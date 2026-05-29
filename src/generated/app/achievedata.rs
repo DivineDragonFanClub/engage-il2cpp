@@ -2,7112 +2,1158 @@
 
 #[cfg(feature = "app-achievedata-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            structbase::{IStructBase, StructBase},
-            structdata_1::{IStructData_1, StructData_1},
-            structtemplate_1::{IStructTemplate_1, StructTemplate_1},
-        },
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/achievedata/AchieveData_ArgType.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct AchieveData_ArgType {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: structbase :: { IStructBase , StructBase }
+ ;
+ use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
+ ;
+ use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/achievedata/AchieveData_Status.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct AchieveData_Status  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for AchieveData_Status  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AchieveData.Status";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for AchieveData_ArgType {
-        const NAME: &'static str = "AchieveData.ArgType";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for AchieveData_Status  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for AchieveData_ArgType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  AchieveData_Status  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl AchieveData_ArgType {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn message() -> Self {
-            Self { value: 1 }
-        }
+    pub fn cleared() -> Self {
+        Self { value: 1 }
 
-        pub fn chapter() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn chapter_side() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn person() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 5 }
-        }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/achievedata/AchieveData_Status.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct AchieveData_Status {
-        pub value: i32,
+
+    pub fn showed() -> Self {
+        Self { value: 2 }
+
     }
 
-    impl ::unity2::ClassIdentity for AchieveData_Status {
-        const NAME: &'static str = "AchieveData.Status";
-        const NAMESPACE: &'static str = "App";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+    pub fn completed() -> Self {
+        Self { value: 3 }
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
     }
 
-    impl ::unity2::IlType for AchieveData_Status {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn num() -> Self {
+        Self { value: 4 }
+
     }
 
-    impl AchieveData_Status {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
+}
 
-        pub fn cleared() -> Self {
-            Self { value: 1 }
-        }
 
-        pub fn showed() -> Self {
-            Self { value: 2 }
-        }
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/achievedata/AchieveData_ArgType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct AchieveData_ArgType  {
+    pub value: i32,
+}
 
-        pub fn completed() -> Self {
-            Self { value: 3 }
-        }
 
-        pub fn num() -> Self {
-            Self { value: 4 }
+impl  ::unity2::ClassIdentity for AchieveData_ArgType  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AchieveData.ArgType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/achievedata/AchieveData.md"))]
-    #[::unity2::class(namespace = "App", name = "AchieveData")]
-    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: achievedata :: AchieveData >)]
-    pub struct AchieveData {
-        #[offset(96)]
-        #[rename(name = "m_FlagName")]
-        pub m_flag_name: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "s_KindDictionary")]
-        pub s_kind_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            i32,
-            crate::system::collections::generic::list_1::List_1<crate::app::achievedata::AchieveData>,
-        >,
-        #[static_field]
-        #[rename(name = "s_ShowQueue")]
-        pub s_show_queue: crate::system::collections::generic::queue_1::Queue_1<crate::app::achievedata::AchieveData>,
+}
+
+
+impl  ::unity2::IlType for AchieveData_ArgType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/achievedata/AchieveData_Kinds.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct AchieveData_Kinds {
-        pub value: i32,
+}
+
+
+impl  AchieveData_ArgType  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl ::unity2::ClassIdentity for AchieveData_Kinds {
-        const NAME: &'static str = "AchieveData.Kinds";
-        const NAMESPACE: &'static str = "App";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+    pub fn message() -> Self {
+        Self { value: 1 }
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
     }
 
-    impl ::unity2::IlType for AchieveData_Kinds {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn chapter() -> Self {
+        Self { value: 2 }
+
     }
 
-    impl AchieveData_Kinds {
-        pub fn 無し() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn 章クリア() -> Self {
-            Self { value: 1 }
-        }
+    pub fn chapter_side() -> Self {
+        Self { value: 3 }
 
-        pub fn 外伝クリア() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn 戦闘回数() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn 杖回数() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn 支援会話() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn 支援会話ｂ() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn 支援会話ａ() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn 支援会話ｓ() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn 一般兵撃破() -> Self {
-            Self { value: 9 }
-        }
-
-        pub fn 異形兵撃破() -> Self {
-            Self { value: 10 }
-        }
-
-        pub fn 蛮族撃破() -> Self {
-            Self { value: 11 }
-        }
-
-        pub fn プレイ時間() -> Self {
-            Self { value: 12 }
-        }
-
-        pub fn 遭遇戦() -> Self {
-            Self { value: 13 }
-        }
-
-        pub fn 共に進軍() -> Self {
-            Self { value: 14 }
-        }
-
-        pub fn 必殺技() -> Self {
-            Self { value: 15 }
-        }
-
-        pub fn エンゲージ() -> Self {
-            Self { value: 16 }
-        }
-
-        pub fn エンゲージ技() -> Self {
-            Self { value: 17 }
-        }
-
-        pub fn 攻撃回避() -> Self {
-            Self { value: 18 }
-        }
-
-        pub fn チェインガード() -> Self {
-            Self { value: 19 }
-        }
-
-        pub fn チェインアタック() -> Self {
-            Self { value: 20 }
-        }
-
-        pub fn チェイン人数() -> Self {
-            Self { value: 21 }
-        }
-
-        pub fn ブレイク() -> Self {
-            Self { value: 22 }
-        }
-
-        pub fn スマッシュ() -> Self {
-            Self { value: 23 }
-        }
-
-        pub fn ミニゲーム() -> Self {
-            Self { value: 24 }
-        }
-
-        pub fn 指輪精製() -> Self {
-            Self { value: 25 }
-        }
-
-        pub fn 指輪合成() -> Self {
-            Self { value: 26 }
-        }
-
-        pub fn 指輪獲得ｃ() -> Self {
-            Self { value: 27 }
-        }
-
-        pub fn 指輪獲得ｂ() -> Self {
-            Self { value: 28 }
-        }
-
-        pub fn 指輪獲得ａ() -> Self {
-            Self { value: 29 }
-        }
-
-        pub fn 指輪獲得ｓ() -> Self {
-            Self { value: 30 }
-        }
-
-        pub fn 指輪磨き() -> Self {
-            Self { value: 31 }
-        }
-
-        pub fn フィレネ投資() -> Self {
-            Self { value: 32 }
-        }
-
-        pub fn ブロディア投資() -> Self {
-            Self { value: 33 }
-        }
-
-        pub fn イルシオン投資() -> Self {
-            Self { value: 34 }
-        }
-
-        pub fn ソルム投資() -> Self {
-            Self { value: 35 }
-        }
-
-        pub fn 投資完了() -> Self {
-            Self { value: 36 }
-        }
-
-        pub fn 投資合計() -> Self {
-            Self { value: 37 }
-        }
-
-        pub fn 料理製作() -> Self {
-            Self { value: 38 }
-        }
-
-        pub fn 料理ｇ() -> Self {
-            Self { value: 39 }
-        }
-
-        pub fn 料理ｆ() -> Self {
-            Self { value: 40 }
-        }
-
-        pub fn 料理ｅ() -> Self {
-            Self { value: 41 }
-        }
-
-        pub fn 料理ｄ() -> Self {
-            Self { value: 42 }
-        }
-
-        pub fn 料理ｃ() -> Self {
-            Self { value: 43 }
-        }
-
-        pub fn 料理ｂ() -> Self {
-            Self { value: 44 }
-        }
-
-        pub fn 料理ａ() -> Self {
-            Self { value: 45 }
-        }
-
-        pub fn 料理ｓ() -> Self {
-            Self { value: 46 }
-        }
-
-        pub fn 料理ｓｓ() -> Self {
-            Self { value: 47 }
-        }
-
-        pub fn 寝る() -> Self {
-            Self { value: 48 }
-        }
-
-        pub fn 起床ｃ() -> Self {
-            Self { value: 49 }
-        }
-
-        pub fn 起床ｂ() -> Self {
-            Self { value: 50 }
-        }
-
-        pub fn 起床ａ() -> Self {
-            Self { value: 51 }
-        }
-
-        pub fn 起床ｓ() -> Self {
-            Self { value: 52 }
-        }
-
-        pub fn 仲間バトル() -> Self {
-            Self { value: 53 }
-        }
-
-        pub fn 仲間バトル勝利() -> Self {
-            Self { value: 54 }
-        }
-
-        pub fn 紋章士バトル() -> Self {
-            Self { value: 55 }
-        }
-
-        pub fn 紋章士バトル勝利() -> Self {
-            Self { value: 56 }
-        }
-
-        pub fn 武器購入() -> Self {
-            Self { value: 57 }
-        }
-
-        pub fn 武器剣購入() -> Self {
-            Self { value: 58 }
-        }
-
-        pub fn 武器槍購入() -> Self {
-            Self { value: 59 }
-        }
-
-        pub fn 武器斧購入() -> Self {
-            Self { value: 60 }
-        }
-
-        pub fn 武器弓購入() -> Self {
-            Self { value: 61 }
-        }
-
-        pub fn 武器短剣購入() -> Self {
-            Self { value: 62 }
-        }
-
-        pub fn 武器魔法購入() -> Self {
-            Self { value: 63 }
-        }
-
-        pub fn 武器拳購入() -> Self {
-            Self { value: 64 }
-        }
-
-        pub fn 武器売却() -> Self {
-            Self { value: 65 }
-        }
-
-        pub fn 道具購入() -> Self {
-            Self { value: 66 }
-        }
-
-        pub fn 道具売却() -> Self {
-            Self { value: 67 }
-        }
-
-        pub fn 杖購入() -> Self {
-            Self { value: 68 }
-        }
-
-        pub fn アクセサリ購入() -> Self {
-            Self { value: 69 }
-        }
-
-        pub fn 着せ替え() -> Self {
-            Self { value: 70 }
-        }
-
-        pub fn 錬成() -> Self {
-            Self { value: 71 }
-        }
-
-        pub fn 錬成剣() -> Self {
-            Self { value: 72 }
-        }
-
-        pub fn 錬成槍() -> Self {
-            Self { value: 73 }
-        }
-
-        pub fn 錬成斧() -> Self {
-            Self { value: 74 }
-        }
-
-        pub fn 錬成弓() -> Self {
-            Self { value: 75 }
-        }
-
-        pub fn 錬成短剣() -> Self {
-            Self { value: 76 }
-        }
-
-        pub fn 錬成魔法() -> Self {
-            Self { value: 77 }
-        }
-
-        pub fn 錬成拳() -> Self {
-            Self { value: 78 }
-        }
-
-        pub fn 紋章を刻む() -> Self {
-            Self { value: 79 }
-        }
-
-        pub fn 通信対戦() -> Self {
-            Self { value: 80 }
-        }
-
-        pub fn 通信対戦勝利() -> Self {
-            Self { value: 81 }
-        }
-
-        pub fn リレーバトル() -> Self {
-            Self { value: 82 }
-        }
-
-        pub fn リレーバトル勝利() -> Self {
-            Self { value: 83 }
-        }
-
-        pub fn 連戦１() -> Self {
-            Self { value: 84 }
-        }
-
-        pub fn 連戦２() -> Self {
-            Self { value: 85 }
-        }
-
-        pub fn 連戦３() -> Self {
-            Self { value: 86 }
-        }
-
-        pub fn 連戦４() -> Self {
-            Self { value: 87 }
-        }
-
-        pub fn 連戦５() -> Self {
-            Self { value: 88 }
-        }
-
-        pub fn 連戦６() -> Self {
-            Self { value: 89 }
-        }
-
-        pub fn pクラスチェンジ() -> Self {
-            Self { value: 90 }
-        }
-
-        pub fn p腕立て伏せノーマル() -> Self {
-            Self { value: 91 }
-        }
-
-        pub fn p腕立て伏せハード() -> Self {
-            Self { value: 92 }
-        }
-
-        pub fn p腕立て伏せエキスパート() -> Self {
-            Self { value: 93 }
-        }
-
-        pub fn p腕立て伏せマッスル() -> Self {
-            Self { value: 94 }
-        }
-
-        pub fn p腹筋ノーマル() -> Self {
-            Self { value: 95 }
-        }
-
-        pub fn p腹筋ハード() -> Self {
-            Self { value: 96 }
-        }
-
-        pub fn p腹筋エキスパート() -> Self {
-            Self { value: 97 }
-        }
-
-        pub fn p腹筋マッスル() -> Self {
-            Self { value: 98 }
-        }
-
-        pub fn pスクワットノーマル() -> Self {
-            Self { value: 99 }
-        }
-
-        pub fn pスクワットハード() -> Self {
-            Self { value: 100 }
-        }
-
-        pub fn pスクワットエキスパート() -> Self {
-            Self { value: 101 }
-        }
-
-        pub fn pスクワットマッスル() -> Self {
-            Self { value: 102 }
-        }
-
-        pub fn pドラゴンシューターノーマル() -> Self {
-            Self { value: 103 }
-        }
-
-        pub fn pドラゴンシューターハード() -> Self {
-            Self { value: 104 }
-        }
-
-        pub fn pドラゴンシューターエキスパート() -> Self {
-            Self { value: 105 }
-        }
-
-        pub fn p釣り小魚用竿回数() -> Self {
-            Self { value: 106 }
-        }
-
-        pub fn p釣り頑丈竿回数() -> Self {
-            Self { value: 107 }
-        }
-
-        pub fn p釣り万能竿回数() -> Self {
-            Self { value: 108 }
-        }
-
-        pub fn p指輪磨き紋章士別() -> Self {
-            Self { value: 109 }
-        }
-
-        pub fn p連戦１挑戦数() -> Self {
-            Self { value: 110 }
-        }
-
-        pub fn p連戦２挑戦数() -> Self {
-            Self { value: 111 }
-        }
-
-        pub fn p連戦３挑戦数() -> Self {
-            Self { value: 112 }
-        }
-
-        pub fn p連戦４挑戦数() -> Self {
-            Self { value: 113 }
-        }
-
-        pub fn p連戦５挑戦数() -> Self {
-            Self { value: 114 }
-        }
-
-        pub fn p連戦６挑戦数() -> Self {
-            Self { value: 115 }
-        }
-
-        pub fn p連戦１クリア数() -> Self {
-            Self { value: 116 }
-        }
-
-        pub fn p連戦２クリア数() -> Self {
-            Self { value: 117 }
-        }
-
-        pub fn p連戦３クリア数() -> Self {
-            Self { value: 118 }
-        }
-
-        pub fn p連戦４クリア数() -> Self {
-            Self { value: 119 }
-        }
-
-        pub fn p連戦５クリア数() -> Self {
-            Self { value: 120 }
-        }
-
-        pub fn p連戦６クリア数() -> Self {
-            Self { value: 121 }
-        }
-
-        pub fn pリレーバトル１開始数() -> Self {
-            Self { value: 122 }
-        }
-
-        pub fn pリレーバトル２開始数() -> Self {
-            Self { value: 123 }
-        }
-
-        pub fn pリレーバトル３開始数() -> Self {
-            Self { value: 124 }
-        }
-
-        pub fn pリレーバトル４開始数() -> Self {
-            Self { value: 125 }
-        }
-
-        pub fn pリレーバトル５開始数() -> Self {
-            Self { value: 126 }
-        }
-
-        pub fn pリレーバトル６開始数() -> Self {
-            Self { value: 127 }
-        }
-
-        pub fn pリレーバトル引き継ぎ数() -> Self {
-            Self { value: 128 }
-        }
-
-        pub fn p対戦お手軽総数() -> Self {
-            Self { value: 129 }
-        }
-
-        pub fn p対戦お手軽勝利数() -> Self {
-            Self { value: 130 }
-        }
-
-        pub fn p対戦お手軽失敗数() -> Self {
-            Self { value: 131 }
-        }
-
-        pub fn p対戦本格総数() -> Self {
-            Self { value: 132 }
-        }
-
-        pub fn p対戦本格勝利数() -> Self {
-            Self { value: 133 }
-        }
-
-        pub fn p対戦本格失敗数() -> Self {
-            Self { value: 134 }
-        }
-
-        pub fn p対戦本格防御勝利数() -> Self {
-            Self { value: 135 }
-        }
-
-        pub fn p対戦本格防御失敗数() -> Self {
-            Self { value: 136 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 137 }
-        }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/achievedata/AchieveData_Categories.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct AchieveData_Categories {
-        pub value: i32,
+
+    pub fn person() -> Self {
+        Self { value: 4 }
+
     }
 
-    impl ::unity2::ClassIdentity for AchieveData_Categories {
-        const NAME: &'static str = "AchieveData.Categories";
-        const NAMESPACE: &'static str = "App";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+    pub fn num() -> Self {
+        Self { value: 5 }
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
     }
 
-    impl ::unity2::IlType for AchieveData_Categories {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/achievedata/AchieveData_Categories.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct AchieveData_Categories  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for AchieveData_Categories  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AchieveData.Categories";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl AchieveData_Categories {
-        pub fn unit() -> Self {
-            Self { value: 0 }
-        }
+}
 
-        pub fn battle() -> Self {
-            Self { value: 1 }
-        }
 
-        pub fn solanel() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn shop() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn system() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn play_report() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 5 }
-        }
+impl  ::unity2::IlType for AchieveData_Categories  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
+
+impl  AchieveData_Categories  {
+    pub fn unit() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn battle() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn solanel() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn shop() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn system() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn play_report() -> Self {
+        Self { value: 5 }
+
+    }
+
+
+    pub fn num() -> Self {
+        Self { value: 5 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/achievedata/AchieveData.md"))] # [:: unity2 :: class (namespace = "App" , name = "AchieveData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: achievedata :: AchieveData >)] pub struct AchieveData {
+# [offset (96)] # [rename (name = "m_FlagName")] pub m_flag_name : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "s_KindDictionary")] pub s_kind_dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: achievedata :: AchieveData > > ,
+# [static_field] # [rename (name = "s_ShowQueue")] pub s_show_queue : crate :: system :: collections :: generic :: queue_1 :: Queue_1 < crate :: app :: achievedata :: AchieveData > ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/achievedata/AchieveData_Kinds.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct AchieveData_Kinds  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for AchieveData_Kinds  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AchieveData.Kinds";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for AchieveData_Kinds  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  AchieveData_Kinds  {
+    pub fn 無し() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn 章クリア() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn 外伝クリア() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn 戦闘回数() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn 杖回数() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn 支援会話() -> Self {
+        Self { value: 5 }
+
+    }
+
+
+    pub fn 支援会話ｂ() -> Self {
+        Self { value: 6 }
+
+    }
+
+
+    pub fn 支援会話ａ() -> Self {
+        Self { value: 7 }
+
+    }
+
+
+    pub fn 支援会話ｓ() -> Self {
+        Self { value: 8 }
+
+    }
+
+
+    pub fn 一般兵撃破() -> Self {
+        Self { value: 9 }
+
+    }
+
+
+    pub fn 異形兵撃破() -> Self {
+        Self { value: 10 }
+
+    }
+
+
+    pub fn 蛮族撃破() -> Self {
+        Self { value: 11 }
+
+    }
+
+
+    pub fn プレイ時間() -> Self {
+        Self { value: 12 }
+
+    }
+
+
+    pub fn 遭遇戦() -> Self {
+        Self { value: 13 }
+
+    }
+
+
+    pub fn 共に進軍() -> Self {
+        Self { value: 14 }
+
+    }
+
+
+    pub fn 必殺技() -> Self {
+        Self { value: 15 }
+
+    }
+
+
+    pub fn エンゲージ() -> Self {
+        Self { value: 16 }
+
+    }
+
+
+    pub fn エンゲージ技() -> Self {
+        Self { value: 17 }
+
+    }
+
+
+    pub fn 攻撃回避() -> Self {
+        Self { value: 18 }
+
+    }
+
+
+    pub fn チェインガード() -> Self {
+        Self { value: 19 }
+
+    }
+
+
+    pub fn チェインアタック() -> Self {
+        Self { value: 20 }
+
+    }
+
+
+    pub fn チェイン人数() -> Self {
+        Self { value: 21 }
+
+    }
+
+
+    pub fn ブレイク() -> Self {
+        Self { value: 22 }
+
+    }
+
+
+    pub fn スマッシュ() -> Self {
+        Self { value: 23 }
+
+    }
+
+
+    pub fn ミニゲーム() -> Self {
+        Self { value: 24 }
+
+    }
+
+
+    pub fn 指輪精製() -> Self {
+        Self { value: 25 }
+
+    }
+
+
+    pub fn 指輪合成() -> Self {
+        Self { value: 26 }
+
+    }
+
+
+    pub fn 指輪獲得ｃ() -> Self {
+        Self { value: 27 }
+
+    }
+
+
+    pub fn 指輪獲得ｂ() -> Self {
+        Self { value: 28 }
+
+    }
+
+
+    pub fn 指輪獲得ａ() -> Self {
+        Self { value: 29 }
+
+    }
+
+
+    pub fn 指輪獲得ｓ() -> Self {
+        Self { value: 30 }
+
+    }
+
+
+    pub fn 指輪磨き() -> Self {
+        Self { value: 31 }
+
+    }
+
+
+    pub fn フィレネ投資() -> Self {
+        Self { value: 32 }
+
+    }
+
+
+    pub fn ブロディア投資() -> Self {
+        Self { value: 33 }
+
+    }
+
+
+    pub fn イルシオン投資() -> Self {
+        Self { value: 34 }
+
+    }
+
+
+    pub fn ソルム投資() -> Self {
+        Self { value: 35 }
+
+    }
+
+
+    pub fn 投資完了() -> Self {
+        Self { value: 36 }
+
+    }
+
+
+    pub fn 投資合計() -> Self {
+        Self { value: 37 }
+
+    }
+
+
+    pub fn 料理製作() -> Self {
+        Self { value: 38 }
+
+    }
+
+
+    pub fn 料理ｇ() -> Self {
+        Self { value: 39 }
+
+    }
+
+
+    pub fn 料理ｆ() -> Self {
+        Self { value: 40 }
+
+    }
+
+
+    pub fn 料理ｅ() -> Self {
+        Self { value: 41 }
+
+    }
+
+
+    pub fn 料理ｄ() -> Self {
+        Self { value: 42 }
+
+    }
+
+
+    pub fn 料理ｃ() -> Self {
+        Self { value: 43 }
+
+    }
+
+
+    pub fn 料理ｂ() -> Self {
+        Self { value: 44 }
+
+    }
+
+
+    pub fn 料理ａ() -> Self {
+        Self { value: 45 }
+
+    }
+
+
+    pub fn 料理ｓ() -> Self {
+        Self { value: 46 }
+
+    }
+
+
+    pub fn 料理ｓｓ() -> Self {
+        Self { value: 47 }
+
+    }
+
+
+    pub fn 寝る() -> Self {
+        Self { value: 48 }
+
+    }
+
+
+    pub fn 起床ｃ() -> Self {
+        Self { value: 49 }
+
+    }
+
+
+    pub fn 起床ｂ() -> Self {
+        Self { value: 50 }
+
+    }
+
+
+    pub fn 起床ａ() -> Self {
+        Self { value: 51 }
+
+    }
+
+
+    pub fn 起床ｓ() -> Self {
+        Self { value: 52 }
+
+    }
+
+
+    pub fn 仲間バトル() -> Self {
+        Self { value: 53 }
+
+    }
+
+
+    pub fn 仲間バトル勝利() -> Self {
+        Self { value: 54 }
+
+    }
+
+
+    pub fn 紋章士バトル() -> Self {
+        Self { value: 55 }
+
+    }
+
+
+    pub fn 紋章士バトル勝利() -> Self {
+        Self { value: 56 }
+
+    }
+
+
+    pub fn 武器購入() -> Self {
+        Self { value: 57 }
+
+    }
+
+
+    pub fn 武器剣購入() -> Self {
+        Self { value: 58 }
+
+    }
+
+
+    pub fn 武器槍購入() -> Self {
+        Self { value: 59 }
+
+    }
+
+
+    pub fn 武器斧購入() -> Self {
+        Self { value: 60 }
+
+    }
+
+
+    pub fn 武器弓購入() -> Self {
+        Self { value: 61 }
+
+    }
+
+
+    pub fn 武器短剣購入() -> Self {
+        Self { value: 62 }
+
+    }
+
+
+    pub fn 武器魔法購入() -> Self {
+        Self { value: 63 }
+
+    }
+
+
+    pub fn 武器拳購入() -> Self {
+        Self { value: 64 }
+
+    }
+
+
+    pub fn 武器売却() -> Self {
+        Self { value: 65 }
+
+    }
+
+
+    pub fn 道具購入() -> Self {
+        Self { value: 66 }
+
+    }
+
+
+    pub fn 道具売却() -> Self {
+        Self { value: 67 }
+
+    }
+
+
+    pub fn 杖購入() -> Self {
+        Self { value: 68 }
+
+    }
+
+
+    pub fn アクセサリ購入() -> Self {
+        Self { value: 69 }
+
+    }
+
+
+    pub fn 着せ替え() -> Self {
+        Self { value: 70 }
+
+    }
+
+
+    pub fn 錬成() -> Self {
+        Self { value: 71 }
+
+    }
+
+
+    pub fn 錬成剣() -> Self {
+        Self { value: 72 }
+
+    }
+
+
+    pub fn 錬成槍() -> Self {
+        Self { value: 73 }
+
+    }
+
+
+    pub fn 錬成斧() -> Self {
+        Self { value: 74 }
+
+    }
+
+
+    pub fn 錬成弓() -> Self {
+        Self { value: 75 }
+
+    }
+
+
+    pub fn 錬成短剣() -> Self {
+        Self { value: 76 }
+
+    }
+
+
+    pub fn 錬成魔法() -> Self {
+        Self { value: 77 }
+
+    }
+
+
+    pub fn 錬成拳() -> Self {
+        Self { value: 78 }
+
+    }
+
+
+    pub fn 紋章を刻む() -> Self {
+        Self { value: 79 }
+
+    }
+
+
+    pub fn 通信対戦() -> Self {
+        Self { value: 80 }
+
+    }
+
+
+    pub fn 通信対戦勝利() -> Self {
+        Self { value: 81 }
+
+    }
+
+
+    pub fn リレーバトル() -> Self {
+        Self { value: 82 }
+
+    }
+
+
+    pub fn リレーバトル勝利() -> Self {
+        Self { value: 83 }
+
+    }
+
+
+    pub fn 連戦１() -> Self {
+        Self { value: 84 }
+
+    }
+
+
+    pub fn 連戦２() -> Self {
+        Self { value: 85 }
+
+    }
+
+
+    pub fn 連戦３() -> Self {
+        Self { value: 86 }
+
+    }
+
+
+    pub fn 連戦４() -> Self {
+        Self { value: 87 }
+
+    }
+
+
+    pub fn 連戦５() -> Self {
+        Self { value: 88 }
+
+    }
+
+
+    pub fn 連戦６() -> Self {
+        Self { value: 89 }
+
+    }
+
+
+    pub fn pクラスチェンジ() -> Self {
+        Self { value: 90 }
+
+    }
+
+
+    pub fn p腕立て伏せノーマル() -> Self {
+        Self { value: 91 }
+
+    }
+
+
+    pub fn p腕立て伏せハード() -> Self {
+        Self { value: 92 }
+
+    }
+
+
+    pub fn p腕立て伏せエキスパート() -> Self {
+        Self { value: 93 }
+
+    }
+
+
+    pub fn p腕立て伏せマッスル() -> Self {
+        Self { value: 94 }
+
+    }
+
+
+    pub fn p腹筋ノーマル() -> Self {
+        Self { value: 95 }
+
+    }
+
+
+    pub fn p腹筋ハード() -> Self {
+        Self { value: 96 }
+
+    }
+
+
+    pub fn p腹筋エキスパート() -> Self {
+        Self { value: 97 }
+
+    }
+
+
+    pub fn p腹筋マッスル() -> Self {
+        Self { value: 98 }
+
+    }
+
+
+    pub fn pスクワットノーマル() -> Self {
+        Self { value: 99 }
+
+    }
+
+
+    pub fn pスクワットハード() -> Self {
+        Self { value: 100 }
+
+    }
+
+
+    pub fn pスクワットエキスパート() -> Self {
+        Self { value: 101 }
+
+    }
+
+
+    pub fn pスクワットマッスル() -> Self {
+        Self { value: 102 }
+
+    }
+
+
+    pub fn pドラゴンシューターノーマル() -> Self {
+        Self { value: 103 }
+
+    }
+
+
+    pub fn pドラゴンシューターハード() -> Self {
+        Self { value: 104 }
+
+    }
+
+
+    pub fn pドラゴンシューターエキスパート() -> Self {
+        Self { value: 105 }
+
+    }
+
+
+    pub fn p釣り小魚用竿回数() -> Self {
+        Self { value: 106 }
+
+    }
+
+
+    pub fn p釣り頑丈竿回数() -> Self {
+        Self { value: 107 }
+
+    }
+
+
+    pub fn p釣り万能竿回数() -> Self {
+        Self { value: 108 }
+
+    }
+
+
+    pub fn p指輪磨き紋章士別() -> Self {
+        Self { value: 109 }
+
+    }
+
+
+    pub fn p連戦１挑戦数() -> Self {
+        Self { value: 110 }
+
+    }
+
+
+    pub fn p連戦２挑戦数() -> Self {
+        Self { value: 111 }
+
+    }
+
+
+    pub fn p連戦３挑戦数() -> Self {
+        Self { value: 112 }
+
+    }
+
+
+    pub fn p連戦４挑戦数() -> Self {
+        Self { value: 113 }
+
+    }
+
+
+    pub fn p連戦５挑戦数() -> Self {
+        Self { value: 114 }
+
+    }
+
+
+    pub fn p連戦６挑戦数() -> Self {
+        Self { value: 115 }
+
+    }
+
+
+    pub fn p連戦１クリア数() -> Self {
+        Self { value: 116 }
+
+    }
+
+
+    pub fn p連戦２クリア数() -> Self {
+        Self { value: 117 }
+
+    }
+
+
+    pub fn p連戦３クリア数() -> Self {
+        Self { value: 118 }
+
+    }
+
+
+    pub fn p連戦４クリア数() -> Self {
+        Self { value: 119 }
+
+    }
+
+
+    pub fn p連戦５クリア数() -> Self {
+        Self { value: 120 }
+
+    }
+
+
+    pub fn p連戦６クリア数() -> Self {
+        Self { value: 121 }
+
+    }
+
+
+    pub fn pリレーバトル１開始数() -> Self {
+        Self { value: 122 }
+
+    }
+
+
+    pub fn pリレーバトル２開始数() -> Self {
+        Self { value: 123 }
+
+    }
+
+
+    pub fn pリレーバトル３開始数() -> Self {
+        Self { value: 124 }
+
+    }
+
+
+    pub fn pリレーバトル４開始数() -> Self {
+        Self { value: 125 }
+
+    }
+
+
+    pub fn pリレーバトル５開始数() -> Self {
+        Self { value: 126 }
+
+    }
+
+
+    pub fn pリレーバトル６開始数() -> Self {
+        Self { value: 127 }
+
+    }
+
+
+    pub fn pリレーバトル引き継ぎ数() -> Self {
+        Self { value: 128 }
+
+    }
+
+
+    pub fn p対戦お手軽総数() -> Self {
+        Self { value: 129 }
+
+    }
+
+
+    pub fn p対戦お手軽勝利数() -> Self {
+        Self { value: 130 }
+
+    }
+
+
+    pub fn p対戦お手軽失敗数() -> Self {
+        Self { value: 131 }
+
+    }
+
+
+    pub fn p対戦本格総数() -> Self {
+        Self { value: 132 }
+
+    }
+
+
+    pub fn p対戦本格勝利数() -> Self {
+        Self { value: 133 }
+
+    }
+
+
+    pub fn p対戦本格失敗数() -> Self {
+        Self { value: 134 }
+
+    }
+
+
+    pub fn p対戦本格防御勝利数() -> Self {
+        Self { value: 135 }
+
+    }
+
+
+    pub fn p対戦本格防御失敗数() -> Self {
+        Self { value: 136 }
+
+    }
+
+
+    pub fn num() -> Self {
+        Self { value: 137 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "app-achievedata-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-achievedata")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AchieveData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AchieveData as ::unity2::ClassIdentity>::class(), "Load", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "Load",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_load::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_grouping {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::achievedata::AchieveData_Kinds as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "IsGrouping",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "IsGrouping",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_grouping(kind: crate::app::achievedata::AchieveData_Kinds, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(crate::app::achievedata::AchieveData_Kinds, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_grouping::get_method_info().method_ptr);
-        inner(kind, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::achievedata::AchieveData_Kinds as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<AchieveData as ::unity2::ClassIdentity>::class(), "IsCount", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "IsCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_count(kind: crate::app::achievedata::AchieveData_Kinds, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(crate::app::achievedata::AchieveData_Kinds, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_count::get_method_info().method_ptr);
-        inner(kind, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_aid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AchieveData as ::unity2::ClassIdentity>::class(), "get_Aid", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "get_Aid",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_aid(this: AchieveData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(AchieveData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_aid::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_aid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<AchieveData as ::unity2::ClassIdentity>::class(), "set_Aid", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "set_Aid",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_aid(this: AchieveData, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AchieveData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_aid::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "get_Name",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "get_Name",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(this: AchieveData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(AchieveData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "set_Name",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "set_Name",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_name(this: AchieveData, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AchieveData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_name::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_category {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "get_Category",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "get_Category",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_category(this: AchieveData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::achievedata::AchieveData_Categories {
-        let inner: extern "C" fn(AchieveData, ::unity2::OptionalMethod) -> crate::app::achievedata::AchieveData_Categories =
-            ::core::mem::transmute(__lookup_get_category::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_category {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::achievedata::AchieveData_Categories as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "set_Category",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "set_Category",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_category(
-        this: AchieveData,
-        value: crate::app::achievedata::AchieveData_Categories,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AchieveData, crate::app::achievedata::AchieveData_Categories, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_category::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_kind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "get_Kind",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "get_Kind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_kind(this: AchieveData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::achievedata::AchieveData_Kinds {
-        let inner: extern "C" fn(AchieveData, ::unity2::OptionalMethod) -> crate::app::achievedata::AchieveData_Kinds =
-            ::core::mem::transmute(__lookup_get_kind::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_kind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::achievedata::AchieveData_Kinds as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "set_Kind",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "set_Kind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_kind(
-        this: AchieveData,
-        value: crate::app::achievedata::AchieveData_Kinds,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AchieveData, crate::app::achievedata::AchieveData_Kinds, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_kind::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "get_Count",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "get_Count",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_count(this: AchieveData, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AchieveData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_count::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "set_Count",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "set_Count",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_count(this: AchieveData, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AchieveData, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_count::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_arg {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AchieveData as ::unity2::ClassIdentity>::class(), "get_Arg", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "get_Arg",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_arg(this: AchieveData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(AchieveData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_arg::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_arg {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<AchieveData as ::unity2::ClassIdentity>::class(), "set_Arg", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "set_Arg",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_arg(this: AchieveData, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AchieveData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_arg::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_count_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "get_CountUnit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "get_CountUnit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_count_unit(this: AchieveData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(AchieveData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_count_unit::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_count_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "set_CountUnit",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "set_CountUnit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_count_unit(this: AchieveData, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AchieveData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_count_unit::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_kizuna_reward {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "get_KizunaReward",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "get_KizunaReward",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_kizuna_reward(this: AchieveData, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AchieveData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_kizuna_reward::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_kizuna_reward {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "set_KizunaReward",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "set_KizunaReward",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_kizuna_reward(this: AchieveData, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AchieveData, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_kizuna_reward::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_chapter {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "get_Chapter",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "get_Chapter",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_chapter(this: AchieveData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(AchieveData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_chapter::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_chapter {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "set_Chapter",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "set_Chapter",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_chapter(this: AchieveData, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AchieveData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_chapter::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_build {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AchieveData as ::unity2::ClassIdentity>::class(), "OnBuild", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "OnBuild",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_build(this: AchieveData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AchieveData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_build::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_debug_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "GetDebugName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "GetDebugName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_debug_name(this: AchieveData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(AchieveData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_debug_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_arg_type {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "GetArgType",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "GetArgType",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_arg_type(this: AchieveData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::achievedata::AchieveData_ArgType {
-        let inner: extern "C" fn(AchieveData, ::unity2::OptionalMethod) -> crate::app::achievedata::AchieveData_ArgType =
-            ::core::mem::transmute(__lookup_get_arg_type::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_person {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "GetPerson",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "GetPerson",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_person(this: AchieveData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::persondata::PersonData {
-        let inner: extern "C" fn(AchieveData, ::unity2::OptionalMethod) -> crate::app::persondata::PersonData =
-            ::core::mem::transmute(__lookup_get_person::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_god {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AchieveData as ::unity2::ClassIdentity>::class(), "GetGod", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "GetGod",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_god(this: AchieveData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::goddata::GodData {
-        let inner: extern "C" fn(AchieveData, ::unity2::OptionalMethod) -> crate::app::goddata::GodData =
-            ::core::mem::transmute(__lookup_get_god::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_status {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "GetStatus",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "GetStatus",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_status(this: AchieveData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::achievedata::AchieveData_Status {
-        let inner: extern "C" fn(AchieveData, ::unity2::OptionalMethod) -> crate::app::achievedata::AchieveData_Status =
-            ::core::mem::transmute(__lookup_get_status::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_cleared {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "SetCleared",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "SetCleared",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_cleared(this: AchieveData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(AchieveData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_set_cleared::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_showed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "SetShowed",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "SetShowed",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_showed(this: AchieveData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(AchieveData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_set_showed::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_complete {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "SetComplete",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "SetComplete",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_complete(this: AchieveData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(AchieveData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_set_complete::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_can_get {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "IsCanGet",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "IsCanGet",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_can_get(this: AchieveData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(AchieveData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_can_get::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_status {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::achievedata::AchieveData_Status as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "SetStatus",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "SetStatus",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_status(
-        this: AchieveData,
-        status: crate::app::achievedata::AchieveData_Status,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AchieveData, crate::app::achievedata::AchieveData_Status, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_status::get_method_info().method_ptr);
-        inner(this, status, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_value {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "GetValue",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "GetValue",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_value(this: AchieveData, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AchieveData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_value::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_regist_global_flags {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "RegistGlobalFlags",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "RegistGlobalFlags",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn regist_global_flags(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_regist_global_flags::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_flag_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::achievedata::AchieveData_Kinds as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "GetFlagName",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "GetFlagName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_flag_name(
-        kind: crate::app::achievedata::AchieveData_Kinds,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(crate::app::achievedata::AchieveData_Kinds, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_flag_name::get_method_info().method_ptr);
-        inner(kind, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_flag_name_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::achievedata::AchieveData_Kinds as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "GetFlagName",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "GetFlagName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_flag_name_2(
-        kind: crate::app::achievedata::AchieveData_Kinds,
-        footer: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::app::achievedata::AchieveData_Kinds,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(__lookup_get_flag_name_2::get_method_info().method_ptr);
-        inner(kind, footer, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_flag_name_3 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "GetFlagName",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "GetFlagName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_flag_name_3(kind: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_flag_name_3::get_method_info().method_ptr);
-        inner(kind, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_count_current {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "GetCountCurrent",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "GetCountCurrent",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_count_current(this: AchieveData, footer: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AchieveData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_count_current::get_method_info().method_ptr);
-        inner(this, footer, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_kind_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "GetKindCount",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "GetKindCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_kind_count(kind: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_kind_count::get_method_info().method_ptr);
-        inner(kind, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_clear_reliance {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::persondata::PersonData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "SetClearReliance",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "SetClearReliance",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_clear_reliance(person: crate::app::persondata::PersonData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::persondata::PersonData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_clear_reliance::get_method_info().method_ptr);
-        inner(person, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_reliance_b {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountRelianceB",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountRelianceB",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_reliance_b(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_count_reliance_b::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_reliance_a {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountRelianceA",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountRelianceA",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_reliance_a(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_count_reliance_a::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_reliance_s {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountRelianceS",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountRelianceS",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_reliance_s(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_count_reliance_s::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_sortie {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::persondata::PersonData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountSortie",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountSortie",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_sortie(person: crate::app::persondata::PersonData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::persondata::PersonData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_count_sortie::get_method_info().method_ptr);
-        inner(person, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_encount {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountEncount",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountEncount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_encount(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_add_count_encount::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_battle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountBattle",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountBattle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_battle(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_add_count_battle::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_defeat {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::persondata::PersonData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountDefeat",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountDefeat",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_defeat(person: crate::app::persondata::PersonData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::persondata::PersonData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_count_defeat::get_method_info().method_ptr);
-        inner(person, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_rod {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountRod",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountRod",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_rod(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_add_count_rod::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_critical {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountCritical",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountCritical",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_critical(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_add_count_critical::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_engage {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountEngage",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountEngage",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_engage(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_add_count_engage::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_engage_attack {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountEngageAttack",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountEngageAttack",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_engage_attack(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_count_engage_attack::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_avoidance {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountAvoidance",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountAvoidance",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_avoidance(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_add_count_avoidance::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_chain_guard {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountChainGuard",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountChainGuard",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_chain_guard(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_count_chain_guard::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_chain_attack {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountChainAttack",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountChainAttack",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_chain_attack(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_count_chain_attack::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_value_chain_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "SetValueChainUnit",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "SetValueChainUnit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_value_chain_unit(unit_num: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_value_chain_unit::get_method_info().method_ptr);
-        inner(unit_num, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_break {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountBreak",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountBreak",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_break(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_add_count_break::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_smash {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountSmash",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountSmash",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_smash(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_add_count_smash::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_mini_game {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountMiniGame",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountMiniGame",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_mini_game(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_add_count_mini_game::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_ring_form {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountRingForm",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountRingForm",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_ring_form(add_value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_count_ring_form::get_method_info().method_ptr);
-        inner(add_value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_ring_mix {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountRingMix",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountRingMix",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_ring_mix(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_add_count_ring_mix::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_bonds_ring_c {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountBondsRingC",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountBondsRingC",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_bonds_ring_c(add_value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_count_bonds_ring_c::get_method_info().method_ptr);
-        inner(add_value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_bonds_ring_b {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountBondsRingB",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountBondsRingB",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_bonds_ring_b(add_value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_count_bonds_ring_b::get_method_info().method_ptr);
-        inner(add_value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_bonds_ring_a {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountBondsRingA",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountBondsRingA",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_bonds_ring_a(add_value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_count_bonds_ring_a::get_method_info().method_ptr);
-        inner(add_value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_bonds_ring_s {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountBondsRingS",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountBondsRingS",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_bonds_ring_s(add_value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_count_bonds_ring_s::get_method_info().method_ptr);
-        inner(add_value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_ring_cleaning {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountRingCleaning",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountRingCleaning",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_ring_cleaning(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_count_ring_cleaning::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_value_investment_filene {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "SetValueInvestmentFilene",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "SetValueInvestmentFilene",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_value_investment_filene(level: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_value_investment_filene::get_method_info().method_ptr);
-        inner(level, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_value_investment_brodia {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "SetValueInvestmentBrodia",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "SetValueInvestmentBrodia",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_value_investment_brodia(level: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_value_investment_brodia::get_method_info().method_ptr);
-        inner(level, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_value_investment_ircion {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "SetValueInvestmentIrcion",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "SetValueInvestmentIrcion",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_value_investment_ircion(level: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_value_investment_ircion::get_method_info().method_ptr);
-        inner(level, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_value_investment_solum {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "SetValueInvestmentSolum",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "SetValueInvestmentSolum",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_value_investment_solum(level: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_value_investment_solum::get_method_info().method_ptr);
-        inner(level, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_clear_investment_all {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "SetClearInvestmentAll",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "SetClearInvestmentAll",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_clear_investment_all(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_clear_investment_all::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_investment_money {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountInvestmentMoney",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountInvestmentMoney",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_investment_money(money: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_count_investment_money::get_method_info().method_ptr);
-        inner(money, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_cook_all {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountCookAll",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountCookAll",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_cook_all(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_add_count_cook_all::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_cook_g {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountCookG",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountCookG",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_cook_g(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_add_count_cook_g::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_cook_f {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountCookF",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountCookF",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_cook_f(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_add_count_cook_f::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_cook_e {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountCookE",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountCookE",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_cook_e(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_add_count_cook_e::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_cook_d {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountCookD",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountCookD",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_cook_d(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_add_count_cook_d::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_cook_c {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountCookC",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountCookC",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_cook_c(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_add_count_cook_c::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_cook_b {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountCookB",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountCookB",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_cook_b(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_add_count_cook_b::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_cook_a {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountCookA",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountCookA",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_cook_a(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_add_count_cook_a::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_cook_s {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountCookS",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountCookS",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_cook_s(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_add_count_cook_s::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_cook_ss {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountCookSS",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountCookSS",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_cook_ss(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_add_count_cook_ss::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_sleep {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountSleep",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountSleep",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_sleep(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_add_count_sleep::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_wake_up_c {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountWakeUpC",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountWakeUpC",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_wake_up_c(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_add_count_wake_up_c::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_wake_up_b {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountWakeUpB",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountWakeUpB",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_wake_up_b(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_add_count_wake_up_b::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_wake_up_a {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountWakeUpA",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountWakeUpA",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_wake_up_a(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_add_count_wake_up_a::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_wake_up_s {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountWakeUpS",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountWakeUpS",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_wake_up_s(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_add_count_wake_up_s::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_unit_battle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountUnitBattle",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountUnitBattle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_unit_battle(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_count_unit_battle::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_unit_battle_win {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountUnitBattleWin",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountUnitBattleWin",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_unit_battle_win(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_count_unit_battle_win::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_god_battle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountGodBattle",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountGodBattle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_god_battle(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_count_god_battle::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_god_battle_win {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountGodBattleWin",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountGodBattleWin",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_god_battle_win(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_count_god_battle_win::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_buy_weapon {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountBuyWeapon",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountBuyWeapon",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_buy_weapon(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_count_buy_weapon::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_buy_sword {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountBuySword",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountBuySword",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_buy_sword(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_add_count_buy_sword::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_buy_lance {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountBuyLance",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountBuyLance",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_buy_lance(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_add_count_buy_lance::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_buy_axe {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountBuyAxe",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountBuyAxe",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_buy_axe(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_add_count_buy_axe::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_buy_bow {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountBuyBow",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountBuyBow",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_buy_bow(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_add_count_buy_bow::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_buy_knife {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountBuyKnife",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountBuyKnife",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_buy_knife(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_add_count_buy_knife::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_buy_magic {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountBuyMagic",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountBuyMagic",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_buy_magic(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_add_count_buy_magic::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_buy_fist {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountBuyFist",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountBuyFist",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_buy_fist(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_add_count_buy_fist::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_sell_weapon {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountSellWeapon",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountSellWeapon",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_sell_weapon(add_value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_count_sell_weapon::get_method_info().method_ptr);
-        inner(add_value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_buy_item {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountBuyItem",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountBuyItem",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_buy_item(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_add_count_buy_item::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_sell_item {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountSellItem",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountSellItem",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_sell_item(add_value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_count_sell_item::get_method_info().method_ptr);
-        inner(add_value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_buy_rod {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountBuyRod",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountBuyRod",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_buy_rod(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_add_count_buy_rod::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_buy_accessories {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountBuyAccessories",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountBuyAccessories",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_buy_accessories(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_count_buy_accessories::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_change_accessories {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountChangeAccessories",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountChangeAccessories",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_change_accessories(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_count_change_accessories::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_forging {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountForging",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountForging",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_forging(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_add_count_forging::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_forging_sword {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountForgingSword",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountForgingSword",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_forging_sword(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_count_forging_sword::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_forging_lance {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountForgingLance",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountForgingLance",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_forging_lance(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_count_forging_lance::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_forging_axe {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountForgingAxe",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountForgingAxe",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_forging_axe(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_count_forging_axe::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_forging_bow {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountForgingBow",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountForgingBow",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_forging_bow(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_count_forging_bow::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_forging_knife {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountForgingKnife",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountForgingKnife",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_forging_knife(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_count_forging_knife::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_forging_magic {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountForgingMagic",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountForgingMagic",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_forging_magic(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_count_forging_magic::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_forging_fist {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountForgingFist",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountForgingFist",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_forging_fist(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_count_forging_fist::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_engrave {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountEngrave",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountEngrave",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_engrave(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_add_count_engrave::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_value_play_time {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "SetValuePlayTime",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "SetValuePlayTime",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_value_play_time(time: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_value_play_time::get_method_info().method_ptr);
-        inner(time, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_clear_chapter {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::chapterdata::ChapterData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "SetClearChapter",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "SetClearChapter",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_clear_chapter(chapter: crate::app::chapterdata::ChapterData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::chapterdata::ChapterData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_clear_chapter::get_method_info().method_ptr);
-        inner(chapter, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_net_match {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountNetMatch",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountNetMatch",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_net_match(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_add_count_net_match::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_net_match_win {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountNetMatchWin",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountNetMatchWin",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_net_match_win(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_count_net_match_win::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_relay_battle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountRelayBattle",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountRelayBattle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_relay_battle(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_count_relay_battle::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count_relay_battle_win {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "AddCountRelayBattleWin",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCountRelayBattleWin",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count_relay_battle_win(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_count_relay_battle_win::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_challenge_rank {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "SetChallengeRank",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "SetChallengeRank",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_challenge_rank(route: i32, level: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_challenge_rank::get_method_info().method_ptr);
-        inner(route, level, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_report_add_count_class_change {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "PlayReportAddCountClassChange",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "PlayReportAddCountClassChange",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_report_add_count_class_change(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_report_add_count_class_change::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_report_add_count_push_ups_normal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "PlayReportAddCountPushUpsNormal",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "PlayReportAddCountPushUpsNormal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_report_add_count_push_ups_normal(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_report_add_count_push_ups_normal::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_report_add_count_push_ups_hard {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "PlayReportAddCountPushUpsHard",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "PlayReportAddCountPushUpsHard",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_report_add_count_push_ups_hard(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_report_add_count_push_ups_hard::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_report_add_count_push_ups_expert {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "PlayReportAddCountPushUpsExpert",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "PlayReportAddCountPushUpsExpert",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_report_add_count_push_ups_expert(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_report_add_count_push_ups_expert::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_report_add_count_push_ups_muscle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "PlayReportAddCountPushUpsMuscle",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "PlayReportAddCountPushUpsMuscle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_report_add_count_push_ups_muscle(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_report_add_count_push_ups_muscle::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_report_add_count_ads_normal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "PlayReportAddCountAdsNormal",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "PlayReportAddCountAdsNormal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_report_add_count_ads_normal(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_report_add_count_ads_normal::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_report_add_count_ads_hard {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "PlayReportAddCountAdsHard",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "PlayReportAddCountAdsHard",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_report_add_count_ads_hard(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_report_add_count_ads_hard::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_report_add_count_ads_expert {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "PlayReportAddCountAdsExpert",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "PlayReportAddCountAdsExpert",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_report_add_count_ads_expert(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_report_add_count_ads_expert::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_report_add_count_ads_muscle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "PlayReportAddCountAdsMuscle",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "PlayReportAddCountAdsMuscle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_report_add_count_ads_muscle(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_report_add_count_ads_muscle::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_report_add_count_squat_normal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "PlayReportAddCountSquatNormal",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "PlayReportAddCountSquatNormal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_report_add_count_squat_normal(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_report_add_count_squat_normal::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_report_add_count_squat_hard {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "PlayReportAddCountSquatHard",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "PlayReportAddCountSquatHard",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_report_add_count_squat_hard(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_report_add_count_squat_hard::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_report_add_count_squat_expert {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "PlayReportAddCountSquatExpert",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "PlayReportAddCountSquatExpert",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_report_add_count_squat_expert(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_report_add_count_squat_expert::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_report_add_count_squat_muscle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "PlayReportAddCountSquatMuscle",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "PlayReportAddCountSquatMuscle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_report_add_count_squat_muscle(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_report_add_count_squat_muscle::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_report_add_count_dragon_ride_normal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "PlayReportAddCountDragonRideNormal",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "PlayReportAddCountDragonRideNormal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_report_add_count_dragon_ride_normal(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_report_add_count_dragon_ride_normal::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_report_add_count_dragon_ride_hard {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "PlayReportAddCountDragonRideHard",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "PlayReportAddCountDragonRideHard",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_report_add_count_dragon_ride_hard(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_report_add_count_dragon_ride_hard::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_report_add_count_dragon_ride_expert {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "PlayReportAddCountDragonRideExpert",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "PlayReportAddCountDragonRideExpert",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_report_add_count_dragon_ride_expert(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_report_add_count_dragon_ride_expert::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_report_add_count_fishing_rod_smoll {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "PlayReportAddCountFishingRodSmoll",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "PlayReportAddCountFishingRodSmoll",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_report_add_count_fishing_rod_smoll(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_report_add_count_fishing_rod_smoll::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_report_add_count_fishing_rod_normal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "PlayReportAddCountFishingRodNormal",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "PlayReportAddCountFishingRodNormal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_report_add_count_fishing_rod_normal(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_report_add_count_fishing_rod_normal::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_report_add_count_fishing_rod_all_purpose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "PlayReportAddCountFishingRodAllPurpose",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "PlayReportAddCountFishingRodAllPurpose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_report_add_count_fishing_rod_all_purpose(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_report_add_count_fishing_rod_all_purpose::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_report_add_count_cleaning_form_god {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "PlayReportAddCountCleaningFormGod",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "PlayReportAddCountCleaningFormGod",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_report_add_count_cleaning_form_god(gid: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_report_add_count_cleaning_form_god::get_method_info().method_ptr);
-        inner(gid, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_report_add_count_challenge {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "PlayReportAddCountChallenge",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "PlayReportAddCountChallenge",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_report_add_count_challenge(route: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_report_add_count_challenge::get_method_info().method_ptr);
-        inner(route, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_report_add_count_challenge_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "PlayReportAddCountChallengeClear",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "PlayReportAddCountChallengeClear",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_report_add_count_challenge_clear(route: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_report_add_count_challenge_clear::get_method_info().method_ptr);
-        inner(route, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_report_add_count_relay_battle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "PlayReportAddCountRelayBattle",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "PlayReportAddCountRelayBattle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_report_add_count_relay_battle(route: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_report_add_count_relay_battle::get_method_info().method_ptr);
-        inner(route, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_report_add_count_relay_battle_inherit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "PlayReportAddCountRelayBattleInherit",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "PlayReportAddCountRelayBattleInherit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_report_add_count_relay_battle_inherit(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_report_add_count_relay_battle_inherit::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_report_add_count_versus_casual {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "PlayReportAddCountVersusCasual",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "PlayReportAddCountVersusCasual",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_report_add_count_versus_casual(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_report_add_count_versus_casual::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_report_add_count_versus_casual_win {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "PlayReportAddCountVersusCasualWin",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "PlayReportAddCountVersusCasualWin",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_report_add_count_versus_casual_win(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_report_add_count_versus_casual_win::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_report_add_count_versus_casual_lose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "PlayReportAddCountVersusCasualLose",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "PlayReportAddCountVersusCasualLose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_report_add_count_versus_casual_lose(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_report_add_count_versus_casual_lose::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_report_add_count_versus_ranked {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "PlayReportAddCountVersusRanked",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "PlayReportAddCountVersusRanked",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_report_add_count_versus_ranked(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_report_add_count_versus_ranked::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_report_add_count_versus_ranked_win {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "PlayReportAddCountVersusRankedWin",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "PlayReportAddCountVersusRankedWin",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_report_add_count_versus_ranked_win(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_report_add_count_versus_ranked_win::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_report_add_count_versus_ranked_lose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "PlayReportAddCountVersusRankedLose",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "PlayReportAddCountVersusRankedLose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_report_add_count_versus_ranked_lose(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_report_add_count_versus_ranked_lose::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_report_add_count_versus_ranked_defense_win {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "PlayReportAddCountVersusRankedDefenseWin",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "PlayReportAddCountVersusRankedDefenseWin",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_report_add_count_versus_ranked_defense_win(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_report_add_count_versus_ranked_defense_win::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_report_add_count_versus_ranked_defense_lose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "PlayReportAddCountVersusRankedDefenseLose",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "PlayReportAddCountVersusRankedDefenseLose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_report_add_count_versus_ranked_defense_lose(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_report_add_count_versus_ranked_defense_lose::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_report_get_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::achievedata::AchieveData_Kinds as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "PlayReportGetCount",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "PlayReportGetCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_report_get_count(kinds: crate::app::achievedata::AchieveData_Kinds, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(crate::app::achievedata::AchieveData_Kinds, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_play_report_get_count::get_method_info().method_ptr);
-        inner(kinds, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_report_get_count_cleaning_form_god {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "PlayReportGetCountCleaningFormGod",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "PlayReportGetCountCleaningFormGod",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_report_get_count_cleaning_form_god(gid: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_play_report_get_count_cleaning_form_god::get_method_info().method_ptr);
-        inner(gid, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_set_cleard {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::achievedata::AchieveData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "TrySetCleard",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "TrySetCleard",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_set_cleard(data: crate::app::achievedata::AchieveData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(crate::app::achievedata::AchieveData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_try_set_cleard::get_method_info().method_ptr);
-        inner(data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_prohibited {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "IsProhibited",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "IsProhibited",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_prohibited(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_prohibited::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_valid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<AchieveData as ::unity2::ClassIdentity>::class(), "IsValid", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "IsValid",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_valid(flag_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_valid::get_method_info().method_ptr);
-        inner(flag_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::achievedata::AchieveData_Kinds as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<AchieveData as ::unity2::ClassIdentity>::class(), "AddCount", 2, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "AddCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_count(kind: crate::app::achievedata::AchieveData_Kinds, add_value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::achievedata::AchieveData_Kinds, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_count::get_method_info().method_ptr);
-        inner(kind, add_value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_commit_value {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::achievedata::AchieveData_Kinds as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "CommitValue",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "CommitValue",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn commit_value(kind: crate::app::achievedata::AchieveData_Kinds, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::achievedata::AchieveData_Kinds, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_commit_value::get_method_info().method_ptr);
-        inner(kind, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_kind_list {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::achievedata::AchieveData_Kinds as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "GetKindList",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "GetKindList",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_kind_list(
-        kind: crate::app::achievedata::AchieveData_Kinds,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::achievedata::AchieveData> {
-        let inner: extern "C" fn(
-            crate::app::achievedata::AchieveData_Kinds,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<crate::app::achievedata::AchieveData> =
-            ::core::mem::transmute(__lookup_get_kind_list::get_method_info().method_ptr);
-        inner(kind, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_show_queue {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "UpdateShowQueue",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "UpdateShowQueue",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_show_queue(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_update_show_queue::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear_show_queue {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "ClearShowQueue",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "ClearShowQueue",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear_show_queue(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_clear_show_queue::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dequeue_show_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchieveData as ::unity2::ClassIdentity>::class(),
-                "DequeueShowData",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        "DequeueShowData",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dequeue_show_data(__unity2_method_info: ::unity2::OptionalMethod) -> crate::app::achievedata::AchieveData {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::app::achievedata::AchieveData =
-            ::core::mem::transmute(__lookup_dequeue_show_data::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AchieveData as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AchieveData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AchieveData, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AchieveData as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AchieveData as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AchieveData_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "Load" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "Load" , e) , } } } pub unsafe fn load (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_load :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_grouping { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: achievedata :: AchieveData_Kinds as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "IsGrouping" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "IsGrouping" , e) , } } } pub unsafe fn is_grouping (kind : crate :: app :: achievedata :: AchieveData_Kinds , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: app :: achievedata :: AchieveData_Kinds , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_grouping :: get_method_info () . method_ptr ,) ; inner (kind , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: achievedata :: AchieveData_Kinds as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "IsCount" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "IsCount" , e) , } } } pub unsafe fn is_count (kind : crate :: app :: achievedata :: AchieveData_Kinds , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: app :: achievedata :: AchieveData_Kinds , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_count :: get_method_info () . method_ptr ,) ; inner (kind , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_aid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "get_Aid" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "get_Aid" , e) , } } } pub unsafe fn get_aid (this : AchieveData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (AchieveData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_aid :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_aid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "set_Aid" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "set_Aid" , e) , } } } pub unsafe fn set_aid (this : AchieveData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AchieveData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_aid :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "get_Name" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "get_Name" , e) , } } } pub unsafe fn get_name (this : AchieveData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (AchieveData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "set_Name" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "set_Name" , e) , } } } pub unsafe fn set_name (this : AchieveData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AchieveData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_name :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_category { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "get_Category" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "get_Category" , e) , } } } pub unsafe fn get_category (this : AchieveData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: achievedata :: AchieveData_Categories { let inner : extern "C" fn (AchieveData , :: unity2 :: OptionalMethod ,) -> crate :: app :: achievedata :: AchieveData_Categories = :: core :: mem :: transmute (__lookup_get_category :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_category { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: achievedata :: AchieveData_Categories as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "set_Category" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "set_Category" , e) , } } } pub unsafe fn set_category (this : AchieveData , value : crate :: app :: achievedata :: AchieveData_Categories , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AchieveData , crate :: app :: achievedata :: AchieveData_Categories , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_category :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_kind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "get_Kind" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "get_Kind" , e) , } } } pub unsafe fn get_kind (this : AchieveData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: achievedata :: AchieveData_Kinds { let inner : extern "C" fn (AchieveData , :: unity2 :: OptionalMethod ,) -> crate :: app :: achievedata :: AchieveData_Kinds = :: core :: mem :: transmute (__lookup_get_kind :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_kind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: achievedata :: AchieveData_Kinds as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "set_Kind" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "set_Kind" , e) , } } } pub unsafe fn set_kind (this : AchieveData , value : crate :: app :: achievedata :: AchieveData_Kinds , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AchieveData , crate :: app :: achievedata :: AchieveData_Kinds , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_kind :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "get_Count" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "get_Count" , e) , } } } pub unsafe fn get_count (this : AchieveData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (AchieveData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_count :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "set_Count" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "set_Count" , e) , } } } pub unsafe fn set_count (this : AchieveData , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AchieveData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_count :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_arg { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "get_Arg" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "get_Arg" , e) , } } } pub unsafe fn get_arg (this : AchieveData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (AchieveData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_arg :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_arg { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "set_Arg" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "set_Arg" , e) , } } } pub unsafe fn set_arg (this : AchieveData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AchieveData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_arg :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_count_unit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "get_CountUnit" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "get_CountUnit" , e) , } } } pub unsafe fn get_count_unit (this : AchieveData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (AchieveData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_count_unit :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_count_unit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "set_CountUnit" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "set_CountUnit" , e) , } } } pub unsafe fn set_count_unit (this : AchieveData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AchieveData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_count_unit :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_kizuna_reward { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "get_KizunaReward" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "get_KizunaReward" , e) , } } } pub unsafe fn get_kizuna_reward (this : AchieveData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (AchieveData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_kizuna_reward :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_kizuna_reward { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "set_KizunaReward" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "set_KizunaReward" , e) , } } } pub unsafe fn set_kizuna_reward (this : AchieveData , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AchieveData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_kizuna_reward :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_chapter { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "get_Chapter" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "get_Chapter" , e) , } } } pub unsafe fn get_chapter (this : AchieveData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (AchieveData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_chapter :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_chapter { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "set_Chapter" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "set_Chapter" , e) , } } } pub unsafe fn set_chapter (this : AchieveData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AchieveData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_chapter :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_build { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "OnBuild" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "OnBuild" , e) , } } } pub unsafe fn on_build (this : AchieveData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AchieveData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_build :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_debug_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "GetDebugName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "GetDebugName" , e) , } } } pub unsafe fn get_debug_name (this : AchieveData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (AchieveData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_debug_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_arg_type { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "GetArgType" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "GetArgType" , e) , } } } pub unsafe fn get_arg_type (this : AchieveData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: achievedata :: AchieveData_ArgType { let inner : extern "C" fn (AchieveData , :: unity2 :: OptionalMethod ,) -> crate :: app :: achievedata :: AchieveData_ArgType = :: core :: mem :: transmute (__lookup_get_arg_type :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_person { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "GetPerson" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "GetPerson" , e) , } } } pub unsafe fn get_person (this : AchieveData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: persondata :: PersonData { let inner : extern "C" fn (AchieveData , :: unity2 :: OptionalMethod ,) -> crate :: app :: persondata :: PersonData = :: core :: mem :: transmute (__lookup_get_person :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_god { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "GetGod" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "GetGod" , e) , } } } pub unsafe fn get_god (this : AchieveData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: goddata :: GodData { let inner : extern "C" fn (AchieveData , :: unity2 :: OptionalMethod ,) -> crate :: app :: goddata :: GodData = :: core :: mem :: transmute (__lookup_get_god :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_status { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "GetStatus" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "GetStatus" , e) , } } } pub unsafe fn get_status (this : AchieveData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: achievedata :: AchieveData_Status { let inner : extern "C" fn (AchieveData , :: unity2 :: OptionalMethod ,) -> crate :: app :: achievedata :: AchieveData_Status = :: core :: mem :: transmute (__lookup_get_status :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_cleared { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "SetCleared" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "SetCleared" , e) , } } } pub unsafe fn set_cleared (this : AchieveData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (AchieveData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_set_cleared :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_showed { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "SetShowed" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "SetShowed" , e) , } } } pub unsafe fn set_showed (this : AchieveData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (AchieveData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_set_showed :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_complete { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "SetComplete" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "SetComplete" , e) , } } } pub unsafe fn set_complete (this : AchieveData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (AchieveData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_set_complete :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_can_get { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "IsCanGet" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "IsCanGet" , e) , } } } pub unsafe fn is_can_get (this : AchieveData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (AchieveData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_can_get :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_status { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: achievedata :: AchieveData_Status as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "SetStatus" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "SetStatus" , e) , } } } pub unsafe fn set_status (this : AchieveData , status : crate :: app :: achievedata :: AchieveData_Status , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AchieveData , crate :: app :: achievedata :: AchieveData_Status , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_status :: get_method_info () . method_ptr ,) ; inner (this , status , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "GetValue" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "GetValue" , e) , } } } pub unsafe fn get_value (this : AchieveData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (AchieveData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_value :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_regist_global_flags { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "RegistGlobalFlags" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "RegistGlobalFlags" , e) , } } } pub unsafe fn regist_global_flags (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_regist_global_flags :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_flag_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: achievedata :: AchieveData_Kinds as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "GetFlagName" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "GetFlagName" , e) , } } } pub unsafe fn get_flag_name (kind : crate :: app :: achievedata :: AchieveData_Kinds , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (crate :: app :: achievedata :: AchieveData_Kinds , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_flag_name :: get_method_info () . method_ptr ,) ; inner (kind , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_flag_name_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: achievedata :: AchieveData_Kinds as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "GetFlagName" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "GetFlagName" , e) , } } } pub unsafe fn get_flag_name_2 (kind : crate :: app :: achievedata :: AchieveData_Kinds , footer : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (crate :: app :: achievedata :: AchieveData_Kinds , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_flag_name_2 :: get_method_info () . method_ptr ,) ; inner (kind , footer , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_flag_name_3 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "GetFlagName" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "GetFlagName" , e) , } } } pub unsafe fn get_flag_name_3 (kind : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_flag_name_3 :: get_method_info () . method_ptr ,) ; inner (kind , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_count_current { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "GetCountCurrent" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "GetCountCurrent" , e) , } } } pub unsafe fn get_count_current (this : AchieveData , footer : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (AchieveData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_count_current :: get_method_info () . method_ptr ,) ; inner (this , footer , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_kind_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "GetKindCount" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "GetKindCount" , e) , } } } pub unsafe fn get_kind_count (kind : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_kind_count :: get_method_info () . method_ptr ,) ; inner (kind , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_clear_reliance { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: persondata :: PersonData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "SetClearReliance" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "SetClearReliance" , e) , } } } pub unsafe fn set_clear_reliance (person : crate :: app :: persondata :: PersonData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: persondata :: PersonData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_clear_reliance :: get_method_info () . method_ptr ,) ; inner (person , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_reliance_b { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountRelianceB" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountRelianceB" , e) , } } } pub unsafe fn add_count_reliance_b (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_reliance_b :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_reliance_a { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountRelianceA" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountRelianceA" , e) , } } } pub unsafe fn add_count_reliance_a (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_reliance_a :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_reliance_s { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountRelianceS" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountRelianceS" , e) , } } } pub unsafe fn add_count_reliance_s (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_reliance_s :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_sortie { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: persondata :: PersonData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountSortie" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountSortie" , e) , } } } pub unsafe fn add_count_sortie (person : crate :: app :: persondata :: PersonData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: persondata :: PersonData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_sortie :: get_method_info () . method_ptr ,) ; inner (person , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_encount { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountEncount" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountEncount" , e) , } } } pub unsafe fn add_count_encount (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_encount :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_battle { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountBattle" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountBattle" , e) , } } } pub unsafe fn add_count_battle (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_battle :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_defeat { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: persondata :: PersonData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountDefeat" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountDefeat" , e) , } } } pub unsafe fn add_count_defeat (person : crate :: app :: persondata :: PersonData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: persondata :: PersonData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_defeat :: get_method_info () . method_ptr ,) ; inner (person , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_rod { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountRod" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountRod" , e) , } } } pub unsafe fn add_count_rod (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_rod :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_critical { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountCritical" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountCritical" , e) , } } } pub unsafe fn add_count_critical (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_critical :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_engage { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountEngage" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountEngage" , e) , } } } pub unsafe fn add_count_engage (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_engage :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_engage_attack { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountEngageAttack" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountEngageAttack" , e) , } } } pub unsafe fn add_count_engage_attack (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_engage_attack :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_avoidance { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountAvoidance" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountAvoidance" , e) , } } } pub unsafe fn add_count_avoidance (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_avoidance :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_chain_guard { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountChainGuard" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountChainGuard" , e) , } } } pub unsafe fn add_count_chain_guard (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_chain_guard :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_chain_attack { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountChainAttack" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountChainAttack" , e) , } } } pub unsafe fn add_count_chain_attack (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_chain_attack :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_value_chain_unit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "SetValueChainUnit" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "SetValueChainUnit" , e) , } } } pub unsafe fn set_value_chain_unit (unit_num : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_value_chain_unit :: get_method_info () . method_ptr ,) ; inner (unit_num , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_break { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountBreak" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountBreak" , e) , } } } pub unsafe fn add_count_break (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_break :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_smash { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountSmash" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountSmash" , e) , } } } pub unsafe fn add_count_smash (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_smash :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_mini_game { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountMiniGame" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountMiniGame" , e) , } } } pub unsafe fn add_count_mini_game (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_mini_game :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_ring_form { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountRingForm" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountRingForm" , e) , } } } pub unsafe fn add_count_ring_form (add_value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_ring_form :: get_method_info () . method_ptr ,) ; inner (add_value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_ring_mix { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountRingMix" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountRingMix" , e) , } } } pub unsafe fn add_count_ring_mix (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_ring_mix :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_bonds_ring_c { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountBondsRingC" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountBondsRingC" , e) , } } } pub unsafe fn add_count_bonds_ring_c (add_value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_bonds_ring_c :: get_method_info () . method_ptr ,) ; inner (add_value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_bonds_ring_b { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountBondsRingB" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountBondsRingB" , e) , } } } pub unsafe fn add_count_bonds_ring_b (add_value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_bonds_ring_b :: get_method_info () . method_ptr ,) ; inner (add_value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_bonds_ring_a { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountBondsRingA" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountBondsRingA" , e) , } } } pub unsafe fn add_count_bonds_ring_a (add_value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_bonds_ring_a :: get_method_info () . method_ptr ,) ; inner (add_value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_bonds_ring_s { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountBondsRingS" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountBondsRingS" , e) , } } } pub unsafe fn add_count_bonds_ring_s (add_value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_bonds_ring_s :: get_method_info () . method_ptr ,) ; inner (add_value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_ring_cleaning { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountRingCleaning" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountRingCleaning" , e) , } } } pub unsafe fn add_count_ring_cleaning (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_ring_cleaning :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_value_investment_filene { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "SetValueInvestmentFilene" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "SetValueInvestmentFilene" , e) , } } } pub unsafe fn set_value_investment_filene (level : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_value_investment_filene :: get_method_info () . method_ptr ,) ; inner (level , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_value_investment_brodia { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "SetValueInvestmentBrodia" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "SetValueInvestmentBrodia" , e) , } } } pub unsafe fn set_value_investment_brodia (level : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_value_investment_brodia :: get_method_info () . method_ptr ,) ; inner (level , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_value_investment_ircion { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "SetValueInvestmentIrcion" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "SetValueInvestmentIrcion" , e) , } } } pub unsafe fn set_value_investment_ircion (level : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_value_investment_ircion :: get_method_info () . method_ptr ,) ; inner (level , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_value_investment_solum { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "SetValueInvestmentSolum" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "SetValueInvestmentSolum" , e) , } } } pub unsafe fn set_value_investment_solum (level : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_value_investment_solum :: get_method_info () . method_ptr ,) ; inner (level , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_clear_investment_all { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "SetClearInvestmentAll" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "SetClearInvestmentAll" , e) , } } } pub unsafe fn set_clear_investment_all (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_clear_investment_all :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_investment_money { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountInvestmentMoney" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountInvestmentMoney" , e) , } } } pub unsafe fn add_count_investment_money (money : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_investment_money :: get_method_info () . method_ptr ,) ; inner (money , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_cook_all { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountCookAll" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountCookAll" , e) , } } } pub unsafe fn add_count_cook_all (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_cook_all :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_cook_g { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountCookG" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountCookG" , e) , } } } pub unsafe fn add_count_cook_g (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_cook_g :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_cook_f { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountCookF" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountCookF" , e) , } } } pub unsafe fn add_count_cook_f (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_cook_f :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_cook_e { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountCookE" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountCookE" , e) , } } } pub unsafe fn add_count_cook_e (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_cook_e :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_cook_d { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountCookD" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountCookD" , e) , } } } pub unsafe fn add_count_cook_d (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_cook_d :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_cook_c { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountCookC" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountCookC" , e) , } } } pub unsafe fn add_count_cook_c (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_cook_c :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_cook_b { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountCookB" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountCookB" , e) , } } } pub unsafe fn add_count_cook_b (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_cook_b :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_cook_a { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountCookA" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountCookA" , e) , } } } pub unsafe fn add_count_cook_a (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_cook_a :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_cook_s { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountCookS" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountCookS" , e) , } } } pub unsafe fn add_count_cook_s (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_cook_s :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_cook_ss { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountCookSS" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountCookSS" , e) , } } } pub unsafe fn add_count_cook_ss (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_cook_ss :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_sleep { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountSleep" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountSleep" , e) , } } } pub unsafe fn add_count_sleep (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_sleep :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_wake_up_c { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountWakeUpC" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountWakeUpC" , e) , } } } pub unsafe fn add_count_wake_up_c (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_wake_up_c :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_wake_up_b { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountWakeUpB" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountWakeUpB" , e) , } } } pub unsafe fn add_count_wake_up_b (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_wake_up_b :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_wake_up_a { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountWakeUpA" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountWakeUpA" , e) , } } } pub unsafe fn add_count_wake_up_a (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_wake_up_a :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_wake_up_s { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountWakeUpS" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountWakeUpS" , e) , } } } pub unsafe fn add_count_wake_up_s (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_wake_up_s :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_unit_battle { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountUnitBattle" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountUnitBattle" , e) , } } } pub unsafe fn add_count_unit_battle (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_unit_battle :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_unit_battle_win { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountUnitBattleWin" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountUnitBattleWin" , e) , } } } pub unsafe fn add_count_unit_battle_win (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_unit_battle_win :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_god_battle { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountGodBattle" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountGodBattle" , e) , } } } pub unsafe fn add_count_god_battle (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_god_battle :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_god_battle_win { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountGodBattleWin" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountGodBattleWin" , e) , } } } pub unsafe fn add_count_god_battle_win (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_god_battle_win :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_buy_weapon { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountBuyWeapon" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountBuyWeapon" , e) , } } } pub unsafe fn add_count_buy_weapon (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_buy_weapon :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_buy_sword { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountBuySword" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountBuySword" , e) , } } } pub unsafe fn add_count_buy_sword (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_buy_sword :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_buy_lance { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountBuyLance" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountBuyLance" , e) , } } } pub unsafe fn add_count_buy_lance (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_buy_lance :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_buy_axe { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountBuyAxe" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountBuyAxe" , e) , } } } pub unsafe fn add_count_buy_axe (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_buy_axe :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_buy_bow { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountBuyBow" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountBuyBow" , e) , } } } pub unsafe fn add_count_buy_bow (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_buy_bow :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_buy_knife { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountBuyKnife" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountBuyKnife" , e) , } } } pub unsafe fn add_count_buy_knife (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_buy_knife :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_buy_magic { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountBuyMagic" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountBuyMagic" , e) , } } } pub unsafe fn add_count_buy_magic (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_buy_magic :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_buy_fist { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountBuyFist" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountBuyFist" , e) , } } } pub unsafe fn add_count_buy_fist (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_buy_fist :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_sell_weapon { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountSellWeapon" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountSellWeapon" , e) , } } } pub unsafe fn add_count_sell_weapon (add_value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_sell_weapon :: get_method_info () . method_ptr ,) ; inner (add_value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_buy_item { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountBuyItem" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountBuyItem" , e) , } } } pub unsafe fn add_count_buy_item (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_buy_item :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_sell_item { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountSellItem" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountSellItem" , e) , } } } pub unsafe fn add_count_sell_item (add_value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_sell_item :: get_method_info () . method_ptr ,) ; inner (add_value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_buy_rod { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountBuyRod" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountBuyRod" , e) , } } } pub unsafe fn add_count_buy_rod (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_buy_rod :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_buy_accessories { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountBuyAccessories" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountBuyAccessories" , e) , } } } pub unsafe fn add_count_buy_accessories (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_buy_accessories :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_change_accessories { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountChangeAccessories" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountChangeAccessories" , e) , } } } pub unsafe fn add_count_change_accessories (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_change_accessories :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_forging { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountForging" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountForging" , e) , } } } pub unsafe fn add_count_forging (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_forging :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_forging_sword { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountForgingSword" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountForgingSword" , e) , } } } pub unsafe fn add_count_forging_sword (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_forging_sword :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_forging_lance { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountForgingLance" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountForgingLance" , e) , } } } pub unsafe fn add_count_forging_lance (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_forging_lance :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_forging_axe { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountForgingAxe" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountForgingAxe" , e) , } } } pub unsafe fn add_count_forging_axe (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_forging_axe :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_forging_bow { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountForgingBow" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountForgingBow" , e) , } } } pub unsafe fn add_count_forging_bow (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_forging_bow :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_forging_knife { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountForgingKnife" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountForgingKnife" , e) , } } } pub unsafe fn add_count_forging_knife (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_forging_knife :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_forging_magic { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountForgingMagic" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountForgingMagic" , e) , } } } pub unsafe fn add_count_forging_magic (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_forging_magic :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_forging_fist { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountForgingFist" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountForgingFist" , e) , } } } pub unsafe fn add_count_forging_fist (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_forging_fist :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_engrave { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountEngrave" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountEngrave" , e) , } } } pub unsafe fn add_count_engrave (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_engrave :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_value_play_time { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "SetValuePlayTime" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "SetValuePlayTime" , e) , } } } pub unsafe fn set_value_play_time (time : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_value_play_time :: get_method_info () . method_ptr ,) ; inner (time , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_clear_chapter { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: chapterdata :: ChapterData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "SetClearChapter" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "SetClearChapter" , e) , } } } pub unsafe fn set_clear_chapter (chapter : crate :: app :: chapterdata :: ChapterData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: chapterdata :: ChapterData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_clear_chapter :: get_method_info () . method_ptr ,) ; inner (chapter , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_net_match { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountNetMatch" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountNetMatch" , e) , } } } pub unsafe fn add_count_net_match (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_net_match :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_net_match_win { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountNetMatchWin" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountNetMatchWin" , e) , } } } pub unsafe fn add_count_net_match_win (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_net_match_win :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_relay_battle { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountRelayBattle" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountRelayBattle" , e) , } } } pub unsafe fn add_count_relay_battle (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_relay_battle :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count_relay_battle_win { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCountRelayBattleWin" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCountRelayBattleWin" , e) , } } } pub unsafe fn add_count_relay_battle_win (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count_relay_battle_win :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_challenge_rank { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "SetChallengeRank" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "SetChallengeRank" , e) , } } } pub unsafe fn set_challenge_rank (route : i32 , level : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_challenge_rank :: get_method_info () . method_ptr ,) ; inner (route , level , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_report_add_count_class_change { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "PlayReportAddCountClassChange" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "PlayReportAddCountClassChange" , e) , } } } pub unsafe fn play_report_add_count_class_change (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_report_add_count_class_change :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_report_add_count_push_ups_normal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "PlayReportAddCountPushUpsNormal" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "PlayReportAddCountPushUpsNormal" , e) , } } } pub unsafe fn play_report_add_count_push_ups_normal (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_report_add_count_push_ups_normal :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_report_add_count_push_ups_hard { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "PlayReportAddCountPushUpsHard" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "PlayReportAddCountPushUpsHard" , e) , } } } pub unsafe fn play_report_add_count_push_ups_hard (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_report_add_count_push_ups_hard :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_report_add_count_push_ups_expert { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "PlayReportAddCountPushUpsExpert" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "PlayReportAddCountPushUpsExpert" , e) , } } } pub unsafe fn play_report_add_count_push_ups_expert (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_report_add_count_push_ups_expert :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_report_add_count_push_ups_muscle { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "PlayReportAddCountPushUpsMuscle" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "PlayReportAddCountPushUpsMuscle" , e) , } } } pub unsafe fn play_report_add_count_push_ups_muscle (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_report_add_count_push_ups_muscle :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_report_add_count_ads_normal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "PlayReportAddCountAdsNormal" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "PlayReportAddCountAdsNormal" , e) , } } } pub unsafe fn play_report_add_count_ads_normal (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_report_add_count_ads_normal :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_report_add_count_ads_hard { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "PlayReportAddCountAdsHard" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "PlayReportAddCountAdsHard" , e) , } } } pub unsafe fn play_report_add_count_ads_hard (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_report_add_count_ads_hard :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_report_add_count_ads_expert { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "PlayReportAddCountAdsExpert" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "PlayReportAddCountAdsExpert" , e) , } } } pub unsafe fn play_report_add_count_ads_expert (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_report_add_count_ads_expert :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_report_add_count_ads_muscle { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "PlayReportAddCountAdsMuscle" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "PlayReportAddCountAdsMuscle" , e) , } } } pub unsafe fn play_report_add_count_ads_muscle (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_report_add_count_ads_muscle :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_report_add_count_squat_normal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "PlayReportAddCountSquatNormal" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "PlayReportAddCountSquatNormal" , e) , } } } pub unsafe fn play_report_add_count_squat_normal (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_report_add_count_squat_normal :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_report_add_count_squat_hard { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "PlayReportAddCountSquatHard" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "PlayReportAddCountSquatHard" , e) , } } } pub unsafe fn play_report_add_count_squat_hard (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_report_add_count_squat_hard :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_report_add_count_squat_expert { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "PlayReportAddCountSquatExpert" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "PlayReportAddCountSquatExpert" , e) , } } } pub unsafe fn play_report_add_count_squat_expert (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_report_add_count_squat_expert :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_report_add_count_squat_muscle { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "PlayReportAddCountSquatMuscle" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "PlayReportAddCountSquatMuscle" , e) , } } } pub unsafe fn play_report_add_count_squat_muscle (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_report_add_count_squat_muscle :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_report_add_count_dragon_ride_normal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "PlayReportAddCountDragonRideNormal" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "PlayReportAddCountDragonRideNormal" , e) , } } } pub unsafe fn play_report_add_count_dragon_ride_normal (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_report_add_count_dragon_ride_normal :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_report_add_count_dragon_ride_hard { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "PlayReportAddCountDragonRideHard" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "PlayReportAddCountDragonRideHard" , e) , } } } pub unsafe fn play_report_add_count_dragon_ride_hard (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_report_add_count_dragon_ride_hard :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_report_add_count_dragon_ride_expert { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "PlayReportAddCountDragonRideExpert" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "PlayReportAddCountDragonRideExpert" , e) , } } } pub unsafe fn play_report_add_count_dragon_ride_expert (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_report_add_count_dragon_ride_expert :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_report_add_count_fishing_rod_smoll { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "PlayReportAddCountFishingRodSmoll" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "PlayReportAddCountFishingRodSmoll" , e) , } } } pub unsafe fn play_report_add_count_fishing_rod_smoll (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_report_add_count_fishing_rod_smoll :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_report_add_count_fishing_rod_normal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "PlayReportAddCountFishingRodNormal" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "PlayReportAddCountFishingRodNormal" , e) , } } } pub unsafe fn play_report_add_count_fishing_rod_normal (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_report_add_count_fishing_rod_normal :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_report_add_count_fishing_rod_all_purpose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "PlayReportAddCountFishingRodAllPurpose" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "PlayReportAddCountFishingRodAllPurpose" , e) , } } } pub unsafe fn play_report_add_count_fishing_rod_all_purpose (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_report_add_count_fishing_rod_all_purpose :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_report_add_count_cleaning_form_god { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "PlayReportAddCountCleaningFormGod" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "PlayReportAddCountCleaningFormGod" , e) , } } } pub unsafe fn play_report_add_count_cleaning_form_god (gid : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_report_add_count_cleaning_form_god :: get_method_info () . method_ptr ,) ; inner (gid , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_report_add_count_challenge { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "PlayReportAddCountChallenge" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "PlayReportAddCountChallenge" , e) , } } } pub unsafe fn play_report_add_count_challenge (route : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_report_add_count_challenge :: get_method_info () . method_ptr ,) ; inner (route , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_report_add_count_challenge_clear { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "PlayReportAddCountChallengeClear" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "PlayReportAddCountChallengeClear" , e) , } } } pub unsafe fn play_report_add_count_challenge_clear (route : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_report_add_count_challenge_clear :: get_method_info () . method_ptr ,) ; inner (route , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_report_add_count_relay_battle { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "PlayReportAddCountRelayBattle" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "PlayReportAddCountRelayBattle" , e) , } } } pub unsafe fn play_report_add_count_relay_battle (route : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_report_add_count_relay_battle :: get_method_info () . method_ptr ,) ; inner (route , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_report_add_count_relay_battle_inherit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "PlayReportAddCountRelayBattleInherit" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "PlayReportAddCountRelayBattleInherit" , e) , } } } pub unsafe fn play_report_add_count_relay_battle_inherit (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_report_add_count_relay_battle_inherit :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_report_add_count_versus_casual { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "PlayReportAddCountVersusCasual" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "PlayReportAddCountVersusCasual" , e) , } } } pub unsafe fn play_report_add_count_versus_casual (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_report_add_count_versus_casual :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_report_add_count_versus_casual_win { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "PlayReportAddCountVersusCasualWin" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "PlayReportAddCountVersusCasualWin" , e) , } } } pub unsafe fn play_report_add_count_versus_casual_win (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_report_add_count_versus_casual_win :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_report_add_count_versus_casual_lose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "PlayReportAddCountVersusCasualLose" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "PlayReportAddCountVersusCasualLose" , e) , } } } pub unsafe fn play_report_add_count_versus_casual_lose (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_report_add_count_versus_casual_lose :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_report_add_count_versus_ranked { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "PlayReportAddCountVersusRanked" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "PlayReportAddCountVersusRanked" , e) , } } } pub unsafe fn play_report_add_count_versus_ranked (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_report_add_count_versus_ranked :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_report_add_count_versus_ranked_win { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "PlayReportAddCountVersusRankedWin" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "PlayReportAddCountVersusRankedWin" , e) , } } } pub unsafe fn play_report_add_count_versus_ranked_win (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_report_add_count_versus_ranked_win :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_report_add_count_versus_ranked_lose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "PlayReportAddCountVersusRankedLose" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "PlayReportAddCountVersusRankedLose" , e) , } } } pub unsafe fn play_report_add_count_versus_ranked_lose (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_report_add_count_versus_ranked_lose :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_report_add_count_versus_ranked_defense_win { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "PlayReportAddCountVersusRankedDefenseWin" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "PlayReportAddCountVersusRankedDefenseWin" , e) , } } } pub unsafe fn play_report_add_count_versus_ranked_defense_win (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_report_add_count_versus_ranked_defense_win :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_report_add_count_versus_ranked_defense_lose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "PlayReportAddCountVersusRankedDefenseLose" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "PlayReportAddCountVersusRankedDefenseLose" , e) , } } } pub unsafe fn play_report_add_count_versus_ranked_defense_lose (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_report_add_count_versus_ranked_defense_lose :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_report_get_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: achievedata :: AchieveData_Kinds as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "PlayReportGetCount" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "PlayReportGetCount" , e) , } } } pub unsafe fn play_report_get_count (kinds : crate :: app :: achievedata :: AchieveData_Kinds , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (crate :: app :: achievedata :: AchieveData_Kinds , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_play_report_get_count :: get_method_info () . method_ptr ,) ; inner (kinds , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_report_get_count_cleaning_form_god { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "PlayReportGetCountCleaningFormGod" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "PlayReportGetCountCleaningFormGod" , e) , } } } pub unsafe fn play_report_get_count_cleaning_form_god (gid : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_play_report_get_count_cleaning_form_god :: get_method_info () . method_ptr ,) ; inner (gid , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_set_cleard { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: achievedata :: AchieveData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "TrySetCleard" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "TrySetCleard" , e) , } } } pub unsafe fn try_set_cleard (data : crate :: app :: achievedata :: AchieveData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: app :: achievedata :: AchieveData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_try_set_cleard :: get_method_info () . method_ptr ,) ; inner (data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_prohibited { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "IsProhibited" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "IsProhibited" , e) , } } } pub unsafe fn is_prohibited (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_prohibited :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_valid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "IsValid" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "IsValid" , e) , } } } pub unsafe fn is_valid (flag_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_valid :: get_method_info () . method_ptr ,) ; inner (flag_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: achievedata :: AchieveData_Kinds as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "AddCount" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "AddCount" , e) , } } } pub unsafe fn add_count (kind : crate :: app :: achievedata :: AchieveData_Kinds , add_value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: achievedata :: AchieveData_Kinds , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_count :: get_method_info () . method_ptr ,) ; inner (kind , add_value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_commit_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: achievedata :: AchieveData_Kinds as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "CommitValue" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "CommitValue" , e) , } } } pub unsafe fn commit_value (kind : crate :: app :: achievedata :: AchieveData_Kinds , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: achievedata :: AchieveData_Kinds , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_commit_value :: get_method_info () . method_ptr ,) ; inner (kind , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_kind_list { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: achievedata :: AchieveData_Kinds as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "GetKindList" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "GetKindList" , e) , } } } pub unsafe fn get_kind_list (kind : crate :: app :: achievedata :: AchieveData_Kinds , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: achievedata :: AchieveData > { let inner : extern "C" fn (crate :: app :: achievedata :: AchieveData_Kinds , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: achievedata :: AchieveData > = :: core :: mem :: transmute (__lookup_get_kind_list :: get_method_info () . method_ptr ,) ; inner (kind , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_show_queue { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "UpdateShowQueue" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "UpdateShowQueue" , e) , } } } pub unsafe fn update_show_queue (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_show_queue :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_clear_show_queue { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "ClearShowQueue" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "ClearShowQueue" , e) , } } } pub unsafe fn clear_show_queue (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_clear_show_queue :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dequeue_show_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , "DequeueShowData" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , "DequeueShowData" , e) , } } } pub unsafe fn dequeue_show_data (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: achievedata :: AchieveData { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: achievedata :: AchieveData = :: core :: mem :: transmute (__lookup_dequeue_show_data :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AchieveData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AchieveData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AchieveData as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AchieveData as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "app-achievedata")]
+impl AchieveData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { __AchieveData_unity2_raw :: load (:: core :: option :: Option :: None) } } # [doc = "`IsGrouping(crate::app::achievedata::AchieveData_Kinds)` overload"] pub fn is_grouping (kind : impl :: core :: convert :: Into < crate :: app :: achievedata :: AchieveData_Kinds >) -> bool { unsafe { __AchieveData_unity2_raw :: is_grouping (:: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } # [doc = "`IsCount(crate::app::achievedata::AchieveData_Kinds)` overload"] pub fn is_count (kind : impl :: core :: convert :: Into < crate :: app :: achievedata :: AchieveData_Kinds >) -> bool { unsafe { __AchieveData_unity2_raw :: is_count (:: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } # [doc = "`RegistGlobalFlags()` overload"] pub fn regist_global_flags () -> () { unsafe { __AchieveData_unity2_raw :: regist_global_flags (:: core :: option :: Option :: None) } } # [doc = "`GetFlagName(crate::app::achievedata::AchieveData_Kinds)` overload"] pub fn get_flag_name (kind : impl :: core :: convert :: Into < crate :: app :: achievedata :: AchieveData_Kinds >) -> :: unity2 :: Il2CppString { unsafe { __AchieveData_unity2_raw :: get_flag_name (:: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } # [doc = "`GetFlagName(crate::app::achievedata::AchieveData_Kinds, ::unity2::Il2CppString)` overload"] pub fn get_flag_name_2 (kind : impl :: core :: convert :: Into < crate :: app :: achievedata :: AchieveData_Kinds > , footer : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { __AchieveData_unity2_raw :: get_flag_name_2 (:: core :: convert :: Into :: into (kind) , :: core :: convert :: Into :: into (footer) , :: core :: option :: Option :: None) } } # [doc = "`GetFlagName(::unity2::Il2CppString)` overload"] pub fn get_flag_name_3 (kind : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { __AchieveData_unity2_raw :: get_flag_name_3 (:: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } # [doc = "`GetKindCount(::unity2::Il2CppString)` overload"] pub fn get_kind_count (kind : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { __AchieveData_unity2_raw :: get_kind_count (:: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } # [doc = "`SetClearReliance(crate::app::persondata::PersonData)` overload"] pub fn set_clear_reliance (person : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData >) -> () { unsafe { __AchieveData_unity2_raw :: set_clear_reliance (:: core :: convert :: Into :: into (person) , :: core :: option :: Option :: None) } } # [doc = "`AddCountRelianceB()` overload"] pub fn add_count_reliance_b () -> () { unsafe { __AchieveData_unity2_raw :: add_count_reliance_b (:: core :: option :: Option :: None) } } # [doc = "`AddCountRelianceA()` overload"] pub fn add_count_reliance_a () -> () { unsafe { __AchieveData_unity2_raw :: add_count_reliance_a (:: core :: option :: Option :: None) } } # [doc = "`AddCountRelianceS()` overload"] pub fn add_count_reliance_s () -> () { unsafe { __AchieveData_unity2_raw :: add_count_reliance_s (:: core :: option :: Option :: None) } } # [doc = "`AddCountSortie(crate::app::persondata::PersonData)` overload"] pub fn add_count_sortie (person : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData >) -> () { unsafe { __AchieveData_unity2_raw :: add_count_sortie (:: core :: convert :: Into :: into (person) , :: core :: option :: Option :: None) } } # [doc = "`AddCountEncount()` overload"] pub fn add_count_encount () -> () { unsafe { __AchieveData_unity2_raw :: add_count_encount (:: core :: option :: Option :: None) } } # [doc = "`AddCountBattle()` overload"] pub fn add_count_battle () -> () { unsafe { __AchieveData_unity2_raw :: add_count_battle (:: core :: option :: Option :: None) } } # [doc = "`AddCountDefeat(crate::app::persondata::PersonData)` overload"] pub fn add_count_defeat (person : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData >) -> () { unsafe { __AchieveData_unity2_raw :: add_count_defeat (:: core :: convert :: Into :: into (person) , :: core :: option :: Option :: None) } } # [doc = "`AddCountRod()` overload"] pub fn add_count_rod () -> () { unsafe { __AchieveData_unity2_raw :: add_count_rod (:: core :: option :: Option :: None) } } # [doc = "`AddCountCritical()` overload"] pub fn add_count_critical () -> () { unsafe { __AchieveData_unity2_raw :: add_count_critical (:: core :: option :: Option :: None) } } # [doc = "`AddCountEngage()` overload"] pub fn add_count_engage () -> () { unsafe { __AchieveData_unity2_raw :: add_count_engage (:: core :: option :: Option :: None) } } # [doc = "`AddCountEngageAttack()` overload"] pub fn add_count_engage_attack () -> () { unsafe { __AchieveData_unity2_raw :: add_count_engage_attack (:: core :: option :: Option :: None) } } # [doc = "`AddCountAvoidance()` overload"] pub fn add_count_avoidance () -> () { unsafe { __AchieveData_unity2_raw :: add_count_avoidance (:: core :: option :: Option :: None) } } # [doc = "`AddCountChainGuard()` overload"] pub fn add_count_chain_guard () -> () { unsafe { __AchieveData_unity2_raw :: add_count_chain_guard (:: core :: option :: Option :: None) } } # [doc = "`AddCountChainAttack()` overload"] pub fn add_count_chain_attack () -> () { unsafe { __AchieveData_unity2_raw :: add_count_chain_attack (:: core :: option :: Option :: None) } } # [doc = "`SetValueChainUnit(i32)` overload"] pub fn set_value_chain_unit (unit_num : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __AchieveData_unity2_raw :: set_value_chain_unit (:: core :: convert :: Into :: into (unit_num) , :: core :: option :: Option :: None) } } # [doc = "`AddCountBreak()` overload"] pub fn add_count_break () -> () { unsafe { __AchieveData_unity2_raw :: add_count_break (:: core :: option :: Option :: None) } } # [doc = "`AddCountSmash()` overload"] pub fn add_count_smash () -> () { unsafe { __AchieveData_unity2_raw :: add_count_smash (:: core :: option :: Option :: None) } } # [doc = "`AddCountMiniGame()` overload"] pub fn add_count_mini_game () -> () { unsafe { __AchieveData_unity2_raw :: add_count_mini_game (:: core :: option :: Option :: None) } } # [doc = "`AddCountRingForm(i32)` overload"] pub fn add_count_ring_form (add_value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __AchieveData_unity2_raw :: add_count_ring_form (:: core :: convert :: Into :: into (add_value) , :: core :: option :: Option :: None) } } # [doc = "`AddCountRingMix()` overload"] pub fn add_count_ring_mix () -> () { unsafe { __AchieveData_unity2_raw :: add_count_ring_mix (:: core :: option :: Option :: None) } } # [doc = "`AddCountBondsRingC(i32)` overload"] pub fn add_count_bonds_ring_c (add_value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __AchieveData_unity2_raw :: add_count_bonds_ring_c (:: core :: convert :: Into :: into (add_value) , :: core :: option :: Option :: None) } } # [doc = "`AddCountBondsRingB(i32)` overload"] pub fn add_count_bonds_ring_b (add_value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __AchieveData_unity2_raw :: add_count_bonds_ring_b (:: core :: convert :: Into :: into (add_value) , :: core :: option :: Option :: None) } } # [doc = "`AddCountBondsRingA(i32)` overload"] pub fn add_count_bonds_ring_a (add_value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __AchieveData_unity2_raw :: add_count_bonds_ring_a (:: core :: convert :: Into :: into (add_value) , :: core :: option :: Option :: None) } } # [doc = "`AddCountBondsRingS(i32)` overload"] pub fn add_count_bonds_ring_s (add_value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __AchieveData_unity2_raw :: add_count_bonds_ring_s (:: core :: convert :: Into :: into (add_value) , :: core :: option :: Option :: None) } } # [doc = "`AddCountRingCleaning()` overload"] pub fn add_count_ring_cleaning () -> () { unsafe { __AchieveData_unity2_raw :: add_count_ring_cleaning (:: core :: option :: Option :: None) } } # [doc = "`SetValueInvestmentFilene(i32)` overload"] pub fn set_value_investment_filene (level : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __AchieveData_unity2_raw :: set_value_investment_filene (:: core :: convert :: Into :: into (level) , :: core :: option :: Option :: None) } } # [doc = "`SetValueInvestmentBrodia(i32)` overload"] pub fn set_value_investment_brodia (level : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __AchieveData_unity2_raw :: set_value_investment_brodia (:: core :: convert :: Into :: into (level) , :: core :: option :: Option :: None) } } # [doc = "`SetValueInvestmentIrcion(i32)` overload"] pub fn set_value_investment_ircion (level : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __AchieveData_unity2_raw :: set_value_investment_ircion (:: core :: convert :: Into :: into (level) , :: core :: option :: Option :: None) } } # [doc = "`SetValueInvestmentSolum(i32)` overload"] pub fn set_value_investment_solum (level : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __AchieveData_unity2_raw :: set_value_investment_solum (:: core :: convert :: Into :: into (level) , :: core :: option :: Option :: None) } } # [doc = "`SetClearInvestmentAll()` overload"] pub fn set_clear_investment_all () -> () { unsafe { __AchieveData_unity2_raw :: set_clear_investment_all (:: core :: option :: Option :: None) } } # [doc = "`AddCountInvestmentMoney(i32)` overload"] pub fn add_count_investment_money (money : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __AchieveData_unity2_raw :: add_count_investment_money (:: core :: convert :: Into :: into (money) , :: core :: option :: Option :: None) } } # [doc = "`AddCountCookAll()` overload"] pub fn add_count_cook_all () -> () { unsafe { __AchieveData_unity2_raw :: add_count_cook_all (:: core :: option :: Option :: None) } } # [doc = "`AddCountCookG()` overload"] pub fn add_count_cook_g () -> () { unsafe { __AchieveData_unity2_raw :: add_count_cook_g (:: core :: option :: Option :: None) } } # [doc = "`AddCountCookF()` overload"] pub fn add_count_cook_f () -> () { unsafe { __AchieveData_unity2_raw :: add_count_cook_f (:: core :: option :: Option :: None) } } # [doc = "`AddCountCookE()` overload"] pub fn add_count_cook_e () -> () { unsafe { __AchieveData_unity2_raw :: add_count_cook_e (:: core :: option :: Option :: None) } } # [doc = "`AddCountCookD()` overload"] pub fn add_count_cook_d () -> () { unsafe { __AchieveData_unity2_raw :: add_count_cook_d (:: core :: option :: Option :: None) } } # [doc = "`AddCountCookC()` overload"] pub fn add_count_cook_c () -> () { unsafe { __AchieveData_unity2_raw :: add_count_cook_c (:: core :: option :: Option :: None) } } # [doc = "`AddCountCookB()` overload"] pub fn add_count_cook_b () -> () { unsafe { __AchieveData_unity2_raw :: add_count_cook_b (:: core :: option :: Option :: None) } } # [doc = "`AddCountCookA()` overload"] pub fn add_count_cook_a () -> () { unsafe { __AchieveData_unity2_raw :: add_count_cook_a (:: core :: option :: Option :: None) } } # [doc = "`AddCountCookS()` overload"] pub fn add_count_cook_s () -> () { unsafe { __AchieveData_unity2_raw :: add_count_cook_s (:: core :: option :: Option :: None) } } # [doc = "`AddCountCookSS()` overload"] pub fn add_count_cook_ss () -> () { unsafe { __AchieveData_unity2_raw :: add_count_cook_ss (:: core :: option :: Option :: None) } } # [doc = "`AddCountSleep()` overload"] pub fn add_count_sleep () -> () { unsafe { __AchieveData_unity2_raw :: add_count_sleep (:: core :: option :: Option :: None) } } # [doc = "`AddCountWakeUpC()` overload"] pub fn add_count_wake_up_c () -> () { unsafe { __AchieveData_unity2_raw :: add_count_wake_up_c (:: core :: option :: Option :: None) } } # [doc = "`AddCountWakeUpB()` overload"] pub fn add_count_wake_up_b () -> () { unsafe { __AchieveData_unity2_raw :: add_count_wake_up_b (:: core :: option :: Option :: None) } } # [doc = "`AddCountWakeUpA()` overload"] pub fn add_count_wake_up_a () -> () { unsafe { __AchieveData_unity2_raw :: add_count_wake_up_a (:: core :: option :: Option :: None) } } # [doc = "`AddCountWakeUpS()` overload"] pub fn add_count_wake_up_s () -> () { unsafe { __AchieveData_unity2_raw :: add_count_wake_up_s (:: core :: option :: Option :: None) } } # [doc = "`AddCountUnitBattle()` overload"] pub fn add_count_unit_battle () -> () { unsafe { __AchieveData_unity2_raw :: add_count_unit_battle (:: core :: option :: Option :: None) } } # [doc = "`AddCountUnitBattleWin()` overload"] pub fn add_count_unit_battle_win () -> () { unsafe { __AchieveData_unity2_raw :: add_count_unit_battle_win (:: core :: option :: Option :: None) } } # [doc = "`AddCountGodBattle()` overload"] pub fn add_count_god_battle () -> () { unsafe { __AchieveData_unity2_raw :: add_count_god_battle (:: core :: option :: Option :: None) } } # [doc = "`AddCountGodBattleWin()` overload"] pub fn add_count_god_battle_win () -> () { unsafe { __AchieveData_unity2_raw :: add_count_god_battle_win (:: core :: option :: Option :: None) } } # [doc = "`AddCountBuyWeapon()` overload"] pub fn add_count_buy_weapon () -> () { unsafe { __AchieveData_unity2_raw :: add_count_buy_weapon (:: core :: option :: Option :: None) } } # [doc = "`AddCountBuySword()` overload"] pub fn add_count_buy_sword () -> () { unsafe { __AchieveData_unity2_raw :: add_count_buy_sword (:: core :: option :: Option :: None) } } # [doc = "`AddCountBuyLance()` overload"] pub fn add_count_buy_lance () -> () { unsafe { __AchieveData_unity2_raw :: add_count_buy_lance (:: core :: option :: Option :: None) } } # [doc = "`AddCountBuyAxe()` overload"] pub fn add_count_buy_axe () -> () { unsafe { __AchieveData_unity2_raw :: add_count_buy_axe (:: core :: option :: Option :: None) } } # [doc = "`AddCountBuyBow()` overload"] pub fn add_count_buy_bow () -> () { unsafe { __AchieveData_unity2_raw :: add_count_buy_bow (:: core :: option :: Option :: None) } } # [doc = "`AddCountBuyKnife()` overload"] pub fn add_count_buy_knife () -> () { unsafe { __AchieveData_unity2_raw :: add_count_buy_knife (:: core :: option :: Option :: None) } } # [doc = "`AddCountBuyMagic()` overload"] pub fn add_count_buy_magic () -> () { unsafe { __AchieveData_unity2_raw :: add_count_buy_magic (:: core :: option :: Option :: None) } } # [doc = "`AddCountBuyFist()` overload"] pub fn add_count_buy_fist () -> () { unsafe { __AchieveData_unity2_raw :: add_count_buy_fist (:: core :: option :: Option :: None) } } # [doc = "`AddCountSellWeapon(i32)` overload"] pub fn add_count_sell_weapon (add_value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __AchieveData_unity2_raw :: add_count_sell_weapon (:: core :: convert :: Into :: into (add_value) , :: core :: option :: Option :: None) } } # [doc = "`AddCountBuyItem()` overload"] pub fn add_count_buy_item () -> () { unsafe { __AchieveData_unity2_raw :: add_count_buy_item (:: core :: option :: Option :: None) } } # [doc = "`AddCountSellItem(i32)` overload"] pub fn add_count_sell_item (add_value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __AchieveData_unity2_raw :: add_count_sell_item (:: core :: convert :: Into :: into (add_value) , :: core :: option :: Option :: None) } } # [doc = "`AddCountBuyRod()` overload"] pub fn add_count_buy_rod () -> () { unsafe { __AchieveData_unity2_raw :: add_count_buy_rod (:: core :: option :: Option :: None) } } # [doc = "`AddCountBuyAccessories()` overload"] pub fn add_count_buy_accessories () -> () { unsafe { __AchieveData_unity2_raw :: add_count_buy_accessories (:: core :: option :: Option :: None) } } # [doc = "`AddCountChangeAccessories()` overload"] pub fn add_count_change_accessories () -> () { unsafe { __AchieveData_unity2_raw :: add_count_change_accessories (:: core :: option :: Option :: None) } } # [doc = "`AddCountForging()` overload"] pub fn add_count_forging () -> () { unsafe { __AchieveData_unity2_raw :: add_count_forging (:: core :: option :: Option :: None) } } # [doc = "`AddCountForgingSword()` overload"] pub fn add_count_forging_sword () -> () { unsafe { __AchieveData_unity2_raw :: add_count_forging_sword (:: core :: option :: Option :: None) } } # [doc = "`AddCountForgingLance()` overload"] pub fn add_count_forging_lance () -> () { unsafe { __AchieveData_unity2_raw :: add_count_forging_lance (:: core :: option :: Option :: None) } } # [doc = "`AddCountForgingAxe()` overload"] pub fn add_count_forging_axe () -> () { unsafe { __AchieveData_unity2_raw :: add_count_forging_axe (:: core :: option :: Option :: None) } } # [doc = "`AddCountForgingBow()` overload"] pub fn add_count_forging_bow () -> () { unsafe { __AchieveData_unity2_raw :: add_count_forging_bow (:: core :: option :: Option :: None) } } # [doc = "`AddCountForgingKnife()` overload"] pub fn add_count_forging_knife () -> () { unsafe { __AchieveData_unity2_raw :: add_count_forging_knife (:: core :: option :: Option :: None) } } # [doc = "`AddCountForgingMagic()` overload"] pub fn add_count_forging_magic () -> () { unsafe { __AchieveData_unity2_raw :: add_count_forging_magic (:: core :: option :: Option :: None) } } # [doc = "`AddCountForgingFist()` overload"] pub fn add_count_forging_fist () -> () { unsafe { __AchieveData_unity2_raw :: add_count_forging_fist (:: core :: option :: Option :: None) } } # [doc = "`AddCountEngrave()` overload"] pub fn add_count_engrave () -> () { unsafe { __AchieveData_unity2_raw :: add_count_engrave (:: core :: option :: Option :: None) } } # [doc = "`SetValuePlayTime(f32)` overload"] pub fn set_value_play_time (time : impl :: core :: convert :: Into < f32 >) -> () { unsafe { __AchieveData_unity2_raw :: set_value_play_time (:: core :: convert :: Into :: into (time) , :: core :: option :: Option :: None) } } # [doc = "`SetClearChapter(crate::app::chapterdata::ChapterData)` overload"] pub fn set_clear_chapter (chapter : impl :: core :: convert :: Into < crate :: app :: chapterdata :: ChapterData >) -> () { unsafe { __AchieveData_unity2_raw :: set_clear_chapter (:: core :: convert :: Into :: into (chapter) , :: core :: option :: Option :: None) } } # [doc = "`AddCountNetMatch()` overload"] pub fn add_count_net_match () -> () { unsafe { __AchieveData_unity2_raw :: add_count_net_match (:: core :: option :: Option :: None) } } # [doc = "`AddCountNetMatchWin()` overload"] pub fn add_count_net_match_win () -> () { unsafe { __AchieveData_unity2_raw :: add_count_net_match_win (:: core :: option :: Option :: None) } } # [doc = "`AddCountRelayBattle()` overload"] pub fn add_count_relay_battle () -> () { unsafe { __AchieveData_unity2_raw :: add_count_relay_battle (:: core :: option :: Option :: None) } } # [doc = "`AddCountRelayBattleWin()` overload"] pub fn add_count_relay_battle_win () -> () { unsafe { __AchieveData_unity2_raw :: add_count_relay_battle_win (:: core :: option :: Option :: None) } } # [doc = "`SetChallengeRank(i32, i32)` overload"] pub fn set_challenge_rank (route : impl :: core :: convert :: Into < i32 > , level : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __AchieveData_unity2_raw :: set_challenge_rank (:: core :: convert :: Into :: into (route) , :: core :: convert :: Into :: into (level) , :: core :: option :: Option :: None) } } # [doc = "`PlayReportAddCountClassChange()` overload"] pub fn play_report_add_count_class_change () -> () { unsafe { __AchieveData_unity2_raw :: play_report_add_count_class_change (:: core :: option :: Option :: None) } } # [doc = "`PlayReportAddCountPushUpsNormal()` overload"] pub fn play_report_add_count_push_ups_normal () -> () { unsafe { __AchieveData_unity2_raw :: play_report_add_count_push_ups_normal (:: core :: option :: Option :: None) } } # [doc = "`PlayReportAddCountPushUpsHard()` overload"] pub fn play_report_add_count_push_ups_hard () -> () { unsafe { __AchieveData_unity2_raw :: play_report_add_count_push_ups_hard (:: core :: option :: Option :: None) } } # [doc = "`PlayReportAddCountPushUpsExpert()` overload"] pub fn play_report_add_count_push_ups_expert () -> () { unsafe { __AchieveData_unity2_raw :: play_report_add_count_push_ups_expert (:: core :: option :: Option :: None) } } # [doc = "`PlayReportAddCountPushUpsMuscle()` overload"] pub fn play_report_add_count_push_ups_muscle () -> () { unsafe { __AchieveData_unity2_raw :: play_report_add_count_push_ups_muscle (:: core :: option :: Option :: None) } } # [doc = "`PlayReportAddCountAdsNormal()` overload"] pub fn play_report_add_count_ads_normal () -> () { unsafe { __AchieveData_unity2_raw :: play_report_add_count_ads_normal (:: core :: option :: Option :: None) } } # [doc = "`PlayReportAddCountAdsHard()` overload"] pub fn play_report_add_count_ads_hard () -> () { unsafe { __AchieveData_unity2_raw :: play_report_add_count_ads_hard (:: core :: option :: Option :: None) } } # [doc = "`PlayReportAddCountAdsExpert()` overload"] pub fn play_report_add_count_ads_expert () -> () { unsafe { __AchieveData_unity2_raw :: play_report_add_count_ads_expert (:: core :: option :: Option :: None) } } # [doc = "`PlayReportAddCountAdsMuscle()` overload"] pub fn play_report_add_count_ads_muscle () -> () { unsafe { __AchieveData_unity2_raw :: play_report_add_count_ads_muscle (:: core :: option :: Option :: None) } } # [doc = "`PlayReportAddCountSquatNormal()` overload"] pub fn play_report_add_count_squat_normal () -> () { unsafe { __AchieveData_unity2_raw :: play_report_add_count_squat_normal (:: core :: option :: Option :: None) } } # [doc = "`PlayReportAddCountSquatHard()` overload"] pub fn play_report_add_count_squat_hard () -> () { unsafe { __AchieveData_unity2_raw :: play_report_add_count_squat_hard (:: core :: option :: Option :: None) } } # [doc = "`PlayReportAddCountSquatExpert()` overload"] pub fn play_report_add_count_squat_expert () -> () { unsafe { __AchieveData_unity2_raw :: play_report_add_count_squat_expert (:: core :: option :: Option :: None) } } # [doc = "`PlayReportAddCountSquatMuscle()` overload"] pub fn play_report_add_count_squat_muscle () -> () { unsafe { __AchieveData_unity2_raw :: play_report_add_count_squat_muscle (:: core :: option :: Option :: None) } } # [doc = "`PlayReportAddCountDragonRideNormal()` overload"] pub fn play_report_add_count_dragon_ride_normal () -> () { unsafe { __AchieveData_unity2_raw :: play_report_add_count_dragon_ride_normal (:: core :: option :: Option :: None) } } # [doc = "`PlayReportAddCountDragonRideHard()` overload"] pub fn play_report_add_count_dragon_ride_hard () -> () { unsafe { __AchieveData_unity2_raw :: play_report_add_count_dragon_ride_hard (:: core :: option :: Option :: None) } } # [doc = "`PlayReportAddCountDragonRideExpert()` overload"] pub fn play_report_add_count_dragon_ride_expert () -> () { unsafe { __AchieveData_unity2_raw :: play_report_add_count_dragon_ride_expert (:: core :: option :: Option :: None) } } # [doc = "`PlayReportAddCountFishingRodSmoll()` overload"] pub fn play_report_add_count_fishing_rod_smoll () -> () { unsafe { __AchieveData_unity2_raw :: play_report_add_count_fishing_rod_smoll (:: core :: option :: Option :: None) } } # [doc = "`PlayReportAddCountFishingRodNormal()` overload"] pub fn play_report_add_count_fishing_rod_normal () -> () { unsafe { __AchieveData_unity2_raw :: play_report_add_count_fishing_rod_normal (:: core :: option :: Option :: None) } } # [doc = "`PlayReportAddCountFishingRodAllPurpose()` overload"] pub fn play_report_add_count_fishing_rod_all_purpose () -> () { unsafe { __AchieveData_unity2_raw :: play_report_add_count_fishing_rod_all_purpose (:: core :: option :: Option :: None) } } # [doc = "`PlayReportAddCountCleaningFormGod(::unity2::Il2CppString)` overload"] pub fn play_report_add_count_cleaning_form_god (gid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { __AchieveData_unity2_raw :: play_report_add_count_cleaning_form_god (:: core :: convert :: Into :: into (gid) , :: core :: option :: Option :: None) } } # [doc = "`PlayReportAddCountChallenge(i32)` overload"] pub fn play_report_add_count_challenge (route : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __AchieveData_unity2_raw :: play_report_add_count_challenge (:: core :: convert :: Into :: into (route) , :: core :: option :: Option :: None) } } # [doc = "`PlayReportAddCountChallengeClear(i32)` overload"] pub fn play_report_add_count_challenge_clear (route : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __AchieveData_unity2_raw :: play_report_add_count_challenge_clear (:: core :: convert :: Into :: into (route) , :: core :: option :: Option :: None) } } # [doc = "`PlayReportAddCountRelayBattle(i32)` overload"] pub fn play_report_add_count_relay_battle (route : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __AchieveData_unity2_raw :: play_report_add_count_relay_battle (:: core :: convert :: Into :: into (route) , :: core :: option :: Option :: None) } } # [doc = "`PlayReportAddCountRelayBattleInherit()` overload"] pub fn play_report_add_count_relay_battle_inherit () -> () { unsafe { __AchieveData_unity2_raw :: play_report_add_count_relay_battle_inherit (:: core :: option :: Option :: None) } } # [doc = "`PlayReportAddCountVersusCasual()` overload"] pub fn play_report_add_count_versus_casual () -> () { unsafe { __AchieveData_unity2_raw :: play_report_add_count_versus_casual (:: core :: option :: Option :: None) } } # [doc = "`PlayReportAddCountVersusCasualWin()` overload"] pub fn play_report_add_count_versus_casual_win () -> () { unsafe { __AchieveData_unity2_raw :: play_report_add_count_versus_casual_win (:: core :: option :: Option :: None) } } # [doc = "`PlayReportAddCountVersusCasualLose()` overload"] pub fn play_report_add_count_versus_casual_lose () -> () { unsafe { __AchieveData_unity2_raw :: play_report_add_count_versus_casual_lose (:: core :: option :: Option :: None) } } # [doc = "`PlayReportAddCountVersusRanked()` overload"] pub fn play_report_add_count_versus_ranked () -> () { unsafe { __AchieveData_unity2_raw :: play_report_add_count_versus_ranked (:: core :: option :: Option :: None) } } # [doc = "`PlayReportAddCountVersusRankedWin()` overload"] pub fn play_report_add_count_versus_ranked_win () -> () { unsafe { __AchieveData_unity2_raw :: play_report_add_count_versus_ranked_win (:: core :: option :: Option :: None) } } # [doc = "`PlayReportAddCountVersusRankedLose()` overload"] pub fn play_report_add_count_versus_ranked_lose () -> () { unsafe { __AchieveData_unity2_raw :: play_report_add_count_versus_ranked_lose (:: core :: option :: Option :: None) } } # [doc = "`PlayReportAddCountVersusRankedDefenseWin()` overload"] pub fn play_report_add_count_versus_ranked_defense_win () -> () { unsafe { __AchieveData_unity2_raw :: play_report_add_count_versus_ranked_defense_win (:: core :: option :: Option :: None) } } # [doc = "`PlayReportAddCountVersusRankedDefenseLose()` overload"] pub fn play_report_add_count_versus_ranked_defense_lose () -> () { unsafe { __AchieveData_unity2_raw :: play_report_add_count_versus_ranked_defense_lose (:: core :: option :: Option :: None) } } # [doc = "`PlayReportGetCount(crate::app::achievedata::AchieveData_Kinds)` overload"] pub fn play_report_get_count (kinds : impl :: core :: convert :: Into < crate :: app :: achievedata :: AchieveData_Kinds >) -> i32 { unsafe { __AchieveData_unity2_raw :: play_report_get_count (:: core :: convert :: Into :: into (kinds) , :: core :: option :: Option :: None) } } # [doc = "`PlayReportGetCountCleaningFormGod(::unity2::Il2CppString)` overload"] pub fn play_report_get_count_cleaning_form_god (gid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { __AchieveData_unity2_raw :: play_report_get_count_cleaning_form_god (:: core :: convert :: Into :: into (gid) , :: core :: option :: Option :: None) } } # [doc = "`TrySetCleard(crate::app::achievedata::AchieveData)` overload"] pub fn try_set_cleard (data : impl :: core :: convert :: Into < crate :: app :: achievedata :: AchieveData >) -> bool { unsafe { __AchieveData_unity2_raw :: try_set_cleard (:: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } # [doc = "`IsProhibited()` overload"] pub fn is_prohibited () -> bool { unsafe { __AchieveData_unity2_raw :: is_prohibited (:: core :: option :: Option :: None) } } # [doc = "`IsValid(::unity2::Il2CppString)` overload"] pub fn is_valid (flag_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { __AchieveData_unity2_raw :: is_valid (:: core :: convert :: Into :: into (flag_name) , :: core :: option :: Option :: None) } } # [doc = "`AddCount(crate::app::achievedata::AchieveData_Kinds, i32)` overload"] pub fn add_count (kind : impl :: core :: convert :: Into < crate :: app :: achievedata :: AchieveData_Kinds > , add_value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __AchieveData_unity2_raw :: add_count (:: core :: convert :: Into :: into (kind) , :: core :: convert :: Into :: into (add_value) , :: core :: option :: Option :: None) } } # [doc = "`CommitValue(crate::app::achievedata::AchieveData_Kinds, i32)` overload"] pub fn commit_value (kind : impl :: core :: convert :: Into < crate :: app :: achievedata :: AchieveData_Kinds > , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __AchieveData_unity2_raw :: commit_value (:: core :: convert :: Into :: into (kind) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`GetKindList(crate::app::achievedata::AchieveData_Kinds)` overload"] pub fn get_kind_list (kind : impl :: core :: convert :: Into < crate :: app :: achievedata :: AchieveData_Kinds >) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: achievedata :: AchieveData > { unsafe { __AchieveData_unity2_raw :: get_kind_list (:: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } # [doc = "`UpdateShowQueue()` overload"] pub fn update_show_queue () -> () { unsafe { __AchieveData_unity2_raw :: update_show_queue (:: core :: option :: Option :: None) } } # [doc = "`ClearShowQueue()` overload"] pub fn clear_show_queue () -> () { unsafe { __AchieveData_unity2_raw :: clear_show_queue (:: core :: option :: Option :: None) } } # [doc = "`DequeueShowData()` overload"] pub fn dequeue_show_data () -> crate :: app :: achievedata :: AchieveData { unsafe { __AchieveData_unity2_raw :: dequeue_show_data (:: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __AchieveData_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-achievedata")]
+pub trait IAchieveDataMethods : IAchieveData { # [doc = "`get_Aid()` overload"] fn get_aid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AchieveData_unity2_raw :: get_aid (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Aid(::unity2::Il2CppString)` overload"] fn set_aid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AchieveData_unity2_raw :: set_aid (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AchieveData_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Name(::unity2::Il2CppString)` overload"] fn set_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AchieveData_unity2_raw :: set_name (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_Category()` overload"] fn get_category (self ,) -> crate :: app :: achievedata :: AchieveData_Categories { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AchieveData_unity2_raw :: get_category (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Category(crate::app::achievedata::AchieveData_Categories)` overload"] fn set_category (self , value : impl :: core :: convert :: Into < crate :: app :: achievedata :: AchieveData_Categories >) -> () { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AchieveData_unity2_raw :: set_category (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_Kind()` overload"] fn get_kind (self ,) -> crate :: app :: achievedata :: AchieveData_Kinds { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AchieveData_unity2_raw :: get_kind (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Kind(crate::app::achievedata::AchieveData_Kinds)` overload"] fn set_kind (self , value : impl :: core :: convert :: Into < crate :: app :: achievedata :: AchieveData_Kinds >) -> () { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AchieveData_unity2_raw :: set_kind (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_Count()` overload"] fn get_count (self ,) -> i32 { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AchieveData_unity2_raw :: get_count (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Count(i32)` overload"] fn set_count (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AchieveData_unity2_raw :: set_count (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_Arg()` overload"] fn get_arg (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AchieveData_unity2_raw :: get_arg (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Arg(::unity2::Il2CppString)` overload"] fn set_arg (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AchieveData_unity2_raw :: set_arg (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_CountUnit()` overload"] fn get_count_unit (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AchieveData_unity2_raw :: get_count_unit (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_CountUnit(::unity2::Il2CppString)` overload"] fn set_count_unit (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AchieveData_unity2_raw :: set_count_unit (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_KizunaReward()` overload"] fn get_kizuna_reward (self ,) -> i32 { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AchieveData_unity2_raw :: get_kizuna_reward (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_KizunaReward(i32)` overload"] fn set_kizuna_reward (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AchieveData_unity2_raw :: set_kizuna_reward (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_Chapter()` overload"] fn get_chapter (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AchieveData_unity2_raw :: get_chapter (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Chapter(::unity2::Il2CppString)` overload"] fn set_chapter (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AchieveData_unity2_raw :: set_chapter (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AchieveData_unity2_raw :: on_build (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AchieveData_unity2_raw :: get_debug_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetArgType()` overload"] fn get_arg_type (self ,) -> crate :: app :: achievedata :: AchieveData_ArgType { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AchieveData_unity2_raw :: get_arg_type (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetPerson()` overload"] fn get_person (self ,) -> crate :: app :: persondata :: PersonData { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AchieveData_unity2_raw :: get_person (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetGod()` overload"] fn get_god (self ,) -> crate :: app :: goddata :: GodData { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AchieveData_unity2_raw :: get_god (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetStatus()` overload"] fn get_status (self ,) -> crate :: app :: achievedata :: AchieveData_Status { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AchieveData_unity2_raw :: get_status (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetCleared()` overload"] fn set_cleared (self ,) -> bool { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AchieveData_unity2_raw :: set_cleared (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetShowed()` overload"] fn set_showed (self ,) -> bool { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AchieveData_unity2_raw :: set_showed (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetComplete()` overload"] fn set_complete (self ,) -> bool { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AchieveData_unity2_raw :: set_complete (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsCanGet()` overload"] fn is_can_get (self ,) -> bool { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AchieveData_unity2_raw :: is_can_get (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetStatus(crate::app::achievedata::AchieveData_Status)` overload"] fn set_status (self , status : impl :: core :: convert :: Into < crate :: app :: achievedata :: AchieveData_Status >) -> () { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AchieveData_unity2_raw :: set_status (__receiver , :: core :: convert :: Into :: into (status) , :: core :: option :: Option :: None) } } # [doc = "`GetValue()` overload"] fn get_value (self ,) -> i32 { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AchieveData_unity2_raw :: get_value (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetCountCurrent(::unity2::Il2CppString)` overload"] fn get_count_current (self , footer : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AchieveData_unity2_raw :: get_count_current (__receiver , :: core :: convert :: Into :: into (footer) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AchieveData_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-achievedata")]
+impl < __T : IAchieveData > IAchieveDataMethods for __T { }
+
+#[cfg(feature = "app-achievedata")]
+impl AchieveData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_load :: get_method_info () } pub fn is_grouping_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_is_grouping :: get_method_info () } pub fn is_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_is_count :: get_method_info () } pub fn get_aid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_get_aid :: get_method_info () } pub fn set_aid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_set_aid :: get_method_info () } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn set_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_set_name :: get_method_info () } pub fn get_category_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_get_category :: get_method_info () } pub fn set_category_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_set_category :: get_method_info () } pub fn get_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_get_kind :: get_method_info () } pub fn set_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_set_kind :: get_method_info () } pub fn get_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_get_count :: get_method_info () } pub fn set_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_set_count :: get_method_info () } pub fn get_arg_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_get_arg :: get_method_info () } pub fn set_arg_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_set_arg :: get_method_info () } pub fn get_count_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_get_count_unit :: get_method_info () } pub fn set_count_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_set_count_unit :: get_method_info () } pub fn get_kizuna_reward_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_get_kizuna_reward :: get_method_info () } pub fn set_kizuna_reward_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_set_kizuna_reward :: get_method_info () } pub fn get_chapter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_get_chapter :: get_method_info () } pub fn set_chapter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_set_chapter :: get_method_info () } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_on_build :: get_method_info () } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_get_debug_name :: get_method_info () } pub fn get_arg_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_get_arg_type :: get_method_info () } pub fn get_person_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_get_person :: get_method_info () } pub fn get_god_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_get_god :: get_method_info () } pub fn get_status_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_get_status :: get_method_info () } pub fn set_cleared_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_set_cleared :: get_method_info () } pub fn set_showed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_set_showed :: get_method_info () } pub fn set_complete_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_set_complete :: get_method_info () } pub fn is_can_get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_is_can_get :: get_method_info () } pub fn set_status_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_set_status :: get_method_info () } pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_get_value :: get_method_info () } pub fn regist_global_flags_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_regist_global_flags :: get_method_info () } pub fn get_flag_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_get_flag_name :: get_method_info () } pub fn get_flag_name_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_get_flag_name_2 :: get_method_info () } pub fn get_flag_name_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_get_flag_name_3 :: get_method_info () } pub fn get_count_current_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_get_count_current :: get_method_info () } pub fn get_kind_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_get_kind_count :: get_method_info () } pub fn set_clear_reliance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_set_clear_reliance :: get_method_info () } pub fn add_count_reliance_b_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_reliance_b :: get_method_info () } pub fn add_count_reliance_a_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_reliance_a :: get_method_info () } pub fn add_count_reliance_s_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_reliance_s :: get_method_info () } pub fn add_count_sortie_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_sortie :: get_method_info () } pub fn add_count_encount_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_encount :: get_method_info () } pub fn add_count_battle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_battle :: get_method_info () } pub fn add_count_defeat_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_defeat :: get_method_info () } pub fn add_count_rod_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_rod :: get_method_info () } pub fn add_count_critical_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_critical :: get_method_info () } pub fn add_count_engage_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_engage :: get_method_info () } pub fn add_count_engage_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_engage_attack :: get_method_info () } pub fn add_count_avoidance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_avoidance :: get_method_info () } pub fn add_count_chain_guard_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_chain_guard :: get_method_info () } pub fn add_count_chain_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_chain_attack :: get_method_info () } pub fn set_value_chain_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_set_value_chain_unit :: get_method_info () } pub fn add_count_break_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_break :: get_method_info () } pub fn add_count_smash_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_smash :: get_method_info () } pub fn add_count_mini_game_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_mini_game :: get_method_info () } pub fn add_count_ring_form_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_ring_form :: get_method_info () } pub fn add_count_ring_mix_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_ring_mix :: get_method_info () } pub fn add_count_bonds_ring_c_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_bonds_ring_c :: get_method_info () } pub fn add_count_bonds_ring_b_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_bonds_ring_b :: get_method_info () } pub fn add_count_bonds_ring_a_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_bonds_ring_a :: get_method_info () } pub fn add_count_bonds_ring_s_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_bonds_ring_s :: get_method_info () } pub fn add_count_ring_cleaning_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_ring_cleaning :: get_method_info () } pub fn set_value_investment_filene_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_set_value_investment_filene :: get_method_info () } pub fn set_value_investment_brodia_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_set_value_investment_brodia :: get_method_info () } pub fn set_value_investment_ircion_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_set_value_investment_ircion :: get_method_info () } pub fn set_value_investment_solum_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_set_value_investment_solum :: get_method_info () } pub fn set_clear_investment_all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_set_clear_investment_all :: get_method_info () } pub fn add_count_investment_money_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_investment_money :: get_method_info () } pub fn add_count_cook_all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_cook_all :: get_method_info () } pub fn add_count_cook_g_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_cook_g :: get_method_info () } pub fn add_count_cook_f_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_cook_f :: get_method_info () } pub fn add_count_cook_e_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_cook_e :: get_method_info () } pub fn add_count_cook_d_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_cook_d :: get_method_info () } pub fn add_count_cook_c_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_cook_c :: get_method_info () } pub fn add_count_cook_b_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_cook_b :: get_method_info () } pub fn add_count_cook_a_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_cook_a :: get_method_info () } pub fn add_count_cook_s_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_cook_s :: get_method_info () } pub fn add_count_cook_ss_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_cook_ss :: get_method_info () } pub fn add_count_sleep_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_sleep :: get_method_info () } pub fn add_count_wake_up_c_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_wake_up_c :: get_method_info () } pub fn add_count_wake_up_b_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_wake_up_b :: get_method_info () } pub fn add_count_wake_up_a_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_wake_up_a :: get_method_info () } pub fn add_count_wake_up_s_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_wake_up_s :: get_method_info () } pub fn add_count_unit_battle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_unit_battle :: get_method_info () } pub fn add_count_unit_battle_win_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_unit_battle_win :: get_method_info () } pub fn add_count_god_battle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_god_battle :: get_method_info () } pub fn add_count_god_battle_win_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_god_battle_win :: get_method_info () } pub fn add_count_buy_weapon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_buy_weapon :: get_method_info () } pub fn add_count_buy_sword_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_buy_sword :: get_method_info () } pub fn add_count_buy_lance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_buy_lance :: get_method_info () } pub fn add_count_buy_axe_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_buy_axe :: get_method_info () } pub fn add_count_buy_bow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_buy_bow :: get_method_info () } pub fn add_count_buy_knife_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_buy_knife :: get_method_info () } pub fn add_count_buy_magic_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_buy_magic :: get_method_info () } pub fn add_count_buy_fist_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_buy_fist :: get_method_info () } pub fn add_count_sell_weapon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_sell_weapon :: get_method_info () } pub fn add_count_buy_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_buy_item :: get_method_info () } pub fn add_count_sell_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_sell_item :: get_method_info () } pub fn add_count_buy_rod_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_buy_rod :: get_method_info () } pub fn add_count_buy_accessories_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_buy_accessories :: get_method_info () } pub fn add_count_change_accessories_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_change_accessories :: get_method_info () } pub fn add_count_forging_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_forging :: get_method_info () } pub fn add_count_forging_sword_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_forging_sword :: get_method_info () } pub fn add_count_forging_lance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_forging_lance :: get_method_info () } pub fn add_count_forging_axe_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_forging_axe :: get_method_info () } pub fn add_count_forging_bow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_forging_bow :: get_method_info () } pub fn add_count_forging_knife_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_forging_knife :: get_method_info () } pub fn add_count_forging_magic_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_forging_magic :: get_method_info () } pub fn add_count_forging_fist_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_forging_fist :: get_method_info () } pub fn add_count_engrave_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_engrave :: get_method_info () } pub fn set_value_play_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_set_value_play_time :: get_method_info () } pub fn set_clear_chapter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_set_clear_chapter :: get_method_info () } pub fn add_count_net_match_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_net_match :: get_method_info () } pub fn add_count_net_match_win_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_net_match_win :: get_method_info () } pub fn add_count_relay_battle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_relay_battle :: get_method_info () } pub fn add_count_relay_battle_win_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count_relay_battle_win :: get_method_info () } pub fn set_challenge_rank_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_set_challenge_rank :: get_method_info () } pub fn play_report_add_count_class_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_play_report_add_count_class_change :: get_method_info () } pub fn play_report_add_count_push_ups_normal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_play_report_add_count_push_ups_normal :: get_method_info () } pub fn play_report_add_count_push_ups_hard_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_play_report_add_count_push_ups_hard :: get_method_info () } pub fn play_report_add_count_push_ups_expert_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_play_report_add_count_push_ups_expert :: get_method_info () } pub fn play_report_add_count_push_ups_muscle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_play_report_add_count_push_ups_muscle :: get_method_info () } pub fn play_report_add_count_ads_normal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_play_report_add_count_ads_normal :: get_method_info () } pub fn play_report_add_count_ads_hard_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_play_report_add_count_ads_hard :: get_method_info () } pub fn play_report_add_count_ads_expert_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_play_report_add_count_ads_expert :: get_method_info () } pub fn play_report_add_count_ads_muscle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_play_report_add_count_ads_muscle :: get_method_info () } pub fn play_report_add_count_squat_normal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_play_report_add_count_squat_normal :: get_method_info () } pub fn play_report_add_count_squat_hard_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_play_report_add_count_squat_hard :: get_method_info () } pub fn play_report_add_count_squat_expert_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_play_report_add_count_squat_expert :: get_method_info () } pub fn play_report_add_count_squat_muscle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_play_report_add_count_squat_muscle :: get_method_info () } pub fn play_report_add_count_dragon_ride_normal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_play_report_add_count_dragon_ride_normal :: get_method_info () } pub fn play_report_add_count_dragon_ride_hard_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_play_report_add_count_dragon_ride_hard :: get_method_info () } pub fn play_report_add_count_dragon_ride_expert_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_play_report_add_count_dragon_ride_expert :: get_method_info () } pub fn play_report_add_count_fishing_rod_smoll_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_play_report_add_count_fishing_rod_smoll :: get_method_info () } pub fn play_report_add_count_fishing_rod_normal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_play_report_add_count_fishing_rod_normal :: get_method_info () } pub fn play_report_add_count_fishing_rod_all_purpose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_play_report_add_count_fishing_rod_all_purpose :: get_method_info () } pub fn play_report_add_count_cleaning_form_god_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_play_report_add_count_cleaning_form_god :: get_method_info () } pub fn play_report_add_count_challenge_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_play_report_add_count_challenge :: get_method_info () } pub fn play_report_add_count_challenge_clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_play_report_add_count_challenge_clear :: get_method_info () } pub fn play_report_add_count_relay_battle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_play_report_add_count_relay_battle :: get_method_info () } pub fn play_report_add_count_relay_battle_inherit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_play_report_add_count_relay_battle_inherit :: get_method_info () } pub fn play_report_add_count_versus_casual_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_play_report_add_count_versus_casual :: get_method_info () } pub fn play_report_add_count_versus_casual_win_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_play_report_add_count_versus_casual_win :: get_method_info () } pub fn play_report_add_count_versus_casual_lose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_play_report_add_count_versus_casual_lose :: get_method_info () } pub fn play_report_add_count_versus_ranked_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_play_report_add_count_versus_ranked :: get_method_info () } pub fn play_report_add_count_versus_ranked_win_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_play_report_add_count_versus_ranked_win :: get_method_info () } pub fn play_report_add_count_versus_ranked_lose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_play_report_add_count_versus_ranked_lose :: get_method_info () } pub fn play_report_add_count_versus_ranked_defense_win_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_play_report_add_count_versus_ranked_defense_win :: get_method_info () } pub fn play_report_add_count_versus_ranked_defense_lose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_play_report_add_count_versus_ranked_defense_lose :: get_method_info () } pub fn play_report_get_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_play_report_get_count :: get_method_info () } pub fn play_report_get_count_cleaning_form_god_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_play_report_get_count_cleaning_form_god :: get_method_info () } pub fn try_set_cleard_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_try_set_cleard :: get_method_info () } pub fn is_prohibited_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_is_prohibited :: get_method_info () } pub fn is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_is_valid :: get_method_info () } pub fn add_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_add_count :: get_method_info () } pub fn commit_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_commit_value :: get_method_info () } pub fn get_kind_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_get_kind_list :: get_method_info () } pub fn update_show_queue_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_update_show_queue :: get_method_info () } pub fn clear_show_queue_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_clear_show_queue :: get_method_info () } pub fn dequeue_show_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_dequeue_show_data :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AchieveData_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "app-achievedata")]
 impl AchieveData {
-    #[doc = "`Load()` overload"]
-    pub fn load() -> () {
-        unsafe { __AchieveData_unity2_raw::load(::core::option::Option::None) }
-    }
-
-    #[doc = "`IsGrouping(crate::app::achievedata::AchieveData_Kinds)` overload"]
-    pub fn is_grouping(kind: impl ::core::convert::Into<crate::app::achievedata::AchieveData_Kinds>) -> bool {
-        unsafe { __AchieveData_unity2_raw::is_grouping(::core::convert::Into::into(kind), ::core::option::Option::None) }
-    }
-
-    #[doc = "`IsCount(crate::app::achievedata::AchieveData_Kinds)` overload"]
-    pub fn is_count(kind: impl ::core::convert::Into<crate::app::achievedata::AchieveData_Kinds>) -> bool {
-        unsafe { __AchieveData_unity2_raw::is_count(::core::convert::Into::into(kind), ::core::option::Option::None) }
-    }
-
-    #[doc = "`RegistGlobalFlags()` overload"]
-    pub fn regist_global_flags() -> () {
-        unsafe { __AchieveData_unity2_raw::regist_global_flags(::core::option::Option::None) }
-    }
-
-    #[doc = "`GetFlagName(crate::app::achievedata::AchieveData_Kinds)` overload"]
-    pub fn get_flag_name(kind: impl ::core::convert::Into<crate::app::achievedata::AchieveData_Kinds>) -> ::unity2::Il2CppString {
-        unsafe { __AchieveData_unity2_raw::get_flag_name(::core::convert::Into::into(kind), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetFlagName(crate::app::achievedata::AchieveData_Kinds, ::unity2::Il2CppString)` overload"]
-    pub fn get_flag_name_2(
-        kind: impl ::core::convert::Into<crate::app::achievedata::AchieveData_Kinds>,
-        footer: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __AchieveData_unity2_raw::get_flag_name_2(
-                ::core::convert::Into::into(kind),
-                ::core::convert::Into::into(footer),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`GetFlagName(::unity2::Il2CppString)` overload"]
-    pub fn get_flag_name_3(kind: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
-        unsafe { __AchieveData_unity2_raw::get_flag_name_3(::core::convert::Into::into(kind), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetKindCount(::unity2::Il2CppString)` overload"]
-    pub fn get_kind_count(kind: impl ::core::convert::Into<::unity2::Il2CppString>) -> i32 {
-        unsafe { __AchieveData_unity2_raw::get_kind_count(::core::convert::Into::into(kind), ::core::option::Option::None) }
-    }
-
-    #[doc = "`SetClearReliance(crate::app::persondata::PersonData)` overload"]
-    pub fn set_clear_reliance(person: impl ::core::convert::Into<crate::app::persondata::PersonData>) -> () {
-        unsafe { __AchieveData_unity2_raw::set_clear_reliance(::core::convert::Into::into(person), ::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountRelianceB()` overload"]
-    pub fn add_count_reliance_b() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_reliance_b(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountRelianceA()` overload"]
-    pub fn add_count_reliance_a() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_reliance_a(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountRelianceS()` overload"]
-    pub fn add_count_reliance_s() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_reliance_s(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountSortie(crate::app::persondata::PersonData)` overload"]
-    pub fn add_count_sortie(person: impl ::core::convert::Into<crate::app::persondata::PersonData>) -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_sortie(::core::convert::Into::into(person), ::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountEncount()` overload"]
-    pub fn add_count_encount() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_encount(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountBattle()` overload"]
-    pub fn add_count_battle() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_battle(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountDefeat(crate::app::persondata::PersonData)` overload"]
-    pub fn add_count_defeat(person: impl ::core::convert::Into<crate::app::persondata::PersonData>) -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_defeat(::core::convert::Into::into(person), ::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountRod()` overload"]
-    pub fn add_count_rod() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_rod(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountCritical()` overload"]
-    pub fn add_count_critical() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_critical(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountEngage()` overload"]
-    pub fn add_count_engage() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_engage(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountEngageAttack()` overload"]
-    pub fn add_count_engage_attack() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_engage_attack(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountAvoidance()` overload"]
-    pub fn add_count_avoidance() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_avoidance(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountChainGuard()` overload"]
-    pub fn add_count_chain_guard() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_chain_guard(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountChainAttack()` overload"]
-    pub fn add_count_chain_attack() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_chain_attack(::core::option::Option::None) }
-    }
-
-    #[doc = "`SetValueChainUnit(i32)` overload"]
-    pub fn set_value_chain_unit(unit_num: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AchieveData_unity2_raw::set_value_chain_unit(::core::convert::Into::into(unit_num), ::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountBreak()` overload"]
-    pub fn add_count_break() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_break(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountSmash()` overload"]
-    pub fn add_count_smash() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_smash(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountMiniGame()` overload"]
-    pub fn add_count_mini_game() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_mini_game(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountRingForm(i32)` overload"]
-    pub fn add_count_ring_form(add_value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_ring_form(::core::convert::Into::into(add_value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountRingMix()` overload"]
-    pub fn add_count_ring_mix() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_ring_mix(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountBondsRingC(i32)` overload"]
-    pub fn add_count_bonds_ring_c(add_value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_bonds_ring_c(::core::convert::Into::into(add_value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountBondsRingB(i32)` overload"]
-    pub fn add_count_bonds_ring_b(add_value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_bonds_ring_b(::core::convert::Into::into(add_value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountBondsRingA(i32)` overload"]
-    pub fn add_count_bonds_ring_a(add_value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_bonds_ring_a(::core::convert::Into::into(add_value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountBondsRingS(i32)` overload"]
-    pub fn add_count_bonds_ring_s(add_value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_bonds_ring_s(::core::convert::Into::into(add_value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountRingCleaning()` overload"]
-    pub fn add_count_ring_cleaning() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_ring_cleaning(::core::option::Option::None) }
-    }
-
-    #[doc = "`SetValueInvestmentFilene(i32)` overload"]
-    pub fn set_value_investment_filene(level: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AchieveData_unity2_raw::set_value_investment_filene(::core::convert::Into::into(level), ::core::option::Option::None) }
-    }
-
-    #[doc = "`SetValueInvestmentBrodia(i32)` overload"]
-    pub fn set_value_investment_brodia(level: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AchieveData_unity2_raw::set_value_investment_brodia(::core::convert::Into::into(level), ::core::option::Option::None) }
-    }
-
-    #[doc = "`SetValueInvestmentIrcion(i32)` overload"]
-    pub fn set_value_investment_ircion(level: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AchieveData_unity2_raw::set_value_investment_ircion(::core::convert::Into::into(level), ::core::option::Option::None) }
-    }
-
-    #[doc = "`SetValueInvestmentSolum(i32)` overload"]
-    pub fn set_value_investment_solum(level: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AchieveData_unity2_raw::set_value_investment_solum(::core::convert::Into::into(level), ::core::option::Option::None) }
-    }
-
-    #[doc = "`SetClearInvestmentAll()` overload"]
-    pub fn set_clear_investment_all() -> () {
-        unsafe { __AchieveData_unity2_raw::set_clear_investment_all(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountInvestmentMoney(i32)` overload"]
-    pub fn add_count_investment_money(money: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_investment_money(::core::convert::Into::into(money), ::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountCookAll()` overload"]
-    pub fn add_count_cook_all() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_cook_all(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountCookG()` overload"]
-    pub fn add_count_cook_g() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_cook_g(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountCookF()` overload"]
-    pub fn add_count_cook_f() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_cook_f(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountCookE()` overload"]
-    pub fn add_count_cook_e() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_cook_e(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountCookD()` overload"]
-    pub fn add_count_cook_d() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_cook_d(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountCookC()` overload"]
-    pub fn add_count_cook_c() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_cook_c(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountCookB()` overload"]
-    pub fn add_count_cook_b() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_cook_b(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountCookA()` overload"]
-    pub fn add_count_cook_a() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_cook_a(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountCookS()` overload"]
-    pub fn add_count_cook_s() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_cook_s(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountCookSS()` overload"]
-    pub fn add_count_cook_ss() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_cook_ss(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountSleep()` overload"]
-    pub fn add_count_sleep() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_sleep(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountWakeUpC()` overload"]
-    pub fn add_count_wake_up_c() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_wake_up_c(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountWakeUpB()` overload"]
-    pub fn add_count_wake_up_b() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_wake_up_b(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountWakeUpA()` overload"]
-    pub fn add_count_wake_up_a() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_wake_up_a(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountWakeUpS()` overload"]
-    pub fn add_count_wake_up_s() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_wake_up_s(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountUnitBattle()` overload"]
-    pub fn add_count_unit_battle() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_unit_battle(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountUnitBattleWin()` overload"]
-    pub fn add_count_unit_battle_win() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_unit_battle_win(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountGodBattle()` overload"]
-    pub fn add_count_god_battle() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_god_battle(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountGodBattleWin()` overload"]
-    pub fn add_count_god_battle_win() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_god_battle_win(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountBuyWeapon()` overload"]
-    pub fn add_count_buy_weapon() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_buy_weapon(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountBuySword()` overload"]
-    pub fn add_count_buy_sword() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_buy_sword(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountBuyLance()` overload"]
-    pub fn add_count_buy_lance() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_buy_lance(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountBuyAxe()` overload"]
-    pub fn add_count_buy_axe() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_buy_axe(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountBuyBow()` overload"]
-    pub fn add_count_buy_bow() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_buy_bow(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountBuyKnife()` overload"]
-    pub fn add_count_buy_knife() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_buy_knife(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountBuyMagic()` overload"]
-    pub fn add_count_buy_magic() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_buy_magic(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountBuyFist()` overload"]
-    pub fn add_count_buy_fist() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_buy_fist(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountSellWeapon(i32)` overload"]
-    pub fn add_count_sell_weapon(add_value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_sell_weapon(::core::convert::Into::into(add_value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountBuyItem()` overload"]
-    pub fn add_count_buy_item() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_buy_item(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountSellItem(i32)` overload"]
-    pub fn add_count_sell_item(add_value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_sell_item(::core::convert::Into::into(add_value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountBuyRod()` overload"]
-    pub fn add_count_buy_rod() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_buy_rod(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountBuyAccessories()` overload"]
-    pub fn add_count_buy_accessories() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_buy_accessories(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountChangeAccessories()` overload"]
-    pub fn add_count_change_accessories() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_change_accessories(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountForging()` overload"]
-    pub fn add_count_forging() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_forging(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountForgingSword()` overload"]
-    pub fn add_count_forging_sword() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_forging_sword(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountForgingLance()` overload"]
-    pub fn add_count_forging_lance() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_forging_lance(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountForgingAxe()` overload"]
-    pub fn add_count_forging_axe() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_forging_axe(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountForgingBow()` overload"]
-    pub fn add_count_forging_bow() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_forging_bow(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountForgingKnife()` overload"]
-    pub fn add_count_forging_knife() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_forging_knife(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountForgingMagic()` overload"]
-    pub fn add_count_forging_magic() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_forging_magic(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountForgingFist()` overload"]
-    pub fn add_count_forging_fist() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_forging_fist(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountEngrave()` overload"]
-    pub fn add_count_engrave() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_engrave(::core::option::Option::None) }
-    }
-
-    #[doc = "`SetValuePlayTime(f32)` overload"]
-    pub fn set_value_play_time(time: impl ::core::convert::Into<f32>) -> () {
-        unsafe { __AchieveData_unity2_raw::set_value_play_time(::core::convert::Into::into(time), ::core::option::Option::None) }
-    }
-
-    #[doc = "`SetClearChapter(crate::app::chapterdata::ChapterData)` overload"]
-    pub fn set_clear_chapter(chapter: impl ::core::convert::Into<crate::app::chapterdata::ChapterData>) -> () {
-        unsafe { __AchieveData_unity2_raw::set_clear_chapter(::core::convert::Into::into(chapter), ::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountNetMatch()` overload"]
-    pub fn add_count_net_match() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_net_match(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountNetMatchWin()` overload"]
-    pub fn add_count_net_match_win() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_net_match_win(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountRelayBattle()` overload"]
-    pub fn add_count_relay_battle() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_relay_battle(::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCountRelayBattleWin()` overload"]
-    pub fn add_count_relay_battle_win() -> () {
-        unsafe { __AchieveData_unity2_raw::add_count_relay_battle_win(::core::option::Option::None) }
-    }
-
-    #[doc = "`SetChallengeRank(i32, i32)` overload"]
-    pub fn set_challenge_rank(route: impl ::core::convert::Into<i32>, level: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __AchieveData_unity2_raw::set_challenge_rank(
-                ::core::convert::Into::into(route),
-                ::core::convert::Into::into(level),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`PlayReportAddCountClassChange()` overload"]
-    pub fn play_report_add_count_class_change() -> () {
-        unsafe { __AchieveData_unity2_raw::play_report_add_count_class_change(::core::option::Option::None) }
-    }
-
-    #[doc = "`PlayReportAddCountPushUpsNormal()` overload"]
-    pub fn play_report_add_count_push_ups_normal() -> () {
-        unsafe { __AchieveData_unity2_raw::play_report_add_count_push_ups_normal(::core::option::Option::None) }
-    }
-
-    #[doc = "`PlayReportAddCountPushUpsHard()` overload"]
-    pub fn play_report_add_count_push_ups_hard() -> () {
-        unsafe { __AchieveData_unity2_raw::play_report_add_count_push_ups_hard(::core::option::Option::None) }
-    }
-
-    #[doc = "`PlayReportAddCountPushUpsExpert()` overload"]
-    pub fn play_report_add_count_push_ups_expert() -> () {
-        unsafe { __AchieveData_unity2_raw::play_report_add_count_push_ups_expert(::core::option::Option::None) }
-    }
-
-    #[doc = "`PlayReportAddCountPushUpsMuscle()` overload"]
-    pub fn play_report_add_count_push_ups_muscle() -> () {
-        unsafe { __AchieveData_unity2_raw::play_report_add_count_push_ups_muscle(::core::option::Option::None) }
-    }
-
-    #[doc = "`PlayReportAddCountAdsNormal()` overload"]
-    pub fn play_report_add_count_ads_normal() -> () {
-        unsafe { __AchieveData_unity2_raw::play_report_add_count_ads_normal(::core::option::Option::None) }
-    }
-
-    #[doc = "`PlayReportAddCountAdsHard()` overload"]
-    pub fn play_report_add_count_ads_hard() -> () {
-        unsafe { __AchieveData_unity2_raw::play_report_add_count_ads_hard(::core::option::Option::None) }
-    }
-
-    #[doc = "`PlayReportAddCountAdsExpert()` overload"]
-    pub fn play_report_add_count_ads_expert() -> () {
-        unsafe { __AchieveData_unity2_raw::play_report_add_count_ads_expert(::core::option::Option::None) }
-    }
-
-    #[doc = "`PlayReportAddCountAdsMuscle()` overload"]
-    pub fn play_report_add_count_ads_muscle() -> () {
-        unsafe { __AchieveData_unity2_raw::play_report_add_count_ads_muscle(::core::option::Option::None) }
-    }
-
-    #[doc = "`PlayReportAddCountSquatNormal()` overload"]
-    pub fn play_report_add_count_squat_normal() -> () {
-        unsafe { __AchieveData_unity2_raw::play_report_add_count_squat_normal(::core::option::Option::None) }
-    }
-
-    #[doc = "`PlayReportAddCountSquatHard()` overload"]
-    pub fn play_report_add_count_squat_hard() -> () {
-        unsafe { __AchieveData_unity2_raw::play_report_add_count_squat_hard(::core::option::Option::None) }
-    }
-
-    #[doc = "`PlayReportAddCountSquatExpert()` overload"]
-    pub fn play_report_add_count_squat_expert() -> () {
-        unsafe { __AchieveData_unity2_raw::play_report_add_count_squat_expert(::core::option::Option::None) }
-    }
-
-    #[doc = "`PlayReportAddCountSquatMuscle()` overload"]
-    pub fn play_report_add_count_squat_muscle() -> () {
-        unsafe { __AchieveData_unity2_raw::play_report_add_count_squat_muscle(::core::option::Option::None) }
-    }
-
-    #[doc = "`PlayReportAddCountDragonRideNormal()` overload"]
-    pub fn play_report_add_count_dragon_ride_normal() -> () {
-        unsafe { __AchieveData_unity2_raw::play_report_add_count_dragon_ride_normal(::core::option::Option::None) }
-    }
-
-    #[doc = "`PlayReportAddCountDragonRideHard()` overload"]
-    pub fn play_report_add_count_dragon_ride_hard() -> () {
-        unsafe { __AchieveData_unity2_raw::play_report_add_count_dragon_ride_hard(::core::option::Option::None) }
-    }
-
-    #[doc = "`PlayReportAddCountDragonRideExpert()` overload"]
-    pub fn play_report_add_count_dragon_ride_expert() -> () {
-        unsafe { __AchieveData_unity2_raw::play_report_add_count_dragon_ride_expert(::core::option::Option::None) }
-    }
-
-    #[doc = "`PlayReportAddCountFishingRodSmoll()` overload"]
-    pub fn play_report_add_count_fishing_rod_smoll() -> () {
-        unsafe { __AchieveData_unity2_raw::play_report_add_count_fishing_rod_smoll(::core::option::Option::None) }
-    }
-
-    #[doc = "`PlayReportAddCountFishingRodNormal()` overload"]
-    pub fn play_report_add_count_fishing_rod_normal() -> () {
-        unsafe { __AchieveData_unity2_raw::play_report_add_count_fishing_rod_normal(::core::option::Option::None) }
-    }
-
-    #[doc = "`PlayReportAddCountFishingRodAllPurpose()` overload"]
-    pub fn play_report_add_count_fishing_rod_all_purpose() -> () {
-        unsafe { __AchieveData_unity2_raw::play_report_add_count_fishing_rod_all_purpose(::core::option::Option::None) }
-    }
-
-    #[doc = "`PlayReportAddCountCleaningFormGod(::unity2::Il2CppString)` overload"]
-    pub fn play_report_add_count_cleaning_form_god(gid: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe { __AchieveData_unity2_raw::play_report_add_count_cleaning_form_god(::core::convert::Into::into(gid), ::core::option::Option::None) }
-    }
-
-    #[doc = "`PlayReportAddCountChallenge(i32)` overload"]
-    pub fn play_report_add_count_challenge(route: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AchieveData_unity2_raw::play_report_add_count_challenge(::core::convert::Into::into(route), ::core::option::Option::None) }
-    }
-
-    #[doc = "`PlayReportAddCountChallengeClear(i32)` overload"]
-    pub fn play_report_add_count_challenge_clear(route: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AchieveData_unity2_raw::play_report_add_count_challenge_clear(::core::convert::Into::into(route), ::core::option::Option::None) }
-    }
-
-    #[doc = "`PlayReportAddCountRelayBattle(i32)` overload"]
-    pub fn play_report_add_count_relay_battle(route: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AchieveData_unity2_raw::play_report_add_count_relay_battle(::core::convert::Into::into(route), ::core::option::Option::None) }
-    }
-
-    #[doc = "`PlayReportAddCountRelayBattleInherit()` overload"]
-    pub fn play_report_add_count_relay_battle_inherit() -> () {
-        unsafe { __AchieveData_unity2_raw::play_report_add_count_relay_battle_inherit(::core::option::Option::None) }
-    }
-
-    #[doc = "`PlayReportAddCountVersusCasual()` overload"]
-    pub fn play_report_add_count_versus_casual() -> () {
-        unsafe { __AchieveData_unity2_raw::play_report_add_count_versus_casual(::core::option::Option::None) }
-    }
-
-    #[doc = "`PlayReportAddCountVersusCasualWin()` overload"]
-    pub fn play_report_add_count_versus_casual_win() -> () {
-        unsafe { __AchieveData_unity2_raw::play_report_add_count_versus_casual_win(::core::option::Option::None) }
-    }
-
-    #[doc = "`PlayReportAddCountVersusCasualLose()` overload"]
-    pub fn play_report_add_count_versus_casual_lose() -> () {
-        unsafe { __AchieveData_unity2_raw::play_report_add_count_versus_casual_lose(::core::option::Option::None) }
-    }
-
-    #[doc = "`PlayReportAddCountVersusRanked()` overload"]
-    pub fn play_report_add_count_versus_ranked() -> () {
-        unsafe { __AchieveData_unity2_raw::play_report_add_count_versus_ranked(::core::option::Option::None) }
-    }
-
-    #[doc = "`PlayReportAddCountVersusRankedWin()` overload"]
-    pub fn play_report_add_count_versus_ranked_win() -> () {
-        unsafe { __AchieveData_unity2_raw::play_report_add_count_versus_ranked_win(::core::option::Option::None) }
-    }
-
-    #[doc = "`PlayReportAddCountVersusRankedLose()` overload"]
-    pub fn play_report_add_count_versus_ranked_lose() -> () {
-        unsafe { __AchieveData_unity2_raw::play_report_add_count_versus_ranked_lose(::core::option::Option::None) }
-    }
-
-    #[doc = "`PlayReportAddCountVersusRankedDefenseWin()` overload"]
-    pub fn play_report_add_count_versus_ranked_defense_win() -> () {
-        unsafe { __AchieveData_unity2_raw::play_report_add_count_versus_ranked_defense_win(::core::option::Option::None) }
-    }
-
-    #[doc = "`PlayReportAddCountVersusRankedDefenseLose()` overload"]
-    pub fn play_report_add_count_versus_ranked_defense_lose() -> () {
-        unsafe { __AchieveData_unity2_raw::play_report_add_count_versus_ranked_defense_lose(::core::option::Option::None) }
-    }
-
-    #[doc = "`PlayReportGetCount(crate::app::achievedata::AchieveData_Kinds)` overload"]
-    pub fn play_report_get_count(kinds: impl ::core::convert::Into<crate::app::achievedata::AchieveData_Kinds>) -> i32 {
-        unsafe { __AchieveData_unity2_raw::play_report_get_count(::core::convert::Into::into(kinds), ::core::option::Option::None) }
-    }
-
-    #[doc = "`PlayReportGetCountCleaningFormGod(::unity2::Il2CppString)` overload"]
-    pub fn play_report_get_count_cleaning_form_god(gid: impl ::core::convert::Into<::unity2::Il2CppString>) -> i32 {
-        unsafe { __AchieveData_unity2_raw::play_report_get_count_cleaning_form_god(::core::convert::Into::into(gid), ::core::option::Option::None) }
-    }
-
-    #[doc = "`TrySetCleard(crate::app::achievedata::AchieveData)` overload"]
-    pub fn try_set_cleard(data: impl ::core::convert::Into<crate::app::achievedata::AchieveData>) -> bool {
-        unsafe { __AchieveData_unity2_raw::try_set_cleard(::core::convert::Into::into(data), ::core::option::Option::None) }
-    }
-
-    #[doc = "`IsProhibited()` overload"]
-    pub fn is_prohibited() -> bool {
-        unsafe { __AchieveData_unity2_raw::is_prohibited(::core::option::Option::None) }
-    }
-
-    #[doc = "`IsValid(::unity2::Il2CppString)` overload"]
-    pub fn is_valid(flag_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe { __AchieveData_unity2_raw::is_valid(::core::convert::Into::into(flag_name), ::core::option::Option::None) }
-    }
-
-    #[doc = "`AddCount(crate::app::achievedata::AchieveData_Kinds, i32)` overload"]
-    pub fn add_count(kind: impl ::core::convert::Into<crate::app::achievedata::AchieveData_Kinds>, add_value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __AchieveData_unity2_raw::add_count(
-                ::core::convert::Into::into(kind),
-                ::core::convert::Into::into(add_value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`CommitValue(crate::app::achievedata::AchieveData_Kinds, i32)` overload"]
-    pub fn commit_value(kind: impl ::core::convert::Into<crate::app::achievedata::AchieveData_Kinds>, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __AchieveData_unity2_raw::commit_value(
-                ::core::convert::Into::into(kind),
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`GetKindList(crate::app::achievedata::AchieveData_Kinds)` overload"]
-    pub fn get_kind_list(
-        kind: impl ::core::convert::Into<crate::app::achievedata::AchieveData_Kinds>,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::achievedata::AchieveData> {
-        unsafe { __AchieveData_unity2_raw::get_kind_list(::core::convert::Into::into(kind), ::core::option::Option::None) }
-    }
-
-    #[doc = "`UpdateShowQueue()` overload"]
-    pub fn update_show_queue() -> () {
-        unsafe { __AchieveData_unity2_raw::update_show_queue(::core::option::Option::None) }
-    }
-
-    #[doc = "`ClearShowQueue()` overload"]
-    pub fn clear_show_queue() -> () {
-        unsafe { __AchieveData_unity2_raw::clear_show_queue(::core::option::Option::None) }
-    }
-
-    #[doc = "`DequeueShowData()` overload"]
-    pub fn dequeue_show_data() -> crate::app::achievedata::AchieveData {
-        unsafe { __AchieveData_unity2_raw::dequeue_show_data(::core::option::Option::None) }
-    }
-
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __AchieveData_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-achievedata")]
-pub trait IAchieveDataMethods: IAchieveData {
-    #[doc = "`get_Aid()` overload"]
-    fn get_aid(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <AchieveData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AchieveData_unity2_raw::get_aid(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Aid(::unity2::Il2CppString)` overload"]
-    fn set_aid(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <AchieveData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AchieveData_unity2_raw::set_aid(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Name()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <AchieveData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AchieveData_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Name(::unity2::Il2CppString)` overload"]
-    fn set_name(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <AchieveData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AchieveData_unity2_raw::set_name(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Category()` overload"]
-    fn get_category(self) -> crate::app::achievedata::AchieveData_Categories {
-        unsafe {
-            let __receiver = <AchieveData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AchieveData_unity2_raw::get_category(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Category(crate::app::achievedata::AchieveData_Categories)` overload"]
-    fn set_category(self, value: impl ::core::convert::Into<crate::app::achievedata::AchieveData_Categories>) -> () {
-        unsafe {
-            let __receiver = <AchieveData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AchieveData_unity2_raw::set_category(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Kind()` overload"]
-    fn get_kind(self) -> crate::app::achievedata::AchieveData_Kinds {
-        unsafe {
-            let __receiver = <AchieveData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AchieveData_unity2_raw::get_kind(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Kind(crate::app::achievedata::AchieveData_Kinds)` overload"]
-    fn set_kind(self, value: impl ::core::convert::Into<crate::app::achievedata::AchieveData_Kinds>) -> () {
-        unsafe {
-            let __receiver = <AchieveData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AchieveData_unity2_raw::set_kind(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Count()` overload"]
-    fn get_count(self) -> i32 {
-        unsafe {
-            let __receiver = <AchieveData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AchieveData_unity2_raw::get_count(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Count(i32)` overload"]
-    fn set_count(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <AchieveData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AchieveData_unity2_raw::set_count(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Arg()` overload"]
-    fn get_arg(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <AchieveData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AchieveData_unity2_raw::get_arg(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Arg(::unity2::Il2CppString)` overload"]
-    fn set_arg(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <AchieveData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AchieveData_unity2_raw::set_arg(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_CountUnit()` overload"]
-    fn get_count_unit(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <AchieveData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AchieveData_unity2_raw::get_count_unit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_CountUnit(::unity2::Il2CppString)` overload"]
-    fn set_count_unit(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <AchieveData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AchieveData_unity2_raw::set_count_unit(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_KizunaReward()` overload"]
-    fn get_kizuna_reward(self) -> i32 {
-        unsafe {
-            let __receiver = <AchieveData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AchieveData_unity2_raw::get_kizuna_reward(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_KizunaReward(i32)` overload"]
-    fn set_kizuna_reward(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <AchieveData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AchieveData_unity2_raw::set_kizuna_reward(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Chapter()` overload"]
-    fn get_chapter(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <AchieveData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AchieveData_unity2_raw::get_chapter(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Chapter(::unity2::Il2CppString)` overload"]
-    fn set_chapter(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <AchieveData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AchieveData_unity2_raw::set_chapter(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnBuild()` overload"]
-    fn on_build(self) -> () {
-        unsafe {
-            let __receiver = <AchieveData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AchieveData_unity2_raw::on_build(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetDebugName()` overload"]
-    fn get_debug_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <AchieveData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AchieveData_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetArgType()` overload"]
-    fn get_arg_type(self) -> crate::app::achievedata::AchieveData_ArgType {
-        unsafe {
-            let __receiver = <AchieveData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AchieveData_unity2_raw::get_arg_type(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetPerson()` overload"]
-    fn get_person(self) -> crate::app::persondata::PersonData {
-        unsafe {
-            let __receiver = <AchieveData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AchieveData_unity2_raw::get_person(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetGod()` overload"]
-    fn get_god(self) -> crate::app::goddata::GodData {
-        unsafe {
-            let __receiver = <AchieveData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AchieveData_unity2_raw::get_god(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetStatus()` overload"]
-    fn get_status(self) -> crate::app::achievedata::AchieveData_Status {
-        unsafe {
-            let __receiver = <AchieveData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AchieveData_unity2_raw::get_status(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetCleared()` overload"]
-    fn set_cleared(self) -> bool {
-        unsafe {
-            let __receiver = <AchieveData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AchieveData_unity2_raw::set_cleared(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetShowed()` overload"]
-    fn set_showed(self) -> bool {
-        unsafe {
-            let __receiver = <AchieveData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AchieveData_unity2_raw::set_showed(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetComplete()` overload"]
-    fn set_complete(self) -> bool {
-        unsafe {
-            let __receiver = <AchieveData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AchieveData_unity2_raw::set_complete(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsCanGet()` overload"]
-    fn is_can_get(self) -> bool {
-        unsafe {
-            let __receiver = <AchieveData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AchieveData_unity2_raw::is_can_get(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetStatus(crate::app::achievedata::AchieveData_Status)` overload"]
-    fn set_status(self, status: impl ::core::convert::Into<crate::app::achievedata::AchieveData_Status>) -> () {
-        unsafe {
-            let __receiver = <AchieveData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AchieveData_unity2_raw::set_status(__receiver, ::core::convert::Into::into(status), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetValue()` overload"]
-    fn get_value(self) -> i32 {
-        unsafe {
-            let __receiver = <AchieveData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AchieveData_unity2_raw::get_value(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetCountCurrent(::unity2::Il2CppString)` overload"]
-    fn get_count_current(self, footer: impl ::core::convert::Into<::unity2::Il2CppString>) -> i32 {
-        unsafe {
-            let __receiver = <AchieveData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AchieveData_unity2_raw::get_count_current(__receiver, ::core::convert::Into::into(footer), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <AchieveData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AchieveData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-achievedata")]
-impl<__T: IAchieveData> IAchieveDataMethods for __T {}
-
-#[cfg(feature = "app-achievedata")]
-impl AchieveData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(AchieveData), ::core::stringify!(new),));
-        <Self as IAchieveDataMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AchieveData) , :: core :: stringify ! (new) ,)) ; < Self as IAchieveDataMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-achievedata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        AchieveData, AchieveData_ArgType, AchieveData_Categories, AchieveData_Kinds, AchieveData_Status, IAchieveData, IAchieveDataMethods,
-    };
-    #[cfg(feature = "app-structbase")]
-    pub use crate::app::structbase::IStructBaseMethods;
-    #[cfg(feature = "app-structdata_1")]
-    pub use crate::app::structdata_1::IStructData_1Methods;
-    #[cfg(feature = "app-structtemplate_1")]
-    pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::{structbase::IStructBase, structdata_1::IStructData_1, structtemplate_1::IStructTemplate_1},
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::AchieveData_Status;
+    pub use super::AchieveData_ArgType;
+    pub use super::AchieveData_Categories;
+    pub use super::AchieveData;
+    pub use super::IAchieveData;
+    pub use super::IAchieveDataMethods;
+    pub use super::AchieveData_Kinds;
+    pub use crate::app::structbase::IStructBase;
+    pub use crate::app::structdata_1::IStructData_1;
+    pub use crate::app::structtemplate_1::IStructTemplate_1;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-structbase")] pub use crate::app::structbase::IStructBaseMethods;
+    #[cfg(feature = "app-structdata_1")] pub use crate::app::structdata_1::IStructData_1Methods;
+    #[cfg(feature = "app-structtemplate_1")] pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

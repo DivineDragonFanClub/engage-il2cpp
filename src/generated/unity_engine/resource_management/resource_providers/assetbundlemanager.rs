@@ -2,284 +2,49 @@
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-assetbundlemanager-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/assetbundlemanager/AssetBundleManager.md"))]
-    #[::unity2::class(namespace = "UnityEngine.ResourceManagement.ResourceProviders", name = "AssetBundleManager")]
-    #[parent(crate::system::object::Object)]
-    pub struct AssetBundleManager {
-        #[static_field]
-        #[rename(name = "s_ResourceStack")]
-        pub s_resource_stack: crate::system::collections::generic::stack_1::Stack_1<
-            crate::unity_engine::resource_management::resource_providers::assetbundlelocalresource::AssetBundleLocalResource,
-        >,
-        #[static_field]
-        #[rename(name = "s_ResourceEntry")]
-        pub s_resource_entry: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            ::unity2::Il2CppString,
-            crate::unity_engine::resource_management::resource_providers::assetbundlelocalresource::AssetBundleLocalResource,
-        >,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/assetbundlemanager/AssetBundleManager.md"))] # [:: unity2 :: class (namespace = "UnityEngine.ResourceManagement.ResourceProviders" , name = "AssetBundleManager")] # [parent (crate :: system :: object :: Object)] pub struct AssetBundleManager {
+# [static_field] # [rename (name = "s_ResourceStack")] pub s_resource_stack : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < crate :: unity_engine :: resource_management :: resource_providers :: assetbundlelocalresource :: AssetBundleLocalResource > ,
+# [static_field] # [rename (name = "s_ResourceEntry")] pub s_resource_entry : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: unity_engine :: resource_management :: resource_providers :: assetbundlelocalresource :: AssetBundleLocalResource > ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-assetbundlemanager-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-assetbundlemanager")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AssetBundleManager_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_initialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetBundleManager as ::unity2::ClassIdentity>::class(),
-                "Initialize",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetBundleManager as ::unity2::ClassIdentity>::NAME,
-                        "Initialize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn initialize(capacity: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_initialize::get_method_info().method_ptr);
-        inner(capacity, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_pop_asset_bundle_local_resource {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetBundleManager as ::unity2::ClassIdentity>::class(),
-                "PopAssetBundleLocalResource",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetBundleManager as ::unity2::ClassIdentity>::NAME,
-                        "PopAssetBundleLocalResource",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn pop_asset_bundle_local_resource(
-        provide_handle: crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_pop_asset_bundle_local_resource::get_method_info().method_ptr);
-        inner(provide_handle, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_push_asset_bundle_local_resource {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: resource_providers :: assetbundlelocalresource :: AssetBundleLocalResource as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetBundleManager as ::unity2::ClassIdentity>::class(),
-                "PushAssetBundleLocalResource",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetBundleManager as ::unity2::ClassIdentity>::NAME,
-                        "PushAssetBundleLocalResource",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn push_asset_bundle_local_resource(
-        resource: crate::unity_engine::resource_management::resource_providers::assetbundlelocalresource::AssetBundleLocalResource,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::resource_management::resource_providers::assetbundlelocalresource::AssetBundleLocalResource,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_push_asset_bundle_local_resource::get_method_info().method_ptr);
-        inner(resource, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetBundleManager as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetBundleManager as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AssetBundleManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AssetBundleManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetBundleManager as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetBundleManager as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AssetBundleManager_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_initialize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AssetBundleManager as :: unity2 :: ClassIdentity > :: class () , "Initialize" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AssetBundleManager as :: unity2 :: ClassIdentity > :: NAME , "Initialize" , e) , } } } pub unsafe fn initialize (capacity : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_initialize :: get_method_info () . method_ptr ,) ; inner (capacity , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_pop_asset_bundle_local_resource { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AssetBundleManager as :: unity2 :: ClassIdentity > :: class () , "PopAssetBundleLocalResource" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AssetBundleManager as :: unity2 :: ClassIdentity > :: NAME , "PopAssetBundleLocalResource" , e) , } } } pub unsafe fn pop_asset_bundle_local_resource (provide_handle : crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_pop_asset_bundle_local_resource :: get_method_info () . method_ptr ,) ; inner (provide_handle , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_push_asset_bundle_local_resource { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: resource_providers :: assetbundlelocalresource :: AssetBundleLocalResource as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AssetBundleManager as :: unity2 :: ClassIdentity > :: class () , "PushAssetBundleLocalResource" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AssetBundleManager as :: unity2 :: ClassIdentity > :: NAME , "PushAssetBundleLocalResource" , e) , } } } pub unsafe fn push_asset_bundle_local_resource (resource : crate :: unity_engine :: resource_management :: resource_providers :: assetbundlelocalresource :: AssetBundleLocalResource , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: resource_management :: resource_providers :: assetbundlelocalresource :: AssetBundleLocalResource , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_push_asset_bundle_local_resource :: get_method_info () . method_ptr ,) ; inner (resource , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AssetBundleManager as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AssetBundleManager as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AssetBundleManager , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AssetBundleManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AssetBundleManager as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AssetBundleManager as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-assetbundlemanager")]
+impl AssetBundleManager { # [doc = "`Initialize(i32)` overload"] pub fn initialize (capacity : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __AssetBundleManager_unity2_raw :: initialize (:: core :: convert :: Into :: into (capacity) , :: core :: option :: Option :: None) } } # [doc = "`PopAssetBundleLocalResource(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"] pub fn pop_asset_bundle_local_resource (provide_handle : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle >) -> () { unsafe { __AssetBundleManager_unity2_raw :: pop_asset_bundle_local_resource (:: core :: convert :: Into :: into (provide_handle) , :: core :: option :: Option :: None) } } # [doc = "`PushAssetBundleLocalResource(crate::unity_engine::resource_management::resource_providers::assetbundlelocalresource::AssetBundleLocalResource)` overload"] pub fn push_asset_bundle_local_resource (resource : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_providers :: assetbundlelocalresource :: AssetBundleLocalResource >) -> () { unsafe { __AssetBundleManager_unity2_raw :: push_asset_bundle_local_resource (:: core :: convert :: Into :: into (resource) , :: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __AssetBundleManager_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-assetbundlemanager")]
+pub trait IAssetBundleManagerMethods : IAssetBundleManager { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AssetBundleManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AssetBundleManager_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-assetbundlemanager")]
+impl < __T : IAssetBundleManager > IAssetBundleManagerMethods for __T { }
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-assetbundlemanager")]
+impl AssetBundleManager { pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AssetBundleManager_unity2_raw :: __lookup_initialize :: get_method_info () } pub fn pop_asset_bundle_local_resource_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AssetBundleManager_unity2_raw :: __lookup_pop_asset_bundle_local_resource :: get_method_info () } pub fn push_asset_bundle_local_resource_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AssetBundleManager_unity2_raw :: __lookup_push_asset_bundle_local_resource :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AssetBundleManager_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AssetBundleManager_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-assetbundlemanager")]
 impl AssetBundleManager {
-    #[doc = "`Initialize(i32)` overload"]
-    pub fn initialize(capacity: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AssetBundleManager_unity2_raw::initialize(::core::convert::Into::into(capacity), ::core::option::Option::None) }
-    }
-
-    #[doc = "`PopAssetBundleLocalResource(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"]
-    pub fn pop_asset_bundle_local_resource(
-        provide_handle: impl ::core::convert::Into<crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle>,
-    ) -> () {
-        unsafe {
-            __AssetBundleManager_unity2_raw::pop_asset_bundle_local_resource(
-                ::core::convert::Into::into(provide_handle),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`PushAssetBundleLocalResource(crate::unity_engine::resource_management::resource_providers::assetbundlelocalresource::AssetBundleLocalResource)` overload"]
-    pub fn push_asset_bundle_local_resource(
-        resource: impl ::core::convert::Into<
-            crate::unity_engine::resource_management::resource_providers::assetbundlelocalresource::AssetBundleLocalResource,
-        >,
-    ) -> () {
-        unsafe {
-            __AssetBundleManager_unity2_raw::push_asset_bundle_local_resource(::core::convert::Into::into(resource), ::core::option::Option::None)
-        }
-    }
-
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __AssetBundleManager_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "unity_engine-resource_management-resource_providers-assetbundlemanager")]
-pub trait IAssetBundleManagerMethods: IAssetBundleManager {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <AssetBundleManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssetBundleManager_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-resource_management-resource_providers-assetbundlemanager")]
-impl<__T: IAssetBundleManager> IAssetBundleManagerMethods for __T {}
-
-#[cfg(feature = "unity_engine-resource_management-resource_providers-assetbundlemanager")]
-impl AssetBundleManager {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AssetBundleManager),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAssetBundleManagerMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AssetBundleManager) , :: core :: stringify ! (new) ,)) ; < Self as IAssetBundleManagerMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-assetbundlemanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{AssetBundleManager, IAssetBundleManager, IAssetBundleManagerMethods};
+    pub use super::AssetBundleManager;
+    pub use super::IAssetBundleManager;
+    pub use super::IAssetBundleManagerMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

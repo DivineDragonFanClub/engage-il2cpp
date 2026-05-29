@@ -2,320 +2,51 @@
 
 #[cfg(feature = "system-reflection-runtimefieldinfo-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        reflection::{
-            fieldinfo::{FieldInfo, IFieldInfo},
-            memberinfo::{IMemberInfo, MemberInfo},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/runtimefieldinfo/RuntimeFieldInfo.md"))]
-    #[::unity2::class(namespace = "System.Reflection", name = "RuntimeFieldInfo")]
-    #[parent(crate::system::reflection::fieldinfo::FieldInfo)]
-    pub struct RuntimeFieldInfo {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: reflection :: fieldinfo :: { FieldInfo , IFieldInfo }
+ ;
+ use crate :: system :: reflection :: memberinfo :: { IMemberInfo , MemberInfo }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/runtimefieldinfo/RuntimeFieldInfo.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "RuntimeFieldInfo")] # [parent (crate :: system :: reflection :: fieldinfo :: FieldInfo)] pub struct RuntimeFieldInfo {}
+
 }
 
 #[cfg(feature = "system-reflection-runtimefieldinfo-types")]
 pub use __types::*;
 
 #[cfg(feature = "system-reflection-runtimefieldinfo")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RuntimeFieldInfo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_binding_flags {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RuntimeFieldInfo as ::unity2::ClassIdentity>::class(),
-                "get_BindingFlags",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RuntimeFieldInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_BindingFlags",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_binding_flags(
-        this: RuntimeFieldInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::reflection::bindingflags::BindingFlags {
-        let inner: extern "C" fn(RuntimeFieldInfo, ::unity2::OptionalMethod) -> crate::system::reflection::bindingflags::BindingFlags =
-            ::core::mem::transmute(__lookup_get_binding_flags::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_module {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RuntimeFieldInfo as ::unity2::ClassIdentity>::class(),
-                "get_Module",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RuntimeFieldInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_Module",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_module(this: RuntimeFieldInfo, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::reflection::module::Module {
-        let inner: extern "C" fn(RuntimeFieldInfo, ::unity2::OptionalMethod) -> crate::system::reflection::module::Module =
-            ::core::mem::transmute(__lookup_get_module::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_declaring_type_internal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RuntimeFieldInfo as ::unity2::ClassIdentity>::class(),
-                "GetDeclaringTypeInternal",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RuntimeFieldInfo as ::unity2::ClassIdentity>::NAME,
-                        "GetDeclaringTypeInternal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_declaring_type_internal(
-        this: RuntimeFieldInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::runtimetype::RuntimeType {
-        let inner: extern "C" fn(RuntimeFieldInfo, ::unity2::OptionalMethod) -> crate::system::runtimetype::RuntimeType =
-            ::core::mem::transmute(__lookup_get_declaring_type_internal::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_reflected_type_internal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RuntimeFieldInfo as ::unity2::ClassIdentity>::class(),
-                "get_ReflectedTypeInternal",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RuntimeFieldInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_ReflectedTypeInternal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_reflected_type_internal(
-        this: RuntimeFieldInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::runtimetype::RuntimeType {
-        let inner: extern "C" fn(RuntimeFieldInfo, ::unity2::OptionalMethod) -> crate::system::runtimetype::RuntimeType =
-            ::core::mem::transmute(__lookup_get_reflected_type_internal::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_runtime_module {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RuntimeFieldInfo as ::unity2::ClassIdentity>::class(),
-                "GetRuntimeModule",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RuntimeFieldInfo as ::unity2::ClassIdentity>::NAME,
-                        "GetRuntimeModule",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_runtime_module(
-        this: RuntimeFieldInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::reflection::runtimemodule::RuntimeModule {
-        let inner: extern "C" fn(RuntimeFieldInfo, ::unity2::OptionalMethod) -> crate::system::reflection::runtimemodule::RuntimeModule =
-            ::core::mem::transmute(__lookup_get_runtime_module::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RuntimeFieldInfo as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RuntimeFieldInfo as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: RuntimeFieldInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RuntimeFieldInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RuntimeFieldInfo_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_binding_flags { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RuntimeFieldInfo as :: unity2 :: ClassIdentity > :: class () , "get_BindingFlags" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RuntimeFieldInfo as :: unity2 :: ClassIdentity > :: NAME , "get_BindingFlags" , e) , } } } pub unsafe fn get_binding_flags (this : RuntimeFieldInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: bindingflags :: BindingFlags { let inner : extern "C" fn (RuntimeFieldInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: bindingflags :: BindingFlags = :: core :: mem :: transmute (__lookup_get_binding_flags :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_module { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RuntimeFieldInfo as :: unity2 :: ClassIdentity > :: class () , "get_Module" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RuntimeFieldInfo as :: unity2 :: ClassIdentity > :: NAME , "get_Module" , e) , } } } pub unsafe fn get_module (this : RuntimeFieldInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: module :: Module { let inner : extern "C" fn (RuntimeFieldInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: module :: Module = :: core :: mem :: transmute (__lookup_get_module :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_declaring_type_internal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RuntimeFieldInfo as :: unity2 :: ClassIdentity > :: class () , "GetDeclaringTypeInternal" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RuntimeFieldInfo as :: unity2 :: ClassIdentity > :: NAME , "GetDeclaringTypeInternal" , e) , } } } pub unsafe fn get_declaring_type_internal (this : RuntimeFieldInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: runtimetype :: RuntimeType { let inner : extern "C" fn (RuntimeFieldInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: runtimetype :: RuntimeType = :: core :: mem :: transmute (__lookup_get_declaring_type_internal :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_reflected_type_internal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RuntimeFieldInfo as :: unity2 :: ClassIdentity > :: class () , "get_ReflectedTypeInternal" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RuntimeFieldInfo as :: unity2 :: ClassIdentity > :: NAME , "get_ReflectedTypeInternal" , e) , } } } pub unsafe fn get_reflected_type_internal (this : RuntimeFieldInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: runtimetype :: RuntimeType { let inner : extern "C" fn (RuntimeFieldInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: runtimetype :: RuntimeType = :: core :: mem :: transmute (__lookup_get_reflected_type_internal :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_runtime_module { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RuntimeFieldInfo as :: unity2 :: ClassIdentity > :: class () , "GetRuntimeModule" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RuntimeFieldInfo as :: unity2 :: ClassIdentity > :: NAME , "GetRuntimeModule" , e) , } } } pub unsafe fn get_runtime_module (this : RuntimeFieldInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: runtimemodule :: RuntimeModule { let inner : extern "C" fn (RuntimeFieldInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: runtimemodule :: RuntimeModule = :: core :: mem :: transmute (__lookup_get_runtime_module :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RuntimeFieldInfo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RuntimeFieldInfo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RuntimeFieldInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RuntimeFieldInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "system-reflection-runtimefieldinfo")]
-pub trait IRuntimeFieldInfoMethods: IRuntimeFieldInfo {
-    #[doc = "`get_BindingFlags()` overload"]
-    fn get_binding_flags(self) -> crate::system::reflection::bindingflags::BindingFlags {
-        unsafe {
-            let __receiver = <RuntimeFieldInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RuntimeFieldInfo_unity2_raw::get_binding_flags(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Module()` overload"]
-    fn get_module(self) -> crate::system::reflection::module::Module {
-        unsafe {
-            let __receiver = <RuntimeFieldInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RuntimeFieldInfo_unity2_raw::get_module(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetDeclaringTypeInternal()` overload"]
-    fn get_declaring_type_internal(self) -> crate::system::runtimetype::RuntimeType {
-        unsafe {
-            let __receiver = <RuntimeFieldInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RuntimeFieldInfo_unity2_raw::get_declaring_type_internal(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_ReflectedTypeInternal()` overload"]
-    fn get_reflected_type_internal(self) -> crate::system::runtimetype::RuntimeType {
-        unsafe {
-            let __receiver = <RuntimeFieldInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RuntimeFieldInfo_unity2_raw::get_reflected_type_internal(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetRuntimeModule()` overload"]
-    fn get_runtime_module(self) -> crate::system::reflection::runtimemodule::RuntimeModule {
-        unsafe {
-            let __receiver = <RuntimeFieldInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RuntimeFieldInfo_unity2_raw::get_runtime_module(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <RuntimeFieldInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RuntimeFieldInfo_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IRuntimeFieldInfoMethods : IRuntimeFieldInfo { # [doc = "`get_BindingFlags()` overload"] fn get_binding_flags (self ,) -> crate :: system :: reflection :: bindingflags :: BindingFlags { unsafe { let __receiver = < RuntimeFieldInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RuntimeFieldInfo_unity2_raw :: get_binding_flags (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Module()` overload"] fn get_module (self ,) -> crate :: system :: reflection :: module :: Module { unsafe { let __receiver = < RuntimeFieldInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RuntimeFieldInfo_unity2_raw :: get_module (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetDeclaringTypeInternal()` overload"] fn get_declaring_type_internal (self ,) -> crate :: system :: runtimetype :: RuntimeType { unsafe { let __receiver = < RuntimeFieldInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RuntimeFieldInfo_unity2_raw :: get_declaring_type_internal (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_ReflectedTypeInternal()` overload"] fn get_reflected_type_internal (self ,) -> crate :: system :: runtimetype :: RuntimeType { unsafe { let __receiver = < RuntimeFieldInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RuntimeFieldInfo_unity2_raw :: get_reflected_type_internal (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetRuntimeModule()` overload"] fn get_runtime_module (self ,) -> crate :: system :: reflection :: runtimemodule :: RuntimeModule { unsafe { let __receiver = < RuntimeFieldInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RuntimeFieldInfo_unity2_raw :: get_runtime_module (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RuntimeFieldInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RuntimeFieldInfo_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "system-reflection-runtimefieldinfo")]
-impl<__T: IRuntimeFieldInfo> IRuntimeFieldInfoMethods for __T {}
+impl < __T : IRuntimeFieldInfo > IRuntimeFieldInfoMethods for __T { }
+
+#[cfg(feature = "system-reflection-runtimefieldinfo")]
+impl RuntimeFieldInfo { pub fn get_binding_flags_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RuntimeFieldInfo_unity2_raw :: __lookup_get_binding_flags :: get_method_info () } pub fn get_module_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RuntimeFieldInfo_unity2_raw :: __lookup_get_module :: get_method_info () } pub fn get_declaring_type_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RuntimeFieldInfo_unity2_raw :: __lookup_get_declaring_type_internal :: get_method_info () } pub fn get_reflected_type_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RuntimeFieldInfo_unity2_raw :: __lookup_get_reflected_type_internal :: get_method_info () } pub fn get_runtime_module_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RuntimeFieldInfo_unity2_raw :: __lookup_get_runtime_module :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RuntimeFieldInfo_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "system-reflection-runtimefieldinfo")]
 impl RuntimeFieldInfo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RuntimeFieldInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRuntimeFieldInfoMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RuntimeFieldInfo) , :: core :: stringify ! (new) ,)) ; < Self as IRuntimeFieldInfoMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "system-reflection-runtimefieldinfo")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IRuntimeFieldInfo, IRuntimeFieldInfoMethods, RuntimeFieldInfo};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-reflection-fieldinfo")]
-    pub use crate::system::reflection::fieldinfo::IFieldInfoMethods;
-    #[cfg(feature = "system-reflection-memberinfo")]
-    pub use crate::system::reflection::memberinfo::IMemberInfoMethods;
-    pub use crate::system::{
-        object::IObject,
-        reflection::{fieldinfo::IFieldInfo, memberinfo::IMemberInfo},
-    };
+    pub use super::RuntimeFieldInfo;
+    pub use super::IRuntimeFieldInfo;
+    pub use super::IRuntimeFieldInfoMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::system::reflection::fieldinfo::IFieldInfo;
+    pub use crate::system::reflection::memberinfo::IMemberInfo;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-reflection-fieldinfo")] pub use crate::system::reflection::fieldinfo::IFieldInfoMethods;
+    #[cfg(feature = "system-reflection-memberinfo")] pub use crate::system::reflection::memberinfo::IMemberInfoMethods;
 }

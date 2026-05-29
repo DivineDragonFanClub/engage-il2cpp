@@ -2,330 +2,49 @@
 
 #[cfg(feature = "app-profilecardvariable-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardvariable/ProfileCardVariable.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileCardVariable")]
-    #[parent(crate::system::object::Object)]
-    pub struct ProfileCardVariable {
-        #[static_field]
-        #[rename(name = "m_Flag_IsStampHide")]
-        pub m_flag_is_stamp_hide: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "m_Flag_MyCard_UgcNotice")]
-        pub m_flag_my_card_ugc_notice: ::unity2::Il2CppString,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardvariable/ProfileCardVariable.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardVariable")] # [parent (crate :: system :: object :: Object)] pub struct ProfileCardVariable {
+# [static_field] # [rename (name = "m_Flag_IsStampHide")] pub m_flag_is_stamp_hide : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "m_Flag_MyCard_UgcNotice")] pub m_flag_my_card_ugc_notice : :: unity2 :: Il2CppString ,
+}
+
 }
 
 #[cfg(feature = "app-profilecardvariable-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-profilecardvariable")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ProfileCardVariable_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_regist_global_flags {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardVariable as ::unity2::ClassIdentity>::class(),
-                "RegistGlobalFlags",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardVariable as ::unity2::ClassIdentity>::NAME,
-                        "RegistGlobalFlags",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn regist_global_flags(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_regist_global_flags::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_stamp_hide {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardVariable as ::unity2::ClassIdentity>::class(),
-                "get_IsStampHide",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardVariable as ::unity2::ClassIdentity>::NAME,
-                        "get_IsStampHide",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_stamp_hide(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_get_is_stamp_hide::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_is_stamp_hide {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardVariable as ::unity2::ClassIdentity>::class(),
-                "set_IsStampHide",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardVariable as ::unity2::ClassIdentity>::NAME,
-                        "set_IsStampHide",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_is_stamp_hide(value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_is_stamp_hide::get_method_info().method_ptr);
-        inner(value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_my_card_ugc_notice {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardVariable as ::unity2::ClassIdentity>::class(),
-                "get_MyCard_UgcNotice",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardVariable as ::unity2::ClassIdentity>::NAME,
-                        "get_MyCard_UgcNotice",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_my_card_ugc_notice(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_my_card_ugc_notice::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_my_card_ugc_notice {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardVariable as ::unity2::ClassIdentity>::class(),
-                "set_MyCard_UgcNotice",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardVariable as ::unity2::ClassIdentity>::NAME,
-                        "set_MyCard_UgcNotice",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_my_card_ugc_notice(value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_my_card_ugc_notice::get_method_info().method_ptr);
-        inner(value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardVariable as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardVariable as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ProfileCardVariable, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ProfileCardVariable, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardVariable as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardVariable as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ProfileCardVariable_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_regist_global_flags { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardVariable as :: unity2 :: ClassIdentity > :: class () , "RegistGlobalFlags" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardVariable as :: unity2 :: ClassIdentity > :: NAME , "RegistGlobalFlags" , e) , } } } pub unsafe fn regist_global_flags (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_regist_global_flags :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_stamp_hide { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardVariable as :: unity2 :: ClassIdentity > :: class () , "get_IsStampHide" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardVariable as :: unity2 :: ClassIdentity > :: NAME , "get_IsStampHide" , e) , } } } pub unsafe fn get_is_stamp_hide (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_is_stamp_hide :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_is_stamp_hide { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardVariable as :: unity2 :: ClassIdentity > :: class () , "set_IsStampHide" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardVariable as :: unity2 :: ClassIdentity > :: NAME , "set_IsStampHide" , e) , } } } pub unsafe fn set_is_stamp_hide (value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_is_stamp_hide :: get_method_info () . method_ptr ,) ; inner (value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_my_card_ugc_notice { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardVariable as :: unity2 :: ClassIdentity > :: class () , "get_MyCard_UgcNotice" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardVariable as :: unity2 :: ClassIdentity > :: NAME , "get_MyCard_UgcNotice" , e) , } } } pub unsafe fn get_my_card_ugc_notice (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_my_card_ugc_notice :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_my_card_ugc_notice { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardVariable as :: unity2 :: ClassIdentity > :: class () , "set_MyCard_UgcNotice" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardVariable as :: unity2 :: ClassIdentity > :: NAME , "set_MyCard_UgcNotice" , e) , } } } pub unsafe fn set_my_card_ugc_notice (value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_my_card_ugc_notice :: get_method_info () . method_ptr ,) ; inner (value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardVariable as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardVariable as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ProfileCardVariable , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProfileCardVariable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardVariable as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardVariable as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "app-profilecardvariable")]
+impl ProfileCardVariable { # [doc = "`RegistGlobalFlags()` overload"] pub fn regist_global_flags () -> () { unsafe { __ProfileCardVariable_unity2_raw :: regist_global_flags (:: core :: option :: Option :: None) } } # [doc = "`get_IsStampHide()` overload"] pub fn get_is_stamp_hide () -> bool { unsafe { __ProfileCardVariable_unity2_raw :: get_is_stamp_hide (:: core :: option :: Option :: None) } } # [doc = "`set_IsStampHide(bool)` overload"] pub fn set_is_stamp_hide (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { __ProfileCardVariable_unity2_raw :: set_is_stamp_hide (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_MyCard_UgcNotice()` overload"] pub fn get_my_card_ugc_notice () -> bool { unsafe { __ProfileCardVariable_unity2_raw :: get_my_card_ugc_notice (:: core :: option :: Option :: None) } } # [doc = "`set_MyCard_UgcNotice(bool)` overload"] pub fn set_my_card_ugc_notice (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { __ProfileCardVariable_unity2_raw :: set_my_card_ugc_notice (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __ProfileCardVariable_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-profilecardvariable")]
+pub trait IProfileCardVariableMethods : IProfileCardVariable { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ProfileCardVariable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileCardVariable_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-profilecardvariable")]
+impl < __T : IProfileCardVariable > IProfileCardVariableMethods for __T { }
+
+#[cfg(feature = "app-profilecardvariable")]
+impl ProfileCardVariable { pub fn regist_global_flags_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardVariable_unity2_raw :: __lookup_regist_global_flags :: get_method_info () } pub fn get_is_stamp_hide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardVariable_unity2_raw :: __lookup_get_is_stamp_hide :: get_method_info () } pub fn set_is_stamp_hide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardVariable_unity2_raw :: __lookup_set_is_stamp_hide :: get_method_info () } pub fn get_my_card_ugc_notice_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardVariable_unity2_raw :: __lookup_get_my_card_ugc_notice :: get_method_info () } pub fn set_my_card_ugc_notice_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardVariable_unity2_raw :: __lookup_set_my_card_ugc_notice :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardVariable_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardVariable_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "app-profilecardvariable")]
 impl ProfileCardVariable {
-    #[doc = "`RegistGlobalFlags()` overload"]
-    pub fn regist_global_flags() -> () {
-        unsafe { __ProfileCardVariable_unity2_raw::regist_global_flags(::core::option::Option::None) }
-    }
-
-    #[doc = "`get_IsStampHide()` overload"]
-    pub fn get_is_stamp_hide() -> bool {
-        unsafe { __ProfileCardVariable_unity2_raw::get_is_stamp_hide(::core::option::Option::None) }
-    }
-
-    #[doc = "`set_IsStampHide(bool)` overload"]
-    pub fn set_is_stamp_hide(value: impl ::core::convert::Into<bool>) -> () {
-        unsafe { __ProfileCardVariable_unity2_raw::set_is_stamp_hide(::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_MyCard_UgcNotice()` overload"]
-    pub fn get_my_card_ugc_notice() -> bool {
-        unsafe { __ProfileCardVariable_unity2_raw::get_my_card_ugc_notice(::core::option::Option::None) }
-    }
-
-    #[doc = "`set_MyCard_UgcNotice(bool)` overload"]
-    pub fn set_my_card_ugc_notice(value: impl ::core::convert::Into<bool>) -> () {
-        unsafe { __ProfileCardVariable_unity2_raw::set_my_card_ugc_notice(::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __ProfileCardVariable_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-profilecardvariable")]
-pub trait IProfileCardVariableMethods: IProfileCardVariable {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <ProfileCardVariable as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProfileCardVariable_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-profilecardvariable")]
-impl<__T: IProfileCardVariable> IProfileCardVariableMethods for __T {}
-
-#[cfg(feature = "app-profilecardvariable")]
-impl ProfileCardVariable {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardVariable),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IProfileCardVariableMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardVariable) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardVariableMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-profilecardvariable")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IProfileCardVariable, IProfileCardVariableMethods, ProfileCardVariable};
+    pub use super::ProfileCardVariable;
+    pub use super::IProfileCardVariable;
+    pub use super::IProfileCardVariableMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -2,143 +2,69 @@
 
 #[cfg(feature = "app-fishingconfig_movecircle-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingconfig_movecircle/FishingConfig_MoveCircle.md"))]
-    #[::unity2::class(namespace = "App", name = "FishingConfig_MoveCircle")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct FishingConfig_MoveCircle {
-        #[offset(24)]
-        #[rename(name = "m_CameraRotateSpeed")]
-        pub m_camera_rotate_speed: f32,
-        #[offset(28)]
-        #[rename(name = "m_DistanceMoveSpeed")]
-        pub m_distance_move_speed: f32,
-        #[offset(32)]
-        #[rename(name = "m_RotateMinimum")]
-        pub m_rotate_minimum: f32,
-        #[offset(36)]
-        #[rename(name = "m_RotateMax")]
-        pub m_rotate_max: f32,
-        #[offset(40)]
-        #[rename(name = "m_DistanceMinimum")]
-        pub m_distance_minimum: f32,
-        #[offset(44)]
-        #[rename(name = "m_DistanceMax")]
-        pub m_distance_max: f32,
-        #[offset(48)]
-        #[rename(name = "m_RipplesInterval")]
-        pub m_ripples_interval: f32,
-        #[offset(56)]
-        #[rename(name = "m_RipplesPosList")]
-        pub m_ripples_pos_list: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-        #[offset(64)]
-        #[rename(name = "m_RipplesRandomRange")]
-        pub m_ripples_random_range: f32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingconfig_movecircle/FishingConfig_MoveCircle.md"))] # [:: unity2 :: class (namespace = "App" , name = "FishingConfig_MoveCircle")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct FishingConfig_MoveCircle {
+# [offset (24)] # [rename (name = "m_CameraRotateSpeed")] pub m_camera_rotate_speed : f32 ,
+# [offset (28)] # [rename (name = "m_DistanceMoveSpeed")] pub m_distance_move_speed : f32 ,
+# [offset (32)] # [rename (name = "m_RotateMinimum")] pub m_rotate_minimum : f32 ,
+# [offset (36)] # [rename (name = "m_RotateMax")] pub m_rotate_max : f32 ,
+# [offset (40)] # [rename (name = "m_DistanceMinimum")] pub m_distance_minimum : f32 ,
+# [offset (44)] # [rename (name = "m_DistanceMax")] pub m_distance_max : f32 ,
+# [offset (48)] # [rename (name = "m_RipplesInterval")] pub m_ripples_interval : f32 ,
+# [offset (56)] # [rename (name = "m_RipplesPosList")] pub m_ripples_pos_list : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > ,
+# [offset (64)] # [rename (name = "m_RipplesRandomRange")] pub m_ripples_random_range : f32 ,
+}
+
 }
 
 #[cfg(feature = "app-fishingconfig_movecircle-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-fishingconfig_movecircle")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FishingConfig_MoveCircle_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingConfig_MoveCircle as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingConfig_MoveCircle as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: FishingConfig_MoveCircle, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FishingConfig_MoveCircle, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __FishingConfig_MoveCircle_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FishingConfig_MoveCircle as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FishingConfig_MoveCircle as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : FishingConfig_MoveCircle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FishingConfig_MoveCircle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-fishingconfig_movecircle")]
-pub trait IFishingConfig_MoveCircleMethods: IFishingConfig_MoveCircle {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <FishingConfig_MoveCircle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingConfig_MoveCircle_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IFishingConfig_MoveCircleMethods : IFishingConfig_MoveCircle { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FishingConfig_MoveCircle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FishingConfig_MoveCircle_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-fishingconfig_movecircle")]
-impl<__T: IFishingConfig_MoveCircle> IFishingConfig_MoveCircleMethods for __T {}
+impl < __T : IFishingConfig_MoveCircle > IFishingConfig_MoveCircleMethods for __T { }
+
+#[cfg(feature = "app-fishingconfig_movecircle")]
+impl FishingConfig_MoveCircle { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FishingConfig_MoveCircle_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-fishingconfig_movecircle")]
 impl FishingConfig_MoveCircle {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FishingConfig_MoveCircle),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFishingConfig_MoveCircleMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FishingConfig_MoveCircle) , :: core :: stringify ! (new) ,)) ; < Self as IFishingConfig_MoveCircleMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-fishingconfig_movecircle")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{FishingConfig_MoveCircle, IFishingConfig_MoveCircle, IFishingConfig_MoveCircleMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::FishingConfig_MoveCircle;
+    pub use super::IFishingConfig_MoveCircle;
+    pub use super::IFishingConfig_MoveCircleMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

@@ -2,97 +2,34 @@
 
 #[cfg(feature = "unity_engine-timeline-timelineundo-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timelineundo/TimelineUndo.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Timeline", name = "TimelineUndo")]
-    #[parent(crate::system::object::Object)]
-    pub struct TimelineUndo {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timelineundo/TimelineUndo.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "TimelineUndo")] # [parent (crate :: system :: object :: Object)] pub struct TimelineUndo {}
+
 }
 
 #[cfg(feature = "unity_engine-timeline-timelineundo-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-timeline-timelineundo")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TimelineUndo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_push_destroy_undo {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::timeline::timelineasset::TimelineAsset as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TimelineUndo as ::unity2::ClassIdentity>::class(),
-                "PushDestroyUndo",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TimelineUndo as ::unity2::ClassIdentity>::NAME,
-                        "PushDestroyUndo",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn push_destroy_undo(
-        timeline: crate::unity_engine::timeline::timelineasset::TimelineAsset,
-        thing_to_dirty: crate::unity_engine::object_2::Object_2,
-        object_to_destroy: crate::unity_engine::object_2::Object_2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::timeline::timelineasset::TimelineAsset,
-            crate::unity_engine::object_2::Object_2,
-            crate::unity_engine::object_2::Object_2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_push_destroy_undo::get_method_info().method_ptr);
-        inner(timeline, thing_to_dirty, object_to_destroy, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TimelineUndo_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_push_destroy_undo { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: timelineasset :: TimelineAsset as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: object_2 :: Object_2 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: object_2 :: Object_2 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TimelineUndo as :: unity2 :: ClassIdentity > :: class () , "PushDestroyUndo" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TimelineUndo as :: unity2 :: ClassIdentity > :: NAME , "PushDestroyUndo" , e) , } } } pub unsafe fn push_destroy_undo (timeline : crate :: unity_engine :: timeline :: timelineasset :: TimelineAsset , thing_to_dirty : crate :: unity_engine :: object_2 :: Object_2 , object_to_destroy : crate :: unity_engine :: object_2 :: Object_2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: timeline :: timelineasset :: TimelineAsset , crate :: unity_engine :: object_2 :: Object_2 , crate :: unity_engine :: object_2 :: Object_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_push_destroy_undo :: get_method_info () . method_ptr ,) ; inner (timeline , thing_to_dirty , object_to_destroy , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-timeline-timelineundo")]
-impl TimelineUndo {
-    #[doc = "`PushDestroyUndo(crate::unity_engine::timeline::timelineasset::TimelineAsset, crate::unity_engine::object_2::Object_2, crate::unity_engine::object_2::Object_2)` overload"]
-    pub fn push_destroy_undo(
-        timeline: impl ::core::convert::Into<crate::unity_engine::timeline::timelineasset::TimelineAsset>,
-        thing_to_dirty: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>,
-        object_to_destroy: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>,
-    ) -> () {
-        unsafe {
-            __TimelineUndo_unity2_raw::push_destroy_undo(
-                ::core::convert::Into::into(timeline),
-                ::core::convert::Into::into(thing_to_dirty),
-                ::core::convert::Into::into(object_to_destroy),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+impl TimelineUndo { # [doc = "`PushDestroyUndo(crate::unity_engine::timeline::timelineasset::TimelineAsset, crate::unity_engine::object_2::Object_2, crate::unity_engine::object_2::Object_2)` overload"] pub fn push_destroy_undo (timeline : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: timelineasset :: TimelineAsset > , thing_to_dirty : impl :: core :: convert :: Into < crate :: unity_engine :: object_2 :: Object_2 > , object_to_destroy : impl :: core :: convert :: Into < crate :: unity_engine :: object_2 :: Object_2 >) -> () { unsafe { __TimelineUndo_unity2_raw :: push_destroy_undo (:: core :: convert :: Into :: into (timeline) , :: core :: convert :: Into :: into (thing_to_dirty) , :: core :: convert :: Into :: into (object_to_destroy) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-timeline-timelineundo")]
+impl TimelineUndo { pub fn push_destroy_undo_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TimelineUndo_unity2_raw :: __lookup_push_destroy_undo :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-timeline-timelineundo")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ITimelineUndo, TimelineUndo};
+    pub use super::TimelineUndo;
+    pub use super::ITimelineUndo;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

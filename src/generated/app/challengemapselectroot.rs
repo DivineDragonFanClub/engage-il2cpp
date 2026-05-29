@@ -2,1060 +2,135 @@
 
 #[cfg(feature = "app-challengemapselectroot-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengemapselectroot/ChallengeMapSelectRoot_RewardInfoItem.md"))]
-    #[::unity2::class(namespace = "App", name = "ChallengeMapSelectRoot.RewardInfoItem")]
-    #[parent(crate::system::object::Object)]
-    pub struct ChallengeMapSelectRoot_RewardInfoItem {
-        #[offset(16)]
-        #[rename(name = "m_Root")]
-        pub m_root: crate::unity_engine::gameobject::GameObject,
-        #[offset(24)]
-        #[rename(name = "m_IconImage")]
-        pub m_icon_image: crate::unity_engine::ui::image::Image,
-        #[offset(32)]
-        #[rename(name = "m_NameText")]
-        pub m_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(40)]
-        #[rename(name = "m_MinText")]
-        pub m_min_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(48)]
-        #[rename(name = "m_Tilde")]
-        pub m_tilde: crate::unity_engine::gameobject::GameObject,
-        #[offset(56)]
-        #[rename(name = "m_MaxText")]
-        pub m_max_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(64)]
-        #[rename(name = "m_FrmImage")]
-        pub m_frm_image: crate::unity_engine::ui::image::Image,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengemapselectroot/ChallengeMapSelectRoot.md"))]
-    #[::unity2::class(namespace = "App", name = "ChallengeMapSelectRoot")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct ChallengeMapSelectRoot {
-        #[static_field]
-        #[rename(name = "PrefabPath")]
-        pub prefab_path: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "SpriteAtlasPath")]
-        pub sprite_atlas_path: ::unity2::Il2CppString,
-        #[offset(24)]
-        #[rename(name = "m_SpriteAtlas")]
-        pub m_sprite_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
-        #[offset(32)]
-        #[rename(name = "m_MapSelectMenuContent")]
-        pub m_map_select_menu_content: crate::app::basicmenucontent::BasicMenuContent,
-        #[offset(40)]
-        #[rename(name = "m_DifficultySelectMenu")]
-        pub m_difficulty_select_menu: crate::app::basicmenucontent::BasicMenuContent,
-        #[offset(48)]
-        #[rename(name = "m_MapHelpObj")]
-        pub m_map_help_obj: crate::unity_engine::gameobject::GameObject,
-        #[offset(56)]
-        #[rename(name = "m_MapTitleText")]
-        pub m_map_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(64)]
-        #[rename(name = "m_BattleCountText")]
-        pub m_battle_count_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(72)]
-        #[rename(name = "m_MapImage")]
-        pub m_map_image: crate::unity_engine::ui::image::Image,
-        #[offset(80)]
-        #[rename(name = "m_DifficultyValueText")]
-        pub m_difficulty_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(88)]
-        #[rename(name = "m_TurnCountValueText")]
-        pub m_turn_count_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(96)]
-        #[rename(name = "m_RewardInfoItem")]
-        pub m_reward_info_item: ::unity2::Array<crate::app::challengemapselectroot::ChallengeMapSelectRoot_RewardInfoItem>,
-        #[offset(104)]
-        #[rename(name = "m_ExpTextList")]
-        pub m_exp_text_list: ::unity2::Array<crate::tm_pro::textmeshprougui::TextMeshProUGUI>,
-        #[offset(112)]
-        #[rename(name = "m_SpRoot")]
-        pub m_sp_root: crate::unity_engine::gameobject::GameObject,
-        #[offset(120)]
-        #[rename(name = "m_SpTextList")]
-        pub m_sp_text_list: ::unity2::Array<crate::tm_pro::textmeshprougui::TextMeshProUGUI>,
-        #[offset(128)]
-        #[rename(name = "m_SelectChallengeData")]
-        pub m_select_challenge_data: crate::app::challengedata::ChallengeData,
-        #[offset(136)]
-        #[rename(name = "m_MapImageSprite")]
-        pub m_map_image_sprite: crate::unity_engine::sprite::Sprite,
-        #[offset(144)]
-        #[rename(name = "m_RootAnim")]
-        pub m_root_anim: crate::unity_engine::animator::Animator,
-    }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengemapselectroot/ChallengeMapSelectRoot_ItemDropNum.md"))]
-    #[::unity2::class(namespace = "App", name = "ChallengeMapSelectRoot.ItemDropNum")]
-    #[parent(crate::system::object::Object)]
-    pub struct ChallengeMapSelectRoot_ItemDropNum {}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengemapselectroot/ChallengeMapSelectRoot_RewardInfoItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "ChallengeMapSelectRoot.RewardInfoItem")] # [parent (crate :: system :: object :: Object)] pub struct ChallengeMapSelectRoot_RewardInfoItem {
+# [offset (16)] # [rename (name = "m_Root")] pub m_root : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (24)] # [rename (name = "m_IconImage")] pub m_icon_image : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (32)] # [rename (name = "m_NameText")] pub m_name_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (40)] # [rename (name = "m_MinText")] pub m_min_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (48)] # [rename (name = "m_Tilde")] pub m_tilde : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (56)] # [rename (name = "m_MaxText")] pub m_max_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (64)] # [rename (name = "m_FrmImage")] pub m_frm_image : crate :: unity_engine :: ui :: image :: Image ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengemapselectroot/ChallengeMapSelectRoot.md"))] # [:: unity2 :: class (namespace = "App" , name = "ChallengeMapSelectRoot")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct ChallengeMapSelectRoot {
+# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "SpriteAtlasPath")] pub sprite_atlas_path : :: unity2 :: Il2CppString ,
+# [offset (24)] # [rename (name = "m_SpriteAtlas")] pub m_sprite_atlas : crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas ,
+# [offset (32)] # [rename (name = "m_MapSelectMenuContent")] pub m_map_select_menu_content : crate :: app :: basicmenucontent :: BasicMenuContent ,
+# [offset (40)] # [rename (name = "m_DifficultySelectMenu")] pub m_difficulty_select_menu : crate :: app :: basicmenucontent :: BasicMenuContent ,
+# [offset (48)] # [rename (name = "m_MapHelpObj")] pub m_map_help_obj : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (56)] # [rename (name = "m_MapTitleText")] pub m_map_title_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (64)] # [rename (name = "m_BattleCountText")] pub m_battle_count_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (72)] # [rename (name = "m_MapImage")] pub m_map_image : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (80)] # [rename (name = "m_DifficultyValueText")] pub m_difficulty_value_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (88)] # [rename (name = "m_TurnCountValueText")] pub m_turn_count_value_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (96)] # [rename (name = "m_RewardInfoItem")] pub m_reward_info_item : :: unity2 :: Array < crate :: app :: challengemapselectroot :: ChallengeMapSelectRoot_RewardInfoItem > ,
+# [offset (104)] # [rename (name = "m_ExpTextList")] pub m_exp_text_list : :: unity2 :: Array < crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI > ,
+# [offset (112)] # [rename (name = "m_SpRoot")] pub m_sp_root : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (120)] # [rename (name = "m_SpTextList")] pub m_sp_text_list : :: unity2 :: Array < crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI > ,
+# [offset (128)] # [rename (name = "m_SelectChallengeData")] pub m_select_challenge_data : crate :: app :: challengedata :: ChallengeData ,
+# [offset (136)] # [rename (name = "m_MapImageSprite")] pub m_map_image_sprite : crate :: unity_engine :: sprite :: Sprite ,
+# [offset (144)] # [rename (name = "m_RootAnim")] pub m_root_anim : crate :: unity_engine :: animator :: Animator ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengemapselectroot/ChallengeMapSelectRoot_ItemDropNum.md"))] # [:: unity2 :: class (namespace = "App" , name = "ChallengeMapSelectRoot.ItemDropNum")] # [parent (crate :: system :: object :: Object)] pub struct ChallengeMapSelectRoot_ItemDropNum {}
+
 }
 
 #[cfg(feature = "app-challengemapselectroot-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-challengemapselectroot")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ChallengeMapSelectRoot_RewardInfoItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ChallengeMapSelectRoot_RewardInfoItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ChallengeMapSelectRoot_RewardInfoItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ChallengeMapSelectRoot_RewardInfoItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ChallengeMapSelectRoot_RewardInfoItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ChallengeMapSelectRoot_RewardInfoItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ChallengeMapSelectRoot_RewardInfoItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ChallengeMapSelectRoot_RewardInfoItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ChallengeMapSelectRoot_RewardInfoItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ChallengeMapSelectRoot_RewardInfoItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-challengemapselectroot")]
-pub trait IChallengeMapSelectRoot_RewardInfoItemMethods: IChallengeMapSelectRoot_RewardInfoItem {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <ChallengeMapSelectRoot_RewardInfoItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ChallengeMapSelectRoot_RewardInfoItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IChallengeMapSelectRoot_RewardInfoItemMethods : IChallengeMapSelectRoot_RewardInfoItem { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ChallengeMapSelectRoot_RewardInfoItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ChallengeMapSelectRoot_RewardInfoItem_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-challengemapselectroot")]
-impl<__T: IChallengeMapSelectRoot_RewardInfoItem> IChallengeMapSelectRoot_RewardInfoItemMethods for __T {}
+impl < __T : IChallengeMapSelectRoot_RewardInfoItem > IChallengeMapSelectRoot_RewardInfoItemMethods for __T { }
+
+#[cfg(feature = "app-challengemapselectroot")]
+impl ChallengeMapSelectRoot_RewardInfoItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ChallengeMapSelectRoot_RewardInfoItem_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-challengemapselectroot")]
 impl ChallengeMapSelectRoot_RewardInfoItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ChallengeMapSelectRoot_RewardInfoItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IChallengeMapSelectRoot_RewardInfoItemMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ChallengeMapSelectRoot_RewardInfoItem) , :: core :: stringify ! (new) ,)) ; < Self as IChallengeMapSelectRoot_RewardInfoItemMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-challengemapselectroot")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ChallengeMapSelectRoot_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_prefab_async {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ChallengeMapSelectRoot as ::unity2::ClassIdentity>::class(),
-                "LoadPrefabAsync",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ChallengeMapSelectRoot as ::unity2::ClassIdentity>::NAME,
-                        "LoadPrefabAsync",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load_prefab_async(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_load_prefab_async::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_loading_prefab {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ChallengeMapSelectRoot as ::unity2::ClassIdentity>::class(),
-                "IsLoadingPrefab",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ChallengeMapSelectRoot as ::unity2::ClassIdentity>::NAME,
-                        "IsLoadingPrefab",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_loading_prefab(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_loading_prefab::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unload_prefab {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ChallengeMapSelectRoot as ::unity2::ClassIdentity>::class(),
-                "UnloadPrefab",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ChallengeMapSelectRoot as ::unity2::ClassIdentity>::NAME,
-                        "UnloadPrefab",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn unload_prefab(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_unload_prefab::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_root {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ChallengeMapSelectRoot as ::unity2::ClassIdentity>::class(),
-                "CreateRoot",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ChallengeMapSelectRoot as ::unity2::ClassIdentity>::NAME,
-                        "CreateRoot",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_root(__unity2_method_info: ::unity2::OptionalMethod) -> crate::app::challengemapselectroot::ChallengeMapSelectRoot {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::app::challengemapselectroot::ChallengeMapSelectRoot =
-            ::core::mem::transmute(__lookup_create_root::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ChallengeMapSelectRoot as ::unity2::ClassIdentity>::class(),
-                "Create",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ChallengeMapSelectRoot as ::unity2::ClassIdentity>::NAME,
-                        "Create",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create(this: ChallengeMapSelectRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ChallengeMapSelectRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_destroy {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ChallengeMapSelectRoot as ::unity2::ClassIdentity>::class(),
-                "Destroy",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ChallengeMapSelectRoot as ::unity2::ClassIdentity>::NAME,
-                        "Destroy",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn destroy(this: ChallengeMapSelectRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ChallengeMapSelectRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_destroy::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ChallengeMapSelectRoot as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ChallengeMapSelectRoot as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ChallengeMapSelectRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ChallengeMapSelectRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_challenge_map_select_menu_content {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ChallengeMapSelectRoot as ::unity2::ClassIdentity>::class(),
-                "GetChallengeMapSelectMenuContent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ChallengeMapSelectRoot as ::unity2::ClassIdentity>::NAME,
-                        "GetChallengeMapSelectMenuContent",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_challenge_map_select_menu_content(
-        this: ChallengeMapSelectRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenucontent::BasicMenuContent {
-        let inner: extern "C" fn(ChallengeMapSelectRoot, ::unity2::OptionalMethod) -> crate::app::basicmenucontent::BasicMenuContent =
-            ::core::mem::transmute(__lookup_get_challenge_map_select_menu_content::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_challenge_difficulty_menu_content {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ChallengeMapSelectRoot as ::unity2::ClassIdentity>::class(),
-                "GetChallengeDifficultyMenuContent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ChallengeMapSelectRoot as ::unity2::ClassIdentity>::NAME,
-                        "GetChallengeDifficultyMenuContent",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_challenge_difficulty_menu_content(
-        this: ChallengeMapSelectRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenucontent::BasicMenuContent {
-        let inner: extern "C" fn(ChallengeMapSelectRoot, ::unity2::OptionalMethod) -> crate::app::basicmenucontent::BasicMenuContent =
-            ::core::mem::transmute(__lookup_get_challenge_difficulty_menu_content::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_map_help_active {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ChallengeMapSelectRoot as ::unity2::ClassIdentity>::class(),
-                "SetMapHelpActive",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ChallengeMapSelectRoot as ::unity2::ClassIdentity>::NAME,
-                        "SetMapHelpActive",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_map_help_active(this: ChallengeMapSelectRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ChallengeMapSelectRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_map_help_active::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_select {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::challengedata::ChallengeData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ChallengeMapSelectRoot as ::unity2::ClassIdentity>::class(),
-                "OnSelect",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ChallengeMapSelectRoot as ::unity2::ClassIdentity>::NAME,
-                        "OnSelect",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_select(
-        this: ChallengeMapSelectRoot,
-        challenge_data: crate::app::challengedata::ChallengeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ChallengeMapSelectRoot, crate::app::challengedata::ChallengeData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_select::get_method_info().method_ptr);
-        inner(this, challenge_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_reward {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ChallengeMapSelectRoot as ::unity2::ClassIdentity>::class(),
-                "SetReward",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ChallengeMapSelectRoot as ::unity2::ClassIdentity>::NAME,
-                        "SetReward",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_reward(
-        this: ChallengeMapSelectRoot,
-        level: i32,
-        is_item_drop_unknow: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ChallengeMapSelectRoot, i32, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_reward::get_method_info().method_ptr);
-        inner(this, level, is_item_drop_unknow, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ChallengeMapSelectRoot as ::unity2::ClassIdentity>::class(),
-                "Close",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ChallengeMapSelectRoot as ::unity2::ClassIdentity>::NAME,
-                        "Close",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn close(this: ChallengeMapSelectRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ChallengeMapSelectRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_close::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_closed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ChallengeMapSelectRoot as ::unity2::ClassIdentity>::class(),
-                "IsClosed",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ChallengeMapSelectRoot as ::unity2::ClassIdentity>::NAME,
-                        "IsClosed",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_closed(this: ChallengeMapSelectRoot, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(ChallengeMapSelectRoot, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_closed::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ChallengeMapSelectRoot_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load_prefab_async { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ChallengeMapSelectRoot as :: unity2 :: ClassIdentity > :: class () , "LoadPrefabAsync" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ChallengeMapSelectRoot as :: unity2 :: ClassIdentity > :: NAME , "LoadPrefabAsync" , e) , } } } pub unsafe fn load_prefab_async (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_load_prefab_async :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_loading_prefab { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ChallengeMapSelectRoot as :: unity2 :: ClassIdentity > :: class () , "IsLoadingPrefab" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ChallengeMapSelectRoot as :: unity2 :: ClassIdentity > :: NAME , "IsLoadingPrefab" , e) , } } } pub unsafe fn is_loading_prefab (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_loading_prefab :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_unload_prefab { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ChallengeMapSelectRoot as :: unity2 :: ClassIdentity > :: class () , "UnloadPrefab" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ChallengeMapSelectRoot as :: unity2 :: ClassIdentity > :: NAME , "UnloadPrefab" , e) , } } } pub unsafe fn unload_prefab (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_unload_prefab :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_root { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ChallengeMapSelectRoot as :: unity2 :: ClassIdentity > :: class () , "CreateRoot" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ChallengeMapSelectRoot as :: unity2 :: ClassIdentity > :: NAME , "CreateRoot" , e) , } } } pub unsafe fn create_root (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: challengemapselectroot :: ChallengeMapSelectRoot { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: challengemapselectroot :: ChallengeMapSelectRoot = :: core :: mem :: transmute (__lookup_create_root :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ChallengeMapSelectRoot as :: unity2 :: ClassIdentity > :: class () , "Create" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ChallengeMapSelectRoot as :: unity2 :: ClassIdentity > :: NAME , "Create" , e) , } } } pub unsafe fn create (this : ChallengeMapSelectRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ChallengeMapSelectRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_destroy { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ChallengeMapSelectRoot as :: unity2 :: ClassIdentity > :: class () , "Destroy" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ChallengeMapSelectRoot as :: unity2 :: ClassIdentity > :: NAME , "Destroy" , e) , } } } pub unsafe fn destroy (this : ChallengeMapSelectRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ChallengeMapSelectRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_destroy :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ChallengeMapSelectRoot as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ChallengeMapSelectRoot as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ChallengeMapSelectRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ChallengeMapSelectRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_challenge_map_select_menu_content { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ChallengeMapSelectRoot as :: unity2 :: ClassIdentity > :: class () , "GetChallengeMapSelectMenuContent" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ChallengeMapSelectRoot as :: unity2 :: ClassIdentity > :: NAME , "GetChallengeMapSelectMenuContent" , e) , } } } pub unsafe fn get_challenge_map_select_menu_content (this : ChallengeMapSelectRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenucontent :: BasicMenuContent { let inner : extern "C" fn (ChallengeMapSelectRoot , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenucontent :: BasicMenuContent = :: core :: mem :: transmute (__lookup_get_challenge_map_select_menu_content :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_challenge_difficulty_menu_content { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ChallengeMapSelectRoot as :: unity2 :: ClassIdentity > :: class () , "GetChallengeDifficultyMenuContent" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ChallengeMapSelectRoot as :: unity2 :: ClassIdentity > :: NAME , "GetChallengeDifficultyMenuContent" , e) , } } } pub unsafe fn get_challenge_difficulty_menu_content (this : ChallengeMapSelectRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenucontent :: BasicMenuContent { let inner : extern "C" fn (ChallengeMapSelectRoot , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenucontent :: BasicMenuContent = :: core :: mem :: transmute (__lookup_get_challenge_difficulty_menu_content :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_map_help_active { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ChallengeMapSelectRoot as :: unity2 :: ClassIdentity > :: class () , "SetMapHelpActive" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ChallengeMapSelectRoot as :: unity2 :: ClassIdentity > :: NAME , "SetMapHelpActive" , e) , } } } pub unsafe fn set_map_help_active (this : ChallengeMapSelectRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ChallengeMapSelectRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_map_help_active :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_select { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: challengedata :: ChallengeData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ChallengeMapSelectRoot as :: unity2 :: ClassIdentity > :: class () , "OnSelect" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ChallengeMapSelectRoot as :: unity2 :: ClassIdentity > :: NAME , "OnSelect" , e) , } } } pub unsafe fn on_select (this : ChallengeMapSelectRoot , challenge_data : crate :: app :: challengedata :: ChallengeData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ChallengeMapSelectRoot , crate :: app :: challengedata :: ChallengeData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_select :: get_method_info () . method_ptr ,) ; inner (this , challenge_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_reward { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ChallengeMapSelectRoot as :: unity2 :: ClassIdentity > :: class () , "SetReward" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ChallengeMapSelectRoot as :: unity2 :: ClassIdentity > :: NAME , "SetReward" , e) , } } } pub unsafe fn set_reward (this : ChallengeMapSelectRoot , level : i32 , is_item_drop_unknow : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ChallengeMapSelectRoot , i32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_reward :: get_method_info () . method_ptr ,) ; inner (this , level , is_item_drop_unknow , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_close { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ChallengeMapSelectRoot as :: unity2 :: ClassIdentity > :: class () , "Close" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ChallengeMapSelectRoot as :: unity2 :: ClassIdentity > :: NAME , "Close" , e) , } } } pub unsafe fn close (this : ChallengeMapSelectRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ChallengeMapSelectRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_close :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_closed { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ChallengeMapSelectRoot as :: unity2 :: ClassIdentity > :: class () , "IsClosed" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ChallengeMapSelectRoot as :: unity2 :: ClassIdentity > :: NAME , "IsClosed" , e) , } } } pub unsafe fn is_closed (this : ChallengeMapSelectRoot , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (ChallengeMapSelectRoot , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_closed :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-challengemapselectroot")]
+impl ChallengeMapSelectRoot { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { __ChallengeMapSelectRoot_unity2_raw :: load_prefab_async (:: core :: option :: Option :: None) } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { __ChallengeMapSelectRoot_unity2_raw :: is_loading_prefab (:: core :: option :: Option :: None) } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { __ChallengeMapSelectRoot_unity2_raw :: unload_prefab (:: core :: option :: Option :: None) } } # [doc = "`CreateRoot()` overload"] pub fn create_root () -> crate :: app :: challengemapselectroot :: ChallengeMapSelectRoot { unsafe { __ChallengeMapSelectRoot_unity2_raw :: create_root (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-challengemapselectroot")]
+pub trait IChallengeMapSelectRootMethods : IChallengeMapSelectRoot { # [doc = "`Create()` overload"] fn create (self ,) -> () { unsafe { let __receiver = < ChallengeMapSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ChallengeMapSelectRoot_unity2_raw :: create (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Destroy()` overload"] fn destroy (self ,) -> () { unsafe { let __receiver = < ChallengeMapSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ChallengeMapSelectRoot_unity2_raw :: destroy (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ChallengeMapSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ChallengeMapSelectRoot_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetChallengeMapSelectMenuContent()` overload"] fn get_challenge_map_select_menu_content (self ,) -> crate :: app :: basicmenucontent :: BasicMenuContent { unsafe { let __receiver = < ChallengeMapSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ChallengeMapSelectRoot_unity2_raw :: get_challenge_map_select_menu_content (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetChallengeDifficultyMenuContent()` overload"] fn get_challenge_difficulty_menu_content (self ,) -> crate :: app :: basicmenucontent :: BasicMenuContent { unsafe { let __receiver = < ChallengeMapSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ChallengeMapSelectRoot_unity2_raw :: get_challenge_difficulty_menu_content (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetMapHelpActive()` overload"] fn set_map_help_active (self ,) -> () { unsafe { let __receiver = < ChallengeMapSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ChallengeMapSelectRoot_unity2_raw :: set_map_help_active (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnSelect(crate::app::challengedata::ChallengeData)` overload"] fn on_select (self , challenge_data : impl :: core :: convert :: Into < crate :: app :: challengedata :: ChallengeData >) -> () { unsafe { let __receiver = < ChallengeMapSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ChallengeMapSelectRoot_unity2_raw :: on_select (__receiver , :: core :: convert :: Into :: into (challenge_data) , :: core :: option :: Option :: None) } } # [doc = "`SetReward(i32, bool)` overload"] fn set_reward (self , level : impl :: core :: convert :: Into < i32 > , is_item_drop_unknow : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ChallengeMapSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ChallengeMapSelectRoot_unity2_raw :: set_reward (__receiver , :: core :: convert :: Into :: into (level) , :: core :: convert :: Into :: into (is_item_drop_unknow) , :: core :: option :: Option :: None) } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < ChallengeMapSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ChallengeMapSelectRoot_unity2_raw :: close (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsClosed()` overload"] fn is_closed (self ,) -> bool { unsafe { let __receiver = < ChallengeMapSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ChallengeMapSelectRoot_unity2_raw :: is_closed (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-challengemapselectroot")]
+impl < __T : IChallengeMapSelectRoot > IChallengeMapSelectRootMethods for __T { }
+
+#[cfg(feature = "app-challengemapselectroot")]
+impl ChallengeMapSelectRoot { pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ChallengeMapSelectRoot_unity2_raw :: __lookup_load_prefab_async :: get_method_info () } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ChallengeMapSelectRoot_unity2_raw :: __lookup_is_loading_prefab :: get_method_info () } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ChallengeMapSelectRoot_unity2_raw :: __lookup_unload_prefab :: get_method_info () } pub fn create_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ChallengeMapSelectRoot_unity2_raw :: __lookup_create_root :: get_method_info () } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ChallengeMapSelectRoot_unity2_raw :: __lookup_create :: get_method_info () } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ChallengeMapSelectRoot_unity2_raw :: __lookup_destroy :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ChallengeMapSelectRoot_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_challenge_map_select_menu_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ChallengeMapSelectRoot_unity2_raw :: __lookup_get_challenge_map_select_menu_content :: get_method_info () } pub fn get_challenge_difficulty_menu_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ChallengeMapSelectRoot_unity2_raw :: __lookup_get_challenge_difficulty_menu_content :: get_method_info () } pub fn set_map_help_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ChallengeMapSelectRoot_unity2_raw :: __lookup_set_map_help_active :: get_method_info () } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ChallengeMapSelectRoot_unity2_raw :: __lookup_on_select :: get_method_info () } pub fn set_reward_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ChallengeMapSelectRoot_unity2_raw :: __lookup_set_reward :: get_method_info () } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ChallengeMapSelectRoot_unity2_raw :: __lookup_close :: get_method_info () } pub fn is_closed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ChallengeMapSelectRoot_unity2_raw :: __lookup_is_closed :: get_method_info () } }
 
 #[cfg(feature = "app-challengemapselectroot")]
 impl ChallengeMapSelectRoot {
-    #[doc = "`LoadPrefabAsync()` overload"]
-    pub fn load_prefab_async() -> () {
-        unsafe { __ChallengeMapSelectRoot_unity2_raw::load_prefab_async(::core::option::Option::None) }
-    }
-
-    #[doc = "`IsLoadingPrefab()` overload"]
-    pub fn is_loading_prefab() -> bool {
-        unsafe { __ChallengeMapSelectRoot_unity2_raw::is_loading_prefab(::core::option::Option::None) }
-    }
-
-    #[doc = "`UnloadPrefab()` overload"]
-    pub fn unload_prefab() -> () {
-        unsafe { __ChallengeMapSelectRoot_unity2_raw::unload_prefab(::core::option::Option::None) }
-    }
-
-    #[doc = "`CreateRoot()` overload"]
-    pub fn create_root() -> crate::app::challengemapselectroot::ChallengeMapSelectRoot {
-        unsafe { __ChallengeMapSelectRoot_unity2_raw::create_root(::core::option::Option::None) }
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ChallengeMapSelectRoot) , :: core :: stringify ! (new) ,)) ; < Self as IChallengeMapSelectRootMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-challengemapselectroot")]
-pub trait IChallengeMapSelectRootMethods: IChallengeMapSelectRoot {
-    #[doc = "`Create()` overload"]
-    fn create(self) -> () {
-        unsafe {
-            let __receiver =
-                <ChallengeMapSelectRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ChallengeMapSelectRoot_unity2_raw::create(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Destroy()` overload"]
-    fn destroy(self) -> () {
-        unsafe {
-            let __receiver =
-                <ChallengeMapSelectRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ChallengeMapSelectRoot_unity2_raw::destroy(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <ChallengeMapSelectRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ChallengeMapSelectRoot_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetChallengeMapSelectMenuContent()` overload"]
-    fn get_challenge_map_select_menu_content(self) -> crate::app::basicmenucontent::BasicMenuContent {
-        unsafe {
-            let __receiver =
-                <ChallengeMapSelectRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ChallengeMapSelectRoot_unity2_raw::get_challenge_map_select_menu_content(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetChallengeDifficultyMenuContent()` overload"]
-    fn get_challenge_difficulty_menu_content(self) -> crate::app::basicmenucontent::BasicMenuContent {
-        unsafe {
-            let __receiver =
-                <ChallengeMapSelectRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ChallengeMapSelectRoot_unity2_raw::get_challenge_difficulty_menu_content(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetMapHelpActive()` overload"]
-    fn set_map_help_active(self) -> () {
-        unsafe {
-            let __receiver =
-                <ChallengeMapSelectRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ChallengeMapSelectRoot_unity2_raw::set_map_help_active(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnSelect(crate::app::challengedata::ChallengeData)` overload"]
-    fn on_select(self, challenge_data: impl ::core::convert::Into<crate::app::challengedata::ChallengeData>) -> () {
-        unsafe {
-            let __receiver =
-                <ChallengeMapSelectRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ChallengeMapSelectRoot_unity2_raw::on_select(__receiver, ::core::convert::Into::into(challenge_data), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetReward(i32, bool)` overload"]
-    fn set_reward(self, level: impl ::core::convert::Into<i32>, is_item_drop_unknow: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <ChallengeMapSelectRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ChallengeMapSelectRoot_unity2_raw::set_reward(
-                __receiver,
-                ::core::convert::Into::into(level),
-                ::core::convert::Into::into(is_item_drop_unknow),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Close()` overload"]
-    fn close(self) -> () {
-        unsafe {
-            let __receiver =
-                <ChallengeMapSelectRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ChallengeMapSelectRoot_unity2_raw::close(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsClosed()` overload"]
-    fn is_closed(self) -> bool {
-        unsafe {
-            let __receiver =
-                <ChallengeMapSelectRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ChallengeMapSelectRoot_unity2_raw::is_closed(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ChallengeMapSelectRoot_ItemDropNum_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_min { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ChallengeMapSelectRoot_ItemDropNum as :: unity2 :: ClassIdentity > :: class () , "get_Min" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ChallengeMapSelectRoot_ItemDropNum as :: unity2 :: ClassIdentity > :: NAME , "get_Min" , e) , } } } pub unsafe fn get_min (this : ChallengeMapSelectRoot_ItemDropNum , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (ChallengeMapSelectRoot_ItemDropNum , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_min :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_min { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ChallengeMapSelectRoot_ItemDropNum as :: unity2 :: ClassIdentity > :: class () , "set_Min" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ChallengeMapSelectRoot_ItemDropNum as :: unity2 :: ClassIdentity > :: NAME , "set_Min" , e) , } } } pub unsafe fn set_min (this : ChallengeMapSelectRoot_ItemDropNum , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ChallengeMapSelectRoot_ItemDropNum , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_min :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_max { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ChallengeMapSelectRoot_ItemDropNum as :: unity2 :: ClassIdentity > :: class () , "get_Max" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ChallengeMapSelectRoot_ItemDropNum as :: unity2 :: ClassIdentity > :: NAME , "get_Max" , e) , } } } pub unsafe fn get_max (this : ChallengeMapSelectRoot_ItemDropNum , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (ChallengeMapSelectRoot_ItemDropNum , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_max :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_max { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ChallengeMapSelectRoot_ItemDropNum as :: unity2 :: ClassIdentity > :: class () , "set_Max" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ChallengeMapSelectRoot_ItemDropNum as :: unity2 :: ClassIdentity > :: NAME , "set_Max" , e) , } } } pub unsafe fn set_max (this : ChallengeMapSelectRoot_ItemDropNum , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ChallengeMapSelectRoot_ItemDropNum , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_max :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ChallengeMapSelectRoot_ItemDropNum as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ChallengeMapSelectRoot_ItemDropNum as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ChallengeMapSelectRoot_ItemDropNum , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ChallengeMapSelectRoot_ItemDropNum , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-challengemapselectroot")]
-impl<__T: IChallengeMapSelectRoot> IChallengeMapSelectRootMethods for __T {}
+pub trait IChallengeMapSelectRoot_ItemDropNumMethods : IChallengeMapSelectRoot_ItemDropNum { # [doc = "`get_Min()` overload"] fn get_min (self ,) -> i32 { unsafe { let __receiver = < ChallengeMapSelectRoot_ItemDropNum as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ChallengeMapSelectRoot_ItemDropNum_unity2_raw :: get_min (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Min(i32)` overload"] fn set_min (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ChallengeMapSelectRoot_ItemDropNum as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ChallengeMapSelectRoot_ItemDropNum_unity2_raw :: set_min (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_Max()` overload"] fn get_max (self ,) -> i32 { unsafe { let __receiver = < ChallengeMapSelectRoot_ItemDropNum as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ChallengeMapSelectRoot_ItemDropNum_unity2_raw :: get_max (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Max(i32)` overload"] fn set_max (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ChallengeMapSelectRoot_ItemDropNum as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ChallengeMapSelectRoot_ItemDropNum_unity2_raw :: set_max (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ChallengeMapSelectRoot_ItemDropNum as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ChallengeMapSelectRoot_ItemDropNum_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-challengemapselectroot")]
-impl ChallengeMapSelectRoot {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ChallengeMapSelectRoot),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IChallengeMapSelectRootMethods>::ctor(this);
-        this
-    }
-}
+impl < __T : IChallengeMapSelectRoot_ItemDropNum > IChallengeMapSelectRoot_ItemDropNumMethods for __T { }
 
 #[cfg(feature = "app-challengemapselectroot")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ChallengeMapSelectRoot_ItemDropNum_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_min {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ChallengeMapSelectRoot_ItemDropNum as ::unity2::ClassIdentity>::class(),
-                "get_Min",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ChallengeMapSelectRoot_ItemDropNum as ::unity2::ClassIdentity>::NAME,
-                        "get_Min",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_min(this: ChallengeMapSelectRoot_ItemDropNum, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(ChallengeMapSelectRoot_ItemDropNum, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_min::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_min {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ChallengeMapSelectRoot_ItemDropNum as ::unity2::ClassIdentity>::class(),
-                "set_Min",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ChallengeMapSelectRoot_ItemDropNum as ::unity2::ClassIdentity>::NAME,
-                        "set_Min",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_min(this: ChallengeMapSelectRoot_ItemDropNum, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ChallengeMapSelectRoot_ItemDropNum, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_min::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_max {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ChallengeMapSelectRoot_ItemDropNum as ::unity2::ClassIdentity>::class(),
-                "get_Max",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ChallengeMapSelectRoot_ItemDropNum as ::unity2::ClassIdentity>::NAME,
-                        "get_Max",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_max(this: ChallengeMapSelectRoot_ItemDropNum, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(ChallengeMapSelectRoot_ItemDropNum, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_max::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_max {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ChallengeMapSelectRoot_ItemDropNum as ::unity2::ClassIdentity>::class(),
-                "set_Max",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ChallengeMapSelectRoot_ItemDropNum as ::unity2::ClassIdentity>::NAME,
-                        "set_Max",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_max(this: ChallengeMapSelectRoot_ItemDropNum, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ChallengeMapSelectRoot_ItemDropNum, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_max::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ChallengeMapSelectRoot_ItemDropNum as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ChallengeMapSelectRoot_ItemDropNum as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ChallengeMapSelectRoot_ItemDropNum, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ChallengeMapSelectRoot_ItemDropNum, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-challengemapselectroot")]
-pub trait IChallengeMapSelectRoot_ItemDropNumMethods: IChallengeMapSelectRoot_ItemDropNum {
-    #[doc = "`get_Min()` overload"]
-    fn get_min(self) -> i32 {
-        unsafe {
-            let __receiver = <ChallengeMapSelectRoot_ItemDropNum as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ChallengeMapSelectRoot_ItemDropNum_unity2_raw::get_min(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Min(i32)` overload"]
-    fn set_min(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <ChallengeMapSelectRoot_ItemDropNum as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ChallengeMapSelectRoot_ItemDropNum_unity2_raw::set_min(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Max()` overload"]
-    fn get_max(self) -> i32 {
-        unsafe {
-            let __receiver = <ChallengeMapSelectRoot_ItemDropNum as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ChallengeMapSelectRoot_ItemDropNum_unity2_raw::get_max(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Max(i32)` overload"]
-    fn set_max(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <ChallengeMapSelectRoot_ItemDropNum as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ChallengeMapSelectRoot_ItemDropNum_unity2_raw::set_max(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <ChallengeMapSelectRoot_ItemDropNum as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ChallengeMapSelectRoot_ItemDropNum_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-challengemapselectroot")]
-impl<__T: IChallengeMapSelectRoot_ItemDropNum> IChallengeMapSelectRoot_ItemDropNumMethods for __T {}
+impl ChallengeMapSelectRoot_ItemDropNum { pub fn get_min_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ChallengeMapSelectRoot_ItemDropNum_unity2_raw :: __lookup_get_min :: get_method_info () } pub fn set_min_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ChallengeMapSelectRoot_ItemDropNum_unity2_raw :: __lookup_set_min :: get_method_info () } pub fn get_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ChallengeMapSelectRoot_ItemDropNum_unity2_raw :: __lookup_get_max :: get_method_info () } pub fn set_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ChallengeMapSelectRoot_ItemDropNum_unity2_raw :: __lookup_set_max :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ChallengeMapSelectRoot_ItemDropNum_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-challengemapselectroot")]
 impl ChallengeMapSelectRoot_ItemDropNum {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ChallengeMapSelectRoot_ItemDropNum),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IChallengeMapSelectRoot_ItemDropNumMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ChallengeMapSelectRoot_ItemDropNum) , :: core :: stringify ! (new) ,)) ; < Self as IChallengeMapSelectRoot_ItemDropNumMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-challengemapselectroot")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        ChallengeMapSelectRoot, ChallengeMapSelectRoot_ItemDropNum, ChallengeMapSelectRoot_RewardInfoItem, IChallengeMapSelectRoot,
-        IChallengeMapSelectRootMethods, IChallengeMapSelectRoot_ItemDropNum, IChallengeMapSelectRoot_ItemDropNumMethods,
-        IChallengeMapSelectRoot_RewardInfoItem, IChallengeMapSelectRoot_RewardInfoItemMethods,
-    };
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::ChallengeMapSelectRoot_RewardInfoItem;
+    pub use super::IChallengeMapSelectRoot_RewardInfoItem;
+    pub use super::IChallengeMapSelectRoot_RewardInfoItemMethods;
+    pub use super::ChallengeMapSelectRoot;
+    pub use super::IChallengeMapSelectRoot;
+    pub use super::IChallengeMapSelectRootMethods;
+    pub use super::ChallengeMapSelectRoot_ItemDropNum;
+    pub use super::IChallengeMapSelectRoot_ItemDropNum;
+    pub use super::IChallengeMapSelectRoot_ItemDropNumMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

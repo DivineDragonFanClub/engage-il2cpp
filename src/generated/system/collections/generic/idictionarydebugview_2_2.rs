@@ -2,15 +2,15 @@
 
 #[cfg(feature = "system-collections-generic-idictionarydebugview_2_2-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/idictionarydebugview_2_2/IDictionaryDebugView_2_2.md"))]
-    #[::unity2::class(namespace = "System.Collections.Generic", name = "IDictionaryDebugView`2")]
-    #[parent(crate::system::object::Object)]
-    pub struct IDictionaryDebugView_2_2<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/idictionarydebugview_2_2/IDictionaryDebugView_2_2.md"))] # [:: unity2 :: class (namespace = "System.Collections.Generic" , name = "IDictionaryDebugView`2")] # [parent (crate :: system :: object :: Object)] pub struct IDictionaryDebugView_2_2 < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity > {}
+
 }
 
 #[cfg(feature = "system-collections-generic-idictionarydebugview_2_2-types")]
@@ -19,8 +19,8 @@ pub use __types::*;
 #[cfg(feature = "system-collections-generic-idictionarydebugview_2_2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IDictionaryDebugView_2_2, IIDictionaryDebugView_2_2};
+    pub use super::IDictionaryDebugView_2_2;
+    pub use super::IIDictionaryDebugView_2_2;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

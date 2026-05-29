@@ -2,389 +2,107 @@
 
 #[cfg(feature = "app-savedatahandle-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatahandle/SaveDataHandle.md"))]
-    #[::unity2::class(namespace = "App", name = "SaveDataHandle")]
-    #[parent(crate::system::object::Object)]
-    pub struct SaveDataHandle {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/savedatahandle/SaveDataHandle_States.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct SaveDataHandle_States {
-        pub value: i32,
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatahandle/SaveDataHandle.md"))] # [:: unity2 :: class (namespace = "App" , name = "SaveDataHandle")] # [parent (crate :: system :: object :: Object)] pub struct SaveDataHandle {}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/savedatahandle/SaveDataHandle_States.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct SaveDataHandle_States  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for SaveDataHandle_States  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "SaveDataHandle.States";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for SaveDataHandle_States {
-        const NAME: &'static str = "SaveDataHandle.States";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for SaveDataHandle_States  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for SaveDataHandle_States {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  SaveDataHandle_States  {
+    pub fn running() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl SaveDataHandle_States {
-        pub fn running() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn succeeded() -> Self {
-            Self { value: 1 }
-        }
+    pub fn succeeded() -> Self {
+        Self { value: 1 }
 
-        pub fn failed() -> Self {
-            Self { value: 2 }
-        }
     }
+
+
+    pub fn failed() -> Self {
+        Self { value: 2 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "app-savedatahandle-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-savedatahandle")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SaveDataHandle_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_running {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SaveDataHandle as ::unity2::ClassIdentity>::class(),
-                "IsRunning",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SaveDataHandle as ::unity2::ClassIdentity>::NAME,
-                        "IsRunning",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_running(this: SaveDataHandle, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(SaveDataHandle, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_running::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_finished {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SaveDataHandle as ::unity2::ClassIdentity>::class(),
-                "IsFinished",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SaveDataHandle as ::unity2::ClassIdentity>::NAME,
-                        "IsFinished",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_finished(this: SaveDataHandle, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(SaveDataHandle, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_finished::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_succeeded {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SaveDataHandle as ::unity2::ClassIdentity>::class(),
-                "IsSucceeded",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SaveDataHandle as ::unity2::ClassIdentity>::NAME,
-                        "IsSucceeded",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_succeeded(this: SaveDataHandle, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(SaveDataHandle, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_succeeded::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_failed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SaveDataHandle as ::unity2::ClassIdentity>::class(),
-                "IsFailed",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SaveDataHandle as ::unity2::ClassIdentity>::NAME,
-                        "IsFailed",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_failed(this: SaveDataHandle, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(SaveDataHandle, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_failed::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_state {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SaveDataHandle as ::unity2::ClassIdentity>::class(),
-                "get_State",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SaveDataHandle as ::unity2::ClassIdentity>::NAME,
-                        "get_State",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_state(
-        this: SaveDataHandle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::savedatahandle::SaveDataHandle_States {
-        let inner: extern "C" fn(SaveDataHandle, ::unity2::OptionalMethod) -> crate::app::savedatahandle::SaveDataHandle_States =
-            ::core::mem::transmute(__lookup_get_state::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_state {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::savedatahandle::SaveDataHandle_States as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SaveDataHandle as ::unity2::ClassIdentity>::class(),
-                "set_State",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SaveDataHandle as ::unity2::ClassIdentity>::NAME,
-                        "set_State",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_state(
-        this: SaveDataHandle,
-        value: crate::app::savedatahandle::SaveDataHandle_States,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(SaveDataHandle, crate::app::savedatahandle::SaveDataHandle_States, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_state::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SaveDataHandle as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SaveDataHandle as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: SaveDataHandle, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SaveDataHandle, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __SaveDataHandle_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_running { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SaveDataHandle as :: unity2 :: ClassIdentity > :: class () , "IsRunning" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SaveDataHandle as :: unity2 :: ClassIdentity > :: NAME , "IsRunning" , e) , } } } pub unsafe fn is_running (this : SaveDataHandle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SaveDataHandle , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_running :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_finished { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SaveDataHandle as :: unity2 :: ClassIdentity > :: class () , "IsFinished" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SaveDataHandle as :: unity2 :: ClassIdentity > :: NAME , "IsFinished" , e) , } } } pub unsafe fn is_finished (this : SaveDataHandle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SaveDataHandle , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_finished :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_succeeded { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SaveDataHandle as :: unity2 :: ClassIdentity > :: class () , "IsSucceeded" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SaveDataHandle as :: unity2 :: ClassIdentity > :: NAME , "IsSucceeded" , e) , } } } pub unsafe fn is_succeeded (this : SaveDataHandle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SaveDataHandle , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_succeeded :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_failed { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SaveDataHandle as :: unity2 :: ClassIdentity > :: class () , "IsFailed" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SaveDataHandle as :: unity2 :: ClassIdentity > :: NAME , "IsFailed" , e) , } } } pub unsafe fn is_failed (this : SaveDataHandle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SaveDataHandle , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_failed :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_state { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SaveDataHandle as :: unity2 :: ClassIdentity > :: class () , "get_State" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SaveDataHandle as :: unity2 :: ClassIdentity > :: NAME , "get_State" , e) , } } } pub unsafe fn get_state (this : SaveDataHandle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: savedatahandle :: SaveDataHandle_States { let inner : extern "C" fn (SaveDataHandle , :: unity2 :: OptionalMethod ,) -> crate :: app :: savedatahandle :: SaveDataHandle_States = :: core :: mem :: transmute (__lookup_get_state :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_state { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: savedatahandle :: SaveDataHandle_States as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SaveDataHandle as :: unity2 :: ClassIdentity > :: class () , "set_State" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SaveDataHandle as :: unity2 :: ClassIdentity > :: NAME , "set_State" , e) , } } } pub unsafe fn set_state (this : SaveDataHandle , value : crate :: app :: savedatahandle :: SaveDataHandle_States , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SaveDataHandle , crate :: app :: savedatahandle :: SaveDataHandle_States , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_state :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SaveDataHandle as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SaveDataHandle as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : SaveDataHandle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SaveDataHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-savedatahandle")]
-pub trait ISaveDataHandleMethods: ISaveDataHandle {
-    #[doc = "`IsRunning()` overload"]
-    fn is_running(self) -> bool {
-        unsafe {
-            let __receiver = <SaveDataHandle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SaveDataHandle_unity2_raw::is_running(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsFinished()` overload"]
-    fn is_finished(self) -> bool {
-        unsafe {
-            let __receiver = <SaveDataHandle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SaveDataHandle_unity2_raw::is_finished(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsSucceeded()` overload"]
-    fn is_succeeded(self) -> bool {
-        unsafe {
-            let __receiver = <SaveDataHandle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SaveDataHandle_unity2_raw::is_succeeded(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsFailed()` overload"]
-    fn is_failed(self) -> bool {
-        unsafe {
-            let __receiver = <SaveDataHandle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SaveDataHandle_unity2_raw::is_failed(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_State()` overload"]
-    fn get_state(self) -> crate::app::savedatahandle::SaveDataHandle_States {
-        unsafe {
-            let __receiver = <SaveDataHandle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SaveDataHandle_unity2_raw::get_state(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_State(crate::app::savedatahandle::SaveDataHandle_States)` overload"]
-    fn set_state(self, value: impl ::core::convert::Into<crate::app::savedatahandle::SaveDataHandle_States>) -> () {
-        unsafe {
-            let __receiver = <SaveDataHandle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SaveDataHandle_unity2_raw::set_state(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <SaveDataHandle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SaveDataHandle_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait ISaveDataHandleMethods : ISaveDataHandle { # [doc = "`IsRunning()` overload"] fn is_running (self ,) -> bool { unsafe { let __receiver = < SaveDataHandle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SaveDataHandle_unity2_raw :: is_running (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsFinished()` overload"] fn is_finished (self ,) -> bool { unsafe { let __receiver = < SaveDataHandle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SaveDataHandle_unity2_raw :: is_finished (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsSucceeded()` overload"] fn is_succeeded (self ,) -> bool { unsafe { let __receiver = < SaveDataHandle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SaveDataHandle_unity2_raw :: is_succeeded (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsFailed()` overload"] fn is_failed (self ,) -> bool { unsafe { let __receiver = < SaveDataHandle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SaveDataHandle_unity2_raw :: is_failed (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_State()` overload"] fn get_state (self ,) -> crate :: app :: savedatahandle :: SaveDataHandle_States { unsafe { let __receiver = < SaveDataHandle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SaveDataHandle_unity2_raw :: get_state (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_State(crate::app::savedatahandle::SaveDataHandle_States)` overload"] fn set_state (self , value : impl :: core :: convert :: Into < crate :: app :: savedatahandle :: SaveDataHandle_States >) -> () { unsafe { let __receiver = < SaveDataHandle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SaveDataHandle_unity2_raw :: set_state (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SaveDataHandle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SaveDataHandle_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-savedatahandle")]
-impl<__T: ISaveDataHandle> ISaveDataHandleMethods for __T {}
+impl < __T : ISaveDataHandle > ISaveDataHandleMethods for __T { }
+
+#[cfg(feature = "app-savedatahandle")]
+impl SaveDataHandle { pub fn is_running_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SaveDataHandle_unity2_raw :: __lookup_is_running :: get_method_info () } pub fn is_finished_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SaveDataHandle_unity2_raw :: __lookup_is_finished :: get_method_info () } pub fn is_succeeded_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SaveDataHandle_unity2_raw :: __lookup_is_succeeded :: get_method_info () } pub fn is_failed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SaveDataHandle_unity2_raw :: __lookup_is_failed :: get_method_info () } pub fn get_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SaveDataHandle_unity2_raw :: __lookup_get_state :: get_method_info () } pub fn set_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SaveDataHandle_unity2_raw :: __lookup_set_state :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SaveDataHandle_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-savedatahandle")]
 impl SaveDataHandle {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SaveDataHandle),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISaveDataHandleMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SaveDataHandle) , :: core :: stringify ! (new) ,)) ; < Self as ISaveDataHandleMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-savedatahandle")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ISaveDataHandle, ISaveDataHandleMethods, SaveDataHandle, SaveDataHandle_States};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
+    pub use super::SaveDataHandle;
+    pub use super::ISaveDataHandle;
+    pub use super::ISaveDataHandleMethods;
+    pub use super::SaveDataHandle_States;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

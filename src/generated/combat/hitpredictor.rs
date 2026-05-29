@@ -2,234 +2,34 @@
 
 #[cfg(feature = "combat-hitpredictor-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/hitpredictor/HitPredictor.md"))]
-    #[::unity2::class(namespace = "Combat", name = "HitPredictor")]
-    #[parent(crate::system::object::Object)]
-    pub struct HitPredictor {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/hitpredictor/HitPredictor.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "HitPredictor")] # [parent (crate :: system :: object :: Object)] pub struct HitPredictor {}
+
 }
 
 #[cfg(feature = "combat-hitpredictor-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-hitpredictor")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __HitPredictor_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_local_hit_time_from_attack_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::combat::character::Character as ::unity2::IlType>::il_type(),
-                <crate::combat::skillstack::SkillStack as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HitPredictor as ::unity2::ClassIdentity>::class(),
-                "CalcLocalHitTimeFromAttackStart",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HitPredictor as ::unity2::ClassIdentity>::NAME,
-                        "CalcLocalHitTimeFromAttackStart",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calc_local_hit_time_from_attack_start(
-        chr: crate::combat::character::Character,
-        skills: crate::combat::skillstack::SkillStack,
-        anim_time: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(crate::combat::character::Character, crate::combat::skillstack::SkillStack, f32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_calc_local_hit_time_from_attack_start::get_method_info().method_ptr);
-        inner(chr, skills, anim_time, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_predict_hit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::combat::character::Character as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HitPredictor as ::unity2::ClassIdentity>::class(),
-                "PredictHit",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HitPredictor as ::unity2::ClassIdentity>::NAME,
-                        "PredictHit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn predict_hit(chr: crate::combat::character::Character, start_time: f32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(crate::combat::character::Character, f32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_predict_hit::get_method_info().method_ptr);
-        inner(chr, start_time, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_predict_shoot {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::combat::character::Character as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HitPredictor as ::unity2::ClassIdentity>::class(),
-                "PredictShoot",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HitPredictor as ::unity2::ClassIdentity>::NAME,
-                        "PredictShoot",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn predict_shoot(chr: crate::combat::character::Character, start_time: f32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(crate::combat::character::Character, f32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_predict_shoot::get_method_info().method_ptr);
-        inner(chr, start_time, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_predict_magic {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::combat::character::Character as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HitPredictor as ::unity2::ClassIdentity>::class(),
-                "PredictMagic",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HitPredictor as ::unity2::ClassIdentity>::NAME,
-                        "PredictMagic",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn predict_magic(chr: crate::combat::character::Character, start_time: f32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(crate::combat::character::Character, f32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_predict_magic::get_method_info().method_ptr);
-        inner(chr, start_time, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __HitPredictor_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calc_local_hit_time_from_attack_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: character :: Character as :: unity2 :: IlType > :: il_type () , < crate :: combat :: skillstack :: SkillStack as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HitPredictor as :: unity2 :: ClassIdentity > :: class () , "CalcLocalHitTimeFromAttackStart" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HitPredictor as :: unity2 :: ClassIdentity > :: NAME , "CalcLocalHitTimeFromAttackStart" , e) , } } } pub unsafe fn calc_local_hit_time_from_attack_start (chr : crate :: combat :: character :: Character , skills : crate :: combat :: skillstack :: SkillStack , anim_time : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (crate :: combat :: character :: Character , crate :: combat :: skillstack :: SkillStack , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_calc_local_hit_time_from_attack_start :: get_method_info () . method_ptr ,) ; inner (chr , skills , anim_time , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_predict_hit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: character :: Character as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HitPredictor as :: unity2 :: ClassIdentity > :: class () , "PredictHit" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HitPredictor as :: unity2 :: ClassIdentity > :: NAME , "PredictHit" , e) , } } } pub unsafe fn predict_hit (chr : crate :: combat :: character :: Character , start_time : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (crate :: combat :: character :: Character , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_predict_hit :: get_method_info () . method_ptr ,) ; inner (chr , start_time , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_predict_shoot { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: character :: Character as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HitPredictor as :: unity2 :: ClassIdentity > :: class () , "PredictShoot" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HitPredictor as :: unity2 :: ClassIdentity > :: NAME , "PredictShoot" , e) , } } } pub unsafe fn predict_shoot (chr : crate :: combat :: character :: Character , start_time : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (crate :: combat :: character :: Character , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_predict_shoot :: get_method_info () . method_ptr ,) ; inner (chr , start_time , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_predict_magic { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: character :: Character as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HitPredictor as :: unity2 :: ClassIdentity > :: class () , "PredictMagic" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HitPredictor as :: unity2 :: ClassIdentity > :: NAME , "PredictMagic" , e) , } } } pub unsafe fn predict_magic (chr : crate :: combat :: character :: Character , start_time : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (crate :: combat :: character :: Character , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_predict_magic :: get_method_info () . method_ptr ,) ; inner (chr , start_time , __unity2_method_info) } }
 
 #[cfg(feature = "combat-hitpredictor")]
-impl HitPredictor {
-    #[doc = "`CalcLocalHitTimeFromAttackStart(crate::combat::character::Character, crate::combat::skillstack::SkillStack, f32)` overload"]
-    pub fn calc_local_hit_time_from_attack_start(
-        chr: impl ::core::convert::Into<crate::combat::character::Character>,
-        skills: impl ::core::convert::Into<crate::combat::skillstack::SkillStack>,
-        anim_time: impl ::core::convert::Into<f32>,
-    ) -> f32 {
-        unsafe {
-            __HitPredictor_unity2_raw::calc_local_hit_time_from_attack_start(
-                ::core::convert::Into::into(chr),
-                ::core::convert::Into::into(skills),
-                ::core::convert::Into::into(anim_time),
-                ::core::option::Option::None,
-            )
-        }
-    }
+impl HitPredictor { # [doc = "`CalcLocalHitTimeFromAttackStart(crate::combat::character::Character, crate::combat::skillstack::SkillStack, f32)` overload"] pub fn calc_local_hit_time_from_attack_start (chr : impl :: core :: convert :: Into < crate :: combat :: character :: Character > , skills : impl :: core :: convert :: Into < crate :: combat :: skillstack :: SkillStack > , anim_time : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { __HitPredictor_unity2_raw :: calc_local_hit_time_from_attack_start (:: core :: convert :: Into :: into (chr) , :: core :: convert :: Into :: into (skills) , :: core :: convert :: Into :: into (anim_time) , :: core :: option :: Option :: None) } } # [doc = "`PredictHit(crate::combat::character::Character, f32)` overload"] pub fn predict_hit (chr : impl :: core :: convert :: Into < crate :: combat :: character :: Character > , start_time : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { __HitPredictor_unity2_raw :: predict_hit (:: core :: convert :: Into :: into (chr) , :: core :: convert :: Into :: into (start_time) , :: core :: option :: Option :: None) } } # [doc = "`PredictShoot(crate::combat::character::Character, f32)` overload"] pub fn predict_shoot (chr : impl :: core :: convert :: Into < crate :: combat :: character :: Character > , start_time : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { __HitPredictor_unity2_raw :: predict_shoot (:: core :: convert :: Into :: into (chr) , :: core :: convert :: Into :: into (start_time) , :: core :: option :: Option :: None) } } # [doc = "`PredictMagic(crate::combat::character::Character, f32)` overload"] pub fn predict_magic (chr : impl :: core :: convert :: Into < crate :: combat :: character :: Character > , start_time : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { __HitPredictor_unity2_raw :: predict_magic (:: core :: convert :: Into :: into (chr) , :: core :: convert :: Into :: into (start_time) , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`PredictHit(crate::combat::character::Character, f32)` overload"]
-    pub fn predict_hit(chr: impl ::core::convert::Into<crate::combat::character::Character>, start_time: impl ::core::convert::Into<f32>) -> f32 {
-        unsafe {
-            __HitPredictor_unity2_raw::predict_hit(
-                ::core::convert::Into::into(chr),
-                ::core::convert::Into::into(start_time),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`PredictShoot(crate::combat::character::Character, f32)` overload"]
-    pub fn predict_shoot(chr: impl ::core::convert::Into<crate::combat::character::Character>, start_time: impl ::core::convert::Into<f32>) -> f32 {
-        unsafe {
-            __HitPredictor_unity2_raw::predict_shoot(
-                ::core::convert::Into::into(chr),
-                ::core::convert::Into::into(start_time),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`PredictMagic(crate::combat::character::Character, f32)` overload"]
-    pub fn predict_magic(chr: impl ::core::convert::Into<crate::combat::character::Character>, start_time: impl ::core::convert::Into<f32>) -> f32 {
-        unsafe {
-            __HitPredictor_unity2_raw::predict_magic(
-                ::core::convert::Into::into(chr),
-                ::core::convert::Into::into(start_time),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+#[cfg(feature = "combat-hitpredictor")]
+impl HitPredictor { pub fn calc_local_hit_time_from_attack_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HitPredictor_unity2_raw :: __lookup_calc_local_hit_time_from_attack_start :: get_method_info () } pub fn predict_hit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HitPredictor_unity2_raw :: __lookup_predict_hit :: get_method_info () } pub fn predict_shoot_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HitPredictor_unity2_raw :: __lookup_predict_shoot :: get_method_info () } pub fn predict_magic_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HitPredictor_unity2_raw :: __lookup_predict_magic :: get_method_info () } }
 
 #[cfg(feature = "combat-hitpredictor")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{HitPredictor, IHitPredictor};
+    pub use super::HitPredictor;
+    pub use super::IHitPredictor;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

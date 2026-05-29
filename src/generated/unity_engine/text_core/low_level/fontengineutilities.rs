@@ -2,106 +2,66 @@
 
 #[cfg(feature = "unity_engine-text_core-low_level-fontengineutilities-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/text_core/low_level/fontengineutilities/FontEngineUtilities.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct FontEngineUtilities {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for FontEngineUtilities {
-        const NAME: &'static str = "FontEngineUtilities";
-        const NAMESPACE: &'static str = "UnityEngine.TextCore.LowLevel";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/text_core/low_level/fontengineutilities/FontEngineUtilities.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct FontEngineUtilities {}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for FontEngineUtilities {
+    const NAMESPACE: &'static str = "UnityEngine.TextCore.LowLevel";
+
+    const NAME: &'static str = "FontEngineUtilities";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for FontEngineUtilities {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for FontEngineUtilities {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-text_core-low_level-fontengineutilities-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-text_core-low_level-fontengineutilities")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FontEngineUtilities_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_max_value {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FontEngineUtilities as ::unity2::ClassIdentity>::class(),
-                "MaxValue",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FontEngineUtilities as ::unity2::ClassIdentity>::NAME,
-                        "MaxValue",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn max_value(a: i32, b: i32, c: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(i32, i32, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_max_value::get_method_info().method_ptr);
-        inner(a, b, c, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __FontEngineUtilities_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_max_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FontEngineUtilities as :: unity2 :: ClassIdentity > :: class () , "MaxValue" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FontEngineUtilities as :: unity2 :: ClassIdentity > :: NAME , "MaxValue" , e) , } } } pub unsafe fn max_value (a : i32 , b : i32 , c : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_max_value :: get_method_info () . method_ptr ,) ; inner (a , b , c , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-text_core-low_level-fontengineutilities")]
-impl FontEngineUtilities {
-    #[doc = "`MaxValue(i32, i32, i32)` overload"]
-    pub fn max_value(a: impl ::core::convert::Into<i32>, b: impl ::core::convert::Into<i32>, c: impl ::core::convert::Into<i32>) -> i32 {
-        unsafe {
-            __FontEngineUtilities_unity2_raw::max_value(
-                ::core::convert::Into::into(a),
-                ::core::convert::Into::into(b),
-                ::core::convert::Into::into(c),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+impl FontEngineUtilities { # [doc = "`MaxValue(i32, i32, i32)` overload"] pub fn max_value (a : impl :: core :: convert :: Into < i32 > , b : impl :: core :: convert :: Into < i32 > , c : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { __FontEngineUtilities_unity2_raw :: max_value (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-text_core-low_level-fontengineutilities")]
+impl FontEngineUtilities { pub fn max_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FontEngineUtilities_unity2_raw :: __lookup_max_value :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-text_core-low_level-fontengineutilities")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::FontEngineUtilities;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

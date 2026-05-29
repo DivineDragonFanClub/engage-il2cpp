@@ -2,222 +2,51 @@
 
 #[cfg(feature = "unity_engine-rigidbody2d-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            component::{Component, IComponent},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rigidbody2d/Rigidbody2D.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "Rigidbody2D")]
-    #[parent(crate::unity_engine::component::Component)]
-    pub struct Rigidbody2D {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rigidbody2d/Rigidbody2D.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "Rigidbody2D")] # [parent (crate :: unity_engine :: component :: Component)] pub struct Rigidbody2D {}
+
 }
 
 #[cfg(feature = "unity_engine-rigidbody2d-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rigidbody2d")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Rigidbody2D_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_velocity {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Rigidbody2D as ::unity2::ClassIdentity>::class(),
-                "get_velocity",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Rigidbody2D as ::unity2::ClassIdentity>::NAME,
-                        "get_velocity",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_velocity(this: Rigidbody2D, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(Rigidbody2D, ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 =
-            ::core::mem::transmute(__lookup_get_velocity::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_mass {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Rigidbody2D as ::unity2::ClassIdentity>::class(),
-                "get_mass",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Rigidbody2D as ::unity2::ClassIdentity>::NAME,
-                        "get_mass",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_mass(this: Rigidbody2D, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(Rigidbody2D, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_mass::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Rigidbody2D as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Rigidbody2D as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: Rigidbody2D, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Rigidbody2D, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_velocity_injected {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Rigidbody2D as ::unity2::ClassIdentity>::class(),
-                "get_velocity_Injected",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Rigidbody2D as ::unity2::ClassIdentity>::NAME,
-                        "get_velocity_Injected",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_velocity_injected(
-        this: Rigidbody2D,
-        ret: *mut crate::unity_engine::vector2::Vector2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Rigidbody2D, *mut crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_get_velocity_injected::get_method_info().method_ptr);
-        inner(this, ret, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Rigidbody2D_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_velocity { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Rigidbody2D as :: unity2 :: ClassIdentity > :: class () , "get_velocity" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Rigidbody2D as :: unity2 :: ClassIdentity > :: NAME , "get_velocity" , e) , } } } pub unsafe fn get_velocity (this : Rigidbody2D , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 { let inner : extern "C" fn (Rigidbody2D , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute (__lookup_get_velocity :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_mass { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Rigidbody2D as :: unity2 :: ClassIdentity > :: class () , "get_mass" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Rigidbody2D as :: unity2 :: ClassIdentity > :: NAME , "get_mass" , e) , } } } pub unsafe fn get_mass (this : Rigidbody2D , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (Rigidbody2D , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_mass :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Rigidbody2D as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Rigidbody2D as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Rigidbody2D , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Rigidbody2D , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_velocity_injected { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Rigidbody2D as :: unity2 :: ClassIdentity > :: class () , "get_velocity_Injected" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Rigidbody2D as :: unity2 :: ClassIdentity > :: NAME , "get_velocity_Injected" , e) , } } } pub unsafe fn get_velocity_injected (this : Rigidbody2D , ret : * mut crate :: unity_engine :: vector2 :: Vector2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Rigidbody2D , * mut crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_get_velocity_injected :: get_method_info () . method_ptr ,) ; inner (this , ret , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-rigidbody2d")]
-pub trait IRigidbody2DMethods: IRigidbody2D {
-    #[doc = "`get_velocity()` overload"]
-    fn get_velocity(self) -> crate::unity_engine::vector2::Vector2 {
-        unsafe {
-            let __receiver = <Rigidbody2D as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Rigidbody2D_unity2_raw::get_velocity(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_mass()` overload"]
-    fn get_mass(self) -> f32 {
-        unsafe {
-            let __receiver = <Rigidbody2D as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Rigidbody2D_unity2_raw::get_mass(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <Rigidbody2D as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Rigidbody2D_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_velocity_Injected(*mutcrate::unity_engine::vector2::Vector2)` overload"]
-    fn get_velocity_injected(self) -> crate::unity_engine::vector2::Vector2 {
-        unsafe {
-            let __receiver = <Rigidbody2D as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
-            __Rigidbody2D_unity2_raw::get_velocity_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
-            __out_0.assume_init()
-        }
-    }
-}
+pub trait IRigidbody2DMethods : IRigidbody2D { # [doc = "`get_velocity()` overload"] fn get_velocity (self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < Rigidbody2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Rigidbody2D_unity2_raw :: get_velocity (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_mass()` overload"] fn get_mass (self ,) -> f32 { unsafe { let __receiver = < Rigidbody2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Rigidbody2D_unity2_raw :: get_mass (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Rigidbody2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Rigidbody2D_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_velocity_Injected(*mutcrate::unity_engine::vector2::Vector2)` overload"] fn get_velocity_injected (self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < Rigidbody2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector2 :: Vector2 > :: uninit () ; __Rigidbody2D_unity2_raw :: get_velocity_injected (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) ; __out_0 . assume_init () } } }
 
 #[cfg(feature = "unity_engine-rigidbody2d")]
-impl<__T: IRigidbody2D> IRigidbody2DMethods for __T {}
+impl < __T : IRigidbody2D > IRigidbody2DMethods for __T { }
+
+#[cfg(feature = "unity_engine-rigidbody2d")]
+impl Rigidbody2D { pub fn get_velocity_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Rigidbody2D_unity2_raw :: __lookup_get_velocity :: get_method_info () } pub fn get_mass_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Rigidbody2D_unity2_raw :: __lookup_get_mass :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Rigidbody2D_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_velocity_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Rigidbody2D_unity2_raw :: __lookup_get_velocity_injected :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rigidbody2d")]
 impl Rigidbody2D {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Rigidbody2D), ::core::stringify!(new),));
-        <Self as IRigidbody2DMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Rigidbody2D) , :: core :: stringify ! (new) ,)) ; < Self as IRigidbody2DMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-rigidbody2d")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IRigidbody2D, IRigidbody2DMethods, Rigidbody2D};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{component::IComponent, object_2::IObject_2},
-    };
+    pub use super::Rigidbody2D;
+    pub use super::IRigidbody2D;
+    pub use super::IRigidbody2DMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

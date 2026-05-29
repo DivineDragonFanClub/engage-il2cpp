@@ -2,73 +2,34 @@
 
 #[cfg(feature = "unity_engine-event_systems-imovehandler-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/imovehandler/IMoveHandler.md"))]
-    #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "IMoveHandler")]
-    pub struct IMoveHandler {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/imovehandler/IMoveHandler.md"))] # [:: unity2 :: class (namespace = "UnityEngine.EventSystems" , name = "IMoveHandler")] pub struct IMoveHandler {}
+
 }
 
 #[cfg(feature = "unity_engine-event_systems-imovehandler-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-event_systems-imovehandler")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __IMoveHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_move {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::event_systems::axiseventdata::AxisEventData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<IMoveHandler as ::unity2::ClassIdentity>::class(), "OnMove", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IMoveHandler as ::unity2::ClassIdentity>::NAME,
-                        "OnMove",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_move(
-        this: IMoveHandler,
-        event_data: crate::unity_engine::event_systems::axiseventdata::AxisEventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(IMoveHandler, crate::unity_engine::event_systems::axiseventdata::AxisEventData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_move::get_method_info().method_ptr);
-        inner(this, event_data, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IMoveHandler_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_move { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: axiseventdata :: AxisEventData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IMoveHandler as :: unity2 :: ClassIdentity > :: class () , "OnMove" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IMoveHandler as :: unity2 :: ClassIdentity > :: NAME , "OnMove" , e) , } } } pub unsafe fn on_move (this : IMoveHandler , event_data : crate :: unity_engine :: event_systems :: axiseventdata :: AxisEventData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (IMoveHandler , crate :: unity_engine :: event_systems :: axiseventdata :: AxisEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_move :: get_method_info () . method_ptr ,) ; inner (this , event_data , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-event_systems-imovehandler")]
-pub trait IIMoveHandlerMethods: IIMoveHandler {
-    #[doc = "`OnMove(crate::unity_engine::event_systems::axiseventdata::AxisEventData)` overload"]
-    fn on_move(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::axiseventdata::AxisEventData>) -> () {
-        unsafe {
-            let __receiver = <IMoveHandler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IMoveHandler_unity2_raw::on_move(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
-        }
-    }
-}
+pub trait IIMoveHandlerMethods : IIMoveHandler { # [doc = "`OnMove(crate::unity_engine::event_systems::axiseventdata::AxisEventData)` overload"] fn on_move (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: axiseventdata :: AxisEventData >) -> () { unsafe { let __receiver = < IMoveHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IMoveHandler_unity2_raw :: on_move (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-event_systems-imovehandler")]
-impl<__T: IIMoveHandler> IIMoveHandlerMethods for __T {}
+impl < __T : IIMoveHandler > IIMoveHandlerMethods for __T { }
+
+#[cfg(feature = "unity_engine-event_systems-imovehandler")]
+impl IMoveHandler { pub fn on_move_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IMoveHandler_unity2_raw :: __lookup_on_move :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-event_systems-imovehandler")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IIMoveHandler, IIMoveHandlerMethods, IMoveHandler};
+    pub use super::IMoveHandler;
+    pub use super::IIMoveHandler;
+    pub use super::IIMoveHandlerMethods;
 }

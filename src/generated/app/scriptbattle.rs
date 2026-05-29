@@ -2,546 +2,90 @@
 
 #[cfg(feature = "app-scriptbattle-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            procinst::{IProcInst, ProcInst},
-            scriptutil::{IScriptUtil, ScriptUtil},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/scriptbattle/ScriptBattle.md"))]
-    #[::unity2::class(namespace = "App", name = "ScriptBattle")]
-    #[parent(crate::app::scriptutil::ScriptUtil)]
-    pub struct ScriptBattle {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: app :: scriptutil :: { IScriptUtil , ScriptUtil }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/scriptbattle/ScriptBattle_ScriptCombatSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "ScriptBattle.ScriptCombatSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct ScriptBattle_ScriptCombatSequence {
-        #[offset(112)]
-        #[rename(name = "m_PersonA")]
-        pub m_person_a: crate::app::persondata::PersonData,
-        #[offset(120)]
-        #[rename(name = "m_PersonB")]
-        pub m_person_b: crate::app::persondata::PersonData,
-        #[offset(128)]
-        #[rename(name = "m_UnitA")]
-        pub m_unit_a: crate::app::unit::Unit,
-        #[offset(136)]
-        #[rename(name = "m_UnitB")]
-        pub m_unit_b: crate::app::unit::Unit,
-        #[offset(144)]
-        #[rename(name = "m_Temporary")]
-        pub m_temporary: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
-        #[offset(152)]
-        #[rename(name = "m_Info")]
-        pub m_info: crate::app::battleinfo::BattleInfo,
-        #[offset(160)]
-        #[rename(name = "m_SimInfo")]
-        pub m_sim_info: crate::app::battleinfo::BattleInfo,
-        #[offset(168)]
-        #[rename(name = "m_Calculator")]
-        pub m_calculator: crate::app::battlecalculator::BattleCalculator,
-        #[offset(176)]
-        #[rename(name = "m_SimCalculator")]
-        pub m_sim_calculator: crate::app::battlecalculator::BattleCalculator,
-    }
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/scriptbattle/ScriptBattle.md"))] # [:: unity2 :: class (namespace = "App" , name = "ScriptBattle")] # [parent (crate :: app :: scriptutil :: ScriptUtil)] pub struct ScriptBattle {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/scriptbattle/ScriptBattle_ScriptCombatSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "ScriptBattle.ScriptCombatSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct ScriptBattle_ScriptCombatSequence {
+# [offset (112)] # [rename (name = "m_PersonA")] pub m_person_a : crate :: app :: persondata :: PersonData ,
+# [offset (120)] # [rename (name = "m_PersonB")] pub m_person_b : crate :: app :: persondata :: PersonData ,
+# [offset (128)] # [rename (name = "m_UnitA")] pub m_unit_a : crate :: app :: unit :: Unit ,
+# [offset (136)] # [rename (name = "m_UnitB")] pub m_unit_b : crate :: app :: unit :: Unit ,
+# [offset (144)] # [rename (name = "m_Temporary")] pub m_temporary : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > ,
+# [offset (152)] # [rename (name = "m_Info")] pub m_info : crate :: app :: battleinfo :: BattleInfo ,
+# [offset (160)] # [rename (name = "m_SimInfo")] pub m_sim_info : crate :: app :: battleinfo :: BattleInfo ,
+# [offset (168)] # [rename (name = "m_Calculator")] pub m_calculator : crate :: app :: battlecalculator :: BattleCalculator ,
+# [offset (176)] # [rename (name = "m_SimCalculator")] pub m_sim_calculator : crate :: app :: battlecalculator :: BattleCalculator ,
+}
+
 }
 
 #[cfg(feature = "app-scriptbattle-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-scriptbattle")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ScriptBattle_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_combat_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptBattle as ::unity2::ClassIdentity>::class(),
-                "CombatStart",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ScriptBattle as ::unity2::ClassIdentity>::NAME,
-                        "CombatStart",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn combat_start(
-        args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_combat_start::get_method_info().method_ptr);
-        inner(args, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_regist {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::eventscript::EventScript as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<ScriptBattle as ::unity2::ClassIdentity>::class(), "Regist", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ScriptBattle as ::unity2::ClassIdentity>::NAME,
-                        "Regist",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn regist(script: crate::app::eventscript::EventScript, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::eventscript::EventScript, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_regist::get_method_info().method_ptr);
-        inner(script, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<ScriptBattle as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ScriptBattle as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ScriptBattle, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ScriptBattle, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ScriptBattle_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_combat_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScriptBattle as :: unity2 :: ClassIdentity > :: class () , "CombatStart" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScriptBattle as :: unity2 :: ClassIdentity > :: NAME , "CombatStart" , e) , } } } pub unsafe fn combat_start (args : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_combat_start :: get_method_info () . method_ptr ,) ; inner (args , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_regist { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: eventscript :: EventScript as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScriptBattle as :: unity2 :: ClassIdentity > :: class () , "Regist" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScriptBattle as :: unity2 :: ClassIdentity > :: NAME , "Regist" , e) , } } } pub unsafe fn regist (script : crate :: app :: eventscript :: EventScript , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: eventscript :: EventScript , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_regist :: get_method_info () . method_ptr ,) ; inner (script , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScriptBattle as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScriptBattle as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ScriptBattle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ScriptBattle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-scriptbattle")]
+impl ScriptBattle { # [doc = "`CombatStart(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] pub fn combat_start (args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> () { unsafe { __ScriptBattle_unity2_raw :: combat_start (:: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } # [doc = "`Regist(crate::app::eventscript::EventScript)` overload"] pub fn regist (script : impl :: core :: convert :: Into < crate :: app :: eventscript :: EventScript >) -> () { unsafe { __ScriptBattle_unity2_raw :: regist (:: core :: convert :: Into :: into (script) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-scriptbattle")]
+pub trait IScriptBattleMethods : IScriptBattle { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ScriptBattle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ScriptBattle_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-scriptbattle")]
+impl < __T : IScriptBattle > IScriptBattleMethods for __T { }
+
+#[cfg(feature = "app-scriptbattle")]
+impl ScriptBattle { pub fn combat_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ScriptBattle_unity2_raw :: __lookup_combat_start :: get_method_info () } pub fn regist_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ScriptBattle_unity2_raw :: __lookup_regist :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ScriptBattle_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-scriptbattle")]
 impl ScriptBattle {
-    #[doc = "`CombatStart(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn combat_start(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
-        unsafe { __ScriptBattle_unity2_raw::combat_start(::core::convert::Into::into(args), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Regist(crate::app::eventscript::EventScript)` overload"]
-    pub fn regist(script: impl ::core::convert::Into<crate::app::eventscript::EventScript>) -> () {
-        unsafe { __ScriptBattle_unity2_raw::regist(::core::convert::Into::into(script), ::core::option::Option::None) }
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ScriptBattle) , :: core :: stringify ! (new) ,)) ; < Self as IScriptBattleMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-scriptbattle")]
-pub trait IScriptBattleMethods: IScriptBattle {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <ScriptBattle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ScriptBattle_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ScriptBattle_ScriptCombatSequence_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: persondata :: PersonData as :: unity2 :: IlType > :: il_type () , < crate :: app :: persondata :: PersonData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScriptBattle_ScriptCombatSequence as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScriptBattle_ScriptCombatSequence as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ScriptBattle_ScriptCombatSequence , person_a : crate :: app :: persondata :: PersonData , person_b : crate :: app :: persondata :: PersonData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ScriptBattle_ScriptCombatSequence , crate :: app :: persondata :: PersonData , crate :: app :: persondata :: PersonData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , person_a , person_b , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_create { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScriptBattle_ScriptCombatSequence as :: unity2 :: ClassIdentity > :: class () , "OnCreate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScriptBattle_ScriptCombatSequence as :: unity2 :: ClassIdentity > :: NAME , "OnCreate" , e) , } } } pub unsafe fn on_create (this : ScriptBattle_ScriptCombatSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ScriptBattle_ScriptCombatSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_create :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScriptBattle_ScriptCombatSequence as :: unity2 :: ClassIdentity > :: class () , "OnDispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScriptBattle_ScriptCombatSequence as :: unity2 :: ClassIdentity > :: NAME , "OnDispose" , e) , } } } pub unsafe fn on_dispose (this : ScriptBattle_ScriptCombatSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ScriptBattle_ScriptCombatSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_battle_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScriptBattle_ScriptCombatSequence as :: unity2 :: ClassIdentity > :: class () , "BattleStart" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScriptBattle_ScriptCombatSequence as :: unity2 :: ClassIdentity > :: NAME , "BattleStart" , e) , } } } pub unsafe fn battle_start (this : ScriptBattle_ScriptCombatSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ScriptBattle_ScriptCombatSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_battle_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_get_unit_or_create { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: persondata :: PersonData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScriptBattle_ScriptCombatSequence as :: unity2 :: ClassIdentity > :: class () , "TryGetUnitOrCreate" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScriptBattle_ScriptCombatSequence as :: unity2 :: ClassIdentity > :: NAME , "TryGetUnitOrCreate" , e) , } } } pub unsafe fn try_get_unit_or_create (this : ScriptBattle_ScriptCombatSequence , person : crate :: app :: persondata :: PersonData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit { let inner : extern "C" fn (ScriptBattle_ScriptCombatSequence , crate :: app :: persondata :: PersonData , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute (__lookup_try_get_unit_or_create :: get_method_info () . method_ptr ,) ; inner (this , person , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: persondata :: PersonData as :: unity2 :: IlType > :: il_type () , < crate :: app :: persondata :: PersonData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScriptBattle_ScriptCombatSequence as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScriptBattle_ScriptCombatSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , person_a : crate :: app :: persondata :: PersonData , person_b : crate :: app :: persondata :: PersonData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: persondata :: PersonData , crate :: app :: persondata :: PersonData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , person_a , person_b , __unity2_method_info) } }
 
 #[cfg(feature = "app-scriptbattle")]
-impl<__T: IScriptBattle> IScriptBattleMethods for __T {}
+impl ScriptBattle_ScriptCombatSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::persondata::PersonData, crate::app::persondata::PersonData)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , person_a : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData > , person_b : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData >) -> () { unsafe { __ScriptBattle_ScriptCombatSequence_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (person_a) , :: core :: convert :: Into :: into (person_b) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-scriptbattle")]
-impl ScriptBattle {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(ScriptBattle), ::core::stringify!(new),));
-        <Self as IScriptBattleMethods>::ctor(this);
-        this
-    }
-}
+pub trait IScriptBattle_ScriptCombatSequenceMethods : IScriptBattle_ScriptCombatSequence { # [doc = "`.ctor(crate::app::persondata::PersonData, crate::app::persondata::PersonData)` overload"] fn ctor (self , person_a : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData > , person_b : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData >) -> () { unsafe { let __receiver = < ScriptBattle_ScriptCombatSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ScriptBattle_ScriptCombatSequence_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (person_a) , :: core :: convert :: Into :: into (person_b) , :: core :: option :: Option :: None) } } # [doc = "`OnCreate()` overload"] fn on_create (self ,) -> () { unsafe { let __receiver = < ScriptBattle_ScriptCombatSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ScriptBattle_ScriptCombatSequence_unity2_raw :: on_create (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < ScriptBattle_ScriptCombatSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ScriptBattle_ScriptCombatSequence_unity2_raw :: on_dispose (__receiver , :: core :: option :: Option :: None) } } # [doc = "`BattleStart()` overload"] fn battle_start (self ,) -> () { unsafe { let __receiver = < ScriptBattle_ScriptCombatSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ScriptBattle_ScriptCombatSequence_unity2_raw :: battle_start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`TryGetUnitOrCreate(crate::app::persondata::PersonData)` overload"] fn try_get_unit_or_create (self , person : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData >) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < ScriptBattle_ScriptCombatSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ScriptBattle_ScriptCombatSequence_unity2_raw :: try_get_unit_or_create (__receiver , :: core :: convert :: Into :: into (person) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-scriptbattle")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ScriptBattle_ScriptCombatSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::persondata::PersonData as ::unity2::IlType>::il_type(),
-                <crate::app::persondata::PersonData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptBattle_ScriptCombatSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ScriptBattle_ScriptCombatSequence as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ScriptBattle_ScriptCombatSequence,
-        person_a: crate::app::persondata::PersonData,
-        person_b: crate::app::persondata::PersonData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ScriptBattle_ScriptCombatSequence,
-            crate::app::persondata::PersonData,
-            crate::app::persondata::PersonData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, person_a, person_b, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptBattle_ScriptCombatSequence as ::unity2::ClassIdentity>::class(),
-                "OnCreate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ScriptBattle_ScriptCombatSequence as ::unity2::ClassIdentity>::NAME,
-                        "OnCreate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_create(this: ScriptBattle_ScriptCombatSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ScriptBattle_ScriptCombatSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_create::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptBattle_ScriptCombatSequence as ::unity2::ClassIdentity>::class(),
-                "OnDispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ScriptBattle_ScriptCombatSequence as ::unity2::ClassIdentity>::NAME,
-                        "OnDispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_dispose(this: ScriptBattle_ScriptCombatSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ScriptBattle_ScriptCombatSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_battle_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptBattle_ScriptCombatSequence as ::unity2::ClassIdentity>::class(),
-                "BattleStart",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ScriptBattle_ScriptCombatSequence as ::unity2::ClassIdentity>::NAME,
-                        "BattleStart",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn battle_start(this: ScriptBattle_ScriptCombatSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ScriptBattle_ScriptCombatSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_battle_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_get_unit_or_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::persondata::PersonData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptBattle_ScriptCombatSequence as ::unity2::ClassIdentity>::class(),
-                "TryGetUnitOrCreate",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ScriptBattle_ScriptCombatSequence as ::unity2::ClassIdentity>::NAME,
-                        "TryGetUnitOrCreate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_get_unit_or_create(
-        this: ScriptBattle_ScriptCombatSequence,
-        person: crate::app::persondata::PersonData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(
-            ScriptBattle_ScriptCombatSequence,
-            crate::app::persondata::PersonData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::unit::Unit = ::core::mem::transmute(__lookup_try_get_unit_or_create::get_method_info().method_ptr);
-        inner(this, person, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::persondata::PersonData as ::unity2::IlType>::il_type(),
-                <crate::app::persondata::PersonData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptBattle_ScriptCombatSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ScriptBattle_ScriptCombatSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        person_a: crate::app::persondata::PersonData,
-        person_b: crate::app::persondata::PersonData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::persondata::PersonData,
-            crate::app::persondata::PersonData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, person_a, person_b, __unity2_method_info)
-    }
-}
+impl < __T : IScriptBattle_ScriptCombatSequence > IScriptBattle_ScriptCombatSequenceMethods for __T { }
+
+#[cfg(feature = "app-scriptbattle")]
+impl ScriptBattle_ScriptCombatSequence { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ScriptBattle_ScriptCombatSequence_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn on_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ScriptBattle_ScriptCombatSequence_unity2_raw :: __lookup_on_create :: get_method_info () } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ScriptBattle_ScriptCombatSequence_unity2_raw :: __lookup_on_dispose :: get_method_info () } pub fn battle_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ScriptBattle_ScriptCombatSequence_unity2_raw :: __lookup_battle_start :: get_method_info () } pub fn try_get_unit_or_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ScriptBattle_ScriptCombatSequence_unity2_raw :: __lookup_try_get_unit_or_create :: get_method_info () } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ScriptBattle_ScriptCombatSequence_unity2_raw :: __lookup_create_bind :: get_method_info () } }
 
 #[cfg(feature = "app-scriptbattle")]
 impl ScriptBattle_ScriptCombatSequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::persondata::PersonData, crate::app::persondata::PersonData)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        person_a: impl ::core::convert::Into<crate::app::persondata::PersonData>,
-        person_b: impl ::core::convert::Into<crate::app::persondata::PersonData>,
-    ) -> () {
-        unsafe {
-            __ScriptBattle_ScriptCombatSequence_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(person_a),
-                ::core::convert::Into::into(person_b),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-scriptbattle")]
-pub trait IScriptBattle_ScriptCombatSequenceMethods: IScriptBattle_ScriptCombatSequence {
-    #[doc = "`.ctor(crate::app::persondata::PersonData, crate::app::persondata::PersonData)` overload"]
-    fn ctor(
-        self,
-        person_a: impl ::core::convert::Into<crate::app::persondata::PersonData>,
-        person_b: impl ::core::convert::Into<crate::app::persondata::PersonData>,
-    ) -> () {
-        unsafe {
-            let __receiver = <ScriptBattle_ScriptCombatSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScriptBattle_ScriptCombatSequence_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(person_a),
-                ::core::convert::Into::into(person_b),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnCreate()` overload"]
-    fn on_create(self) -> () {
-        unsafe {
-            let __receiver = <ScriptBattle_ScriptCombatSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScriptBattle_ScriptCombatSequence_unity2_raw::on_create(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDispose()` overload"]
-    fn on_dispose(self) -> () {
-        unsafe {
-            let __receiver = <ScriptBattle_ScriptCombatSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScriptBattle_ScriptCombatSequence_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BattleStart()` overload"]
-    fn battle_start(self) -> () {
-        unsafe {
-            let __receiver = <ScriptBattle_ScriptCombatSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScriptBattle_ScriptCombatSequence_unity2_raw::battle_start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`TryGetUnitOrCreate(crate::app::persondata::PersonData)` overload"]
-    fn try_get_unit_or_create(self, person: impl ::core::convert::Into<crate::app::persondata::PersonData>) -> crate::app::unit::Unit {
-        unsafe {
-            let __receiver = <ScriptBattle_ScriptCombatSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScriptBattle_ScriptCombatSequence_unity2_raw::try_get_unit_or_create(
-                __receiver,
-                ::core::convert::Into::into(person),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-scriptbattle")]
-impl<__T: IScriptBattle_ScriptCombatSequence> IScriptBattle_ScriptCombatSequenceMethods for __T {}
-
-#[cfg(feature = "app-scriptbattle")]
-impl ScriptBattle_ScriptCombatSequence {
-    #[doc = "`.ctor(crate::app::persondata::PersonData, crate::app::persondata::PersonData)` — overload selector"]
-    pub fn new(person_a: crate::app::persondata::PersonData, person_b: crate::app::persondata::PersonData) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ScriptBattle_ScriptCombatSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IScriptBattle_ScriptCombatSequenceMethods>::ctor(this, person_a, person_b);
-        this
-    }
+# [doc = "`.ctor(crate::app::persondata::PersonData, crate::app::persondata::PersonData)` — overload selector"] pub fn new (person_a : crate :: app :: persondata :: PersonData , person_b : crate :: app :: persondata :: PersonData) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ScriptBattle_ScriptCombatSequence) , :: core :: stringify ! (new) ,)) ; < Self as IScriptBattle_ScriptCombatSequenceMethods > :: ctor (this , person_a , person_b) ; this }
 }
 
 #[cfg(feature = "app-scriptbattle")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        IScriptBattle, IScriptBattleMethods, IScriptBattle_ScriptCombatSequence, IScriptBattle_ScriptCombatSequenceMethods, ScriptBattle,
-        ScriptBattle_ScriptCombatSequence,
-    };
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "app-scriptutil")]
-    pub use crate::app::scriptutil::IScriptUtilMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        app::{procinst::IProcInst, scriptutil::IScriptUtil},
-        system::object::IObject,
-    };
+    pub use super::ScriptBattle;
+    pub use super::IScriptBattle;
+    pub use super::IScriptBattleMethods;
+    pub use super::ScriptBattle_ScriptCombatSequence;
+    pub use super::IScriptBattle_ScriptCombatSequence;
+    pub use super::IScriptBattle_ScriptCombatSequenceMethods;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::app::scriptutil::IScriptUtil;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "app-scriptutil")] pub use crate::app::scriptutil::IScriptUtilMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

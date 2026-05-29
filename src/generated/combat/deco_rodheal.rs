@@ -2,263 +2,54 @@
 
 #[cfg(feature = "combat-deco_rodheal-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        combat::{
-            deco_rod::{Deco_Rod, IDeco_Rod},
-            decorator::{Decorator, IDecorator},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/deco_rodheal/Deco_RodHeal.md"))]
-    #[::unity2::class(namespace = "Combat", name = "Deco_RodHeal")]
-    #[parent(crate::combat::deco_rod::Deco_Rod)]
-    pub struct Deco_RodHeal {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: combat :: deco_rod :: { Deco_Rod , IDeco_Rod }
+ ;
+ use crate :: combat :: decorator :: { Decorator , IDecorator }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/deco_rodheal/Deco_RodHeal.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "Deco_RodHeal")] # [parent (crate :: combat :: deco_rod :: Deco_Rod)] pub struct Deco_RodHeal {}
+
 }
 
 #[cfg(feature = "combat-deco_rodheal-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-deco_rodheal")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Deco_RodHeal_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Deco_RodHeal as ::unity2::ClassIdentity>::class(),
-                "get_Name",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Deco_RodHeal as ::unity2::ClassIdentity>::NAME,
-                        "get_Name",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(this: Deco_RodHeal, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(Deco_RodHeal, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_available {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::decoratorargs::DecoratorArgs as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Deco_RodHeal as ::unity2::ClassIdentity>::class(),
-                "IsAvailable",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Deco_RodHeal as ::unity2::ClassIdentity>::NAME,
-                        "IsAvailable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_available(that: crate::combat::decoratorargs::DecoratorArgs, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(crate::combat::decoratorargs::DecoratorArgs, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_available::get_method_info().method_ptr);
-        inner(that, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_enemy_damage {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Deco_RodHeal as ::unity2::ClassIdentity>::class(),
-                "OnEnemyDamage_",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Deco_RodHeal as ::unity2::ClassIdentity>::NAME,
-                        "OnEnemyDamage_",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_enemy_damage(
-        this: Deco_RodHeal,
-        ev: crate::unity_engine::animationevent::AnimationEvent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Deco_RodHeal, crate::unity_engine::animationevent::AnimationEvent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_enemy_damage::get_method_info().method_ptr);
-        inner(this, ev, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_use_wideuse13 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Deco_RodHeal as ::unity2::ClassIdentity>::class(),
-                "UseWideuse13",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Deco_RodHeal as ::unity2::ClassIdentity>::NAME,
-                        "UseWideuse13",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn use_wideuse13(this: Deco_RodHeal, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(Deco_RodHeal, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_use_wideuse13::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Deco_RodHeal as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Deco_RodHeal as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: Deco_RodHeal, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Deco_RodHeal, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Deco_RodHeal_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Deco_RodHeal as :: unity2 :: ClassIdentity > :: class () , "get_Name" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Deco_RodHeal as :: unity2 :: ClassIdentity > :: NAME , "get_Name" , e) , } } } pub unsafe fn get_name (this : Deco_RodHeal , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (Deco_RodHeal , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_available { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: decoratorargs :: DecoratorArgs as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Deco_RodHeal as :: unity2 :: ClassIdentity > :: class () , "IsAvailable" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Deco_RodHeal as :: unity2 :: ClassIdentity > :: NAME , "IsAvailable" , e) , } } } pub unsafe fn is_available (that : crate :: combat :: decoratorargs :: DecoratorArgs , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: combat :: decoratorargs :: DecoratorArgs , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_available :: get_method_info () . method_ptr ,) ; inner (that , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_enemy_damage { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animationevent :: AnimationEvent as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Deco_RodHeal as :: unity2 :: ClassIdentity > :: class () , "OnEnemyDamage_" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Deco_RodHeal as :: unity2 :: ClassIdentity > :: NAME , "OnEnemyDamage_" , e) , } } } pub unsafe fn on_enemy_damage (this : Deco_RodHeal , ev : crate :: unity_engine :: animationevent :: AnimationEvent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Deco_RodHeal , crate :: unity_engine :: animationevent :: AnimationEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_enemy_damage :: get_method_info () . method_ptr ,) ; inner (this , ev , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_use_wideuse13 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Deco_RodHeal as :: unity2 :: ClassIdentity > :: class () , "UseWideuse13" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Deco_RodHeal as :: unity2 :: ClassIdentity > :: NAME , "UseWideuse13" , e) , } } } pub unsafe fn use_wideuse13 (this : Deco_RodHeal , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (Deco_RodHeal , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_use_wideuse13 :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Deco_RodHeal as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Deco_RodHeal as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Deco_RodHeal , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Deco_RodHeal , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "combat-deco_rodheal")]
+impl Deco_RodHeal { # [doc = "`IsAvailable(crate::combat::decoratorargs::DecoratorArgs)` overload"] pub fn is_available (that : impl :: core :: convert :: Into < crate :: combat :: decoratorargs :: DecoratorArgs >) -> bool { unsafe { __Deco_RodHeal_unity2_raw :: is_available (:: core :: convert :: Into :: into (that) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "combat-deco_rodheal")]
+pub trait IDeco_RodHealMethods : IDeco_RodHeal { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < Deco_RodHeal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Deco_RodHeal_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnEnemyDamage_(crate::unity_engine::animationevent::AnimationEvent)` overload"] fn on_enemy_damage (self , ev : impl :: core :: convert :: Into < crate :: unity_engine :: animationevent :: AnimationEvent >) -> () { unsafe { let __receiver = < Deco_RodHeal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Deco_RodHeal_unity2_raw :: on_enemy_damage (__receiver , :: core :: convert :: Into :: into (ev) , :: core :: option :: Option :: None) } } # [doc = "`UseWideuse13()` overload"] fn use_wideuse13 (self ,) -> bool { unsafe { let __receiver = < Deco_RodHeal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Deco_RodHeal_unity2_raw :: use_wideuse13 (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Deco_RodHeal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Deco_RodHeal_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "combat-deco_rodheal")]
+impl < __T : IDeco_RodHeal > IDeco_RodHealMethods for __T { }
+
+#[cfg(feature = "combat-deco_rodheal")]
+impl Deco_RodHeal { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Deco_RodHeal_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn is_available_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Deco_RodHeal_unity2_raw :: __lookup_is_available :: get_method_info () } pub fn on_enemy_damage_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Deco_RodHeal_unity2_raw :: __lookup_on_enemy_damage :: get_method_info () } pub fn use_wideuse13_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Deco_RodHeal_unity2_raw :: __lookup_use_wideuse13 :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Deco_RodHeal_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "combat-deco_rodheal")]
 impl Deco_RodHeal {
-    #[doc = "`IsAvailable(crate::combat::decoratorargs::DecoratorArgs)` overload"]
-    pub fn is_available(that: impl ::core::convert::Into<crate::combat::decoratorargs::DecoratorArgs>) -> bool {
-        unsafe { __Deco_RodHeal_unity2_raw::is_available(::core::convert::Into::into(that), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "combat-deco_rodheal")]
-pub trait IDeco_RodHealMethods: IDeco_RodHeal {
-    #[doc = "`get_Name()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <Deco_RodHeal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Deco_RodHeal_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnEnemyDamage_(crate::unity_engine::animationevent::AnimationEvent)` overload"]
-    fn on_enemy_damage(self, ev: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>) -> () {
-        unsafe {
-            let __receiver = <Deco_RodHeal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Deco_RodHeal_unity2_raw::on_enemy_damage(__receiver, ::core::convert::Into::into(ev), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UseWideuse13()` overload"]
-    fn use_wideuse13(self) -> bool {
-        unsafe {
-            let __receiver = <Deco_RodHeal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Deco_RodHeal_unity2_raw::use_wideuse13(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <Deco_RodHeal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Deco_RodHeal_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "combat-deco_rodheal")]
-impl<__T: IDeco_RodHeal> IDeco_RodHealMethods for __T {}
-
-#[cfg(feature = "combat-deco_rodheal")]
-impl Deco_RodHeal {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Deco_RodHeal), ::core::stringify!(new),));
-        <Self as IDeco_RodHealMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Deco_RodHeal) , :: core :: stringify ! (new) ,)) ; < Self as IDeco_RodHealMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "combat-deco_rodheal")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{Deco_RodHeal, IDeco_RodHeal, IDeco_RodHealMethods};
-    #[cfg(feature = "combat-deco_rod")]
-    pub use crate::combat::deco_rod::IDeco_RodMethods;
-    #[cfg(feature = "combat-decorator")]
-    pub use crate::combat::decorator::IDecoratorMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        combat::{deco_rod::IDeco_Rod, decorator::IDecorator},
-        system::object::IObject,
-    };
+    pub use super::Deco_RodHeal;
+    pub use super::IDeco_RodHeal;
+    pub use super::IDeco_RodHealMethods;
+    pub use crate::combat::deco_rod::IDeco_Rod;
+    pub use crate::combat::decorator::IDecorator;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "combat-deco_rod")] pub use crate::combat::deco_rod::IDeco_RodMethods;
+    #[cfg(feature = "combat-decorator")] pub use crate::combat::decorator::IDecoratorMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

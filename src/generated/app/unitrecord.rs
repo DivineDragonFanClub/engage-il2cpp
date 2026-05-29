@@ -2,1118 +2,424 @@
 
 #[cfg(feature = "app-unitrecord-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitrecord/UnitRecord_DeadFlags.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct UnitRecord_DeadFlags {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitrecord/UnitRecord.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitRecord")] # [parent (crate :: system :: object :: Object)] pub struct UnitRecord {
+# [static_field] # [rename (name = "Version")] pub version : i32 ,
+# [static_field] # [rename (name = "s_Names")] pub s_names : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+# [static_field] # [rename (name = "s_Keys")] pub s_keys : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: app :: unitrecord :: UnitRecord_Kinds , i32 > ,
+# [static_field] # [rename (name = "s_Kinds")] pub s_kinds : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , crate :: app :: unitrecord :: UnitRecord_Kinds > ,
+# [offset (16)] # [rename (name = "m_Values")] pub m_values : :: unity2 :: Array < i32 > ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitrecord/UnitRecord_DeadFlags.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct UnitRecord_DeadFlags  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for UnitRecord_DeadFlags  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "UnitRecord.DeadFlags";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for UnitRecord_DeadFlags {
-        const NAME: &'static str = "UnitRecord.DeadFlags";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for UnitRecord_DeadFlags  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for UnitRecord_DeadFlags {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  UnitRecord_DeadFlags  {
+    pub fn encount() -> Self {
+        Self { value: 1 }
+
     }
 
-    impl UnitRecord_DeadFlags {
-        pub fn encount() -> Self {
-            Self { value: 1 }
-        }
 
-        pub fn exist_dead() -> Self {
-            Self { value: 2 }
-        }
+    pub fn exist_dead() -> Self {
+        Self { value: 2 }
+
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitrecord/UnitRecord.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitRecord")]
-    #[parent(crate::system::object::Object)]
-    pub struct UnitRecord {
-        #[static_field]
-        #[rename(name = "Version")]
-        pub version: i32,
-        #[static_field]
-        #[rename(name = "s_Names")]
-        pub s_names: ::unity2::Array<::unity2::Il2CppString>,
-        #[static_field]
-        #[rename(name = "s_Keys")]
-        pub s_keys: crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unitrecord::UnitRecord_Kinds, i32>,
-        #[static_field]
-        #[rename(name = "s_Kinds")]
-        pub s_kinds: crate::system::collections::generic::dictionary_2::Dictionary_2<i32, crate::app::unitrecord::UnitRecord_Kinds>,
-        #[offset(16)]
-        #[rename(name = "m_Values")]
-        pub m_values: ::unity2::Array<i32>,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitrecord/UnitRecord_Kinds.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct UnitRecord_Kinds  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for UnitRecord_Kinds  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "UnitRecord.Kinds";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitrecord/UnitRecord_Kinds.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct UnitRecord_Kinds {
-        pub value: i32,
+}
+
+
+impl  ::unity2::IlType for UnitRecord_Kinds  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::ClassIdentity for UnitRecord_Kinds {
-        const NAME: &'static str = "UnitRecord.Kinds";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  UnitRecord_Kinds  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl ::unity2::IlType for UnitRecord_Kinds {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn sortie_count() -> Self {
+        Self { value: 1 }
+
     }
 
-    impl UnitRecord_Kinds {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn sortie_count() -> Self {
-            Self { value: 1 }
-        }
+    pub fn no_sortie_count() -> Self {
+        Self { value: 2 }
 
-        pub fn no_sortie_count() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn continuous_sortie_count() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn continuous_no_sortie_count() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn challenge_sortie_count() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn mvp_count() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn battle_count() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn kill_count() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn dead_chapter() -> Self {
-            Self { value: 9 }
-        }
-
-        pub fn dead_flag() -> Self {
-            Self { value: 10 }
-        }
-
-        pub fn map_kill_count() -> Self {
-            Self { value: 11 }
-        }
-
-        pub fn map_critical_count() -> Self {
-            Self { value: 12 }
-        }
-
-        pub fn map_heal_count() -> Self {
-            Self { value: 13 }
-        }
-
-        pub fn map_break_count() -> Self {
-            Self { value: 14 }
-        }
-
-        pub fn map_damage() -> Self {
-            Self { value: 15 }
-        }
-
-        pub fn map_recive_heal_count() -> Self {
-            Self { value: 16 }
-        }
-
-        pub fn map_recive_damage() -> Self {
-            Self { value: 17 }
-        }
-
-        pub fn map_level_up_count() -> Self {
-            Self { value: 18 }
-        }
-
-        pub fn map_engage_count() -> Self {
-            Self { value: 19 }
-        }
-
-        pub fn map_dead_count() -> Self {
-            Self { value: 20 }
-        }
-
-        pub fn map_battle_exp_give_count() -> Self {
-            Self { value: 21 }
-        }
-
-        pub fn map_destroy_exp_count() -> Self {
-            Self { value: 22 }
-        }
-
-        pub fn map_rod_exp_count() -> Self {
-            Self { value: 23 }
-        }
-
-        pub fn map_interference_exp_count() -> Self {
-            Self { value: 24 }
-        }
-
-        pub fn map_dance_exp_count() -> Self {
-            Self { value: 25 }
-        }
-
-        pub fn map_recive_attack_count() -> Self {
-            Self { value: 26 }
-        }
-
-        pub fn map_last_target() -> Self {
-            Self { value: 27 }
-        }
-
-        pub fn map_completed_hp() -> Self {
-            Self { value: 28 }
-        }
-
-        pub fn map_guard_count() -> Self {
-            Self { value: 29 }
-        }
-
-        pub fn map_efficacy_attack_count() -> Self {
-            Self { value: 30 }
-        }
-
-        pub fn map_poision_attack_count() -> Self {
-            Self { value: 31 }
-        }
-
-        pub fn map_smash_attack_count() -> Self {
-            Self { value: 32 }
-        }
-
-        pub fn map_skill_count() -> Self {
-            Self { value: 33 }
-        }
-
-        pub fn map_recive_skill_count() -> Self {
-            Self { value: 34 }
-        }
-
-        pub fn map_direct_attack_count() -> Self {
-            Self { value: 35 }
-        }
-
-        pub fn map_indirect_attack_count() -> Self {
-            Self { value: 36 }
-        }
-
-        pub fn map_engage_attack_count() -> Self {
-            Self { value: 37 }
-        }
-
-        pub fn map_chain_attack_count() -> Self {
-            Self { value: 38 }
-        }
-
-        pub fn map_chain_guard_count() -> Self {
-            Self { value: 39 }
-        }
-
-        pub fn map_use_item_count() -> Self {
-            Self { value: 40 }
-        }
-
-        pub fn map_move_distance() -> Self {
-            Self { value: 41 }
-        }
-
-        pub fn map_fixed_cont() -> Self {
-            Self { value: 42 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 43 }
-        }
-
-        pub fn map_begin() -> Self {
-            Self { value: 11 }
-        }
-
-        pub fn map_end() -> Self {
-            Self { value: 42 }
-        }
     }
+
+
+    pub fn continuous_sortie_count() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn continuous_no_sortie_count() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn challenge_sortie_count() -> Self {
+        Self { value: 5 }
+
+    }
+
+
+    pub fn mvp_count() -> Self {
+        Self { value: 6 }
+
+    }
+
+
+    pub fn battle_count() -> Self {
+        Self { value: 7 }
+
+    }
+
+
+    pub fn kill_count() -> Self {
+        Self { value: 8 }
+
+    }
+
+
+    pub fn dead_chapter() -> Self {
+        Self { value: 9 }
+
+    }
+
+
+    pub fn dead_flag() -> Self {
+        Self { value: 10 }
+
+    }
+
+
+    pub fn map_kill_count() -> Self {
+        Self { value: 11 }
+
+    }
+
+
+    pub fn map_critical_count() -> Self {
+        Self { value: 12 }
+
+    }
+
+
+    pub fn map_heal_count() -> Self {
+        Self { value: 13 }
+
+    }
+
+
+    pub fn map_break_count() -> Self {
+        Self { value: 14 }
+
+    }
+
+
+    pub fn map_damage() -> Self {
+        Self { value: 15 }
+
+    }
+
+
+    pub fn map_recive_heal_count() -> Self {
+        Self { value: 16 }
+
+    }
+
+
+    pub fn map_recive_damage() -> Self {
+        Self { value: 17 }
+
+    }
+
+
+    pub fn map_level_up_count() -> Self {
+        Self { value: 18 }
+
+    }
+
+
+    pub fn map_engage_count() -> Self {
+        Self { value: 19 }
+
+    }
+
+
+    pub fn map_dead_count() -> Self {
+        Self { value: 20 }
+
+    }
+
+
+    pub fn map_battle_exp_give_count() -> Self {
+        Self { value: 21 }
+
+    }
+
+
+    pub fn map_destroy_exp_count() -> Self {
+        Self { value: 22 }
+
+    }
+
+
+    pub fn map_rod_exp_count() -> Self {
+        Self { value: 23 }
+
+    }
+
+
+    pub fn map_interference_exp_count() -> Self {
+        Self { value: 24 }
+
+    }
+
+
+    pub fn map_dance_exp_count() -> Self {
+        Self { value: 25 }
+
+    }
+
+
+    pub fn map_recive_attack_count() -> Self {
+        Self { value: 26 }
+
+    }
+
+
+    pub fn map_last_target() -> Self {
+        Self { value: 27 }
+
+    }
+
+
+    pub fn map_completed_hp() -> Self {
+        Self { value: 28 }
+
+    }
+
+
+    pub fn map_guard_count() -> Self {
+        Self { value: 29 }
+
+    }
+
+
+    pub fn map_efficacy_attack_count() -> Self {
+        Self { value: 30 }
+
+    }
+
+
+    pub fn map_poision_attack_count() -> Self {
+        Self { value: 31 }
+
+    }
+
+
+    pub fn map_smash_attack_count() -> Self {
+        Self { value: 32 }
+
+    }
+
+
+    pub fn map_skill_count() -> Self {
+        Self { value: 33 }
+
+    }
+
+
+    pub fn map_recive_skill_count() -> Self {
+        Self { value: 34 }
+
+    }
+
+
+    pub fn map_direct_attack_count() -> Self {
+        Self { value: 35 }
+
+    }
+
+
+    pub fn map_indirect_attack_count() -> Self {
+        Self { value: 36 }
+
+    }
+
+
+    pub fn map_engage_attack_count() -> Self {
+        Self { value: 37 }
+
+    }
+
+
+    pub fn map_chain_attack_count() -> Self {
+        Self { value: 38 }
+
+    }
+
+
+    pub fn map_chain_guard_count() -> Self {
+        Self { value: 39 }
+
+    }
+
+
+    pub fn map_use_item_count() -> Self {
+        Self { value: 40 }
+
+    }
+
+
+    pub fn map_move_distance() -> Self {
+        Self { value: 41 }
+
+    }
+
+
+    pub fn map_fixed_cont() -> Self {
+        Self { value: 42 }
+
+    }
+
+
+    pub fn num() -> Self {
+        Self { value: 43 }
+
+    }
+
+
+    pub fn map_begin() -> Self {
+        Self { value: 11 }
+
+    }
+
+
+    pub fn map_end() -> Self {
+        Self { value: 42 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "app-unitrecord-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-unitrecord")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __UnitRecord_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_initialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitRecord as ::unity2::ClassIdentity>::class(),
-                "Initialize",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitRecord as ::unity2::ClassIdentity>::NAME,
-                        "Initialize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn initialize(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_initialize::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_key {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unitrecord::UnitRecord_Kinds as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<UnitRecord as ::unity2::ClassIdentity>::class(), "GetKey", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitRecord as ::unity2::ClassIdentity>::NAME,
-                        "GetKey",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_key(kind: crate::app::unitrecord::UnitRecord_Kinds, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(crate::app::unitrecord::UnitRecord_Kinds, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_key::get_method_info().method_ptr);
-        inner(kind, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_kind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<UnitRecord as ::unity2::ClassIdentity>::class(), "GetKind", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitRecord as ::unity2::ClassIdentity>::NAME,
-                        "GetKind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_kind(key: i32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unitrecord::UnitRecord_Kinds {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> crate::app::unitrecord::UnitRecord_Kinds =
-            ::core::mem::transmute(__lookup_get_kind::get_method_info().method_ptr);
-        inner(key, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unitrecord::UnitRecord_Kinds as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<UnitRecord as ::unity2::ClassIdentity>::class(), "GetName", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitRecord as ::unity2::ClassIdentity>::NAME,
-                        "GetName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(kind: crate::app::unitrecord::UnitRecord_Kinds, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(crate::app::unitrecord::UnitRecord_Kinds, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(kind, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<UnitRecord as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitRecord as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: UnitRecord, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnitRecord, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unitrecord::UnitRecord_Kinds as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<UnitRecord as ::unity2::ClassIdentity>::class(), "Get", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitRecord as ::unity2::ClassIdentity>::NAME,
-                        "Get",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get(this: UnitRecord, kind: crate::app::unitrecord::UnitRecord_Kinds, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(UnitRecord, crate::app::unitrecord::UnitRecord_Kinds, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get::get_method_info().method_ptr);
-        inner(this, kind, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unitrecord::UnitRecord_Kinds as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<UnitRecord as ::unity2::ClassIdentity>::class(), "Set", 2, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitRecord as ::unity2::ClassIdentity>::NAME,
-                        "Set",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set(
-        this: UnitRecord,
-        kind: crate::app::unitrecord::UnitRecord_Kinds,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(UnitRecord, crate::app::unitrecord::UnitRecord_Kinds, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set::get_method_info().method_ptr);
-        inner(this, kind, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unitrecord::UnitRecord_Kinds as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<UnitRecord as ::unity2::ClassIdentity>::class(), "Add", 2, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitRecord as ::unity2::ClassIdentity>::NAME,
-                        "Add",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add(
-        this: UnitRecord,
-        kind: crate::app::unitrecord::UnitRecord_Kinds,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(UnitRecord, crate::app::unitrecord::UnitRecord_Kinds, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
-        inner(this, kind, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset_map_begin {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitRecord as ::unity2::ClassIdentity>::class(),
-                "ResetMapBegin",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitRecord as ::unity2::ClassIdentity>::NAME,
-                        "ResetMapBegin",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reset_map_begin(this: UnitRecord, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnitRecord, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_reset_map_begin::get_method_info().method_ptr);
-        inner(this, unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset_map_end {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitRecord as ::unity2::ClassIdentity>::class(),
-                "ResetMapEnd",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitRecord as ::unity2::ClassIdentity>::NAME,
-                        "ResetMapEnd",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reset_map_end(this: UnitRecord, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnitRecord, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_reset_map_end::get_method_info().method_ptr);
-        inner(this, unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<UnitRecord as ::unity2::ClassIdentity>::class(), "Clear", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitRecord as ::unity2::ClassIdentity>::NAME,
-                        "Clear",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear(this: UnitRecord, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnitRecord, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_copy {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unitrecord::UnitRecord as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<UnitRecord as ::unity2::ClassIdentity>::class(), "Copy", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitRecord as ::unity2::ClassIdentity>::NAME,
-                        "Copy",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn copy(this: UnitRecord, src: crate::app::unitrecord::UnitRecord, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnitRecord, crate::app::unitrecord::UnitRecord, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_copy::get_method_info().method_ptr);
-        inner(this, src, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_serialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitRecord as ::unity2::ClassIdentity>::class(),
-                "Serialize",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitRecord as ::unity2::ClassIdentity>::NAME,
-                        "Serialize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn serialize(this: UnitRecord, stream: crate::app::stream_2::Stream_2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnitRecord, crate::app::stream_2::Stream_2, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_serialize::get_method_info().method_ptr);
-        inner(this, stream, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_deserialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitRecord as ::unity2::ClassIdentity>::class(),
-                "Deserialize",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitRecord as ::unity2::ClassIdentity>::NAME,
-                        "Deserialize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn deserialize(this: UnitRecord, stream: crate::app::stream_2::Stream_2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnitRecord, crate::app::stream_2::Stream_2, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_deserialize::get_method_info().method_ptr);
-        inner(this, stream, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_hero_reliance {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitRecord as ::unity2::ClassIdentity>::class(),
-                "GetHeroReliance",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitRecord as ::unity2::ClassIdentity>::NAME,
-                        "GetHeroReliance",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_hero_reliance(unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(crate::app::unit::Unit, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_hero_reliance::get_method_info().method_ptr);
-        inner(unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_mvp_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitRecord as ::unity2::ClassIdentity>::class(),
-                "GetMvpUnit",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitRecord as ::unity2::ClassIdentity>::NAME,
-                        "GetMvpUnit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_mvp_unit(__unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::app::unit::Unit =
-            ::core::mem::transmute(__lookup_get_mvp_unit::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_dead_chapter {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitRecord as ::unity2::ClassIdentity>::class(),
-                "GetDeadChapter",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitRecord as ::unity2::ClassIdentity>::NAME,
-                        "GetDeadChapter",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_dead_chapter(this: UnitRecord, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::chapterdata::ChapterData {
-        let inner: extern "C" fn(UnitRecord, ::unity2::OptionalMethod) -> crate::app::chapterdata::ChapterData =
-            ::core::mem::transmute(__lookup_get_dead_chapter::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_dead_chapter {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::chapterdata::ChapterData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitRecord as ::unity2::ClassIdentity>::class(),
-                "SetDeadChapter",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitRecord as ::unity2::ClassIdentity>::NAME,
-                        "SetDeadChapter",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_dead_chapter(
-        this: UnitRecord,
-        chapter: crate::app::chapterdata::ChapterData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(UnitRecord, crate::app::chapterdata::ChapterData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_dead_chapter::get_method_info().method_ptr);
-        inner(this, chapter, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_dead_flag {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitRecord as ::unity2::ClassIdentity>::class(),
-                "GetDeadFlag",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitRecord as ::unity2::ClassIdentity>::NAME,
-                        "GetDeadFlag",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_dead_flag(this: UnitRecord, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unitrecord::UnitRecord_DeadFlags {
-        let inner: extern "C" fn(UnitRecord, ::unity2::OptionalMethod) -> crate::app::unitrecord::UnitRecord_DeadFlags =
-            ::core::mem::transmute(__lookup_get_dead_flag::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_dead_flag {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unitrecord::UnitRecord_DeadFlags as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitRecord as ::unity2::ClassIdentity>::class(),
-                "SetDeadFlag",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitRecord as ::unity2::ClassIdentity>::NAME,
-                        "SetDeadFlag",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_dead_flag(
-        this: UnitRecord,
-        flags: crate::app::unitrecord::UnitRecord_DeadFlags,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(UnitRecord, crate::app::unitrecord::UnitRecord_DeadFlags, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_dead_flag::get_method_info().method_ptr);
-        inner(this, flags, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<UnitRecord as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitRecord as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __UnitRecord_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_initialize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitRecord as :: unity2 :: ClassIdentity > :: class () , "Initialize" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitRecord as :: unity2 :: ClassIdentity > :: NAME , "Initialize" , e) , } } } pub unsafe fn initialize (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_initialize :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_key { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unitrecord :: UnitRecord_Kinds as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitRecord as :: unity2 :: ClassIdentity > :: class () , "GetKey" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitRecord as :: unity2 :: ClassIdentity > :: NAME , "GetKey" , e) , } } } pub unsafe fn get_key (kind : crate :: app :: unitrecord :: UnitRecord_Kinds , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (crate :: app :: unitrecord :: UnitRecord_Kinds , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_key :: get_method_info () . method_ptr ,) ; inner (kind , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_kind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitRecord as :: unity2 :: ClassIdentity > :: class () , "GetKind" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitRecord as :: unity2 :: ClassIdentity > :: NAME , "GetKind" , e) , } } } pub unsafe fn get_kind (key : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: unitrecord :: UnitRecord_Kinds { let inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: unitrecord :: UnitRecord_Kinds = :: core :: mem :: transmute (__lookup_get_kind :: get_method_info () . method_ptr ,) ; inner (key , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unitrecord :: UnitRecord_Kinds as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitRecord as :: unity2 :: ClassIdentity > :: class () , "GetName" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitRecord as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , } } } pub unsafe fn get_name (kind : crate :: app :: unitrecord :: UnitRecord_Kinds , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (crate :: app :: unitrecord :: UnitRecord_Kinds , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (kind , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitRecord as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitRecord as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : UnitRecord , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitRecord , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unitrecord :: UnitRecord_Kinds as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitRecord as :: unity2 :: ClassIdentity > :: class () , "Get" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitRecord as :: unity2 :: ClassIdentity > :: NAME , "Get" , e) , } } } pub unsafe fn get (this : UnitRecord , kind : crate :: app :: unitrecord :: UnitRecord_Kinds , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (UnitRecord , crate :: app :: unitrecord :: UnitRecord_Kinds , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get :: get_method_info () . method_ptr ,) ; inner (this , kind , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unitrecord :: UnitRecord_Kinds as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitRecord as :: unity2 :: ClassIdentity > :: class () , "Set" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitRecord as :: unity2 :: ClassIdentity > :: NAME , "Set" , e) , } } } pub unsafe fn set (this : UnitRecord , kind : crate :: app :: unitrecord :: UnitRecord_Kinds , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitRecord , crate :: app :: unitrecord :: UnitRecord_Kinds , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set :: get_method_info () . method_ptr ,) ; inner (this , kind , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unitrecord :: UnitRecord_Kinds as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitRecord as :: unity2 :: ClassIdentity > :: class () , "Add" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitRecord as :: unity2 :: ClassIdentity > :: NAME , "Add" , e) , } } } pub unsafe fn add (this : UnitRecord , kind : crate :: app :: unitrecord :: UnitRecord_Kinds , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitRecord , crate :: app :: unitrecord :: UnitRecord_Kinds , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add :: get_method_info () . method_ptr ,) ; inner (this , kind , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_reset_map_begin { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitRecord as :: unity2 :: ClassIdentity > :: class () , "ResetMapBegin" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitRecord as :: unity2 :: ClassIdentity > :: NAME , "ResetMapBegin" , e) , } } } pub unsafe fn reset_map_begin (this : UnitRecord , unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitRecord , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_reset_map_begin :: get_method_info () . method_ptr ,) ; inner (this , unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_reset_map_end { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitRecord as :: unity2 :: ClassIdentity > :: class () , "ResetMapEnd" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitRecord as :: unity2 :: ClassIdentity > :: NAME , "ResetMapEnd" , e) , } } } pub unsafe fn reset_map_end (this : UnitRecord , unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitRecord , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_reset_map_end :: get_method_info () . method_ptr ,) ; inner (this , unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_clear { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitRecord as :: unity2 :: ClassIdentity > :: class () , "Clear" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitRecord as :: unity2 :: ClassIdentity > :: NAME , "Clear" , e) , } } } pub unsafe fn clear (this : UnitRecord , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitRecord , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_clear :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_copy { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unitrecord :: UnitRecord as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitRecord as :: unity2 :: ClassIdentity > :: class () , "Copy" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitRecord as :: unity2 :: ClassIdentity > :: NAME , "Copy" , e) , } } } pub unsafe fn copy (this : UnitRecord , src : crate :: app :: unitrecord :: UnitRecord , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitRecord , crate :: app :: unitrecord :: UnitRecord , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_copy :: get_method_info () . method_ptr ,) ; inner (this , src , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_serialize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: stream_2 :: Stream_2 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitRecord as :: unity2 :: ClassIdentity > :: class () , "Serialize" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitRecord as :: unity2 :: ClassIdentity > :: NAME , "Serialize" , e) , } } } pub unsafe fn serialize (this : UnitRecord , stream : crate :: app :: stream_2 :: Stream_2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitRecord , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_serialize :: get_method_info () . method_ptr ,) ; inner (this , stream , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_deserialize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: stream_2 :: Stream_2 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitRecord as :: unity2 :: ClassIdentity > :: class () , "Deserialize" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitRecord as :: unity2 :: ClassIdentity > :: NAME , "Deserialize" , e) , } } } pub unsafe fn deserialize (this : UnitRecord , stream : crate :: app :: stream_2 :: Stream_2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitRecord , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_deserialize :: get_method_info () . method_ptr ,) ; inner (this , stream , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_hero_reliance { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitRecord as :: unity2 :: ClassIdentity > :: class () , "GetHeroReliance" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitRecord as :: unity2 :: ClassIdentity > :: NAME , "GetHeroReliance" , e) , } } } pub unsafe fn get_hero_reliance (unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_hero_reliance :: get_method_info () . method_ptr ,) ; inner (unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_mvp_unit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitRecord as :: unity2 :: ClassIdentity > :: class () , "GetMvpUnit" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitRecord as :: unity2 :: ClassIdentity > :: NAME , "GetMvpUnit" , e) , } } } pub unsafe fn get_mvp_unit (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute (__lookup_get_mvp_unit :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_dead_chapter { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitRecord as :: unity2 :: ClassIdentity > :: class () , "GetDeadChapter" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitRecord as :: unity2 :: ClassIdentity > :: NAME , "GetDeadChapter" , e) , } } } pub unsafe fn get_dead_chapter (this : UnitRecord , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: chapterdata :: ChapterData { let inner : extern "C" fn (UnitRecord , :: unity2 :: OptionalMethod ,) -> crate :: app :: chapterdata :: ChapterData = :: core :: mem :: transmute (__lookup_get_dead_chapter :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_dead_chapter { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: chapterdata :: ChapterData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitRecord as :: unity2 :: ClassIdentity > :: class () , "SetDeadChapter" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitRecord as :: unity2 :: ClassIdentity > :: NAME , "SetDeadChapter" , e) , } } } pub unsafe fn set_dead_chapter (this : UnitRecord , chapter : crate :: app :: chapterdata :: ChapterData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitRecord , crate :: app :: chapterdata :: ChapterData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_dead_chapter :: get_method_info () . method_ptr ,) ; inner (this , chapter , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_dead_flag { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitRecord as :: unity2 :: ClassIdentity > :: class () , "GetDeadFlag" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitRecord as :: unity2 :: ClassIdentity > :: NAME , "GetDeadFlag" , e) , } } } pub unsafe fn get_dead_flag (this : UnitRecord , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: unitrecord :: UnitRecord_DeadFlags { let inner : extern "C" fn (UnitRecord , :: unity2 :: OptionalMethod ,) -> crate :: app :: unitrecord :: UnitRecord_DeadFlags = :: core :: mem :: transmute (__lookup_get_dead_flag :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_dead_flag { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unitrecord :: UnitRecord_DeadFlags as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitRecord as :: unity2 :: ClassIdentity > :: class () , "SetDeadFlag" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitRecord as :: unity2 :: ClassIdentity > :: NAME , "SetDeadFlag" , e) , } } } pub unsafe fn set_dead_flag (this : UnitRecord , flags : crate :: app :: unitrecord :: UnitRecord_DeadFlags , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitRecord , crate :: app :: unitrecord :: UnitRecord_DeadFlags , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_dead_flag :: get_method_info () . method_ptr ,) ; inner (this , flags , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitRecord as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitRecord as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "app-unitrecord")]
+impl UnitRecord { # [doc = "`Initialize()` overload"] pub fn initialize () -> () { unsafe { __UnitRecord_unity2_raw :: initialize (:: core :: option :: Option :: None) } } # [doc = "`GetKey(crate::app::unitrecord::UnitRecord_Kinds)` overload"] pub fn get_key (kind : impl :: core :: convert :: Into < crate :: app :: unitrecord :: UnitRecord_Kinds >) -> i32 { unsafe { __UnitRecord_unity2_raw :: get_key (:: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } # [doc = "`GetKind(i32)` overload"] pub fn get_kind (key : impl :: core :: convert :: Into < i32 >) -> crate :: app :: unitrecord :: UnitRecord_Kinds { unsafe { __UnitRecord_unity2_raw :: get_kind (:: core :: convert :: Into :: into (key) , :: core :: option :: Option :: None) } } # [doc = "`GetName(crate::app::unitrecord::UnitRecord_Kinds)` overload"] pub fn get_name (kind : impl :: core :: convert :: Into < crate :: app :: unitrecord :: UnitRecord_Kinds >) -> :: unity2 :: Il2CppString { unsafe { __UnitRecord_unity2_raw :: get_name (:: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } # [doc = "`GetHeroReliance(crate::app::unit::Unit)` overload"] pub fn get_hero_reliance (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> i32 { unsafe { __UnitRecord_unity2_raw :: get_hero_reliance (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } # [doc = "`GetMvpUnit()` overload"] pub fn get_mvp_unit () -> crate :: app :: unit :: Unit { unsafe { __UnitRecord_unity2_raw :: get_mvp_unit (:: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __UnitRecord_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-unitrecord")]
+pub trait IUnitRecordMethods : IUnitRecord { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < UnitRecord as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitRecord_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Get(crate::app::unitrecord::UnitRecord_Kinds)` overload"] fn get (self , kind : impl :: core :: convert :: Into < crate :: app :: unitrecord :: UnitRecord_Kinds >) -> i32 { unsafe { let __receiver = < UnitRecord as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitRecord_unity2_raw :: get (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } # [doc = "`Set(crate::app::unitrecord::UnitRecord_Kinds, i32)` overload"] fn set (self , kind : impl :: core :: convert :: Into < crate :: app :: unitrecord :: UnitRecord_Kinds > , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < UnitRecord as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitRecord_unity2_raw :: set (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`Add(crate::app::unitrecord::UnitRecord_Kinds, i32)` overload"] fn add (self , kind : impl :: core :: convert :: Into < crate :: app :: unitrecord :: UnitRecord_Kinds > , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < UnitRecord as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitRecord_unity2_raw :: add (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`ResetMapBegin(crate::app::unit::Unit)` overload"] fn reset_map_begin (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < UnitRecord as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitRecord_unity2_raw :: reset_map_begin (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } # [doc = "`ResetMapEnd(crate::app::unit::Unit)` overload"] fn reset_map_end (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < UnitRecord as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitRecord_unity2_raw :: reset_map_end (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < UnitRecord as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitRecord_unity2_raw :: clear (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Copy(crate::app::unitrecord::UnitRecord)` overload"] fn copy (self , src : impl :: core :: convert :: Into < crate :: app :: unitrecord :: UnitRecord >) -> () { unsafe { let __receiver = < UnitRecord as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitRecord_unity2_raw :: copy (__receiver , :: core :: convert :: Into :: into (src) , :: core :: option :: Option :: None) } } # [doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"] fn serialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < UnitRecord as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitRecord_unity2_raw :: serialize (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } # [doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"] fn deserialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < UnitRecord as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitRecord_unity2_raw :: deserialize (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } # [doc = "`GetDeadChapter()` overload"] fn get_dead_chapter (self ,) -> crate :: app :: chapterdata :: ChapterData { unsafe { let __receiver = < UnitRecord as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitRecord_unity2_raw :: get_dead_chapter (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetDeadChapter(crate::app::chapterdata::ChapterData)` overload"] fn set_dead_chapter (self , chapter : impl :: core :: convert :: Into < crate :: app :: chapterdata :: ChapterData >) -> () { unsafe { let __receiver = < UnitRecord as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitRecord_unity2_raw :: set_dead_chapter (__receiver , :: core :: convert :: Into :: into (chapter) , :: core :: option :: Option :: None) } } # [doc = "`GetDeadFlag()` overload"] fn get_dead_flag (self ,) -> crate :: app :: unitrecord :: UnitRecord_DeadFlags { unsafe { let __receiver = < UnitRecord as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitRecord_unity2_raw :: get_dead_flag (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetDeadFlag(crate::app::unitrecord::UnitRecord_DeadFlags)` overload"] fn set_dead_flag (self , flags : impl :: core :: convert :: Into < crate :: app :: unitrecord :: UnitRecord_DeadFlags >) -> () { unsafe { let __receiver = < UnitRecord as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitRecord_unity2_raw :: set_dead_flag (__receiver , :: core :: convert :: Into :: into (flags) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-unitrecord")]
+impl < __T : IUnitRecord > IUnitRecordMethods for __T { }
+
+#[cfg(feature = "app-unitrecord")]
+impl UnitRecord { pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitRecord_unity2_raw :: __lookup_initialize :: get_method_info () } pub fn get_key_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitRecord_unity2_raw :: __lookup_get_key :: get_method_info () } pub fn get_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitRecord_unity2_raw :: __lookup_get_kind :: get_method_info () } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitRecord_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitRecord_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitRecord_unity2_raw :: __lookup_get :: get_method_info () } pub fn set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitRecord_unity2_raw :: __lookup_set :: get_method_info () } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitRecord_unity2_raw :: __lookup_add :: get_method_info () } pub fn reset_map_begin_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitRecord_unity2_raw :: __lookup_reset_map_begin :: get_method_info () } pub fn reset_map_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitRecord_unity2_raw :: __lookup_reset_map_end :: get_method_info () } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitRecord_unity2_raw :: __lookup_clear :: get_method_info () } pub fn copy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitRecord_unity2_raw :: __lookup_copy :: get_method_info () } pub fn serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitRecord_unity2_raw :: __lookup_serialize :: get_method_info () } pub fn deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitRecord_unity2_raw :: __lookup_deserialize :: get_method_info () } pub fn get_hero_reliance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitRecord_unity2_raw :: __lookup_get_hero_reliance :: get_method_info () } pub fn get_mvp_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitRecord_unity2_raw :: __lookup_get_mvp_unit :: get_method_info () } pub fn get_dead_chapter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitRecord_unity2_raw :: __lookup_get_dead_chapter :: get_method_info () } pub fn set_dead_chapter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitRecord_unity2_raw :: __lookup_set_dead_chapter :: get_method_info () } pub fn get_dead_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitRecord_unity2_raw :: __lookup_get_dead_flag :: get_method_info () } pub fn set_dead_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitRecord_unity2_raw :: __lookup_set_dead_flag :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitRecord_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "app-unitrecord")]
 impl UnitRecord {
-    #[doc = "`Initialize()` overload"]
-    pub fn initialize() -> () {
-        unsafe { __UnitRecord_unity2_raw::initialize(::core::option::Option::None) }
-    }
-
-    #[doc = "`GetKey(crate::app::unitrecord::UnitRecord_Kinds)` overload"]
-    pub fn get_key(kind: impl ::core::convert::Into<crate::app::unitrecord::UnitRecord_Kinds>) -> i32 {
-        unsafe { __UnitRecord_unity2_raw::get_key(::core::convert::Into::into(kind), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetKind(i32)` overload"]
-    pub fn get_kind(key: impl ::core::convert::Into<i32>) -> crate::app::unitrecord::UnitRecord_Kinds {
-        unsafe { __UnitRecord_unity2_raw::get_kind(::core::convert::Into::into(key), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetName(crate::app::unitrecord::UnitRecord_Kinds)` overload"]
-    pub fn get_name(kind: impl ::core::convert::Into<crate::app::unitrecord::UnitRecord_Kinds>) -> ::unity2::Il2CppString {
-        unsafe { __UnitRecord_unity2_raw::get_name(::core::convert::Into::into(kind), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetHeroReliance(crate::app::unit::Unit)` overload"]
-    pub fn get_hero_reliance(unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> i32 {
-        unsafe { __UnitRecord_unity2_raw::get_hero_reliance(::core::convert::Into::into(unit), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetMvpUnit()` overload"]
-    pub fn get_mvp_unit() -> crate::app::unit::Unit {
-        unsafe { __UnitRecord_unity2_raw::get_mvp_unit(::core::option::Option::None) }
-    }
-
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __UnitRecord_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-unitrecord")]
-pub trait IUnitRecordMethods: IUnitRecord {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <UnitRecord as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitRecord_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Get(crate::app::unitrecord::UnitRecord_Kinds)` overload"]
-    fn get(self, kind: impl ::core::convert::Into<crate::app::unitrecord::UnitRecord_Kinds>) -> i32 {
-        unsafe {
-            let __receiver = <UnitRecord as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitRecord_unity2_raw::get(__receiver, ::core::convert::Into::into(kind), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Set(crate::app::unitrecord::UnitRecord_Kinds, i32)` overload"]
-    fn set(self, kind: impl ::core::convert::Into<crate::app::unitrecord::UnitRecord_Kinds>, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <UnitRecord as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitRecord_unity2_raw::set(
-                __receiver,
-                ::core::convert::Into::into(kind),
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Add(crate::app::unitrecord::UnitRecord_Kinds, i32)` overload"]
-    fn add(self, kind: impl ::core::convert::Into<crate::app::unitrecord::UnitRecord_Kinds>, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <UnitRecord as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitRecord_unity2_raw::add(
-                __receiver,
-                ::core::convert::Into::into(kind),
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ResetMapBegin(crate::app::unit::Unit)` overload"]
-    fn reset_map_begin(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe {
-            let __receiver = <UnitRecord as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitRecord_unity2_raw::reset_map_begin(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ResetMapEnd(crate::app::unit::Unit)` overload"]
-    fn reset_map_end(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe {
-            let __receiver = <UnitRecord as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitRecord_unity2_raw::reset_map_end(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Clear()` overload"]
-    fn clear(self) -> () {
-        unsafe {
-            let __receiver = <UnitRecord as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitRecord_unity2_raw::clear(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Copy(crate::app::unitrecord::UnitRecord)` overload"]
-    fn copy(self, src: impl ::core::convert::Into<crate::app::unitrecord::UnitRecord>) -> () {
-        unsafe {
-            let __receiver = <UnitRecord as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitRecord_unity2_raw::copy(__receiver, ::core::convert::Into::into(src), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"]
-    fn serialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>) -> () {
-        unsafe {
-            let __receiver = <UnitRecord as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitRecord_unity2_raw::serialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"]
-    fn deserialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>) -> () {
-        unsafe {
-            let __receiver = <UnitRecord as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitRecord_unity2_raw::deserialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetDeadChapter()` overload"]
-    fn get_dead_chapter(self) -> crate::app::chapterdata::ChapterData {
-        unsafe {
-            let __receiver = <UnitRecord as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitRecord_unity2_raw::get_dead_chapter(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetDeadChapter(crate::app::chapterdata::ChapterData)` overload"]
-    fn set_dead_chapter(self, chapter: impl ::core::convert::Into<crate::app::chapterdata::ChapterData>) -> () {
-        unsafe {
-            let __receiver = <UnitRecord as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitRecord_unity2_raw::set_dead_chapter(__receiver, ::core::convert::Into::into(chapter), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetDeadFlag()` overload"]
-    fn get_dead_flag(self) -> crate::app::unitrecord::UnitRecord_DeadFlags {
-        unsafe {
-            let __receiver = <UnitRecord as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitRecord_unity2_raw::get_dead_flag(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetDeadFlag(crate::app::unitrecord::UnitRecord_DeadFlags)` overload"]
-    fn set_dead_flag(self, flags: impl ::core::convert::Into<crate::app::unitrecord::UnitRecord_DeadFlags>) -> () {
-        unsafe {
-            let __receiver = <UnitRecord as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitRecord_unity2_raw::set_dead_flag(__receiver, ::core::convert::Into::into(flags), ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-unitrecord")]
-impl<__T: IUnitRecord> IUnitRecordMethods for __T {}
-
-#[cfg(feature = "app-unitrecord")]
-impl UnitRecord {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(UnitRecord), ::core::stringify!(new),));
-        <Self as IUnitRecordMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnitRecord) , :: core :: stringify ! (new) ,)) ; < Self as IUnitRecordMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-unitrecord")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IUnitRecord, IUnitRecordMethods, UnitRecord, UnitRecord_DeadFlags, UnitRecord_Kinds};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
+    pub use super::UnitRecord;
+    pub use super::IUnitRecord;
+    pub use super::IUnitRecordMethods;
+    pub use super::UnitRecord_DeadFlags;
+    pub use super::UnitRecord_Kinds;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

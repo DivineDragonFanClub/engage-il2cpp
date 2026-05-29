@@ -2,639 +2,175 @@
 
 #[cfg(feature = "app-fishingresultui-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingresultui/FishingResultUI_ResultPhase.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct FishingResultUI_ResultPhase {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingresultui/FishingResultUI_ResultPhase.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct FishingResultUI_ResultPhase  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for FishingResultUI_ResultPhase  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "FishingResultUI.ResultPhase";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for FishingResultUI_ResultPhase {
-        const NAME: &'static str = "FishingResultUI.ResultPhase";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for FishingResultUI_ResultPhase  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for FishingResultUI_ResultPhase {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  FishingResultUI_ResultPhase  {
+    pub fn before_open() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl FishingResultUI_ResultPhase {
-        pub fn before_open() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn open() -> Self {
-            Self { value: 1 }
-        }
+    pub fn open() -> Self {
+        Self { value: 1 }
 
-        pub fn wait_close() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn phase_count() -> Self {
-            Self { value: 3 }
-        }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingresultui/FishingResultUI.md"))]
-    #[::unity2::class(namespace = "App", name = "FishingResultUI")]
-    #[parent(crate::system::object::Object)]
-    pub struct FishingResultUI {
-        #[offset(16)]
-        #[rename(name = "m_Sprites")]
-        pub m_sprites: ::unity2::Array<crate::unity_engine::sprite::Sprite>,
-        #[static_field]
-        #[rename(name = "cTextureRootPath")]
-        pub c_texture_root_path: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "cResultTextureGold")]
-        pub c_result_texture_gold: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "cResultTextureSilver")]
-        pub c_result_texture_silver: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "cResultTextureBronze")]
-        pub c_result_texture_bronze: ::unity2::Il2CppString,
-        #[offset(24)]
-        #[rename(name = "m_Root")]
-        pub m_root: crate::unity_engine::gameobject::GameObject,
-        #[offset(32)]
-        #[rename(name = "m_Data")]
-        pub m_data: crate::app::fishingresultdata::FishingResultData,
-        #[offset(40)]
-        #[rename(name = "m_Timer")]
-        pub m_timer: f64,
-        #[offset(48)]
-        #[rename(name = "m_TimeLimit")]
-        pub m_time_limit: f32,
-        #[offset(52)]
-        #[rename(name = "m_IsNewRecord")]
-        pub m_is_new_record: bool,
-        #[offset(56)]
-        #[rename(name = "m_Phase")]
-        pub m_phase: crate::app::fishingresultui::FishingResultUI_ResultPhase,
+
+    pub fn wait_close() -> Self {
+        Self { value: 2 }
+
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingresultui/FishingResultUI_SpriteKind.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct FishingResultUI_SpriteKind {
-        pub value: i32,
+
+    pub fn phase_count() -> Self {
+        Self { value: 3 }
+
     }
 
-    impl ::unity2::ClassIdentity for FishingResultUI_SpriteKind {
-        const NAME: &'static str = "FishingResultUI.SpriteKind";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingresultui/FishingResultUI_SpriteKind.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct FishingResultUI_SpriteKind  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for FishingResultUI_SpriteKind  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "FishingResultUI.SpriteKind";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for FishingResultUI_SpriteKind {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  ::unity2::IlType for FishingResultUI_SpriteKind  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl FishingResultUI_SpriteKind {
-        pub fn size() -> Self {
-            Self { value: 0 }
-        }
+}
 
-        pub fn gyotaku() -> Self {
-            Self { value: 1 }
-        }
+
+impl  FishingResultUI_SpriteKind  {
+    pub fn size() -> Self {
+        Self { value: 0 }
+
     }
+
+
+    pub fn gyotaku() -> Self {
+        Self { value: 1 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingresultui/FishingResultUI.md"))] # [:: unity2 :: class (namespace = "App" , name = "FishingResultUI")] # [parent (crate :: system :: object :: Object)] pub struct FishingResultUI {
+# [offset (16)] # [rename (name = "m_Sprites")] pub m_sprites : :: unity2 :: Array < crate :: unity_engine :: sprite :: Sprite > ,
+# [static_field] # [rename (name = "cTextureRootPath")] pub c_texture_root_path : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "cResultTextureGold")] pub c_result_texture_gold : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "cResultTextureSilver")] pub c_result_texture_silver : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "cResultTextureBronze")] pub c_result_texture_bronze : :: unity2 :: Il2CppString ,
+# [offset (24)] # [rename (name = "m_Root")] pub m_root : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (32)] # [rename (name = "m_Data")] pub m_data : crate :: app :: fishingresultdata :: FishingResultData ,
+# [offset (40)] # [rename (name = "m_Timer")] pub m_timer : f64 ,
+# [offset (48)] # [rename (name = "m_TimeLimit")] pub m_time_limit : f32 ,
+# [offset (52)] # [rename (name = "m_IsNewRecord")] pub m_is_new_record : bool ,
+# [offset (56)] # [rename (name = "m_Phase")] pub m_phase : crate :: app :: fishingresultui :: FishingResultUI_ResultPhase ,
+}
+
 }
 
 #[cfg(feature = "app-fishingresultui-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-fishingresultui")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FishingResultUI_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_ready {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingResultUI as ::unity2::ClassIdentity>::class(),
-                "get_IsReady",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingResultUI as ::unity2::ClassIdentity>::NAME,
-                        "get_IsReady",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_ready(this: FishingResultUI, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(FishingResultUI, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_ready::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_finish {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingResultUI as ::unity2::ClassIdentity>::class(),
-                "get_IsFinish",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingResultUI as ::unity2::ClassIdentity>::NAME,
-                        "get_IsFinish",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_finish(this: FishingResultUI, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(FishingResultUI, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_finish::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingResultUI as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingResultUI as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: FishingResultUI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FishingResultUI, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_init {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-                <crate::app::fishingresultdata::FishingResultData as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingResultUI as ::unity2::ClassIdentity>::class(),
-                "Init",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingResultUI as ::unity2::ClassIdentity>::NAME,
-                        "Init",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn init(
-        this: FishingResultUI,
-        root_obj: crate::unity_engine::gameobject::GameObject,
-        set_data: crate::app::fishingresultdata::FishingResultData,
-        time_limit: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            FishingResultUI,
-            crate::unity_engine::gameobject::GameObject,
-            crate::app::fishingresultdata::FishingResultData,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_init::get_method_info().method_ptr);
-        inner(this, root_obj, set_data, time_limit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_overwrite_user_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingResultUI as ::unity2::ClassIdentity>::class(),
-                "OverwriteUserData",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingResultUI as ::unity2::ClassIdentity>::NAME,
-                        "OverwriteUserData",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn overwrite_user_data(this: FishingResultUI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FishingResultUI, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_overwrite_user_data::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_next_phase {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingResultUI as ::unity2::ClassIdentity>::class(),
-                "NextPhase",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingResultUI as ::unity2::ClassIdentity>::NAME,
-                        "NextPhase",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn next_phase(this: FishingResultUI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FishingResultUI, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_next_phase::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingResultUI as ::unity2::ClassIdentity>::class(),
-                "Start",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingResultUI as ::unity2::ClassIdentity>::NAME,
-                        "Start",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start(this: FishingResultUI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FishingResultUI, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_tick {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingResultUI as ::unity2::ClassIdentity>::class(),
-                "Tick",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingResultUI as ::unity2::ClassIdentity>::NAME,
-                        "Tick",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn tick(this: FishingResultUI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FishingResultUI, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_tick::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_destroy_result {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingResultUI as ::unity2::ClassIdentity>::class(),
-                "DestroyResult",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingResultUI as ::unity2::ClassIdentity>::NAME,
-                        "DestroyResult",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn destroy_result(this: FishingResultUI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FishingResultUI, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_destroy_result::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close_result {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingResultUI as ::unity2::ClassIdentity>::class(),
-                "CloseResult",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingResultUI as ::unity2::ClassIdentity>::NAME,
-                        "CloseResult",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn close_result(this: FishingResultUI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FishingResultUI, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_close_result::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_closed_result {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingResultUI as ::unity2::ClassIdentity>::class(),
-                "IsClosedResult",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingResultUI as ::unity2::ClassIdentity>::NAME,
-                        "IsClosedResult",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_closed_result(this: FishingResultUI, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(FishingResultUI, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_closed_result::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __FishingResultUI_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_ready { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FishingResultUI as :: unity2 :: ClassIdentity > :: class () , "get_IsReady" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FishingResultUI as :: unity2 :: ClassIdentity > :: NAME , "get_IsReady" , e) , } } } pub unsafe fn get_is_ready (this : FishingResultUI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (FishingResultUI , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_is_ready :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_finish { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FishingResultUI as :: unity2 :: ClassIdentity > :: class () , "get_IsFinish" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FishingResultUI as :: unity2 :: ClassIdentity > :: NAME , "get_IsFinish" , e) , } } } pub unsafe fn get_is_finish (this : FishingResultUI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (FishingResultUI , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_is_finish :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FishingResultUI as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FishingResultUI as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : FishingResultUI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FishingResultUI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_init { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < crate :: app :: fishingresultdata :: FishingResultData as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FishingResultUI as :: unity2 :: ClassIdentity > :: class () , "Init" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FishingResultUI as :: unity2 :: ClassIdentity > :: NAME , "Init" , e) , } } } pub unsafe fn init (this : FishingResultUI , root_obj : crate :: unity_engine :: gameobject :: GameObject , set_data : crate :: app :: fishingresultdata :: FishingResultData , time_limit : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FishingResultUI , crate :: unity_engine :: gameobject :: GameObject , crate :: app :: fishingresultdata :: FishingResultData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_init :: get_method_info () . method_ptr ,) ; inner (this , root_obj , set_data , time_limit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_overwrite_user_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FishingResultUI as :: unity2 :: ClassIdentity > :: class () , "OverwriteUserData" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FishingResultUI as :: unity2 :: ClassIdentity > :: NAME , "OverwriteUserData" , e) , } } } pub unsafe fn overwrite_user_data (this : FishingResultUI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FishingResultUI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_overwrite_user_data :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_next_phase { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FishingResultUI as :: unity2 :: ClassIdentity > :: class () , "NextPhase" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FishingResultUI as :: unity2 :: ClassIdentity > :: NAME , "NextPhase" , e) , } } } pub unsafe fn next_phase (this : FishingResultUI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FishingResultUI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_next_phase :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FishingResultUI as :: unity2 :: ClassIdentity > :: class () , "Start" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FishingResultUI as :: unity2 :: ClassIdentity > :: NAME , "Start" , e) , } } } pub unsafe fn start (this : FishingResultUI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FishingResultUI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_tick { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FishingResultUI as :: unity2 :: ClassIdentity > :: class () , "Tick" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FishingResultUI as :: unity2 :: ClassIdentity > :: NAME , "Tick" , e) , } } } pub unsafe fn tick (this : FishingResultUI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FishingResultUI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_tick :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_destroy_result { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FishingResultUI as :: unity2 :: ClassIdentity > :: class () , "DestroyResult" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FishingResultUI as :: unity2 :: ClassIdentity > :: NAME , "DestroyResult" , e) , } } } pub unsafe fn destroy_result (this : FishingResultUI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FishingResultUI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_destroy_result :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_close_result { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FishingResultUI as :: unity2 :: ClassIdentity > :: class () , "CloseResult" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FishingResultUI as :: unity2 :: ClassIdentity > :: NAME , "CloseResult" , e) , } } } pub unsafe fn close_result (this : FishingResultUI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FishingResultUI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_close_result :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_closed_result { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FishingResultUI as :: unity2 :: ClassIdentity > :: class () , "IsClosedResult" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FishingResultUI as :: unity2 :: ClassIdentity > :: NAME , "IsClosedResult" , e) , } } } pub unsafe fn is_closed_result (this : FishingResultUI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (FishingResultUI , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_closed_result :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-fishingresultui")]
-pub trait IFishingResultUIMethods: IFishingResultUI {
-    #[doc = "`get_IsReady()` overload"]
-    fn get_is_ready(self) -> bool {
-        unsafe {
-            let __receiver = <FishingResultUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingResultUI_unity2_raw::get_is_ready(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_IsFinish()` overload"]
-    fn get_is_finish(self) -> bool {
-        unsafe {
-            let __receiver = <FishingResultUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingResultUI_unity2_raw::get_is_finish(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <FishingResultUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingResultUI_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Init(crate::unity_engine::gameobject::GameObject, crate::app::fishingresultdata::FishingResultData, f32)` overload"]
-    fn init(
-        self,
-        root_obj: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-        set_data: impl ::core::convert::Into<crate::app::fishingresultdata::FishingResultData>,
-        time_limit: impl ::core::convert::Into<f32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <FishingResultUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingResultUI_unity2_raw::init(
-                __receiver,
-                ::core::convert::Into::into(root_obj),
-                ::core::convert::Into::into(set_data),
-                ::core::convert::Into::into(time_limit),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OverwriteUserData()` overload"]
-    fn overwrite_user_data(self) -> () {
-        unsafe {
-            let __receiver = <FishingResultUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingResultUI_unity2_raw::overwrite_user_data(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`NextPhase()` overload"]
-    fn next_phase(self) -> () {
-        unsafe {
-            let __receiver = <FishingResultUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingResultUI_unity2_raw::next_phase(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Start()` overload"]
-    fn start(self) -> () {
-        unsafe {
-            let __receiver = <FishingResultUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingResultUI_unity2_raw::start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Tick()` overload"]
-    fn tick(self) -> () {
-        unsafe {
-            let __receiver = <FishingResultUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingResultUI_unity2_raw::tick(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`DestroyResult()` overload"]
-    fn destroy_result(self) -> () {
-        unsafe {
-            let __receiver = <FishingResultUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingResultUI_unity2_raw::destroy_result(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CloseResult()` overload"]
-    fn close_result(self) -> () {
-        unsafe {
-            let __receiver = <FishingResultUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingResultUI_unity2_raw::close_result(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsClosedResult()` overload"]
-    fn is_closed_result(self) -> bool {
-        unsafe {
-            let __receiver = <FishingResultUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingResultUI_unity2_raw::is_closed_result(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IFishingResultUIMethods : IFishingResultUI { # [doc = "`get_IsReady()` overload"] fn get_is_ready (self ,) -> bool { unsafe { let __receiver = < FishingResultUI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FishingResultUI_unity2_raw :: get_is_ready (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_IsFinish()` overload"] fn get_is_finish (self ,) -> bool { unsafe { let __receiver = < FishingResultUI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FishingResultUI_unity2_raw :: get_is_finish (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FishingResultUI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FishingResultUI_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Init(crate::unity_engine::gameobject::GameObject, crate::app::fishingresultdata::FishingResultData, f32)` overload"] fn init (self , root_obj : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , set_data : impl :: core :: convert :: Into < crate :: app :: fishingresultdata :: FishingResultData > , time_limit : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < FishingResultUI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FishingResultUI_unity2_raw :: init (__receiver , :: core :: convert :: Into :: into (root_obj) , :: core :: convert :: Into :: into (set_data) , :: core :: convert :: Into :: into (time_limit) , :: core :: option :: Option :: None) } } # [doc = "`OverwriteUserData()` overload"] fn overwrite_user_data (self ,) -> () { unsafe { let __receiver = < FishingResultUI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FishingResultUI_unity2_raw :: overwrite_user_data (__receiver , :: core :: option :: Option :: None) } } # [doc = "`NextPhase()` overload"] fn next_phase (self ,) -> () { unsafe { let __receiver = < FishingResultUI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FishingResultUI_unity2_raw :: next_phase (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < FishingResultUI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FishingResultUI_unity2_raw :: start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Tick()` overload"] fn tick (self ,) -> () { unsafe { let __receiver = < FishingResultUI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FishingResultUI_unity2_raw :: tick (__receiver , :: core :: option :: Option :: None) } } # [doc = "`DestroyResult()` overload"] fn destroy_result (self ,) -> () { unsafe { let __receiver = < FishingResultUI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FishingResultUI_unity2_raw :: destroy_result (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CloseResult()` overload"] fn close_result (self ,) -> () { unsafe { let __receiver = < FishingResultUI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FishingResultUI_unity2_raw :: close_result (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsClosedResult()` overload"] fn is_closed_result (self ,) -> bool { unsafe { let __receiver = < FishingResultUI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FishingResultUI_unity2_raw :: is_closed_result (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-fishingresultui")]
-impl<__T: IFishingResultUI> IFishingResultUIMethods for __T {}
+impl < __T : IFishingResultUI > IFishingResultUIMethods for __T { }
+
+#[cfg(feature = "app-fishingresultui")]
+impl FishingResultUI { pub fn get_is_ready_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FishingResultUI_unity2_raw :: __lookup_get_is_ready :: get_method_info () } pub fn get_is_finish_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FishingResultUI_unity2_raw :: __lookup_get_is_finish :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FishingResultUI_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FishingResultUI_unity2_raw :: __lookup_init :: get_method_info () } pub fn overwrite_user_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FishingResultUI_unity2_raw :: __lookup_overwrite_user_data :: get_method_info () } pub fn next_phase_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FishingResultUI_unity2_raw :: __lookup_next_phase :: get_method_info () } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FishingResultUI_unity2_raw :: __lookup_start :: get_method_info () } pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FishingResultUI_unity2_raw :: __lookup_tick :: get_method_info () } pub fn destroy_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FishingResultUI_unity2_raw :: __lookup_destroy_result :: get_method_info () } pub fn close_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FishingResultUI_unity2_raw :: __lookup_close_result :: get_method_info () } pub fn is_closed_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FishingResultUI_unity2_raw :: __lookup_is_closed_result :: get_method_info () } }
 
 #[cfg(feature = "app-fishingresultui")]
 impl FishingResultUI {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FishingResultUI),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFishingResultUIMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FishingResultUI) , :: core :: stringify ! (new) ,)) ; < Self as IFishingResultUIMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-fishingresultui")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{FishingResultUI, FishingResultUI_ResultPhase, FishingResultUI_SpriteKind, IFishingResultUI, IFishingResultUIMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
+    pub use super::FishingResultUI_ResultPhase;
+    pub use super::FishingResultUI_SpriteKind;
+    pub use super::FishingResultUI;
+    pub use super::IFishingResultUI;
+    pub use super::IFishingResultUIMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

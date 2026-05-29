@@ -2,190 +2,67 @@
 
 #[cfg(feature = "app-profilecardcolor-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::singletonscriptableobject_1::{ISingletonScriptableObject_1, SingletonScriptableObject_1},
-        system::object::{IObject, Object},
-        unity_engine::{
-            object_2::{IObject_2, Object_2},
-            scriptableobject::{IScriptableObject, ScriptableObject},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardcolor/ProfileCardColor.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileCardColor")]
-    # [parent (crate :: app :: singletonscriptableobject_1 :: SingletonScriptableObject_1 < crate :: app :: profilecardcolor :: ProfileCardColor >)]
-    pub struct ProfileCardColor {
-        #[offset(24)]
-        #[rename(name = "黒")]
-        pub 黒: crate::unity_engine::color::Color,
-        #[offset(40)]
-        #[rename(name = "灰")]
-        pub 灰: crate::unity_engine::color::Color,
-        #[offset(56)]
-        #[rename(name = "赤")]
-        pub 赤: crate::unity_engine::color::Color,
-        #[offset(72)]
-        #[rename(name = "桃")]
-        pub 桃: crate::unity_engine::color::Color,
-        #[offset(88)]
-        #[rename(name = "紫")]
-        pub 紫: crate::unity_engine::color::Color,
-        #[offset(104)]
-        #[rename(name = "青")]
-        pub 青: crate::unity_engine::color::Color,
-        #[offset(120)]
-        #[rename(name = "群青")]
-        pub 群青: crate::unity_engine::color::Color,
-        #[offset(136)]
-        #[rename(name = "緑")]
-        pub 緑: crate::unity_engine::color::Color,
-        #[offset(152)]
-        #[rename(name = "黄緑")]
-        pub 黄緑: crate::unity_engine::color::Color,
-        #[offset(168)]
-        #[rename(name = "茶色")]
-        pub 茶色: crate::unity_engine::color::Color,
-        #[offset(184)]
-        #[rename(name = "橙")]
-        pub 橙: crate::unity_engine::color::Color,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: singletonscriptableobject_1 :: { ISingletonScriptableObject_1 , SingletonScriptableObject_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+ use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardcolor/ProfileCardColor.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardColor")] # [parent (crate :: app :: singletonscriptableobject_1 :: SingletonScriptableObject_1 < crate :: app :: profilecardcolor :: ProfileCardColor >)] pub struct ProfileCardColor {
+# [offset (24)] # [rename (name = "黒")] pub 黒 : crate :: unity_engine :: color :: Color ,
+# [offset (40)] # [rename (name = "灰")] pub 灰 : crate :: unity_engine :: color :: Color ,
+# [offset (56)] # [rename (name = "赤")] pub 赤 : crate :: unity_engine :: color :: Color ,
+# [offset (72)] # [rename (name = "桃")] pub 桃 : crate :: unity_engine :: color :: Color ,
+# [offset (88)] # [rename (name = "紫")] pub 紫 : crate :: unity_engine :: color :: Color ,
+# [offset (104)] # [rename (name = "青")] pub 青 : crate :: unity_engine :: color :: Color ,
+# [offset (120)] # [rename (name = "群青")] pub 群青 : crate :: unity_engine :: color :: Color ,
+# [offset (136)] # [rename (name = "緑")] pub 緑 : crate :: unity_engine :: color :: Color ,
+# [offset (152)] # [rename (name = "黄緑")] pub 黄緑 : crate :: unity_engine :: color :: Color ,
+# [offset (168)] # [rename (name = "茶色")] pub 茶色 : crate :: unity_engine :: color :: Color ,
+# [offset (184)] # [rename (name = "橙")] pub 橙 : crate :: unity_engine :: color :: Color ,
+}
+
 }
 
 #[cfg(feature = "app-profilecardcolor-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-profilecardcolor")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ProfileCardColor_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardColor as ::unity2::ClassIdentity>::class(),
-                "GetColor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardColor as ::unity2::ClassIdentity>::NAME,
-                        "GetColor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_color(
-        this: ProfileCardColor,
-        color: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::color::Color {
-        let inner: extern "C" fn(ProfileCardColor, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::unity_engine::color::Color =
-            ::core::mem::transmute(__lookup_get_color::get_method_info().method_ptr);
-        inner(this, color, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardColor as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCardColor as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ProfileCardColor, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ProfileCardColor, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ProfileCardColor_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_color { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardColor as :: unity2 :: ClassIdentity > :: class () , "GetColor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardColor as :: unity2 :: ClassIdentity > :: NAME , "GetColor" , e) , } } } pub unsafe fn get_color (this : ProfileCardColor , color : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color { let inner : extern "C" fn (ProfileCardColor , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute (__lookup_get_color :: get_method_info () . method_ptr ,) ; inner (this , color , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardColor as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardColor as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ProfileCardColor , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProfileCardColor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-profilecardcolor")]
-pub trait IProfileCardColorMethods: IProfileCardColor {
-    #[doc = "`GetColor(::unity2::Il2CppString)` overload"]
-    fn get_color(self, color: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::color::Color {
-        unsafe {
-            let __receiver = <ProfileCardColor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProfileCardColor_unity2_raw::get_color(__receiver, ::core::convert::Into::into(color), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <ProfileCardColor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProfileCardColor_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IProfileCardColorMethods : IProfileCardColor { # [doc = "`GetColor(::unity2::Il2CppString)` overload"] fn get_color (self , color : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: color :: Color { unsafe { let __receiver = < ProfileCardColor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileCardColor_unity2_raw :: get_color (__receiver , :: core :: convert :: Into :: into (color) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ProfileCardColor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileCardColor_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-profilecardcolor")]
-impl<__T: IProfileCardColor> IProfileCardColorMethods for __T {}
+impl < __T : IProfileCardColor > IProfileCardColorMethods for __T { }
+
+#[cfg(feature = "app-profilecardcolor")]
+impl ProfileCardColor { pub fn get_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardColor_unity2_raw :: __lookup_get_color :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardColor_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-profilecardcolor")]
 impl ProfileCardColor {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardColor),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IProfileCardColorMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardColor) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardColorMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-profilecardcolor")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IProfileCardColor, IProfileCardColorMethods, ProfileCardColor};
-    #[cfg(feature = "app-singletonscriptableobject_1")]
-    pub use crate::app::singletonscriptableobject_1::ISingletonScriptableObject_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    #[cfg(feature = "unity_engine-scriptableobject")]
-    pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
-    pub use crate::{
-        app::singletonscriptableobject_1::ISingletonScriptableObject_1,
-        system::object::IObject,
-        unity_engine::{object_2::IObject_2, scriptableobject::IScriptableObject},
-    };
+    pub use super::ProfileCardColor;
+    pub use super::IProfileCardColor;
+    pub use super::IProfileCardColorMethods;
+    pub use crate::app::singletonscriptableobject_1::ISingletonScriptableObject_1;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::object_2::IObject_2;
+    pub use crate::unity_engine::scriptableobject::IScriptableObject;
+    #[cfg(feature = "app-singletonscriptableobject_1")] pub use crate::app::singletonscriptableobject_1::ISingletonScriptableObject_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    #[cfg(feature = "unity_engine-scriptableobject")] pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
 }

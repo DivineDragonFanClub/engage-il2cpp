@@ -2,95 +2,63 @@
 
 #[cfg(feature = "app-integeritem_1-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            instanceitem_1::{IInstanceItem_1, InstanceItem_1},
-            menuitem::{IMenuItem, MenuItem},
-            paramitem::{IParamItem, ParamItem},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/integeritem_1/IntegerItem_1.md"))]
-    #[::unity2::class(namespace = "App", name = "IntegerItem`1")]
-    # [parent (crate :: app :: instanceitem_1 :: InstanceItem_1 < T0 >)]
-    #[parent(crate::app::paramitem::ParamItem)]
-    #[parent(crate::app::menuitem::MenuItem)]
-    #[parent(crate::system::object::Object)]
-    pub struct IntegerItem_1<T0: ::unity2::ClassIdentity> {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: instanceitem_1 :: { IInstanceItem_1 , InstanceItem_1 }
+ ;
+ use crate :: app :: menuitem :: { IMenuItem , MenuItem }
+ ;
+ use crate :: app :: paramitem :: { IParamItem , ParamItem }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/integeritem_1/IntegerItem_1.md"))] # [:: unity2 :: class (namespace = "App" , name = "IntegerItem`1")] # [parent (crate :: app :: instanceitem_1 :: InstanceItem_1 < T0 >)] # [parent (crate :: app :: paramitem :: ParamItem)] # [parent (crate :: app :: menuitem :: MenuItem)] # [parent (crate :: system :: object :: Object)] pub struct IntegerItem_1 < T0 : :: unity2 :: ClassIdentity > {}
+
 }
 
 #[cfg(feature = "app-integeritem_1-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-integeritem_1")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> IntegerItem_1<T0> {
-    #[doc = "`.ctor(T0)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, instance: T0) -> ();
+# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > IntegerItem_1 < T0 > {
+# [doc = "`.ctor(T0)` overload"] # [method (name = ".ctor" , args = 1)] pub fn ctor (self , instance : T0) -> () ;
 
-    #[doc = "`GetValue()` overload"]
-    #[method(name = "GetValue", args = 0)]
-    pub fn get_value(self) -> i32;
+# [doc = "`GetValue()` overload"] # [method (name = "GetValue" , args = 0)] pub fn get_value (self ,) -> i32 ;
 
-    #[doc = "`SetValue(i32)` overload"]
-    #[method(name = "SetValue", args = 1)]
-    pub fn set_value(self, value: i32) -> ();
+# [doc = "`SetValue(i32)` overload"] # [method (name = "SetValue" , args = 1)] pub fn set_value (self , value : i32) -> () ;
 
-    #[doc = "`GetStep()` overload"]
-    #[method(name = "GetStep", args = 0)]
-    pub fn get_step(self) -> i32;
+# [doc = "`GetStep()` overload"] # [method (name = "GetStep" , args = 0)] pub fn get_step (self ,) -> i32 ;
 
-    #[doc = "`GetMin()` overload"]
-    #[method(name = "GetMin", args = 0)]
-    pub fn get_min(self) -> i32;
+# [doc = "`GetMin()` overload"] # [method (name = "GetMin" , args = 0)] pub fn get_min (self ,) -> i32 ;
 
-    #[doc = "`GetMax()` overload"]
-    #[method(name = "GetMax", args = 0)]
-    pub fn get_max(self) -> i32;
+# [doc = "`GetMax()` overload"] # [method (name = "GetMax" , args = 0)] pub fn get_max (self ,) -> i32 ;
 
-    #[doc = "`GetColumnName1()` overload"]
-    #[method(name = "GetColumnName1", args = 0)]
-    pub fn get_column_name1(self) -> ::unity2::Il2CppString;
+# [doc = "`GetColumnName1()` overload"] # [method (name = "GetColumnName1" , args = 0)] pub fn get_column_name1 (self ,) -> :: unity2 :: Il2CppString ;
 
-    #[doc = "`OnLeftRight(i32, bool)` overload"]
-    #[method(name = "OnLeftRight", args = 2)]
-    pub fn on_left_right(self, step: i32, is_trigger: bool) -> ();
+# [doc = "`OnLeftRight(i32, bool)` overload"] # [method (name = "OnLeftRight" , args = 2)] pub fn on_left_right (self , step : i32 , is_trigger : bool) -> () ;
 }
 
 #[cfg(feature = "app-integeritem_1")]
-impl<T0: ::unity2::ClassIdentity> IntegerItem_1<T0> {
-    #[doc = "`.ctor(T0)` — overload selector"]
-    pub fn new(instance: T0) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(IntegerItem_1), ::core::stringify!(new),));
-        <Self as IIntegerItem_1Methods<T0>>::ctor(this, instance);
-        this
-    }
+impl < T0 : :: unity2 :: ClassIdentity > IntegerItem_1 < T0 > {
+# [doc = "`.ctor(T0)` — overload selector"] pub fn new (instance : T0) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (IntegerItem_1) , :: core :: stringify ! (new) ,)) ; < Self as IIntegerItem_1Methods < T0 > > :: ctor (this , instance) ; this }
 }
 
 #[cfg(feature = "app-integeritem_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IIntegerItem_1, IIntegerItem_1Methods, IntegerItem_1};
-    #[cfg(feature = "app-instanceitem_1")]
-    pub use crate::app::instanceitem_1::IInstanceItem_1Methods;
-    #[cfg(feature = "app-menuitem")]
-    pub use crate::app::menuitem::IMenuItemMethods;
-    #[cfg(feature = "app-paramitem")]
-    pub use crate::app::paramitem::IParamItemMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        app::{
-            instanceitem_1::{IInstanceItem_1, InstanceItem_1},
-            menuitem::IMenuItem,
-            paramitem::IParamItem,
-        },
-        system::object::IObject,
-    };
+    pub use super::IntegerItem_1;
+    pub use super::IIntegerItem_1;
+    pub use super::IIntegerItem_1Methods;
+    pub use crate::app::instanceitem_1::IInstanceItem_1;
+    pub use crate::app::instanceitem_1::InstanceItem_1;
+    pub use crate::app::menuitem::IMenuItem;
+    pub use crate::app::paramitem::IParamItem;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-instanceitem_1")] pub use crate::app::instanceitem_1::IInstanceItem_1Methods;
+    #[cfg(feature = "app-menuitem")] pub use crate::app::menuitem::IMenuItemMethods;
+    #[cfg(feature = "app-paramitem")] pub use crate::app::paramitem::IParamItemMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

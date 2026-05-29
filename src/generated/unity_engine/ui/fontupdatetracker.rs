@@ -2,193 +2,36 @@
 
 #[cfg(feature = "unity_engine-ui-fontupdatetracker-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/fontupdatetracker/FontUpdateTracker.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UI", name = "FontUpdateTracker")]
-    #[parent(crate::system::object::Object)]
-    pub struct FontUpdateTracker {
-        #[static_field]
-        #[rename(name = "m_Tracked")]
-        pub m_tracked: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            crate::unity_engine::font::Font,
-            crate::system::collections::generic::hashset_1::HashSet_1<crate::unity_engine::ui::text::Text>,
-        >,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/fontupdatetracker/FontUpdateTracker.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "FontUpdateTracker")] # [parent (crate :: system :: object :: Object)] pub struct FontUpdateTracker {
+# [static_field] # [rename (name = "m_Tracked")] pub m_tracked : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: unity_engine :: font :: Font , crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < crate :: unity_engine :: ui :: text :: Text > > ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-ui-fontupdatetracker-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-ui-fontupdatetracker")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FontUpdateTracker_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_track_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::ui::text::Text as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FontUpdateTracker as ::unity2::ClassIdentity>::class(),
-                "TrackText",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FontUpdateTracker as ::unity2::ClassIdentity>::NAME,
-                        "TrackText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn track_text(t: crate::unity_engine::ui::text::Text, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::unity_engine::ui::text::Text, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_track_text::get_method_info().method_ptr);
-        inner(t, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_rebuild_for_font {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::font::Font as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FontUpdateTracker as ::unity2::ClassIdentity>::class(),
-                "RebuildForFont",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FontUpdateTracker as ::unity2::ClassIdentity>::NAME,
-                        "RebuildForFont",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn rebuild_for_font(f: crate::unity_engine::font::Font, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::unity_engine::font::Font, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_rebuild_for_font::get_method_info().method_ptr);
-        inner(f, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_untrack_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::ui::text::Text as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FontUpdateTracker as ::unity2::ClassIdentity>::class(),
-                "UntrackText",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FontUpdateTracker as ::unity2::ClassIdentity>::NAME,
-                        "UntrackText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn untrack_text(t: crate::unity_engine::ui::text::Text, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::unity_engine::ui::text::Text, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_untrack_text::get_method_info().method_ptr);
-        inner(t, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FontUpdateTracker as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FontUpdateTracker as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __FontUpdateTracker_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_track_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: ui :: text :: Text as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FontUpdateTracker as :: unity2 :: ClassIdentity > :: class () , "TrackText" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FontUpdateTracker as :: unity2 :: ClassIdentity > :: NAME , "TrackText" , e) , } } } pub unsafe fn track_text (t : crate :: unity_engine :: ui :: text :: Text , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: ui :: text :: Text , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_track_text :: get_method_info () . method_ptr ,) ; inner (t , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_rebuild_for_font { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: font :: Font as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FontUpdateTracker as :: unity2 :: ClassIdentity > :: class () , "RebuildForFont" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FontUpdateTracker as :: unity2 :: ClassIdentity > :: NAME , "RebuildForFont" , e) , } } } pub unsafe fn rebuild_for_font (f : crate :: unity_engine :: font :: Font , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: font :: Font , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_rebuild_for_font :: get_method_info () . method_ptr ,) ; inner (f , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_untrack_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: ui :: text :: Text as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FontUpdateTracker as :: unity2 :: ClassIdentity > :: class () , "UntrackText" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FontUpdateTracker as :: unity2 :: ClassIdentity > :: NAME , "UntrackText" , e) , } } } pub unsafe fn untrack_text (t : crate :: unity_engine :: ui :: text :: Text , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: ui :: text :: Text , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_untrack_text :: get_method_info () . method_ptr ,) ; inner (t , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FontUpdateTracker as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FontUpdateTracker as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-ui-fontupdatetracker")]
-impl FontUpdateTracker {
-    #[doc = "`TrackText(crate::unity_engine::ui::text::Text)` overload"]
-    pub fn track_text(t: impl ::core::convert::Into<crate::unity_engine::ui::text::Text>) -> () {
-        unsafe { __FontUpdateTracker_unity2_raw::track_text(::core::convert::Into::into(t), ::core::option::Option::None) }
-    }
+impl FontUpdateTracker { # [doc = "`TrackText(crate::unity_engine::ui::text::Text)` overload"] pub fn track_text (t : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: text :: Text >) -> () { unsafe { __FontUpdateTracker_unity2_raw :: track_text (:: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } # [doc = "`RebuildForFont(crate::unity_engine::font::Font)` overload"] pub fn rebuild_for_font (f : impl :: core :: convert :: Into < crate :: unity_engine :: font :: Font >) -> () { unsafe { __FontUpdateTracker_unity2_raw :: rebuild_for_font (:: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } # [doc = "`UntrackText(crate::unity_engine::ui::text::Text)` overload"] pub fn untrack_text (t : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: text :: Text >) -> () { unsafe { __FontUpdateTracker_unity2_raw :: untrack_text (:: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __FontUpdateTracker_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
 
-    #[doc = "`RebuildForFont(crate::unity_engine::font::Font)` overload"]
-    pub fn rebuild_for_font(f: impl ::core::convert::Into<crate::unity_engine::font::Font>) -> () {
-        unsafe { __FontUpdateTracker_unity2_raw::rebuild_for_font(::core::convert::Into::into(f), ::core::option::Option::None) }
-    }
-
-    #[doc = "`UntrackText(crate::unity_engine::ui::text::Text)` overload"]
-    pub fn untrack_text(t: impl ::core::convert::Into<crate::unity_engine::ui::text::Text>) -> () {
-        unsafe { __FontUpdateTracker_unity2_raw::untrack_text(::core::convert::Into::into(t), ::core::option::Option::None) }
-    }
-
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __FontUpdateTracker_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "unity_engine-ui-fontupdatetracker")]
+impl FontUpdateTracker { pub fn track_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FontUpdateTracker_unity2_raw :: __lookup_track_text :: get_method_info () } pub fn rebuild_for_font_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FontUpdateTracker_unity2_raw :: __lookup_rebuild_for_font :: get_method_info () } pub fn untrack_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FontUpdateTracker_unity2_raw :: __lookup_untrack_text :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FontUpdateTracker_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-ui-fontupdatetracker")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{FontUpdateTracker, IFontUpdateTracker};
+    pub use super::FontUpdateTracker;
+    pub use super::IFontUpdateTracker;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

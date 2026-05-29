@@ -2,74 +2,34 @@
 
 #[cfg(feature = "unity_engine-rendering-cameraeventutils-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/cameraeventutils/CameraEventUtils.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "CameraEventUtils")]
-    #[parent(crate::system::object::Object)]
-    pub struct CameraEventUtils {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/cameraeventutils/CameraEventUtils.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "CameraEventUtils")] # [parent (crate :: system :: object :: Object)] pub struct CameraEventUtils {}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-cameraeventutils-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-cameraeventutils")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CameraEventUtils_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_valid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::rendering::cameraevent::CameraEvent as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraEventUtils as ::unity2::ClassIdentity>::class(),
-                "IsValid",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CameraEventUtils as ::unity2::ClassIdentity>::NAME,
-                        "IsValid",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_valid(value: crate::unity_engine::rendering::cameraevent::CameraEvent, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(crate::unity_engine::rendering::cameraevent::CameraEvent, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_valid::get_method_info().method_ptr);
-        inner(value, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CameraEventUtils_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_valid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: cameraevent :: CameraEvent as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CameraEventUtils as :: unity2 :: ClassIdentity > :: class () , "IsValid" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CameraEventUtils as :: unity2 :: ClassIdentity > :: NAME , "IsValid" , e) , } } } pub unsafe fn is_valid (value : crate :: unity_engine :: rendering :: cameraevent :: CameraEvent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: unity_engine :: rendering :: cameraevent :: CameraEvent , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_valid :: get_method_info () . method_ptr ,) ; inner (value , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-rendering-cameraeventutils")]
-impl CameraEventUtils {
-    #[doc = "`IsValid(crate::unity_engine::rendering::cameraevent::CameraEvent)` overload"]
-    pub fn is_valid(value: impl ::core::convert::Into<crate::unity_engine::rendering::cameraevent::CameraEvent>) -> bool {
-        unsafe { __CameraEventUtils_unity2_raw::is_valid(::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-}
+impl CameraEventUtils { # [doc = "`IsValid(crate::unity_engine::rendering::cameraevent::CameraEvent)` overload"] pub fn is_valid (value : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: cameraevent :: CameraEvent >) -> bool { unsafe { __CameraEventUtils_unity2_raw :: is_valid (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-rendering-cameraeventutils")]
+impl CameraEventUtils { pub fn is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CameraEventUtils_unity2_raw :: __lookup_is_valid :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-cameraeventutils")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{CameraEventUtils, ICameraEventUtils};
+    pub use super::CameraEventUtils;
+    pub use super::ICameraEventUtils;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

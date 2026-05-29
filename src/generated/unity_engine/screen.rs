@@ -2,166 +2,34 @@
 
 #[cfg(feature = "unity_engine-screen-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/screen/Screen.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "Screen")]
-    #[parent(crate::system::object::Object)]
-    pub struct Screen {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/screen/Screen.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "Screen")] # [parent (crate :: system :: object :: Object)] pub struct Screen {}
+
 }
 
 #[cfg(feature = "unity_engine-screen-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-screen")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Screen_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_width {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Screen as ::unity2::ClassIdentity>::class(), "get_width", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Screen as ::unity2::ClassIdentity>::NAME,
-                        "get_width",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_width(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_get_width::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_height {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Screen as ::unity2::ClassIdentity>::class(), "get_height", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Screen as ::unity2::ClassIdentity>::NAME,
-                        "get_height",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_height(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_get_height::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_dpi {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Screen as ::unity2::ClassIdentity>::class(), "get_dpi", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Screen as ::unity2::ClassIdentity>::NAME,
-                        "get_dpi",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_dpi(__unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(__lookup_get_dpi::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_full_screen_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Screen as ::unity2::ClassIdentity>::class(),
-                "get_fullScreenMode",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Screen as ::unity2::ClassIdentity>::NAME,
-                        "get_fullScreenMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_full_screen_mode(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::fullscreenmode::FullScreenMode {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::fullscreenmode::FullScreenMode =
-            ::core::mem::transmute(__lookup_get_full_screen_mode::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Screen_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_width { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Screen as :: unity2 :: ClassIdentity > :: class () , "get_width" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Screen as :: unity2 :: ClassIdentity > :: NAME , "get_width" , e) , } } } pub unsafe fn get_width (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_width :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_height { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Screen as :: unity2 :: ClassIdentity > :: class () , "get_height" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Screen as :: unity2 :: ClassIdentity > :: NAME , "get_height" , e) , } } } pub unsafe fn get_height (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_height :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_dpi { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Screen as :: unity2 :: ClassIdentity > :: class () , "get_dpi" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Screen as :: unity2 :: ClassIdentity > :: NAME , "get_dpi" , e) , } } } pub unsafe fn get_dpi (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_dpi :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_full_screen_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Screen as :: unity2 :: ClassIdentity > :: class () , "get_fullScreenMode" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Screen as :: unity2 :: ClassIdentity > :: NAME , "get_fullScreenMode" , e) , } } } pub unsafe fn get_full_screen_mode (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: fullscreenmode :: FullScreenMode { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: fullscreenmode :: FullScreenMode = :: core :: mem :: transmute (__lookup_get_full_screen_mode :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-screen")]
-impl Screen {
-    #[doc = "`get_width()` overload"]
-    pub fn get_width() -> i32 {
-        unsafe { __Screen_unity2_raw::get_width(::core::option::Option::None) }
-    }
+impl Screen { # [doc = "`get_width()` overload"] pub fn get_width () -> i32 { unsafe { __Screen_unity2_raw :: get_width (:: core :: option :: Option :: None) } } # [doc = "`get_height()` overload"] pub fn get_height () -> i32 { unsafe { __Screen_unity2_raw :: get_height (:: core :: option :: Option :: None) } } # [doc = "`get_dpi()` overload"] pub fn get_dpi () -> f32 { unsafe { __Screen_unity2_raw :: get_dpi (:: core :: option :: Option :: None) } } # [doc = "`get_fullScreenMode()` overload"] pub fn get_full_screen_mode () -> crate :: unity_engine :: fullscreenmode :: FullScreenMode { unsafe { __Screen_unity2_raw :: get_full_screen_mode (:: core :: option :: Option :: None) } } }
 
-    #[doc = "`get_height()` overload"]
-    pub fn get_height() -> i32 {
-        unsafe { __Screen_unity2_raw::get_height(::core::option::Option::None) }
-    }
-
-    #[doc = "`get_dpi()` overload"]
-    pub fn get_dpi() -> f32 {
-        unsafe { __Screen_unity2_raw::get_dpi(::core::option::Option::None) }
-    }
-
-    #[doc = "`get_fullScreenMode()` overload"]
-    pub fn get_full_screen_mode() -> crate::unity_engine::fullscreenmode::FullScreenMode {
-        unsafe { __Screen_unity2_raw::get_full_screen_mode(::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "unity_engine-screen")]
+impl Screen { pub fn get_width_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Screen_unity2_raw :: __lookup_get_width :: get_method_info () } pub fn get_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Screen_unity2_raw :: __lookup_get_height :: get_method_info () } pub fn get_dpi_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Screen_unity2_raw :: __lookup_get_dpi :: get_method_info () } pub fn get_full_screen_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Screen_unity2_raw :: __lookup_get_full_screen_mode :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-screen")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IScreen, Screen};
+    pub use super::Screen;
+    pub use super::IScreen;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

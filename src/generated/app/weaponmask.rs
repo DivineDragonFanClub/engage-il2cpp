@@ -2,551 +2,165 @@
 
 #[cfg(feature = "app-weaponmask-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            bitfield32::{BitField32, IBitField32},
-            bitfieldcommon::{BitFieldCommon, IBitFieldCommon},
-            bitfieldtemplate32_1::{BitFieldTemplate32_1, IBitFieldTemplate32_1},
-        },
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/weaponmask/WeaponMask_Flag.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct WeaponMask_Flag {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: bitfield32 :: { BitField32 , IBitField32 }
+ ;
+ use crate :: app :: bitfieldcommon :: { BitFieldCommon , IBitFieldCommon }
+ ;
+ use crate :: app :: bitfieldtemplate32_1 :: { BitFieldTemplate32_1 , IBitFieldTemplate32_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponmask/WeaponMask.md"))] # [:: unity2 :: class (namespace = "App" , name = "WeaponMask")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: weaponmask :: WeaponMask_Flag >)] pub struct WeaponMask {}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/weaponmask/WeaponMask_Flag.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct WeaponMask_Flag  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for WeaponMask_Flag  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "WeaponMask.Flag";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for WeaponMask_Flag {
-        const NAME: &'static str = "WeaponMask.Flag";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for WeaponMask_Flag  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for WeaponMask_Flag {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  WeaponMask_Flag  {
+    pub fn none() -> Self {
+        Self { value: 1 }
+
     }
 
-    impl WeaponMask_Flag {
-        pub fn none() -> Self {
-            Self { value: 1 }
-        }
 
-        pub fn sword() -> Self {
-            Self { value: 2 }
-        }
+    pub fn sword() -> Self {
+        Self { value: 2 }
 
-        pub fn lance() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn axe() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn bow() -> Self {
-            Self { value: 16 }
-        }
-
-        pub fn dagger() -> Self {
-            Self { value: 32 }
-        }
-
-        pub fn magic() -> Self {
-            Self { value: 64 }
-        }
-
-        pub fn rod() -> Self {
-            Self { value: 128 }
-        }
-
-        pub fn fist() -> Self {
-            Self { value: 256 }
-        }
-
-        pub fn special() -> Self {
-            Self { value: 512 }
-        }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponmask/WeaponMask.md"))]
-    #[::unity2::class(namespace = "App", name = "WeaponMask")]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: weaponmask :: WeaponMask_Flag >)]
-    pub struct WeaponMask {}
+
+    pub fn lance() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn axe() -> Self {
+        Self { value: 8 }
+
+    }
+
+
+    pub fn bow() -> Self {
+        Self { value: 16 }
+
+    }
+
+
+    pub fn dagger() -> Self {
+        Self { value: 32 }
+
+    }
+
+
+    pub fn magic() -> Self {
+        Self { value: 64 }
+
+    }
+
+
+    pub fn rod() -> Self {
+        Self { value: 128 }
+
+    }
+
+
+    pub fn fist() -> Self {
+        Self { value: 256 }
+
+    }
+
+
+    pub fn special() -> Self {
+        Self { value: 512 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "app-weaponmask-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-weaponmask")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __WeaponMask_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<WeaponMask as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WeaponMask as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: WeaponMask, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WeaponMask, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<WeaponMask as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WeaponMask as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor_2(this: WeaponMask, f: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WeaponMask, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
-        inner(this, f, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_3 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::weaponmask::WeaponMask_Flag as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<WeaponMask as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WeaponMask as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor_3(this: WeaponMask, f: crate::app::weaponmask::WeaponMask_Flag, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WeaponMask, crate::app::weaponmask::WeaponMask_Flag, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor_3::get_method_info().method_ptr);
-        inner(this, f, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_int {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::weaponmask::WeaponMask_Flag as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<WeaponMask as ::unity2::ClassIdentity>::class(), "ToInt", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WeaponMask as ::unity2::ClassIdentity>::NAME,
-                        "ToInt",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn to_int(this: WeaponMask, value: crate::app::weaponmask::WeaponMask_Flag, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(WeaponMask, crate::app::weaponmask::WeaponMask_Flag, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_to_int::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_test {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<WeaponMask as ::unity2::ClassIdentity>::class(), "Test", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WeaponMask as ::unity2::ClassIdentity>::NAME,
-                        "Test",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn test(this: WeaponMask, item: crate::app::itemdata::ItemData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(WeaponMask, crate::app::itemdata::ItemData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_test::get_method_info().method_ptr);
-        inner(this, item, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_test_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<WeaponMask as ::unity2::ClassIdentity>::class(), "Test", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WeaponMask as ::unity2::ClassIdentity>::NAME,
-                        "Test",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn test_2(this: WeaponMask, kind: crate::app::itemdata::ItemData_Kinds, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(WeaponMask, crate::app::itemdata::ItemData_Kinds, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_test_2::get_method_info().method_ptr);
-        inner(this, kind, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<WeaponMask as ::unity2::ClassIdentity>::class(), "Set", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WeaponMask as ::unity2::ClassIdentity>::NAME,
-                        "Set",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set(this: WeaponMask, kind: crate::app::itemdata::ItemData_Kinds, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WeaponMask, crate::app::itemdata::ItemData_Kinds, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set::get_method_info().method_ptr);
-        inner(this, kind, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<WeaponMask as ::unity2::ClassIdentity>::class(), "Clear", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WeaponMask as ::unity2::ClassIdentity>::NAME,
-                        "Clear",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear(this: WeaponMask, kind: crate::app::itemdata::ItemData_Kinds, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(WeaponMask, crate::app::itemdata::ItemData_Kinds, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
-        inner(this, kind, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_can_equip_from_kind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WeaponMask as ::unity2::ClassIdentity>::class(),
-                "CanEquipFromKind",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WeaponMask as ::unity2::ClassIdentity>::NAME,
-                        "CanEquipFromKind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn can_equip_from_kind(
-        this: WeaponMask,
-        kind: crate::app::itemdata::ItemData_Kinds,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(WeaponMask, crate::app::itemdata::ItemData_Kinds, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_can_equip_from_kind::get_method_info().method_ptr);
-        inner(this, kind, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_exist {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WeaponMask as ::unity2::ClassIdentity>::class(),
-                "get_Exist",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WeaponMask as ::unity2::ClassIdentity>::NAME,
-                        "get_Exist",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_exist(this: WeaponMask, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(WeaponMask, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_exist::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_random_for_arena {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WeaponMask as ::unity2::ClassIdentity>::class(),
-                "GetRandomForArena",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WeaponMask as ::unity2::ClassIdentity>::NAME,
-                        "GetRandomForArena",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_random_for_arena(this: WeaponMask, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::itemdata::ItemData_Kinds {
-        let inner: extern "C" fn(WeaponMask, ::unity2::OptionalMethod) -> crate::app::itemdata::ItemData_Kinds =
-            ::core::mem::transmute(__lookup_get_random_for_arena::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __WeaponMask_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WeaponMask as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WeaponMask as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : WeaponMask , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WeaponMask , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WeaponMask as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WeaponMask as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor_2 (this : WeaponMask , f : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WeaponMask , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor_2 :: get_method_info () . method_ptr ,) ; inner (this , f , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_3 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: weaponmask :: WeaponMask_Flag as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WeaponMask as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WeaponMask as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor_3 (this : WeaponMask , f : crate :: app :: weaponmask :: WeaponMask_Flag , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WeaponMask , crate :: app :: weaponmask :: WeaponMask_Flag , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor_3 :: get_method_info () . method_ptr ,) ; inner (this , f , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_int { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: weaponmask :: WeaponMask_Flag as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WeaponMask as :: unity2 :: ClassIdentity > :: class () , "ToInt" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WeaponMask as :: unity2 :: ClassIdentity > :: NAME , "ToInt" , e) , } } } pub unsafe fn to_int (this : WeaponMask , value : crate :: app :: weaponmask :: WeaponMask_Flag , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (WeaponMask , crate :: app :: weaponmask :: WeaponMask_Flag , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_to_int :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_test { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: itemdata :: ItemData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WeaponMask as :: unity2 :: ClassIdentity > :: class () , "Test" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WeaponMask as :: unity2 :: ClassIdentity > :: NAME , "Test" , e) , } } } pub unsafe fn test (this : WeaponMask , item : crate :: app :: itemdata :: ItemData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (WeaponMask , crate :: app :: itemdata :: ItemData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_test :: get_method_info () . method_ptr ,) ; inner (this , item , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_test_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: itemdata :: ItemData_Kinds as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WeaponMask as :: unity2 :: ClassIdentity > :: class () , "Test" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WeaponMask as :: unity2 :: ClassIdentity > :: NAME , "Test" , e) , } } } pub unsafe fn test_2 (this : WeaponMask , kind : crate :: app :: itemdata :: ItemData_Kinds , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (WeaponMask , crate :: app :: itemdata :: ItemData_Kinds , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_test_2 :: get_method_info () . method_ptr ,) ; inner (this , kind , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: itemdata :: ItemData_Kinds as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WeaponMask as :: unity2 :: ClassIdentity > :: class () , "Set" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WeaponMask as :: unity2 :: ClassIdentity > :: NAME , "Set" , e) , } } } pub unsafe fn set (this : WeaponMask , kind : crate :: app :: itemdata :: ItemData_Kinds , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WeaponMask , crate :: app :: itemdata :: ItemData_Kinds , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set :: get_method_info () . method_ptr ,) ; inner (this , kind , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_clear { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: itemdata :: ItemData_Kinds as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WeaponMask as :: unity2 :: ClassIdentity > :: class () , "Clear" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WeaponMask as :: unity2 :: ClassIdentity > :: NAME , "Clear" , e) , } } } pub unsafe fn clear (this : WeaponMask , kind : crate :: app :: itemdata :: ItemData_Kinds , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WeaponMask , crate :: app :: itemdata :: ItemData_Kinds , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_clear :: get_method_info () . method_ptr ,) ; inner (this , kind , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_can_equip_from_kind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: itemdata :: ItemData_Kinds as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WeaponMask as :: unity2 :: ClassIdentity > :: class () , "CanEquipFromKind" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WeaponMask as :: unity2 :: ClassIdentity > :: NAME , "CanEquipFromKind" , e) , } } } pub unsafe fn can_equip_from_kind (this : WeaponMask , kind : crate :: app :: itemdata :: ItemData_Kinds , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (WeaponMask , crate :: app :: itemdata :: ItemData_Kinds , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_can_equip_from_kind :: get_method_info () . method_ptr ,) ; inner (this , kind , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_exist { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WeaponMask as :: unity2 :: ClassIdentity > :: class () , "get_Exist" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WeaponMask as :: unity2 :: ClassIdentity > :: NAME , "get_Exist" , e) , } } } pub unsafe fn get_exist (this : WeaponMask , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (WeaponMask , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_exist :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_random_for_arena { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WeaponMask as :: unity2 :: ClassIdentity > :: class () , "GetRandomForArena" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WeaponMask as :: unity2 :: ClassIdentity > :: NAME , "GetRandomForArena" , e) , } } } pub unsafe fn get_random_for_arena (this : WeaponMask , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData_Kinds { let inner : extern "C" fn (WeaponMask , :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData_Kinds = :: core :: mem :: transmute (__lookup_get_random_for_arena :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-weaponmask")]
-pub trait IWeaponMaskMethods: IWeaponMask {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <WeaponMask as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WeaponMask_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(i32)` overload"]
-    fn ctor_2(self, f: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <WeaponMask as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WeaponMask_unity2_raw::ctor_2(__receiver, ::core::convert::Into::into(f), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(crate::app::weaponmask::WeaponMask_Flag)` overload"]
-    fn ctor_3(self, f: impl ::core::convert::Into<crate::app::weaponmask::WeaponMask_Flag>) -> () {
-        unsafe {
-            let __receiver = <WeaponMask as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WeaponMask_unity2_raw::ctor_3(__receiver, ::core::convert::Into::into(f), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ToInt(crate::app::weaponmask::WeaponMask_Flag)` overload"]
-    fn to_int(self, value: impl ::core::convert::Into<crate::app::weaponmask::WeaponMask_Flag>) -> i32 {
-        unsafe {
-            let __receiver = <WeaponMask as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WeaponMask_unity2_raw::to_int(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Test(crate::app::itemdata::ItemData)` overload"]
-    fn test(self, item: impl ::core::convert::Into<crate::app::itemdata::ItemData>) -> bool {
-        unsafe {
-            let __receiver = <WeaponMask as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WeaponMask_unity2_raw::test(__receiver, ::core::convert::Into::into(item), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Test(crate::app::itemdata::ItemData_Kinds)` overload"]
-    fn test_2(self, kind: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>) -> bool {
-        unsafe {
-            let __receiver = <WeaponMask as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WeaponMask_unity2_raw::test_2(__receiver, ::core::convert::Into::into(kind), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Set(crate::app::itemdata::ItemData_Kinds)` overload"]
-    fn set(self, kind: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>) -> () {
-        unsafe {
-            let __receiver = <WeaponMask as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WeaponMask_unity2_raw::set(__receiver, ::core::convert::Into::into(kind), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Clear(crate::app::itemdata::ItemData_Kinds)` overload"]
-    fn clear(self, kind: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>) -> () {
-        unsafe {
-            let __receiver = <WeaponMask as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WeaponMask_unity2_raw::clear(__receiver, ::core::convert::Into::into(kind), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CanEquipFromKind(crate::app::itemdata::ItemData_Kinds)` overload"]
-    fn can_equip_from_kind(self, kind: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>) -> bool {
-        unsafe {
-            let __receiver = <WeaponMask as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WeaponMask_unity2_raw::can_equip_from_kind(__receiver, ::core::convert::Into::into(kind), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Exist()` overload"]
-    fn get_exist(self) -> bool {
-        unsafe {
-            let __receiver = <WeaponMask as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WeaponMask_unity2_raw::get_exist(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetRandomForArena()` overload"]
-    fn get_random_for_arena(self) -> crate::app::itemdata::ItemData_Kinds {
-        unsafe {
-            let __receiver = <WeaponMask as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WeaponMask_unity2_raw::get_random_for_arena(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IWeaponMaskMethods : IWeaponMask { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < WeaponMask as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WeaponMask_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor(i32)` overload"] fn ctor_2 (self , f : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < WeaponMask as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WeaponMask_unity2_raw :: ctor_2 (__receiver , :: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } # [doc = "`.ctor(crate::app::weaponmask::WeaponMask_Flag)` overload"] fn ctor_3 (self , f : impl :: core :: convert :: Into < crate :: app :: weaponmask :: WeaponMask_Flag >) -> () { unsafe { let __receiver = < WeaponMask as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WeaponMask_unity2_raw :: ctor_3 (__receiver , :: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } # [doc = "`ToInt(crate::app::weaponmask::WeaponMask_Flag)` overload"] fn to_int (self , value : impl :: core :: convert :: Into < crate :: app :: weaponmask :: WeaponMask_Flag >) -> i32 { unsafe { let __receiver = < WeaponMask as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WeaponMask_unity2_raw :: to_int (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`Test(crate::app::itemdata::ItemData)` overload"] fn test (self , item : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData >) -> bool { unsafe { let __receiver = < WeaponMask as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WeaponMask_unity2_raw :: test (__receiver , :: core :: convert :: Into :: into (item) , :: core :: option :: Option :: None) } } # [doc = "`Test(crate::app::itemdata::ItemData_Kinds)` overload"] fn test_2 (self , kind : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData_Kinds >) -> bool { unsafe { let __receiver = < WeaponMask as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WeaponMask_unity2_raw :: test_2 (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } # [doc = "`Set(crate::app::itemdata::ItemData_Kinds)` overload"] fn set (self , kind : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData_Kinds >) -> () { unsafe { let __receiver = < WeaponMask as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WeaponMask_unity2_raw :: set (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } # [doc = "`Clear(crate::app::itemdata::ItemData_Kinds)` overload"] fn clear (self , kind : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData_Kinds >) -> () { unsafe { let __receiver = < WeaponMask as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WeaponMask_unity2_raw :: clear (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } # [doc = "`CanEquipFromKind(crate::app::itemdata::ItemData_Kinds)` overload"] fn can_equip_from_kind (self , kind : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData_Kinds >) -> bool { unsafe { let __receiver = < WeaponMask as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WeaponMask_unity2_raw :: can_equip_from_kind (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } # [doc = "`get_Exist()` overload"] fn get_exist (self ,) -> bool { unsafe { let __receiver = < WeaponMask as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WeaponMask_unity2_raw :: get_exist (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetRandomForArena()` overload"] fn get_random_for_arena (self ,) -> crate :: app :: itemdata :: ItemData_Kinds { unsafe { let __receiver = < WeaponMask as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WeaponMask_unity2_raw :: get_random_for_arena (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-weaponmask")]
-impl<__T: IWeaponMask> IWeaponMaskMethods for __T {}
+impl < __T : IWeaponMask > IWeaponMaskMethods for __T { }
+
+#[cfg(feature = "app-weaponmask")]
+impl WeaponMask { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WeaponMask_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WeaponMask_unity2_raw :: __lookup_ctor_2 :: get_method_info () } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WeaponMask_unity2_raw :: __lookup_ctor_3 :: get_method_info () } pub fn to_int_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WeaponMask_unity2_raw :: __lookup_to_int :: get_method_info () } pub fn test_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WeaponMask_unity2_raw :: __lookup_test :: get_method_info () } pub fn test_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WeaponMask_unity2_raw :: __lookup_test_2 :: get_method_info () } pub fn set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WeaponMask_unity2_raw :: __lookup_set :: get_method_info () } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WeaponMask_unity2_raw :: __lookup_clear :: get_method_info () } pub fn can_equip_from_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WeaponMask_unity2_raw :: __lookup_can_equip_from_kind :: get_method_info () } pub fn get_exist_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WeaponMask_unity2_raw :: __lookup_get_exist :: get_method_info () } pub fn get_random_for_arena_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WeaponMask_unity2_raw :: __lookup_get_random_for_arena :: get_method_info () } }
 
 #[cfg(feature = "app-weaponmask")]
 impl WeaponMask {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(WeaponMask), ::core::stringify!(new),));
-        <Self as IWeaponMaskMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WeaponMask) , :: core :: stringify ! (new) ,)) ; < Self as IWeaponMaskMethods > :: ctor (this ,) ; this }
 
-    #[doc = "`.ctor(i32)` — overload selector"]
-    pub fn new_2(f: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(WeaponMask), ::core::stringify!(new_2),));
-        <Self as IWeaponMaskMethods>::ctor_2(this, f);
-        this
-    }
+# [doc = "`.ctor(i32)` — overload selector"] pub fn new_2 (f : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WeaponMask) , :: core :: stringify ! (new_2) ,)) ; < Self as IWeaponMaskMethods > :: ctor_2 (this , f) ; this }
 
-    #[doc = "`.ctor(crate::app::weaponmask::WeaponMask_Flag)` — overload selector"]
-    pub fn new_3(f: crate::app::weaponmask::WeaponMask_Flag) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(WeaponMask), ::core::stringify!(new_3),));
-        <Self as IWeaponMaskMethods>::ctor_3(this, f);
-        this
-    }
+# [doc = "`.ctor(crate::app::weaponmask::WeaponMask_Flag)` — overload selector"] pub fn new_3 (f : crate :: app :: weaponmask :: WeaponMask_Flag) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WeaponMask) , :: core :: stringify ! (new_3) ,)) ; < Self as IWeaponMaskMethods > :: ctor_3 (this , f) ; this }
 }
 
 #[cfg(feature = "app-weaponmask")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IWeaponMask, IWeaponMaskMethods, WeaponMask, WeaponMask_Flag};
-    #[cfg(feature = "app-bitfield32")]
-    pub use crate::app::bitfield32::IBitField32Methods;
-    #[cfg(feature = "app-bitfieldcommon")]
-    pub use crate::app::bitfieldcommon::IBitFieldCommonMethods;
-    #[cfg(feature = "app-bitfieldtemplate32_1")]
-    pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::{bitfield32::IBitField32, bitfieldcommon::IBitFieldCommon, bitfieldtemplate32_1::IBitFieldTemplate32_1},
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::WeaponMask;
+    pub use super::IWeaponMask;
+    pub use super::IWeaponMaskMethods;
+    pub use super::WeaponMask_Flag;
+    pub use crate::app::bitfield32::IBitField32;
+    pub use crate::app::bitfieldcommon::IBitFieldCommon;
+    pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-bitfield32")] pub use crate::app::bitfield32::IBitField32Methods;
+    #[cfg(feature = "app-bitfieldcommon")] pub use crate::app::bitfieldcommon::IBitFieldCommonMethods;
+    #[cfg(feature = "app-bitfieldtemplate32_1")] pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

@@ -2,314 +2,47 @@
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-texturepool-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::experimental::rendering::render_graph_module::rendergraphresourcepool_1::{
-            IRenderGraphResourcePool_1, RenderGraphResourcePool_1,
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/texturepool/TexturePool.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule", name = "TexturePool")]
-    # [parent (crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourcepool_1 :: RenderGraphResourcePool_1 < crate :: unity_engine :: rendering :: rthandle :: RTHandle >)]
-    pub struct TexturePool {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourcepool_1 :: { IRenderGraphResourcePool_1 , RenderGraphResourcePool_1 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/texturepool/TexturePool.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule" , name = "TexturePool")] # [parent (crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourcepool_1 :: RenderGraphResourcePool_1 < crate :: unity_engine :: rendering :: rthandle :: RTHandle >)] pub struct TexturePool {}
+
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-texturepool-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-texturepool")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TexturePool_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_release_internal_resource {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::rendering::rthandle::RTHandle as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TexturePool as ::unity2::ClassIdentity>::class(),
-                "ReleaseInternalResource",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TexturePool as ::unity2::ClassIdentity>::NAME,
-                        "ReleaseInternalResource",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn release_internal_resource(
-        this: TexturePool,
-        res: crate::unity_engine::rendering::rthandle::RTHandle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TexturePool, crate::unity_engine::rendering::rthandle::RTHandle, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_release_internal_resource::get_method_info().method_ptr);
-        inner(this, res, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_resource_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::rendering::rthandle::RTHandle as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TexturePool as ::unity2::ClassIdentity>::class(),
-                "GetResourceName",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TexturePool as ::unity2::ClassIdentity>::NAME,
-                        "GetResourceName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_resource_name(
-        this: TexturePool,
-        res: crate::unity_engine::rendering::rthandle::RTHandle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            TexturePool,
-            crate::unity_engine::rendering::rthandle::RTHandle,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(__lookup_get_resource_name::get_method_info().method_ptr);
-        inner(this, res, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_resource_size {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::rendering::rthandle::RTHandle as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TexturePool as ::unity2::ClassIdentity>::class(),
-                "GetResourceSize",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TexturePool as ::unity2::ClassIdentity>::NAME,
-                        "GetResourceSize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_resource_size(
-        this: TexturePool,
-        res: crate::unity_engine::rendering::rthandle::RTHandle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i64 {
-        let inner: extern "C" fn(TexturePool, crate::unity_engine::rendering::rthandle::RTHandle, ::unity2::OptionalMethod) -> i64 =
-            ::core::mem::transmute(__lookup_get_resource_size::get_method_info().method_ptr);
-        inner(this, res, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_resource_type_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TexturePool as ::unity2::ClassIdentity>::class(),
-                "GetResourceTypeName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TexturePool as ::unity2::ClassIdentity>::NAME,
-                        "GetResourceTypeName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_resource_type_name(this: TexturePool, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(TexturePool, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_resource_type_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_purge_unused_resources {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TexturePool as ::unity2::ClassIdentity>::class(),
-                "PurgeUnusedResources",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TexturePool as ::unity2::ClassIdentity>::NAME,
-                        "PurgeUnusedResources",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn purge_unused_resources(this: TexturePool, current_frame_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TexturePool, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_purge_unused_resources::get_method_info().method_ptr);
-        inner(this, current_frame_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<TexturePool as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TexturePool as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: TexturePool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TexturePool, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TexturePool_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_release_internal_resource { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: rthandle :: RTHandle as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TexturePool as :: unity2 :: ClassIdentity > :: class () , "ReleaseInternalResource" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TexturePool as :: unity2 :: ClassIdentity > :: NAME , "ReleaseInternalResource" , e) , } } } pub unsafe fn release_internal_resource (this : TexturePool , res : crate :: unity_engine :: rendering :: rthandle :: RTHandle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TexturePool , crate :: unity_engine :: rendering :: rthandle :: RTHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_release_internal_resource :: get_method_info () . method_ptr ,) ; inner (this , res , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_resource_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: rthandle :: RTHandle as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TexturePool as :: unity2 :: ClassIdentity > :: class () , "GetResourceName" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TexturePool as :: unity2 :: ClassIdentity > :: NAME , "GetResourceName" , e) , } } } pub unsafe fn get_resource_name (this : TexturePool , res : crate :: unity_engine :: rendering :: rthandle :: RTHandle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (TexturePool , crate :: unity_engine :: rendering :: rthandle :: RTHandle , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_resource_name :: get_method_info () . method_ptr ,) ; inner (this , res , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_resource_size { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: rthandle :: RTHandle as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TexturePool as :: unity2 :: ClassIdentity > :: class () , "GetResourceSize" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TexturePool as :: unity2 :: ClassIdentity > :: NAME , "GetResourceSize" , e) , } } } pub unsafe fn get_resource_size (this : TexturePool , res : crate :: unity_engine :: rendering :: rthandle :: RTHandle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i64 { let inner : extern "C" fn (TexturePool , crate :: unity_engine :: rendering :: rthandle :: RTHandle , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute (__lookup_get_resource_size :: get_method_info () . method_ptr ,) ; inner (this , res , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_resource_type_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TexturePool as :: unity2 :: ClassIdentity > :: class () , "GetResourceTypeName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TexturePool as :: unity2 :: ClassIdentity > :: NAME , "GetResourceTypeName" , e) , } } } pub unsafe fn get_resource_type_name (this : TexturePool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (TexturePool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_resource_type_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_purge_unused_resources { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TexturePool as :: unity2 :: ClassIdentity > :: class () , "PurgeUnusedResources" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TexturePool as :: unity2 :: ClassIdentity > :: NAME , "PurgeUnusedResources" , e) , } } } pub unsafe fn purge_unused_resources (this : TexturePool , current_frame_index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TexturePool , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_purge_unused_resources :: get_method_info () . method_ptr ,) ; inner (this , current_frame_index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TexturePool as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TexturePool as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : TexturePool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TexturePool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-texturepool")]
-pub trait ITexturePoolMethods: ITexturePool {
-    #[doc = "`ReleaseInternalResource(crate::unity_engine::rendering::rthandle::RTHandle)` overload"]
-    fn release_internal_resource(self, res: impl ::core::convert::Into<crate::unity_engine::rendering::rthandle::RTHandle>) -> () {
-        unsafe {
-            let __receiver = <TexturePool as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TexturePool_unity2_raw::release_internal_resource(__receiver, ::core::convert::Into::into(res), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetResourceName(crate::unity_engine::rendering::rthandle::RTHandle)` overload"]
-    fn get_resource_name(self, res: impl ::core::convert::Into<crate::unity_engine::rendering::rthandle::RTHandle>) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <TexturePool as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TexturePool_unity2_raw::get_resource_name(__receiver, ::core::convert::Into::into(res), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetResourceSize(crate::unity_engine::rendering::rthandle::RTHandle)` overload"]
-    fn get_resource_size(self, res: impl ::core::convert::Into<crate::unity_engine::rendering::rthandle::RTHandle>) -> i64 {
-        unsafe {
-            let __receiver = <TexturePool as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TexturePool_unity2_raw::get_resource_size(__receiver, ::core::convert::Into::into(res), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetResourceTypeName()` overload"]
-    fn get_resource_type_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <TexturePool as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TexturePool_unity2_raw::get_resource_type_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`PurgeUnusedResources(i32)` overload"]
-    fn purge_unused_resources(self, current_frame_index: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <TexturePool as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TexturePool_unity2_raw::purge_unused_resources(
-                __receiver,
-                ::core::convert::Into::into(current_frame_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <TexturePool as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TexturePool_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait ITexturePoolMethods : ITexturePool { # [doc = "`ReleaseInternalResource(crate::unity_engine::rendering::rthandle::RTHandle)` overload"] fn release_internal_resource (self , res : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: rthandle :: RTHandle >) -> () { unsafe { let __receiver = < TexturePool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TexturePool_unity2_raw :: release_internal_resource (__receiver , :: core :: convert :: Into :: into (res) , :: core :: option :: Option :: None) } } # [doc = "`GetResourceName(crate::unity_engine::rendering::rthandle::RTHandle)` overload"] fn get_resource_name (self , res : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: rthandle :: RTHandle >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TexturePool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TexturePool_unity2_raw :: get_resource_name (__receiver , :: core :: convert :: Into :: into (res) , :: core :: option :: Option :: None) } } # [doc = "`GetResourceSize(crate::unity_engine::rendering::rthandle::RTHandle)` overload"] fn get_resource_size (self , res : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: rthandle :: RTHandle >) -> i64 { unsafe { let __receiver = < TexturePool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TexturePool_unity2_raw :: get_resource_size (__receiver , :: core :: convert :: Into :: into (res) , :: core :: option :: Option :: None) } } # [doc = "`GetResourceTypeName()` overload"] fn get_resource_type_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TexturePool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TexturePool_unity2_raw :: get_resource_type_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`PurgeUnusedResources(i32)` overload"] fn purge_unused_resources (self , current_frame_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < TexturePool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TexturePool_unity2_raw :: purge_unused_resources (__receiver , :: core :: convert :: Into :: into (current_frame_index) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TexturePool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TexturePool_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-texturepool")]
-impl<__T: ITexturePool> ITexturePoolMethods for __T {}
+impl < __T : ITexturePool > ITexturePoolMethods for __T { }
+
+#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-texturepool")]
+impl TexturePool { pub fn release_internal_resource_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TexturePool_unity2_raw :: __lookup_release_internal_resource :: get_method_info () } pub fn get_resource_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TexturePool_unity2_raw :: __lookup_get_resource_name :: get_method_info () } pub fn get_resource_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TexturePool_unity2_raw :: __lookup_get_resource_size :: get_method_info () } pub fn get_resource_type_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TexturePool_unity2_raw :: __lookup_get_resource_type_name :: get_method_info () } pub fn purge_unused_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TexturePool_unity2_raw :: __lookup_purge_unused_resources :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TexturePool_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-texturepool")]
 impl TexturePool {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(TexturePool), ::core::stringify!(new),));
-        <Self as ITexturePoolMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TexturePool) , :: core :: stringify ! (new) ,)) ; < Self as ITexturePoolMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-texturepool")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ITexturePool, ITexturePoolMethods, TexturePool};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphresourcepool_1")]
-    pub use crate::unity_engine::experimental::rendering::render_graph_module::rendergraphresourcepool_1::IRenderGraphResourcePool_1Methods;
-    pub use crate::{
-        system::object::IObject, unity_engine::experimental::rendering::render_graph_module::rendergraphresourcepool_1::IRenderGraphResourcePool_1,
-    };
+    pub use super::TexturePool;
+    pub use super::ITexturePool;
+    pub use super::ITexturePoolMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::experimental::rendering::render_graph_module::rendergraphresourcepool_1::IRenderGraphResourcePool_1;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphresourcepool_1")] pub use crate::unity_engine::experimental::rendering::render_graph_module::rendergraphresourcepool_1::IRenderGraphResourcePool_1Methods;
 }

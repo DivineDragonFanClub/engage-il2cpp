@@ -2,180 +2,47 @@
 
 #[cfg(feature = "combat-fsmbuilderjobintro-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        combat::fsmbuilder::{FSMBuilder, IFSMBuilder},
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/fsmbuilderjobintro/FSMBuilderJobIntro.md"))]
-    #[::unity2::class(namespace = "Combat", name = "FSMBuilderJobIntro")]
-    #[parent(crate::combat::fsmbuilder::FSMBuilder)]
-    pub struct FSMBuilderJobIntro {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: combat :: fsmbuilder :: { FSMBuilder , IFSMBuilder }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/fsmbuilderjobintro/FSMBuilderJobIntro.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "FSMBuilderJobIntro")] # [parent (crate :: combat :: fsmbuilder :: FSMBuilder)] pub struct FSMBuilderJobIntro {}
+
 }
 
 #[cfg(feature = "combat-fsmbuilderjobintro-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-fsmbuilderjobintro")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FSMBuilderJobIntro_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FSMBuilderJobIntro as ::unity2::ClassIdentity>::class(),
-                "Build",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FSMBuilderJobIntro as ::unity2::ClassIdentity>::NAME,
-                        "Build",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build(this: FSMBuilderJobIntro, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FSMBuilderJobIntro, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_build::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_attack {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::phase::Phase as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FSMBuilderJobIntro as ::unity2::ClassIdentity>::class(),
-                "AddAttack",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FSMBuilderJobIntro as ::unity2::ClassIdentity>::NAME,
-                        "AddAttack",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_attack(this: FSMBuilderJobIntro, p: crate::combat::phase::Phase, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FSMBuilderJobIntro, crate::combat::phase::Phase, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_attack::get_method_info().method_ptr);
-        inner(this, p, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FSMBuilderJobIntro as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FSMBuilderJobIntro as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: FSMBuilderJobIntro, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FSMBuilderJobIntro, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __FSMBuilderJobIntro_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FSMBuilderJobIntro as :: unity2 :: ClassIdentity > :: class () , "Build" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FSMBuilderJobIntro as :: unity2 :: ClassIdentity > :: NAME , "Build" , e) , } } } pub unsafe fn build (this : FSMBuilderJobIntro , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FSMBuilderJobIntro , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_build :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add_attack { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: phase :: Phase as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FSMBuilderJobIntro as :: unity2 :: ClassIdentity > :: class () , "AddAttack" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FSMBuilderJobIntro as :: unity2 :: ClassIdentity > :: NAME , "AddAttack" , e) , } } } pub unsafe fn add_attack (this : FSMBuilderJobIntro , p : crate :: combat :: phase :: Phase , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FSMBuilderJobIntro , crate :: combat :: phase :: Phase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add_attack :: get_method_info () . method_ptr ,) ; inner (this , p , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FSMBuilderJobIntro as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FSMBuilderJobIntro as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : FSMBuilderJobIntro , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FSMBuilderJobIntro , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "combat-fsmbuilderjobintro")]
-pub trait IFSMBuilderJobIntroMethods: IFSMBuilderJobIntro {
-    #[doc = "`Build()` overload"]
-    fn build(self) -> () {
-        unsafe {
-            let __receiver = <FSMBuilderJobIntro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FSMBuilderJobIntro_unity2_raw::build(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`AddAttack(crate::combat::phase::Phase)` overload"]
-    fn add_attack(self, p: impl ::core::convert::Into<crate::combat::phase::Phase>) -> () {
-        unsafe {
-            let __receiver = <FSMBuilderJobIntro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FSMBuilderJobIntro_unity2_raw::add_attack(__receiver, ::core::convert::Into::into(p), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <FSMBuilderJobIntro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FSMBuilderJobIntro_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IFSMBuilderJobIntroMethods : IFSMBuilderJobIntro { # [doc = "`Build()` overload"] fn build (self ,) -> () { unsafe { let __receiver = < FSMBuilderJobIntro as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FSMBuilderJobIntro_unity2_raw :: build (__receiver , :: core :: option :: Option :: None) } } # [doc = "`AddAttack(crate::combat::phase::Phase)` overload"] fn add_attack (self , p : impl :: core :: convert :: Into < crate :: combat :: phase :: Phase >) -> () { unsafe { let __receiver = < FSMBuilderJobIntro as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FSMBuilderJobIntro_unity2_raw :: add_attack (__receiver , :: core :: convert :: Into :: into (p) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FSMBuilderJobIntro as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FSMBuilderJobIntro_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "combat-fsmbuilderjobintro")]
-impl<__T: IFSMBuilderJobIntro> IFSMBuilderJobIntroMethods for __T {}
+impl < __T : IFSMBuilderJobIntro > IFSMBuilderJobIntroMethods for __T { }
+
+#[cfg(feature = "combat-fsmbuilderjobintro")]
+impl FSMBuilderJobIntro { pub fn build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FSMBuilderJobIntro_unity2_raw :: __lookup_build :: get_method_info () } pub fn add_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FSMBuilderJobIntro_unity2_raw :: __lookup_add_attack :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FSMBuilderJobIntro_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "combat-fsmbuilderjobintro")]
 impl FSMBuilderJobIntro {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FSMBuilderJobIntro),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFSMBuilderJobIntroMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FSMBuilderJobIntro) , :: core :: stringify ! (new) ,)) ; < Self as IFSMBuilderJobIntroMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "combat-fsmbuilderjobintro")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{FSMBuilderJobIntro, IFSMBuilderJobIntro, IFSMBuilderJobIntroMethods};
-    #[cfg(feature = "combat-fsmbuilder")]
-    pub use crate::combat::fsmbuilder::IFSMBuilderMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{combat::fsmbuilder::IFSMBuilder, system::object::IObject};
+    pub use super::FSMBuilderJobIntro;
+    pub use super::IFSMBuilderJobIntro;
+    pub use super::IFSMBuilderJobIntroMethods;
+    pub use crate::combat::fsmbuilder::IFSMBuilder;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "combat-fsmbuilder")] pub use crate::combat::fsmbuilder::IFSMBuilderMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

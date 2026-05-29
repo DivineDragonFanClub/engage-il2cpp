@@ -2,2120 +2,231 @@
 
 #[cfg(feature = "unity_engine-ui-scrollbar-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            event_systems::uibehaviour::{IUIBehaviour, UIBehaviour},
-            events::{
-                unityevent_1::{IUnityEvent_1, UnityEvent_1},
-                unityeventbase::{IUnityEventBase, UnityEventBase},
-            },
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-            ui::selectable::{ISelectable, Selectable},
-        },
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/scrollbar/Scrollbar_Axis.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct Scrollbar_Axis {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: event_systems :: uibehaviour :: { IUIBehaviour , UIBehaviour }
+ ;
+ use crate :: unity_engine :: events :: unityevent_1 :: { IUnityEvent_1 , UnityEvent_1 }
+ ;
+ use crate :: unity_engine :: events :: unityeventbase :: { IUnityEventBase , UnityEventBase }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+ use crate :: unity_engine :: ui :: selectable :: { ISelectable , Selectable }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/scrollbar/Scrollbar_Axis.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct Scrollbar_Axis  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for Scrollbar_Axis  {
+    const NAMESPACE: &'static str = "UnityEngine.UI";
+
+    const NAME: &'static str = "Scrollbar.Axis";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for Scrollbar_Axis {
-        const NAME: &'static str = "Scrollbar.Axis";
-        const NAMESPACE: &'static str = "UnityEngine.UI";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for Scrollbar_Axis  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for Scrollbar_Axis {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  Scrollbar_Axis  {
+    pub fn horizontal() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl Scrollbar_Axis {
-        pub fn horizontal() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn vertical() -> Self {
-            Self { value: 1 }
-        }
+    pub fn vertical() -> Self {
+        Self { value: 1 }
+
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/scrollbar/Scrollbar.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UI", name = "Scrollbar")]
-    #[parent(crate::unity_engine::ui::selectable::Selectable)]
-    pub struct Scrollbar {
-        #[offset(248)]
-        #[rename(name = "m_HandleRect")]
-        pub m_handle_rect: crate::unity_engine::recttransform::RectTransform,
-        #[offset(256)]
-        #[rename(name = "m_Direction")]
-        pub m_direction: crate::unity_engine::ui::scrollbar::Scrollbar_Direction,
-        #[offset(260)]
-        #[rename(name = "m_Value")]
-        pub m_value: f32,
-        #[offset(264)]
-        #[rename(name = "m_Size")]
-        pub m_size: f32,
-        #[offset(268)]
-        #[rename(name = "m_NumberOfSteps")]
-        pub m_number_of_steps: i32,
-        #[offset(272)]
-        #[rename(name = "m_OnValueChanged")]
-        pub m_on_value_changed: crate::unity_engine::ui::scrollbar::Scrollbar_ScrollEvent,
-        #[offset(280)]
-        #[rename(name = "m_ContainerRect")]
-        pub m_container_rect: crate::unity_engine::recttransform::RectTransform,
-        #[offset(288)]
-        #[rename(name = "m_Offset")]
-        pub m_offset: crate::unity_engine::vector2::Vector2,
-        #[offset(296)]
-        #[rename(name = "m_Tracker")]
-        pub m_tracker: crate::unity_engine::drivenrecttransformtracker::DrivenRectTransformTracker,
-        #[offset(304)]
-        #[rename(name = "m_PointerDownRepeat")]
-        pub m_pointer_down_repeat: crate::unity_engine::coroutine::Coroutine,
-        #[offset(312)]
-        #[rename(name = "isPointerDownAndNotDragging")]
-        pub is_pointer_down_and_not_dragging: bool,
-        #[offset(313)]
-        #[rename(name = "m_DelayedUpdateVisuals")]
-        pub m_delayed_update_visuals: bool,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/scrollbar/Scrollbar.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "Scrollbar")] # [parent (crate :: unity_engine :: ui :: selectable :: Selectable)] pub struct Scrollbar {
+# [offset (248)] # [rename (name = "m_HandleRect")] pub m_handle_rect : crate :: unity_engine :: recttransform :: RectTransform ,
+# [offset (256)] # [rename (name = "m_Direction")] pub m_direction : crate :: unity_engine :: ui :: scrollbar :: Scrollbar_Direction ,
+# [offset (260)] # [rename (name = "m_Value")] pub m_value : f32 ,
+# [offset (264)] # [rename (name = "m_Size")] pub m_size : f32 ,
+# [offset (268)] # [rename (name = "m_NumberOfSteps")] pub m_number_of_steps : i32 ,
+# [offset (272)] # [rename (name = "m_OnValueChanged")] pub m_on_value_changed : crate :: unity_engine :: ui :: scrollbar :: Scrollbar_ScrollEvent ,
+# [offset (280)] # [rename (name = "m_ContainerRect")] pub m_container_rect : crate :: unity_engine :: recttransform :: RectTransform ,
+# [offset (288)] # [rename (name = "m_Offset")] pub m_offset : crate :: unity_engine :: vector2 :: Vector2 ,
+# [offset (296)] # [rename (name = "m_Tracker")] pub m_tracker : crate :: unity_engine :: drivenrecttransformtracker :: DrivenRectTransformTracker ,
+# [offset (304)] # [rename (name = "m_PointerDownRepeat")] pub m_pointer_down_repeat : crate :: unity_engine :: coroutine :: Coroutine ,
+# [offset (312)] # [rename (name = "isPointerDownAndNotDragging")] pub is_pointer_down_and_not_dragging : bool ,
+# [offset (313)] # [rename (name = "m_DelayedUpdateVisuals")] pub m_delayed_update_visuals : bool ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/scrollbar/Scrollbar_ScrollEvent.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "Scrollbar.ScrollEvent")] # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < f32 >)] pub struct Scrollbar_ScrollEvent {}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/scrollbar/Scrollbar_Direction.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct Scrollbar_Direction  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for Scrollbar_Direction  {
+    const NAMESPACE: &'static str = "UnityEngine.UI";
+
+    const NAME: &'static str = "Scrollbar.Direction";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/scrollbar/Scrollbar_Direction.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct Scrollbar_Direction {
-        pub value: i32,
+}
+
+
+impl  ::unity2::IlType for Scrollbar_Direction  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::ClassIdentity for Scrollbar_Direction {
-        const NAME: &'static str = "Scrollbar.Direction";
-        const NAMESPACE: &'static str = "UnityEngine.UI";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  Scrollbar_Direction  {
+    pub fn left_to_right() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl ::unity2::IlType for Scrollbar_Direction {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn right_to_left() -> Self {
+        Self { value: 1 }
+
     }
 
-    impl Scrollbar_Direction {
-        pub fn left_to_right() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn right_to_left() -> Self {
-            Self { value: 1 }
-        }
+    pub fn bottom_to_top() -> Self {
+        Self { value: 2 }
 
-        pub fn bottom_to_top() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn top_to_bottom() -> Self {
-            Self { value: 3 }
-        }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/scrollbar/Scrollbar_ScrollEvent.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UI", name = "Scrollbar.ScrollEvent")]
-    # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < f32 >)]
-    pub struct Scrollbar_ScrollEvent {}
+
+    pub fn top_to_bottom() -> Self {
+        Self { value: 3 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-ui-scrollbar-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-ui-scrollbar")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Scrollbar_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_handle_rect {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Scrollbar as ::unity2::ClassIdentity>::class(),
-                "get_handleRect",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar as ::unity2::ClassIdentity>::NAME,
-                        "get_handleRect",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_handle_rect(
-        this: Scrollbar,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::recttransform::RectTransform {
-        let inner: extern "C" fn(Scrollbar, ::unity2::OptionalMethod) -> crate::unity_engine::recttransform::RectTransform =
-            ::core::mem::transmute(__lookup_get_handle_rect::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_handle_rect {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Scrollbar as ::unity2::ClassIdentity>::class(),
-                "set_handleRect",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar as ::unity2::ClassIdentity>::NAME,
-                        "set_handleRect",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_handle_rect(
-        this: Scrollbar,
-        value: crate::unity_engine::recttransform::RectTransform,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Scrollbar, crate::unity_engine::recttransform::RectTransform, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_handle_rect::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_direction {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Scrollbar as ::unity2::ClassIdentity>::class(),
-                "get_direction",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar as ::unity2::ClassIdentity>::NAME,
-                        "get_direction",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_direction(
-        this: Scrollbar,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::ui::scrollbar::Scrollbar_Direction {
-        let inner: extern "C" fn(Scrollbar, ::unity2::OptionalMethod) -> crate::unity_engine::ui::scrollbar::Scrollbar_Direction =
-            ::core::mem::transmute(__lookup_get_direction::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_direction {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::ui::scrollbar::Scrollbar_Direction as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Scrollbar as ::unity2::ClassIdentity>::class(),
-                "set_direction",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar as ::unity2::ClassIdentity>::NAME,
-                        "set_direction",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_direction(
-        this: Scrollbar,
-        value: crate::unity_engine::ui::scrollbar::Scrollbar_Direction,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Scrollbar, crate::unity_engine::ui::scrollbar::Scrollbar_Direction, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_direction::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Scrollbar as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: Scrollbar, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Scrollbar, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_value {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Scrollbar as ::unity2::ClassIdentity>::class(), "get_value", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar as ::unity2::ClassIdentity>::NAME,
-                        "get_value",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_value(this: Scrollbar, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(Scrollbar, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_value::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_value {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Scrollbar as ::unity2::ClassIdentity>::class(), "set_value", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar as ::unity2::ClassIdentity>::NAME,
-                        "set_value",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_value(this: Scrollbar, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Scrollbar, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_value::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_value_without_notify {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Scrollbar as ::unity2::ClassIdentity>::class(),
-                "SetValueWithoutNotify",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar as ::unity2::ClassIdentity>::NAME,
-                        "SetValueWithoutNotify",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_value_without_notify(this: Scrollbar, input: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Scrollbar, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_value_without_notify::get_method_info().method_ptr);
-        inner(this, input, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_size {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Scrollbar as ::unity2::ClassIdentity>::class(), "get_size", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar as ::unity2::ClassIdentity>::NAME,
-                        "get_size",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_size(this: Scrollbar, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(Scrollbar, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_size::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_size {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Scrollbar as ::unity2::ClassIdentity>::class(), "set_size", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar as ::unity2::ClassIdentity>::NAME,
-                        "set_size",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_size(this: Scrollbar, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Scrollbar, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_size::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_number_of_steps {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Scrollbar as ::unity2::ClassIdentity>::class(),
-                "get_numberOfSteps",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar as ::unity2::ClassIdentity>::NAME,
-                        "get_numberOfSteps",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_number_of_steps(this: Scrollbar, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(Scrollbar, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_number_of_steps::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_number_of_steps {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Scrollbar as ::unity2::ClassIdentity>::class(),
-                "set_numberOfSteps",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar as ::unity2::ClassIdentity>::NAME,
-                        "set_numberOfSteps",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_number_of_steps(this: Scrollbar, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Scrollbar, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_number_of_steps::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_on_value_changed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Scrollbar as ::unity2::ClassIdentity>::class(),
-                "get_onValueChanged",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar as ::unity2::ClassIdentity>::NAME,
-                        "get_onValueChanged",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_on_value_changed(
-        this: Scrollbar,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::ui::scrollbar::Scrollbar_ScrollEvent {
-        let inner: extern "C" fn(Scrollbar, ::unity2::OptionalMethod) -> crate::unity_engine::ui::scrollbar::Scrollbar_ScrollEvent =
-            ::core::mem::transmute(__lookup_get_on_value_changed::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_on_value_changed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::ui::scrollbar::Scrollbar_ScrollEvent as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Scrollbar as ::unity2::ClassIdentity>::class(),
-                "set_onValueChanged",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar as ::unity2::ClassIdentity>::NAME,
-                        "set_onValueChanged",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_on_value_changed(
-        this: Scrollbar,
-        value: crate::unity_engine::ui::scrollbar::Scrollbar_ScrollEvent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Scrollbar, crate::unity_engine::ui::scrollbar::Scrollbar_ScrollEvent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_on_value_changed::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_step_size {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Scrollbar as ::unity2::ClassIdentity>::class(),
-                "get_stepSize",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar as ::unity2::ClassIdentity>::NAME,
-                        "get_stepSize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_step_size(this: Scrollbar, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(Scrollbar, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_step_size::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_rebuild {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::ui::canvasupdate::CanvasUpdate as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Scrollbar as ::unity2::ClassIdentity>::class(), "Rebuild", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar as ::unity2::ClassIdentity>::NAME,
-                        "Rebuild",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn rebuild(
-        this: Scrollbar,
-        executing: crate::unity_engine::ui::canvasupdate::CanvasUpdate,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Scrollbar, crate::unity_engine::ui::canvasupdate::CanvasUpdate, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_rebuild::get_method_info().method_ptr);
-        inner(this, executing, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_layout_complete {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Scrollbar as ::unity2::ClassIdentity>::class(),
-                "LayoutComplete",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar as ::unity2::ClassIdentity>::NAME,
-                        "LayoutComplete",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn layout_complete(this: Scrollbar, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Scrollbar, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_layout_complete::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_graphic_update_complete {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Scrollbar as ::unity2::ClassIdentity>::class(),
-                "GraphicUpdateComplete",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar as ::unity2::ClassIdentity>::NAME,
-                        "GraphicUpdateComplete",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn graphic_update_complete(this: Scrollbar, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Scrollbar, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_graphic_update_complete::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_enable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Scrollbar as ::unity2::ClassIdentity>::class(), "OnEnable", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar as ::unity2::ClassIdentity>::NAME,
-                        "OnEnable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_enable(this: Scrollbar, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Scrollbar, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_enable::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_disable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Scrollbar as ::unity2::ClassIdentity>::class(), "OnDisable", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar as ::unity2::ClassIdentity>::NAME,
-                        "OnDisable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_disable(this: Scrollbar, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Scrollbar, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_disable::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Scrollbar as ::unity2::ClassIdentity>::class(), "Update", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar as ::unity2::ClassIdentity>::NAME,
-                        "Update",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update(this: Scrollbar, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Scrollbar, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_cached_references {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Scrollbar as ::unity2::ClassIdentity>::class(),
-                "UpdateCachedReferences",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar as ::unity2::ClassIdentity>::NAME,
-                        "UpdateCachedReferences",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_cached_references(this: Scrollbar, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Scrollbar, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_cached_references::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Scrollbar as ::unity2::ClassIdentity>::class(), "Set", 2, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Scrollbar as ::unity2::ClassIdentity>::NAME, "Set", e),
-            }
-        }
-    }
-    pub unsafe fn set(this: Scrollbar, input: f32, send_callback: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Scrollbar, f32, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set::get_method_info().method_ptr);
-        inner(this, input, send_callback, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_rect_transform_dimensions_change {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Scrollbar as ::unity2::ClassIdentity>::class(),
-                "OnRectTransformDimensionsChange",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar as ::unity2::ClassIdentity>::NAME,
-                        "OnRectTransformDimensionsChange",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_rect_transform_dimensions_change(this: Scrollbar, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Scrollbar, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_rect_transform_dimensions_change::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_axis {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Scrollbar as ::unity2::ClassIdentity>::class(), "get_axis", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar as ::unity2::ClassIdentity>::NAME,
-                        "get_axis",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_axis(this: Scrollbar, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::ui::scrollbar::Scrollbar_Axis {
-        let inner: extern "C" fn(Scrollbar, ::unity2::OptionalMethod) -> crate::unity_engine::ui::scrollbar::Scrollbar_Axis =
-            ::core::mem::transmute(__lookup_get_axis::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_reverse_value {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Scrollbar as ::unity2::ClassIdentity>::class(),
-                "get_reverseValue",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar as ::unity2::ClassIdentity>::NAME,
-                        "get_reverseValue",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_reverse_value(this: Scrollbar, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(Scrollbar, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_reverse_value::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_visuals {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Scrollbar as ::unity2::ClassIdentity>::class(),
-                "UpdateVisuals",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar as ::unity2::ClassIdentity>::NAME,
-                        "UpdateVisuals",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_visuals(this: Scrollbar, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Scrollbar, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_visuals::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_drag {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::event_systems::pointereventdata::PointerEventData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Scrollbar as ::unity2::ClassIdentity>::class(),
-                "UpdateDrag",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar as ::unity2::ClassIdentity>::NAME,
-                        "UpdateDrag",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_drag(
-        this: Scrollbar,
-        event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Scrollbar, crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_drag::get_method_info().method_ptr);
-        inner(this, event_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_do_update_drag {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Scrollbar as ::unity2::ClassIdentity>::class(),
-                "DoUpdateDrag",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar as ::unity2::ClassIdentity>::NAME,
-                        "DoUpdateDrag",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn do_update_drag(
-        this: Scrollbar,
-        handle_corner: crate::unity_engine::vector2::Vector2,
-        remaining_size: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Scrollbar, crate::unity_engine::vector2::Vector2, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_do_update_drag::get_method_info().method_ptr);
-        inner(this, handle_corner, remaining_size, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_may_drag {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::event_systems::pointereventdata::PointerEventData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Scrollbar as ::unity2::ClassIdentity>::class(), "MayDrag", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar as ::unity2::ClassIdentity>::NAME,
-                        "MayDrag",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn may_drag(
-        this: Scrollbar,
-        event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            Scrollbar,
-            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_may_drag::get_method_info().method_ptr);
-        inner(this, event_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_begin_drag {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::event_systems::pointereventdata::PointerEventData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Scrollbar as ::unity2::ClassIdentity>::class(),
-                "OnBeginDrag",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar as ::unity2::ClassIdentity>::NAME,
-                        "OnBeginDrag",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_begin_drag(
-        this: Scrollbar,
-        event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Scrollbar, crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_begin_drag::get_method_info().method_ptr);
-        inner(this, event_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_drag {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::event_systems::pointereventdata::PointerEventData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Scrollbar as ::unity2::ClassIdentity>::class(), "OnDrag", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar as ::unity2::ClassIdentity>::NAME,
-                        "OnDrag",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_drag(
-        this: Scrollbar,
-        event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Scrollbar, crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_drag::get_method_info().method_ptr);
-        inner(this, event_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_pointer_down {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::event_systems::pointereventdata::PointerEventData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Scrollbar as ::unity2::ClassIdentity>::class(),
-                "OnPointerDown",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar as ::unity2::ClassIdentity>::NAME,
-                        "OnPointerDown",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_pointer_down(
-        this: Scrollbar,
-        event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Scrollbar, crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_pointer_down::get_method_info().method_ptr);
-        inner(this, event_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_click_repeat {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::event_systems::pointereventdata::PointerEventData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Scrollbar as ::unity2::ClassIdentity>::class(),
-                "ClickRepeat",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar as ::unity2::ClassIdentity>::NAME,
-                        "ClickRepeat",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn click_repeat(
-        this: Scrollbar,
-        event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(
-            Scrollbar,
-            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(__lookup_click_repeat::get_method_info().method_ptr);
-        inner(this, event_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_click_repeat_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Scrollbar as ::unity2::ClassIdentity>::class(),
-                "ClickRepeat",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar as ::unity2::ClassIdentity>::NAME,
-                        "ClickRepeat",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn click_repeat_2(
-        this: Scrollbar,
-        screen_position: crate::unity_engine::vector2::Vector2,
-        camera: crate::unity_engine::camera::Camera,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(
-            Scrollbar,
-            crate::unity_engine::vector2::Vector2,
-            crate::unity_engine::camera::Camera,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(__lookup_click_repeat_2::get_method_info().method_ptr);
-        inner(this, screen_position, camera, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_pointer_up {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::event_systems::pointereventdata::PointerEventData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Scrollbar as ::unity2::ClassIdentity>::class(),
-                "OnPointerUp",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar as ::unity2::ClassIdentity>::NAME,
-                        "OnPointerUp",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_pointer_up(
-        this: Scrollbar,
-        event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Scrollbar, crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_pointer_up::get_method_info().method_ptr);
-        inner(this, event_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_move {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::event_systems::axiseventdata::AxisEventData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Scrollbar as ::unity2::ClassIdentity>::class(), "OnMove", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar as ::unity2::ClassIdentity>::NAME,
-                        "OnMove",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_move(
-        this: Scrollbar,
-        event_data: crate::unity_engine::event_systems::axiseventdata::AxisEventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Scrollbar, crate::unity_engine::event_systems::axiseventdata::AxisEventData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_move::get_method_info().method_ptr);
-        inner(this, event_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_find_selectable_on_left {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Scrollbar as ::unity2::ClassIdentity>::class(),
-                "FindSelectableOnLeft",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar as ::unity2::ClassIdentity>::NAME,
-                        "FindSelectableOnLeft",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn find_selectable_on_left(
-        this: Scrollbar,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::ui::selectable::Selectable {
-        let inner: extern "C" fn(Scrollbar, ::unity2::OptionalMethod) -> crate::unity_engine::ui::selectable::Selectable =
-            ::core::mem::transmute(__lookup_find_selectable_on_left::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_find_selectable_on_right {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Scrollbar as ::unity2::ClassIdentity>::class(),
-                "FindSelectableOnRight",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar as ::unity2::ClassIdentity>::NAME,
-                        "FindSelectableOnRight",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn find_selectable_on_right(
-        this: Scrollbar,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::ui::selectable::Selectable {
-        let inner: extern "C" fn(Scrollbar, ::unity2::OptionalMethod) -> crate::unity_engine::ui::selectable::Selectable =
-            ::core::mem::transmute(__lookup_find_selectable_on_right::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_find_selectable_on_up {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Scrollbar as ::unity2::ClassIdentity>::class(),
-                "FindSelectableOnUp",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar as ::unity2::ClassIdentity>::NAME,
-                        "FindSelectableOnUp",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn find_selectable_on_up(
-        this: Scrollbar,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::ui::selectable::Selectable {
-        let inner: extern "C" fn(Scrollbar, ::unity2::OptionalMethod) -> crate::unity_engine::ui::selectable::Selectable =
-            ::core::mem::transmute(__lookup_find_selectable_on_up::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_find_selectable_on_down {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Scrollbar as ::unity2::ClassIdentity>::class(),
-                "FindSelectableOnDown",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar as ::unity2::ClassIdentity>::NAME,
-                        "FindSelectableOnDown",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn find_selectable_on_down(
-        this: Scrollbar,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::ui::selectable::Selectable {
-        let inner: extern "C" fn(Scrollbar, ::unity2::OptionalMethod) -> crate::unity_engine::ui::selectable::Selectable =
-            ::core::mem::transmute(__lookup_find_selectable_on_down::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_initialize_potential_drag {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::event_systems::pointereventdata::PointerEventData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Scrollbar as ::unity2::ClassIdentity>::class(),
-                "OnInitializePotentialDrag",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar as ::unity2::ClassIdentity>::NAME,
-                        "OnInitializePotentialDrag",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_initialize_potential_drag(
-        this: Scrollbar,
-        event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Scrollbar, crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_initialize_potential_drag::get_method_info().method_ptr);
-        inner(this, event_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_direction_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::ui::scrollbar::Scrollbar_Direction as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Scrollbar as ::unity2::ClassIdentity>::class(),
-                "SetDirection",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar as ::unity2::ClassIdentity>::NAME,
-                        "SetDirection",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_direction_2(
-        this: Scrollbar,
-        direction: crate::unity_engine::ui::scrollbar::Scrollbar_Direction,
-        include_rect_layouts: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Scrollbar, crate::unity_engine::ui::scrollbar::Scrollbar_Direction, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_direction_2::get_method_info().method_ptr);
-        inner(this, direction, include_rect_layouts, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unity_engine_ui_i_canvas_element_get_transform {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Scrollbar as ::unity2::ClassIdentity>::class(),
-                "UnityEngine.UI.ICanvasElement.get_transform",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar as ::unity2::ClassIdentity>::NAME,
-                        "UnityEngine.UI.ICanvasElement.get_transform",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn unity_engine_ui_i_canvas_element_get_transform(
-        this: Scrollbar,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(Scrollbar, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
-            ::core::mem::transmute(__lookup_unity_engine_ui_i_canvas_element_get_transform::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Scrollbar_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_handle_rect { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , "get_handleRect" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , "get_handleRect" , e) , } } } pub unsafe fn get_handle_rect (this : Scrollbar , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: recttransform :: RectTransform { let inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: recttransform :: RectTransform = :: core :: mem :: transmute (__lookup_get_handle_rect :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_handle_rect { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: recttransform :: RectTransform as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , "set_handleRect" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , "set_handleRect" , e) , } } } pub unsafe fn set_handle_rect (this : Scrollbar , value : crate :: unity_engine :: recttransform :: RectTransform , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Scrollbar , crate :: unity_engine :: recttransform :: RectTransform , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_handle_rect :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_direction { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , "get_direction" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , "get_direction" , e) , } } } pub unsafe fn get_direction (this : Scrollbar , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: scrollbar :: Scrollbar_Direction { let inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: scrollbar :: Scrollbar_Direction = :: core :: mem :: transmute (__lookup_get_direction :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_direction { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: ui :: scrollbar :: Scrollbar_Direction as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , "set_direction" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , "set_direction" , e) , } } } pub unsafe fn set_direction (this : Scrollbar , value : crate :: unity_engine :: ui :: scrollbar :: Scrollbar_Direction , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Scrollbar , crate :: unity_engine :: ui :: scrollbar :: Scrollbar_Direction , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_direction :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Scrollbar , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , "get_value" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , "get_value" , e) , } } } pub unsafe fn get_value (this : Scrollbar , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_value :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , "set_value" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , "set_value" , e) , } } } pub unsafe fn set_value (this : Scrollbar , value : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Scrollbar , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_value :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_value_without_notify { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , "SetValueWithoutNotify" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , "SetValueWithoutNotify" , e) , } } } pub unsafe fn set_value_without_notify (this : Scrollbar , input : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Scrollbar , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_value_without_notify :: get_method_info () . method_ptr ,) ; inner (this , input , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_size { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , "get_size" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , "get_size" , e) , } } } pub unsafe fn get_size (this : Scrollbar , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_size :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_size { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , "set_size" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , "set_size" , e) , } } } pub unsafe fn set_size (this : Scrollbar , value : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Scrollbar , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_size :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_number_of_steps { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , "get_numberOfSteps" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , "get_numberOfSteps" , e) , } } } pub unsafe fn get_number_of_steps (this : Scrollbar , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_number_of_steps :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_number_of_steps { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , "set_numberOfSteps" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , "set_numberOfSteps" , e) , } } } pub unsafe fn set_number_of_steps (this : Scrollbar , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Scrollbar , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_number_of_steps :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_on_value_changed { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , "get_onValueChanged" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , "get_onValueChanged" , e) , } } } pub unsafe fn get_on_value_changed (this : Scrollbar , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: scrollbar :: Scrollbar_ScrollEvent { let inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: scrollbar :: Scrollbar_ScrollEvent = :: core :: mem :: transmute (__lookup_get_on_value_changed :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_on_value_changed { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: ui :: scrollbar :: Scrollbar_ScrollEvent as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , "set_onValueChanged" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , "set_onValueChanged" , e) , } } } pub unsafe fn set_on_value_changed (this : Scrollbar , value : crate :: unity_engine :: ui :: scrollbar :: Scrollbar_ScrollEvent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Scrollbar , crate :: unity_engine :: ui :: scrollbar :: Scrollbar_ScrollEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_on_value_changed :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_step_size { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , "get_stepSize" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , "get_stepSize" , e) , } } } pub unsafe fn get_step_size (this : Scrollbar , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_step_size :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_rebuild { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: ui :: canvasupdate :: CanvasUpdate as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , "Rebuild" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , "Rebuild" , e) , } } } pub unsafe fn rebuild (this : Scrollbar , executing : crate :: unity_engine :: ui :: canvasupdate :: CanvasUpdate , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Scrollbar , crate :: unity_engine :: ui :: canvasupdate :: CanvasUpdate , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_rebuild :: get_method_info () . method_ptr ,) ; inner (this , executing , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_layout_complete { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , "LayoutComplete" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , "LayoutComplete" , e) , } } } pub unsafe fn layout_complete (this : Scrollbar , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_layout_complete :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_graphic_update_complete { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , "GraphicUpdateComplete" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , "GraphicUpdateComplete" , e) , } } } pub unsafe fn graphic_update_complete (this : Scrollbar , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_graphic_update_complete :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_enable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , "OnEnable" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , "OnEnable" , e) , } } } pub unsafe fn on_enable (this : Scrollbar , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_enable :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_disable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , "OnDisable" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , "OnDisable" , e) , } } } pub unsafe fn on_disable (this : Scrollbar , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_disable :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , "Update" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , } } } pub unsafe fn update (this : Scrollbar , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_cached_references { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , "UpdateCachedReferences" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , "UpdateCachedReferences" , e) , } } } pub unsafe fn update_cached_references (this : Scrollbar , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_cached_references :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , "Set" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , "Set" , e) , } } } pub unsafe fn set (this : Scrollbar , input : f32 , send_callback : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Scrollbar , f32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set :: get_method_info () . method_ptr ,) ; inner (this , input , send_callback , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_rect_transform_dimensions_change { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , "OnRectTransformDimensionsChange" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , "OnRectTransformDimensionsChange" , e) , } } } pub unsafe fn on_rect_transform_dimensions_change (this : Scrollbar , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_rect_transform_dimensions_change :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_axis { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , "get_axis" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , "get_axis" , e) , } } } pub unsafe fn get_axis (this : Scrollbar , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: scrollbar :: Scrollbar_Axis { let inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: scrollbar :: Scrollbar_Axis = :: core :: mem :: transmute (__lookup_get_axis :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_reverse_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , "get_reverseValue" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , "get_reverseValue" , e) , } } } pub unsafe fn get_reverse_value (this : Scrollbar , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_reverse_value :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_visuals { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , "UpdateVisuals" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , "UpdateVisuals" , e) , } } } pub unsafe fn update_visuals (this : Scrollbar , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_visuals :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_drag { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , "UpdateDrag" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , "UpdateDrag" , e) , } } } pub unsafe fn update_drag (this : Scrollbar , event_data : crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Scrollbar , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_drag :: get_method_info () . method_ptr ,) ; inner (this , event_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_do_update_drag { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , "DoUpdateDrag" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , "DoUpdateDrag" , e) , } } } pub unsafe fn do_update_drag (this : Scrollbar , handle_corner : crate :: unity_engine :: vector2 :: Vector2 , remaining_size : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Scrollbar , crate :: unity_engine :: vector2 :: Vector2 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_do_update_drag :: get_method_info () . method_ptr ,) ; inner (this , handle_corner , remaining_size , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_may_drag { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , "MayDrag" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , "MayDrag" , e) , } } } pub unsafe fn may_drag (this : Scrollbar , event_data : crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (Scrollbar , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_may_drag :: get_method_info () . method_ptr ,) ; inner (this , event_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_begin_drag { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , "OnBeginDrag" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , "OnBeginDrag" , e) , } } } pub unsafe fn on_begin_drag (this : Scrollbar , event_data : crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Scrollbar , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_begin_drag :: get_method_info () . method_ptr ,) ; inner (this , event_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_drag { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , "OnDrag" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , "OnDrag" , e) , } } } pub unsafe fn on_drag (this : Scrollbar , event_data : crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Scrollbar , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_drag :: get_method_info () . method_ptr ,) ; inner (this , event_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_pointer_down { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , "OnPointerDown" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , "OnPointerDown" , e) , } } } pub unsafe fn on_pointer_down (this : Scrollbar , event_data : crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Scrollbar , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_pointer_down :: get_method_info () . method_ptr ,) ; inner (this , event_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_click_repeat { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , "ClickRepeat" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , "ClickRepeat" , e) , } } } pub unsafe fn click_repeat (this : Scrollbar , event_data : crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { let inner : extern "C" fn (Scrollbar , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute (__lookup_click_repeat :: get_method_info () . method_ptr ,) ; inner (this , event_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_click_repeat_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: camera :: Camera as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , "ClickRepeat" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , "ClickRepeat" , e) , } } } pub unsafe fn click_repeat_2 (this : Scrollbar , screen_position : crate :: unity_engine :: vector2 :: Vector2 , camera : crate :: unity_engine :: camera :: Camera , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { let inner : extern "C" fn (Scrollbar , crate :: unity_engine :: vector2 :: Vector2 , crate :: unity_engine :: camera :: Camera , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute (__lookup_click_repeat_2 :: get_method_info () . method_ptr ,) ; inner (this , screen_position , camera , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_pointer_up { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , "OnPointerUp" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , "OnPointerUp" , e) , } } } pub unsafe fn on_pointer_up (this : Scrollbar , event_data : crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Scrollbar , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_pointer_up :: get_method_info () . method_ptr ,) ; inner (this , event_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_move { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: axiseventdata :: AxisEventData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , "OnMove" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , "OnMove" , e) , } } } pub unsafe fn on_move (this : Scrollbar , event_data : crate :: unity_engine :: event_systems :: axiseventdata :: AxisEventData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Scrollbar , crate :: unity_engine :: event_systems :: axiseventdata :: AxisEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_move :: get_method_info () . method_ptr ,) ; inner (this , event_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_find_selectable_on_left { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , "FindSelectableOnLeft" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , "FindSelectableOnLeft" , e) , } } } pub unsafe fn find_selectable_on_left (this : Scrollbar , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: selectable :: Selectable { let inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: selectable :: Selectable = :: core :: mem :: transmute (__lookup_find_selectable_on_left :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_find_selectable_on_right { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , "FindSelectableOnRight" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , "FindSelectableOnRight" , e) , } } } pub unsafe fn find_selectable_on_right (this : Scrollbar , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: selectable :: Selectable { let inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: selectable :: Selectable = :: core :: mem :: transmute (__lookup_find_selectable_on_right :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_find_selectable_on_up { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , "FindSelectableOnUp" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , "FindSelectableOnUp" , e) , } } } pub unsafe fn find_selectable_on_up (this : Scrollbar , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: selectable :: Selectable { let inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: selectable :: Selectable = :: core :: mem :: transmute (__lookup_find_selectable_on_up :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_find_selectable_on_down { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , "FindSelectableOnDown" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , "FindSelectableOnDown" , e) , } } } pub unsafe fn find_selectable_on_down (this : Scrollbar , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: selectable :: Selectable { let inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: selectable :: Selectable = :: core :: mem :: transmute (__lookup_find_selectable_on_down :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_initialize_potential_drag { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , "OnInitializePotentialDrag" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , "OnInitializePotentialDrag" , e) , } } } pub unsafe fn on_initialize_potential_drag (this : Scrollbar , event_data : crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Scrollbar , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_initialize_potential_drag :: get_method_info () . method_ptr ,) ; inner (this , event_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_direction_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: ui :: scrollbar :: Scrollbar_Direction as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , "SetDirection" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , "SetDirection" , e) , } } } pub unsafe fn set_direction_2 (this : Scrollbar , direction : crate :: unity_engine :: ui :: scrollbar :: Scrollbar_Direction , include_rect_layouts : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Scrollbar , crate :: unity_engine :: ui :: scrollbar :: Scrollbar_Direction , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_direction_2 :: get_method_info () . method_ptr ,) ; inner (this , direction , include_rect_layouts , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_unity_engine_ui_i_canvas_element_get_transform { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar as :: unity2 :: ClassIdentity > :: class () , "UnityEngine.UI.ICanvasElement.get_transform" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar as :: unity2 :: ClassIdentity > :: NAME , "UnityEngine.UI.ICanvasElement.get_transform" , e) , } } } pub unsafe fn unity_engine_ui_i_canvas_element_get_transform (this : Scrollbar , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform { let inner : extern "C" fn (Scrollbar , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform = :: core :: mem :: transmute (__lookup_unity_engine_ui_i_canvas_element_get_transform :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-ui-scrollbar")]
-pub trait IScrollbarMethods: IScrollbar {
-    #[doc = "`get_handleRect()` overload"]
-    fn get_handle_rect(self) -> crate::unity_engine::recttransform::RectTransform {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::get_handle_rect(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_handleRect(crate::unity_engine::recttransform::RectTransform)` overload"]
-    fn set_handle_rect(self, value: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>) -> () {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::set_handle_rect(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_direction()` overload"]
-    fn get_direction(self) -> crate::unity_engine::ui::scrollbar::Scrollbar_Direction {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::get_direction(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_direction(crate::unity_engine::ui::scrollbar::Scrollbar_Direction)` overload"]
-    fn set_direction(self, value: impl ::core::convert::Into<crate::unity_engine::ui::scrollbar::Scrollbar_Direction>) -> () {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::set_direction(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_value()` overload"]
-    fn get_value(self) -> f32 {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::get_value(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_value(f32)` overload"]
-    fn set_value(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::set_value(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetValueWithoutNotify(f32)` overload"]
-    fn set_value_without_notify(self, input: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::set_value_without_notify(__receiver, ::core::convert::Into::into(input), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_size()` overload"]
-    fn get_size(self) -> f32 {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::get_size(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_size(f32)` overload"]
-    fn set_size(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::set_size(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_numberOfSteps()` overload"]
-    fn get_number_of_steps(self) -> i32 {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::get_number_of_steps(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_numberOfSteps(i32)` overload"]
-    fn set_number_of_steps(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::set_number_of_steps(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_onValueChanged()` overload"]
-    fn get_on_value_changed(self) -> crate::unity_engine::ui::scrollbar::Scrollbar_ScrollEvent {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::get_on_value_changed(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_onValueChanged(crate::unity_engine::ui::scrollbar::Scrollbar_ScrollEvent)` overload"]
-    fn set_on_value_changed(self, value: impl ::core::convert::Into<crate::unity_engine::ui::scrollbar::Scrollbar_ScrollEvent>) -> () {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::set_on_value_changed(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_stepSize()` overload"]
-    fn get_step_size(self) -> f32 {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::get_step_size(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Rebuild(crate::unity_engine::ui::canvasupdate::CanvasUpdate)` overload"]
-    fn rebuild(self, executing: impl ::core::convert::Into<crate::unity_engine::ui::canvasupdate::CanvasUpdate>) -> () {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::rebuild(__receiver, ::core::convert::Into::into(executing), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`LayoutComplete()` overload"]
-    fn layout_complete(self) -> () {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::layout_complete(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GraphicUpdateComplete()` overload"]
-    fn graphic_update_complete(self) -> () {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::graphic_update_complete(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnEnable()` overload"]
-    fn on_enable(self) -> () {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::on_enable(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDisable()` overload"]
-    fn on_disable(self) -> () {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::on_disable(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateCachedReferences()` overload"]
-    fn update_cached_references(self) -> () {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::update_cached_references(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Set(f32, bool)` overload"]
-    fn set(self, input: impl ::core::convert::Into<f32>, send_callback: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::set(
-                __receiver,
-                ::core::convert::Into::into(input),
-                ::core::convert::Into::into(send_callback),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnRectTransformDimensionsChange()` overload"]
-    fn on_rect_transform_dimensions_change(self) -> () {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::on_rect_transform_dimensions_change(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_axis()` overload"]
-    fn get_axis(self) -> crate::unity_engine::ui::scrollbar::Scrollbar_Axis {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::get_axis(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_reverseValue()` overload"]
-    fn get_reverse_value(self) -> bool {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::get_reverse_value(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateVisuals()` overload"]
-    fn update_visuals(self) -> () {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::update_visuals(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
-    fn update_drag(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>) -> () {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::update_drag(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`DoUpdateDrag(crate::unity_engine::vector2::Vector2, f32)` overload"]
-    fn do_update_drag(
-        self,
-        handle_corner: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-        remaining_size: impl ::core::convert::Into<f32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::do_update_drag(
-                __receiver,
-                ::core::convert::Into::into(handle_corner),
-                ::core::convert::Into::into(remaining_size),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`MayDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
-    fn may_drag(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>) -> bool {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::may_drag(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnBeginDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
-    fn on_begin_drag(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>) -> () {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::on_begin_drag(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
-    fn on_drag(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>) -> () {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::on_drag(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnPointerDown(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
-    fn on_pointer_down(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>) -> () {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::on_pointer_down(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ClickRepeat(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
-    fn click_repeat(
-        self,
-        event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::click_repeat(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ClickRepeat(crate::unity_engine::vector2::Vector2, crate::unity_engine::camera::Camera)` overload"]
-    fn click_repeat_2(
-        self,
-        screen_position: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-        camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::click_repeat_2(
-                __receiver,
-                ::core::convert::Into::into(screen_position),
-                ::core::convert::Into::into(camera),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnPointerUp(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
-    fn on_pointer_up(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>) -> () {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::on_pointer_up(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnMove(crate::unity_engine::event_systems::axiseventdata::AxisEventData)` overload"]
-    fn on_move(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::axiseventdata::AxisEventData>) -> () {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::on_move(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`FindSelectableOnLeft()` overload"]
-    fn find_selectable_on_left(self) -> crate::unity_engine::ui::selectable::Selectable {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::find_selectable_on_left(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`FindSelectableOnRight()` overload"]
-    fn find_selectable_on_right(self) -> crate::unity_engine::ui::selectable::Selectable {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::find_selectable_on_right(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`FindSelectableOnUp()` overload"]
-    fn find_selectable_on_up(self) -> crate::unity_engine::ui::selectable::Selectable {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::find_selectable_on_up(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`FindSelectableOnDown()` overload"]
-    fn find_selectable_on_down(self) -> crate::unity_engine::ui::selectable::Selectable {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::find_selectable_on_down(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnInitializePotentialDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
-    fn on_initialize_potential_drag(
-        self,
-        event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>,
-    ) -> () {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::on_initialize_potential_drag(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetDirection(crate::unity_engine::ui::scrollbar::Scrollbar_Direction, bool)` overload"]
-    fn set_direction_2(
-        self,
-        direction: impl ::core::convert::Into<crate::unity_engine::ui::scrollbar::Scrollbar_Direction>,
-        include_rect_layouts: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::set_direction_2(
-                __receiver,
-                ::core::convert::Into::into(direction),
-                ::core::convert::Into::into(include_rect_layouts),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`UnityEngine.UI.ICanvasElement.get_transform()` overload"]
-    fn unity_engine_ui_i_canvas_element_get_transform(self) -> crate::unity_engine::transform::Transform {
-        unsafe {
-            let __receiver = <Scrollbar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_unity2_raw::unity_engine_ui_i_canvas_element_get_transform(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IScrollbarMethods : IScrollbar { # [doc = "`get_handleRect()` overload"] fn get_handle_rect (self ,) -> crate :: unity_engine :: recttransform :: RectTransform { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: get_handle_rect (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_handleRect(crate::unity_engine::recttransform::RectTransform)` overload"] fn set_handle_rect (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: recttransform :: RectTransform >) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: set_handle_rect (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_direction()` overload"] fn get_direction (self ,) -> crate :: unity_engine :: ui :: scrollbar :: Scrollbar_Direction { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: get_direction (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_direction(crate::unity_engine::ui::scrollbar::Scrollbar_Direction)` overload"] fn set_direction (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: scrollbar :: Scrollbar_Direction >) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: set_direction (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_value()` overload"] fn get_value (self ,) -> f32 { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: get_value (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_value(f32)` overload"] fn set_value (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: set_value (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`SetValueWithoutNotify(f32)` overload"] fn set_value_without_notify (self , input : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: set_value_without_notify (__receiver , :: core :: convert :: Into :: into (input) , :: core :: option :: Option :: None) } } # [doc = "`get_size()` overload"] fn get_size (self ,) -> f32 { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: get_size (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_size(f32)` overload"] fn set_size (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: set_size (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_numberOfSteps()` overload"] fn get_number_of_steps (self ,) -> i32 { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: get_number_of_steps (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_numberOfSteps(i32)` overload"] fn set_number_of_steps (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: set_number_of_steps (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_onValueChanged()` overload"] fn get_on_value_changed (self ,) -> crate :: unity_engine :: ui :: scrollbar :: Scrollbar_ScrollEvent { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: get_on_value_changed (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_onValueChanged(crate::unity_engine::ui::scrollbar::Scrollbar_ScrollEvent)` overload"] fn set_on_value_changed (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: scrollbar :: Scrollbar_ScrollEvent >) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: set_on_value_changed (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_stepSize()` overload"] fn get_step_size (self ,) -> f32 { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: get_step_size (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Rebuild(crate::unity_engine::ui::canvasupdate::CanvasUpdate)` overload"] fn rebuild (self , executing : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: canvasupdate :: CanvasUpdate >) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: rebuild (__receiver , :: core :: convert :: Into :: into (executing) , :: core :: option :: Option :: None) } } # [doc = "`LayoutComplete()` overload"] fn layout_complete (self ,) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: layout_complete (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GraphicUpdateComplete()` overload"] fn graphic_update_complete (self ,) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: graphic_update_complete (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: on_enable (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: on_disable (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UpdateCachedReferences()` overload"] fn update_cached_references (self ,) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: update_cached_references (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Set(f32, bool)` overload"] fn set (self , input : impl :: core :: convert :: Into < f32 > , send_callback : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: set (__receiver , :: core :: convert :: Into :: into (input) , :: core :: convert :: Into :: into (send_callback) , :: core :: option :: Option :: None) } } # [doc = "`OnRectTransformDimensionsChange()` overload"] fn on_rect_transform_dimensions_change (self ,) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: on_rect_transform_dimensions_change (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_axis()` overload"] fn get_axis (self ,) -> crate :: unity_engine :: ui :: scrollbar :: Scrollbar_Axis { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: get_axis (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_reverseValue()` overload"] fn get_reverse_value (self ,) -> bool { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: get_reverse_value (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UpdateVisuals()` overload"] fn update_visuals (self ,) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: update_visuals (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UpdateDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn update_drag (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: update_drag (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } # [doc = "`DoUpdateDrag(crate::unity_engine::vector2::Vector2, f32)` overload"] fn do_update_drag (self , handle_corner : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , remaining_size : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: do_update_drag (__receiver , :: core :: convert :: Into :: into (handle_corner) , :: core :: convert :: Into :: into (remaining_size) , :: core :: option :: Option :: None) } } # [doc = "`MayDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn may_drag (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> bool { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: may_drag (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } # [doc = "`OnBeginDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn on_begin_drag (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: on_begin_drag (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } # [doc = "`OnDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn on_drag (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: on_drag (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } # [doc = "`OnPointerDown(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn on_pointer_down (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: on_pointer_down (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } # [doc = "`ClickRepeat(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn click_repeat (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: click_repeat (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } # [doc = "`ClickRepeat(crate::unity_engine::vector2::Vector2, crate::unity_engine::camera::Camera)` overload"] fn click_repeat_2 (self , screen_position : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , camera : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera >) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: click_repeat_2 (__receiver , :: core :: convert :: Into :: into (screen_position) , :: core :: convert :: Into :: into (camera) , :: core :: option :: Option :: None) } } # [doc = "`OnPointerUp(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn on_pointer_up (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: on_pointer_up (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } # [doc = "`OnMove(crate::unity_engine::event_systems::axiseventdata::AxisEventData)` overload"] fn on_move (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: axiseventdata :: AxisEventData >) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: on_move (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } # [doc = "`FindSelectableOnLeft()` overload"] fn find_selectable_on_left (self ,) -> crate :: unity_engine :: ui :: selectable :: Selectable { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: find_selectable_on_left (__receiver , :: core :: option :: Option :: None) } } # [doc = "`FindSelectableOnRight()` overload"] fn find_selectable_on_right (self ,) -> crate :: unity_engine :: ui :: selectable :: Selectable { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: find_selectable_on_right (__receiver , :: core :: option :: Option :: None) } } # [doc = "`FindSelectableOnUp()` overload"] fn find_selectable_on_up (self ,) -> crate :: unity_engine :: ui :: selectable :: Selectable { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: find_selectable_on_up (__receiver , :: core :: option :: Option :: None) } } # [doc = "`FindSelectableOnDown()` overload"] fn find_selectable_on_down (self ,) -> crate :: unity_engine :: ui :: selectable :: Selectable { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: find_selectable_on_down (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnInitializePotentialDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn on_initialize_potential_drag (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: on_initialize_potential_drag (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } # [doc = "`SetDirection(crate::unity_engine::ui::scrollbar::Scrollbar_Direction, bool)` overload"] fn set_direction_2 (self , direction : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: scrollbar :: Scrollbar_Direction > , include_rect_layouts : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: set_direction_2 (__receiver , :: core :: convert :: Into :: into (direction) , :: core :: convert :: Into :: into (include_rect_layouts) , :: core :: option :: Option :: None) } } # [doc = "`UnityEngine.UI.ICanvasElement.get_transform()` overload"] fn unity_engine_ui_i_canvas_element_get_transform (self ,) -> crate :: unity_engine :: transform :: Transform { unsafe { let __receiver = < Scrollbar as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_unity2_raw :: unity_engine_ui_i_canvas_element_get_transform (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-ui-scrollbar")]
-impl<__T: IScrollbar> IScrollbarMethods for __T {}
+impl < __T : IScrollbar > IScrollbarMethods for __T { }
+
+#[cfg(feature = "unity_engine-ui-scrollbar")]
+impl Scrollbar { pub fn get_handle_rect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_get_handle_rect :: get_method_info () } pub fn set_handle_rect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_set_handle_rect :: get_method_info () } pub fn get_direction_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_get_direction :: get_method_info () } pub fn set_direction_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_set_direction :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_get_value :: get_method_info () } pub fn set_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_set_value :: get_method_info () } pub fn set_value_without_notify_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_set_value_without_notify :: get_method_info () } pub fn get_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_get_size :: get_method_info () } pub fn set_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_set_size :: get_method_info () } pub fn get_number_of_steps_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_get_number_of_steps :: get_method_info () } pub fn set_number_of_steps_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_set_number_of_steps :: get_method_info () } pub fn get_on_value_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_get_on_value_changed :: get_method_info () } pub fn set_on_value_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_set_on_value_changed :: get_method_info () } pub fn get_step_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_get_step_size :: get_method_info () } pub fn rebuild_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_rebuild :: get_method_info () } pub fn layout_complete_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_layout_complete :: get_method_info () } pub fn graphic_update_complete_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_graphic_update_complete :: get_method_info () } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_on_enable :: get_method_info () } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_on_disable :: get_method_info () } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_update :: get_method_info () } pub fn update_cached_references_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_update_cached_references :: get_method_info () } pub fn set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_set :: get_method_info () } pub fn on_rect_transform_dimensions_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_on_rect_transform_dimensions_change :: get_method_info () } pub fn get_axis_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_get_axis :: get_method_info () } pub fn get_reverse_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_get_reverse_value :: get_method_info () } pub fn update_visuals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_update_visuals :: get_method_info () } pub fn update_drag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_update_drag :: get_method_info () } pub fn do_update_drag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_do_update_drag :: get_method_info () } pub fn may_drag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_may_drag :: get_method_info () } pub fn on_begin_drag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_on_begin_drag :: get_method_info () } pub fn on_drag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_on_drag :: get_method_info () } pub fn on_pointer_down_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_on_pointer_down :: get_method_info () } pub fn click_repeat_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_click_repeat :: get_method_info () } pub fn click_repeat_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_click_repeat_2 :: get_method_info () } pub fn on_pointer_up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_on_pointer_up :: get_method_info () } pub fn on_move_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_on_move :: get_method_info () } pub fn find_selectable_on_left_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_find_selectable_on_left :: get_method_info () } pub fn find_selectable_on_right_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_find_selectable_on_right :: get_method_info () } pub fn find_selectable_on_up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_find_selectable_on_up :: get_method_info () } pub fn find_selectable_on_down_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_find_selectable_on_down :: get_method_info () } pub fn on_initialize_potential_drag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_on_initialize_potential_drag :: get_method_info () } pub fn set_direction_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_set_direction_2 :: get_method_info () } pub fn unity_engine_ui_i_canvas_element_get_transform_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_unity2_raw :: __lookup_unity_engine_ui_i_canvas_element_get_transform :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-ui-scrollbar")]
 impl Scrollbar {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Scrollbar), ::core::stringify!(new),));
-        <Self as IScrollbarMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Scrollbar) , :: core :: stringify ! (new) ,)) ; < Self as IScrollbarMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-ui-scrollbar")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Scrollbar_ScrollEvent_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Scrollbar_ScrollEvent as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Scrollbar_ScrollEvent as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: Scrollbar_ScrollEvent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Scrollbar_ScrollEvent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Scrollbar_ScrollEvent_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Scrollbar_ScrollEvent as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Scrollbar_ScrollEvent as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Scrollbar_ScrollEvent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Scrollbar_ScrollEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-ui-scrollbar")]
-pub trait IScrollbar_ScrollEventMethods: IScrollbar_ScrollEvent {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <Scrollbar_ScrollEvent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Scrollbar_ScrollEvent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IScrollbar_ScrollEventMethods : IScrollbar_ScrollEvent { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Scrollbar_ScrollEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Scrollbar_ScrollEvent_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-ui-scrollbar")]
-impl<__T: IScrollbar_ScrollEvent> IScrollbar_ScrollEventMethods for __T {}
+impl < __T : IScrollbar_ScrollEvent > IScrollbar_ScrollEventMethods for __T { }
+
+#[cfg(feature = "unity_engine-ui-scrollbar")]
+impl Scrollbar_ScrollEvent { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Scrollbar_ScrollEvent_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-ui-scrollbar")]
 impl Scrollbar_ScrollEvent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Scrollbar_ScrollEvent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IScrollbar_ScrollEventMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Scrollbar_ScrollEvent) , :: core :: stringify ! (new) ,)) ; < Self as IScrollbar_ScrollEventMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-ui-scrollbar")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        IScrollbar, IScrollbarMethods, IScrollbar_ScrollEvent, IScrollbar_ScrollEventMethods, Scrollbar, Scrollbar_Axis, Scrollbar_Direction,
-        Scrollbar_ScrollEvent,
-    };
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-event_systems-uibehaviour")]
-    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviourMethods;
-    #[cfg(feature = "unity_engine-events-unityevent_1")]
-    pub use crate::unity_engine::events::unityevent_1::IUnityEvent_1Methods;
-    #[cfg(feature = "unity_engine-events-unityeventbase")]
-    pub use crate::unity_engine::events::unityeventbase::IUnityEventBaseMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    #[cfg(feature = "unity_engine-ui-selectable")]
-    pub use crate::unity_engine::ui::selectable::ISelectableMethods;
-    pub use crate::{
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-        unity_engine::{
-            behaviour::IBehaviour,
-            component::IComponent,
-            event_systems::uibehaviour::IUIBehaviour,
-            events::{unityevent_1::IUnityEvent_1, unityeventbase::IUnityEventBase},
-            monobehaviour::IMonoBehaviour,
-            object_2::IObject_2,
-            ui::selectable::ISelectable,
-        },
-    };
+    pub use super::Scrollbar_Axis;
+    pub use super::Scrollbar;
+    pub use super::IScrollbar;
+    pub use super::IScrollbarMethods;
+    pub use super::Scrollbar_ScrollEvent;
+    pub use super::IScrollbar_ScrollEvent;
+    pub use super::IScrollbar_ScrollEventMethods;
+    pub use super::Scrollbar_Direction;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
+    pub use crate::unity_engine::events::unityevent_1::IUnityEvent_1;
+    pub use crate::unity_engine::events::unityeventbase::IUnityEventBase;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    pub use crate::unity_engine::ui::selectable::ISelectable;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-event_systems-uibehaviour")] pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviourMethods;
+    #[cfg(feature = "unity_engine-events-unityevent_1")] pub use crate::unity_engine::events::unityevent_1::IUnityEvent_1Methods;
+    #[cfg(feature = "unity_engine-events-unityeventbase")] pub use crate::unity_engine::events::unityeventbase::IUnityEventBaseMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    #[cfg(feature = "unity_engine-ui-selectable")] pub use crate::unity_engine::ui::selectable::ISelectableMethods;
 }

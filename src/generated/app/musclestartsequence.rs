@@ -2,1083 +2,165 @@
 
 #[cfg(feature = "app-musclestartsequence-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::procinst::{IProcInst, ProcInst},
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/musclestartsequence/MuscleStartSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "MuscleStartSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct MuscleStartSequence {
-        #[offset(112)]
-        #[rename(name = "m_SelectedType")]
-        pub m_selected_type: i32,
-        #[offset(116)]
-        #[rename(name = "m_SelectedLevel")]
-        pub m_selected_level: i32,
-        #[offset(120)]
-        #[rename(name = "m_AssistDeside")]
-        pub m_assist_deside: i32,
-        #[offset(124)]
-        #[rename(name = "m_IsCreateGameSequence")]
-        pub m_is_create_game_sequence: bool,
-        #[offset(125)]
-        #[rename(name = "m_IsCotinueExercise")]
-        pub m_is_cotinue_exercise: bool,
-        #[offset(128)]
-        #[rename(name = "m_TalkerChara")]
-        pub m_talker_chara: crate::combat::character::Character,
-        #[offset(136)]
-        #[rename(name = "m_AnnouceDifficult")]
-        pub m_annouce_difficult: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
-        #[offset(144)]
-        #[rename(name = "m_IsAnnounceVoiceOnce")]
-        pub m_is_announce_voice_once: bool,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/musclestartsequence/MuscleStartSequence_Label.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct MuscleStartSequence_Label  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for MuscleStartSequence_Label  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MuscleStartSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/musclestartsequence/MuscleStartSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct MuscleStartSequence_Label {
-        pub value: i32,
+}
+
+
+impl  ::unity2::IlType for MuscleStartSequence_Label  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::ClassIdentity for MuscleStartSequence_Label {
-        const NAME: &'static str = "MuscleStartSequence.Label";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  MuscleStartSequence_Label  {
+    pub fn initialize() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl ::unity2::IlType for MuscleStartSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+
+    pub fn select_type() -> Self {
+        Self { value: 1 }
+
     }
 
-    impl MuscleStartSequence_Label {
-        pub fn initialize() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn select_type() -> Self {
-            Self { value: 1 }
-        }
+    pub fn check_new_difficult() -> Self {
+        Self { value: 2 }
 
-        pub fn check_new_difficult() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn annouce_new_difficult() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn select_difficult() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn select_assist() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn create_game_sequence() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn continue_check() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn play_repeat() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn exit() -> Self {
-            Self { value: 9 }
-        }
     }
+
+
+    pub fn annouce_new_difficult() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn select_difficult() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn select_assist() -> Self {
+        Self { value: 5 }
+
+    }
+
+
+    pub fn create_game_sequence() -> Self {
+        Self { value: 6 }
+
+    }
+
+
+    pub fn continue_check() -> Self {
+        Self { value: 7 }
+
+    }
+
+
+    pub fn play_repeat() -> Self {
+        Self { value: 8 }
+
+    }
+
+
+    pub fn exit() -> Self {
+        Self { value: 9 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/musclestartsequence/MuscleStartSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "MuscleStartSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct MuscleStartSequence {
+# [offset (112)] # [rename (name = "m_SelectedType")] pub m_selected_type : i32 ,
+# [offset (116)] # [rename (name = "m_SelectedLevel")] pub m_selected_level : i32 ,
+# [offset (120)] # [rename (name = "m_AssistDeside")] pub m_assist_deside : i32 ,
+# [offset (124)] # [rename (name = "m_IsCreateGameSequence")] pub m_is_create_game_sequence : bool ,
+# [offset (125)] # [rename (name = "m_IsCotinueExercise")] pub m_is_cotinue_exercise : bool ,
+# [offset (128)] # [rename (name = "m_TalkerChara")] pub m_talker_chara : crate :: combat :: character :: Character ,
+# [offset (136)] # [rename (name = "m_AnnouceDifficult")] pub m_annouce_difficult : crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > ,
+# [offset (144)] # [rename (name = "m_IsAnnounceVoiceOnce")] pub m_is_announce_voice_once : bool ,
+}
+
 }
 
 #[cfg(feature = "app-musclestartsequence-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-musclestartsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MuscleStartSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MuscleStartSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MuscleStartSequence as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MuscleStartSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MuscleStartSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_resources {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MuscleStartSequence as ::unity2::ClassIdentity>::class(),
-                "LoadResources",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MuscleStartSequence as ::unity2::ClassIdentity>::NAME,
-                        "LoadResources",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load_resources(this: MuscleStartSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MuscleStartSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_load_resources::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_loading {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MuscleStartSequence as ::unity2::ClassIdentity>::class(),
-                "IsLoading",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MuscleStartSequence as ::unity2::ClassIdentity>::NAME,
-                        "IsLoading",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_loading(this: MuscleStartSequence, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(MuscleStartSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_loading::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_init {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MuscleStartSequence as ::unity2::ClassIdentity>::class(),
-                "Init",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MuscleStartSequence as ::unity2::ClassIdentity>::NAME,
-                        "Init",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn init(this: MuscleStartSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MuscleStartSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_init::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_open_title_bar {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MuscleStartSequence as ::unity2::ClassIdentity>::class(),
-                "OpenTitleBar",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MuscleStartSequence as ::unity2::ClassIdentity>::NAME,
-                        "OpenTitleBar",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn open_title_bar(this: MuscleStartSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MuscleStartSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_open_title_bar::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close_title_bar {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MuscleStartSequence as ::unity2::ClassIdentity>::class(),
-                "CloseTitleBar",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MuscleStartSequence as ::unity2::ClassIdentity>::NAME,
-                        "CloseTitleBar",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn close_title_bar(this: MuscleStartSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MuscleStartSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_close_title_bar::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_open_exercise_type_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MuscleStartSequence as ::unity2::ClassIdentity>::class(),
-                "OpenExerciseTypeMenu",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MuscleStartSequence as ::unity2::ClassIdentity>::NAME,
-                        "OpenExerciseTypeMenu",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn open_exercise_type_menu(this: MuscleStartSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MuscleStartSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_open_exercise_type_menu::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_tutorial {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MuscleStartSequence as ::unity2::ClassIdentity>::class(),
-                "Tutorial",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MuscleStartSequence as ::unity2::ClassIdentity>::NAME,
-                        "Tutorial",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn tutorial(this: MuscleStartSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MuscleStartSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_tutorial::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_check_new_difficult {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MuscleStartSequence as ::unity2::ClassIdentity>::class(),
-                "CheckNewDifficult",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MuscleStartSequence as ::unity2::ClassIdentity>::NAME,
-                        "CheckNewDifficult",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn check_new_difficult(this: MuscleStartSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MuscleStartSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_check_new_difficult::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_announce_new_difficult {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MuscleStartSequence as ::unity2::ClassIdentity>::class(),
-                "AnnounceNewDifficult",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MuscleStartSequence as ::unity2::ClassIdentity>::NAME,
-                        "AnnounceNewDifficult",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn announce_new_difficult(this: MuscleStartSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MuscleStartSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_announce_new_difficult::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_check_announce_difficult {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MuscleStartSequence as ::unity2::ClassIdentity>::class(),
-                "CheckAnnounceDifficult",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MuscleStartSequence as ::unity2::ClassIdentity>::NAME,
-                        "CheckAnnounceDifficult",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn check_announce_difficult(this: MuscleStartSequence, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(MuscleStartSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_check_announce_difficult::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_open_difficult_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MuscleStartSequence as ::unity2::ClassIdentity>::class(),
-                "OpenDifficultMenu",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MuscleStartSequence as ::unity2::ClassIdentity>::NAME,
-                        "OpenDifficultMenu",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn open_difficult_menu(this: MuscleStartSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MuscleStartSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_open_difficult_menu::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_assist_dialog {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MuscleStartSequence as ::unity2::ClassIdentity>::class(),
-                "CreateAssistDialog",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MuscleStartSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateAssistDialog",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_assist_dialog(this: MuscleStartSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MuscleStartSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_assist_dialog::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_game_sequence {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MuscleStartSequence as ::unity2::ClassIdentity>::class(),
-                "CreateGameSequence",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MuscleStartSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateGameSequence",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_game_sequence(this: MuscleStartSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MuscleStartSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_game_sequence::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_continue_dialog {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MuscleStartSequence as ::unity2::ClassIdentity>::class(),
-                "CreateContinueDialog",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MuscleStartSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateContinueDialog",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_continue_dialog(this: MuscleStartSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MuscleStartSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_continue_dialog::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_check_continue {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MuscleStartSequence as ::unity2::ClassIdentity>::class(),
-                "CheckContinue",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MuscleStartSequence as ::unity2::ClassIdentity>::NAME,
-                        "CheckContinue",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn check_continue(this: MuscleStartSequence, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(MuscleStartSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_check_continue::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_exit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MuscleStartSequence as ::unity2::ClassIdentity>::class(),
-                "Exit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MuscleStartSequence as ::unity2::ClassIdentity>::NAME,
-                        "Exit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn exit(this: MuscleStartSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MuscleStartSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_exit::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unload_resources {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MuscleStartSequence as ::unity2::ClassIdentity>::class(),
-                "UnloadResources",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MuscleStartSequence as ::unity2::ClassIdentity>::NAME,
-                        "UnloadResources",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn unload_resources(this: MuscleStartSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MuscleStartSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_unload_resources::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_voice_select_type {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MuscleStartSequence as ::unity2::ClassIdentity>::class(),
-                "VoiceSelectType",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MuscleStartSequence as ::unity2::ClassIdentity>::NAME,
-                        "VoiceSelectType",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn voice_select_type(this: MuscleStartSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MuscleStartSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_voice_select_type::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_voice_new_difficult {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MuscleStartSequence as ::unity2::ClassIdentity>::class(),
-                "VoiceNewDifficult",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MuscleStartSequence as ::unity2::ClassIdentity>::NAME,
-                        "VoiceNewDifficult",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn voice_new_difficult(this: MuscleStartSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MuscleStartSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_voice_new_difficult::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_voice_select_difficult {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MuscleStartSequence as ::unity2::ClassIdentity>::class(),
-                "VoiceSelectDifficult",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MuscleStartSequence as ::unity2::ClassIdentity>::NAME,
-                        "VoiceSelectDifficult",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn voice_select_difficult(this: MuscleStartSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MuscleStartSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_voice_select_difficult::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_voice_finish_exercise {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MuscleStartSequence as ::unity2::ClassIdentity>::class(),
-                "VoiceFinishExercise",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MuscleStartSequence as ::unity2::ClassIdentity>::NAME,
-                        "VoiceFinishExercise",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn voice_finish_exercise(this: MuscleStartSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MuscleStartSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_voice_finish_exercise::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MuscleStartSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MuscleStartSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MuscleStartSequence_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MuscleStartSequence as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MuscleStartSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load_resources { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () , "LoadResources" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MuscleStartSequence as :: unity2 :: ClassIdentity > :: NAME , "LoadResources" , e) , } } } pub unsafe fn load_resources (this : MuscleStartSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_load_resources :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_loading { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () , "IsLoading" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MuscleStartSequence as :: unity2 :: ClassIdentity > :: NAME , "IsLoading" , e) , } } } pub unsafe fn is_loading (this : MuscleStartSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_loading :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_init { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () , "Init" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MuscleStartSequence as :: unity2 :: ClassIdentity > :: NAME , "Init" , e) , } } } pub unsafe fn init (this : MuscleStartSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_init :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_open_title_bar { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () , "OpenTitleBar" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MuscleStartSequence as :: unity2 :: ClassIdentity > :: NAME , "OpenTitleBar" , e) , } } } pub unsafe fn open_title_bar (this : MuscleStartSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_open_title_bar :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_close_title_bar { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () , "CloseTitleBar" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MuscleStartSequence as :: unity2 :: ClassIdentity > :: NAME , "CloseTitleBar" , e) , } } } pub unsafe fn close_title_bar (this : MuscleStartSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_close_title_bar :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_open_exercise_type_menu { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () , "OpenExerciseTypeMenu" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MuscleStartSequence as :: unity2 :: ClassIdentity > :: NAME , "OpenExerciseTypeMenu" , e) , } } } pub unsafe fn open_exercise_type_menu (this : MuscleStartSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_open_exercise_type_menu :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_tutorial { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () , "Tutorial" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MuscleStartSequence as :: unity2 :: ClassIdentity > :: NAME , "Tutorial" , e) , } } } pub unsafe fn tutorial (this : MuscleStartSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_tutorial :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check_new_difficult { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () , "CheckNewDifficult" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MuscleStartSequence as :: unity2 :: ClassIdentity > :: NAME , "CheckNewDifficult" , e) , } } } pub unsafe fn check_new_difficult (this : MuscleStartSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_check_new_difficult :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_announce_new_difficult { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () , "AnnounceNewDifficult" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MuscleStartSequence as :: unity2 :: ClassIdentity > :: NAME , "AnnounceNewDifficult" , e) , } } } pub unsafe fn announce_new_difficult (this : MuscleStartSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_announce_new_difficult :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check_announce_difficult { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () , "CheckAnnounceDifficult" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MuscleStartSequence as :: unity2 :: ClassIdentity > :: NAME , "CheckAnnounceDifficult" , e) , } } } pub unsafe fn check_announce_difficult (this : MuscleStartSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_check_announce_difficult :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_open_difficult_menu { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () , "OpenDifficultMenu" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MuscleStartSequence as :: unity2 :: ClassIdentity > :: NAME , "OpenDifficultMenu" , e) , } } } pub unsafe fn open_difficult_menu (this : MuscleStartSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_open_difficult_menu :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_assist_dialog { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () , "CreateAssistDialog" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MuscleStartSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateAssistDialog" , e) , } } } pub unsafe fn create_assist_dialog (this : MuscleStartSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_assist_dialog :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_game_sequence { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () , "CreateGameSequence" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MuscleStartSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateGameSequence" , e) , } } } pub unsafe fn create_game_sequence (this : MuscleStartSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_game_sequence :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_continue_dialog { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () , "CreateContinueDialog" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MuscleStartSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateContinueDialog" , e) , } } } pub unsafe fn create_continue_dialog (this : MuscleStartSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_continue_dialog :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check_continue { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () , "CheckContinue" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MuscleStartSequence as :: unity2 :: ClassIdentity > :: NAME , "CheckContinue" , e) , } } } pub unsafe fn check_continue (this : MuscleStartSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_check_continue :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_exit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () , "Exit" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MuscleStartSequence as :: unity2 :: ClassIdentity > :: NAME , "Exit" , e) , } } } pub unsafe fn exit (this : MuscleStartSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_exit :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_unload_resources { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () , "UnloadResources" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MuscleStartSequence as :: unity2 :: ClassIdentity > :: NAME , "UnloadResources" , e) , } } } pub unsafe fn unload_resources (this : MuscleStartSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_unload_resources :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_voice_select_type { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () , "VoiceSelectType" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MuscleStartSequence as :: unity2 :: ClassIdentity > :: NAME , "VoiceSelectType" , e) , } } } pub unsafe fn voice_select_type (this : MuscleStartSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_voice_select_type :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_voice_new_difficult { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () , "VoiceNewDifficult" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MuscleStartSequence as :: unity2 :: ClassIdentity > :: NAME , "VoiceNewDifficult" , e) , } } } pub unsafe fn voice_new_difficult (this : MuscleStartSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_voice_new_difficult :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_voice_select_difficult { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () , "VoiceSelectDifficult" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MuscleStartSequence as :: unity2 :: ClassIdentity > :: NAME , "VoiceSelectDifficult" , e) , } } } pub unsafe fn voice_select_difficult (this : MuscleStartSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_voice_select_difficult :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_voice_finish_exercise { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () , "VoiceFinishExercise" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MuscleStartSequence as :: unity2 :: ClassIdentity > :: NAME , "VoiceFinishExercise" , e) , } } } pub unsafe fn voice_finish_exercise (this : MuscleStartSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MuscleStartSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_voice_finish_exercise :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MuscleStartSequence as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MuscleStartSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , __unity2_method_info) } }
+
+#[cfg(feature = "app-musclestartsequence")]
+impl MuscleStartSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { __MuscleStartSequence_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-musclestartsequence")]
+pub trait IMuscleStartSequenceMethods : IMuscleStartSequence { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MuscleStartSequence_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`LoadResources()` overload"] fn load_resources (self ,) -> () { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MuscleStartSequence_unity2_raw :: load_resources (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsLoading()` overload"] fn is_loading (self ,) -> bool { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MuscleStartSequence_unity2_raw :: is_loading (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Init()` overload"] fn init (self ,) -> () { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MuscleStartSequence_unity2_raw :: init (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OpenTitleBar()` overload"] fn open_title_bar (self ,) -> () { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MuscleStartSequence_unity2_raw :: open_title_bar (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CloseTitleBar()` overload"] fn close_title_bar (self ,) -> () { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MuscleStartSequence_unity2_raw :: close_title_bar (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OpenExerciseTypeMenu()` overload"] fn open_exercise_type_menu (self ,) -> () { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MuscleStartSequence_unity2_raw :: open_exercise_type_menu (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Tutorial()` overload"] fn tutorial (self ,) -> () { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MuscleStartSequence_unity2_raw :: tutorial (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CheckNewDifficult()` overload"] fn check_new_difficult (self ,) -> () { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MuscleStartSequence_unity2_raw :: check_new_difficult (__receiver , :: core :: option :: Option :: None) } } # [doc = "`AnnounceNewDifficult()` overload"] fn announce_new_difficult (self ,) -> () { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MuscleStartSequence_unity2_raw :: announce_new_difficult (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CheckAnnounceDifficult()` overload"] fn check_announce_difficult (self ,) -> bool { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MuscleStartSequence_unity2_raw :: check_announce_difficult (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OpenDifficultMenu()` overload"] fn open_difficult_menu (self ,) -> () { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MuscleStartSequence_unity2_raw :: open_difficult_menu (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CreateAssistDialog()` overload"] fn create_assist_dialog (self ,) -> () { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MuscleStartSequence_unity2_raw :: create_assist_dialog (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CreateGameSequence()` overload"] fn create_game_sequence (self ,) -> () { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MuscleStartSequence_unity2_raw :: create_game_sequence (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CreateContinueDialog()` overload"] fn create_continue_dialog (self ,) -> () { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MuscleStartSequence_unity2_raw :: create_continue_dialog (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CheckContinue()` overload"] fn check_continue (self ,) -> bool { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MuscleStartSequence_unity2_raw :: check_continue (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Exit()` overload"] fn exit (self ,) -> () { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MuscleStartSequence_unity2_raw :: exit (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UnloadResources()` overload"] fn unload_resources (self ,) -> () { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MuscleStartSequence_unity2_raw :: unload_resources (__receiver , :: core :: option :: Option :: None) } } # [doc = "`VoiceSelectType()` overload"] fn voice_select_type (self ,) -> () { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MuscleStartSequence_unity2_raw :: voice_select_type (__receiver , :: core :: option :: Option :: None) } } # [doc = "`VoiceNewDifficult()` overload"] fn voice_new_difficult (self ,) -> () { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MuscleStartSequence_unity2_raw :: voice_new_difficult (__receiver , :: core :: option :: Option :: None) } } # [doc = "`VoiceSelectDifficult()` overload"] fn voice_select_difficult (self ,) -> () { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MuscleStartSequence_unity2_raw :: voice_select_difficult (__receiver , :: core :: option :: Option :: None) } } # [doc = "`VoiceFinishExercise()` overload"] fn voice_finish_exercise (self ,) -> () { unsafe { let __receiver = < MuscleStartSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MuscleStartSequence_unity2_raw :: voice_finish_exercise (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-musclestartsequence")]
+impl < __T : IMuscleStartSequence > IMuscleStartSequenceMethods for __T { }
+
+#[cfg(feature = "app-musclestartsequence")]
+impl MuscleStartSequence { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MuscleStartSequence_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn load_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MuscleStartSequence_unity2_raw :: __lookup_load_resources :: get_method_info () } pub fn is_loading_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MuscleStartSequence_unity2_raw :: __lookup_is_loading :: get_method_info () } pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MuscleStartSequence_unity2_raw :: __lookup_init :: get_method_info () } pub fn open_title_bar_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MuscleStartSequence_unity2_raw :: __lookup_open_title_bar :: get_method_info () } pub fn close_title_bar_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MuscleStartSequence_unity2_raw :: __lookup_close_title_bar :: get_method_info () } pub fn open_exercise_type_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MuscleStartSequence_unity2_raw :: __lookup_open_exercise_type_menu :: get_method_info () } pub fn tutorial_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MuscleStartSequence_unity2_raw :: __lookup_tutorial :: get_method_info () } pub fn check_new_difficult_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MuscleStartSequence_unity2_raw :: __lookup_check_new_difficult :: get_method_info () } pub fn announce_new_difficult_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MuscleStartSequence_unity2_raw :: __lookup_announce_new_difficult :: get_method_info () } pub fn check_announce_difficult_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MuscleStartSequence_unity2_raw :: __lookup_check_announce_difficult :: get_method_info () } pub fn open_difficult_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MuscleStartSequence_unity2_raw :: __lookup_open_difficult_menu :: get_method_info () } pub fn create_assist_dialog_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MuscleStartSequence_unity2_raw :: __lookup_create_assist_dialog :: get_method_info () } pub fn create_game_sequence_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MuscleStartSequence_unity2_raw :: __lookup_create_game_sequence :: get_method_info () } pub fn create_continue_dialog_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MuscleStartSequence_unity2_raw :: __lookup_create_continue_dialog :: get_method_info () } pub fn check_continue_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MuscleStartSequence_unity2_raw :: __lookup_check_continue :: get_method_info () } pub fn exit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MuscleStartSequence_unity2_raw :: __lookup_exit :: get_method_info () } pub fn unload_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MuscleStartSequence_unity2_raw :: __lookup_unload_resources :: get_method_info () } pub fn voice_select_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MuscleStartSequence_unity2_raw :: __lookup_voice_select_type :: get_method_info () } pub fn voice_new_difficult_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MuscleStartSequence_unity2_raw :: __lookup_voice_new_difficult :: get_method_info () } pub fn voice_select_difficult_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MuscleStartSequence_unity2_raw :: __lookup_voice_select_difficult :: get_method_info () } pub fn voice_finish_exercise_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MuscleStartSequence_unity2_raw :: __lookup_voice_finish_exercise :: get_method_info () } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MuscleStartSequence_unity2_raw :: __lookup_create_bind :: get_method_info () } }
 
 #[cfg(feature = "app-musclestartsequence")]
 impl MuscleStartSequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe { __MuscleStartSequence_unity2_raw::create_bind(::core::convert::Into::into(super_), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-musclestartsequence")]
-pub trait IMuscleStartSequenceMethods: IMuscleStartSequence {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <MuscleStartSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MuscleStartSequence_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`LoadResources()` overload"]
-    fn load_resources(self) -> () {
-        unsafe {
-            let __receiver = <MuscleStartSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MuscleStartSequence_unity2_raw::load_resources(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsLoading()` overload"]
-    fn is_loading(self) -> bool {
-        unsafe {
-            let __receiver = <MuscleStartSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MuscleStartSequence_unity2_raw::is_loading(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Init()` overload"]
-    fn init(self) -> () {
-        unsafe {
-            let __receiver = <MuscleStartSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MuscleStartSequence_unity2_raw::init(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OpenTitleBar()` overload"]
-    fn open_title_bar(self) -> () {
-        unsafe {
-            let __receiver = <MuscleStartSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MuscleStartSequence_unity2_raw::open_title_bar(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CloseTitleBar()` overload"]
-    fn close_title_bar(self) -> () {
-        unsafe {
-            let __receiver = <MuscleStartSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MuscleStartSequence_unity2_raw::close_title_bar(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OpenExerciseTypeMenu()` overload"]
-    fn open_exercise_type_menu(self) -> () {
-        unsafe {
-            let __receiver = <MuscleStartSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MuscleStartSequence_unity2_raw::open_exercise_type_menu(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Tutorial()` overload"]
-    fn tutorial(self) -> () {
-        unsafe {
-            let __receiver = <MuscleStartSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MuscleStartSequence_unity2_raw::tutorial(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CheckNewDifficult()` overload"]
-    fn check_new_difficult(self) -> () {
-        unsafe {
-            let __receiver = <MuscleStartSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MuscleStartSequence_unity2_raw::check_new_difficult(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`AnnounceNewDifficult()` overload"]
-    fn announce_new_difficult(self) -> () {
-        unsafe {
-            let __receiver = <MuscleStartSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MuscleStartSequence_unity2_raw::announce_new_difficult(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CheckAnnounceDifficult()` overload"]
-    fn check_announce_difficult(self) -> bool {
-        unsafe {
-            let __receiver = <MuscleStartSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MuscleStartSequence_unity2_raw::check_announce_difficult(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OpenDifficultMenu()` overload"]
-    fn open_difficult_menu(self) -> () {
-        unsafe {
-            let __receiver = <MuscleStartSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MuscleStartSequence_unity2_raw::open_difficult_menu(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateAssistDialog()` overload"]
-    fn create_assist_dialog(self) -> () {
-        unsafe {
-            let __receiver = <MuscleStartSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MuscleStartSequence_unity2_raw::create_assist_dialog(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateGameSequence()` overload"]
-    fn create_game_sequence(self) -> () {
-        unsafe {
-            let __receiver = <MuscleStartSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MuscleStartSequence_unity2_raw::create_game_sequence(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateContinueDialog()` overload"]
-    fn create_continue_dialog(self) -> () {
-        unsafe {
-            let __receiver = <MuscleStartSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MuscleStartSequence_unity2_raw::create_continue_dialog(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CheckContinue()` overload"]
-    fn check_continue(self) -> bool {
-        unsafe {
-            let __receiver = <MuscleStartSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MuscleStartSequence_unity2_raw::check_continue(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Exit()` overload"]
-    fn exit(self) -> () {
-        unsafe {
-            let __receiver = <MuscleStartSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MuscleStartSequence_unity2_raw::exit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UnloadResources()` overload"]
-    fn unload_resources(self) -> () {
-        unsafe {
-            let __receiver = <MuscleStartSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MuscleStartSequence_unity2_raw::unload_resources(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`VoiceSelectType()` overload"]
-    fn voice_select_type(self) -> () {
-        unsafe {
-            let __receiver = <MuscleStartSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MuscleStartSequence_unity2_raw::voice_select_type(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`VoiceNewDifficult()` overload"]
-    fn voice_new_difficult(self) -> () {
-        unsafe {
-            let __receiver = <MuscleStartSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MuscleStartSequence_unity2_raw::voice_new_difficult(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`VoiceSelectDifficult()` overload"]
-    fn voice_select_difficult(self) -> () {
-        unsafe {
-            let __receiver = <MuscleStartSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MuscleStartSequence_unity2_raw::voice_select_difficult(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`VoiceFinishExercise()` overload"]
-    fn voice_finish_exercise(self) -> () {
-        unsafe {
-            let __receiver = <MuscleStartSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MuscleStartSequence_unity2_raw::voice_finish_exercise(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-musclestartsequence")]
-impl<__T: IMuscleStartSequence> IMuscleStartSequenceMethods for __T {}
-
-#[cfg(feature = "app-musclestartsequence")]
-impl MuscleStartSequence {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MuscleStartSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMuscleStartSequenceMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MuscleStartSequence) , :: core :: stringify ! (new) ,)) ; < Self as IMuscleStartSequenceMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-musclestartsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IMuscleStartSequence, IMuscleStartSequenceMethods, MuscleStartSequence, MuscleStartSequence_Label};
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::procinst::IProcInst,
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::MuscleStartSequence_Label;
+    pub use super::MuscleStartSequence;
+    pub use super::IMuscleStartSequence;
+    pub use super::IMuscleStartSequenceMethods;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

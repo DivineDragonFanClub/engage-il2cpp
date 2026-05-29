@@ -2,396 +2,72 @@
 
 #[cfg(feature = "unity_engine-rendering-filteringsettings-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        valuetype::{IValueType, ValueType},
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/filteringsettings/FilteringSettings.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct FilteringSettings {
-        pub m_render_queue_range: crate::unity_engine::rendering::renderqueuerange::RenderQueueRange,
-        pub m_layer_mask: i32,
-        pub m_rendering_layer_mask: u32,
-        pub m_exclude_motion_vector_objects: i32,
-        pub m_sorting_layer_range: crate::unity_engine::rendering::sortinglayerrange::SortingLayerRange,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    impl ::unity2::ClassIdentity for FilteringSettings {
-        const NAME: &'static str = "FilteringSettings";
-        const NAMESPACE: &'static str = "UnityEngine.Rendering";
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/filteringsettings/FilteringSettings.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct FilteringSettings {
+    pub m_render_queue_range: crate :: unity_engine :: rendering :: renderqueuerange :: RenderQueueRange,
+    pub m_layer_mask: i32,
+    pub m_rendering_layer_mask: u32,
+    pub m_exclude_motion_vector_objects: i32,
+    pub m_sorting_layer_range: crate :: unity_engine :: rendering :: sortinglayerrange :: SortingLayerRange,
+}
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+
+impl ::unity2::ClassIdentity for FilteringSettings {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering";
+
+    const NAME: &'static str = "FilteringSettings";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
         }
+)
     }
 
-    impl ::unity2::IlType for FilteringSettings {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl ::unity2::IlType for FilteringSettings {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-filteringsettings-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-filteringsettings")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FilteringSettings_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_render_queue_range {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::rendering::renderqueuerange::RenderQueueRange as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FilteringSettings as ::unity2::ClassIdentity>::class(),
-                "set_renderQueueRange",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FilteringSettings as ::unity2::ClassIdentity>::NAME,
-                        "set_renderQueueRange",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_render_queue_range(
-        this: FilteringSettings,
-        value: crate::unity_engine::rendering::renderqueuerange::RenderQueueRange,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            FilteringSettings,
-            crate::unity_engine::rendering::renderqueuerange::RenderQueueRange,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_render_queue_range::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_layer_mask {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FilteringSettings as ::unity2::ClassIdentity>::class(),
-                "set_layerMask",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FilteringSettings as ::unity2::ClassIdentity>::NAME,
-                        "set_layerMask",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_layer_mask(this: FilteringSettings, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FilteringSettings, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_layer_mask::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_rendering_layer_mask {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FilteringSettings as ::unity2::ClassIdentity>::class(),
-                "set_renderingLayerMask",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FilteringSettings as ::unity2::ClassIdentity>::NAME,
-                        "set_renderingLayerMask",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_rendering_layer_mask(this: FilteringSettings, value: u32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FilteringSettings, u32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_rendering_layer_mask::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_exclude_motion_vector_objects {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FilteringSettings as ::unity2::ClassIdentity>::class(),
-                "set_excludeMotionVectorObjects",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FilteringSettings as ::unity2::ClassIdentity>::NAME,
-                        "set_excludeMotionVectorObjects",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_exclude_motion_vector_objects(this: FilteringSettings, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FilteringSettings, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_exclude_motion_vector_objects::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_sorting_layer_range {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::rendering::sortinglayerrange::SortingLayerRange as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FilteringSettings as ::unity2::ClassIdentity>::class(),
-                "set_sortingLayerRange",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FilteringSettings as ::unity2::ClassIdentity>::NAME,
-                        "set_sortingLayerRange",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_sorting_layer_range(
-        this: FilteringSettings,
-        value: crate::unity_engine::rendering::sortinglayerrange::SortingLayerRange,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            FilteringSettings,
-            crate::unity_engine::rendering::sortinglayerrange::SortingLayerRange,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_sorting_layer_range::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_equals {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::rendering::filteringsettings::FilteringSettings as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FilteringSettings as ::unity2::ClassIdentity>::class(),
-                "Equals",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FilteringSettings as ::unity2::ClassIdentity>::NAME,
-                        "Equals",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn equals(
-        this: FilteringSettings,
-        other: crate::unity_engine::rendering::filteringsettings::FilteringSettings,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            FilteringSettings,
-            crate::unity_engine::rendering::filteringsettings::FilteringSettings,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_equals::get_method_info().method_ptr);
-        inner(this, other, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_equals_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FilteringSettings as ::unity2::ClassIdentity>::class(),
-                "Equals",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FilteringSettings as ::unity2::ClassIdentity>::NAME,
-                        "Equals",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn equals_2(this: FilteringSettings, obj: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(FilteringSettings, crate::system::object::Object, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_equals_2::get_method_info().method_ptr);
-        inner(this, obj, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_hash_code {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FilteringSettings as ::unity2::ClassIdentity>::class(),
-                "GetHashCode",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FilteringSettings as ::unity2::ClassIdentity>::NAME,
-                        "GetHashCode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_hash_code(this: FilteringSettings, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(FilteringSettings, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_hash_code::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __FilteringSettings_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_render_queue_range { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: renderqueuerange :: RenderQueueRange as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FilteringSettings as :: unity2 :: ClassIdentity > :: class () , "set_renderQueueRange" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FilteringSettings as :: unity2 :: ClassIdentity > :: NAME , "set_renderQueueRange" , e) , } } } pub unsafe fn set_render_queue_range (this : FilteringSettings , value : crate :: unity_engine :: rendering :: renderqueuerange :: RenderQueueRange , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FilteringSettings , crate :: unity_engine :: rendering :: renderqueuerange :: RenderQueueRange , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_render_queue_range :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_layer_mask { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FilteringSettings as :: unity2 :: ClassIdentity > :: class () , "set_layerMask" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FilteringSettings as :: unity2 :: ClassIdentity > :: NAME , "set_layerMask" , e) , } } } pub unsafe fn set_layer_mask (this : FilteringSettings , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FilteringSettings , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_layer_mask :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_rendering_layer_mask { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FilteringSettings as :: unity2 :: ClassIdentity > :: class () , "set_renderingLayerMask" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FilteringSettings as :: unity2 :: ClassIdentity > :: NAME , "set_renderingLayerMask" , e) , } } } pub unsafe fn set_rendering_layer_mask (this : FilteringSettings , value : u32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FilteringSettings , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_rendering_layer_mask :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_exclude_motion_vector_objects { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FilteringSettings as :: unity2 :: ClassIdentity > :: class () , "set_excludeMotionVectorObjects" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FilteringSettings as :: unity2 :: ClassIdentity > :: NAME , "set_excludeMotionVectorObjects" , e) , } } } pub unsafe fn set_exclude_motion_vector_objects (this : FilteringSettings , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FilteringSettings , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_exclude_motion_vector_objects :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_sorting_layer_range { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: sortinglayerrange :: SortingLayerRange as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FilteringSettings as :: unity2 :: ClassIdentity > :: class () , "set_sortingLayerRange" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FilteringSettings as :: unity2 :: ClassIdentity > :: NAME , "set_sortingLayerRange" , e) , } } } pub unsafe fn set_sorting_layer_range (this : FilteringSettings , value : crate :: unity_engine :: rendering :: sortinglayerrange :: SortingLayerRange , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FilteringSettings , crate :: unity_engine :: rendering :: sortinglayerrange :: SortingLayerRange , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_sorting_layer_range :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_equals { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: filteringsettings :: FilteringSettings as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FilteringSettings as :: unity2 :: ClassIdentity > :: class () , "Equals" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FilteringSettings as :: unity2 :: ClassIdentity > :: NAME , "Equals" , e) , } } } pub unsafe fn equals (this : FilteringSettings , other : crate :: unity_engine :: rendering :: filteringsettings :: FilteringSettings , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (FilteringSettings , crate :: unity_engine :: rendering :: filteringsettings :: FilteringSettings , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_equals :: get_method_info () . method_ptr ,) ; inner (this , other , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_equals_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FilteringSettings as :: unity2 :: ClassIdentity > :: class () , "Equals" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FilteringSettings as :: unity2 :: ClassIdentity > :: NAME , "Equals" , e) , } } } pub unsafe fn equals_2 (this : FilteringSettings , obj : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (FilteringSettings , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_equals_2 :: get_method_info () . method_ptr ,) ; inner (this , obj , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_hash_code { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FilteringSettings as :: unity2 :: ClassIdentity > :: class () , "GetHashCode" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FilteringSettings as :: unity2 :: ClassIdentity > :: NAME , "GetHashCode" , e) , } } } pub unsafe fn get_hash_code (this : FilteringSettings , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (FilteringSettings , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_hash_code :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-rendering-filteringsettings")]
-impl FilteringSettings {
-    #[doc = "`set_renderQueueRange(crate::unity_engine::rendering::renderqueuerange::RenderQueueRange)` overload"]
-    pub fn set_render_queue_range(self, value: impl ::core::convert::Into<crate::unity_engine::rendering::renderqueuerange::RenderQueueRange>) -> () {
-        unsafe { __FilteringSettings_unity2_raw::set_render_queue_range(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
+impl FilteringSettings { # [doc = "`set_renderQueueRange(crate::unity_engine::rendering::renderqueuerange::RenderQueueRange)` overload"] pub fn set_render_queue_range (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: renderqueuerange :: RenderQueueRange >) -> () { unsafe { __FilteringSettings_unity2_raw :: set_render_queue_range (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`set_layerMask(i32)` overload"] pub fn set_layer_mask (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __FilteringSettings_unity2_raw :: set_layer_mask (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`set_renderingLayerMask(u32)` overload"] pub fn set_rendering_layer_mask (self , value : impl :: core :: convert :: Into < u32 >) -> () { unsafe { __FilteringSettings_unity2_raw :: set_rendering_layer_mask (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`set_excludeMotionVectorObjects(bool)` overload"] pub fn set_exclude_motion_vector_objects (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { __FilteringSettings_unity2_raw :: set_exclude_motion_vector_objects (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`set_sortingLayerRange(crate::unity_engine::rendering::sortinglayerrange::SortingLayerRange)` overload"] pub fn set_sorting_layer_range (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: sortinglayerrange :: SortingLayerRange >) -> () { unsafe { __FilteringSettings_unity2_raw :: set_sorting_layer_range (self , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`Equals(crate::unity_engine::rendering::filteringsettings::FilteringSettings)` overload"] pub fn equals (self , other : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: filteringsettings :: FilteringSettings >) -> bool { unsafe { __FilteringSettings_unity2_raw :: equals (self , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals_2 (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { __FilteringSettings_unity2_raw :: equals_2 (self , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (self ,) -> i32 { unsafe { __FilteringSettings_unity2_raw :: get_hash_code (self , :: core :: option :: Option :: None) } } }
 
-    #[doc = "`set_layerMask(i32)` overload"]
-    pub fn set_layer_mask(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __FilteringSettings_unity2_raw::set_layer_mask(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_renderingLayerMask(u32)` overload"]
-    pub fn set_rendering_layer_mask(self, value: impl ::core::convert::Into<u32>) -> () {
-        unsafe { __FilteringSettings_unity2_raw::set_rendering_layer_mask(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_excludeMotionVectorObjects(bool)` overload"]
-    pub fn set_exclude_motion_vector_objects(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            __FilteringSettings_unity2_raw::set_exclude_motion_vector_objects(self, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-
-    #[doc = "`set_sortingLayerRange(crate::unity_engine::rendering::sortinglayerrange::SortingLayerRange)` overload"]
-    pub fn set_sorting_layer_range(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::rendering::sortinglayerrange::SortingLayerRange>,
-    ) -> () {
-        unsafe { __FilteringSettings_unity2_raw::set_sorting_layer_range(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Equals(crate::unity_engine::rendering::filteringsettings::FilteringSettings)` overload"]
-    pub fn equals(self, other: impl ::core::convert::Into<crate::unity_engine::rendering::filteringsettings::FilteringSettings>) -> bool {
-        unsafe { __FilteringSettings_unity2_raw::equals(self, ::core::convert::Into::into(other), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Equals(crate::system::object::Object)` overload"]
-    pub fn equals_2(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
-        unsafe { __FilteringSettings_unity2_raw::equals_2(self, ::core::convert::Into::into(obj), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetHashCode()` overload"]
-    pub fn get_hash_code(self) -> i32 {
-        unsafe { __FilteringSettings_unity2_raw::get_hash_code(self, ::core::option::Option::None) }
-    }
-}
+#[cfg(feature = "unity_engine-rendering-filteringsettings")]
+impl FilteringSettings { pub fn set_render_queue_range_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FilteringSettings_unity2_raw :: __lookup_set_render_queue_range :: get_method_info () } pub fn set_layer_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FilteringSettings_unity2_raw :: __lookup_set_layer_mask :: get_method_info () } pub fn set_rendering_layer_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FilteringSettings_unity2_raw :: __lookup_set_rendering_layer_mask :: get_method_info () } pub fn set_exclude_motion_vector_objects_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FilteringSettings_unity2_raw :: __lookup_set_exclude_motion_vector_objects :: get_method_info () } pub fn set_sorting_layer_range_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FilteringSettings_unity2_raw :: __lookup_set_sorting_layer_range :: get_method_info () } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FilteringSettings_unity2_raw :: __lookup_equals :: get_method_info () } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FilteringSettings_unity2_raw :: __lookup_equals_2 :: get_method_info () } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FilteringSettings_unity2_raw :: __lookup_get_hash_code :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-filteringsettings")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::FilteringSettings;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, valuetype::IValueType};
+    pub use crate::system::object::IObject;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

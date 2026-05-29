@@ -2,683 +2,146 @@
 
 #[cfg(feature = "root-mapuiicon-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1, SingletonMonoBehaviour_1},
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mapuiicon/MapUIIcon_IconIndex.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct MapUIIcon_IconIndex {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: singletonmonobehaviour_1 :: { ISingletonMonoBehaviour_1 , SingletonMonoBehaviour_1 }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mapuiicon/MapUIIcon_IconIndex.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct MapUIIcon_IconIndex  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for MapUIIcon_IconIndex  {
+    const NAMESPACE: &'static str = "";
+
+    const NAME: &'static str = "MapUIIcon.IconIndex";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for MapUIIcon_IconIndex {
-        const NAME: &'static str = "MapUIIcon.IconIndex";
-        const NAMESPACE: &'static str = "";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for MapUIIcon_IconIndex  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for MapUIIcon_IconIndex {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  MapUIIcon_IconIndex  {
+    pub fn breakable_wall() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl MapUIIcon_IconIndex {
-        pub fn breakable_wall() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn door() -> Self {
-            Self { value: 1 }
-        }
+    pub fn door() -> Self {
+        Self { value: 1 }
 
-        pub fn cannon() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 3 }
-        }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapuiicon/MapUIIcon.md"))]
-    #[::unity2::class(namespace = "", name = "MapUIIcon")]
-    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: root :: mapuiicon :: MapUIIcon >)]
-    pub struct MapUIIcon {
-        #[static_field]
-        #[rename(name = "IconNames")]
-        pub icon_names: ::unity2::Array<::unity2::Il2CppString>,
-        #[offset(32)]
-        #[rename(name = "m_IconLocatorRoot")]
-        pub m_icon_locator_root: crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot,
-        #[offset(40)]
-        #[rename(name = "m_SpriteAtlas")]
-        pub m_sprite_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
-        #[offset(48)]
-        #[rename(name = "m_Sprites")]
-        pub m_sprites: ::unity2::Array<crate::unity_engine::sprite::Sprite>,
-        #[offset(56)]
-        #[rename(name = "m_IconPool")]
-        pub m_icon_pool: crate::root::mapinfoiconpool::MapInfoIconPool,
-        #[offset(64)]
-        #[rename(name = "m_IconTable")]
-        pub m_icon_table:
-            crate::system::collections::generic::dictionary_2::Dictionary_2<i32, crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot>,
-        #[offset(72)]
-        #[rename(name = "m_TempTable")]
-        pub m_temp_table:
-            crate::system::collections::generic::dictionary_2::Dictionary_2<i32, crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot>,
-        #[offset(80)]
-        #[rename(name = "m_RemoveTable")]
-        pub m_remove_table:
-            crate::system::collections::generic::dictionary_2::Dictionary_2<i32, crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot>,
-        #[offset(88)]
-        #[rename(name = "m_IsUpdate")]
-        pub m_is_update: bool,
+
+    pub fn cannon() -> Self {
+        Self { value: 2 }
+
     }
+
+
+    pub fn num() -> Self {
+        Self { value: 3 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapuiicon/MapUIIcon.md"))] # [:: unity2 :: class (namespace = "" , name = "MapUIIcon")] # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: root :: mapuiicon :: MapUIIcon >)] pub struct MapUIIcon {
+# [static_field] # [rename (name = "IconNames")] pub icon_names : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+# [offset (32)] # [rename (name = "m_IconLocatorRoot")] pub m_icon_locator_root : crate :: root :: mapinfoiconlocatorroot :: MapInfoIconLocatorRoot ,
+# [offset (40)] # [rename (name = "m_SpriteAtlas")] pub m_sprite_atlas : crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas ,
+# [offset (48)] # [rename (name = "m_Sprites")] pub m_sprites : :: unity2 :: Array < crate :: unity_engine :: sprite :: Sprite > ,
+# [offset (56)] # [rename (name = "m_IconPool")] pub m_icon_pool : crate :: root :: mapinfoiconpool :: MapInfoIconPool ,
+# [offset (64)] # [rename (name = "m_IconTable")] pub m_icon_table : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , crate :: root :: mapinfoiconlocatorroot :: MapInfoIconLocatorRoot > ,
+# [offset (72)] # [rename (name = "m_TempTable")] pub m_temp_table : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , crate :: root :: mapinfoiconlocatorroot :: MapInfoIconLocatorRoot > ,
+# [offset (80)] # [rename (name = "m_RemoveTable")] pub m_remove_table : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , crate :: root :: mapinfoiconlocatorroot :: MapInfoIconLocatorRoot > ,
+# [offset (88)] # [rename (name = "m_IsUpdate")] pub m_is_update : bool ,
+}
+
 }
 
 #[cfg(feature = "root-mapuiicon-types")]
 pub use __types::*;
 
 #[cfg(feature = "root-mapuiicon")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapUIIcon_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapUIIcon as ::unity2::ClassIdentity>::class(), "Start", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapUIIcon as ::unity2::ClassIdentity>::NAME,
-                        "Start",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start(this: MapUIIcon, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapUIIcon, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_destroy {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapUIIcon as ::unity2::ClassIdentity>::class(), "OnDestroy", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapUIIcon as ::unity2::ClassIdentity>::NAME,
-                        "OnDestroy",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_destroy(this: MapUIIcon, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapUIIcon, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_destroy::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapUIIcon as ::unity2::ClassIdentity>::class(), "Update", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapUIIcon as ::unity2::ClassIdentity>::NAME,
-                        "Update",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update(this: MapUIIcon, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapUIIcon, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_sprites {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapUIIcon as ::unity2::ClassIdentity>::class(),
-                "GetSprites",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapUIIcon as ::unity2::ClassIdentity>::NAME,
-                        "GetSprites",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_sprites(this: MapUIIcon, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapUIIcon, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_get_sprites::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_sprite {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapUIIcon as ::unity2::ClassIdentity>::class(), "GetSprite", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapUIIcon as ::unity2::ClassIdentity>::NAME,
-                        "GetSprite",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_sprite(this: MapUIIcon, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite {
-        let inner: extern "C" fn(MapUIIcon, i32, ::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite =
-            ::core::mem::transmute(__lookup_get_sprite::get_method_info().method_ptr);
-        inner(this, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_icon {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapUIIcon as ::unity2::ClassIdentity>::class(), "SetIcon", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapUIIcon as ::unity2::ClassIdentity>::NAME,
-                        "SetIcon",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_icon(this: MapUIIcon, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapUIIcon, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_set_icon::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_registe_icon_table {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapUIIcon as ::unity2::ClassIdentity>::class(),
-                "RegisteIconTable",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapUIIcon as ::unity2::ClassIdentity>::NAME,
-                        "RegisteIconTable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn registe_icon_table(this: MapUIIcon, key: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapUIIcon, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_registe_icon_table::get_method_info().method_ptr);
-        inner(this, key, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unregiste_icon_table {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapUIIcon as ::unity2::ClassIdentity>::class(),
-                "UnregisteIconTable",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapUIIcon as ::unity2::ClassIdentity>::NAME,
-                        "UnregisteIconTable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn unregiste_icon_table(this: MapUIIcon, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapUIIcon, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_unregiste_icon_table::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_icon_table {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapUIIcon as ::unity2::ClassIdentity>::class(),
-                "UpdateIconTable",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapUIIcon as ::unity2::ClassIdentity>::NAME,
-                        "UpdateIconTable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_icon_table(this: MapUIIcon, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapUIIcon, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_icon_table::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_remove {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::generic::list_1::List_1<crate::app::mapinspector::MapInspector> as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapUIIcon as ::unity2::ClassIdentity>::class(), "IsRemove", 2, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapUIIcon as ::unity2::ClassIdentity>::NAME,
-                        "IsRemove",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_remove(
-        this: MapUIIcon,
-        inspectors: crate::system::collections::generic::list_1::List_1<crate::app::mapinspector::MapInspector>,
-        key: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            MapUIIcon,
-            crate::system::collections::generic::list_1::List_1<crate::app::mapinspector::MapInspector>,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_is_remove::get_method_info().method_ptr);
-        inner(this, inspectors, key, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear_icon_table {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapUIIcon as ::unity2::ClassIdentity>::class(),
-                "ClearIconTable",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapUIIcon as ::unity2::ClassIdentity>::NAME,
-                        "ClearIconTable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear_icon_table(this: MapUIIcon, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapUIIcon, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear_icon_table::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_is_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapUIIcon as ::unity2::ClassIdentity>::class(),
-                "set_IsUpdate",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapUIIcon as ::unity2::ClassIdentity>::NAME,
-                        "set_IsUpdate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_is_update(this: MapUIIcon, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapUIIcon, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_is_update::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapUIIcon as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapUIIcon as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MapUIIcon, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapUIIcon, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<MapUIIcon as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapUIIcon as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapUIIcon_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapUIIcon as :: unity2 :: ClassIdentity > :: class () , "Start" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapUIIcon as :: unity2 :: ClassIdentity > :: NAME , "Start" , e) , } } } pub unsafe fn start (this : MapUIIcon , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapUIIcon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_destroy { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapUIIcon as :: unity2 :: ClassIdentity > :: class () , "OnDestroy" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapUIIcon as :: unity2 :: ClassIdentity > :: NAME , "OnDestroy" , e) , } } } pub unsafe fn on_destroy (this : MapUIIcon , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapUIIcon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_destroy :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapUIIcon as :: unity2 :: ClassIdentity > :: class () , "Update" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapUIIcon as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , } } } pub unsafe fn update (this : MapUIIcon , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapUIIcon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_sprites { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapUIIcon as :: unity2 :: ClassIdentity > :: class () , "GetSprites" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapUIIcon as :: unity2 :: ClassIdentity > :: NAME , "GetSprites" , e) , } } } pub unsafe fn get_sprites (this : MapUIIcon , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapUIIcon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_get_sprites :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_sprite { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapUIIcon as :: unity2 :: ClassIdentity > :: class () , "GetSprite" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapUIIcon as :: unity2 :: ClassIdentity > :: NAME , "GetSprite" , e) , } } } pub unsafe fn get_sprite (this : MapUIIcon , index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite { let inner : extern "C" fn (MapUIIcon , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite = :: core :: mem :: transmute (__lookup_get_sprite :: get_method_info () . method_ptr ,) ; inner (this , index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_icon { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapUIIcon as :: unity2 :: ClassIdentity > :: class () , "SetIcon" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapUIIcon as :: unity2 :: ClassIdentity > :: NAME , "SetIcon" , e) , } } } pub unsafe fn set_icon (this : MapUIIcon , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapUIIcon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_icon :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_registe_icon_table { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapUIIcon as :: unity2 :: ClassIdentity > :: class () , "RegisteIconTable" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapUIIcon as :: unity2 :: ClassIdentity > :: NAME , "RegisteIconTable" , e) , } } } pub unsafe fn registe_icon_table (this : MapUIIcon , key : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapUIIcon , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_registe_icon_table :: get_method_info () . method_ptr ,) ; inner (this , key , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_unregiste_icon_table { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapUIIcon as :: unity2 :: ClassIdentity > :: class () , "UnregisteIconTable" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapUIIcon as :: unity2 :: ClassIdentity > :: NAME , "UnregisteIconTable" , e) , } } } pub unsafe fn unregiste_icon_table (this : MapUIIcon , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapUIIcon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_unregiste_icon_table :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_icon_table { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapUIIcon as :: unity2 :: ClassIdentity > :: class () , "UpdateIconTable" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapUIIcon as :: unity2 :: ClassIdentity > :: NAME , "UpdateIconTable" , e) , } } } pub unsafe fn update_icon_table (this : MapUIIcon , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapUIIcon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_icon_table :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_remove { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mapinspector :: MapInspector > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapUIIcon as :: unity2 :: ClassIdentity > :: class () , "IsRemove" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapUIIcon as :: unity2 :: ClassIdentity > :: NAME , "IsRemove" , e) , } } } pub unsafe fn is_remove (this : MapUIIcon , inspectors : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mapinspector :: MapInspector > , key : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (MapUIIcon , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mapinspector :: MapInspector > , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_remove :: get_method_info () . method_ptr ,) ; inner (this , inspectors , key , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_clear_icon_table { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapUIIcon as :: unity2 :: ClassIdentity > :: class () , "ClearIconTable" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapUIIcon as :: unity2 :: ClassIdentity > :: NAME , "ClearIconTable" , e) , } } } pub unsafe fn clear_icon_table (this : MapUIIcon , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapUIIcon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_clear_icon_table :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_is_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapUIIcon as :: unity2 :: ClassIdentity > :: class () , "set_IsUpdate" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapUIIcon as :: unity2 :: ClassIdentity > :: NAME , "set_IsUpdate" , e) , } } } pub unsafe fn set_is_update (this : MapUIIcon , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapUIIcon , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_is_update :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapUIIcon as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapUIIcon as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapUIIcon , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapUIIcon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapUIIcon as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapUIIcon as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "root-mapuiicon")]
+impl MapUIIcon { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __MapUIIcon_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "root-mapuiicon")]
+pub trait IMapUIIconMethods : IMapUIIcon { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < MapUIIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapUIIcon_unity2_raw :: start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < MapUIIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapUIIcon_unity2_raw :: on_destroy (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < MapUIIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapUIIcon_unity2_raw :: update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetSprites()` overload"] fn get_sprites (self ,) -> () { unsafe { let __receiver = < MapUIIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapUIIcon_unity2_raw :: get_sprites (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetSprite(i32)` overload"] fn get_sprite (self , index : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: sprite :: Sprite { unsafe { let __receiver = < MapUIIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapUIIcon_unity2_raw :: get_sprite (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } # [doc = "`SetIcon()` overload"] fn set_icon (self ,) -> () { unsafe { let __receiver = < MapUIIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapUIIcon_unity2_raw :: set_icon (__receiver , :: core :: option :: Option :: None) } } # [doc = "`RegisteIconTable(i32)` overload"] fn registe_icon_table (self , key : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapUIIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapUIIcon_unity2_raw :: registe_icon_table (__receiver , :: core :: convert :: Into :: into (key) , :: core :: option :: Option :: None) } } # [doc = "`UnregisteIconTable()` overload"] fn unregiste_icon_table (self ,) -> () { unsafe { let __receiver = < MapUIIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapUIIcon_unity2_raw :: unregiste_icon_table (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UpdateIconTable()` overload"] fn update_icon_table (self ,) -> () { unsafe { let __receiver = < MapUIIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapUIIcon_unity2_raw :: update_icon_table (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsRemove(crate::system::collections::generic::list_1::List_1<crate::app::mapinspector::MapInspector>, i32)` overload"] fn is_remove (self , inspectors : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mapinspector :: MapInspector > > , key : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < MapUIIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapUIIcon_unity2_raw :: is_remove (__receiver , :: core :: convert :: Into :: into (inspectors) , :: core :: convert :: Into :: into (key) , :: core :: option :: Option :: None) } } # [doc = "`ClearIconTable()` overload"] fn clear_icon_table (self ,) -> () { unsafe { let __receiver = < MapUIIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapUIIcon_unity2_raw :: clear_icon_table (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_IsUpdate(bool)` overload"] fn set_is_update (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MapUIIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapUIIcon_unity2_raw :: set_is_update (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapUIIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapUIIcon_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "root-mapuiicon")]
+impl < __T : IMapUIIcon > IMapUIIconMethods for __T { }
+
+#[cfg(feature = "root-mapuiicon")]
+impl MapUIIcon { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapUIIcon_unity2_raw :: __lookup_start :: get_method_info () } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapUIIcon_unity2_raw :: __lookup_on_destroy :: get_method_info () } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapUIIcon_unity2_raw :: __lookup_update :: get_method_info () } pub fn get_sprites_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapUIIcon_unity2_raw :: __lookup_get_sprites :: get_method_info () } pub fn get_sprite_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapUIIcon_unity2_raw :: __lookup_get_sprite :: get_method_info () } pub fn set_icon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapUIIcon_unity2_raw :: __lookup_set_icon :: get_method_info () } pub fn registe_icon_table_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapUIIcon_unity2_raw :: __lookup_registe_icon_table :: get_method_info () } pub fn unregiste_icon_table_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapUIIcon_unity2_raw :: __lookup_unregiste_icon_table :: get_method_info () } pub fn update_icon_table_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapUIIcon_unity2_raw :: __lookup_update_icon_table :: get_method_info () } pub fn is_remove_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapUIIcon_unity2_raw :: __lookup_is_remove :: get_method_info () } pub fn clear_icon_table_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapUIIcon_unity2_raw :: __lookup_clear_icon_table :: get_method_info () } pub fn set_is_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapUIIcon_unity2_raw :: __lookup_set_is_update :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapUIIcon_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapUIIcon_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "root-mapuiicon")]
 impl MapUIIcon {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __MapUIIcon_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "root-mapuiicon")]
-pub trait IMapUIIconMethods: IMapUIIcon {
-    #[doc = "`Start()` overload"]
-    fn start(self) -> () {
-        unsafe {
-            let __receiver = <MapUIIcon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapUIIcon_unity2_raw::start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDestroy()` overload"]
-    fn on_destroy(self) -> () {
-        unsafe {
-            let __receiver = <MapUIIcon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapUIIcon_unity2_raw::on_destroy(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver = <MapUIIcon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapUIIcon_unity2_raw::update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetSprites()` overload"]
-    fn get_sprites(self) -> () {
-        unsafe {
-            let __receiver = <MapUIIcon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapUIIcon_unity2_raw::get_sprites(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetSprite(i32)` overload"]
-    fn get_sprite(self, index: impl ::core::convert::Into<i32>) -> crate::unity_engine::sprite::Sprite {
-        unsafe {
-            let __receiver = <MapUIIcon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapUIIcon_unity2_raw::get_sprite(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetIcon()` overload"]
-    fn set_icon(self) -> () {
-        unsafe {
-            let __receiver = <MapUIIcon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapUIIcon_unity2_raw::set_icon(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`RegisteIconTable(i32)` overload"]
-    fn registe_icon_table(self, key: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <MapUIIcon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapUIIcon_unity2_raw::registe_icon_table(__receiver, ::core::convert::Into::into(key), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UnregisteIconTable()` overload"]
-    fn unregiste_icon_table(self) -> () {
-        unsafe {
-            let __receiver = <MapUIIcon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapUIIcon_unity2_raw::unregiste_icon_table(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateIconTable()` overload"]
-    fn update_icon_table(self) -> () {
-        unsafe {
-            let __receiver = <MapUIIcon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapUIIcon_unity2_raw::update_icon_table(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsRemove(crate::system::collections::generic::list_1::List_1<crate::app::mapinspector::MapInspector>, i32)` overload"]
-    fn is_remove(
-        self,
-        inspectors: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::mapinspector::MapInspector>>,
-        key: impl ::core::convert::Into<i32>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <MapUIIcon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapUIIcon_unity2_raw::is_remove(
-                __receiver,
-                ::core::convert::Into::into(inspectors),
-                ::core::convert::Into::into(key),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ClearIconTable()` overload"]
-    fn clear_icon_table(self) -> () {
-        unsafe {
-            let __receiver = <MapUIIcon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapUIIcon_unity2_raw::clear_icon_table(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_IsUpdate(bool)` overload"]
-    fn set_is_update(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <MapUIIcon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapUIIcon_unity2_raw::set_is_update(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <MapUIIcon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapUIIcon_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "root-mapuiicon")]
-impl<__T: IMapUIIcon> IMapUIIconMethods for __T {}
-
-#[cfg(feature = "root-mapuiicon")]
-impl MapUIIcon {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(MapUIIcon), ::core::stringify!(new),));
-        <Self as IMapUIIconMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapUIIcon) , :: core :: stringify ! (new) ,)) ; < Self as IMapUIIconMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "root-mapuiicon")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IMapUIIcon, IMapUIIconMethods, MapUIIcon, MapUIIcon_IconIndex};
-    #[cfg(feature = "app-singletonmonobehaviour_1")]
-    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1Methods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1,
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::MapUIIcon_IconIndex;
+    pub use super::MapUIIcon;
+    pub use super::IMapUIIcon;
+    pub use super::IMapUIIconMethods;
+    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "app-singletonmonobehaviour_1")] pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1Methods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

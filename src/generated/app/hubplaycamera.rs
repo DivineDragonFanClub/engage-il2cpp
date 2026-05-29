@@ -2,1254 +2,157 @@
 
 #[cfg(feature = "app-hubplaycamera-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::procinst::{IProcInst, ProcInst},
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubplaycamera/HubPlayCamera_Label.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct HubPlayCamera_Label {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaycamera/HubPlayCamera.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubPlayCamera")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct HubPlayCamera {
+# [offset (120)] # [rename (name = "CameraObject")] pub camera_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (128)] # [rename (name = "MainCamera")] pub main_camera : crate :: unity_engine :: gameobject :: GameObject ,
+# [static_field] # [rename (name = "AssetPath")] pub asset_path : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "DisableLodCrossFadeTag")] pub disable_lod_cross_fade_tag : :: unity2 :: Il2CppString ,
+# [offset (144)] # [rename (name = "m_distance")] pub m_distance : crate :: system :: collections :: generic :: list_1 :: List_1 < f32 > ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubplaycamera/HubPlayCamera_Label.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct HubPlayCamera_Label  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for HubPlayCamera_Label  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "HubPlayCamera.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for HubPlayCamera_Label {
-        const NAME: &'static str = "HubPlayCamera.Label";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for HubPlayCamera_Label  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for HubPlayCamera_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  HubPlayCamera_Label  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl HubPlayCamera_Label {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn init() -> Self {
-            Self { value: 1 }
-        }
+    pub fn init() -> Self {
+        Self { value: 1 }
 
-        pub fn main() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn exit() -> Self {
-            Self { value: 3 }
-        }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaycamera/HubPlayCamera.md"))]
-    #[::unity2::class(namespace = "App", name = "HubPlayCamera")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct HubPlayCamera {
-        #[offset(120)]
-        #[rename(name = "CameraObject")]
-        pub camera_object: crate::unity_engine::gameobject::GameObject,
-        #[offset(128)]
-        #[rename(name = "MainCamera")]
-        pub main_camera: crate::unity_engine::gameobject::GameObject,
-        #[static_field]
-        #[rename(name = "AssetPath")]
-        pub asset_path: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "DisableLodCrossFadeTag")]
-        pub disable_lod_cross_fade_tag: ::unity2::Il2CppString,
-        #[offset(144)]
-        #[rename(name = "m_distance")]
-        pub m_distance: crate::system::collections::generic::list_1::List_1<f32>,
+
+    pub fn main() -> Self {
+        Self { value: 2 }
+
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaycamera/HubPlayCamera_DemoTelop.md"))]
-    #[::unity2::class(namespace = "App", name = "HubPlayCamera.DemoTelop")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct HubPlayCamera_DemoTelop {
-        #[offset(120)]
-        #[rename(name = "Root")]
-        pub root: crate::unity_engine::gameobject::GameObject,
-        #[offset(128)]
-        #[rename(name = "UIObject")]
-        pub ui_object: crate::unity_engine::gameobject::GameObject,
-        #[static_field]
-        #[rename(name = "UIAssetPath")]
-        pub ui_asset_path: ::unity2::Il2CppString,
-        #[offset(144)]
-        #[rename(name = "m_animator")]
-        pub m_animator: crate::unity_engine::animator::Animator,
+
+    pub fn exit() -> Self {
+        Self { value: 3 }
+
     }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaycamera/HubPlayCamera_DemoTelop.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubPlayCamera.DemoTelop")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct HubPlayCamera_DemoTelop {
+# [offset (120)] # [rename (name = "Root")] pub root : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (128)] # [rename (name = "UIObject")] pub ui_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [static_field] # [rename (name = "UIAssetPath")] pub ui_asset_path : :: unity2 :: Il2CppString ,
+# [offset (144)] # [rename (name = "m_animator")] pub m_animator : crate :: unity_engine :: animator :: Animator ,
+}
+
 }
 
 #[cfg(feature = "app-hubplaycamera-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-hubplaycamera")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __HubPlayCamera_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubPlayCamera as ::unity2::ClassIdentity>::class(),
-                "get_Data",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubPlayCamera as ::unity2::ClassIdentity>::NAME,
-                        "get_Data",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_data(this: HubPlayCamera, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::hubdemodata::HubDemoData {
-        let inner: extern "C" fn(HubPlayCamera, ::unity2::OptionalMethod) -> crate::app::hubdemodata::HubDemoData =
-            ::core::mem::transmute(__lookup_get_data::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_camera_handle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubPlayCamera as ::unity2::ClassIdentity>::class(),
-                "get_CameraHandle",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubPlayCamera as ::unity2::ClassIdentity>::NAME,
-                        "get_CameraHandle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_camera_handle(
-        this: HubPlayCamera,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::resourcehandle_2::ResourceHandle_2 {
-        let inner: extern "C" fn(HubPlayCamera, ::unity2::OptionalMethod) -> crate::app::resourcehandle_2::ResourceHandle_2 =
-            ::core::mem::transmute(__lookup_get_camera_handle::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_camera_handle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::resourcehandle_2::ResourceHandle_2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubPlayCamera as ::unity2::ClassIdentity>::class(),
-                "set_CameraHandle",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubPlayCamera as ::unity2::ClassIdentity>::NAME,
-                        "set_CameraHandle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_camera_handle(
-        this: HubPlayCamera,
-        value: crate::app::resourcehandle_2::ResourceHandle_2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubPlayCamera, crate::app::resourcehandle_2::ResourceHandle_2, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_camera_handle::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_player {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubPlayCamera as ::unity2::ClassIdentity>::class(),
-                "get_Player",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubPlayCamera as ::unity2::ClassIdentity>::NAME,
-                        "get_Player",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_player(
-        this: HubPlayCamera,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::hubplayercontroller::HubPlayerController {
-        let inner: extern "C" fn(HubPlayCamera, ::unity2::OptionalMethod) -> crate::app::hubplayercontroller::HubPlayerController =
-            ::core::mem::transmute(__lookup_get_player::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::hubdemodata::HubDemoData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<HubPlayCamera as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubPlayCamera as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: HubPlayCamera, data: crate::app::hubdemodata::HubDemoData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubPlayCamera, crate::app::hubdemodata::HubDemoData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_init {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<HubPlayCamera as ::unity2::ClassIdentity>::class(), "Init", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubPlayCamera as ::unity2::ClassIdentity>::NAME,
-                        "Init",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn init(this: HubPlayCamera, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubPlayCamera, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_init::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_loading {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubPlayCamera as ::unity2::ClassIdentity>::class(),
-                "IsLoading",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubPlayCamera as ::unity2::ClassIdentity>::NAME,
-                        "IsLoading",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_loading(this: HubPlayCamera, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(HubPlayCamera, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_loading::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_main {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<HubPlayCamera as ::unity2::ClassIdentity>::class(), "Main", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubPlayCamera as ::unity2::ClassIdentity>::NAME,
-                        "Main",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn main(this: HubPlayCamera, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(HubPlayCamera, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
-            ::core::mem::transmute(__lookup_main::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_exit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<HubPlayCamera as ::unity2::ClassIdentity>::class(), "Exit", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubPlayCamera as ::unity2::ClassIdentity>::NAME,
-                        "Exit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn exit(this: HubPlayCamera, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubPlayCamera, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_exit::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_open_message {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubPlayCamera as ::unity2::ClassIdentity>::class(),
-                "OpenMessage",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubPlayCamera as ::unity2::ClassIdentity>::NAME,
-                        "OpenMessage",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn open_message(this: HubPlayCamera, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubPlayCamera, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_open_message::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_open_tutorial {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubPlayCamera as ::unity2::ClassIdentity>::class(),
-                "OpenTutorial",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubPlayCamera as ::unity2::ClassIdentity>::NAME,
-                        "OpenTutorial",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn open_tutorial(this: HubPlayCamera, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubPlayCamera, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_open_tutorial::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_end {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<HubPlayCamera as ::unity2::ClassIdentity>::class(), "End", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubPlayCamera as ::unity2::ClassIdentity>::NAME,
-                        "End",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn end(this: HubPlayCamera, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubPlayCamera, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_end::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::hubdemodata::HubDemoData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubPlayCamera as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubPlayCamera as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        data: crate::app::hubdemodata::HubDemoData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, crate::app::hubdemodata::HubDemoData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, data, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __HubPlayCamera_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubPlayCamera as :: unity2 :: ClassIdentity > :: class () , "get_Data" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubPlayCamera as :: unity2 :: ClassIdentity > :: NAME , "get_Data" , e) , } } } pub unsafe fn get_data (this : HubPlayCamera , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: hubdemodata :: HubDemoData { let inner : extern "C" fn (HubPlayCamera , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubdemodata :: HubDemoData = :: core :: mem :: transmute (__lookup_get_data :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_camera_handle { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubPlayCamera as :: unity2 :: ClassIdentity > :: class () , "get_CameraHandle" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubPlayCamera as :: unity2 :: ClassIdentity > :: NAME , "get_CameraHandle" , e) , } } } pub unsafe fn get_camera_handle (this : HubPlayCamera , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: resourcehandle_2 :: ResourceHandle_2 { let inner : extern "C" fn (HubPlayCamera , :: unity2 :: OptionalMethod ,) -> crate :: app :: resourcehandle_2 :: ResourceHandle_2 = :: core :: mem :: transmute (__lookup_get_camera_handle :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_camera_handle { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: resourcehandle_2 :: ResourceHandle_2 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubPlayCamera as :: unity2 :: ClassIdentity > :: class () , "set_CameraHandle" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubPlayCamera as :: unity2 :: ClassIdentity > :: NAME , "set_CameraHandle" , e) , } } } pub unsafe fn set_camera_handle (this : HubPlayCamera , value : crate :: app :: resourcehandle_2 :: ResourceHandle_2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubPlayCamera , crate :: app :: resourcehandle_2 :: ResourceHandle_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_camera_handle :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_player { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubPlayCamera as :: unity2 :: ClassIdentity > :: class () , "get_Player" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubPlayCamera as :: unity2 :: ClassIdentity > :: NAME , "get_Player" , e) , } } } pub unsafe fn get_player (this : HubPlayCamera , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: hubplayercontroller :: HubPlayerController { let inner : extern "C" fn (HubPlayCamera , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubplayercontroller :: HubPlayerController = :: core :: mem :: transmute (__lookup_get_player :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: hubdemodata :: HubDemoData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubPlayCamera as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubPlayCamera as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : HubPlayCamera , data : crate :: app :: hubdemodata :: HubDemoData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubPlayCamera , crate :: app :: hubdemodata :: HubDemoData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_init { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubPlayCamera as :: unity2 :: ClassIdentity > :: class () , "Init" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubPlayCamera as :: unity2 :: ClassIdentity > :: NAME , "Init" , e) , } } } pub unsafe fn init (this : HubPlayCamera , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubPlayCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_init :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_loading { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubPlayCamera as :: unity2 :: ClassIdentity > :: class () , "IsLoading" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubPlayCamera as :: unity2 :: ClassIdentity > :: NAME , "IsLoading" , e) , } } } pub unsafe fn is_loading (this : HubPlayCamera , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (HubPlayCamera , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_loading :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_main { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubPlayCamera as :: unity2 :: ClassIdentity > :: class () , "Main" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubPlayCamera as :: unity2 :: ClassIdentity > :: NAME , "Main" , e) , } } } pub unsafe fn main (this : HubPlayCamera , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { let inner : extern "C" fn (HubPlayCamera , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute (__lookup_main :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_exit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubPlayCamera as :: unity2 :: ClassIdentity > :: class () , "Exit" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubPlayCamera as :: unity2 :: ClassIdentity > :: NAME , "Exit" , e) , } } } pub unsafe fn exit (this : HubPlayCamera , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubPlayCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_exit :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_open_message { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubPlayCamera as :: unity2 :: ClassIdentity > :: class () , "OpenMessage" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubPlayCamera as :: unity2 :: ClassIdentity > :: NAME , "OpenMessage" , e) , } } } pub unsafe fn open_message (this : HubPlayCamera , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubPlayCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_open_message :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_open_tutorial { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubPlayCamera as :: unity2 :: ClassIdentity > :: class () , "OpenTutorial" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubPlayCamera as :: unity2 :: ClassIdentity > :: NAME , "OpenTutorial" , e) , } } } pub unsafe fn open_tutorial (this : HubPlayCamera , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubPlayCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_open_tutorial :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_end { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubPlayCamera as :: unity2 :: ClassIdentity > :: class () , "End" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubPlayCamera as :: unity2 :: ClassIdentity > :: NAME , "End" , e) , } } } pub unsafe fn end (this : HubPlayCamera , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubPlayCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_end :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: hubdemodata :: HubDemoData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubPlayCamera as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubPlayCamera as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , data : crate :: app :: hubdemodata :: HubDemoData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: hubdemodata :: HubDemoData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , data , __unity2_method_info) } }
+
+#[cfg(feature = "app-hubplaycamera")]
+impl HubPlayCamera { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::hubdemodata::HubDemoData)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , data : impl :: core :: convert :: Into < crate :: app :: hubdemodata :: HubDemoData >) -> () { unsafe { __HubPlayCamera_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-hubplaycamera")]
+pub trait IHubPlayCameraMethods : IHubPlayCamera { # [doc = "`get_Data()` overload"] fn get_data (self ,) -> crate :: app :: hubdemodata :: HubDemoData { unsafe { let __receiver = < HubPlayCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubPlayCamera_unity2_raw :: get_data (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_CameraHandle()` overload"] fn get_camera_handle (self ,) -> crate :: app :: resourcehandle_2 :: ResourceHandle_2 { unsafe { let __receiver = < HubPlayCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubPlayCamera_unity2_raw :: get_camera_handle (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_CameraHandle(crate::app::resourcehandle_2::ResourceHandle_2)` overload"] fn set_camera_handle (self , value : impl :: core :: convert :: Into < crate :: app :: resourcehandle_2 :: ResourceHandle_2 >) -> () { unsafe { let __receiver = < HubPlayCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubPlayCamera_unity2_raw :: set_camera_handle (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_Player()` overload"] fn get_player (self ,) -> crate :: app :: hubplayercontroller :: HubPlayerController { unsafe { let __receiver = < HubPlayCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubPlayCamera_unity2_raw :: get_player (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor(crate::app::hubdemodata::HubDemoData)` overload"] fn ctor (self , data : impl :: core :: convert :: Into < crate :: app :: hubdemodata :: HubDemoData >) -> () { unsafe { let __receiver = < HubPlayCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubPlayCamera_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } # [doc = "`Init()` overload"] fn init (self ,) -> () { unsafe { let __receiver = < HubPlayCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubPlayCamera_unity2_raw :: init (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsLoading()` overload"] fn is_loading (self ,) -> bool { unsafe { let __receiver = < HubPlayCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubPlayCamera_unity2_raw :: is_loading (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Main()` overload"] fn main (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < HubPlayCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubPlayCamera_unity2_raw :: main (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Exit()` overload"] fn exit (self ,) -> () { unsafe { let __receiver = < HubPlayCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubPlayCamera_unity2_raw :: exit (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OpenMessage()` overload"] fn open_message (self ,) -> () { unsafe { let __receiver = < HubPlayCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubPlayCamera_unity2_raw :: open_message (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OpenTutorial()` overload"] fn open_tutorial (self ,) -> () { unsafe { let __receiver = < HubPlayCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubPlayCamera_unity2_raw :: open_tutorial (__receiver , :: core :: option :: Option :: None) } } # [doc = "`End()` overload"] fn end (self ,) -> () { unsafe { let __receiver = < HubPlayCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubPlayCamera_unity2_raw :: end (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-hubplaycamera")]
+impl < __T : IHubPlayCamera > IHubPlayCameraMethods for __T { }
+
+#[cfg(feature = "app-hubplaycamera")]
+impl HubPlayCamera { pub fn get_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubPlayCamera_unity2_raw :: __lookup_get_data :: get_method_info () } pub fn get_camera_handle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubPlayCamera_unity2_raw :: __lookup_get_camera_handle :: get_method_info () } pub fn set_camera_handle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubPlayCamera_unity2_raw :: __lookup_set_camera_handle :: get_method_info () } pub fn get_player_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubPlayCamera_unity2_raw :: __lookup_get_player :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubPlayCamera_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubPlayCamera_unity2_raw :: __lookup_init :: get_method_info () } pub fn is_loading_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubPlayCamera_unity2_raw :: __lookup_is_loading :: get_method_info () } pub fn main_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubPlayCamera_unity2_raw :: __lookup_main :: get_method_info () } pub fn exit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubPlayCamera_unity2_raw :: __lookup_exit :: get_method_info () } pub fn open_message_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubPlayCamera_unity2_raw :: __lookup_open_message :: get_method_info () } pub fn open_tutorial_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubPlayCamera_unity2_raw :: __lookup_open_tutorial :: get_method_info () } pub fn end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubPlayCamera_unity2_raw :: __lookup_end :: get_method_info () } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubPlayCamera_unity2_raw :: __lookup_create_bind :: get_method_info () } }
 
 #[cfg(feature = "app-hubplaycamera")]
 impl HubPlayCamera {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::hubdemodata::HubDemoData)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        data: impl ::core::convert::Into<crate::app::hubdemodata::HubDemoData>,
-    ) -> () {
-        unsafe {
-            __HubPlayCamera_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
-        }
-    }
+# [doc = "`.ctor(crate::app::hubdemodata::HubDemoData)` — overload selector"] pub fn new (data : crate :: app :: hubdemodata :: HubDemoData) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubPlayCamera) , :: core :: stringify ! (new) ,)) ; < Self as IHubPlayCameraMethods > :: ctor (this , data) ; this }
 }
 
 #[cfg(feature = "app-hubplaycamera")]
-pub trait IHubPlayCameraMethods: IHubPlayCamera {
-    #[doc = "`get_Data()` overload"]
-    fn get_data(self) -> crate::app::hubdemodata::HubDemoData {
-        unsafe {
-            let __receiver = <HubPlayCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubPlayCamera_unity2_raw::get_data(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_CameraHandle()` overload"]
-    fn get_camera_handle(self) -> crate::app::resourcehandle_2::ResourceHandle_2 {
-        unsafe {
-            let __receiver = <HubPlayCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubPlayCamera_unity2_raw::get_camera_handle(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_CameraHandle(crate::app::resourcehandle_2::ResourceHandle_2)` overload"]
-    fn set_camera_handle(self, value: impl ::core::convert::Into<crate::app::resourcehandle_2::ResourceHandle_2>) -> () {
-        unsafe {
-            let __receiver = <HubPlayCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubPlayCamera_unity2_raw::set_camera_handle(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Player()` overload"]
-    fn get_player(self) -> crate::app::hubplayercontroller::HubPlayerController {
-        unsafe {
-            let __receiver = <HubPlayCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubPlayCamera_unity2_raw::get_player(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(crate::app::hubdemodata::HubDemoData)` overload"]
-    fn ctor(self, data: impl ::core::convert::Into<crate::app::hubdemodata::HubDemoData>) -> () {
-        unsafe {
-            let __receiver = <HubPlayCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubPlayCamera_unity2_raw::ctor(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Init()` overload"]
-    fn init(self) -> () {
-        unsafe {
-            let __receiver = <HubPlayCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubPlayCamera_unity2_raw::init(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsLoading()` overload"]
-    fn is_loading(self) -> bool {
-        unsafe {
-            let __receiver = <HubPlayCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubPlayCamera_unity2_raw::is_loading(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Main()` overload"]
-    fn main(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver = <HubPlayCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubPlayCamera_unity2_raw::main(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Exit()` overload"]
-    fn exit(self) -> () {
-        unsafe {
-            let __receiver = <HubPlayCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubPlayCamera_unity2_raw::exit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OpenMessage()` overload"]
-    fn open_message(self) -> () {
-        unsafe {
-            let __receiver = <HubPlayCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubPlayCamera_unity2_raw::open_message(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OpenTutorial()` overload"]
-    fn open_tutorial(self) -> () {
-        unsafe {
-            let __receiver = <HubPlayCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubPlayCamera_unity2_raw::open_tutorial(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`End()` overload"]
-    fn end(self) -> () {
-        unsafe {
-            let __receiver = <HubPlayCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubPlayCamera_unity2_raw::end(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __HubPlayCamera_DemoTelop_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubPlayCamera_DemoTelop as :: unity2 :: ClassIdentity > :: class () , "get_Data" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubPlayCamera_DemoTelop as :: unity2 :: ClassIdentity > :: NAME , "get_Data" , e) , } } } pub unsafe fn get_data (this : HubPlayCamera_DemoTelop , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: hubdemodata :: HubDemoData { let inner : extern "C" fn (HubPlayCamera_DemoTelop , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubdemodata :: HubDemoData = :: core :: mem :: transmute (__lookup_get_data :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_ui_handle { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubPlayCamera_DemoTelop as :: unity2 :: ClassIdentity > :: class () , "get_UIHandle" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubPlayCamera_DemoTelop as :: unity2 :: ClassIdentity > :: NAME , "get_UIHandle" , e) , } } } pub unsafe fn get_ui_handle (this : HubPlayCamera_DemoTelop , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: resourcehandle_2 :: ResourceHandle_2 { let inner : extern "C" fn (HubPlayCamera_DemoTelop , :: unity2 :: OptionalMethod ,) -> crate :: app :: resourcehandle_2 :: ResourceHandle_2 = :: core :: mem :: transmute (__lookup_get_ui_handle :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_ui_handle { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: resourcehandle_2 :: ResourceHandle_2 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubPlayCamera_DemoTelop as :: unity2 :: ClassIdentity > :: class () , "set_UIHandle" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubPlayCamera_DemoTelop as :: unity2 :: ClassIdentity > :: NAME , "set_UIHandle" , e) , } } } pub unsafe fn set_ui_handle (this : HubPlayCamera_DemoTelop , value : crate :: app :: resourcehandle_2 :: ResourceHandle_2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubPlayCamera_DemoTelop , crate :: app :: resourcehandle_2 :: ResourceHandle_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_ui_handle :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: hubdemodata :: HubDemoData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubPlayCamera_DemoTelop as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubPlayCamera_DemoTelop as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : HubPlayCamera_DemoTelop , data : crate :: app :: hubdemodata :: HubDemoData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubPlayCamera_DemoTelop , crate :: app :: hubdemodata :: HubDemoData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_loading { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubPlayCamera_DemoTelop as :: unity2 :: ClassIdentity > :: class () , "IsLoading" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubPlayCamera_DemoTelop as :: unity2 :: ClassIdentity > :: NAME , "IsLoading" , e) , } } } pub unsafe fn is_loading (this : HubPlayCamera_DemoTelop , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (HubPlayCamera_DemoTelop , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_loading :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_closing { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubPlayCamera_DemoTelop as :: unity2 :: ClassIdentity > :: class () , "IsClosing" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubPlayCamera_DemoTelop as :: unity2 :: ClassIdentity > :: NAME , "IsClosing" , e) , } } } pub unsafe fn is_closing (this : HubPlayCamera_DemoTelop , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (HubPlayCamera_DemoTelop , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_closing :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_build { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubPlayCamera_DemoTelop as :: unity2 :: ClassIdentity > :: class () , "Build" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubPlayCamera_DemoTelop as :: unity2 :: ClassIdentity > :: NAME , "Build" , e) , } } } pub unsafe fn build (this : HubPlayCamera_DemoTelop , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubPlayCamera_DemoTelop , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_build :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_open { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubPlayCamera_DemoTelop as :: unity2 :: ClassIdentity > :: class () , "Open" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubPlayCamera_DemoTelop as :: unity2 :: ClassIdentity > :: NAME , "Open" , e) , } } } pub unsafe fn open (this : HubPlayCamera_DemoTelop , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubPlayCamera_DemoTelop , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_open :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_tick { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubPlayCamera_DemoTelop as :: unity2 :: ClassIdentity > :: class () , "Tick" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubPlayCamera_DemoTelop as :: unity2 :: ClassIdentity > :: NAME , "Tick" , e) , } } } pub unsafe fn tick (this : HubPlayCamera_DemoTelop , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubPlayCamera_DemoTelop , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_tick :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_close { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubPlayCamera_DemoTelop as :: unity2 :: ClassIdentity > :: class () , "Close" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubPlayCamera_DemoTelop as :: unity2 :: ClassIdentity > :: NAME , "Close" , e) , } } } pub unsafe fn close (this : HubPlayCamera_DemoTelop , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubPlayCamera_DemoTelop , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_close :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_exit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubPlayCamera_DemoTelop as :: unity2 :: ClassIdentity > :: class () , "Exit" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubPlayCamera_DemoTelop as :: unity2 :: ClassIdentity > :: NAME , "Exit" , e) , } } } pub unsafe fn exit (this : HubPlayCamera_DemoTelop , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubPlayCamera_DemoTelop , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_exit :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_default_desc { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubPlayCamera_DemoTelop as :: unity2 :: ClassIdentity > :: class () , "CreateDefaultDesc" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubPlayCamera_DemoTelop as :: unity2 :: ClassIdentity > :: NAME , "CreateDefaultDesc" , e) , } } } pub unsafe fn create_default_desc (this : HubPlayCamera_DemoTelop , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { let inner : extern "C" fn (HubPlayCamera_DemoTelop , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute (__lookup_create_default_desc :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: hubdemodata :: HubDemoData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubPlayCamera_DemoTelop as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubPlayCamera_DemoTelop as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , data : crate :: app :: hubdemodata :: HubDemoData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: hubdemodata :: HubDemoData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , data , __unity2_method_info) } }
 
 #[cfg(feature = "app-hubplaycamera")]
-impl<__T: IHubPlayCamera> IHubPlayCameraMethods for __T {}
+impl HubPlayCamera_DemoTelop { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::hubdemodata::HubDemoData)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , data : impl :: core :: convert :: Into < crate :: app :: hubdemodata :: HubDemoData >) -> () { unsafe { __HubPlayCamera_DemoTelop_unity2_raw :: create_bind (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-hubplaycamera")]
-impl HubPlayCamera {
-    #[doc = "`.ctor(crate::app::hubdemodata::HubDemoData)` — overload selector"]
-    pub fn new(data: crate::app::hubdemodata::HubDemoData) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(HubPlayCamera), ::core::stringify!(new),));
-        <Self as IHubPlayCameraMethods>::ctor(this, data);
-        this
-    }
-}
+pub trait IHubPlayCamera_DemoTelopMethods : IHubPlayCamera_DemoTelop { # [doc = "`get_Data()` overload"] fn get_data (self ,) -> crate :: app :: hubdemodata :: HubDemoData { unsafe { let __receiver = < HubPlayCamera_DemoTelop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubPlayCamera_DemoTelop_unity2_raw :: get_data (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_UIHandle()` overload"] fn get_ui_handle (self ,) -> crate :: app :: resourcehandle_2 :: ResourceHandle_2 { unsafe { let __receiver = < HubPlayCamera_DemoTelop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubPlayCamera_DemoTelop_unity2_raw :: get_ui_handle (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_UIHandle(crate::app::resourcehandle_2::ResourceHandle_2)` overload"] fn set_ui_handle (self , value : impl :: core :: convert :: Into < crate :: app :: resourcehandle_2 :: ResourceHandle_2 >) -> () { unsafe { let __receiver = < HubPlayCamera_DemoTelop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubPlayCamera_DemoTelop_unity2_raw :: set_ui_handle (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`.ctor(crate::app::hubdemodata::HubDemoData)` overload"] fn ctor (self , data : impl :: core :: convert :: Into < crate :: app :: hubdemodata :: HubDemoData >) -> () { unsafe { let __receiver = < HubPlayCamera_DemoTelop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubPlayCamera_DemoTelop_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } # [doc = "`IsLoading()` overload"] fn is_loading (self ,) -> bool { unsafe { let __receiver = < HubPlayCamera_DemoTelop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubPlayCamera_DemoTelop_unity2_raw :: is_loading (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsClosing()` overload"] fn is_closing (self ,) -> bool { unsafe { let __receiver = < HubPlayCamera_DemoTelop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubPlayCamera_DemoTelop_unity2_raw :: is_closing (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Build()` overload"] fn build (self ,) -> () { unsafe { let __receiver = < HubPlayCamera_DemoTelop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubPlayCamera_DemoTelop_unity2_raw :: build (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Open()` overload"] fn open (self ,) -> () { unsafe { let __receiver = < HubPlayCamera_DemoTelop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubPlayCamera_DemoTelop_unity2_raw :: open (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Tick()` overload"] fn tick (self ,) -> () { unsafe { let __receiver = < HubPlayCamera_DemoTelop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubPlayCamera_DemoTelop_unity2_raw :: tick (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < HubPlayCamera_DemoTelop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubPlayCamera_DemoTelop_unity2_raw :: close (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Exit()` overload"] fn exit (self ,) -> () { unsafe { let __receiver = < HubPlayCamera_DemoTelop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubPlayCamera_DemoTelop_unity2_raw :: exit (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CreateDefaultDesc()` overload"] fn create_default_desc (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < HubPlayCamera_DemoTelop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubPlayCamera_DemoTelop_unity2_raw :: create_default_desc (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-hubplaycamera")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __HubPlayCamera_DemoTelop_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubPlayCamera_DemoTelop as ::unity2::ClassIdentity>::class(),
-                "get_Data",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubPlayCamera_DemoTelop as ::unity2::ClassIdentity>::NAME,
-                        "get_Data",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_data(this: HubPlayCamera_DemoTelop, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::hubdemodata::HubDemoData {
-        let inner: extern "C" fn(HubPlayCamera_DemoTelop, ::unity2::OptionalMethod) -> crate::app::hubdemodata::HubDemoData =
-            ::core::mem::transmute(__lookup_get_data::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_ui_handle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubPlayCamera_DemoTelop as ::unity2::ClassIdentity>::class(),
-                "get_UIHandle",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubPlayCamera_DemoTelop as ::unity2::ClassIdentity>::NAME,
-                        "get_UIHandle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_ui_handle(
-        this: HubPlayCamera_DemoTelop,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::resourcehandle_2::ResourceHandle_2 {
-        let inner: extern "C" fn(HubPlayCamera_DemoTelop, ::unity2::OptionalMethod) -> crate::app::resourcehandle_2::ResourceHandle_2 =
-            ::core::mem::transmute(__lookup_get_ui_handle::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_ui_handle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::resourcehandle_2::ResourceHandle_2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubPlayCamera_DemoTelop as ::unity2::ClassIdentity>::class(),
-                "set_UIHandle",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubPlayCamera_DemoTelop as ::unity2::ClassIdentity>::NAME,
-                        "set_UIHandle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_ui_handle(
-        this: HubPlayCamera_DemoTelop,
-        value: crate::app::resourcehandle_2::ResourceHandle_2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubPlayCamera_DemoTelop, crate::app::resourcehandle_2::ResourceHandle_2, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_ui_handle::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::hubdemodata::HubDemoData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubPlayCamera_DemoTelop as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubPlayCamera_DemoTelop as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: HubPlayCamera_DemoTelop,
-        data: crate::app::hubdemodata::HubDemoData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubPlayCamera_DemoTelop, crate::app::hubdemodata::HubDemoData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_loading {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubPlayCamera_DemoTelop as ::unity2::ClassIdentity>::class(),
-                "IsLoading",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubPlayCamera_DemoTelop as ::unity2::ClassIdentity>::NAME,
-                        "IsLoading",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_loading(this: HubPlayCamera_DemoTelop, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(HubPlayCamera_DemoTelop, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_loading::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_closing {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubPlayCamera_DemoTelop as ::unity2::ClassIdentity>::class(),
-                "IsClosing",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubPlayCamera_DemoTelop as ::unity2::ClassIdentity>::NAME,
-                        "IsClosing",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_closing(this: HubPlayCamera_DemoTelop, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(HubPlayCamera_DemoTelop, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_closing::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubPlayCamera_DemoTelop as ::unity2::ClassIdentity>::class(),
-                "Build",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubPlayCamera_DemoTelop as ::unity2::ClassIdentity>::NAME,
-                        "Build",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build(this: HubPlayCamera_DemoTelop, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubPlayCamera_DemoTelop, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_build::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_open {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubPlayCamera_DemoTelop as ::unity2::ClassIdentity>::class(),
-                "Open",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubPlayCamera_DemoTelop as ::unity2::ClassIdentity>::NAME,
-                        "Open",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn open(this: HubPlayCamera_DemoTelop, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubPlayCamera_DemoTelop, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_open::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_tick {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubPlayCamera_DemoTelop as ::unity2::ClassIdentity>::class(),
-                "Tick",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubPlayCamera_DemoTelop as ::unity2::ClassIdentity>::NAME,
-                        "Tick",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn tick(this: HubPlayCamera_DemoTelop, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubPlayCamera_DemoTelop, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_tick::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubPlayCamera_DemoTelop as ::unity2::ClassIdentity>::class(),
-                "Close",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubPlayCamera_DemoTelop as ::unity2::ClassIdentity>::NAME,
-                        "Close",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn close(this: HubPlayCamera_DemoTelop, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubPlayCamera_DemoTelop, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_close::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_exit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubPlayCamera_DemoTelop as ::unity2::ClassIdentity>::class(),
-                "Exit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubPlayCamera_DemoTelop as ::unity2::ClassIdentity>::NAME,
-                        "Exit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn exit(this: HubPlayCamera_DemoTelop, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubPlayCamera_DemoTelop, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_exit::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_default_desc {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubPlayCamera_DemoTelop as ::unity2::ClassIdentity>::class(),
-                "CreateDefaultDesc",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubPlayCamera_DemoTelop as ::unity2::ClassIdentity>::NAME,
-                        "CreateDefaultDesc",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_default_desc(
-        this: HubPlayCamera_DemoTelop,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
-        let inner: extern "C" fn(HubPlayCamera_DemoTelop, ::unity2::OptionalMethod) -> ::unity2::Array<crate::app::procdesc::ProcDesc> =
-            ::core::mem::transmute(__lookup_create_default_desc::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::hubdemodata::HubDemoData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubPlayCamera_DemoTelop as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubPlayCamera_DemoTelop as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        data: crate::app::hubdemodata::HubDemoData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, crate::app::hubdemodata::HubDemoData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, data, __unity2_method_info)
-    }
-}
+impl < __T : IHubPlayCamera_DemoTelop > IHubPlayCamera_DemoTelopMethods for __T { }
+
+#[cfg(feature = "app-hubplaycamera")]
+impl HubPlayCamera_DemoTelop { pub fn get_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubPlayCamera_DemoTelop_unity2_raw :: __lookup_get_data :: get_method_info () } pub fn get_ui_handle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubPlayCamera_DemoTelop_unity2_raw :: __lookup_get_ui_handle :: get_method_info () } pub fn set_ui_handle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubPlayCamera_DemoTelop_unity2_raw :: __lookup_set_ui_handle :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubPlayCamera_DemoTelop_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn is_loading_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubPlayCamera_DemoTelop_unity2_raw :: __lookup_is_loading :: get_method_info () } pub fn is_closing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubPlayCamera_DemoTelop_unity2_raw :: __lookup_is_closing :: get_method_info () } pub fn build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubPlayCamera_DemoTelop_unity2_raw :: __lookup_build :: get_method_info () } pub fn open_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubPlayCamera_DemoTelop_unity2_raw :: __lookup_open :: get_method_info () } pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubPlayCamera_DemoTelop_unity2_raw :: __lookup_tick :: get_method_info () } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubPlayCamera_DemoTelop_unity2_raw :: __lookup_close :: get_method_info () } pub fn exit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubPlayCamera_DemoTelop_unity2_raw :: __lookup_exit :: get_method_info () } pub fn create_default_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubPlayCamera_DemoTelop_unity2_raw :: __lookup_create_default_desc :: get_method_info () } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubPlayCamera_DemoTelop_unity2_raw :: __lookup_create_bind :: get_method_info () } }
 
 #[cfg(feature = "app-hubplaycamera")]
 impl HubPlayCamera_DemoTelop {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::hubdemodata::HubDemoData)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        data: impl ::core::convert::Into<crate::app::hubdemodata::HubDemoData>,
-    ) -> () {
-        unsafe {
-            __HubPlayCamera_DemoTelop_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-hubplaycamera")]
-pub trait IHubPlayCamera_DemoTelopMethods: IHubPlayCamera_DemoTelop {
-    #[doc = "`get_Data()` overload"]
-    fn get_data(self) -> crate::app::hubdemodata::HubDemoData {
-        unsafe {
-            let __receiver =
-                <HubPlayCamera_DemoTelop as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubPlayCamera_DemoTelop_unity2_raw::get_data(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_UIHandle()` overload"]
-    fn get_ui_handle(self) -> crate::app::resourcehandle_2::ResourceHandle_2 {
-        unsafe {
-            let __receiver =
-                <HubPlayCamera_DemoTelop as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubPlayCamera_DemoTelop_unity2_raw::get_ui_handle(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_UIHandle(crate::app::resourcehandle_2::ResourceHandle_2)` overload"]
-    fn set_ui_handle(self, value: impl ::core::convert::Into<crate::app::resourcehandle_2::ResourceHandle_2>) -> () {
-        unsafe {
-            let __receiver =
-                <HubPlayCamera_DemoTelop as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubPlayCamera_DemoTelop_unity2_raw::set_ui_handle(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(crate::app::hubdemodata::HubDemoData)` overload"]
-    fn ctor(self, data: impl ::core::convert::Into<crate::app::hubdemodata::HubDemoData>) -> () {
-        unsafe {
-            let __receiver =
-                <HubPlayCamera_DemoTelop as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubPlayCamera_DemoTelop_unity2_raw::ctor(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsLoading()` overload"]
-    fn is_loading(self) -> bool {
-        unsafe {
-            let __receiver =
-                <HubPlayCamera_DemoTelop as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubPlayCamera_DemoTelop_unity2_raw::is_loading(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsClosing()` overload"]
-    fn is_closing(self) -> bool {
-        unsafe {
-            let __receiver =
-                <HubPlayCamera_DemoTelop as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubPlayCamera_DemoTelop_unity2_raw::is_closing(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Build()` overload"]
-    fn build(self) -> () {
-        unsafe {
-            let __receiver =
-                <HubPlayCamera_DemoTelop as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubPlayCamera_DemoTelop_unity2_raw::build(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Open()` overload"]
-    fn open(self) -> () {
-        unsafe {
-            let __receiver =
-                <HubPlayCamera_DemoTelop as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubPlayCamera_DemoTelop_unity2_raw::open(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Tick()` overload"]
-    fn tick(self) -> () {
-        unsafe {
-            let __receiver =
-                <HubPlayCamera_DemoTelop as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubPlayCamera_DemoTelop_unity2_raw::tick(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Close()` overload"]
-    fn close(self) -> () {
-        unsafe {
-            let __receiver =
-                <HubPlayCamera_DemoTelop as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubPlayCamera_DemoTelop_unity2_raw::close(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Exit()` overload"]
-    fn exit(self) -> () {
-        unsafe {
-            let __receiver =
-                <HubPlayCamera_DemoTelop as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubPlayCamera_DemoTelop_unity2_raw::exit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateDefaultDesc()` overload"]
-    fn create_default_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
-        unsafe {
-            let __receiver =
-                <HubPlayCamera_DemoTelop as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubPlayCamera_DemoTelop_unity2_raw::create_default_desc(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-hubplaycamera")]
-impl<__T: IHubPlayCamera_DemoTelop> IHubPlayCamera_DemoTelopMethods for __T {}
-
-#[cfg(feature = "app-hubplaycamera")]
-impl HubPlayCamera_DemoTelop {
-    #[doc = "`.ctor(crate::app::hubdemodata::HubDemoData)` — overload selector"]
-    pub fn new(data: crate::app::hubdemodata::HubDemoData) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubPlayCamera_DemoTelop),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubPlayCamera_DemoTelopMethods>::ctor(this, data);
-        this
-    }
+# [doc = "`.ctor(crate::app::hubdemodata::HubDemoData)` — overload selector"] pub fn new (data : crate :: app :: hubdemodata :: HubDemoData) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubPlayCamera_DemoTelop) , :: core :: stringify ! (new) ,)) ; < Self as IHubPlayCamera_DemoTelopMethods > :: ctor (this , data) ; this }
 }
 
 #[cfg(feature = "app-hubplaycamera")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{
-        HubPlayCamera, HubPlayCamera_DemoTelop, HubPlayCamera_Label, IHubPlayCamera, IHubPlayCameraMethods, IHubPlayCamera_DemoTelop,
-        IHubPlayCamera_DemoTelopMethods,
-    };
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::{
-        app::procinst::IProcInst,
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-    };
+    pub use super::HubPlayCamera;
+    pub use super::IHubPlayCamera;
+    pub use super::IHubPlayCameraMethods;
+    pub use super::HubPlayCamera_Label;
+    pub use super::HubPlayCamera_DemoTelop;
+    pub use super::IHubPlayCamera_DemoTelop;
+    pub use super::IHubPlayCamera_DemoTelopMethods;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

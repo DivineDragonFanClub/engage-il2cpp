@@ -2,381 +2,53 @@
 
 #[cfg(feature = "combat-situation_converter-convertcrosscut-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        combat::situation_converter::{
-            baseconverter::{BaseConverter, IBaseConverter},
-            converterwithut::{ConverterWithUt, IConverterWithUt},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/situation_converter/convertcrosscut/ConvertCrossCut.md"))]
-    #[::unity2::class(namespace = "Combat.SituationConverter", name = "ConvertCrossCut")]
-    #[parent(crate::combat::situation_converter::converterwithut::ConverterWithUt)]
-    pub struct ConvertCrossCut {
-        #[offset(44)]
-        #[rename(name = "m_IsEnded")]
-        pub m_is_ended: bool,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: combat :: situation_converter :: baseconverter :: { BaseConverter , IBaseConverter }
+ ;
+ use crate :: combat :: situation_converter :: converterwithut :: { ConverterWithUt , IConverterWithUt }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/situation_converter/convertcrosscut/ConvertCrossCut.md"))] # [:: unity2 :: class (namespace = "Combat.SituationConverter" , name = "ConvertCrossCut")] # [parent (crate :: combat :: situation_converter :: converterwithut :: ConverterWithUt)] pub struct ConvertCrossCut {
+# [offset (44)] # [rename (name = "m_IsEnded")] pub m_is_ended : bool ,
+}
+
 }
 
 #[cfg(feature = "combat-situation_converter-convertcrosscut-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-situation_converter-convertcrosscut")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ConvertCrossCut_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::situation_converter::cameradataset::CameraDataSet as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ConvertCrossCut as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ConvertCrossCut as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ConvertCrossCut,
-        data: crate::combat::situation_converter::cameradataset::CameraDataSet,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ConvertCrossCut, crate::combat::situation_converter::cameradataset::CameraDataSet, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_convert {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::combat::camerasituation::CameraSituation as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ConvertCrossCut as ::unity2::ClassIdentity>::class(),
-                "Convert",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ConvertCrossCut as ::unity2::ClassIdentity>::NAME,
-                        "Convert",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn convert(
-        this: ConvertCrossCut,
-        situation: crate::combat::camerasituation::CameraSituation,
-        arg: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::combat::cameraposition::CameraPosition {
-        let inner: extern "C" fn(
-            ConvertCrossCut,
-            crate::combat::camerasituation::CameraSituation,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::cameraposition::CameraPosition = ::core::mem::transmute(__lookup_convert::get_method_info().method_ptr);
-        inner(this, situation, arg, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_begin {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ConvertCrossCut as ::unity2::ClassIdentity>::class(),
-                "OnBegin",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ConvertCrossCut as ::unity2::ClassIdentity>::NAME,
-                        "OnBegin",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_begin(this: ConvertCrossCut, __unity2_method_info: ::unity2::OptionalMethod) -> crate::combat::cameraposition::CameraPosition {
-        let inner: extern "C" fn(ConvertCrossCut, ::unity2::OptionalMethod) -> crate::combat::cameraposition::CameraPosition =
-            ::core::mem::transmute(__lookup_on_begin::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_approach {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ConvertCrossCut as ::unity2::ClassIdentity>::class(),
-                "OnApproach",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ConvertCrossCut as ::unity2::ClassIdentity>::NAME,
-                        "OnApproach",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_approach(
-        this: ConvertCrossCut,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::combat::cameraposition::CameraPosition {
-        let inner: extern "C" fn(ConvertCrossCut, ::unity2::OptionalMethod) -> crate::combat::cameraposition::CameraPosition =
-            ::core::mem::transmute(__lookup_on_approach::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_attack {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ConvertCrossCut as ::unity2::ClassIdentity>::class(),
-                "OnAttack",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ConvertCrossCut as ::unity2::ClassIdentity>::NAME,
-                        "OnAttack",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_attack(this: ConvertCrossCut, __unity2_method_info: ::unity2::OptionalMethod) -> crate::combat::cameraposition::CameraPosition {
-        let inner: extern "C" fn(ConvertCrossCut, ::unity2::OptionalMethod) -> crate::combat::cameraposition::CameraPosition =
-            ::core::mem::transmute(__lookup_on_attack::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_damage {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ConvertCrossCut as ::unity2::ClassIdentity>::class(),
-                "OnDamage",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ConvertCrossCut as ::unity2::ClassIdentity>::NAME,
-                        "OnDamage",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_damage(this: ConvertCrossCut, __unity2_method_info: ::unity2::OptionalMethod) -> crate::combat::cameraposition::CameraPosition {
-        let inner: extern "C" fn(ConvertCrossCut, ::unity2::OptionalMethod) -> crate::combat::cameraposition::CameraPosition =
-            ::core::mem::transmute(__lookup_on_damage::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_end {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ConvertCrossCut as ::unity2::ClassIdentity>::class(),
-                "OnEnd",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ConvertCrossCut as ::unity2::ClassIdentity>::NAME,
-                        "OnEnd",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_end(this: ConvertCrossCut, __unity2_method_info: ::unity2::OptionalMethod) -> crate::combat::cameraposition::CameraPosition {
-        let inner: extern "C" fn(ConvertCrossCut, ::unity2::OptionalMethod) -> crate::combat::cameraposition::CameraPosition =
-            ::core::mem::transmute(__lookup_on_end::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ConvertCrossCut_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: situation_converter :: cameradataset :: CameraDataSet as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ConvertCrossCut as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ConvertCrossCut as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ConvertCrossCut , data : crate :: combat :: situation_converter :: cameradataset :: CameraDataSet , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ConvertCrossCut , crate :: combat :: situation_converter :: cameradataset :: CameraDataSet , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_convert { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: camerasituation :: CameraSituation as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ConvertCrossCut as :: unity2 :: ClassIdentity > :: class () , "Convert" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ConvertCrossCut as :: unity2 :: ClassIdentity > :: NAME , "Convert" , e) , } } } pub unsafe fn convert (this : ConvertCrossCut , situation : crate :: combat :: camerasituation :: CameraSituation , arg : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition { let inner : extern "C" fn (ConvertCrossCut , crate :: combat :: camerasituation :: CameraSituation , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition = :: core :: mem :: transmute (__lookup_convert :: get_method_info () . method_ptr ,) ; inner (this , situation , arg , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_begin { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ConvertCrossCut as :: unity2 :: ClassIdentity > :: class () , "OnBegin" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ConvertCrossCut as :: unity2 :: ClassIdentity > :: NAME , "OnBegin" , e) , } } } pub unsafe fn on_begin (this : ConvertCrossCut , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition { let inner : extern "C" fn (ConvertCrossCut , :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition = :: core :: mem :: transmute (__lookup_on_begin :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_approach { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ConvertCrossCut as :: unity2 :: ClassIdentity > :: class () , "OnApproach" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ConvertCrossCut as :: unity2 :: ClassIdentity > :: NAME , "OnApproach" , e) , } } } pub unsafe fn on_approach (this : ConvertCrossCut , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition { let inner : extern "C" fn (ConvertCrossCut , :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition = :: core :: mem :: transmute (__lookup_on_approach :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_attack { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ConvertCrossCut as :: unity2 :: ClassIdentity > :: class () , "OnAttack" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ConvertCrossCut as :: unity2 :: ClassIdentity > :: NAME , "OnAttack" , e) , } } } pub unsafe fn on_attack (this : ConvertCrossCut , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition { let inner : extern "C" fn (ConvertCrossCut , :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition = :: core :: mem :: transmute (__lookup_on_attack :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_damage { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ConvertCrossCut as :: unity2 :: ClassIdentity > :: class () , "OnDamage" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ConvertCrossCut as :: unity2 :: ClassIdentity > :: NAME , "OnDamage" , e) , } } } pub unsafe fn on_damage (this : ConvertCrossCut , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition { let inner : extern "C" fn (ConvertCrossCut , :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition = :: core :: mem :: transmute (__lookup_on_damage :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_end { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ConvertCrossCut as :: unity2 :: ClassIdentity > :: class () , "OnEnd" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ConvertCrossCut as :: unity2 :: ClassIdentity > :: NAME , "OnEnd" , e) , } } } pub unsafe fn on_end (this : ConvertCrossCut , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition { let inner : extern "C" fn (ConvertCrossCut , :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition = :: core :: mem :: transmute (__lookup_on_end :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "combat-situation_converter-convertcrosscut")]
-pub trait IConvertCrossCutMethods: IConvertCrossCut {
-    #[doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` overload"]
-    fn ctor(self, data: impl ::core::convert::Into<crate::combat::situation_converter::cameradataset::CameraDataSet>) -> () {
-        unsafe {
-            let __receiver = <ConvertCrossCut as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ConvertCrossCut_unity2_raw::ctor(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Convert(crate::combat::camerasituation::CameraSituation, ::unity2::Il2CppString)` overload"]
-    fn convert(
-        self,
-        situation: impl ::core::convert::Into<crate::combat::camerasituation::CameraSituation>,
-        arg: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::combat::cameraposition::CameraPosition {
-        unsafe {
-            let __receiver = <ConvertCrossCut as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ConvertCrossCut_unity2_raw::convert(
-                __receiver,
-                ::core::convert::Into::into(situation),
-                ::core::convert::Into::into(arg),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnBegin()` overload"]
-    fn on_begin(self) -> crate::combat::cameraposition::CameraPosition {
-        unsafe {
-            let __receiver = <ConvertCrossCut as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ConvertCrossCut_unity2_raw::on_begin(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnApproach()` overload"]
-    fn on_approach(self) -> crate::combat::cameraposition::CameraPosition {
-        unsafe {
-            let __receiver = <ConvertCrossCut as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ConvertCrossCut_unity2_raw::on_approach(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnAttack()` overload"]
-    fn on_attack(self) -> crate::combat::cameraposition::CameraPosition {
-        unsafe {
-            let __receiver = <ConvertCrossCut as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ConvertCrossCut_unity2_raw::on_attack(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDamage()` overload"]
-    fn on_damage(self) -> crate::combat::cameraposition::CameraPosition {
-        unsafe {
-            let __receiver = <ConvertCrossCut as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ConvertCrossCut_unity2_raw::on_damage(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnEnd()` overload"]
-    fn on_end(self) -> crate::combat::cameraposition::CameraPosition {
-        unsafe {
-            let __receiver = <ConvertCrossCut as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ConvertCrossCut_unity2_raw::on_end(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IConvertCrossCutMethods : IConvertCrossCut { # [doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` overload"] fn ctor (self , data : impl :: core :: convert :: Into < crate :: combat :: situation_converter :: cameradataset :: CameraDataSet >) -> () { unsafe { let __receiver = < ConvertCrossCut as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ConvertCrossCut_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } # [doc = "`Convert(crate::combat::camerasituation::CameraSituation, ::unity2::Il2CppString)` overload"] fn convert (self , situation : impl :: core :: convert :: Into < crate :: combat :: camerasituation :: CameraSituation > , arg : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: combat :: cameraposition :: CameraPosition { unsafe { let __receiver = < ConvertCrossCut as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ConvertCrossCut_unity2_raw :: convert (__receiver , :: core :: convert :: Into :: into (situation) , :: core :: convert :: Into :: into (arg) , :: core :: option :: Option :: None) } } # [doc = "`OnBegin()` overload"] fn on_begin (self ,) -> crate :: combat :: cameraposition :: CameraPosition { unsafe { let __receiver = < ConvertCrossCut as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ConvertCrossCut_unity2_raw :: on_begin (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnApproach()` overload"] fn on_approach (self ,) -> crate :: combat :: cameraposition :: CameraPosition { unsafe { let __receiver = < ConvertCrossCut as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ConvertCrossCut_unity2_raw :: on_approach (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnAttack()` overload"] fn on_attack (self ,) -> crate :: combat :: cameraposition :: CameraPosition { unsafe { let __receiver = < ConvertCrossCut as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ConvertCrossCut_unity2_raw :: on_attack (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnDamage()` overload"] fn on_damage (self ,) -> crate :: combat :: cameraposition :: CameraPosition { unsafe { let __receiver = < ConvertCrossCut as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ConvertCrossCut_unity2_raw :: on_damage (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnEnd()` overload"] fn on_end (self ,) -> crate :: combat :: cameraposition :: CameraPosition { unsafe { let __receiver = < ConvertCrossCut as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ConvertCrossCut_unity2_raw :: on_end (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "combat-situation_converter-convertcrosscut")]
-impl<__T: IConvertCrossCut> IConvertCrossCutMethods for __T {}
+impl < __T : IConvertCrossCut > IConvertCrossCutMethods for __T { }
+
+#[cfg(feature = "combat-situation_converter-convertcrosscut")]
+impl ConvertCrossCut { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ConvertCrossCut_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn convert_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ConvertCrossCut_unity2_raw :: __lookup_convert :: get_method_info () } pub fn on_begin_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ConvertCrossCut_unity2_raw :: __lookup_on_begin :: get_method_info () } pub fn on_approach_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ConvertCrossCut_unity2_raw :: __lookup_on_approach :: get_method_info () } pub fn on_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ConvertCrossCut_unity2_raw :: __lookup_on_attack :: get_method_info () } pub fn on_damage_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ConvertCrossCut_unity2_raw :: __lookup_on_damage :: get_method_info () } pub fn on_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ConvertCrossCut_unity2_raw :: __lookup_on_end :: get_method_info () } }
 
 #[cfg(feature = "combat-situation_converter-convertcrosscut")]
 impl ConvertCrossCut {
-    #[doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` — overload selector"]
-    pub fn new(data: crate::combat::situation_converter::cameradataset::CameraDataSet) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ConvertCrossCut),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IConvertCrossCutMethods>::ctor(this, data);
-        this
-    }
+# [doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` — overload selector"] pub fn new (data : crate :: combat :: situation_converter :: cameradataset :: CameraDataSet) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ConvertCrossCut) , :: core :: stringify ! (new) ,)) ; < Self as IConvertCrossCutMethods > :: ctor (this , data) ; this }
 }
 
 #[cfg(feature = "combat-situation_converter-convertcrosscut")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ConvertCrossCut, IConvertCrossCut, IConvertCrossCutMethods};
-    #[cfg(feature = "combat-situation_converter-baseconverter")]
-    pub use crate::combat::situation_converter::baseconverter::IBaseConverterMethods;
-    #[cfg(feature = "combat-situation_converter-converterwithut")]
-    pub use crate::combat::situation_converter::converterwithut::IConverterWithUtMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        combat::situation_converter::{baseconverter::IBaseConverter, converterwithut::IConverterWithUt},
-        system::object::IObject,
-    };
+    pub use super::ConvertCrossCut;
+    pub use super::IConvertCrossCut;
+    pub use super::IConvertCrossCutMethods;
+    pub use crate::combat::situation_converter::baseconverter::IBaseConverter;
+    pub use crate::combat::situation_converter::converterwithut::IConverterWithUt;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "combat-situation_converter-baseconverter")] pub use crate::combat::situation_converter::baseconverter::IBaseConverterMethods;
+    #[cfg(feature = "combat-situation_converter-converterwithut")] pub use crate::combat::situation_converter::converterwithut::IConverterWithUtMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -2,28 +2,27 @@
 
 #[cfg(feature = "system-collections-generic-ireadonlycollection_1-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/ireadonlycollection_1/IReadOnlyCollection_1.md"))]
-    #[::unity2::class(namespace = "System.Collections.Generic", name = "IReadOnlyCollection`1")]
-    pub struct IReadOnlyCollection_1<T0: ::unity2::ClassIdentity> {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/ireadonlycollection_1/IReadOnlyCollection_1.md"))] # [:: unity2 :: class (namespace = "System.Collections.Generic" , name = "IReadOnlyCollection`1")] pub struct IReadOnlyCollection_1 < T0 : :: unity2 :: ClassIdentity > {}
+
 }
 
 #[cfg(feature = "system-collections-generic-ireadonlycollection_1-types")]
 pub use __types::*;
 
 #[cfg(feature = "system-collections-generic-ireadonlycollection_1")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> IReadOnlyCollection_1<T0> {
-    #[doc = "`get_Count()` overload"]
-    #[method(name = "get_Count", args = 0)]
-    pub fn get_count(self) -> i32;
+# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > IReadOnlyCollection_1 < T0 > {
+# [doc = "`get_Count()` overload"] # [method (name = "get_Count" , args = 0)] pub fn get_count (self ,) -> i32 ;
 }
 
 #[cfg(feature = "system-collections-generic-ireadonlycollection_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IIReadOnlyCollection_1, IIReadOnlyCollection_1Methods, IReadOnlyCollection_1};
+    pub use super::IReadOnlyCollection_1;
+    pub use super::IIReadOnlyCollection_1;
+    pub use super::IIReadOnlyCollection_1Methods;
 }

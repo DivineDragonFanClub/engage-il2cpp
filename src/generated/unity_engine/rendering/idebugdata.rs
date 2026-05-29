@@ -2,68 +2,34 @@
 
 #[cfg(feature = "unity_engine-rendering-idebugdata-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/idebugdata/IDebugData.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "IDebugData")]
-    pub struct IDebugData {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/idebugdata/IDebugData.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "IDebugData")] pub struct IDebugData {}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-idebugdata-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-idebugdata")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __IDebugData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_reset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<IDebugData as ::unity2::ClassIdentity>::class(), "GetReset", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IDebugData as ::unity2::ClassIdentity>::NAME,
-                        "GetReset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_reset(this: IDebugData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::action::Action {
-        let inner: extern "C" fn(IDebugData, ::unity2::OptionalMethod) -> crate::system::action::Action =
-            ::core::mem::transmute(__lookup_get_reset::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IDebugData_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_reset { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IDebugData as :: unity2 :: ClassIdentity > :: class () , "GetReset" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IDebugData as :: unity2 :: ClassIdentity > :: NAME , "GetReset" , e) , } } } pub unsafe fn get_reset (this : IDebugData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: action :: Action { let inner : extern "C" fn (IDebugData , :: unity2 :: OptionalMethod ,) -> crate :: system :: action :: Action = :: core :: mem :: transmute (__lookup_get_reset :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-rendering-idebugdata")]
-pub trait IIDebugDataMethods: IIDebugData {
-    #[doc = "`GetReset()` overload"]
-    fn get_reset(self) -> crate::system::action::Action {
-        unsafe {
-            let __receiver = <IDebugData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IDebugData_unity2_raw::get_reset(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IIDebugDataMethods : IIDebugData { # [doc = "`GetReset()` overload"] fn get_reset (self ,) -> crate :: system :: action :: Action { unsafe { let __receiver = < IDebugData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IDebugData_unity2_raw :: get_reset (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-rendering-idebugdata")]
-impl<__T: IIDebugData> IIDebugDataMethods for __T {}
+impl < __T : IIDebugData > IIDebugDataMethods for __T { }
+
+#[cfg(feature = "unity_engine-rendering-idebugdata")]
+impl IDebugData { pub fn get_reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IDebugData_unity2_raw :: __lookup_get_reset :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-idebugdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IDebugData, IIDebugData, IIDebugDataMethods};
+    pub use super::IDebugData;
+    pub use super::IIDebugData;
+    pub use super::IIDebugDataMethods;
 }

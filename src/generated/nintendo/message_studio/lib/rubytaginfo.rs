@@ -2,318 +2,43 @@
 
 #[cfg(feature = "nintendo-message_studio-lib-rubytaginfo-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nintendo/message_studio/lib/rubytaginfo/RubyTagInfo.md"))]
-    #[::unity2::class(namespace = "Nintendo.MessageStudio.Lib", name = "RubyTagInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct RubyTagInfo {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nintendo/message_studio/lib/rubytaginfo/RubyTagInfo.md"))] # [:: unity2 :: class (namespace = "Nintendo.MessageStudio.Lib" , name = "RubyTagInfo")] # [parent (crate :: system :: object :: Object)] pub struct RubyTagInfo {}
+
 }
 
 #[cfg(feature = "nintendo-message_studio-lib-rubytaginfo-types")]
 pub use __types::*;
 
 #[cfg(feature = "nintendo-message_studio-lib-rubytaginfo")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RubyTagInfo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_tag {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<RubyTagInfo as ::unity2::ClassIdentity>::class(), "get_Tag", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RubyTagInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_Tag",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_tag(this: RubyTagInfo, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
-        let inner: extern "C" fn(RubyTagInfo, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(__lookup_get_tag::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_tag_group {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RubyTagInfo as ::unity2::ClassIdentity>::class(),
-                "get_TagGroup",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RubyTagInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_TagGroup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_tag_group(this: RubyTagInfo, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
-        let inner: extern "C" fn(RubyTagInfo, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(__lookup_get_tag_group::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_parent_length {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RubyTagInfo as ::unity2::ClassIdentity>::class(),
-                "get_ParentLength",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RubyTagInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_ParentLength",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_parent_length(this: RubyTagInfo, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
-        let inner: extern "C" fn(RubyTagInfo, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(__lookup_get_parent_length::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_parent_length {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RubyTagInfo as ::unity2::ClassIdentity>::class(),
-                "set_ParentLength",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RubyTagInfo as ::unity2::ClassIdentity>::NAME,
-                        "set_ParentLength",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_parent_length(this: RubyTagInfo, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RubyTagInfo, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_parent_length::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_ruby {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RubyTagInfo as ::unity2::ClassIdentity>::class(),
-                "get_Ruby",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RubyTagInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_Ruby",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_ruby(this: RubyTagInfo, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(RubyTagInfo, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_ruby::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_ruby {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RubyTagInfo as ::unity2::ClassIdentity>::class(),
-                "set_Ruby",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RubyTagInfo as ::unity2::ClassIdentity>::NAME,
-                        "set_Ruby",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_ruby(this: RubyTagInfo, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RubyTagInfo, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_ruby::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<u8> as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<RubyTagInfo as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RubyTagInfo as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: RubyTagInfo, param: ::unity2::Array<u8>, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RubyTagInfo, ::unity2::Array<u8>, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, param, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RubyTagInfo_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_tag { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RubyTagInfo as :: unity2 :: ClassIdentity > :: class () , "get_Tag" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RubyTagInfo as :: unity2 :: ClassIdentity > :: NAME , "get_Tag" , e) , } } } pub unsafe fn get_tag (this : RubyTagInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> u16 { let inner : extern "C" fn (RubyTagInfo , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute (__lookup_get_tag :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_tag_group { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RubyTagInfo as :: unity2 :: ClassIdentity > :: class () , "get_TagGroup" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RubyTagInfo as :: unity2 :: ClassIdentity > :: NAME , "get_TagGroup" , e) , } } } pub unsafe fn get_tag_group (this : RubyTagInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> u16 { let inner : extern "C" fn (RubyTagInfo , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute (__lookup_get_tag_group :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_parent_length { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RubyTagInfo as :: unity2 :: ClassIdentity > :: class () , "get_ParentLength" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RubyTagInfo as :: unity2 :: ClassIdentity > :: NAME , "get_ParentLength" , e) , } } } pub unsafe fn get_parent_length (this : RubyTagInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> u16 { let inner : extern "C" fn (RubyTagInfo , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute (__lookup_get_parent_length :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_parent_length { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u16 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RubyTagInfo as :: unity2 :: ClassIdentity > :: class () , "set_ParentLength" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RubyTagInfo as :: unity2 :: ClassIdentity > :: NAME , "set_ParentLength" , e) , } } } pub unsafe fn set_parent_length (this : RubyTagInfo , value : u16 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RubyTagInfo , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_parent_length :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_ruby { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RubyTagInfo as :: unity2 :: ClassIdentity > :: class () , "get_Ruby" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RubyTagInfo as :: unity2 :: ClassIdentity > :: NAME , "get_Ruby" , e) , } } } pub unsafe fn get_ruby (this : RubyTagInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (RubyTagInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_ruby :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_ruby { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RubyTagInfo as :: unity2 :: ClassIdentity > :: class () , "set_Ruby" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RubyTagInfo as :: unity2 :: ClassIdentity > :: NAME , "set_Ruby" , e) , } } } pub unsafe fn set_ruby (this : RubyTagInfo , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RubyTagInfo , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_ruby :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < u8 > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RubyTagInfo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RubyTagInfo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RubyTagInfo , param : :: unity2 :: Array < u8 > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RubyTagInfo , :: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , param , __unity2_method_info) } }
 
 #[cfg(feature = "nintendo-message_studio-lib-rubytaginfo")]
-pub trait IRubyTagInfoMethods: IRubyTagInfo {
-    #[doc = "`get_Tag()` overload"]
-    fn get_tag(self) -> u16 {
-        unsafe {
-            let __receiver = <RubyTagInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RubyTagInfo_unity2_raw::get_tag(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_TagGroup()` overload"]
-    fn get_tag_group(self) -> u16 {
-        unsafe {
-            let __receiver = <RubyTagInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RubyTagInfo_unity2_raw::get_tag_group(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_ParentLength()` overload"]
-    fn get_parent_length(self) -> u16 {
-        unsafe {
-            let __receiver = <RubyTagInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RubyTagInfo_unity2_raw::get_parent_length(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_ParentLength(u16)` overload"]
-    fn set_parent_length(self, value: impl ::core::convert::Into<u16>) -> () {
-        unsafe {
-            let __receiver = <RubyTagInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RubyTagInfo_unity2_raw::set_parent_length(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Ruby()` overload"]
-    fn get_ruby(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <RubyTagInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RubyTagInfo_unity2_raw::get_ruby(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Ruby(::unity2::Il2CppString)` overload"]
-    fn set_ruby(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <RubyTagInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RubyTagInfo_unity2_raw::set_ruby(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(::unity2::Array<u8>)` overload"]
-    fn ctor(self, param: impl ::core::convert::Into<::unity2::Array<u8>>) -> () {
-        unsafe {
-            let __receiver = <RubyTagInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RubyTagInfo_unity2_raw::ctor(__receiver, ::core::convert::Into::into(param), ::core::option::Option::None)
-        }
-    }
-}
+pub trait IRubyTagInfoMethods : IRubyTagInfo { # [doc = "`get_Tag()` overload"] fn get_tag (self ,) -> u16 { unsafe { let __receiver = < RubyTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RubyTagInfo_unity2_raw :: get_tag (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_TagGroup()` overload"] fn get_tag_group (self ,) -> u16 { unsafe { let __receiver = < RubyTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RubyTagInfo_unity2_raw :: get_tag_group (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_ParentLength()` overload"] fn get_parent_length (self ,) -> u16 { unsafe { let __receiver = < RubyTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RubyTagInfo_unity2_raw :: get_parent_length (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_ParentLength(u16)` overload"] fn set_parent_length (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < RubyTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RubyTagInfo_unity2_raw :: set_parent_length (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`get_Ruby()` overload"] fn get_ruby (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RubyTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RubyTagInfo_unity2_raw :: get_ruby (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Ruby(::unity2::Il2CppString)` overload"] fn set_ruby (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < RubyTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RubyTagInfo_unity2_raw :: set_ruby (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`.ctor(::unity2::Array<u8>)` overload"] fn ctor (self , param : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> () { unsafe { let __receiver = < RubyTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RubyTagInfo_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (param) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "nintendo-message_studio-lib-rubytaginfo")]
-impl<__T: IRubyTagInfo> IRubyTagInfoMethods for __T {}
+impl < __T : IRubyTagInfo > IRubyTagInfoMethods for __T { }
+
+#[cfg(feature = "nintendo-message_studio-lib-rubytaginfo")]
+impl RubyTagInfo { pub fn get_tag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RubyTagInfo_unity2_raw :: __lookup_get_tag :: get_method_info () } pub fn get_tag_group_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RubyTagInfo_unity2_raw :: __lookup_get_tag_group :: get_method_info () } pub fn get_parent_length_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RubyTagInfo_unity2_raw :: __lookup_get_parent_length :: get_method_info () } pub fn set_parent_length_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RubyTagInfo_unity2_raw :: __lookup_set_parent_length :: get_method_info () } pub fn get_ruby_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RubyTagInfo_unity2_raw :: __lookup_get_ruby :: get_method_info () } pub fn set_ruby_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RubyTagInfo_unity2_raw :: __lookup_set_ruby :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RubyTagInfo_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "nintendo-message_studio-lib-rubytaginfo")]
 impl RubyTagInfo {
-    #[doc = "`.ctor(::unity2::Array<u8>)` — overload selector"]
-    pub fn new(param: ::unity2::Array<u8>) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(RubyTagInfo), ::core::stringify!(new),));
-        <Self as IRubyTagInfoMethods>::ctor(this, param);
-        this
-    }
+# [doc = "`.ctor(::unity2::Array<u8>)` — overload selector"] pub fn new (param : :: unity2 :: Array < u8 >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RubyTagInfo) , :: core :: stringify ! (new) ,)) ; < Self as IRubyTagInfoMethods > :: ctor (this , param) ; this }
 }
 
 #[cfg(feature = "nintendo-message_studio-lib-rubytaginfo")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IRubyTagInfo, IRubyTagInfoMethods, RubyTagInfo};
+    pub use super::RubyTagInfo;
+    pub use super::IRubyTagInfo;
+    pub use super::IRubyTagInfoMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

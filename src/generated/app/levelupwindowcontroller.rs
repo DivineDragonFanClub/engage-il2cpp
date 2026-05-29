@@ -2,566 +2,81 @@
 
 #[cfg(feature = "app-levelupwindowcontroller-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/levelupwindowcontroller/LevelUpWindowController.md"))]
-    #[::unity2::class(namespace = "App", name = "LevelUpWindowController")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct LevelUpWindowController {
-        #[offset(24)]
-        #[rename(name = "m_CharaName")]
-        pub m_chara_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(32)]
-        #[rename(name = "m_TitleLevel")]
-        pub m_title_level: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(40)]
-        #[rename(name = "m_Level")]
-        pub m_level: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(48)]
-        #[rename(name = "m_Job")]
-        pub m_job: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[offset(56)]
-        #[rename(name = "m_ParameterMax")]
-        pub m_parameter_max: i32,
-        #[offset(64)]
-        #[rename(name = "m_Hp")]
-        pub m_hp: crate::unity_engine::gameobject::GameObject,
-        #[offset(72)]
-        #[rename(name = "m_Str")]
-        pub m_str: crate::unity_engine::gameobject::GameObject,
-        #[offset(80)]
-        #[rename(name = "m_Magic")]
-        pub m_magic: crate::unity_engine::gameobject::GameObject,
-        #[offset(88)]
-        #[rename(name = "m_Tech")]
-        pub m_tech: crate::unity_engine::gameobject::GameObject,
-        #[offset(96)]
-        #[rename(name = "m_Quick")]
-        pub m_quick: crate::unity_engine::gameobject::GameObject,
-        #[offset(104)]
-        #[rename(name = "m_Def")]
-        pub m_def: crate::unity_engine::gameobject::GameObject,
-        #[offset(112)]
-        #[rename(name = "m_Mdef")]
-        pub m_mdef: crate::unity_engine::gameobject::GameObject,
-        #[offset(120)]
-        #[rename(name = "m_Luck")]
-        pub m_luck: crate::unity_engine::gameobject::GameObject,
-        #[offset(128)]
-        #[rename(name = "m_Phys")]
-        pub m_phys: crate::unity_engine::gameobject::GameObject,
-        #[offset(136)]
-        #[rename(name = "m_Sight")]
-        pub m_sight: crate::unity_engine::gameobject::GameObject,
-        #[offset(144)]
-        #[rename(name = "m_Move")]
-        pub m_move: crate::unity_engine::gameobject::GameObject,
-        #[offset(152)]
-        #[rename(name = "m_ArrowUp")]
-        pub m_arrow_up: crate::unity_engine::sprite::Sprite,
-        #[offset(160)]
-        #[rename(name = "m_ArrowDown")]
-        pub m_arrow_down: crate::unity_engine::sprite::Sprite,
-        #[offset(168)]
-        #[rename(name = "m_FrameUp")]
-        pub m_frame_up: crate::unity_engine::sprite::Sprite,
-        #[offset(176)]
-        #[rename(name = "m_FrameDown")]
-        pub m_frame_down: crate::unity_engine::sprite::Sprite,
-        #[offset(184)]
-        #[rename(name = "m_ParamObjectArray")]
-        pub m_param_object_array: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/levelupwindowcontroller/LevelUpWindowController.md"))] # [:: unity2 :: class (namespace = "App" , name = "LevelUpWindowController")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct LevelUpWindowController {
+# [offset (24)] # [rename (name = "m_CharaName")] pub m_chara_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (32)] # [rename (name = "m_TitleLevel")] pub m_title_level : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (40)] # [rename (name = "m_Level")] pub m_level : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (48)] # [rename (name = "m_Job")] pub m_job : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (56)] # [rename (name = "m_ParameterMax")] pub m_parameter_max : i32 ,
+# [offset (64)] # [rename (name = "m_Hp")] pub m_hp : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (72)] # [rename (name = "m_Str")] pub m_str : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (80)] # [rename (name = "m_Magic")] pub m_magic : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (88)] # [rename (name = "m_Tech")] pub m_tech : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (96)] # [rename (name = "m_Quick")] pub m_quick : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (104)] # [rename (name = "m_Def")] pub m_def : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (112)] # [rename (name = "m_Mdef")] pub m_mdef : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (120)] # [rename (name = "m_Luck")] pub m_luck : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (128)] # [rename (name = "m_Phys")] pub m_phys : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (136)] # [rename (name = "m_Sight")] pub m_sight : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (144)] # [rename (name = "m_Move")] pub m_move : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (152)] # [rename (name = "m_ArrowUp")] pub m_arrow_up : crate :: unity_engine :: sprite :: Sprite ,
+# [offset (160)] # [rename (name = "m_ArrowDown")] pub m_arrow_down : crate :: unity_engine :: sprite :: Sprite ,
+# [offset (168)] # [rename (name = "m_FrameUp")] pub m_frame_up : crate :: unity_engine :: sprite :: Sprite ,
+# [offset (176)] # [rename (name = "m_FrameDown")] pub m_frame_down : crate :: unity_engine :: sprite :: Sprite ,
+# [offset (184)] # [rename (name = "m_ParamObjectArray")] pub m_param_object_array : :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > ,
+}
+
 }
 
 #[cfg(feature = "app-levelupwindowcontroller-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-levelupwindowcontroller")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __LevelUpWindowController_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LevelUpWindowController as ::unity2::ClassIdentity>::class(),
-                "Start",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LevelUpWindowController as ::unity2::ClassIdentity>::NAME,
-                        "Start",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start(this: LevelUpWindowController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(LevelUpWindowController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LevelUpWindowController as ::unity2::ClassIdentity>::class(),
-                "Update",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LevelUpWindowController as ::unity2::ClassIdentity>::NAME,
-                        "Update",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update(this: LevelUpWindowController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(LevelUpWindowController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_value_text_mesh {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LevelUpWindowController as ::unity2::ClassIdentity>::class(),
-                "GetValueTextMesh",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LevelUpWindowController as ::unity2::ClassIdentity>::NAME,
-                        "GetValueTextMesh",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_value_text_mesh(
-        this: LevelUpWindowController,
-        param_root: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::tm_pro::textmeshprougui::TextMeshProUGUI {
-        let inner: extern "C" fn(
-            LevelUpWindowController,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> crate::tm_pro::textmeshprougui::TextMeshProUGUI = ::core::mem::transmute(__lookup_get_value_text_mesh::get_method_info().method_ptr);
-        inner(this, param_root, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start_anime {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LevelUpWindowController as ::unity2::ClassIdentity>::class(),
-                "StartAnime",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LevelUpWindowController as ::unity2::ClassIdentity>::NAME,
-                        "StartAnime",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start_anime(
-        this: LevelUpWindowController,
-        param_root: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(LevelUpWindowController, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_start_anime::get_method_info().method_ptr);
-        inner(this, param_root, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup_params {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LevelUpWindowController as ::unity2::ClassIdentity>::class(),
-                "SetupParams",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LevelUpWindowController as ::unity2::ClassIdentity>::NAME,
-                        "SetupParams",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup_params(
-        this: LevelUpWindowController,
-        unit: crate::app::unit::Unit,
-        next: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(LevelUpWindowController, crate::app::unit::Unit, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_setup_params::get_method_info().method_ptr);
-        inner(this, unit, next, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_change_param {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::capabilitydefinition::CapabilityDefinition_Type as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LevelUpWindowController as ::unity2::ClassIdentity>::class(),
-                "ChangeParam",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LevelUpWindowController as ::unity2::ClassIdentity>::NAME,
-                        "ChangeParam",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn change_param(
-        this: LevelUpWindowController,
-        r#type: crate::app::capabilitydefinition::CapabilityDefinition_Type,
-        change: i32,
-        new_value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            LevelUpWindowController,
-            crate::app::capabilitydefinition::CapabilityDefinition_Type,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_change_param::get_method_info().method_ptr);
-        inner(this, r#type, change, new_value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_out_anime {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LevelUpWindowController as ::unity2::ClassIdentity>::class(),
-                "OutAnime",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LevelUpWindowController as ::unity2::ClassIdentity>::NAME,
-                        "OutAnime",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn out_anime(this: LevelUpWindowController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(LevelUpWindowController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_out_anime::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_animation {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LevelUpWindowController as ::unity2::ClassIdentity>::class(),
-                "IsAnimation",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LevelUpWindowController as ::unity2::ClassIdentity>::NAME,
-                        "IsAnimation",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_animation(this: LevelUpWindowController, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(LevelUpWindowController, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_animation::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LevelUpWindowController as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LevelUpWindowController as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: LevelUpWindowController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(LevelUpWindowController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __LevelUpWindowController_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LevelUpWindowController as :: unity2 :: ClassIdentity > :: class () , "Start" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LevelUpWindowController as :: unity2 :: ClassIdentity > :: NAME , "Start" , e) , } } } pub unsafe fn start (this : LevelUpWindowController , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (LevelUpWindowController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LevelUpWindowController as :: unity2 :: ClassIdentity > :: class () , "Update" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LevelUpWindowController as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , } } } pub unsafe fn update (this : LevelUpWindowController , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (LevelUpWindowController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_value_text_mesh { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LevelUpWindowController as :: unity2 :: ClassIdentity > :: class () , "GetValueTextMesh" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LevelUpWindowController as :: unity2 :: ClassIdentity > :: NAME , "GetValueTextMesh" , e) , } } } pub unsafe fn get_value_text_mesh (this : LevelUpWindowController , param_root : crate :: unity_engine :: gameobject :: GameObject , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI { let inner : extern "C" fn (LevelUpWindowController , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI = :: core :: mem :: transmute (__lookup_get_value_text_mesh :: get_method_info () . method_ptr ,) ; inner (this , param_root , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start_anime { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LevelUpWindowController as :: unity2 :: ClassIdentity > :: class () , "StartAnime" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LevelUpWindowController as :: unity2 :: ClassIdentity > :: NAME , "StartAnime" , e) , } } } pub unsafe fn start_anime (this : LevelUpWindowController , param_root : crate :: unity_engine :: gameobject :: GameObject , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (LevelUpWindowController , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start_anime :: get_method_info () . method_ptr ,) ; inner (this , param_root , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup_params { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LevelUpWindowController as :: unity2 :: ClassIdentity > :: class () , "SetupParams" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LevelUpWindowController as :: unity2 :: ClassIdentity > :: NAME , "SetupParams" , e) , } } } pub unsafe fn setup_params (this : LevelUpWindowController , unit : crate :: app :: unit :: Unit , next : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (LevelUpWindowController , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_setup_params :: get_method_info () . method_ptr ,) ; inner (this , unit , next , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_change_param { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: capabilitydefinition :: CapabilityDefinition_Type as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LevelUpWindowController as :: unity2 :: ClassIdentity > :: class () , "ChangeParam" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LevelUpWindowController as :: unity2 :: ClassIdentity > :: NAME , "ChangeParam" , e) , } } } pub unsafe fn change_param (this : LevelUpWindowController , r#type : crate :: app :: capabilitydefinition :: CapabilityDefinition_Type , change : i32 , new_value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (LevelUpWindowController , crate :: app :: capabilitydefinition :: CapabilityDefinition_Type , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_change_param :: get_method_info () . method_ptr ,) ; inner (this , r#type , change , new_value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_out_anime { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LevelUpWindowController as :: unity2 :: ClassIdentity > :: class () , "OutAnime" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LevelUpWindowController as :: unity2 :: ClassIdentity > :: NAME , "OutAnime" , e) , } } } pub unsafe fn out_anime (this : LevelUpWindowController , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (LevelUpWindowController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_out_anime :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_animation { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LevelUpWindowController as :: unity2 :: ClassIdentity > :: class () , "IsAnimation" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LevelUpWindowController as :: unity2 :: ClassIdentity > :: NAME , "IsAnimation" , e) , } } } pub unsafe fn is_animation (this : LevelUpWindowController , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (LevelUpWindowController , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_animation :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LevelUpWindowController as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LevelUpWindowController as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : LevelUpWindowController , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (LevelUpWindowController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-levelupwindowcontroller")]
-pub trait ILevelUpWindowControllerMethods: ILevelUpWindowController {
-    #[doc = "`Start()` overload"]
-    fn start(self) -> () {
-        unsafe {
-            let __receiver =
-                <LevelUpWindowController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LevelUpWindowController_unity2_raw::start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver =
-                <LevelUpWindowController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LevelUpWindowController_unity2_raw::update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetValueTextMesh(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn get_value_text_mesh(
-        self,
-        param_root: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> crate::tm_pro::textmeshprougui::TextMeshProUGUI {
-        unsafe {
-            let __receiver =
-                <LevelUpWindowController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LevelUpWindowController_unity2_raw::get_value_text_mesh(
-                __receiver,
-                ::core::convert::Into::into(param_root),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`StartAnime(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn start_anime(self, param_root: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
-        unsafe {
-            let __receiver =
-                <LevelUpWindowController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LevelUpWindowController_unity2_raw::start_anime(__receiver, ::core::convert::Into::into(param_root), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetupParams(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
-    fn setup_params(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>, next: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe {
-            let __receiver =
-                <LevelUpWindowController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LevelUpWindowController_unity2_raw::setup_params(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(next),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ChangeParam(crate::app::capabilitydefinition::CapabilityDefinition_Type, i32, i32)` overload"]
-    fn change_param(
-        self,
-        r#type: impl ::core::convert::Into<crate::app::capabilitydefinition::CapabilityDefinition_Type>,
-        change: impl ::core::convert::Into<i32>,
-        new_value: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <LevelUpWindowController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LevelUpWindowController_unity2_raw::change_param(
-                __receiver,
-                ::core::convert::Into::into(r#type),
-                ::core::convert::Into::into(change),
-                ::core::convert::Into::into(new_value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OutAnime()` overload"]
-    fn out_anime(self) -> () {
-        unsafe {
-            let __receiver =
-                <LevelUpWindowController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LevelUpWindowController_unity2_raw::out_anime(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsAnimation()` overload"]
-    fn is_animation(self) -> bool {
-        unsafe {
-            let __receiver =
-                <LevelUpWindowController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LevelUpWindowController_unity2_raw::is_animation(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <LevelUpWindowController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LevelUpWindowController_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait ILevelUpWindowControllerMethods : ILevelUpWindowController { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < LevelUpWindowController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __LevelUpWindowController_unity2_raw :: start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < LevelUpWindowController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __LevelUpWindowController_unity2_raw :: update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetValueTextMesh(crate::unity_engine::gameobject::GameObject)` overload"] fn get_value_text_mesh (self , param_root : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI { unsafe { let __receiver = < LevelUpWindowController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __LevelUpWindowController_unity2_raw :: get_value_text_mesh (__receiver , :: core :: convert :: Into :: into (param_root) , :: core :: option :: Option :: None) } } # [doc = "`StartAnime(crate::unity_engine::gameobject::GameObject)` overload"] fn start_anime (self , param_root : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < LevelUpWindowController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __LevelUpWindowController_unity2_raw :: start_anime (__receiver , :: core :: convert :: Into :: into (param_root) , :: core :: option :: Option :: None) } } # [doc = "`SetupParams(crate::app::unit::Unit, crate::app::unit::Unit)` overload"] fn setup_params (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , next : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < LevelUpWindowController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __LevelUpWindowController_unity2_raw :: setup_params (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (next) , :: core :: option :: Option :: None) } } # [doc = "`ChangeParam(crate::app::capabilitydefinition::CapabilityDefinition_Type, i32, i32)` overload"] fn change_param (self , r#type : impl :: core :: convert :: Into < crate :: app :: capabilitydefinition :: CapabilityDefinition_Type > , change : impl :: core :: convert :: Into < i32 > , new_value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < LevelUpWindowController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __LevelUpWindowController_unity2_raw :: change_param (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (change) , :: core :: convert :: Into :: into (new_value) , :: core :: option :: Option :: None) } } # [doc = "`OutAnime()` overload"] fn out_anime (self ,) -> () { unsafe { let __receiver = < LevelUpWindowController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __LevelUpWindowController_unity2_raw :: out_anime (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsAnimation()` overload"] fn is_animation (self ,) -> bool { unsafe { let __receiver = < LevelUpWindowController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __LevelUpWindowController_unity2_raw :: is_animation (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < LevelUpWindowController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __LevelUpWindowController_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-levelupwindowcontroller")]
-impl<__T: ILevelUpWindowController> ILevelUpWindowControllerMethods for __T {}
+impl < __T : ILevelUpWindowController > ILevelUpWindowControllerMethods for __T { }
+
+#[cfg(feature = "app-levelupwindowcontroller")]
+impl LevelUpWindowController { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LevelUpWindowController_unity2_raw :: __lookup_start :: get_method_info () } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LevelUpWindowController_unity2_raw :: __lookup_update :: get_method_info () } pub fn get_value_text_mesh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LevelUpWindowController_unity2_raw :: __lookup_get_value_text_mesh :: get_method_info () } pub fn start_anime_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LevelUpWindowController_unity2_raw :: __lookup_start_anime :: get_method_info () } pub fn setup_params_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LevelUpWindowController_unity2_raw :: __lookup_setup_params :: get_method_info () } pub fn change_param_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LevelUpWindowController_unity2_raw :: __lookup_change_param :: get_method_info () } pub fn out_anime_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LevelUpWindowController_unity2_raw :: __lookup_out_anime :: get_method_info () } pub fn is_animation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LevelUpWindowController_unity2_raw :: __lookup_is_animation :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LevelUpWindowController_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-levelupwindowcontroller")]
 impl LevelUpWindowController {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(LevelUpWindowController),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ILevelUpWindowControllerMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (LevelUpWindowController) , :: core :: stringify ! (new) ,)) ; < Self as ILevelUpWindowControllerMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-levelupwindowcontroller")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ILevelUpWindowController, ILevelUpWindowControllerMethods, LevelUpWindowController};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::LevelUpWindowController;
+    pub use super::ILevelUpWindowController;
+    pub use super::ILevelUpWindowControllerMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

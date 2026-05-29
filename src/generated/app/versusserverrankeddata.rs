@@ -2,234 +2,50 @@
 
 #[cfg(feature = "app-versusserverrankeddata-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::versusserverdata::{IVersusServerData, VersusServerData},
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusserverrankeddata/VersusServerRankedData.md"))]
-    #[::unity2::class(namespace = "App", name = "VersusServerRankedData")]
-    #[parent(crate::app::versusserverdata::VersusServerData)]
-    pub struct VersusServerRankedData {
-        #[static_field]
-        #[rename(name = "Version")]
-        pub version: u16,
-        #[offset(40)]
-        #[rename(name = "m_EditData")]
-        pub m_edit_data: crate::app::mapeditdata::MapEditData,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: versusserverdata :: { IVersusServerData , VersusServerData }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusserverrankeddata/VersusServerRankedData.md"))] # [:: unity2 :: class (namespace = "App" , name = "VersusServerRankedData")] # [parent (crate :: app :: versusserverdata :: VersusServerData)] pub struct VersusServerRankedData {
+# [static_field] # [rename (name = "Version")] pub version : u16 ,
+# [offset (40)] # [rename (name = "m_EditData")] pub m_edit_data : crate :: app :: mapeditdata :: MapEditData ,
+}
+
 }
 
 #[cfg(feature = "app-versusserverrankeddata-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-versusserverrankeddata")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __VersusServerRankedData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusServerRankedData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusServerRankedData as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: VersusServerRankedData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(VersusServerRankedData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_serialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusServerRankedData as ::unity2::ClassIdentity>::class(),
-                "Serialize",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusServerRankedData as ::unity2::ClassIdentity>::NAME,
-                        "Serialize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn serialize(this: VersusServerRankedData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(VersusServerRankedData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_serialize::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_deserialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusServerRankedData as ::unity2::ClassIdentity>::class(),
-                "Deserialize",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusServerRankedData as ::unity2::ClassIdentity>::NAME,
-                        "Deserialize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn deserialize(this: VersusServerRankedData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(VersusServerRankedData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_deserialize::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_edit_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusServerRankedData as ::unity2::ClassIdentity>::class(),
-                "get_EditData",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusServerRankedData as ::unity2::ClassIdentity>::NAME,
-                        "get_EditData",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_edit_data(
-        this: VersusServerRankedData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::mapeditdata::MapEditData {
-        let inner: extern "C" fn(VersusServerRankedData, ::unity2::OptionalMethod) -> crate::app::mapeditdata::MapEditData =
-            ::core::mem::transmute(__lookup_get_edit_data::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __VersusServerRankedData_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusServerRankedData as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusServerRankedData as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : VersusServerRankedData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (VersusServerRankedData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_serialize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusServerRankedData as :: unity2 :: ClassIdentity > :: class () , "Serialize" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusServerRankedData as :: unity2 :: ClassIdentity > :: NAME , "Serialize" , e) , } } } pub unsafe fn serialize (this : VersusServerRankedData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (VersusServerRankedData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_serialize :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_deserialize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusServerRankedData as :: unity2 :: ClassIdentity > :: class () , "Deserialize" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusServerRankedData as :: unity2 :: ClassIdentity > :: NAME , "Deserialize" , e) , } } } pub unsafe fn deserialize (this : VersusServerRankedData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (VersusServerRankedData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_deserialize :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_edit_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusServerRankedData as :: unity2 :: ClassIdentity > :: class () , "get_EditData" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusServerRankedData as :: unity2 :: ClassIdentity > :: NAME , "get_EditData" , e) , } } } pub unsafe fn get_edit_data (this : VersusServerRankedData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: mapeditdata :: MapEditData { let inner : extern "C" fn (VersusServerRankedData , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapeditdata :: MapEditData = :: core :: mem :: transmute (__lookup_get_edit_data :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-versusserverrankeddata")]
-pub trait IVersusServerRankedDataMethods: IVersusServerRankedData {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <VersusServerRankedData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VersusServerRankedData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Serialize()` overload"]
-    fn serialize(self) -> () {
-        unsafe {
-            let __receiver =
-                <VersusServerRankedData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VersusServerRankedData_unity2_raw::serialize(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Deserialize()` overload"]
-    fn deserialize(self) -> bool {
-        unsafe {
-            let __receiver =
-                <VersusServerRankedData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VersusServerRankedData_unity2_raw::deserialize(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_EditData()` overload"]
-    fn get_edit_data(self) -> crate::app::mapeditdata::MapEditData {
-        unsafe {
-            let __receiver =
-                <VersusServerRankedData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __VersusServerRankedData_unity2_raw::get_edit_data(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IVersusServerRankedDataMethods : IVersusServerRankedData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < VersusServerRankedData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VersusServerRankedData_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Serialize()` overload"] fn serialize (self ,) -> () { unsafe { let __receiver = < VersusServerRankedData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VersusServerRankedData_unity2_raw :: serialize (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Deserialize()` overload"] fn deserialize (self ,) -> bool { unsafe { let __receiver = < VersusServerRankedData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VersusServerRankedData_unity2_raw :: deserialize (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_EditData()` overload"] fn get_edit_data (self ,) -> crate :: app :: mapeditdata :: MapEditData { unsafe { let __receiver = < VersusServerRankedData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VersusServerRankedData_unity2_raw :: get_edit_data (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-versusserverrankeddata")]
-impl<__T: IVersusServerRankedData> IVersusServerRankedDataMethods for __T {}
+impl < __T : IVersusServerRankedData > IVersusServerRankedDataMethods for __T { }
+
+#[cfg(feature = "app-versusserverrankeddata")]
+impl VersusServerRankedData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusServerRankedData_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusServerRankedData_unity2_raw :: __lookup_serialize :: get_method_info () } pub fn deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusServerRankedData_unity2_raw :: __lookup_deserialize :: get_method_info () } pub fn get_edit_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __VersusServerRankedData_unity2_raw :: __lookup_get_edit_data :: get_method_info () } }
 
 #[cfg(feature = "app-versusserverrankeddata")]
 impl VersusServerRankedData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusServerRankedData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersusServerRankedDataMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VersusServerRankedData) , :: core :: stringify ! (new) ,)) ; < Self as IVersusServerRankedDataMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-versusserverrankeddata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IVersusServerRankedData, IVersusServerRankedDataMethods, VersusServerRankedData};
-    #[cfg(feature = "app-versusserverdata")]
-    pub use crate::app::versusserverdata::IVersusServerDataMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{app::versusserverdata::IVersusServerData, system::object::IObject};
+    pub use super::VersusServerRankedData;
+    pub use super::IVersusServerRankedData;
+    pub use super::IVersusServerRankedDataMethods;
+    pub use crate::app::versusserverdata::IVersusServerData;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-versusserverdata")] pub use crate::app::versusserverdata::IVersusServerDataMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

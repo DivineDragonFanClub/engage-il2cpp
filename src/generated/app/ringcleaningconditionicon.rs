@@ -2,401 +2,64 @@
 
 #[cfg(feature = "app-ringcleaningconditionicon-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringcleaningconditionicon/RingCleaningConditionIcon.md"))]
-    #[::unity2::class(namespace = "App", name = "RingCleaningConditionIcon")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct RingCleaningConditionIcon {
-        #[offset(24)]
-        #[rename(name = "Gauge")]
-        pub gauge: crate::unity_engine::gameobject::GameObject,
-        #[offset(32)]
-        #[rename(name = "m_Animator")]
-        pub m_animator: crate::unity_engine::animator::Animator,
-        #[offset(40)]
-        #[rename(name = "m_GaugeAnimator")]
-        pub m_gauge_animator: crate::unity_engine::animator::Animator,
-        #[offset(48)]
-        #[rename(name = "m_GaugeController")]
-        pub m_gauge_controller: crate::app::ringcleaninggaugecontroller::RingCleaningGaugeController,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringcleaningconditionicon/RingCleaningConditionIcon.md"))] # [:: unity2 :: class (namespace = "App" , name = "RingCleaningConditionIcon")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct RingCleaningConditionIcon {
+# [offset (24)] # [rename (name = "Gauge")] pub gauge : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (32)] # [rename (name = "m_Animator")] pub m_animator : crate :: unity_engine :: animator :: Animator ,
+# [offset (40)] # [rename (name = "m_GaugeAnimator")] pub m_gauge_animator : crate :: unity_engine :: animator :: Animator ,
+# [offset (48)] # [rename (name = "m_GaugeController")] pub m_gauge_controller : crate :: app :: ringcleaninggaugecontroller :: RingCleaningGaugeController ,
+}
+
 }
 
 #[cfg(feature = "app-ringcleaningconditionicon-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-ringcleaningconditionicon")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RingCleaningConditionIcon_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingCleaningConditionIcon as ::unity2::ClassIdentity>::class(),
-                "Start",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingCleaningConditionIcon as ::unity2::ClassIdentity>::NAME,
-                        "Start",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start(this: RingCleaningConditionIcon, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RingCleaningConditionIcon, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_icon_anim {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingCleaningConditionIcon as ::unity2::ClassIdentity>::class(),
-                "PlayIconAnim",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingCleaningConditionIcon as ::unity2::ClassIdentity>::NAME,
-                        "PlayIconAnim",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_icon_anim(
-        this: RingCleaningConditionIcon,
-        old_dirty: i32,
-        new_dirty: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingCleaningConditionIcon, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_icon_anim::get_method_info().method_ptr);
-        inner(this, old_dirty, new_dirty, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset_param {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingCleaningConditionIcon as ::unity2::ClassIdentity>::class(),
-                "ResetParam",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingCleaningConditionIcon as ::unity2::ClassIdentity>::NAME,
-                        "ResetParam",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reset_param(this: RingCleaningConditionIcon, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RingCleaningConditionIcon, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_reset_param::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_position {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingCleaningConditionIcon as ::unity2::ClassIdentity>::class(),
-                "SetPosition",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingCleaningConditionIcon as ::unity2::ClassIdentity>::NAME,
-                        "SetPosition",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_position(this: RingCleaningConditionIcon, x: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RingCleaningConditionIcon, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_position::get_method_info().method_ptr);
-        inner(this, x, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_bool_animators {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingCleaningConditionIcon as ::unity2::ClassIdentity>::class(),
-                "SetBoolAnimators",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingCleaningConditionIcon as ::unity2::ClassIdentity>::NAME,
-                        "SetBoolAnimators",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_bool_animators(
-        this: RingCleaningConditionIcon,
-        name: ::unity2::Il2CppString,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingCleaningConditionIcon, ::unity2::Il2CppString, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_bool_animators::get_method_info().method_ptr);
-        inner(this, name, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_animators {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingCleaningConditionIcon as ::unity2::ClassIdentity>::class(),
-                "PlayAnimators",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingCleaningConditionIcon as ::unity2::ClassIdentity>::NAME,
-                        "PlayAnimators",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_animators(
-        this: RingCleaningConditionIcon,
-        state_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingCleaningConditionIcon, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_animators::get_method_info().method_ptr);
-        inner(this, state_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingCleaningConditionIcon as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingCleaningConditionIcon as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: RingCleaningConditionIcon, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RingCleaningConditionIcon, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RingCleaningConditionIcon_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RingCleaningConditionIcon as :: unity2 :: ClassIdentity > :: class () , "Start" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingCleaningConditionIcon as :: unity2 :: ClassIdentity > :: NAME , "Start" , e) , } } } pub unsafe fn start (this : RingCleaningConditionIcon , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RingCleaningConditionIcon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_icon_anim { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RingCleaningConditionIcon as :: unity2 :: ClassIdentity > :: class () , "PlayIconAnim" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingCleaningConditionIcon as :: unity2 :: ClassIdentity > :: NAME , "PlayIconAnim" , e) , } } } pub unsafe fn play_icon_anim (this : RingCleaningConditionIcon , old_dirty : i32 , new_dirty : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RingCleaningConditionIcon , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_icon_anim :: get_method_info () . method_ptr ,) ; inner (this , old_dirty , new_dirty , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_reset_param { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RingCleaningConditionIcon as :: unity2 :: ClassIdentity > :: class () , "ResetParam" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingCleaningConditionIcon as :: unity2 :: ClassIdentity > :: NAME , "ResetParam" , e) , } } } pub unsafe fn reset_param (this : RingCleaningConditionIcon , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RingCleaningConditionIcon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_reset_param :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_position { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RingCleaningConditionIcon as :: unity2 :: ClassIdentity > :: class () , "SetPosition" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingCleaningConditionIcon as :: unity2 :: ClassIdentity > :: NAME , "SetPosition" , e) , } } } pub unsafe fn set_position (this : RingCleaningConditionIcon , x : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RingCleaningConditionIcon , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_position :: get_method_info () . method_ptr ,) ; inner (this , x , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_bool_animators { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RingCleaningConditionIcon as :: unity2 :: ClassIdentity > :: class () , "SetBoolAnimators" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingCleaningConditionIcon as :: unity2 :: ClassIdentity > :: NAME , "SetBoolAnimators" , e) , } } } pub unsafe fn set_bool_animators (this : RingCleaningConditionIcon , name : :: unity2 :: Il2CppString , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RingCleaningConditionIcon , :: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_bool_animators :: get_method_info () . method_ptr ,) ; inner (this , name , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_animators { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RingCleaningConditionIcon as :: unity2 :: ClassIdentity > :: class () , "PlayAnimators" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingCleaningConditionIcon as :: unity2 :: ClassIdentity > :: NAME , "PlayAnimators" , e) , } } } pub unsafe fn play_animators (this : RingCleaningConditionIcon , state_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RingCleaningConditionIcon , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_animators :: get_method_info () . method_ptr ,) ; inner (this , state_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RingCleaningConditionIcon as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingCleaningConditionIcon as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RingCleaningConditionIcon , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RingCleaningConditionIcon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-ringcleaningconditionicon")]
-pub trait IRingCleaningConditionIconMethods: IRingCleaningConditionIcon {
-    #[doc = "`Start()` overload"]
-    fn start(self) -> () {
-        unsafe {
-            let __receiver =
-                <RingCleaningConditionIcon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingCleaningConditionIcon_unity2_raw::start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`PlayIconAnim(i32, i32)` overload"]
-    fn play_icon_anim(self, old_dirty: impl ::core::convert::Into<i32>, new_dirty: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <RingCleaningConditionIcon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingCleaningConditionIcon_unity2_raw::play_icon_anim(
-                __receiver,
-                ::core::convert::Into::into(old_dirty),
-                ::core::convert::Into::into(new_dirty),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ResetParam()` overload"]
-    fn reset_param(self) -> () {
-        unsafe {
-            let __receiver =
-                <RingCleaningConditionIcon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingCleaningConditionIcon_unity2_raw::reset_param(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetPosition(f32)` overload"]
-    fn set_position(self, x: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver =
-                <RingCleaningConditionIcon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingCleaningConditionIcon_unity2_raw::set_position(__receiver, ::core::convert::Into::into(x), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetBoolAnimators(::unity2::Il2CppString, bool)` overload"]
-    fn set_bool_animators(self, name: impl ::core::convert::Into<::unity2::Il2CppString>, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <RingCleaningConditionIcon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingCleaningConditionIcon_unity2_raw::set_bool_animators(
-                __receiver,
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`PlayAnimators(::unity2::Il2CppString)` overload"]
-    fn play_animators(self, state_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver =
-                <RingCleaningConditionIcon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingCleaningConditionIcon_unity2_raw::play_animators(__receiver, ::core::convert::Into::into(state_name), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <RingCleaningConditionIcon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingCleaningConditionIcon_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IRingCleaningConditionIconMethods : IRingCleaningConditionIcon { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < RingCleaningConditionIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RingCleaningConditionIcon_unity2_raw :: start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`PlayIconAnim(i32, i32)` overload"] fn play_icon_anim (self , old_dirty : impl :: core :: convert :: Into < i32 > , new_dirty : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < RingCleaningConditionIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RingCleaningConditionIcon_unity2_raw :: play_icon_anim (__receiver , :: core :: convert :: Into :: into (old_dirty) , :: core :: convert :: Into :: into (new_dirty) , :: core :: option :: Option :: None) } } # [doc = "`ResetParam()` overload"] fn reset_param (self ,) -> () { unsafe { let __receiver = < RingCleaningConditionIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RingCleaningConditionIcon_unity2_raw :: reset_param (__receiver , :: core :: option :: Option :: None) } } # [doc = "`SetPosition(f32)` overload"] fn set_position (self , x : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < RingCleaningConditionIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RingCleaningConditionIcon_unity2_raw :: set_position (__receiver , :: core :: convert :: Into :: into (x) , :: core :: option :: Option :: None) } } # [doc = "`SetBoolAnimators(::unity2::Il2CppString, bool)` overload"] fn set_bool_animators (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < RingCleaningConditionIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RingCleaningConditionIcon_unity2_raw :: set_bool_animators (__receiver , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`PlayAnimators(::unity2::Il2CppString)` overload"] fn play_animators (self , state_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < RingCleaningConditionIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RingCleaningConditionIcon_unity2_raw :: play_animators (__receiver , :: core :: convert :: Into :: into (state_name) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RingCleaningConditionIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RingCleaningConditionIcon_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-ringcleaningconditionicon")]
-impl<__T: IRingCleaningConditionIcon> IRingCleaningConditionIconMethods for __T {}
+impl < __T : IRingCleaningConditionIcon > IRingCleaningConditionIconMethods for __T { }
+
+#[cfg(feature = "app-ringcleaningconditionicon")]
+impl RingCleaningConditionIcon { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RingCleaningConditionIcon_unity2_raw :: __lookup_start :: get_method_info () } pub fn play_icon_anim_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RingCleaningConditionIcon_unity2_raw :: __lookup_play_icon_anim :: get_method_info () } pub fn reset_param_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RingCleaningConditionIcon_unity2_raw :: __lookup_reset_param :: get_method_info () } pub fn set_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RingCleaningConditionIcon_unity2_raw :: __lookup_set_position :: get_method_info () } pub fn set_bool_animators_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RingCleaningConditionIcon_unity2_raw :: __lookup_set_bool_animators :: get_method_info () } pub fn play_animators_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RingCleaningConditionIcon_unity2_raw :: __lookup_play_animators :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RingCleaningConditionIcon_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-ringcleaningconditionicon")]
 impl RingCleaningConditionIcon {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingCleaningConditionIcon),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingCleaningConditionIconMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RingCleaningConditionIcon) , :: core :: stringify ! (new) ,)) ; < Self as IRingCleaningConditionIconMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-ringcleaningconditionicon")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IRingCleaningConditionIcon, IRingCleaningConditionIconMethods, RingCleaningConditionIcon};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::RingCleaningConditionIcon;
+    pub use super::IRingCleaningConditionIcon;
+    pub use super::IRingCleaningConditionIconMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

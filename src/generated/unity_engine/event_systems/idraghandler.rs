@@ -2,76 +2,34 @@
 
 #[cfg(feature = "unity_engine-event_systems-idraghandler-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/idraghandler/IDragHandler.md"))]
-    #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "IDragHandler")]
-    pub struct IDragHandler {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/idraghandler/IDragHandler.md"))] # [:: unity2 :: class (namespace = "UnityEngine.EventSystems" , name = "IDragHandler")] pub struct IDragHandler {}
+
 }
 
 #[cfg(feature = "unity_engine-event_systems-idraghandler-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-event_systems-idraghandler")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __IDragHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_drag {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::event_systems::pointereventdata::PointerEventData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<IDragHandler as ::unity2::ClassIdentity>::class(), "OnDrag", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IDragHandler as ::unity2::ClassIdentity>::NAME,
-                        "OnDrag",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_drag(
-        this: IDragHandler,
-        event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            IDragHandler,
-            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_on_drag::get_method_info().method_ptr);
-        inner(this, event_data, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IDragHandler_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_drag { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IDragHandler as :: unity2 :: ClassIdentity > :: class () , "OnDrag" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IDragHandler as :: unity2 :: ClassIdentity > :: NAME , "OnDrag" , e) , } } } pub unsafe fn on_drag (this : IDragHandler , event_data : crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (IDragHandler , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_drag :: get_method_info () . method_ptr ,) ; inner (this , event_data , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-event_systems-idraghandler")]
-pub trait IIDragHandlerMethods: IIDragHandler {
-    #[doc = "`OnDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
-    fn on_drag(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>) -> () {
-        unsafe {
-            let __receiver = <IDragHandler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IDragHandler_unity2_raw::on_drag(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
-        }
-    }
-}
+pub trait IIDragHandlerMethods : IIDragHandler { # [doc = "`OnDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn on_drag (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> () { unsafe { let __receiver = < IDragHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IDragHandler_unity2_raw :: on_drag (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-event_systems-idraghandler")]
-impl<__T: IIDragHandler> IIDragHandlerMethods for __T {}
+impl < __T : IIDragHandler > IIDragHandlerMethods for __T { }
+
+#[cfg(feature = "unity_engine-event_systems-idraghandler")]
+impl IDragHandler { pub fn on_drag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IDragHandler_unity2_raw :: __lookup_on_drag :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-event_systems-idraghandler")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IDragHandler, IIDragHandler, IIDragHandlerMethods};
+    pub use super::IDragHandler;
+    pub use super::IIDragHandler;
+    pub use super::IIDragHandlerMethods;
 }

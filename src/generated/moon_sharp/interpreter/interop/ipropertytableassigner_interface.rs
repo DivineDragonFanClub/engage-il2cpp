@@ -2,96 +2,34 @@
 
 #[cfg(feature = "moon_sharp-interpreter-interop-ipropertytableassigner_interface-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/ipropertytableassigner_interface/IPropertyTableAssigner_Interface.md"))]
-    #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop", name = "IPropertyTableAssigner")]
-    pub struct IPropertyTableAssigner_Interface {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/ipropertytableassigner_interface/IPropertyTableAssigner_Interface.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Interop" , name = "IPropertyTableAssigner")] pub struct IPropertyTableAssigner_Interface {}
+
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-ipropertytableassigner_interface-types")]
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-interop-ipropertytableassigner_interface")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __IPropertyTableAssigner_Interface_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_assign_object_unchecked {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::moon_sharp::interpreter::table::Table as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IPropertyTableAssigner_Interface as ::unity2::ClassIdentity>::class(),
-                "AssignObjectUnchecked",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <IPropertyTableAssigner_Interface as ::unity2::ClassIdentity>::NAME,
-                        "AssignObjectUnchecked",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn assign_object_unchecked(
-        this: IPropertyTableAssigner_Interface,
-        o: crate::system::object::Object,
-        data: crate::moon_sharp::interpreter::table::Table,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            IPropertyTableAssigner_Interface,
-            crate::system::object::Object,
-            crate::moon_sharp::interpreter::table::Table,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_assign_object_unchecked::get_method_info().method_ptr);
-        inner(this, o, data, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IPropertyTableAssigner_Interface_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_assign_object_unchecked { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: table :: Table as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IPropertyTableAssigner_Interface as :: unity2 :: ClassIdentity > :: class () , "AssignObjectUnchecked" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IPropertyTableAssigner_Interface as :: unity2 :: ClassIdentity > :: NAME , "AssignObjectUnchecked" , e) , } } } pub unsafe fn assign_object_unchecked (this : IPropertyTableAssigner_Interface , o : crate :: system :: object :: Object , data : crate :: moon_sharp :: interpreter :: table :: Table , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (IPropertyTableAssigner_Interface , crate :: system :: object :: Object , crate :: moon_sharp :: interpreter :: table :: Table , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_assign_object_unchecked :: get_method_info () . method_ptr ,) ; inner (this , o , data , __unity2_method_info) } }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-ipropertytableassigner_interface")]
-pub trait IIPropertyTableAssigner_InterfaceMethods: IIPropertyTableAssigner_Interface {
-    #[doc = "`AssignObjectUnchecked(crate::system::object::Object, crate::moon_sharp::interpreter::table::Table)` overload"]
-    fn assign_object_unchecked(
-        self,
-        o: impl ::core::convert::Into<crate::system::object::Object>,
-        data: impl ::core::convert::Into<crate::moon_sharp::interpreter::table::Table>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <IPropertyTableAssigner_Interface as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __IPropertyTableAssigner_Interface_unity2_raw::assign_object_unchecked(
-                __receiver,
-                ::core::convert::Into::into(o),
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+pub trait IIPropertyTableAssigner_InterfaceMethods : IIPropertyTableAssigner_Interface { # [doc = "`AssignObjectUnchecked(crate::system::object::Object, crate::moon_sharp::interpreter::table::Table)` overload"] fn assign_object_unchecked (self , o : impl :: core :: convert :: Into < crate :: system :: object :: Object > , data : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: table :: Table >) -> () { unsafe { let __receiver = < IPropertyTableAssigner_Interface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IPropertyTableAssigner_Interface_unity2_raw :: assign_object_unchecked (__receiver , :: core :: convert :: Into :: into (o) , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-ipropertytableassigner_interface")]
-impl<__T: IIPropertyTableAssigner_Interface> IIPropertyTableAssigner_InterfaceMethods for __T {}
+impl < __T : IIPropertyTableAssigner_Interface > IIPropertyTableAssigner_InterfaceMethods for __T { }
+
+#[cfg(feature = "moon_sharp-interpreter-interop-ipropertytableassigner_interface")]
+impl IPropertyTableAssigner_Interface { pub fn assign_object_unchecked_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __IPropertyTableAssigner_Interface_unity2_raw :: __lookup_assign_object_unchecked :: get_method_info () } }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-ipropertytableassigner_interface")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IIPropertyTableAssigner_Interface, IIPropertyTableAssigner_InterfaceMethods, IPropertyTableAssigner_Interface};
+    pub use super::IPropertyTableAssigner_Interface;
+    pub use super::IIPropertyTableAssigner_Interface;
+    pub use super::IIPropertyTableAssigner_InterfaceMethods;
 }

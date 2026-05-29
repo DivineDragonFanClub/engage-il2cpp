@@ -2,413 +2,58 @@
 
 #[cfg(feature = "app-commonwaitmessage-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::{
-            procinst::{IProcInst, ProcInst},
-            procwaitmessagebase::{IProcWaitMessageBase, ProcWaitMessageBase},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/commonwaitmessage/CommonWaitMessage.md"))]
-    #[::unity2::class(namespace = "App", name = "CommonWaitMessage")]
-    #[parent(crate::app::procwaitmessagebase::ProcWaitMessageBase)]
-    pub struct CommonWaitMessage {
-        #[offset(120)]
-        #[rename(name = "m_IsLoopSE")]
-        pub m_is_loop_se: bool,
-        #[offset(121)]
-        #[rename(name = "m_IsPlaySE")]
-        pub m_is_play_se: bool,
-        #[static_field]
-        #[rename(name = "s_Instance")]
-        pub s_instance: crate::app::commonwaitmessage::CommonWaitMessage,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: app :: procwaitmessagebase :: { IProcWaitMessageBase , ProcWaitMessageBase }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/commonwaitmessage/CommonWaitMessage.md"))] # [:: unity2 :: class (namespace = "App" , name = "CommonWaitMessage")] # [parent (crate :: app :: procwaitmessagebase :: ProcWaitMessageBase)] pub struct CommonWaitMessage {
+# [offset (120)] # [rename (name = "m_IsLoopSE")] pub m_is_loop_se : bool ,
+# [offset (121)] # [rename (name = "m_IsPlaySE")] pub m_is_play_se : bool ,
+# [static_field] # [rename (name = "s_Instance")] pub s_instance : crate :: app :: commonwaitmessage :: CommonWaitMessage ,
+}
+
 }
 
 #[cfg(feature = "app-commonwaitmessage-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-commonwaitmessage")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CommonWaitMessage_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_open {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CommonWaitMessage as ::unity2::ClassIdentity>::class(),
-                "Open",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CommonWaitMessage as ::unity2::ClassIdentity>::NAME,
-                        "Open",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn open(
-        msg: ::unity2::Il2CppString,
-        is_play_sound: bool,
-        is_hide_wait_anime: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(::unity2::Il2CppString, bool, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_open::get_method_info().method_ptr);
-        inner(msg, is_play_sound, is_hide_wait_anime, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CommonWaitMessage as ::unity2::ClassIdentity>::class(),
-                "Close",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CommonWaitMessage as ::unity2::ClassIdentity>::NAME,
-                        "Close",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn close(is_success: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(bool, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_close::get_method_info().method_ptr);
-        inner(is_success, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_alive {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CommonWaitMessage as ::unity2::ClassIdentity>::class(),
-                "IsAlive",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CommonWaitMessage as ::unity2::ClassIdentity>::NAME,
-                        "IsAlive",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_alive(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_alive::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CommonWaitMessage as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CommonWaitMessage as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: CommonWaitMessage, is_play_sound: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CommonWaitMessage, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, is_play_sound, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CommonWaitMessage as ::unity2::ClassIdentity>::class(),
-                "OnDispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CommonWaitMessage as ::unity2::ClassIdentity>::NAME,
-                        "OnDispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_dispose(this: CommonWaitMessage, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CommonWaitMessage, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_loop_se {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CommonWaitMessage as ::unity2::ClassIdentity>::class(),
-                "PlayLoopSE",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CommonWaitMessage as ::unity2::ClassIdentity>::NAME,
-                        "PlayLoopSE",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_loop_se(this: CommonWaitMessage, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CommonWaitMessage, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_loop_se::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_stop_loop_se {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CommonWaitMessage as ::unity2::ClassIdentity>::class(),
-                "StopLoopSE",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CommonWaitMessage as ::unity2::ClassIdentity>::NAME,
-                        "StopLoopSE",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn stop_loop_se(this: CommonWaitMessage, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CommonWaitMessage, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_stop_loop_se::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_result_se {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CommonWaitMessage as ::unity2::ClassIdentity>::class(),
-                "PlayResultSE",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CommonWaitMessage as ::unity2::ClassIdentity>::NAME,
-                        "PlayResultSE",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn play_result_se(this: CommonWaitMessage, is_success: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CommonWaitMessage, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_play_result_se::get_method_info().method_ptr);
-        inner(this, is_success, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CommonWaitMessage_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_open { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CommonWaitMessage as :: unity2 :: ClassIdentity > :: class () , "Open" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CommonWaitMessage as :: unity2 :: ClassIdentity > :: NAME , "Open" , e) , } } } pub unsafe fn open (msg : :: unity2 :: Il2CppString , is_play_sound : bool , is_hide_wait_anime : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: Il2CppString , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_open :: get_method_info () . method_ptr ,) ; inner (msg , is_play_sound , is_hide_wait_anime , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_close { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CommonWaitMessage as :: unity2 :: ClassIdentity > :: class () , "Close" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CommonWaitMessage as :: unity2 :: ClassIdentity > :: NAME , "Close" , e) , } } } pub unsafe fn close (is_success : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_close :: get_method_info () . method_ptr ,) ; inner (is_success , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_alive { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CommonWaitMessage as :: unity2 :: ClassIdentity > :: class () , "IsAlive" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CommonWaitMessage as :: unity2 :: ClassIdentity > :: NAME , "IsAlive" , e) , } } } pub unsafe fn is_alive (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_alive :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CommonWaitMessage as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CommonWaitMessage as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : CommonWaitMessage , is_play_sound : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CommonWaitMessage , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , is_play_sound , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CommonWaitMessage as :: unity2 :: ClassIdentity > :: class () , "OnDispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CommonWaitMessage as :: unity2 :: ClassIdentity > :: NAME , "OnDispose" , e) , } } } pub unsafe fn on_dispose (this : CommonWaitMessage , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CommonWaitMessage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_loop_se { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CommonWaitMessage as :: unity2 :: ClassIdentity > :: class () , "PlayLoopSE" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CommonWaitMessage as :: unity2 :: ClassIdentity > :: NAME , "PlayLoopSE" , e) , } } } pub unsafe fn play_loop_se (this : CommonWaitMessage , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CommonWaitMessage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_loop_se :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_stop_loop_se { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CommonWaitMessage as :: unity2 :: ClassIdentity > :: class () , "StopLoopSE" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CommonWaitMessage as :: unity2 :: ClassIdentity > :: NAME , "StopLoopSE" , e) , } } } pub unsafe fn stop_loop_se (this : CommonWaitMessage , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CommonWaitMessage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_stop_loop_se :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_play_result_se { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CommonWaitMessage as :: unity2 :: ClassIdentity > :: class () , "PlayResultSE" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CommonWaitMessage as :: unity2 :: ClassIdentity > :: NAME , "PlayResultSE" , e) , } } } pub unsafe fn play_result_se (this : CommonWaitMessage , is_success : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CommonWaitMessage , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_play_result_se :: get_method_info () . method_ptr ,) ; inner (this , is_success , __unity2_method_info) } }
+
+#[cfg(feature = "app-commonwaitmessage")]
+impl CommonWaitMessage { # [doc = "`Open(::unity2::Il2CppString, bool, bool)` overload"] pub fn open (msg : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , is_play_sound : impl :: core :: convert :: Into < bool > , is_hide_wait_anime : impl :: core :: convert :: Into < bool >) -> () { unsafe { __CommonWaitMessage_unity2_raw :: open (:: core :: convert :: Into :: into (msg) , :: core :: convert :: Into :: into (is_play_sound) , :: core :: convert :: Into :: into (is_hide_wait_anime) , :: core :: option :: Option :: None) } } # [doc = "`Close(bool)` overload"] pub fn close (is_success : impl :: core :: convert :: Into < bool >) -> () { unsafe { __CommonWaitMessage_unity2_raw :: close (:: core :: convert :: Into :: into (is_success) , :: core :: option :: Option :: None) } } # [doc = "`IsAlive()` overload"] pub fn is_alive () -> bool { unsafe { __CommonWaitMessage_unity2_raw :: is_alive (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-commonwaitmessage")]
+pub trait ICommonWaitMessageMethods : ICommonWaitMessage { # [doc = "`.ctor(bool)` overload"] fn ctor (self , is_play_sound : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CommonWaitMessage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CommonWaitMessage_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (is_play_sound) , :: core :: option :: Option :: None) } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < CommonWaitMessage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CommonWaitMessage_unity2_raw :: on_dispose (__receiver , :: core :: option :: Option :: None) } } # [doc = "`PlayLoopSE()` overload"] fn play_loop_se (self ,) -> () { unsafe { let __receiver = < CommonWaitMessage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CommonWaitMessage_unity2_raw :: play_loop_se (__receiver , :: core :: option :: Option :: None) } } # [doc = "`StopLoopSE()` overload"] fn stop_loop_se (self ,) -> () { unsafe { let __receiver = < CommonWaitMessage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CommonWaitMessage_unity2_raw :: stop_loop_se (__receiver , :: core :: option :: Option :: None) } } # [doc = "`PlayResultSE(bool)` overload"] fn play_result_se (self , is_success : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CommonWaitMessage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CommonWaitMessage_unity2_raw :: play_result_se (__receiver , :: core :: convert :: Into :: into (is_success) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-commonwaitmessage")]
+impl < __T : ICommonWaitMessage > ICommonWaitMessageMethods for __T { }
+
+#[cfg(feature = "app-commonwaitmessage")]
+impl CommonWaitMessage { pub fn open_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CommonWaitMessage_unity2_raw :: __lookup_open :: get_method_info () } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CommonWaitMessage_unity2_raw :: __lookup_close :: get_method_info () } pub fn is_alive_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CommonWaitMessage_unity2_raw :: __lookup_is_alive :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CommonWaitMessage_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CommonWaitMessage_unity2_raw :: __lookup_on_dispose :: get_method_info () } pub fn play_loop_se_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CommonWaitMessage_unity2_raw :: __lookup_play_loop_se :: get_method_info () } pub fn stop_loop_se_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CommonWaitMessage_unity2_raw :: __lookup_stop_loop_se :: get_method_info () } pub fn play_result_se_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CommonWaitMessage_unity2_raw :: __lookup_play_result_se :: get_method_info () } }
 
 #[cfg(feature = "app-commonwaitmessage")]
 impl CommonWaitMessage {
-    #[doc = "`Open(::unity2::Il2CppString, bool, bool)` overload"]
-    pub fn open(
-        msg: impl ::core::convert::Into<::unity2::Il2CppString>,
-        is_play_sound: impl ::core::convert::Into<bool>,
-        is_hide_wait_anime: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            __CommonWaitMessage_unity2_raw::open(
-                ::core::convert::Into::into(msg),
-                ::core::convert::Into::into(is_play_sound),
-                ::core::convert::Into::into(is_hide_wait_anime),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`Close(bool)` overload"]
-    pub fn close(is_success: impl ::core::convert::Into<bool>) -> () {
-        unsafe { __CommonWaitMessage_unity2_raw::close(::core::convert::Into::into(is_success), ::core::option::Option::None) }
-    }
-
-    #[doc = "`IsAlive()` overload"]
-    pub fn is_alive() -> bool {
-        unsafe { __CommonWaitMessage_unity2_raw::is_alive(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-commonwaitmessage")]
-pub trait ICommonWaitMessageMethods: ICommonWaitMessage {
-    #[doc = "`.ctor(bool)` overload"]
-    fn ctor(self, is_play_sound: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <CommonWaitMessage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CommonWaitMessage_unity2_raw::ctor(__receiver, ::core::convert::Into::into(is_play_sound), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDispose()` overload"]
-    fn on_dispose(self) -> () {
-        unsafe {
-            let __receiver = <CommonWaitMessage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CommonWaitMessage_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`PlayLoopSE()` overload"]
-    fn play_loop_se(self) -> () {
-        unsafe {
-            let __receiver = <CommonWaitMessage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CommonWaitMessage_unity2_raw::play_loop_se(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`StopLoopSE()` overload"]
-    fn stop_loop_se(self) -> () {
-        unsafe {
-            let __receiver = <CommonWaitMessage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CommonWaitMessage_unity2_raw::stop_loop_se(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`PlayResultSE(bool)` overload"]
-    fn play_result_se(self, is_success: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <CommonWaitMessage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CommonWaitMessage_unity2_raw::play_result_se(__receiver, ::core::convert::Into::into(is_success), ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-commonwaitmessage")]
-impl<__T: ICommonWaitMessage> ICommonWaitMessageMethods for __T {}
-
-#[cfg(feature = "app-commonwaitmessage")]
-impl CommonWaitMessage {
-    #[doc = "`.ctor(bool)` — overload selector"]
-    pub fn new(is_play_sound: bool) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CommonWaitMessage),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICommonWaitMessageMethods>::ctor(this, is_play_sound);
-        this
-    }
+# [doc = "`.ctor(bool)` — overload selector"] pub fn new (is_play_sound : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CommonWaitMessage) , :: core :: stringify ! (new) ,)) ; < Self as ICommonWaitMessageMethods > :: ctor (this , is_play_sound) ; this }
 }
 
 #[cfg(feature = "app-commonwaitmessage")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{CommonWaitMessage, ICommonWaitMessage, ICommonWaitMessageMethods};
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "app-procwaitmessagebase")]
-    pub use crate::app::procwaitmessagebase::IProcWaitMessageBaseMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        app::{procinst::IProcInst, procwaitmessagebase::IProcWaitMessageBase},
-        system::object::IObject,
-    };
+    pub use super::CommonWaitMessage;
+    pub use super::ICommonWaitMessage;
+    pub use super::ICommonWaitMessageMethods;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::app::procwaitmessagebase::IProcWaitMessageBase;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "app-procwaitmessagebase")] pub use crate::app::procwaitmessagebase::IProcWaitMessageBaseMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

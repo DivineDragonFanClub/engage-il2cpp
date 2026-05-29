@@ -2,269 +2,73 @@
 
 #[cfg(feature = "combat-magicsubanim-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        combat::magicsub::{IMagicSub, MagicSub},
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/magicsubanim/MagicSubAnim.md"))]
-    #[::unity2::class(namespace = "Combat", name = "MagicSubAnim")]
-    #[parent(crate::combat::magicsub::MagicSub)]
-    pub struct MagicSubAnim {
-        #[offset(80)]
-        #[rename(name = "HitTimeOnAnim")]
-        pub hit_time_on_anim: f32,
-        #[offset(88)]
-        #[rename(name = "m_TargetNode")]
-        pub m_target_node: crate::unity_engine::transform::Transform,
-        #[offset(96)]
-        #[rename(name = "m_FlyingTime")]
-        pub m_flying_time: f32,
-        #[offset(100)]
-        #[rename(name = "m_Elapsed")]
-        pub m_elapsed: f32,
-        #[offset(104)]
-        #[rename(name = "m_StartPos")]
-        pub m_start_pos: crate::unity_engine::vector3::Vector3,
-        #[offset(116)]
-        #[rename(name = "m_EndPos")]
-        pub m_end_pos: crate::unity_engine::vector3::Vector3,
-        #[offset(128)]
-        #[rename(name = "m_Forward")]
-        pub m_forward: crate::unity_engine::vector3::Vector3,
-        #[offset(140)]
-        #[rename(name = "m_Distance")]
-        pub m_distance: f32,
-        #[offset(144)]
-        #[rename(name = "m_InitialLocalScaleList")]
-        pub m_initial_local_scale_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: combat :: magicsub :: { IMagicSub , MagicSub }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/magicsubanim/MagicSubAnim.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "MagicSubAnim")] # [parent (crate :: combat :: magicsub :: MagicSub)] pub struct MagicSubAnim {
+# [offset (80)] # [rename (name = "HitTimeOnAnim")] pub hit_time_on_anim : f32 ,
+# [offset (88)] # [rename (name = "m_TargetNode")] pub m_target_node : crate :: unity_engine :: transform :: Transform ,
+# [offset (96)] # [rename (name = "m_FlyingTime")] pub m_flying_time : f32 ,
+# [offset (100)] # [rename (name = "m_Elapsed")] pub m_elapsed : f32 ,
+# [offset (104)] # [rename (name = "m_StartPos")] pub m_start_pos : crate :: unity_engine :: vector3 :: Vector3 ,
+# [offset (116)] # [rename (name = "m_EndPos")] pub m_end_pos : crate :: unity_engine :: vector3 :: Vector3 ,
+# [offset (128)] # [rename (name = "m_Forward")] pub m_forward : crate :: unity_engine :: vector3 :: Vector3 ,
+# [offset (140)] # [rename (name = "m_Distance")] pub m_distance : f32 ,
+# [offset (144)] # [rename (name = "m_InitialLocalScaleList")] pub m_initial_local_scale_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: vector3 :: Vector3 > ,
+}
+
 }
 
 #[cfg(feature = "combat-magicsubanim-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-magicsubanim")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MagicSubAnim_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_distance_scale {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MagicSubAnim as ::unity2::ClassIdentity>::class(),
-                "get_DistanceScale",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MagicSubAnim as ::unity2::ClassIdentity>::NAME,
-                        "get_DistanceScale",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_distance_scale(this: MagicSubAnim, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(MagicSubAnim, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_distance_scale::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::combat::character::Character as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<MagicSubAnim as ::unity2::ClassIdentity>::class(), "Setup", 3, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MagicSubAnim as ::unity2::ClassIdentity>::NAME,
-                        "Setup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup(
-        this: MagicSubAnim,
-        chr: crate::combat::character::Character,
-        initial_start_pos: *mut crate::unity_engine::vector3::Vector3,
-        initial_end_pos: *mut crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MagicSubAnim,
-            crate::combat::character::Character,
-            *mut crate::unity_engine::vector3::Vector3,
-            *mut crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
-        inner(this, chr, initial_start_pos, initial_end_pos, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<MagicSubAnim as ::unity2::ClassIdentity>::class(), "Update", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MagicSubAnim as ::unity2::ClassIdentity>::NAME,
-                        "Update",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update(this: MagicSubAnim, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MagicSubAnim, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<MagicSubAnim as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MagicSubAnim as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MagicSubAnim, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MagicSubAnim, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MagicSubAnim_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_distance_scale { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MagicSubAnim as :: unity2 :: ClassIdentity > :: class () , "get_DistanceScale" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MagicSubAnim as :: unity2 :: ClassIdentity > :: NAME , "get_DistanceScale" , e) , } } } pub unsafe fn get_distance_scale (this : MagicSubAnim , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (MagicSubAnim , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_distance_scale :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_setup { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: character :: Character as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MagicSubAnim as :: unity2 :: ClassIdentity > :: class () , "Setup" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MagicSubAnim as :: unity2 :: ClassIdentity > :: NAME , "Setup" , e) , } } } pub unsafe fn setup (this : MagicSubAnim , chr : crate :: combat :: character :: Character , initial_start_pos : * mut crate :: unity_engine :: vector3 :: Vector3 , initial_end_pos : * mut crate :: unity_engine :: vector3 :: Vector3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MagicSubAnim , crate :: combat :: character :: Character , * mut crate :: unity_engine :: vector3 :: Vector3 , * mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_setup :: get_method_info () . method_ptr ,) ; inner (this , chr , initial_start_pos , initial_end_pos , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MagicSubAnim as :: unity2 :: ClassIdentity > :: class () , "Update" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MagicSubAnim as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , } } } pub unsafe fn update (this : MagicSubAnim , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MagicSubAnim , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MagicSubAnim as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MagicSubAnim as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MagicSubAnim , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MagicSubAnim , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "combat-magicsubanim")]
-pub trait IMagicSubAnimMethods: IMagicSubAnim {
-    #[doc = "`get_DistanceScale()` overload"]
-    fn get_distance_scale(self) -> f32 {
-        unsafe {
-            let __receiver = <MagicSubAnim as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MagicSubAnim_unity2_raw::get_distance_scale(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Setup(crate::combat::character::Character, *mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3)` overload"]
-    fn setup(
-        self,
-        chr: impl ::core::convert::Into<crate::combat::character::Character>,
-    ) -> (crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3) {
-        unsafe {
-            let __receiver = <MagicSubAnim as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            __MagicSubAnim_unity2_raw::setup(
-                __receiver,
-                ::core::convert::Into::into(chr),
-                __out_0.as_mut_ptr(),
-                __out_1.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            (__out_0.assume_init(), __out_1.assume_init())
-        }
-    }
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver = <MagicSubAnim as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MagicSubAnim_unity2_raw::update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <MagicSubAnim as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MagicSubAnim_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IMagicSubAnimMethods : IMagicSubAnim { # [doc = "`get_DistanceScale()` overload"] fn get_distance_scale (self ,) -> f32 { unsafe { let __receiver = < MagicSubAnim as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MagicSubAnim_unity2_raw :: get_distance_scale (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Setup(crate::combat::character::Character, *mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3)` overload"] fn setup (self , chr : impl :: core :: convert :: Into < crate :: combat :: character :: Character >) -> (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3) { unsafe { let __receiver = < MagicSubAnim as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; __MagicSubAnim_unity2_raw :: setup (__receiver , :: core :: convert :: Into :: into (chr) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < MagicSubAnim as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MagicSubAnim_unity2_raw :: update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MagicSubAnim as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MagicSubAnim_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "combat-magicsubanim")]
-impl<__T: IMagicSubAnim> IMagicSubAnimMethods for __T {}
+impl < __T : IMagicSubAnim > IMagicSubAnimMethods for __T { }
+
+#[cfg(feature = "combat-magicsubanim")]
+impl MagicSubAnim { pub fn get_distance_scale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MagicSubAnim_unity2_raw :: __lookup_get_distance_scale :: get_method_info () } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MagicSubAnim_unity2_raw :: __lookup_setup :: get_method_info () } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MagicSubAnim_unity2_raw :: __lookup_update :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MagicSubAnim_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "combat-magicsubanim")]
 impl MagicSubAnim {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(MagicSubAnim), ::core::stringify!(new),));
-        <Self as IMagicSubAnimMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MagicSubAnim) , :: core :: stringify ! (new) ,)) ; < Self as IMagicSubAnimMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "combat-magicsubanim")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IMagicSubAnim, IMagicSubAnimMethods, MagicSubAnim};
-    #[cfg(feature = "combat-magicsub")]
-    pub use crate::combat::magicsub::IMagicSubMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        combat::magicsub::IMagicSub,
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::MagicSubAnim;
+    pub use super::IMagicSubAnim;
+    pub use super::IMagicSubAnimMethods;
+    pub use crate::combat::magicsub::IMagicSub;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "combat-magicsub")] pub use crate::combat::magicsub::IMagicSubMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

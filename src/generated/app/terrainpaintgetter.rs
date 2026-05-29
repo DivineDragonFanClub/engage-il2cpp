@@ -2,265 +2,67 @@
 
 #[cfg(feature = "app-terrainpaintgetter-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/terrainpaintgetter/TerrainPaintGetter.md"))]
-    #[::unity2::class(namespace = "App", name = "TerrainPaintGetter")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct TerrainPaintGetter {
-        #[offset(24)]
-        #[rename(name = "m_Data")]
-        pub m_data: crate::app::terrainpaintdata::TerrainPaintData,
-        #[offset(32)]
-        #[rename(name = "m_drawDebugGizmo")]
-        pub m_draw_debug_gizmo: bool,
-        #[offset(36)]
-        #[rename(name = "m_debugGizmoHeight")]
-        pub m_debug_gizmo_height: f32,
-        #[offset(40)]
-        #[rename(name = "m_debugGizmoGridColor")]
-        pub m_debug_gizmo_grid_color: crate::unity_engine::color::Color,
-        #[offset(56)]
-        #[rename(name = "m_debugGizmoDrawIndex")]
-        pub m_debug_gizmo_draw_index: crate::system::collections::generic::list_1::List_1<i32>,
-        #[offset(64)]
-        #[rename(name = "m_debugGizmoDrawAlpha")]
-        pub m_debug_gizmo_draw_alpha: f32,
-        #[offset(72)]
-        #[rename(name = "m_debugGizmoDrawColor")]
-        pub m_debug_gizmo_draw_color: crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/terrainpaintgetter/TerrainPaintGetter.md"))] # [:: unity2 :: class (namespace = "App" , name = "TerrainPaintGetter")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct TerrainPaintGetter {
+# [offset (24)] # [rename (name = "m_Data")] pub m_data : crate :: app :: terrainpaintdata :: TerrainPaintData ,
+# [offset (32)] # [rename (name = "m_drawDebugGizmo")] pub m_draw_debug_gizmo : bool ,
+# [offset (36)] # [rename (name = "m_debugGizmoHeight")] pub m_debug_gizmo_height : f32 ,
+# [offset (40)] # [rename (name = "m_debugGizmoGridColor")] pub m_debug_gizmo_grid_color : crate :: unity_engine :: color :: Color ,
+# [offset (56)] # [rename (name = "m_debugGizmoDrawIndex")] pub m_debug_gizmo_draw_index : crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > ,
+# [offset (64)] # [rename (name = "m_debugGizmoDrawAlpha")] pub m_debug_gizmo_draw_alpha : f32 ,
+# [offset (72)] # [rename (name = "m_debugGizmoDrawColor")] pub m_debug_gizmo_draw_color : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: color :: Color > ,
+}
+
 }
 
 #[cfg(feature = "app-terrainpaintgetter-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-terrainpaintgetter")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TerrainPaintGetter_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TerrainPaintGetter as ::unity2::ClassIdentity>::class(),
-                "Get",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TerrainPaintGetter as ::unity2::ClassIdentity>::NAME,
-                        "Get",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get(this: TerrainPaintGetter, x: f32, y: f32, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(TerrainPaintGetter, f32, f32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get::get_method_info().method_ptr);
-        inner(this, x, y, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TerrainPaintGetter as ::unity2::ClassIdentity>::class(),
-                "Get",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TerrainPaintGetter as ::unity2::ClassIdentity>::NAME,
-                        "Get",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_2(
-        this: TerrainPaintGetter,
-        pos: crate::unity_engine::vector2::Vector2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(TerrainPaintGetter, crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_2::get_method_info().method_ptr);
-        inner(this, pos, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_draw_gizmos {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TerrainPaintGetter as ::unity2::ClassIdentity>::class(),
-                "OnDrawGizmos",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TerrainPaintGetter as ::unity2::ClassIdentity>::NAME,
-                        "OnDrawGizmos",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_draw_gizmos(this: TerrainPaintGetter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TerrainPaintGetter, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_draw_gizmos::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TerrainPaintGetter as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TerrainPaintGetter as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: TerrainPaintGetter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TerrainPaintGetter, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TerrainPaintGetter_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TerrainPaintGetter as :: unity2 :: ClassIdentity > :: class () , "Get" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TerrainPaintGetter as :: unity2 :: ClassIdentity > :: NAME , "Get" , e) , } } } pub unsafe fn get (this : TerrainPaintGetter , x : f32 , y : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (TerrainPaintGetter , f32 , f32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get :: get_method_info () . method_ptr ,) ; inner (this , x , y , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TerrainPaintGetter as :: unity2 :: ClassIdentity > :: class () , "Get" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TerrainPaintGetter as :: unity2 :: ClassIdentity > :: NAME , "Get" , e) , } } } pub unsafe fn get_2 (this : TerrainPaintGetter , pos : crate :: unity_engine :: vector2 :: Vector2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (TerrainPaintGetter , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_2 :: get_method_info () . method_ptr ,) ; inner (this , pos , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_draw_gizmos { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TerrainPaintGetter as :: unity2 :: ClassIdentity > :: class () , "OnDrawGizmos" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TerrainPaintGetter as :: unity2 :: ClassIdentity > :: NAME , "OnDrawGizmos" , e) , } } } pub unsafe fn on_draw_gizmos (this : TerrainPaintGetter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TerrainPaintGetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_draw_gizmos :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TerrainPaintGetter as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TerrainPaintGetter as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : TerrainPaintGetter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TerrainPaintGetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-terrainpaintgetter")]
-pub trait ITerrainPaintGetterMethods: ITerrainPaintGetter {
-    #[doc = "`Get(f32, f32)` overload"]
-    fn get(self, x: impl ::core::convert::Into<f32>, y: impl ::core::convert::Into<f32>) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <TerrainPaintGetter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TerrainPaintGetter_unity2_raw::get(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(y),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Get(crate::unity_engine::vector2::Vector2)` overload"]
-    fn get_2(self, pos: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <TerrainPaintGetter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TerrainPaintGetter_unity2_raw::get_2(__receiver, ::core::convert::Into::into(pos), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDrawGizmos()` overload"]
-    fn on_draw_gizmos(self) -> () {
-        unsafe {
-            let __receiver = <TerrainPaintGetter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TerrainPaintGetter_unity2_raw::on_draw_gizmos(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <TerrainPaintGetter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TerrainPaintGetter_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait ITerrainPaintGetterMethods : ITerrainPaintGetter { # [doc = "`Get(f32, f32)` overload"] fn get (self , x : impl :: core :: convert :: Into < f32 > , y : impl :: core :: convert :: Into < f32 >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TerrainPaintGetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TerrainPaintGetter_unity2_raw :: get (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: option :: Option :: None) } } # [doc = "`Get(crate::unity_engine::vector2::Vector2)` overload"] fn get_2 (self , pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TerrainPaintGetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TerrainPaintGetter_unity2_raw :: get_2 (__receiver , :: core :: convert :: Into :: into (pos) , :: core :: option :: Option :: None) } } # [doc = "`OnDrawGizmos()` overload"] fn on_draw_gizmos (self ,) -> () { unsafe { let __receiver = < TerrainPaintGetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TerrainPaintGetter_unity2_raw :: on_draw_gizmos (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TerrainPaintGetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TerrainPaintGetter_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-terrainpaintgetter")]
-impl<__T: ITerrainPaintGetter> ITerrainPaintGetterMethods for __T {}
+impl < __T : ITerrainPaintGetter > ITerrainPaintGetterMethods for __T { }
+
+#[cfg(feature = "app-terrainpaintgetter")]
+impl TerrainPaintGetter { pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TerrainPaintGetter_unity2_raw :: __lookup_get :: get_method_info () } pub fn get_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TerrainPaintGetter_unity2_raw :: __lookup_get_2 :: get_method_info () } pub fn on_draw_gizmos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TerrainPaintGetter_unity2_raw :: __lookup_on_draw_gizmos :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TerrainPaintGetter_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-terrainpaintgetter")]
 impl TerrainPaintGetter {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TerrainPaintGetter),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITerrainPaintGetterMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TerrainPaintGetter) , :: core :: stringify ! (new) ,)) ; < Self as ITerrainPaintGetterMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-terrainpaintgetter")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ITerrainPaintGetter, ITerrainPaintGetterMethods, TerrainPaintGetter};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        system::object::IObject,
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::TerrainPaintGetter;
+    pub use super::ITerrainPaintGetter;
+    pub use super::ITerrainPaintGetterMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

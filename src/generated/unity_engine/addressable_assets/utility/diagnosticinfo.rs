@@ -2,177 +2,47 @@
 
 #[cfg(feature = "unity_engine-addressable_assets-utility-diagnosticinfo-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/utility/diagnosticinfo/DiagnosticInfo.md"))]
-    #[::unity2::class(namespace = "UnityEngine.AddressableAssets.Utility", name = "DiagnosticInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct DiagnosticInfo {
-        #[offset(16)]
-        #[rename(name = "DisplayName")]
-        pub display_name: ::unity2::Il2CppString,
-        #[offset(24)]
-        #[rename(name = "ObjectId")]
-        pub object_id: i32,
-        #[offset(32)]
-        #[rename(name = "Dependencies")]
-        pub dependencies: ::unity2::Array<i32>,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/utility/diagnosticinfo/DiagnosticInfo.md"))] # [:: unity2 :: class (namespace = "UnityEngine.AddressableAssets.Utility" , name = "DiagnosticInfo")] # [parent (crate :: system :: object :: Object)] pub struct DiagnosticInfo {
+# [offset (16)] # [rename (name = "DisplayName")] pub display_name : :: unity2 :: Il2CppString ,
+# [offset (24)] # [rename (name = "ObjectId")] pub object_id : i32 ,
+# [offset (32)] # [rename (name = "Dependencies")] pub dependencies : :: unity2 :: Array < i32 > ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-utility-diagnosticinfo-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-addressable_assets-utility-diagnosticinfo")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DiagnosticInfo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_event {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::resource_management::resourcemanager::ResourceManager_DiagnosticEventType as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DiagnosticInfo as ::unity2::ClassIdentity>::class(),
-                "CreateEvent",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DiagnosticInfo as ::unity2::ClassIdentity>::NAME,
-                        "CreateEvent",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_event(
-        this: DiagnosticInfo,
-        category: ::unity2::Il2CppString,
-        event_type: crate::unity_engine::resource_management::resourcemanager::ResourceManager_DiagnosticEventType,
-        frame: i32,
-        val: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent {
-        let inner: extern "C" fn(
-            DiagnosticInfo,
-            ::unity2::Il2CppString,
-            crate::unity_engine::resource_management::resourcemanager::ResourceManager_DiagnosticEventType,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent =
-            ::core::mem::transmute(__lookup_create_event::get_method_info().method_ptr);
-        inner(this, category, event_type, frame, val, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DiagnosticInfo as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DiagnosticInfo as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: DiagnosticInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DiagnosticInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DiagnosticInfo_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_event { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager_DiagnosticEventType as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DiagnosticInfo as :: unity2 :: ClassIdentity > :: class () , "CreateEvent" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DiagnosticInfo as :: unity2 :: ClassIdentity > :: NAME , "CreateEvent" , e) , } } } pub unsafe fn create_event (this : DiagnosticInfo , category : :: unity2 :: Il2CppString , event_type : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager_DiagnosticEventType , frame : i32 , val : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: diagnostics :: diagnosticevent :: DiagnosticEvent { let inner : extern "C" fn (DiagnosticInfo , :: unity2 :: Il2CppString , crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager_DiagnosticEventType , i32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: diagnostics :: diagnosticevent :: DiagnosticEvent = :: core :: mem :: transmute (__lookup_create_event :: get_method_info () . method_ptr ,) ; inner (this , category , event_type , frame , val , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DiagnosticInfo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DiagnosticInfo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DiagnosticInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DiagnosticInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-addressable_assets-utility-diagnosticinfo")]
-pub trait IDiagnosticInfoMethods: IDiagnosticInfo {
-    #[doc = "`CreateEvent(::unity2::Il2CppString, crate::unity_engine::resource_management::resourcemanager::ResourceManager_DiagnosticEventType, i32, i32)` overload"]
-    fn create_event(
-        self,
-        category: impl ::core::convert::Into<::unity2::Il2CppString>,
-        event_type: impl ::core::convert::Into<crate::unity_engine::resource_management::resourcemanager::ResourceManager_DiagnosticEventType>,
-        frame: impl ::core::convert::Into<i32>,
-        val: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent {
-        unsafe {
-            let __receiver = <DiagnosticInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DiagnosticInfo_unity2_raw::create_event(
-                __receiver,
-                ::core::convert::Into::into(category),
-                ::core::convert::Into::into(event_type),
-                ::core::convert::Into::into(frame),
-                ::core::convert::Into::into(val),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <DiagnosticInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DiagnosticInfo_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IDiagnosticInfoMethods : IDiagnosticInfo { # [doc = "`CreateEvent(::unity2::Il2CppString, crate::unity_engine::resource_management::resourcemanager::ResourceManager_DiagnosticEventType, i32, i32)` overload"] fn create_event (self , category : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , event_type : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager_DiagnosticEventType > , frame : impl :: core :: convert :: Into < i32 > , val : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: resource_management :: diagnostics :: diagnosticevent :: DiagnosticEvent { unsafe { let __receiver = < DiagnosticInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DiagnosticInfo_unity2_raw :: create_event (__receiver , :: core :: convert :: Into :: into (category) , :: core :: convert :: Into :: into (event_type) , :: core :: convert :: Into :: into (frame) , :: core :: convert :: Into :: into (val) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DiagnosticInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DiagnosticInfo_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-addressable_assets-utility-diagnosticinfo")]
-impl<__T: IDiagnosticInfo> IDiagnosticInfoMethods for __T {}
+impl < __T : IDiagnosticInfo > IDiagnosticInfoMethods for __T { }
+
+#[cfg(feature = "unity_engine-addressable_assets-utility-diagnosticinfo")]
+impl DiagnosticInfo { pub fn create_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DiagnosticInfo_unity2_raw :: __lookup_create_event :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DiagnosticInfo_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-addressable_assets-utility-diagnosticinfo")]
 impl DiagnosticInfo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DiagnosticInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDiagnosticInfoMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DiagnosticInfo) , :: core :: stringify ! (new) ,)) ; < Self as IDiagnosticInfoMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-utility-diagnosticinfo")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{DiagnosticInfo, IDiagnosticInfo, IDiagnosticInfoMethods};
+    pub use super::DiagnosticInfo;
+    pub use super::IDiagnosticInfo;
+    pub use super::IDiagnosticInfoMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -2,136 +2,46 @@
 
 #[cfg(feature = "app-terrainutility_2-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/terrainutility_2/TerrainUtility_2.md"))]
-    #[::unity2::class(namespace = "App", name = "TerrainUtility")]
-    #[parent(crate::system::object::Object)]
-    pub struct TerrainUtility_2 {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/terrainutility_2/TerrainUtility_2.md"))] # [:: unity2 :: class (namespace = "App" , name = "TerrainUtility")] # [parent (crate :: system :: object :: Object)] pub struct TerrainUtility_2 {}
+
 }
 
 #[cfg(feature = "app-terrainutility_2-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-terrainutility_2")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TerrainUtility_2_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_regist_undo {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::terrain::Terrain as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TerrainUtility_2 as ::unity2::ClassIdentity>::class(),
-                "RegistUndo",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TerrainUtility_2 as ::unity2::ClassIdentity>::NAME,
-                        "RegistUndo",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn regist_undo(terrain: crate::unity_engine::terrain::Terrain, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::unity_engine::terrain::Terrain, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_regist_undo::get_method_info().method_ptr);
-        inner(terrain, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TerrainUtility_2 as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TerrainUtility_2 as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: TerrainUtility_2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TerrainUtility_2, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TerrainUtility_2_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_regist_undo { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: terrain :: Terrain as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TerrainUtility_2 as :: unity2 :: ClassIdentity > :: class () , "RegistUndo" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TerrainUtility_2 as :: unity2 :: ClassIdentity > :: NAME , "RegistUndo" , e) , } } } pub unsafe fn regist_undo (terrain : crate :: unity_engine :: terrain :: Terrain , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: unity_engine :: terrain :: Terrain , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_regist_undo :: get_method_info () . method_ptr ,) ; inner (terrain , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TerrainUtility_2 as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TerrainUtility_2 as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : TerrainUtility_2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TerrainUtility_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-terrainutility_2")]
+impl TerrainUtility_2 { # [doc = "`RegistUndo(crate::unity_engine::terrain::Terrain)` overload"] pub fn regist_undo (terrain : impl :: core :: convert :: Into < crate :: unity_engine :: terrain :: Terrain >) -> () { unsafe { __TerrainUtility_2_unity2_raw :: regist_undo (:: core :: convert :: Into :: into (terrain) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-terrainutility_2")]
+pub trait ITerrainUtility_2Methods : ITerrainUtility_2 { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TerrainUtility_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TerrainUtility_2_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-terrainutility_2")]
+impl < __T : ITerrainUtility_2 > ITerrainUtility_2Methods for __T { }
+
+#[cfg(feature = "app-terrainutility_2")]
+impl TerrainUtility_2 { pub fn regist_undo_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TerrainUtility_2_unity2_raw :: __lookup_regist_undo :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TerrainUtility_2_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-terrainutility_2")]
 impl TerrainUtility_2 {
-    #[doc = "`RegistUndo(crate::unity_engine::terrain::Terrain)` overload"]
-    pub fn regist_undo(terrain: impl ::core::convert::Into<crate::unity_engine::terrain::Terrain>) -> () {
-        unsafe { __TerrainUtility_2_unity2_raw::regist_undo(::core::convert::Into::into(terrain), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-terrainutility_2")]
-pub trait ITerrainUtility_2Methods: ITerrainUtility_2 {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <TerrainUtility_2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TerrainUtility_2_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-terrainutility_2")]
-impl<__T: ITerrainUtility_2> ITerrainUtility_2Methods for __T {}
-
-#[cfg(feature = "app-terrainutility_2")]
-impl TerrainUtility_2 {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TerrainUtility_2),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITerrainUtility_2Methods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TerrainUtility_2) , :: core :: stringify ! (new) ,)) ; < Self as ITerrainUtility_2Methods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-terrainutility_2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ITerrainUtility_2, ITerrainUtility_2Methods, TerrainUtility_2};
+    pub use super::TerrainUtility_2;
+    pub use super::ITerrainUtility_2;
+    pub use super::ITerrainUtility_2Methods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

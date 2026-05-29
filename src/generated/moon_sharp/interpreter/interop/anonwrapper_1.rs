@@ -2,75 +2,48 @@
 
 #[cfg(feature = "moon_sharp-interpreter-interop-anonwrapper_1-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        moon_sharp::interpreter::interop::anonwrapper::{AnonWrapper, IAnonWrapper},
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/anonwrapper_1/AnonWrapper_1.md"))]
-    #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop", name = "AnonWrapper`1")]
-    #[parent(crate::moon_sharp::interpreter::interop::anonwrapper::AnonWrapper)]
-    #[parent(crate::system::object::Object)]
-    pub struct AnonWrapper_1<T0: ::unity2::ClassIdentity> {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: moon_sharp :: interpreter :: interop :: anonwrapper :: { AnonWrapper , IAnonWrapper }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/anonwrapper_1/AnonWrapper_1.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Interop" , name = "AnonWrapper`1")] # [parent (crate :: moon_sharp :: interpreter :: interop :: anonwrapper :: AnonWrapper)] # [parent (crate :: system :: object :: Object)] pub struct AnonWrapper_1 < T0 : :: unity2 :: ClassIdentity > {}
+
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-anonwrapper_1-types")]
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-interop-anonwrapper_1")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> AnonWrapper_1<T0> {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > AnonWrapper_1 < T0 > {
+# [doc = "`.ctor()` overload"] # [method (name = ".ctor" , args = 0)] pub fn ctor (self ,) -> () ;
 
-    #[doc = "`.ctor(T0)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor_2(self, o: T0) -> ();
+# [doc = "`.ctor(T0)` overload"] # [method (name = ".ctor" , args = 1)] pub fn ctor_2 (self , o : T0) -> () ;
 
-    #[doc = "`get_Value()` overload"]
-    #[method(name = "get_Value", args = 0)]
-    pub fn get_value(self) -> T0;
+# [doc = "`get_Value()` overload"] # [method (name = "get_Value" , args = 0)] pub fn get_value (self ,) -> T0 ;
 
-    #[doc = "`set_Value(T0)` overload"]
-    #[method(name = "set_Value", args = 1)]
-    pub fn set_value(self, value: T0) -> ();
+# [doc = "`set_Value(T0)` overload"] # [method (name = "set_Value" , args = 1)] pub fn set_value (self , value : T0) -> () ;
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-anonwrapper_1")]
-impl<T0: ::unity2::ClassIdentity> AnonWrapper_1<T0> {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(AnonWrapper_1), ::core::stringify!(new),));
-        <Self as IAnonWrapper_1Methods<T0>>::ctor(this);
-        this
-    }
+impl < T0 : :: unity2 :: ClassIdentity > AnonWrapper_1 < T0 > {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AnonWrapper_1) , :: core :: stringify ! (new) ,)) ; < Self as IAnonWrapper_1Methods < T0 > > :: ctor (this ,) ; this }
 
-    #[doc = "`.ctor(T0)` — overload selector"]
-    pub fn new_2(o: T0) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AnonWrapper_1),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IAnonWrapper_1Methods<T0>>::ctor_2(this, o);
-        this
-    }
+# [doc = "`.ctor(T0)` — overload selector"] pub fn new_2 (o : T0) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AnonWrapper_1) , :: core :: stringify ! (new_2) ,)) ; < Self as IAnonWrapper_1Methods < T0 > > :: ctor_2 (this , o) ; this }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-anonwrapper_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{AnonWrapper_1, IAnonWrapper_1, IAnonWrapper_1Methods};
-    #[cfg(feature = "moon_sharp-interpreter-interop-anonwrapper")]
-    pub use crate::moon_sharp::interpreter::interop::anonwrapper::IAnonWrapperMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{moon_sharp::interpreter::interop::anonwrapper::IAnonWrapper, system::object::IObject};
+    pub use super::AnonWrapper_1;
+    pub use super::IAnonWrapper_1;
+    pub use super::IAnonWrapper_1Methods;
+    pub use crate::moon_sharp::interpreter::interop::anonwrapper::IAnonWrapper;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "moon_sharp-interpreter-interop-anonwrapper")] pub use crate::moon_sharp::interpreter::interop::anonwrapper::IAnonWrapperMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

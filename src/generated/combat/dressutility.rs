@@ -2,343 +2,45 @@
 
 #[cfg(feature = "combat-dressutility-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/dressutility/DressUtility.md"))]
-    #[::unity2::class(namespace = "Combat", name = "DressUtility")]
-    #[parent(crate::system::object::Object)]
-    pub struct DressUtility {
-        #[offset(16)]
-        #[rename(name = "bodyCache")]
-        pub body_cache: crate::combat::hierarchycache::HierarchyCache,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/dressutility/DressUtility.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "DressUtility")] # [parent (crate :: system :: object :: Object)] pub struct DressUtility {
+# [offset (16)] # [rename (name = "bodyCache")] pub body_cache : crate :: combat :: hierarchycache :: HierarchyCache ,
+}
+
 }
 
 #[cfg(feature = "combat-dressutility-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-dressutility")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DressUtility_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_cache {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DressUtility as ::unity2::ClassIdentity>::class(),
-                "get_Cache",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DressUtility as ::unity2::ClassIdentity>::NAME,
-                        "get_Cache",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_cache(this: DressUtility, __unity2_method_info: ::unity2::OptionalMethod) -> crate::combat::hierarchycache::HierarchyCache {
-        let inner: extern "C" fn(DressUtility, ::unity2::OptionalMethod) -> crate::combat::hierarchycache::HierarchyCache =
-            ::core::mem::transmute(__lookup_get_cache::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_item {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DressUtility as ::unity2::ClassIdentity>::class(),
-                "get_Item",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DressUtility as ::unity2::ClassIdentity>::NAME,
-                        "get_Item",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_item(
-        this: DressUtility,
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(DressUtility, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
-            ::core::mem::transmute(__lookup_get_item::get_method_info().method_ptr);
-        inner(this, name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<DressUtility as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DressUtility as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: DressUtility,
-        body_root: crate::unity_engine::transform::Transform,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(DressUtility, crate::unity_engine::transform::Transform, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, body_root, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_transplant_dress_only_bones {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DressUtility as ::unity2::ClassIdentity>::class(),
-                "TransplantDressOnlyBones",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DressUtility as ::unity2::ClassIdentity>::NAME,
-                        "TransplantDressOnlyBones",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn transplant_dress_only_bones(
-        this: DressUtility,
-        dress: crate::unity_engine::transform::Transform,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(DressUtility, crate::unity_engine::transform::Transform, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_transplant_dress_only_bones::get_method_info().method_ptr);
-        inner(this, dress, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_transplant_skinned_mesh {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-                <::unity2::Array<crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer> as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DressUtility as ::unity2::ClassIdentity>::class(),
-                "TransplantSkinnedMesh",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DressUtility as ::unity2::ClassIdentity>::NAME,
-                        "TransplantSkinnedMesh",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn transplant_skinned_mesh(
-        this: DressUtility,
-        dress_go: crate::unity_engine::gameobject::GameObject,
-        dress_meshes: ::unity2::Array<crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer>,
-        parent_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DressUtility,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::Array<crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer>,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_transplant_skinned_mesh::get_method_info().method_ptr);
-        inner(this, dress_go, dress_meshes, parent_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_transplant_mesh {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DressUtility as ::unity2::ClassIdentity>::class(),
-                "TransplantMesh",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DressUtility as ::unity2::ClassIdentity>::NAME,
-                        "TransplantMesh",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn transplant_mesh(
-        this: DressUtility,
-        acc_go: crate::unity_engine::gameobject::GameObject,
-        parent_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(DressUtility, crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_transplant_mesh::get_method_info().method_ptr);
-        inner(this, acc_go, parent_name, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DressUtility_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_cache { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DressUtility as :: unity2 :: ClassIdentity > :: class () , "get_Cache" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DressUtility as :: unity2 :: ClassIdentity > :: NAME , "get_Cache" , e) , } } } pub unsafe fn get_cache (this : DressUtility , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: combat :: hierarchycache :: HierarchyCache { let inner : extern "C" fn (DressUtility , :: unity2 :: OptionalMethod ,) -> crate :: combat :: hierarchycache :: HierarchyCache = :: core :: mem :: transmute (__lookup_get_cache :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_item { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DressUtility as :: unity2 :: ClassIdentity > :: class () , "get_Item" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DressUtility as :: unity2 :: ClassIdentity > :: NAME , "get_Item" , e) , } } } pub unsafe fn get_item (this : DressUtility , name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform { let inner : extern "C" fn (DressUtility , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform = :: core :: mem :: transmute (__lookup_get_item :: get_method_info () . method_ptr ,) ; inner (this , name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: transform :: Transform as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DressUtility as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DressUtility as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DressUtility , body_root : crate :: unity_engine :: transform :: Transform , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DressUtility , crate :: unity_engine :: transform :: Transform , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , body_root , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_transplant_dress_only_bones { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: transform :: Transform as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DressUtility as :: unity2 :: ClassIdentity > :: class () , "TransplantDressOnlyBones" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DressUtility as :: unity2 :: ClassIdentity > :: NAME , "TransplantDressOnlyBones" , e) , } } } pub unsafe fn transplant_dress_only_bones (this : DressUtility , dress : crate :: unity_engine :: transform :: Transform , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DressUtility , crate :: unity_engine :: transform :: Transform , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_transplant_dress_only_bones :: get_method_info () . method_ptr ,) ; inner (this , dress , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_transplant_skinned_mesh { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: skinnedmeshrenderer :: SkinnedMeshRenderer > as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DressUtility as :: unity2 :: ClassIdentity > :: class () , "TransplantSkinnedMesh" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DressUtility as :: unity2 :: ClassIdentity > :: NAME , "TransplantSkinnedMesh" , e) , } } } pub unsafe fn transplant_skinned_mesh (this : DressUtility , dress_go : crate :: unity_engine :: gameobject :: GameObject , dress_meshes : :: unity2 :: Array < crate :: unity_engine :: skinnedmeshrenderer :: SkinnedMeshRenderer > , parent_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DressUtility , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: Array < crate :: unity_engine :: skinnedmeshrenderer :: SkinnedMeshRenderer > , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_transplant_skinned_mesh :: get_method_info () . method_ptr ,) ; inner (this , dress_go , dress_meshes , parent_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_transplant_mesh { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DressUtility as :: unity2 :: ClassIdentity > :: class () , "TransplantMesh" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DressUtility as :: unity2 :: ClassIdentity > :: NAME , "TransplantMesh" , e) , } } } pub unsafe fn transplant_mesh (this : DressUtility , acc_go : crate :: unity_engine :: gameobject :: GameObject , parent_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DressUtility , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_transplant_mesh :: get_method_info () . method_ptr ,) ; inner (this , acc_go , parent_name , __unity2_method_info) } }
 
 #[cfg(feature = "combat-dressutility")]
-pub trait IDressUtilityMethods: IDressUtility {
-    #[doc = "`get_Cache()` overload"]
-    fn get_cache(self) -> crate::combat::hierarchycache::HierarchyCache {
-        unsafe {
-            let __receiver = <DressUtility as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DressUtility_unity2_raw::get_cache(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Item(::unity2::Il2CppString)` overload"]
-    fn get_item(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::transform::Transform {
-        unsafe {
-            let __receiver = <DressUtility as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DressUtility_unity2_raw::get_item(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(crate::unity_engine::transform::Transform)` overload"]
-    fn ctor(self, body_root: impl ::core::convert::Into<crate::unity_engine::transform::Transform>) -> () {
-        unsafe {
-            let __receiver = <DressUtility as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DressUtility_unity2_raw::ctor(__receiver, ::core::convert::Into::into(body_root), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`TransplantDressOnlyBones(crate::unity_engine::transform::Transform)` overload"]
-    fn transplant_dress_only_bones(self, dress: impl ::core::convert::Into<crate::unity_engine::transform::Transform>) -> () {
-        unsafe {
-            let __receiver = <DressUtility as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DressUtility_unity2_raw::transplant_dress_only_bones(__receiver, ::core::convert::Into::into(dress), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`TransplantSkinnedMesh(crate::unity_engine::gameobject::GameObject, ::unity2::Array<crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer>, ::unity2::Il2CppString)` overload"]
-    fn transplant_skinned_mesh(
-        self,
-        dress_go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-        dress_meshes: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer>>,
-        parent_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            let __receiver = <DressUtility as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DressUtility_unity2_raw::transplant_skinned_mesh(
-                __receiver,
-                ::core::convert::Into::into(dress_go),
-                ::core::convert::Into::into(dress_meshes),
-                ::core::convert::Into::into(parent_name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`TransplantMesh(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString)` overload"]
-    fn transplant_mesh(
-        self,
-        acc_go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-        parent_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            let __receiver = <DressUtility as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DressUtility_unity2_raw::transplant_mesh(
-                __receiver,
-                ::core::convert::Into::into(acc_go),
-                ::core::convert::Into::into(parent_name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+pub trait IDressUtilityMethods : IDressUtility { # [doc = "`get_Cache()` overload"] fn get_cache (self ,) -> crate :: combat :: hierarchycache :: HierarchyCache { unsafe { let __receiver = < DressUtility as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DressUtility_unity2_raw :: get_cache (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Item(::unity2::Il2CppString)` overload"] fn get_item (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: transform :: Transform { unsafe { let __receiver = < DressUtility as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DressUtility_unity2_raw :: get_item (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } # [doc = "`.ctor(crate::unity_engine::transform::Transform)` overload"] fn ctor (self , body_root : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform >) -> () { unsafe { let __receiver = < DressUtility as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DressUtility_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (body_root) , :: core :: option :: Option :: None) } } # [doc = "`TransplantDressOnlyBones(crate::unity_engine::transform::Transform)` overload"] fn transplant_dress_only_bones (self , dress : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform >) -> () { unsafe { let __receiver = < DressUtility as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DressUtility_unity2_raw :: transplant_dress_only_bones (__receiver , :: core :: convert :: Into :: into (dress) , :: core :: option :: Option :: None) } } # [doc = "`TransplantSkinnedMesh(crate::unity_engine::gameobject::GameObject, ::unity2::Array<crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer>, ::unity2::Il2CppString)` overload"] fn transplant_skinned_mesh (self , dress_go : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , dress_meshes : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: skinnedmeshrenderer :: SkinnedMeshRenderer > > , parent_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < DressUtility as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DressUtility_unity2_raw :: transplant_skinned_mesh (__receiver , :: core :: convert :: Into :: into (dress_go) , :: core :: convert :: Into :: into (dress_meshes) , :: core :: convert :: Into :: into (parent_name) , :: core :: option :: Option :: None) } } # [doc = "`TransplantMesh(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString)` overload"] fn transplant_mesh (self , acc_go : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , parent_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < DressUtility as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DressUtility_unity2_raw :: transplant_mesh (__receiver , :: core :: convert :: Into :: into (acc_go) , :: core :: convert :: Into :: into (parent_name) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "combat-dressutility")]
-impl<__T: IDressUtility> IDressUtilityMethods for __T {}
+impl < __T : IDressUtility > IDressUtilityMethods for __T { }
+
+#[cfg(feature = "combat-dressutility")]
+impl DressUtility { pub fn get_cache_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DressUtility_unity2_raw :: __lookup_get_cache :: get_method_info () } pub fn get_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DressUtility_unity2_raw :: __lookup_get_item :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DressUtility_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn transplant_dress_only_bones_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DressUtility_unity2_raw :: __lookup_transplant_dress_only_bones :: get_method_info () } pub fn transplant_skinned_mesh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DressUtility_unity2_raw :: __lookup_transplant_skinned_mesh :: get_method_info () } pub fn transplant_mesh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DressUtility_unity2_raw :: __lookup_transplant_mesh :: get_method_info () } }
 
 #[cfg(feature = "combat-dressutility")]
 impl DressUtility {
-    #[doc = "`.ctor(crate::unity_engine::transform::Transform)` — overload selector"]
-    pub fn new(body_root: crate::unity_engine::transform::Transform) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(DressUtility), ::core::stringify!(new),));
-        <Self as IDressUtilityMethods>::ctor(this, body_root);
-        this
-    }
+# [doc = "`.ctor(crate::unity_engine::transform::Transform)` — overload selector"] pub fn new (body_root : crate :: unity_engine :: transform :: Transform) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DressUtility) , :: core :: stringify ! (new) ,)) ; < Self as IDressUtilityMethods > :: ctor (this , body_root) ; this }
 }
 
 #[cfg(feature = "combat-dressutility")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{DressUtility, IDressUtility, IDressUtilityMethods};
+    pub use super::DressUtility;
+    pub use super::IDressUtility;
+    pub use super::IDressUtilityMethods;
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

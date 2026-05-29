@@ -2,177 +2,57 @@
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-repeatstatement-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        moon_sharp::interpreter::tree::{
-            nodebase::{INodeBase, NodeBase},
-            statement::{IStatement, Statement},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/tree/statements/repeatstatement/RepeatStatement.md"))]
-    #[::unity2::class(namespace = "MoonSharp.Interpreter.Tree.Statements", name = "RepeatStatement")]
-    #[parent(crate::moon_sharp::interpreter::tree::statement::Statement)]
-    pub struct RepeatStatement {
-        #[offset(32)]
-        #[rename(name = "m_Condition")]
-        pub m_condition: crate::moon_sharp::interpreter::tree::expression::Expression,
-        #[offset(40)]
-        #[rename(name = "m_Block")]
-        pub m_block: crate::moon_sharp::interpreter::tree::statement::Statement,
-        #[offset(48)]
-        #[rename(name = "m_StackFrame")]
-        pub m_stack_frame: crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock,
-        #[offset(56)]
-        #[rename(name = "m_Repeat")]
-        pub m_repeat: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
-        #[offset(64)]
-        #[rename(name = "m_Until")]
-        pub m_until: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: moon_sharp :: interpreter :: tree :: nodebase :: { INodeBase , NodeBase }
+ ;
+ use crate :: moon_sharp :: interpreter :: tree :: statement :: { IStatement , Statement }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/tree/statements/repeatstatement/RepeatStatement.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Tree.Statements" , name = "RepeatStatement")] # [parent (crate :: moon_sharp :: interpreter :: tree :: statement :: Statement)] pub struct RepeatStatement {
+# [offset (32)] # [rename (name = "m_Condition")] pub m_condition : crate :: moon_sharp :: interpreter :: tree :: expression :: Expression ,
+# [offset (40)] # [rename (name = "m_Block")] pub m_block : crate :: moon_sharp :: interpreter :: tree :: statement :: Statement ,
+# [offset (48)] # [rename (name = "m_StackFrame")] pub m_stack_frame : crate :: moon_sharp :: interpreter :: execution :: runtimescopeblock :: RuntimeScopeBlock ,
+# [offset (56)] # [rename (name = "m_Repeat")] pub m_repeat : crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef ,
+# [offset (64)] # [rename (name = "m_Until")] pub m_until : crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef ,
+}
+
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-repeatstatement-types")]
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-repeatstatement")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RepeatStatement_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RepeatStatement as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RepeatStatement as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RepeatStatement,
-        lcontext: crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RepeatStatement,
-            crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, lcontext, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_compile {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RepeatStatement as ::unity2::ClassIdentity>::class(),
-                "Compile",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RepeatStatement as ::unity2::ClassIdentity>::NAME,
-                        "Compile",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn compile(
-        this: RepeatStatement,
-        bc: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RepeatStatement, crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_compile::get_method_info().method_ptr);
-        inner(this, bc, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RepeatStatement_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RepeatStatement as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RepeatStatement as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RepeatStatement , lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RepeatStatement , crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , lcontext , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_compile { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RepeatStatement as :: unity2 :: ClassIdentity > :: class () , "Compile" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RepeatStatement as :: unity2 :: ClassIdentity > :: NAME , "Compile" , e) , } } } pub unsafe fn compile (this : RepeatStatement , bc : crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RepeatStatement , crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_compile :: get_method_info () . method_ptr ,) ; inner (this , bc , __unity2_method_info) } }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-repeatstatement")]
-pub trait IRepeatStatementMethods: IRepeatStatement {
-    #[doc = "`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` overload"]
-    fn ctor(self, lcontext: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext>) -> () {
-        unsafe {
-            let __receiver = <RepeatStatement as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RepeatStatement_unity2_raw::ctor(__receiver, ::core::convert::Into::into(lcontext), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Compile(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"]
-    fn compile(self, bc: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode>) -> () {
-        unsafe {
-            let __receiver = <RepeatStatement as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RepeatStatement_unity2_raw::compile(__receiver, ::core::convert::Into::into(bc), ::core::option::Option::None)
-        }
-    }
-}
+pub trait IRepeatStatementMethods : IRepeatStatement { # [doc = "`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` overload"] fn ctor (self , lcontext : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext >) -> () { unsafe { let __receiver = < RepeatStatement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RepeatStatement_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (lcontext) , :: core :: option :: Option :: None) } } # [doc = "`Compile(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"] fn compile (self , bc : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode >) -> () { unsafe { let __receiver = < RepeatStatement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RepeatStatement_unity2_raw :: compile (__receiver , :: core :: convert :: Into :: into (bc) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-repeatstatement")]
-impl<__T: IRepeatStatement> IRepeatStatementMethods for __T {}
+impl < __T : IRepeatStatement > IRepeatStatementMethods for __T { }
+
+#[cfg(feature = "moon_sharp-interpreter-tree-statements-repeatstatement")]
+impl RepeatStatement { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RepeatStatement_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn compile_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RepeatStatement_unity2_raw :: __lookup_compile :: get_method_info () } }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-repeatstatement")]
 impl RepeatStatement {
-    #[doc = "`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` — overload selector"]
-    pub fn new(lcontext: crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RepeatStatement),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRepeatStatementMethods>::ctor(this, lcontext);
-        this
-    }
+# [doc = "`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` — overload selector"] pub fn new (lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RepeatStatement) , :: core :: stringify ! (new) ,)) ; < Self as IRepeatStatementMethods > :: ctor (this , lcontext) ; this }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-repeatstatement")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{IRepeatStatement, IRepeatStatementMethods, RepeatStatement};
-    #[cfg(feature = "moon_sharp-interpreter-tree-nodebase")]
-    pub use crate::moon_sharp::interpreter::tree::nodebase::INodeBaseMethods;
-    #[cfg(feature = "moon_sharp-interpreter-tree-statement")]
-    pub use crate::moon_sharp::interpreter::tree::statement::IStatementMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        moon_sharp::interpreter::tree::{nodebase::INodeBase, statement::IStatement},
-        system::object::IObject,
-    };
+    pub use super::RepeatStatement;
+    pub use super::IRepeatStatement;
+    pub use super::IRepeatStatementMethods;
+    pub use crate::moon_sharp::interpreter::tree::nodebase::INodeBase;
+    pub use crate::moon_sharp::interpreter::tree::statement::IStatement;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "moon_sharp-interpreter-tree-nodebase")] pub use crate::moon_sharp::interpreter::tree::nodebase::INodeBaseMethods;
+    #[cfg(feature = "moon_sharp-interpreter-tree-statement")] pub use crate::moon_sharp::interpreter::tree::statement::IStatementMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

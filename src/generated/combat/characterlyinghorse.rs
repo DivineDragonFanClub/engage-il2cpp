@@ -2,367 +2,141 @@
 
 #[cfg(feature = "combat-characterlyinghorse-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        combat::characterlying::{CharacterLying, ICharacterLying},
-        system::{
-            object::{IObject, Object},
-            r#enum::{Enum, IEnum},
-            valuetype::{IValueType, ValueType},
-        },
-        unity_engine::{
-            behaviour::{Behaviour, IBehaviour},
-            component::{Component, IComponent},
-            monobehaviour::{IMonoBehaviour, MonoBehaviour},
-            object_2::{IObject_2, Object_2},
-        },
-    };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/characterlyinghorse/CharacterLyingHorse_Progress.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct CharacterLyingHorse_Progress {
-        pub value: i32,
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: combat :: characterlying :: { CharacterLying , ICharacterLying }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
+ use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
+ ;
+ use crate :: unity_engine :: component :: { Component , IComponent }
+ ;
+ use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/characterlyinghorse/CharacterLyingHorse_Progress.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct CharacterLyingHorse_Progress  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for CharacterLyingHorse_Progress  {
+    const NAMESPACE: &'static str = "Combat";
+
+    const NAME: &'static str = "CharacterLyingHorse.Progress";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for CharacterLyingHorse_Progress {
-        const NAME: &'static str = "CharacterLyingHorse.Progress";
-        const NAMESPACE: &'static str = "Combat";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for CharacterLyingHorse_Progress  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for CharacterLyingHorse_Progress {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  CharacterLyingHorse_Progress  {
+    pub fn flying() -> Self {
+        Self { value: 0 }
+
     }
 
-    impl CharacterLyingHorse_Progress {
-        pub fn flying() -> Self {
-            Self { value: 0 }
-        }
 
-        pub fn horse_landed() -> Self {
-            Self { value: 1 }
-        }
+    pub fn horse_landed() -> Self {
+        Self { value: 1 }
 
-        pub fn both_landed() -> Self {
-            Self { value: 2 }
-        }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/characterlyinghorse/CharacterLyingHorse.md"))]
-    #[::unity2::class(namespace = "Combat", name = "CharacterLyingHorse")]
-    #[parent(crate::combat::characterlying::CharacterLying)]
-    pub struct CharacterLyingHorse {
-        #[offset(36)]
-        #[rename(name = "m_StartBaseTR")]
-        pub m_start_base_tr: crate::combat::tr::TR,
-        #[offset(64)]
-        #[rename(name = "m_EndBaseTR")]
-        pub m_end_base_tr: crate::combat::tr::TR,
-        #[offset(92)]
-        #[rename(name = "m_StartHumanQ")]
-        pub m_start_human_q: crate::unity_engine::quaternion::Quaternion,
-        #[offset(108)]
-        #[rename(name = "m_EndHumanQ")]
-        pub m_end_human_q: crate::unity_engine::quaternion::Quaternion,
-        #[offset(128)]
-        #[rename(name = "m_HumanRoot")]
-        pub m_human_root: crate::unity_engine::transform::Transform,
-        #[offset(136)]
-        #[rename(name = "m_HorseRoot")]
-        pub m_horse_root: crate::unity_engine::transform::Transform,
-        #[offset(144)]
-        #[rename(name = "m_HorseRootRotation")]
-        pub m_horse_root_rotation: crate::unity_engine::quaternion::Quaternion,
-        #[offset(160)]
-        #[rename(name = "m_HorseNrm")]
-        pub m_horse_nrm: crate::unity_engine::vector3::Vector3,
-        #[offset(172)]
-        #[rename(name = "m_Time")]
-        pub m_time: f32,
-        #[offset(176)]
-        #[rename(name = "m_EndTime")]
-        pub m_end_time: f32,
-        #[offset(180)]
-        #[rename(name = "m_IsCollide")]
-        pub m_is_collide: bool,
-        #[offset(184)]
-        #[rename(name = "m_LastSafetyHipXZ")]
-        pub m_last_safety_hip_xz: crate::combat::fxz::FXZ,
-        #[offset(192)]
-        #[rename(name = "m_LastLookAtRide")]
-        pub m_last_look_at_ride: crate::combat::fxz::FXZ,
+
+    pub fn both_landed() -> Self {
+        Self { value: 2 }
+
     }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/characterlyinghorse/CharacterLyingHorse.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CharacterLyingHorse")] # [parent (crate :: combat :: characterlying :: CharacterLying)] pub struct CharacterLyingHorse {
+# [offset (36)] # [rename (name = "m_StartBaseTR")] pub m_start_base_tr : crate :: combat :: tr :: TR ,
+# [offset (64)] # [rename (name = "m_EndBaseTR")] pub m_end_base_tr : crate :: combat :: tr :: TR ,
+# [offset (92)] # [rename (name = "m_StartHumanQ")] pub m_start_human_q : crate :: unity_engine :: quaternion :: Quaternion ,
+# [offset (108)] # [rename (name = "m_EndHumanQ")] pub m_end_human_q : crate :: unity_engine :: quaternion :: Quaternion ,
+# [offset (128)] # [rename (name = "m_HumanRoot")] pub m_human_root : crate :: unity_engine :: transform :: Transform ,
+# [offset (136)] # [rename (name = "m_HorseRoot")] pub m_horse_root : crate :: unity_engine :: transform :: Transform ,
+# [offset (144)] # [rename (name = "m_HorseRootRotation")] pub m_horse_root_rotation : crate :: unity_engine :: quaternion :: Quaternion ,
+# [offset (160)] # [rename (name = "m_HorseNrm")] pub m_horse_nrm : crate :: unity_engine :: vector3 :: Vector3 ,
+# [offset (172)] # [rename (name = "m_Time")] pub m_time : f32 ,
+# [offset (176)] # [rename (name = "m_EndTime")] pub m_end_time : f32 ,
+# [offset (180)] # [rename (name = "m_IsCollide")] pub m_is_collide : bool ,
+# [offset (184)] # [rename (name = "m_LastSafetyHipXZ")] pub m_last_safety_hip_xz : crate :: combat :: fxz :: FXZ ,
+# [offset (192)] # [rename (name = "m_LastLookAtRide")] pub m_last_look_at_ride : crate :: combat :: fxz :: FXZ ,
+}
+
 }
 
 #[cfg(feature = "combat-characterlyinghorse-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-characterlyinghorse")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CharacterLyingHorse_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_progess {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterLyingHorse as ::unity2::ClassIdentity>::class(),
-                "GetProgess",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterLyingHorse as ::unity2::ClassIdentity>::NAME,
-                        "GetProgess",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_progess(
-        this: CharacterLyingHorse,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::combat::characterlyinghorse::CharacterLyingHorse_Progress {
-        let inner: extern "C" fn(CharacterLyingHorse, ::unity2::OptionalMethod) -> crate::combat::characterlyinghorse::CharacterLyingHorse_Progress =
-            ::core::mem::transmute(__lookup_get_progess::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_my_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterLyingHorse as ::unity2::ClassIdentity>::class(),
-                "MyStart",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterLyingHorse as ::unity2::ClassIdentity>::NAME,
-                        "MyStart",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn my_start(this: CharacterLyingHorse, die_hash: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharacterLyingHorse, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_my_start::get_method_info().method_ptr);
-        inner(this, die_hash, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_make_my_dead_pose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterLyingHorse as ::unity2::ClassIdentity>::class(),
-                "MakeMyDeadPose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterLyingHorse as ::unity2::ClassIdentity>::NAME,
-                        "MakeMyDeadPose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn make_my_dead_pose(this: CharacterLyingHorse, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharacterLyingHorse, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_make_my_dead_pose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_my_late_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterLyingHorse as ::unity2::ClassIdentity>::class(),
-                "MyLateUpdate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterLyingHorse as ::unity2::ClassIdentity>::NAME,
-                        "MyLateUpdate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn my_late_update(this: CharacterLyingHorse, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharacterLyingHorse, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_my_late_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharacterLyingHorse as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CharacterLyingHorse as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: CharacterLyingHorse, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharacterLyingHorse, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CharacterLyingHorse_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_progess { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterLyingHorse as :: unity2 :: ClassIdentity > :: class () , "GetProgess" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterLyingHorse as :: unity2 :: ClassIdentity > :: NAME , "GetProgess" , e) , } } } pub unsafe fn get_progess (this : CharacterLyingHorse , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: combat :: characterlyinghorse :: CharacterLyingHorse_Progress { let inner : extern "C" fn (CharacterLyingHorse , :: unity2 :: OptionalMethod ,) -> crate :: combat :: characterlyinghorse :: CharacterLyingHorse_Progress = :: core :: mem :: transmute (__lookup_get_progess :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_my_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterLyingHorse as :: unity2 :: ClassIdentity > :: class () , "MyStart" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterLyingHorse as :: unity2 :: ClassIdentity > :: NAME , "MyStart" , e) , } } } pub unsafe fn my_start (this : CharacterLyingHorse , die_hash : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterLyingHorse , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_my_start :: get_method_info () . method_ptr ,) ; inner (this , die_hash , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_make_my_dead_pose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterLyingHorse as :: unity2 :: ClassIdentity > :: class () , "MakeMyDeadPose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterLyingHorse as :: unity2 :: ClassIdentity > :: NAME , "MakeMyDeadPose" , e) , } } } pub unsafe fn make_my_dead_pose (this : CharacterLyingHorse , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterLyingHorse , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_make_my_dead_pose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_my_late_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterLyingHorse as :: unity2 :: ClassIdentity > :: class () , "MyLateUpdate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterLyingHorse as :: unity2 :: ClassIdentity > :: NAME , "MyLateUpdate" , e) , } } } pub unsafe fn my_late_update (this : CharacterLyingHorse , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterLyingHorse , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_my_late_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CharacterLyingHorse as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CharacterLyingHorse as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : CharacterLyingHorse , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CharacterLyingHorse , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "combat-characterlyinghorse")]
-pub trait ICharacterLyingHorseMethods: ICharacterLyingHorse {
-    #[doc = "`GetProgess()` overload"]
-    fn get_progess(self) -> crate::combat::characterlyinghorse::CharacterLyingHorse_Progress {
-        unsafe {
-            let __receiver = <CharacterLyingHorse as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterLyingHorse_unity2_raw::get_progess(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`MyStart(i32)` overload"]
-    fn my_start(self, die_hash: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <CharacterLyingHorse as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterLyingHorse_unity2_raw::my_start(__receiver, ::core::convert::Into::into(die_hash), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`MakeMyDeadPose()` overload"]
-    fn make_my_dead_pose(self) -> () {
-        unsafe {
-            let __receiver = <CharacterLyingHorse as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterLyingHorse_unity2_raw::make_my_dead_pose(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`MyLateUpdate()` overload"]
-    fn my_late_update(self) -> () {
-        unsafe {
-            let __receiver = <CharacterLyingHorse as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterLyingHorse_unity2_raw::my_late_update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <CharacterLyingHorse as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __CharacterLyingHorse_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait ICharacterLyingHorseMethods : ICharacterLyingHorse { # [doc = "`GetProgess()` overload"] fn get_progess (self ,) -> crate :: combat :: characterlyinghorse :: CharacterLyingHorse_Progress { unsafe { let __receiver = < CharacterLyingHorse as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterLyingHorse_unity2_raw :: get_progess (__receiver , :: core :: option :: Option :: None) } } # [doc = "`MyStart(i32)` overload"] fn my_start (self , die_hash : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < CharacterLyingHorse as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterLyingHorse_unity2_raw :: my_start (__receiver , :: core :: convert :: Into :: into (die_hash) , :: core :: option :: Option :: None) } } # [doc = "`MakeMyDeadPose()` overload"] fn make_my_dead_pose (self ,) -> () { unsafe { let __receiver = < CharacterLyingHorse as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterLyingHorse_unity2_raw :: make_my_dead_pose (__receiver , :: core :: option :: Option :: None) } } # [doc = "`MyLateUpdate()` overload"] fn my_late_update (self ,) -> () { unsafe { let __receiver = < CharacterLyingHorse as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterLyingHorse_unity2_raw :: my_late_update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CharacterLyingHorse as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterLyingHorse_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "combat-characterlyinghorse")]
-impl<__T: ICharacterLyingHorse> ICharacterLyingHorseMethods for __T {}
+impl < __T : ICharacterLyingHorse > ICharacterLyingHorseMethods for __T { }
+
+#[cfg(feature = "combat-characterlyinghorse")]
+impl CharacterLyingHorse { pub fn get_progess_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterLyingHorse_unity2_raw :: __lookup_get_progess :: get_method_info () } pub fn my_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterLyingHorse_unity2_raw :: __lookup_my_start :: get_method_info () } pub fn make_my_dead_pose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterLyingHorse_unity2_raw :: __lookup_make_my_dead_pose :: get_method_info () } pub fn my_late_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterLyingHorse_unity2_raw :: __lookup_my_late_update :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CharacterLyingHorse_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "combat-characterlyinghorse")]
 impl CharacterLyingHorse {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CharacterLyingHorse),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICharacterLyingHorseMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CharacterLyingHorse) , :: core :: stringify ! (new) ,)) ; < Self as ICharacterLyingHorseMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "combat-characterlyinghorse")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{CharacterLyingHorse, CharacterLyingHorse_Progress, ICharacterLyingHorse, ICharacterLyingHorseMethods};
-    #[cfg(feature = "combat-characterlying")]
-    pub use crate::combat::characterlying::ICharacterLyingMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    #[cfg(feature = "unity_engine-behaviour")]
-    pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")]
-    pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")]
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{
-        combat::characterlying::ICharacterLying,
-        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
-        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
-    };
+    pub use super::CharacterLyingHorse_Progress;
+    pub use super::CharacterLyingHorse;
+    pub use super::ICharacterLyingHorse;
+    pub use super::ICharacterLyingHorseMethods;
+    pub use crate::combat::characterlying::ICharacterLying;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    pub use crate::unity_engine::component::IComponent;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "combat-characterlying")] pub use crate::combat::characterlying::ICharacterLyingMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

@@ -2,410 +2,158 @@
 
 #[cfg(feature = "app-dir_2-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::system::{
-        object::{IObject, Object},
-        r#enum::{Enum, IEnum},
-        valuetype::{IValueType, ValueType},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dir_2/Dir_2.md"))]
-    #[::unity2::class(namespace = "App", name = "Dir")]
-    #[parent(crate::system::object::Object)]
-    pub struct Dir_2 {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: system :: r#enum :: { Enum , IEnum }
+ ;
+ use crate :: system :: valuetype :: { IValueType , ValueType }
+ ;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dir_2/Dir_Type.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct Dir_Type {
-        pub value: i32,
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dir_2/Dir_2.md"))] # [:: unity2 :: class (namespace = "App" , name = "Dir")] # [parent (crate :: system :: object :: Object)] pub struct Dir_2 {}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dir_2/Dir_Type.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct Dir_Type  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for Dir_Type  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Dir.Type";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
-    impl ::unity2::ClassIdentity for Dir_Type {
-        const NAME: &'static str = "Dir.Type";
-        const NAMESPACE: &'static str = "App";
+}
 
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+impl  ::unity2::IlType for Dir_Type  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-    impl ::unity2::IlType for Dir_Type {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
+}
+
+
+impl  Dir_Type  {
+    pub fn left() -> Self {
+        Self { value: 134480385 }
+
     }
 
-    impl Dir_Type {
-        pub fn left() -> Self {
-            Self { value: 134480385 }
-        }
 
-        pub fn right() -> Self {
-            Self { value: 537396226 }
-        }
+    pub fn right() -> Self {
+        Self { value: 537396226 }
 
-        pub fn down() -> Self {
-            Self { value: -2145384444 }
-        }
-
-        pub fn up() -> Self {
-            Self { value: 8396808 }
-        }
-
-        pub fn center() -> Self {
-            Self { value: 151027744 }
-        }
-
-        pub fn terminate() -> Self {
-            Self { value: 168362112 }
-        }
-
-        pub fn none() -> Self {
-            Self { value: 84543744 }
-        }
-
-        pub fn up_left() -> Self {
-            Self { value: 100993545 }
-        }
-
-        pub fn up_right() -> Self {
-            Self { value: 17171722 }
-        }
-
-        pub fn down_left() -> Self {
-            Self { value: 67077 }
-        }
-
-        pub fn down_right() -> Self {
-            Self { value: 262 }
-        }
     }
+
+
+    pub fn down() -> Self {
+        Self { value: -2145384444 }
+
+    }
+
+
+    pub fn up() -> Self {
+        Self { value: 8396808 }
+
+    }
+
+
+    pub fn center() -> Self {
+        Self { value: 151027744 }
+
+    }
+
+
+    pub fn terminate() -> Self {
+        Self { value: 168362112 }
+
+    }
+
+
+    pub fn none() -> Self {
+        Self { value: 84543744 }
+
+    }
+
+
+    pub fn up_left() -> Self {
+        Self { value: 100993545 }
+
+    }
+
+
+    pub fn up_right() -> Self {
+        Self { value: 17171722 }
+
+    }
+
+
+    pub fn down_left() -> Self {
+        Self { value: 67077 }
+
+    }
+
+
+    pub fn down_right() -> Self {
+        Self { value: 262 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "app-dir_2-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-dir_2")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Dir_2_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_dir {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<Dir_2 as ::unity2::ClassIdentity>::class(), "GetDir", 4, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Dir_2 as ::unity2::ClassIdentity>::NAME, "GetDir", e),
-            }
-        }
-    }
-    pub unsafe fn get_dir(sx: i32, sz: i32, tx: i32, tz: i32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::dir_2::Dir_Type {
-        let inner: extern "C" fn(i32, i32, i32, i32, ::unity2::OptionalMethod) -> crate::app::dir_2::Dir_Type =
-            ::core::mem::transmute(__lookup_get_dir::get_method_info().method_ptr);
-        inner(sx, sz, tx, tz, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_reverse {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::dir_2::Dir_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Dir_2 as ::unity2::ClassIdentity>::class(), "GetReverse", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Dir_2 as ::unity2::ClassIdentity>::NAME,
-                        "GetReverse",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_reverse(dir: crate::app::dir_2::Dir_Type, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::dir_2::Dir_Type {
-        let inner: extern "C" fn(crate::app::dir_2::Dir_Type, ::unity2::OptionalMethod) -> crate::app::dir_2::Dir_Type =
-            ::core::mem::transmute(__lookup_get_reverse::get_method_info().method_ptr);
-        inner(dir, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::dir_2::Dir_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Dir_2 as ::unity2::ClassIdentity>::class(), "GetX", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Dir_2 as ::unity2::ClassIdentity>::NAME, "GetX", e),
-            }
-        }
-    }
-    pub unsafe fn get_x(dir: crate::app::dir_2::Dir_Type, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(crate::app::dir_2::Dir_Type, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_x::get_method_info().method_ptr);
-        inner(dir, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::dir_2::Dir_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Dir_2 as ::unity2::ClassIdentity>::class(), "GetZ", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Dir_2 as ::unity2::ClassIdentity>::NAME, "GetZ", e),
-            }
-        }
-    }
-    pub unsafe fn get_z(dir: crate::app::dir_2::Dir_Type, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(crate::app::dir_2::Dir_Type, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_z::get_method_info().method_ptr);
-        inner(dir, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_terminate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::dir_2::Dir_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Dir_2 as ::unity2::ClassIdentity>::class(), "IsTerminate", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Dir_2 as ::unity2::ClassIdentity>::NAME,
-                        "IsTerminate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_terminate(dir: crate::app::dir_2::Dir_Type, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(crate::app::dir_2::Dir_Type, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_terminate::get_method_info().method_ptr);
-        inner(dir, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_angle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::dir_2::Dir_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Dir_2 as ::unity2::ClassIdentity>::class(), "GetAngle", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Dir_2 as ::unity2::ClassIdentity>::NAME,
-                        "GetAngle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_angle(dir: crate::app::dir_2::Dir_Type, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(crate::app::dir_2::Dir_Type, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_angle::get_method_info().method_ptr);
-        inner(dir, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_rotate_l90 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::dir_2::Dir_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Dir_2 as ::unity2::ClassIdentity>::class(), "GetRotateL90", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Dir_2 as ::unity2::ClassIdentity>::NAME,
-                        "GetRotateL90",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_rotate_l90(dir: crate::app::dir_2::Dir_Type, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::dir_2::Dir_Type {
-        let inner: extern "C" fn(crate::app::dir_2::Dir_Type, ::unity2::OptionalMethod) -> crate::app::dir_2::Dir_Type =
-            ::core::mem::transmute(__lookup_get_rotate_l90::get_method_info().method_ptr);
-        inner(dir, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_rotate_r90 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::dir_2::Dir_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Dir_2 as ::unity2::ClassIdentity>::class(), "GetRotateR90", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Dir_2 as ::unity2::ClassIdentity>::NAME,
-                        "GetRotateR90",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_rotate_r90(dir: crate::app::dir_2::Dir_Type, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::dir_2::Dir_Type {
-        let inner: extern "C" fn(crate::app::dir_2::Dir_Type, ::unity2::OptionalMethod) -> crate::app::dir_2::Dir_Type =
-            ::core::mem::transmute(__lookup_get_rotate_r90::get_method_info().method_ptr);
-        inner(dir, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Dir_2 as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Dir_2 as ::unity2::ClassIdentity>::NAME, ".ctor", e),
-            }
-        }
-    }
-    pub unsafe fn ctor(this: Dir_2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Dir_2, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Dir_2_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_dir { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Dir_2 as :: unity2 :: ClassIdentity > :: class () , "GetDir" , 4 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Dir_2 as :: unity2 :: ClassIdentity > :: NAME , "GetDir" , e) , } } } pub unsafe fn get_dir (sx : i32 , sz : i32 , tx : i32 , tz : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: dir_2 :: Dir_Type { let inner : extern "C" fn (i32 , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: dir_2 :: Dir_Type = :: core :: mem :: transmute (__lookup_get_dir :: get_method_info () . method_ptr ,) ; inner (sx , sz , tx , tz , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_reverse { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: dir_2 :: Dir_Type as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Dir_2 as :: unity2 :: ClassIdentity > :: class () , "GetReverse" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Dir_2 as :: unity2 :: ClassIdentity > :: NAME , "GetReverse" , e) , } } } pub unsafe fn get_reverse (dir : crate :: app :: dir_2 :: Dir_Type , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: dir_2 :: Dir_Type { let inner : extern "C" fn (crate :: app :: dir_2 :: Dir_Type , :: unity2 :: OptionalMethod ,) -> crate :: app :: dir_2 :: Dir_Type = :: core :: mem :: transmute (__lookup_get_reverse :: get_method_info () . method_ptr ,) ; inner (dir , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_x { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: dir_2 :: Dir_Type as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Dir_2 as :: unity2 :: ClassIdentity > :: class () , "GetX" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Dir_2 as :: unity2 :: ClassIdentity > :: NAME , "GetX" , e) , } } } pub unsafe fn get_x (dir : crate :: app :: dir_2 :: Dir_Type , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (crate :: app :: dir_2 :: Dir_Type , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_x :: get_method_info () . method_ptr ,) ; inner (dir , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_z { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: dir_2 :: Dir_Type as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Dir_2 as :: unity2 :: ClassIdentity > :: class () , "GetZ" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Dir_2 as :: unity2 :: ClassIdentity > :: NAME , "GetZ" , e) , } } } pub unsafe fn get_z (dir : crate :: app :: dir_2 :: Dir_Type , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (crate :: app :: dir_2 :: Dir_Type , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_z :: get_method_info () . method_ptr ,) ; inner (dir , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_terminate { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: dir_2 :: Dir_Type as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Dir_2 as :: unity2 :: ClassIdentity > :: class () , "IsTerminate" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Dir_2 as :: unity2 :: ClassIdentity > :: NAME , "IsTerminate" , e) , } } } pub unsafe fn is_terminate (dir : crate :: app :: dir_2 :: Dir_Type , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: app :: dir_2 :: Dir_Type , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_terminate :: get_method_info () . method_ptr ,) ; inner (dir , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_angle { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: dir_2 :: Dir_Type as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Dir_2 as :: unity2 :: ClassIdentity > :: class () , "GetAngle" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Dir_2 as :: unity2 :: ClassIdentity > :: NAME , "GetAngle" , e) , } } } pub unsafe fn get_angle (dir : crate :: app :: dir_2 :: Dir_Type , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (crate :: app :: dir_2 :: Dir_Type , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_angle :: get_method_info () . method_ptr ,) ; inner (dir , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_rotate_l90 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: dir_2 :: Dir_Type as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Dir_2 as :: unity2 :: ClassIdentity > :: class () , "GetRotateL90" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Dir_2 as :: unity2 :: ClassIdentity > :: NAME , "GetRotateL90" , e) , } } } pub unsafe fn get_rotate_l90 (dir : crate :: app :: dir_2 :: Dir_Type , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: dir_2 :: Dir_Type { let inner : extern "C" fn (crate :: app :: dir_2 :: Dir_Type , :: unity2 :: OptionalMethod ,) -> crate :: app :: dir_2 :: Dir_Type = :: core :: mem :: transmute (__lookup_get_rotate_l90 :: get_method_info () . method_ptr ,) ; inner (dir , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_rotate_r90 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: dir_2 :: Dir_Type as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Dir_2 as :: unity2 :: ClassIdentity > :: class () , "GetRotateR90" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Dir_2 as :: unity2 :: ClassIdentity > :: NAME , "GetRotateR90" , e) , } } } pub unsafe fn get_rotate_r90 (dir : crate :: app :: dir_2 :: Dir_Type , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: dir_2 :: Dir_Type { let inner : extern "C" fn (crate :: app :: dir_2 :: Dir_Type , :: unity2 :: OptionalMethod ,) -> crate :: app :: dir_2 :: Dir_Type = :: core :: mem :: transmute (__lookup_get_rotate_r90 :: get_method_info () . method_ptr ,) ; inner (dir , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Dir_2 as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Dir_2 as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Dir_2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Dir_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-dir_2")]
+impl Dir_2 { # [doc = "`GetDir(i32, i32, i32, i32)` overload"] pub fn get_dir (sx : impl :: core :: convert :: Into < i32 > , sz : impl :: core :: convert :: Into < i32 > , tx : impl :: core :: convert :: Into < i32 > , tz : impl :: core :: convert :: Into < i32 >) -> crate :: app :: dir_2 :: Dir_Type { unsafe { __Dir_2_unity2_raw :: get_dir (:: core :: convert :: Into :: into (sx) , :: core :: convert :: Into :: into (sz) , :: core :: convert :: Into :: into (tx) , :: core :: convert :: Into :: into (tz) , :: core :: option :: Option :: None) } } # [doc = "`GetReverse(crate::app::dir_2::Dir_Type)` overload"] pub fn get_reverse (dir : impl :: core :: convert :: Into < crate :: app :: dir_2 :: Dir_Type >) -> crate :: app :: dir_2 :: Dir_Type { unsafe { __Dir_2_unity2_raw :: get_reverse (:: core :: convert :: Into :: into (dir) , :: core :: option :: Option :: None) } } # [doc = "`GetX(crate::app::dir_2::Dir_Type)` overload"] pub fn get_x (dir : impl :: core :: convert :: Into < crate :: app :: dir_2 :: Dir_Type >) -> i32 { unsafe { __Dir_2_unity2_raw :: get_x (:: core :: convert :: Into :: into (dir) , :: core :: option :: Option :: None) } } # [doc = "`GetZ(crate::app::dir_2::Dir_Type)` overload"] pub fn get_z (dir : impl :: core :: convert :: Into < crate :: app :: dir_2 :: Dir_Type >) -> i32 { unsafe { __Dir_2_unity2_raw :: get_z (:: core :: convert :: Into :: into (dir) , :: core :: option :: Option :: None) } } # [doc = "`IsTerminate(crate::app::dir_2::Dir_Type)` overload"] pub fn is_terminate (dir : impl :: core :: convert :: Into < crate :: app :: dir_2 :: Dir_Type >) -> bool { unsafe { __Dir_2_unity2_raw :: is_terminate (:: core :: convert :: Into :: into (dir) , :: core :: option :: Option :: None) } } # [doc = "`GetAngle(crate::app::dir_2::Dir_Type)` overload"] pub fn get_angle (dir : impl :: core :: convert :: Into < crate :: app :: dir_2 :: Dir_Type >) -> i32 { unsafe { __Dir_2_unity2_raw :: get_angle (:: core :: convert :: Into :: into (dir) , :: core :: option :: Option :: None) } } # [doc = "`GetRotateL90(crate::app::dir_2::Dir_Type)` overload"] pub fn get_rotate_l90 (dir : impl :: core :: convert :: Into < crate :: app :: dir_2 :: Dir_Type >) -> crate :: app :: dir_2 :: Dir_Type { unsafe { __Dir_2_unity2_raw :: get_rotate_l90 (:: core :: convert :: Into :: into (dir) , :: core :: option :: Option :: None) } } # [doc = "`GetRotateR90(crate::app::dir_2::Dir_Type)` overload"] pub fn get_rotate_r90 (dir : impl :: core :: convert :: Into < crate :: app :: dir_2 :: Dir_Type >) -> crate :: app :: dir_2 :: Dir_Type { unsafe { __Dir_2_unity2_raw :: get_rotate_r90 (:: core :: convert :: Into :: into (dir) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-dir_2")]
+pub trait IDir_2Methods : IDir_2 { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Dir_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Dir_2_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-dir_2")]
+impl < __T : IDir_2 > IDir_2Methods for __T { }
+
+#[cfg(feature = "app-dir_2")]
+impl Dir_2 { pub fn get_dir_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Dir_2_unity2_raw :: __lookup_get_dir :: get_method_info () } pub fn get_reverse_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Dir_2_unity2_raw :: __lookup_get_reverse :: get_method_info () } pub fn get_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Dir_2_unity2_raw :: __lookup_get_x :: get_method_info () } pub fn get_z_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Dir_2_unity2_raw :: __lookup_get_z :: get_method_info () } pub fn is_terminate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Dir_2_unity2_raw :: __lookup_is_terminate :: get_method_info () } pub fn get_angle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Dir_2_unity2_raw :: __lookup_get_angle :: get_method_info () } pub fn get_rotate_l90_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Dir_2_unity2_raw :: __lookup_get_rotate_l90 :: get_method_info () } pub fn get_rotate_r90_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Dir_2_unity2_raw :: __lookup_get_rotate_r90 :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Dir_2_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-dir_2")]
 impl Dir_2 {
-    #[doc = "`GetDir(i32, i32, i32, i32)` overload"]
-    pub fn get_dir(
-        sx: impl ::core::convert::Into<i32>,
-        sz: impl ::core::convert::Into<i32>,
-        tx: impl ::core::convert::Into<i32>,
-        tz: impl ::core::convert::Into<i32>,
-    ) -> crate::app::dir_2::Dir_Type {
-        unsafe {
-            __Dir_2_unity2_raw::get_dir(
-                ::core::convert::Into::into(sx),
-                ::core::convert::Into::into(sz),
-                ::core::convert::Into::into(tx),
-                ::core::convert::Into::into(tz),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`GetReverse(crate::app::dir_2::Dir_Type)` overload"]
-    pub fn get_reverse(dir: impl ::core::convert::Into<crate::app::dir_2::Dir_Type>) -> crate::app::dir_2::Dir_Type {
-        unsafe { __Dir_2_unity2_raw::get_reverse(::core::convert::Into::into(dir), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetX(crate::app::dir_2::Dir_Type)` overload"]
-    pub fn get_x(dir: impl ::core::convert::Into<crate::app::dir_2::Dir_Type>) -> i32 {
-        unsafe { __Dir_2_unity2_raw::get_x(::core::convert::Into::into(dir), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetZ(crate::app::dir_2::Dir_Type)` overload"]
-    pub fn get_z(dir: impl ::core::convert::Into<crate::app::dir_2::Dir_Type>) -> i32 {
-        unsafe { __Dir_2_unity2_raw::get_z(::core::convert::Into::into(dir), ::core::option::Option::None) }
-    }
-
-    #[doc = "`IsTerminate(crate::app::dir_2::Dir_Type)` overload"]
-    pub fn is_terminate(dir: impl ::core::convert::Into<crate::app::dir_2::Dir_Type>) -> bool {
-        unsafe { __Dir_2_unity2_raw::is_terminate(::core::convert::Into::into(dir), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetAngle(crate::app::dir_2::Dir_Type)` overload"]
-    pub fn get_angle(dir: impl ::core::convert::Into<crate::app::dir_2::Dir_Type>) -> i32 {
-        unsafe { __Dir_2_unity2_raw::get_angle(::core::convert::Into::into(dir), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetRotateL90(crate::app::dir_2::Dir_Type)` overload"]
-    pub fn get_rotate_l90(dir: impl ::core::convert::Into<crate::app::dir_2::Dir_Type>) -> crate::app::dir_2::Dir_Type {
-        unsafe { __Dir_2_unity2_raw::get_rotate_l90(::core::convert::Into::into(dir), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetRotateR90(crate::app::dir_2::Dir_Type)` overload"]
-    pub fn get_rotate_r90(dir: impl ::core::convert::Into<crate::app::dir_2::Dir_Type>) -> crate::app::dir_2::Dir_Type {
-        unsafe { __Dir_2_unity2_raw::get_rotate_r90(::core::convert::Into::into(dir), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-dir_2")]
-pub trait IDir_2Methods: IDir_2 {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <Dir_2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Dir_2_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-dir_2")]
-impl<__T: IDir_2> IDir_2Methods for __T {}
-
-#[cfg(feature = "app-dir_2")]
-impl Dir_2 {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Dir_2), ::core::stringify!(new),));
-        <Self as IDir_2Methods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Dir_2) , :: core :: stringify ! (new) ,)) ; < Self as IDir_2Methods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-dir_2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{Dir_2, Dir_Type, IDir_2, IDir_2Methods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")]
-    pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")]
-    pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
+    pub use super::Dir_2;
+    pub use super::IDir_2;
+    pub use super::IDir_2Methods;
+    pub use super::Dir_Type;
+    pub use crate::system::object::IObject;
+    pub use crate::system::r#enum::IEnum;
+    pub use crate::system::valuetype::IValueType;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
 }

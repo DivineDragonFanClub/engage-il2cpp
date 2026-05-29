@@ -2,228 +2,52 @@
 
 #[cfg(feature = "app-skilltutorialsequence-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        app::procinst::{IProcInst, ProcInst},
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/skilltutorialsequence/SkillTutorialSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "SkillTutorialSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct SkillTutorialSequence {
-        #[static_field]
-        #[rename(name = "TUTID_SKILL")]
-        pub tutid_skill: ::unity2::Il2CppString,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: app :: procinst :: { IProcInst , ProcInst }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/skilltutorialsequence/SkillTutorialSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "SkillTutorialSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct SkillTutorialSequence {
+# [static_field] # [rename (name = "TUTID_SKILL")] pub tutid_skill : :: unity2 :: Il2CppString ,
+}
+
 }
 
 #[cfg(feature = "app-skilltutorialsequence-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-skilltutorialsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SkillTutorialSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillTutorialSequence as ::unity2::ClassIdentity>::class(),
-                "TryCreateBind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SkillTutorialSequence as ::unity2::ClassIdentity>::NAME,
-                        "TryCreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_create_bind(parent: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_try_create_bind::get_method_info().method_ptr);
-        inner(parent, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dialog {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillTutorialSequence as ::unity2::ClassIdentity>::class(),
-                "Dialog",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SkillTutorialSequence as ::unity2::ClassIdentity>::NAME,
-                        "Dialog",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dialog(this: SkillTutorialSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SkillTutorialSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_dialog::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_tutorial {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillTutorialSequence as ::unity2::ClassIdentity>::class(),
-                "Tutorial",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SkillTutorialSequence as ::unity2::ClassIdentity>::NAME,
-                        "Tutorial",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn tutorial(this: SkillTutorialSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SkillTutorialSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_tutorial::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillTutorialSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SkillTutorialSequence as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: SkillTutorialSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SkillTutorialSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __SkillTutorialSequence_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillTutorialSequence as :: unity2 :: ClassIdentity > :: class () , "TryCreateBind" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillTutorialSequence as :: unity2 :: ClassIdentity > :: NAME , "TryCreateBind" , e) , } } } pub unsafe fn try_create_bind (parent : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_try_create_bind :: get_method_info () . method_ptr ,) ; inner (parent , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dialog { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillTutorialSequence as :: unity2 :: ClassIdentity > :: class () , "Dialog" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillTutorialSequence as :: unity2 :: ClassIdentity > :: NAME , "Dialog" , e) , } } } pub unsafe fn dialog (this : SkillTutorialSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillTutorialSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dialog :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_tutorial { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillTutorialSequence as :: unity2 :: ClassIdentity > :: class () , "Tutorial" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillTutorialSequence as :: unity2 :: ClassIdentity > :: NAME , "Tutorial" , e) , } } } pub unsafe fn tutorial (this : SkillTutorialSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillTutorialSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_tutorial :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillTutorialSequence as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillTutorialSequence as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : SkillTutorialSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillTutorialSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-skilltutorialsequence")]
+impl SkillTutorialSequence { # [doc = "`TryCreateBind(crate::app::procinst::ProcInst)` overload"] pub fn try_create_bind (parent : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { __SkillTutorialSequence_unity2_raw :: try_create_bind (:: core :: convert :: Into :: into (parent) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-skilltutorialsequence")]
+pub trait ISkillTutorialSequenceMethods : ISkillTutorialSequence { # [doc = "`Dialog()` overload"] fn dialog (self ,) -> () { unsafe { let __receiver = < SkillTutorialSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SkillTutorialSequence_unity2_raw :: dialog (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Tutorial()` overload"] fn tutorial (self ,) -> () { unsafe { let __receiver = < SkillTutorialSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SkillTutorialSequence_unity2_raw :: tutorial (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SkillTutorialSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SkillTutorialSequence_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-skilltutorialsequence")]
+impl < __T : ISkillTutorialSequence > ISkillTutorialSequenceMethods for __T { }
+
+#[cfg(feature = "app-skilltutorialsequence")]
+impl SkillTutorialSequence { pub fn try_create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SkillTutorialSequence_unity2_raw :: __lookup_try_create_bind :: get_method_info () } pub fn dialog_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SkillTutorialSequence_unity2_raw :: __lookup_dialog :: get_method_info () } pub fn tutorial_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SkillTutorialSequence_unity2_raw :: __lookup_tutorial :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SkillTutorialSequence_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-skilltutorialsequence")]
 impl SkillTutorialSequence {
-    #[doc = "`TryCreateBind(crate::app::procinst::ProcInst)` overload"]
-    pub fn try_create_bind(parent: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe { __SkillTutorialSequence_unity2_raw::try_create_bind(::core::convert::Into::into(parent), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-skilltutorialsequence")]
-pub trait ISkillTutorialSequenceMethods: ISkillTutorialSequence {
-    #[doc = "`Dialog()` overload"]
-    fn dialog(self) -> () {
-        unsafe {
-            let __receiver =
-                <SkillTutorialSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SkillTutorialSequence_unity2_raw::dialog(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Tutorial()` overload"]
-    fn tutorial(self) -> () {
-        unsafe {
-            let __receiver =
-                <SkillTutorialSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SkillTutorialSequence_unity2_raw::tutorial(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <SkillTutorialSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SkillTutorialSequence_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-skilltutorialsequence")]
-impl<__T: ISkillTutorialSequence> ISkillTutorialSequenceMethods for __T {}
-
-#[cfg(feature = "app-skilltutorialsequence")]
-impl SkillTutorialSequence {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SkillTutorialSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISkillTutorialSequenceMethods>::ctor(this);
-        this
-    }
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SkillTutorialSequence) , :: core :: stringify ! (new) ,)) ; < Self as ISkillTutorialSequenceMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-skilltutorialsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ISkillTutorialSequence, ISkillTutorialSequenceMethods, SkillTutorialSequence};
-    #[cfg(feature = "app-procinst")]
-    pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{app::procinst::IProcInst, system::object::IObject};
+    pub use super::SkillTutorialSequence;
+    pub use super::ISkillTutorialSequence;
+    pub use super::ISkillTutorialSequenceMethods;
+    pub use crate::app::procinst::IProcInst;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

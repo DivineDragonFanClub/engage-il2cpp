@@ -2,240 +2,51 @@
 
 #[cfg(feature = "combat-situation_converter-convertengageattack-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        combat::situation_converter::baseconverter::{BaseConverter, IBaseConverter},
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/situation_converter/convertengageattack/ConvertEngageAttack.md"))]
-    #[::unity2::class(namespace = "Combat.SituationConverter", name = "ConvertEngageAttack")]
-    #[parent(crate::combat::situation_converter::baseconverter::BaseConverter)]
-    pub struct ConvertEngageAttack {
-        #[offset(24)]
-        #[rename(name = "m_IsFirstEnterApproach")]
-        pub m_is_first_enter_approach: bool,
-        #[offset(25)]
-        #[rename(name = "m_BeforeSpace")]
-        pub m_before_space: bool,
-        #[offset(26)]
-        #[rename(name = "m_IsStartGTSP")]
-        pub m_is_start_gtsp: bool,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: combat :: situation_converter :: baseconverter :: { BaseConverter , IBaseConverter }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/situation_converter/convertengageattack/ConvertEngageAttack.md"))] # [:: unity2 :: class (namespace = "Combat.SituationConverter" , name = "ConvertEngageAttack")] # [parent (crate :: combat :: situation_converter :: baseconverter :: BaseConverter)] pub struct ConvertEngageAttack {
+# [offset (24)] # [rename (name = "m_IsFirstEnterApproach")] pub m_is_first_enter_approach : bool ,
+# [offset (25)] # [rename (name = "m_BeforeSpace")] pub m_before_space : bool ,
+# [offset (26)] # [rename (name = "m_IsStartGTSP")] pub m_is_start_gtsp : bool ,
+}
+
 }
 
 #[cfg(feature = "combat-situation_converter-convertengageattack-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-situation_converter-convertengageattack")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ConvertEngageAttack_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::situation_converter::cameradataset::CameraDataSet as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ConvertEngageAttack as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ConvertEngageAttack as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ConvertEngageAttack,
-        data: crate::combat::situation_converter::cameradataset::CameraDataSet,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ConvertEngageAttack,
-            crate::combat::situation_converter::cameradataset::CameraDataSet,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_convert {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::combat::camerasituation::CameraSituation as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ConvertEngageAttack as ::unity2::ClassIdentity>::class(),
-                "Convert",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ConvertEngageAttack as ::unity2::ClassIdentity>::NAME,
-                        "Convert",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn convert(
-        this: ConvertEngageAttack,
-        situation: crate::combat::camerasituation::CameraSituation,
-        arg: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::combat::cameraposition::CameraPosition {
-        let inner: extern "C" fn(
-            ConvertEngageAttack,
-            crate::combat::camerasituation::CameraSituation,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::cameraposition::CameraPosition = ::core::mem::transmute(__lookup_convert::get_method_info().method_ptr);
-        inner(this, situation, arg, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_check_enemy {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::combat::cameraposition::CameraPosition as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ConvertEngageAttack as ::unity2::ClassIdentity>::class(),
-                "CheckEnemy",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ConvertEngageAttack as ::unity2::ClassIdentity>::NAME,
-                        "CheckEnemy",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn check_enemy(
-        this: ConvertEngageAttack,
-        cam_pos: crate::combat::cameraposition::CameraPosition,
-        inv_side: bool,
-        inv_cam: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ConvertEngageAttack, crate::combat::cameraposition::CameraPosition, bool, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_check_enemy::get_method_info().method_ptr);
-        inner(this, cam_pos, inv_side, inv_cam, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ConvertEngageAttack_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: situation_converter :: cameradataset :: CameraDataSet as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ConvertEngageAttack as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ConvertEngageAttack as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ConvertEngageAttack , data : crate :: combat :: situation_converter :: cameradataset :: CameraDataSet , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ConvertEngageAttack , crate :: combat :: situation_converter :: cameradataset :: CameraDataSet , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_convert { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: camerasituation :: CameraSituation as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ConvertEngageAttack as :: unity2 :: ClassIdentity > :: class () , "Convert" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ConvertEngageAttack as :: unity2 :: ClassIdentity > :: NAME , "Convert" , e) , } } } pub unsafe fn convert (this : ConvertEngageAttack , situation : crate :: combat :: camerasituation :: CameraSituation , arg : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition { let inner : extern "C" fn (ConvertEngageAttack , crate :: combat :: camerasituation :: CameraSituation , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition = :: core :: mem :: transmute (__lookup_convert :: get_method_info () . method_ptr ,) ; inner (this , situation , arg , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check_enemy { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: cameraposition :: CameraPosition as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ConvertEngageAttack as :: unity2 :: ClassIdentity > :: class () , "CheckEnemy" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ConvertEngageAttack as :: unity2 :: ClassIdentity > :: NAME , "CheckEnemy" , e) , } } } pub unsafe fn check_enemy (this : ConvertEngageAttack , cam_pos : crate :: combat :: cameraposition :: CameraPosition , inv_side : bool , inv_cam : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ConvertEngageAttack , crate :: combat :: cameraposition :: CameraPosition , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_check_enemy :: get_method_info () . method_ptr ,) ; inner (this , cam_pos , inv_side , inv_cam , __unity2_method_info) } }
 
 #[cfg(feature = "combat-situation_converter-convertengageattack")]
-pub trait IConvertEngageAttackMethods: IConvertEngageAttack {
-    #[doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` overload"]
-    fn ctor(self, data: impl ::core::convert::Into<crate::combat::situation_converter::cameradataset::CameraDataSet>) -> () {
-        unsafe {
-            let __receiver = <ConvertEngageAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ConvertEngageAttack_unity2_raw::ctor(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Convert(crate::combat::camerasituation::CameraSituation, ::unity2::Il2CppString)` overload"]
-    fn convert(
-        self,
-        situation: impl ::core::convert::Into<crate::combat::camerasituation::CameraSituation>,
-        arg: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::combat::cameraposition::CameraPosition {
-        unsafe {
-            let __receiver = <ConvertEngageAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ConvertEngageAttack_unity2_raw::convert(
-                __receiver,
-                ::core::convert::Into::into(situation),
-                ::core::convert::Into::into(arg),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CheckEnemy(crate::combat::cameraposition::CameraPosition, bool, bool)` overload"]
-    fn check_enemy(
-        self,
-        cam_pos: impl ::core::convert::Into<crate::combat::cameraposition::CameraPosition>,
-        inv_side: impl ::core::convert::Into<bool>,
-        inv_cam: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver = <ConvertEngageAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ConvertEngageAttack_unity2_raw::check_enemy(
-                __receiver,
-                ::core::convert::Into::into(cam_pos),
-                ::core::convert::Into::into(inv_side),
-                ::core::convert::Into::into(inv_cam),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
+pub trait IConvertEngageAttackMethods : IConvertEngageAttack { # [doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` overload"] fn ctor (self , data : impl :: core :: convert :: Into < crate :: combat :: situation_converter :: cameradataset :: CameraDataSet >) -> () { unsafe { let __receiver = < ConvertEngageAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ConvertEngageAttack_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } # [doc = "`Convert(crate::combat::camerasituation::CameraSituation, ::unity2::Il2CppString)` overload"] fn convert (self , situation : impl :: core :: convert :: Into < crate :: combat :: camerasituation :: CameraSituation > , arg : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: combat :: cameraposition :: CameraPosition { unsafe { let __receiver = < ConvertEngageAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ConvertEngageAttack_unity2_raw :: convert (__receiver , :: core :: convert :: Into :: into (situation) , :: core :: convert :: Into :: into (arg) , :: core :: option :: Option :: None) } } # [doc = "`CheckEnemy(crate::combat::cameraposition::CameraPosition, bool, bool)` overload"] fn check_enemy (self , cam_pos : impl :: core :: convert :: Into < crate :: combat :: cameraposition :: CameraPosition > , inv_side : impl :: core :: convert :: Into < bool > , inv_cam : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ConvertEngageAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ConvertEngageAttack_unity2_raw :: check_enemy (__receiver , :: core :: convert :: Into :: into (cam_pos) , :: core :: convert :: Into :: into (inv_side) , :: core :: convert :: Into :: into (inv_cam) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "combat-situation_converter-convertengageattack")]
-impl<__T: IConvertEngageAttack> IConvertEngageAttackMethods for __T {}
+impl < __T : IConvertEngageAttack > IConvertEngageAttackMethods for __T { }
+
+#[cfg(feature = "combat-situation_converter-convertengageattack")]
+impl ConvertEngageAttack { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ConvertEngageAttack_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn convert_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ConvertEngageAttack_unity2_raw :: __lookup_convert :: get_method_info () } pub fn check_enemy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ConvertEngageAttack_unity2_raw :: __lookup_check_enemy :: get_method_info () } }
 
 #[cfg(feature = "combat-situation_converter-convertengageattack")]
 impl ConvertEngageAttack {
-    #[doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` — overload selector"]
-    pub fn new(data: crate::combat::situation_converter::cameradataset::CameraDataSet) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ConvertEngageAttack),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IConvertEngageAttackMethods>::ctor(this, data);
-        this
-    }
+# [doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` — overload selector"] pub fn new (data : crate :: combat :: situation_converter :: cameradataset :: CameraDataSet) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ConvertEngageAttack) , :: core :: stringify ! (new) ,)) ; < Self as IConvertEngageAttackMethods > :: ctor (this , data) ; this }
 }
 
 #[cfg(feature = "combat-situation_converter-convertengageattack")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ConvertEngageAttack, IConvertEngageAttack, IConvertEngageAttackMethods};
-    #[cfg(feature = "combat-situation_converter-baseconverter")]
-    pub use crate::combat::situation_converter::baseconverter::IBaseConverterMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{combat::situation_converter::baseconverter::IBaseConverter, system::object::IObject};
+    pub use super::ConvertEngageAttack;
+    pub use super::IConvertEngageAttack;
+    pub use super::IConvertEngageAttackMethods;
+    pub use crate::combat::situation_converter::baseconverter::IBaseConverter;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "combat-situation_converter-baseconverter")] pub use crate::combat::situation_converter::baseconverter::IBaseConverterMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -2,164 +2,42 @@
 
 #[cfg(feature = "unity_engine-computeshader-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        system::object::{IObject, Object},
-        unity_engine::object_2::{IObject_2, Object_2},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/computeshader/ComputeShader.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "ComputeShader")]
-    #[parent(crate::unity_engine::object_2::Object_2)]
-    pub struct ComputeShader {}
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+ use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/computeshader/ComputeShader.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "ComputeShader")] # [parent (crate :: unity_engine :: object_2 :: Object_2)] pub struct ComputeShader {}
+
 }
 
 #[cfg(feature = "unity_engine-computeshader-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-computeshader")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ComputeShader_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_find_kernel {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ComputeShader as ::unity2::ClassIdentity>::class(),
-                "FindKernel",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ComputeShader as ::unity2::ClassIdentity>::NAME,
-                        "FindKernel",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn find_kernel(this: ComputeShader, name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(ComputeShader, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_find_kernel::get_method_info().method_ptr);
-        inner(this, name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_enable_keyword {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ComputeShader as ::unity2::ClassIdentity>::class(),
-                "EnableKeyword",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ComputeShader as ::unity2::ClassIdentity>::NAME,
-                        "EnableKeyword",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn enable_keyword(this: ComputeShader, keyword: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ComputeShader, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_enable_keyword::get_method_info().method_ptr);
-        inner(this, keyword, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_disable_keyword {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ComputeShader as ::unity2::ClassIdentity>::class(),
-                "DisableKeyword",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ComputeShader as ::unity2::ClassIdentity>::NAME,
-                        "DisableKeyword",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn disable_keyword(this: ComputeShader, keyword: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ComputeShader, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_disable_keyword::get_method_info().method_ptr);
-        inner(this, keyword, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ComputeShader_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_find_kernel { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ComputeShader as :: unity2 :: ClassIdentity > :: class () , "FindKernel" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ComputeShader as :: unity2 :: ClassIdentity > :: NAME , "FindKernel" , e) , } } } pub unsafe fn find_kernel (this : ComputeShader , name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (ComputeShader , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_find_kernel :: get_method_info () . method_ptr ,) ; inner (this , name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_enable_keyword { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ComputeShader as :: unity2 :: ClassIdentity > :: class () , "EnableKeyword" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ComputeShader as :: unity2 :: ClassIdentity > :: NAME , "EnableKeyword" , e) , } } } pub unsafe fn enable_keyword (this : ComputeShader , keyword : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ComputeShader , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_enable_keyword :: get_method_info () . method_ptr ,) ; inner (this , keyword , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_disable_keyword { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ComputeShader as :: unity2 :: ClassIdentity > :: class () , "DisableKeyword" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ComputeShader as :: unity2 :: ClassIdentity > :: NAME , "DisableKeyword" , e) , } } } pub unsafe fn disable_keyword (this : ComputeShader , keyword : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ComputeShader , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_disable_keyword :: get_method_info () . method_ptr ,) ; inner (this , keyword , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-computeshader")]
-pub trait IComputeShaderMethods: IComputeShader {
-    #[doc = "`FindKernel(::unity2::Il2CppString)` overload"]
-    fn find_kernel(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> i32 {
-        unsafe {
-            let __receiver = <ComputeShader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ComputeShader_unity2_raw::find_kernel(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`EnableKeyword(::unity2::Il2CppString)` overload"]
-    fn enable_keyword(self, keyword: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <ComputeShader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ComputeShader_unity2_raw::enable_keyword(__receiver, ::core::convert::Into::into(keyword), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`DisableKeyword(::unity2::Il2CppString)` overload"]
-    fn disable_keyword(self, keyword: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <ComputeShader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ComputeShader_unity2_raw::disable_keyword(__receiver, ::core::convert::Into::into(keyword), ::core::option::Option::None)
-        }
-    }
-}
+pub trait IComputeShaderMethods : IComputeShader { # [doc = "`FindKernel(::unity2::Il2CppString)` overload"] fn find_kernel (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { let __receiver = < ComputeShader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ComputeShader_unity2_raw :: find_kernel (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } # [doc = "`EnableKeyword(::unity2::Il2CppString)` overload"] fn enable_keyword (self , keyword : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ComputeShader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ComputeShader_unity2_raw :: enable_keyword (__receiver , :: core :: convert :: Into :: into (keyword) , :: core :: option :: Option :: None) } } # [doc = "`DisableKeyword(::unity2::Il2CppString)` overload"] fn disable_keyword (self , keyword : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ComputeShader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ComputeShader_unity2_raw :: disable_keyword (__receiver , :: core :: convert :: Into :: into (keyword) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-computeshader")]
-impl<__T: IComputeShader> IComputeShaderMethods for __T {}
+impl < __T : IComputeShader > IComputeShaderMethods for __T { }
+
+#[cfg(feature = "unity_engine-computeshader")]
+impl ComputeShader { pub fn find_kernel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ComputeShader_unity2_raw :: __lookup_find_kernel :: get_method_info () } pub fn enable_keyword_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ComputeShader_unity2_raw :: __lookup_enable_keyword :: get_method_info () } pub fn disable_keyword_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ComputeShader_unity2_raw :: __lookup_disable_keyword :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-computeshader")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ComputeShader, IComputeShader, IComputeShaderMethods};
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-object_2")]
-    pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::{system::object::IObject, unity_engine::object_2::IObject_2};
+    pub use super::ComputeShader;
+    pub use super::IComputeShader;
+    pub use super::IComputeShaderMethods;
+    pub use crate::system::object::IObject;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
 }

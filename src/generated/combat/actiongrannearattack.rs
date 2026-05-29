@@ -2,258 +2,62 @@
 
 #[cfg(feature = "combat-actiongrannearattack-types")]
 mod __types {
-    #[allow(unused_imports)] use ::unity2::prelude::*;
-
     use super::*;
-    use crate::{
-        combat::{
-            actionbase::{ActionBase, IActionBase},
-            actiondisposerholder::{ActionDisposerHolder, IActionDisposerHolder},
-            actiongranbase::{ActionGranBase, IActionGranBase},
-            state::{IState, State},
-        },
-        system::object::{IObject, Object},
-    };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actiongrannearattack/ActionGranNearAttack.md"))]
-    #[::unity2::class(namespace = "Combat", name = "ActionGranNearAttack")]
-    #[parent(crate::combat::actiongranbase::ActionGranBase)]
-    pub struct ActionGranNearAttack {
-        #[offset(64)]
-        #[rename(name = "m_WorldHitTime")]
-        pub m_world_hit_time: f32,
-        #[offset(68)]
-        #[rename(name = "m_Life")]
-        pub m_life: f32,
-    }
+# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+ use crate :: combat :: actionbase :: { ActionBase , IActionBase }
+ ;
+ use crate :: combat :: actiondisposerholder :: { ActionDisposerHolder , IActionDisposerHolder }
+ ;
+ use crate :: combat :: actiongranbase :: { ActionGranBase , IActionGranBase }
+ ;
+ use crate :: combat :: state :: { IState , State }
+ ;
+ use crate :: system :: object :: { IObject , Object }
+ ;
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actiongrannearattack/ActionGranNearAttack.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "ActionGranNearAttack")] # [parent (crate :: combat :: actiongranbase :: ActionGranBase)] pub struct ActionGranNearAttack {
+# [offset (64)] # [rename (name = "m_WorldHitTime")] pub m_world_hit_time : f32 ,
+# [offset (68)] # [rename (name = "m_Life")] pub m_life : f32 ,
+}
+
 }
 
 #[cfg(feature = "combat-actiongrannearattack-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-actiongrannearattack")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ActionGranNearAttack_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ActionGranNearAttack as ::unity2::ClassIdentity>::class(),
-                "get_Name",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ActionGranNearAttack as ::unity2::ClassIdentity>::NAME,
-                        "get_Name",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(this: ActionGranNearAttack, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(ActionGranNearAttack, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::combat::character::Character as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ActionGranNearAttack as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ActionGranNearAttack as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ActionGranNearAttack,
-        chr: crate::combat::character::Character,
-        world_hit_time: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ActionGranNearAttack, crate::combat::character::Character, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, chr, world_hit_time, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_enter {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ActionGranNearAttack as ::unity2::ClassIdentity>::class(),
-                "OnEnter",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ActionGranNearAttack as ::unity2::ClassIdentity>::NAME,
-                        "OnEnter",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_enter(this: ActionGranNearAttack, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ActionGranNearAttack, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_enter::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ActionGranNearAttack as ::unity2::ClassIdentity>::class(),
-                "OnUpdate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ActionGranNearAttack as ::unity2::ClassIdentity>::NAME,
-                        "OnUpdate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_update(this: ActionGranNearAttack, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ActionGranNearAttack, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ActionGranNearAttack_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ActionGranNearAttack as :: unity2 :: ClassIdentity > :: class () , "get_Name" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ActionGranNearAttack as :: unity2 :: ClassIdentity > :: NAME , "get_Name" , e) , } } } pub unsafe fn get_name (this : ActionGranNearAttack , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (ActionGranNearAttack , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: character :: Character as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ActionGranNearAttack as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ActionGranNearAttack as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ActionGranNearAttack , chr : crate :: combat :: character :: Character , world_hit_time : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ActionGranNearAttack , crate :: combat :: character :: Character , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , chr , world_hit_time , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_enter { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ActionGranNearAttack as :: unity2 :: ClassIdentity > :: class () , "OnEnter" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ActionGranNearAttack as :: unity2 :: ClassIdentity > :: NAME , "OnEnter" , e) , } } } pub unsafe fn on_enter (this : ActionGranNearAttack , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ActionGranNearAttack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_enter :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ActionGranNearAttack as :: unity2 :: ClassIdentity > :: class () , "OnUpdate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ActionGranNearAttack as :: unity2 :: ClassIdentity > :: NAME , "OnUpdate" , e) , } } } pub unsafe fn on_update (this : ActionGranNearAttack , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ActionGranNearAttack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "combat-actiongrannearattack")]
-pub trait IActionGranNearAttackMethods: IActionGranNearAttack {
-    #[doc = "`get_Name()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <ActionGranNearAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ActionGranNearAttack_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(crate::combat::character::Character, f32)` overload"]
-    fn ctor(self, chr: impl ::core::convert::Into<crate::combat::character::Character>, world_hit_time: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver =
-                <ActionGranNearAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ActionGranNearAttack_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(chr),
-                ::core::convert::Into::into(world_hit_time),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnEnter()` overload"]
-    fn on_enter(self) -> () {
-        unsafe {
-            let __receiver =
-                <ActionGranNearAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ActionGranNearAttack_unity2_raw::on_enter(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnUpdate()` overload"]
-    fn on_update(self) -> () {
-        unsafe {
-            let __receiver =
-                <ActionGranNearAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ActionGranNearAttack_unity2_raw::on_update(__receiver, ::core::option::Option::None)
-        }
-    }
-}
+pub trait IActionGranNearAttackMethods : IActionGranNearAttack { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ActionGranNearAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ActionGranNearAttack_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor(crate::combat::character::Character, f32)` overload"] fn ctor (self , chr : impl :: core :: convert :: Into < crate :: combat :: character :: Character > , world_hit_time : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < ActionGranNearAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ActionGranNearAttack_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (chr) , :: core :: convert :: Into :: into (world_hit_time) , :: core :: option :: Option :: None) } } # [doc = "`OnEnter()` overload"] fn on_enter (self ,) -> () { unsafe { let __receiver = < ActionGranNearAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ActionGranNearAttack_unity2_raw :: on_enter (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnUpdate()` overload"] fn on_update (self ,) -> () { unsafe { let __receiver = < ActionGranNearAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ActionGranNearAttack_unity2_raw :: on_update (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "combat-actiongrannearattack")]
-impl<__T: IActionGranNearAttack> IActionGranNearAttackMethods for __T {}
+impl < __T : IActionGranNearAttack > IActionGranNearAttackMethods for __T { }
+
+#[cfg(feature = "combat-actiongrannearattack")]
+impl ActionGranNearAttack { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ActionGranNearAttack_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ActionGranNearAttack_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn on_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ActionGranNearAttack_unity2_raw :: __lookup_on_enter :: get_method_info () } pub fn on_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ActionGranNearAttack_unity2_raw :: __lookup_on_update :: get_method_info () } }
 
 #[cfg(feature = "combat-actiongrannearattack")]
 impl ActionGranNearAttack {
-    #[doc = "`.ctor(crate::combat::character::Character, f32)` — overload selector"]
-    pub fn new(chr: crate::combat::character::Character, world_hit_time: f32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ActionGranNearAttack),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IActionGranNearAttackMethods>::ctor(this, chr, world_hit_time);
-        this
-    }
+# [doc = "`.ctor(crate::combat::character::Character, f32)` — overload selector"] pub fn new (chr : crate :: combat :: character :: Character , world_hit_time : f32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ActionGranNearAttack) , :: core :: stringify ! (new) ,)) ; < Self as IActionGranNearAttackMethods > :: ctor (this , chr , world_hit_time) ; this }
 }
 
 #[cfg(feature = "combat-actiongrannearattack")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::{ActionGranNearAttack, IActionGranNearAttack, IActionGranNearAttackMethods};
-    #[cfg(feature = "combat-actionbase")]
-    pub use crate::combat::actionbase::IActionBaseMethods;
-    #[cfg(feature = "combat-actiondisposerholder")]
-    pub use crate::combat::actiondisposerholder::IActionDisposerHolderMethods;
-    #[cfg(feature = "combat-actiongranbase")]
-    pub use crate::combat::actiongranbase::IActionGranBaseMethods;
-    #[cfg(feature = "combat-state")]
-    pub use crate::combat::state::IStateMethods;
-    #[cfg(feature = "system-object")]
-    pub use crate::system::object::IObjectMethods;
-    pub use crate::{
-        combat::{actionbase::IActionBase, actiondisposerholder::IActionDisposerHolder, actiongranbase::IActionGranBase, state::IState},
-        system::object::IObject,
-    };
+    pub use super::ActionGranNearAttack;
+    pub use super::IActionGranNearAttack;
+    pub use super::IActionGranNearAttackMethods;
+    pub use crate::combat::actionbase::IActionBase;
+    pub use crate::combat::actiondisposerholder::IActionDisposerHolder;
+    pub use crate::combat::actiongranbase::IActionGranBase;
+    pub use crate::combat::state::IState;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "combat-actionbase")] pub use crate::combat::actionbase::IActionBaseMethods;
+    #[cfg(feature = "combat-actiondisposerholder")] pub use crate::combat::actiondisposerholder::IActionDisposerHolderMethods;
+    #[cfg(feature = "combat-actiongranbase")] pub use crate::combat::actiongranbase::IActionGranBaseMethods;
+    #[cfg(feature = "combat-state")] pub use crate::combat::state::IStateMethods;
+    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }
