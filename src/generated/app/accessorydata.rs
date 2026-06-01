@@ -19,6 +19,72 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessorydata/AccessoryData.md"))] # [:: unity2 :: class (namespace = "App" , name = "AccessoryData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: accessorydata :: AccessoryData >)] pub struct AccessoryData {
+# [offset (168)] # [rename (name = "FlagName")] pub flag_name : :: unity2 :: Il2CppString ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/accessorydata/AccessoryData_Masks.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct AccessoryData_Masks  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for AccessoryData_Masks  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AccessoryData.Masks";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for AccessoryData_Masks  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  AccessoryData_Masks  {
+    pub fn body() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn head() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn face() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn back() -> Self {
+        Self { value: 8 }
+
+    }
+
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/accessorydata/AccessoryData_Kinds.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -85,72 +151,6 @@ impl  AccessoryData_Kinds  {
 
 }
 
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/accessorydata/AccessoryData_Masks.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct AccessoryData_Masks  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for AccessoryData_Masks  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AccessoryData.Masks";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for AccessoryData_Masks  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  AccessoryData_Masks  {
-    pub fn body() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn head() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn face() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn back() -> Self {
-        Self { value: 8 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessorydata/AccessoryData.md"))] # [:: unity2 :: class (namespace = "App" , name = "AccessoryData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: accessorydata :: AccessoryData >)] pub struct AccessoryData {
-# [offset (168)] # [rename (name = "FlagName")] pub flag_name : :: unity2 :: Il2CppString ,
-}
-
 }
 
 #[cfg(feature = "app-accessorydata-types")]
@@ -179,11 +179,11 @@ impl AccessoryData {
 #[cfg(feature = "app-accessorydata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AccessoryData_Kinds;
-    pub use super::AccessoryData_Masks;
     pub use super::AccessoryData;
     pub use super::IAccessoryData;
     pub use super::IAccessoryDataMethods;
+    pub use super::AccessoryData_Masks;
+    pub use super::AccessoryData_Kinds;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdata_1::IStructData_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

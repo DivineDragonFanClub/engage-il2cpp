@@ -21,6 +21,73 @@ mod __types {
  ;
 
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/light2d_2/Light2D_LightType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct Light2D_LightType  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for Light2D_LightType  {
+    const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.Universal";
+
+    const NAME: &'static str = "Light2D.LightType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for Light2D_LightType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  Light2D_LightType  {
+    pub fn parametric() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn freeform() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn sprite() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn point() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn global() -> Self {
+        Self { value: 4 }
+
+    }
+
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/light2d_2/Light2D_PointLightQuality.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -105,73 +172,6 @@ impl  Light2D_PointLightQuality  {
 # [offset (220)] # [rename (name = "m_PreviousShapeLightParametricRadius")] pub m_previous_shape_light_parametric_radius : f32 ,
 }
 
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/light2d_2/Light2D_LightType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Light2D_LightType  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for Light2D_LightType  {
-    const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.Universal";
-
-    const NAME: &'static str = "Light2D.LightType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for Light2D_LightType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  Light2D_LightType  {
-    pub fn parametric() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn freeform() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn sprite() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn point() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn global() -> Self {
-        Self { value: 4 }
-
-    }
-
-}
-
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-light2d_2-types")]
@@ -197,11 +197,11 @@ impl Light2D_2 {
 #[cfg(feature = "unity_engine-experimental-rendering-universal-light2d_2")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::Light2D_LightType;
     pub use super::Light2D_PointLightQuality;
     pub use super::Light2D_2;
     pub use super::ILight2D_2;
     pub use super::ILight2D_2Methods;
-    pub use super::Light2D_LightType;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

@@ -116,6 +116,61 @@ impl  MapPanelDanger_MeshIndex  {
 }
 
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldanger/MapPanelDanger_DangerType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct MapPanelDanger_DangerType  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for MapPanelDanger_DangerType  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapPanelDanger.DangerType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for MapPanelDanger_DangerType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  MapPanelDanger_DangerType  {
+    pub fn rod() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn attack() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn num() -> Self {
+        Self { value: 2 }
+
+    }
+
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldanger/MapPanelDanger_Mode.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -186,61 +241,6 @@ impl  MapPanelDanger_Mode  {
 # [offset (197)] # [rename (name = "m_IsVisible")] pub m_is_visible : bool ,
 }
 
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldanger/MapPanelDanger_DangerType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapPanelDanger_DangerType  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for MapPanelDanger_DangerType  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapPanelDanger.DangerType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for MapPanelDanger_DangerType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  MapPanelDanger_DangerType  {
-    pub fn rod() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn attack() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
 }
 
 #[cfg(feature = "app-mappaneldanger-types")]
@@ -267,11 +267,11 @@ impl MapPanelDanger {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::MapPanelDanger_MeshIndex;
+    pub use super::MapPanelDanger_DangerType;
     pub use super::MapPanelDanger_Mode;
     pub use super::MapPanelDanger;
     pub use super::IMapPanelDanger;
     pub use super::IMapPanelDangerMethods;
-    pub use super::MapPanelDanger_DangerType;
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
     pub use crate::root::mappanelbase_1::IMapPanelBase_1;
     pub use crate::system::object::IObject;

@@ -25,29 +25,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/resourceobject/ResourceObject_Callback.md"))] # [:: unity2 :: class (namespace = "App" , name = "ResourceObject.Callback")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct ResourceObject_Callback {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/resourceobject/ResourceObject.md"))] # [:: unity2 :: class (namespace = "App" , name = "ResourceObject")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct ResourceObject {
-# [offset (24)] # [rename (name = "m_Handle")] pub m_handle : crate :: app :: resourcegameobject :: ResourceGameObject ,
-# [offset (32)] # [rename (name = "m_StartCallback")] pub m_start_callback : crate :: app :: resourceobject :: ResourceObject_Callback ,
-# [offset (40)] # [rename (name = "m_TickCallback")] pub m_tick_callback : crate :: app :: resourceobject :: ResourceObject_Callback ,
-# [offset (48)] # [rename (name = "m_EndCallback")] pub m_end_callback : crate :: app :: resourceobject :: ResourceObject_Callback ,
-# [offset (56)] # [rename (name = "m_Coroutine")] pub m_coroutine : crate :: app :: resourceobject :: ResourceObject_Coroutine ,
-# [offset (64)] # [rename (name = "m_BindProc")] pub m_bind_proc : crate :: app :: procinst :: ProcInst ,
-# [offset (72)] # [rename (name = "m_BindHolder")] pub m_bind_holder : crate :: app :: bindholder :: BindHolder ,
-# [offset (80)] # [rename (name = "m_Sequence")] pub m_sequence : crate :: app :: resourceobject :: ResourceObject_Sequence ,
-# [offset (84)] # [rename (name = "m_Flags")] pub m_flags : crate :: app :: resourceobject :: ResourceObject_Flags ,
-# [offset (88)] # [rename (name = "m_DelayTime")] pub m_delay_time : f32 ,
-# [offset (92)] # [rename (name = "m_BindTime")] pub m_bind_time : f32 ,
-# [offset (96)] # [rename (name = "m_LifeTime")] pub m_life_time : f32 ,
-# [offset (104)] # [rename (name = "m_SoundLabel")] pub m_sound_label : :: unity2 :: Il2CppString ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/resourceobject/ResourceObject_Coroutine.md"))] # [:: unity2 :: class (namespace = "App" , name = "ResourceObject.Coroutine")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct ResourceObject_Coroutine {}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/resourceobject/ResourceObject_Sequence.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -101,6 +78,29 @@ impl  ResourceObject_Sequence  {
     }
 
 }
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/resourceobject/ResourceObject_Callback.md"))] # [:: unity2 :: class (namespace = "App" , name = "ResourceObject.Callback")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct ResourceObject_Callback {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/resourceobject/ResourceObject.md"))] # [:: unity2 :: class (namespace = "App" , name = "ResourceObject")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct ResourceObject {
+# [offset (24)] # [rename (name = "m_Handle")] pub m_handle : crate :: app :: resourcegameobject :: ResourceGameObject ,
+# [offset (32)] # [rename (name = "m_StartCallback")] pub m_start_callback : crate :: app :: resourceobject :: ResourceObject_Callback ,
+# [offset (40)] # [rename (name = "m_TickCallback")] pub m_tick_callback : crate :: app :: resourceobject :: ResourceObject_Callback ,
+# [offset (48)] # [rename (name = "m_EndCallback")] pub m_end_callback : crate :: app :: resourceobject :: ResourceObject_Callback ,
+# [offset (56)] # [rename (name = "m_Coroutine")] pub m_coroutine : crate :: app :: resourceobject :: ResourceObject_Coroutine ,
+# [offset (64)] # [rename (name = "m_BindProc")] pub m_bind_proc : crate :: app :: procinst :: ProcInst ,
+# [offset (72)] # [rename (name = "m_BindHolder")] pub m_bind_holder : crate :: app :: bindholder :: BindHolder ,
+# [offset (80)] # [rename (name = "m_Sequence")] pub m_sequence : crate :: app :: resourceobject :: ResourceObject_Sequence ,
+# [offset (84)] # [rename (name = "m_Flags")] pub m_flags : crate :: app :: resourceobject :: ResourceObject_Flags ,
+# [offset (88)] # [rename (name = "m_DelayTime")] pub m_delay_time : f32 ,
+# [offset (92)] # [rename (name = "m_BindTime")] pub m_bind_time : f32 ,
+# [offset (96)] # [rename (name = "m_LifeTime")] pub m_life_time : f32 ,
+# [offset (104)] # [rename (name = "m_SoundLabel")] pub m_sound_label : :: unity2 :: Il2CppString ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/resourceobject/ResourceObject_Coroutine.md"))] # [:: unity2 :: class (namespace = "App" , name = "ResourceObject.Coroutine")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct ResourceObject_Coroutine {}
 
 
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/resourceobject/ResourceObject_Flags.md"))]
@@ -231,6 +231,7 @@ impl ResourceObject_Coroutine {
 #[cfg(feature = "app-resourceobject")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ResourceObject_Sequence;
     pub use super::ResourceObject_Callback;
     pub use super::IResourceObject_Callback;
     pub use super::IResourceObject_CallbackMethods;
@@ -240,7 +241,6 @@ pub mod prelude {
     pub use super::ResourceObject_Coroutine;
     pub use super::IResourceObject_Coroutine;
     pub use super::IResourceObject_CoroutineMethods;
-    pub use super::ResourceObject_Sequence;
     pub use super::ResourceObject_Flags;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;

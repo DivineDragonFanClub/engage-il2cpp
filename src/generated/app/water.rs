@@ -51,7 +51,7 @@
  # [cfg (feature = "app-water-watertilev2")] pub use watertilev2 :: { IWaterTileV2Methods }
  ;
  # [cfg (any (feature = "app-water-waterv2-types"))] pub mod waterv2 ;
- # [cfg (feature = "app-water-waterv2-types")] pub use waterv2 :: { WaterV2 , IWaterV2 , WaterV2_WaterMode }
+ # [cfg (feature = "app-water-waterv2-types")] pub use waterv2 :: { WaterV2_WaterMode , WaterV2 , IWaterV2 }
  ;
  # [cfg (feature = "app-water-waterv2")] pub use waterv2 :: { IWaterV2Methods }
  ;

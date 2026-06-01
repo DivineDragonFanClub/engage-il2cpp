@@ -33,113 +33,6 @@ mod __types {
  ;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/inputfield/InputField_EditState.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct InputField_EditState  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for InputField_EditState  {
-    const NAMESPACE: &'static str = "UnityEngine.UI";
-
-    const NAME: &'static str = "InputField.EditState";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for InputField_EditState  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  InputField_EditState  {
-    pub fn r#continue() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn finish() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/inputfield/InputField_InputType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct InputField_InputType  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for InputField_InputType  {
-    const NAMESPACE: &'static str = "UnityEngine.UI";
-
-    const NAME: &'static str = "InputField.InputType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for InputField_InputType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  InputField_InputType  {
-    pub fn standard() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn auto_correct() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn password() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/inputfield/InputField_OnValidateInput.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "InputField.OnValidateInput")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct InputField_OnValidateInput {}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/inputfield/InputField_LineType.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -195,21 +88,18 @@ impl  InputField_LineType  {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/inputfield/InputField_OnChangeEvent.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "InputField.OnChangeEvent")] # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < :: unity2 :: Il2CppString >)] pub struct InputField_OnChangeEvent {}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/inputfield/InputField_CharacterValidation.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/inputfield/InputField_EditState.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct InputField_CharacterValidation  {
+pub struct InputField_EditState  {
     pub value: i32,
 }
 
 
-impl  ::unity2::ClassIdentity for InputField_CharacterValidation  {
+impl  ::unity2::ClassIdentity for InputField_EditState  {
     const NAMESPACE: &'static str = "UnityEngine.UI";
 
-    const NAME: &'static str = "InputField.CharacterValidation";
+    const NAME: &'static str = "InputField.EditState";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> =
@@ -224,7 +114,7 @@ impl  ::unity2::ClassIdentity for InputField_CharacterValidation  {
 }
 
 
-impl  ::unity2::IlType for InputField_CharacterValidation  {
+impl  ::unity2::IlType for InputField_EditState  {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
@@ -232,97 +122,76 @@ impl  ::unity2::IlType for InputField_CharacterValidation  {
 }
 
 
-impl  InputField_CharacterValidation  {
-    pub fn none() -> Self {
+impl  InputField_EditState  {
+    pub fn r#continue() -> Self {
         Self { value: 0 }
 
     }
 
 
-    pub fn integer() -> Self {
+    pub fn finish() -> Self {
         Self { value: 1 }
-
-    }
-
-
-    pub fn decimal() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn alphanumeric() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn name() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn email_address() -> Self {
-        Self { value: 5 }
 
     }
 
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/inputfield/InputField.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "InputField")] # [parent (crate :: unity_engine :: ui :: selectable :: Selectable)] pub struct InputField {
-# [offset (248)] # [rename (name = "m_Keyboard")] pub m_keyboard : crate :: unity_engine :: touchscreenkeyboard :: TouchScreenKeyboard ,
-# [static_field] # [rename (name = "kSeparators")] pub k_separators : :: unity2 :: Array < u16 > ,
-# [offset (256)] # [rename (name = "m_TextComponent")] pub m_text_component : crate :: unity_engine :: ui :: text :: Text ,
-# [offset (264)] # [rename (name = "m_Placeholder")] pub m_placeholder : crate :: unity_engine :: ui :: graphic :: Graphic ,
-# [offset (272)] # [rename (name = "m_ContentType")] pub m_content_type : crate :: unity_engine :: ui :: inputfield :: InputField_ContentType ,
-# [offset (276)] # [rename (name = "m_InputType")] pub m_input_type : crate :: unity_engine :: ui :: inputfield :: InputField_InputType ,
-# [offset (280)] # [rename (name = "m_AsteriskChar")] pub m_asterisk_char : u16 ,
-# [offset (284)] # [rename (name = "m_KeyboardType")] pub m_keyboard_type : crate :: unity_engine :: touchscreenkeyboardtype :: TouchScreenKeyboardType ,
-# [offset (288)] # [rename (name = "m_LineType")] pub m_line_type : crate :: unity_engine :: ui :: inputfield :: InputField_LineType ,
-# [offset (292)] # [rename (name = "m_HideMobileInput")] pub m_hide_mobile_input : bool ,
-# [offset (296)] # [rename (name = "m_CharacterValidation")] pub m_character_validation : crate :: unity_engine :: ui :: inputfield :: InputField_CharacterValidation ,
-# [offset (300)] # [rename (name = "m_CharacterLimit")] pub m_character_limit : i32 ,
-# [offset (304)] # [rename (name = "m_OnEndEdit")] pub m_on_end_edit : crate :: unity_engine :: ui :: inputfield :: InputField_SubmitEvent ,
-# [offset (312)] # [rename (name = "m_OnValueChanged")] pub m_on_value_changed : crate :: unity_engine :: ui :: inputfield :: InputField_OnChangeEvent ,
-# [offset (320)] # [rename (name = "m_OnValidateInput")] pub m_on_validate_input : crate :: unity_engine :: ui :: inputfield :: InputField_OnValidateInput ,
-# [offset (328)] # [rename (name = "m_CaretColor")] pub m_caret_color : crate :: unity_engine :: color :: Color ,
-# [offset (344)] # [rename (name = "m_CustomCaretColor")] pub m_custom_caret_color : bool ,
-# [offset (348)] # [rename (name = "m_SelectionColor")] pub m_selection_color : crate :: unity_engine :: color :: Color ,
-# [offset (368)] # [rename (name = "m_Text")] pub m_text : :: unity2 :: Il2CppString ,
-# [offset (376)] # [rename (name = "m_CaretBlinkRate")] pub m_caret_blink_rate : f32 ,
-# [offset (380)] # [rename (name = "m_CaretWidth")] pub m_caret_width : i32 ,
-# [offset (384)] # [rename (name = "m_ReadOnly")] pub m_read_only : bool ,
-# [offset (385)] # [rename (name = "m_ShouldActivateOnSelect")] pub m_should_activate_on_select : bool ,
-# [offset (388)] # [rename (name = "m_CaretPosition")] pub m_caret_position : i32 ,
-# [offset (392)] # [rename (name = "m_CaretSelectPosition")] pub m_caret_select_position : i32 ,
-# [offset (400)] # [rename (name = "caretRectTrans")] pub caret_rect_trans : crate :: unity_engine :: recttransform :: RectTransform ,
-# [offset (408)] # [rename (name = "m_CursorVerts")] pub m_cursor_verts : :: unity2 :: Array < crate :: unity_engine :: uivertex :: UIVertex > ,
-# [offset (416)] # [rename (name = "m_InputTextCache")] pub m_input_text_cache : crate :: unity_engine :: textgenerator :: TextGenerator ,
-# [offset (424)] # [rename (name = "m_CachedInputRenderer")] pub m_cached_input_renderer : crate :: unity_engine :: canvasrenderer :: CanvasRenderer ,
-# [offset (432)] # [rename (name = "m_PreventFontCallback")] pub m_prevent_font_callback : bool ,
-# [offset (440)] # [rename (name = "m_Mesh")] pub m_mesh : crate :: unity_engine :: mesh :: Mesh ,
-# [offset (448)] # [rename (name = "m_AllowInput")] pub m_allow_input : bool ,
-# [offset (449)] # [rename (name = "m_ShouldActivateNextUpdate")] pub m_should_activate_next_update : bool ,
-# [offset (450)] # [rename (name = "m_UpdateDrag")] pub m_update_drag : bool ,
-# [offset (451)] # [rename (name = "m_DragPositionOutOfBounds")] pub m_drag_position_out_of_bounds : bool ,
-# [static_field] # [rename (name = "kHScrollSpeed")] pub k_h_scroll_speed : f32 ,
-# [static_field] # [rename (name = "kVScrollSpeed")] pub k_v_scroll_speed : f32 ,
-# [offset (452)] # [rename (name = "m_CaretVisible")] pub m_caret_visible : bool ,
-# [offset (456)] # [rename (name = "m_BlinkCoroutine")] pub m_blink_coroutine : crate :: unity_engine :: coroutine :: Coroutine ,
-# [offset (464)] # [rename (name = "m_BlinkStartTime")] pub m_blink_start_time : f32 ,
-# [offset (468)] # [rename (name = "m_DrawStart")] pub m_draw_start : i32 ,
-# [offset (472)] # [rename (name = "m_DrawEnd")] pub m_draw_end : i32 ,
-# [offset (480)] # [rename (name = "m_DragCoroutine")] pub m_drag_coroutine : crate :: unity_engine :: coroutine :: Coroutine ,
-# [offset (488)] # [rename (name = "m_OriginalText")] pub m_original_text : :: unity2 :: Il2CppString ,
-# [offset (496)] # [rename (name = "m_WasCanceled")] pub m_was_canceled : bool ,
-# [offset (497)] # [rename (name = "m_HasDoneFocusTransition")] pub m_has_done_focus_transition : bool ,
-# [offset (504)] # [rename (name = "m_WaitForSecondsRealtime")] pub m_wait_for_seconds_realtime : crate :: unity_engine :: waitforsecondsrealtime :: WaitForSecondsRealtime ,
-# [offset (512)] # [rename (name = "m_TouchKeyboardAllowsInPlaceEditing")] pub m_touch_keyboard_allows_in_place_editing : bool ,
-# [static_field] # [rename (name = "kEmailSpecialCharacters")] pub k_email_special_characters : :: unity2 :: Il2CppString ,
-# [offset (520)] # [rename (name = "m_ProcessingEvent")] pub m_processing_event : crate :: unity_engine :: event :: Event ,
-# [static_field] # [rename (name = "k_MaxTextLength")] pub k_max_text_length : i32 ,
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/inputfield/InputField_OnChangeEvent.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "InputField.OnChangeEvent")] # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < :: unity2 :: Il2CppString >)] pub struct InputField_OnChangeEvent {}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/inputfield/InputField_InputType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct InputField_InputType  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for InputField_InputType  {
+    const NAMESPACE: &'static str = "UnityEngine.UI";
+
+    const NAME: &'static str = "InputField.InputType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for InputField_InputType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  InputField_InputType  {
+    pub fn standard() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn auto_correct() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn password() -> Self {
+        Self { value: 2 }
+
+    }
+
 }
 
 
@@ -423,29 +292,143 @@ impl  InputField_ContentType  {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/inputfield/InputField.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "InputField")] # [parent (crate :: unity_engine :: ui :: selectable :: Selectable)] pub struct InputField {
+# [offset (248)] # [rename (name = "m_Keyboard")] pub m_keyboard : crate :: unity_engine :: touchscreenkeyboard :: TouchScreenKeyboard ,
+# [static_field] # [rename (name = "kSeparators")] pub k_separators : :: unity2 :: Array < u16 > ,
+# [offset (256)] # [rename (name = "m_TextComponent")] pub m_text_component : crate :: unity_engine :: ui :: text :: Text ,
+# [offset (264)] # [rename (name = "m_Placeholder")] pub m_placeholder : crate :: unity_engine :: ui :: graphic :: Graphic ,
+# [offset (272)] # [rename (name = "m_ContentType")] pub m_content_type : crate :: unity_engine :: ui :: inputfield :: InputField_ContentType ,
+# [offset (276)] # [rename (name = "m_InputType")] pub m_input_type : crate :: unity_engine :: ui :: inputfield :: InputField_InputType ,
+# [offset (280)] # [rename (name = "m_AsteriskChar")] pub m_asterisk_char : u16 ,
+# [offset (284)] # [rename (name = "m_KeyboardType")] pub m_keyboard_type : crate :: unity_engine :: touchscreenkeyboardtype :: TouchScreenKeyboardType ,
+# [offset (288)] # [rename (name = "m_LineType")] pub m_line_type : crate :: unity_engine :: ui :: inputfield :: InputField_LineType ,
+# [offset (292)] # [rename (name = "m_HideMobileInput")] pub m_hide_mobile_input : bool ,
+# [offset (296)] # [rename (name = "m_CharacterValidation")] pub m_character_validation : crate :: unity_engine :: ui :: inputfield :: InputField_CharacterValidation ,
+# [offset (300)] # [rename (name = "m_CharacterLimit")] pub m_character_limit : i32 ,
+# [offset (304)] # [rename (name = "m_OnEndEdit")] pub m_on_end_edit : crate :: unity_engine :: ui :: inputfield :: InputField_SubmitEvent ,
+# [offset (312)] # [rename (name = "m_OnValueChanged")] pub m_on_value_changed : crate :: unity_engine :: ui :: inputfield :: InputField_OnChangeEvent ,
+# [offset (320)] # [rename (name = "m_OnValidateInput")] pub m_on_validate_input : crate :: unity_engine :: ui :: inputfield :: InputField_OnValidateInput ,
+# [offset (328)] # [rename (name = "m_CaretColor")] pub m_caret_color : crate :: unity_engine :: color :: Color ,
+# [offset (344)] # [rename (name = "m_CustomCaretColor")] pub m_custom_caret_color : bool ,
+# [offset (348)] # [rename (name = "m_SelectionColor")] pub m_selection_color : crate :: unity_engine :: color :: Color ,
+# [offset (368)] # [rename (name = "m_Text")] pub m_text : :: unity2 :: Il2CppString ,
+# [offset (376)] # [rename (name = "m_CaretBlinkRate")] pub m_caret_blink_rate : f32 ,
+# [offset (380)] # [rename (name = "m_CaretWidth")] pub m_caret_width : i32 ,
+# [offset (384)] # [rename (name = "m_ReadOnly")] pub m_read_only : bool ,
+# [offset (385)] # [rename (name = "m_ShouldActivateOnSelect")] pub m_should_activate_on_select : bool ,
+# [offset (388)] # [rename (name = "m_CaretPosition")] pub m_caret_position : i32 ,
+# [offset (392)] # [rename (name = "m_CaretSelectPosition")] pub m_caret_select_position : i32 ,
+# [offset (400)] # [rename (name = "caretRectTrans")] pub caret_rect_trans : crate :: unity_engine :: recttransform :: RectTransform ,
+# [offset (408)] # [rename (name = "m_CursorVerts")] pub m_cursor_verts : :: unity2 :: Array < crate :: unity_engine :: uivertex :: UIVertex > ,
+# [offset (416)] # [rename (name = "m_InputTextCache")] pub m_input_text_cache : crate :: unity_engine :: textgenerator :: TextGenerator ,
+# [offset (424)] # [rename (name = "m_CachedInputRenderer")] pub m_cached_input_renderer : crate :: unity_engine :: canvasrenderer :: CanvasRenderer ,
+# [offset (432)] # [rename (name = "m_PreventFontCallback")] pub m_prevent_font_callback : bool ,
+# [offset (440)] # [rename (name = "m_Mesh")] pub m_mesh : crate :: unity_engine :: mesh :: Mesh ,
+# [offset (448)] # [rename (name = "m_AllowInput")] pub m_allow_input : bool ,
+# [offset (449)] # [rename (name = "m_ShouldActivateNextUpdate")] pub m_should_activate_next_update : bool ,
+# [offset (450)] # [rename (name = "m_UpdateDrag")] pub m_update_drag : bool ,
+# [offset (451)] # [rename (name = "m_DragPositionOutOfBounds")] pub m_drag_position_out_of_bounds : bool ,
+# [static_field] # [rename (name = "kHScrollSpeed")] pub k_h_scroll_speed : f32 ,
+# [static_field] # [rename (name = "kVScrollSpeed")] pub k_v_scroll_speed : f32 ,
+# [offset (452)] # [rename (name = "m_CaretVisible")] pub m_caret_visible : bool ,
+# [offset (456)] # [rename (name = "m_BlinkCoroutine")] pub m_blink_coroutine : crate :: unity_engine :: coroutine :: Coroutine ,
+# [offset (464)] # [rename (name = "m_BlinkStartTime")] pub m_blink_start_time : f32 ,
+# [offset (468)] # [rename (name = "m_DrawStart")] pub m_draw_start : i32 ,
+# [offset (472)] # [rename (name = "m_DrawEnd")] pub m_draw_end : i32 ,
+# [offset (480)] # [rename (name = "m_DragCoroutine")] pub m_drag_coroutine : crate :: unity_engine :: coroutine :: Coroutine ,
+# [offset (488)] # [rename (name = "m_OriginalText")] pub m_original_text : :: unity2 :: Il2CppString ,
+# [offset (496)] # [rename (name = "m_WasCanceled")] pub m_was_canceled : bool ,
+# [offset (497)] # [rename (name = "m_HasDoneFocusTransition")] pub m_has_done_focus_transition : bool ,
+# [offset (504)] # [rename (name = "m_WaitForSecondsRealtime")] pub m_wait_for_seconds_realtime : crate :: unity_engine :: waitforsecondsrealtime :: WaitForSecondsRealtime ,
+# [offset (512)] # [rename (name = "m_TouchKeyboardAllowsInPlaceEditing")] pub m_touch_keyboard_allows_in_place_editing : bool ,
+# [static_field] # [rename (name = "kEmailSpecialCharacters")] pub k_email_special_characters : :: unity2 :: Il2CppString ,
+# [offset (520)] # [rename (name = "m_ProcessingEvent")] pub m_processing_event : crate :: unity_engine :: event :: Event ,
+# [static_field] # [rename (name = "k_MaxTextLength")] pub k_max_text_length : i32 ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/inputfield/InputField_OnValidateInput.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "InputField.OnValidateInput")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct InputField_OnValidateInput {}
+
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/inputfield/InputField_SubmitEvent.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "InputField.SubmitEvent")] # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < :: unity2 :: Il2CppString >)] pub struct InputField_SubmitEvent {}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/inputfield/InputField_CharacterValidation.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct InputField_CharacterValidation  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for InputField_CharacterValidation  {
+    const NAMESPACE: &'static str = "UnityEngine.UI";
+
+    const NAME: &'static str = "InputField.CharacterValidation";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for InputField_CharacterValidation  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  InputField_CharacterValidation  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn integer() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn decimal() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn alphanumeric() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn name() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn email_address() -> Self {
+        Self { value: 5 }
+
+    }
+
+}
 
 }
 
 #[cfg(feature = "unity_engine-ui-inputfield-types")]
 pub use __types::*;
-
-#[cfg(feature = "unity_engine-ui-inputfield")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __InputField_OnValidateInput_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InputField_OnValidateInput as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InputField_OnValidateInput as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : InputField_OnValidateInput , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InputField_OnValidateInput , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , object , method , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < u16 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InputField_OnValidateInput as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InputField_OnValidateInput as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , } } } pub unsafe fn invoke (this : InputField_OnValidateInput , text : :: unity2 :: Il2CppString , char_index : i32 , added_char : u16 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> u16 { let inner : extern "C" fn (InputField_OnValidateInput , :: unity2 :: Il2CppString , i32 , u16 , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute (__lookup_invoke :: get_method_info () . method_ptr ,) ; inner (this , text , char_index , added_char , __unity2_method_info) } }
-
-#[cfg(feature = "unity_engine-ui-inputfield")]
-pub trait IInputField_OnValidateInputMethods : IInputField_OnValidateInput { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < InputField_OnValidateInput as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InputField_OnValidateInput_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } # [doc = "`Invoke(::unity2::Il2CppString, i32, u16)` overload"] fn invoke (self , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , char_index : impl :: core :: convert :: Into < i32 > , added_char : impl :: core :: convert :: Into < u16 >) -> u16 { unsafe { let __receiver = < InputField_OnValidateInput as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InputField_OnValidateInput_unity2_raw :: invoke (__receiver , :: core :: convert :: Into :: into (text) , :: core :: convert :: Into :: into (char_index) , :: core :: convert :: Into :: into (added_char) , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "unity_engine-ui-inputfield")]
-impl < __T : IInputField_OnValidateInput > IInputField_OnValidateInputMethods for __T { }
-
-#[cfg(feature = "unity_engine-ui-inputfield")]
-impl InputField_OnValidateInput { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InputField_OnValidateInput_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InputField_OnValidateInput_unity2_raw :: __lookup_invoke :: get_method_info () } }
-
-#[cfg(feature = "unity_engine-ui-inputfield")]
-impl InputField_OnValidateInput {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InputField_OnValidateInput) , :: core :: stringify ! (new) ,)) ; < Self as IInputField_OnValidateInputMethods > :: ctor (this , object , method) ; this }
-}
 
 #[cfg(feature = "unity_engine-ui-inputfield")]
 # [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __InputField_OnChangeEvent_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InputField_OnChangeEvent as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InputField_OnChangeEvent as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : InputField_OnChangeEvent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InputField_OnChangeEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
@@ -485,6 +468,23 @@ impl InputField {
 }
 
 #[cfg(feature = "unity_engine-ui-inputfield")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __InputField_OnValidateInput_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InputField_OnValidateInput as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InputField_OnValidateInput as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : InputField_OnValidateInput , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InputField_OnValidateInput , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , object , method , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < u16 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InputField_OnValidateInput as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InputField_OnValidateInput as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , } } } pub unsafe fn invoke (this : InputField_OnValidateInput , text : :: unity2 :: Il2CppString , char_index : i32 , added_char : u16 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> u16 { let inner : extern "C" fn (InputField_OnValidateInput , :: unity2 :: Il2CppString , i32 , u16 , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute (__lookup_invoke :: get_method_info () . method_ptr ,) ; inner (this , text , char_index , added_char , __unity2_method_info) } }
+
+#[cfg(feature = "unity_engine-ui-inputfield")]
+pub trait IInputField_OnValidateInputMethods : IInputField_OnValidateInput { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < InputField_OnValidateInput as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InputField_OnValidateInput_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } # [doc = "`Invoke(::unity2::Il2CppString, i32, u16)` overload"] fn invoke (self , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , char_index : impl :: core :: convert :: Into < i32 > , added_char : impl :: core :: convert :: Into < u16 >) -> u16 { unsafe { let __receiver = < InputField_OnValidateInput as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InputField_OnValidateInput_unity2_raw :: invoke (__receiver , :: core :: convert :: Into :: into (text) , :: core :: convert :: Into :: into (char_index) , :: core :: convert :: Into :: into (added_char) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-ui-inputfield")]
+impl < __T : IInputField_OnValidateInput > IInputField_OnValidateInputMethods for __T { }
+
+#[cfg(feature = "unity_engine-ui-inputfield")]
+impl InputField_OnValidateInput { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InputField_OnValidateInput_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InputField_OnValidateInput_unity2_raw :: __lookup_invoke :: get_method_info () } }
+
+#[cfg(feature = "unity_engine-ui-inputfield")]
+impl InputField_OnValidateInput {
+# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InputField_OnValidateInput) , :: core :: stringify ! (new) ,)) ; < Self as IInputField_OnValidateInputMethods > :: ctor (this , object , method) ; this }
+}
+
+#[cfg(feature = "unity_engine-ui-inputfield")]
 # [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __InputField_SubmitEvent_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InputField_SubmitEvent as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InputField_SubmitEvent as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : InputField_SubmitEvent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InputField_SubmitEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-ui-inputfield")]
@@ -504,23 +504,23 @@ impl InputField_SubmitEvent {
 #[cfg(feature = "unity_engine-ui-inputfield")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::InputField_EditState;
-    pub use super::InputField_InputType;
-    pub use super::InputField_OnValidateInput;
-    pub use super::IInputField_OnValidateInput;
-    pub use super::IInputField_OnValidateInputMethods;
     pub use super::InputField_LineType;
+    pub use super::InputField_EditState;
     pub use super::InputField_OnChangeEvent;
     pub use super::IInputField_OnChangeEvent;
     pub use super::IInputField_OnChangeEventMethods;
-    pub use super::InputField_CharacterValidation;
+    pub use super::InputField_InputType;
+    pub use super::InputField_ContentType;
     pub use super::InputField;
     pub use super::IInputField;
     pub use super::IInputFieldMethods;
-    pub use super::InputField_ContentType;
+    pub use super::InputField_OnValidateInput;
+    pub use super::IInputField_OnValidateInput;
+    pub use super::IInputField_OnValidateInputMethods;
     pub use super::InputField_SubmitEvent;
     pub use super::IInputField_SubmitEvent;
     pub use super::IInputField_SubmitEventMethods;
+    pub use super::InputField_CharacterValidation;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

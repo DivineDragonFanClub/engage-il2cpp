@@ -23,6 +23,23 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/characterlyinghorse/CharacterLyingHorse.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CharacterLyingHorse")] # [parent (crate :: combat :: characterlying :: CharacterLying)] pub struct CharacterLyingHorse {
+# [offset (36)] # [rename (name = "m_StartBaseTR")] pub m_start_base_tr : crate :: combat :: tr :: TR ,
+# [offset (64)] # [rename (name = "m_EndBaseTR")] pub m_end_base_tr : crate :: combat :: tr :: TR ,
+# [offset (92)] # [rename (name = "m_StartHumanQ")] pub m_start_human_q : crate :: unity_engine :: quaternion :: Quaternion ,
+# [offset (108)] # [rename (name = "m_EndHumanQ")] pub m_end_human_q : crate :: unity_engine :: quaternion :: Quaternion ,
+# [offset (128)] # [rename (name = "m_HumanRoot")] pub m_human_root : crate :: unity_engine :: transform :: Transform ,
+# [offset (136)] # [rename (name = "m_HorseRoot")] pub m_horse_root : crate :: unity_engine :: transform :: Transform ,
+# [offset (144)] # [rename (name = "m_HorseRootRotation")] pub m_horse_root_rotation : crate :: unity_engine :: quaternion :: Quaternion ,
+# [offset (160)] # [rename (name = "m_HorseNrm")] pub m_horse_nrm : crate :: unity_engine :: vector3 :: Vector3 ,
+# [offset (172)] # [rename (name = "m_Time")] pub m_time : f32 ,
+# [offset (176)] # [rename (name = "m_EndTime")] pub m_end_time : f32 ,
+# [offset (180)] # [rename (name = "m_IsCollide")] pub m_is_collide : bool ,
+# [offset (184)] # [rename (name = "m_LastSafetyHipXZ")] pub m_last_safety_hip_xz : crate :: combat :: fxz :: FXZ ,
+# [offset (192)] # [rename (name = "m_LastLookAtRide")] pub m_last_look_at_ride : crate :: combat :: fxz :: FXZ ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/characterlyinghorse/CharacterLyingHorse_Progress.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -77,23 +94,6 @@ impl  CharacterLyingHorse_Progress  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/characterlyinghorse/CharacterLyingHorse.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CharacterLyingHorse")] # [parent (crate :: combat :: characterlying :: CharacterLying)] pub struct CharacterLyingHorse {
-# [offset (36)] # [rename (name = "m_StartBaseTR")] pub m_start_base_tr : crate :: combat :: tr :: TR ,
-# [offset (64)] # [rename (name = "m_EndBaseTR")] pub m_end_base_tr : crate :: combat :: tr :: TR ,
-# [offset (92)] # [rename (name = "m_StartHumanQ")] pub m_start_human_q : crate :: unity_engine :: quaternion :: Quaternion ,
-# [offset (108)] # [rename (name = "m_EndHumanQ")] pub m_end_human_q : crate :: unity_engine :: quaternion :: Quaternion ,
-# [offset (128)] # [rename (name = "m_HumanRoot")] pub m_human_root : crate :: unity_engine :: transform :: Transform ,
-# [offset (136)] # [rename (name = "m_HorseRoot")] pub m_horse_root : crate :: unity_engine :: transform :: Transform ,
-# [offset (144)] # [rename (name = "m_HorseRootRotation")] pub m_horse_root_rotation : crate :: unity_engine :: quaternion :: Quaternion ,
-# [offset (160)] # [rename (name = "m_HorseNrm")] pub m_horse_nrm : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (172)] # [rename (name = "m_Time")] pub m_time : f32 ,
-# [offset (176)] # [rename (name = "m_EndTime")] pub m_end_time : f32 ,
-# [offset (180)] # [rename (name = "m_IsCollide")] pub m_is_collide : bool ,
-# [offset (184)] # [rename (name = "m_LastSafetyHipXZ")] pub m_last_safety_hip_xz : crate :: combat :: fxz :: FXZ ,
-# [offset (192)] # [rename (name = "m_LastLookAtRide")] pub m_last_look_at_ride : crate :: combat :: fxz :: FXZ ,
-}
-
 }
 
 #[cfg(feature = "combat-characterlyinghorse-types")]
@@ -119,10 +119,10 @@ impl CharacterLyingHorse {
 #[cfg(feature = "combat-characterlyinghorse")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CharacterLyingHorse_Progress;
     pub use super::CharacterLyingHorse;
     pub use super::ICharacterLyingHorse;
     pub use super::ICharacterLyingHorseMethods;
+    pub use super::CharacterLyingHorse_Progress;
     pub use crate::combat::characterlying::ICharacterLying;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

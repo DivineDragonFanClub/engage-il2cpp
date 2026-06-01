@@ -17,6 +17,15 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorypoolitemmenu/InventoryPoolItemMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "InventoryPoolItemMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct InventoryPoolItemMenu {
+# [static_field] # [rename (name = "ShowRowNum")] pub show_row_num : i32 ,
+# [offset (200)] # [rename (name = "m_SavedFullMenuItemList")] pub m_saved_full_menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > ,
+# [offset (208)] # [rename (name = "m_SortMenuItemList")] pub m_sort_menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > ,
+# [offset (216)] # [rename (name = "m_ItemKind")] pub m_item_kind : crate :: app :: itemdata :: ItemData_Kinds ,
+# [offset (224)] # [rename (name = "m_Selects")] pub m_selects : :: unity2 :: Array < crate :: app :: basicmenuselect :: BasicMenuSelect > ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/inventorypoolitemmenu/InventoryPoolItemMenu_Kinds.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -71,15 +80,6 @@ impl  InventoryPoolItemMenu_Kinds  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorypoolitemmenu/InventoryPoolItemMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "InventoryPoolItemMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct InventoryPoolItemMenu {
-# [static_field] # [rename (name = "ShowRowNum")] pub show_row_num : i32 ,
-# [offset (200)] # [rename (name = "m_SavedFullMenuItemList")] pub m_saved_full_menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > ,
-# [offset (208)] # [rename (name = "m_SortMenuItemList")] pub m_sort_menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > ,
-# [offset (216)] # [rename (name = "m_ItemKind")] pub m_item_kind : crate :: app :: itemdata :: ItemData_Kinds ,
-# [offset (224)] # [rename (name = "m_Selects")] pub m_selects : :: unity2 :: Array < crate :: app :: basicmenuselect :: BasicMenuSelect > ,
-}
-
 }
 
 #[cfg(feature = "app-inventorypoolitemmenu-types")]
@@ -108,10 +108,10 @@ impl InventoryPoolItemMenu {
 #[cfg(feature = "app-inventorypoolitemmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::InventoryPoolItemMenu_Kinds;
     pub use super::InventoryPoolItemMenu;
     pub use super::IInventoryPoolItemMenu;
     pub use super::IInventoryPoolItemMenuMethods;
+    pub use super::InventoryPoolItemMenu_Kinds;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;

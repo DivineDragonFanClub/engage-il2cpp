@@ -13,38 +13,21 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubminimapcaptureparam/HubMiniMapCaptureParam.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMiniMapCaptureParam")] # [parent (crate :: unity_engine :: scriptableobject :: ScriptableObject)] pub struct HubMiniMapCaptureParam {
-# [offset (24)] # [rename (name = "m_CaptureParamList")] pub m_capture_param_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: hubminimapcaptureparam :: HubMiniMapCaptureParam_CaptureParam1 > ,
-}
-
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubminimapcaptureparam/HubMiniMapCaptureParam_CaptureParam1.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMiniMapCaptureParam.CaptureParam1")] # [parent (crate :: system :: object :: Object)] pub struct HubMiniMapCaptureParam_CaptureParam1 {
 # [offset (16)] # [rename (name = "name")] pub name : :: unity2 :: Il2CppString ,
 # [offset (24)] # [rename (name = "center")] pub center : crate :: unity_engine :: vector3 :: Vector3 ,
 # [offset (36)] # [rename (name = "size")] pub size : crate :: unity_engine :: vector3 :: Vector3 ,
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubminimapcaptureparam/HubMiniMapCaptureParam.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMiniMapCaptureParam")] # [parent (crate :: unity_engine :: scriptableobject :: ScriptableObject)] pub struct HubMiniMapCaptureParam {
+# [offset (24)] # [rename (name = "m_CaptureParamList")] pub m_capture_param_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: hubminimapcaptureparam :: HubMiniMapCaptureParam_CaptureParam1 > ,
+}
+
 }
 
 #[cfg(feature = "app-hubminimapcaptureparam-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-hubminimapcaptureparam")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __HubMiniMapCaptureParam_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMiniMapCaptureParam as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMiniMapCaptureParam as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : HubMiniMapCaptureParam , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMiniMapCaptureParam , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "app-hubminimapcaptureparam")]
-pub trait IHubMiniMapCaptureParamMethods : IHubMiniMapCaptureParam { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubMiniMapCaptureParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMiniMapCaptureParam_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-hubminimapcaptureparam")]
-impl < __T : IHubMiniMapCaptureParam > IHubMiniMapCaptureParamMethods for __T { }
-
-#[cfg(feature = "app-hubminimapcaptureparam")]
-impl HubMiniMapCaptureParam { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMiniMapCaptureParam_unity2_raw :: __lookup_ctor :: get_method_info () } }
-
-#[cfg(feature = "app-hubminimapcaptureparam")]
-impl HubMiniMapCaptureParam {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubMiniMapCaptureParam) , :: core :: stringify ! (new) ,)) ; < Self as IHubMiniMapCaptureParamMethods > :: ctor (this ,) ; this }
-}
 
 #[cfg(feature = "app-hubminimapcaptureparam")]
 # [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __HubMiniMapCaptureParam_CaptureParam1_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMiniMapCaptureParam_CaptureParam1 as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMiniMapCaptureParam_CaptureParam1 as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : HubMiniMapCaptureParam_CaptureParam1 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMiniMapCaptureParam_CaptureParam1 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
@@ -64,14 +47,31 @@ impl HubMiniMapCaptureParam_CaptureParam1 {
 }
 
 #[cfg(feature = "app-hubminimapcaptureparam")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __HubMiniMapCaptureParam_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubMiniMapCaptureParam as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubMiniMapCaptureParam as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : HubMiniMapCaptureParam , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubMiniMapCaptureParam , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-hubminimapcaptureparam")]
+pub trait IHubMiniMapCaptureParamMethods : IHubMiniMapCaptureParam { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubMiniMapCaptureParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubMiniMapCaptureParam_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-hubminimapcaptureparam")]
+impl < __T : IHubMiniMapCaptureParam > IHubMiniMapCaptureParamMethods for __T { }
+
+#[cfg(feature = "app-hubminimapcaptureparam")]
+impl HubMiniMapCaptureParam { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubMiniMapCaptureParam_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-hubminimapcaptureparam")]
+impl HubMiniMapCaptureParam {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubMiniMapCaptureParam) , :: core :: stringify ! (new) ,)) ; < Self as IHubMiniMapCaptureParamMethods > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "app-hubminimapcaptureparam")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HubMiniMapCaptureParam;
-    pub use super::IHubMiniMapCaptureParam;
-    pub use super::IHubMiniMapCaptureParamMethods;
     pub use super::HubMiniMapCaptureParam_CaptureParam1;
     pub use super::IHubMiniMapCaptureParam_CaptureParam1;
     pub use super::IHubMiniMapCaptureParam_CaptureParam1Methods;
+    pub use super::HubMiniMapCaptureParam;
+    pub use super::IHubMiniMapCaptureParam;
+    pub use super::IHubMiniMapCaptureParamMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::object_2::IObject_2;
     pub use crate::unity_engine::scriptableobject::IScriptableObject;

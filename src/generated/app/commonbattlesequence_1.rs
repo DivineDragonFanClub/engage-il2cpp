@@ -17,6 +17,15 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/commonbattlesequence_1/CommonBattleSequence_1.md"))] # [:: unity2 :: class (namespace = "App" , name = "CommonBattleSequence`1")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < T0 >)] # [parent (crate :: app :: procinst :: ProcInst)] # [parent (crate :: system :: object :: Object)] pub struct CommonBattleSequence_1 < T0 : :: unity2 :: ClassIdentity > {
+# [rename (name = "m_Info")] pub m_info : crate :: app :: battleinfo :: BattleInfo ,
+# [rename (name = "m_SimInfo")] pub m_sim_info : crate :: app :: battleinfo :: BattleInfo ,
+# [rename (name = "m_Calculator")] pub m_calculator : crate :: app :: battlecalculator :: BattleCalculator ,
+# [rename (name = "m_SimCalculator")] pub m_sim_calculator : crate :: app :: battlecalculator :: BattleCalculator ,
+# [rename (name = "m_Reliances")] pub m_reliances : crate :: app :: commonbattlesequence_1 :: CommonBattleSequence_1_RelianceList < T0 > ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/commonbattlesequence_1/CommonBattleSequence_1_Reliance.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -48,15 +57,6 @@ impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for CommonBattleSequence_1_Re
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/commonbattlesequence_1/CommonBattleSequence_1.md"))] # [:: unity2 :: class (namespace = "App" , name = "CommonBattleSequence`1")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < T0 >)] # [parent (crate :: app :: procinst :: ProcInst)] # [parent (crate :: system :: object :: Object)] pub struct CommonBattleSequence_1 < T0 : :: unity2 :: ClassIdentity > {
-# [rename (name = "m_Info")] pub m_info : crate :: app :: battleinfo :: BattleInfo ,
-# [rename (name = "m_SimInfo")] pub m_sim_info : crate :: app :: battleinfo :: BattleInfo ,
-# [rename (name = "m_Calculator")] pub m_calculator : crate :: app :: battlecalculator :: BattleCalculator ,
-# [rename (name = "m_SimCalculator")] pub m_sim_calculator : crate :: app :: battlecalculator :: BattleCalculator ,
-# [rename (name = "m_Reliances")] pub m_reliances : crate :: app :: commonbattlesequence_1 :: CommonBattleSequence_1_RelianceList < T0 > ,
 }
 
 
@@ -132,10 +132,10 @@ impl < T0 : :: unity2 :: ClassIdentity > CommonBattleSequence_1_RelianceList < T
 #[cfg(feature = "app-commonbattlesequence_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CommonBattleSequence_1_Reliance;
     pub use super::CommonBattleSequence_1;
     pub use super::ICommonBattleSequence_1;
     pub use super::ICommonBattleSequence_1Methods;
+    pub use super::CommonBattleSequence_1_Reliance;
     pub use super::CommonBattleSequence_1_RelianceList;
     pub use super::ICommonBattleSequence_1_RelianceList;
     pub use super::ICommonBattleSequence_1_RelianceListMethods;

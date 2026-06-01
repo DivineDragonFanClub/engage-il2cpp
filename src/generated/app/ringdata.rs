@@ -19,6 +19,73 @@ mod __types {
  ;
 
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringdata/RingData_Ranks.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct RingData_Ranks  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for RingData_Ranks  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RingData.Ranks";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for RingData_Ranks  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  RingData_Ranks  {
+    pub fn c() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn b() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn a() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn s() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn max() -> Self {
+        Self { value: 4 }
+
+    }
+
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringdata/RingData_Kinds.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -87,73 +154,6 @@ impl  RingData_Kinds  {
 # [offset (152)] # [rename (name = "m_RimColor")] pub m_rim_color : crate :: unity_engine :: color :: Color ,
 }
 
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringdata/RingData_Ranks.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct RingData_Ranks  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for RingData_Ranks  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RingData.Ranks";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for RingData_Ranks  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  RingData_Ranks  {
-    pub fn c() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn b() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn a() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn s() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn max() -> Self {
-        Self { value: 4 }
-
-    }
-
-}
-
 }
 
 #[cfg(feature = "app-ringdata-types")]
@@ -182,11 +182,11 @@ impl RingData {
 #[cfg(feature = "app-ringdata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::RingData_Ranks;
     pub use super::RingData_Kinds;
     pub use super::RingData;
     pub use super::IRingData;
     pub use super::IRingDataMethods;
-    pub use super::RingData_Ranks;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdata_1::IStructData_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

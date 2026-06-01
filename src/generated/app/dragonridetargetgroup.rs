@@ -34,6 +34,21 @@ mod __types {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridetargetgroup/DragonRideTargetGroup.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRideTargetGroup")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct DragonRideTargetGroup {
+# [static_field] # [rename (name = "cTargetPrefabPath")] pub c_target_prefab_path : :: unity2 :: Il2CppString ,
+# [offset (28)] # [rename (name = "m_BillboardType")] pub m_billboard_type : crate :: app :: dragon_ride :: billboardtypes :: BillboardTypes ,
+# [offset (32)] # [rename (name = "m_MapWidth")] pub m_map_width : i32 ,
+# [offset (36)] # [rename (name = "m_MapHeight")] pub m_map_height : i32 ,
+# [offset (56)] # [rename (name = "m_ChainIntervalTimer")] pub m_chain_interval_timer : f32 ,
+# [offset (64)] # [rename (name = "m_GameCamera")] pub m_game_camera : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (72)] # [rename (name = "m_CameraScript")] pub m_camera_script : crate :: app :: dragonridecamera :: DragonRideCamera ,
+# [offset (80)] # [rename (name = "m_Config")] pub m_config : crate :: app :: dragonrideconfig :: DragonRideConfig ,
+# [offset (88)] # [rename (name = "m_TargetSpace")] pub m_target_space : crate :: unity_engine :: vector2 :: Vector2 ,
+# [offset (96)] # [rename (name = "m_ChainPlayer")] pub m_chain_player : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: dragonridetargetgroup :: DragonRideTargetGroup_ChainSEManager > ,
+# [offset (104)] # [rename (name = "m_ChainChecker")] pub m_chain_checker : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: dragonridetargetgroup :: DragonRideTargetGroup_ChainParam > ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridetargetgroup/DragonRideTargetGroup_ChainParam.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -67,21 +82,6 @@ impl ::unity2::IlType for DragonRideTargetGroup_ChainParam {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridetargetgroup/DragonRideTargetGroup.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRideTargetGroup")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct DragonRideTargetGroup {
-# [static_field] # [rename (name = "cTargetPrefabPath")] pub c_target_prefab_path : :: unity2 :: Il2CppString ,
-# [offset (28)] # [rename (name = "m_BillboardType")] pub m_billboard_type : crate :: app :: dragon_ride :: billboardtypes :: BillboardTypes ,
-# [offset (32)] # [rename (name = "m_MapWidth")] pub m_map_width : i32 ,
-# [offset (36)] # [rename (name = "m_MapHeight")] pub m_map_height : i32 ,
-# [offset (56)] # [rename (name = "m_ChainIntervalTimer")] pub m_chain_interval_timer : f32 ,
-# [offset (64)] # [rename (name = "m_GameCamera")] pub m_game_camera : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (72)] # [rename (name = "m_CameraScript")] pub m_camera_script : crate :: app :: dragonridecamera :: DragonRideCamera ,
-# [offset (80)] # [rename (name = "m_Config")] pub m_config : crate :: app :: dragonrideconfig :: DragonRideConfig ,
-# [offset (88)] # [rename (name = "m_TargetSpace")] pub m_target_space : crate :: unity_engine :: vector2 :: Vector2 ,
-# [offset (96)] # [rename (name = "m_ChainPlayer")] pub m_chain_player : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: dragonridetargetgroup :: DragonRideTargetGroup_ChainSEManager > ,
-# [offset (104)] # [rename (name = "m_ChainChecker")] pub m_chain_checker : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: dragonridetargetgroup :: DragonRideTargetGroup_ChainParam > ,
 }
 
 }
@@ -129,10 +129,10 @@ pub mod prelude {
     pub use super::DragonRideTargetGroup_ChainSEManager;
     pub use super::IDragonRideTargetGroup_ChainSEManager;
     pub use super::IDragonRideTargetGroup_ChainSEManagerMethods;
-    pub use super::DragonRideTargetGroup_ChainParam;
     pub use super::DragonRideTargetGroup;
     pub use super::IDragonRideTargetGroup;
     pub use super::IDragonRideTargetGroupMethods;
+    pub use super::DragonRideTargetGroup_ChainParam;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     pub use crate::unity_engine::behaviour::IBehaviour;

@@ -28,6 +28,9 @@ mod __types {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaytakeovermenu/RelayTakeOverMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayTakeOverMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct RelayTakeOverMenu {}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relaytakeovermenu/RelayTakeOverMenu_Result2.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -75,9 +78,6 @@ impl  RelayTakeOverMenu_Result2  {
     }
 
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaytakeovermenu/RelayTakeOverMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayTakeOverMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct RelayTakeOverMenu {}
 
 }
 
@@ -127,10 +127,10 @@ pub mod prelude {
     pub use super::RelayTakeOverMenu_MenuItem;
     pub use super::IRelayTakeOverMenu_MenuItem;
     pub use super::IRelayTakeOverMenu_MenuItemMethods;
-    pub use super::RelayTakeOverMenu_Result2;
     pub use super::RelayTakeOverMenu;
     pub use super::IRelayTakeOverMenu;
     pub use super::IRelayTakeOverMenuMethods;
+    pub use super::RelayTakeOverMenu_Result2;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::procinst::IProcInst;

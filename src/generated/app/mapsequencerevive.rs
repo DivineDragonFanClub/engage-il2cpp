@@ -15,6 +15,12 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencerevive/MapSequenceRevive.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceRevive")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct MapSequenceRevive {
+# [offset (112)] # [rename (name = "m_Units")] pub m_units : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > ,
+# [offset (120)] # [rename (name = "m_Index")] pub m_index : i32 ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencerevive/MapSequenceRevive_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -57,12 +63,6 @@ impl  MapSequenceRevive_Label  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencerevive/MapSequenceRevive.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceRevive")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct MapSequenceRevive {
-# [offset (112)] # [rename (name = "m_Units")] pub m_units : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > ,
-# [offset (120)] # [rename (name = "m_Index")] pub m_index : i32 ,
-}
-
 }
 
 #[cfg(feature = "app-mapsequencerevive-types")]
@@ -91,10 +91,10 @@ impl MapSequenceRevive {
 #[cfg(feature = "app-mapsequencerevive")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapSequenceRevive_Label;
     pub use super::MapSequenceRevive;
     pub use super::IMapSequenceRevive;
     pub use super::IMapSequenceReviveMethods;
+    pub use super::MapSequenceRevive_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

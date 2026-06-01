@@ -16,7 +16,7 @@
  # [cfg (feature = "unity_engine-rendering-universal-custom-customenvsetmanager")] pub use customenvsetmanager :: { ICustomEnvSetManagerMethods }
  ;
  # [cfg (any (feature = "unity_engine-rendering-universal-custom-customforwardrenderer-types"))] pub mod customforwardrenderer ;
- # [cfg (feature = "unity_engine-rendering-universal-custom-customforwardrenderer-types")] pub use customforwardrenderer :: { CustomForwardRenderer_Profiling , ICustomForwardRenderer_Profiling , CustomForwardRenderer , ICustomForwardRenderer }
+ # [cfg (feature = "unity_engine-rendering-universal-custom-customforwardrenderer-types")] pub use customforwardrenderer :: { CustomForwardRenderer , ICustomForwardRenderer , CustomForwardRenderer_Profiling , ICustomForwardRenderer_Profiling }
  ;
  # [cfg (feature = "unity_engine-rendering-universal-custom-customforwardrenderer")] pub use customforwardrenderer :: { ICustomForwardRendererMethods }
  ;
@@ -70,7 +70,7 @@
  # [cfg (feature = "unity_engine-rendering-universal-custom-reflectionrenderer")] pub use reflectionrenderer :: { IReflectionRendererMethods }
  ;
  # [cfg (any (feature = "unity_engine-rendering-universal-custom-reflectionrendererdata-types"))] pub mod reflectionrendererdata ;
- # [cfg (feature = "unity_engine-rendering-universal-custom-reflectionrendererdata-types")] pub use reflectionrendererdata :: { ReflectionRendererData_ShaderResources , IReflectionRendererData_ShaderResources , ReflectionRendererData_ReflectionTarget , ReflectionRendererData , IReflectionRendererData }
+ # [cfg (feature = "unity_engine-rendering-universal-custom-reflectionrendererdata-types")] pub use reflectionrendererdata :: { ReflectionRendererData_ShaderResources , IReflectionRendererData_ShaderResources , ReflectionRendererData , IReflectionRendererData , ReflectionRendererData_ReflectionTarget }
  ;
  # [cfg (feature = "unity_engine-rendering-universal-custom-reflectionrendererdata")] pub use reflectionrendererdata :: { IReflectionRendererData_ShaderResourcesMethods , IReflectionRendererDataMethods }
  ;

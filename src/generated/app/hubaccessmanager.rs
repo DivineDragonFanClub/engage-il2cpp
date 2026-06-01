@@ -13,12 +13,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubaccessmanager/HubAccessManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubAccessManager")] # [parent (crate :: system :: object :: Object)] pub struct HubAccessManager {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubaccessmanager/HubAccessManager_MaterialCalculator.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubAccessManager.MaterialCalculator")] # [parent (crate :: system :: object :: Object)] pub struct HubAccessManager_MaterialCalculator {}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessmanager/HubAccessManager_MaterialCalculator_Type.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -73,6 +67,12 @@ impl  HubAccessManager_MaterialCalculator_Type  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubaccessmanager/HubAccessManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubAccessManager")] # [parent (crate :: system :: object :: Object)] pub struct HubAccessManager {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubaccessmanager/HubAccessManager_MaterialCalculator.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubAccessManager.MaterialCalculator")] # [parent (crate :: system :: object :: Object)] pub struct HubAccessManager_MaterialCalculator {}
+
 }
 
 #[cfg(feature = "app-hubaccessmanager-types")]
@@ -121,13 +121,13 @@ impl HubAccessManager_MaterialCalculator {
 #[cfg(feature = "app-hubaccessmanager")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::HubAccessManager_MaterialCalculator_Type;
     pub use super::HubAccessManager;
     pub use super::IHubAccessManager;
     pub use super::IHubAccessManagerMethods;
     pub use super::HubAccessManager_MaterialCalculator;
     pub use super::IHubAccessManager_MaterialCalculator;
     pub use super::IHubAccessManager_MaterialCalculatorMethods;
-    pub use super::HubAccessManager_MaterialCalculator_Type;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

@@ -25,17 +25,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animalmenusequence/AnimalMenuSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "AnimalMenuSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: animalmenusequence :: AnimalMenuSequence >)] pub struct AnimalMenuSequence {
-# [offset (184)] # [rename (name = "AnimalPID")] pub animal_pid : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (224)] # [rename (name = "m_Handle")] pub m_handle : crate :: app :: resourcehandle_2 :: ResourceHandle_2 ,
-# [offset (232)] # [rename (name = "m_RootAnim")] pub m_root_anim : crate :: unity_engine :: animator :: Animator ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animalmenusequence/AnimalMenuSequence_ConfirmNo.md"))] # [:: unity2 :: class (namespace = "App" , name = "AnimalMenuSequence.ConfirmNo")] # [parent (crate :: app :: basicdialogitemno :: BasicDialogItemNo)] pub struct AnimalMenuSequence_ConfirmNo {}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/animalmenusequence/AnimalMenuSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -109,6 +98,20 @@ impl  AnimalMenuSequence_Label  {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animalmenusequence/AnimalMenuSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "AnimalMenuSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: animalmenusequence :: AnimalMenuSequence >)] pub struct AnimalMenuSequence {
+# [offset (184)] # [rename (name = "AnimalPID")] pub animal_pid : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
+# [offset (224)] # [rename (name = "m_Handle")] pub m_handle : crate :: app :: resourcehandle_2 :: ResourceHandle_2 ,
+# [offset (232)] # [rename (name = "m_RootAnim")] pub m_root_anim : crate :: unity_engine :: animator :: Animator ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animalmenusequence/AnimalMenuSequence_ConfirmNo.md"))] # [:: unity2 :: class (namespace = "App" , name = "AnimalMenuSequence.ConfirmNo")] # [parent (crate :: app :: basicdialogitemno :: BasicDialogItemNo)] pub struct AnimalMenuSequence_ConfirmNo {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animalmenusequence/AnimalMenuSequence_ConfirmYes.md"))] # [:: unity2 :: class (namespace = "App" , name = "AnimalMenuSequence.ConfirmYes")] # [parent (crate :: app :: basicdialogitemyes :: BasicDialogItemYes)] pub struct AnimalMenuSequence_ConfirmYes {}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/animalmenusequence/AnimalMenuSequence_From.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -156,9 +159,6 @@ impl  AnimalMenuSequence_From  {
     }
 
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animalmenusequence/AnimalMenuSequence_ConfirmYes.md"))] # [:: unity2 :: class (namespace = "App" , name = "AnimalMenuSequence.ConfirmYes")] # [parent (crate :: app :: basicdialogitemyes :: BasicDialogItemYes)] pub struct AnimalMenuSequence_ConfirmYes {}
 
 }
 
@@ -222,17 +222,17 @@ impl AnimalMenuSequence_ConfirmYes {
 #[cfg(feature = "app-animalmenusequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::AnimalMenuSequence_Label;
     pub use super::AnimalMenuSequence;
     pub use super::IAnimalMenuSequence;
     pub use super::IAnimalMenuSequenceMethods;
     pub use super::AnimalMenuSequence_ConfirmNo;
     pub use super::IAnimalMenuSequence_ConfirmNo;
     pub use super::IAnimalMenuSequence_ConfirmNoMethods;
-    pub use super::AnimalMenuSequence_Label;
-    pub use super::AnimalMenuSequence_From;
     pub use super::AnimalMenuSequence_ConfirmYes;
     pub use super::IAnimalMenuSequence_ConfirmYes;
     pub use super::IAnimalMenuSequence_ConfirmYesMethods;
+    pub use super::AnimalMenuSequence_From;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemno::IBasicDialogItemNo;
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;

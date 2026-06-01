@@ -26,7 +26,7 @@
  # [cfg (feature = "unity_engine-resource_management-resource_providers-assetbundlerequestoptions")] pub use assetbundlerequestoptions :: { IAssetBundleRequestOptionsMethods }
  ;
  # [cfg (any (feature = "unity_engine-resource_management-resource_providers-assetbundleresource-types"))] pub mod assetbundleresource ;
- # [cfg (feature = "unity_engine-resource_management-resource_providers-assetbundleresource-types")] pub use assetbundleresource :: { AssetBundleResource , IAssetBundleResource , AssetBundleResource_LoadType }
+ # [cfg (feature = "unity_engine-resource_management-resource_providers-assetbundleresource-types")] pub use assetbundleresource :: { AssetBundleResource_LoadType , AssetBundleResource , IAssetBundleResource }
  ;
  # [cfg (feature = "unity_engine-resource_management-resource_providers-assetbundleresource")] pub use assetbundleresource :: { IAssetBundleResourceMethods }
  ;
@@ -36,9 +36,9 @@
  # [cfg (feature = "unity_engine-resource_management-resource_providers-atlasspriteprovider")] pub use atlasspriteprovider :: { IAtlasSpriteProviderMethods }
  ;
  # [cfg (any (feature = "unity_engine-resource_management-resource_providers-bundledassetprovider-types"))] pub mod bundledassetprovider ;
- # [cfg (feature = "unity_engine-resource_management-resource_providers-bundledassetprovider-types")] pub use bundledassetprovider :: { BundledAssetProvider , IBundledAssetProvider , BundledAssetProvider_InternalOp , IBundledAssetProvider_InternalOp }
+ # [cfg (feature = "unity_engine-resource_management-resource_providers-bundledassetprovider-types")] pub use bundledassetprovider :: { BundledAssetProvider_InternalOp , IBundledAssetProvider_InternalOp , BundledAssetProvider , IBundledAssetProvider }
  ;
- # [cfg (feature = "unity_engine-resource_management-resource_providers-bundledassetprovider")] pub use bundledassetprovider :: { IBundledAssetProviderMethods , IBundledAssetProvider_InternalOpMethods }
+ # [cfg (feature = "unity_engine-resource_management-resource_providers-bundledassetprovider")] pub use bundledassetprovider :: { IBundledAssetProvider_InternalOpMethods , IBundledAssetProviderMethods }
  ;
  # [cfg (any (feature = "unity_engine-resource_management-resource_providers-iassetbundleresource_interface-types"))] pub mod iassetbundleresource_interface ;
  # [cfg (feature = "unity_engine-resource_management-resource_providers-iassetbundleresource_interface-types")] pub use iassetbundleresource_interface :: { IAssetBundleResource_Interface , IIAssetBundleResource_Interface }

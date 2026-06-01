@@ -11,7 +11,7 @@
  # [cfg (feature = "app-accessoryblankmenuitem")] pub use accessoryblankmenuitem :: { IAccessoryBlankMenuItemMethods }
  ;
  # [cfg (any (feature = "app-accessorydata-types"))] pub mod accessorydata ;
- # [cfg (feature = "app-accessorydata-types")] pub use accessorydata :: { AccessoryData_Kinds , AccessoryData_Masks , AccessoryData , IAccessoryData }
+ # [cfg (feature = "app-accessorydata-types")] pub use accessorydata :: { AccessoryData , IAccessoryData , AccessoryData_Masks , AccessoryData_Kinds }
  ;
  # [cfg (feature = "app-accessorydata")] pub use accessorydata :: { IAccessoryDataMethods }
  ;
@@ -31,9 +31,9 @@
  # [cfg (feature = "app-accessoryequipmentinfo")] pub use accessoryequipmentinfo :: { IAccessoryEquipmentInfoMethods }
  ;
  # [cfg (any (feature = "app-accessorymenuitem-types"))] pub mod accessorymenuitem ;
- # [cfg (feature = "app-accessorymenuitem-types")] pub use accessorymenuitem :: { AccessoryMenuItem_RequestCloseEventHandler , IAccessoryMenuItem_RequestCloseEventHandler , AccessoryMenuItem_DecideEventHandler , IAccessoryMenuItem_DecideEventHandler , AccessoryMenuItem , IAccessoryMenuItem , AccessoryMenuItem_SelectEventHandler , IAccessoryMenuItem_SelectEventHandler }
+ # [cfg (feature = "app-accessorymenuitem-types")] pub use accessorymenuitem :: { AccessoryMenuItem_DecideEventHandler , IAccessoryMenuItem_DecideEventHandler , AccessoryMenuItem_SelectEventHandler , IAccessoryMenuItem_SelectEventHandler , AccessoryMenuItem_RequestCloseEventHandler , IAccessoryMenuItem_RequestCloseEventHandler , AccessoryMenuItem , IAccessoryMenuItem }
  ;
- # [cfg (feature = "app-accessorymenuitem")] pub use accessorymenuitem :: { IAccessoryMenuItem_RequestCloseEventHandlerMethods , IAccessoryMenuItem_DecideEventHandlerMethods , IAccessoryMenuItemMethods , IAccessoryMenuItem_SelectEventHandlerMethods }
+ # [cfg (feature = "app-accessorymenuitem")] pub use accessorymenuitem :: { IAccessoryMenuItem_DecideEventHandlerMethods , IAccessoryMenuItem_SelectEventHandlerMethods , IAccessoryMenuItem_RequestCloseEventHandlerMethods , IAccessoryMenuItemMethods }
  ;
  # [cfg (any (feature = "app-accessorymenuitemcontent-types"))] pub mod accessorymenuitemcontent ;
  # [cfg (feature = "app-accessorymenuitemcontent-types")] pub use accessorymenuitemcontent :: { AccessoryMenuItemContent , IAccessoryMenuItemContent }
@@ -46,9 +46,9 @@
  # [cfg (feature = "app-accessoryshopbuyemptymenuitem")] pub use accessoryshopbuyemptymenuitem :: { IAccessoryShopBuyEmptyMenuItemMethods }
  ;
  # [cfg (any (feature = "app-accessoryshopbuymenu-types"))] pub mod accessoryshopbuymenu ;
- # [cfg (feature = "app-accessoryshopbuymenu-types")] pub use accessoryshopbuymenu :: { AccessoryShopBuyMenu_RequestCloseEventHandler , IAccessoryShopBuyMenu_RequestCloseEventHandler , AccessoryShopBuyMenu_SelectEventHandler , IAccessoryShopBuyMenu_SelectEventHandler , AccessoryShopBuyMenu_DecideEventHandler , IAccessoryShopBuyMenu_DecideEventHandler , AccessoryShopBuyMenu_ChangeKindEventHandler , IAccessoryShopBuyMenu_ChangeKindEventHandler , AccessoryShopBuyMenu , IAccessoryShopBuyMenu }
+ # [cfg (feature = "app-accessoryshopbuymenu-types")] pub use accessoryshopbuymenu :: { AccessoryShopBuyMenu_DecideEventHandler , IAccessoryShopBuyMenu_DecideEventHandler , AccessoryShopBuyMenu_SelectEventHandler , IAccessoryShopBuyMenu_SelectEventHandler , AccessoryShopBuyMenu_ChangeKindEventHandler , IAccessoryShopBuyMenu_ChangeKindEventHandler , AccessoryShopBuyMenu , IAccessoryShopBuyMenu , AccessoryShopBuyMenu_RequestCloseEventHandler , IAccessoryShopBuyMenu_RequestCloseEventHandler }
  ;
- # [cfg (feature = "app-accessoryshopbuymenu")] pub use accessoryshopbuymenu :: { IAccessoryShopBuyMenu_RequestCloseEventHandlerMethods , IAccessoryShopBuyMenu_SelectEventHandlerMethods , IAccessoryShopBuyMenu_DecideEventHandlerMethods , IAccessoryShopBuyMenu_ChangeKindEventHandlerMethods , IAccessoryShopBuyMenuMethods }
+ # [cfg (feature = "app-accessoryshopbuymenu")] pub use accessoryshopbuymenu :: { IAccessoryShopBuyMenu_DecideEventHandlerMethods , IAccessoryShopBuyMenu_SelectEventHandlerMethods , IAccessoryShopBuyMenu_ChangeKindEventHandlerMethods , IAccessoryShopBuyMenuMethods , IAccessoryShopBuyMenu_RequestCloseEventHandlerMethods }
  ;
  # [cfg (any (feature = "app-accessoryshopbuymenucontent-types"))] pub mod accessoryshopbuymenucontent ;
  # [cfg (feature = "app-accessoryshopbuymenucontent-types")] pub use accessoryshopbuymenucontent :: { AccessoryShopBuyMenuContent_KindIcon , IAccessoryShopBuyMenuContent_KindIcon , AccessoryShopBuyMenuContent , IAccessoryShopBuyMenuContent }
@@ -66,34 +66,34 @@
  # [cfg (feature = "app-accessoryshopbuymenuitemcontent")] pub use accessoryshopbuymenuitemcontent :: { IAccessoryShopBuyMenuItemContentMethods }
  ;
  # [cfg (any (feature = "app-accessoryshopbuyroot-types"))] pub mod accessoryshopbuyroot ;
- # [cfg (feature = "app-accessoryshopbuyroot-types")] pub use accessoryshopbuyroot :: { AccessoryShopBuyRoot , IAccessoryShopBuyRoot , AccessoryShopBuyRoot_ReturnEventHandler , IAccessoryShopBuyRoot_ReturnEventHandler }
+ # [cfg (feature = "app-accessoryshopbuyroot-types")] pub use accessoryshopbuyroot :: { AccessoryShopBuyRoot_ReturnEventHandler , IAccessoryShopBuyRoot_ReturnEventHandler , AccessoryShopBuyRoot , IAccessoryShopBuyRoot }
  ;
- # [cfg (feature = "app-accessoryshopbuyroot")] pub use accessoryshopbuyroot :: { IAccessoryShopBuyRootMethods , IAccessoryShopBuyRoot_ReturnEventHandlerMethods }
+ # [cfg (feature = "app-accessoryshopbuyroot")] pub use accessoryshopbuyroot :: { IAccessoryShopBuyRoot_ReturnEventHandlerMethods , IAccessoryShopBuyRootMethods }
  ;
  # [cfg (any (feature = "app-accessoryshopbuyrootproc-types"))] pub mod accessoryshopbuyrootproc ;
- # [cfg (feature = "app-accessoryshopbuyrootproc-types")] pub use accessoryshopbuyrootproc :: { AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler , IAccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler , AccessoryShopBuyRootProc_HideUIEventHandler , IAccessoryShopBuyRootProc_HideUIEventHandler , AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler , IAccessoryShopBuyRootProc_ChangeUnitToNextEventHandler , AccessoryShopBuyRootProc , IAccessoryShopBuyRootProc , AccessoryShopBuyRootProc_EndWatchingEventHandler , IAccessoryShopBuyRootProc_EndWatchingEventHandler , AccessoryShopBuyRootProc_StartWatchingEventHandler , IAccessoryShopBuyRootProc_StartWatchingEventHandler , AccessoryShopBuyRootProc_ShowUIEventHandler , IAccessoryShopBuyRootProc_ShowUIEventHandler }
+ # [cfg (feature = "app-accessoryshopbuyrootproc-types")] pub use accessoryshopbuyrootproc :: { AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler , IAccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler , AccessoryShopBuyRootProc , IAccessoryShopBuyRootProc , AccessoryShopBuyRootProc_StartWatchingEventHandler , IAccessoryShopBuyRootProc_StartWatchingEventHandler , AccessoryShopBuyRootProc_ShowUIEventHandler , IAccessoryShopBuyRootProc_ShowUIEventHandler , AccessoryShopBuyRootProc_HideUIEventHandler , IAccessoryShopBuyRootProc_HideUIEventHandler , AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler , IAccessoryShopBuyRootProc_ChangeUnitToNextEventHandler , AccessoryShopBuyRootProc_EndWatchingEventHandler , IAccessoryShopBuyRootProc_EndWatchingEventHandler }
  ;
- # [cfg (feature = "app-accessoryshopbuyrootproc")] pub use accessoryshopbuyrootproc :: { IAccessoryShopBuyRootProc_ChangeUnitToPrevEventHandlerMethods , IAccessoryShopBuyRootProc_HideUIEventHandlerMethods , IAccessoryShopBuyRootProc_ChangeUnitToNextEventHandlerMethods , IAccessoryShopBuyRootProcMethods , IAccessoryShopBuyRootProc_EndWatchingEventHandlerMethods , IAccessoryShopBuyRootProc_StartWatchingEventHandlerMethods , IAccessoryShopBuyRootProc_ShowUIEventHandlerMethods }
+ # [cfg (feature = "app-accessoryshopbuyrootproc")] pub use accessoryshopbuyrootproc :: { IAccessoryShopBuyRootProc_ChangeUnitToPrevEventHandlerMethods , IAccessoryShopBuyRootProcMethods , IAccessoryShopBuyRootProc_StartWatchingEventHandlerMethods , IAccessoryShopBuyRootProc_ShowUIEventHandlerMethods , IAccessoryShopBuyRootProc_HideUIEventHandlerMethods , IAccessoryShopBuyRootProc_ChangeUnitToNextEventHandlerMethods , IAccessoryShopBuyRootProc_EndWatchingEventHandlerMethods }
  ;
  # [cfg (any (feature = "app-accessoryshopchangemenu-types"))] pub mod accessoryshopchangemenu ;
- # [cfg (feature = "app-accessoryshopchangemenu-types")] pub use accessoryshopchangemenu :: { AccessoryShopChangeMenu_ChangeKindEventHandler , IAccessoryShopChangeMenu_ChangeKindEventHandler , AccessoryShopChangeMenu , IAccessoryShopChangeMenu , AccessoryShopChangeMenu_RequestCloseEventHandler , IAccessoryShopChangeMenu_RequestCloseEventHandler }
+ # [cfg (feature = "app-accessoryshopchangemenu-types")] pub use accessoryshopchangemenu :: { AccessoryShopChangeMenu_RequestCloseEventHandler , IAccessoryShopChangeMenu_RequestCloseEventHandler , AccessoryShopChangeMenu_ChangeKindEventHandler , IAccessoryShopChangeMenu_ChangeKindEventHandler , AccessoryShopChangeMenu , IAccessoryShopChangeMenu }
  ;
- # [cfg (feature = "app-accessoryshopchangemenu")] pub use accessoryshopchangemenu :: { IAccessoryShopChangeMenu_ChangeKindEventHandlerMethods , IAccessoryShopChangeMenuMethods , IAccessoryShopChangeMenu_RequestCloseEventHandlerMethods }
+ # [cfg (feature = "app-accessoryshopchangemenu")] pub use accessoryshopchangemenu :: { IAccessoryShopChangeMenu_RequestCloseEventHandlerMethods , IAccessoryShopChangeMenu_ChangeKindEventHandlerMethods , IAccessoryShopChangeMenuMethods }
  ;
  # [cfg (any (feature = "app-accessoryshopchangemenucontent-types"))] pub mod accessoryshopchangemenucontent ;
- # [cfg (feature = "app-accessoryshopchangemenucontent-types")] pub use accessoryshopchangemenucontent :: { AccessoryShopChangeMenuContent , IAccessoryShopChangeMenuContent , AccessoryShopChangeMenuContent_KindIcon , IAccessoryShopChangeMenuContent_KindIcon }
+ # [cfg (feature = "app-accessoryshopchangemenucontent-types")] pub use accessoryshopchangemenucontent :: { AccessoryShopChangeMenuContent_KindIcon , IAccessoryShopChangeMenuContent_KindIcon , AccessoryShopChangeMenuContent , IAccessoryShopChangeMenuContent }
  ;
- # [cfg (feature = "app-accessoryshopchangemenucontent")] pub use accessoryshopchangemenucontent :: { IAccessoryShopChangeMenuContentMethods , IAccessoryShopChangeMenuContent_KindIconMethods }
+ # [cfg (feature = "app-accessoryshopchangemenucontent")] pub use accessoryshopchangemenucontent :: { IAccessoryShopChangeMenuContent_KindIconMethods , IAccessoryShopChangeMenuContentMethods }
  ;
  # [cfg (any (feature = "app-accessoryshopchangeroot-types"))] pub mod accessoryshopchangeroot ;
- # [cfg (feature = "app-accessoryshopchangeroot-types")] pub use accessoryshopchangeroot :: { AccessoryShopChangeRoot , IAccessoryShopChangeRoot , AccessoryShopChangeRoot_ReturnEventHandler , IAccessoryShopChangeRoot_ReturnEventHandler }
+ # [cfg (feature = "app-accessoryshopchangeroot-types")] pub use accessoryshopchangeroot :: { AccessoryShopChangeRoot_ReturnEventHandler , IAccessoryShopChangeRoot_ReturnEventHandler , AccessoryShopChangeRoot , IAccessoryShopChangeRoot }
  ;
- # [cfg (feature = "app-accessoryshopchangeroot")] pub use accessoryshopchangeroot :: { IAccessoryShopChangeRootMethods , IAccessoryShopChangeRoot_ReturnEventHandlerMethods }
+ # [cfg (feature = "app-accessoryshopchangeroot")] pub use accessoryshopchangeroot :: { IAccessoryShopChangeRoot_ReturnEventHandlerMethods , IAccessoryShopChangeRootMethods }
  ;
  # [cfg (any (feature = "app-accessoryshopchangerootproc-types"))] pub mod accessoryshopchangerootproc ;
- # [cfg (feature = "app-accessoryshopchangerootproc-types")] pub use accessoryshopchangerootproc :: { AccessoryShopChangeRootProc_ChangeUnitToNextEventHandler , IAccessoryShopChangeRootProc_ChangeUnitToNextEventHandler , AccessoryShopChangeRootProc_StartWatchingEventHandler , IAccessoryShopChangeRootProc_StartWatchingEventHandler , AccessoryShopChangeRootProc , IAccessoryShopChangeRootProc , AccessoryShopChangeRootProc_ChangeUnitToPrevEventHandler , IAccessoryShopChangeRootProc_ChangeUnitToPrevEventHandler , AccessoryShopChangeRootProc_EndWatchingEventHandler , IAccessoryShopChangeRootProc_EndWatchingEventHandler , AccessoryShopChangeRootProc_HideUIEventHandler , IAccessoryShopChangeRootProc_HideUIEventHandler , AccessoryShopChangeRootProc_ShowUIEventHandler , IAccessoryShopChangeRootProc_ShowUIEventHandler }
+ # [cfg (feature = "app-accessoryshopchangerootproc-types")] pub use accessoryshopchangerootproc :: { AccessoryShopChangeRootProc_EndWatchingEventHandler , IAccessoryShopChangeRootProc_EndWatchingEventHandler , AccessoryShopChangeRootProc_ShowUIEventHandler , IAccessoryShopChangeRootProc_ShowUIEventHandler , AccessoryShopChangeRootProc_HideUIEventHandler , IAccessoryShopChangeRootProc_HideUIEventHandler , AccessoryShopChangeRootProc_StartWatchingEventHandler , IAccessoryShopChangeRootProc_StartWatchingEventHandler , AccessoryShopChangeRootProc_ChangeUnitToNextEventHandler , IAccessoryShopChangeRootProc_ChangeUnitToNextEventHandler , AccessoryShopChangeRootProc_ChangeUnitToPrevEventHandler , IAccessoryShopChangeRootProc_ChangeUnitToPrevEventHandler , AccessoryShopChangeRootProc , IAccessoryShopChangeRootProc }
  ;
- # [cfg (feature = "app-accessoryshopchangerootproc")] pub use accessoryshopchangerootproc :: { IAccessoryShopChangeRootProc_ChangeUnitToNextEventHandlerMethods , IAccessoryShopChangeRootProc_StartWatchingEventHandlerMethods , IAccessoryShopChangeRootProcMethods , IAccessoryShopChangeRootProc_ChangeUnitToPrevEventHandlerMethods , IAccessoryShopChangeRootProc_EndWatchingEventHandlerMethods , IAccessoryShopChangeRootProc_HideUIEventHandlerMethods , IAccessoryShopChangeRootProc_ShowUIEventHandlerMethods }
+ # [cfg (feature = "app-accessoryshopchangerootproc")] pub use accessoryshopchangerootproc :: { IAccessoryShopChangeRootProc_EndWatchingEventHandlerMethods , IAccessoryShopChangeRootProc_ShowUIEventHandlerMethods , IAccessoryShopChangeRootProc_HideUIEventHandlerMethods , IAccessoryShopChangeRootProc_StartWatchingEventHandlerMethods , IAccessoryShopChangeRootProc_ChangeUnitToNextEventHandlerMethods , IAccessoryShopChangeRootProc_ChangeUnitToPrevEventHandlerMethods , IAccessoryShopChangeRootProcMethods }
  ;
  # [cfg (any (feature = "app-accessoryshopcontent-types"))] pub mod accessoryshopcontent ;
  # [cfg (feature = "app-accessoryshopcontent-types")] pub use accessoryshopcontent :: { AccessoryShopContent , IAccessoryShopContent }
@@ -106,9 +106,9 @@
  # [cfg (feature = "app-accessoryshopdata")] pub use accessoryshopdata :: { IAccessoryShopDataMethods }
  ;
  # [cfg (any (feature = "app-accessoryshoptopmenu-types"))] pub mod accessoryshoptopmenu ;
- # [cfg (feature = "app-accessoryshoptopmenu-types")] pub use accessoryshoptopmenu :: { AccessoryShopTopMenu , IAccessoryShopTopMenu , AccessoryShopTopMenu_DecideEventHandler , IAccessoryShopTopMenu_DecideEventHandler , AccessoryShopTopMenu_ChangeMenuItem , IAccessoryShopTopMenu_ChangeMenuItem , AccessoryShopTopMenu_BuyMenuItem , IAccessoryShopTopMenu_BuyMenuItem , AccessoryShopTopMenu_Result2 }
+ # [cfg (feature = "app-accessoryshoptopmenu-types")] pub use accessoryshoptopmenu :: { AccessoryShopTopMenu_ChangeMenuItem , IAccessoryShopTopMenu_ChangeMenuItem , AccessoryShopTopMenu_DecideEventHandler , IAccessoryShopTopMenu_DecideEventHandler , AccessoryShopTopMenu , IAccessoryShopTopMenu , AccessoryShopTopMenu_BuyMenuItem , IAccessoryShopTopMenu_BuyMenuItem , AccessoryShopTopMenu_Result2 }
  ;
- # [cfg (feature = "app-accessoryshoptopmenu")] pub use accessoryshoptopmenu :: { IAccessoryShopTopMenuMethods , IAccessoryShopTopMenu_DecideEventHandlerMethods , IAccessoryShopTopMenu_ChangeMenuItemMethods , IAccessoryShopTopMenu_BuyMenuItemMethods }
+ # [cfg (feature = "app-accessoryshoptopmenu")] pub use accessoryshoptopmenu :: { IAccessoryShopTopMenu_ChangeMenuItemMethods , IAccessoryShopTopMenu_DecideEventHandlerMethods , IAccessoryShopTopMenuMethods , IAccessoryShopTopMenu_BuyMenuItemMethods }
  ;
  # [cfg (any (feature = "app-accessoryshopunitselectroot-types"))] pub mod accessoryshopunitselectroot ;
  # [cfg (feature = "app-accessoryshopunitselectroot-types")] pub use accessoryshopunitselectroot :: { AccessoryShopUnitSelectRoot , IAccessoryShopUnitSelectRoot }
@@ -121,19 +121,19 @@
  # [cfg (feature = "app-accessoryshoputility")] pub use accessoryshoputility :: { IAccessoryShopUtilityMethods }
  ;
  # [cfg (any (feature = "app-account-types"))] pub mod account ;
- # [cfg (feature = "app-account-types")] pub use account :: { Account_SetupNsaResult , Account , IAccount , Account_SetupNsaResultFunction , IAccount_SetupNsaResultFunction , Account_SetupNsaSequence , IAccount_SetupNsaSequence , Account_SetupNsaSequence_Label }
+ # [cfg (feature = "app-account-types")] pub use account :: { Account_SetupNsaResult , Account_SetupNsaSequence , IAccount_SetupNsaSequence , Account_SetupNsaSequence_Label , Account_SetupNsaResultFunction , IAccount_SetupNsaResultFunction , Account , IAccount }
  ;
- # [cfg (feature = "app-account")] pub use account :: { IAccount_SetupNsaResultFunctionMethods , IAccount_SetupNsaSequenceMethods }
+ # [cfg (feature = "app-account")] pub use account :: { IAccount_SetupNsaSequenceMethods , IAccount_SetupNsaResultFunctionMethods }
  ;
  # [cfg (any (feature = "app-achievedata-types"))] pub mod achievedata ;
- # [cfg (feature = "app-achievedata-types")] pub use achievedata :: { AchieveData_Status , AchieveData_ArgType , AchieveData_Categories , AchieveData , IAchieveData , AchieveData_Kinds }
+ # [cfg (feature = "app-achievedata-types")] pub use achievedata :: { AchieveData_Kinds , AchieveData_Status , AchieveData_ArgType , AchieveData_Categories , AchieveData , IAchieveData }
  ;
  # [cfg (feature = "app-achievedata")] pub use achievedata :: { IAchieveDataMethods }
  ;
  # [cfg (any (feature = "app-achievementmenu-types"))] pub mod achievementmenu ;
- # [cfg (feature = "app-achievementmenu-types")] pub use achievementmenu :: { AchievementMenu_GetBondsExchangeDialog , IAchievementMenu_GetBondsExchangeDialog , AchievementMenu_AchievementMenuNoneItem , IAchievementMenu_AchievementMenuNoneItem , AchievementMenu , IAchievementMenu , AchievementMenu_YesMenuItem , IAchievementMenu_YesMenuItem , AchievementMenu_AchievementMenuItem , IAchievementMenu_AchievementMenuItem }
+ # [cfg (feature = "app-achievementmenu-types")] pub use achievementmenu :: { AchievementMenu_YesMenuItem , IAchievementMenu_YesMenuItem , AchievementMenu_AchievementMenuItem , IAchievementMenu_AchievementMenuItem , AchievementMenu , IAchievementMenu , AchievementMenu_AchievementMenuNoneItem , IAchievementMenu_AchievementMenuNoneItem , AchievementMenu_GetBondsExchangeDialog , IAchievementMenu_GetBondsExchangeDialog }
  ;
- # [cfg (feature = "app-achievementmenu")] pub use achievementmenu :: { IAchievementMenu_GetBondsExchangeDialogMethods , IAchievementMenu_AchievementMenuNoneItemMethods , IAchievementMenuMethods , IAchievementMenu_YesMenuItemMethods , IAchievementMenu_AchievementMenuItemMethods }
+ # [cfg (feature = "app-achievementmenu")] pub use achievementmenu :: { IAchievementMenu_YesMenuItemMethods , IAchievementMenu_AchievementMenuItemMethods , IAchievementMenuMethods , IAchievementMenu_AchievementMenuNoneItemMethods , IAchievementMenu_GetBondsExchangeDialogMethods }
  ;
  # [cfg (any (feature = "app-achievementmenucontent-types"))] pub mod achievementmenucontent ;
  # [cfg (feature = "app-achievementmenucontent-types")] pub use achievementmenucontent :: { AchievementMenuContent , IAchievementMenuContent }
@@ -146,22 +146,22 @@
  # [cfg (feature = "app-achievementmenuitemcontent")] pub use achievementmenuitemcontent :: { IAchievementMenuItemContentMethods }
  ;
  # [cfg (any (feature = "app-achievementsequence-types"))] pub mod achievementsequence ;
- # [cfg (feature = "app-achievementsequence-types")] pub use achievementsequence :: { AchievementSequence , IAchievementSequence , AchievementSequence_Label2 }
+ # [cfg (feature = "app-achievementsequence-types")] pub use achievementsequence :: { AchievementSequence_Label2 , AchievementSequence , IAchievementSequence }
  ;
  # [cfg (feature = "app-achievementsequence")] pub use achievementsequence :: { IAchievementSequenceMethods }
  ;
  # [cfg (any (feature = "app-ai-types"))] pub mod ai ;
- # [cfg (feature = "app-ai-types")] pub use ai :: { AI_Seq , AI , IAI }
+ # [cfg (feature = "app-ai-types")] pub use ai :: { AI , IAI , AI_Seq }
  ;
  # [cfg (feature = "app-ai")] pub use ai :: { IAIMethods }
  ;
  # [cfg (any (feature = "app-aibattlesimulator-types"))] pub mod aibattlesimulator ;
- # [cfg (feature = "app-aibattlesimulator-types")] pub use aibattlesimulator :: { AIBattleSimulator_ChainAttackCandidate , IAIBattleSimulator_ChainAttackCandidate , AIBattleSimulator_Indication , IAIBattleSimulator_Indication , AIBattleSimulator , IAIBattleSimulator , AIBattleSimulator_Break , IAIBattleSimulator_Break }
+ # [cfg (feature = "app-aibattlesimulator-types")] pub use aibattlesimulator :: { AIBattleSimulator_Break , IAIBattleSimulator_Break , AIBattleSimulator_Indication , IAIBattleSimulator_Indication , AIBattleSimulator , IAIBattleSimulator , AIBattleSimulator_ChainAttackCandidate , IAIBattleSimulator_ChainAttackCandidate }
  ;
- # [cfg (feature = "app-aibattlesimulator")] pub use aibattlesimulator :: { IAIBattleSimulator_ChainAttackCandidateMethods , IAIBattleSimulator_IndicationMethods , IAIBattleSimulatorMethods , IAIBattleSimulator_BreakMethods }
+ # [cfg (feature = "app-aibattlesimulator")] pub use aibattlesimulator :: { IAIBattleSimulator_BreakMethods , IAIBattleSimulator_IndicationMethods , IAIBattleSimulatorMethods , IAIBattleSimulator_ChainAttackCandidateMethods }
  ;
  # [cfg (any (feature = "app-aicannon-types"))] pub mod aicannon ;
- # [cfg (feature = "app-aicannon-types")] pub use aicannon :: { AICannon , IAICannon , AICannon_CannonData , IAICannon_CannonData , AICannon_CannonSkillScope , AICannon_ChangeEquipScope }
+ # [cfg (feature = "app-aicannon-types")] pub use aicannon :: { AICannon , IAICannon , AICannon_CannonData , IAICannon_CannonData , AICannon_ChangeEquipScope , AICannon_CannonSkillScope }
  ;
  # [cfg (feature = "app-aicannon")] pub use aicannon :: { IAICannonMethods , IAICannon_CannonDataMethods }
  ;
@@ -171,9 +171,9 @@
  # [cfg (feature = "app-aiconst")] pub use aiconst :: { IAIConstMethods }
  ;
  # [cfg (any (feature = "app-aicrossfire-types"))] pub mod aicrossfire ;
- # [cfg (feature = "app-aicrossfire-types")] pub use aicrossfire :: { AICrossfire , IAICrossfire , AICrossfire_Ahead , AICrossfire_Fire , IAICrossfire_Fire , AICrossfire_PositionTable , AICrossfire_Fire_Type , AICrossfire_FireComparer , IAICrossfire_FireComparer , AICrossfire_Crossfire , IAICrossfire_Crossfire }
+ # [cfg (feature = "app-aicrossfire-types")] pub use aicrossfire :: { AICrossfire_Fire_Type , AICrossfire_Fire , IAICrossfire_Fire , AICrossfire_Crossfire , IAICrossfire_Crossfire , AICrossfire , IAICrossfire , AICrossfire_Ahead , AICrossfire_PositionTable , AICrossfire_FireComparer , IAICrossfire_FireComparer }
  ;
- # [cfg (feature = "app-aicrossfire")] pub use aicrossfire :: { IAICrossfireMethods , IAICrossfire_FireMethods , IAICrossfire_FireComparerMethods , IAICrossfire_CrossfireMethods }
+ # [cfg (feature = "app-aicrossfire")] pub use aicrossfire :: { IAICrossfire_FireMethods , IAICrossfire_CrossfireMethods , IAICrossfireMethods , IAICrossfire_FireComparerMethods }
  ;
  # [cfg (any (feature = "app-aidata-types"))] pub mod aidata ;
  # [cfg (feature = "app-aidata-types")] pub use aidata :: { AIData , IAIData }
@@ -186,7 +186,7 @@
  # [cfg (feature = "app-aideploy")] pub use aideploy :: { IAIDeployMethods }
  ;
  # [cfg (any (feature = "app-aienum-types"))] pub mod aienum ;
- # [cfg (feature = "app-aienum-types")] pub use aienum :: { AIEnum , IAIEnum , AIEnum_SkillRangeEnemyEnumerator , AIEnum_SkillRangeEnemyData }
+ # [cfg (feature = "app-aienum-types")] pub use aienum :: { AIEnum_SkillRangeEnemyEnumerator , AIEnum , IAIEnum , AIEnum_SkillRangeEnemyData }
  ;
  # [cfg (any (feature = "app-aiinterferencesimulator-types"))] pub mod aiinterferencesimulator ;
  # [cfg (feature = "app-aiinterferencesimulator-types")] pub use aiinterferencesimulator :: { AIInterferenceSimulator , IAIInterferenceSimulator , AIInterferenceSimulator_Flag , IAIInterferenceSimulator_Flag }
@@ -194,14 +194,14 @@
  # [cfg (feature = "app-aiinterferencesimulator")] pub use aiinterferencesimulator :: { IAIInterferenceSimulatorMethods , IAIInterferenceSimulator_FlagMethods }
  ;
  # [cfg (any (feature = "app-aiinterruptattack-types"))] pub mod aiinterruptattack ;
- # [cfg (feature = "app-aiinterruptattack-types")] pub use aiinterruptattack :: { AIInterruptAttack , IAIInterruptAttack , AIInterruptAttack_CandidateList , IAIInterruptAttack_CandidateList , AIInterruptAttack_Candidate , IAIInterruptAttack_Candidate , AIInterruptAttack_AttackScoreResult }
+ # [cfg (feature = "app-aiinterruptattack-types")] pub use aiinterruptattack :: { AIInterruptAttack_Candidate , IAIInterruptAttack_Candidate , AIInterruptAttack_AttackScoreResult , AIInterruptAttack , IAIInterruptAttack , AIInterruptAttack_CandidateList , IAIInterruptAttack_CandidateList }
  ;
- # [cfg (feature = "app-aiinterruptattack")] pub use aiinterruptattack :: { IAIInterruptAttackMethods , IAIInterruptAttack_CandidateListMethods , IAIInterruptAttack_CandidateMethods }
+ # [cfg (feature = "app-aiinterruptattack")] pub use aiinterruptattack :: { IAIInterruptAttack_CandidateMethods , IAIInterruptAttackMethods , IAIInterruptAttack_CandidateListMethods }
  ;
  # [cfg (any (feature = "app-aiorder-types"))] pub mod aiorder ;
- # [cfg (feature = "app-aiorder-types")] pub use aiorder :: { AIOrder , IAIOrder , AIOrder_UnitPriority , AIOrder_Func , IAIOrder_Func }
+ # [cfg (feature = "app-aiorder-types")] pub use aiorder :: { AIOrder_Func , IAIOrder_Func , AIOrder_UnitPriority , AIOrder , IAIOrder }
  ;
- # [cfg (feature = "app-aiorder")] pub use aiorder :: { IAIOrderMethods , IAIOrder_FuncMethods }
+ # [cfg (feature = "app-aiorder")] pub use aiorder :: { IAIOrder_FuncMethods , IAIOrderMethods }
  ;
  # [cfg (any (feature = "app-aisimulatorbase-types"))] pub mod aisimulatorbase ;
  # [cfg (feature = "app-aisimulatorbase-types")] pub use aisimulatorbase :: { AISimulatorBase , IAISimulatorBase }
@@ -209,12 +209,12 @@
  # [cfg (feature = "app-aisimulatorbase")] pub use aisimulatorbase :: { IAISimulatorBaseMethods }
  ;
  # [cfg (any (feature = "app-aithink-types"))] pub mod aithink ;
- # [cfg (feature = "app-aithink-types")] pub use aithink :: { AIThink_EnchantThink_DMPTResult , AIThink_OverlapSkills , AIThink_UncontrollAttackTarget , AIThink_WarpRodEvaluationResult , AIThink_EnchantThink_SurroundingInfo , AIThink_AttackTarget , AIThink_EngageWaitRangeScore , AIThink_EnchantThink_CalcUnitScoreFunction , IAIThink_EnchantThink_CalcUnitScoreFunction , AIThink_RcFunc , IAIThink_RcFunc , AIThink_Think , AIThink_TrimasteriesSkills_Kinds , AIThink , IAIThink , AIThink_WarpRodTarget , AIThink_UncontrollAttackScoreResult , AIThink_RescueRodTarget , AIThink_AttackScoreResult , AIThink_HealRodScoreImplResult , AIThink_RescueRodScoreResult , AIThink_HealRodScoreResult , AIThink_EngageWaitResult , AIThink_EnchantThink , IAIThink_EnchantThink , AIThink_AttackPositionResult , AIThink_EnchantThink_Desc , AIThink_EntrustAttackScoreResult , AIThink_GodSkillTypes , AIThink_AttackFlag , IAIThink_AttackFlag , AIThink_InterferenceScoreResult , AIThink_HealRodPositionResult , AIThink_AcFunc , IAIThink_AcFunc , AIThink_EntrustAttackTarget , AIThink_TrimasteriesSkills , AIThink_EnchantThink_ItemInfo , AIThink_Command , AIThink_EngageWaitAdditionalAttackImage , IAIThink_EngageWaitAdditionalAttackImage , AIThink_UpdateFlag , IAIThink_UpdateFlag , AIThink_InterferenceTarget , AIThink_Result , AIThink_ActionFunc , IAIThink_ActionFunc , AIThink_CGBSResult , AIThink_EnchantThink_Kinds , AIThink_MoveFlag , IAIThink_MoveFlag }
+ # [cfg (feature = "app-aithink-types")] pub use aithink :: { AIThink_HealRodPositionResult , AIThink_AttackFlag , IAIThink_AttackFlag , AIThink_EnchantThink_DMPTResult , AIThink_EngageWaitAdditionalAttackImage , IAIThink_EngageWaitAdditionalAttackImage , AIThink_MoveFlag , IAIThink_MoveFlag , AIThink_InterferenceTarget , AIThink_UncontrollAttackTarget , AIThink_AcFunc , IAIThink_AcFunc , AIThink_EntrustAttackTarget , AIThink_ActionFunc , IAIThink_ActionFunc , AIThink_RcFunc , IAIThink_RcFunc , AIThink_EnchantThink_Kinds , AIThink_WarpRodEvaluationResult , AIThink_EnchantThink_SurroundingInfo , AIThink_WarpRodTarget , AIThink_Result , AIThink_Command , AIThink_AttackPositionResult , AIThink_EngageWaitRangeScore , AIThink_EntrustAttackScoreResult , AIThink_EnchantThink , IAIThink_EnchantThink , AIThink_RescueRodTarget , AIThink_OverlapSkills , AIThink_AttackScoreResult , AIThink_UpdateFlag , IAIThink_UpdateFlag , AIThink_CGBSResult , AIThink_AttackTarget , AIThink_TrimasteriesSkills_Kinds , AIThink_UncontrollAttackScoreResult , AIThink_HealRodScoreResult , AIThink_EnchantThink_Desc , AIThink_HealRodScoreImplResult , AIThink_GodSkillTypes , AIThink , IAIThink , AIThink_EngageWaitResult , AIThink_EnchantThink_CalcUnitScoreFunction , IAIThink_EnchantThink_CalcUnitScoreFunction , AIThink_Think , AIThink_TrimasteriesSkills , AIThink_InterferenceScoreResult , AIThink_RescueRodScoreResult , AIThink_EnchantThink_ItemInfo }
  ;
- # [cfg (feature = "app-aithink")] pub use aithink :: { IAIThink_EnchantThink_CalcUnitScoreFunctionMethods , IAIThink_RcFuncMethods , IAIThinkMethods , IAIThink_EnchantThinkMethods , IAIThink_AttackFlagMethods , IAIThink_AcFuncMethods , IAIThink_EngageWaitAdditionalAttackImageMethods , IAIThink_UpdateFlagMethods , IAIThink_ActionFuncMethods , IAIThink_MoveFlagMethods }
+ # [cfg (feature = "app-aithink")] pub use aithink :: { IAIThink_AttackFlagMethods , IAIThink_EngageWaitAdditionalAttackImageMethods , IAIThink_MoveFlagMethods , IAIThink_AcFuncMethods , IAIThink_ActionFuncMethods , IAIThink_RcFuncMethods , IAIThink_EnchantThinkMethods , IAIThink_UpdateFlagMethods , IAIThinkMethods , IAIThink_EnchantThink_CalcUnitScoreFunctionMethods }
  ;
  # [cfg (any (feature = "app-aivalue-types"))] pub mod aivalue ;
- # [cfg (feature = "app-aivalue-types")] pub use aivalue :: { AIValue_UnionValue , AIValue , IAIValue , AIValue_Value , AIValue_Order }
+ # [cfg (feature = "app-aivalue-types")] pub use aivalue :: { AIValue_UnionValue , AIValue_Order , AIValue_Value , AIValue , IAIValue }
  ;
  # [cfg (feature = "app-aivalue")] pub use aivalue :: { IAIValueMethods }
  ;
@@ -249,14 +249,14 @@
  # [cfg (feature = "app-amiiboaccessorymenunoneitem")] pub use amiiboaccessorymenunoneitem :: { IAmiiboAccessoryMenuNoneItemMethods }
  ;
  # [cfg (any (feature = "app-amiiboaccessorysequence-types"))] pub mod amiiboaccessorysequence ;
- # [cfg (feature = "app-amiiboaccessorysequence-types")] pub use amiiboaccessorysequence :: { AmiiboAccessorySequence_Label2 , AmiiboAccessorySequence , IAmiiboAccessorySequence }
+ # [cfg (feature = "app-amiiboaccessorysequence-types")] pub use amiiboaccessorysequence :: { AmiiboAccessorySequence , IAmiiboAccessorySequence , AmiiboAccessorySequence_Label2 }
  ;
  # [cfg (feature = "app-amiiboaccessorysequence")] pub use amiiboaccessorysequence :: { IAmiiboAccessorySequenceMethods }
  ;
  # [cfg (any (feature = "app-amiiboautoexchangedialog-types"))] pub mod amiiboautoexchangedialog ;
- # [cfg (feature = "app-amiiboautoexchangedialog-types")] pub use amiiboautoexchangedialog :: { AmiiboAutoExchangeDialog_Type , AmiiboAutoExchangeDialog , IAmiiboAutoExchangeDialog , AmiiboAutoExchangeDialog_ConfirmDialogNo , IAmiiboAutoExchangeDialog_ConfirmDialogNo }
+ # [cfg (feature = "app-amiiboautoexchangedialog-types")] pub use amiiboautoexchangedialog :: { AmiiboAutoExchangeDialog_ConfirmDialogNo , IAmiiboAutoExchangeDialog_ConfirmDialogNo , AmiiboAutoExchangeDialog , IAmiiboAutoExchangeDialog , AmiiboAutoExchangeDialog_Type }
  ;
- # [cfg (feature = "app-amiiboautoexchangedialog")] pub use amiiboautoexchangedialog :: { IAmiiboAutoExchangeDialogMethods , IAmiiboAutoExchangeDialog_ConfirmDialogNoMethods }
+ # [cfg (feature = "app-amiiboautoexchangedialog")] pub use amiiboautoexchangedialog :: { IAmiiboAutoExchangeDialog_ConfirmDialogNoMethods , IAmiiboAutoExchangeDialogMethods }
  ;
  # [cfg (any (feature = "app-amiibodata-types"))] pub mod amiibodata ;
  # [cfg (feature = "app-amiibodata-types")] pub use amiibodata :: { AmiiboData , IAmiiboData }
@@ -264,7 +264,7 @@
  # [cfg (feature = "app-amiibodata")] pub use amiibodata :: { IAmiiboDataMethods }
  ;
  # [cfg (any (feature = "app-amiibomanager-types"))] pub mod amiibomanager ;
- # [cfg (feature = "app-amiibomanager-types")] pub use amiibomanager :: { AmiiboManager_AmiiboInfo , IAmiiboManager_AmiiboInfo , AmiiboManager_Sequence , AmiiboManager , IAmiiboManager }
+ # [cfg (feature = "app-amiibomanager-types")] pub use amiibomanager :: { AmiiboManager_Sequence , AmiiboManager_AmiiboInfo , IAmiiboManager_AmiiboInfo , AmiiboManager , IAmiiboManager }
  ;
  # [cfg (feature = "app-amiibomanager")] pub use amiibomanager :: { IAmiiboManager_AmiiboInfoMethods , IAmiiboManagerMethods }
  ;
@@ -279,7 +279,7 @@
  # [cfg (feature = "app-amiibomenucontent")] pub use amiibomenucontent :: { IAmiiboMenuContentMethods }
  ;
  # [cfg (any (feature = "app-amiibosequence-types"))] pub mod amiibosequence ;
- # [cfg (feature = "app-amiibosequence-types")] pub use amiibosequence :: { AmiiboSequence_TagData , AmiiboSequence_ItemType , AmiiboSequence , IAmiiboSequence , AmiiboSequence_Label , AmiiboSequence_GainItemData }
+ # [cfg (feature = "app-amiibosequence-types")] pub use amiibosequence :: { AmiiboSequence_Label , AmiiboSequence_ItemType , AmiiboSequence_TagData , AmiiboSequence , IAmiiboSequence , AmiiboSequence_GainItemData }
  ;
  # [cfg (feature = "app-amiibosequence")] pub use amiibosequence :: { IAmiiboSequenceMethods }
  ;
@@ -304,7 +304,7 @@
  # [cfg (feature = "app-amiibosoundmenuitemcontent")] pub use amiibosoundmenuitemcontent :: { IAmiiboSoundMenuItemContentMethods }
  ;
  # [cfg (any (feature = "app-amiibosoundsequence-types"))] pub mod amiibosoundsequence ;
- # [cfg (feature = "app-amiibosoundsequence-types")] pub use amiibosoundsequence :: { AmiiboSoundSequence_Label , AmiiboSoundSequence , IAmiiboSoundSequence }
+ # [cfg (feature = "app-amiibosoundsequence-types")] pub use amiibosoundsequence :: { AmiiboSoundSequence , IAmiiboSoundSequence , AmiiboSoundSequence_Label }
  ;
  # [cfg (feature = "app-amiibosoundsequence")] pub use amiibosoundsequence :: { IAmiiboSoundSequenceMethods }
  ;
@@ -329,12 +329,12 @@
  # [cfg (feature = "app-amiiboticketyesnodialogyesmenuitem")] pub use amiiboticketyesnodialogyesmenuitem :: { IAmiiboTicketYesNoDialogYesMenuItemMethods }
  ;
  # [cfg (any (feature = "app-amiibotopmenu-types"))] pub mod amiibotopmenu ;
- # [cfg (feature = "app-amiibotopmenu-types")] pub use amiibotopmenu :: { AmiiboTopMenu_AmiiboMenuItem , IAmiiboTopMenu_AmiiboMenuItem , AmiiboTopMenu_DecideEventHandler , IAmiiboTopMenu_DecideEventHandler , AmiiboTopMenu_AccessoryMenuItem , IAmiiboTopMenu_AccessoryMenuItem , AmiiboTopMenu_SoundMenuItem , IAmiiboTopMenu_SoundMenuItem , AmiiboTopMenu_MenuResult , AmiiboTopMenu , IAmiiboTopMenu }
+ # [cfg (feature = "app-amiibotopmenu-types")] pub use amiibotopmenu :: { AmiiboTopMenu_MenuResult , AmiiboTopMenu_AccessoryMenuItem , IAmiiboTopMenu_AccessoryMenuItem , AmiiboTopMenu_AmiiboMenuItem , IAmiiboTopMenu_AmiiboMenuItem , AmiiboTopMenu_DecideEventHandler , IAmiiboTopMenu_DecideEventHandler , AmiiboTopMenu_SoundMenuItem , IAmiiboTopMenu_SoundMenuItem , AmiiboTopMenu , IAmiiboTopMenu }
  ;
- # [cfg (feature = "app-amiibotopmenu")] pub use amiibotopmenu :: { IAmiiboTopMenu_AmiiboMenuItemMethods , IAmiiboTopMenu_DecideEventHandlerMethods , IAmiiboTopMenu_AccessoryMenuItemMethods , IAmiiboTopMenu_SoundMenuItemMethods , IAmiiboTopMenuMethods }
+ # [cfg (feature = "app-amiibotopmenu")] pub use amiibotopmenu :: { IAmiiboTopMenu_AccessoryMenuItemMethods , IAmiiboTopMenu_AmiiboMenuItemMethods , IAmiiboTopMenu_DecideEventHandlerMethods , IAmiiboTopMenu_SoundMenuItemMethods , IAmiiboTopMenuMethods }
  ;
  # [cfg (any (feature = "app-amiibotopsequence-types"))] pub mod amiibotopsequence ;
- # [cfg (feature = "app-amiibotopsequence-types")] pub use amiibotopsequence :: { AmiiboTopSequence , IAmiiboTopSequence , AmiiboTopSequence_Label }
+ # [cfg (feature = "app-amiibotopsequence-types")] pub use amiibotopsequence :: { AmiiboTopSequence_Label , AmiiboTopSequence , IAmiiboTopSequence }
  ;
  # [cfg (feature = "app-amiibotopsequence")] pub use amiibotopsequence :: { IAmiiboTopSequenceMethods }
  ;
@@ -349,9 +349,9 @@
  # [cfg (feature = "app-animalaccesssequence")] pub use animalaccesssequence :: { IAnimalAccessSequenceMethods }
  ;
  # [cfg (any (feature = "app-animalcatchsequence-types"))] pub mod animalcatchsequence ;
- # [cfg (feature = "app-animalcatchsequence-types")] pub use animalcatchsequence :: { AnimalCatchSequence_Label , AnimalCatchSequence , IAnimalCatchSequence , AnimalCatchSequence_CatchConfirm , IAnimalCatchSequence_CatchConfirm , AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes , IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes , AnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo , IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo }
+ # [cfg (feature = "app-animalcatchsequence-types")] pub use animalcatchsequence :: { AnimalCatchSequence_CatchConfirm , IAnimalCatchSequence_CatchConfirm , AnimalCatchSequence , IAnimalCatchSequence , AnimalCatchSequence_Label , AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes , IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes , AnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo , IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo }
  ;
- # [cfg (feature = "app-animalcatchsequence")] pub use animalcatchsequence :: { IAnimalCatchSequenceMethods , IAnimalCatchSequence_CatchConfirmMethods , IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemYesMethods , IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemNoMethods }
+ # [cfg (feature = "app-animalcatchsequence")] pub use animalcatchsequence :: { IAnimalCatchSequence_CatchConfirmMethods , IAnimalCatchSequenceMethods , IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemYesMethods , IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemNoMethods }
  ;
  # [cfg (any (feature = "app-animaldata-types"))] pub mod animaldata ;
  # [cfg (feature = "app-animaldata-types")] pub use animaldata :: { AnimalData , IAnimalData }
@@ -384,7 +384,7 @@
  # [cfg (feature = "app-animalmenucontent")] pub use animalmenucontent :: { IAnimalMenuContentMethods }
  ;
  # [cfg (any (feature = "app-animalmenusequence-types"))] pub mod animalmenusequence ;
- # [cfg (feature = "app-animalmenusequence-types")] pub use animalmenusequence :: { AnimalMenuSequence , IAnimalMenuSequence , AnimalMenuSequence_ConfirmNo , IAnimalMenuSequence_ConfirmNo , AnimalMenuSequence_Label , AnimalMenuSequence_From , AnimalMenuSequence_ConfirmYes , IAnimalMenuSequence_ConfirmYes }
+ # [cfg (feature = "app-animalmenusequence-types")] pub use animalmenusequence :: { AnimalMenuSequence_Label , AnimalMenuSequence , IAnimalMenuSequence , AnimalMenuSequence_ConfirmNo , IAnimalMenuSequence_ConfirmNo , AnimalMenuSequence_ConfirmYes , IAnimalMenuSequence_ConfirmYes , AnimalMenuSequence_From }
  ;
  # [cfg (feature = "app-animalmenusequence")] pub use animalmenusequence :: { IAnimalMenuSequenceMethods , IAnimalMenuSequence_ConfirmNoMethods , IAnimalMenuSequence_ConfirmYesMethods }
  ;
@@ -409,9 +409,9 @@
  # [cfg (feature = "app-animaloutsidemenuitemcontent")] pub use animaloutsidemenuitemcontent :: { IAnimalOutsideMenuItemContentMethods }
  ;
  # [cfg (any (feature = "app-animaloutsidesubmenu-types"))] pub mod animaloutsidesubmenu ;
- # [cfg (feature = "app-animaloutsidesubmenu-types")] pub use animaloutsidesubmenu :: { AnimalOutsideSubMenu , IAnimalOutsideSubMenu , AnimalOutsideSubMenu_ExchangeMenuItem , IAnimalOutsideSubMenu_ExchangeMenuItem , AnimalOutsideSubMenu_RemoveMenuItem , IAnimalOutsideSubMenu_RemoveMenuItem }
+ # [cfg (feature = "app-animaloutsidesubmenu-types")] pub use animaloutsidesubmenu :: { AnimalOutsideSubMenu_ExchangeMenuItem , IAnimalOutsideSubMenu_ExchangeMenuItem , AnimalOutsideSubMenu , IAnimalOutsideSubMenu , AnimalOutsideSubMenu_RemoveMenuItem , IAnimalOutsideSubMenu_RemoveMenuItem }
  ;
- # [cfg (feature = "app-animaloutsidesubmenu")] pub use animaloutsidesubmenu :: { IAnimalOutsideSubMenuMethods , IAnimalOutsideSubMenu_ExchangeMenuItemMethods , IAnimalOutsideSubMenu_RemoveMenuItemMethods }
+ # [cfg (feature = "app-animaloutsidesubmenu")] pub use animaloutsidesubmenu :: { IAnimalOutsideSubMenu_ExchangeMenuItemMethods , IAnimalOutsideSubMenuMethods , IAnimalOutsideSubMenu_RemoveMenuItemMethods }
  ;
  # [cfg (any (feature = "app-animalsequence-types"))] pub mod animalsequence ;
  # [cfg (feature = "app-animalsequence-types")] pub use animalsequence :: { AnimalSequence_Label , AnimalSequence , IAnimalSequence }
@@ -429,9 +429,9 @@
  # [cfg (feature = "app-areainspector")] pub use areainspector :: { IAreaInspectorMethods }
  ;
  # [cfg (any (feature = "app-arenabondgodselectmenu-types"))] pub mod arenabondgodselectmenu ;
- # [cfg (feature = "app-arenabondgodselectmenu-types")] pub use arenabondgodselectmenu :: { ArenaBondGodSelectMenu , IArenaBondGodSelectMenu , ArenaBondGodSelectMenu_SelectEventHandler , IArenaBondGodSelectMenu_SelectEventHandler , ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes , IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes , ArenaBondGodSelectMenu_ConfirmDialog , IArenaBondGodSelectMenu_ConfirmDialog , ArenaBondGodSelectMenu_ChangeUnitEventHandle , IArenaBondGodSelectMenu_ChangeUnitEventHandle , ArenaBondGodSelectMenu_StartHelpEventHandler , IArenaBondGodSelectMenu_StartHelpEventHandler , ArenaBondGodSelectMenu_ArenaBondEmblemSelectMenuItem , IArenaBondGodSelectMenu_ArenaBondEmblemSelectMenuItem , ArenaBondGodSelectMenu_DecideEventHandler , IArenaBondGodSelectMenu_DecideEventHandler , ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo , IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo }
+ # [cfg (feature = "app-arenabondgodselectmenu-types")] pub use arenabondgodselectmenu :: { ArenaBondGodSelectMenu_StartHelpEventHandler , IArenaBondGodSelectMenu_StartHelpEventHandler , ArenaBondGodSelectMenu_ArenaBondEmblemSelectMenuItem , IArenaBondGodSelectMenu_ArenaBondEmblemSelectMenuItem , ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo , IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo , ArenaBondGodSelectMenu_ChangeUnitEventHandle , IArenaBondGodSelectMenu_ChangeUnitEventHandle , ArenaBondGodSelectMenu_DecideEventHandler , IArenaBondGodSelectMenu_DecideEventHandler , ArenaBondGodSelectMenu_ConfirmDialog , IArenaBondGodSelectMenu_ConfirmDialog , ArenaBondGodSelectMenu_SelectEventHandler , IArenaBondGodSelectMenu_SelectEventHandler , ArenaBondGodSelectMenu , IArenaBondGodSelectMenu , ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes , IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes }
  ;
- # [cfg (feature = "app-arenabondgodselectmenu")] pub use arenabondgodselectmenu :: { IArenaBondGodSelectMenuMethods , IArenaBondGodSelectMenu_SelectEventHandlerMethods , IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYesMethods , IArenaBondGodSelectMenu_ConfirmDialogMethods , IArenaBondGodSelectMenu_ChangeUnitEventHandleMethods , IArenaBondGodSelectMenu_StartHelpEventHandlerMethods , IArenaBondGodSelectMenu_ArenaBondEmblemSelectMenuItemMethods , IArenaBondGodSelectMenu_DecideEventHandlerMethods , IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNoMethods }
+ # [cfg (feature = "app-arenabondgodselectmenu")] pub use arenabondgodselectmenu :: { IArenaBondGodSelectMenu_StartHelpEventHandlerMethods , IArenaBondGodSelectMenu_ArenaBondEmblemSelectMenuItemMethods , IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNoMethods , IArenaBondGodSelectMenu_ChangeUnitEventHandleMethods , IArenaBondGodSelectMenu_DecideEventHandlerMethods , IArenaBondGodSelectMenu_ConfirmDialogMethods , IArenaBondGodSelectMenu_SelectEventHandlerMethods , IArenaBondGodSelectMenuMethods , IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYesMethods }
  ;
  # [cfg (any (feature = "app-arenabondgodselectmenucontent-types"))] pub mod arenabondgodselectmenucontent ;
  # [cfg (feature = "app-arenabondgodselectmenucontent-types")] pub use arenabondgodselectmenucontent :: { ArenaBondGodSelectMenuContent , IArenaBondGodSelectMenuContent }
@@ -454,9 +454,9 @@
  # [cfg (feature = "app-arenabondgodselectskilllistsetter")] pub use arenabondgodselectskilllistsetter :: { IArenaBondGodSelectSkillListSetter_AddAbilityMethods , IArenaBondGodSelectSkillListSetterMethods }
  ;
  # [cfg (any (feature = "app-arenabondlevelselectmenu-types"))] pub mod arenabondlevelselectmenu ;
- # [cfg (feature = "app-arenabondlevelselectmenu-types")] pub use arenabondlevelselectmenu :: { ArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemYes , IArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemYes , ArenaBondLevelSelectMenu , IArenaBondLevelSelectMenu , ArenaBondLevelSelectMenu_SelectEventHandler , IArenaBondLevelSelectMenu_SelectEventHandler , ArenaBondLevelSelectMenu_DecideEventHandler , IArenaBondLevelSelectMenu_DecideEventHandler , ArenaBondLevelSelectMenu_ArenaBondLevelSelectMenuItem , IArenaBondLevelSelectMenu_ArenaBondLevelSelectMenuItem , ArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNo , IArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNo , ArenaBondLevelSelectMenu_ConfirmDialog , IArenaBondLevelSelectMenu_ConfirmDialog , ArenaBondLevelSelectMenu_ChangeGodEventHandle , IArenaBondLevelSelectMenu_ChangeGodEventHandle }
+ # [cfg (feature = "app-arenabondlevelselectmenu-types")] pub use arenabondlevelselectmenu :: { ArenaBondLevelSelectMenu_ChangeGodEventHandle , IArenaBondLevelSelectMenu_ChangeGodEventHandle , ArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNo , IArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNo , ArenaBondLevelSelectMenu_DecideEventHandler , IArenaBondLevelSelectMenu_DecideEventHandler , ArenaBondLevelSelectMenu_SelectEventHandler , IArenaBondLevelSelectMenu_SelectEventHandler , ArenaBondLevelSelectMenu_ArenaBondLevelSelectMenuItem , IArenaBondLevelSelectMenu_ArenaBondLevelSelectMenuItem , ArenaBondLevelSelectMenu_ConfirmDialog , IArenaBondLevelSelectMenu_ConfirmDialog , ArenaBondLevelSelectMenu , IArenaBondLevelSelectMenu , ArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemYes , IArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemYes }
  ;
- # [cfg (feature = "app-arenabondlevelselectmenu")] pub use arenabondlevelselectmenu :: { IArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemYesMethods , IArenaBondLevelSelectMenuMethods , IArenaBondLevelSelectMenu_SelectEventHandlerMethods , IArenaBondLevelSelectMenu_DecideEventHandlerMethods , IArenaBondLevelSelectMenu_ArenaBondLevelSelectMenuItemMethods , IArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNoMethods , IArenaBondLevelSelectMenu_ConfirmDialogMethods , IArenaBondLevelSelectMenu_ChangeGodEventHandleMethods }
+ # [cfg (feature = "app-arenabondlevelselectmenu")] pub use arenabondlevelselectmenu :: { IArenaBondLevelSelectMenu_ChangeGodEventHandleMethods , IArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNoMethods , IArenaBondLevelSelectMenu_DecideEventHandlerMethods , IArenaBondLevelSelectMenu_SelectEventHandlerMethods , IArenaBondLevelSelectMenu_ArenaBondLevelSelectMenuItemMethods , IArenaBondLevelSelectMenu_ConfirmDialogMethods , IArenaBondLevelSelectMenuMethods , IArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemYesMethods }
  ;
  # [cfg (any (feature = "app-arenabondlevelselectmenucontent-types"))] pub mod arenabondlevelselectmenucontent ;
  # [cfg (feature = "app-arenabondlevelselectmenucontent-types")] pub use arenabondlevelselectmenucontent :: { ArenaBondLevelSelectMenuContent , IArenaBondLevelSelectMenuContent }
@@ -479,9 +479,9 @@
  # [cfg (feature = "app-arenabondlevelselectsetter")] pub use arenabondlevelselectsetter :: { IArenaBondLevelSelectSetterMethods }
  ;
  # [cfg (any (feature = "app-arenabondunitselectmenu-types"))] pub mod arenabondunitselectmenu ;
- # [cfg (feature = "app-arenabondunitselectmenu-types")] pub use arenabondunitselectmenu :: { ArenaBondUnitSelectMenu , IArenaBondUnitSelectMenu , ArenaBondUnitSelectMenu_DecideEventHandler , IArenaBondUnitSelectMenu_DecideEventHandler , ArenaBondUnitSelectMenu_SelectEventHandler , IArenaBondUnitSelectMenu_SelectEventHandler , ArenaBondUnitSelectMenu_HelpEventHandler , IArenaBondUnitSelectMenu_HelpEventHandler }
+ # [cfg (feature = "app-arenabondunitselectmenu-types")] pub use arenabondunitselectmenu :: { ArenaBondUnitSelectMenu_DecideEventHandler , IArenaBondUnitSelectMenu_DecideEventHandler , ArenaBondUnitSelectMenu_SelectEventHandler , IArenaBondUnitSelectMenu_SelectEventHandler , ArenaBondUnitSelectMenu_HelpEventHandler , IArenaBondUnitSelectMenu_HelpEventHandler , ArenaBondUnitSelectMenu , IArenaBondUnitSelectMenu }
  ;
- # [cfg (feature = "app-arenabondunitselectmenu")] pub use arenabondunitselectmenu :: { IArenaBondUnitSelectMenuMethods , IArenaBondUnitSelectMenu_DecideEventHandlerMethods , IArenaBondUnitSelectMenu_SelectEventHandlerMethods , IArenaBondUnitSelectMenu_HelpEventHandlerMethods }
+ # [cfg (feature = "app-arenabondunitselectmenu")] pub use arenabondunitselectmenu :: { IArenaBondUnitSelectMenu_DecideEventHandlerMethods , IArenaBondUnitSelectMenu_SelectEventHandlerMethods , IArenaBondUnitSelectMenu_HelpEventHandlerMethods , IArenaBondUnitSelectMenuMethods }
  ;
  # [cfg (any (feature = "app-arenabondunitselectmenucontent-types"))] pub mod arenabondunitselectmenucontent ;
  # [cfg (feature = "app-arenabondunitselectmenucontent-types")] pub use arenabondunitselectmenucontent :: { ArenaBondUnitSelectMenuContent , IArenaBondUnitSelectMenuContent }
@@ -509,9 +509,9 @@
  # [cfg (feature = "app-arenadata")] pub use arenadata :: { IArenaDataMethods }
  ;
  # [cfg (any (feature = "app-arenaexpunitselectmenu-types"))] pub mod arenaexpunitselectmenu ;
- # [cfg (feature = "app-arenaexpunitselectmenu-types")] pub use arenaexpunitselectmenu :: { ArenaExpUnitSelectMenu_HelpEventHandler , IArenaExpUnitSelectMenu_HelpEventHandler , ArenaExpUnitSelectMenu_DecideEventHandler , IArenaExpUnitSelectMenu_DecideEventHandler , ArenaExpUnitSelectMenu_SelectEventHandler , IArenaExpUnitSelectMenu_SelectEventHandler , ArenaExpUnitSelectMenu , IArenaExpUnitSelectMenu }
+ # [cfg (feature = "app-arenaexpunitselectmenu-types")] pub use arenaexpunitselectmenu :: { ArenaExpUnitSelectMenu , IArenaExpUnitSelectMenu , ArenaExpUnitSelectMenu_SelectEventHandler , IArenaExpUnitSelectMenu_SelectEventHandler , ArenaExpUnitSelectMenu_HelpEventHandler , IArenaExpUnitSelectMenu_HelpEventHandler , ArenaExpUnitSelectMenu_DecideEventHandler , IArenaExpUnitSelectMenu_DecideEventHandler }
  ;
- # [cfg (feature = "app-arenaexpunitselectmenu")] pub use arenaexpunitselectmenu :: { IArenaExpUnitSelectMenu_HelpEventHandlerMethods , IArenaExpUnitSelectMenu_DecideEventHandlerMethods , IArenaExpUnitSelectMenu_SelectEventHandlerMethods , IArenaExpUnitSelectMenuMethods }
+ # [cfg (feature = "app-arenaexpunitselectmenu")] pub use arenaexpunitselectmenu :: { IArenaExpUnitSelectMenuMethods , IArenaExpUnitSelectMenu_SelectEventHandlerMethods , IArenaExpUnitSelectMenu_HelpEventHandlerMethods , IArenaExpUnitSelectMenu_DecideEventHandlerMethods }
  ;
  # [cfg (any (feature = "app-arenaexpunitselectmenucontent-types"))] pub mod arenaexpunitselectmenucontent ;
  # [cfg (feature = "app-arenaexpunitselectmenucontent-types")] pub use arenaexpunitselectmenucontent :: { ArenaExpUnitSelectMenuContent , IArenaExpUnitSelectMenuContent }
@@ -519,9 +519,9 @@
  # [cfg (feature = "app-arenaexpunitselectmenucontent")] pub use arenaexpunitselectmenucontent :: { IArenaExpUnitSelectMenuContentMethods }
  ;
  # [cfg (any (feature = "app-arenaexpunitselectmenuitem-types"))] pub mod arenaexpunitselectmenuitem ;
- # [cfg (feature = "app-arenaexpunitselectmenuitem-types")] pub use arenaexpunitselectmenuitem :: { ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemNo , IArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemNo , ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYes , IArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYes , ArenaExpUnitSelectMenuItem_ConfirmDialog , IArenaExpUnitSelectMenuItem_ConfirmDialog , ArenaExpUnitSelectMenuItem , IArenaExpUnitSelectMenuItem }
+ # [cfg (feature = "app-arenaexpunitselectmenuitem-types")] pub use arenaexpunitselectmenuitem :: { ArenaExpUnitSelectMenuItem , IArenaExpUnitSelectMenuItem , ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemNo , IArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemNo , ArenaExpUnitSelectMenuItem_ConfirmDialog , IArenaExpUnitSelectMenuItem_ConfirmDialog , ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYes , IArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYes }
  ;
- # [cfg (feature = "app-arenaexpunitselectmenuitem")] pub use arenaexpunitselectmenuitem :: { IArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemNoMethods , IArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYesMethods , IArenaExpUnitSelectMenuItem_ConfirmDialogMethods , IArenaExpUnitSelectMenuItemMethods }
+ # [cfg (feature = "app-arenaexpunitselectmenuitem")] pub use arenaexpunitselectmenuitem :: { IArenaExpUnitSelectMenuItemMethods , IArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemNoMethods , IArenaExpUnitSelectMenuItem_ConfirmDialogMethods , IArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYesMethods }
  ;
  # [cfg (any (feature = "app-arenaexpunitselectmenuitemcontent-types"))] pub mod arenaexpunitselectmenuitemcontent ;
  # [cfg (feature = "app-arenaexpunitselectmenuitemcontent-types")] pub use arenaexpunitselectmenuitemcontent :: { ArenaExpUnitSelectMenuItemContent , IArenaExpUnitSelectMenuItemContent }
@@ -534,14 +534,14 @@
  # [cfg (feature = "app-arenaexpunitselectroot")] pub use arenaexpunitselectroot :: { IArenaExpUnitSelectRootMethods }
  ;
  # [cfg (any (feature = "app-arenaordersequence-types"))] pub mod arenaordersequence ;
- # [cfg (feature = "app-arenaordersequence-types")] pub use arenaordersequence :: { ArenaOrderSequence_GodInfo , ArenaOrderSequence_TrainType , ArenaOrderSequence_Label , ArenaOrderSequence , IArenaOrderSequence }
+ # [cfg (feature = "app-arenaordersequence-types")] pub use arenaordersequence :: { ArenaOrderSequence_TrainType , ArenaOrderSequence_Label , ArenaOrderSequence_GodInfo , ArenaOrderSequence , IArenaOrderSequence }
  ;
  # [cfg (feature = "app-arenaordersequence")] pub use arenaordersequence :: { IArenaOrderSequenceMethods }
  ;
  # [cfg (any (feature = "app-arenatopmenu-types"))] pub mod arenatopmenu ;
- # [cfg (feature = "app-arenatopmenu-types")] pub use arenatopmenu :: { ArenaTopMenu , IArenaTopMenu , ArenaTopMenu_DecideEventHandler , IArenaTopMenu_DecideEventHandler , ArenaTopMenu_TrainingMenuItem , IArenaTopMenu_TrainingMenuItem }
+ # [cfg (feature = "app-arenatopmenu-types")] pub use arenatopmenu :: { ArenaTopMenu_TrainingMenuItem , IArenaTopMenu_TrainingMenuItem , ArenaTopMenu , IArenaTopMenu , ArenaTopMenu_DecideEventHandler , IArenaTopMenu_DecideEventHandler }
  ;
- # [cfg (feature = "app-arenatopmenu")] pub use arenatopmenu :: { IArenaTopMenuMethods , IArenaTopMenu_DecideEventHandlerMethods , IArenaTopMenu_TrainingMenuItemMethods }
+ # [cfg (feature = "app-arenatopmenu")] pub use arenatopmenu :: { IArenaTopMenu_TrainingMenuItemMethods , IArenaTopMenuMethods , IArenaTopMenu_DecideEventHandlerMethods }
  ;
  # [cfg (any (feature = "app-arenatopmenucontent-types"))] pub mod arenatopmenucontent ;
  # [cfg (feature = "app-arenatopmenucontent-types")] pub use arenatopmenucontent :: { ArenaTopMenuContent , IArenaTopMenuContent }
@@ -554,15 +554,15 @@
  # [cfg (feature = "app-arenaunitselectstatus")] pub use arenaunitselectstatus :: { IArenaUnitSelectStatusMethods }
  ;
  # [cfg (any (feature = "app-assettable-types"))] pub mod assettable ;
- # [cfg (feature = "app-assettable-types")] pub use assettable :: { AssetTable_States , AssetTable_Sound , AssetTable_Result , IAssetTable_Result , AssetTable_Modes , AssetTable_AccessoryList , IAssetTable_AccessoryList , AssetTable_ConditionIndexes , IAssetTable_ConditionIndexes , AssetTable , IAssetTable , AssetTable_ConditionFlags , IAssetTable_ConditionFlags , AssetTable_Accessory , IAssetTable_Accessory }
+ # [cfg (feature = "app-assettable-types")] pub use assettable :: { AssetTable_Result , IAssetTable_Result , AssetTable_Sound , AssetTable_Modes , AssetTable_Accessory , IAssetTable_Accessory , AssetTable_AccessoryList , IAssetTable_AccessoryList , AssetTable_ConditionFlags , IAssetTable_ConditionFlags , AssetTable , IAssetTable , AssetTable_States , AssetTable_ConditionIndexes , IAssetTable_ConditionIndexes }
  ;
- # [cfg (feature = "app-assettable")] pub use assettable :: { IAssetTable_ResultMethods , IAssetTable_AccessoryListMethods , IAssetTable_ConditionIndexesMethods , IAssetTableMethods , IAssetTable_ConditionFlagsMethods , IAssetTable_AccessoryMethods }
+ # [cfg (feature = "app-assettable")] pub use assettable :: { IAssetTable_ResultMethods , IAssetTable_AccessoryMethods , IAssetTable_AccessoryListMethods , IAssetTable_ConditionFlagsMethods , IAssetTableMethods , IAssetTable_ConditionIndexesMethods }
  ;
  # [cfg (any (feature = "app-attacktype-types"))] pub mod attacktype ;
  # [cfg (feature = "app-attacktype-types")] pub use attacktype :: { AttackType }
  ;
  # [cfg (any (feature = "app-backgroundmanager-types"))] pub mod backgroundmanager ;
- # [cfg (feature = "app-backgroundmanager-types")] pub use backgroundmanager :: { BackgroundManager_BindType , BackgroundManager , IBackgroundManager }
+ # [cfg (feature = "app-backgroundmanager-types")] pub use backgroundmanager :: { BackgroundManager , IBackgroundManager , BackgroundManager_BindType }
  ;
  # [cfg (feature = "app-backgroundmanager")] pub use backgroundmanager :: { IBackgroundManagerMethods }
  ;
@@ -612,14 +612,14 @@
  # [cfg (feature = "app-basicitemmenuitemcontentold")] pub use basicitemmenuitemcontentold :: { IBasicItemMenuItemContentOldMethods }
  ;
  # [cfg (any (feature = "app-basicmenu-types"))] pub mod basicmenu ;
- # [cfg (feature = "app-basicmenu-types")] pub use basicmenu :: { BasicMenu_Result , BasicMenu_AnchorType , BasicMenu_StatusField , IBasicMenu_StatusField , BasicMenu_Label0 , BasicMenu , IBasicMenu , BasicMenu_Status , BasicMenu_BindTypes }
+ # [cfg (feature = "app-basicmenu-types")] pub use basicmenu :: { BasicMenu_StatusField , IBasicMenu_StatusField , BasicMenu_AnchorType , BasicMenu_Label0 , BasicMenu_Result , BasicMenu_Status , BasicMenu_BindTypes , BasicMenu , IBasicMenu }
  ;
  # [cfg (feature = "app-basicmenu")] pub use basicmenu :: { IBasicMenu_StatusFieldMethods , IBasicMenuMethods }
  ;
  # [cfg (any (feature = "app-basicmenucontent-types"))] pub mod basicmenucontent ;
- # [cfg (feature = "app-basicmenucontent-types")] pub use basicmenucontent :: { BasicMenuContent , IBasicMenuContent , BasicMenuContent_Scroll , IBasicMenuContent_Scroll , BasicMenuContent_Cursor , IBasicMenuContent_Cursor }
+ # [cfg (feature = "app-basicmenucontent-types")] pub use basicmenucontent :: { BasicMenuContent_Scroll , IBasicMenuContent_Scroll , BasicMenuContent , IBasicMenuContent , BasicMenuContent_Cursor , IBasicMenuContent_Cursor }
  ;
- # [cfg (feature = "app-basicmenucontent")] pub use basicmenucontent :: { IBasicMenuContentMethods , IBasicMenuContent_ScrollMethods , IBasicMenuContent_CursorMethods }
+ # [cfg (feature = "app-basicmenucontent")] pub use basicmenucontent :: { IBasicMenuContent_ScrollMethods , IBasicMenuContentMethods , IBasicMenuContent_CursorMethods }
  ;
  # [cfg (any (feature = "app-basicmenuitem-types"))] pub mod basicmenuitem ;
  # [cfg (feature = "app-basicmenuitem-types")] pub use basicmenuitem :: { BasicMenuItem_Attribute , BasicMenuItem , IBasicMenuItem }
@@ -642,7 +642,7 @@
  # [cfg (feature = "app-basicskillmenuitem")] pub use basicskillmenuitem :: { IBasicSkillMenuItemMethods }
  ;
  # [cfg (any (feature = "app-basicskillmenuitemcontent-types"))] pub mod basicskillmenuitemcontent ;
- # [cfg (feature = "app-basicskillmenuitemcontent-types")] pub use basicskillmenuitemcontent :: { BasicSkillMenuItemContent , IBasicSkillMenuItemContent , BasicSkillMenuItemContent_SubText }
+ # [cfg (feature = "app-basicskillmenuitemcontent-types")] pub use basicskillmenuitemcontent :: { BasicSkillMenuItemContent_SubText , BasicSkillMenuItemContent , IBasicSkillMenuItemContent }
  ;
  # [cfg (feature = "app-basicskillmenuitemcontent")] pub use basicskillmenuitemcontent :: { IBasicSkillMenuItemContentMethods }
  ;
@@ -657,9 +657,9 @@
  # [cfg (feature = "app-battlebeforeinspector")] pub use battlebeforeinspector :: { IBattleBeforeInspectorMethods }
  ;
  # [cfg (any (feature = "app-battlecalculator-types"))] pub mod battlecalculator ;
- # [cfg (feature = "app-battlecalculator-types")] pub use battlecalculator :: { BattleCalculator_FlagField , IBattleCalculator_FlagField , BattleCalculator_SeparatorScope , BattleCalculator_FuncExp1 , IBattleCalculator_FuncExp1 , BattleCalculator , IBattleCalculator , BattleCalculator_TargetScope , BattleCalculator_TrainingResult , BattleCalculator_OrderList , IBattleCalculator_OrderList , BattleCalculator_Mode , BattleCalculator_HitSkillPool , IBattleCalculator_HitSkillPool , BattleCalculator_DetailScope , BattleCalculator_FuncExp2 , IBattleCalculator_FuncExp2 , BattleCalculator_HitSkill , IBattleCalculator_HitSkill , BattleCalculator_Attributes , BattleCalculator_Flags , BattleCalculator_Order , IBattleCalculator_Order }
+ # [cfg (feature = "app-battlecalculator-types")] pub use battlecalculator :: { BattleCalculator_FlagField , IBattleCalculator_FlagField , BattleCalculator_Flags , BattleCalculator_HitSkill , IBattleCalculator_HitSkill , BattleCalculator_TrainingResult , BattleCalculator_Mode , BattleCalculator_DetailScope , BattleCalculator_FuncExp1 , IBattleCalculator_FuncExp1 , BattleCalculator_SeparatorScope , BattleCalculator , IBattleCalculator , BattleCalculator_FuncExp2 , IBattleCalculator_FuncExp2 , BattleCalculator_TargetScope , BattleCalculator_HitSkillPool , IBattleCalculator_HitSkillPool , BattleCalculator_OrderList , IBattleCalculator_OrderList , BattleCalculator_Order , IBattleCalculator_Order , BattleCalculator_Attributes }
  ;
- # [cfg (feature = "app-battlecalculator")] pub use battlecalculator :: { IBattleCalculator_FlagFieldMethods , IBattleCalculator_FuncExp1Methods , IBattleCalculatorMethods , IBattleCalculator_OrderListMethods , IBattleCalculator_HitSkillPoolMethods , IBattleCalculator_FuncExp2Methods , IBattleCalculator_HitSkillMethods , IBattleCalculator_OrderMethods }
+ # [cfg (feature = "app-battlecalculator")] pub use battlecalculator :: { IBattleCalculator_FlagFieldMethods , IBattleCalculator_HitSkillMethods , IBattleCalculator_FuncExp1Methods , IBattleCalculatorMethods , IBattleCalculator_FuncExp2Methods , IBattleCalculator_HitSkillPoolMethods , IBattleCalculator_OrderListMethods , IBattleCalculator_OrderMethods }
  ;
  # [cfg (any (feature = "app-battledebugmanager-types"))] pub mod battledebugmanager ;
  # [cfg (feature = "app-battledebugmanager-types")] pub use battledebugmanager :: { BattleDebugManager , IBattleDebugManager }
@@ -672,9 +672,9 @@
  # [cfg (feature = "app-battledestory")] pub use battledestory :: { IBattleDestoryMethods }
  ;
  # [cfg (any (feature = "app-battledetail-types"))] pub mod battledetail ;
- # [cfg (feature = "app-battledetail-types")] pub use battledetail :: { BattleDetail_HitParam , IBattleDetail_HitParam , BattleDetail_SimpleCriticalParam , IBattleDetail_SimpleCriticalParam , BattleDetail_SimpleHitParam , IBattleDetail_SimpleHitParam , BattleDetail_DetailParam , IBattleDetail_DetailParam , BattleDetail_UnitDefenseParam , IBattleDetail_UnitDefenseParam , BattleDetail_DefenseParam , IBattleDetail_DefenseParam , BattleDetail , IBattleDetail , BattleDetail_ContinuousParam , IBattleDetail_ContinuousParam , BattleDetail_BaseParams , BattleDetail_BattleParams , BattleDetail_SimplePowerParam , IBattleDetail_SimplePowerParam , BattleDetail_AvoidParam , IBattleDetail_AvoidParam , BattleDetail_AttackParam , IBattleDetail_AttackParam , BattleDetail_CommandParam , IBattleDetail_CommandParam , BattleDetail_SecureParam , IBattleDetail_SecureParam , BattleDetail_UnitAttackParam , IBattleDetail_UnitAttackParam , BattleDetail_CriticalParam , IBattleDetail_CriticalParam }
+ # [cfg (feature = "app-battledetail-types")] pub use battledetail :: { BattleDetail_BaseParams , BattleDetail_UnitAttackParam , IBattleDetail_UnitAttackParam , BattleDetail_DefenseParam , IBattleDetail_DefenseParam , BattleDetail , IBattleDetail , BattleDetail_BattleParams , BattleDetail_HitParam , IBattleDetail_HitParam , BattleDetail_DetailParam , IBattleDetail_DetailParam , BattleDetail_UnitDefenseParam , IBattleDetail_UnitDefenseParam , BattleDetail_SecureParam , IBattleDetail_SecureParam , BattleDetail_SimpleHitParam , IBattleDetail_SimpleHitParam , BattleDetail_AvoidParam , IBattleDetail_AvoidParam , BattleDetail_AttackParam , IBattleDetail_AttackParam , BattleDetail_ContinuousParam , IBattleDetail_ContinuousParam , BattleDetail_SimplePowerParam , IBattleDetail_SimplePowerParam , BattleDetail_CriticalParam , IBattleDetail_CriticalParam , BattleDetail_SimpleCriticalParam , IBattleDetail_SimpleCriticalParam , BattleDetail_CommandParam , IBattleDetail_CommandParam }
  ;
- # [cfg (feature = "app-battledetail")] pub use battledetail :: { IBattleDetail_HitParamMethods , IBattleDetail_SimpleCriticalParamMethods , IBattleDetail_SimpleHitParamMethods , IBattleDetail_DetailParamMethods , IBattleDetail_UnitDefenseParamMethods , IBattleDetail_DefenseParamMethods , IBattleDetailMethods , IBattleDetail_ContinuousParamMethods , IBattleDetail_SimplePowerParamMethods , IBattleDetail_AvoidParamMethods , IBattleDetail_AttackParamMethods , IBattleDetail_CommandParamMethods , IBattleDetail_SecureParamMethods , IBattleDetail_UnitAttackParamMethods , IBattleDetail_CriticalParamMethods }
+ # [cfg (feature = "app-battledetail")] pub use battledetail :: { IBattleDetail_UnitAttackParamMethods , IBattleDetail_DefenseParamMethods , IBattleDetailMethods , IBattleDetail_HitParamMethods , IBattleDetail_DetailParamMethods , IBattleDetail_UnitDefenseParamMethods , IBattleDetail_SecureParamMethods , IBattleDetail_SimpleHitParamMethods , IBattleDetail_AvoidParamMethods , IBattleDetail_AttackParamMethods , IBattleDetail_ContinuousParamMethods , IBattleDetail_SimplePowerParamMethods , IBattleDetail_CriticalParamMethods , IBattleDetail_SimpleCriticalParamMethods , IBattleDetail_CommandParamMethods }
  ;
  # [cfg (any (feature = "app-battlegrow-types"))] pub mod battlegrow ;
  # [cfg (feature = "app-battlegrow-types")] pub use battlegrow :: { BattleGrow , IBattleGrow }
@@ -682,9 +682,9 @@
  # [cfg (feature = "app-battlegrow")] pub use battlegrow :: { IBattleGrowMethods }
  ;
  # [cfg (any (feature = "app-battleinfo-types"))] pub mod battleinfo ;
- # [cfg (feature = "app-battleinfo-types")] pub use battleinfo :: { BattleInfo_BattleInfoSideArray , IBattleInfo_BattleInfoSideArray , BattleInfo_SetupScope , BattleInfo_SupportData , BattleInfo_SupportList , IBattleInfo_SupportList , BattleInfo_FlagField , IBattleInfo_FlagField , BattleInfo_MindScope , BattleInfo_Flags , BattleInfo , IBattleInfo }
+ # [cfg (feature = "app-battleinfo-types")] pub use battleinfo :: { BattleInfo_SupportData , BattleInfo_MindScope , BattleInfo_FlagField , IBattleInfo_FlagField , BattleInfo_SetupScope , BattleInfo_BattleInfoSideArray , IBattleInfo_BattleInfoSideArray , BattleInfo , IBattleInfo , BattleInfo_Flags , BattleInfo_SupportList , IBattleInfo_SupportList }
  ;
- # [cfg (feature = "app-battleinfo")] pub use battleinfo :: { IBattleInfo_BattleInfoSideArrayMethods , IBattleInfo_SupportListMethods , IBattleInfo_FlagFieldMethods , IBattleInfoMethods }
+ # [cfg (feature = "app-battleinfo")] pub use battleinfo :: { IBattleInfo_FlagFieldMethods , IBattleInfo_BattleInfoSideArrayMethods , IBattleInfoMethods , IBattleInfo_SupportListMethods }
  ;
  # [cfg (any (feature = "app-battleinfoenum-types"))] pub mod battleinfoenum ;
  # [cfg (feature = "app-battleinfoenum-types")] pub use battleinfoenum :: { BattleInfoEnum }
@@ -695,9 +695,9 @@
  # [cfg (feature = "app-battleinfoparam")] pub use battleinfoparam :: { IBattleInfoParamMethods }
  ;
  # [cfg (any (feature = "app-battleinfoside-types"))] pub mod battleinfoside ;
- # [cfg (feature = "app-battleinfoside-types")] pub use battleinfoside :: { BattleInfoSide , IBattleInfoSide , BattleInfoSide_BitFieldStatus , IBattleInfoSide_BitFieldStatus , BattleInfoSide_Status }
+ # [cfg (feature = "app-battleinfoside-types")] pub use battleinfoside :: { BattleInfoSide_BitFieldStatus , IBattleInfoSide_BitFieldStatus , BattleInfoSide , IBattleInfoSide , BattleInfoSide_Status }
  ;
- # [cfg (feature = "app-battleinfoside")] pub use battleinfoside :: { IBattleInfoSideMethods , IBattleInfoSide_BitFieldStatusMethods }
+ # [cfg (feature = "app-battleinfoside")] pub use battleinfoside :: { IBattleInfoSide_BitFieldStatusMethods , IBattleInfoSideMethods }
  ;
  # [cfg (any (feature = "app-battlemath-types"))] pub mod battlemath ;
  # [cfg (feature = "app-battlemath-types")] pub use battlemath :: { BattleMath_Probability , IBattleMath_Probability , BattleMath , IBattleMath }
@@ -725,7 +725,7 @@
  # [cfg (feature = "app-battlerecordsetter")] pub use battlerecordsetter :: { IBattleRecordSetterMethods }
  ;
  # [cfg (any (feature = "app-battlescene-types"))] pub mod battlescene ;
- # [cfg (feature = "app-battlescene-types")] pub use battlescene :: { BattleScene_Result , BattleScene , IBattleScene , BattleScene_FieldResult , IBattleScene_FieldResult , BattleScene_Kind }
+ # [cfg (feature = "app-battlescene-types")] pub use battlescene :: { BattleScene , IBattleScene , BattleScene_Result , BattleScene_FieldResult , IBattleScene_FieldResult , BattleScene_Kind }
  ;
  # [cfg (feature = "app-battlescene")] pub use battlescene :: { IBattleSceneMethods , IBattleScene_FieldResultMethods }
  ;
@@ -735,9 +735,9 @@
  # [cfg (feature = "app-battlescenelist")] pub use battlescenelist :: { IBattleSceneListMethods }
  ;
  # [cfg (any (feature = "app-battleside-types"))] pub mod battleside ;
- # [cfg (feature = "app-battleside-types")] pub use battleside :: { BattleSide_Type , BattleSide_ClassArray_1 , IBattleSide_ClassArray_1 , BattleSide_StructArray_1 , IBattleSide_StructArray_1 , BattleSide_ContainerArray_1 , IBattleSide_ContainerArray_1 , BattleSide_ShortArray , IBattleSide_ShortArray , BattleSide_FloatArray , IBattleSide_FloatArray , BattleSide , IBattleSide , BattleSide_SbyteArray , IBattleSide_SbyteArray , BattleSide_IntArray , IBattleSide_IntArray }
+ # [cfg (feature = "app-battleside-types")] pub use battleside :: { BattleSide , IBattleSide , BattleSide_SbyteArray , IBattleSide_SbyteArray , BattleSide_ShortArray , IBattleSide_ShortArray , BattleSide_ContainerArray_1 , IBattleSide_ContainerArray_1 , BattleSide_FloatArray , IBattleSide_FloatArray , BattleSide_IntArray , IBattleSide_IntArray , BattleSide_ClassArray_1 , IBattleSide_ClassArray_1 , BattleSide_Type , BattleSide_StructArray_1 , IBattleSide_StructArray_1 }
  ;
- # [cfg (feature = "app-battleside")] pub use battleside :: { IBattleSide_ClassArray_1Methods , IBattleSide_StructArray_1Methods , IBattleSide_ContainerArray_1Methods , IBattleSide_ShortArrayMethods , IBattleSide_FloatArrayMethods , IBattleSideMethods , IBattleSide_SbyteArrayMethods , IBattleSide_IntArrayMethods }
+ # [cfg (feature = "app-battleside")] pub use battleside :: { IBattleSideMethods , IBattleSide_SbyteArrayMethods , IBattleSide_ShortArrayMethods , IBattleSide_ContainerArray_1Methods , IBattleSide_FloatArrayMethods , IBattleSide_IntArrayMethods , IBattleSide_ClassArray_1Methods , IBattleSide_StructArray_1Methods }
  ;
  # [cfg (any (feature = "app-battlestyle-types"))] pub mod battlestyle ;
  # [cfg (feature = "app-battlestyle-types")] pub use battlestyle :: { BattleStyle , IBattleStyle , BattleStyle_Types }
@@ -755,7 +755,7 @@
  # [cfg (feature = "app-battletalkinspector")] pub use battletalkinspector :: { IBattleTalkInspectorMethods }
  ;
  # [cfg (any (feature = "app-battleutil-types"))] pub mod battleutil ;
- # [cfg (feature = "app-battleutil-types")] pub use battleutil :: { BattleUtil , IBattleUtil , BattleUtil_CalcScope }
+ # [cfg (feature = "app-battleutil-types")] pub use battleutil :: { BattleUtil_CalcScope , BattleUtil , IBattleUtil }
  ;
  # [cfg (feature = "app-battleutil")] pub use battleutil :: { IBattleUtilMethods }
  ;
@@ -883,9 +883,9 @@
  # [cfg (feature = "app-calculatordata")] pub use calculatordata :: { ICalculatorDataMethods }
  ;
  # [cfg (any (feature = "app-calculatormanager-types"))] pub mod calculatormanager ;
- # [cfg (feature = "app-calculatormanager-types")] pub use calculatormanager :: { CalculatorManager_CommandList , ICalculatorManager_CommandList , CalculatorManager , ICalculatorManager , CalculatorManager_StackPool , ICalculatorManager_StackPool , CalculatorManager_CommandStack , ICalculatorManager_CommandStack }
+ # [cfg (feature = "app-calculatormanager-types")] pub use calculatormanager :: { CalculatorManager_StackPool , ICalculatorManager_StackPool , CalculatorManager_CommandList , ICalculatorManager_CommandList , CalculatorManager_CommandStack , ICalculatorManager_CommandStack , CalculatorManager , ICalculatorManager }
  ;
- # [cfg (feature = "app-calculatormanager")] pub use calculatormanager :: { ICalculatorManager_CommandListMethods , ICalculatorManagerMethods , ICalculatorManager_StackPoolMethods , ICalculatorManager_CommandStackMethods }
+ # [cfg (feature = "app-calculatormanager")] pub use calculatormanager :: { ICalculatorManager_StackPoolMethods , ICalculatorManager_CommandListMethods , ICalculatorManager_CommandStackMethods , ICalculatorManagerMethods }
  ;
  # [cfg (any (feature = "app-calculatortable-types"))] pub mod calculatortable ;
  # [cfg (feature = "app-calculatortable-types")] pub use calculatortable :: { CalculatorTable , ICalculatorTable }
@@ -908,19 +908,19 @@
  # [cfg (feature = "app-calculatortableadd2d")] pub use calculatortableadd2d :: { ICalculatorTableAdd2DMethods , ICalculatorTableAdd2D_TableCommandMethods }
  ;
  # [cfg (any (feature = "app-calculatortablesub1d-types"))] pub mod calculatortablesub1d ;
- # [cfg (feature = "app-calculatortablesub1d-types")] pub use calculatortablesub1d :: { CalculatorTableSub1D , ICalculatorTableSub1D , CalculatorTableSub1D_TableCommand , ICalculatorTableSub1D_TableCommand }
+ # [cfg (feature = "app-calculatortablesub1d-types")] pub use calculatortablesub1d :: { CalculatorTableSub1D_TableCommand , ICalculatorTableSub1D_TableCommand , CalculatorTableSub1D , ICalculatorTableSub1D }
  ;
- # [cfg (feature = "app-calculatortablesub1d")] pub use calculatortablesub1d :: { ICalculatorTableSub1DMethods , ICalculatorTableSub1D_TableCommandMethods }
+ # [cfg (feature = "app-calculatortablesub1d")] pub use calculatortablesub1d :: { ICalculatorTableSub1D_TableCommandMethods , ICalculatorTableSub1DMethods }
  ;
  # [cfg (any (feature = "app-calculatortablesub2d-types"))] pub mod calculatortablesub2d ;
- # [cfg (feature = "app-calculatortablesub2d-types")] pub use calculatortablesub2d :: { CalculatorTableSub2D , ICalculatorTableSub2D , CalculatorTableSub2D_TableCommand , ICalculatorTableSub2D_TableCommand }
+ # [cfg (feature = "app-calculatortablesub2d-types")] pub use calculatortablesub2d :: { CalculatorTableSub2D_TableCommand , ICalculatorTableSub2D_TableCommand , CalculatorTableSub2D , ICalculatorTableSub2D }
  ;
- # [cfg (feature = "app-calculatortablesub2d")] pub use calculatortablesub2d :: { ICalculatorTableSub2DMethods , ICalculatorTableSub2D_TableCommandMethods }
+ # [cfg (feature = "app-calculatortablesub2d")] pub use calculatortablesub2d :: { ICalculatorTableSub2D_TableCommandMethods , ICalculatorTableSub2DMethods }
  ;
  # [cfg (any (feature = "app-calculatorutil-types"))] pub mod calculatorutil ;
- # [cfg (feature = "app-calculatorutil-types")] pub use calculatorutil :: { CalculatorUtil_Type , CalculatorUtil , ICalculatorUtil , CalculatorUtil_Entity , ICalculatorUtil_Entity }
+ # [cfg (feature = "app-calculatorutil-types")] pub use calculatorutil :: { CalculatorUtil_Type , CalculatorUtil_Entity , ICalculatorUtil_Entity , CalculatorUtil , ICalculatorUtil }
  ;
- # [cfg (feature = "app-calculatorutil")] pub use calculatorutil :: { ICalculatorUtilMethods , ICalculatorUtil_EntityMethods }
+ # [cfg (feature = "app-calculatorutil")] pub use calculatorutil :: { ICalculatorUtil_EntityMethods , ICalculatorUtilMethods }
  ;
  # [cfg (any (feature = "app-cameraconstraint-types"))] pub mod cameraconstraint ;
  # [cfg (feature = "app-cameraconstraint-types")] pub use cameraconstraint :: { CameraConstraint , ICameraConstraint }
@@ -961,7 +961,7 @@
  # [cfg (feature = "app-capabilitybase_1")] pub use capabilitybase_1 :: { ICapabilityBase_1Methods }
  ;
  # [cfg (any (feature = "app-capabilitydefinition-types"))] pub mod capabilitydefinition ;
- # [cfg (feature = "app-capabilitydefinition-types")] pub use capabilitydefinition :: { CapabilityDefinition , ICapabilityDefinition , CapabilityDefinition_Type }
+ # [cfg (feature = "app-capabilitydefinition-types")] pub use capabilitydefinition :: { CapabilityDefinition_Type , CapabilityDefinition , ICapabilityDefinition }
  ;
  # [cfg (feature = "app-capabilitydefinition")] pub use capabilitydefinition :: { ICapabilityDefinitionMethods }
  ;
@@ -986,14 +986,14 @@
  # [cfg (feature = "app-capabilityshort")] pub use capabilityshort :: { ICapabilityShortMethods }
  ;
  # [cfg (any (feature = "app-capetowersequence-types"))] pub mod capetowersequence ;
- # [cfg (feature = "app-capetowersequence-types")] pub use capetowersequence :: { CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem , ICapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem , CapeTowerSequence_ConfirmEnableOnlineDialog , ICapeTowerSequence_ConfirmEnableOnlineDialog , CapeTowerSequence_Label2 , CapeTowerSequence , ICapeTowerSequence , CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem , ICapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem }
+ # [cfg (feature = "app-capetowersequence-types")] pub use capetowersequence :: { CapeTowerSequence , ICapeTowerSequence , CapeTowerSequence_ConfirmEnableOnlineDialog , ICapeTowerSequence_ConfirmEnableOnlineDialog , CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem , ICapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem , CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem , ICapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem , CapeTowerSequence_Label2 }
  ;
- # [cfg (feature = "app-capetowersequence")] pub use capetowersequence :: { ICapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItemMethods , ICapeTowerSequenceMethods , ICapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItemMethods }
+ # [cfg (feature = "app-capetowersequence")] pub use capetowersequence :: { ICapeTowerSequenceMethods , ICapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItemMethods , ICapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItemMethods }
  ;
  # [cfg (any (feature = "app-capetowertopmenu-types"))] pub mod capetowertopmenu ;
- # [cfg (feature = "app-capetowertopmenu-types")] pub use capetowertopmenu :: { CapeTowerTopMenu_ChallengeMenuItem , ICapeTowerTopMenu_ChallengeMenuItem , CapeTowerTopMenu , ICapeTowerTopMenu , CapeTowerTopMenu_RelayMenuItem , ICapeTowerTopMenu_RelayMenuItem , CapeTowerTopMenu_DecideEventHandler , ICapeTowerTopMenu_DecideEventHandler , CapeTowerTopMenu_Result2 , CapeTowerTopMenu_VersusMenuItem , ICapeTowerTopMenu_VersusMenuItem }
+ # [cfg (feature = "app-capetowertopmenu-types")] pub use capetowertopmenu :: { CapeTowerTopMenu_DecideEventHandler , ICapeTowerTopMenu_DecideEventHandler , CapeTowerTopMenu_ChallengeMenuItem , ICapeTowerTopMenu_ChallengeMenuItem , CapeTowerTopMenu_VersusMenuItem , ICapeTowerTopMenu_VersusMenuItem , CapeTowerTopMenu , ICapeTowerTopMenu , CapeTowerTopMenu_Result2 , CapeTowerTopMenu_RelayMenuItem , ICapeTowerTopMenu_RelayMenuItem }
  ;
- # [cfg (feature = "app-capetowertopmenu")] pub use capetowertopmenu :: { ICapeTowerTopMenu_ChallengeMenuItemMethods , ICapeTowerTopMenuMethods , ICapeTowerTopMenu_RelayMenuItemMethods , ICapeTowerTopMenu_DecideEventHandlerMethods , ICapeTowerTopMenu_VersusMenuItemMethods }
+ # [cfg (feature = "app-capetowertopmenu")] pub use capetowertopmenu :: { ICapeTowerTopMenu_DecideEventHandlerMethods , ICapeTowerTopMenu_ChallengeMenuItemMethods , ICapeTowerTopMenu_VersusMenuItemMethods , ICapeTowerTopMenuMethods , ICapeTowerTopMenu_RelayMenuItemMethods }
  ;
  # [cfg (any (feature = "app-capetowertopmenucontent-types"))] pub mod capetowertopmenucontent ;
  # [cfg (feature = "app-capetowertopmenucontent-types")] pub use capetowertopmenucontent :: { CapeTowerTopMenuContent , ICapeTowerTopMenuContent }
@@ -1006,9 +1006,9 @@
  # [cfg (feature = "app-capetowertopmenuroot")] pub use capetowertopmenuroot :: { ICapeTowerTopMenuRootMethods }
  ;
  # [cfg (any (feature = "app-casualmap-types"))] pub mod casualmap ;
- # [cfg (feature = "app-casualmap-types")] pub use casualmap :: { CasualMap_ObjectData , ICasualMap_ObjectData , CasualMap , ICasualMap }
+ # [cfg (feature = "app-casualmap-types")] pub use casualmap :: { CasualMap , ICasualMap , CasualMap_ObjectData , ICasualMap_ObjectData }
  ;
- # [cfg (feature = "app-casualmap")] pub use casualmap :: { ICasualMap_ObjectDataMethods , ICasualMapMethods }
+ # [cfg (feature = "app-casualmap")] pub use casualmap :: { ICasualMapMethods , ICasualMap_ObjectDataMethods }
  ;
  # [cfg (any (feature = "app-challengedata-types"))] pub mod challengedata ;
  # [cfg (feature = "app-challengedata-types")] pub use challengedata :: { ChallengeData , IChallengeData }
@@ -1021,9 +1021,9 @@
  # [cfg (feature = "app-challengedifficultymanager")] pub use challengedifficultymanager :: { IChallengeDifficultyManager_ReturnEventHandlerMethods , IChallengeDifficultyManagerMethods }
  ;
  # [cfg (any (feature = "app-challengedifficultymenu-types"))] pub mod challengedifficultymenu ;
- # [cfg (feature = "app-challengedifficultymenu-types")] pub use challengedifficultymenu :: { ChallengeDifficultyMenu , IChallengeDifficultyMenu , ChallengeDifficultyMenu_RequestCloseEventHandler , IChallengeDifficultyMenu_RequestCloseEventHandler , ChallengeDifficultyMenu_DecideEventHandler , IChallengeDifficultyMenu_DecideEventHandler }
+ # [cfg (feature = "app-challengedifficultymenu-types")] pub use challengedifficultymenu :: { ChallengeDifficultyMenu_DecideEventHandler , IChallengeDifficultyMenu_DecideEventHandler , ChallengeDifficultyMenu_RequestCloseEventHandler , IChallengeDifficultyMenu_RequestCloseEventHandler , ChallengeDifficultyMenu , IChallengeDifficultyMenu }
  ;
- # [cfg (feature = "app-challengedifficultymenu")] pub use challengedifficultymenu :: { IChallengeDifficultyMenuMethods , IChallengeDifficultyMenu_RequestCloseEventHandlerMethods , IChallengeDifficultyMenu_DecideEventHandlerMethods }
+ # [cfg (feature = "app-challengedifficultymenu")] pub use challengedifficultymenu :: { IChallengeDifficultyMenu_DecideEventHandlerMethods , IChallengeDifficultyMenu_RequestCloseEventHandlerMethods , IChallengeDifficultyMenuMethods }
  ;
  # [cfg (any (feature = "app-challengedifficultymenuitem-types"))] pub mod challengedifficultymenuitem ;
  # [cfg (feature = "app-challengedifficultymenuitem-types")] pub use challengedifficultymenuitem :: { ChallengeDifficultyMenuItem , IChallengeDifficultyMenuItem }
@@ -1031,14 +1031,14 @@
  # [cfg (feature = "app-challengedifficultymenuitem")] pub use challengedifficultymenuitem :: { IChallengeDifficultyMenuItemMethods }
  ;
  # [cfg (any (feature = "app-challengemapselectmanager-types"))] pub mod challengemapselectmanager ;
- # [cfg (feature = "app-challengemapselectmanager-types")] pub use challengemapselectmanager :: { ChallengeMapSelectManager_ReturnEventHandler , IChallengeMapSelectManager_ReturnEventHandler , ChallengeMapSelectManager , IChallengeMapSelectManager }
+ # [cfg (feature = "app-challengemapselectmanager-types")] pub use challengemapselectmanager :: { ChallengeMapSelectManager , IChallengeMapSelectManager , ChallengeMapSelectManager_ReturnEventHandler , IChallengeMapSelectManager_ReturnEventHandler }
  ;
- # [cfg (feature = "app-challengemapselectmanager")] pub use challengemapselectmanager :: { IChallengeMapSelectManager_ReturnEventHandlerMethods , IChallengeMapSelectManagerMethods }
+ # [cfg (feature = "app-challengemapselectmanager")] pub use challengemapselectmanager :: { IChallengeMapSelectManagerMethods , IChallengeMapSelectManager_ReturnEventHandlerMethods }
  ;
  # [cfg (any (feature = "app-challengemapselectmenu-types"))] pub mod challengemapselectmenu ;
- # [cfg (feature = "app-challengemapselectmenu-types")] pub use challengemapselectmenu :: { ChallengeMapSelectMenu , IChallengeMapSelectMenu , ChallengeMapSelectMenu_DecideEventHandler , IChallengeMapSelectMenu_DecideEventHandler , ChallengeMapSelectMenu_SelectEventHandler , IChallengeMapSelectMenu_SelectEventHandler , ChallengeMapSelectMenu_RequestCloseEventHandler , IChallengeMapSelectMenu_RequestCloseEventHandler }
+ # [cfg (feature = "app-challengemapselectmenu-types")] pub use challengemapselectmenu :: { ChallengeMapSelectMenu_DecideEventHandler , IChallengeMapSelectMenu_DecideEventHandler , ChallengeMapSelectMenu , IChallengeMapSelectMenu , ChallengeMapSelectMenu_SelectEventHandler , IChallengeMapSelectMenu_SelectEventHandler , ChallengeMapSelectMenu_RequestCloseEventHandler , IChallengeMapSelectMenu_RequestCloseEventHandler }
  ;
- # [cfg (feature = "app-challengemapselectmenu")] pub use challengemapselectmenu :: { IChallengeMapSelectMenuMethods , IChallengeMapSelectMenu_DecideEventHandlerMethods , IChallengeMapSelectMenu_SelectEventHandlerMethods , IChallengeMapSelectMenu_RequestCloseEventHandlerMethods }
+ # [cfg (feature = "app-challengemapselectmenu")] pub use challengemapselectmenu :: { IChallengeMapSelectMenu_DecideEventHandlerMethods , IChallengeMapSelectMenuMethods , IChallengeMapSelectMenu_SelectEventHandlerMethods , IChallengeMapSelectMenu_RequestCloseEventHandlerMethods }
  ;
  # [cfg (any (feature = "app-challengemapselectmenuitem-types"))] pub mod challengemapselectmenuitem ;
  # [cfg (feature = "app-challengemapselectmenuitem-types")] pub use challengemapselectmenuitem :: { ChallengeMapSelectMenuItem , IChallengeMapSelectMenuItem }
@@ -1046,9 +1046,9 @@
  # [cfg (feature = "app-challengemapselectmenuitem")] pub use challengemapselectmenuitem :: { IChallengeMapSelectMenuItemMethods }
  ;
  # [cfg (any (feature = "app-challengemapselectroot-types"))] pub mod challengemapselectroot ;
- # [cfg (feature = "app-challengemapselectroot-types")] pub use challengemapselectroot :: { ChallengeMapSelectRoot_RewardInfoItem , IChallengeMapSelectRoot_RewardInfoItem , ChallengeMapSelectRoot , IChallengeMapSelectRoot , ChallengeMapSelectRoot_ItemDropNum , IChallengeMapSelectRoot_ItemDropNum }
+ # [cfg (feature = "app-challengemapselectroot-types")] pub use challengemapselectroot :: { ChallengeMapSelectRoot_ItemDropNum , IChallengeMapSelectRoot_ItemDropNum , ChallengeMapSelectRoot , IChallengeMapSelectRoot , ChallengeMapSelectRoot_RewardInfoItem , IChallengeMapSelectRoot_RewardInfoItem }
  ;
- # [cfg (feature = "app-challengemapselectroot")] pub use challengemapselectroot :: { IChallengeMapSelectRoot_RewardInfoItemMethods , IChallengeMapSelectRootMethods , IChallengeMapSelectRoot_ItemDropNumMethods }
+ # [cfg (feature = "app-challengemapselectroot")] pub use challengemapselectroot :: { IChallengeMapSelectRoot_ItemDropNumMethods , IChallengeMapSelectRootMethods , IChallengeMapSelectRoot_RewardInfoItemMethods }
  ;
  # [cfg (any (feature = "app-challengesequence-types"))] pub mod challengesequence ;
  # [cfg (feature = "app-challengesequence-types")] pub use challengesequence :: { ChallengeSequence_Label2 , ChallengeSequence , IChallengeSequence }
@@ -1076,9 +1076,9 @@
  # [cfg (feature = "app-characteridset")] pub use characteridset :: { ICharacterIdSetMethods }
  ;
  # [cfg (any (feature = "app-chartdata-types"))] pub mod chartdata ;
- # [cfg (feature = "app-chartdata-types")] pub use chartdata :: { ChartData_Item , IChartData_Item , ChartData , IChartData }
+ # [cfg (feature = "app-chartdata-types")] pub use chartdata :: { ChartData , IChartData , ChartData_Item , IChartData_Item }
  ;
- # [cfg (feature = "app-chartdata")] pub use chartdata :: { IChartData_ItemMethods , IChartDataMethods }
+ # [cfg (feature = "app-chartdata")] pub use chartdata :: { IChartDataMethods , IChartData_ItemMethods }
  ;
  # [cfg (any (feature = "app-chartgoddata-types"))] pub mod chartgoddata ;
  # [cfg (feature = "app-chartgoddata-types")] pub use chartgoddata :: { ChartGodData_Flags , ChartGodData , IChartGodData , ChartGodData_FlagField , IChartGodData_FlagField }
@@ -1111,14 +1111,14 @@
  # [cfg (feature = "app-clampcommand")] pub use clampcommand :: { IClampCommandMethods }
  ;
  # [cfg (any (feature = "app-classchange-types"))] pub mod classchange ;
- # [cfg (feature = "app-classchange-types")] pub use classchange :: { ClassChange , IClassChange , ClassChange_ChangeJobData , IClassChange_ChangeJobData , ClassChange_ChangeJobData_ProofTypes }
+ # [cfg (feature = "app-classchange-types")] pub use classchange :: { ClassChange_ChangeJobData , IClassChange_ChangeJobData , ClassChange_ChangeJobData_ProofTypes , ClassChange , IClassChange }
  ;
- # [cfg (feature = "app-classchange")] pub use classchange :: { IClassChangeMethods , IClassChange_ChangeJobDataMethods }
+ # [cfg (feature = "app-classchange")] pub use classchange :: { IClassChange_ChangeJobDataMethods , IClassChangeMethods }
  ;
  # [cfg (any (feature = "app-classchangejobmenu-types"))] pub mod classchangejobmenu ;
- # [cfg (feature = "app-classchangejobmenu-types")] pub use classchangejobmenu :: { ClassChangeJobMenu_ConfirmDialog_ConfirmDialogItemYes , IClassChangeJobMenu_ConfirmDialog_ConfirmDialogItemYes , ClassChangeJobMenu , IClassChangeJobMenu , ClassChangeJobMenu_ClassChangeJobMenuItem , IClassChangeJobMenu_ClassChangeJobMenuItem , ClassChangeJobMenu_ConfirmDialog , IClassChangeJobMenu_ConfirmDialog }
+ # [cfg (feature = "app-classchangejobmenu-types")] pub use classchangejobmenu :: { ClassChangeJobMenu_ConfirmDialog , IClassChangeJobMenu_ConfirmDialog , ClassChangeJobMenu_ClassChangeJobMenuItem , IClassChangeJobMenu_ClassChangeJobMenuItem , ClassChangeJobMenu_ConfirmDialog_ConfirmDialogItemYes , IClassChangeJobMenu_ConfirmDialog_ConfirmDialogItemYes , ClassChangeJobMenu , IClassChangeJobMenu }
  ;
- # [cfg (feature = "app-classchangejobmenu")] pub use classchangejobmenu :: { IClassChangeJobMenu_ConfirmDialog_ConfirmDialogItemYesMethods , IClassChangeJobMenuMethods , IClassChangeJobMenu_ClassChangeJobMenuItemMethods , IClassChangeJobMenu_ConfirmDialogMethods }
+ # [cfg (feature = "app-classchangejobmenu")] pub use classchangejobmenu :: { IClassChangeJobMenu_ConfirmDialogMethods , IClassChangeJobMenu_ClassChangeJobMenuItemMethods , IClassChangeJobMenu_ConfirmDialog_ConfirmDialogItemYesMethods , IClassChangeJobMenuMethods }
  ;
  # [cfg (any (feature = "app-classchangejobmenucontent-types"))] pub mod classchangejobmenucontent ;
  # [cfg (feature = "app-classchangejobmenucontent-types")] pub use classchangejobmenucontent :: { ClassChangeJobMenuContent , IClassChangeJobMenuContent }
@@ -1146,7 +1146,7 @@
  # [cfg (feature = "app-commandinspector")] pub use commandinspector :: { ICommandInspectorMethods }
  ;
  # [cfg (any (feature = "app-commonbattlesequence_1-types"))] pub mod commonbattlesequence_1 ;
- # [cfg (feature = "app-commonbattlesequence_1-types")] pub use commonbattlesequence_1 :: { CommonBattleSequence_1_Reliance , CommonBattleSequence_1 , ICommonBattleSequence_1 , CommonBattleSequence_1_RelianceList , ICommonBattleSequence_1_RelianceList }
+ # [cfg (feature = "app-commonbattlesequence_1-types")] pub use commonbattlesequence_1 :: { CommonBattleSequence_1 , ICommonBattleSequence_1 , CommonBattleSequence_1_Reliance , CommonBattleSequence_1_RelianceList , ICommonBattleSequence_1_RelianceList }
  ;
  # [cfg (feature = "app-commonbattlesequence_1")] pub use commonbattlesequence_1 :: { ICommonBattleSequence_1Methods , ICommonBattleSequence_1_RelianceListMethods }
  ;
@@ -1186,9 +1186,9 @@
  # [cfg (feature = "app-commonrewardmenuitemcontent")] pub use commonrewardmenuitemcontent :: { ICommonRewardMenuItemContentMethods }
  ;
  # [cfg (any (feature = "app-commonrewardsequence-types"))] pub mod commonrewardsequence ;
- # [cfg (feature = "app-commonrewardsequence-types")] pub use commonrewardsequence :: { CommonRewardSequence , ICommonRewardSequence , CommonRewardSequence_ProcDiscardMessage , ICommonRewardSequence_ProcDiscardMessage , CommonRewardSequence_Label2 }
+ # [cfg (feature = "app-commonrewardsequence-types")] pub use commonrewardsequence :: { CommonRewardSequence_ProcDiscardMessage , ICommonRewardSequence_ProcDiscardMessage , CommonRewardSequence_Label2 , CommonRewardSequence , ICommonRewardSequence }
  ;
- # [cfg (feature = "app-commonrewardsequence")] pub use commonrewardsequence :: { ICommonRewardSequenceMethods , ICommonRewardSequence_ProcDiscardMessageMethods }
+ # [cfg (feature = "app-commonrewardsequence")] pub use commonrewardsequence :: { ICommonRewardSequence_ProcDiscardMessageMethods , ICommonRewardSequenceMethods }
  ;
  # [cfg (any (feature = "app-commonringcontroller-types"))] pub mod commonringcontroller ;
  # [cfg (feature = "app-commonringcontroller-types")] pub use commonringcontroller :: { CommonRingController , ICommonRingController }
@@ -1231,9 +1231,9 @@
  # [cfg (feature = "app-condcommand")] pub use condcommand :: { ICondCommandMethods }
  ;
  # [cfg (any (feature = "app-conditiongettercommand-types"))] pub mod conditiongettercommand ;
- # [cfg (feature = "app-conditiongettercommand-types")] pub use conditiongettercommand :: { ConditionGetterCommand , IConditionGetterCommand , ConditionGetterCommand_Command , IConditionGetterCommand_Command }
+ # [cfg (feature = "app-conditiongettercommand-types")] pub use conditiongettercommand :: { ConditionGetterCommand_Command , IConditionGetterCommand_Command , ConditionGetterCommand , IConditionGetterCommand }
  ;
- # [cfg (feature = "app-conditiongettercommand")] pub use conditiongettercommand :: { IConditionGetterCommandMethods , IConditionGetterCommand_CommandMethods }
+ # [cfg (feature = "app-conditiongettercommand")] pub use conditiongettercommand :: { IConditionGetterCommand_CommandMethods , IConditionGetterCommandMethods }
  ;
  # [cfg (any (feature = "app-configbgmselectsequence-types"))] pub mod configbgmselectsequence ;
  # [cfg (feature = "app-configbgmselectsequence-types")] pub use configbgmselectsequence :: { ConfigBgmSelectSequence , IConfigBgmSelectSequence , ConfigBgmSelectSequence_Label }
@@ -1271,12 +1271,12 @@
  # [cfg (feature = "app-controllersupportapplet")] pub use controllersupportapplet :: { IControllerSupportAppletMethods }
  ;
  # [cfg (any (feature = "app-cookdata-types"))] pub mod cookdata ;
- # [cfg (feature = "app-cookdata-types")] pub use cookdata :: { CookData_Difficulty , CookData , ICookData }
+ # [cfg (feature = "app-cookdata-types")] pub use cookdata :: { CookData , ICookData , CookData_Difficulty }
  ;
  # [cfg (feature = "app-cookdata")] pub use cookdata :: { ICookDataMethods }
  ;
  # [cfg (any (feature = "app-cooking-types"))] pub mod cooking ;
- # [cfg (feature = "app-cooking-types")] pub use cooking :: { Cooking_ConversationType , Cooking_Order , Cooking_Probability , ICooking_Probability , Cooking_Quality , Cooking , ICooking }
+ # [cfg (feature = "app-cooking-types")] pub use cooking :: { Cooking_Order , Cooking_Quality , Cooking_Probability , ICooking_Probability , Cooking_ConversationType , Cooking , ICooking }
  ;
  # [cfg (feature = "app-cooking")] pub use cooking :: { ICooking_ProbabilityMethods , ICookingMethods }
  ;
@@ -1290,7 +1290,7 @@
  # [cfg (feature = "app-crc32-types")] pub use crc32 :: { Crc32 , ICrc32 }
  ;
  # [cfg (any (feature = "app-curve-types"))] pub mod curve ;
- # [cfg (feature = "app-curve-types")] pub use curve :: { Curve_Type , Curve , ICurve }
+ # [cfg (feature = "app-curve-types")] pub use curve :: { Curve , ICurve , Curve_Type }
  ;
  # [cfg (feature = "app-curve")] pub use curve :: { ICurveMethods }
  ;
@@ -1315,9 +1315,9 @@
  # [cfg (feature = "app-cutscenespringresetmarker")] pub use cutscenespringresetmarker :: { ICutSceneSpringResetMarkerMethods }
  ;
  # [cfg (any (feature = "app-damageinfo-types"))] pub mod damageinfo ;
- # [cfg (feature = "app-damageinfo-types")] pub use damageinfo :: { DamageInfo_InfoWindow , IDamageInfo_InfoWindow , DamageInfo_InfoComparer , IDamageInfo_InfoComparer , DamageInfo , IDamageInfo , DamageInfo_Info , IDamageInfo_Info }
+ # [cfg (feature = "app-damageinfo-types")] pub use damageinfo :: { DamageInfo , IDamageInfo , DamageInfo_Info , IDamageInfo_Info , DamageInfo_InfoWindow , IDamageInfo_InfoWindow , DamageInfo_InfoComparer , IDamageInfo_InfoComparer }
  ;
- # [cfg (feature = "app-damageinfo")] pub use damageinfo :: { IDamageInfo_InfoWindowMethods , IDamageInfo_InfoComparerMethods , IDamageInfoMethods , IDamageInfo_InfoMethods }
+ # [cfg (feature = "app-damageinfo")] pub use damageinfo :: { IDamageInfoMethods , IDamageInfo_InfoMethods , IDamageInfo_InfoWindowMethods , IDamageInfo_InfoComparerMethods }
  ;
  # [cfg (any (feature = "app-damagelevel-types"))] pub mod damagelevel ;
  # [cfg (feature = "app-damagelevel-types")] pub use damagelevel :: { DamageLevel }
@@ -1331,9 +1331,9 @@
  # [cfg (feature = "app-datatypesextension-types")] pub use datatypesextension :: { DataTypesExtension , IDataTypesExtension }
  ;
  # [cfg (any (feature = "app-debugaccessorymenu-types"))] pub mod debugaccessorymenu ;
- # [cfg (feature = "app-debugaccessorymenu-types")] pub use debugaccessorymenu :: { DebugAccessoryMenu_AccessoryMenuItem , IDebugAccessoryMenu_AccessoryMenuItem , DebugAccessoryMenu_AddAllMenuItem , IDebugAccessoryMenu_AddAllMenuItem , DebugAccessoryMenu_DeleteAllMenuItem , IDebugAccessoryMenu_DeleteAllMenuItem , DebugAccessoryMenu , IDebugAccessoryMenu }
+ # [cfg (feature = "app-debugaccessorymenu-types")] pub use debugaccessorymenu :: { DebugAccessoryMenu_AddAllMenuItem , IDebugAccessoryMenu_AddAllMenuItem , DebugAccessoryMenu_DeleteAllMenuItem , IDebugAccessoryMenu_DeleteAllMenuItem , DebugAccessoryMenu , IDebugAccessoryMenu , DebugAccessoryMenu_AccessoryMenuItem , IDebugAccessoryMenu_AccessoryMenuItem }
  ;
- # [cfg (feature = "app-debugaccessorymenu")] pub use debugaccessorymenu :: { IDebugAccessoryMenu_AccessoryMenuItemMethods , IDebugAccessoryMenu_AddAllMenuItemMethods , IDebugAccessoryMenu_DeleteAllMenuItemMethods , IDebugAccessoryMenuMethods }
+ # [cfg (feature = "app-debugaccessorymenu")] pub use debugaccessorymenu :: { IDebugAccessoryMenu_AddAllMenuItemMethods , IDebugAccessoryMenu_DeleteAllMenuItemMethods , IDebugAccessoryMenuMethods , IDebugAccessoryMenu_AccessoryMenuItemMethods }
  ;
  # [cfg (any (feature = "app-debugautoplay-types"))] pub mod debugautoplay ;
  # [cfg (feature = "app-debugautoplay-types")] pub use debugautoplay :: { DebugAutoPlay , IDebugAutoPlay }
@@ -1346,9 +1346,9 @@
  # [cfg (feature = "app-debugchapterrecordmenu")] pub use debugchapterrecordmenu :: { IDebugChapterRecordMenuMethods }
  ;
  # [cfg (any (feature = "app-debugcommandline-types"))] pub mod debugcommandline ;
- # [cfg (feature = "app-debugcommandline-types")] pub use debugcommandline :: { DebugCommandline_OptProperty , IDebugCommandline_OptProperty , DebugCommandline_OptionAttribute , IDebugCommandline_OptionAttribute , DebugCommandline_OptProperty_StringSetter , IDebugCommandline_OptProperty_StringSetter , DebugCommandline_OptProperty_BoolSetter , IDebugCommandline_OptProperty_BoolSetter , DebugCommandline_OptProperty_FloatSetter , IDebugCommandline_OptProperty_FloatSetter , DebugCommandline_OptionWildcardAttribute , IDebugCommandline_OptionWildcardAttribute , DebugCommandline_OptProperty_IntSetter , IDebugCommandline_OptProperty_IntSetter , DebugCommandline_Property , IDebugCommandline_Property , DebugCommandline , IDebugCommandline , DebugCommandline_OptwProperty , IDebugCommandline_OptwProperty , DebugCommandline_OptBaseAttribute , IDebugCommandline_OptBaseAttribute , DebugCommandline_OptProperty_Setter , IDebugCommandline_OptProperty_Setter }
+ # [cfg (feature = "app-debugcommandline-types")] pub use debugcommandline :: { DebugCommandline_OptProperty_IntSetter , IDebugCommandline_OptProperty_IntSetter , DebugCommandline_OptProperty , IDebugCommandline_OptProperty , DebugCommandline_OptProperty_StringSetter , IDebugCommandline_OptProperty_StringSetter , DebugCommandline_OptBaseAttribute , IDebugCommandline_OptBaseAttribute , DebugCommandline_OptProperty_BoolSetter , IDebugCommandline_OptProperty_BoolSetter , DebugCommandline , IDebugCommandline , DebugCommandline_OptProperty_Setter , IDebugCommandline_OptProperty_Setter , DebugCommandline_OptwProperty , IDebugCommandline_OptwProperty , DebugCommandline_OptProperty_FloatSetter , IDebugCommandline_OptProperty_FloatSetter , DebugCommandline_Property , IDebugCommandline_Property , DebugCommandline_OptionAttribute , IDebugCommandline_OptionAttribute , DebugCommandline_OptionWildcardAttribute , IDebugCommandline_OptionWildcardAttribute }
  ;
- # [cfg (feature = "app-debugcommandline")] pub use debugcommandline :: { IDebugCommandline_OptPropertyMethods , IDebugCommandline_OptionAttributeMethods , IDebugCommandline_OptProperty_StringSetterMethods , IDebugCommandline_OptProperty_BoolSetterMethods , IDebugCommandline_OptProperty_FloatSetterMethods , IDebugCommandline_OptionWildcardAttributeMethods , IDebugCommandline_OptProperty_IntSetterMethods , IDebugCommandline_PropertyMethods , IDebugCommandline_OptwPropertyMethods , IDebugCommandline_OptBaseAttributeMethods , IDebugCommandline_OptProperty_SetterMethods }
+ # [cfg (feature = "app-debugcommandline")] pub use debugcommandline :: { IDebugCommandline_OptProperty_IntSetterMethods , IDebugCommandline_OptPropertyMethods , IDebugCommandline_OptProperty_StringSetterMethods , IDebugCommandline_OptBaseAttributeMethods , IDebugCommandline_OptProperty_BoolSetterMethods , IDebugCommandline_OptProperty_SetterMethods , IDebugCommandline_OptwPropertyMethods , IDebugCommandline_OptProperty_FloatSetterMethods , IDebugCommandline_PropertyMethods , IDebugCommandline_OptionAttributeMethods , IDebugCommandline_OptionWildcardAttributeMethods }
  ;
  # [cfg (any (feature = "app-debugcommandlinerom-types"))] pub mod debugcommandlinerom ;
  # [cfg (feature = "app-debugcommandlinerom-types")] pub use debugcommandlinerom :: { DebugCommandlineRom , IDebugCommandlineRom , DebugCommandlineRom_Options , IDebugCommandlineRom_Options }
@@ -1361,7 +1361,7 @@
  # [cfg (feature = "app-debugeditmenuitem")] pub use debugeditmenuitem :: { IDebugEditMenuItemMethods }
  ;
  # [cfg (any (feature = "app-debugfont-types"))] pub mod debugfont ;
- # [cfg (feature = "app-debugfont-types")] pub use debugfont :: { DebugFont , IDebugFont , DebugFont_Scope }
+ # [cfg (feature = "app-debugfont-types")] pub use debugfont :: { DebugFont_Scope , DebugFont , IDebugFont }
  ;
  # [cfg (feature = "app-debugfont")] pub use debugfont :: { IDebugFontMethods }
  ;
@@ -1397,12 +1397,12 @@
  # [cfg (feature = "app-debuglodvisualizer")] pub use debuglodvisualizer :: { IDebugLodVisualizerMethods }
  ;
  # [cfg (any (feature = "app-debugmanager_2-types"))] pub mod debugmanager_2 ;
- # [cfg (feature = "app-debugmanager_2-types")] pub use debugmanager_2 :: { DebugManager_2 , IDebugManager_2 , DebugManager_LogFunc , IDebugManager_LogFunc , DebugManager_LogScope , IDebugManager_LogScope , DebugManager_LogArg , IDebugManager_LogArg }
+ # [cfg (feature = "app-debugmanager_2-types")] pub use debugmanager_2 :: { DebugManager_LogFunc , IDebugManager_LogFunc , DebugManager_LogScope , IDebugManager_LogScope , DebugManager_LogArg , IDebugManager_LogArg , DebugManager_2 , IDebugManager_2 }
  ;
- # [cfg (feature = "app-debugmanager_2")] pub use debugmanager_2 :: { IDebugManager_2Methods , IDebugManager_LogFuncMethods , IDebugManager_LogScopeMethods , IDebugManager_LogArgMethods }
+ # [cfg (feature = "app-debugmanager_2")] pub use debugmanager_2 :: { IDebugManager_LogFuncMethods , IDebugManager_LogScopeMethods , IDebugManager_LogArgMethods , IDebugManager_2Methods }
  ;
  # [cfg (any (feature = "app-debugmenu-types"))] pub mod debugmenu ;
- # [cfg (feature = "app-debugmenu-types")] pub use debugmenu :: { DebugMenu_BindMode , DebugMenu_AnchorLocation , IDebugMenu_AnchorLocation , DebugMenu , IDebugMenu }
+ # [cfg (feature = "app-debugmenu-types")] pub use debugmenu :: { DebugMenu_AnchorLocation , IDebugMenu_AnchorLocation , DebugMenu_BindMode , DebugMenu , IDebugMenu }
  ;
  # [cfg (feature = "app-debugmenu")] pub use debugmenu :: { IDebugMenu_AnchorLocationMethods , IDebugMenuMethods }
  ;
@@ -1422,9 +1422,9 @@
  # [cfg (feature = "app-debugoverlap")] pub use debugoverlap :: { IDebugOverlapMethods }
  ;
  # [cfg (any (feature = "app-debugpathmenu-types"))] pub mod debugpathmenu ;
- # [cfg (feature = "app-debugpathmenu-types")] pub use debugpathmenu :: { DebugPathMenu_PCDriveMenu , IDebugPathMenu_PCDriveMenu , DebugPathMenu_EntryData , IDebugPathMenu_EntryData , DebugPathMenu , IDebugPathMenu , DebugPathMenu_EntryMenu , IDebugPathMenu_EntryMenu , DebugPathMenu_Directory , IDebugPathMenu_Directory , DebugPathMenu_Setting , IDebugPathMenu_Setting , DebugPathMenu_ShowError_ErrorMenuItem , IDebugPathMenu_ShowError_ErrorMenuItem , DebugPathMenu_EntryMenuItem , IDebugPathMenu_EntryMenuItem , DebugPathMenu_Categories , DebugPathMenu_Result , DebugPathMenu_CategoriesMenu , IDebugPathMenu_CategoriesMenu , DebugPathMenu_CategoriesMenu_PCMenuItem , IDebugPathMenu_CategoriesMenu_PCMenuItem , DebugPathMenu_Path , IDebugPathMenu_Path , DebugPathMenu_CategoriesMenu_AssetsMenuItem , IDebugPathMenu_CategoriesMenu_AssetsMenuItem , DebugPathMenu_ShowError , IDebugPathMenu_ShowError , DebugPathMenu_Directory_EnumResult , IDebugPathMenu_Directory_EnumResult }
+ # [cfg (feature = "app-debugpathmenu-types")] pub use debugpathmenu :: { DebugPathMenu_Result , DebugPathMenu_PCDriveMenu , IDebugPathMenu_PCDriveMenu , DebugPathMenu_Categories , DebugPathMenu_CategoriesMenu , IDebugPathMenu_CategoriesMenu , DebugPathMenu_CategoriesMenu_AssetsMenuItem , IDebugPathMenu_CategoriesMenu_AssetsMenuItem , DebugPathMenu_Path , IDebugPathMenu_Path , DebugPathMenu_Directory , IDebugPathMenu_Directory , DebugPathMenu_Setting , IDebugPathMenu_Setting , DebugPathMenu_EntryMenu , IDebugPathMenu_EntryMenu , DebugPathMenu_CategoriesMenu_PCMenuItem , IDebugPathMenu_CategoriesMenu_PCMenuItem , DebugPathMenu_EntryMenuItem , IDebugPathMenu_EntryMenuItem , DebugPathMenu , IDebugPathMenu , DebugPathMenu_EntryData , IDebugPathMenu_EntryData , DebugPathMenu_Directory_EnumResult , IDebugPathMenu_Directory_EnumResult , DebugPathMenu_ShowError_ErrorMenuItem , IDebugPathMenu_ShowError_ErrorMenuItem , DebugPathMenu_ShowError , IDebugPathMenu_ShowError }
  ;
- # [cfg (feature = "app-debugpathmenu")] pub use debugpathmenu :: { IDebugPathMenu_PCDriveMenuMethods , IDebugPathMenu_EntryDataMethods , IDebugPathMenuMethods , IDebugPathMenu_EntryMenuMethods , IDebugPathMenu_DirectoryMethods , IDebugPathMenu_SettingMethods , IDebugPathMenu_ShowError_ErrorMenuItemMethods , IDebugPathMenu_EntryMenuItemMethods , IDebugPathMenu_CategoriesMenuMethods , IDebugPathMenu_CategoriesMenu_PCMenuItemMethods , IDebugPathMenu_PathMethods , IDebugPathMenu_CategoriesMenu_AssetsMenuItemMethods , IDebugPathMenu_ShowErrorMethods , IDebugPathMenu_Directory_EnumResultMethods }
+ # [cfg (feature = "app-debugpathmenu")] pub use debugpathmenu :: { IDebugPathMenu_PCDriveMenuMethods , IDebugPathMenu_CategoriesMenuMethods , IDebugPathMenu_CategoriesMenu_AssetsMenuItemMethods , IDebugPathMenu_PathMethods , IDebugPathMenu_DirectoryMethods , IDebugPathMenu_SettingMethods , IDebugPathMenu_EntryMenuMethods , IDebugPathMenu_CategoriesMenu_PCMenuItemMethods , IDebugPathMenu_EntryMenuItemMethods , IDebugPathMenuMethods , IDebugPathMenu_EntryDataMethods , IDebugPathMenu_Directory_EnumResultMethods , IDebugPathMenu_ShowError_ErrorMenuItemMethods , IDebugPathMenu_ShowErrorMethods }
  ;
  # [cfg (any (feature = "app-debugperf-types"))] pub mod debugperf ;
  # [cfg (feature = "app-debugperf-types")] pub use debugperf :: { DebugPerf , IDebugPerf }
@@ -1447,9 +1447,9 @@
  # [cfg (feature = "app-debugprofile")] pub use debugprofile :: { IDebugProfileMethods }
  ;
  # [cfg (any (feature = "app-debugringmenu-types"))] pub mod debugringmenu ;
- # [cfg (feature = "app-debugringmenu-types")] pub use debugringmenu :: { DebugRingMenu_RingLabelItem , IDebugRingMenu_RingLabelItem , DebugRingMenu_AddAllCommonRingItem , IDebugRingMenu_AddAllCommonRingItem , DebugRingMenu_RingItem , IDebugRingMenu_RingItem , DebugRingMenu , IDebugRingMenu , DebugRingMenu_AddRingItem , IDebugRingMenu_AddRingItem , DebugRingMenu_AddRingItem_SubItem , IDebugRingMenu_AddRingItem_SubItem , DebugRingMenu_RingMenu , IDebugRingMenu_RingMenu }
+ # [cfg (feature = "app-debugringmenu-types")] pub use debugringmenu :: { DebugRingMenu_RingItem , IDebugRingMenu_RingItem , DebugRingMenu_RingLabelItem , IDebugRingMenu_RingLabelItem , DebugRingMenu_AddRingItem , IDebugRingMenu_AddRingItem , DebugRingMenu_AddRingItem_SubItem , IDebugRingMenu_AddRingItem_SubItem , DebugRingMenu , IDebugRingMenu , DebugRingMenu_RingMenu , IDebugRingMenu_RingMenu , DebugRingMenu_AddAllCommonRingItem , IDebugRingMenu_AddAllCommonRingItem }
  ;
- # [cfg (feature = "app-debugringmenu")] pub use debugringmenu :: { IDebugRingMenu_RingLabelItemMethods , IDebugRingMenu_AddAllCommonRingItemMethods , IDebugRingMenu_RingItemMethods , IDebugRingMenuMethods , IDebugRingMenu_AddRingItemMethods , IDebugRingMenu_AddRingItem_SubItemMethods , IDebugRingMenu_RingMenuMethods }
+ # [cfg (feature = "app-debugringmenu")] pub use debugringmenu :: { IDebugRingMenu_RingItemMethods , IDebugRingMenu_RingLabelItemMethods , IDebugRingMenu_AddRingItemMethods , IDebugRingMenu_AddRingItem_SubItemMethods , IDebugRingMenuMethods , IDebugRingMenu_RingMenuMethods , IDebugRingMenu_AddAllCommonRingItemMethods }
  ;
  # [cfg (any (feature = "app-debugsavedatamenu-types"))] pub mod debugsavedatamenu ;
  # [cfg (feature = "app-debugsavedatamenu-types")] pub use debugsavedatamenu :: { DebugSaveDataMenu , IDebugSaveDataMenu }
@@ -1462,9 +1462,9 @@
  # [cfg (feature = "app-debugsavedatapathmenu")] pub use debugsavedatapathmenu :: { IDebugSaveDataPathMenuMethods }
  ;
  # [cfg (any (feature = "app-debugshopmenu-types"))] pub mod debugshopmenu ;
- # [cfg (feature = "app-debugshopmenu-types")] pub use debugshopmenu :: { DebugShopMenu , IDebugShopMenu , DebugShopMenu_ShopCallItem , IDebugShopMenu_ShopCallItem }
+ # [cfg (feature = "app-debugshopmenu-types")] pub use debugshopmenu :: { DebugShopMenu_ShopCallItem , IDebugShopMenu_ShopCallItem , DebugShopMenu , IDebugShopMenu }
  ;
- # [cfg (feature = "app-debugshopmenu")] pub use debugshopmenu :: { IDebugShopMenuMethods , IDebugShopMenu_ShopCallItemMethods }
+ # [cfg (feature = "app-debugshopmenu")] pub use debugshopmenu :: { IDebugShopMenu_ShopCallItemMethods , IDebugShopMenuMethods }
  ;
  # [cfg (any (feature = "app-debugstream-types"))] pub mod debugstream ;
  # [cfg (feature = "app-debugstream-types")] pub use debugstream :: { DebugStream , IDebugStream }
@@ -1477,14 +1477,14 @@
  # [cfg (feature = "app-debugtextwriter")] pub use debugtextwriter :: { IDebugTextWriterMethods }
  ;
  # [cfg (any (feature = "app-debugtransporteritemmenu-types"))] pub mod debugtransporteritemmenu ;
- # [cfg (feature = "app-debugtransporteritemmenu-types")] pub use debugtransporteritemmenu :: { DebugTransporterItemMenu_EditMenuItem , IDebugTransporterItemMenu_EditMenuItem , DebugTransporterItemMenu , IDebugTransporterItemMenu , DebugTransporterItemMenu_SelectMenuItem , IDebugTransporterItemMenu_SelectMenuItem }
+ # [cfg (feature = "app-debugtransporteritemmenu-types")] pub use debugtransporteritemmenu :: { DebugTransporterItemMenu , IDebugTransporterItemMenu , DebugTransporterItemMenu_SelectMenuItem , IDebugTransporterItemMenu_SelectMenuItem , DebugTransporterItemMenu_EditMenuItem , IDebugTransporterItemMenu_EditMenuItem }
  ;
- # [cfg (feature = "app-debugtransporteritemmenu")] pub use debugtransporteritemmenu :: { IDebugTransporterItemMenu_EditMenuItemMethods , IDebugTransporterItemMenuMethods , IDebugTransporterItemMenu_SelectMenuItemMethods }
+ # [cfg (feature = "app-debugtransporteritemmenu")] pub use debugtransporteritemmenu :: { IDebugTransporterItemMenuMethods , IDebugTransporterItemMenu_SelectMenuItemMethods , IDebugTransporterItemMenu_EditMenuItemMethods }
  ;
  # [cfg (any (feature = "app-debugtransportermenu-types"))] pub mod debugtransportermenu ;
- # [cfg (feature = "app-debugtransportermenu-types")] pub use debugtransportermenu :: { DebugTransporterMenu_BaseMenuItem , IDebugTransporterMenu_BaseMenuItem , DebugTransporterMenu_FillAllMenuItem , IDebugTransporterMenu_FillAllMenuItem , DebugTransporterMenu , IDebugTransporterMenu , DebugTransporterMenu_AddAllMenuItem , IDebugTransporterMenu_AddAllMenuItem , DebugTransporterMenu_DeleteAllMenuItem , IDebugTransporterMenu_DeleteAllMenuItem , DebugTransporterMenu_LowestItemMenuItem , IDebugTransporterMenu_LowestItemMenuItem , DebugTransporterMenu_AddByKindMenuItem , IDebugTransporterMenu_AddByKindMenuItem , DebugTransporterMenu_TitleItem , IDebugTransporterMenu_TitleItem }
+ # [cfg (feature = "app-debugtransportermenu-types")] pub use debugtransportermenu :: { DebugTransporterMenu_FillAllMenuItem , IDebugTransporterMenu_FillAllMenuItem , DebugTransporterMenu_AddByKindMenuItem , IDebugTransporterMenu_AddByKindMenuItem , DebugTransporterMenu , IDebugTransporterMenu , DebugTransporterMenu_TitleItem , IDebugTransporterMenu_TitleItem , DebugTransporterMenu_DeleteAllMenuItem , IDebugTransporterMenu_DeleteAllMenuItem , DebugTransporterMenu_BaseMenuItem , IDebugTransporterMenu_BaseMenuItem , DebugTransporterMenu_AddAllMenuItem , IDebugTransporterMenu_AddAllMenuItem , DebugTransporterMenu_LowestItemMenuItem , IDebugTransporterMenu_LowestItemMenuItem }
  ;
- # [cfg (feature = "app-debugtransportermenu")] pub use debugtransportermenu :: { IDebugTransporterMenu_BaseMenuItemMethods , IDebugTransporterMenu_FillAllMenuItemMethods , IDebugTransporterMenuMethods , IDebugTransporterMenu_AddAllMenuItemMethods , IDebugTransporterMenu_DeleteAllMenuItemMethods , IDebugTransporterMenu_LowestItemMenuItemMethods , IDebugTransporterMenu_AddByKindMenuItemMethods , IDebugTransporterMenu_TitleItemMethods }
+ # [cfg (feature = "app-debugtransportermenu")] pub use debugtransportermenu :: { IDebugTransporterMenu_FillAllMenuItemMethods , IDebugTransporterMenu_AddByKindMenuItemMethods , IDebugTransporterMenuMethods , IDebugTransporterMenu_TitleItemMethods , IDebugTransporterMenu_DeleteAllMenuItemMethods , IDebugTransporterMenu_BaseMenuItemMethods , IDebugTransporterMenu_AddAllMenuItemMethods , IDebugTransporterMenu_LowestItemMenuItemMethods }
  ;
  # [cfg (any (feature = "app-debuguirebuildchecker-types"))] pub mod debuguirebuildchecker ;
  # [cfg (feature = "app-debuguirebuildchecker-types")] pub use debuguirebuildchecker :: { DebugUIRebuildChecker , IDebugUIRebuildChecker }
@@ -1492,19 +1492,19 @@
  # [cfg (feature = "app-debuguirebuildchecker")] pub use debuguirebuildchecker :: { IDebugUIRebuildCheckerMethods }
  ;
  # [cfg (any (feature = "app-debugunitaccessorymenu-types"))] pub mod debugunitaccessorymenu ;
- # [cfg (feature = "app-debugunitaccessorymenu-types")] pub use debugunitaccessorymenu :: { DebugUnitAccessoryMenu_UnitAccessoryRemoveItem , IDebugUnitAccessoryMenu_UnitAccessoryRemoveItem , DebugUnitAccessoryMenu_UnitAccessoryItem , IDebugUnitAccessoryMenu_UnitAccessoryItem , DebugUnitAccessoryMenu , IDebugUnitAccessoryMenu , DebugUnitAccessoryMenu_UnitAccessoryAddItem , IDebugUnitAccessoryMenu_UnitAccessoryAddItem , DebugUnitAccessoryMenu_UnitBaseItem , IDebugUnitAccessoryMenu_UnitBaseItem }
+ # [cfg (feature = "app-debugunitaccessorymenu-types")] pub use debugunitaccessorymenu :: { DebugUnitAccessoryMenu_UnitAccessoryAddItem , IDebugUnitAccessoryMenu_UnitAccessoryAddItem , DebugUnitAccessoryMenu , IDebugUnitAccessoryMenu , DebugUnitAccessoryMenu_UnitBaseItem , IDebugUnitAccessoryMenu_UnitBaseItem , DebugUnitAccessoryMenu_UnitAccessoryRemoveItem , IDebugUnitAccessoryMenu_UnitAccessoryRemoveItem , DebugUnitAccessoryMenu_UnitAccessoryItem , IDebugUnitAccessoryMenu_UnitAccessoryItem }
  ;
- # [cfg (feature = "app-debugunitaccessorymenu")] pub use debugunitaccessorymenu :: { IDebugUnitAccessoryMenu_UnitAccessoryRemoveItemMethods , IDebugUnitAccessoryMenu_UnitAccessoryItemMethods , IDebugUnitAccessoryMenuMethods , IDebugUnitAccessoryMenu_UnitAccessoryAddItemMethods , IDebugUnitAccessoryMenu_UnitBaseItemMethods }
+ # [cfg (feature = "app-debugunitaccessorymenu")] pub use debugunitaccessorymenu :: { IDebugUnitAccessoryMenu_UnitAccessoryAddItemMethods , IDebugUnitAccessoryMenuMethods , IDebugUnitAccessoryMenu_UnitBaseItemMethods , IDebugUnitAccessoryMenu_UnitAccessoryRemoveItemMethods , IDebugUnitAccessoryMenu_UnitAccessoryItemMethods }
  ;
  # [cfg (any (feature = "app-debugunititemmenu-types"))] pub mod debugunititemmenu ;
- # [cfg (feature = "app-debugunititemmenu-types")] pub use debugunititemmenu :: { DebugUnitItemMenu_SubMenu_DropMenuItem , IDebugUnitItemMenu_SubMenu_DropMenuItem , DebugUnitItemMenu , IDebugUnitItemMenu , DebugUnitItemMenu_SubMenu_NameMenuItem , IDebugUnitItemMenu_SubMenu_NameMenuItem , DebugUnitItemMenu_RefineMenu_RefineMenuItem , IDebugUnitItemMenu_RefineMenu_RefineMenuItem , DebugUnitItemMenu_EngraveMenu , IDebugUnitItemMenu_EngraveMenu , DebugUnitItemMenu_SubMenu_EngraveMenuItem , IDebugUnitItemMenu_SubMenu_EngraveMenuItem , DebugUnitItemMenu_EngraveMenu_EngraveMenuItem , IDebugUnitItemMenu_EngraveMenu_EngraveMenuItem , DebugUnitItemMenu_RefineMenu_BaseMenuItem , IDebugUnitItemMenu_RefineMenu_BaseMenuItem , DebugUnitItemMenu_EditItemMenuItem , IDebugUnitItemMenu_EditItemMenuItem , DebugUnitItemMenu_SubMenu_ItemBaseMenuItem , IDebugUnitItemMenu_SubMenu_ItemBaseMenuItem , DebugUnitItemMenu_SubMenu_RefineMenuItem , IDebugUnitItemMenu_SubMenu_RefineMenuItem , DebugUnitItemMenu_EngraveMenu_ClearEngraveMenuItem , IDebugUnitItemMenu_EngraveMenu_ClearEngraveMenuItem , DebugUnitItemMenu_SubMenu_SellingMenuItem , IDebugUnitItemMenu_SubMenu_SellingMenuItem , DebugUnitItemMenu_SubMenu_EnchantMenuItem , IDebugUnitItemMenu_SubMenu_EnchantMenuItem , DebugUnitItemMenu_UnitDebugMenu , IDebugUnitItemMenu_UnitDebugMenu , DebugUnitItemMenu_SubMenu_PriceMenuItem , IDebugUnitItemMenu_SubMenu_PriceMenuItem , DebugUnitItemMenu_SubMenu_BaseMenuItem , IDebugUnitItemMenu_SubMenu_BaseMenuItem , DebugUnitItemMenu_ItemListMenu_ItemMenuItem , IDebugUnitItemMenu_ItemListMenu_ItemMenuItem , DebugUnitItemMenu_SubMenu , IDebugUnitItemMenu_SubMenu , DebugUnitItemMenu_EngraveMenu_BaseMenuItem , IDebugUnitItemMenu_EngraveMenu_BaseMenuItem , DebugUnitItemMenu_ItemListMenu , IDebugUnitItemMenu_ItemListMenu , DebugUnitItemMenu_SubMenu_FlagMenuItem , IDebugUnitItemMenu_SubMenu_FlagMenuItem , DebugUnitItemMenu_SubMenu_EquipMenuItem , IDebugUnitItemMenu_SubMenu_EquipMenuItem , DebugUnitItemMenu_SubMenu_EnchantHashMenuItem , IDebugUnitItemMenu_SubMenu_EnchantHashMenuItem , DebugUnitItemMenu_RefineMenu_EvolveMenuItem , IDebugUnitItemMenu_RefineMenu_EvolveMenuItem , DebugUnitItemMenu_RefineMenu , IDebugUnitItemMenu_RefineMenu }
+ # [cfg (feature = "app-debugunititemmenu-types")] pub use debugunititemmenu :: { DebugUnitItemMenu_SubMenu_SellingMenuItem , IDebugUnitItemMenu_SubMenu_SellingMenuItem , DebugUnitItemMenu_ItemListMenu , IDebugUnitItemMenu_ItemListMenu , DebugUnitItemMenu_RefineMenu_EvolveMenuItem , IDebugUnitItemMenu_RefineMenu_EvolveMenuItem , DebugUnitItemMenu_RefineMenu , IDebugUnitItemMenu_RefineMenu , DebugUnitItemMenu_UnitDebugMenu , IDebugUnitItemMenu_UnitDebugMenu , DebugUnitItemMenu_SubMenu_EnchantHashMenuItem , IDebugUnitItemMenu_SubMenu_EnchantHashMenuItem , DebugUnitItemMenu , IDebugUnitItemMenu , DebugUnitItemMenu_SubMenu_NameMenuItem , IDebugUnitItemMenu_SubMenu_NameMenuItem , DebugUnitItemMenu_EditItemMenuItem , IDebugUnitItemMenu_EditItemMenuItem , DebugUnitItemMenu_SubMenu_EquipMenuItem , IDebugUnitItemMenu_SubMenu_EquipMenuItem , DebugUnitItemMenu_EngraveMenu , IDebugUnitItemMenu_EngraveMenu , DebugUnitItemMenu_SubMenu_DropMenuItem , IDebugUnitItemMenu_SubMenu_DropMenuItem , DebugUnitItemMenu_SubMenu_BaseMenuItem , IDebugUnitItemMenu_SubMenu_BaseMenuItem , DebugUnitItemMenu_EngraveMenu_BaseMenuItem , IDebugUnitItemMenu_EngraveMenu_BaseMenuItem , DebugUnitItemMenu_ItemListMenu_ItemMenuItem , IDebugUnitItemMenu_ItemListMenu_ItemMenuItem , DebugUnitItemMenu_RefineMenu_BaseMenuItem , IDebugUnitItemMenu_RefineMenu_BaseMenuItem , DebugUnitItemMenu_SubMenu_EngraveMenuItem , IDebugUnitItemMenu_SubMenu_EngraveMenuItem , DebugUnitItemMenu_SubMenu_ItemBaseMenuItem , IDebugUnitItemMenu_SubMenu_ItemBaseMenuItem , DebugUnitItemMenu_SubMenu_FlagMenuItem , IDebugUnitItemMenu_SubMenu_FlagMenuItem , DebugUnitItemMenu_EngraveMenu_EngraveMenuItem , IDebugUnitItemMenu_EngraveMenu_EngraveMenuItem , DebugUnitItemMenu_SubMenu_EnchantMenuItem , IDebugUnitItemMenu_SubMenu_EnchantMenuItem , DebugUnitItemMenu_RefineMenu_RefineMenuItem , IDebugUnitItemMenu_RefineMenu_RefineMenuItem , DebugUnitItemMenu_EngraveMenu_ClearEngraveMenuItem , IDebugUnitItemMenu_EngraveMenu_ClearEngraveMenuItem , DebugUnitItemMenu_SubMenu_PriceMenuItem , IDebugUnitItemMenu_SubMenu_PriceMenuItem , DebugUnitItemMenu_SubMenu_RefineMenuItem , IDebugUnitItemMenu_SubMenu_RefineMenuItem , DebugUnitItemMenu_SubMenu , IDebugUnitItemMenu_SubMenu }
  ;
- # [cfg (feature = "app-debugunititemmenu")] pub use debugunititemmenu :: { IDebugUnitItemMenu_SubMenu_DropMenuItemMethods , IDebugUnitItemMenuMethods , IDebugUnitItemMenu_SubMenu_NameMenuItemMethods , IDebugUnitItemMenu_RefineMenu_RefineMenuItemMethods , IDebugUnitItemMenu_EngraveMenuMethods , IDebugUnitItemMenu_SubMenu_EngraveMenuItemMethods , IDebugUnitItemMenu_EngraveMenu_EngraveMenuItemMethods , IDebugUnitItemMenu_RefineMenu_BaseMenuItemMethods , IDebugUnitItemMenu_EditItemMenuItemMethods , IDebugUnitItemMenu_SubMenu_ItemBaseMenuItemMethods , IDebugUnitItemMenu_SubMenu_RefineMenuItemMethods , IDebugUnitItemMenu_EngraveMenu_ClearEngraveMenuItemMethods , IDebugUnitItemMenu_SubMenu_SellingMenuItemMethods , IDebugUnitItemMenu_SubMenu_EnchantMenuItemMethods , IDebugUnitItemMenu_UnitDebugMenuMethods , IDebugUnitItemMenu_SubMenu_PriceMenuItemMethods , IDebugUnitItemMenu_SubMenu_BaseMenuItemMethods , IDebugUnitItemMenu_ItemListMenu_ItemMenuItemMethods , IDebugUnitItemMenu_SubMenuMethods , IDebugUnitItemMenu_EngraveMenu_BaseMenuItemMethods , IDebugUnitItemMenu_ItemListMenuMethods , IDebugUnitItemMenu_SubMenu_FlagMenuItemMethods , IDebugUnitItemMenu_SubMenu_EquipMenuItemMethods , IDebugUnitItemMenu_SubMenu_EnchantHashMenuItemMethods , IDebugUnitItemMenu_RefineMenu_EvolveMenuItemMethods , IDebugUnitItemMenu_RefineMenuMethods }
+ # [cfg (feature = "app-debugunititemmenu")] pub use debugunititemmenu :: { IDebugUnitItemMenu_SubMenu_SellingMenuItemMethods , IDebugUnitItemMenu_ItemListMenuMethods , IDebugUnitItemMenu_RefineMenu_EvolveMenuItemMethods , IDebugUnitItemMenu_RefineMenuMethods , IDebugUnitItemMenu_UnitDebugMenuMethods , IDebugUnitItemMenu_SubMenu_EnchantHashMenuItemMethods , IDebugUnitItemMenuMethods , IDebugUnitItemMenu_SubMenu_NameMenuItemMethods , IDebugUnitItemMenu_EditItemMenuItemMethods , IDebugUnitItemMenu_SubMenu_EquipMenuItemMethods , IDebugUnitItemMenu_EngraveMenuMethods , IDebugUnitItemMenu_SubMenu_DropMenuItemMethods , IDebugUnitItemMenu_SubMenu_BaseMenuItemMethods , IDebugUnitItemMenu_EngraveMenu_BaseMenuItemMethods , IDebugUnitItemMenu_ItemListMenu_ItemMenuItemMethods , IDebugUnitItemMenu_RefineMenu_BaseMenuItemMethods , IDebugUnitItemMenu_SubMenu_EngraveMenuItemMethods , IDebugUnitItemMenu_SubMenu_ItemBaseMenuItemMethods , IDebugUnitItemMenu_SubMenu_FlagMenuItemMethods , IDebugUnitItemMenu_EngraveMenu_EngraveMenuItemMethods , IDebugUnitItemMenu_SubMenu_EnchantMenuItemMethods , IDebugUnitItemMenu_RefineMenu_RefineMenuItemMethods , IDebugUnitItemMenu_EngraveMenu_ClearEngraveMenuItemMethods , IDebugUnitItemMenu_SubMenu_PriceMenuItemMethods , IDebugUnitItemMenu_SubMenu_RefineMenuItemMethods , IDebugUnitItemMenu_SubMenuMethods }
  ;
  # [cfg (any (feature = "app-debugunitringmenu-types"))] pub mod debugunitringmenu ;
- # [cfg (feature = "app-debugunitringmenu-types")] pub use debugunitringmenu :: { DebugUnitRingMenu_UnitRingMenu , IDebugUnitRingMenu_UnitRingMenu , DebugUnitRingMenu , IDebugUnitRingMenu , DebugUnitRingMenu_RingItemBase , IDebugUnitRingMenu_RingItemBase , DebugUnitRingMenu_CurrentRingLabelItem , IDebugUnitRingMenu_CurrentRingLabelItem , DebugUnitRingMenu_EmblemRingLabelItem , IDebugUnitRingMenu_EmblemRingLabelItem , DebugUnitRingMenu_CommonRingLabelItem , IDebugUnitRingMenu_CommonRingLabelItem , DebugUnitRingMenu_UnitMenuItem , IDebugUnitRingMenu_UnitMenuItem , DebugUnitRingMenu_ClearRingItem , IDebugUnitRingMenu_ClearRingItem , DebugUnitRingMenu_CommonRingItem , IDebugUnitRingMenu_CommonRingItem , DebugUnitRingMenu_RingLabelItemBase , IDebugUnitRingMenu_RingLabelItemBase , DebugUnitRingMenu_EmblemRingItem , IDebugUnitRingMenu_EmblemRingItem }
+ # [cfg (feature = "app-debugunitringmenu-types")] pub use debugunitringmenu :: { DebugUnitRingMenu , IDebugUnitRingMenu , DebugUnitRingMenu_RingItemBase , IDebugUnitRingMenu_RingItemBase , DebugUnitRingMenu_ClearRingItem , IDebugUnitRingMenu_ClearRingItem , DebugUnitRingMenu_UnitMenuItem , IDebugUnitRingMenu_UnitMenuItem , DebugUnitRingMenu_CommonRingItem , IDebugUnitRingMenu_CommonRingItem , DebugUnitRingMenu_UnitRingMenu , IDebugUnitRingMenu_UnitRingMenu , DebugUnitRingMenu_EmblemRingItem , IDebugUnitRingMenu_EmblemRingItem , DebugUnitRingMenu_EmblemRingLabelItem , IDebugUnitRingMenu_EmblemRingLabelItem , DebugUnitRingMenu_CurrentRingLabelItem , IDebugUnitRingMenu_CurrentRingLabelItem , DebugUnitRingMenu_CommonRingLabelItem , IDebugUnitRingMenu_CommonRingLabelItem , DebugUnitRingMenu_RingLabelItemBase , IDebugUnitRingMenu_RingLabelItemBase }
  ;
- # [cfg (feature = "app-debugunitringmenu")] pub use debugunitringmenu :: { IDebugUnitRingMenu_UnitRingMenuMethods , IDebugUnitRingMenuMethods , IDebugUnitRingMenu_RingItemBaseMethods , IDebugUnitRingMenu_CurrentRingLabelItemMethods , IDebugUnitRingMenu_EmblemRingLabelItemMethods , IDebugUnitRingMenu_CommonRingLabelItemMethods , IDebugUnitRingMenu_UnitMenuItemMethods , IDebugUnitRingMenu_ClearRingItemMethods , IDebugUnitRingMenu_CommonRingItemMethods , IDebugUnitRingMenu_RingLabelItemBaseMethods , IDebugUnitRingMenu_EmblemRingItemMethods }
+ # [cfg (feature = "app-debugunitringmenu")] pub use debugunitringmenu :: { IDebugUnitRingMenuMethods , IDebugUnitRingMenu_RingItemBaseMethods , IDebugUnitRingMenu_ClearRingItemMethods , IDebugUnitRingMenu_UnitMenuItemMethods , IDebugUnitRingMenu_CommonRingItemMethods , IDebugUnitRingMenu_UnitRingMenuMethods , IDebugUnitRingMenu_EmblemRingItemMethods , IDebugUnitRingMenu_EmblemRingLabelItemMethods , IDebugUnitRingMenu_CurrentRingLabelItemMethods , IDebugUnitRingMenu_CommonRingLabelItemMethods , IDebugUnitRingMenu_RingLabelItemBaseMethods }
  ;
  # [cfg (any (feature = "app-debuguserexceptionhandler-types"))] pub mod debuguserexceptionhandler ;
  # [cfg (feature = "app-debuguserexceptionhandler-types")] pub use debuguserexceptionhandler :: { DebugUserExceptionHandler , IDebugUserExceptionHandler }
@@ -1578,7 +1578,7 @@
  # [cfg (feature = "app-difficultyselectmenuitemcontent")] pub use difficultyselectmenuitemcontent :: { IDifficultySelectMenuItemContentMethods }
  ;
  # [cfg (any (feature = "app-dir_2-types"))] pub mod dir_2 ;
- # [cfg (feature = "app-dir_2-types")] pub use dir_2 :: { Dir_2 , IDir_2 , Dir_Type }
+ # [cfg (feature = "app-dir_2-types")] pub use dir_2 :: { Dir_Type , Dir_2 , IDir_2 }
  ;
  # [cfg (feature = "app-dir_2")] pub use dir_2 :: { IDir_2Methods }
  ;
@@ -1588,14 +1588,14 @@
  # [cfg (feature = "app-disableitem")] pub use disableitem :: { IDisableItemMethods }
  ;
  # [cfg (any (feature = "app-discarditemmenu-types"))] pub mod discarditemmenu ;
- # [cfg (feature = "app-discarditemmenu-types")] pub use discarditemmenu :: { DiscardItemMenu_ConfirmDialog_YesEventHandler , IDiscardItemMenu_ConfirmDialog_YesEventHandler , DiscardItemMenu_ConfirmDialog_YesDialogItem , IDiscardItemMenu_ConfirmDialog_YesDialogItem , DiscardItemMenu_DecideCallback , IDiscardItemMenu_DecideCallback , DiscardItemMenu_DiscardItemMenuItem , IDiscardItemMenu_DiscardItemMenuItem , DiscardItemMenu , IDiscardItemMenu , DiscardItemMenu_CancelCallback , IDiscardItemMenu_CancelCallback , DiscardItemMenu_DiscardItemEmptyMenuItem , IDiscardItemMenu_DiscardItemEmptyMenuItem , DiscardItemMenu_ConfirmDialog , IDiscardItemMenu_ConfirmDialog }
+ # [cfg (feature = "app-discarditemmenu-types")] pub use discarditemmenu :: { DiscardItemMenu_ConfirmDialog_YesDialogItem , IDiscardItemMenu_ConfirmDialog_YesDialogItem , DiscardItemMenu_DecideCallback , IDiscardItemMenu_DecideCallback , DiscardItemMenu_DiscardItemMenuItem , IDiscardItemMenu_DiscardItemMenuItem , DiscardItemMenu_CancelCallback , IDiscardItemMenu_CancelCallback , DiscardItemMenu , IDiscardItemMenu , DiscardItemMenu_DiscardItemEmptyMenuItem , IDiscardItemMenu_DiscardItemEmptyMenuItem , DiscardItemMenu_ConfirmDialog , IDiscardItemMenu_ConfirmDialog , DiscardItemMenu_ConfirmDialog_YesEventHandler , IDiscardItemMenu_ConfirmDialog_YesEventHandler }
  ;
- # [cfg (feature = "app-discarditemmenu")] pub use discarditemmenu :: { IDiscardItemMenu_ConfirmDialog_YesEventHandlerMethods , IDiscardItemMenu_ConfirmDialog_YesDialogItemMethods , IDiscardItemMenu_DecideCallbackMethods , IDiscardItemMenu_DiscardItemMenuItemMethods , IDiscardItemMenuMethods , IDiscardItemMenu_CancelCallbackMethods , IDiscardItemMenu_DiscardItemEmptyMenuItemMethods , IDiscardItemMenu_ConfirmDialogMethods }
+ # [cfg (feature = "app-discarditemmenu")] pub use discarditemmenu :: { IDiscardItemMenu_ConfirmDialog_YesDialogItemMethods , IDiscardItemMenu_DecideCallbackMethods , IDiscardItemMenu_DiscardItemMenuItemMethods , IDiscardItemMenu_CancelCallbackMethods , IDiscardItemMenuMethods , IDiscardItemMenu_DiscardItemEmptyMenuItemMethods , IDiscardItemMenu_ConfirmDialogMethods , IDiscardItemMenu_ConfirmDialog_YesEventHandlerMethods }
  ;
  # [cfg (any (feature = "app-discarditemmenucontent-types"))] pub mod discarditemmenucontent ;
- # [cfg (feature = "app-discarditemmenucontent-types")] pub use discarditemmenucontent :: { DiscardItemMenuContent , IDiscardItemMenuContent , DiscardItemMenuContent_KindIcon , IDiscardItemMenuContent_KindIcon }
+ # [cfg (feature = "app-discarditemmenucontent-types")] pub use discarditemmenucontent :: { DiscardItemMenuContent_KindIcon , IDiscardItemMenuContent_KindIcon , DiscardItemMenuContent , IDiscardItemMenuContent }
  ;
- # [cfg (feature = "app-discarditemmenucontent")] pub use discarditemmenucontent :: { IDiscardItemMenuContentMethods , IDiscardItemMenuContent_KindIconMethods }
+ # [cfg (feature = "app-discarditemmenucontent")] pub use discarditemmenucontent :: { IDiscardItemMenuContent_KindIconMethods , IDiscardItemMenuContentMethods }
  ;
  # [cfg (any (feature = "app-discarditemroot-types"))] pub mod discarditemroot ;
  # [cfg (feature = "app-discarditemroot-types")] pub use discarditemroot :: { DiscardItemRoot , IDiscardItemRoot }
@@ -1603,7 +1603,7 @@
  # [cfg (feature = "app-discarditemroot")] pub use discarditemroot :: { IDiscardItemRootMethods }
  ;
  # [cfg (any (feature = "app-dish-types"))] pub mod dish ;
- # [cfg (feature = "app-dish-types")] pub use dish :: { Dish , IDish , Dish_RelianceResult_TryResult , Dish_RelianceResult , Dish_Liking }
+ # [cfg (feature = "app-dish-types")] pub use dish :: { Dish_Liking , Dish , IDish , Dish_RelianceResult_TryResult , Dish_RelianceResult }
  ;
  # [cfg (feature = "app-dish")] pub use dish :: { IDishMethods }
  ;
@@ -1623,9 +1623,9 @@
  # [cfg (feature = "app-dishresultdialogparamcontent")] pub use dishresultdialogparamcontent :: { IDishResultDialogParamContentMethods }
  ;
  # [cfg (any (feature = "app-disposdata-types"))] pub mod disposdata ;
- # [cfg (feature = "app-disposdata-types")] pub use disposdata :: { DisposData_AIFlagField , IDisposData_AIFlagField , DisposData_State , DisposData , IDisposData , DisposData_Flags , DisposData_FlagField , IDisposData_FlagField , DisposData_AIFlags , DisposData_Item , IDisposData_Item , DisposData_Directions }
+ # [cfg (feature = "app-disposdata-types")] pub use disposdata :: { DisposData_AIFlags , DisposData_Directions , DisposData_Flags , DisposData_State , DisposData_Item , IDisposData_Item , DisposData , IDisposData , DisposData_AIFlagField , IDisposData_AIFlagField , DisposData_FlagField , IDisposData_FlagField }
  ;
- # [cfg (feature = "app-disposdata")] pub use disposdata :: { IDisposData_AIFlagFieldMethods , IDisposDataMethods , IDisposData_FlagFieldMethods , IDisposData_ItemMethods }
+ # [cfg (feature = "app-disposdata")] pub use disposdata :: { IDisposData_ItemMethods , IDisposDataMethods , IDisposData_AIFlagFieldMethods , IDisposData_FlagFieldMethods }
  ;
  # [cfg (any (feature = "app-disposgroup-types"))] pub mod disposgroup ;
  # [cfg (feature = "app-disposgroup-types")] pub use disposgroup :: { DisposGroup , IDisposGroup }
@@ -1638,14 +1638,14 @@
  # [cfg (feature = "app-disposmanager")] pub use disposmanager :: { IDisposManagerMethods }
  ;
  # [cfg (any (feature = "app-disposunit-types"))] pub mod disposunit ;
- # [cfg (feature = "app-disposunit-types")] pub use disposunit :: { DisposUnit , IDisposUnit , DisposUnit_Item }
+ # [cfg (feature = "app-disposunit-types")] pub use disposunit :: { DisposUnit_Item , DisposUnit , IDisposUnit }
  ;
  # [cfg (feature = "app-disposunit")] pub use disposunit :: { IDisposUnitMethods }
  ;
  # [cfg (any (feature = "app-dlcmanager-types"))] pub mod dlcmanager ;
- # [cfg (feature = "app-dlcmanager-types")] pub use dlcmanager :: { DLCManager_DLCList , IDLCManager_DLCList , DLCManager_MountData , IDLCManager_MountData , DLCManager , IDLCManager , DLCManager_Content }
+ # [cfg (feature = "app-dlcmanager-types")] pub use dlcmanager :: { DLCManager , IDLCManager , DLCManager_Content , DLCManager_DLCList , IDLCManager_DLCList , DLCManager_MountData , IDLCManager_MountData }
  ;
- # [cfg (feature = "app-dlcmanager")] pub use dlcmanager :: { IDLCManager_DLCListMethods , IDLCManager_MountDataMethods , IDLCManagerMethods }
+ # [cfg (feature = "app-dlcmanager")] pub use dlcmanager :: { IDLCManagerMethods , IDLCManager_DLCListMethods , IDLCManager_MountDataMethods }
  ;
  # [cfg (any (feature = "app-doorinspector-types"))] pub mod doorinspector ;
  # [cfg (feature = "app-doorinspector-types")] pub use doorinspector :: { DoorInspector , IDoorInspector }
@@ -1654,24 +1654,24 @@
  ;
  # [cfg (any (feature = "app-dragon_ride-billboardtypes-types" , feature = "app-dragon_ride-fadetype_2-types" , feature = "app-dragon_ride-levels-types" , feature = "app-dragon_ride-ranks-types"))] pub mod dragon_ride ;
  # [cfg (any (feature = "app-dragonridecamera-types"))] pub mod dragonridecamera ;
- # [cfg (feature = "app-dragonridecamera-types")] pub use dragonridecamera :: { DragonRideCamera_TargetControleFlag , DragonRideCamera , IDragonRideCamera , DragonRideCamera_CutinState }
+ # [cfg (feature = "app-dragonridecamera-types")] pub use dragonridecamera :: { DragonRideCamera , IDragonRideCamera , DragonRideCamera_CutinState , DragonRideCamera_TargetControleFlag }
  ;
  # [cfg (feature = "app-dragonridecamera")] pub use dragonridecamera :: { IDragonRideCameraMethods }
  ;
  # [cfg (any (feature = "app-dragonrideconfig-types"))] pub mod dragonrideconfig ;
- # [cfg (feature = "app-dragonrideconfig-types")] pub use dragonrideconfig :: { DragonRideConfig , IDragonRideConfig , DragonRideConfig_ResultConfig , IDragonRideConfig_ResultConfig , DragonRideConfig_ShotConfig , IDragonRideConfig_ShotConfig }
+ # [cfg (feature = "app-dragonrideconfig-types")] pub use dragonrideconfig :: { DragonRideConfig_ShotConfig , IDragonRideConfig_ShotConfig , DragonRideConfig , IDragonRideConfig , DragonRideConfig_ResultConfig , IDragonRideConfig_ResultConfig }
  ;
- # [cfg (feature = "app-dragonrideconfig")] pub use dragonrideconfig :: { IDragonRideConfigMethods , IDragonRideConfig_ResultConfigMethods , IDragonRideConfig_ShotConfigMethods }
+ # [cfg (feature = "app-dragonrideconfig")] pub use dragonrideconfig :: { IDragonRideConfig_ShotConfigMethods , IDragonRideConfigMethods , IDragonRideConfig_ResultConfigMethods }
  ;
  # [cfg (any (feature = "app-dragonridedifficultselectmenu-types"))] pub mod dragonridedifficultselectmenu ;
- # [cfg (feature = "app-dragonridedifficultselectmenu-types")] pub use dragonridedifficultselectmenu :: { DragonRideDifficultSelectMenu_DecideEventHandler , IDragonRideDifficultSelectMenu_DecideEventHandler , DragonRideDifficultSelectMenu_DifficultyItem , IDragonRideDifficultSelectMenu_DifficultyItem , DragonRideDifficultSelectMenu_Result2 , DragonRideDifficultSelectMenu , IDragonRideDifficultSelectMenu }
+ # [cfg (feature = "app-dragonridedifficultselectmenu-types")] pub use dragonridedifficultselectmenu :: { DragonRideDifficultSelectMenu_DecideEventHandler , IDragonRideDifficultSelectMenu_DecideEventHandler , DragonRideDifficultSelectMenu , IDragonRideDifficultSelectMenu , DragonRideDifficultSelectMenu_DifficultyItem , IDragonRideDifficultSelectMenu_DifficultyItem , DragonRideDifficultSelectMenu_Result2 }
  ;
- # [cfg (feature = "app-dragonridedifficultselectmenu")] pub use dragonridedifficultselectmenu :: { IDragonRideDifficultSelectMenu_DecideEventHandlerMethods , IDragonRideDifficultSelectMenu_DifficultyItemMethods , IDragonRideDifficultSelectMenuMethods }
+ # [cfg (feature = "app-dragonridedifficultselectmenu")] pub use dragonridedifficultselectmenu :: { IDragonRideDifficultSelectMenu_DecideEventHandlerMethods , IDragonRideDifficultSelectMenuMethods , IDragonRideDifficultSelectMenu_DifficultyItemMethods }
  ;
  # [cfg (any (feature = "app-dragonrideeffectmanager-types"))] pub mod dragonrideeffectmanager ;
- # [cfg (feature = "app-dragonrideeffectmanager-types")] pub use dragonrideeffectmanager :: { DragonRideEffectManager_TypeIndex , DragonRideEffectManager , IDragonRideEffectManager , DragonRideEffectManager_EffectReserver , IDragonRideEffectManager_EffectReserver }
+ # [cfg (feature = "app-dragonrideeffectmanager-types")] pub use dragonrideeffectmanager :: { DragonRideEffectManager_TypeIndex , DragonRideEffectManager_EffectReserver , IDragonRideEffectManager_EffectReserver , DragonRideEffectManager , IDragonRideEffectManager }
  ;
- # [cfg (feature = "app-dragonrideeffectmanager")] pub use dragonrideeffectmanager :: { IDragonRideEffectManagerMethods , IDragonRideEffectManager_EffectReserverMethods }
+ # [cfg (feature = "app-dragonrideeffectmanager")] pub use dragonrideeffectmanager :: { IDragonRideEffectManager_EffectReserverMethods , IDragonRideEffectManagerMethods }
  ;
  # [cfg (any (feature = "app-dragonrideeventcamerachecker-types"))] pub mod dragonrideeventcamerachecker ;
  # [cfg (feature = "app-dragonrideeventcamerachecker-types")] pub use dragonrideeventcamerachecker :: { DragonRideEventCameraChecker , IDragonRideEventCameraChecker }
@@ -1699,7 +1699,7 @@
  # [cfg (feature = "app-dragonridefinishtelopreciever")] pub use dragonridefinishtelopreciever :: { IDragonRideFinishtelopRecieverMethods }
  ;
  # [cfg (any (feature = "app-dragonridegamesequence-types"))] pub mod dragonridegamesequence ;
- # [cfg (feature = "app-dragonridegamesequence-types")] pub use dragonridegamesequence :: { DragonRideGameSequence_Label , DragonRideGameSequence , IDragonRideGameSequence }
+ # [cfg (feature = "app-dragonridegamesequence-types")] pub use dragonridegamesequence :: { DragonRideGameSequence , IDragonRideGameSequence , DragonRideGameSequence_Label }
  ;
  # [cfg (feature = "app-dragonridegamesequence")] pub use dragonridegamesequence :: { IDragonRideGameSequenceMethods }
  ;
@@ -1754,9 +1754,9 @@
  # [cfg (feature = "app-dragonriderestartwindreciever")] pub use dragonriderestartwindreciever :: { IDragonRideRestartWindRecieverMethods }
  ;
  # [cfg (any (feature = "app-dragonrideresultui-types"))] pub mod dragonrideresultui ;
- # [cfg (feature = "app-dragonrideresultui-types")] pub use dragonrideresultui :: { DragonRideResultUI_DragonRideResultUITarget , IDragonRideResultUI_DragonRideResultUITarget , DragonRideResultUI_DataSet , IDragonRideResultUI_DataSet , DragonRideResultUI_ResultPhase , DragonRideResultUI , IDragonRideResultUI }
+ # [cfg (feature = "app-dragonrideresultui-types")] pub use dragonrideresultui :: { DragonRideResultUI_ResultPhase , DragonRideResultUI_DataSet , IDragonRideResultUI_DataSet , DragonRideResultUI_DragonRideResultUITarget , IDragonRideResultUI_DragonRideResultUITarget , DragonRideResultUI , IDragonRideResultUI }
  ;
- # [cfg (feature = "app-dragonrideresultui")] pub use dragonrideresultui :: { IDragonRideResultUI_DragonRideResultUITargetMethods , IDragonRideResultUI_DataSetMethods , IDragonRideResultUIMethods }
+ # [cfg (feature = "app-dragonrideresultui")] pub use dragonrideresultui :: { IDragonRideResultUI_DataSetMethods , IDragonRideResultUI_DragonRideResultUITargetMethods , IDragonRideResultUIMethods }
  ;
  # [cfg (any (feature = "app-dragonridescore-types"))] pub mod dragonridescore ;
  # [cfg (feature = "app-dragonridescore-types")] pub use dragonridescore :: { DragonRideScore , IDragonRideScore }
@@ -1764,9 +1764,9 @@
  # [cfg (feature = "app-dragonridescore")] pub use dragonridescore :: { IDragonRideScoreMethods }
  ;
  # [cfg (any (feature = "app-dragonridesequence-types"))] pub mod dragonridesequence ;
- # [cfg (feature = "app-dragonridesequence-types")] pub use dragonridesequence :: { DragonRideSequence_PrizeData , IDragonRideSequence_PrizeData , DragonRideSequence_Label , DragonRideSequence , IDragonRideSequence }
+ # [cfg (feature = "app-dragonridesequence-types")] pub use dragonridesequence :: { DragonRideSequence , IDragonRideSequence , DragonRideSequence_Label , DragonRideSequence_PrizeData , IDragonRideSequence_PrizeData }
  ;
- # [cfg (feature = "app-dragonridesequence")] pub use dragonridesequence :: { IDragonRideSequence_PrizeDataMethods , IDragonRideSequenceMethods }
+ # [cfg (feature = "app-dragonridesequence")] pub use dragonridesequence :: { IDragonRideSequenceMethods , IDragonRideSequence_PrizeDataMethods }
  ;
  # [cfg (any (feature = "app-dragonrideshot-types"))] pub mod dragonrideshot ;
  # [cfg (feature = "app-dragonrideshot-types")] pub use dragonrideshot :: { DragonRideShot , IDragonRideShot }
@@ -1804,12 +1804,12 @@
  # [cfg (feature = "app-dragonridestopwindreciever")] pub use dragonridestopwindreciever :: { IDragonRideStopWindRecieverMethods }
  ;
  # [cfg (any (feature = "app-dragonridetarget-types"))] pub mod dragonridetarget ;
- # [cfg (feature = "app-dragonridetarget-types")] pub use dragonridetarget :: { DragonRideTarget_TargetType , DragonRideTarget_TargetState , DragonRideTarget_ExecuteReason , DragonRideTarget , IDragonRideTarget }
+ # [cfg (feature = "app-dragonridetarget-types")] pub use dragonridetarget :: { DragonRideTarget_ExecuteReason , DragonRideTarget_TargetState , DragonRideTarget , IDragonRideTarget , DragonRideTarget_TargetType }
  ;
  # [cfg (feature = "app-dragonridetarget")] pub use dragonridetarget :: { IDragonRideTargetMethods }
  ;
  # [cfg (any (feature = "app-dragonridetargetgroup-types"))] pub mod dragonridetargetgroup ;
- # [cfg (feature = "app-dragonridetargetgroup-types")] pub use dragonridetargetgroup :: { DragonRideTargetGroup_ChainSEManager , IDragonRideTargetGroup_ChainSEManager , DragonRideTargetGroup_ChainParam , DragonRideTargetGroup , IDragonRideTargetGroup }
+ # [cfg (feature = "app-dragonridetargetgroup-types")] pub use dragonridetargetgroup :: { DragonRideTargetGroup_ChainSEManager , IDragonRideTargetGroup_ChainSEManager , DragonRideTargetGroup , IDragonRideTargetGroup , DragonRideTargetGroup_ChainParam }
  ;
  # [cfg (feature = "app-dragonridetargetgroup")] pub use dragonridetargetgroup :: { IDragonRideTargetGroup_ChainSEManagerMethods , IDragonRideTargetGroupMethods }
  ;
@@ -1839,9 +1839,9 @@
  # [cfg (feature = "app-dummymenuitem")] pub use dummymenuitem :: { IDummyMenuItemMethods }
  ;
  # [cfg (any (feature = "app-dynamicmesh-types"))] pub mod dynamicmesh ;
- # [cfg (feature = "app-dynamicmesh-types")] pub use dynamicmesh :: { DynamicMesh_StaticIndices , IDynamicMesh_StaticIndices , DynamicMesh_Scope , DynamicMesh , IDynamicMesh , DynamicMesh_State , DynamicMesh_Mode }
+ # [cfg (feature = "app-dynamicmesh-types")] pub use dynamicmesh :: { DynamicMesh_State , DynamicMesh_Mode , DynamicMesh_Scope , DynamicMesh , IDynamicMesh , DynamicMesh_StaticIndices , IDynamicMesh_StaticIndices }
  ;
- # [cfg (feature = "app-dynamicmesh")] pub use dynamicmesh :: { IDynamicMesh_StaticIndicesMethods , IDynamicMeshMethods }
+ # [cfg (feature = "app-dynamicmesh")] pub use dynamicmesh :: { IDynamicMeshMethods , IDynamicMesh_StaticIndicesMethods }
  ;
  # [cfg (any (feature = "app-eachdictionary_2-types"))] pub mod eachdictionary_2 ;
  # [cfg (feature = "app-eachdictionary_2-types")] pub use eachdictionary_2 :: { EachDictionary_2 , IEachDictionary_2 }
@@ -1864,12 +1864,12 @@
  # [cfg (feature = "app-eatunitsselectmenureliancelistcontent")] pub use eatunitsselectmenureliancelistcontent :: { IEatUnitsSelectMenuRelianceListContentMethods }
  ;
  # [cfg (any (feature = "app-effectdata-types"))] pub mod effectdata ;
- # [cfg (feature = "app-effectdata-types")] pub use effectdata :: { EffectData_Residents , EffectData_Types , EffectData_Modes , EffectData , IEffectData }
+ # [cfg (feature = "app-effectdata-types")] pub use effectdata :: { EffectData , IEffectData , EffectData_Modes , EffectData_Residents , EffectData_Types }
  ;
  # [cfg (feature = "app-effectdata")] pub use effectdata :: { IEffectDataMethods }
  ;
  # [cfg (any (feature = "app-effectsequence-types"))] pub mod effectsequence ;
- # [cfg (feature = "app-effectsequence-types")] pub use effectsequence :: { EffectSequence_Kind , EffectSequence , IEffectSequence }
+ # [cfg (feature = "app-effectsequence-types")] pub use effectsequence :: { EffectSequence , IEffectSequence , EffectSequence_Kind }
  ;
  # [cfg (feature = "app-effectsequence")] pub use effectsequence :: { IEffectSequenceMethods }
  ;
@@ -1909,9 +1909,9 @@
  # [cfg (feature = "app-encountequipdata")] pub use encountequipdata :: { IEncountEquipDataMethods }
  ;
  # [cfg (any (feature = "app-encountjobdata-types"))] pub mod encountjobdata ;
- # [cfg (feature = "app-encountjobdata-types")] pub use encountjobdata :: { EncountJobData_Flags , EncountJobData_FlagField , IEncountJobData_FlagField , EncountJobData , IEncountJobData }
+ # [cfg (feature = "app-encountjobdata-types")] pub use encountjobdata :: { EncountJobData , IEncountJobData , EncountJobData_Flags , EncountJobData_FlagField , IEncountJobData_FlagField }
  ;
- # [cfg (feature = "app-encountjobdata")] pub use encountjobdata :: { IEncountJobData_FlagFieldMethods , IEncountJobDataMethods }
+ # [cfg (feature = "app-encountjobdata")] pub use encountjobdata :: { IEncountJobDataMethods , IEncountJobData_FlagFieldMethods }
  ;
  # [cfg (any (feature = "app-encountmob-types"))] pub mod encountmob ;
  # [cfg (feature = "app-encountmob-types")] pub use encountmob :: { EncountMob , IEncountMob }
@@ -2004,14 +2004,14 @@
  # [cfg (feature = "app-eventcharactersimpleanimation")] pub use eventcharactersimpleanimation :: { IEventCharacterSimpleAnimationMethods }
  ;
  # [cfg (any (feature = "app-eventdata-types"))] pub mod eventdata ;
- # [cfg (feature = "app-eventdata-types")] pub use eventdata :: { EventData , IEventData , EventData_Commands }
+ # [cfg (feature = "app-eventdata-types")] pub use eventdata :: { EventData_Commands , EventData , IEventData }
  ;
  # [cfg (feature = "app-eventdata")] pub use eventdata :: { IEventDataMethods }
  ;
  # [cfg (any (feature = "app-eventdemosequence-types"))] pub mod eventdemosequence ;
- # [cfg (feature = "app-eventdemosequence-types")] pub use eventdemosequence :: { EventDemoSequence , IEventDemoSequence , EventDemoSequence_SoundEnv_EventNameData , IEventDemoSequence_SoundEnv_EventNameData , EventDemoSequence_CharacterWork , IEventDemoSequence_CharacterWork , EventDemoSequence_CmdFunc , IEventDemoSequence_CmdFunc , EventDemoSequence_EventCmdResult , EventDemoSequence_LightSetupInfo , IEventDemoSequence_LightSetupInfo , EventDemoSequence_CmdInfo , IEventDemoSequence_CmdInfo , EventDemoSequence_EffectWork , IEventDemoSequence_EffectWork , EventDemoSequence_SplitViewWork , IEventDemoSequence_SplitViewWork , EventDemoSequence_ColorFader , IEventDemoSequence_ColorFader , EventDemoSequence_EventCmdSeq , EventDemoSequence_WeightFader , IEventDemoSequence_WeightFader , EventDemoSequence_SoundEnv , IEventDemoSequence_SoundEnv , EventDemoSequence_RotateFader , IEventDemoSequence_RotateFader , EventDemoSequence_ClothType }
+ # [cfg (feature = "app-eventdemosequence-types")] pub use eventdemosequence :: { EventDemoSequence , IEventDemoSequence , EventDemoSequence_SplitViewWork , IEventDemoSequence_SplitViewWork , EventDemoSequence_CharacterWork , IEventDemoSequence_CharacterWork , EventDemoSequence_EventCmdSeq , EventDemoSequence_CmdInfo , IEventDemoSequence_CmdInfo , EventDemoSequence_RotateFader , IEventDemoSequence_RotateFader , EventDemoSequence_SoundEnv , IEventDemoSequence_SoundEnv , EventDemoSequence_ColorFader , IEventDemoSequence_ColorFader , EventDemoSequence_LightSetupInfo , IEventDemoSequence_LightSetupInfo , EventDemoSequence_CmdFunc , IEventDemoSequence_CmdFunc , EventDemoSequence_EventCmdResult , EventDemoSequence_WeightFader , IEventDemoSequence_WeightFader , EventDemoSequence_ClothType , EventDemoSequence_EffectWork , IEventDemoSequence_EffectWork , EventDemoSequence_SoundEnv_EventNameData , IEventDemoSequence_SoundEnv_EventNameData }
  ;
- # [cfg (feature = "app-eventdemosequence")] pub use eventdemosequence :: { IEventDemoSequenceMethods , IEventDemoSequence_SoundEnv_EventNameDataMethods , IEventDemoSequence_CharacterWorkMethods , IEventDemoSequence_CmdFuncMethods , IEventDemoSequence_LightSetupInfoMethods , IEventDemoSequence_CmdInfoMethods , IEventDemoSequence_EffectWorkMethods , IEventDemoSequence_SplitViewWorkMethods , IEventDemoSequence_ColorFaderMethods , IEventDemoSequence_WeightFaderMethods , IEventDemoSequence_SoundEnvMethods , IEventDemoSequence_RotateFaderMethods }
+ # [cfg (feature = "app-eventdemosequence")] pub use eventdemosequence :: { IEventDemoSequenceMethods , IEventDemoSequence_SplitViewWorkMethods , IEventDemoSequence_CharacterWorkMethods , IEventDemoSequence_CmdInfoMethods , IEventDemoSequence_RotateFaderMethods , IEventDemoSequence_SoundEnvMethods , IEventDemoSequence_ColorFaderMethods , IEventDemoSequence_LightSetupInfoMethods , IEventDemoSequence_CmdFuncMethods , IEventDemoSequence_WeightFaderMethods , IEventDemoSequence_EffectWorkMethods , IEventDemoSequence_SoundEnv_EventNameDataMethods }
  ;
  # [cfg (any (feature = "app-eventmarker-types"))] pub mod eventmarker ;
  # [cfg (feature = "app-eventmarker-types")] pub use eventmarker :: { EventMarker , IEventMarker }
@@ -2034,14 +2034,14 @@
  # [cfg (feature = "app-eventpicturecontroller")] pub use eventpicturecontroller :: { IEventPictureControllerMethods }
  ;
  # [cfg (any (feature = "app-eventscript-types"))] pub mod eventscript ;
- # [cfg (feature = "app-eventscript-types")] pub use eventscript :: { EventScript_ActionArgs , IEventScript_ActionArgs , EventScript , IEventScript , EventScript_FunctionArgs , IEventScript_FunctionArgs }
+ # [cfg (feature = "app-eventscript-types")] pub use eventscript :: { EventScript_FunctionArgs , IEventScript_FunctionArgs , EventScript_ActionArgs , IEventScript_ActionArgs , EventScript , IEventScript }
  ;
- # [cfg (feature = "app-eventscript")] pub use eventscript :: { IEventScript_ActionArgsMethods , IEventScriptMethods , IEventScript_FunctionArgsMethods }
+ # [cfg (feature = "app-eventscript")] pub use eventscript :: { IEventScript_FunctionArgsMethods , IEventScript_ActionArgsMethods , IEventScriptMethods }
  ;
  # [cfg (any (feature = "app-eventsequence-types"))] pub mod eventsequence ;
- # [cfg (feature = "app-eventsequence-types")] pub use eventsequence :: { EventSequence , IEventSequence , EventSequence_Label , EventSequence_Coroutine , IEventSequence_Coroutine , EventSequence_MapEventStatck , IEventSequence_MapEventStatck }
+ # [cfg (feature = "app-eventsequence-types")] pub use eventsequence :: { EventSequence_MapEventStatck , IEventSequence_MapEventStatck , EventSequence_Label , EventSequence_Coroutine , IEventSequence_Coroutine , EventSequence , IEventSequence }
  ;
- # [cfg (feature = "app-eventsequence")] pub use eventsequence :: { IEventSequenceMethods , IEventSequence_CoroutineMethods , IEventSequence_MapEventStatckMethods }
+ # [cfg (feature = "app-eventsequence")] pub use eventsequence :: { IEventSequence_MapEventStatckMethods , IEventSequence_CoroutineMethods , IEventSequenceMethods }
  ;
  # [cfg (any (feature = "app-evilclearrewardsequence-types"))] pub mod evilclearrewardsequence ;
  # [cfg (feature = "app-evilclearrewardsequence-types")] pub use evilclearrewardsequence :: { EvilClearRewardSequence , IEvilClearRewardSequence }
@@ -2059,9 +2059,9 @@
  # [cfg (feature = "app-exchangeitemyesnodialog")] pub use exchangeitemyesnodialog :: { IExchangeItemYesNoDialogMethods , IExchangeItemYesNoDialog_YesMenuItemMethods , IExchangeItemYesNoDialog_YesEventHandlerMethods }
  ;
  # [cfg (any (feature = "app-exchangeyesnodialog-types"))] pub mod exchangeyesnodialog ;
- # [cfg (feature = "app-exchangeyesnodialog-types")] pub use exchangeyesnodialog :: { ExchangeYesNoDialog_ItemParam , IExchangeYesNoDialog_ItemParam , ExchangeYesNoDialog_MoneyParam , IExchangeYesNoDialog_MoneyParam , ExchangeYesNoDialog , IExchangeYesNoDialog }
+ # [cfg (feature = "app-exchangeyesnodialog-types")] pub use exchangeyesnodialog :: { ExchangeYesNoDialog_ItemParam , IExchangeYesNoDialog_ItemParam , ExchangeYesNoDialog , IExchangeYesNoDialog , ExchangeYesNoDialog_MoneyParam , IExchangeYesNoDialog_MoneyParam }
  ;
- # [cfg (feature = "app-exchangeyesnodialog")] pub use exchangeyesnodialog :: { IExchangeYesNoDialog_ItemParamMethods , IExchangeYesNoDialog_MoneyParamMethods , IExchangeYesNoDialogMethods }
+ # [cfg (feature = "app-exchangeyesnodialog")] pub use exchangeyesnodialog :: { IExchangeYesNoDialog_ItemParamMethods , IExchangeYesNoDialogMethods , IExchangeYesNoDialog_MoneyParamMethods }
  ;
  # [cfg (any (feature = "app-exjobintrodata-types"))] pub mod exjobintrodata ;
  # [cfg (feature = "app-exjobintrodata-types")] pub use exjobintrodata :: { ExJobIntroData , IExJobIntroData }
@@ -2077,9 +2077,9 @@
  # [cfg (feature = "app-expsequence")] pub use expsequence :: { IExpSequenceMethods }
  ;
  # [cfg (any (feature = "app-expsetter-types"))] pub mod expsetter ;
- # [cfg (feature = "app-expsetter-types")] pub use expsetter :: { ExpSetter_ExpWindow , IExpSetter_ExpWindow , ExpSetter , IExpSetter }
+ # [cfg (feature = "app-expsetter-types")] pub use expsetter :: { ExpSetter , IExpSetter , ExpSetter_ExpWindow , IExpSetter_ExpWindow }
  ;
- # [cfg (feature = "app-expsetter")] pub use expsetter :: { IExpSetter_ExpWindowMethods , IExpSetterMethods }
+ # [cfg (feature = "app-expsetter")] pub use expsetter :: { IExpSetterMethods , IExpSetter_ExpWindowMethods }
  ;
  # [cfg (any (feature = "app-exptable-types"))] pub mod exptable ;
  # [cfg (feature = "app-exptable-types")] pub use exptable :: { ExpTable , IExpTable , ExpTable_TableCommand , IExpTable_TableCommand }
@@ -2092,9 +2092,9 @@
  # [cfg (feature = "app-facethumbnail")] pub use facethumbnail :: { IFaceThumbnailMethods }
  ;
  # [cfg (any (feature = "app-fade-types"))] pub mod fade ;
- # [cfg (feature = "app-fade-types")] pub use fade :: { Fade_LayerScope , IFade_LayerScope , Fade_ProcDescWait , IFade_ProcDescWait , Fade_ProcDescFade , IFade_ProcDescFade , Fade_ProcFadeWait , IFade_ProcFadeWait , Fade_ProcDescInOut , IFade_ProcDescInOut , Fade_ProcFade , IFade_ProcFade , Fade_FadeLayer , IFade_FadeLayer , Fade_Layer , Fade , IFade }
+ # [cfg (feature = "app-fade-types")] pub use fade :: { Fade_ProcDescFade , IFade_ProcDescFade , Fade_FadeLayer , IFade_FadeLayer , Fade_LayerScope , IFade_LayerScope , Fade_ProcFadeWait , IFade_ProcFadeWait , Fade_Layer , Fade , IFade , Fade_ProcDescInOut , IFade_ProcDescInOut , Fade_ProcDescWait , IFade_ProcDescWait , Fade_ProcFade , IFade_ProcFade }
  ;
- # [cfg (feature = "app-fade")] pub use fade :: { IFade_LayerScopeMethods , IFade_ProcDescWaitMethods , IFade_ProcDescFadeMethods , IFade_ProcFadeWaitMethods , IFade_ProcDescInOutMethods , IFade_ProcFadeMethods , IFade_FadeLayerMethods , IFadeMethods }
+ # [cfg (feature = "app-fade")] pub use fade :: { IFade_ProcDescFadeMethods , IFade_FadeLayerMethods , IFade_LayerScopeMethods , IFade_ProcFadeWaitMethods , IFadeMethods , IFade_ProcDescInOutMethods , IFade_ProcDescWaitMethods , IFade_ProcFadeMethods }
  ;
  # [cfg (any (feature = "app-fademarker-types"))] pub mod fademarker ;
  # [cfg (feature = "app-fademarker-types")] pub use fademarker :: { FadeMarker , IFadeMarker }
@@ -2107,9 +2107,9 @@
  # [cfg (feature = "app-fademarkerreciever")] pub use fademarkerreciever :: { IFadeMarkerRecieverMethods }
  ;
  # [cfg (any (feature = "app-fieldbgmmanager-types"))] pub mod fieldbgmmanager ;
- # [cfg (feature = "app-fieldbgmmanager-types")] pub use fieldbgmmanager :: { FieldBgmManager_BgmHandle , IFieldBgmManager_BgmHandle , FieldBgmManager , IFieldBgmManager , FieldBgmManager_ProcChangeBgm , IFieldBgmManager_ProcChangeBgm , FieldBgmManager_VolumeFader , IFieldBgmManager_VolumeFader }
+ # [cfg (feature = "app-fieldbgmmanager-types")] pub use fieldbgmmanager :: { FieldBgmManager_ProcChangeBgm , IFieldBgmManager_ProcChangeBgm , FieldBgmManager , IFieldBgmManager , FieldBgmManager_BgmHandle , IFieldBgmManager_BgmHandle , FieldBgmManager_VolumeFader , IFieldBgmManager_VolumeFader }
  ;
- # [cfg (feature = "app-fieldbgmmanager")] pub use fieldbgmmanager :: { IFieldBgmManager_BgmHandleMethods , IFieldBgmManagerMethods , IFieldBgmManager_ProcChangeBgmMethods , IFieldBgmManager_VolumeFaderMethods }
+ # [cfg (feature = "app-fieldbgmmanager")] pub use fieldbgmmanager :: { IFieldBgmManager_ProcChangeBgmMethods , IFieldBgmManagerMethods , IFieldBgmManager_BgmHandleMethods , IFieldBgmManager_VolumeFaderMethods }
  ;
  # [cfg (any (feature = "app-fieldinfoitem-types"))] pub mod fieldinfoitem ;
  # [cfg (feature = "app-fieldinfoitem-types")] pub use fieldinfoitem :: { FieldInfoItem , IFieldInfoItem }
@@ -2117,7 +2117,7 @@
  # [cfg (feature = "app-fieldinfoitem")] pub use fieldinfoitem :: { IFieldInfoItemMethods }
  ;
  # [cfg (any (feature = "app-filecommon-types"))] pub mod filecommon ;
- # [cfg (feature = "app-filecommon-types")] pub use filecommon :: { FileCommon , IFileCommon , FileCommon_State }
+ # [cfg (feature = "app-filecommon-types")] pub use filecommon :: { FileCommon_State , FileCommon , IFileCommon }
  ;
  # [cfg (feature = "app-filecommon")] pub use filecommon :: { IFileCommonMethods }
  ;
@@ -2142,9 +2142,9 @@
  # [cfg (feature = "app-filemanager")] pub use filemanager :: { IFileManagerMethods }
  ;
  # [cfg (any (feature = "app-filevieweritem-types"))] pub mod filevieweritem ;
- # [cfg (feature = "app-filevieweritem-types")] pub use filevieweritem :: { FileViewerItem , IFileViewerItem , FileViewerItem_FileItem , IFileViewerItem_FileItem , FileViewerItem_DirectoryItem , IFileViewerItem_DirectoryItem , FileViewerItem_PathItem , IFileViewerItem_PathItem }
+ # [cfg (feature = "app-filevieweritem-types")] pub use filevieweritem :: { FileViewerItem_PathItem , IFileViewerItem_PathItem , FileViewerItem_DirectoryItem , IFileViewerItem_DirectoryItem , FileViewerItem , IFileViewerItem , FileViewerItem_FileItem , IFileViewerItem_FileItem }
  ;
- # [cfg (feature = "app-filevieweritem")] pub use filevieweritem :: { IFileViewerItemMethods , IFileViewerItem_FileItemMethods , IFileViewerItem_DirectoryItemMethods , IFileViewerItem_PathItemMethods }
+ # [cfg (feature = "app-filevieweritem")] pub use filevieweritem :: { IFileViewerItem_PathItemMethods , IFileViewerItem_DirectoryItemMethods , IFileViewerItemMethods , IFileViewerItem_FileItemMethods }
  ;
  # [cfg (any (feature = "app-fishing-config-fixcameraconfig-types" , feature = "app-fishing-fadetype-types" , feature = "app-fishing-forecastfishdata-types" , feature = "app-fishing-shadowsize-types" , feature = "app-fishing-sizerank-types" , feature = "app-fishing-sticktype-types"))] pub mod fishing ;
  # [cfg (any (feature = "app-fishingassistdata-types"))] pub mod fishingassistdata ;
@@ -2163,9 +2163,9 @@
  # [cfg (feature = "app-fishingcharaimagerender")] pub use fishingcharaimagerender :: { IFishingCharaImageRenderMethods }
  ;
  # [cfg (any (feature = "app-fishingconfig-types"))] pub mod fishingconfig ;
- # [cfg (feature = "app-fishingconfig-types")] pub use fishingconfig :: { FishingConfig_AngleBorder , IFishingConfig_AngleBorder , FishingConfig_FixCameraConfig , IFishingConfig_FixCameraConfig , FishingConfig , IFishingConfig }
+ # [cfg (feature = "app-fishingconfig-types")] pub use fishingconfig :: { FishingConfig_AngleBorder , IFishingConfig_AngleBorder , FishingConfig , IFishingConfig , FishingConfig_FixCameraConfig , IFishingConfig_FixCameraConfig }
  ;
- # [cfg (feature = "app-fishingconfig")] pub use fishingconfig :: { IFishingConfig_AngleBorderMethods , IFishingConfig_FixCameraConfigMethods , IFishingConfigMethods }
+ # [cfg (feature = "app-fishingconfig")] pub use fishingconfig :: { IFishingConfig_AngleBorderMethods , IFishingConfigMethods , IFishingConfig_FixCameraConfigMethods }
  ;
  # [cfg (any (feature = "app-fishingconfig_base-types"))] pub mod fishingconfig_base ;
  # [cfg (feature = "app-fishingconfig_base-types")] pub use fishingconfig_base :: { FishingConfig_Base , IFishingConfig_Base }
@@ -2173,9 +2173,9 @@
  # [cfg (feature = "app-fishingconfig_base")] pub use fishingconfig_base :: { IFishingConfig_BaseMethods }
  ;
  # [cfg (any (feature = "app-fishingconfig_battle-types"))] pub mod fishingconfig_battle ;
- # [cfg (feature = "app-fishingconfig_battle-types")] pub use fishingconfig_battle :: { FishingConfig_Battle_AngleBorder , IFishingConfig_Battle_AngleBorder , FishingConfig_Battle , IFishingConfig_Battle }
+ # [cfg (feature = "app-fishingconfig_battle-types")] pub use fishingconfig_battle :: { FishingConfig_Battle , IFishingConfig_Battle , FishingConfig_Battle_AngleBorder , IFishingConfig_Battle_AngleBorder }
  ;
- # [cfg (feature = "app-fishingconfig_battle")] pub use fishingconfig_battle :: { IFishingConfig_Battle_AngleBorderMethods , IFishingConfig_BattleMethods }
+ # [cfg (feature = "app-fishingconfig_battle")] pub use fishingconfig_battle :: { IFishingConfig_BattleMethods , IFishingConfig_Battle_AngleBorderMethods }
  ;
  # [cfg (any (feature = "app-fishingconfig_defeat-types"))] pub mod fishingconfig_defeat ;
  # [cfg (feature = "app-fishingconfig_defeat-types")] pub use fishingconfig_defeat :: { FishingConfig_Defeat , IFishingConfig_Defeat }
@@ -2223,7 +2223,7 @@
  # [cfg (feature = "app-fishingeventfader")] pub use fishingeventfader :: { IFishingEventFaderMethods }
  ;
  # [cfg (any (feature = "app-fishingfish-types"))] pub mod fishingfish ;
- # [cfg (feature = "app-fishingfish-types")] pub use fishingfish :: { FishingFish_CounterVoiceFlag , FishingFish_FishState , FishingFish , IFishingFish }
+ # [cfg (feature = "app-fishingfish-types")] pub use fishingfish :: { FishingFish_FishState , FishingFish , IFishingFish , FishingFish_CounterVoiceFlag }
  ;
  # [cfg (feature = "app-fishingfish")] pub use fishingfish :: { IFishingFishMethods }
  ;
@@ -2233,7 +2233,7 @@
  # [cfg (feature = "app-fishingfishdata")] pub use fishingfishdata :: { IFishingFishDataMethods }
  ;
  # [cfg (any (feature = "app-fishinggamesequence-types"))] pub mod fishinggamesequence ;
- # [cfg (feature = "app-fishinggamesequence-types")] pub use fishinggamesequence :: { FishingGameSequence_FishingAngleState , FishingGameSequence_LureRoot , FishingGameSequence_AnnounceType , FishingGameSequence_Ripple , IFishingGameSequence_Ripple , FishingGameSequence , IFishingGameSequence , FishingGameSequence_Label }
+ # [cfg (feature = "app-fishinggamesequence-types")] pub use fishinggamesequence :: { FishingGameSequence_Label , FishingGameSequence_Ripple , IFishingGameSequence_Ripple , FishingGameSequence_AnnounceType , FishingGameSequence_FishingAngleState , FishingGameSequence_LureRoot , FishingGameSequence , IFishingGameSequence }
  ;
  # [cfg (feature = "app-fishinggamesequence")] pub use fishinggamesequence :: { IFishingGameSequence_RippleMethods , IFishingGameSequenceMethods }
  ;
@@ -2263,7 +2263,7 @@
  # [cfg (feature = "app-fishingpicturebooksequence")] pub use fishingpicturebooksequence :: { IFishingPictureBookSequenceMethods }
  ;
  # [cfg (any (feature = "app-fishingpictureitem-types"))] pub mod fishingpictureitem ;
- # [cfg (feature = "app-fishingpictureitem-types")] pub use fishingpictureitem :: { FishingPictureItem_SpriteKind , FishingPictureItem , IFishingPictureItem }
+ # [cfg (feature = "app-fishingpictureitem-types")] pub use fishingpictureitem :: { FishingPictureItem , IFishingPictureItem , FishingPictureItem_SpriteKind }
  ;
  # [cfg (feature = "app-fishingpictureitem")] pub use fishingpictureitem :: { IFishingPictureItemMethods }
  ;
@@ -2278,14 +2278,14 @@
  # [cfg (feature = "app-fishingresultdata")] pub use fishingresultdata :: { IFishingResultDataMethods }
  ;
  # [cfg (any (feature = "app-fishingresultui-types"))] pub mod fishingresultui ;
- # [cfg (feature = "app-fishingresultui-types")] pub use fishingresultui :: { FishingResultUI_ResultPhase , FishingResultUI_SpriteKind , FishingResultUI , IFishingResultUI }
+ # [cfg (feature = "app-fishingresultui-types")] pub use fishingresultui :: { FishingResultUI , IFishingResultUI , FishingResultUI_ResultPhase , FishingResultUI_SpriteKind }
  ;
  # [cfg (feature = "app-fishingresultui")] pub use fishingresultui :: { IFishingResultUIMethods }
  ;
  # [cfg (any (feature = "app-fishingrodselectmenu-types"))] pub mod fishingrodselectmenu ;
- # [cfg (feature = "app-fishingrodselectmenu-types")] pub use fishingrodselectmenu :: { FishingRodSelectMenu_DecideEventHandler , IFishingRodSelectMenu_DecideEventHandler , FishingRodSelectMenu , IFishingRodSelectMenu , FishingRodSelectMenu_RodAItem , IFishingRodSelectMenu_RodAItem , FishingRodSelectMenu_RodBItem , IFishingRodSelectMenu_RodBItem , FishingRodSelectMenu_Result2 , FishingRodSelectMenu_RodCItem , IFishingRodSelectMenu_RodCItem , FishingRodSelectMenu_RodItem , IFishingRodSelectMenu_RodItem }
+ # [cfg (feature = "app-fishingrodselectmenu-types")] pub use fishingrodselectmenu :: { FishingRodSelectMenu_RodCItem , IFishingRodSelectMenu_RodCItem , FishingRodSelectMenu_RodItem , IFishingRodSelectMenu_RodItem , FishingRodSelectMenu , IFishingRodSelectMenu , FishingRodSelectMenu_RodAItem , IFishingRodSelectMenu_RodAItem , FishingRodSelectMenu_RodBItem , IFishingRodSelectMenu_RodBItem , FishingRodSelectMenu_Result2 , FishingRodSelectMenu_DecideEventHandler , IFishingRodSelectMenu_DecideEventHandler }
  ;
- # [cfg (feature = "app-fishingrodselectmenu")] pub use fishingrodselectmenu :: { IFishingRodSelectMenu_DecideEventHandlerMethods , IFishingRodSelectMenuMethods , IFishingRodSelectMenu_RodAItemMethods , IFishingRodSelectMenu_RodBItemMethods , IFishingRodSelectMenu_RodCItemMethods , IFishingRodSelectMenu_RodItemMethods }
+ # [cfg (feature = "app-fishingrodselectmenu")] pub use fishingrodselectmenu :: { IFishingRodSelectMenu_RodCItemMethods , IFishingRodSelectMenu_RodItemMethods , IFishingRodSelectMenuMethods , IFishingRodSelectMenu_RodAItemMethods , IFishingRodSelectMenu_RodBItemMethods , IFishingRodSelectMenu_DecideEventHandlerMethods }
  ;
  # [cfg (any (feature = "app-fishingrodselectmenucontent-types"))] pub mod fishingrodselectmenucontent ;
  # [cfg (feature = "app-fishingrodselectmenucontent-types")] pub use fishingrodselectmenucontent :: { FishingRodSelectMenuContent , IFishingRodSelectMenuContent }
@@ -2331,7 +2331,7 @@
  # [cfg (feature = "app-fleamarketdata")] pub use fleamarketdata :: { IFleaMarketDataMethods }
  ;
  # [cfg (any (feature = "app-flipbook-types"))] pub mod flipbook ;
- # [cfg (feature = "app-flipbook-types")] pub use flipbook :: { Flipbook_Mode , Flipbook , IFlipbook }
+ # [cfg (feature = "app-flipbook-types")] pub use flipbook :: { Flipbook , IFlipbook , Flipbook_Mode }
  ;
  # [cfg (feature = "app-flipbook")] pub use flipbook :: { IFlipbookMethods }
  ;
@@ -2346,14 +2346,14 @@
  # [cfg (feature = "app-fontlist")] pub use fontlist :: { IFontListMethods }
  ;
  # [cfg (any (feature = "app-fooddata-types"))] pub mod fooddata ;
- # [cfg (feature = "app-fooddata-types")] pub use fooddata :: { FoodData , IFoodData , FoodData_FoodCountry }
+ # [cfg (feature = "app-fooddata-types")] pub use fooddata :: { FoodData_FoodCountry , FoodData , IFoodData }
  ;
  # [cfg (feature = "app-fooddata")] pub use fooddata :: { IFoodDataMethods }
  ;
  # [cfg (any (feature = "app-foodstuffdata-types"))] pub mod foodstuffdata ;
- # [cfg (feature = "app-foodstuffdata-types")] pub use foodstuffdata :: { FoodstuffData , IFoodstuffData , FoodstuffData_FlagField , IFoodstuffData_FlagField , FoodstuffData_Flags }
+ # [cfg (feature = "app-foodstuffdata-types")] pub use foodstuffdata :: { FoodstuffData_Flags , FoodstuffData_FlagField , IFoodstuffData_FlagField , FoodstuffData , IFoodstuffData }
  ;
- # [cfg (feature = "app-foodstuffdata")] pub use foodstuffdata :: { IFoodstuffDataMethods , IFoodstuffData_FlagFieldMethods }
+ # [cfg (feature = "app-foodstuffdata")] pub use foodstuffdata :: { IFoodstuffData_FlagFieldMethods , IFoodstuffDataMethods }
  ;
  # [cfg (any (feature = "app-foodstuffpool-types"))] pub mod foodstuffpool ;
  # [cfg (feature = "app-foodstuffpool-types")] pub use foodstuffpool :: { FoodstuffPool , IFoodstuffPool }
@@ -2361,7 +2361,7 @@
  # [cfg (feature = "app-foodstuffpool")] pub use foodstuffpool :: { IFoodstuffPoolMethods }
  ;
  # [cfg (any (feature = "app-force-types"))] pub mod force ;
- # [cfg (feature = "app-force-types")] pub use force :: { Force , IForce , Force_Type }
+ # [cfg (feature = "app-force-types")] pub use force :: { Force_Type , Force , IForce }
  ;
  # [cfg (feature = "app-force")] pub use force :: { IForceMethods }
  ;
@@ -2381,19 +2381,19 @@
  # [cfg (feature = "app-fortunetellingresultmenu")] pub use fortunetellingresultmenu :: { IFortuneTellingResultMenuMethods }
  ;
  # [cfg (any (feature = "app-fortunetellingresultsequence-types"))] pub mod fortunetellingresultsequence ;
- # [cfg (feature = "app-fortunetellingresultsequence-types")] pub use fortunetellingresultsequence :: { FortuneTellingResultSequence_ResId , FortuneTellingResultSequence_Label2 , FortuneTellingResultSequence , IFortuneTellingResultSequence }
+ # [cfg (feature = "app-fortunetellingresultsequence-types")] pub use fortunetellingresultsequence :: { FortuneTellingResultSequence_Label2 , FortuneTellingResultSequence_ResId , FortuneTellingResultSequence , IFortuneTellingResultSequence }
  ;
  # [cfg (feature = "app-fortunetellingresultsequence")] pub use fortunetellingresultsequence :: { IFortuneTellingResultSequenceMethods }
  ;
  # [cfg (any (feature = "app-fortunetellingsequence-types"))] pub mod fortunetellingsequence ;
- # [cfg (feature = "app-fortunetellingsequence-types")] pub use fortunetellingsequence :: { FortuneTellingSequence_Label2 , FortuneTellingSequence , IFortuneTellingSequence }
+ # [cfg (feature = "app-fortunetellingsequence-types")] pub use fortunetellingsequence :: { FortuneTellingSequence , IFortuneTellingSequence , FortuneTellingSequence_Label2 }
  ;
  # [cfg (feature = "app-fortunetellingsequence")] pub use fortunetellingsequence :: { IFortuneTellingSequenceMethods }
  ;
  # [cfg (any (feature = "app-fortunetellingunitselectmenu-types"))] pub mod fortunetellingunitselectmenu ;
- # [cfg (feature = "app-fortunetellingunitselectmenu-types")] pub use fortunetellingunitselectmenu :: { FortuneTellingUnitSelectMenu_DecideEventHandler , IFortuneTellingUnitSelectMenu_DecideEventHandler , FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem , IFortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem , FortuneTellingUnitSelectMenu , IFortuneTellingUnitSelectMenu }
+ # [cfg (feature = "app-fortunetellingunitselectmenu-types")] pub use fortunetellingunitselectmenu :: { FortuneTellingUnitSelectMenu_DecideEventHandler , IFortuneTellingUnitSelectMenu_DecideEventHandler , FortuneTellingUnitSelectMenu , IFortuneTellingUnitSelectMenu , FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem , IFortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem }
  ;
- # [cfg (feature = "app-fortunetellingunitselectmenu")] pub use fortunetellingunitselectmenu :: { IFortuneTellingUnitSelectMenu_DecideEventHandlerMethods , IFortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItemMethods , IFortuneTellingUnitSelectMenuMethods }
+ # [cfg (feature = "app-fortunetellingunitselectmenu")] pub use fortunetellingunitselectmenu :: { IFortuneTellingUnitSelectMenu_DecideEventHandlerMethods , IFortuneTellingUnitSelectMenuMethods , IFortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItemMethods }
  ;
  # [cfg (any (feature = "app-fortunetellingunitselectmenucontent-types"))] pub mod fortunetellingunitselectmenucontent ;
  # [cfg (feature = "app-fortunetellingunitselectmenucontent-types")] pub use fortunetellingunitselectmenucontent :: { FortuneTellingUnitSelectMenuContent , IFortuneTellingUnitSelectMenuContent }
@@ -2421,9 +2421,9 @@
  # [cfg (feature = "app-friendlistdata")] pub use friendlistdata :: { IFriendListDataMethods }
  ;
  # [cfg (any (feature = "app-friendlistselectmenu-types"))] pub mod friendlistselectmenu ;
- # [cfg (feature = "app-friendlistselectmenu-types")] pub use friendlistselectmenu :: { FriendListSelectMenu_DecideEventHandler , IFriendListSelectMenu_DecideEventHandler , FriendListSelectMenu , IFriendListSelectMenu , FriendListSelectMenu_FriendListSelectMenuItem , IFriendListSelectMenu_FriendListSelectMenuItem }
+ # [cfg (feature = "app-friendlistselectmenu-types")] pub use friendlistselectmenu :: { FriendListSelectMenu_FriendListSelectMenuItem , IFriendListSelectMenu_FriendListSelectMenuItem , FriendListSelectMenu_DecideEventHandler , IFriendListSelectMenu_DecideEventHandler , FriendListSelectMenu , IFriendListSelectMenu }
  ;
- # [cfg (feature = "app-friendlistselectmenu")] pub use friendlistselectmenu :: { IFriendListSelectMenu_DecideEventHandlerMethods , IFriendListSelectMenuMethods , IFriendListSelectMenu_FriendListSelectMenuItemMethods }
+ # [cfg (feature = "app-friendlistselectmenu")] pub use friendlistselectmenu :: { IFriendListSelectMenu_FriendListSelectMenuItemMethods , IFriendListSelectMenu_DecideEventHandlerMethods , IFriendListSelectMenuMethods }
  ;
  # [cfg (any (feature = "app-friendlistselectmenucontent-types"))] pub mod friendlistselectmenucontent ;
  # [cfg (feature = "app-friendlistselectmenucontent-types")] pub use friendlistselectmenucontent :: { FriendListSelectMenuContent , IFriendListSelectMenuContent }
@@ -2441,9 +2441,9 @@
  # [cfg (feature = "app-friendlistsequence")] pub use friendlistsequence :: { IFriendListSequenceMethods , IFriendListSequence_ProcZoomMethods }
  ;
  # [cfg (any (feature = "app-funcitem-types"))] pub mod funcitem ;
- # [cfg (feature = "app-funcitem-types")] pub use funcitem :: { FuncItem , IFuncItem , FuncItem_Func , IFuncItem_Func }
+ # [cfg (feature = "app-funcitem-types")] pub use funcitem :: { FuncItem_Func , IFuncItem_Func , FuncItem , IFuncItem }
  ;
- # [cfg (feature = "app-funcitem")] pub use funcitem :: { IFuncItemMethods , IFuncItem_FuncMethods }
+ # [cfg (feature = "app-funcitem")] pub use funcitem :: { IFuncItem_FuncMethods , IFuncItemMethods }
  ;
  # [cfg (any (feature = "app-functioncallproc-types"))] pub mod functioncallproc ;
  # [cfg (feature = "app-functioncallproc-types")] pub use functioncallproc :: { FunctionCallProc , IFunctionCallProc }
@@ -2479,7 +2479,7 @@
  # [cfg (feature = "app-gamecolor")] pub use gamecolor :: { IGameColorMethods }
  ;
  # [cfg (any (feature = "app-gameconfig-types"))] pub mod gameconfig ;
- # [cfg (feature = "app-gameconfig-types")] pub use gameconfig :: { GameConfig_OperationType , GameConfig_AllInfoSwitch , GameConfig_DragonRideOperationType , GameConfig_MinimapType , GameConfig_InfoType , GameConfig_AllInfo , GameConfig_EngageAnimeType , GameConfig_InfoLocation , GameConfig_MapCursorMoveTyep , GameConfig_Toggle , GameConfig_CameraRotationType , GameConfig_AnimeType , GameConfig_UnitInfoType , GameConfig_StickTriggerMarginType , GameConfig_SpeedType , GameConfig , IGameConfig , GameConfig_Modes }
+ # [cfg (feature = "app-gameconfig-types")] pub use gameconfig :: { GameConfig_MinimapType , GameConfig_AllInfoSwitch , GameConfig_DragonRideOperationType , GameConfig_Toggle , GameConfig_InfoType , GameConfig_Modes , GameConfig_AnimeType , GameConfig_OperationType , GameConfig_AllInfo , GameConfig_MapCursorMoveTyep , GameConfig_CameraRotationType , GameConfig_InfoLocation , GameConfig_SpeedType , GameConfig_EngageAnimeType , GameConfig , IGameConfig , GameConfig_UnitInfoType , GameConfig_StickTriggerMarginType }
  ;
  # [cfg (feature = "app-gameconfig")] pub use gameconfig :: { IGameConfigMethods }
  ;
@@ -2499,9 +2499,9 @@
  # [cfg (feature = "app-gameicon")] pub use gameicon :: { IGameIconMethods }
  ;
  # [cfg (any (feature = "app-gamemessage-types"))] pub mod gamemessage ;
- # [cfg (feature = "app-gamemessage-types")] pub use gamemessage :: { GameMessage_Status , IGameMessage_Status , GameMessage , IGameMessage }
+ # [cfg (feature = "app-gamemessage-types")] pub use gamemessage :: { GameMessage , IGameMessage , GameMessage_Status , IGameMessage_Status }
  ;
- # [cfg (feature = "app-gamemessage")] pub use gamemessage :: { IGameMessage_StatusMethods , IGameMessageMethods }
+ # [cfg (feature = "app-gamemessage")] pub use gamemessage :: { IGameMessageMethods , IGameMessage_StatusMethods }
  ;
  # [cfg (any (feature = "app-gamemessagecontent-types"))] pub mod gamemessagecontent ;
  # [cfg (feature = "app-gamemessagecontent-types")] pub use gamemessagecontent :: { GameMessageContent , IGameMessageContent }
@@ -2517,14 +2517,14 @@
  # [cfg (feature = "app-gamemodecommand")] pub use gamemodecommand :: { IGameModeCommandMethods }
  ;
  # [cfg (any (feature = "app-gameparam-types"))] pub mod gameparam ;
- # [cfg (feature = "app-gameparam-types")] pub use gameparam :: { GameParam_Holder , IGameParam_Holder , GameParam_Kind , GameParam_ParamFunction , IGameParam_ParamFunction , GameParam , IGameParam }
+ # [cfg (feature = "app-gameparam-types")] pub use gameparam :: { GameParam , IGameParam , GameParam_Kind , GameParam_Holder , IGameParam_Holder , GameParam_ParamFunction , IGameParam_ParamFunction }
  ;
- # [cfg (feature = "app-gameparam")] pub use gameparam :: { IGameParam_HolderMethods , IGameParam_ParamFunctionMethods , IGameParamMethods }
+ # [cfg (feature = "app-gameparam")] pub use gameparam :: { IGameParamMethods , IGameParam_HolderMethods , IGameParam_ParamFunctionMethods }
  ;
  # [cfg (any (feature = "app-gamesavedata-types"))] pub mod gamesavedata ;
- # [cfg (feature = "app-gamesavedata-types")] pub use gamesavedata :: { GameSaveData_Tag_Writer , IGameSaveData_Tag_Writer , GameSaveData_ProcCopy , IGameSaveData_ProcCopy , GameSaveData_ProcRead , IGameSaveData_ProcRead , GameSaveData_ProcWrite , IGameSaveData_ProcWrite , GameSaveData_Tag_Reader , IGameSaveData_Tag_Reader , GameSaveData_ProcDelete , IGameSaveData_ProcDelete , GameSaveData_ProcRead_Label , GameSaveData_ProcDelete_Label , GameSaveData_ProcBase , IGameSaveData_ProcBase , GameSaveData_Types , GameSaveData_ProcCopy_Label , GameSaveData_ProcWrite_Label , GameSaveData_Tag , IGameSaveData_Tag , GameSaveData , IGameSaveData }
+ # [cfg (feature = "app-gamesavedata-types")] pub use gamesavedata :: { GameSaveData_Types , GameSaveData_ProcWrite_Label , GameSaveData_ProcDelete , IGameSaveData_ProcDelete , GameSaveData_ProcDelete_Label , GameSaveData_Tag_Reader , IGameSaveData_Tag_Reader , GameSaveData_ProcBase , IGameSaveData_ProcBase , GameSaveData_ProcRead , IGameSaveData_ProcRead , GameSaveData_Tag_Writer , IGameSaveData_Tag_Writer , GameSaveData_ProcRead_Label , GameSaveData_Tag , IGameSaveData_Tag , GameSaveData , IGameSaveData , GameSaveData_ProcWrite , IGameSaveData_ProcWrite , GameSaveData_ProcCopy_Label , GameSaveData_ProcCopy , IGameSaveData_ProcCopy }
  ;
- # [cfg (feature = "app-gamesavedata")] pub use gamesavedata :: { IGameSaveData_Tag_WriterMethods , IGameSaveData_ProcCopyMethods , IGameSaveData_ProcReadMethods , IGameSaveData_ProcWriteMethods , IGameSaveData_Tag_ReaderMethods , IGameSaveData_ProcDeleteMethods , IGameSaveData_ProcBaseMethods , IGameSaveDataMethods }
+ # [cfg (feature = "app-gamesavedata")] pub use gamesavedata :: { IGameSaveData_ProcDeleteMethods , IGameSaveData_Tag_ReaderMethods , IGameSaveData_ProcBaseMethods , IGameSaveData_ProcReadMethods , IGameSaveData_Tag_WriterMethods , IGameSaveDataMethods , IGameSaveData_ProcWriteMethods , IGameSaveData_ProcCopyMethods }
  ;
  # [cfg (any (feature = "app-gamesavedataheader-types"))] pub mod gamesavedataheader ;
  # [cfg (feature = "app-gamesavedataheader-types")] pub use gamesavedataheader :: { GameSaveDataHeader , IGameSaveDataHeader }
@@ -2532,24 +2532,24 @@
  # [cfg (feature = "app-gamesavedataheader")] pub use gamesavedataheader :: { IGameSaveDataHeaderMethods }
  ;
  # [cfg (any (feature = "app-gamesavedataheaderreader-types"))] pub mod gamesavedataheaderreader ;
- # [cfg (feature = "app-gamesavedataheaderreader-types")] pub use gamesavedataheaderreader :: { GameSaveDataHeaderReader_ProcRelease , IGameSaveDataHeaderReader_ProcRelease , GameSaveDataHeaderReader , IGameSaveDataHeaderReader , GameSaveDataHeaderReader_Handle , IGameSaveDataHeaderReader_Handle , GameSaveDataHeaderReader_ProcRead , IGameSaveDataHeaderReader_ProcRead , GameSaveDataHeaderReader_States , GameSaveDataHeaderReader_HandleList , IGameSaveDataHeaderReader_HandleList }
+ # [cfg (feature = "app-gamesavedataheaderreader-types")] pub use gamesavedataheaderreader :: { GameSaveDataHeaderReader_ProcRead , IGameSaveDataHeaderReader_ProcRead , GameSaveDataHeaderReader_States , GameSaveDataHeaderReader , IGameSaveDataHeaderReader , GameSaveDataHeaderReader_HandleList , IGameSaveDataHeaderReader_HandleList , GameSaveDataHeaderReader_ProcRelease , IGameSaveDataHeaderReader_ProcRelease , GameSaveDataHeaderReader_Handle , IGameSaveDataHeaderReader_Handle }
  ;
- # [cfg (feature = "app-gamesavedataheaderreader")] pub use gamesavedataheaderreader :: { IGameSaveDataHeaderReader_ProcReleaseMethods , IGameSaveDataHeaderReaderMethods , IGameSaveDataHeaderReader_HandleMethods , IGameSaveDataHeaderReader_ProcReadMethods , IGameSaveDataHeaderReader_HandleListMethods }
+ # [cfg (feature = "app-gamesavedataheaderreader")] pub use gamesavedataheaderreader :: { IGameSaveDataHeaderReader_ProcReadMethods , IGameSaveDataHeaderReaderMethods , IGameSaveDataHeaderReader_HandleListMethods , IGameSaveDataHeaderReader_ProcReleaseMethods , IGameSaveDataHeaderReader_HandleMethods }
  ;
  # [cfg (any (feature = "app-gamesavedatautil-types"))] pub mod gamesavedatautil ;
- # [cfg (feature = "app-gamesavedatautil-types")] pub use gamesavedatautil :: { GameSaveDataUtil_ProcDeleteAll , IGameSaveDataUtil_ProcDeleteAll , GameSaveDataUtil_ProcProcess , IGameSaveDataUtil_ProcProcess , GameSaveDataUtil , IGameSaveDataUtil , GameSaveDataUtil_ProcessResultWithHeader , IGameSaveDataUtil_ProcessResultWithHeader , GameSaveDataUtil_ProcProcess_Modes , GameSaveDataUtil_ProcDeleteAll_Data , IGameSaveDataUtil_ProcDeleteAll_Data , GameSaveDataUtil_ProcessResult , IGameSaveDataUtil_ProcessResult }
+ # [cfg (feature = "app-gamesavedatautil-types")] pub use gamesavedatautil :: { GameSaveDataUtil_ProcDeleteAll_Data , IGameSaveDataUtil_ProcDeleteAll_Data , GameSaveDataUtil_ProcessResultWithHeader , IGameSaveDataUtil_ProcessResultWithHeader , GameSaveDataUtil , IGameSaveDataUtil , GameSaveDataUtil_ProcDeleteAll , IGameSaveDataUtil_ProcDeleteAll , GameSaveDataUtil_ProcessResult , IGameSaveDataUtil_ProcessResult , GameSaveDataUtil_ProcProcess_Modes , GameSaveDataUtil_ProcProcess , IGameSaveDataUtil_ProcProcess }
  ;
- # [cfg (feature = "app-gamesavedatautil")] pub use gamesavedatautil :: { IGameSaveDataUtil_ProcDeleteAllMethods , IGameSaveDataUtil_ProcProcessMethods , IGameSaveDataUtil_ProcessResultWithHeaderMethods , IGameSaveDataUtil_ProcDeleteAll_DataMethods , IGameSaveDataUtil_ProcessResultMethods }
+ # [cfg (feature = "app-gamesavedatautil")] pub use gamesavedatautil :: { IGameSaveDataUtil_ProcDeleteAll_DataMethods , IGameSaveDataUtil_ProcessResultWithHeaderMethods , IGameSaveDataUtil_ProcDeleteAllMethods , IGameSaveDataUtil_ProcessResultMethods , IGameSaveDataUtil_ProcProcessMethods }
  ;
  # [cfg (any (feature = "app-gameskip-types"))] pub mod gameskip ;
- # [cfg (feature = "app-gameskip-types")] pub use gameskip :: { GameSkip , IGameSkip , GameSkip_Status , GameSkip_Result , GameSkip_ProcWaitTime , IGameSkip_ProcWaitTime , GameSkip_Sequence , GameSkip_ProcSuspend , IGameSkip_ProcSuspend }
+ # [cfg (feature = "app-gameskip-types")] pub use gameskip :: { GameSkip_Status , GameSkip_ProcSuspend , IGameSkip_ProcSuspend , GameSkip_ProcWaitTime , IGameSkip_ProcWaitTime , GameSkip_Sequence , GameSkip_Result , GameSkip , IGameSkip }
  ;
- # [cfg (feature = "app-gameskip")] pub use gameskip :: { IGameSkipMethods , IGameSkip_ProcWaitTimeMethods , IGameSkip_ProcSuspendMethods }
+ # [cfg (feature = "app-gameskip")] pub use gameskip :: { IGameSkip_ProcSuspendMethods , IGameSkip_ProcWaitTimeMethods , IGameSkipMethods }
  ;
  # [cfg (any (feature = "app-gamesound-types"))] pub mod gamesound ;
- # [cfg (feature = "app-gamesound-types")] pub use gamesound :: { GameSound_WakeupVoicePattern , GameSound_ResultLoad , IGameSound_ResultLoad , GameSound_LipSyncData , IGameSound_LipSyncData , GameSound_UnitHP , GameSound , IGameSound , GameSound_ProcDescPostEvent , IGameSound_ProcDescPostEvent , GameSound_WakeupVoiceSituation , GameSound_RingCleaningVoicePattern , GameSound_FadeSpeedType , GameSound_Handle , IGameSound_Handle }
+ # [cfg (feature = "app-gamesound-types")] pub use gamesound :: { GameSound , IGameSound , GameSound_UnitHP , GameSound_ResultLoad , IGameSound_ResultLoad , GameSound_ProcDescPostEvent , IGameSound_ProcDescPostEvent , GameSound_RingCleaningVoicePattern , GameSound_WakeupVoiceSituation , GameSound_FadeSpeedType , GameSound_Handle , IGameSound_Handle , GameSound_WakeupVoicePattern , GameSound_LipSyncData , IGameSound_LipSyncData }
  ;
- # [cfg (feature = "app-gamesound")] pub use gamesound :: { IGameSound_ResultLoadMethods , IGameSound_LipSyncDataMethods , IGameSoundMethods , IGameSound_ProcDescPostEventMethods , IGameSound_HandleMethods }
+ # [cfg (feature = "app-gamesound")] pub use gamesound :: { IGameSoundMethods , IGameSound_ResultLoadMethods , IGameSound_ProcDescPostEventMethods , IGameSound_HandleMethods , IGameSound_LipSyncDataMethods }
  ;
  # [cfg (any (feature = "app-gamesoundutil-types"))] pub mod gamesoundutil ;
  # [cfg (feature = "app-gamesoundutil-types")] pub use gamesoundutil :: { GameSoundUtil , IGameSoundUtil }
@@ -2557,24 +2557,24 @@
  # [cfg (feature = "app-gamesoundutil")] pub use gamesoundutil :: { IGameSoundUtilMethods }
  ;
  # [cfg (any (feature = "app-gametime-types"))] pub mod gametime ;
- # [cfg (feature = "app-gametime-types")] pub use gametime :: { GameTime_VsycMode , GameTime , IGameTime , GameTime_Ch }
+ # [cfg (feature = "app-gametime-types")] pub use gametime :: { GameTime , IGameTime , GameTime_Ch , GameTime_VsycMode }
  ;
  # [cfg (feature = "app-gametime")] pub use gametime :: { IGameTimeMethods }
  ;
  # [cfg (any (feature = "app-gameui-types"))] pub mod gameui ;
- # [cfg (feature = "app-gameui-types")] pub use gameui :: { GameUI , IGameUI , GameUI_Priority }
+ # [cfg (feature = "app-gameui-types")] pub use gameui :: { GameUI_Priority , GameUI , IGameUI }
  ;
  # [cfg (feature = "app-gameui")] pub use gameui :: { IGameUIMethods }
  ;
  # [cfg (any (feature = "app-gameuserdata-types"))] pub mod gameuserdata ;
- # [cfg (feature = "app-gameuserdata-types")] pub use gameuserdata :: { GameUserData_MapModes , GameUserData_StatusField , IGameUserData_StatusField , GameUserData_Statuses , GameUserData_Sequences , GameUserData , IGameUserData , GameUserData_ProcDescSetSequence , IGameUserData_ProcDescSetSequence }
+ # [cfg (feature = "app-gameuserdata-types")] pub use gameuserdata :: { GameUserData_MapModes , GameUserData_StatusField , IGameUserData_StatusField , GameUserData_Sequences , GameUserData_ProcDescSetSequence , IGameUserData_ProcDescSetSequence , GameUserData_Statuses , GameUserData , IGameUserData }
  ;
- # [cfg (feature = "app-gameuserdata")] pub use gameuserdata :: { IGameUserData_StatusFieldMethods , IGameUserDataMethods , IGameUserData_ProcDescSetSequenceMethods }
+ # [cfg (feature = "app-gameuserdata")] pub use gameuserdata :: { IGameUserData_StatusFieldMethods , IGameUserData_ProcDescSetSequenceMethods , IGameUserDataMethods }
  ;
  # [cfg (any (feature = "app-gameuserglobaldata-types"))] pub mod gameuserglobaldata ;
- # [cfg (feature = "app-gameuserglobaldata-types")] pub use gameuserglobaldata :: { GameUserGlobalData_Flags , GameUserGlobalData , IGameUserGlobalData , GameUserGlobalData_FlagsField , IGameUserGlobalData_FlagsField }
+ # [cfg (feature = "app-gameuserglobaldata-types")] pub use gameuserglobaldata :: { GameUserGlobalData_FlagsField , IGameUserGlobalData_FlagsField , GameUserGlobalData_Flags , GameUserGlobalData , IGameUserGlobalData }
  ;
- # [cfg (feature = "app-gameuserglobaldata")] pub use gameuserglobaldata :: { IGameUserGlobalDataMethods , IGameUserGlobalData_FlagsFieldMethods }
+ # [cfg (feature = "app-gameuserglobaldata")] pub use gameuserglobaldata :: { IGameUserGlobalData_FlagsFieldMethods , IGameUserGlobalDataMethods }
  ;
  # [cfg (any (feature = "app-gameusergmapdata-types"))] pub mod gameusergmapdata ;
  # [cfg (feature = "app-gameusergmapdata-types")] pub use gameusergmapdata :: { GameUserGmapData_EncountCounterType , GameUserGmapData , IGameUserGmapData }
@@ -2587,9 +2587,9 @@
  # [cfg (feature = "app-gameuserhubdata")] pub use gameuserhubdata :: { IGameUserHubDataMethods }
  ;
  # [cfg (any (feature = "app-gameuserrestartdata-types"))] pub mod gameuserrestartdata ;
- # [cfg (feature = "app-gameuserrestartdata-types")] pub use gameuserrestartdata :: { GameUserRestartData_VariableWriter , IGameUserRestartData_VariableWriter , GameUserRestartData_GameConfigWriter , IGameUserRestartData_GameConfigWriter , GameUserRestartData_RecordWriter , IGameUserRestartData_RecordWriter , GameUserRestartData , IGameUserRestartData , GameUserRestartData_Targtes , GameUserRestartData_GrowthWriter , IGameUserRestartData_GrowthWriter , GameUserRestartData_CompleteWriter , IGameUserRestartData_CompleteWriter , GameUserRestartData_Growth , IGameUserRestartData_Growth , GameUserRestartData_RestartStream , IGameUserRestartData_RestartStream }
+ # [cfg (feature = "app-gameuserrestartdata-types")] pub use gameuserrestartdata :: { GameUserRestartData_VariableWriter , IGameUserRestartData_VariableWriter , GameUserRestartData_Targtes , GameUserRestartData_GameConfigWriter , IGameUserRestartData_GameConfigWriter , GameUserRestartData_GrowthWriter , IGameUserRestartData_GrowthWriter , GameUserRestartData , IGameUserRestartData , GameUserRestartData_RecordWriter , IGameUserRestartData_RecordWriter , GameUserRestartData_RestartStream , IGameUserRestartData_RestartStream , GameUserRestartData_CompleteWriter , IGameUserRestartData_CompleteWriter , GameUserRestartData_Growth , IGameUserRestartData_Growth }
  ;
- # [cfg (feature = "app-gameuserrestartdata")] pub use gameuserrestartdata :: { IGameUserRestartData_VariableWriterMethods , IGameUserRestartData_GameConfigWriterMethods , IGameUserRestartData_RecordWriterMethods , IGameUserRestartDataMethods , IGameUserRestartData_GrowthWriterMethods , IGameUserRestartData_CompleteWriterMethods , IGameUserRestartData_GrowthMethods , IGameUserRestartData_RestartStreamMethods }
+ # [cfg (feature = "app-gameuserrestartdata")] pub use gameuserrestartdata :: { IGameUserRestartData_VariableWriterMethods , IGameUserRestartData_GameConfigWriterMethods , IGameUserRestartData_GrowthWriterMethods , IGameUserRestartDataMethods , IGameUserRestartData_RecordWriterMethods , IGameUserRestartData_RestartStreamMethods , IGameUserRestartData_CompleteWriterMethods , IGameUserRestartData_GrowthMethods }
  ;
  # [cfg (any (feature = "app-gamevariable-types"))] pub mod gamevariable ;
  # [cfg (feature = "app-gamevariable-types")] pub use gamevariable :: { GameVariable , IGameVariable , GameVariable_Value }
@@ -2671,7 +2671,7 @@
  # [cfg (feature = "app-gmapcamera")] pub use gmapcamera :: { IGmapCameraMethods }
  ;
  # [cfg (any (feature = "app-gmapcinemachinecontroller-types"))] pub mod gmapcinemachinecontroller ;
- # [cfg (feature = "app-gmapcinemachinecontroller-types")] pub use gmapcinemachinecontroller :: { GmapCinemachineController_PointType , GmapCinemachineController , IGmapCinemachineController }
+ # [cfg (feature = "app-gmapcinemachinecontroller-types")] pub use gmapcinemachinecontroller :: { GmapCinemachineController , IGmapCinemachineController , GmapCinemachineController_PointType }
  ;
  # [cfg (feature = "app-gmapcinemachinecontroller")] pub use gmapcinemachinecontroller :: { IGmapCinemachineControllerMethods }
  ;
@@ -2681,7 +2681,7 @@
  # [cfg (feature = "app-gmapcinemascope")] pub use gmapcinemascope :: { IGmapCinemaScopeMethods }
  ;
  # [cfg (any (feature = "app-gmapgroundcollider-types"))] pub mod gmapgroundcollider ;
- # [cfg (feature = "app-gmapgroundcollider-types")] pub use gmapgroundcollider :: { GmapGroundCollider_Type , GmapGroundCollider , IGmapGroundCollider }
+ # [cfg (feature = "app-gmapgroundcollider-types")] pub use gmapgroundcollider :: { GmapGroundCollider , IGmapGroundCollider , GmapGroundCollider_Type }
  ;
  # [cfg (feature = "app-gmapgroundcollider")] pub use gmapgroundcollider :: { IGmapGroundColliderMethods }
  ;
@@ -2696,7 +2696,7 @@
  # [cfg (feature = "app-gmaplightcolortable")] pub use gmaplightcolortable :: { IGmapLightColorTableMethods }
  ;
  # [cfg (any (feature = "app-gmaplinerenderer-types"))] pub mod gmaplinerenderer ;
- # [cfg (feature = "app-gmaplinerenderer-types")] pub use gmaplinerenderer :: { GmapLineRenderer_DrawType , GmapLineRenderer , IGmapLineRenderer , GmapLineRenderer_LinePoint , IGmapLineRenderer_LinePoint }
+ # [cfg (feature = "app-gmaplinerenderer-types")] pub use gmaplinerenderer :: { GmapLineRenderer , IGmapLineRenderer , GmapLineRenderer_LinePoint , IGmapLineRenderer_LinePoint , GmapLineRenderer_DrawType }
  ;
  # [cfg (feature = "app-gmaplinerenderer")] pub use gmaplinerenderer :: { IGmapLineRendererMethods , IGmapLineRenderer_LinePointMethods }
  ;
@@ -2716,9 +2716,9 @@
  # [cfg (feature = "app-gmapmenumanager")] pub use gmapmenumanager :: { IGmapMenuManagerMethods }
  ;
  # [cfg (any (feature = "app-gmapmenusequence-types"))] pub mod gmapmenusequence ;
- # [cfg (feature = "app-gmapmenusequence-types")] pub use gmapmenusequence :: { GmapMenuSequence_GmapMenu , IGmapMenuSequence_GmapMenu , GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem , IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem , GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem , IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem , GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem , IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem , GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem , IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem , GmapMenuSequence_GmapMenu_EnterChapterItem , IGmapMenuSequence_GmapMenu_EnterChapterItem , GmapMenuSequence , IGmapMenuSequence , GmapMenuSequence_GmapMenu_RankingItem , IGmapMenuSequence_GmapMenu_RankingItem , GmapMenuSequence_GoToMapSequence , IGmapMenuSequence_GoToMapSequence , GmapMenuSequence_GmapMenu_SubShopMenu , IGmapMenuSequence_GmapMenu_SubShopMenu , GmapMenuSequence_GmapMenu_GoToSolanelItem , IGmapMenuSequence_GmapMenu_GoToSolanelItem , GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem , IGmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem , GmapMenuSequence_Label , GmapMenuSequence_GmapMenu_FriendItem , IGmapMenuSequence_GmapMenu_FriendItem , GmapMenuSequence_GmapMenu_SystemItem , IGmapMenuSequence_GmapMenu_SystemItem , GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem , IGmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem , GmapMenuSequence_GoToMapSequence_Label , GmapMenuSequence_GmapMenu_GodItem , IGmapMenuSequence_GmapMenu_GodItem , GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem , IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem , GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem , IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem , GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem , IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem , GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem , IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem , GmapMenuSequence_GmapMenu_ShopItem , IGmapMenuSequence_GmapMenu_ShopItem , GmapMenuSequence_GmapMenu_MaterialListItem , IGmapMenuSequence_GmapMenu_MaterialListItem , GmapMenuSequence_GmapMenu_SubSystemMenu , IGmapMenuSequence_GmapMenu_SubSystemMenu , GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem , IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem , GmapMenuSequence_GmapMenu_SubFriendMenu , IGmapMenuSequence_GmapMenu_SubFriendMenu , GmapMenuSequence_GmapMenu_GmapMenuMenuItem , IGmapMenuSequence_GmapMenu_GmapMenuMenuItem , GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence , IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence , GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence , IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence , GmapMenuSequence_GmapMenu_SaveItem , IGmapMenuSequence_GmapMenu_SaveItem , GmapMenuSequence_GmapMenu_InventoryItem , IGmapMenuSequence_GmapMenu_InventoryItem }
+ # [cfg (feature = "app-gmapmenusequence-types")] pub use gmapmenusequence :: { GmapMenuSequence_Label , GmapMenuSequence_GmapMenu , IGmapMenuSequence_GmapMenu , GmapMenuSequence_GmapMenu_RankingItem , IGmapMenuSequence_GmapMenu_RankingItem , GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem , IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem , GmapMenuSequence_GmapMenu_SubSystemMenu , IGmapMenuSequence_GmapMenu_SubSystemMenu , GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem , IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem , GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem , IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem , GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence , IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence , GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem , IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem , GmapMenuSequence_GmapMenu_SaveItem , IGmapMenuSequence_GmapMenu_SaveItem , GmapMenuSequence_GmapMenu_ShopItem , IGmapMenuSequence_GmapMenu_ShopItem , GmapMenuSequence_GmapMenu_InventoryItem , IGmapMenuSequence_GmapMenu_InventoryItem , GmapMenuSequence_GmapMenu_GodItem , IGmapMenuSequence_GmapMenu_GodItem , GmapMenuSequence_GmapMenu_MaterialListItem , IGmapMenuSequence_GmapMenu_MaterialListItem , GmapMenuSequence_GmapMenu_FriendItem , IGmapMenuSequence_GmapMenu_FriendItem , GmapMenuSequence_GoToMapSequence , IGmapMenuSequence_GoToMapSequence , GmapMenuSequence_GmapMenu_SubShopMenu , IGmapMenuSequence_GmapMenu_SubShopMenu , GmapMenuSequence_GmapMenu_SubFriendMenu , IGmapMenuSequence_GmapMenu_SubFriendMenu , GmapMenuSequence_GmapMenu_SystemItem , IGmapMenuSequence_GmapMenu_SystemItem , GmapMenuSequence_GoToMapSequence_Label , GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem , IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem , GmapMenuSequence_GmapMenu_GmapMenuMenuItem , IGmapMenuSequence_GmapMenu_GmapMenuMenuItem , GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem , IGmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem , GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem , IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem , GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem , IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem , GmapMenuSequence , IGmapMenuSequence , GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem , IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem , GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem , IGmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem , GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem , IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem , GmapMenuSequence_GmapMenu_EnterChapterItem , IGmapMenuSequence_GmapMenu_EnterChapterItem , GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence , IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence , GmapMenuSequence_GmapMenu_GoToSolanelItem , IGmapMenuSequence_GmapMenu_GoToSolanelItem }
  ;
- # [cfg (feature = "app-gmapmenusequence")] pub use gmapmenusequence :: { IGmapMenuSequence_GmapMenuMethods , IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItemMethods , IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItemMethods , IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItemMethods , IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItemMethods , IGmapMenuSequence_GmapMenu_EnterChapterItemMethods , IGmapMenuSequenceMethods , IGmapMenuSequence_GmapMenu_RankingItemMethods , IGmapMenuSequence_GoToMapSequenceMethods , IGmapMenuSequence_GmapMenu_SubShopMenuMethods , IGmapMenuSequence_GmapMenu_GoToSolanelItemMethods , IGmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItemMethods , IGmapMenuSequence_GmapMenu_FriendItemMethods , IGmapMenuSequence_GmapMenu_SystemItemMethods , IGmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItemMethods , IGmapMenuSequence_GmapMenu_GodItemMethods , IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItemMethods , IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItemMethods , IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItemMethods , IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItemMethods , IGmapMenuSequence_GmapMenu_ShopItemMethods , IGmapMenuSequence_GmapMenu_MaterialListItemMethods , IGmapMenuSequence_GmapMenu_SubSystemMenuMethods , IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItemMethods , IGmapMenuSequence_GmapMenu_SubFriendMenuMethods , IGmapMenuSequence_GmapMenu_GmapMenuMenuItemMethods , IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequenceMethods , IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequenceMethods , IGmapMenuSequence_GmapMenu_SaveItemMethods , IGmapMenuSequence_GmapMenu_InventoryItemMethods }
+ # [cfg (feature = "app-gmapmenusequence")] pub use gmapmenusequence :: { IGmapMenuSequence_GmapMenuMethods , IGmapMenuSequence_GmapMenu_RankingItemMethods , IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItemMethods , IGmapMenuSequence_GmapMenu_SubSystemMenuMethods , IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItemMethods , IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItemMethods , IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequenceMethods , IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItemMethods , IGmapMenuSequence_GmapMenu_SaveItemMethods , IGmapMenuSequence_GmapMenu_ShopItemMethods , IGmapMenuSequence_GmapMenu_InventoryItemMethods , IGmapMenuSequence_GmapMenu_GodItemMethods , IGmapMenuSequence_GmapMenu_MaterialListItemMethods , IGmapMenuSequence_GmapMenu_FriendItemMethods , IGmapMenuSequence_GoToMapSequenceMethods , IGmapMenuSequence_GmapMenu_SubShopMenuMethods , IGmapMenuSequence_GmapMenu_SubFriendMenuMethods , IGmapMenuSequence_GmapMenu_SystemItemMethods , IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItemMethods , IGmapMenuSequence_GmapMenu_GmapMenuMenuItemMethods , IGmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItemMethods , IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItemMethods , IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItemMethods , IGmapMenuSequenceMethods , IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItemMethods , IGmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItemMethods , IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItemMethods , IGmapMenuSequence_GmapMenu_EnterChapterItemMethods , IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequenceMethods , IGmapMenuSequence_GmapMenu_GoToSolanelItemMethods }
  ;
  # [cfg (any (feature = "app-gmapmobunit-types"))] pub mod gmapmobunit ;
  # [cfg (feature = "app-gmapmobunit-types")] pub use gmapmobunit :: { GmapMobUnit , IGmapMobUnit }
@@ -2726,27 +2726,27 @@
  # [cfg (feature = "app-gmapmobunit")] pub use gmapmobunit :: { IGmapMobUnitMethods }
  ;
  # [cfg (any (feature = "app-gmapmode-types"))] pub mod gmapmode ;
- # [cfg (feature = "app-gmapmode-types")] pub use gmapmode :: { GmapMode , IGmapMode , GmapMode_Mode }
+ # [cfg (feature = "app-gmapmode-types")] pub use gmapmode :: { GmapMode_Mode , GmapMode , IGmapMode }
  ;
  # [cfg (feature = "app-gmapmode")] pub use gmapmode :: { IGmapModeMethods }
  ;
  # [cfg (any (feature = "app-gmapplayerunit-types"))] pub mod gmapplayerunit ;
- # [cfg (feature = "app-gmapplayerunit-types")] pub use gmapplayerunit :: { GmapPlayerUnit_ModelType , GmapPlayerUnit , IGmapPlayerUnit }
+ # [cfg (feature = "app-gmapplayerunit-types")] pub use gmapplayerunit :: { GmapPlayerUnit , IGmapPlayerUnit , GmapPlayerUnit_ModelType }
  ;
  # [cfg (feature = "app-gmapplayerunit")] pub use gmapplayerunit :: { IGmapPlayerUnitMethods }
  ;
  # [cfg (any (feature = "app-gmapsequence-types"))] pub mod gmapsequence ;
- # [cfg (feature = "app-gmapsequence-types")] pub use gmapsequence :: { GmapSequence_GmapWholeMapSequence_Label , GmapSequence_GmapDisposeSequence_Label , GmapSequence_GmapFreeCameraSequence_Label , GmapSequence_Label , GmapSequence_GmapTeleportSequence_Label , GmapSequence_GmapFreeCameraSequence_Dir , GmapSequence_GmapDisposeSequence , IGmapSequence_GmapDisposeSequence , GmapSequence_GmapFreeCameraSequence_DirFlag , GmapSequence_GmapFreeCameraSequence_SelfDestroy , IGmapSequence_GmapFreeCameraSequence_SelfDestroy , GmapSequence_GmapFreeCameraSequence , IGmapSequence_GmapFreeCameraSequence , GmapSequence_EnterChapterSequence_Label , GmapSequence_GmapWholeMapSequence , IGmapSequence_GmapWholeMapSequence , GmapSequence_GmapFreeCameraSequence_DirFlagField , IGmapSequence_GmapFreeCameraSequence_DirFlagField , GmapSequence_EnterChapterSequence , IGmapSequence_EnterChapterSequence , GmapSequence_GmapTeleportSequence , IGmapSequence_GmapTeleportSequence , GmapSequence , IGmapSequence }
+ # [cfg (feature = "app-gmapsequence-types")] pub use gmapsequence :: { GmapSequence , IGmapSequence , GmapSequence_EnterChapterSequence_Label , GmapSequence_EnterChapterSequence , IGmapSequence_EnterChapterSequence , GmapSequence_GmapTeleportSequence , IGmapSequence_GmapTeleportSequence , GmapSequence_GmapWholeMapSequence , IGmapSequence_GmapWholeMapSequence , GmapSequence_GmapWholeMapSequence_Label , GmapSequence_GmapFreeCameraSequence_SelfDestroy , IGmapSequence_GmapFreeCameraSequence_SelfDestroy , GmapSequence_Label , GmapSequence_GmapFreeCameraSequence_DirFlag , GmapSequence_GmapFreeCameraSequence_DirFlagField , IGmapSequence_GmapFreeCameraSequence_DirFlagField , GmapSequence_GmapDisposeSequence_Label , GmapSequence_GmapFreeCameraSequence , IGmapSequence_GmapFreeCameraSequence , GmapSequence_GmapFreeCameraSequence_Label , GmapSequence_GmapFreeCameraSequence_Dir , GmapSequence_GmapTeleportSequence_Label , GmapSequence_GmapDisposeSequence , IGmapSequence_GmapDisposeSequence }
  ;
- # [cfg (feature = "app-gmapsequence")] pub use gmapsequence :: { IGmapSequence_GmapDisposeSequenceMethods , IGmapSequence_GmapFreeCameraSequence_SelfDestroyMethods , IGmapSequence_GmapFreeCameraSequenceMethods , IGmapSequence_GmapWholeMapSequenceMethods , IGmapSequence_GmapFreeCameraSequence_DirFlagFieldMethods , IGmapSequence_EnterChapterSequenceMethods , IGmapSequence_GmapTeleportSequenceMethods , IGmapSequenceMethods }
+ # [cfg (feature = "app-gmapsequence")] pub use gmapsequence :: { IGmapSequenceMethods , IGmapSequence_EnterChapterSequenceMethods , IGmapSequence_GmapTeleportSequenceMethods , IGmapSequence_GmapWholeMapSequenceMethods , IGmapSequence_GmapFreeCameraSequence_SelfDestroyMethods , IGmapSequence_GmapFreeCameraSequence_DirFlagFieldMethods , IGmapSequence_GmapFreeCameraSequenceMethods , IGmapSequence_GmapDisposeSequenceMethods }
  ;
  # [cfg (any (feature = "app-gmapspot-types"))] pub mod gmapspot ;
- # [cfg (feature = "app-gmapspot-types")] pub use gmapspot :: { GmapSpot_EncountType , GmapSpot_State , GmapSpot_Direction , GmapSpot , IGmapSpot , GmapSpot_EncountPersonType }
+ # [cfg (feature = "app-gmapspot-types")] pub use gmapspot :: { GmapSpot_State , GmapSpot_EncountType , GmapSpot , IGmapSpot , GmapSpot_Direction , GmapSpot_EncountPersonType }
  ;
  # [cfg (feature = "app-gmapspot")] pub use gmapspot :: { IGmapSpotMethods }
  ;
  # [cfg (any (feature = "app-gmapspotadjuster-types"))] pub mod gmapspotadjuster ;
- # [cfg (feature = "app-gmapspotadjuster-types")] pub use gmapspotadjuster :: { GmapSpotAdjuster , IGmapSpotAdjuster , GmapSpotAdjuster_TargetModel }
+ # [cfg (feature = "app-gmapspotadjuster-types")] pub use gmapspotadjuster :: { GmapSpotAdjuster_TargetModel , GmapSpotAdjuster , IGmapSpotAdjuster }
  ;
  # [cfg (feature = "app-gmapspotadjuster")] pub use gmapspotadjuster :: { IGmapSpotAdjusterMethods }
  ;
@@ -2761,9 +2761,9 @@
  # [cfg (feature = "app-gmapspotmanager")] pub use gmapspotmanager :: { IGmapSpotManagerMethods }
  ;
  # [cfg (any (feature = "app-gmapteleportmenu-types"))] pub mod gmapteleportmenu ;
- # [cfg (feature = "app-gmapteleportmenu-types")] pub use gmapteleportmenu :: { GmapTeleportMenu_DecideEventHandler , IGmapTeleportMenu_DecideEventHandler , GmapTeleportMenu , IGmapTeleportMenu , GmapTeleportMenu_GmapTeleportMenuItem , IGmapTeleportMenu_GmapTeleportMenuItem }
+ # [cfg (feature = "app-gmapteleportmenu-types")] pub use gmapteleportmenu :: { GmapTeleportMenu , IGmapTeleportMenu , GmapTeleportMenu_GmapTeleportMenuItem , IGmapTeleportMenu_GmapTeleportMenuItem , GmapTeleportMenu_DecideEventHandler , IGmapTeleportMenu_DecideEventHandler }
  ;
- # [cfg (feature = "app-gmapteleportmenu")] pub use gmapteleportmenu :: { IGmapTeleportMenu_DecideEventHandlerMethods , IGmapTeleportMenuMethods , IGmapTeleportMenu_GmapTeleportMenuItemMethods }
+ # [cfg (feature = "app-gmapteleportmenu")] pub use gmapteleportmenu :: { IGmapTeleportMenuMethods , IGmapTeleportMenu_GmapTeleportMenuItemMethods , IGmapTeleportMenu_DecideEventHandlerMethods }
  ;
  # [cfg (any (feature = "app-gmaputil-types"))] pub mod gmaputil ;
  # [cfg (feature = "app-gmaputil-types")] pub use gmaputil :: { GmapUtil , IGmapUtil }
@@ -2801,7 +2801,7 @@
  # [cfg (feature = "app-godcolorrefineemblem")] pub use godcolorrefineemblem :: { IGodColorRefineEmblemMethods }
  ;
  # [cfg (any (feature = "app-goddata-types"))] pub mod goddata ;
- # [cfg (feature = "app-goddata-types")] pub use goddata :: { GodData_Flags , GodData , IGodData , GodData_FlagField , IGodData_FlagField , GodData_RelianceLevel , GodData_AIEngageAttackTypes }
+ # [cfg (feature = "app-goddata-types")] pub use goddata :: { GodData , IGodData , GodData_Flags , GodData_RelianceLevel , GodData_AIEngageAttackTypes , GodData_FlagField , IGodData_FlagField }
  ;
  # [cfg (feature = "app-goddata")] pub use goddata :: { IGodDataMethods , IGodData_FlagFieldMethods }
  ;
@@ -2811,14 +2811,14 @@
  # [cfg (feature = "app-godfacepicture")] pub use godfacepicture :: { IGodFacePictureMethods }
  ;
  # [cfg (any (feature = "app-godgrowsequence-types"))] pub mod godgrowsequence ;
- # [cfg (feature = "app-godgrowsequence-types")] pub use godgrowsequence :: { GodGrowSequence_Label , GodGrowSequence , IGodGrowSequence }
+ # [cfg (feature = "app-godgrowsequence-types")] pub use godgrowsequence :: { GodGrowSequence , IGodGrowSequence , GodGrowSequence_Label }
  ;
  # [cfg (feature = "app-godgrowsequence")] pub use godgrowsequence :: { IGodGrowSequenceMethods }
  ;
  # [cfg (any (feature = "app-godgrowthdata-types"))] pub mod godgrowthdata ;
- # [cfg (feature = "app-godgrowthdata-types")] pub use godgrowthdata :: { GodGrowthData_FlagField , IGodGrowthData_FlagField , GodGrowthData_LevelData , IGodGrowthData_LevelData , GodGrowthData_StyleItems , IGodGrowthData_StyleItems , GodGrowthData , IGodGrowthData , GodGrowthData_Flags }
+ # [cfg (feature = "app-godgrowthdata-types")] pub use godgrowthdata :: { GodGrowthData_Flags , GodGrowthData_LevelData , IGodGrowthData_LevelData , GodGrowthData , IGodGrowthData , GodGrowthData_FlagField , IGodGrowthData_FlagField , GodGrowthData_StyleItems , IGodGrowthData_StyleItems }
  ;
- # [cfg (feature = "app-godgrowthdata")] pub use godgrowthdata :: { IGodGrowthData_FlagFieldMethods , IGodGrowthData_LevelDataMethods , IGodGrowthData_StyleItemsMethods , IGodGrowthDataMethods }
+ # [cfg (feature = "app-godgrowthdata")] pub use godgrowthdata :: { IGodGrowthData_LevelDataMethods , IGodGrowthDataMethods , IGodGrowthData_FlagFieldMethods , IGodGrowthData_StyleItemsMethods }
  ;
  # [cfg (any (feature = "app-godinheritedskills-types"))] pub mod godinheritedskills ;
  # [cfg (feature = "app-godinheritedskills-types")] pub use godinheritedskills :: { GodInheritedSkills , IGodInheritedSkills }
@@ -2861,19 +2861,19 @@
  # [cfg (feature = "app-godroomgodinfosetter")] pub use godroomgodinfosetter :: { IGodRoomGodInfoSetterMethods }
  ;
  # [cfg (any (feature = "app-godroompedestalsequence-types"))] pub mod godroompedestalsequence ;
- # [cfg (feature = "app-godroompedestalsequence-types")] pub use godroompedestalsequence :: { GodRoomPedestalSequence , IGodRoomPedestalSequence , GodRoomPedestalSequence_Label }
+ # [cfg (feature = "app-godroompedestalsequence-types")] pub use godroompedestalsequence :: { GodRoomPedestalSequence_Label , GodRoomPedestalSequence , IGodRoomPedestalSequence }
  ;
  # [cfg (feature = "app-godroompedestalsequence")] pub use godroompedestalsequence :: { IGodRoomPedestalSequenceMethods }
  ;
  # [cfg (any (feature = "app-godroompedestaltopmenu-types"))] pub mod godroompedestaltopmenu ;
- # [cfg (feature = "app-godroompedestaltopmenu-types")] pub use godroompedestaltopmenu :: { GodRoomPedestalTopMenu_DecideEventHandler , IGodRoomPedestalTopMenu_DecideEventHandler , GodRoomPedestalTopMenu_RingMergeItem , IGodRoomPedestalTopMenu_RingMergeItem , GodRoomPedestalTopMenu_SkillInheritanceItem , IGodRoomPedestalTopMenu_SkillInheritanceItem , GodRoomPedestalTopMenu , IGodRoomPedestalTopMenu , GodRoomPedestalTopMenu_RingCleaningItem , IGodRoomPedestalTopMenu_RingCleaningItem , GodRoomPedestalTopMenu_RefineGodWeaponItem , IGodRoomPedestalTopMenu_RefineGodWeaponItem , GodRoomPedestalTopMenu_RingGachaItem , IGodRoomPedestalTopMenu_RingGachaItem , GodRoomPedestalTopMenu_Result2 }
+ # [cfg (feature = "app-godroompedestaltopmenu-types")] pub use godroompedestaltopmenu :: { GodRoomPedestalTopMenu_RingMergeItem , IGodRoomPedestalTopMenu_RingMergeItem , GodRoomPedestalTopMenu_RingCleaningItem , IGodRoomPedestalTopMenu_RingCleaningItem , GodRoomPedestalTopMenu_Result2 , GodRoomPedestalTopMenu_RefineGodWeaponItem , IGodRoomPedestalTopMenu_RefineGodWeaponItem , GodRoomPedestalTopMenu_DecideEventHandler , IGodRoomPedestalTopMenu_DecideEventHandler , GodRoomPedestalTopMenu_RingGachaItem , IGodRoomPedestalTopMenu_RingGachaItem , GodRoomPedestalTopMenu , IGodRoomPedestalTopMenu , GodRoomPedestalTopMenu_SkillInheritanceItem , IGodRoomPedestalTopMenu_SkillInheritanceItem }
  ;
- # [cfg (feature = "app-godroompedestaltopmenu")] pub use godroompedestaltopmenu :: { IGodRoomPedestalTopMenu_DecideEventHandlerMethods , IGodRoomPedestalTopMenu_RingMergeItemMethods , IGodRoomPedestalTopMenu_SkillInheritanceItemMethods , IGodRoomPedestalTopMenuMethods , IGodRoomPedestalTopMenu_RingCleaningItemMethods , IGodRoomPedestalTopMenu_RefineGodWeaponItemMethods , IGodRoomPedestalTopMenu_RingGachaItemMethods }
+ # [cfg (feature = "app-godroompedestaltopmenu")] pub use godroompedestaltopmenu :: { IGodRoomPedestalTopMenu_RingMergeItemMethods , IGodRoomPedestalTopMenu_RingCleaningItemMethods , IGodRoomPedestalTopMenu_RefineGodWeaponItemMethods , IGodRoomPedestalTopMenu_DecideEventHandlerMethods , IGodRoomPedestalTopMenu_RingGachaItemMethods , IGodRoomPedestalTopMenuMethods , IGodRoomPedestalTopMenu_SkillInheritanceItemMethods }
  ;
  # [cfg (any (feature = "app-godroomunitselectmenu-types"))] pub mod godroomunitselectmenu ;
- # [cfg (feature = "app-godroomunitselectmenu-types")] pub use godroomunitselectmenu :: { GodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem , IGodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem , GodRoomUnitSelectMenu_DecideEventHandler , IGodRoomUnitSelectMenu_DecideEventHandler , GodRoomUnitSelectMenu , IGodRoomUnitSelectMenu , GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem , IGodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem }
+ # [cfg (feature = "app-godroomunitselectmenu-types")] pub use godroomunitselectmenu :: { GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem , IGodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem , GodRoomUnitSelectMenu , IGodRoomUnitSelectMenu , GodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem , IGodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem , GodRoomUnitSelectMenu_DecideEventHandler , IGodRoomUnitSelectMenu_DecideEventHandler }
  ;
- # [cfg (feature = "app-godroomunitselectmenu")] pub use godroomunitselectmenu :: { IGodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItemMethods , IGodRoomUnitSelectMenu_DecideEventHandlerMethods , IGodRoomUnitSelectMenuMethods , IGodRoomUnitSelectMenu_GodRoomUnitSelectMenuItemMethods }
+ # [cfg (feature = "app-godroomunitselectmenu")] pub use godroomunitselectmenu :: { IGodRoomUnitSelectMenu_GodRoomUnitSelectMenuItemMethods , IGodRoomUnitSelectMenuMethods , IGodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItemMethods , IGodRoomUnitSelectMenu_DecideEventHandlerMethods }
  ;
  # [cfg (any (feature = "app-godroomunitselectmenucontent-types"))] pub mod godroomunitselectmenucontent ;
  # [cfg (feature = "app-godroomunitselectmenucontent-types")] pub use godroomunitselectmenucontent :: { GodRoomUnitSelectMenuContent , IGodRoomUnitSelectMenuContent }
@@ -2914,9 +2914,9 @@
  # [cfg (feature = "app-godunitmenuitem")] pub use godunitmenuitem :: { IGodUnitMenuItemMethods }
  ;
  # [cfg (any (feature = "app-godunitselectmenu-types"))] pub mod godunitselectmenu ;
- # [cfg (feature = "app-godunitselectmenu-types")] pub use godunitselectmenu :: { GodUnitSelectMenu_DecideEventHandler , IGodUnitSelectMenu_DecideEventHandler , GodUnitSelectMenu , IGodUnitSelectMenu , GodUnitSelectMenu_SelectEventHandler , IGodUnitSelectMenu_SelectEventHandler }
+ # [cfg (feature = "app-godunitselectmenu-types")] pub use godunitselectmenu :: { GodUnitSelectMenu , IGodUnitSelectMenu , GodUnitSelectMenu_SelectEventHandler , IGodUnitSelectMenu_SelectEventHandler , GodUnitSelectMenu_DecideEventHandler , IGodUnitSelectMenu_DecideEventHandler }
  ;
- # [cfg (feature = "app-godunitselectmenu")] pub use godunitselectmenu :: { IGodUnitSelectMenu_DecideEventHandlerMethods , IGodUnitSelectMenuMethods , IGodUnitSelectMenu_SelectEventHandlerMethods }
+ # [cfg (feature = "app-godunitselectmenu")] pub use godunitselectmenu :: { IGodUnitSelectMenuMethods , IGodUnitSelectMenu_SelectEventHandlerMethods , IGodUnitSelectMenu_DecideEventHandlerMethods }
  ;
  # [cfg (any (feature = "app-godunitselectmenucontent-types"))] pub mod godunitselectmenucontent ;
  # [cfg (feature = "app-godunitselectmenucontent-types")] pub use godunitselectmenucontent :: { GodUnitSelectMenuContent , IGodUnitSelectMenuContent }
@@ -2929,7 +2929,7 @@
  # [cfg (feature = "app-godunitselectmenuitem")] pub use godunitselectmenuitem :: { IGodUnitSelectMenuItemMethods }
  ;
  # [cfg (any (feature = "app-godweaponrefinedata-types"))] pub mod godweaponrefinedata ;
- # [cfg (feature = "app-godweaponrefinedata-types")] pub use godweaponrefinedata :: { GodWeaponRefineData , IGodWeaponRefineData , GodWeaponRefineData_Kind }
+ # [cfg (feature = "app-godweaponrefinedata-types")] pub use godweaponrefinedata :: { GodWeaponRefineData_Kind , GodWeaponRefineData , IGodWeaponRefineData }
  ;
  # [cfg (feature = "app-godweaponrefinedata")] pub use godweaponrefinedata :: { IGodWeaponRefineDataMethods }
  ;
@@ -2954,7 +2954,7 @@
  # [cfg (feature = "app-grassdata")] pub use grassdata :: { IGrassData_SpriteInfoMethods , IGrassDataMethods }
  ;
  # [cfg (any (feature = "app-grassmanager-types"))] pub mod grassmanager ;
- # [cfg (feature = "app-grassmanager-types")] pub use grassmanager :: { GrassManager , IGrassManager , GrassManager_MixType }
+ # [cfg (feature = "app-grassmanager-types")] pub use grassmanager :: { GrassManager_MixType , GrassManager , IGrassManager }
  ;
  # [cfg (feature = "app-grassmanager")] pub use grassmanager :: { IGrassManagerMethods }
  ;
@@ -3027,12 +3027,12 @@
  # [cfg (feature = "app-growmodeselectmenuitemcontent")] pub use growmodeselectmenuitemcontent :: { IGrowModeSelectMenuItemContentMethods }
  ;
  # [cfg (any (feature = "app-gx-types"))] pub mod gx ;
- # [cfg (feature = "app-gx-types")] pub use gx :: { GX_Anchor , GX , IGX }
+ # [cfg (feature = "app-gx-types")] pub use gx :: { GX , IGX , GX_Anchor }
  ;
  # [cfg (feature = "app-gx")] pub use gx :: { IGXMethods }
  ;
  # [cfg (any (feature = "app-gyromnager-types"))] pub mod gyromnager ;
- # [cfg (feature = "app-gyromnager-types")] pub use gyromnager :: { GyroMnager , IGyroMnager , GyroMnager_DeviceType }
+ # [cfg (feature = "app-gyromnager-types")] pub use gyromnager :: { GyroMnager_DeviceType , GyroMnager , IGyroMnager }
  ;
  # [cfg (feature = "app-gyromnager")] pub use gyromnager :: { IGyroMnagerMethods }
  ;
@@ -3127,7 +3127,7 @@
  # [cfg (feature = "app-helpitemweaponlevel")] pub use helpitemweaponlevel :: { IHelpItemWeaponLevelMethods }
  ;
  # [cfg (any (feature = "app-helpmanager-types"))] pub mod helpmanager ;
- # [cfg (feature = "app-helpmanager-types")] pub use helpmanager :: { HelpManager , IHelpManager , HelpManager_Item , IHelpManager_Item , HelpManager_HelpItemType , HelpManager_Item_Dir , HelpManager_SituationType }
+ # [cfg (feature = "app-helpmanager-types")] pub use helpmanager :: { HelpManager_Item_Dir , HelpManager , IHelpManager , HelpManager_HelpItemType , HelpManager_SituationType , HelpManager_Item , IHelpManager_Item }
  ;
  # [cfg (feature = "app-helpmanager")] pub use helpmanager :: { IHelpManagerMethods , IHelpManager_ItemMethods }
  ;
@@ -3137,9 +3137,9 @@
  # [cfg (feature = "app-helpparamsetter")] pub use helpparamsetter :: { IHelpParamSetterMethods }
  ;
  # [cfg (any (feature = "app-helpproc-types"))] pub mod helpproc ;
- # [cfg (feature = "app-helpproc-types")] pub use helpproc :: { HelpProc_EventHandler , IHelpProc_EventHandler , HelpProc , IHelpProc }
+ # [cfg (feature = "app-helpproc-types")] pub use helpproc :: { HelpProc , IHelpProc , HelpProc_EventHandler , IHelpProc_EventHandler }
  ;
- # [cfg (feature = "app-helpproc")] pub use helpproc :: { IHelpProc_EventHandlerMethods , IHelpProcMethods }
+ # [cfg (feature = "app-helpproc")] pub use helpproc :: { IHelpProcMethods , IHelpProc_EventHandlerMethods }
  ;
  # [cfg (any (feature = "app-helpspotinspector-types"))] pub mod helpspotinspector ;
  # [cfg (feature = "app-helpspotinspector-types")] pub use helpspotinspector :: { HelpSpotInspector , IHelpSpotInspector }
@@ -3172,22 +3172,22 @@
  # [cfg (feature = "app-hubaccesshelp")] pub use hubaccesshelp :: { IHubAccessHelpMethods }
  ;
  # [cfg (any (feature = "app-hubaccessmanager-types"))] pub mod hubaccessmanager ;
- # [cfg (feature = "app-hubaccessmanager-types")] pub use hubaccessmanager :: { HubAccessManager , IHubAccessManager , HubAccessManager_MaterialCalculator , IHubAccessManager_MaterialCalculator , HubAccessManager_MaterialCalculator_Type }
+ # [cfg (feature = "app-hubaccessmanager-types")] pub use hubaccessmanager :: { HubAccessManager_MaterialCalculator_Type , HubAccessManager , IHubAccessManager , HubAccessManager_MaterialCalculator , IHubAccessManager_MaterialCalculator }
  ;
  # [cfg (feature = "app-hubaccessmanager")] pub use hubaccessmanager :: { IHubAccessManagerMethods , IHubAccessManager_MaterialCalculatorMethods }
  ;
  # [cfg (any (feature = "app-hubaccessoryroom-types"))] pub mod hubaccessoryroom ;
- # [cfg (feature = "app-hubaccessoryroom-types")] pub use hubaccessoryroom :: { HubAccessoryRoom_ViewMode , HubAccessoryRoom_Shop , HubAccessoryRoom_Label , HubAccessoryRoom , IHubAccessoryRoom }
+ # [cfg (feature = "app-hubaccessoryroom-types")] pub use hubaccessoryroom :: { HubAccessoryRoom_ViewMode , HubAccessoryRoom_Label , HubAccessoryRoom_Shop , HubAccessoryRoom , IHubAccessoryRoom }
  ;
  # [cfg (feature = "app-hubaccessoryroom")] pub use hubaccessoryroom :: { IHubAccessoryRoomMethods }
  ;
  # [cfg (any (feature = "app-hubaccessoryroomcamera-types"))] pub mod hubaccessoryroomcamera ;
- # [cfg (feature = "app-hubaccessoryroomcamera-types")] pub use hubaccessoryroomcamera :: { HubAccessoryRoomCamera_CameraPositionParam , HubAccessoryRoomCamera_BackgroundSettings , HubAccessoryRoomCamera , IHubAccessoryRoomCamera }
+ # [cfg (feature = "app-hubaccessoryroomcamera-types")] pub use hubaccessoryroomcamera :: { HubAccessoryRoomCamera_CameraPositionParam , HubAccessoryRoomCamera , IHubAccessoryRoomCamera , HubAccessoryRoomCamera_BackgroundSettings }
  ;
  # [cfg (feature = "app-hubaccessoryroomcamera")] pub use hubaccessoryroomcamera :: { IHubAccessoryRoomCameraMethods }
  ;
  # [cfg (any (feature = "app-hubaccessoryshopsequence-types"))] pub mod hubaccessoryshopsequence ;
- # [cfg (feature = "app-hubaccessoryshopsequence-types")] pub use hubaccessoryshopsequence :: { HubAccessoryShopSequence , IHubAccessoryShopSequence , HubAccessoryShopSequence_Label2 }
+ # [cfg (feature = "app-hubaccessoryshopsequence-types")] pub use hubaccessoryshopsequence :: { HubAccessoryShopSequence_Label2 , HubAccessoryShopSequence , IHubAccessoryShopSequence }
  ;
  # [cfg (feature = "app-hubaccessoryshopsequence")] pub use hubaccessoryshopsequence :: { IHubAccessoryShopSequenceMethods }
  ;
@@ -3222,7 +3222,7 @@
  # [cfg (feature = "app-hubcamera")] pub use hubcamera :: { IHubCameraMethods }
  ;
  # [cfg (any (feature = "app-hubconditioncontroller-types"))] pub mod hubconditioncontroller ;
- # [cfg (feature = "app-hubconditioncontroller-types")] pub use hubconditioncontroller :: { HubConditionController , IHubConditionController , HubConditionController_ControlType }
+ # [cfg (feature = "app-hubconditioncontroller-types")] pub use hubconditioncontroller :: { HubConditionController_ControlType , HubConditionController , IHubConditionController }
  ;
  # [cfg (feature = "app-hubconditioncontroller")] pub use hubconditioncontroller :: { IHubConditionControllerMethods }
  ;
@@ -3247,7 +3247,7 @@
  # [cfg (feature = "app-hubdemodata")] pub use hubdemodata :: { IHubDemoDataMethods }
  ;
  # [cfg (any (feature = "app-hubdisposdata-types"))] pub mod hubdisposdata ;
- # [cfg (feature = "app-hubdisposdata-types")] pub use hubdisposdata :: { HubDisposData_IdleTypes , HubDisposData_TimezoneFlags , HubDisposData_Type , HubDisposData_PhaseType , HubDisposData_DisposTypes , HubDisposData_AccessTypes , HubDisposData , IHubDisposData }
+ # [cfg (feature = "app-hubdisposdata-types")] pub use hubdisposdata :: { HubDisposData_PhaseType , HubDisposData_DisposTypes , HubDisposData_TimezoneFlags , HubDisposData , IHubDisposData , HubDisposData_AccessTypes , HubDisposData_Type , HubDisposData_IdleTypes }
  ;
  # [cfg (feature = "app-hubdisposdata")] pub use hubdisposdata :: { IHubDisposDataMethods }
  ;
@@ -3342,7 +3342,7 @@
  # [cfg (feature = "app-hubinvestmentlevel")] pub use hubinvestmentlevel :: { IHubInvestmentLevelMethods }
  ;
  # [cfg (any (feature = "app-hubitemshopsequence-types"))] pub mod hubitemshopsequence ;
- # [cfg (feature = "app-hubitemshopsequence-types")] pub use hubitemshopsequence :: { HubItemShopSequence_Label2 , HubItemShopSequence , IHubItemShopSequence }
+ # [cfg (feature = "app-hubitemshopsequence-types")] pub use hubitemshopsequence :: { HubItemShopSequence , IHubItemShopSequence , HubItemShopSequence_Label2 }
  ;
  # [cfg (feature = "app-hubitemshopsequence")] pub use hubitemshopsequence :: { IHubItemShopSequenceMethods }
  ;
@@ -3357,7 +3357,7 @@
  # [cfg (feature = "app-hublocatorgroup")] pub use hublocatorgroup :: { IHubLocatorGroupMethods }
  ;
  # [cfg (any (feature = "app-hublookatcontroller-types"))] pub mod hublookatcontroller ;
- # [cfg (feature = "app-hublookatcontroller-types")] pub use hublookatcontroller :: { HubLookAtController_LookAtIKParam , HubLookAtController , IHubLookAtController }
+ # [cfg (feature = "app-hublookatcontroller-types")] pub use hublookatcontroller :: { HubLookAtController , IHubLookAtController , HubLookAtController_LookAtIKParam }
  ;
  # [cfg (feature = "app-hublookatcontroller")] pub use hublookatcontroller :: { IHubLookAtControllerMethods }
  ;
@@ -3392,9 +3392,9 @@
  # [cfg (feature = "app-hubmascotcontroller")] pub use hubmascotcontroller :: { IHubMascotControllerMethods }
  ;
  # [cfg (any (feature = "app-hubmascotsequence-types"))] pub mod hubmascotsequence ;
- # [cfg (feature = "app-hubmascotsequence-types")] pub use hubmascotsequence :: { HubMascotSequence_Label , HubMascotSequence , IHubMascotSequence , HubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo , IHubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo , HubMascotSequence_NameDecideConfirm_ConfirmDialogItemYes , IHubMascotSequence_NameDecideConfirm_ConfirmDialogItemYes , HubMascotSequence_NameDecideConfirm , IHubMascotSequence_NameDecideConfirm }
+ # [cfg (feature = "app-hubmascotsequence-types")] pub use hubmascotsequence :: { HubMascotSequence , IHubMascotSequence , HubMascotSequence_NameDecideConfirm_ConfirmDialogItemYes , IHubMascotSequence_NameDecideConfirm_ConfirmDialogItemYes , HubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo , IHubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo , HubMascotSequence_Label , HubMascotSequence_NameDecideConfirm , IHubMascotSequence_NameDecideConfirm }
  ;
- # [cfg (feature = "app-hubmascotsequence")] pub use hubmascotsequence :: { IHubMascotSequenceMethods , IHubMascotSequence_NameDecideConfirm_ConfirmDialogItemNoMethods , IHubMascotSequence_NameDecideConfirm_ConfirmDialogItemYesMethods , IHubMascotSequence_NameDecideConfirmMethods }
+ # [cfg (feature = "app-hubmascotsequence")] pub use hubmascotsequence :: { IHubMascotSequenceMethods , IHubMascotSequence_NameDecideConfirm_ConfirmDialogItemYesMethods , IHubMascotSequence_NameDecideConfirm_ConfirmDialogItemNoMethods , IHubMascotSequence_NameDecideConfirmMethods }
  ;
  # [cfg (any (feature = "app-hubmaterialarray-types"))] pub mod hubmaterialarray ;
  # [cfg (feature = "app-hubmaterialarray-types")] pub use hubmaterialarray :: { HubMaterialArray , IHubMaterialArray , HubMaterialArray_MaterialInfo }
@@ -3412,9 +3412,9 @@
  # [cfg (feature = "app-hubmaterialselector")] pub use hubmaterialselector :: { IHubMaterialSelectorMethods }
  ;
  # [cfg (any (feature = "app-hubmenu-types"))] pub mod hubmenu ;
- # [cfg (feature = "app-hubmenu-types")] pub use hubmenu :: { HubMenu_SubFriendMenu_NotebookItem , IHubMenu_SubFriendMenu_NotebookItem , HubMenu_GodItem , IHubMenu_GodItem , HubMenu , IHubMenu , HubMenu_SystemItem , IHubMenu_SystemItem , HubMenu_MapInfoItem , IHubMenu_MapInfoItem , HubMenu_NextItem , IHubMenu_NextItem , HubMenu_InventoryItem , IHubMenu_InventoryItem , HubMenu_SubSystemMenu_ConfigItem , IHubMenu_SubSystemMenu_ConfigItem , HubMenu_MaterialListItem , IHubMenu_MaterialListItem , HubMenu_SubSystemMenu_TutorialItem , IHubMenu_SubSystemMenu_TutorialItem , HubMenu_SubFriendMenu , IHubMenu_SubFriendMenu , HubMenu_SubFriendMenu_RingListItem , IHubMenu_SubFriendMenu_RingListItem , HubMenu_HubMenuItem , IHubMenu_HubMenuItem , HubMenu_SaveItem , IHubMenu_SaveItem , HubMenu_SubFriendMenu_KizunaItem , IHubMenu_SubFriendMenu_KizunaItem , HubMenu_SubFriendMenu_ProfileCardItem , IHubMenu_SubFriendMenu_ProfileCardItem , HubMenu_NextChapterItem , IHubMenu_NextChapterItem , HubMenu_SubSystemMenu_ResetItem , IHubMenu_SubSystemMenu_ResetItem , HubMenu_SubFriendMenu_RelianceItem , IHubMenu_SubFriendMenu_RelianceItem , HubMenu_SubSystemMenu , IHubMenu_SubSystemMenu , HubMenu_GmapItem , IHubMenu_GmapItem , HubMenu_FriendItem , IHubMenu_FriendItem }
+ # [cfg (feature = "app-hubmenu-types")] pub use hubmenu :: { HubMenu_SubFriendMenu_KizunaItem , IHubMenu_SubFriendMenu_KizunaItem , HubMenu_SaveItem , IHubMenu_SaveItem , HubMenu_SubFriendMenu_ProfileCardItem , IHubMenu_SubFriendMenu_ProfileCardItem , HubMenu_FriendItem , IHubMenu_FriendItem , HubMenu_MapInfoItem , IHubMenu_MapInfoItem , HubMenu_MaterialListItem , IHubMenu_MaterialListItem , HubMenu_GmapItem , IHubMenu_GmapItem , HubMenu_NextChapterItem , IHubMenu_NextChapterItem , HubMenu_SubFriendMenu_RelianceItem , IHubMenu_SubFriendMenu_RelianceItem , HubMenu_SubSystemMenu_ConfigItem , IHubMenu_SubSystemMenu_ConfigItem , HubMenu_SubSystemMenu_TutorialItem , IHubMenu_SubSystemMenu_TutorialItem , HubMenu_SubSystemMenu_ResetItem , IHubMenu_SubSystemMenu_ResetItem , HubMenu_HubMenuItem , IHubMenu_HubMenuItem , HubMenu_SubFriendMenu_NotebookItem , IHubMenu_SubFriendMenu_NotebookItem , HubMenu_SubFriendMenu_RingListItem , IHubMenu_SubFriendMenu_RingListItem , HubMenu_SubFriendMenu , IHubMenu_SubFriendMenu , HubMenu_NextItem , IHubMenu_NextItem , HubMenu_SystemItem , IHubMenu_SystemItem , HubMenu_GodItem , IHubMenu_GodItem , HubMenu_SubSystemMenu , IHubMenu_SubSystemMenu , HubMenu , IHubMenu , HubMenu_InventoryItem , IHubMenu_InventoryItem }
  ;
- # [cfg (feature = "app-hubmenu")] pub use hubmenu :: { IHubMenu_SubFriendMenu_NotebookItemMethods , IHubMenu_GodItemMethods , IHubMenuMethods , IHubMenu_SystemItemMethods , IHubMenu_MapInfoItemMethods , IHubMenu_NextItemMethods , IHubMenu_InventoryItemMethods , IHubMenu_SubSystemMenu_ConfigItemMethods , IHubMenu_MaterialListItemMethods , IHubMenu_SubSystemMenu_TutorialItemMethods , IHubMenu_SubFriendMenuMethods , IHubMenu_SubFriendMenu_RingListItemMethods , IHubMenu_HubMenuItemMethods , IHubMenu_SaveItemMethods , IHubMenu_SubFriendMenu_KizunaItemMethods , IHubMenu_SubFriendMenu_ProfileCardItemMethods , IHubMenu_NextChapterItemMethods , IHubMenu_SubSystemMenu_ResetItemMethods , IHubMenu_SubFriendMenu_RelianceItemMethods , IHubMenu_SubSystemMenuMethods , IHubMenu_GmapItemMethods , IHubMenu_FriendItemMethods }
+ # [cfg (feature = "app-hubmenu")] pub use hubmenu :: { IHubMenu_SubFriendMenu_KizunaItemMethods , IHubMenu_SaveItemMethods , IHubMenu_SubFriendMenu_ProfileCardItemMethods , IHubMenu_FriendItemMethods , IHubMenu_MapInfoItemMethods , IHubMenu_MaterialListItemMethods , IHubMenu_GmapItemMethods , IHubMenu_NextChapterItemMethods , IHubMenu_SubFriendMenu_RelianceItemMethods , IHubMenu_SubSystemMenu_ConfigItemMethods , IHubMenu_SubSystemMenu_TutorialItemMethods , IHubMenu_SubSystemMenu_ResetItemMethods , IHubMenu_HubMenuItemMethods , IHubMenu_SubFriendMenu_NotebookItemMethods , IHubMenu_SubFriendMenu_RingListItemMethods , IHubMenu_SubFriendMenuMethods , IHubMenu_NextItemMethods , IHubMenu_SystemItemMethods , IHubMenu_GodItemMethods , IHubMenu_SubSystemMenuMethods , IHubMenuMethods , IHubMenu_InventoryItemMethods }
  ;
  # [cfg (any (feature = "app-hubmenucontent-types"))] pub mod hubmenucontent ;
  # [cfg (feature = "app-hubmenucontent-types")] pub use hubmenucontent :: { HubMenuContent , IHubMenuContent }
@@ -3427,14 +3427,14 @@
  # [cfg (feature = "app-hubmenusequence")] pub use hubmenusequence :: { IHubMenuSequenceMethods }
  ;
  # [cfg (any (feature = "app-hubminimap-types"))] pub mod hubminimap ;
- # [cfg (feature = "app-hubminimap-types")] pub use hubminimap :: { HubMiniMap , IHubMiniMap , HubMiniMap_MapMode , HubMiniMap_IconData , IHubMiniMap_IconData }
+ # [cfg (feature = "app-hubminimap-types")] pub use hubminimap :: { HubMiniMap_MapMode , HubMiniMap_IconData , IHubMiniMap_IconData , HubMiniMap , IHubMiniMap }
  ;
- # [cfg (feature = "app-hubminimap")] pub use hubminimap :: { IHubMiniMapMethods , IHubMiniMap_IconDataMethods }
+ # [cfg (feature = "app-hubminimap")] pub use hubminimap :: { IHubMiniMap_IconDataMethods , IHubMiniMapMethods }
  ;
  # [cfg (any (feature = "app-hubminimapcaptureparam-types"))] pub mod hubminimapcaptureparam ;
- # [cfg (feature = "app-hubminimapcaptureparam-types")] pub use hubminimapcaptureparam :: { HubMiniMapCaptureParam , IHubMiniMapCaptureParam , HubMiniMapCaptureParam_CaptureParam1 , IHubMiniMapCaptureParam_CaptureParam1 }
+ # [cfg (feature = "app-hubminimapcaptureparam-types")] pub use hubminimapcaptureparam :: { HubMiniMapCaptureParam_CaptureParam1 , IHubMiniMapCaptureParam_CaptureParam1 , HubMiniMapCaptureParam , IHubMiniMapCaptureParam }
  ;
- # [cfg (feature = "app-hubminimapcaptureparam")] pub use hubminimapcaptureparam :: { IHubMiniMapCaptureParamMethods , IHubMiniMapCaptureParam_CaptureParam1Methods }
+ # [cfg (feature = "app-hubminimapcaptureparam")] pub use hubminimapcaptureparam :: { IHubMiniMapCaptureParam_CaptureParam1Methods , IHubMiniMapCaptureParamMethods }
  ;
  # [cfg (any (feature = "app-hubminimaplayer-types"))] pub mod hubminimaplayer ;
  # [cfg (feature = "app-hubminimaplayer-types")] pub use hubminimaplayer :: { HubMiniMapLayer , IHubMiniMapLayer }
@@ -3507,14 +3507,14 @@
  # [cfg (feature = "app-hubplayercontroller")] pub use hubplayercontroller :: { IHubPlayerControllerMethods }
  ;
  # [cfg (any (feature = "app-hubplaytalk-types"))] pub mod hubplaytalk ;
- # [cfg (feature = "app-hubplaytalk-types")] pub use hubplaytalk :: { HubPlayTalk_TalkType , HubPlayTalk_CallPuppetEvent , IHubPlayTalk_CallPuppetEvent , HubPlayTalk , IHubPlayTalk }
+ # [cfg (feature = "app-hubplaytalk-types")] pub use hubplaytalk :: { HubPlayTalk , IHubPlayTalk , HubPlayTalk_TalkType , HubPlayTalk_CallPuppetEvent , IHubPlayTalk_CallPuppetEvent }
  ;
- # [cfg (feature = "app-hubplaytalk")] pub use hubplaytalk :: { IHubPlayTalk_CallPuppetEventMethods , IHubPlayTalkMethods }
+ # [cfg (feature = "app-hubplaytalk")] pub use hubplaytalk :: { IHubPlayTalkMethods , IHubPlayTalk_CallPuppetEventMethods }
  ;
  # [cfg (any (feature = "app-hubplaytalkafter-types"))] pub mod hubplaytalkafter ;
- # [cfg (feature = "app-hubplaytalkafter-types")] pub use hubplaytalkafter :: { HubPlayTalkAfter_FortuneTellingMenu , IHubPlayTalkAfter_FortuneTellingMenu , HubPlayTalkAfter_FishingPictureBookMenu , IHubPlayTalkAfter_FishingPictureBookMenu , HubPlayTalkAfter_RingMenu_YesItem , IHubPlayTalkAfter_RingMenu_YesItem , HubPlayTalkAfter_TalkGiftMenu , IHubPlayTalkAfter_TalkGiftMenu , HubPlayTalkAfter_FishingMenu , IHubPlayTalkAfter_FishingMenu , HubPlayTalkAfter_RelianceMenu , IHubPlayTalkAfter_RelianceMenu , HubPlayTalkAfter_SelectListMenu , IHubPlayTalkAfter_SelectListMenu , HubPlayTalkAfter_ReplacePerson , IHubPlayTalkAfter_ReplacePerson , HubPlayTalkAfter_RingMenu , IHubPlayTalkAfter_RingMenu , HubPlayTalkAfter_CookingMenu , IHubPlayTalkAfter_CookingMenu , HubPlayTalkAfter_MuscleMenu , IHubPlayTalkAfter_MuscleMenu , HubPlayTalkAfter , IHubPlayTalkAfter , HubPlayTalkAfter_FleaMarketMenu , IHubPlayTalkAfter_FleaMarketMenu , HubPlayTalkAfter_RingMenu_NoItem , IHubPlayTalkAfter_RingMenu_NoItem , HubPlayTalkAfter_Label , HubPlayTalkAfter_DragonRideMenu , IHubPlayTalkAfter_DragonRideMenu , HubPlayTalkAfter_GodRelianceMenu , IHubPlayTalkAfter_GodRelianceMenu }
+ # [cfg (feature = "app-hubplaytalkafter-types")] pub use hubplaytalkafter :: { HubPlayTalkAfter_TalkGiftMenu , IHubPlayTalkAfter_TalkGiftMenu , HubPlayTalkAfter_GodRelianceMenu , IHubPlayTalkAfter_GodRelianceMenu , HubPlayTalkAfter_FleaMarketMenu , IHubPlayTalkAfter_FleaMarketMenu , HubPlayTalkAfter_SelectListMenu , IHubPlayTalkAfter_SelectListMenu , HubPlayTalkAfter_FishingMenu , IHubPlayTalkAfter_FishingMenu , HubPlayTalkAfter_RingMenu_YesItem , IHubPlayTalkAfter_RingMenu_YesItem , HubPlayTalkAfter_FortuneTellingMenu , IHubPlayTalkAfter_FortuneTellingMenu , HubPlayTalkAfter_RelianceMenu , IHubPlayTalkAfter_RelianceMenu , HubPlayTalkAfter_MuscleMenu , IHubPlayTalkAfter_MuscleMenu , HubPlayTalkAfter_ReplacePerson , IHubPlayTalkAfter_ReplacePerson , HubPlayTalkAfter_CookingMenu , IHubPlayTalkAfter_CookingMenu , HubPlayTalkAfter , IHubPlayTalkAfter , HubPlayTalkAfter_DragonRideMenu , IHubPlayTalkAfter_DragonRideMenu , HubPlayTalkAfter_RingMenu , IHubPlayTalkAfter_RingMenu , HubPlayTalkAfter_FishingPictureBookMenu , IHubPlayTalkAfter_FishingPictureBookMenu , HubPlayTalkAfter_RingMenu_NoItem , IHubPlayTalkAfter_RingMenu_NoItem , HubPlayTalkAfter_Label }
  ;
- # [cfg (feature = "app-hubplaytalkafter")] pub use hubplaytalkafter :: { IHubPlayTalkAfter_FortuneTellingMenuMethods , IHubPlayTalkAfter_FishingPictureBookMenuMethods , IHubPlayTalkAfter_RingMenu_YesItemMethods , IHubPlayTalkAfter_TalkGiftMenuMethods , IHubPlayTalkAfter_FishingMenuMethods , IHubPlayTalkAfter_RelianceMenuMethods , IHubPlayTalkAfter_SelectListMenuMethods , IHubPlayTalkAfter_ReplacePersonMethods , IHubPlayTalkAfter_RingMenuMethods , IHubPlayTalkAfter_CookingMenuMethods , IHubPlayTalkAfter_MuscleMenuMethods , IHubPlayTalkAfterMethods , IHubPlayTalkAfter_FleaMarketMenuMethods , IHubPlayTalkAfter_RingMenu_NoItemMethods , IHubPlayTalkAfter_DragonRideMenuMethods , IHubPlayTalkAfter_GodRelianceMenuMethods }
+ # [cfg (feature = "app-hubplaytalkafter")] pub use hubplaytalkafter :: { IHubPlayTalkAfter_TalkGiftMenuMethods , IHubPlayTalkAfter_GodRelianceMenuMethods , IHubPlayTalkAfter_FleaMarketMenuMethods , IHubPlayTalkAfter_SelectListMenuMethods , IHubPlayTalkAfter_FishingMenuMethods , IHubPlayTalkAfter_RingMenu_YesItemMethods , IHubPlayTalkAfter_FortuneTellingMenuMethods , IHubPlayTalkAfter_RelianceMenuMethods , IHubPlayTalkAfter_MuscleMenuMethods , IHubPlayTalkAfter_ReplacePersonMethods , IHubPlayTalkAfter_CookingMenuMethods , IHubPlayTalkAfterMethods , IHubPlayTalkAfter_DragonRideMenuMethods , IHubPlayTalkAfter_RingMenuMethods , IHubPlayTalkAfter_FishingPictureBookMenuMethods , IHubPlayTalkAfter_RingMenu_NoItemMethods }
  ;
  # [cfg (any (feature = "app-hubplaytalkaftermenucontent-types"))] pub mod hubplaytalkaftermenucontent ;
  # [cfg (feature = "app-hubplaytalkaftermenucontent-types")] pub use hubplaytalkaftermenucontent :: { HubPlayTalkAfterMenuContent , IHubPlayTalkAfterMenuContent }
@@ -3532,7 +3532,7 @@
  # [cfg (feature = "app-hubrangeaction")] pub use hubrangeaction :: { IHubRangeActionMethods }
  ;
  # [cfg (any (feature = "app-hubrefineshopsequence-types"))] pub mod hubrefineshopsequence ;
- # [cfg (feature = "app-hubrefineshopsequence-types")] pub use hubrefineshopsequence :: { HubRefineShopSequence , IHubRefineShopSequence , HubRefineShopSequence_Label2 }
+ # [cfg (feature = "app-hubrefineshopsequence-types")] pub use hubrefineshopsequence :: { HubRefineShopSequence_Label2 , HubRefineShopSequence , IHubRefineShopSequence }
  ;
  # [cfg (feature = "app-hubrefineshopsequence")] pub use hubrefineshopsequence :: { IHubRefineShopSequenceMethods }
  ;
@@ -3547,9 +3547,9 @@
  # [cfg (feature = "app-hubresourcedata")] pub use hubresourcedata :: { IHubResourceDataMethods }
  ;
  # [cfg (any (feature = "app-hubsequence-types"))] pub mod hubsequence ;
- # [cfg (feature = "app-hubsequence-types")] pub use hubsequence :: { HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem , IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem , HubSequence_LastChapterSequence , IHubSequence_LastChapterSequence , HubSequence_AreaString , IHubSequence_AreaString , HubSequence_ConfirmEndRollDialogItemYes , IHubSequence_ConfirmEndRollDialogItemYes , HubSequence_Label , HubSequence_LastChapterMenu_GoToMenuItem , IHubSequence_LastChapterMenu_GoToMenuItem , HubSequence_LastChapterMenu_RankingMenuItem , IHubSequence_LastChapterMenu_RankingMenuItem , HubSequence_LastChapterGoToMenuItem , IHubSequence_LastChapterGoToMenuItem , HubSequence_LastChapterSequence_ConfirmDialogItemNo , IHubSequence_LastChapterSequence_ConfirmDialogItemNo , HubSequence_LastChapterSequence_Label , HubSequence_ConfirmEndRollDialogItemNo , IHubSequence_ConfirmEndRollDialogItemNo , HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem , IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem , HubSequence , IHubSequence , HubSequence_LastChapterMenu , IHubSequence_LastChapterMenu , HubSequence_LastChapterRankingMenuItem , IHubSequence_LastChapterRankingMenuItem , HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes , IHubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes , HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog , IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog }
+ # [cfg (feature = "app-hubsequence-types")] pub use hubsequence :: { HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes , IHubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes , HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog , IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog , HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem , IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem , HubSequence_LastChapterMenu_GoToMenuItem , IHubSequence_LastChapterMenu_GoToMenuItem , HubSequence_LastChapterGoToMenuItem , IHubSequence_LastChapterGoToMenuItem , HubSequence_LastChapterMenu , IHubSequence_LastChapterMenu , HubSequence_LastChapterMenu_RankingMenuItem , IHubSequence_LastChapterMenu_RankingMenuItem , HubSequence_Label , HubSequence_LastChapterSequence_Label , HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem , IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem , HubSequence_AreaString , IHubSequence_AreaString , HubSequence_ConfirmEndRollDialogItemNo , IHubSequence_ConfirmEndRollDialogItemNo , HubSequence , IHubSequence , HubSequence_ConfirmEndRollDialogItemYes , IHubSequence_ConfirmEndRollDialogItemYes , HubSequence_LastChapterSequence , IHubSequence_LastChapterSequence , HubSequence_LastChapterSequence_ConfirmDialogItemNo , IHubSequence_LastChapterSequence_ConfirmDialogItemNo , HubSequence_LastChapterRankingMenuItem , IHubSequence_LastChapterRankingMenuItem }
  ;
- # [cfg (feature = "app-hubsequence")] pub use hubsequence :: { IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItemMethods , IHubSequence_LastChapterSequenceMethods , IHubSequence_AreaStringMethods , IHubSequence_ConfirmEndRollDialogItemYesMethods , IHubSequence_LastChapterMenu_GoToMenuItemMethods , IHubSequence_LastChapterMenu_RankingMenuItemMethods , IHubSequence_LastChapterGoToMenuItemMethods , IHubSequence_LastChapterSequence_ConfirmDialogItemNoMethods , IHubSequence_ConfirmEndRollDialogItemNoMethods , IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItemMethods , IHubSequenceMethods , IHubSequence_LastChapterMenuMethods , IHubSequence_LastChapterRankingMenuItemMethods , IHubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYesMethods }
+ # [cfg (feature = "app-hubsequence")] pub use hubsequence :: { IHubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYesMethods , IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItemMethods , IHubSequence_LastChapterMenu_GoToMenuItemMethods , IHubSequence_LastChapterGoToMenuItemMethods , IHubSequence_LastChapterMenuMethods , IHubSequence_LastChapterMenu_RankingMenuItemMethods , IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItemMethods , IHubSequence_AreaStringMethods , IHubSequence_ConfirmEndRollDialogItemNoMethods , IHubSequenceMethods , IHubSequence_ConfirmEndRollDialogItemYesMethods , IHubSequence_LastChapterSequenceMethods , IHubSequence_LastChapterSequence_ConfirmDialogItemNoMethods , IHubSequence_LastChapterRankingMenuItemMethods }
  ;
  # [cfg (any (feature = "app-hubskyselector-types"))] pub mod hubskyselector ;
  # [cfg (feature = "app-hubskyselector-types")] pub use hubskyselector :: { HubSkySelector , IHubSkySelector }
@@ -3597,7 +3597,7 @@
  # [cfg (feature = "app-hubvariable")] pub use hubvariable :: { IHubVariableMethods , IHubVariable_MascotMethods }
  ;
  # [cfg (any (feature = "app-hubweaponshopsequence-types"))] pub mod hubweaponshopsequence ;
- # [cfg (feature = "app-hubweaponshopsequence-types")] pub use hubweaponshopsequence :: { HubWeaponShopSequence_Label2 , HubWeaponShopSequence , IHubWeaponShopSequence }
+ # [cfg (feature = "app-hubweaponshopsequence-types")] pub use hubweaponshopsequence :: { HubWeaponShopSequence , IHubWeaponShopSequence , HubWeaponShopSequence_Label2 }
  ;
  # [cfg (feature = "app-hubweaponshopsequence")] pub use hubweaponshopsequence :: { IHubWeaponShopSequenceMethods }
  ;
@@ -3617,7 +3617,7 @@
  # [cfg (feature = "app-imapdeploy_interface")] pub use imapdeploy_interface :: { IIMapDeploy_InterfaceMethods }
  ;
  # [cfg (any (feature = "app-inactivator-types"))] pub mod inactivator ;
- # [cfg (feature = "app-inactivator-types")] pub use inactivator :: { Inactivator , IInactivator , Inactivator_Flags , Inactivator_Kind }
+ # [cfg (feature = "app-inactivator-types")] pub use inactivator :: { Inactivator_Flags , Inactivator_Kind , Inactivator , IInactivator }
  ;
  # [cfg (feature = "app-inactivator")] pub use inactivator :: { IInactivatorMethods }
  ;
@@ -3697,7 +3697,7 @@
  # [cfg (feature = "app-interruptinspector")] pub use interruptinspector :: { IInterruptInspectorMethods }
  ;
  # [cfg (any (feature = "app-inventorypoolitemmenu-types"))] pub mod inventorypoolitemmenu ;
- # [cfg (feature = "app-inventorypoolitemmenu-types")] pub use inventorypoolitemmenu :: { InventoryPoolItemMenu_Kinds , InventoryPoolItemMenu , IInventoryPoolItemMenu }
+ # [cfg (feature = "app-inventorypoolitemmenu-types")] pub use inventorypoolitemmenu :: { InventoryPoolItemMenu , IInventoryPoolItemMenu , InventoryPoolItemMenu_Kinds }
  ;
  # [cfg (feature = "app-inventorypoolitemmenu")] pub use inventorypoolitemmenu :: { IInventoryPoolItemMenuMethods }
  ;
@@ -3707,7 +3707,7 @@
  # [cfg (feature = "app-inventorypoolitemmenublankitem")] pub use inventorypoolitemmenublankitem :: { IInventoryPoolItemMenuBlankItemMethods }
  ;
  # [cfg (any (feature = "app-inventorypoolitemmenucontent-types"))] pub mod inventorypoolitemmenucontent ;
- # [cfg (feature = "app-inventorypoolitemmenucontent-types")] pub use inventorypoolitemmenucontent :: { InventoryPoolItemMenuContent , IInventoryPoolItemMenuContent , InventoryPoolItemMenuContent_KindBgNameClass }
+ # [cfg (feature = "app-inventorypoolitemmenucontent-types")] pub use inventorypoolitemmenucontent :: { InventoryPoolItemMenuContent_KindBgNameClass , InventoryPoolItemMenuContent , IInventoryPoolItemMenuContent }
  ;
  # [cfg (feature = "app-inventorypoolitemmenucontent")] pub use inventorypoolitemmenucontent :: { IInventoryPoolItemMenuContentMethods }
  ;
@@ -3727,9 +3727,9 @@
  # [cfg (feature = "app-inventoryroot")] pub use inventoryroot :: { IInventoryRootMethods }
  ;
  # [cfg (any (feature = "app-inventorysubmenu-types"))] pub mod inventorysubmenu ;
- # [cfg (feature = "app-inventorysubmenu-types")] pub use inventorysubmenu :: { InventorySubMenu_BaseMenuItem , IInventorySubMenu_BaseMenuItem , InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYes , IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYes , InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem , IInventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem , InventorySubMenu_ReceiveMenuItem , IInventorySubMenu_ReceiveMenuItem , InventorySubMenu_TakeOffMenuItem , IInventorySubMenu_TakeOffMenuItem , InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog , IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog , InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback , IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback , InventorySubMenu_TradeMenuItem , IInventorySubMenu_TradeMenuItem , InventorySubMenu_EquipMenuItem , IInventorySubMenu_EquipMenuItem , InventorySubMenu_SortMenuItem , IInventorySubMenu_SortMenuItem , InventorySubMenu_ThrowAwayMenuItem , IInventorySubMenu_ThrowAwayMenuItem , InventorySubMenu_UseMenuItem_ConfirmDialog , IInventorySubMenu_UseMenuItem_ConfirmDialog , InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler , IInventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler , InventorySubMenu_StoreMenuItem , IInventorySubMenu_StoreMenuItem , InventorySubMenu_UseMenuItem , IInventorySubMenu_UseMenuItem , InventorySubMenu , IInventorySubMenu }
+ # [cfg (feature = "app-inventorysubmenu-types")] pub use inventorysubmenu :: { InventorySubMenu_TradeMenuItem , IInventorySubMenu_TradeMenuItem , InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler , IInventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler , InventorySubMenu_ThrowAwayMenuItem , IInventorySubMenu_ThrowAwayMenuItem , InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem , IInventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem , InventorySubMenu_EquipMenuItem , IInventorySubMenu_EquipMenuItem , InventorySubMenu_TakeOffMenuItem , IInventorySubMenu_TakeOffMenuItem , InventorySubMenu_UseMenuItem , IInventorySubMenu_UseMenuItem , InventorySubMenu_ReceiveMenuItem , IInventorySubMenu_ReceiveMenuItem , InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog , IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog , InventorySubMenu , IInventorySubMenu , InventorySubMenu_SortMenuItem , IInventorySubMenu_SortMenuItem , InventorySubMenu_StoreMenuItem , IInventorySubMenu_StoreMenuItem , InventorySubMenu_UseMenuItem_ConfirmDialog , IInventorySubMenu_UseMenuItem_ConfirmDialog , InventorySubMenu_BaseMenuItem , IInventorySubMenu_BaseMenuItem , InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback , IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback , InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYes , IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYes }
  ;
- # [cfg (feature = "app-inventorysubmenu")] pub use inventorysubmenu :: { IInventorySubMenu_BaseMenuItemMethods , IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYesMethods , IInventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItemMethods , IInventorySubMenu_ReceiveMenuItemMethods , IInventorySubMenu_TakeOffMenuItemMethods , IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialogMethods , IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallbackMethods , IInventorySubMenu_TradeMenuItemMethods , IInventorySubMenu_EquipMenuItemMethods , IInventorySubMenu_SortMenuItemMethods , IInventorySubMenu_ThrowAwayMenuItemMethods , IInventorySubMenu_UseMenuItem_ConfirmDialogMethods , IInventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandlerMethods , IInventorySubMenu_StoreMenuItemMethods , IInventorySubMenu_UseMenuItemMethods , IInventorySubMenuMethods }
+ # [cfg (feature = "app-inventorysubmenu")] pub use inventorysubmenu :: { IInventorySubMenu_TradeMenuItemMethods , IInventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandlerMethods , IInventorySubMenu_ThrowAwayMenuItemMethods , IInventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItemMethods , IInventorySubMenu_EquipMenuItemMethods , IInventorySubMenu_TakeOffMenuItemMethods , IInventorySubMenu_UseMenuItemMethods , IInventorySubMenu_ReceiveMenuItemMethods , IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialogMethods , IInventorySubMenuMethods , IInventorySubMenu_SortMenuItemMethods , IInventorySubMenu_StoreMenuItemMethods , IInventorySubMenu_UseMenuItem_ConfirmDialogMethods , IInventorySubMenu_BaseMenuItemMethods , IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallbackMethods , IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYesMethods }
  ;
  # [cfg (any (feature = "app-inventoryunititemmenu-types"))] pub mod inventoryunititemmenu ;
  # [cfg (feature = "app-inventoryunititemmenu-types")] pub use inventoryunititemmenu :: { InventoryUnitItemMenu , IInventoryUnitItemMenu }
@@ -3752,14 +3752,14 @@
  # [cfg (feature = "app-investmentmappoint")] pub use investmentmappoint :: { IInvestmentMapPointMethods }
  ;
  # [cfg (any (feature = "app-investmentmenu-types"))] pub mod investmentmenu ;
- # [cfg (feature = "app-investmentmenu-types")] pub use investmentmenu :: { InvestmentMenu , IInvestmentMenu , InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem , IInvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem , InvestmentMenu_DecideEventHandler , IInvestmentMenu_DecideEventHandler , InvestmentMenu_InvestmentMenuItem , IInvestmentMenu_InvestmentMenuItem }
+ # [cfg (feature = "app-investmentmenu-types")] pub use investmentmenu :: { InvestmentMenu_DecideEventHandler , IInvestmentMenu_DecideEventHandler , InvestmentMenu_InvestmentMenuItem , IInvestmentMenu_InvestmentMenuItem , InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem , IInvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem , InvestmentMenu , IInvestmentMenu }
  ;
- # [cfg (feature = "app-investmentmenu")] pub use investmentmenu :: { IInvestmentMenuMethods , IInvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItemMethods , IInvestmentMenu_DecideEventHandlerMethods , IInvestmentMenu_InvestmentMenuItemMethods }
+ # [cfg (feature = "app-investmentmenu")] pub use investmentmenu :: { IInvestmentMenu_DecideEventHandlerMethods , IInvestmentMenu_InvestmentMenuItemMethods , IInvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItemMethods , IInvestmentMenuMethods }
  ;
  # [cfg (any (feature = "app-investmentmenucontent-types"))] pub mod investmentmenucontent ;
- # [cfg (feature = "app-investmentmenucontent-types")] pub use investmentmenucontent :: { InvestmentMenuContent_BattleEnemyInfo , IInvestmentMenuContent_BattleEnemyInfo , InvestmentMenuContent , IInvestmentMenuContent , InvestmentMenuContent_AnimalInfo , IInvestmentMenuContent_AnimalInfo , InvestmentMenuContent_DropItemInfo , IInvestmentMenuContent_DropItemInfo }
+ # [cfg (feature = "app-investmentmenucontent-types")] pub use investmentmenucontent :: { InvestmentMenuContent_AnimalInfo , IInvestmentMenuContent_AnimalInfo , InvestmentMenuContent , IInvestmentMenuContent , InvestmentMenuContent_DropItemInfo , IInvestmentMenuContent_DropItemInfo , InvestmentMenuContent_BattleEnemyInfo , IInvestmentMenuContent_BattleEnemyInfo }
  ;
- # [cfg (feature = "app-investmentmenucontent")] pub use investmentmenucontent :: { IInvestmentMenuContent_BattleEnemyInfoMethods , IInvestmentMenuContentMethods , IInvestmentMenuContent_AnimalInfoMethods , IInvestmentMenuContent_DropItemInfoMethods }
+ # [cfg (feature = "app-investmentmenucontent")] pub use investmentmenucontent :: { IInvestmentMenuContent_AnimalInfoMethods , IInvestmentMenuContentMethods , IInvestmentMenuContent_DropItemInfoMethods , IInvestmentMenuContent_BattleEnemyInfoMethods }
  ;
  # [cfg (any (feature = "app-investmentmenuitemcontent-types"))] pub mod investmentmenuitemcontent ;
  # [cfg (feature = "app-investmentmenuitemcontent-types")] pub use investmentmenuitemcontent :: { InvestmentMenuItemContent , IInvestmentMenuItemContent }
@@ -3767,12 +3767,12 @@
  # [cfg (feature = "app-investmentmenuitemcontent")] pub use investmentmenuitemcontent :: { IInvestmentMenuItemContentMethods }
  ;
  # [cfg (any (feature = "app-investmentnationdatamenu-types"))] pub mod investmentnationdatamenu ;
- # [cfg (feature = "app-investmentnationdatamenu-types")] pub use investmentnationdatamenu :: { InvestmentNationDataMenu , IInvestmentNationDataMenu , InvestmentNationDataMenu_AnimalInfo , IInvestmentNationDataMenu_AnimalInfo , InvestmentNationDataMenu_ItemInfo , IInvestmentNationDataMenu_ItemInfo }
+ # [cfg (feature = "app-investmentnationdatamenu-types")] pub use investmentnationdatamenu :: { InvestmentNationDataMenu_ItemInfo , IInvestmentNationDataMenu_ItemInfo , InvestmentNationDataMenu_AnimalInfo , IInvestmentNationDataMenu_AnimalInfo , InvestmentNationDataMenu , IInvestmentNationDataMenu }
  ;
- # [cfg (feature = "app-investmentnationdatamenu")] pub use investmentnationdatamenu :: { IInvestmentNationDataMenuMethods , IInvestmentNationDataMenu_AnimalInfoMethods , IInvestmentNationDataMenu_ItemInfoMethods }
+ # [cfg (feature = "app-investmentnationdatamenu")] pub use investmentnationdatamenu :: { IInvestmentNationDataMenu_ItemInfoMethods , IInvestmentNationDataMenu_AnimalInfoMethods , IInvestmentNationDataMenuMethods }
  ;
  # [cfg (any (feature = "app-investmentnationdatasequence-types"))] pub mod investmentnationdatasequence ;
- # [cfg (feature = "app-investmentnationdatasequence-types")] pub use investmentnationdatasequence :: { InvestmentNationDataSequence , IInvestmentNationDataSequence , InvestmentNationDataSequence_Label2 , InvestmentNationDataSequence_DecideEventHandler , IInvestmentNationDataSequence_DecideEventHandler }
+ # [cfg (feature = "app-investmentnationdatasequence-types")] pub use investmentnationdatasequence :: { InvestmentNationDataSequence_Label2 , InvestmentNationDataSequence , IInvestmentNationDataSequence , InvestmentNationDataSequence_DecideEventHandler , IInvestmentNationDataSequence_DecideEventHandler }
  ;
  # [cfg (feature = "app-investmentnationdatasequence")] pub use investmentnationdatasequence :: { IInvestmentNationDataSequenceMethods , IInvestmentNationDataSequence_DecideEventHandlerMethods }
  ;
@@ -3797,9 +3797,9 @@
  # [cfg (feature = "app-irewardsequence")] pub use irewardsequence :: { IIRewardSequenceMethods }
  ;
  # [cfg (any (feature = "app-itemdata-types"))] pub mod itemdata ;
- # [cfg (feature = "app-itemdata-types")] pub use itemdata :: { ItemData_UseTypes , ItemData_WeaponAttrs , ItemData , IItemData , ItemData_RodTypes , ItemData_Kinds , ItemData_FlagField , IItemData_FlagField , ItemData_Flags , ItemData_Attrs , ItemData_AddTargets }
+ # [cfg (feature = "app-itemdata-types")] pub use itemdata :: { ItemData_UseTypes , ItemData_WeaponAttrs , ItemData_AddTargets , ItemData_Attrs , ItemData_FlagField , IItemData_FlagField , ItemData , IItemData , ItemData_Kinds , ItemData_Flags , ItemData_RodTypes }
  ;
- # [cfg (feature = "app-itemdata")] pub use itemdata :: { IItemDataMethods , IItemData_FlagFieldMethods }
+ # [cfg (feature = "app-itemdata")] pub use itemdata :: { IItemData_FlagFieldMethods , IItemDataMethods }
  ;
  # [cfg (any (feature = "app-itemevolvedata-types"))] pub mod itemevolvedata ;
  # [cfg (feature = "app-itemevolvedata-types")] pub use itemevolvedata :: { ItemEvolveData , IItemEvolveData }
@@ -3807,7 +3807,7 @@
  # [cfg (feature = "app-itemevolvedata")] pub use itemevolvedata :: { IItemEvolveDataMethods }
  ;
  # [cfg (any (feature = "app-itemgainsequence-types"))] pub mod itemgainsequence ;
- # [cfg (feature = "app-itemgainsequence-types")] pub use itemgainsequence :: { ItemGainSequence , IItemGainSequence , ItemGainSequence_Label }
+ # [cfg (feature = "app-itemgainsequence-types")] pub use itemgainsequence :: { ItemGainSequence_Label , ItemGainSequence , IItemGainSequence }
  ;
  # [cfg (feature = "app-itemgainsequence")] pub use itemgainsequence :: { IItemGainSequenceMethods }
  ;
@@ -3827,12 +3827,12 @@
  # [cfg (feature = "app-itemlistdialogitemcontent")] pub use itemlistdialogitemcontent :: { IItemListDialogItemContentMethods }
  ;
  # [cfg (any (feature = "app-itemlistyesnodialog-types"))] pub mod itemlistyesnodialog ;
- # [cfg (feature = "app-itemlistyesnodialog-types")] pub use itemlistyesnodialog :: { ItemListYesNoDialog_MoneyParam , IItemListYesNoDialog_MoneyParam , ItemListYesNoDialog_ItemParam , IItemListYesNoDialog_ItemParam , ItemListYesNoDialog , IItemListYesNoDialog }
+ # [cfg (feature = "app-itemlistyesnodialog-types")] pub use itemlistyesnodialog :: { ItemListYesNoDialog , IItemListYesNoDialog , ItemListYesNoDialog_MoneyParam , IItemListYesNoDialog_MoneyParam , ItemListYesNoDialog_ItemParam , IItemListYesNoDialog_ItemParam }
  ;
- # [cfg (feature = "app-itemlistyesnodialog")] pub use itemlistyesnodialog :: { IItemListYesNoDialog_MoneyParamMethods , IItemListYesNoDialog_ItemParamMethods , IItemListYesNoDialogMethods }
+ # [cfg (feature = "app-itemlistyesnodialog")] pub use itemlistyesnodialog :: { IItemListYesNoDialogMethods , IItemListYesNoDialog_MoneyParamMethods , IItemListYesNoDialog_ItemParamMethods }
  ;
  # [cfg (any (feature = "app-itemmenudetailsetter-types"))] pub mod itemmenudetailsetter ;
- # [cfg (feature = "app-itemmenudetailsetter-types")] pub use itemmenudetailsetter :: { ItemMenuDetailSetter_Kind , ItemMenuDetailSetter , IItemMenuDetailSetter }
+ # [cfg (feature = "app-itemmenudetailsetter-types")] pub use itemmenudetailsetter :: { ItemMenuDetailSetter , IItemMenuDetailSetter , ItemMenuDetailSetter_Kind }
  ;
  # [cfg (feature = "app-itemmenudetailsetter")] pub use itemmenudetailsetter :: { IItemMenuDetailSetterMethods }
  ;
@@ -3857,9 +3857,9 @@
  # [cfg (feature = "app-itemshopbuyemptymenuitem")] pub use itemshopbuyemptymenuitem :: { IItemShopBuyEmptyMenuItemMethods }
  ;
  # [cfg (any (feature = "app-itemshopbuymenu-types"))] pub mod itemshopbuymenu ;
- # [cfg (feature = "app-itemshopbuymenu-types")] pub use itemshopbuymenu :: { ItemShopBuyMenu_DecideEventHandler , IItemShopBuyMenu_DecideEventHandler , ItemShopBuyMenu , IItemShopBuyMenu , ItemShopBuyMenu_ChangeUnitToNextEventHandler , IItemShopBuyMenu_ChangeUnitToNextEventHandler , ItemShopBuyMenu_ChangeUnitToPrevEventHandler , IItemShopBuyMenu_ChangeUnitToPrevEventHandler , ItemShopBuyMenu_RequestCloseEventHandler , IItemShopBuyMenu_RequestCloseEventHandler , ItemShopBuyMenu_SwitchDetailDisplaywayEventHandler , IItemShopBuyMenu_SwitchDetailDisplaywayEventHandler , ItemShopBuyMenu_SelectEventHandler , IItemShopBuyMenu_SelectEventHandler }
+ # [cfg (feature = "app-itemshopbuymenu-types")] pub use itemshopbuymenu :: { ItemShopBuyMenu_SelectEventHandler , IItemShopBuyMenu_SelectEventHandler , ItemShopBuyMenu , IItemShopBuyMenu , ItemShopBuyMenu_ChangeUnitToPrevEventHandler , IItemShopBuyMenu_ChangeUnitToPrevEventHandler , ItemShopBuyMenu_ChangeUnitToNextEventHandler , IItemShopBuyMenu_ChangeUnitToNextEventHandler , ItemShopBuyMenu_RequestCloseEventHandler , IItemShopBuyMenu_RequestCloseEventHandler , ItemShopBuyMenu_DecideEventHandler , IItemShopBuyMenu_DecideEventHandler , ItemShopBuyMenu_SwitchDetailDisplaywayEventHandler , IItemShopBuyMenu_SwitchDetailDisplaywayEventHandler }
  ;
- # [cfg (feature = "app-itemshopbuymenu")] pub use itemshopbuymenu :: { IItemShopBuyMenu_DecideEventHandlerMethods , IItemShopBuyMenuMethods , IItemShopBuyMenu_ChangeUnitToNextEventHandlerMethods , IItemShopBuyMenu_ChangeUnitToPrevEventHandlerMethods , IItemShopBuyMenu_RequestCloseEventHandlerMethods , IItemShopBuyMenu_SwitchDetailDisplaywayEventHandlerMethods , IItemShopBuyMenu_SelectEventHandlerMethods }
+ # [cfg (feature = "app-itemshopbuymenu")] pub use itemshopbuymenu :: { IItemShopBuyMenu_SelectEventHandlerMethods , IItemShopBuyMenuMethods , IItemShopBuyMenu_ChangeUnitToPrevEventHandlerMethods , IItemShopBuyMenu_ChangeUnitToNextEventHandlerMethods , IItemShopBuyMenu_RequestCloseEventHandlerMethods , IItemShopBuyMenu_DecideEventHandlerMethods , IItemShopBuyMenu_SwitchDetailDisplaywayEventHandlerMethods }
  ;
  # [cfg (any (feature = "app-itemshopbuymenucontent-types"))] pub mod itemshopbuymenucontent ;
  # [cfg (feature = "app-itemshopbuymenucontent-types")] pub use itemshopbuymenucontent :: { ItemShopBuyMenuContent , IItemShopBuyMenuContent }
@@ -3877,14 +3877,14 @@
  # [cfg (feature = "app-itemshopbuymenuitemcontent")] pub use itemshopbuymenuitemcontent :: { IItemShopBuyMenuItemContentMethods }
  ;
  # [cfg (any (feature = "app-itemshopbuyroot-types"))] pub mod itemshopbuyroot ;
- # [cfg (feature = "app-itemshopbuyroot-types")] pub use itemshopbuyroot :: { ItemShopBuyRoot , IItemShopBuyRoot , ItemShopBuyRoot_ReturnEventHandler , IItemShopBuyRoot_ReturnEventHandler }
+ # [cfg (feature = "app-itemshopbuyroot-types")] pub use itemshopbuyroot :: { ItemShopBuyRoot_ReturnEventHandler , IItemShopBuyRoot_ReturnEventHandler , ItemShopBuyRoot , IItemShopBuyRoot }
  ;
- # [cfg (feature = "app-itemshopbuyroot")] pub use itemshopbuyroot :: { IItemShopBuyRootMethods , IItemShopBuyRoot_ReturnEventHandlerMethods }
+ # [cfg (feature = "app-itemshopbuyroot")] pub use itemshopbuyroot :: { IItemShopBuyRoot_ReturnEventHandlerMethods , IItemShopBuyRootMethods }
  ;
  # [cfg (any (feature = "app-itemshopbuyyesnodialogyesmenuitem-types"))] pub mod itemshopbuyyesnodialogyesmenuitem ;
- # [cfg (feature = "app-itemshopbuyyesnodialogyesmenuitem-types")] pub use itemshopbuyyesnodialogyesmenuitem :: { ItemShopBuyYesNoDialogYesMenuItem_YesEventHandler , IItemShopBuyYesNoDialogYesMenuItem_YesEventHandler , ItemShopBuyYesNoDialogYesMenuItem , IItemShopBuyYesNoDialogYesMenuItem }
+ # [cfg (feature = "app-itemshopbuyyesnodialogyesmenuitem-types")] pub use itemshopbuyyesnodialogyesmenuitem :: { ItemShopBuyYesNoDialogYesMenuItem , IItemShopBuyYesNoDialogYesMenuItem , ItemShopBuyYesNoDialogYesMenuItem_YesEventHandler , IItemShopBuyYesNoDialogYesMenuItem_YesEventHandler }
  ;
- # [cfg (feature = "app-itemshopbuyyesnodialogyesmenuitem")] pub use itemshopbuyyesnodialogyesmenuitem :: { IItemShopBuyYesNoDialogYesMenuItem_YesEventHandlerMethods , IItemShopBuyYesNoDialogYesMenuItemMethods }
+ # [cfg (feature = "app-itemshopbuyyesnodialogyesmenuitem")] pub use itemshopbuyyesnodialogyesmenuitem :: { IItemShopBuyYesNoDialogYesMenuItemMethods , IItemShopBuyYesNoDialogYesMenuItem_YesEventHandlerMethods }
  ;
  # [cfg (any (feature = "app-itemshopdata-types"))] pub mod itemshopdata ;
  # [cfg (feature = "app-itemshopdata-types")] pub use itemshopdata :: { ItemShopData , IItemShopData }
@@ -3892,22 +3892,22 @@
  # [cfg (feature = "app-itemshopdata")] pub use itemshopdata :: { IItemShopDataMethods }
  ;
  # [cfg (any (feature = "app-itemshoptopmenu-types"))] pub mod itemshoptopmenu ;
- # [cfg (feature = "app-itemshoptopmenu-types")] pub use itemshoptopmenu :: { ItemShopTopMenu_DecideEventHandler , IItemShopTopMenu_DecideEventHandler , ItemShopTopMenu_Result2 , ItemShopTopMenu_SellMenuItem , IItemShopTopMenu_SellMenuItem , ItemShopTopMenu , IItemShopTopMenu , ItemShopTopMenu_BuyMenuItem , IItemShopTopMenu_BuyMenuItem }
+ # [cfg (feature = "app-itemshoptopmenu-types")] pub use itemshoptopmenu :: { ItemShopTopMenu , IItemShopTopMenu , ItemShopTopMenu_SellMenuItem , IItemShopTopMenu_SellMenuItem , ItemShopTopMenu_DecideEventHandler , IItemShopTopMenu_DecideEventHandler , ItemShopTopMenu_Result2 , ItemShopTopMenu_BuyMenuItem , IItemShopTopMenu_BuyMenuItem }
  ;
- # [cfg (feature = "app-itemshoptopmenu")] pub use itemshoptopmenu :: { IItemShopTopMenu_DecideEventHandlerMethods , IItemShopTopMenu_SellMenuItemMethods , IItemShopTopMenuMethods , IItemShopTopMenu_BuyMenuItemMethods }
+ # [cfg (feature = "app-itemshoptopmenu")] pub use itemshoptopmenu :: { IItemShopTopMenuMethods , IItemShopTopMenu_SellMenuItemMethods , IItemShopTopMenu_DecideEventHandlerMethods , IItemShopTopMenu_BuyMenuItemMethods }
  ;
  # [cfg (any (feature = "app-itemusesequence-types"))] pub mod itemusesequence ;
- # [cfg (feature = "app-itemusesequence-types")] pub use itemusesequence :: { ItemUseSequence , IItemUseSequence , ItemUseSequence_Label , ItemUseSequence_EnchantedUnitList , IItemUseSequence_EnchantedUnitList }
+ # [cfg (feature = "app-itemusesequence-types")] pub use itemusesequence :: { ItemUseSequence_EnchantedUnitList , IItemUseSequence_EnchantedUnitList , ItemUseSequence_Label , ItemUseSequence , IItemUseSequence }
  ;
- # [cfg (feature = "app-itemusesequence")] pub use itemusesequence :: { IItemUseSequenceMethods , IItemUseSequence_EnchantedUnitListMethods }
+ # [cfg (feature = "app-itemusesequence")] pub use itemusesequence :: { IItemUseSequence_EnchantedUnitListMethods , IItemUseSequenceMethods }
  ;
  # [cfg (any (feature = "app-jobdata-types"))] pub mod jobdata ;
- # [cfg (feature = "app-jobdata-types")] pub use jobdata :: { JobData_WeaponValues , JobData_Flags , JobData_FlagField , IJobData_FlagField , JobData , IJobData , JobData_MoveTypes , JobData_Ranks }
+ # [cfg (feature = "app-jobdata-types")] pub use jobdata :: { JobData_Flags , JobData_WeaponValues , JobData , IJobData , JobData_MoveTypes , JobData_Ranks , JobData_FlagField , IJobData_FlagField }
  ;
- # [cfg (feature = "app-jobdata")] pub use jobdata :: { IJobData_FlagFieldMethods , IJobDataMethods }
+ # [cfg (feature = "app-jobdata")] pub use jobdata :: { IJobDataMethods , IJobData_FlagFieldMethods }
  ;
  # [cfg (any (feature = "app-jobintrodata-types"))] pub mod jobintrodata ;
- # [cfg (feature = "app-jobintrodata-types")] pub use jobintrodata :: { JobIntroData_BattleType , JobIntroData , IJobIntroData }
+ # [cfg (feature = "app-jobintrodata-types")] pub use jobintrodata :: { JobIntroData , IJobIntroData , JobIntroData_BattleType }
  ;
  # [cfg (feature = "app-jobintrodata")] pub use jobintrodata :: { IJobIntroDataMethods }
  ;
@@ -3957,9 +3957,9 @@
  # [cfg (feature = "app-key3dictionary_2")] pub use key3dictionary_2 :: { IKey3Dictionary_2Methods }
  ;
  # [cfg (any (feature = "app-keyhelp-types"))] pub mod keyhelp ;
- # [cfg (feature = "app-keyhelp-types")] pub use keyhelp :: { KeyHelp_UI , IKeyHelp_UI , KeyHelp , IKeyHelp , KeyHelp_Type , KeyHelp_UI_Element , IKeyHelp_UI_Element }
+ # [cfg (feature = "app-keyhelp-types")] pub use keyhelp :: { KeyHelp_UI , IKeyHelp_UI , KeyHelp_UI_Element , IKeyHelp_UI_Element , KeyHelp_Type , KeyHelp , IKeyHelp }
  ;
- # [cfg (feature = "app-keyhelp")] pub use keyhelp :: { IKeyHelp_UIMethods , IKeyHelpMethods , IKeyHelp_UI_ElementMethods }
+ # [cfg (feature = "app-keyhelp")] pub use keyhelp :: { IKeyHelp_UIMethods , IKeyHelp_UI_ElementMethods , IKeyHelpMethods }
  ;
  # [cfg (any (feature = "app-keyhelpcontroller-types"))] pub mod keyhelpcontroller ;
  # [cfg (feature = "app-keyhelpcontroller-types")] pub use keyhelpcontroller :: { KeyHelpController , IKeyHelpController , KeyHelpController_Type }
@@ -3972,7 +3972,7 @@
  # [cfg (feature = "app-keyhelpdata")] pub use keyhelpdata :: { IKeyHelpDataMethods }
  ;
  # [cfg (any (feature = "app-keyhelptitlebarcontroller-types"))] pub mod keyhelptitlebarcontroller ;
- # [cfg (feature = "app-keyhelptitlebarcontroller-types")] pub use keyhelptitlebarcontroller :: { KeyHelpTitleBarController_Type , KeyHelpTitleBarController , IKeyHelpTitleBarController }
+ # [cfg (feature = "app-keyhelptitlebarcontroller-types")] pub use keyhelptitlebarcontroller :: { KeyHelpTitleBarController , IKeyHelpTitleBarController , KeyHelpTitleBarController_Type }
  ;
  # [cfg (feature = "app-keyhelptitlebarcontroller")] pub use keyhelptitlebarcontroller :: { IKeyHelpTitleBarControllerMethods }
  ;
@@ -3982,9 +3982,9 @@
  # [cfg (feature = "app-killbonusdata")] pub use killbonusdata :: { IKillBonusDataMethods }
  ;
  # [cfg (any (feature = "app-killedbonusdata-types"))] pub mod killedbonusdata ;
- # [cfg (feature = "app-killedbonusdata-types")] pub use killedbonusdata :: { KilledBonusData_Flags , KilledBonusData , IKilledBonusData , KilledBonusData_Kinds , KilledBonusData_FlagField , IKilledBonusData_FlagField }
+ # [cfg (feature = "app-killedbonusdata-types")] pub use killedbonusdata :: { KilledBonusData_FlagField , IKilledBonusData_FlagField , KilledBonusData , IKilledBonusData , KilledBonusData_Flags , KilledBonusData_Kinds }
  ;
- # [cfg (feature = "app-killedbonusdata")] pub use killedbonusdata :: { IKilledBonusDataMethods , IKilledBonusData_FlagFieldMethods }
+ # [cfg (feature = "app-killedbonusdata")] pub use killedbonusdata :: { IKilledBonusData_FlagFieldMethods , IKilledBonusDataMethods }
  ;
  # [cfg (any (feature = "app-labelitem-types"))] pub mod labelitem ;
  # [cfg (feature = "app-labelitem-types")] pub use labelitem :: { LabelItem , ILabelItem }
@@ -3992,7 +3992,7 @@
  # [cfg (feature = "app-labelitem")] pub use labelitem :: { ILabelItemMethods }
  ;
  # [cfg (any (feature = "app-language-types"))] pub mod language ;
- # [cfg (feature = "app-language-types")] pub use language :: { Language , ILanguage , Language_Voices , Language_Langs }
+ # [cfg (feature = "app-language-types")] pub use language :: { Language_Voices , Language , ILanguage , Language_Langs }
  ;
  # [cfg (feature = "app-language")] pub use language :: { ILanguageMethods }
  ;
@@ -4022,9 +4022,9 @@
  # [cfg (feature = "app-latertalksequence")] pub use latertalksequence :: { ILaterTalkSequenceMethods }
  ;
  # [cfg (any (feature = "app-latertalksetter-types"))] pub mod latertalksetter ;
- # [cfg (feature = "app-latertalksetter-types")] pub use latertalksetter :: { LaterTalkSetter_UnitInfo , ILaterTalkSetter_UnitInfo , LaterTalkSetter_UnitData , ILaterTalkSetter_UnitData , LaterTalkSetter , ILaterTalkSetter }
+ # [cfg (feature = "app-latertalksetter-types")] pub use latertalksetter :: { LaterTalkSetter_UnitInfo , ILaterTalkSetter_UnitInfo , LaterTalkSetter , ILaterTalkSetter , LaterTalkSetter_UnitData , ILaterTalkSetter_UnitData }
  ;
- # [cfg (feature = "app-latertalksetter")] pub use latertalksetter :: { ILaterTalkSetter_UnitInfoMethods , ILaterTalkSetter_UnitDataMethods , ILaterTalkSetterMethods }
+ # [cfg (feature = "app-latertalksetter")] pub use latertalksetter :: { ILaterTalkSetter_UnitInfoMethods , ILaterTalkSetterMethods , ILaterTalkSetter_UnitDataMethods }
  ;
  # [cfg (any (feature = "app-lerpcommand-types"))] pub mod lerpcommand ;
  # [cfg (feature = "app-lerpcommand-types")] pub use lerpcommand :: { LerpCommand , ILerpCommand }
@@ -4060,7 +4060,7 @@
  # [cfg (feature = "app-loadinglogo")] pub use loadinglogo :: { ILoadingLogoMethods , ILoadingLogo_UnitDotObjectMethods }
  ;
  # [cfg (any (feature = "app-loadingmanager-types"))] pub mod loadingmanager ;
- # [cfg (feature = "app-loadingmanager-types")] pub use loadingmanager :: { LoadingManager , ILoadingManager , LoadingManager_Modes }
+ # [cfg (feature = "app-loadingmanager-types")] pub use loadingmanager :: { LoadingManager_Modes , LoadingManager , ILoadingManager }
  ;
  # [cfg (feature = "app-loadingmanager")] pub use loadingmanager :: { ILoadingManagerMethods }
  ;
@@ -4080,27 +4080,27 @@
  # [cfg (feature = "app-logo")] pub use logo :: { ILogoMethods }
  ;
  # [cfg (any (feature = "app-mainmenusequence-types"))] pub mod mainmenusequence ;
- # [cfg (feature = "app-mainmenusequence-types")] pub use mainmenusequence :: { MainMenuSequence_NameCheckDialogItemNo , IMainMenuSequence_NameCheckDialogItemNo , MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent , IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent , MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem , IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem , MainMenuSequence_OptionMenuSequence_Menu , IMainMenuSequence_OptionMenuSequence_Menu , MainMenuSequence_HistoryInfo_Window , IMainMenuSequence_HistoryInfo_Window , MainMenuSequence_LanguageSettingMenuSequence_Menu_ConfirmDialog , IMainMenuSequence_LanguageSettingMenuSequence_Menu_ConfirmDialog , MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItem , IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItem , MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu , IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu , MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContent , IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContent , MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContent , IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContent , MainMenuSequence_FinalConfirmDialog , IMainMenuSequence_FinalConfirmDialog , MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemContent , IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemContent , MainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItem , IMainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItem , MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem , IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem , MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_NoMenuItem , IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_NoMenuItem , MainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItem , IMainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItem , MainMenuSequence_NetworkServiceSelectMenuSequence , IMainMenuSequence_NetworkServiceSelectMenuSequence , MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItem , IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItem , MainMenuSequence_GrowModeSelectMenuSequence , IMainMenuSequence_GrowModeSelectMenuSequence , MainMenuSequence_CharacterWork , IMainMenuSequence_CharacterWork , MainMenuSequence_OptionMenuSequence_Menu_CopyMenuItem , IMainMenuSequence_OptionMenuSequence_Menu_CopyMenuItem , MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContent , IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContent , MainMenuSequence_FinalConfirmDialog_YesDialogItem , IMainMenuSequence_FinalConfirmDialog_YesDialogItem , MainMenuSequence_GrowModeSelectMenuSequence_Menu_FixedMenuItem , IMainMenuSequence_GrowModeSelectMenuSequence_Menu_FixedMenuItem , MainMenuSequence_GrowModeSelectMenuSequence_Menu , IMainMenuSequence_GrowModeSelectMenuSequence_Menu , MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContent , IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContent , MainMenuSequence_TopMenuSequence_Menu_StartMenuItem , IMainMenuSequence_TopMenuSequence_Menu_StartMenuItem , MainMenuSequence_DifficultySelectMenuSequence , IMainMenuSequence_DifficultySelectMenuSequence , MainMenuSequence_TopMenuSequence_Menu_MenuItem , IMainMenuSequence_TopMenuSequence_Menu_MenuItem , MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItem , IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItem , MainMenuSequence_LanguageSettingMenuSequence_Menu_ConfirmDialog_NoDialogItem , IMainMenuSequence_LanguageSettingMenuSequence_Menu_ConfirmDialog_NoDialogItem , MainMenuSequence_NameCheckDialogItemYes , IMainMenuSequence_NameCheckDialogItemYes , MainMenuSequence_LanguageSettingMenuSequence_Menu_MessMenuItem , IMainMenuSequence_LanguageSettingMenuSequence_Menu_MessMenuItem , MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContent , IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContent , MainMenuSequence_TopMenuSequence , IMainMenuSequence_TopMenuSequence , MainMenuSequence , IMainMenuSequence , MainMenuSequence_TopMenuSequence_Menu_MenuContent , IMainMenuSequence_TopMenuSequence_Menu_MenuContent , MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem , IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem , MainMenuSequence_DifficultySelectMenuSequence_Menu_NormalMenuItem , IMainMenuSequence_DifficultySelectMenuSequence_Menu_NormalMenuItem , MainMenuSequence_LanguageSettingMenuSequence_Menu , IMainMenuSequence_LanguageSettingMenuSequence_Menu , MainMenuSequence_OptionMenuSequence , IMainMenuSequence_OptionMenuSequence , MainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItem , IMainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItem , MainMenuSequence_TopMenuSequence_Menu_MenuItemContent , IMainMenuSequence_TopMenuSequence_Menu_MenuItemContent , MainMenuSequence_LanguageSettingMenuSequence , IMainMenuSequence_LanguageSettingMenuSequence , MainMenuSequence_PlayerBirthdayInputMenuSequence_LayoutType , MainMenuSequence_DifficultySelectMenuSequence_Menu , IMainMenuSequence_DifficultySelectMenuSequence_Menu , MainMenuSequence_GameModeSelectMenuSequence , IMainMenuSequence_GameModeSelectMenuSequence , MainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItem , IMainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItem , MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent , IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent , MainMenuSequence_AlphaFader , IMainMenuSequence_AlphaFader , MainMenuSequence_OptionMenuSequence_Menu_MenuItem , IMainMenuSequence_OptionMenuSequence_Menu_MenuItem , MainMenuSequence_PlayerBirthdayInputMenuSequence , IMainMenuSequence_PlayerBirthdayInputMenuSequence , MainMenuSequence_GameModeSelectMenuSequence_Menu , IMainMenuSequence_GameModeSelectMenuSequence_Menu , MainMenuSequence_PlayerGenderSelectMenuSequence , IMainMenuSequence_PlayerGenderSelectMenuSequence , MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContent , IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContent , MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent , IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent , MainMenuSequence_GrowModeSelectMenuSequence_Menu_RandomMenuItem , IMainMenuSequence_GrowModeSelectMenuSequence_Menu_RandomMenuItem , MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent , IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent , MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContent , IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContent , MainMenuSequence_HistoryInfo_InfoKind , MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItem , IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItem , MainMenuSequence_HistoryInfo , IMainMenuSequence_HistoryInfo , MainMenuSequence_LanguageSettingMenuSequence_Menu_ConfirmDialog_YesDialogItem , IMainMenuSequence_LanguageSettingMenuSequence_Menu_ConfirmDialog_YesDialogItem , MainMenuSequence_TopMenuSequence_Menu_OptionMenuItem , IMainMenuSequence_TopMenuSequence_Menu_OptionMenuItem , MainMenuSequence_TopMenuSequence_Menu_DLCMenuItem , IMainMenuSequence_TopMenuSequence_Menu_DLCMenuItem , MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItem , IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItem , MainMenuSequence_TopMenuSequence_Menu_ContinueMenuItem , IMainMenuSequence_TopMenuSequence_Menu_ContinueMenuItem , MainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItem , IMainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItem , MainMenuSequence_MenuSequenceBase , IMainMenuSequence_MenuSequenceBase , MainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItem , IMainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItem , MainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItem , IMainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItem , MainMenuSequence_CameraWork , IMainMenuSequence_CameraWork , MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContent , IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContent , MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContent , IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContent , MainMenuSequence_Label , MainMenuSequence_FinalConfirmDialog_NoDialogItem , IMainMenuSequence_FinalConfirmDialog_NoDialogItem , MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem , IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem , MainMenuSequence_NetworkServiceSelectMenuSequence_Menu , IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu , MainMenuSequence_TopMenuSequence_Menu , IMainMenuSequence_TopMenuSequence_Menu }
+ # [cfg (feature = "app-mainmenusequence-types")] pub use mainmenusequence :: { MainMenuSequence_PlayerGenderSelectMenuSequence , IMainMenuSequence_PlayerGenderSelectMenuSequence , MainMenuSequence_GameModeSelectMenuSequence_Menu , IMainMenuSequence_GameModeSelectMenuSequence_Menu , MainMenuSequence_PlayerBirthdayInputMenuSequence_LayoutType , MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContent , IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContent , MainMenuSequence_OptionMenuSequence , IMainMenuSequence_OptionMenuSequence , MainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItem , IMainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItem , MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContent , IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContent , MainMenuSequence_GrowModeSelectMenuSequence_Menu_FixedMenuItem , IMainMenuSequence_GrowModeSelectMenuSequence_Menu_FixedMenuItem , MainMenuSequence_DifficultySelectMenuSequence_Menu_NormalMenuItem , IMainMenuSequence_DifficultySelectMenuSequence_Menu_NormalMenuItem , MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItem , IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItem , MainMenuSequence_CameraWork , IMainMenuSequence_CameraWork , MainMenuSequence_HistoryInfo_Window , IMainMenuSequence_HistoryInfo_Window , MainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItem , IMainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItem , MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContent , IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContent , MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContent , IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContent , MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem , IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem , MainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItem , IMainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItem , MainMenuSequence_LanguageSettingMenuSequence , IMainMenuSequence_LanguageSettingMenuSequence , MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem , IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem , MainMenuSequence_Label , MainMenuSequence_MenuSequenceBase , IMainMenuSequence_MenuSequenceBase , MainMenuSequence_OptionMenuSequence_Menu_CopyMenuItem , IMainMenuSequence_OptionMenuSequence_Menu_CopyMenuItem , MainMenuSequence_HistoryInfo_InfoKind , MainMenuSequence_DifficultySelectMenuSequence , IMainMenuSequence_DifficultySelectMenuSequence , MainMenuSequence_OptionMenuSequence_Menu_MenuItem , IMainMenuSequence_OptionMenuSequence_Menu_MenuItem , MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItem , IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItem , MainMenuSequence_NameCheckDialogItemYes , IMainMenuSequence_NameCheckDialogItemYes , MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItem , IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItem , MainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItem , IMainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItem , MainMenuSequence_NetworkServiceSelectMenuSequence_Menu , IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu , MainMenuSequence_LanguageSettingMenuSequence_Menu_MessMenuItem , IMainMenuSequence_LanguageSettingMenuSequence_Menu_MessMenuItem , MainMenuSequence_LanguageSettingMenuSequence_Menu_ConfirmDialog , IMainMenuSequence_LanguageSettingMenuSequence_Menu_ConfirmDialog , MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent , IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent , MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent , IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent , MainMenuSequence_GrowModeSelectMenuSequence_Menu_RandomMenuItem , IMainMenuSequence_GrowModeSelectMenuSequence_Menu_RandomMenuItem , MainMenuSequence_FinalConfirmDialog , IMainMenuSequence_FinalConfirmDialog , MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItem , IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItem , MainMenuSequence_FinalConfirmDialog_YesDialogItem , IMainMenuSequence_FinalConfirmDialog_YesDialogItem , MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem , IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem , MainMenuSequence_TopMenuSequence_Menu_OptionMenuItem , IMainMenuSequence_TopMenuSequence_Menu_OptionMenuItem , MainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItem , IMainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItem , MainMenuSequence_DifficultySelectMenuSequence_Menu , IMainMenuSequence_DifficultySelectMenuSequence_Menu , MainMenuSequence_GrowModeSelectMenuSequence , IMainMenuSequence_GrowModeSelectMenuSequence , MainMenuSequence_PlayerBirthdayInputMenuSequence , IMainMenuSequence_PlayerBirthdayInputMenuSequence , MainMenuSequence_TopMenuSequence_Menu_DLCMenuItem , IMainMenuSequence_TopMenuSequence_Menu_DLCMenuItem , MainMenuSequence_GameModeSelectMenuSequence , IMainMenuSequence_GameModeSelectMenuSequence , MainMenuSequence_TopMenuSequence_Menu_MenuItemContent , IMainMenuSequence_TopMenuSequence_Menu_MenuItemContent , MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_NoMenuItem , IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_NoMenuItem , MainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItem , IMainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItem , MainMenuSequence_GrowModeSelectMenuSequence_Menu , IMainMenuSequence_GrowModeSelectMenuSequence_Menu , MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContent , IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContent , MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContent , IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContent , MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContent , IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContent , MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContent , IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContent , MainMenuSequence_TopMenuSequence , IMainMenuSequence_TopMenuSequence , MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu , IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu , MainMenuSequence_LanguageSettingMenuSequence_Menu_ConfirmDialog_NoDialogItem , IMainMenuSequence_LanguageSettingMenuSequence_Menu_ConfirmDialog_NoDialogItem , MainMenuSequence_TopMenuSequence_Menu , IMainMenuSequence_TopMenuSequence_Menu , MainMenuSequence_LanguageSettingMenuSequence_Menu , IMainMenuSequence_LanguageSettingMenuSequence_Menu , MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemContent , IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemContent , MainMenuSequence_TopMenuSequence_Menu_ContinueMenuItem , IMainMenuSequence_TopMenuSequence_Menu_ContinueMenuItem , MainMenuSequence_TopMenuSequence_Menu_StartMenuItem , IMainMenuSequence_TopMenuSequence_Menu_StartMenuItem , MainMenuSequence_FinalConfirmDialog_NoDialogItem , IMainMenuSequence_FinalConfirmDialog_NoDialogItem , MainMenuSequence_CharacterWork , IMainMenuSequence_CharacterWork , MainMenuSequence_AlphaFader , IMainMenuSequence_AlphaFader , MainMenuSequence_NameCheckDialogItemNo , IMainMenuSequence_NameCheckDialogItemNo , MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem , IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem , MainMenuSequence_OptionMenuSequence_Menu , IMainMenuSequence_OptionMenuSequence_Menu , MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItem , IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItem , MainMenuSequence_TopMenuSequence_Menu_MenuItem , IMainMenuSequence_TopMenuSequence_Menu_MenuItem , MainMenuSequence , IMainMenuSequence , MainMenuSequence_LanguageSettingMenuSequence_Menu_ConfirmDialog_YesDialogItem , IMainMenuSequence_LanguageSettingMenuSequence_Menu_ConfirmDialog_YesDialogItem , MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent , IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent , MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContent , IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContent , MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent , IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent , MainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItem , IMainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItem , MainMenuSequence_HistoryInfo , IMainMenuSequence_HistoryInfo , MainMenuSequence_NetworkServiceSelectMenuSequence , IMainMenuSequence_NetworkServiceSelectMenuSequence , MainMenuSequence_TopMenuSequence_Menu_MenuContent , IMainMenuSequence_TopMenuSequence_Menu_MenuContent }
  ;
- # [cfg (feature = "app-mainmenusequence")] pub use mainmenusequence :: { IMainMenuSequence_NameCheckDialogItemNoMethods , IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContentMethods , IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemMethods , IMainMenuSequence_OptionMenuSequence_MenuMethods , IMainMenuSequence_HistoryInfo_WindowMethods , IMainMenuSequence_LanguageSettingMenuSequence_Menu_ConfirmDialogMethods , IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemMethods , IMainMenuSequence_PlayerBirthdayInputMenuSequence_MenuMethods , IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContentMethods , IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContentMethods , IMainMenuSequence_FinalConfirmDialogMethods , IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemContentMethods , IMainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItemMethods , IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemMethods , IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_NoMenuItemMethods , IMainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItemMethods , IMainMenuSequence_NetworkServiceSelectMenuSequenceMethods , IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItemMethods , IMainMenuSequence_GrowModeSelectMenuSequenceMethods , IMainMenuSequence_CharacterWorkMethods , IMainMenuSequence_OptionMenuSequence_Menu_CopyMenuItemMethods , IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContentMethods , IMainMenuSequence_FinalConfirmDialog_YesDialogItemMethods , IMainMenuSequence_GrowModeSelectMenuSequence_Menu_FixedMenuItemMethods , IMainMenuSequence_GrowModeSelectMenuSequence_MenuMethods , IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContentMethods , IMainMenuSequence_TopMenuSequence_Menu_StartMenuItemMethods , IMainMenuSequence_DifficultySelectMenuSequenceMethods , IMainMenuSequence_TopMenuSequence_Menu_MenuItemMethods , IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemMethods , IMainMenuSequence_LanguageSettingMenuSequence_Menu_ConfirmDialog_NoDialogItemMethods , IMainMenuSequence_NameCheckDialogItemYesMethods , IMainMenuSequence_LanguageSettingMenuSequence_Menu_MessMenuItemMethods , IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContentMethods , IMainMenuSequence_TopMenuSequenceMethods , IMainMenuSequenceMethods , IMainMenuSequence_TopMenuSequence_Menu_MenuContentMethods , IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemMethods , IMainMenuSequence_DifficultySelectMenuSequence_Menu_NormalMenuItemMethods , IMainMenuSequence_LanguageSettingMenuSequence_MenuMethods , IMainMenuSequence_OptionMenuSequenceMethods , IMainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItemMethods , IMainMenuSequence_TopMenuSequence_Menu_MenuItemContentMethods , IMainMenuSequence_LanguageSettingMenuSequenceMethods , IMainMenuSequence_DifficultySelectMenuSequence_MenuMethods , IMainMenuSequence_GameModeSelectMenuSequenceMethods , IMainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItemMethods , IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContentMethods , IMainMenuSequence_AlphaFaderMethods , IMainMenuSequence_OptionMenuSequence_Menu_MenuItemMethods , IMainMenuSequence_PlayerBirthdayInputMenuSequenceMethods , IMainMenuSequence_GameModeSelectMenuSequence_MenuMethods , IMainMenuSequence_PlayerGenderSelectMenuSequenceMethods , IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContentMethods , IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContentMethods , IMainMenuSequence_GrowModeSelectMenuSequence_Menu_RandomMenuItemMethods , IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContentMethods , IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContentMethods , IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemMethods , IMainMenuSequence_HistoryInfoMethods , IMainMenuSequence_LanguageSettingMenuSequence_Menu_ConfirmDialog_YesDialogItemMethods , IMainMenuSequence_TopMenuSequence_Menu_OptionMenuItemMethods , IMainMenuSequence_TopMenuSequence_Menu_DLCMenuItemMethods , IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemMethods , IMainMenuSequence_TopMenuSequence_Menu_ContinueMenuItemMethods , IMainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItemMethods , IMainMenuSequence_MenuSequenceBaseMethods , IMainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItemMethods , IMainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItemMethods , IMainMenuSequence_CameraWorkMethods , IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContentMethods , IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContentMethods , IMainMenuSequence_FinalConfirmDialog_NoDialogItemMethods , IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemMethods , IMainMenuSequence_NetworkServiceSelectMenuSequence_MenuMethods , IMainMenuSequence_TopMenuSequence_MenuMethods }
+ # [cfg (feature = "app-mainmenusequence")] pub use mainmenusequence :: { IMainMenuSequence_PlayerGenderSelectMenuSequenceMethods , IMainMenuSequence_GameModeSelectMenuSequence_MenuMethods , IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContentMethods , IMainMenuSequence_OptionMenuSequenceMethods , IMainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItemMethods , IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContentMethods , IMainMenuSequence_GrowModeSelectMenuSequence_Menu_FixedMenuItemMethods , IMainMenuSequence_DifficultySelectMenuSequence_Menu_NormalMenuItemMethods , IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemMethods , IMainMenuSequence_CameraWorkMethods , IMainMenuSequence_HistoryInfo_WindowMethods , IMainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItemMethods , IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContentMethods , IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContentMethods , IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemMethods , IMainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItemMethods , IMainMenuSequence_LanguageSettingMenuSequenceMethods , IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemMethods , IMainMenuSequence_MenuSequenceBaseMethods , IMainMenuSequence_OptionMenuSequence_Menu_CopyMenuItemMethods , IMainMenuSequence_DifficultySelectMenuSequenceMethods , IMainMenuSequence_OptionMenuSequence_Menu_MenuItemMethods , IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemMethods , IMainMenuSequence_NameCheckDialogItemYesMethods , IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItemMethods , IMainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItemMethods , IMainMenuSequence_NetworkServiceSelectMenuSequence_MenuMethods , IMainMenuSequence_LanguageSettingMenuSequence_Menu_MessMenuItemMethods , IMainMenuSequence_LanguageSettingMenuSequence_Menu_ConfirmDialogMethods , IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContentMethods , IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContentMethods , IMainMenuSequence_GrowModeSelectMenuSequence_Menu_RandomMenuItemMethods , IMainMenuSequence_FinalConfirmDialogMethods , IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemMethods , IMainMenuSequence_FinalConfirmDialog_YesDialogItemMethods , IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemMethods , IMainMenuSequence_TopMenuSequence_Menu_OptionMenuItemMethods , IMainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItemMethods , IMainMenuSequence_DifficultySelectMenuSequence_MenuMethods , IMainMenuSequence_GrowModeSelectMenuSequenceMethods , IMainMenuSequence_PlayerBirthdayInputMenuSequenceMethods , IMainMenuSequence_TopMenuSequence_Menu_DLCMenuItemMethods , IMainMenuSequence_GameModeSelectMenuSequenceMethods , IMainMenuSequence_TopMenuSequence_Menu_MenuItemContentMethods , IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_NoMenuItemMethods , IMainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItemMethods , IMainMenuSequence_GrowModeSelectMenuSequence_MenuMethods , IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContentMethods , IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContentMethods , IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContentMethods , IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContentMethods , IMainMenuSequence_TopMenuSequenceMethods , IMainMenuSequence_PlayerBirthdayInputMenuSequence_MenuMethods , IMainMenuSequence_LanguageSettingMenuSequence_Menu_ConfirmDialog_NoDialogItemMethods , IMainMenuSequence_TopMenuSequence_MenuMethods , IMainMenuSequence_LanguageSettingMenuSequence_MenuMethods , IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemContentMethods , IMainMenuSequence_TopMenuSequence_Menu_ContinueMenuItemMethods , IMainMenuSequence_TopMenuSequence_Menu_StartMenuItemMethods , IMainMenuSequence_FinalConfirmDialog_NoDialogItemMethods , IMainMenuSequence_CharacterWorkMethods , IMainMenuSequence_AlphaFaderMethods , IMainMenuSequence_NameCheckDialogItemNoMethods , IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemMethods , IMainMenuSequence_OptionMenuSequence_MenuMethods , IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemMethods , IMainMenuSequence_TopMenuSequence_Menu_MenuItemMethods , IMainMenuSequenceMethods , IMainMenuSequence_LanguageSettingMenuSequence_Menu_ConfirmDialog_YesDialogItemMethods , IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContentMethods , IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContentMethods , IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContentMethods , IMainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItemMethods , IMainMenuSequence_HistoryInfoMethods , IMainMenuSequence_NetworkServiceSelectMenuSequenceMethods , IMainMenuSequence_TopMenuSequence_Menu_MenuContentMethods }
  ;
  # [cfg (any (feature = "app-mainsequence-types"))] pub mod mainsequence ;
- # [cfg (feature = "app-mainsequence-types")] pub use mainsequence :: { MainSequence , IMainSequence , MainSequence_Label }
+ # [cfg (feature = "app-mainsequence-types")] pub use mainsequence :: { MainSequence_Label , MainSequence , IMainSequence }
  ;
  # [cfg (feature = "app-mainsequence")] pub use mainsequence :: { IMainSequenceMethods }
  ;
  # [cfg (any (feature = "app-map-types"))] pub mod map ;
- # [cfg (feature = "app-map-types")] pub use map :: { Map_CellVertex , IMap_CellVertex , Map_FillList , IMap_FillList , Map , IMap , Map_CellMesh , IMap_CellMesh , Map_Pos }
+ # [cfg (feature = "app-map-types")] pub use map :: { Map , IMap , Map_Pos , Map_CellMesh , IMap_CellMesh , Map_FillList , IMap_FillList , Map_CellVertex , IMap_CellVertex }
  ;
- # [cfg (feature = "app-map")] pub use map :: { IMap_CellVertexMethods , IMap_FillListMethods , IMapMethods , IMap_CellMeshMethods }
+ # [cfg (feature = "app-map")] pub use map :: { IMapMethods , IMap_CellMeshMethods , IMap_FillListMethods , IMap_CellVertexMethods }
  ;
  # [cfg (any (feature = "app-mapaction-types"))] pub mod mapaction ;
- # [cfg (feature = "app-mapaction-types")] pub use mapaction :: { MapAction_ProcRouteMove_Result , MapAction_ProcBounce , IMapAction_ProcBounce , MapAction , IMapAction , MapAction_ProcSyncSkyCastle , IMapAction_ProcSyncSkyCastle , MapAction_ProcRouteMove , IMapAction_ProcRouteMove , MapAction_ProcUnitAction , IMapAction_ProcUnitAction , MapAction_ProcRouteMove_Spline , IMapAction_ProcRouteMove_Spline , MapAction_ProcChangePos , IMapAction_ProcChangePos , MapAction_ProcBlow , IMapAction_ProcBlow , MapAction_ProcWarp , IMapAction_ProcWarp , MapAction_ProcRevive , IMapAction_ProcRevive , MapAction_ProcDead , IMapAction_ProcDead , MapAction_ProcTranslation , IMapAction_ProcTranslation , MapAction_ProcJump , IMapAction_ProcJump }
+ # [cfg (feature = "app-mapaction-types")] pub use mapaction :: { MapAction_ProcRouteMove , IMapAction_ProcRouteMove , MapAction_ProcSyncSkyCastle , IMapAction_ProcSyncSkyCastle , MapAction_ProcChangePos , IMapAction_ProcChangePos , MapAction_ProcUnitAction , IMapAction_ProcUnitAction , MapAction_ProcTranslation , IMapAction_ProcTranslation , MapAction_ProcBlow , IMapAction_ProcBlow , MapAction_ProcBounce , IMapAction_ProcBounce , MapAction_ProcDead , IMapAction_ProcDead , MapAction_ProcRevive , IMapAction_ProcRevive , MapAction_ProcRouteMove_Spline , IMapAction_ProcRouteMove_Spline , MapAction_ProcJump , IMapAction_ProcJump , MapAction_ProcWarp , IMapAction_ProcWarp , MapAction_ProcRouteMove_Result , MapAction , IMapAction }
  ;
- # [cfg (feature = "app-mapaction")] pub use mapaction :: { IMapAction_ProcBounceMethods , IMapAction_ProcSyncSkyCastleMethods , IMapAction_ProcRouteMoveMethods , IMapAction_ProcUnitActionMethods , IMapAction_ProcRouteMove_SplineMethods , IMapAction_ProcChangePosMethods , IMapAction_ProcBlowMethods , IMapAction_ProcWarpMethods , IMapAction_ProcReviveMethods , IMapAction_ProcDeadMethods , IMapAction_ProcTranslationMethods , IMapAction_ProcJumpMethods }
+ # [cfg (feature = "app-mapaction")] pub use mapaction :: { IMapAction_ProcRouteMoveMethods , IMapAction_ProcSyncSkyCastleMethods , IMapAction_ProcChangePosMethods , IMapAction_ProcUnitActionMethods , IMapAction_ProcTranslationMethods , IMapAction_ProcBlowMethods , IMapAction_ProcBounceMethods , IMapAction_ProcDeadMethods , IMapAction_ProcReviveMethods , IMapAction_ProcRouteMove_SplineMethods , IMapAction_ProcJumpMethods , IMapAction_ProcWarpMethods }
  ;
  # [cfg (any (feature = "app-mapactor-types"))] pub mod mapactor ;
- # [cfg (feature = "app-mapactor-types")] pub use mapactor :: { MapActor_MoveResult , MapActor , IMapActor }
+ # [cfg (feature = "app-mapactor-types")] pub use mapactor :: { MapActor , IMapActor , MapActor_MoveResult }
  ;
  # [cfg (feature = "app-mapactor")] pub use mapactor :: { IMapActorMethods }
  ;
@@ -4160,7 +4160,7 @@
  # [cfg (feature = "app-mapbattleinfoparamsetter")] pub use mapbattleinfoparamsetter :: { IMapBattleInfoParamSetterMethods }
  ;
  # [cfg (any (feature = "app-mapbattleinforoot-types"))] pub mod mapbattleinforoot ;
- # [cfg (feature = "app-mapbattleinforoot-types")] pub use mapbattleinforoot :: { MapBattleInfoRoot , IMapBattleInfoRoot , MapBattleInfoRoot_StatusShowType }
+ # [cfg (feature = "app-mapbattleinforoot-types")] pub use mapbattleinforoot :: { MapBattleInfoRoot_StatusShowType , MapBattleInfoRoot , IMapBattleInfoRoot }
  ;
  # [cfg (feature = "app-mapbattleinforoot")] pub use mapbattleinforoot :: { IMapBattleInfoRootMethods }
  ;
@@ -4185,9 +4185,9 @@
  # [cfg (feature = "app-mapbattleinfowindowsingle")] pub use mapbattleinfowindowsingle :: { IMapBattleInfoWindowSingleMethods }
  ;
  # [cfg (any (feature = "app-mapbattlewindow-types"))] pub mod mapbattlewindow ;
- # [cfg (feature = "app-mapbattlewindow-types")] pub use mapbattlewindow :: { MapBattleWindow_MoveParam , IMapBattleWindow_MoveParam , MapBattleWindow , IMapBattleWindow }
+ # [cfg (feature = "app-mapbattlewindow-types")] pub use mapbattlewindow :: { MapBattleWindow , IMapBattleWindow , MapBattleWindow_MoveParam , IMapBattleWindow_MoveParam }
  ;
- # [cfg (feature = "app-mapbattlewindow")] pub use mapbattlewindow :: { IMapBattleWindow_MoveParamMethods , IMapBattleWindowMethods }
+ # [cfg (feature = "app-mapbattlewindow")] pub use mapbattlewindow :: { IMapBattleWindowMethods , IMapBattleWindow_MoveParamMethods }
  ;
  # [cfg (any (feature = "app-mapbinder-types"))] pub mod mapbinder ;
  # [cfg (feature = "app-mapbinder-types")] pub use mapbinder :: { MapBinder , IMapBinder }
@@ -4230,7 +4230,7 @@
  # [cfg (feature = "app-mapcombatviewersettings")] pub use mapcombatviewersettings :: { IMapCombatViewerSettingsMethods }
  ;
  # [cfg (any (feature = "app-mapcursor-types"))] pub mod mapcursor ;
- # [cfg (feature = "app-mapcursor-types")] pub use mapcursor :: { MapCursor_FlagField , IMapCursor_FlagField , MapCursor , IMapCursor , MapCursor_CursorTopType , MapCursor_DistanceMode , MapCursor_Flag , MapCursor_AnimType }
+ # [cfg (feature = "app-mapcursor-types")] pub use mapcursor :: { MapCursor_CursorTopType , MapCursor_FlagField , IMapCursor_FlagField , MapCursor_DistanceMode , MapCursor , IMapCursor , MapCursor_Flag , MapCursor_AnimType }
  ;
  # [cfg (feature = "app-mapcursor")] pub use mapcursor :: { IMapCursor_FlagFieldMethods , IMapCursorMethods }
  ;
@@ -4245,9 +4245,9 @@
  # [cfg (feature = "app-mapdeactivate")] pub use mapdeactivate :: { IMapDeactivateMethods }
  ;
  # [cfg (any (feature = "app-mapdebugdisposmenu-types"))] pub mod mapdebugdisposmenu ;
- # [cfg (feature = "app-mapdebugdisposmenu-types")] pub use mapdebugdisposmenu :: { MapDebugDisposMenu_DeleteForceMenuItem , IMapDebugDisposMenu_DeleteForceMenuItem , MapDebugDisposMenu_DisposMenuItem , IMapDebugDisposMenu_DisposMenuItem , MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup , IMapDebugDisposMenu_DisposMenuItem_SharedPositionGroup , MapDebugDisposMenu , IMapDebugDisposMenu }
+ # [cfg (feature = "app-mapdebugdisposmenu-types")] pub use mapdebugdisposmenu :: { MapDebugDisposMenu_DisposMenuItem , IMapDebugDisposMenu_DisposMenuItem , MapDebugDisposMenu , IMapDebugDisposMenu , MapDebugDisposMenu_DeleteForceMenuItem , IMapDebugDisposMenu_DeleteForceMenuItem , MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup , IMapDebugDisposMenu_DisposMenuItem_SharedPositionGroup }
  ;
- # [cfg (feature = "app-mapdebugdisposmenu")] pub use mapdebugdisposmenu :: { IMapDebugDisposMenu_DeleteForceMenuItemMethods , IMapDebugDisposMenu_DisposMenuItemMethods , IMapDebugDisposMenu_DisposMenuItem_SharedPositionGroupMethods , IMapDebugDisposMenuMethods }
+ # [cfg (feature = "app-mapdebugdisposmenu")] pub use mapdebugdisposmenu :: { IMapDebugDisposMenu_DisposMenuItemMethods , IMapDebugDisposMenuMethods , IMapDebugDisposMenu_DeleteForceMenuItemMethods , IMapDebugDisposMenu_DisposMenuItem_SharedPositionGroupMethods }
  ;
  # [cfg (any (feature = "app-mapdeploy-types"))] pub mod mapdeploy ;
  # [cfg (feature = "app-mapdeploy-types")] pub use mapdeploy :: { MapDeploy , IMapDeploy }
@@ -4330,9 +4330,9 @@
  # [cfg (feature = "app-mapdeploysupportimage")] pub use mapdeploysupportimage :: { IMapDeploySupportImageMethods }
  ;
  # [cfg (any (feature = "app-mapdeploytemplate_1-types"))] pub mod mapdeploytemplate_1 ;
- # [cfg (feature = "app-mapdeploytemplate_1-types")] pub use mapdeploytemplate_1 :: { MapDeployTemplate_1_DisplayType , MapDeployTemplate_1_SwapBufferScope , IMapDeployTemplate_1_SwapBufferScope , MapDeployTemplate_1_Queue_Data , MapDeployTemplate_1_FlagField , IMapDeployTemplate_1_FlagField , MapDeployTemplate_1_ImageType , MapDeployTemplate_1 , IMapDeployTemplate_1 , MapDeployTemplate_1_Flag , MapDeployTemplate_1_Queue , IMapDeployTemplate_1_Queue }
+ # [cfg (feature = "app-mapdeploytemplate_1-types")] pub use mapdeploytemplate_1 :: { MapDeployTemplate_1_SwapBufferScope , IMapDeployTemplate_1_SwapBufferScope , MapDeployTemplate_1_Queue_Data , MapDeployTemplate_1_Queue , IMapDeployTemplate_1_Queue , MapDeployTemplate_1_FlagField , IMapDeployTemplate_1_FlagField , MapDeployTemplate_1_DisplayType , MapDeployTemplate_1_ImageType , MapDeployTemplate_1_Flag , MapDeployTemplate_1 , IMapDeployTemplate_1 }
  ;
- # [cfg (feature = "app-mapdeploytemplate_1")] pub use mapdeploytemplate_1 :: { IMapDeployTemplate_1_SwapBufferScopeMethods , IMapDeployTemplate_1_FlagFieldMethods , IMapDeployTemplate_1Methods , IMapDeployTemplate_1_QueueMethods }
+ # [cfg (feature = "app-mapdeploytemplate_1")] pub use mapdeploytemplate_1 :: { IMapDeployTemplate_1_SwapBufferScopeMethods , IMapDeployTemplate_1_QueueMethods , IMapDeployTemplate_1_FlagFieldMethods , IMapDeployTemplate_1Methods }
  ;
  # [cfg (any (feature = "app-mapdeploytrickimage-types"))] pub mod mapdeploytrickimage ;
  # [cfg (feature = "app-mapdeploytrickimage-types")] pub use mapdeploytrickimage :: { MapDeployTrickImage , IMapDeployTrickImage }
@@ -4345,9 +4345,9 @@
  # [cfg (feature = "app-mapdeployzocimage")] pub use mapdeployzocimage :: { IMapDeployZocImageMethods }
  ;
  # [cfg (any (feature = "app-mapdispos-types"))] pub mod mapdispos ;
- # [cfg (feature = "app-mapdispos-types")] pub use mapdispos :: { MapDispos_ActualData , IMapDispos_ActualData , MapDispos_FlagField , IMapDispos_FlagField , MapDispos_Pos , IMapDispos_Pos , MapDispos_ProcDispos , IMapDispos_ProcDispos , MapDispos_PosList , IMapDispos_PosList , MapDispos_ActualDataList , IMapDispos_ActualDataList , MapDispos_Flag , MapDispos_ActualData_CalcResults , MapDispos , IMapDispos }
+ # [cfg (feature = "app-mapdispos-types")] pub use mapdispos :: { MapDispos , IMapDispos , MapDispos_PosList , IMapDispos_PosList , MapDispos_ActualData , IMapDispos_ActualData , MapDispos_ProcDispos , IMapDispos_ProcDispos , MapDispos_ActualData_CalcResults , MapDispos_ActualDataList , IMapDispos_ActualDataList , MapDispos_Pos , IMapDispos_Pos , MapDispos_FlagField , IMapDispos_FlagField , MapDispos_Flag }
  ;
- # [cfg (feature = "app-mapdispos")] pub use mapdispos :: { IMapDispos_ActualDataMethods , IMapDispos_FlagFieldMethods , IMapDispos_PosMethods , IMapDispos_ProcDisposMethods , IMapDispos_PosListMethods , IMapDispos_ActualDataListMethods , IMapDisposMethods }
+ # [cfg (feature = "app-mapdispos")] pub use mapdispos :: { IMapDisposMethods , IMapDispos_PosListMethods , IMapDispos_ActualDataMethods , IMapDispos_ProcDisposMethods , IMapDispos_ActualDataListMethods , IMapDispos_PosMethods , IMapDispos_FlagFieldMethods }
  ;
  # [cfg (any (feature = "app-mapdnagerdeploy-types"))] pub mod mapdnagerdeploy ;
  # [cfg (feature = "app-mapdnagerdeploy-types")] pub use mapdnagerdeploy :: { MapDnagerDeploy , IMapDnagerDeploy }
@@ -4355,7 +4355,7 @@
  # [cfg (feature = "app-mapdnagerdeploy")] pub use mapdnagerdeploy :: { IMapDnagerDeployMethods }
  ;
  # [cfg (any (feature = "app-mapeditchecker-types"))] pub mod mapeditchecker ;
- # [cfg (feature = "app-mapeditchecker-types")] pub use mapeditchecker :: { MapEditChecker , IMapEditChecker , MapEditChecker_CheckRange }
+ # [cfg (feature = "app-mapeditchecker-types")] pub use mapeditchecker :: { MapEditChecker_CheckRange , MapEditChecker , IMapEditChecker }
  ;
  # [cfg (feature = "app-mapeditchecker")] pub use mapeditchecker :: { IMapEditCheckerMethods }
  ;
@@ -4365,14 +4365,14 @@
  # [cfg (feature = "app-mapeditdata")] pub use mapeditdata :: { IMapEditDataMethods , IMapEditData_UnitInfoMethods }
  ;
  # [cfg (any (feature = "app-mapedithistory-types"))] pub mod mapedithistory ;
- # [cfg (feature = "app-mapedithistory-types")] pub use mapedithistory :: { MapEditHistory_MapEditCommand , IMapEditHistory_MapEditCommand , MapEditHistory_RotateObjectCommand , IMapEditHistory_RotateObjectCommand , MapEditHistory_CreateObjectCommand , IMapEditHistory_CreateObjectCommand , MapEditHistory_ReplaceObjectCommand , IMapEditHistory_ReplaceObjectCommand , MapEditHistory_DeleteObjectCommand , IMapEditHistory_DeleteObjectCommand , MapEditHistory , IMapEditHistory }
+ # [cfg (feature = "app-mapedithistory-types")] pub use mapedithistory :: { MapEditHistory_CreateObjectCommand , IMapEditHistory_CreateObjectCommand , MapEditHistory_DeleteObjectCommand , IMapEditHistory_DeleteObjectCommand , MapEditHistory_MapEditCommand , IMapEditHistory_MapEditCommand , MapEditHistory_ReplaceObjectCommand , IMapEditHistory_ReplaceObjectCommand , MapEditHistory_RotateObjectCommand , IMapEditHistory_RotateObjectCommand , MapEditHistory , IMapEditHistory }
  ;
- # [cfg (feature = "app-mapedithistory")] pub use mapedithistory :: { IMapEditHistory_MapEditCommandMethods , IMapEditHistory_RotateObjectCommandMethods , IMapEditHistory_CreateObjectCommandMethods , IMapEditHistory_ReplaceObjectCommandMethods , IMapEditHistory_DeleteObjectCommandMethods , IMapEditHistoryMethods }
+ # [cfg (feature = "app-mapedithistory")] pub use mapedithistory :: { IMapEditHistory_CreateObjectCommandMethods , IMapEditHistory_DeleteObjectCommandMethods , IMapEditHistory_MapEditCommandMethods , IMapEditHistory_ReplaceObjectCommandMethods , IMapEditHistory_RotateObjectCommandMethods , IMapEditHistoryMethods }
  ;
  # [cfg (any (feature = "app-mapeditor-types"))] pub mod mapeditor ;
- # [cfg (feature = "app-mapeditor-types")] pub use mapeditor :: { MapEditor_EditObject , IMapEditor_EditObject , MapEditor , IMapEditor }
+ # [cfg (feature = "app-mapeditor-types")] pub use mapeditor :: { MapEditor , IMapEditor , MapEditor_EditObject , IMapEditor_EditObject }
  ;
- # [cfg (feature = "app-mapeditor")] pub use mapeditor :: { IMapEditor_EditObjectMethods , IMapEditorMethods }
+ # [cfg (feature = "app-mapeditor")] pub use mapeditor :: { IMapEditorMethods , IMapEditor_EditObjectMethods }
  ;
  # [cfg (any (feature = "app-mapeditorcategorydata-types"))] pub mod mapeditorcategorydata ;
  # [cfg (feature = "app-mapeditorcategorydata-types")] pub use mapeditorcategorydata :: { MapEditorCategoryData , IMapEditorCategoryData }
@@ -4385,9 +4385,9 @@
  # [cfg (feature = "app-mapeditorobjectdata")] pub use mapeditorobjectdata :: { IMapEditorObjectDataMethods }
  ;
  # [cfg (any (feature = "app-mapeffect-types"))] pub mod mapeffect ;
- # [cfg (feature = "app-mapeffect-types")] pub use mapeffect :: { MapEffect_LocationNode , IMapEffect_LocationNode , MapEffect , IMapEffect , MapEffect_LocationPool , IMapEffect_LocationPool }
+ # [cfg (feature = "app-mapeffect-types")] pub use mapeffect :: { MapEffect_LocationPool , IMapEffect_LocationPool , MapEffect_LocationNode , IMapEffect_LocationNode , MapEffect , IMapEffect }
  ;
- # [cfg (feature = "app-mapeffect")] pub use mapeffect :: { IMapEffect_LocationNodeMethods , IMapEffectMethods , IMapEffect_LocationPoolMethods }
+ # [cfg (feature = "app-mapeffect")] pub use mapeffect :: { IMapEffect_LocationPoolMethods , IMapEffect_LocationNodeMethods , IMapEffectMethods }
  ;
  # [cfg (any (feature = "app-mapengageconfirmroot-types"))] pub mod mapengageconfirmroot ;
  # [cfg (feature = "app-mapengageconfirmroot-types")] pub use mapengageconfirmroot :: { MapEngageConfirmRoot , IMapEngageConfirmRoot }
@@ -4395,7 +4395,7 @@
  # [cfg (feature = "app-mapengageconfirmroot")] pub use mapengageconfirmroot :: { IMapEngageConfirmRootMethods }
  ;
  # [cfg (any (feature = "app-mapenum-types"))] pub mod mapenum ;
- # [cfg (feature = "app-mapenum-types")] pub use mapenum :: { MapEnum_MoveEnumerator , MapEnum_RangeEnumerator , MapEnum , IMapEnum , MapEnum_CellEnumerator , MapEnum_AreaEnumerator }
+ # [cfg (feature = "app-mapenum-types")] pub use mapenum :: { MapEnum_RangeEnumerator , MapEnum_CellEnumerator , MapEnum_AreaEnumerator , MapEnum_MoveEnumerator , MapEnum , IMapEnum }
  ;
  # [cfg (feature = "app-mapenum")] pub use mapenum :: { IMapEnumMethods }
  ;
@@ -4410,12 +4410,12 @@
  # [cfg (feature = "app-mapfademanager")] pub use mapfademanager :: { IMapFadeManagerMethods }
  ;
  # [cfg (any (feature = "app-mapfor-types"))] pub mod mapfor ;
- # [cfg (feature = "app-mapfor-types")] pub use mapfor :: { MapFor_Force2Function , IMapFor_Force2Function , MapFor_RangeFunction , IMapFor_RangeFunction , MapFor_TargetFunction , IMapFor_TargetFunction , MapFor_Return , MapFor_Pos2Function , IMapFor_Pos2Function , MapFor_UnitFunction , IMapFor_UnitFunction , MapFor_DestroyFunction , IMapFor_DestroyFunction , MapFor_ForceFunction , IMapFor_ForceFunction , MapFor_UnitPosFunction , IMapFor_UnitPosFunction , MapFor_PokeFunction , IMapFor_PokeFunction , MapFor , IMapFor , MapFor_Unit2Function , IMapFor_Unit2Function , MapFor_Range2Function , IMapFor_Range2Function , MapFor_UnitSkillFunction , IMapFor_UnitSkillFunction , MapFor_PosFunction , IMapFor_PosFunction }
+ # [cfg (feature = "app-mapfor-types")] pub use mapfor :: { MapFor_PosFunction , IMapFor_PosFunction , MapFor_DestroyFunction , IMapFor_DestroyFunction , MapFor_TargetFunction , IMapFor_TargetFunction , MapFor_UnitPosFunction , IMapFor_UnitPosFunction , MapFor_Range2Function , IMapFor_Range2Function , MapFor_UnitSkillFunction , IMapFor_UnitSkillFunction , MapFor_Unit2Function , IMapFor_Unit2Function , MapFor_RangeFunction , IMapFor_RangeFunction , MapFor_Force2Function , IMapFor_Force2Function , MapFor_UnitFunction , IMapFor_UnitFunction , MapFor_ForceFunction , IMapFor_ForceFunction , MapFor_Pos2Function , IMapFor_Pos2Function , MapFor_PokeFunction , IMapFor_PokeFunction , MapFor , IMapFor , MapFor_Return }
  ;
- # [cfg (feature = "app-mapfor")] pub use mapfor :: { IMapFor_Force2FunctionMethods , IMapFor_RangeFunctionMethods , IMapFor_TargetFunctionMethods , IMapFor_Pos2FunctionMethods , IMapFor_UnitFunctionMethods , IMapFor_DestroyFunctionMethods , IMapFor_ForceFunctionMethods , IMapFor_UnitPosFunctionMethods , IMapFor_PokeFunctionMethods , IMapForMethods , IMapFor_Unit2FunctionMethods , IMapFor_Range2FunctionMethods , IMapFor_UnitSkillFunctionMethods , IMapFor_PosFunctionMethods }
+ # [cfg (feature = "app-mapfor")] pub use mapfor :: { IMapFor_PosFunctionMethods , IMapFor_DestroyFunctionMethods , IMapFor_TargetFunctionMethods , IMapFor_UnitPosFunctionMethods , IMapFor_Range2FunctionMethods , IMapFor_UnitSkillFunctionMethods , IMapFor_Unit2FunctionMethods , IMapFor_RangeFunctionMethods , IMapFor_Force2FunctionMethods , IMapFor_UnitFunctionMethods , IMapFor_ForceFunctionMethods , IMapFor_Pos2FunctionMethods , IMapFor_PokeFunctionMethods , IMapForMethods }
  ;
  # [cfg (any (feature = "app-mapgodexp-types"))] pub mod mapgodexp ;
- # [cfg (feature = "app-mapgodexp-types")] pub use mapgodexp :: { MapGodExp_Kinds , MapGodExp_KindDesc , MapGodExp , IMapGodExp }
+ # [cfg (feature = "app-mapgodexp-types")] pub use mapgodexp :: { MapGodExp_KindDesc , MapGodExp_Kinds , MapGodExp , IMapGodExp }
  ;
  # [cfg (feature = "app-mapgodexp")] pub use mapgodexp :: { IMapGodExpMethods }
  ;
@@ -4425,14 +4425,14 @@
  # [cfg (feature = "app-mapgroup")] pub use mapgroup :: { IMapGroupMethods }
  ;
  # [cfg (any (feature = "app-mapheight-types"))] pub mod mapheight ;
- # [cfg (feature = "app-mapheight-types")] pub use mapheight :: { MapHeight_CellInfo , IMapHeight_CellInfo , MapHeight_Layers , MapHeight , IMapHeight , MapHeight_CellMap , IMapHeight_CellMap , MapHeight_Plane , MapHeight_EdgeIndex , IMapHeight_EdgeIndex }
+ # [cfg (feature = "app-mapheight-types")] pub use mapheight :: { MapHeight_Layers , MapHeight_Plane , MapHeight , IMapHeight , MapHeight_CellInfo , IMapHeight_CellInfo , MapHeight_CellMap , IMapHeight_CellMap , MapHeight_EdgeIndex , IMapHeight_EdgeIndex }
  ;
- # [cfg (feature = "app-mapheight")] pub use mapheight :: { IMapHeight_CellInfoMethods , IMapHeightMethods , IMapHeight_CellMapMethods , IMapHeight_EdgeIndexMethods }
+ # [cfg (feature = "app-mapheight")] pub use mapheight :: { IMapHeightMethods , IMapHeight_CellInfoMethods , IMapHeight_CellMapMethods , IMapHeight_EdgeIndexMethods }
  ;
  # [cfg (any (feature = "app-maphistory-types"))] pub mod maphistory ;
- # [cfg (feature = "app-maphistory-types")] pub use maphistory :: { MapHistory_Rewind_OverlapData , IMapHistory_Rewind_OverlapData , MapHistory_CommandWriter , IMapHistory_CommandWriter , MapHistory_Rewind_OverlapDataPool , IMapHistory_Rewind_OverlapDataPool , MapHistory_VariableMap , IMapHistory_VariableMap , MapHistory_RewindLog , IMapHistory_RewindLog , MapHistory_RewindLogBuilder , IMapHistory_RewindLogBuilder , MapHistory_PidMap , IMapHistory_PidMap , MapHistory_EffectNameMap , IMapHistory_EffectNameMap , MapHistory_Rewind_ModeScope , MapHistory_RewindNameMap , IMapHistory_RewindNameMap , MapHistory_Rewind_WorkLayerData , MapHistory_Replay_SaveAsync , IMapHistory_Replay_SaveAsync , MapHistory_ReplayAppearanceMap , IMapHistory_ReplayAppearanceMap , MapHistory_RewindUnitPhaseBeginKinds , MapHistory_RewindVariableType , MapHistory_RewindLog_UnitIcon , IMapHistory_RewindLog_UnitIcon , MapHistory_Replay_SaveAsyncThread , IMapHistory_Replay_SaveAsyncThread , MapHistory_ReplayAppearanceMap_Leaving , MapHistory_Rewind_LatestInspectorData , MapHistory_Rewind_InspectorType , MapHistory_Base_1 , IMapHistory_Base_1 , MapHistory_RewindType , MapHistory_UnitMapBase_2_IData , IMapHistory_UnitMapBase_2_IData , MapHistory , IMapHistory , MapHistory_RewindUnitMap , IMapHistory_RewindUnitMap , MapHistory_UnitMapBase_2 , IMapHistory_UnitMapBase_2 , MapHistory_ReplayCommandWriter , IMapHistory_ReplayCommandWriter , MapHistory_RewindUnitMap_Data , MapHistory_GidMap , IMapHistory_GidMap , MapHistory_Replay_SaveAsyncThread_Status , MapHistory_RewindCommandWriter , IMapHistory_RewindCommandWriter , MapHistory_Replay_SaveAsync_SaveMethod , IMapHistory_Replay_SaveAsync_SaveMethod , MapHistory_Replay_TurnSave , IMapHistory_Replay_TurnSave , MapHistory_JidMap , IMapHistory_JidMap , MapHistory_IdMapBase_1 , IMapHistory_IdMapBase_1 , MapHistory_ReplayType , MapHistory_SidMap , IMapHistory_SidMap , MapHistory_Rewind , IMapHistory_Rewind , MapHistory_Rewind_BattleCalcData , IMapHistory_Rewind_BattleCalcData , MapHistory_CommonType , MapHistory_RnidMap , IMapHistory_RnidMap , MapHistory_ReplayUnitMap_Data , MapHistory_Replay_OverwriteStreamScope , MapHistory_RewindRelianceMap , IMapHistory_RewindRelianceMap , MapHistory_Replay_ReadResult , MapHistory_MaterialStringMap , IMapHistory_MaterialStringMap , MapHistory_CommandReader , IMapHistory_CommandReader , MapHistory_Replay , IMapHistory_Replay , MapHistory_RewindCommandReader , IMapHistory_RewindCommandReader , MapHistory_Command , MapHistory_Rewind_WriterKind , MapHistory_IidMap , IMapHistory_IidMap , MapHistory_UnitMapBase_2_NoEmptyFunction , IMapHistory_UnitMapBase_2_NoEmptyFunction , MapHistory_SerializeDisabled , MapHistory_ReplayCommandReader , IMapHistory_ReplayCommandReader , MapHistory_Rewind_IsEngagings , MapHistory_Rewind_WorkTerrainData , MapHistory_ReplayUnitMap , IMapHistory_ReplayUnitMap , MapHistory_Rewind_RangeType , MapHistory_Rewind_SplitArgs , MapHistory_Mode , MapHistory_ReplayAppearanceMap_Appearance , MapHistory_TidMap , IMapHistory_TidMap , MapHistory_IdMap_1 , IMapHistory_IdMap_1 }
+ # [cfg (feature = "app-maphistory-types")] pub use maphistory :: { MapHistory_UnitMapBase_2_IData , IMapHistory_UnitMapBase_2_IData , MapHistory_Rewind_SplitArgs , MapHistory_SerializeDisabled , MapHistory_RewindNameMap , IMapHistory_RewindNameMap , MapHistory_Rewind_WorkTerrainData , MapHistory_RewindLog , IMapHistory_RewindLog , MapHistory_Replay_TurnSave , IMapHistory_Replay_TurnSave , MapHistory_RewindCommandWriter , IMapHistory_RewindCommandWriter , MapHistory_IidMap , IMapHistory_IidMap , MapHistory_CommonType , MapHistory_RewindUnitMap_Data , MapHistory_Rewind_OverlapData , IMapHistory_Rewind_OverlapData , MapHistory_ReplayAppearanceMap , IMapHistory_ReplayAppearanceMap , MapHistory_Base_1 , IMapHistory_Base_1 , MapHistory_RewindType , MapHistory_MaterialStringMap , IMapHistory_MaterialStringMap , MapHistory_ReplayAppearanceMap_Appearance , MapHistory_ReplayCommandReader , IMapHistory_ReplayCommandReader , MapHistory_RewindVariableType , MapHistory_TidMap , IMapHistory_TidMap , MapHistory_SidMap , IMapHistory_SidMap , MapHistory_ReplayAppearanceMap_Leaving , MapHistory_IdMap_1 , IMapHistory_IdMap_1 , MapHistory_Rewind_ModeScope , MapHistory_ReplayCommandWriter , IMapHistory_ReplayCommandWriter , MapHistory_EffectNameMap , IMapHistory_EffectNameMap , MapHistory_RewindUnitPhaseBeginKinds , MapHistory_JidMap , IMapHistory_JidMap , MapHistory_ReplayUnitMap , IMapHistory_ReplayUnitMap , MapHistory_UnitMapBase_2_NoEmptyFunction , IMapHistory_UnitMapBase_2_NoEmptyFunction , MapHistory_Replay , IMapHistory_Replay , MapHistory_Command , MapHistory_Rewind_LatestInspectorData , MapHistory_Mode , MapHistory_RewindLogBuilder , IMapHistory_RewindLogBuilder , MapHistory_Replay_SaveAsync , IMapHistory_Replay_SaveAsync , MapHistory_Replay_SaveAsync_SaveMethod , IMapHistory_Replay_SaveAsync_SaveMethod , MapHistory_UnitMapBase_2 , IMapHistory_UnitMapBase_2 , MapHistory_RewindCommandReader , IMapHistory_RewindCommandReader , MapHistory_Rewind_WorkLayerData , MapHistory_IdMapBase_1 , IMapHistory_IdMapBase_1 , MapHistory_PidMap , IMapHistory_PidMap , MapHistory_Rewind_OverlapDataPool , IMapHistory_Rewind_OverlapDataPool , MapHistory_Replay_OverwriteStreamScope , MapHistory_Rewind_BattleCalcData , IMapHistory_Rewind_BattleCalcData , MapHistory_ReplayUnitMap_Data , MapHistory_Replay_SaveAsyncThread , IMapHistory_Replay_SaveAsyncThread , MapHistory_VariableMap , IMapHistory_VariableMap , MapHistory_Rewind_InspectorType , MapHistory_Replay_SaveAsyncThread_Status , MapHistory_RnidMap , IMapHistory_RnidMap , MapHistory_CommandWriter , IMapHistory_CommandWriter , MapHistory_Rewind_IsEngagings , MapHistory_RewindLog_UnitIcon , IMapHistory_RewindLog_UnitIcon , MapHistory_RewindUnitMap , IMapHistory_RewindUnitMap , MapHistory_Replay_ReadResult , MapHistory_Rewind , IMapHistory_Rewind , MapHistory_Rewind_RangeType , MapHistory_Rewind_WriterKind , MapHistory_RewindRelianceMap , IMapHistory_RewindRelianceMap , MapHistory_GidMap , IMapHistory_GidMap , MapHistory_CommandReader , IMapHistory_CommandReader , MapHistory_ReplayType , MapHistory , IMapHistory }
  ;
- # [cfg (feature = "app-maphistory")] pub use maphistory :: { IMapHistory_Rewind_OverlapDataMethods , IMapHistory_CommandWriterMethods , IMapHistory_Rewind_OverlapDataPoolMethods , IMapHistory_VariableMapMethods , IMapHistory_RewindLogMethods , IMapHistory_RewindLogBuilderMethods , IMapHistory_PidMapMethods , IMapHistory_EffectNameMapMethods , IMapHistory_RewindNameMapMethods , IMapHistory_Replay_SaveAsyncMethods , IMapHistory_ReplayAppearanceMapMethods , IMapHistory_RewindLog_UnitIconMethods , IMapHistory_Replay_SaveAsyncThreadMethods , IMapHistory_Base_1Methods , IMapHistory_UnitMapBase_2_IDataMethods , IMapHistory_RewindUnitMapMethods , IMapHistory_UnitMapBase_2Methods , IMapHistory_ReplayCommandWriterMethods , IMapHistory_GidMapMethods , IMapHistory_RewindCommandWriterMethods , IMapHistory_Replay_SaveAsync_SaveMethodMethods , IMapHistory_Replay_TurnSaveMethods , IMapHistory_JidMapMethods , IMapHistory_IdMapBase_1Methods , IMapHistory_SidMapMethods , IMapHistory_RewindMethods , IMapHistory_Rewind_BattleCalcDataMethods , IMapHistory_RnidMapMethods , IMapHistory_RewindRelianceMapMethods , IMapHistory_MaterialStringMapMethods , IMapHistory_CommandReaderMethods , IMapHistory_ReplayMethods , IMapHistory_RewindCommandReaderMethods , IMapHistory_IidMapMethods , IMapHistory_UnitMapBase_2_NoEmptyFunctionMethods , IMapHistory_ReplayCommandReaderMethods , IMapHistory_ReplayUnitMapMethods , IMapHistory_TidMapMethods , IMapHistory_IdMap_1Methods }
+ # [cfg (feature = "app-maphistory")] pub use maphistory :: { IMapHistory_UnitMapBase_2_IDataMethods , IMapHistory_RewindNameMapMethods , IMapHistory_RewindLogMethods , IMapHistory_Replay_TurnSaveMethods , IMapHistory_RewindCommandWriterMethods , IMapHistory_IidMapMethods , IMapHistory_Rewind_OverlapDataMethods , IMapHistory_ReplayAppearanceMapMethods , IMapHistory_Base_1Methods , IMapHistory_MaterialStringMapMethods , IMapHistory_ReplayCommandReaderMethods , IMapHistory_TidMapMethods , IMapHistory_SidMapMethods , IMapHistory_IdMap_1Methods , IMapHistory_ReplayCommandWriterMethods , IMapHistory_EffectNameMapMethods , IMapHistory_JidMapMethods , IMapHistory_ReplayUnitMapMethods , IMapHistory_UnitMapBase_2_NoEmptyFunctionMethods , IMapHistory_ReplayMethods , IMapHistory_RewindLogBuilderMethods , IMapHistory_Replay_SaveAsyncMethods , IMapHistory_Replay_SaveAsync_SaveMethodMethods , IMapHistory_UnitMapBase_2Methods , IMapHistory_RewindCommandReaderMethods , IMapHistory_IdMapBase_1Methods , IMapHistory_PidMapMethods , IMapHistory_Rewind_OverlapDataPoolMethods , IMapHistory_Rewind_BattleCalcDataMethods , IMapHistory_Replay_SaveAsyncThreadMethods , IMapHistory_VariableMapMethods , IMapHistory_RnidMapMethods , IMapHistory_CommandWriterMethods , IMapHistory_RewindLog_UnitIconMethods , IMapHistory_RewindUnitMapMethods , IMapHistory_RewindMethods , IMapHistory_RewindRelianceMapMethods , IMapHistory_GidMapMethods , IMapHistory_CommandReaderMethods }
  ;
  # [cfg (any (feature = "app-maphistorydata-types"))] pub mod maphistorydata ;
  # [cfg (feature = "app-maphistorydata-types")] pub use maphistorydata :: { MapHistoryData , IMapHistoryData }
@@ -4440,7 +4440,7 @@
  # [cfg (feature = "app-maphistorydata")] pub use maphistorydata :: { IMapHistoryDataMethods }
  ;
  # [cfg (any (feature = "app-mapimage-types"))] pub mod mapimage ;
- # [cfg (feature = "app-mapimage-types")] pub use mapimage :: { MapImage , IMapImage , MapImage_BackupTerrain }
+ # [cfg (feature = "app-mapimage-types")] pub use mapimage :: { MapImage_BackupTerrain , MapImage , IMapImage }
  ;
  # [cfg (feature = "app-mapimage")] pub use mapimage :: { IMapImageMethods }
  ;
@@ -4480,9 +4480,9 @@
  # [cfg (feature = "app-mapimagedanger")] pub use mapimagedanger :: { IMapImageDangerMethods }
  ;
  # [cfg (any (feature = "app-mapimagehistory-types"))] pub mod mapimagehistory ;
- # [cfg (feature = "app-mapimagehistory-types")] pub use mapimagehistory :: { MapImageHistory_HeatMap , IMapImageHistory_HeatMap , MapImageHistory , IMapImageHistory }
+ # [cfg (feature = "app-mapimagehistory-types")] pub use mapimagehistory :: { MapImageHistory , IMapImageHistory , MapImageHistory_HeatMap , IMapImageHistory_HeatMap }
  ;
- # [cfg (feature = "app-mapimagehistory")] pub use mapimagehistory :: { IMapImageHistory_HeatMapMethods , IMapImageHistoryMethods }
+ # [cfg (feature = "app-mapimagehistory")] pub use mapimagehistory :: { IMapImageHistoryMethods , IMapImageHistory_HeatMapMethods }
  ;
  # [cfg (any (feature = "app-mapimageindex-types"))] pub mod mapimageindex ;
  # [cfg (feature = "app-mapimageindex-types")] pub use mapimageindex :: { MapImageIndex , IMapImageIndex }
@@ -4520,7 +4520,7 @@
  # [cfg (feature = "app-mapimageterrain")] pub use mapimageterrain :: { IMapImageTerrain_MinimapInfoMethods , IMapImageTerrainMethods }
  ;
  # [cfg (any (feature = "app-mapimageunit-types"))] pub mod mapimageunit ;
- # [cfg (feature = "app-mapimageunit-types")] pub use mapimageunit :: { MapImageUnit_UnitScope , MapImageUnit_PositionScope , MapImageUnit , IMapImageUnit }
+ # [cfg (feature = "app-mapimageunit-types")] pub use mapimageunit :: { MapImageUnit , IMapImageUnit , MapImageUnit_PositionScope , MapImageUnit_UnitScope }
  ;
  # [cfg (feature = "app-mapimageunit")] pub use mapimageunit :: { IMapImageUnitMethods }
  ;
@@ -4530,7 +4530,7 @@
  # [cfg (feature = "app-mapinfobase")] pub use mapinfobase :: { IMapInfoBaseMethods }
  ;
  # [cfg (any (feature = "app-mapinfocircle-types"))] pub mod mapinfocircle ;
- # [cfg (feature = "app-mapinfocircle-types")] pub use mapinfocircle :: { MapInfoCircle_CircleState , MapInfoCircle_MeshIndex , MapInfoCircle_CircleColor , MapInfoCircle , IMapInfoCircle , MapInfoCircle_Animes }
+ # [cfg (feature = "app-mapinfocircle-types")] pub use mapinfocircle :: { MapInfoCircle_CircleState , MapInfoCircle_CircleColor , MapInfoCircle , IMapInfoCircle , MapInfoCircle_Animes , MapInfoCircle_MeshIndex }
  ;
  # [cfg (feature = "app-mapinfocircle")] pub use mapinfocircle :: { IMapInfoCircleMethods }
  ;
@@ -4555,49 +4555,49 @@
  # [cfg (feature = "app-mapinfoterrain")] pub use mapinfoterrain :: { IMapInfoTerrainMethods }
  ;
  # [cfg (any (feature = "app-mapinfounit-types"))] pub mod mapinfounit ;
- # [cfg (feature = "app-mapinfounit-types")] pub use mapinfounit :: { MapInfoUnit_InputState , MapInfoUnit_SuppressScene , MapInfoUnit , IMapInfoUnit , MapInfoUnit_SpriteKind }
+ # [cfg (feature = "app-mapinfounit-types")] pub use mapinfounit :: { MapInfoUnit_SuppressScene , MapInfoUnit , IMapInfoUnit , MapInfoUnit_SpriteKind , MapInfoUnit_InputState }
  ;
  # [cfg (feature = "app-mapinfounit")] pub use mapinfounit :: { IMapInfoUnitMethods }
  ;
  # [cfg (any (feature = "app-mapinfounitlocatorroot-types"))] pub mod mapinfounitlocatorroot ;
- # [cfg (feature = "app-mapinfounitlocatorroot-types")] pub use mapinfounitlocatorroot :: { MapInfoUnitLocatorRoot_TextMeshProKind , MapInfoUnitLocatorRoot , IMapInfoUnitLocatorRoot , MapInfoUnitLocatorRoot_ImageKind , MapInfoUnitLocatorRoot_CanvasGroupKind }
+ # [cfg (feature = "app-mapinfounitlocatorroot-types")] pub use mapinfounitlocatorroot :: { MapInfoUnitLocatorRoot_CanvasGroupKind , MapInfoUnitLocatorRoot_ImageKind , MapInfoUnitLocatorRoot_TextMeshProKind , MapInfoUnitLocatorRoot , IMapInfoUnitLocatorRoot }
  ;
  # [cfg (feature = "app-mapinfounitlocatorroot")] pub use mapinfounitlocatorroot :: { IMapInfoUnitLocatorRootMethods }
  ;
  # [cfg (any (feature = "app-mapinspector-types"))] pub mod mapinspector ;
- # [cfg (feature = "app-mapinspector-types")] pub use mapinspector :: { MapInspector , IMapInspector , MapInspector_Kind }
+ # [cfg (feature = "app-mapinspector-types")] pub use mapinspector :: { MapInspector_Kind , MapInspector , IMapInspector }
  ;
  # [cfg (feature = "app-mapinspector")] pub use mapinspector :: { IMapInspectorMethods }
  ;
  # [cfg (any (feature = "app-mapinspectors-types"))] pub mod mapinspectors ;
- # [cfg (feature = "app-mapinspectors-types")] pub use mapinspectors :: { MapInspectors_MapInspectorSearch , IMapInspectors_MapInspectorSearch , MapInspectors , IMapInspectors , MapInspectors_EventUnitScope }
+ # [cfg (feature = "app-mapinspectors-types")] pub use mapinspectors :: { MapInspectors_EventUnitScope , MapInspectors , IMapInspectors , MapInspectors_MapInspectorSearch , IMapInspectors_MapInspectorSearch }
  ;
- # [cfg (feature = "app-mapinspectors")] pub use mapinspectors :: { IMapInspectors_MapInspectorSearchMethods , IMapInspectorsMethods }
+ # [cfg (feature = "app-mapinspectors")] pub use mapinspectors :: { IMapInspectorsMethods , IMapInspectors_MapInspectorSearchMethods }
  ;
  # [cfg (any (feature = "app-mapitemhelper-types"))] pub mod mapitemhelper ;
- # [cfg (feature = "app-mapitemhelper-types")] pub use mapitemhelper :: { MapItemHelper , IMapItemHelper , MapItemHelper_Flag , MapItemHelper_BlessFlags }
+ # [cfg (feature = "app-mapitemhelper-types")] pub use mapitemhelper :: { MapItemHelper_BlessFlags , MapItemHelper , IMapItemHelper , MapItemHelper_Flag }
  ;
  # [cfg (feature = "app-mapitemhelper")] pub use mapitemhelper :: { IMapItemHelperMethods }
  ;
  # [cfg (any (feature = "app-mapitemmenu-types"))] pub mod mapitemmenu ;
- # [cfg (feature = "app-mapitemmenu-types")] pub use mapitemmenu :: { MapItemMenu_SubItemSortMenuItem , IMapItemMenu_SubItemSortMenuItem , MapItemMenu_MapTradeMenuItem , IMapItemMenu_MapTradeMenuItem , MapItemMenu_SubItemMenu , IMapItemMenu_SubItemMenu , MapItemMenu_SubItemEquipMenuItem , IMapItemMenu_SubItemEquipMenuItem , MapItemMenu_EnchantItemMenuItem , IMapItemMenu_EnchantItemMenuItem , MapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYes , IMapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYes , MapItemMenu_ItemMenu , IMapItemMenu_ItemMenu , MapItemMenu_SubItemUseMenuItem , IMapItemMenu_SubItemUseMenuItem , MapItemMenu_SubItemPutOffMenuItem , IMapItemMenu_SubItemPutOffMenuItem , MapItemMenu_SubItemTradeMenuItem , IMapItemMenu_SubItemTradeMenuItem , MapItemMenu_RodMenuItem , IMapItemMenu_RodMenuItem , MapItemMenu_AttackMenu , IMapItemMenu_AttackMenu , MapItemMenu_SubItemMenuItem , IMapItemMenu_SubItemMenuItem , MapItemMenu_SubItemTakeOffMenuItem , IMapItemMenu_SubItemTakeOffMenuItem , MapItemMenu_SubItemPutOffMenuItem_ConfirmDialog , IMapItemMenu_SubItemPutOffMenuItem_ConfirmDialog , MapItemMenu_TargetMenuItem , IMapItemMenu_TargetMenuItem , MapItemMenu_ItemMenuItem , IMapItemMenu_ItemMenuItem , MapItemMenu_AttackMenuItem , IMapItemMenu_AttackMenuItem , MapItemMenu_RodMenu , IMapItemMenu_RodMenu , MapItemMenu_MapTradeMenu , IMapItemMenu_MapTradeMenu , MapItemMenu , IMapItemMenu , MapItemMenu_EnchantType }
+ # [cfg (feature = "app-mapitemmenu-types")] pub use mapitemmenu :: { MapItemMenu_AttackMenu , IMapItemMenu_AttackMenu , MapItemMenu_RodMenu , IMapItemMenu_RodMenu , MapItemMenu_MapTradeMenu , IMapItemMenu_MapTradeMenu , MapItemMenu_SubItemTakeOffMenuItem , IMapItemMenu_SubItemTakeOffMenuItem , MapItemMenu , IMapItemMenu , MapItemMenu_EnchantType , MapItemMenu_SubItemTradeMenuItem , IMapItemMenu_SubItemTradeMenuItem , MapItemMenu_SubItemMenuItem , IMapItemMenu_SubItemMenuItem , MapItemMenu_MapTradeMenuItem , IMapItemMenu_MapTradeMenuItem , MapItemMenu_SubItemMenu , IMapItemMenu_SubItemMenu , MapItemMenu_ItemMenuItem , IMapItemMenu_ItemMenuItem , MapItemMenu_ItemMenu , IMapItemMenu_ItemMenu , MapItemMenu_SubItemSortMenuItem , IMapItemMenu_SubItemSortMenuItem , MapItemMenu_SubItemPutOffMenuItem , IMapItemMenu_SubItemPutOffMenuItem , MapItemMenu_AttackMenuItem , IMapItemMenu_AttackMenuItem , MapItemMenu_RodMenuItem , IMapItemMenu_RodMenuItem , MapItemMenu_TargetMenuItem , IMapItemMenu_TargetMenuItem , MapItemMenu_EnchantItemMenuItem , IMapItemMenu_EnchantItemMenuItem , MapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYes , IMapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYes , MapItemMenu_SubItemUseMenuItem , IMapItemMenu_SubItemUseMenuItem , MapItemMenu_SubItemPutOffMenuItem_ConfirmDialog , IMapItemMenu_SubItemPutOffMenuItem_ConfirmDialog , MapItemMenu_SubItemEquipMenuItem , IMapItemMenu_SubItemEquipMenuItem }
  ;
- # [cfg (feature = "app-mapitemmenu")] pub use mapitemmenu :: { IMapItemMenu_SubItemSortMenuItemMethods , IMapItemMenu_MapTradeMenuItemMethods , IMapItemMenu_SubItemMenuMethods , IMapItemMenu_SubItemEquipMenuItemMethods , IMapItemMenu_EnchantItemMenuItemMethods , IMapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYesMethods , IMapItemMenu_ItemMenuMethods , IMapItemMenu_SubItemUseMenuItemMethods , IMapItemMenu_SubItemPutOffMenuItemMethods , IMapItemMenu_SubItemTradeMenuItemMethods , IMapItemMenu_RodMenuItemMethods , IMapItemMenu_AttackMenuMethods , IMapItemMenu_SubItemMenuItemMethods , IMapItemMenu_SubItemTakeOffMenuItemMethods , IMapItemMenu_SubItemPutOffMenuItem_ConfirmDialogMethods , IMapItemMenu_TargetMenuItemMethods , IMapItemMenu_ItemMenuItemMethods , IMapItemMenu_AttackMenuItemMethods , IMapItemMenu_RodMenuMethods , IMapItemMenu_MapTradeMenuMethods , IMapItemMenuMethods }
+ # [cfg (feature = "app-mapitemmenu")] pub use mapitemmenu :: { IMapItemMenu_AttackMenuMethods , IMapItemMenu_RodMenuMethods , IMapItemMenu_MapTradeMenuMethods , IMapItemMenu_SubItemTakeOffMenuItemMethods , IMapItemMenuMethods , IMapItemMenu_SubItemTradeMenuItemMethods , IMapItemMenu_SubItemMenuItemMethods , IMapItemMenu_MapTradeMenuItemMethods , IMapItemMenu_SubItemMenuMethods , IMapItemMenu_ItemMenuItemMethods , IMapItemMenu_ItemMenuMethods , IMapItemMenu_SubItemSortMenuItemMethods , IMapItemMenu_SubItemPutOffMenuItemMethods , IMapItemMenu_AttackMenuItemMethods , IMapItemMenu_RodMenuItemMethods , IMapItemMenu_TargetMenuItemMethods , IMapItemMenu_EnchantItemMenuItemMethods , IMapItemMenu_SubItemPutOffMenuItem_ConfirmDialogItemYesMethods , IMapItemMenu_SubItemUseMenuItemMethods , IMapItemMenu_SubItemPutOffMenuItem_ConfirmDialogMethods , IMapItemMenu_SubItemEquipMenuItemMethods }
  ;
  # [cfg (any (feature = "app-mapkeyhelp-types"))] pub mod mapkeyhelp ;
- # [cfg (feature = "app-mapkeyhelp-types")] pub use mapkeyhelp :: { MapKeyHelp , IMapKeyHelp , MapKeyHelp_Label , MapKeyHelp_Mode , MapKeyHelp_Types }
+ # [cfg (feature = "app-mapkeyhelp-types")] pub use mapkeyhelp :: { MapKeyHelp_Types , MapKeyHelp_Mode , MapKeyHelp , IMapKeyHelp , MapKeyHelp_Label }
  ;
  # [cfg (feature = "app-mapkeyhelp")] pub use mapkeyhelp :: { IMapKeyHelpMethods }
  ;
  # [cfg (any (feature = "app-mapkillbonus-types"))] pub mod mapkillbonus ;
- # [cfg (feature = "app-mapkillbonus-types")] pub use mapkillbonus :: { MapKillBonus_DownloadSequence , IMapKillBonus_DownloadSequence , MapKillBonus_KillBonus , MapKillBonus_KindImage , IMapKillBonus_KindImage , MapKillBonus_CountImage , IMapKillBonus_CountImage , MapKillBonus_GainSequence , IMapKillBonus_GainSequence , MapKillBonus_Work , MapKillBonus_Work_Pos , MapKillBonus , IMapKillBonus , MapKillBonus_KilledBonus , MapKillBonus_Kinds }
+ # [cfg (feature = "app-mapkillbonus-types")] pub use mapkillbonus :: { MapKillBonus_Work , MapKillBonus_Work_Pos , MapKillBonus_Kinds , MapKillBonus , IMapKillBonus , MapKillBonus_GainSequence , IMapKillBonus_GainSequence , MapKillBonus_KindImage , IMapKillBonus_KindImage , MapKillBonus_KilledBonus , MapKillBonus_CountImage , IMapKillBonus_CountImage , MapKillBonus_KillBonus , MapKillBonus_DownloadSequence , IMapKillBonus_DownloadSequence }
  ;
- # [cfg (feature = "app-mapkillbonus")] pub use mapkillbonus :: { IMapKillBonus_DownloadSequenceMethods , IMapKillBonus_KindImageMethods , IMapKillBonus_CountImageMethods , IMapKillBonus_GainSequenceMethods , IMapKillBonusMethods }
+ # [cfg (feature = "app-mapkillbonus")] pub use mapkillbonus :: { IMapKillBonusMethods , IMapKillBonus_GainSequenceMethods , IMapKillBonus_KindImageMethods , IMapKillBonus_CountImageMethods , IMapKillBonus_DownloadSequenceMethods }
  ;
  # [cfg (any (feature = "app-maplayer-types"))] pub mod maplayer ;
- # [cfg (feature = "app-maplayer-types")] pub use maplayer :: { MapLayer_Data , IMapLayer_Data , MapLayer , IMapLayer , MapLayer_List , IMapLayer_List }
+ # [cfg (feature = "app-maplayer-types")] pub use maplayer :: { MapLayer_Data , IMapLayer_Data , MapLayer_List , IMapLayer_List , MapLayer , IMapLayer }
  ;
- # [cfg (feature = "app-maplayer")] pub use maplayer :: { IMapLayer_DataMethods , IMapLayerMethods , IMapLayer_ListMethods }
+ # [cfg (feature = "app-maplayer")] pub use maplayer :: { IMapLayer_DataMethods , IMapLayer_ListMethods , IMapLayerMethods }
  ;
  # [cfg (any (feature = "app-maplightprobe-types"))] pub mod maplightprobe ;
  # [cfg (feature = "app-maplightprobe-types")] pub use maplightprobe :: { MapLightProbe , IMapLightProbe }
@@ -4605,17 +4605,17 @@
  # [cfg (feature = "app-maplightprobe")] pub use maplightprobe :: { IMapLightProbeMethods }
  ;
  # [cfg (any (feature = "app-mapmaterial-types"))] pub mod mapmaterial ;
- # [cfg (feature = "app-mapmaterial-types")] pub use mapmaterial :: { MapMaterial , IMapMaterial , MapMaterial_Kinds , MapMaterial_Node , IMapMaterial_Node }
+ # [cfg (feature = "app-mapmaterial-types")] pub use mapmaterial :: { MapMaterial , IMapMaterial , MapMaterial_Node , IMapMaterial_Node , MapMaterial_Kinds }
  ;
  # [cfg (feature = "app-mapmaterial")] pub use mapmaterial :: { IMapMaterialMethods , IMapMaterial_NodeMethods }
  ;
  # [cfg (any (feature = "app-mapmind-types"))] pub mod mapmind ;
- # [cfg (feature = "app-mapmind-types")] pub use mapmind :: { MapMind_MultiTargets , IMapMind_MultiTargets , MapMind , IMapMind , MapMind_CommandStack , IMapMind_CommandStack , MapMind_Type , MapMind_Target , MapMind_Record_Value , MapMind_Record , MapMind_Done , MapMind_DoneField , IMapMind_DoneField }
+ # [cfg (feature = "app-mapmind-types")] pub use mapmind :: { MapMind_CommandStack , IMapMind_CommandStack , MapMind_Record , MapMind , IMapMind , MapMind_Done , MapMind_DoneField , IMapMind_DoneField , MapMind_Type , MapMind_MultiTargets , IMapMind_MultiTargets , MapMind_Record_Value , MapMind_Target }
  ;
- # [cfg (feature = "app-mapmind")] pub use mapmind :: { IMapMind_MultiTargetsMethods , IMapMindMethods , IMapMind_CommandStackMethods , IMapMind_DoneFieldMethods }
+ # [cfg (feature = "app-mapmind")] pub use mapmind :: { IMapMind_CommandStackMethods , IMapMindMethods , IMapMind_DoneFieldMethods , IMapMind_MultiTargetsMethods }
  ;
  # [cfg (any (feature = "app-mapminimap-types"))] pub mod mapminimap ;
- # [cfg (feature = "app-mapminimap-types")] pub use mapminimap :: { MapMiniMap_Label , MapMiniMap , IMapMiniMap }
+ # [cfg (feature = "app-mapminimap-types")] pub use mapminimap :: { MapMiniMap , IMapMiniMap , MapMiniMap_Label }
  ;
  # [cfg (feature = "app-mapminimap")] pub use mapminimap :: { IMapMiniMapMethods }
  ;
@@ -4628,37 +4628,37 @@
  # [cfg (feature = "app-mapmoveflag-types")] pub use mapmoveflag :: { MapMoveFlag }
  ;
  # [cfg (any (feature = "app-mapobject-types"))] pub mod mapobject ;
- # [cfg (feature = "app-mapobject-types")] pub use mapobject :: { MapObject_RigidInfo , IMapObject_RigidInfo , MapObject_LightmapScales , MapObject_Pair , IMapObject_Pair , MapObject , IMapObject , MapObject_DitherManager , IMapObject_DitherManager , MapObject_BakeTypes , MapObject_Lods , MapObject_DitherPair , IMapObject_DitherPair , MapObject_State , IMapObject_State , MapObject_Actions , MapObject_Kinds , MapObject_RigidList , IMapObject_RigidList }
+ # [cfg (feature = "app-mapobject-types")] pub use mapobject :: { MapObject_State , IMapObject_State , MapObject_RigidInfo , IMapObject_RigidInfo , MapObject_Pair , IMapObject_Pair , MapObject_LightmapScales , MapObject_Actions , MapObject_RigidList , IMapObject_RigidList , MapObject_DitherManager , IMapObject_DitherManager , MapObject_BakeTypes , MapObject , IMapObject , MapObject_Lods , MapObject_Kinds , MapObject_DitherPair , IMapObject_DitherPair }
  ;
- # [cfg (feature = "app-mapobject")] pub use mapobject :: { IMapObject_RigidInfoMethods , IMapObject_PairMethods , IMapObjectMethods , IMapObject_DitherManagerMethods , IMapObject_DitherPairMethods , IMapObject_StateMethods , IMapObject_RigidListMethods }
+ # [cfg (feature = "app-mapobject")] pub use mapobject :: { IMapObject_StateMethods , IMapObject_RigidInfoMethods , IMapObject_PairMethods , IMapObject_RigidListMethods , IMapObject_DitherManagerMethods , IMapObjectMethods , IMapObject_DitherPairMethods }
  ;
  # [cfg (any (feature = "app-mapoverlap-types"))] pub mod mapoverlap ;
- # [cfg (feature = "app-mapoverlap-types")] pub use mapoverlap :: { MapOverlap , IMapOverlap , MapOverlap_Data , IMapOverlap_Data , MapOverlap_List , IMapOverlap_List }
+ # [cfg (feature = "app-mapoverlap-types")] pub use mapoverlap :: { MapOverlap_List , IMapOverlap_List , MapOverlap_Data , IMapOverlap_Data , MapOverlap , IMapOverlap }
  ;
- # [cfg (feature = "app-mapoverlap")] pub use mapoverlap :: { IMapOverlapMethods , IMapOverlap_DataMethods , IMapOverlap_ListMethods }
+ # [cfg (feature = "app-mapoverlap")] pub use mapoverlap :: { IMapOverlap_ListMethods , IMapOverlap_DataMethods , IMapOverlapMethods }
  ;
  # [cfg (any (feature = "app-mappanelactive-types"))] pub mod mappanelactive ;
- # [cfg (feature = "app-mappanelactive-types")] pub use mappanelactive :: { MapPanelActive_MeshIndex , MapPanelActive_TargetFunc , IMapPanelActive_TargetFunc , MapPanelActive , IMapPanelActive , MapPanelActive_FlagField , IMapPanelActive_FlagField }
+ # [cfg (feature = "app-mappanelactive-types")] pub use mappanelactive :: { MapPanelActive_FlagField , IMapPanelActive_FlagField , MapPanelActive , IMapPanelActive , MapPanelActive_TargetFunc , IMapPanelActive_TargetFunc , MapPanelActive_MeshIndex }
  ;
- # [cfg (feature = "app-mappanelactive")] pub use mappanelactive :: { IMapPanelActive_TargetFuncMethods , IMapPanelActiveMethods , IMapPanelActive_FlagFieldMethods }
+ # [cfg (feature = "app-mappanelactive")] pub use mappanelactive :: { IMapPanelActive_FlagFieldMethods , IMapPanelActiveMethods , IMapPanelActive_TargetFuncMethods }
  ;
  # [cfg (any (feature = "app-mappaneldanger-types"))] pub mod mappaneldanger ;
- # [cfg (feature = "app-mappaneldanger-types")] pub use mappaneldanger :: { MapPanelDanger_MeshIndex , MapPanelDanger_Mode , MapPanelDanger , IMapPanelDanger , MapPanelDanger_DangerType }
+ # [cfg (feature = "app-mappaneldanger-types")] pub use mappaneldanger :: { MapPanelDanger_MeshIndex , MapPanelDanger_DangerType , MapPanelDanger_Mode , MapPanelDanger , IMapPanelDanger }
  ;
  # [cfg (feature = "app-mappaneldanger")] pub use mappaneldanger :: { IMapPanelDangerMethods }
  ;
  # [cfg (any (feature = "app-mappaneldangerall-types"))] pub mod mappaneldangerall ;
- # [cfg (feature = "app-mappaneldangerall-types")] pub use mappaneldangerall :: { MapPanelDangerAll_MeshIndex , MapPanelDangerAll , IMapPanelDangerAll , MapPanelDangerAll_DangerType }
+ # [cfg (feature = "app-mappaneldangerall-types")] pub use mappaneldangerall :: { MapPanelDangerAll , IMapPanelDangerAll , MapPanelDangerAll_MeshIndex , MapPanelDangerAll_DangerType }
  ;
  # [cfg (feature = "app-mappaneldangerall")] pub use mappaneldangerall :: { IMapPanelDangerAllMethods }
  ;
  # [cfg (any (feature = "app-mappaneldebug-types"))] pub mod mappaneldebug ;
- # [cfg (feature = "app-mappaneldebug-types")] pub use mappaneldebug :: { MapPanelDebug_Entity , MapPanelDebug , IMapPanelDebug }
+ # [cfg (feature = "app-mappaneldebug-types")] pub use mappaneldebug :: { MapPanelDebug , IMapPanelDebug , MapPanelDebug_Entity }
  ;
  # [cfg (feature = "app-mappaneldebug")] pub use mappaneldebug :: { IMapPanelDebugMethods }
  ;
  # [cfg (any (feature = "app-mappaneldeploy-types"))] pub mod mappaneldeploy ;
- # [cfg (feature = "app-mappaneldeploy-types")] pub use mappaneldeploy :: { MapPanelDeploy_MeshIndex , MapPanelDeploy_Mode , MapPanelDeploy , IMapPanelDeploy }
+ # [cfg (feature = "app-mappaneldeploy-types")] pub use mappaneldeploy :: { MapPanelDeploy_Mode , MapPanelDeploy_MeshIndex , MapPanelDeploy , IMapPanelDeploy }
  ;
  # [cfg (feature = "app-mappaneldeploy")] pub use mappaneldeploy :: { IMapPanelDeployMethods }
  ;
@@ -4691,7 +4691,7 @@
  # [cfg (feature = "app-mappos-types")] pub use mappos :: { MapPos }
  ;
  # [cfg (any (feature = "app-mapprefab-types"))] pub mod mapprefab ;
- # [cfg (feature = "app-mapprefab-types")] pub use mapprefab :: { MapPrefab_Region , MapPrefab_Entity , IMapPrefab_Entity , MapPrefab_Category , MapPrefab , IMapPrefab }
+ # [cfg (feature = "app-mapprefab-types")] pub use mapprefab :: { MapPrefab_Entity , IMapPrefab_Entity , MapPrefab_Region , MapPrefab_Category , MapPrefab , IMapPrefab }
  ;
  # [cfg (feature = "app-mapprefab")] pub use mapprefab :: { IMapPrefab_EntityMethods , IMapPrefabMethods }
  ;
@@ -4719,14 +4719,14 @@
  # [cfg (feature = "app-mapresources")] pub use mapresources :: { IMapResourcesMethods }
  ;
  # [cfg (any (feature = "app-maprestartmenu-types"))] pub mod maprestartmenu ;
- # [cfg (feature = "app-maprestartmenu-types")] pub use maprestartmenu :: { MapRestartMenu , IMapRestartMenu , MapRestartMenu_ConfirmRestartItemYes , IMapRestartMenu_ConfirmRestartItemYes }
+ # [cfg (feature = "app-maprestartmenu-types")] pub use maprestartmenu :: { MapRestartMenu_ConfirmRestartItemYes , IMapRestartMenu_ConfirmRestartItemYes , MapRestartMenu , IMapRestartMenu }
  ;
- # [cfg (feature = "app-maprestartmenu")] pub use maprestartmenu :: { IMapRestartMenuMethods , IMapRestartMenu_ConfirmRestartItemYesMethods }
+ # [cfg (feature = "app-maprestartmenu")] pub use maprestartmenu :: { IMapRestartMenu_ConfirmRestartItemYesMethods , IMapRestartMenuMethods }
  ;
  # [cfg (any (feature = "app-maproute-types"))] pub mod maproute ;
- # [cfg (feature = "app-maproute-types")] pub use maproute :: { MapRoute_Func , IMapRoute_Func , MapRoute , IMapRoute , MapRoute_Flag }
+ # [cfg (feature = "app-maproute-types")] pub use maproute :: { MapRoute , IMapRoute , MapRoute_Flag , MapRoute_Func , IMapRoute_Func }
  ;
- # [cfg (feature = "app-maproute")] pub use maproute :: { IMapRoute_FuncMethods , IMapRouteMethods }
+ # [cfg (feature = "app-maproute")] pub use maproute :: { IMapRouteMethods , IMapRoute_FuncMethods }
  ;
  # [cfg (any (feature = "app-mapsandbox-types"))] pub mod mapsandbox ;
  # [cfg (feature = "app-mapsandbox-types")] pub use mapsandbox :: { MapSandBox , IMapSandBox }
@@ -4734,12 +4734,12 @@
  # [cfg (feature = "app-mapsandbox")] pub use mapsandbox :: { IMapSandBoxMethods }
  ;
  # [cfg (any (feature = "app-mapsequence-types"))] pub mod mapsequence ;
- # [cfg (feature = "app-mapsequence-types")] pub use mapsequence :: { MapSequence_Label , MapSequence , IMapSequence }
+ # [cfg (feature = "app-mapsequence-types")] pub use mapsequence :: { MapSequence , IMapSequence , MapSequence_Label }
  ;
  # [cfg (feature = "app-mapsequence")] pub use mapsequence :: { IMapSequenceMethods }
  ;
  # [cfg (any (feature = "app-mapsequenceai-types"))] pub mod mapsequenceai ;
- # [cfg (feature = "app-mapsequenceai-types")] pub use mapsequenceai :: { MapSequenceAI_Label , MapSequenceAI , IMapSequenceAI }
+ # [cfg (feature = "app-mapsequenceai-types")] pub use mapsequenceai :: { MapSequenceAI , IMapSequenceAI , MapSequenceAI_Label }
  ;
  # [cfg (feature = "app-mapsequenceai")] pub use mapsequenceai :: { IMapSequenceAIMethods }
  ;
@@ -4749,22 +4749,22 @@
  # [cfg (feature = "app-mapsequencealternateconfirm")] pub use mapsequencealternateconfirm :: { IMapSequenceAlternateConfirmMethods }
  ;
  # [cfg (any (feature = "app-mapsequencebattle-types"))] pub mod mapsequencebattle ;
- # [cfg (feature = "app-mapsequencebattle-types")] pub use mapsequencebattle :: { MapSequenceBattle_RangeWarpTargets , IMapSequenceBattle_RangeWarpTargets , MapSequenceBattle_Kinds , MapSequenceBattle , IMapSequenceBattle , MapSequenceBattle_UnitList , IMapSequenceBattle_UnitList , MapSequenceBattle_Label , MapSequenceBattle_BitFieldStatus , IMapSequenceBattle_BitFieldStatus , MapSequenceBattle_BattleUnitScope , MapSequenceBattle_Status }
+ # [cfg (feature = "app-mapsequencebattle-types")] pub use mapsequencebattle :: { MapSequenceBattle_Kinds , MapSequenceBattle_UnitList , IMapSequenceBattle_UnitList , MapSequenceBattle_Status , MapSequenceBattle_BitFieldStatus , IMapSequenceBattle_BitFieldStatus , MapSequenceBattle , IMapSequenceBattle , MapSequenceBattle_RangeWarpTargets , IMapSequenceBattle_RangeWarpTargets , MapSequenceBattle_BattleUnitScope , MapSequenceBattle_Label }
  ;
- # [cfg (feature = "app-mapsequencebattle")] pub use mapsequencebattle :: { IMapSequenceBattle_RangeWarpTargetsMethods , IMapSequenceBattleMethods , IMapSequenceBattle_UnitListMethods , IMapSequenceBattle_BitFieldStatusMethods }
+ # [cfg (feature = "app-mapsequencebattle")] pub use mapsequencebattle :: { IMapSequenceBattle_UnitListMethods , IMapSequenceBattle_BitFieldStatusMethods , IMapSequenceBattleMethods , IMapSequenceBattle_RangeWarpTargetsMethods }
  ;
  # [cfg (any (feature = "app-mapsequencebattleaction-types"))] pub mod mapsequencebattleaction ;
- # [cfg (feature = "app-mapsequencebattleaction-types")] pub use mapsequencebattleaction :: { MapSequenceBattleAction_Label , MapSequenceBattleAction , IMapSequenceBattleAction }
+ # [cfg (feature = "app-mapsequencebattleaction-types")] pub use mapsequencebattleaction :: { MapSequenceBattleAction , IMapSequenceBattleAction , MapSequenceBattleAction_Label }
  ;
  # [cfg (feature = "app-mapsequencebattleaction")] pub use mapsequencebattleaction :: { IMapSequenceBattleActionMethods }
  ;
  # [cfg (any (feature = "app-mapsequencecommandskill-types"))] pub mod mapsequencecommandskill ;
- # [cfg (feature = "app-mapsequencecommandskill-types")] pub use mapsequencecommandskill :: { MapSequenceCommandSkill , IMapSequenceCommandSkill , MapSequenceCommandSkill_Label , MapSequenceCommandSkill_Action }
+ # [cfg (feature = "app-mapsequencecommandskill-types")] pub use mapsequencecommandskill :: { MapSequenceCommandSkill_Action , MapSequenceCommandSkill , IMapSequenceCommandSkill , MapSequenceCommandSkill_Label }
  ;
  # [cfg (feature = "app-mapsequencecommandskill")] pub use mapsequencecommandskill :: { IMapSequenceCommandSkillMethods }
  ;
  # [cfg (any (feature = "app-mapsequencecontract-types"))] pub mod mapsequencecontract ;
- # [cfg (feature = "app-mapsequencecontract-types")] pub use mapsequencecontract :: { MapSequenceContract_Label , MapSequenceContract , IMapSequenceContract }
+ # [cfg (feature = "app-mapsequencecontract-types")] pub use mapsequencecontract :: { MapSequenceContract , IMapSequenceContract , MapSequenceContract_Label }
  ;
  # [cfg (feature = "app-mapsequencecontract")] pub use mapsequencecontract :: { IMapSequenceContractMethods }
  ;
@@ -4774,9 +4774,9 @@
  # [cfg (feature = "app-mapsequencedance")] pub use mapsequencedance :: { IMapSequenceDanceMethods }
  ;
  # [cfg (any (feature = "app-mapsequenceeditor-types"))] pub mod mapsequenceeditor ;
- # [cfg (feature = "app-mapsequenceeditor-types")] pub use mapsequenceeditor :: { MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem , IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem , MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem , IMapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem , MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog , IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog , MapSequenceEditor_SaveSequence_Label , MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo , IMapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo , MapSequenceEditor_SaveSequence_UploadConfirmDialog , IMapSequenceEditor_SaveSequence_UploadConfirmDialog , MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog , IMapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog , MapSequenceEditor_ClearObjectsSequence , IMapSequenceEditor_ClearObjectsSequence , MapSequenceEditor , IMapSequenceEditor , MapSequenceEditor_Label , MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo , IMapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo , MapSequenceEditor_SaveSequence , IMapSequenceEditor_SaveSequence , MapSequenceEditor_SaveSequence_EndConfirmDialog , IMapSequenceEditor_SaveSequence_EndConfirmDialog }
+ # [cfg (feature = "app-mapsequenceeditor-types")] pub use mapsequenceeditor :: { MapSequenceEditor_SaveSequence_UploadConfirmDialog , IMapSequenceEditor_SaveSequence_UploadConfirmDialog , MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo , IMapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo , MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo , IMapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo , MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog , IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog , MapSequenceEditor_SaveSequence_Label , MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem , IMapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem , MapSequenceEditor_SaveSequence_EndConfirmDialog , IMapSequenceEditor_SaveSequence_EndConfirmDialog , MapSequenceEditor_Label , MapSequenceEditor , IMapSequenceEditor , MapSequenceEditor_ClearObjectsSequence , IMapSequenceEditor_ClearObjectsSequence , MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog , IMapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog , MapSequenceEditor_SaveSequence , IMapSequenceEditor_SaveSequence , MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem , IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem }
  ;
- # [cfg (feature = "app-mapsequenceeditor")] pub use mapsequenceeditor :: { IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItemMethods , IMapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItemMethods , IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialogMethods , IMapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNoMethods , IMapSequenceEditor_SaveSequence_UploadConfirmDialogMethods , IMapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialogMethods , IMapSequenceEditor_ClearObjectsSequenceMethods , IMapSequenceEditorMethods , IMapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNoMethods , IMapSequenceEditor_SaveSequenceMethods , IMapSequenceEditor_SaveSequence_EndConfirmDialogMethods }
+ # [cfg (feature = "app-mapsequenceeditor")] pub use mapsequenceeditor :: { IMapSequenceEditor_SaveSequence_UploadConfirmDialogMethods , IMapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNoMethods , IMapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNoMethods , IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialogMethods , IMapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItemMethods , IMapSequenceEditor_SaveSequence_EndConfirmDialogMethods , IMapSequenceEditorMethods , IMapSequenceEditor_ClearObjectsSequenceMethods , IMapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialogMethods , IMapSequenceEditor_SaveSequenceMethods , IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItemMethods }
  ;
  # [cfg (any (feature = "app-mapsequenceengageconfirm-types"))] pub mod mapsequenceengageconfirm ;
  # [cfg (feature = "app-mapsequenceengageconfirm-types")] pub use mapsequenceengageconfirm :: { MapSequenceEngageConfirm , IMapSequenceEngageConfirm }
@@ -4789,24 +4789,24 @@
  # [cfg (feature = "app-mapsequenceengagesummon")] pub use mapsequenceengagesummon :: { IMapSequenceEngageSummonMethods }
  ;
  # [cfg (any (feature = "app-mapsequencegod-types"))] pub mod mapsequencegod ;
- # [cfg (feature = "app-mapsequencegod-types")] pub use mapsequencegod :: { MapSequenceGod_ProcEngage , IMapSequenceGod_ProcEngage , MapSequenceGod_ProcEngageStart , IMapSequenceGod_ProcEngageStart , MapSequenceGod_Label , MapSequenceGod_Kind , MapSequenceGod_ProcEngageCancel , IMapSequenceGod_ProcEngageCancel , MapSequenceGod , IMapSequenceGod }
+ # [cfg (feature = "app-mapsequencegod-types")] pub use mapsequencegod :: { MapSequenceGod_ProcEngageStart , IMapSequenceGod_ProcEngageStart , MapSequenceGod , IMapSequenceGod , MapSequenceGod_ProcEngageCancel , IMapSequenceGod_ProcEngageCancel , MapSequenceGod_Label , MapSequenceGod_ProcEngage , IMapSequenceGod_ProcEngage , MapSequenceGod_Kind }
  ;
- # [cfg (feature = "app-mapsequencegod")] pub use mapsequencegod :: { IMapSequenceGod_ProcEngageMethods , IMapSequenceGod_ProcEngageStartMethods , IMapSequenceGod_ProcEngageCancelMethods , IMapSequenceGodMethods }
+ # [cfg (feature = "app-mapsequencegod")] pub use mapsequencegod :: { IMapSequenceGod_ProcEngageStartMethods , IMapSequenceGodMethods , IMapSequenceGod_ProcEngageCancelMethods , IMapSequenceGod_ProcEngageMethods }
  ;
  # [cfg (any (feature = "app-mapsequencehelper-types"))] pub mod mapsequencehelper ;
- # [cfg (feature = "app-mapsequencehelper-types")] pub use mapsequencehelper :: { MapSequenceHelper , IMapSequenceHelper , MapSequenceHelper_ProcWaitCamera , IMapSequenceHelper_ProcWaitCamera , MapSequenceHelper_ProcWaitCameraLoosely , IMapSequenceHelper_ProcWaitCameraLoosely }
+ # [cfg (feature = "app-mapsequencehelper-types")] pub use mapsequencehelper :: { MapSequenceHelper_ProcWaitCamera , IMapSequenceHelper_ProcWaitCamera , MapSequenceHelper , IMapSequenceHelper , MapSequenceHelper_ProcWaitCameraLoosely , IMapSequenceHelper_ProcWaitCameraLoosely }
  ;
- # [cfg (feature = "app-mapsequencehelper")] pub use mapsequencehelper :: { IMapSequenceHelperMethods , IMapSequenceHelper_ProcWaitCameraMethods , IMapSequenceHelper_ProcWaitCameraLooselyMethods }
+ # [cfg (feature = "app-mapsequencehelper")] pub use mapsequencehelper :: { IMapSequenceHelper_ProcWaitCameraMethods , IMapSequenceHelperMethods , IMapSequenceHelper_ProcWaitCameraLooselyMethods }
  ;
  # [cfg (any (feature = "app-mapsequencehuman-types"))] pub mod mapsequencehuman ;
- # [cfg (feature = "app-mapsequencehuman-types")] pub use mapsequencehuman :: { MapSequenceHuman_OperateMode , MapSequenceHuman , IMapSequenceHuman , MapSequenceHuman_Label , MapSequenceHuman_NextMode }
+ # [cfg (feature = "app-mapsequencehuman-types")] pub use mapsequencehuman :: { MapSequenceHuman , IMapSequenceHuman , MapSequenceHuman_OperateMode , MapSequenceHuman_NextMode , MapSequenceHuman_Label }
  ;
  # [cfg (feature = "app-mapsequencehuman")] pub use mapsequencehuman :: { IMapSequenceHumanMethods }
  ;
  # [cfg (any (feature = "app-mapsequencemind-types"))] pub mod mapsequencemind ;
- # [cfg (feature = "app-mapsequencemind-types")] pub use mapsequencemind :: { MapSequenceMind , IMapSequenceMind , MapSequenceMind_Label , MapSequenceMind_ProcEscape , IMapSequenceMind_ProcEscape , MapSequenceMind_ProcMindBase , IMapSequenceMind_ProcMindBase }
+ # [cfg (feature = "app-mapsequencemind-types")] pub use mapsequencemind :: { MapSequenceMind , IMapSequenceMind , MapSequenceMind_ProcMindBase , IMapSequenceMind_ProcMindBase , MapSequenceMind_ProcEscape , IMapSequenceMind_ProcEscape , MapSequenceMind_Label }
  ;
- # [cfg (feature = "app-mapsequencemind")] pub use mapsequencemind :: { IMapSequenceMindMethods , IMapSequenceMind_ProcEscapeMethods , IMapSequenceMind_ProcMindBaseMethods }
+ # [cfg (feature = "app-mapsequencemind")] pub use mapsequencemind :: { IMapSequenceMindMethods , IMapSequenceMind_ProcMindBaseMethods , IMapSequenceMind_ProcEscapeMethods }
  ;
  # [cfg (any (feature = "app-mapsequencemove-types"))] pub mod mapsequencemove ;
  # [cfg (feature = "app-mapsequencemove-types")] pub use mapsequencemove :: { MapSequenceMove , IMapSequenceMove }
@@ -4814,32 +4814,32 @@
  # [cfg (feature = "app-mapsequencemove")] pub use mapsequencemove :: { IMapSequenceMoveMethods }
  ;
  # [cfg (any (feature = "app-mapsequencenet-types"))] pub mod mapsequencenet ;
- # [cfg (feature = "app-mapsequencenet-types")] pub use mapsequencenet :: { MapSequenceNet_ProcUpload_Label , MapSequenceNet_ProcDownload , IMapSequenceNet_ProcDownload , MapSequenceNet_ProcShowError , IMapSequenceNet_ProcShowError , MapSequenceNet_ProcDownload_Label , MapSequenceNet_ProcShowError_ProcDelayedHideError , IMapSequenceNet_ProcShowError_ProcDelayedHideError , MapSequenceNet , IMapSequenceNet , MapSequenceNet_ProcUpload , IMapSequenceNet_ProcUpload }
+ # [cfg (feature = "app-mapsequencenet-types")] pub use mapsequencenet :: { MapSequenceNet_ProcDownload_Label , MapSequenceNet_ProcUpload , IMapSequenceNet_ProcUpload , MapSequenceNet_ProcDownload , IMapSequenceNet_ProcDownload , MapSequenceNet_ProcShowError , IMapSequenceNet_ProcShowError , MapSequenceNet , IMapSequenceNet , MapSequenceNet_ProcShowError_ProcDelayedHideError , IMapSequenceNet_ProcShowError_ProcDelayedHideError , MapSequenceNet_ProcUpload_Label }
  ;
- # [cfg (feature = "app-mapsequencenet")] pub use mapsequencenet :: { IMapSequenceNet_ProcDownloadMethods , IMapSequenceNet_ProcShowErrorMethods , IMapSequenceNet_ProcShowError_ProcDelayedHideErrorMethods , IMapSequenceNet_ProcUploadMethods }
+ # [cfg (feature = "app-mapsequencenet")] pub use mapsequencenet :: { IMapSequenceNet_ProcUploadMethods , IMapSequenceNet_ProcDownloadMethods , IMapSequenceNet_ProcShowErrorMethods , IMapSequenceNet_ProcShowError_ProcDelayedHideErrorMethods }
  ;
  # [cfg (any (feature = "app-mapsequencephoenix-types"))] pub mod mapsequencephoenix ;
- # [cfg (feature = "app-mapsequencephoenix-types")] pub use mapsequencephoenix :: { MapSequencePhoenix_ProcAppear , IMapSequencePhoenix_ProcAppear , MapSequencePhoenix , IMapSequencePhoenix }
+ # [cfg (feature = "app-mapsequencephoenix-types")] pub use mapsequencephoenix :: { MapSequencePhoenix , IMapSequencePhoenix , MapSequencePhoenix_ProcAppear , IMapSequencePhoenix_ProcAppear }
  ;
- # [cfg (feature = "app-mapsequencephoenix")] pub use mapsequencephoenix :: { IMapSequencePhoenix_ProcAppearMethods , IMapSequencePhoenixMethods }
+ # [cfg (feature = "app-mapsequencephoenix")] pub use mapsequencephoenix :: { IMapSequencePhoenixMethods , IMapSequencePhoenix_ProcAppearMethods }
  ;
  # [cfg (any (feature = "app-mapsequencereplay-types"))] pub mod mapsequencereplay ;
- # [cfg (feature = "app-mapsequencereplay-types")] pub use mapsequencereplay :: { MapSequenceReplay , IMapSequenceReplay , MapSequenceReplay_Label }
+ # [cfg (feature = "app-mapsequencereplay-types")] pub use mapsequencereplay :: { MapSequenceReplay_Label , MapSequenceReplay , IMapSequenceReplay }
  ;
  # [cfg (feature = "app-mapsequencereplay")] pub use mapsequencereplay :: { IMapSequenceReplayMethods }
  ;
  # [cfg (any (feature = "app-mapsequencerevive-types"))] pub mod mapsequencerevive ;
- # [cfg (feature = "app-mapsequencerevive-types")] pub use mapsequencerevive :: { MapSequenceRevive_Label , MapSequenceRevive , IMapSequenceRevive }
+ # [cfg (feature = "app-mapsequencerevive-types")] pub use mapsequencerevive :: { MapSequenceRevive , IMapSequenceRevive , MapSequenceRevive_Label }
  ;
  # [cfg (feature = "app-mapsequencerevive")] pub use mapsequencerevive :: { IMapSequenceReviveMethods }
  ;
  # [cfg (any (feature = "app-mapsequenceskipreplay-types"))] pub mod mapsequenceskipreplay ;
- # [cfg (feature = "app-mapsequenceskipreplay-types")] pub use mapsequenceskipreplay :: { MapSequenceSkipReplay_Label , MapSequenceSkipReplay , IMapSequenceSkipReplay }
+ # [cfg (feature = "app-mapsequenceskipreplay-types")] pub use mapsequenceskipreplay :: { MapSequenceSkipReplay , IMapSequenceSkipReplay , MapSequenceSkipReplay_Label }
  ;
  # [cfg (feature = "app-mapsequenceskipreplay")] pub use mapsequenceskipreplay :: { IMapSequenceSkipReplayMethods }
  ;
  # [cfg (any (feature = "app-mapsequencetargetselect-types"))] pub mod mapsequencetargetselect ;
- # [cfg (feature = "app-mapsequencetargetselect-types")] pub use mapsequencetargetselect :: { MapSequenceTargetSelect_InfoType , MapSequenceTargetSelect , IMapSequenceTargetSelect , MapSequenceTargetSelect_Label }
+ # [cfg (feature = "app-mapsequencetargetselect-types")] pub use mapsequencetargetselect :: { MapSequenceTargetSelect_InfoType , MapSequenceTargetSelect_Label , MapSequenceTargetSelect , IMapSequenceTargetSelect }
  ;
  # [cfg (feature = "app-mapsequencetargetselect")] pub use mapsequencetargetselect :: { IMapSequenceTargetSelectMethods }
  ;
@@ -4849,9 +4849,9 @@
  # [cfg (feature = "app-mapsequencetemporarysave")] pub use mapsequencetemporarysave :: { IMapSequenceTemporarySaveMethods }
  ;
  # [cfg (any (feature = "app-mapsequenceturnbegineffect-types"))] pub mod mapsequenceturnbegineffect ;
- # [cfg (feature = "app-mapsequenceturnbegineffect-types")] pub use mapsequenceturnbegineffect :: { MapSequenceTurnBeginEffect_ProcTerrainDamage , IMapSequenceTurnBeginEffect_ProcTerrainDamage , MapSequenceTurnBeginEffect_ProcFullBulletAttack , IMapSequenceTurnBeginEffect_ProcFullBulletAttack , MapSequenceTurnBeginEffect_ProcSkillTurn , IMapSequenceTurnBeginEffect_ProcSkillTurn , MapSequenceTurnBeginEffect_ProcEngageSkill , IMapSequenceTurnBeginEffect_ProcEngageSkill , MapSequenceTurnBeginEffect_ProcSkillHeal , IMapSequenceTurnBeginEffect_ProcSkillHeal , MapSequenceTurnBeginEffect_ProcTerrainHeal , IMapSequenceTurnBeginEffect_ProcTerrainHeal , MapSequenceTurnBeginEffect , IMapSequenceTurnBeginEffect }
+ # [cfg (feature = "app-mapsequenceturnbegineffect-types")] pub use mapsequenceturnbegineffect :: { MapSequenceTurnBeginEffect_ProcSkillHeal , IMapSequenceTurnBeginEffect_ProcSkillHeal , MapSequenceTurnBeginEffect , IMapSequenceTurnBeginEffect , MapSequenceTurnBeginEffect_ProcTerrainDamage , IMapSequenceTurnBeginEffect_ProcTerrainDamage , MapSequenceTurnBeginEffect_ProcSkillTurn , IMapSequenceTurnBeginEffect_ProcSkillTurn , MapSequenceTurnBeginEffect_ProcTerrainHeal , IMapSequenceTurnBeginEffect_ProcTerrainHeal , MapSequenceTurnBeginEffect_ProcEngageSkill , IMapSequenceTurnBeginEffect_ProcEngageSkill , MapSequenceTurnBeginEffect_ProcFullBulletAttack , IMapSequenceTurnBeginEffect_ProcFullBulletAttack }
  ;
- # [cfg (feature = "app-mapsequenceturnbegineffect")] pub use mapsequenceturnbegineffect :: { IMapSequenceTurnBeginEffect_ProcTerrainDamageMethods , IMapSequenceTurnBeginEffect_ProcFullBulletAttackMethods , IMapSequenceTurnBeginEffect_ProcSkillTurnMethods , IMapSequenceTurnBeginEffect_ProcEngageSkillMethods , IMapSequenceTurnBeginEffect_ProcSkillHealMethods , IMapSequenceTurnBeginEffect_ProcTerrainHealMethods , IMapSequenceTurnBeginEffectMethods }
+ # [cfg (feature = "app-mapsequenceturnbegineffect")] pub use mapsequenceturnbegineffect :: { IMapSequenceTurnBeginEffect_ProcSkillHealMethods , IMapSequenceTurnBeginEffectMethods , IMapSequenceTurnBeginEffect_ProcTerrainDamageMethods , IMapSequenceTurnBeginEffect_ProcSkillTurnMethods , IMapSequenceTurnBeginEffect_ProcTerrainHealMethods , IMapSequenceTurnBeginEffect_ProcEngageSkillMethods , IMapSequenceTurnBeginEffect_ProcFullBulletAttackMethods }
  ;
  # [cfg (any (feature = "app-mapsetting-types"))] pub mod mapsetting ;
  # [cfg (feature = "app-mapsetting-types")] pub use mapsetting :: { MapSetting , IMapSetting }
@@ -4874,14 +4874,14 @@
  # [cfg (feature = "app-mapsimplebattle")] pub use mapsimplebattle :: { IMapSimpleBattleMethods }
  ;
  # [cfg (any (feature = "app-mapsituation-types"))] pub mod mapsituation ;
- # [cfg (feature = "app-mapsituation-types")] pub use mapsituation :: { MapSituation_ForceCursor , IMapSituation_ForceCursor , MapSituation , IMapSituation , MapSituation_SubPhases , MapSituation_StatusField , IMapSituation_StatusField , MapSituation_Status , MapSituation_Player }
+ # [cfg (feature = "app-mapsituation-types")] pub use mapsituation :: { MapSituation_StatusField , IMapSituation_StatusField , MapSituation_SubPhases , MapSituation_Player , MapSituation , IMapSituation , MapSituation_Status , MapSituation_ForceCursor , IMapSituation_ForceCursor }
  ;
- # [cfg (feature = "app-mapsituation")] pub use mapsituation :: { IMapSituation_ForceCursorMethods , IMapSituationMethods , IMapSituation_StatusFieldMethods }
+ # [cfg (feature = "app-mapsituation")] pub use mapsituation :: { IMapSituation_StatusFieldMethods , IMapSituationMethods , IMapSituation_ForceCursorMethods }
  ;
  # [cfg (any (feature = "app-mapskill-types"))] pub mod mapskill ;
- # [cfg (feature = "app-mapskill-types")] pub use mapskill :: { MapSkill_Result , MapSkill_TerrainFunc , IMapSkill_TerrainFunc , MapSkill_Results , MapSkill_AroundCalculator_Result , MapSkill_AroundCalculator , MapSkill_SkillCalculator , MapSkill , IMapSkill , MapSkill_FixedCalculator , MapSkill_HistoryScope , MapSkill_UnitFunc , IMapSkill_UnitFunc , MapSkill_SkillCalculator_UnitList , IMapSkill_SkillCalculator_UnitList }
+ # [cfg (feature = "app-mapskill-types")] pub use mapskill :: { MapSkill_Result , MapSkill_HistoryScope , MapSkill_AroundCalculator , MapSkill_AroundCalculator_Result , MapSkill_TerrainFunc , IMapSkill_TerrainFunc , MapSkill_UnitFunc , IMapSkill_UnitFunc , MapSkill_SkillCalculator_UnitList , IMapSkill_SkillCalculator_UnitList , MapSkill , IMapSkill , MapSkill_Results , MapSkill_FixedCalculator , MapSkill_SkillCalculator }
  ;
- # [cfg (feature = "app-mapskill")] pub use mapskill :: { IMapSkill_TerrainFuncMethods , IMapSkillMethods , IMapSkill_UnitFuncMethods , IMapSkill_SkillCalculator_UnitListMethods }
+ # [cfg (feature = "app-mapskill")] pub use mapskill :: { IMapSkill_TerrainFuncMethods , IMapSkill_UnitFuncMethods , IMapSkill_SkillCalculator_UnitListMethods , IMapSkillMethods }
  ;
  # [cfg (any (feature = "app-mapsortieposition-types"))] pub mod mapsortieposition ;
  # [cfg (feature = "app-mapsortieposition-types")] pub use mapsortieposition :: { MapSortiePosition_Data , IMapSortiePosition_Data , MapSortiePosition , IMapSortiePosition }
@@ -4894,29 +4894,29 @@
  # [cfg (feature = "app-mapsummonmenu")] pub use mapsummonmenu :: { IMapSummonMenu_SummonColorMenuItemMethods , IMapSummonMenuMethods }
  ;
  # [cfg (any (feature = "app-mapsystemmenu-types"))] pub mod mapsystemmenu ;
- # [cfg (feature = "app-mapsystemmenu-types")] pub use mapsystemmenu :: { MapSystemMenu_SubFriendMenu_RingListItem , IMapSystemMenu_SubFriendMenu_RingListItem , MapSystemMenu_SubSystemMenu_SurrenderItem , IMapSystemMenu_SubSystemMenu_SurrenderItem , MapSystemMenu_TemporarySaveItem , IMapSystemMenu_TemporarySaveItem , MapSystemMenu_SubSystemMenu_TutorialItem , IMapSystemMenu_SubSystemMenu_TutorialItem , MapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYes , IMapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYes , MapSystemMenu_SubSystemMenu_ResetItem , IMapSystemMenu_SubSystemMenu_ResetItem , MapSystemMenu_SubSystemMenu_RestartItem , IMapSystemMenu_SubSystemMenu_RestartItem , MapSystemMenu_SubSystemMenu_ConfigItem , IMapSystemMenu_SubSystemMenu_ConfigItem , MapSystemMenu_SubFriendMenu_KizunaItem , IMapSystemMenu_SubFriendMenu_KizunaItem , MapSystemMenu_UnitListItem , IMapSystemMenu_UnitListItem , MapSystemMenu_SubFriendMenu_NotebookItem , IMapSystemMenu_SubFriendMenu_NotebookItem , MapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYes , IMapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYes , MapSystemMenu_OrderItem , IMapSystemMenu_OrderItem , MapSystemMenu_SubSystemMenu , IMapSystemMenu_SubSystemMenu , MapSystemMenu_MapSystemMenuItem , IMapSystemMenu_MapSystemMenuItem , MapSystemMenu_SubFriendMenu_RelianceItem , IMapSystemMenu_SubFriendMenu_RelianceItem , MapSystemMenu_FriendMenuItem , IMapSystemMenu_FriendMenuItem , MapSystemMenu_SystemMenuItem , IMapSystemMenu_SystemMenuItem , MapSystemMenu_RewindMenuItem , IMapSystemMenu_RewindMenuItem , MapSystemMenu , IMapSystemMenu , MapSystemMenu_SubFriendMenu , IMapSystemMenu_SubFriendMenu , MapSystemMenu_TurnItem , IMapSystemMenu_TurnItem }
+ # [cfg (feature = "app-mapsystemmenu-types")] pub use mapsystemmenu :: { MapSystemMenu_SubSystemMenu_SurrenderItem , IMapSystemMenu_SubSystemMenu_SurrenderItem , MapSystemMenu_SubFriendMenu_RelianceItem , IMapSystemMenu_SubFriendMenu_RelianceItem , MapSystemMenu , IMapSystemMenu , MapSystemMenu_SubSystemMenu_ConfigItem , IMapSystemMenu_SubSystemMenu_ConfigItem , MapSystemMenu_OrderItem , IMapSystemMenu_OrderItem , MapSystemMenu_SubFriendMenu_KizunaItem , IMapSystemMenu_SubFriendMenu_KizunaItem , MapSystemMenu_RewindMenuItem , IMapSystemMenu_RewindMenuItem , MapSystemMenu_SubFriendMenu_RingListItem , IMapSystemMenu_SubFriendMenu_RingListItem , MapSystemMenu_UnitListItem , IMapSystemMenu_UnitListItem , MapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYes , IMapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYes , MapSystemMenu_SubSystemMenu_TutorialItem , IMapSystemMenu_SubSystemMenu_TutorialItem , MapSystemMenu_SubFriendMenu_NotebookItem , IMapSystemMenu_SubFriendMenu_NotebookItem , MapSystemMenu_SystemMenuItem , IMapSystemMenu_SystemMenuItem , MapSystemMenu_TemporarySaveItem , IMapSystemMenu_TemporarySaveItem , MapSystemMenu_SubSystemMenu_ResetItem , IMapSystemMenu_SubSystemMenu_ResetItem , MapSystemMenu_TurnItem , IMapSystemMenu_TurnItem , MapSystemMenu_SubSystemMenu , IMapSystemMenu_SubSystemMenu , MapSystemMenu_MapSystemMenuItem , IMapSystemMenu_MapSystemMenuItem , MapSystemMenu_FriendMenuItem , IMapSystemMenu_FriendMenuItem , MapSystemMenu_SubFriendMenu , IMapSystemMenu_SubFriendMenu , MapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYes , IMapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYes , MapSystemMenu_SubSystemMenu_RestartItem , IMapSystemMenu_SubSystemMenu_RestartItem }
  ;
- # [cfg (feature = "app-mapsystemmenu")] pub use mapsystemmenu :: { IMapSystemMenu_SubFriendMenu_RingListItemMethods , IMapSystemMenu_SubSystemMenu_SurrenderItemMethods , IMapSystemMenu_TemporarySaveItemMethods , IMapSystemMenu_SubSystemMenu_TutorialItemMethods , IMapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYesMethods , IMapSystemMenu_SubSystemMenu_ResetItemMethods , IMapSystemMenu_SubSystemMenu_RestartItemMethods , IMapSystemMenu_SubSystemMenu_ConfigItemMethods , IMapSystemMenu_SubFriendMenu_KizunaItemMethods , IMapSystemMenu_UnitListItemMethods , IMapSystemMenu_SubFriendMenu_NotebookItemMethods , IMapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYesMethods , IMapSystemMenu_OrderItemMethods , IMapSystemMenu_SubSystemMenuMethods , IMapSystemMenu_MapSystemMenuItemMethods , IMapSystemMenu_SubFriendMenu_RelianceItemMethods , IMapSystemMenu_FriendMenuItemMethods , IMapSystemMenu_SystemMenuItemMethods , IMapSystemMenu_RewindMenuItemMethods , IMapSystemMenuMethods , IMapSystemMenu_SubFriendMenuMethods , IMapSystemMenu_TurnItemMethods }
+ # [cfg (feature = "app-mapsystemmenu")] pub use mapsystemmenu :: { IMapSystemMenu_SubSystemMenu_SurrenderItemMethods , IMapSystemMenu_SubFriendMenu_RelianceItemMethods , IMapSystemMenuMethods , IMapSystemMenu_SubSystemMenu_ConfigItemMethods , IMapSystemMenu_OrderItemMethods , IMapSystemMenu_SubFriendMenu_KizunaItemMethods , IMapSystemMenu_RewindMenuItemMethods , IMapSystemMenu_SubFriendMenu_RingListItemMethods , IMapSystemMenu_UnitListItemMethods , IMapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYesMethods , IMapSystemMenu_SubSystemMenu_TutorialItemMethods , IMapSystemMenu_SubFriendMenu_NotebookItemMethods , IMapSystemMenu_SystemMenuItemMethods , IMapSystemMenu_TemporarySaveItemMethods , IMapSystemMenu_SubSystemMenu_ResetItemMethods , IMapSystemMenu_TurnItemMethods , IMapSystemMenu_SubSystemMenuMethods , IMapSystemMenu_MapSystemMenuItemMethods , IMapSystemMenu_FriendMenuItemMethods , IMapSystemMenu_SubFriendMenuMethods , IMapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYesMethods , IMapSystemMenu_SubSystemMenu_RestartItemMethods }
  ;
  # [cfg (any (feature = "app-maptarget-types"))] pub mod maptarget ;
- # [cfg (feature = "app-maptarget-types")] pub use maptarget :: { MapTarget_Data , IMapTarget_Data , MapTarget_RangeType , MapTarget , IMapTarget , MapTarget_ActionMask , MapTarget_DataSet , IMapTarget_DataSet }
+ # [cfg (feature = "app-maptarget-types")] pub use maptarget :: { MapTarget_ActionMask , MapTarget , IMapTarget , MapTarget_DataSet , IMapTarget_DataSet , MapTarget_Data , IMapTarget_Data , MapTarget_RangeType }
  ;
- # [cfg (feature = "app-maptarget")] pub use maptarget :: { IMapTarget_DataMethods , IMapTargetMethods , IMapTarget_DataSetMethods }
+ # [cfg (feature = "app-maptarget")] pub use maptarget :: { IMapTargetMethods , IMapTarget_DataSetMethods , IMapTarget_DataMethods }
  ;
  # [cfg (any (feature = "app-mapterrain-types"))] pub mod mapterrain ;
- # [cfg (feature = "app-mapterrain-types")] pub use mapterrain :: { MapTerrain_LayerData , IMapTerrain_LayerData , MapTerrain , IMapTerrain , MapTerrain_OverlapData , IMapTerrain_OverlapData }
+ # [cfg (feature = "app-mapterrain-types")] pub use mapterrain :: { MapTerrain , IMapTerrain , MapTerrain_LayerData , IMapTerrain_LayerData , MapTerrain_OverlapData , IMapTerrain_OverlapData }
  ;
- # [cfg (feature = "app-mapterrain")] pub use mapterrain :: { IMapTerrain_LayerDataMethods , IMapTerrainMethods , IMapTerrain_OverlapDataMethods }
+ # [cfg (feature = "app-mapterrain")] pub use mapterrain :: { IMapTerrainMethods , IMapTerrain_LayerDataMethods , IMapTerrain_OverlapDataMethods }
  ;
  # [cfg (any (feature = "app-mapterraininfo-types"))] pub mod mapterraininfo ;
- # [cfg (feature = "app-mapterraininfo-types")] pub use mapterraininfo :: { MapTerrainInfo_MapTerrainInfoSingle , IMapTerrainInfo_MapTerrainInfoSingle , MapTerrainInfo , IMapTerrainInfo , MapTerrainInfo_Element , MapTerrainInfo_Side }
+ # [cfg (feature = "app-mapterraininfo-types")] pub use mapterraininfo :: { MapTerrainInfo_Element , MapTerrainInfo_MapTerrainInfoSingle , IMapTerrainInfo_MapTerrainInfoSingle , MapTerrainInfo , IMapTerrainInfo , MapTerrainInfo_Side }
  ;
  # [cfg (feature = "app-mapterraininfo")] pub use mapterraininfo :: { IMapTerrainInfo_MapTerrainInfoSingleMethods , IMapTerrainInfoMethods }
  ;
  # [cfg (any (feature = "app-mapterraininfoalignment-types"))] pub mod mapterraininfoalignment ;
- # [cfg (feature = "app-mapterraininfoalignment-types")] pub use mapterraininfoalignment :: { MapTerrainInfoAlignment_Type , MapTerrainInfoAlignment_AlignParent , IMapTerrainInfoAlignment_AlignParent , MapTerrainInfoAlignment_InversionMember , IMapTerrainInfoAlignment_InversionMember , MapTerrainInfoAlignment , IMapTerrainInfoAlignment , MapTerrainInfoAlignment_AlignMember , IMapTerrainInfoAlignment_AlignMember , MapTerrainInfoAlignment_AlignMember_Type }
+ # [cfg (feature = "app-mapterraininfoalignment-types")] pub use mapterraininfoalignment :: { MapTerrainInfoAlignment_AlignMember , IMapTerrainInfoAlignment_AlignMember , MapTerrainInfoAlignment_AlignMember_Type , MapTerrainInfoAlignment_InversionMember , IMapTerrainInfoAlignment_InversionMember , MapTerrainInfoAlignment_AlignParent , IMapTerrainInfoAlignment_AlignParent , MapTerrainInfoAlignment , IMapTerrainInfoAlignment , MapTerrainInfoAlignment_Type }
  ;
- # [cfg (feature = "app-mapterraininfoalignment")] pub use mapterraininfoalignment :: { IMapTerrainInfoAlignment_AlignParentMethods , IMapTerrainInfoAlignment_InversionMemberMethods , IMapTerrainInfoAlignmentMethods , IMapTerrainInfoAlignment_AlignMemberMethods }
+ # [cfg (feature = "app-mapterraininfoalignment")] pub use mapterraininfoalignment :: { IMapTerrainInfoAlignment_AlignMemberMethods , IMapTerrainInfoAlignment_InversionMemberMethods , IMapTerrainInfoAlignment_AlignParentMethods , IMapTerrainInfoAlignmentMethods }
  ;
  # [cfg (any (feature = "app-mapterraininfoalignmentmember-types"))] pub mod mapterraininfoalignmentmember ;
  # [cfg (feature = "app-mapterraininfoalignmentmember-types")] pub use mapterraininfoalignmentmember :: { MapTerrainInfoAlignmentMember , IMapTerrainInfoAlignmentMember }
@@ -4929,14 +4929,14 @@
  # [cfg (feature = "app-mapuiunitindexasuv2")] pub use mapuiunitindexasuv2 :: { IMapUIUnitIndexAsUV2Methods }
  ;
  # [cfg (any (feature = "app-mapunitaicommandmenu-types"))] pub mod mapunitaicommandmenu ;
- # [cfg (feature = "app-mapunitaicommandmenu-types")] pub use mapunitaicommandmenu :: { MapUnitAICommandMenu_AIMenuItem , IMapUnitAICommandMenu_AIMenuItem , MapUnitAICommandMenu , IMapUnitAICommandMenu }
+ # [cfg (feature = "app-mapunitaicommandmenu-types")] pub use mapunitaicommandmenu :: { MapUnitAICommandMenu , IMapUnitAICommandMenu , MapUnitAICommandMenu_AIMenuItem , IMapUnitAICommandMenu_AIMenuItem }
  ;
- # [cfg (feature = "app-mapunitaicommandmenu")] pub use mapunitaicommandmenu :: { IMapUnitAICommandMenu_AIMenuItemMethods , IMapUnitAICommandMenuMethods }
+ # [cfg (feature = "app-mapunitaicommandmenu")] pub use mapunitaicommandmenu :: { IMapUnitAICommandMenuMethods , IMapUnitAICommandMenu_AIMenuItemMethods }
  ;
  # [cfg (any (feature = "app-mapunitcommandmenu-types"))] pub mod mapunitcommandmenu ;
- # [cfg (feature = "app-mapunitcommandmenu-types")] pub use mapunitcommandmenu :: { MapUnitCommandMenu , IMapUnitCommandMenu , MapUnitCommandMenu_NoCancelFixedMenuItem , IMapUnitCommandMenu_NoCancelFixedMenuItem , MapUnitCommandMenu_DoorMenuItem , IMapUnitCommandMenu_DoorMenuItem , MapUnitCommandMenu_SubMenuItem , IMapUnitCommandMenu_SubMenuItem , MapUnitCommandMenu_EngageCommandMenuItem , IMapUnitCommandMenu_EngageCommandMenuItem , MapUnitCommandMenu_ItemMenuItem , IMapUnitCommandMenu_ItemMenuItem , MapUnitCommandMenu_RodMenuItem , IMapUnitCommandMenu_RodMenuItem , MapUnitCommandMenu_VisionDeleteMenuItem , IMapUnitCommandMenu_VisionDeleteMenuItem , MapUnitCommandMenu_EnchantWeaponMenuItem , IMapUnitCommandMenu_EnchantWeaponMenuItem , MapUnitCommandMenu_BreakdownEnemyMenuItem , IMapUnitCommandMenu_BreakdownEnemyMenuItem , MapUnitCommandMenu_EnchantItemMenuItem , IMapUnitCommandMenu_EnchantItemMenuItem , MapUnitCommandMenu_EngageStartMenuItem , IMapUnitCommandMenu_EngageStartMenuItem , MapUnitCommandMenu_GodChangeMenuItem , IMapUnitCommandMenu_GodChangeMenuItem , MapUnitCommandMenu_EngageSummonMenuItem , IMapUnitCommandMenu_EngageSummonMenuItem , MapUnitCommandMenu_BreakdownMenuItem , IMapUnitCommandMenu_BreakdownMenuItem , MapUnitCommandMenu_CannonMenuItem , IMapUnitCommandMenu_CannonMenuItem , MapUnitCommandMenu_EngageWaitMenuItem , IMapUnitCommandMenu_EngageWaitMenuItem , MapUnitCommandMenu_TransporterMenuItem , IMapUnitCommandMenu_TransporterMenuItem , MapUnitCommandMenu_TorchOnMenuItem , IMapUnitCommandMenu_TorchOnMenuItem , MapUnitCommandMenu_EngageLinkMenuItem , IMapUnitCommandMenu_EngageLinkMenuItem , MapUnitCommandMenu_BaseMenuItem , IMapUnitCommandMenu_BaseMenuItem , MapUnitCommandMenu_NoCancelMagicMenuItem , IMapUnitCommandMenu_NoCancelMagicMenuItem , MapUnitCommandMenu_AttackMenuItem , IMapUnitCommandMenu_AttackMenuItem , MapUnitCommandMenu_VisitMenuItem , IMapUnitCommandMenu_VisitMenuItem , MapUnitCommandMenu_DanceMenuItem , IMapUnitCommandMenu_DanceMenuItem , MapUnitCommandMenu_SkillAttackMenuItem , IMapUnitCommandMenu_SkillAttackMenuItem , MapUnitCommandMenu_CannonMenuItem_States , MapUnitCommandMenu_TradeMenuItem , IMapUnitCommandMenu_TradeMenuItem , MapUnitCommandMenu_GuardMenuItem , IMapUnitCommandMenu_GuardMenuItem , MapUnitCommandMenu_EngageAttackMenuItem , IMapUnitCommandMenu_EngageAttackMenuItem , MapUnitCommandMenu_DestroyMenuItem , IMapUnitCommandMenu_DestroyMenuItem , MapUnitCommandMenu_TreasureBoxMenuItem , IMapUnitCommandMenu_TreasureBoxMenuItem , MapUnitCommandMenu_BreakdownBaseMenuItem , IMapUnitCommandMenu_BreakdownBaseMenuItem , MapUnitCommandMenu_JumpToMenuItem , IMapUnitCommandMenu_JumpToMenuItem , MapUnitCommandMenu_OverlapSkillMenuItem , IMapUnitCommandMenu_OverlapSkillMenuItem , MapUnitCommandMenu_FixedMenuItem , IMapUnitCommandMenu_FixedMenuItem , MapUnitCommandMenu_VisionCreateMenuItem , IMapUnitCommandMenu_VisionCreateMenuItem , MapUnitCommandMenu_EngageChargeMenuItem , IMapUnitCommandMenu_EngageChargeMenuItem , MapUnitCommandMenu_EngageRodMenuItem , IMapUnitCommandMenu_EngageRodMenuItem , MapUnitCommandMenu_EnchantMenuItem , IMapUnitCommandMenu_EnchantMenuItem , MapUnitCommandMenu_ContractMenuItem , IMapUnitCommandMenu_ContractMenuItem , MapUnitCommandMenu_BreakthroughMenuItem , IMapUnitCommandMenu_BreakthroughMenuItem , MapUnitCommandMenu_TalkMenuItem , IMapUnitCommandMenu_TalkMenuItem , MapUnitCommandMenu_CommandSkillMenuItem , IMapUnitCommandMenu_CommandSkillMenuItem , MapUnitCommandMenu_EngageActionBaseMenuItem , IMapUnitCommandMenu_EngageActionBaseMenuItem , MapUnitCommandMenu_EngageRewarpMenuItem , IMapUnitCommandMenu_EngageRewarpMenuItem , MapUnitCommandMenu_TargetSelectMenuItem , IMapUnitCommandMenu_TargetSelectMenuItem , MapUnitCommandMenu_EscapeMenuItem , IMapUnitCommandMenu_EscapeMenuItem }
+ # [cfg (feature = "app-mapunitcommandmenu-types")] pub use mapunitcommandmenu :: { MapUnitCommandMenu_EngageRodMenuItem , IMapUnitCommandMenu_EngageRodMenuItem , MapUnitCommandMenu_BaseMenuItem , IMapUnitCommandMenu_BaseMenuItem , MapUnitCommandMenu_CannonMenuItem , IMapUnitCommandMenu_CannonMenuItem , MapUnitCommandMenu_EngageActionBaseMenuItem , IMapUnitCommandMenu_EngageActionBaseMenuItem , MapUnitCommandMenu_EngageChargeMenuItem , IMapUnitCommandMenu_EngageChargeMenuItem , MapUnitCommandMenu_GuardMenuItem , IMapUnitCommandMenu_GuardMenuItem , MapUnitCommandMenu_EngageRewarpMenuItem , IMapUnitCommandMenu_EngageRewarpMenuItem , MapUnitCommandMenu_TargetSelectMenuItem , IMapUnitCommandMenu_TargetSelectMenuItem , MapUnitCommandMenu_TradeMenuItem , IMapUnitCommandMenu_TradeMenuItem , MapUnitCommandMenu_EnchantItemMenuItem , IMapUnitCommandMenu_EnchantItemMenuItem , MapUnitCommandMenu_SubMenuItem , IMapUnitCommandMenu_SubMenuItem , MapUnitCommandMenu_TreasureBoxMenuItem , IMapUnitCommandMenu_TreasureBoxMenuItem , MapUnitCommandMenu_CommandSkillMenuItem , IMapUnitCommandMenu_CommandSkillMenuItem , MapUnitCommandMenu_BreakdownEnemyMenuItem , IMapUnitCommandMenu_BreakdownEnemyMenuItem , MapUnitCommandMenu_BreakthroughMenuItem , IMapUnitCommandMenu_BreakthroughMenuItem , MapUnitCommandMenu_ItemMenuItem , IMapUnitCommandMenu_ItemMenuItem , MapUnitCommandMenu_VisitMenuItem , IMapUnitCommandMenu_VisitMenuItem , MapUnitCommandMenu_NoCancelFixedMenuItem , IMapUnitCommandMenu_NoCancelFixedMenuItem , MapUnitCommandMenu_EngageLinkMenuItem , IMapUnitCommandMenu_EngageLinkMenuItem , MapUnitCommandMenu_DoorMenuItem , IMapUnitCommandMenu_DoorMenuItem , MapUnitCommandMenu_VisionDeleteMenuItem , IMapUnitCommandMenu_VisionDeleteMenuItem , MapUnitCommandMenu_DestroyMenuItem , IMapUnitCommandMenu_DestroyMenuItem , MapUnitCommandMenu_NoCancelMagicMenuItem , IMapUnitCommandMenu_NoCancelMagicMenuItem , MapUnitCommandMenu_CannonMenuItem_States , MapUnitCommandMenu_DanceMenuItem , IMapUnitCommandMenu_DanceMenuItem , MapUnitCommandMenu_EnchantWeaponMenuItem , IMapUnitCommandMenu_EnchantWeaponMenuItem , MapUnitCommandMenu_OverlapSkillMenuItem , IMapUnitCommandMenu_OverlapSkillMenuItem , MapUnitCommandMenu_BreakdownMenuItem , IMapUnitCommandMenu_BreakdownMenuItem , MapUnitCommandMenu_JumpToMenuItem , IMapUnitCommandMenu_JumpToMenuItem , MapUnitCommandMenu_TalkMenuItem , IMapUnitCommandMenu_TalkMenuItem , MapUnitCommandMenu_AttackMenuItem , IMapUnitCommandMenu_AttackMenuItem , MapUnitCommandMenu_TransporterMenuItem , IMapUnitCommandMenu_TransporterMenuItem , MapUnitCommandMenu_VisionCreateMenuItem , IMapUnitCommandMenu_VisionCreateMenuItem , MapUnitCommandMenu_EngageCommandMenuItem , IMapUnitCommandMenu_EngageCommandMenuItem , MapUnitCommandMenu_EngageStartMenuItem , IMapUnitCommandMenu_EngageStartMenuItem , MapUnitCommandMenu_EngageWaitMenuItem , IMapUnitCommandMenu_EngageWaitMenuItem , MapUnitCommandMenu_FixedMenuItem , IMapUnitCommandMenu_FixedMenuItem , MapUnitCommandMenu_EngageSummonMenuItem , IMapUnitCommandMenu_EngageSummonMenuItem , MapUnitCommandMenu_EnchantMenuItem , IMapUnitCommandMenu_EnchantMenuItem , MapUnitCommandMenu_RodMenuItem , IMapUnitCommandMenu_RodMenuItem , MapUnitCommandMenu , IMapUnitCommandMenu , MapUnitCommandMenu_ContractMenuItem , IMapUnitCommandMenu_ContractMenuItem , MapUnitCommandMenu_SkillAttackMenuItem , IMapUnitCommandMenu_SkillAttackMenuItem , MapUnitCommandMenu_TorchOnMenuItem , IMapUnitCommandMenu_TorchOnMenuItem , MapUnitCommandMenu_GodChangeMenuItem , IMapUnitCommandMenu_GodChangeMenuItem , MapUnitCommandMenu_BreakdownBaseMenuItem , IMapUnitCommandMenu_BreakdownBaseMenuItem , MapUnitCommandMenu_EscapeMenuItem , IMapUnitCommandMenu_EscapeMenuItem , MapUnitCommandMenu_EngageAttackMenuItem , IMapUnitCommandMenu_EngageAttackMenuItem }
  ;
- # [cfg (feature = "app-mapunitcommandmenu")] pub use mapunitcommandmenu :: { IMapUnitCommandMenuMethods , IMapUnitCommandMenu_NoCancelFixedMenuItemMethods , IMapUnitCommandMenu_DoorMenuItemMethods , IMapUnitCommandMenu_SubMenuItemMethods , IMapUnitCommandMenu_EngageCommandMenuItemMethods , IMapUnitCommandMenu_ItemMenuItemMethods , IMapUnitCommandMenu_RodMenuItemMethods , IMapUnitCommandMenu_VisionDeleteMenuItemMethods , IMapUnitCommandMenu_EnchantWeaponMenuItemMethods , IMapUnitCommandMenu_BreakdownEnemyMenuItemMethods , IMapUnitCommandMenu_EnchantItemMenuItemMethods , IMapUnitCommandMenu_EngageStartMenuItemMethods , IMapUnitCommandMenu_GodChangeMenuItemMethods , IMapUnitCommandMenu_EngageSummonMenuItemMethods , IMapUnitCommandMenu_BreakdownMenuItemMethods , IMapUnitCommandMenu_CannonMenuItemMethods , IMapUnitCommandMenu_EngageWaitMenuItemMethods , IMapUnitCommandMenu_TransporterMenuItemMethods , IMapUnitCommandMenu_TorchOnMenuItemMethods , IMapUnitCommandMenu_EngageLinkMenuItemMethods , IMapUnitCommandMenu_BaseMenuItemMethods , IMapUnitCommandMenu_NoCancelMagicMenuItemMethods , IMapUnitCommandMenu_AttackMenuItemMethods , IMapUnitCommandMenu_VisitMenuItemMethods , IMapUnitCommandMenu_DanceMenuItemMethods , IMapUnitCommandMenu_SkillAttackMenuItemMethods , IMapUnitCommandMenu_TradeMenuItemMethods , IMapUnitCommandMenu_GuardMenuItemMethods , IMapUnitCommandMenu_EngageAttackMenuItemMethods , IMapUnitCommandMenu_DestroyMenuItemMethods , IMapUnitCommandMenu_TreasureBoxMenuItemMethods , IMapUnitCommandMenu_BreakdownBaseMenuItemMethods , IMapUnitCommandMenu_JumpToMenuItemMethods , IMapUnitCommandMenu_OverlapSkillMenuItemMethods , IMapUnitCommandMenu_FixedMenuItemMethods , IMapUnitCommandMenu_VisionCreateMenuItemMethods , IMapUnitCommandMenu_EngageChargeMenuItemMethods , IMapUnitCommandMenu_EngageRodMenuItemMethods , IMapUnitCommandMenu_EnchantMenuItemMethods , IMapUnitCommandMenu_ContractMenuItemMethods , IMapUnitCommandMenu_BreakthroughMenuItemMethods , IMapUnitCommandMenu_TalkMenuItemMethods , IMapUnitCommandMenu_CommandSkillMenuItemMethods , IMapUnitCommandMenu_EngageActionBaseMenuItemMethods , IMapUnitCommandMenu_EngageRewarpMenuItemMethods , IMapUnitCommandMenu_TargetSelectMenuItemMethods , IMapUnitCommandMenu_EscapeMenuItemMethods }
+ # [cfg (feature = "app-mapunitcommandmenu")] pub use mapunitcommandmenu :: { IMapUnitCommandMenu_EngageRodMenuItemMethods , IMapUnitCommandMenu_BaseMenuItemMethods , IMapUnitCommandMenu_CannonMenuItemMethods , IMapUnitCommandMenu_EngageActionBaseMenuItemMethods , IMapUnitCommandMenu_EngageChargeMenuItemMethods , IMapUnitCommandMenu_GuardMenuItemMethods , IMapUnitCommandMenu_EngageRewarpMenuItemMethods , IMapUnitCommandMenu_TargetSelectMenuItemMethods , IMapUnitCommandMenu_TradeMenuItemMethods , IMapUnitCommandMenu_EnchantItemMenuItemMethods , IMapUnitCommandMenu_SubMenuItemMethods , IMapUnitCommandMenu_TreasureBoxMenuItemMethods , IMapUnitCommandMenu_CommandSkillMenuItemMethods , IMapUnitCommandMenu_BreakdownEnemyMenuItemMethods , IMapUnitCommandMenu_BreakthroughMenuItemMethods , IMapUnitCommandMenu_ItemMenuItemMethods , IMapUnitCommandMenu_VisitMenuItemMethods , IMapUnitCommandMenu_NoCancelFixedMenuItemMethods , IMapUnitCommandMenu_EngageLinkMenuItemMethods , IMapUnitCommandMenu_DoorMenuItemMethods , IMapUnitCommandMenu_VisionDeleteMenuItemMethods , IMapUnitCommandMenu_DestroyMenuItemMethods , IMapUnitCommandMenu_NoCancelMagicMenuItemMethods , IMapUnitCommandMenu_DanceMenuItemMethods , IMapUnitCommandMenu_EnchantWeaponMenuItemMethods , IMapUnitCommandMenu_OverlapSkillMenuItemMethods , IMapUnitCommandMenu_BreakdownMenuItemMethods , IMapUnitCommandMenu_JumpToMenuItemMethods , IMapUnitCommandMenu_TalkMenuItemMethods , IMapUnitCommandMenu_AttackMenuItemMethods , IMapUnitCommandMenu_TransporterMenuItemMethods , IMapUnitCommandMenu_VisionCreateMenuItemMethods , IMapUnitCommandMenu_EngageCommandMenuItemMethods , IMapUnitCommandMenu_EngageStartMenuItemMethods , IMapUnitCommandMenu_EngageWaitMenuItemMethods , IMapUnitCommandMenu_FixedMenuItemMethods , IMapUnitCommandMenu_EngageSummonMenuItemMethods , IMapUnitCommandMenu_EnchantMenuItemMethods , IMapUnitCommandMenu_RodMenuItemMethods , IMapUnitCommandMenuMethods , IMapUnitCommandMenu_ContractMenuItemMethods , IMapUnitCommandMenu_SkillAttackMenuItemMethods , IMapUnitCommandMenu_TorchOnMenuItemMethods , IMapUnitCommandMenu_GodChangeMenuItemMethods , IMapUnitCommandMenu_BreakdownBaseMenuItemMethods , IMapUnitCommandMenu_EscapeMenuItemMethods , IMapUnitCommandMenu_EngageAttackMenuItemMethods }
  ;
  # [cfg (any (feature = "app-mapunitcommandmenucontent-types"))] pub mod mapunitcommandmenucontent ;
  # [cfg (feature = "app-mapunitcommandmenucontent-types")] pub use mapunitcommandmenucontent :: { MapUnitCommandMenuContent , IMapUnitCommandMenuContent }
@@ -4989,9 +4989,9 @@
  # [cfg (feature = "app-mascotcolorchangeitemcontent")] pub use mascotcolorchangeitemcontent :: { IMascotColorChangeItemContentMethods }
  ;
  # [cfg (any (feature = "app-mascotcolorchangemenu-types"))] pub mod mascotcolorchangemenu ;
- # [cfg (feature = "app-mascotcolorchangemenu-types")] pub use mascotcolorchangemenu :: { MascotColorChangeMenu_CursorTop , IMascotColorChangeMenu_CursorTop , MascotColorChangeMenu , IMascotColorChangeMenu , MascotColorChangeMenu_Label }
+ # [cfg (feature = "app-mascotcolorchangemenu-types")] pub use mascotcolorchangemenu :: { MascotColorChangeMenu_Label , MascotColorChangeMenu , IMascotColorChangeMenu , MascotColorChangeMenu_CursorTop , IMascotColorChangeMenu_CursorTop }
  ;
- # [cfg (feature = "app-mascotcolorchangemenu")] pub use mascotcolorchangemenu :: { IMascotColorChangeMenu_CursorTopMethods , IMascotColorChangeMenuMethods }
+ # [cfg (feature = "app-mascotcolorchangemenu")] pub use mascotcolorchangemenu :: { IMascotColorChangeMenuMethods , IMascotColorChangeMenu_CursorTopMethods }
  ;
  # [cfg (any (feature = "app-mascotcolordata-types"))] pub mod mascotcolordata ;
  # [cfg (feature = "app-mascotcolordata-types")] pub use mascotcolordata :: { MascotColorData , IMascotColorData }
@@ -4999,9 +4999,9 @@
  # [cfg (feature = "app-mascotcolordata")] pub use mascotcolordata :: { IMascotColorDataMethods }
  ;
  # [cfg (any (feature = "app-mascotcustomizemenu-types"))] pub mod mascotcustomizemenu ;
- # [cfg (feature = "app-mascotcustomizemenu-types")] pub use mascotcustomizemenu :: { MascotCustomizeMenu_ColorMenuItem , IMascotCustomizeMenu_ColorMenuItem , MascotCustomizeMenu , IMascotCustomizeMenu , MascotCustomizeMenu_DecideEventHandler , IMascotCustomizeMenu_DecideEventHandler , MascotCustomizeMenu_PartsMenuItem , IMascotCustomizeMenu_PartsMenuItem , MascotCustomizeMenu_MenuResult }
+ # [cfg (feature = "app-mascotcustomizemenu-types")] pub use mascotcustomizemenu :: { MascotCustomizeMenu_DecideEventHandler , IMascotCustomizeMenu_DecideEventHandler , MascotCustomizeMenu_ColorMenuItem , IMascotCustomizeMenu_ColorMenuItem , MascotCustomizeMenu_PartsMenuItem , IMascotCustomizeMenu_PartsMenuItem , MascotCustomizeMenu , IMascotCustomizeMenu , MascotCustomizeMenu_MenuResult }
  ;
- # [cfg (feature = "app-mascotcustomizemenu")] pub use mascotcustomizemenu :: { IMascotCustomizeMenu_ColorMenuItemMethods , IMascotCustomizeMenuMethods , IMascotCustomizeMenu_DecideEventHandlerMethods , IMascotCustomizeMenu_PartsMenuItemMethods }
+ # [cfg (feature = "app-mascotcustomizemenu")] pub use mascotcustomizemenu :: { IMascotCustomizeMenu_DecideEventHandlerMethods , IMascotCustomizeMenu_ColorMenuItemMethods , IMascotCustomizeMenu_PartsMenuItemMethods , IMascotCustomizeMenuMethods }
  ;
  # [cfg (any (feature = "app-mascotfooddata-types"))] pub mod mascotfooddata ;
  # [cfg (feature = "app-mascotfooddata-types")] pub use mascotfooddata :: { MascotFoodData , IMascotFoodData }
@@ -5029,9 +5029,9 @@
  # [cfg (feature = "app-mascotfoodselectmenu")] pub use mascotfoodselectmenu :: { IMascotFoodSelectMenuMethods }
  ;
  # [cfg (any (feature = "app-mascotfoodselectmenuitem-types"))] pub mod mascotfoodselectmenuitem ;
- # [cfg (feature = "app-mascotfoodselectmenuitem-types")] pub use mascotfoodselectmenuitem :: { MascotFoodSelectMenuItem_ConfirmDialogYes , IMascotFoodSelectMenuItem_ConfirmDialogYes , MascotFoodSelectMenuItem_ConfirmDialogNo , IMascotFoodSelectMenuItem_ConfirmDialogNo , MascotFoodSelectMenuItem_ConfirmDialog , IMascotFoodSelectMenuItem_ConfirmDialog , MascotFoodSelectMenuItem , IMascotFoodSelectMenuItem }
+ # [cfg (feature = "app-mascotfoodselectmenuitem-types")] pub use mascotfoodselectmenuitem :: { MascotFoodSelectMenuItem , IMascotFoodSelectMenuItem , MascotFoodSelectMenuItem_ConfirmDialogNo , IMascotFoodSelectMenuItem_ConfirmDialogNo , MascotFoodSelectMenuItem_ConfirmDialogYes , IMascotFoodSelectMenuItem_ConfirmDialogYes , MascotFoodSelectMenuItem_ConfirmDialog , IMascotFoodSelectMenuItem_ConfirmDialog }
  ;
- # [cfg (feature = "app-mascotfoodselectmenuitem")] pub use mascotfoodselectmenuitem :: { IMascotFoodSelectMenuItem_ConfirmDialogYesMethods , IMascotFoodSelectMenuItem_ConfirmDialogNoMethods , IMascotFoodSelectMenuItem_ConfirmDialogMethods , IMascotFoodSelectMenuItemMethods }
+ # [cfg (feature = "app-mascotfoodselectmenuitem")] pub use mascotfoodselectmenuitem :: { IMascotFoodSelectMenuItemMethods , IMascotFoodSelectMenuItem_ConfirmDialogNoMethods , IMascotFoodSelectMenuItem_ConfirmDialogYesMethods , IMascotFoodSelectMenuItem_ConfirmDialogMethods }
  ;
  # [cfg (any (feature = "app-mascotfriendlycontent-types"))] pub mod mascotfriendlycontent ;
  # [cfg (feature = "app-mascotfriendlycontent-types")] pub use mascotfriendlycontent :: { MascotFriendlyContent , IMascotFriendlyContent }
@@ -5039,7 +5039,7 @@
  # [cfg (feature = "app-mascotfriendlycontent")] pub use mascotfriendlycontent :: { IMascotFriendlyContentMethods }
  ;
  # [cfg (any (feature = "app-mascotmenusequence-types"))] pub mod mascotmenusequence ;
- # [cfg (feature = "app-mascotmenusequence-types")] pub use mascotmenusequence :: { MascotMenuSequence , IMascotMenuSequence , MascotMenuSequence_Label }
+ # [cfg (feature = "app-mascotmenusequence-types")] pub use mascotmenusequence :: { MascotMenuSequence_Label , MascotMenuSequence , IMascotMenuSequence }
  ;
  # [cfg (feature = "app-mascotmenusequence")] pub use mascotmenusequence :: { IMascotMenuSequenceMethods }
  ;
@@ -5054,9 +5054,9 @@
  # [cfg (feature = "app-mascotpresentationroot")] pub use mascotpresentationroot :: { IMascotPresentationRootMethods }
  ;
  # [cfg (any (feature = "app-mascottopmenu-types"))] pub mod mascottopmenu ;
- # [cfg (feature = "app-mascottopmenu-types")] pub use mascottopmenu :: { MascotTopMenu_StrokMenuItem , IMascotTopMenu_StrokMenuItem , MascotTopMenu_MealMenuItem , IMascotTopMenu_MealMenuItem , MascotTopMenu_CustomMenuItem , IMascotTopMenu_CustomMenuItem , MascotTopMenu_MenuResult , MascotTopMenu_DecideEventHandler , IMascotTopMenu_DecideEventHandler , MascotTopMenu , IMascotTopMenu }
+ # [cfg (feature = "app-mascottopmenu-types")] pub use mascottopmenu :: { MascotTopMenu_CustomMenuItem , IMascotTopMenu_CustomMenuItem , MascotTopMenu , IMascotTopMenu , MascotTopMenu_MenuResult , MascotTopMenu_DecideEventHandler , IMascotTopMenu_DecideEventHandler , MascotTopMenu_MealMenuItem , IMascotTopMenu_MealMenuItem , MascotTopMenu_StrokMenuItem , IMascotTopMenu_StrokMenuItem }
  ;
- # [cfg (feature = "app-mascottopmenu")] pub use mascottopmenu :: { IMascotTopMenu_StrokMenuItemMethods , IMascotTopMenu_MealMenuItemMethods , IMascotTopMenu_CustomMenuItemMethods , IMascotTopMenu_DecideEventHandlerMethods , IMascotTopMenuMethods }
+ # [cfg (feature = "app-mascottopmenu")] pub use mascottopmenu :: { IMascotTopMenu_CustomMenuItemMethods , IMascotTopMenuMethods , IMascotTopMenu_DecideEventHandlerMethods , IMascotTopMenu_MealMenuItemMethods , IMascotTopMenu_StrokMenuItemMethods }
  ;
  # [cfg (any (feature = "app-materiallistmenu-types"))] pub mod materiallistmenu ;
  # [cfg (feature = "app-materiallistmenu-types")] pub use materiallistmenu :: { MaterialListMenu , IMaterialListMenu }
@@ -5064,7 +5064,7 @@
  # [cfg (feature = "app-materiallistmenu")] pub use materiallistmenu :: { IMaterialListMenuMethods }
  ;
  # [cfg (any (feature = "app-materiallistmenucontent-types"))] pub mod materiallistmenucontent ;
- # [cfg (feature = "app-materiallistmenucontent-types")] pub use materiallistmenucontent :: { MaterialListMenuContent_CategoryType , MaterialListMenuContent , IMaterialListMenuContent }
+ # [cfg (feature = "app-materiallistmenucontent-types")] pub use materiallistmenucontent :: { MaterialListMenuContent , IMaterialListMenuContent , MaterialListMenuContent_CategoryType }
  ;
  # [cfg (feature = "app-materiallistmenucontent")] pub use materiallistmenucontent :: { IMaterialListMenuContentMethods }
  ;
@@ -5084,14 +5084,14 @@
  # [cfg (feature = "app-materiallistmenunoneitem")] pub use materiallistmenunoneitem :: { IMaterialListMenuNoneItemMethods }
  ;
  # [cfg (any (feature = "app-materiallistmenusequence-types"))] pub mod materiallistmenusequence ;
- # [cfg (feature = "app-materiallistmenusequence-types")] pub use materiallistmenusequence :: { MaterialListMenuSequence , IMaterialListMenuSequence , MaterialListMenuSequence_Label2 }
+ # [cfg (feature = "app-materiallistmenusequence-types")] pub use materiallistmenusequence :: { MaterialListMenuSequence_Label2 , MaterialListMenuSequence , IMaterialListMenuSequence }
  ;
  # [cfg (feature = "app-materiallistmenusequence")] pub use materiallistmenusequence :: { IMaterialListMenuSequenceMethods }
  ;
  # [cfg (any (feature = "app-materialmenuitem-types"))] pub mod materialmenuitem ;
- # [cfg (feature = "app-materialmenuitem-types")] pub use materialmenuitem :: { MaterialMenuItem_SelectEventHandler , IMaterialMenuItem_SelectEventHandler , MaterialMenuItem_DecideEventHandler , IMaterialMenuItem_DecideEventHandler , MaterialMenuItem , IMaterialMenuItem }
+ # [cfg (feature = "app-materialmenuitem-types")] pub use materialmenuitem :: { MaterialMenuItem_DecideEventHandler , IMaterialMenuItem_DecideEventHandler , MaterialMenuItem_SelectEventHandler , IMaterialMenuItem_SelectEventHandler , MaterialMenuItem , IMaterialMenuItem }
  ;
- # [cfg (feature = "app-materialmenuitem")] pub use materialmenuitem :: { IMaterialMenuItem_SelectEventHandlerMethods , IMaterialMenuItem_DecideEventHandlerMethods , IMaterialMenuItemMethods }
+ # [cfg (feature = "app-materialmenuitem")] pub use materialmenuitem :: { IMaterialMenuItem_DecideEventHandlerMethods , IMaterialMenuItem_SelectEventHandlerMethods , IMaterialMenuItemMethods }
  ;
  # [cfg (any (feature = "app-materialmenuitemcontent-types"))] pub mod materialmenuitemcontent ;
  # [cfg (feature = "app-materialmenuitemcontent-types")] pub use materialmenuitemcontent :: { MaterialMenuItemContent , IMaterialMenuItemContent }
@@ -5139,7 +5139,7 @@
  # [cfg (feature = "app-menubondsetter")] pub use menubondsetter :: { IMenuBondSetterMethods }
  ;
  # [cfg (any (feature = "app-menuitem-types"))] pub mod menuitem ;
- # [cfg (feature = "app-menuitem-types")] pub use menuitem :: { MenuItem_Align , MenuItem , IMenuItem , MenuItem_Result , MenuItem_State , MenuItem_Kind }
+ # [cfg (feature = "app-menuitem-types")] pub use menuitem :: { MenuItem_State , MenuItem_Align , MenuItem , IMenuItem , MenuItem_Result , MenuItem_Kind }
  ;
  # [cfg (feature = "app-menuitem")] pub use menuitem :: { IMenuItemMethods }
  ;
@@ -5159,7 +5159,7 @@
  # [cfg (feature = "app-meshgroundpaintgetter")] pub use meshgroundpaintgetter :: { IMeshGroundPaintGetterMethods }
  ;
  # [cfg (any (feature = "app-mess-types"))] pub mod mess ;
- # [cfg (feature = "app-mess-types")] pub use mess :: { Mess_LanguageScope , Mess_ReloadFileInfo , IMess_ReloadFileInfo , Mess_TagGroup , Mess_TagID_Text , Mess_TagID_Name , Mess_ArgScope , Mess_IconCategory , Mess_TagID_Arg , Mess , IMess , Mess_TagID_Localize , Mess_TagID_Picture }
+ # [cfg (feature = "app-mess-types")] pub use mess :: { Mess_TagID_Localize , Mess_TagID_Arg , Mess_TagGroup , Mess_ArgScope , Mess_LanguageScope , Mess_TagID_Text , Mess_ReloadFileInfo , IMess_ReloadFileInfo , Mess_IconCategory , Mess_TagID_Picture , Mess , IMess , Mess_TagID_Name }
  ;
  # [cfg (feature = "app-mess")] pub use mess :: { IMess_ReloadFileInfoMethods , IMessMethods }
  ;
@@ -5184,9 +5184,9 @@
  # [cfg (feature = "app-mincommand")] pub use mincommand :: { IMinCommandMethods }
  ;
  # [cfg (any (feature = "app-minigameassistdialog-types"))] pub mod minigameassistdialog ;
- # [cfg (feature = "app-minigameassistdialog-types")] pub use minigameassistdialog :: { MinigameAssistDialog_MinigameType , MinigameAssistDialog_DecideEventHandler , IMinigameAssistDialog_DecideEventHandler , MinigameAssistDialog , IMinigameAssistDialog , MinigameAssistDialog_AssistItem , IMinigameAssistDialog_AssistItem , MinigameAssistDialog_AssistResult }
+ # [cfg (feature = "app-minigameassistdialog-types")] pub use minigameassistdialog :: { MinigameAssistDialog , IMinigameAssistDialog , MinigameAssistDialog_DecideEventHandler , IMinigameAssistDialog_DecideEventHandler , MinigameAssistDialog_AssistResult , MinigameAssistDialog_MinigameType , MinigameAssistDialog_AssistItem , IMinigameAssistDialog_AssistItem }
  ;
- # [cfg (feature = "app-minigameassistdialog")] pub use minigameassistdialog :: { IMinigameAssistDialog_DecideEventHandlerMethods , IMinigameAssistDialogMethods , IMinigameAssistDialog_AssistItemMethods }
+ # [cfg (feature = "app-minigameassistdialog")] pub use minigameassistdialog :: { IMinigameAssistDialogMethods , IMinigameAssistDialog_DecideEventHandlerMethods , IMinigameAssistDialog_AssistItemMethods }
  ;
  # [cfg (any (feature = "app-minimapbasicmenu-types"))] pub mod minimapbasicmenu ;
  # [cfg (feature = "app-minimapbasicmenu-types")] pub use minimapbasicmenu :: { MiniMapBasicMenu , IMiniMapBasicMenu }
@@ -5194,9 +5194,9 @@
  # [cfg (feature = "app-minimapbasicmenu")] pub use minimapbasicmenu :: { IMiniMapBasicMenuMethods }
  ;
  # [cfg (any (feature = "app-minimapcontroller-types"))] pub mod minimapcontroller ;
- # [cfg (feature = "app-minimapcontroller-types")] pub use minimapcontroller :: { MiniMapController_TImage_1 , IMiniMapController_TImage_1 , MiniMapController_IconIndex , MiniMapController_Mode , MiniMapController , IMiniMapController , MiniMapController_FadeMode , MiniMapController_DisplayPosSize , MiniMapController_Alignment }
+ # [cfg (feature = "app-minimapcontroller-types")] pub use minimapcontroller :: { MiniMapController , IMiniMapController , MiniMapController_DisplayPosSize , MiniMapController_Mode , MiniMapController_IconIndex , MiniMapController_TImage_1 , IMiniMapController_TImage_1 , MiniMapController_Alignment , MiniMapController_FadeMode }
  ;
- # [cfg (feature = "app-minimapcontroller")] pub use minimapcontroller :: { IMiniMapController_TImage_1Methods , IMiniMapControllerMethods }
+ # [cfg (feature = "app-minimapcontroller")] pub use minimapcontroller :: { IMiniMapControllerMethods , IMiniMapController_TImage_1Methods }
  ;
  # [cfg (any (feature = "app-minimapcursor-types"))] pub mod minimapcursor ;
  # [cfg (feature = "app-minimapcursor-types")] pub use minimapcursor :: { MiniMapCursor , IMiniMapCursor }
@@ -5264,9 +5264,9 @@
  # [cfg (feature = "app-movieplayer")] pub use movieplayer :: { IMoviePlayerMethods }
  ;
  # [cfg (any (feature = "app-movieplayerbase-types"))] pub mod movieplayerbase ;
- # [cfg (feature = "app-movieplayerbase-types")] pub use movieplayerbase :: { MoviePlayerBase_KeyHelp , IMoviePlayerBase_KeyHelp , MoviePlayerBase , IMoviePlayerBase , MoviePlayerBase_TitleLogo , IMoviePlayerBase_TitleLogo , MoviePlayerBase_Caption , IMoviePlayerBase_Caption }
+ # [cfg (feature = "app-movieplayerbase-types")] pub use movieplayerbase :: { MoviePlayerBase_KeyHelp , IMoviePlayerBase_KeyHelp , MoviePlayerBase_TitleLogo , IMoviePlayerBase_TitleLogo , MoviePlayerBase_Caption , IMoviePlayerBase_Caption , MoviePlayerBase , IMoviePlayerBase }
  ;
- # [cfg (feature = "app-movieplayerbase")] pub use movieplayerbase :: { IMoviePlayerBase_KeyHelpMethods , IMoviePlayerBaseMethods , IMoviePlayerBase_TitleLogoMethods , IMoviePlayerBase_CaptionMethods }
+ # [cfg (feature = "app-movieplayerbase")] pub use movieplayerbase :: { IMoviePlayerBase_KeyHelpMethods , IMoviePlayerBase_TitleLogoMethods , IMoviePlayerBase_CaptionMethods , IMoviePlayerBaseMethods }
  ;
  # [cfg (any (feature = "app-moviesequence-types"))] pub mod moviesequence ;
  # [cfg (feature = "app-moviesequence-types")] pub use moviesequence :: { MovieSequence_Label , MovieSequence , IMovieSequence }
@@ -5295,9 +5295,9 @@
  # [cfg (feature = "app-muscleassistdata")] pub use muscleassistdata :: { IMuscleAssistDataMethods }
  ;
  # [cfg (any (feature = "app-muscledifficultmenu-types"))] pub mod muscledifficultmenu ;
- # [cfg (feature = "app-muscledifficultmenu-types")] pub use muscledifficultmenu :: { MuscleDifficultMenu , IMuscleDifficultMenu , MuscleDifficultMenu_DecideEventHandler , IMuscleDifficultMenu_DecideEventHandler , MuscleDifficultMenu_MuscleDifficultMenuItem , IMuscleDifficultMenu_MuscleDifficultMenuItem }
+ # [cfg (feature = "app-muscledifficultmenu-types")] pub use muscledifficultmenu :: { MuscleDifficultMenu_DecideEventHandler , IMuscleDifficultMenu_DecideEventHandler , MuscleDifficultMenu , IMuscleDifficultMenu , MuscleDifficultMenu_MuscleDifficultMenuItem , IMuscleDifficultMenu_MuscleDifficultMenuItem }
  ;
- # [cfg (feature = "app-muscledifficultmenu")] pub use muscledifficultmenu :: { IMuscleDifficultMenuMethods , IMuscleDifficultMenu_DecideEventHandlerMethods , IMuscleDifficultMenu_MuscleDifficultMenuItemMethods }
+ # [cfg (feature = "app-muscledifficultmenu")] pub use muscledifficultmenu :: { IMuscleDifficultMenu_DecideEventHandlerMethods , IMuscleDifficultMenuMethods , IMuscleDifficultMenu_MuscleDifficultMenuItemMethods }
  ;
  # [cfg (any (feature = "app-muscledifficultmenucontent-types"))] pub mod muscledifficultmenucontent ;
  # [cfg (feature = "app-muscledifficultmenucontent-types")] pub use muscledifficultmenucontent :: { MuscleDifficultMenuContent , IMuscleDifficultMenuContent }
@@ -5325,7 +5325,7 @@
  # [cfg (feature = "app-muscleexercisescoredata")] pub use muscleexercisescoredata :: { IMuscleExerciseScoreDataMethods }
  ;
  # [cfg (any (feature = "app-muscleexercisesequence-types"))] pub mod muscleexercisesequence ;
- # [cfg (feature = "app-muscleexercisesequence-types")] pub use muscleexercisesequence :: { MuscleExerciseSequence , IMuscleExerciseSequence , MuscleExerciseSequence_Label }
+ # [cfg (feature = "app-muscleexercisesequence-types")] pub use muscleexercisesequence :: { MuscleExerciseSequence_Label , MuscleExerciseSequence , IMuscleExerciseSequence }
  ;
  # [cfg (feature = "app-muscleexercisesequence")] pub use muscleexercisesequence :: { IMuscleExerciseSequenceMethods }
  ;
@@ -5365,9 +5365,9 @@
  # [cfg (feature = "app-musclesquatscorepatterndata")] pub use musclesquatscorepatterndata :: { IMuscleSquatScorePatternDataMethods }
  ;
  # [cfg (any (feature = "app-musclestartmenu-types"))] pub mod musclestartmenu ;
- # [cfg (feature = "app-musclestartmenu-types")] pub use musclestartmenu :: { MuscleStartMenu_MuscleStartMenuItem , IMuscleStartMenu_MuscleStartMenuItem , MuscleStartMenu_DecideEventHandler , IMuscleStartMenu_DecideEventHandler , MuscleStartMenu , IMuscleStartMenu }
+ # [cfg (feature = "app-musclestartmenu-types")] pub use musclestartmenu :: { MuscleStartMenu_DecideEventHandler , IMuscleStartMenu_DecideEventHandler , MuscleStartMenu_MuscleStartMenuItem , IMuscleStartMenu_MuscleStartMenuItem , MuscleStartMenu , IMuscleStartMenu }
  ;
- # [cfg (feature = "app-musclestartmenu")] pub use musclestartmenu :: { IMuscleStartMenu_MuscleStartMenuItemMethods , IMuscleStartMenu_DecideEventHandlerMethods , IMuscleStartMenuMethods }
+ # [cfg (feature = "app-musclestartmenu")] pub use musclestartmenu :: { IMuscleStartMenu_DecideEventHandlerMethods , IMuscleStartMenu_MuscleStartMenuItemMethods , IMuscleStartMenuMethods }
  ;
  # [cfg (any (feature = "app-musclestartmenucontent-types"))] pub mod musclestartmenucontent ;
  # [cfg (feature = "app-musclestartmenucontent-types")] pub use musclestartmenucontent :: { MuscleStartMenuContent , IMuscleStartMenuContent }
@@ -5375,7 +5375,7 @@
  # [cfg (feature = "app-musclestartmenucontent")] pub use musclestartmenucontent :: { IMuscleStartMenuContentMethods }
  ;
  # [cfg (any (feature = "app-musclestartsequence-types"))] pub mod musclestartsequence ;
- # [cfg (feature = "app-musclestartsequence-types")] pub use musclestartsequence :: { MuscleStartSequence_Label , MuscleStartSequence , IMuscleStartSequence }
+ # [cfg (feature = "app-musclestartsequence-types")] pub use musclestartsequence :: { MuscleStartSequence , IMuscleStartSequence , MuscleStartSequence_Label }
  ;
  # [cfg (feature = "app-musclestartsequence")] pub use musclestartsequence :: { IMuscleStartSequenceMethods }
  ;
@@ -5385,7 +5385,7 @@
  # [cfg (feature = "app-musicdata")] pub use musicdata :: { IMusicDataMethods }
  ;
  # [cfg (any (feature = "app-myroomcameramarker-types"))] pub mod myroomcameramarker ;
- # [cfg (feature = "app-myroomcameramarker-types")] pub use myroomcameramarker :: { MyRoomCameraMarker_Type , MyRoomCameraMarker , IMyRoomCameraMarker }
+ # [cfg (feature = "app-myroomcameramarker-types")] pub use myroomcameramarker :: { MyRoomCameraMarker , IMyRoomCameraMarker , MyRoomCameraMarker_Type }
  ;
  # [cfg (feature = "app-myroomcameramarker")] pub use myroomcameramarker :: { IMyRoomCameraMarkerMethods }
  ;
@@ -5410,14 +5410,14 @@
  # [cfg (feature = "app-myroomcaptiontrack")] pub use myroomcaptiontrack :: { IMyRoomCaptionTrackMethods }
  ;
  # [cfg (any (feature = "app-myroomchestsequence-types"))] pub mod myroomchestsequence ;
- # [cfg (feature = "app-myroomchestsequence-types")] pub use myroomchestsequence :: { MyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes , IMyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes , MyRoomChestSequence , IMyRoomChestSequence , MyRoomChestSequence_Label , MyRoomChestSequence_ChestConfirmDialog , IMyRoomChestSequence_ChestConfirmDialog , MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes , IMyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes , MyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNo , IMyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNo }
+ # [cfg (feature = "app-myroomchestsequence-types")] pub use myroomchestsequence :: { MyRoomChestSequence , IMyRoomChestSequence , MyRoomChestSequence_Label , MyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes , IMyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes , MyRoomChestSequence_ChestConfirmDialog , IMyRoomChestSequence_ChestConfirmDialog , MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes , IMyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes , MyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNo , IMyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNo }
  ;
- # [cfg (feature = "app-myroomchestsequence")] pub use myroomchestsequence :: { IMyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYesMethods , IMyRoomChestSequenceMethods , IMyRoomChestSequence_ChestConfirmDialogMethods , IMyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYesMethods , IMyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNoMethods }
+ # [cfg (feature = "app-myroomchestsequence")] pub use myroomchestsequence :: { IMyRoomChestSequenceMethods , IMyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYesMethods , IMyRoomChestSequence_ChestConfirmDialogMethods , IMyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYesMethods , IMyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNoMethods }
  ;
  # [cfg (any (feature = "app-myroomdifficultysequence-types"))] pub mod myroomdifficultysequence ;
- # [cfg (feature = "app-myroomdifficultysequence-types")] pub use myroomdifficultysequence :: { MyRoomDifficultySequence , IMyRoomDifficultySequence , MyRoomDifficultySequence_NoMenuItem , IMyRoomDifficultySequence_NoMenuItem , MyRoomDifficultySequence_YesMenuItem , IMyRoomDifficultySequence_YesMenuItem , MyRoomDifficultySequence_YesMenuItem_YesEventHandler , IMyRoomDifficultySequence_YesMenuItem_YesEventHandler }
+ # [cfg (feature = "app-myroomdifficultysequence-types")] pub use myroomdifficultysequence :: { MyRoomDifficultySequence , IMyRoomDifficultySequence , MyRoomDifficultySequence_YesMenuItem , IMyRoomDifficultySequence_YesMenuItem , MyRoomDifficultySequence_NoMenuItem , IMyRoomDifficultySequence_NoMenuItem , MyRoomDifficultySequence_YesMenuItem_YesEventHandler , IMyRoomDifficultySequence_YesMenuItem_YesEventHandler }
  ;
- # [cfg (feature = "app-myroomdifficultysequence")] pub use myroomdifficultysequence :: { IMyRoomDifficultySequenceMethods , IMyRoomDifficultySequence_NoMenuItemMethods , IMyRoomDifficultySequence_YesMenuItemMethods , IMyRoomDifficultySequence_YesMenuItem_YesEventHandlerMethods }
+ # [cfg (feature = "app-myroomdifficultysequence")] pub use myroomdifficultysequence :: { IMyRoomDifficultySequenceMethods , IMyRoomDifficultySequence_YesMenuItemMethods , IMyRoomDifficultySequence_NoMenuItemMethods , IMyRoomDifficultySequence_YesMenuItem_YesEventHandlerMethods }
  ;
  # [cfg (any (feature = "app-myroomeffectmarker-types"))] pub mod myroomeffectmarker ;
  # [cfg (feature = "app-myroomeffectmarker-types")] pub use myroomeffectmarker :: { MyRoomEffectMarker , IMyRoomEffectMarker }
@@ -5430,7 +5430,7 @@
  # [cfg (feature = "app-myroomeventbehaviour")] pub use myroomeventbehaviour :: { IMyRoomEventBehaviourMethods }
  ;
  # [cfg (any (feature = "app-myroomeventclip-types"))] pub mod myroomeventclip ;
- # [cfg (feature = "app-myroomeventclip-types")] pub use myroomeventclip :: { MyRoomEventClip_EventClipType , MyRoomEventClip , IMyRoomEventClip , MyRoomEventClip_EventClipLayer }
+ # [cfg (feature = "app-myroomeventclip-types")] pub use myroomeventclip :: { MyRoomEventClip , IMyRoomEventClip , MyRoomEventClip_EventClipLayer , MyRoomEventClip_EventClipType }
  ;
  # [cfg (feature = "app-myroomeventclip")] pub use myroomeventclip :: { IMyRoomEventClipMethods }
  ;
@@ -5485,7 +5485,7 @@
  # [cfg (feature = "app-myroommoviemenucontent")] pub use myroommoviemenucontent :: { IMyRoomMovieMenuContentMethods }
  ;
  # [cfg (any (feature = "app-myroommoviemenuitem-types"))] pub mod myroommoviemenuitem ;
- # [cfg (feature = "app-myroommoviemenuitem-types")] pub use myroommoviemenuitem :: { MyRoomMovieMenuItem_MyRoomMovieCallSequence_Label , MyRoomMovieMenuItem , IMyRoomMovieMenuItem , MyRoomMovieMenuItem_MyRoomMovieCallSequence , IMyRoomMovieMenuItem_MyRoomMovieCallSequence }
+ # [cfg (feature = "app-myroommoviemenuitem-types")] pub use myroommoviemenuitem :: { MyRoomMovieMenuItem , IMyRoomMovieMenuItem , MyRoomMovieMenuItem_MyRoomMovieCallSequence_Label , MyRoomMovieMenuItem_MyRoomMovieCallSequence , IMyRoomMovieMenuItem_MyRoomMovieCallSequence }
  ;
  # [cfg (feature = "app-myroommoviemenuitem")] pub use myroommoviemenuitem :: { IMyRoomMovieMenuItemMethods , IMyRoomMovieMenuItem_MyRoomMovieCallSequenceMethods }
  ;
@@ -5495,7 +5495,7 @@
  # [cfg (feature = "app-myroommoviemenuitemcontent")] pub use myroommoviemenuitemcontent :: { IMyRoomMovieMenuItemContentMethods }
  ;
  # [cfg (any (feature = "app-myroommoviesequence-types"))] pub mod myroommoviesequence ;
- # [cfg (feature = "app-myroommoviesequence-types")] pub use myroommoviesequence :: { MyRoomMovieSequence , IMyRoomMovieSequence , MyRoomMovieSequence_Label }
+ # [cfg (feature = "app-myroommoviesequence-types")] pub use myroommoviesequence :: { MyRoomMovieSequence_Label , MyRoomMovieSequence , IMyRoomMovieSequence }
  ;
  # [cfg (feature = "app-myroommoviesequence")] pub use myroommoviesequence :: { IMyRoomMovieSequenceMethods }
  ;
@@ -5515,14 +5515,14 @@
  # [cfg (feature = "app-myroomphasetrack")] pub use myroomphasetrack :: { IMyRoomPhaseTrackMethods }
  ;
  # [cfg (any (feature = "app-myroomrecallmenu-types"))] pub mod myroomrecallmenu ;
- # [cfg (feature = "app-myroomrecallmenu-types")] pub use myroomrecallmenu :: { MyRoomRecallMenu_MovieMenuItem , IMyRoomRecallMenu_MovieMenuItem , MyRoomRecallMenu_MenuResult , MyRoomRecallMenu_RelianceMenuItem , IMyRoomRecallMenu_RelianceMenuItem , MyRoomRecallMenu_GodRelianceMenuItem , IMyRoomRecallMenu_GodRelianceMenuItem , MyRoomRecallMenu , IMyRoomRecallMenu , MyRoomRecallMenu_DecideEventHandler , IMyRoomRecallMenu_DecideEventHandler , MyRoomRecallMenu_MusicMenuItem , IMyRoomRecallMenu_MusicMenuItem , MyRoomRecallMenu_WakeupMenuItem , IMyRoomRecallMenu_WakeupMenuItem }
+ # [cfg (feature = "app-myroomrecallmenu-types")] pub use myroomrecallmenu :: { MyRoomRecallMenu_MenuResult , MyRoomRecallMenu_DecideEventHandler , IMyRoomRecallMenu_DecideEventHandler , MyRoomRecallMenu_MovieMenuItem , IMyRoomRecallMenu_MovieMenuItem , MyRoomRecallMenu , IMyRoomRecallMenu , MyRoomRecallMenu_WakeupMenuItem , IMyRoomRecallMenu_WakeupMenuItem , MyRoomRecallMenu_MusicMenuItem , IMyRoomRecallMenu_MusicMenuItem , MyRoomRecallMenu_RelianceMenuItem , IMyRoomRecallMenu_RelianceMenuItem , MyRoomRecallMenu_GodRelianceMenuItem , IMyRoomRecallMenu_GodRelianceMenuItem }
  ;
- # [cfg (feature = "app-myroomrecallmenu")] pub use myroomrecallmenu :: { IMyRoomRecallMenu_MovieMenuItemMethods , IMyRoomRecallMenu_RelianceMenuItemMethods , IMyRoomRecallMenu_GodRelianceMenuItemMethods , IMyRoomRecallMenuMethods , IMyRoomRecallMenu_DecideEventHandlerMethods , IMyRoomRecallMenu_MusicMenuItemMethods , IMyRoomRecallMenu_WakeupMenuItemMethods }
+ # [cfg (feature = "app-myroomrecallmenu")] pub use myroomrecallmenu :: { IMyRoomRecallMenu_DecideEventHandlerMethods , IMyRoomRecallMenu_MovieMenuItemMethods , IMyRoomRecallMenuMethods , IMyRoomRecallMenu_WakeupMenuItemMethods , IMyRoomRecallMenu_MusicMenuItemMethods , IMyRoomRecallMenu_RelianceMenuItemMethods , IMyRoomRecallMenu_GodRelianceMenuItemMethods }
  ;
  # [cfg (any (feature = "app-myroomrelianceselect-types"))] pub mod myroomrelianceselect ;
- # [cfg (feature = "app-myroomrelianceselect-types")] pub use myroomrelianceselect :: { MyRoomRelianceSelect , IMyRoomRelianceSelect , MyRoomRelianceSelect_MyRoomRelianceSelectItem , IMyRoomRelianceSelect_MyRoomRelianceSelectItem }
+ # [cfg (feature = "app-myroomrelianceselect-types")] pub use myroomrelianceselect :: { MyRoomRelianceSelect_MyRoomRelianceSelectItem , IMyRoomRelianceSelect_MyRoomRelianceSelectItem , MyRoomRelianceSelect , IMyRoomRelianceSelect }
  ;
- # [cfg (feature = "app-myroomrelianceselect")] pub use myroomrelianceselect :: { IMyRoomRelianceSelectMethods , IMyRoomRelianceSelect_MyRoomRelianceSelectItemMethods }
+ # [cfg (feature = "app-myroomrelianceselect")] pub use myroomrelianceselect :: { IMyRoomRelianceSelect_MyRoomRelianceSelectItemMethods , IMyRoomRelianceSelectMethods }
  ;
  # [cfg (any (feature = "app-myroomrelianceselectcontent-types"))] pub mod myroomrelianceselectcontent ;
  # [cfg (feature = "app-myroomrelianceselectcontent-types")] pub use myroomrelianceselectcontent :: { MyRoomRelianceSelectContent , IMyRoomRelianceSelectContent }
@@ -5535,19 +5535,19 @@
  # [cfg (feature = "app-myroomrelianceselectitemcontent")] pub use myroomrelianceselectitemcontent :: { IMyRoomRelianceSelectItemContentMethods }
  ;
  # [cfg (any (feature = "app-myroomrelianceselectroot-types"))] pub mod myroomrelianceselectroot ;
- # [cfg (feature = "app-myroomrelianceselectroot-types")] pub use myroomrelianceselectroot :: { MyRoomRelianceSelectRoot , IMyRoomRelianceSelectRoot , MyRoomRelianceSelectRoot_CursorTop , IMyRoomRelianceSelectRoot_CursorTop }
+ # [cfg (feature = "app-myroomrelianceselectroot-types")] pub use myroomrelianceselectroot :: { MyRoomRelianceSelectRoot_CursorTop , IMyRoomRelianceSelectRoot_CursorTop , MyRoomRelianceSelectRoot , IMyRoomRelianceSelectRoot }
  ;
- # [cfg (feature = "app-myroomrelianceselectroot")] pub use myroomrelianceselectroot :: { IMyRoomRelianceSelectRootMethods , IMyRoomRelianceSelectRoot_CursorTopMethods }
+ # [cfg (feature = "app-myroomrelianceselectroot")] pub use myroomrelianceselectroot :: { IMyRoomRelianceSelectRoot_CursorTopMethods , IMyRoomRelianceSelectRootMethods }
  ;
  # [cfg (any (feature = "app-myroomreliancesequence-types"))] pub mod myroomreliancesequence ;
- # [cfg (feature = "app-myroomreliancesequence-types")] pub use myroomreliancesequence :: { MyRoomRelianceSequence , IMyRoomRelianceSequence , MyRoomRelianceSequence_Label }
+ # [cfg (feature = "app-myroomreliancesequence-types")] pub use myroomreliancesequence :: { MyRoomRelianceSequence_Label , MyRoomRelianceSequence , IMyRoomRelianceSequence }
  ;
  # [cfg (feature = "app-myroomreliancesequence")] pub use myroomreliancesequence :: { IMyRoomRelianceSequenceMethods }
  ;
  # [cfg (any (feature = "app-myroomreliancesubselect-types"))] pub mod myroomreliancesubselect ;
- # [cfg (feature = "app-myroomreliancesubselect-types")] pub use myroomreliancesubselect :: { MyRoomRelianceSubSelect , IMyRoomRelianceSubSelect , MyRoomRelianceSubSelect_MyRoomRelianceCallSequence , IMyRoomRelianceSubSelect_MyRoomRelianceCallSequence , MyRoomRelianceSubSelect_MyRoomRelianceCallSequence_Label , MyRoomRelianceSubSelect_AmiiboBenefitSequence , IMyRoomRelianceSubSelect_AmiiboBenefitSequence , MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem , IMyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem }
+ # [cfg (feature = "app-myroomreliancesubselect-types")] pub use myroomreliancesubselect :: { MyRoomRelianceSubSelect_MyRoomRelianceCallSequence , IMyRoomRelianceSubSelect_MyRoomRelianceCallSequence , MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem , IMyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem , MyRoomRelianceSubSelect_MyRoomRelianceCallSequence_Label , MyRoomRelianceSubSelect_AmiiboBenefitSequence , IMyRoomRelianceSubSelect_AmiiboBenefitSequence , MyRoomRelianceSubSelect , IMyRoomRelianceSubSelect }
  ;
- # [cfg (feature = "app-myroomreliancesubselect")] pub use myroomreliancesubselect :: { IMyRoomRelianceSubSelectMethods , IMyRoomRelianceSubSelect_MyRoomRelianceCallSequenceMethods , IMyRoomRelianceSubSelect_AmiiboBenefitSequenceMethods , IMyRoomRelianceSubSelect_MyRoomRelianceSubSelectItemMethods }
+ # [cfg (feature = "app-myroomreliancesubselect")] pub use myroomreliancesubselect :: { IMyRoomRelianceSubSelect_MyRoomRelianceCallSequenceMethods , IMyRoomRelianceSubSelect_MyRoomRelianceSubSelectItemMethods , IMyRoomRelianceSubSelect_AmiiboBenefitSequenceMethods , IMyRoomRelianceSubSelectMethods }
  ;
  # [cfg (any (feature = "app-myroomreliancesubselectcontent-types"))] pub mod myroomreliancesubselectcontent ;
  # [cfg (feature = "app-myroomreliancesubselectcontent-types")] pub use myroomreliancesubselectcontent :: { MyRoomRelianceSubSelectContent , IMyRoomRelianceSubSelectContent }
@@ -5565,9 +5565,9 @@
  # [cfg (feature = "app-myroomsemarker")] pub use myroomsemarker :: { IMyRoomSEMarkerMethods }
  ;
  # [cfg (any (feature = "app-myroomsequence-types"))] pub mod myroomsequence ;
- # [cfg (feature = "app-myroomsequence-types")] pub use myroomsequence :: { MyRoomSequence_RelianceListMenu , IMyRoomSequence_RelianceListMenu , MyRoomSequence_Label , MyRoomSequence_RelianceUnitMenuItem , IMyRoomSequence_RelianceUnitMenuItem , MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo , IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo , MyRoomSequence , IMyRoomSequence , MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes , IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes , MyRoomSequence_SleepConfirmDialog , IMyRoomSequence_SleepConfirmDialog }
+ # [cfg (feature = "app-myroomsequence-types")] pub use myroomsequence :: { MyRoomSequence_SleepConfirmDialog , IMyRoomSequence_SleepConfirmDialog , MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes , IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes , MyRoomSequence_RelianceListMenu , IMyRoomSequence_RelianceListMenu , MyRoomSequence_RelianceUnitMenuItem , IMyRoomSequence_RelianceUnitMenuItem , MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo , IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo , MyRoomSequence_Label , MyRoomSequence , IMyRoomSequence }
  ;
- # [cfg (feature = "app-myroomsequence")] pub use myroomsequence :: { IMyRoomSequence_RelianceListMenuMethods , IMyRoomSequence_RelianceUnitMenuItemMethods , IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNoMethods , IMyRoomSequenceMethods , IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYesMethods , IMyRoomSequence_SleepConfirmDialogMethods }
+ # [cfg (feature = "app-myroomsequence")] pub use myroomsequence :: { IMyRoomSequence_SleepConfirmDialogMethods , IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYesMethods , IMyRoomSequence_RelianceListMenuMethods , IMyRoomSequence_RelianceUnitMenuItemMethods , IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNoMethods , IMyRoomSequenceMethods }
  ;
  # [cfg (any (feature = "app-myroomsoundmenu-types"))] pub mod myroomsoundmenu ;
  # [cfg (feature = "app-myroomsoundmenu-types")] pub use myroomsoundmenu :: { MyRoomSoundMenu , IMyRoomSoundMenu , MyRoomSoundMenu_MenuType }
@@ -5595,9 +5595,9 @@
  # [cfg (feature = "app-myroomsoundsequence")] pub use myroomsoundsequence :: { IMyRoomSoundSequenceMethods }
  ;
  # [cfg (any (feature = "app-myroomtopmenu-types"))] pub mod myroomtopmenu ;
- # [cfg (feature = "app-myroomtopmenu-types")] pub use myroomtopmenu :: { MyRoomTopMenu_SleepSelectMenuItem , IMyRoomTopMenu_SleepSelectMenuItem , MyRoomTopMenu_SetDifficultySelectMenuItem , IMyRoomTopMenu_SetDifficultySelectMenuItem , MyRoomTopMenu_DecideEventHandler , IMyRoomTopMenu_DecideEventHandler , MyRoomTopMenu_RecallSelectMenuItem , IMyRoomTopMenu_RecallSelectMenuItem , MyRoomTopMenu_MenuResult , MyRoomTopMenu , IMyRoomTopMenu }
+ # [cfg (feature = "app-myroomtopmenu-types")] pub use myroomtopmenu :: { MyRoomTopMenu_RecallSelectMenuItem , IMyRoomTopMenu_RecallSelectMenuItem , MyRoomTopMenu_MenuResult , MyRoomTopMenu_SetDifficultySelectMenuItem , IMyRoomTopMenu_SetDifficultySelectMenuItem , MyRoomTopMenu_SleepSelectMenuItem , IMyRoomTopMenu_SleepSelectMenuItem , MyRoomTopMenu_DecideEventHandler , IMyRoomTopMenu_DecideEventHandler , MyRoomTopMenu , IMyRoomTopMenu }
  ;
- # [cfg (feature = "app-myroomtopmenu")] pub use myroomtopmenu :: { IMyRoomTopMenu_SleepSelectMenuItemMethods , IMyRoomTopMenu_SetDifficultySelectMenuItemMethods , IMyRoomTopMenu_DecideEventHandlerMethods , IMyRoomTopMenu_RecallSelectMenuItemMethods , IMyRoomTopMenuMethods }
+ # [cfg (feature = "app-myroomtopmenu")] pub use myroomtopmenu :: { IMyRoomTopMenu_RecallSelectMenuItemMethods , IMyRoomTopMenu_SetDifficultySelectMenuItemMethods , IMyRoomTopMenu_SleepSelectMenuItemMethods , IMyRoomTopMenu_DecideEventHandlerMethods , IMyRoomTopMenuMethods }
  ;
  # [cfg (any (feature = "app-myroomvoicebehaviour-types"))] pub mod myroomvoicebehaviour ;
  # [cfg (feature = "app-myroomvoicebehaviour-types")] pub use myroomvoicebehaviour :: { MyRoomVoiceBehaviour , IMyRoomVoiceBehaviour }
@@ -5635,19 +5635,19 @@
  # [cfg (feature = "app-myroomwakeupselectmenuitemcontent")] pub use myroomwakeupselectmenuitemcontent :: { IMyRoomWakeupSelectMenuItemContentMethods }
  ;
  # [cfg (any (feature = "app-myroomwakeupselectroot-types"))] pub mod myroomwakeupselectroot ;
- # [cfg (feature = "app-myroomwakeupselectroot-types")] pub use myroomwakeupselectroot :: { MyRoomWakeupSelectRoot , IMyRoomWakeupSelectRoot , MyRoomWakeupSelectRoot_CursorTop , IMyRoomWakeupSelectRoot_CursorTop }
+ # [cfg (feature = "app-myroomwakeupselectroot-types")] pub use myroomwakeupselectroot :: { MyRoomWakeupSelectRoot_CursorTop , IMyRoomWakeupSelectRoot_CursorTop , MyRoomWakeupSelectRoot , IMyRoomWakeupSelectRoot }
  ;
- # [cfg (feature = "app-myroomwakeupselectroot")] pub use myroomwakeupselectroot :: { IMyRoomWakeupSelectRootMethods , IMyRoomWakeupSelectRoot_CursorTopMethods }
+ # [cfg (feature = "app-myroomwakeupselectroot")] pub use myroomwakeupselectroot :: { IMyRoomWakeupSelectRoot_CursorTopMethods , IMyRoomWakeupSelectRootMethods }
  ;
  # [cfg (any (feature = "app-myroomwakeupselectsequence-types"))] pub mod myroomwakeupselectsequence ;
- # [cfg (feature = "app-myroomwakeupselectsequence-types")] pub use myroomwakeupselectsequence :: { MyRoomWakeupSelectSequence_Label , MyRoomWakeupSelectSequence , IMyRoomWakeupSelectSequence }
+ # [cfg (feature = "app-myroomwakeupselectsequence-types")] pub use myroomwakeupselectsequence :: { MyRoomWakeupSelectSequence , IMyRoomWakeupSelectSequence , MyRoomWakeupSelectSequence_Label }
  ;
  # [cfg (feature = "app-myroomwakeupselectsequence")] pub use myroomwakeupselectsequence :: { IMyRoomWakeupSelectSequenceMethods }
  ;
  # [cfg (any (feature = "app-myroomwakeupsequence-types"))] pub mod myroomwakeupsequence ;
- # [cfg (feature = "app-myroomwakeupsequence-types")] pub use myroomwakeupsequence :: { MyRoomWakeupSequence_Label , MyRoomWakeupSequence , IMyRoomWakeupSequence , MyRoomWakeupSequence_RelianceWakeup , IMyRoomWakeupSequence_RelianceWakeup }
+ # [cfg (feature = "app-myroomwakeupsequence-types")] pub use myroomwakeupsequence :: { MyRoomWakeupSequence_Label , MyRoomWakeupSequence_RelianceWakeup , IMyRoomWakeupSequence_RelianceWakeup , MyRoomWakeupSequence , IMyRoomWakeupSequence }
  ;
- # [cfg (feature = "app-myroomwakeupsequence")] pub use myroomwakeupsequence :: { IMyRoomWakeupSequenceMethods , IMyRoomWakeupSequence_RelianceWakeupMethods }
+ # [cfg (feature = "app-myroomwakeupsequence")] pub use myroomwakeupsequence :: { IMyRoomWakeupSequence_RelianceWakeupMethods , IMyRoomWakeupSequenceMethods }
  ;
  # [cfg (any (feature = "app-namecheckdialog-types"))] pub mod namecheckdialog ;
  # [cfg (feature = "app-namecheckdialog-types")] pub use namecheckdialog :: { NameCheckDialog , INameCheckDialog }
@@ -5670,20 +5670,20 @@
  # [cfg (feature = "app-nationalsymbol")] pub use nationalsymbol :: { INationalSymbolMethods }
  ;
  # [cfg (any (feature = "app-netenablesequence-types"))] pub mod netenablesequence ;
- # [cfg (feature = "app-netenablesequence-types")] pub use netenablesequence :: { NetEnableSequence_Arg , NetEnableSequence_Label , NetEnableSequence , INetEnableSequence , NetEnableSequence_ConfirmDialog , INetEnableSequence_ConfirmDialog , NetEnableSequence_ResultFunction , INetEnableSequence_ResultFunction , NetEnableSequence_ConfirmDialog_NoMenuItem , INetEnableSequence_ConfirmDialog_NoMenuItem , NetEnableSequence_ConfirmDialog_YesMenuItem , INetEnableSequence_ConfirmDialog_YesMenuItem }
+ # [cfg (feature = "app-netenablesequence-types")] pub use netenablesequence :: { NetEnableSequence_Arg , NetEnableSequence , INetEnableSequence , NetEnableSequence_ConfirmDialog , INetEnableSequence_ConfirmDialog , NetEnableSequence_ResultFunction , INetEnableSequence_ResultFunction , NetEnableSequence_ConfirmDialog_NoMenuItem , INetEnableSequence_ConfirmDialog_NoMenuItem , NetEnableSequence_Label , NetEnableSequence_ConfirmDialog_YesMenuItem , INetEnableSequence_ConfirmDialog_YesMenuItem }
  ;
  # [cfg (feature = "app-netenablesequence")] pub use netenablesequence :: { INetEnableSequenceMethods , INetEnableSequence_ConfirmDialogMethods , INetEnableSequence_ResultFunctionMethods , INetEnableSequence_ConfirmDialog_NoMenuItemMethods , INetEnableSequence_ConfirmDialog_YesMenuItemMethods }
  ;
  # [cfg (any (feature = "app-neterror-types"))] pub mod neterror ;
- # [cfg (feature = "app-neterror-types")] pub use neterror :: { NetError , INetError , NetError_App , NetError_Kind }
+ # [cfg (feature = "app-neterror-types")] pub use neterror :: { NetError_Kind , NetError , INetError , NetError_App }
  ;
  # [cfg (any (feature = "app-netrestorescope-types"))] pub mod netrestorescope ;
  # [cfg (feature = "app-netrestorescope-types")] pub use netrestorescope :: { NetRestoreScope }
  ;
  # [cfg (any (feature = "app-netwaitmessage-types"))] pub mod netwaitmessage ;
- # [cfg (feature = "app-netwaitmessage-types")] pub use netwaitmessage :: { NetWaitMessage_ProcCloseWait , INetWaitMessage_ProcCloseWait , NetWaitMessage , INetWaitMessage , NetWaitMessage_ProcOpen , INetWaitMessage_ProcOpen }
+ # [cfg (feature = "app-netwaitmessage-types")] pub use netwaitmessage :: { NetWaitMessage , INetWaitMessage , NetWaitMessage_ProcOpen , INetWaitMessage_ProcOpen , NetWaitMessage_ProcCloseWait , INetWaitMessage_ProcCloseWait }
  ;
- # [cfg (feature = "app-netwaitmessage")] pub use netwaitmessage :: { INetWaitMessage_ProcCloseWaitMethods , INetWaitMessage_ProcOpenMethods }
+ # [cfg (feature = "app-netwaitmessage")] pub use netwaitmessage :: { INetWaitMessage_ProcOpenMethods , INetWaitMessage_ProcCloseWaitMethods }
  ;
  # [cfg (any (feature = "app-networkserviceselectmenucontent-types"))] pub mod networkserviceselectmenucontent ;
  # [cfg (feature = "app-networkserviceselectmenucontent-types")] pub use networkserviceselectmenucontent :: { NetworkServiceSelectMenuContent , INetworkServiceSelectMenuContent }
@@ -5708,12 +5708,12 @@
  # [cfg (feature = "app-nexintegersettings-types")] pub use nexintegersettings :: { NexIntegerSettings , INexIntegerSettings }
  ;
  # [cfg (any (feature = "app-nexkillbonus-types"))] pub mod nexkillbonus ;
- # [cfg (feature = "app-nexkillbonus-types")] pub use nexkillbonus :: { NexKillBonus_ServerSequence_Label , NexKillBonus_ServerSequence , INexKillBonus_ServerSequence , NexKillBonus_Kinds , NexKillBonus_ServerSequence_Mode , NexKillBonus , INexKillBonus }
+ # [cfg (feature = "app-nexkillbonus-types")] pub use nexkillbonus :: { NexKillBonus_Kinds , NexKillBonus_ServerSequence_Label , NexKillBonus_ServerSequence_Mode , NexKillBonus_ServerSequence , INexKillBonus_ServerSequence , NexKillBonus , INexKillBonus }
  ;
  # [cfg (feature = "app-nexkillbonus")] pub use nexkillbonus :: { INexKillBonus_ServerSequenceMethods , INexKillBonusMethods }
  ;
  # [cfg (any (feature = "app-nexloginsequence-types"))] pub mod nexloginsequence ;
- # [cfg (feature = "app-nexloginsequence-types")] pub use nexloginsequence :: { NexLoginSequence_Result , NexLoginSequence , INexLoginSequence , NexLoginSequence_Label }
+ # [cfg (feature = "app-nexloginsequence-types")] pub use nexloginsequence :: { NexLoginSequence_Label , NexLoginSequence_Result , NexLoginSequence , INexLoginSequence }
  ;
  # [cfg (feature = "app-nexloginsequence")] pub use nexloginsequence :: { INexLoginSequenceMethods }
  ;
@@ -5721,19 +5721,19 @@
  # [cfg (feature = "app-nexpersistenceslotid-types")] pub use nexpersistenceslotid :: { NexPersistenceSlotId , INexPersistenceSlotId }
  ;
  # [cfg (any (feature = "app-nexprofile-types"))] pub mod nexprofile ;
- # [cfg (feature = "app-nexprofile-types")] pub use nexprofile :: { NexProfile_ServerSequence , INexProfile_ServerSequence , NexProfile_ServerSequence_Label , NexProfile_ServerSequence_Mode , NexProfile_Results , NexProfile , INexProfile }
+ # [cfg (feature = "app-nexprofile-types")] pub use nexprofile :: { NexProfile_ServerSequence_Label , NexProfile_ServerSequence_Mode , NexProfile , INexProfile , NexProfile_ServerSequence , INexProfile_ServerSequence , NexProfile_Results }
  ;
- # [cfg (feature = "app-nexprofile")] pub use nexprofile :: { INexProfile_ServerSequenceMethods , INexProfileMethods }
+ # [cfg (feature = "app-nexprofile")] pub use nexprofile :: { INexProfileMethods , INexProfile_ServerSequenceMethods }
  ;
  # [cfg (any (feature = "app-nexranking-types"))] pub mod nexranking ;
- # [cfg (feature = "app-nexranking-types")] pub use nexranking :: { NexRanking_UploadSequence_Label , NexRanking_UploadSequence , INexRanking_UploadSequence , NexRanking_DownloadSequence , INexRanking_DownloadSequence , NexRanking , INexRanking , NexRanking_DownloadSequence_Label , NexRanking_Data }
+ # [cfg (feature = "app-nexranking-types")] pub use nexranking :: { NexRanking_UploadSequence_Label , NexRanking_DownloadSequence_Label , NexRanking_UploadSequence , INexRanking_UploadSequence , NexRanking_DownloadSequence , INexRanking_DownloadSequence , NexRanking_Data , NexRanking , INexRanking }
  ;
  # [cfg (feature = "app-nexranking")] pub use nexranking :: { INexRanking_UploadSequenceMethods , INexRanking_DownloadSequenceMethods , INexRankingMethods }
  ;
  # [cfg (any (feature = "app-nexrelay-types"))] pub mod nexrelay ;
- # [cfg (feature = "app-nexrelay-types")] pub use nexrelay :: { NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem , INexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem , NexRelay_UploadNewSequence , INexRelay_UploadNewSequence , NexRelay_ServerSequenceBase , INexRelay_ServerSequenceBase , NexRelay_SearchSequence_Label , NexRelay_DownloadMetaSequence , INexRelay_DownloadMetaSequence , NexRelay_Results , NexRelay_SetPlayingSequence_Label , NexRelay_DownloadSequence_Label , NexRelay_UploadTakeOverSequence_Label , NexRelay_DownloadMetaSequence_Label , NexRelay_UploadNewSequence_Label , NexRelay_UploadTakeOverSequence , INexRelay_UploadTakeOverSequence , NexRelay_DownloadSequence , INexRelay_DownloadSequence , NexRelay , INexRelay , NexRelay_ServerSequenceBase_ConfirmRetryDialog , INexRelay_ServerSequenceBase_ConfirmRetryDialog , NexRelay_SearchSequence , INexRelay_SearchSequence , NexRelay_SetPlayingSequence , INexRelay_SetPlayingSequence , NexRelay_SearchSequence_DataTypeInfo , INexRelay_SearchSequence_DataTypeInfo }
+ # [cfg (feature = "app-nexrelay-types")] pub use nexrelay :: { NexRelay_SearchSequence , INexRelay_SearchSequence , NexRelay_Results , NexRelay_UploadTakeOverSequence_Label , NexRelay_ServerSequenceBase_ConfirmRetryDialog , INexRelay_ServerSequenceBase_ConfirmRetryDialog , NexRelay_DownloadMetaSequence , INexRelay_DownloadMetaSequence , NexRelay_DownloadSequence_Label , NexRelay_DownloadSequence , INexRelay_DownloadSequence , NexRelay_SetPlayingSequence_Label , NexRelay_DownloadMetaSequence_Label , NexRelay_SearchSequence_DataTypeInfo , INexRelay_SearchSequence_DataTypeInfo , NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem , INexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem , NexRelay_UploadTakeOverSequence , INexRelay_UploadTakeOverSequence , NexRelay_ServerSequenceBase , INexRelay_ServerSequenceBase , NexRelay_UploadNewSequence , INexRelay_UploadNewSequence , NexRelay_SearchSequence_Label , NexRelay_SetPlayingSequence , INexRelay_SetPlayingSequence , NexRelay , INexRelay , NexRelay_UploadNewSequence_Label }
  ;
- # [cfg (feature = "app-nexrelay")] pub use nexrelay :: { INexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItemMethods , INexRelay_UploadNewSequenceMethods , INexRelay_ServerSequenceBaseMethods , INexRelay_DownloadMetaSequenceMethods , INexRelay_UploadTakeOverSequenceMethods , INexRelay_DownloadSequenceMethods , INexRelayMethods , INexRelay_SearchSequenceMethods , INexRelay_SetPlayingSequenceMethods , INexRelay_SearchSequence_DataTypeInfoMethods }
+ # [cfg (feature = "app-nexrelay")] pub use nexrelay :: { INexRelay_SearchSequenceMethods , INexRelay_DownloadMetaSequenceMethods , INexRelay_DownloadSequenceMethods , INexRelay_SearchSequence_DataTypeInfoMethods , INexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItemMethods , INexRelay_UploadTakeOverSequenceMethods , INexRelay_ServerSequenceBaseMethods , INexRelay_UploadNewSequenceMethods , INexRelay_SetPlayingSequenceMethods , INexRelayMethods }
  ;
  # [cfg (any (feature = "app-nextexititem-types"))] pub mod nextexititem ;
  # [cfg (feature = "app-nextexititem-types")] pub use nextexititem :: { NextExitItem , INextExitItem }
@@ -5741,14 +5741,14 @@
  # [cfg (feature = "app-nextexititem")] pub use nextexititem :: { INextExitItemMethods }
  ;
  # [cfg (any (feature = "app-nexversus-types"))] pub mod nexversus ;
- # [cfg (feature = "app-nexversus-types")] pub use nexversus :: { NexVersus_CheckAccessibleSlotSequence_Mode , NexVersus_ChangeVersusRankedMetaDataSequence_Label , NexVersus_SearchSequence , INexVersus_SearchSequence , NexVersus_ChangeMetaDataTypeSequence_TargetType , NexVersus_UploadSequence_Label , NexVersus_UploadSequence , INexVersus_UploadSequence , NexVersus_CasualMetaDataEndCallback , INexVersus_CasualMetaDataEndCallback , NexVersus_DownloadMetaSequence_1 , INexVersus_DownloadMetaSequence_1 , NexVersus_DownloadMetaDataSequence_1_Mode , NexVersus_AddRatingSequence_Label , NexVersus_SearchCasualSequence , INexVersus_SearchCasualSequence , NexVersus_ChangeUpdatedTimeSequence_Label , NexVersus_DownloadMetaDataSequence_1_EndCallback , INexVersus_DownloadMetaDataSequence_1_EndCallback , NexVersus_TargetSlotList_Results , NexVersus_RatingSpotId , INexVersus_RatingSpotId , NexVersus_SearchCasualSequence_Label , NexVersus_ChangeVersusDataSequence_1 , INexVersus_ChangeVersusDataSequence_1 , NexVersus_RankedMetaDataEndCallback , INexVersus_RankedMetaDataEndCallback , NexVersus_ChangeReplaySequence_Label , NexVersus_GetMetaDataFromPersistenceSlotSequence_1_Label , NexVersus_ChangeVersusDataSequence_1_Label , NexVersus_UploadCasualSequence , INexVersus_UploadCasualSequence , NexVersus_UploadReplaySequence_Label , NexVersus_TargetSlotList , INexVersus_TargetSlotList , NexVersus_GetMetaDataFromPersistenceSlotSequence_1 , INexVersus_GetMetaDataFromPersistenceSlotSequence_1 , NexVersus_DownloadMetaSequence_1_Label , NexVersus_DownloadReplaySequence_Label , NexVersus_ChangeMetaDataTypeSequence_Label , NexVersus_UploadReportMetaSequence , INexVersus_UploadReportMetaSequence , NexVersus_DownloadSequence_1 , INexVersus_DownloadSequence_1 , NexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItem , INexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItem , NexVersus_ResultInfo , INexVersus_ResultInfo , NexVersus_DownloadReplaySequence , INexVersus_DownloadReplaySequence , NexVersus_ChangeUpdatedTimeSequence , INexVersus_ChangeUpdatedTimeSequence , NexVersus_GetReplayMetaDataFromPersistenceSlotSequence , INexVersus_GetReplayMetaDataFromPersistenceSlotSequence , NexVersus_GetReplayMetaDataFromPersistenceSlotSequence_Label , NexVersus_DownloadMetaDataSequence_1 , INexVersus_DownloadMetaDataSequence_1 , NexVersus_NexSequenceBase , INexVersus_NexSequenceBase , NexVersus_GetMetaDataListFromPersistenceSlotSequence_1 , INexVersus_GetMetaDataListFromPersistenceSlotSequence_1 , NexVersus_RatingData , NexVersus_ChangeReplayMetaSequence_Label , NexVersus_GetMetaDataListFromPersistenceSlotSequence_1_Label , NexVersus_ChangeVersusRankedMetaDataSequence , INexVersus_ChangeVersusRankedMetaDataSequence , NexVersus_ChangeReplayMetaSequence , INexVersus_ChangeReplayMetaSequence , NexVersus_UploadCasualSequence_Label , NexVersus_CheckAccessibleSlotSequence_Label , NexVersus , INexVersus , NexVersus_UploadType , NexVersus_CheckAccessibleSlotSequence , INexVersus_CheckAccessibleSlotSequence , NexVersus_ChangeReplayMetaSequence_Mode , NexVersus_NexSequenceBase_ConfirmRetryDialog , INexVersus_NexSequenceBase_ConfirmRetryDialog , NexVersus_UploadReportMetaSequence_Label , NexVersus_EndCallback , INexVersus_EndCallback , NexVersus_ChangeReplaySequence , INexVersus_ChangeReplaySequence , NexVersus_ReportSequence , INexVersus_ReportSequence , NexVersus_DownloadMetaSequence_1_DataType , NexVersus_ReportSequence_Label , NexVersus_SearchSequence_Label , NexVersus_UploadReplaySequence , INexVersus_UploadReplaySequence , NexVersus_ReplaySlotMetaResultData , INexVersus_ReplaySlotMetaResultData , NexVersus_AddRatingSequence , INexVersus_AddRatingSequence , NexVersus_DownloadMetaDataSequence_1_Label , NexVersus_ChangeMetaDataTypeSequence , INexVersus_ChangeMetaDataTypeSequence , NexVersus_Results , NexVersus_GetRankedMetaDataFromPersistenceSlotSequence_Label , NexVersus_GetRankedMetaDataFromPersistenceSlotSequence , INexVersus_GetRankedMetaDataFromPersistenceSlotSequence , NexVersus_DownloadSequence_1_Label }
+ # [cfg (feature = "app-nexversus-types")] pub use nexversus :: { NexVersus_AddRatingSequence , INexVersus_AddRatingSequence , NexVersus_CheckAccessibleSlotSequence_Mode , NexVersus_UploadType , NexVersus_RatingData , NexVersus_TargetSlotList_Results , NexVersus_DownloadReplaySequence_Label , NexVersus_ChangeUpdatedTimeSequence_Label , NexVersus_UploadReplaySequence , INexVersus_UploadReplaySequence , NexVersus_DownloadMetaDataSequence_1_Label , NexVersus_ChangeMetaDataTypeSequence_Label , NexVersus_ChangeMetaDataTypeSequence , INexVersus_ChangeMetaDataTypeSequence , NexVersus_GetRankedMetaDataFromPersistenceSlotSequence , INexVersus_GetRankedMetaDataFromPersistenceSlotSequence , NexVersus_CasualMetaDataEndCallback , INexVersus_CasualMetaDataEndCallback , NexVersus_UploadSequence , INexVersus_UploadSequence , NexVersus_ChangeReplaySequence , INexVersus_ChangeReplaySequence , NexVersus_ReportSequence_Label , NexVersus_DownloadReplaySequence , INexVersus_DownloadReplaySequence , NexVersus_SearchCasualSequence , INexVersus_SearchCasualSequence , NexVersus_DownloadMetaDataSequence_1_Mode , NexVersus_CheckAccessibleSlotSequence_Label , NexVersus_NexSequenceBase_ConfirmRetryDialog , INexVersus_NexSequenceBase_ConfirmRetryDialog , NexVersus_ChangeVersusDataSequence_1 , INexVersus_ChangeVersusDataSequence_1 , NexVersus_GetRankedMetaDataFromPersistenceSlotSequence_Label , NexVersus_ChangeMetaDataTypeSequence_TargetType , NexVersus_DownloadSequence_1_Label , NexVersus_ChangeReplayMetaSequence_Label , NexVersus_DownloadMetaDataSequence_1 , INexVersus_DownloadMetaDataSequence_1 , NexVersus_ChangeVersusDataSequence_1_Label , NexVersus_DownloadMetaSequence_1 , INexVersus_DownloadMetaSequence_1 , NexVersus_UploadReplaySequence_Label , NexVersus_ReplaySlotMetaResultData , INexVersus_ReplaySlotMetaResultData , NexVersus_ResultInfo , INexVersus_ResultInfo , NexVersus_Results , NexVersus_ChangeReplaySequence_Label , NexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItem , INexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItem , NexVersus_ChangeReplayMetaSequence , INexVersus_ChangeReplayMetaSequence , NexVersus_SearchCasualSequence_Label , NexVersus_UploadReportMetaSequence , INexVersus_UploadReportMetaSequence , NexVersus_UploadReportMetaSequence_Label , NexVersus_DownloadMetaSequence_1_DataType , NexVersus_DownloadMetaSequence_1_Label , NexVersus , INexVersus , NexVersus_GetReplayMetaDataFromPersistenceSlotSequence , INexVersus_GetReplayMetaDataFromPersistenceSlotSequence , NexVersus_DownloadSequence_1 , INexVersus_DownloadSequence_1 , NexVersus_NexSequenceBase , INexVersus_NexSequenceBase , NexVersus_SearchSequence , INexVersus_SearchSequence , NexVersus_GetMetaDataListFromPersistenceSlotSequence_1 , INexVersus_GetMetaDataListFromPersistenceSlotSequence_1 , NexVersus_SearchSequence_Label , NexVersus_ChangeVersusRankedMetaDataSequence_Label , NexVersus_UploadSequence_Label , NexVersus_RankedMetaDataEndCallback , INexVersus_RankedMetaDataEndCallback , NexVersus_ChangeUpdatedTimeSequence , INexVersus_ChangeUpdatedTimeSequence , NexVersus_GetMetaDataFromPersistenceSlotSequence_1 , INexVersus_GetMetaDataFromPersistenceSlotSequence_1 , NexVersus_GetMetaDataListFromPersistenceSlotSequence_1_Label , NexVersus_ChangeReplayMetaSequence_Mode , NexVersus_GetReplayMetaDataFromPersistenceSlotSequence_Label , NexVersus_DownloadMetaDataSequence_1_EndCallback , INexVersus_DownloadMetaDataSequence_1_EndCallback , NexVersus_RatingSpotId , INexVersus_RatingSpotId , NexVersus_UploadCasualSequence_Label , NexVersus_EndCallback , INexVersus_EndCallback , NexVersus_CheckAccessibleSlotSequence , INexVersus_CheckAccessibleSlotSequence , NexVersus_ChangeVersusRankedMetaDataSequence , INexVersus_ChangeVersusRankedMetaDataSequence , NexVersus_AddRatingSequence_Label , NexVersus_ReportSequence , INexVersus_ReportSequence , NexVersus_UploadCasualSequence , INexVersus_UploadCasualSequence , NexVersus_GetMetaDataFromPersistenceSlotSequence_1_Label , NexVersus_TargetSlotList , INexVersus_TargetSlotList }
  ;
- # [cfg (feature = "app-nexversus")] pub use nexversus :: { INexVersus_SearchSequenceMethods , INexVersus_UploadSequenceMethods , INexVersus_CasualMetaDataEndCallbackMethods , INexVersus_DownloadMetaSequence_1Methods , INexVersus_SearchCasualSequenceMethods , INexVersus_DownloadMetaDataSequence_1_EndCallbackMethods , INexVersus_ChangeVersusDataSequence_1Methods , INexVersus_RankedMetaDataEndCallbackMethods , INexVersus_UploadCasualSequenceMethods , INexVersus_TargetSlotListMethods , INexVersus_GetMetaDataFromPersistenceSlotSequence_1Methods , INexVersus_UploadReportMetaSequenceMethods , INexVersus_DownloadSequence_1Methods , INexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItemMethods , INexVersus_ResultInfoMethods , INexVersus_DownloadReplaySequenceMethods , INexVersus_ChangeUpdatedTimeSequenceMethods , INexVersus_GetReplayMetaDataFromPersistenceSlotSequenceMethods , INexVersus_DownloadMetaDataSequence_1Methods , INexVersus_NexSequenceBaseMethods , INexVersus_GetMetaDataListFromPersistenceSlotSequence_1Methods , INexVersus_ChangeVersusRankedMetaDataSequenceMethods , INexVersus_ChangeReplayMetaSequenceMethods , INexVersusMethods , INexVersus_CheckAccessibleSlotSequenceMethods , INexVersus_EndCallbackMethods , INexVersus_ChangeReplaySequenceMethods , INexVersus_ReportSequenceMethods , INexVersus_UploadReplaySequenceMethods , INexVersus_ReplaySlotMetaResultDataMethods , INexVersus_AddRatingSequenceMethods , INexVersus_ChangeMetaDataTypeSequenceMethods , INexVersus_GetRankedMetaDataFromPersistenceSlotSequenceMethods }
+ # [cfg (feature = "app-nexversus")] pub use nexversus :: { INexVersus_AddRatingSequenceMethods , INexVersus_UploadReplaySequenceMethods , INexVersus_ChangeMetaDataTypeSequenceMethods , INexVersus_GetRankedMetaDataFromPersistenceSlotSequenceMethods , INexVersus_CasualMetaDataEndCallbackMethods , INexVersus_UploadSequenceMethods , INexVersus_ChangeReplaySequenceMethods , INexVersus_DownloadReplaySequenceMethods , INexVersus_SearchCasualSequenceMethods , INexVersus_ChangeVersusDataSequence_1Methods , INexVersus_DownloadMetaDataSequence_1Methods , INexVersus_DownloadMetaSequence_1Methods , INexVersus_ReplaySlotMetaResultDataMethods , INexVersus_ResultInfoMethods , INexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItemMethods , INexVersus_ChangeReplayMetaSequenceMethods , INexVersus_UploadReportMetaSequenceMethods , INexVersusMethods , INexVersus_GetReplayMetaDataFromPersistenceSlotSequenceMethods , INexVersus_DownloadSequence_1Methods , INexVersus_NexSequenceBaseMethods , INexVersus_SearchSequenceMethods , INexVersus_GetMetaDataListFromPersistenceSlotSequence_1Methods , INexVersus_RankedMetaDataEndCallbackMethods , INexVersus_ChangeUpdatedTimeSequenceMethods , INexVersus_GetMetaDataFromPersistenceSlotSequence_1Methods , INexVersus_DownloadMetaDataSequence_1_EndCallbackMethods , INexVersus_EndCallbackMethods , INexVersus_CheckAccessibleSlotSequenceMethods , INexVersus_ChangeVersusRankedMetaDataSequenceMethods , INexVersus_ReportSequenceMethods , INexVersus_UploadCasualSequenceMethods , INexVersus_TargetSlotListMethods }
  ;
  # [cfg (any (feature = "app-ngc-types"))] pub mod ngc ;
- # [cfg (feature = "app-ngc-types")] pub use ngc :: { Ngc_CheckTextResultFunction , INgc_CheckTextResultFunction , Ngc_CheckMultiTextSequence , INgc_CheckMultiTextSequence , Ngc_MaskTextSequenceBase , INgc_MaskTextSequenceBase , Ngc_CheckTextSequence , INgc_CheckTextSequence , Ngc_CheckMultiTextResultFunction , INgc_CheckMultiTextResultFunction , Ngc_MaskTextSequence , INgc_MaskTextSequence , Ngc_MaskTextSequenceBase_Data , Ngc , INgc , Ngc_MaskTextResultFunction , INgc_MaskTextResultFunction }
+ # [cfg (feature = "app-ngc-types")] pub use ngc :: { Ngc_CheckTextSequence , INgc_CheckTextSequence , Ngc_CheckTextResultFunction , INgc_CheckTextResultFunction , Ngc , INgc , Ngc_CheckMultiTextSequence , INgc_CheckMultiTextSequence , Ngc_MaskTextResultFunction , INgc_MaskTextResultFunction , Ngc_CheckMultiTextResultFunction , INgc_CheckMultiTextResultFunction , Ngc_MaskTextSequence , INgc_MaskTextSequence , Ngc_MaskTextSequenceBase , INgc_MaskTextSequenceBase , Ngc_MaskTextSequenceBase_Data }
  ;
- # [cfg (feature = "app-ngc")] pub use ngc :: { INgc_CheckTextResultFunctionMethods , INgc_CheckMultiTextSequenceMethods , INgc_MaskTextSequenceBaseMethods , INgc_CheckTextSequenceMethods , INgc_CheckMultiTextResultFunctionMethods , INgc_MaskTextSequenceMethods , INgc_MaskTextResultFunctionMethods }
+ # [cfg (feature = "app-ngc")] pub use ngc :: { INgc_CheckTextSequenceMethods , INgc_CheckTextResultFunctionMethods , INgc_CheckMultiTextSequenceMethods , INgc_MaskTextResultFunctionMethods , INgc_CheckMultiTextResultFunctionMethods , INgc_MaskTextSequenceMethods , INgc_MaskTextSequenceBaseMethods }
  ;
  # [cfg (any (feature = "app-noticeboardsequence-types"))] pub mod noticeboardsequence ;
  # [cfg (feature = "app-noticeboardsequence-types")] pub use noticeboardsequence :: { NoticeBoardSequence , INoticeBoardSequence , NoticeBoardSequence_Label }
@@ -5756,9 +5756,9 @@
  # [cfg (feature = "app-noticeboardsequence")] pub use noticeboardsequence :: { INoticeBoardSequenceMethods }
  ;
  # [cfg (any (feature = "app-noticeboardtopmenu-types"))] pub mod noticeboardtopmenu ;
- # [cfg (feature = "app-noticeboardtopmenu-types")] pub use noticeboardtopmenu :: { NoticeBoardTopMenu_SolanelInfoItem , INoticeBoardTopMenu_SolanelInfoItem , NoticeBoardTopMenu_InvestmentItem , INoticeBoardTopMenu_InvestmentItem , NoticeBoardTopMenu_DecideEventHandler , INoticeBoardTopMenu_DecideEventHandler , NoticeBoardTopMenu_Result2 , NoticeBoardTopMenu_AchievementItem , INoticeBoardTopMenu_AchievementItem , NoticeBoardTopMenu , INoticeBoardTopMenu }
+ # [cfg (feature = "app-noticeboardtopmenu-types")] pub use noticeboardtopmenu :: { NoticeBoardTopMenu , INoticeBoardTopMenu , NoticeBoardTopMenu_DecideEventHandler , INoticeBoardTopMenu_DecideEventHandler , NoticeBoardTopMenu_AchievementItem , INoticeBoardTopMenu_AchievementItem , NoticeBoardTopMenu_Result2 , NoticeBoardTopMenu_SolanelInfoItem , INoticeBoardTopMenu_SolanelInfoItem , NoticeBoardTopMenu_InvestmentItem , INoticeBoardTopMenu_InvestmentItem }
  ;
- # [cfg (feature = "app-noticeboardtopmenu")] pub use noticeboardtopmenu :: { INoticeBoardTopMenu_SolanelInfoItemMethods , INoticeBoardTopMenu_InvestmentItemMethods , INoticeBoardTopMenu_DecideEventHandlerMethods , INoticeBoardTopMenu_AchievementItemMethods , INoticeBoardTopMenuMethods }
+ # [cfg (feature = "app-noticeboardtopmenu")] pub use noticeboardtopmenu :: { INoticeBoardTopMenuMethods , INoticeBoardTopMenu_DecideEventHandlerMethods , INoticeBoardTopMenu_AchievementItemMethods , INoticeBoardTopMenu_SolanelInfoItemMethods , INoticeBoardTopMenu_InvestmentItemMethods }
  ;
  # [cfg (any (feature = "app-noticemanager-types"))] pub mod noticemanager ;
  # [cfg (feature = "app-noticemanager-types")] pub use noticemanager :: { NoticeManager , INoticeManager , NoticeManager_Kinds }
@@ -5776,7 +5776,7 @@
  # [cfg (feature = "app-packassets")] pub use packassets :: { IPackAssetsMethods }
  ;
  # [cfg (any (feature = "app-pad-types"))] pub mod pad ;
- # [cfg (feature = "app-pad-types")] pub use pad :: { Pad , IPad , Pad_Mode }
+ # [cfg (feature = "app-pad-types")] pub use pad :: { Pad_Mode , Pad , IPad }
  ;
  # [cfg (feature = "app-pad")] pub use pad :: { IPadMethods }
  ;
@@ -5786,7 +5786,7 @@
  # [cfg (feature = "app-paramitem")] pub use paramitem :: { IParamItemMethods }
  ;
  # [cfg (any (feature = "app-parentalcontrol-types"))] pub mod parentalcontrol ;
- # [cfg (feature = "app-parentalcontrol-types")] pub use parentalcontrol :: { ParentalControl , IParentalControl , ParentalControl_BeginFCSequence , IParentalControl_BeginFCSequence }
+ # [cfg (feature = "app-parentalcontrol-types")] pub use parentalcontrol :: { ParentalControl_BeginFCSequence , IParentalControl_BeginFCSequence , ParentalControl , IParentalControl }
  ;
  # [cfg (feature = "app-parentalcontrol")] pub use parentalcontrol :: { IParentalControl_BeginFCSequenceMethods }
  ;
@@ -5796,9 +5796,9 @@
  # [cfg (feature = "app-perf")] pub use perf :: { IPerfMethods }
  ;
  # [cfg (any (feature = "app-persondata-types"))] pub mod persondata ;
- # [cfg (feature = "app-persondata-types")] pub use persondata :: { PersonData_FlagField , IPersonData_FlagField , PersonData_Colors , PersonData_Ranks , PersonData_Timing , PersonData , IPersonData , PersonData_Flags , PersonData_Country }
+ # [cfg (feature = "app-persondata-types")] pub use persondata :: { PersonData_Colors , PersonData , IPersonData , PersonData_FlagField , IPersonData_FlagField , PersonData_Timing , PersonData_Ranks , PersonData_Country , PersonData_Flags }
  ;
- # [cfg (feature = "app-persondata")] pub use persondata :: { IPersonData_FlagFieldMethods , IPersonDataMethods }
+ # [cfg (feature = "app-persondata")] pub use persondata :: { IPersonDataMethods , IPersonData_FlagFieldMethods }
  ;
  # [cfg (any (feature = "app-personinspector-types"))] pub mod personinspector ;
  # [cfg (feature = "app-personinspector-types")] pub use personinspector :: { PersonInspector , IPersonInspector }
@@ -5826,7 +5826,7 @@
  # [cfg (feature = "app-photographcameraparameter")] pub use photographcameraparameter :: { IPhotographCameraParameterMethods }
  ;
  # [cfg (any (feature = "app-photographdisposinfo-types"))] pub mod photographdisposinfo ;
- # [cfg (feature = "app-photographdisposinfo-types")] pub use photographdisposinfo :: { PhotographDisposInfo_FlagField , IPhotographDisposInfo_FlagField , PhotographDisposInfo , IPhotographDisposInfo , PhotographDisposInfo_Flags , PhotographDisposInfo_CharacterType }
+ # [cfg (feature = "app-photographdisposinfo-types")] pub use photographdisposinfo :: { PhotographDisposInfo_Flags , PhotographDisposInfo_FlagField , IPhotographDisposInfo_FlagField , PhotographDisposInfo_CharacterType , PhotographDisposInfo , IPhotographDisposInfo }
  ;
  # [cfg (feature = "app-photographdisposinfo")] pub use photographdisposinfo :: { IPhotographDisposInfo_FlagFieldMethods , IPhotographDisposInfoMethods }
  ;
@@ -5836,9 +5836,9 @@
  # [cfg (feature = "app-photographdisposmanager")] pub use photographdisposmanager :: { IPhotographDisposManagerMethods }
  ;
  # [cfg (any (feature = "app-photographeditdisposmenu-types"))] pub mod photographeditdisposmenu ;
- # [cfg (feature = "app-photographeditdisposmenu-types")] pub use photographeditdisposmenu :: { PhotographEditDisposMenu , IPhotographEditDisposMenu , PhotographEditDisposMenu_UpdateUIObjHandler , IPhotographEditDisposMenu_UpdateUIObjHandler , PhotographEditDisposMenu_ReturnHandler , IPhotographEditDisposMenu_ReturnHandler }
+ # [cfg (feature = "app-photographeditdisposmenu-types")] pub use photographeditdisposmenu :: { PhotographEditDisposMenu , IPhotographEditDisposMenu , PhotographEditDisposMenu_ReturnHandler , IPhotographEditDisposMenu_ReturnHandler , PhotographEditDisposMenu_UpdateUIObjHandler , IPhotographEditDisposMenu_UpdateUIObjHandler }
  ;
- # [cfg (feature = "app-photographeditdisposmenu")] pub use photographeditdisposmenu :: { IPhotographEditDisposMenuMethods , IPhotographEditDisposMenu_UpdateUIObjHandlerMethods , IPhotographEditDisposMenu_ReturnHandlerMethods }
+ # [cfg (feature = "app-photographeditdisposmenu")] pub use photographeditdisposmenu :: { IPhotographEditDisposMenuMethods , IPhotographEditDisposMenu_ReturnHandlerMethods , IPhotographEditDisposMenu_UpdateUIObjHandlerMethods }
  ;
  # [cfg (any (feature = "app-photographeditdisposmenucontent-types"))] pub mod photographeditdisposmenucontent ;
  # [cfg (feature = "app-photographeditdisposmenucontent-types")] pub use photographeditdisposmenucontent :: { PhotographEditDisposMenuContent , IPhotographEditDisposMenuContent }
@@ -5856,7 +5856,7 @@
  # [cfg (feature = "app-photographeditdisposmenuitemcontent")] pub use photographeditdisposmenuitemcontent :: { IPhotographEditDisposMenuItemContentMethods }
  ;
  # [cfg (any (feature = "app-photographhaveanimatorcontroller-types"))] pub mod photographhaveanimatorcontroller ;
- # [cfg (feature = "app-photographhaveanimatorcontroller-types")] pub use photographhaveanimatorcontroller :: { PhotographHaveAnimatorController_UpdateFaceAnime , IPhotographHaveAnimatorController_UpdateFaceAnime , PhotographHaveAnimatorController , IPhotographHaveAnimatorController , PhotographHaveAnimatorController_UpdateAnime , IPhotographHaveAnimatorController_UpdateAnime , PhotographHaveAnimatorController_FaceAnime }
+ # [cfg (feature = "app-photographhaveanimatorcontroller-types")] pub use photographhaveanimatorcontroller :: { PhotographHaveAnimatorController_FaceAnime , PhotographHaveAnimatorController_UpdateFaceAnime , IPhotographHaveAnimatorController_UpdateFaceAnime , PhotographHaveAnimatorController , IPhotographHaveAnimatorController , PhotographHaveAnimatorController_UpdateAnime , IPhotographHaveAnimatorController_UpdateAnime }
  ;
  # [cfg (feature = "app-photographhaveanimatorcontroller")] pub use photographhaveanimatorcontroller :: { IPhotographHaveAnimatorController_UpdateFaceAnimeMethods , IPhotographHaveAnimatorControllerMethods , IPhotographHaveAnimatorController_UpdateAnimeMethods }
  ;
@@ -5871,9 +5871,9 @@
  # [cfg (feature = "app-photographpausedata")] pub use photographpausedata :: { IPhotographPauseDataMethods }
  ;
  # [cfg (any (feature = "app-photographselectareamenu-types"))] pub mod photographselectareamenu ;
- # [cfg (feature = "app-photographselectareamenu-types")] pub use photographselectareamenu :: { PhotographSelectAreaMenu_MenuItem , IPhotographSelectAreaMenu_MenuItem , PhotographSelectAreaMenu_SelectHandler , IPhotographSelectAreaMenu_SelectHandler , PhotographSelectAreaMenu , IPhotographSelectAreaMenu }
+ # [cfg (feature = "app-photographselectareamenu-types")] pub use photographselectareamenu :: { PhotographSelectAreaMenu , IPhotographSelectAreaMenu , PhotographSelectAreaMenu_MenuItem , IPhotographSelectAreaMenu_MenuItem , PhotographSelectAreaMenu_SelectHandler , IPhotographSelectAreaMenu_SelectHandler }
  ;
- # [cfg (feature = "app-photographselectareamenu")] pub use photographselectareamenu :: { IPhotographSelectAreaMenu_MenuItemMethods , IPhotographSelectAreaMenu_SelectHandlerMethods , IPhotographSelectAreaMenuMethods }
+ # [cfg (feature = "app-photographselectareamenu")] pub use photographselectareamenu :: { IPhotographSelectAreaMenuMethods , IPhotographSelectAreaMenu_MenuItemMethods , IPhotographSelectAreaMenu_SelectHandlerMethods }
  ;
  # [cfg (any (feature = "app-photographselectareamenucontent-types"))] pub mod photographselectareamenucontent ;
  # [cfg (feature = "app-photographselectareamenucontent-types")] pub use photographselectareamenucontent :: { PhotographSelectAreaMenuContent , IPhotographSelectAreaMenuContent }
@@ -5926,9 +5926,9 @@
  # [cfg (feature = "app-photographselectcharactermenuitemcontent")] pub use photographselectcharactermenuitemcontent :: { IPhotographSelectCharacterMenuItemContentMethods }
  ;
  # [cfg (any (feature = "app-photographselectdisposmenu-types"))] pub mod photographselectdisposmenu ;
- # [cfg (feature = "app-photographselectdisposmenu-types")] pub use photographselectdisposmenu :: { PhotographSelectDisposMenu_ReturnHandler , IPhotographSelectDisposMenu_ReturnHandler , PhotographSelectDisposMenu_ConfirmDialog_YesHandler , IPhotographSelectDisposMenu_ConfirmDialog_YesHandler , PhotographSelectDisposMenu_ConfirmDialog_NoHandler , IPhotographSelectDisposMenu_ConfirmDialog_NoHandler , PhotographSelectDisposMenu_ConfirmDialog , IPhotographSelectDisposMenu_ConfirmDialog , PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem , IPhotographSelectDisposMenu_ConfirmDialog_YesMenuItem , PhotographSelectDisposMenu , IPhotographSelectDisposMenu , PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem , IPhotographSelectDisposMenu_ConfirmDialog_NoMenuItem }
+ # [cfg (feature = "app-photographselectdisposmenu-types")] pub use photographselectdisposmenu :: { PhotographSelectDisposMenu , IPhotographSelectDisposMenu , PhotographSelectDisposMenu_ConfirmDialog_YesHandler , IPhotographSelectDisposMenu_ConfirmDialog_YesHandler , PhotographSelectDisposMenu_ConfirmDialog , IPhotographSelectDisposMenu_ConfirmDialog , PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem , IPhotographSelectDisposMenu_ConfirmDialog_NoMenuItem , PhotographSelectDisposMenu_ConfirmDialog_NoHandler , IPhotographSelectDisposMenu_ConfirmDialog_NoHandler , PhotographSelectDisposMenu_ReturnHandler , IPhotographSelectDisposMenu_ReturnHandler , PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem , IPhotographSelectDisposMenu_ConfirmDialog_YesMenuItem }
  ;
- # [cfg (feature = "app-photographselectdisposmenu")] pub use photographselectdisposmenu :: { IPhotographSelectDisposMenu_ReturnHandlerMethods , IPhotographSelectDisposMenu_ConfirmDialog_YesHandlerMethods , IPhotographSelectDisposMenu_ConfirmDialog_NoHandlerMethods , IPhotographSelectDisposMenu_ConfirmDialogMethods , IPhotographSelectDisposMenu_ConfirmDialog_YesMenuItemMethods , IPhotographSelectDisposMenuMethods , IPhotographSelectDisposMenu_ConfirmDialog_NoMenuItemMethods }
+ # [cfg (feature = "app-photographselectdisposmenu")] pub use photographselectdisposmenu :: { IPhotographSelectDisposMenuMethods , IPhotographSelectDisposMenu_ConfirmDialog_YesHandlerMethods , IPhotographSelectDisposMenu_ConfirmDialogMethods , IPhotographSelectDisposMenu_ConfirmDialog_NoMenuItemMethods , IPhotographSelectDisposMenu_ConfirmDialog_NoHandlerMethods , IPhotographSelectDisposMenu_ReturnHandlerMethods , IPhotographSelectDisposMenu_ConfirmDialog_YesMenuItemMethods }
  ;
  # [cfg (any (feature = "app-photographselectdisposmenucontent-types"))] pub mod photographselectdisposmenucontent ;
  # [cfg (feature = "app-photographselectdisposmenucontent-types")] pub use photographselectdisposmenucontent :: { PhotographSelectDisposMenuContent , IPhotographSelectDisposMenuContent }
@@ -5966,9 +5966,9 @@
  # [cfg (feature = "app-photographselectfaceaccmenuitemcontent")] pub use photographselectfaceaccmenuitemcontent :: { IPhotographSelectFaceAccMenuItemContentMethods }
  ;
  # [cfg (any (feature = "app-photographselectpausemenu-types"))] pub mod photographselectpausemenu ;
- # [cfg (feature = "app-photographselectpausemenu-types")] pub use photographselectpausemenu :: { PhotographSelectPauseMenu_UpdateUIObjHandler , IPhotographSelectPauseMenu_UpdateUIObjHandler , PhotographSelectPauseMenu , IPhotographSelectPauseMenu }
+ # [cfg (feature = "app-photographselectpausemenu-types")] pub use photographselectpausemenu :: { PhotographSelectPauseMenu , IPhotographSelectPauseMenu , PhotographSelectPauseMenu_UpdateUIObjHandler , IPhotographSelectPauseMenu_UpdateUIObjHandler }
  ;
- # [cfg (feature = "app-photographselectpausemenu")] pub use photographselectpausemenu :: { IPhotographSelectPauseMenu_UpdateUIObjHandlerMethods , IPhotographSelectPauseMenuMethods }
+ # [cfg (feature = "app-photographselectpausemenu")] pub use photographselectpausemenu :: { IPhotographSelectPauseMenuMethods , IPhotographSelectPauseMenu_UpdateUIObjHandlerMethods }
  ;
  # [cfg (any (feature = "app-photographselectpausemenucontent-types"))] pub mod photographselectpausemenucontent ;
  # [cfg (feature = "app-photographselectpausemenucontent-types")] pub use photographselectpausemenucontent :: { PhotographSelectPauseMenuContent , IPhotographSelectPauseMenuContent }
@@ -6036,9 +6036,9 @@
  # [cfg (feature = "app-photographspotdata")] pub use photographspotdata :: { IPhotographSpotDataMethods }
  ;
  # [cfg (any (feature = "app-photographtopsequence-types"))] pub mod photographtopsequence ;
- # [cfg (feature = "app-photographtopsequence-types")] pub use photographtopsequence :: { PhotographTopSequence_UnitAccDataSet , IPhotographTopSequence_UnitAccDataSet , PhotographTopSequence , IPhotographTopSequence , PhotographTopSequence_Label }
+ # [cfg (feature = "app-photographtopsequence-types")] pub use photographtopsequence :: { PhotographTopSequence , IPhotographTopSequence , PhotographTopSequence_UnitAccDataSet , IPhotographTopSequence_UnitAccDataSet , PhotographTopSequence_Label }
  ;
- # [cfg (feature = "app-photographtopsequence")] pub use photographtopsequence :: { IPhotographTopSequence_UnitAccDataSetMethods , IPhotographTopSequenceMethods }
+ # [cfg (feature = "app-photographtopsequence")] pub use photographtopsequence :: { IPhotographTopSequenceMethods , IPhotographTopSequence_UnitAccDataSetMethods }
  ;
  # [cfg (any (feature = "app-physicsmanager-types"))] pub mod physicsmanager ;
  # [cfg (feature = "app-physicsmanager-types")] pub use physicsmanager :: { PhysicsManager , IPhysicsManager , PhysicsManager_Scope }
@@ -6101,9 +6101,9 @@
  # [cfg (feature = "app-pokeinspector")] pub use pokeinspector :: { IPokeInspectorMethods }
  ;
  # [cfg (any (feature = "app-pool-types"))] pub mod pool ;
- # [cfg (feature = "app-pool-types")] pub use pool :: { Pool_Node , IPool_Node , Pool , IPool , Pool_Hierarchy_1 , IPool_Hierarchy_1 , Pool_List_1 , IPool_List_1 , Pool_LockStack_1 , IPool_LockStack_1 , Pool_Stack_1 , IPool_Stack_1 }
+ # [cfg (feature = "app-pool-types")] pub use pool :: { Pool_Node , IPool_Node , Pool_Hierarchy_1 , IPool_Hierarchy_1 , Pool_List_1 , IPool_List_1 , Pool_LockStack_1 , IPool_LockStack_1 , Pool_Stack_1 , IPool_Stack_1 , Pool , IPool }
  ;
- # [cfg (feature = "app-pool")] pub use pool :: { IPool_NodeMethods , IPoolMethods , IPool_Hierarchy_1Methods , IPool_List_1Methods , IPool_LockStack_1Methods , IPool_Stack_1Methods }
+ # [cfg (feature = "app-pool")] pub use pool :: { IPool_NodeMethods , IPool_Hierarchy_1Methods , IPool_List_1Methods , IPool_LockStack_1Methods , IPool_Stack_1Methods , IPoolMethods }
  ;
  # [cfg (any (feature = "app-postprocessmanager-types"))] pub mod postprocessmanager ;
  # [cfg (feature = "app-postprocessmanager-types")] pub use postprocessmanager :: { PostProcessManager , IPostProcessManager }
@@ -6136,7 +6136,7 @@
  # [cfg (feature = "app-procboolmethod")] pub use procboolmethod :: { IProcBoolMethodMethods }
  ;
  # [cfg (any (feature = "app-procdesc-types"))] pub mod procdesc ;
- # [cfg (feature = "app-procdesc-types")] pub use procdesc :: { ProcDesc_Result , ProcDesc_Type , ProcDesc , IProcDesc }
+ # [cfg (feature = "app-procdesc-types")] pub use procdesc :: { ProcDesc_Type , ProcDesc , IProcDesc , ProcDesc_Result }
  ;
  # [cfg (feature = "app-procdesc")] pub use procdesc :: { IProcDescMethods }
  ;
@@ -6351,14 +6351,14 @@
  # [cfg (feature = "app-procwaitmessagebase")] pub use procwaitmessagebase :: { IProcWaitMessageBaseMethods }
  ;
  # [cfg (any (feature = "app-profilecard-types"))] pub mod profilecard ;
- # [cfg (feature = "app-profilecard-types")] pub use profilecard :: { ProfileCard_Achievement , ProfileCard , IProfileCard , ProfileCard_SortieCount , ProfileCard_FreeStamp , IProfileCard_FreeStamp }
+ # [cfg (feature = "app-profilecard-types")] pub use profilecard :: { ProfileCard_SortieCount , ProfileCard , IProfileCard , ProfileCard_Achievement , ProfileCard_FreeStamp , IProfileCard_FreeStamp }
  ;
  # [cfg (feature = "app-profilecard")] pub use profilecard :: { IProfileCardMethods , IProfileCard_FreeStampMethods }
  ;
  # [cfg (any (feature = "app-profilecardalbumlistdeleteconfirmdialog-types"))] pub mod profilecardalbumlistdeleteconfirmdialog ;
- # [cfg (feature = "app-profilecardalbumlistdeleteconfirmdialog-types")] pub use profilecardalbumlistdeleteconfirmdialog :: { ProfileCardAlbumListDeleteConfirmDialog , IProfileCardAlbumListDeleteConfirmDialog , ProfileCardAlbumListDeleteConfirmDialog_YesMenuItem , IProfileCardAlbumListDeleteConfirmDialog_YesMenuItem , ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler , IProfileCardAlbumListDeleteConfirmDialog_YesEventHandler }
+ # [cfg (feature = "app-profilecardalbumlistdeleteconfirmdialog-types")] pub use profilecardalbumlistdeleteconfirmdialog :: { ProfileCardAlbumListDeleteConfirmDialog_YesMenuItem , IProfileCardAlbumListDeleteConfirmDialog_YesMenuItem , ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler , IProfileCardAlbumListDeleteConfirmDialog_YesEventHandler , ProfileCardAlbumListDeleteConfirmDialog , IProfileCardAlbumListDeleteConfirmDialog }
  ;
- # [cfg (feature = "app-profilecardalbumlistdeleteconfirmdialog")] pub use profilecardalbumlistdeleteconfirmdialog :: { IProfileCardAlbumListDeleteConfirmDialogMethods , IProfileCardAlbumListDeleteConfirmDialog_YesMenuItemMethods , IProfileCardAlbumListDeleteConfirmDialog_YesEventHandlerMethods }
+ # [cfg (feature = "app-profilecardalbumlistdeleteconfirmdialog")] pub use profilecardalbumlistdeleteconfirmdialog :: { IProfileCardAlbumListDeleteConfirmDialog_YesMenuItemMethods , IProfileCardAlbumListDeleteConfirmDialog_YesEventHandlerMethods , IProfileCardAlbumListDeleteConfirmDialogMethods }
  ;
  # [cfg (any (feature = "app-profilecardalbumlistemptymenuitem-types"))] pub mod profilecardalbumlistemptymenuitem ;
  # [cfg (feature = "app-profilecardalbumlistemptymenuitem-types")] pub use profilecardalbumlistemptymenuitem :: { ProfileCardAlbumListEmptyMenuItem , IProfileCardAlbumListEmptyMenuItem }
@@ -6366,9 +6366,9 @@
  # [cfg (feature = "app-profilecardalbumlistemptymenuitem")] pub use profilecardalbumlistemptymenuitem :: { IProfileCardAlbumListEmptyMenuItemMethods }
  ;
  # [cfg (any (feature = "app-profilecardalbumlistmenu-types"))] pub mod profilecardalbumlistmenu ;
- # [cfg (feature = "app-profilecardalbumlistmenu-types")] pub use profilecardalbumlistmenu :: { ProfileCardAlbumListMenu , IProfileCardAlbumListMenu , ProfileCardAlbumListMenu_DecideEventHandler , IProfileCardAlbumListMenu_DecideEventHandler , ProfileCardAlbumListMenu_Result2 , ProfileCardAlbumListMenu_DeleteEventHandler , IProfileCardAlbumListMenu_DeleteEventHandler , ProfileCardAlbumListMenu_DisposeEventHandler , IProfileCardAlbumListMenu_DisposeEventHandler }
+ # [cfg (feature = "app-profilecardalbumlistmenu-types")] pub use profilecardalbumlistmenu :: { ProfileCardAlbumListMenu_Result2 , ProfileCardAlbumListMenu , IProfileCardAlbumListMenu , ProfileCardAlbumListMenu_DeleteEventHandler , IProfileCardAlbumListMenu_DeleteEventHandler , ProfileCardAlbumListMenu_DisposeEventHandler , IProfileCardAlbumListMenu_DisposeEventHandler , ProfileCardAlbumListMenu_DecideEventHandler , IProfileCardAlbumListMenu_DecideEventHandler }
  ;
- # [cfg (feature = "app-profilecardalbumlistmenu")] pub use profilecardalbumlistmenu :: { IProfileCardAlbumListMenuMethods , IProfileCardAlbumListMenu_DecideEventHandlerMethods , IProfileCardAlbumListMenu_DeleteEventHandlerMethods , IProfileCardAlbumListMenu_DisposeEventHandlerMethods }
+ # [cfg (feature = "app-profilecardalbumlistmenu")] pub use profilecardalbumlistmenu :: { IProfileCardAlbumListMenuMethods , IProfileCardAlbumListMenu_DeleteEventHandlerMethods , IProfileCardAlbumListMenu_DisposeEventHandlerMethods , IProfileCardAlbumListMenu_DecideEventHandlerMethods }
  ;
  # [cfg (any (feature = "app-profilecardalbumlistmenucontent-types"))] pub mod profilecardalbumlistmenucontent ;
  # [cfg (feature = "app-profilecardalbumlistmenucontent-types")] pub use profilecardalbumlistmenucontent :: { ProfileCardAlbumListMenuContent , IProfileCardAlbumListMenuContent }
@@ -6386,14 +6386,14 @@
  # [cfg (feature = "app-profilecardalbumlistmenuitemcontent")] pub use profilecardalbumlistmenuitemcontent :: { IProfileCardAlbumListMenuItemContentMethods }
  ;
  # [cfg (any (feature = "app-profilecardalbumlistmenuoverlimit-types"))] pub mod profilecardalbumlistmenuoverlimit ;
- # [cfg (feature = "app-profilecardalbumlistmenuoverlimit-types")] pub use profilecardalbumlistmenuoverlimit :: { ProfileCardAlbumListMenuOverLimit_CancelEventHandler , IProfileCardAlbumListMenuOverLimit_CancelEventHandler , ProfileCardAlbumListMenuOverLimit , IProfileCardAlbumListMenuOverLimit , ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem , IProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem }
+ # [cfg (feature = "app-profilecardalbumlistmenuoverlimit-types")] pub use profilecardalbumlistmenuoverlimit :: { ProfileCardAlbumListMenuOverLimit , IProfileCardAlbumListMenuOverLimit , ProfileCardAlbumListMenuOverLimit_CancelEventHandler , IProfileCardAlbumListMenuOverLimit_CancelEventHandler , ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem , IProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem }
  ;
- # [cfg (feature = "app-profilecardalbumlistmenuoverlimit")] pub use profilecardalbumlistmenuoverlimit :: { IProfileCardAlbumListMenuOverLimit_CancelEventHandlerMethods , IProfileCardAlbumListMenuOverLimitMethods , IProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItemMethods }
+ # [cfg (feature = "app-profilecardalbumlistmenuoverlimit")] pub use profilecardalbumlistmenuoverlimit :: { IProfileCardAlbumListMenuOverLimitMethods , IProfileCardAlbumListMenuOverLimit_CancelEventHandlerMethods , IProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItemMethods }
  ;
  # [cfg (any (feature = "app-profilecardalbummenu-types"))] pub mod profilecardalbummenu ;
- # [cfg (feature = "app-profilecardalbummenu-types")] pub use profilecardalbummenu :: { ProfileCardAlbumMenu_ChangeProfileEventHandler , IProfileCardAlbumMenu_ChangeProfileEventHandler , ProfileCardAlbumMenu_Result2 , ProfileCardAlbumMenu , IProfileCardAlbumMenu , ProfileCardAlbumMenu_DecideEventHandler , IProfileCardAlbumMenu_DecideEventHandler }
+ # [cfg (feature = "app-profilecardalbummenu-types")] pub use profilecardalbummenu :: { ProfileCardAlbumMenu_DecideEventHandler , IProfileCardAlbumMenu_DecideEventHandler , ProfileCardAlbumMenu , IProfileCardAlbumMenu , ProfileCardAlbumMenu_ChangeProfileEventHandler , IProfileCardAlbumMenu_ChangeProfileEventHandler , ProfileCardAlbumMenu_Result2 }
  ;
- # [cfg (feature = "app-profilecardalbummenu")] pub use profilecardalbummenu :: { IProfileCardAlbumMenu_ChangeProfileEventHandlerMethods , IProfileCardAlbumMenuMethods , IProfileCardAlbumMenu_DecideEventHandlerMethods }
+ # [cfg (feature = "app-profilecardalbummenu")] pub use profilecardalbummenu :: { IProfileCardAlbumMenu_DecideEventHandlerMethods , IProfileCardAlbumMenuMethods , IProfileCardAlbumMenu_ChangeProfileEventHandlerMethods }
  ;
  # [cfg (any (feature = "app-profilecardalbumroot-types"))] pub mod profilecardalbumroot ;
  # [cfg (feature = "app-profilecardalbumroot-types")] pub use profilecardalbumroot :: { ProfileCardAlbumRoot , IProfileCardAlbumRoot }
@@ -6416,14 +6416,14 @@
  # [cfg (feature = "app-profilecardcolor")] pub use profilecardcolor :: { IProfileCardColorMethods }
  ;
  # [cfg (any (feature = "app-profilecardcommentdata-types"))] pub mod profilecardcommentdata ;
- # [cfg (feature = "app-profilecardcommentdata-types")] pub use profilecardcommentdata :: { ProfileCardCommentData , IProfileCardCommentData , ProfileCardCommentData_Categories }
+ # [cfg (feature = "app-profilecardcommentdata-types")] pub use profilecardcommentdata :: { ProfileCardCommentData_Categories , ProfileCardCommentData , IProfileCardCommentData }
  ;
  # [cfg (feature = "app-profilecardcommentdata")] pub use profilecardcommentdata :: { IProfileCardCommentDataMethods }
  ;
  # [cfg (any (feature = "app-profilecardcommentindexmenu-types"))] pub mod profilecardcommentindexmenu ;
- # [cfg (feature = "app-profilecardcommentindexmenu-types")] pub use profilecardcommentindexmenu :: { ProfileCardCommentIndexMenu , IProfileCardCommentIndexMenu , ProfileCardCommentIndexMenu_Result2 , ProfileCardCommentIndexMenu_DisposeEventHandler , IProfileCardCommentIndexMenu_DisposeEventHandler , ProfileCardCommentIndexMenu_DecideEventHandler , IProfileCardCommentIndexMenu_DecideEventHandler }
+ # [cfg (feature = "app-profilecardcommentindexmenu-types")] pub use profilecardcommentindexmenu :: { ProfileCardCommentIndexMenu_DecideEventHandler , IProfileCardCommentIndexMenu_DecideEventHandler , ProfileCardCommentIndexMenu_DisposeEventHandler , IProfileCardCommentIndexMenu_DisposeEventHandler , ProfileCardCommentIndexMenu , IProfileCardCommentIndexMenu , ProfileCardCommentIndexMenu_Result2 }
  ;
- # [cfg (feature = "app-profilecardcommentindexmenu")] pub use profilecardcommentindexmenu :: { IProfileCardCommentIndexMenuMethods , IProfileCardCommentIndexMenu_DisposeEventHandlerMethods , IProfileCardCommentIndexMenu_DecideEventHandlerMethods }
+ # [cfg (feature = "app-profilecardcommentindexmenu")] pub use profilecardcommentindexmenu :: { IProfileCardCommentIndexMenu_DecideEventHandlerMethods , IProfileCardCommentIndexMenu_DisposeEventHandlerMethods , IProfileCardCommentIndexMenuMethods }
  ;
  # [cfg (any (feature = "app-profilecardcommentindexmenuitem-types"))] pub mod profilecardcommentindexmenuitem ;
  # [cfg (feature = "app-profilecardcommentindexmenuitem-types")] pub use profilecardcommentindexmenuitem :: { ProfileCardCommentIndexMenuItem , IProfileCardCommentIndexMenuItem }
@@ -6436,9 +6436,9 @@
  # [cfg (feature = "app-profilecardcommentlistdoemptymenuitem")] pub use profilecardcommentlistdoemptymenuitem :: { IProfileCardCommentListDoEmptyMenuItemMethods }
  ;
  # [cfg (any (feature = "app-profilecardcommentlistmenu-types"))] pub mod profilecardcommentlistmenu ;
- # [cfg (feature = "app-profilecardcommentlistmenu-types")] pub use profilecardcommentlistmenu :: { ProfileCardCommentListMenu , IProfileCardCommentListMenu , ProfileCardCommentListMenu_DecideEventHandler , IProfileCardCommentListMenu_DecideEventHandler , ProfileCardCommentListMenu_SelectEventHandler , IProfileCardCommentListMenu_SelectEventHandler , ProfileCardCommentListMenu_DisposeEventHandler , IProfileCardCommentListMenu_DisposeEventHandler , ProfileCardCommentListMenu_CancelEventHandler , IProfileCardCommentListMenu_CancelEventHandler }
+ # [cfg (feature = "app-profilecardcommentlistmenu-types")] pub use profilecardcommentlistmenu :: { ProfileCardCommentListMenu_DisposeEventHandler , IProfileCardCommentListMenu_DisposeEventHandler , ProfileCardCommentListMenu_SelectEventHandler , IProfileCardCommentListMenu_SelectEventHandler , ProfileCardCommentListMenu_DecideEventHandler , IProfileCardCommentListMenu_DecideEventHandler , ProfileCardCommentListMenu , IProfileCardCommentListMenu , ProfileCardCommentListMenu_CancelEventHandler , IProfileCardCommentListMenu_CancelEventHandler }
  ;
- # [cfg (feature = "app-profilecardcommentlistmenu")] pub use profilecardcommentlistmenu :: { IProfileCardCommentListMenuMethods , IProfileCardCommentListMenu_DecideEventHandlerMethods , IProfileCardCommentListMenu_SelectEventHandlerMethods , IProfileCardCommentListMenu_DisposeEventHandlerMethods , IProfileCardCommentListMenu_CancelEventHandlerMethods }
+ # [cfg (feature = "app-profilecardcommentlistmenu")] pub use profilecardcommentlistmenu :: { IProfileCardCommentListMenu_DisposeEventHandlerMethods , IProfileCardCommentListMenu_SelectEventHandlerMethods , IProfileCardCommentListMenu_DecideEventHandlerMethods , IProfileCardCommentListMenuMethods , IProfileCardCommentListMenu_CancelEventHandlerMethods }
  ;
  # [cfg (any (feature = "app-profilecardcommentlistmenuitem-types"))] pub mod profilecardcommentlistmenuitem ;
  # [cfg (feature = "app-profilecardcommentlistmenuitem-types")] pub use profilecardcommentlistmenuitem :: { ProfileCardCommentListMenuItem , IProfileCardCommentListMenuItem }
@@ -6494,9 +6494,9 @@
  # [cfg (feature = "app-profilecardfavoriterelaymapemptymenuitem")] pub use profilecardfavoriterelaymapemptymenuitem :: { IProfileCardFavoriteRelayMapEmptyMenuItemMethods }
  ;
  # [cfg (any (feature = "app-profilecardfavoriterelaymapmenu-types"))] pub mod profilecardfavoriterelaymapmenu ;
- # [cfg (feature = "app-profilecardfavoriterelaymapmenu-types")] pub use profilecardfavoriterelaymapmenu :: { ProfileCardFavoriteRelayMapMenu , IProfileCardFavoriteRelayMapMenu , ProfileCardFavoriteRelayMapMenu_DisposeEventHandler , IProfileCardFavoriteRelayMapMenu_DisposeEventHandler }
+ # [cfg (feature = "app-profilecardfavoriterelaymapmenu-types")] pub use profilecardfavoriterelaymapmenu :: { ProfileCardFavoriteRelayMapMenu_DisposeEventHandler , IProfileCardFavoriteRelayMapMenu_DisposeEventHandler , ProfileCardFavoriteRelayMapMenu , IProfileCardFavoriteRelayMapMenu }
  ;
- # [cfg (feature = "app-profilecardfavoriterelaymapmenu")] pub use profilecardfavoriterelaymapmenu :: { IProfileCardFavoriteRelayMapMenuMethods , IProfileCardFavoriteRelayMapMenu_DisposeEventHandlerMethods }
+ # [cfg (feature = "app-profilecardfavoriterelaymapmenu")] pub use profilecardfavoriterelaymapmenu :: { IProfileCardFavoriteRelayMapMenu_DisposeEventHandlerMethods , IProfileCardFavoriteRelayMapMenuMethods }
  ;
  # [cfg (any (feature = "app-profilecardfavoriterelaymapmenuitem-types"))] pub mod profilecardfavoriterelaymapmenuitem ;
  # [cfg (feature = "app-profilecardfavoriterelaymapmenuitem-types")] pub use profilecardfavoriterelaymapmenuitem :: { ProfileCardFavoriteRelayMapMenuItem , IProfileCardFavoriteRelayMapMenuItem }
@@ -6544,9 +6544,9 @@
  # [cfg (feature = "app-profilecardmessageselectmenucontent")] pub use profilecardmessageselectmenucontent :: { IProfileCardMessageSelectMenuContentMethods }
  ;
  # [cfg (any (feature = "app-profilecardmycardmenu-types"))] pub mod profilecardmycardmenu ;
- # [cfg (feature = "app-profilecardmycardmenu-types")] pub use profilecardmycardmenu :: { ProfileCardMyCardMenu , IProfileCardMyCardMenu , ProfileCardMyCardMenu_DecideEventHandler , IProfileCardMyCardMenu_DecideEventHandler , ProfileCardMyCardMenu_Result2 }
+ # [cfg (feature = "app-profilecardmycardmenu-types")] pub use profilecardmycardmenu :: { ProfileCardMyCardMenu_DecideEventHandler , IProfileCardMyCardMenu_DecideEventHandler , ProfileCardMyCardMenu , IProfileCardMyCardMenu , ProfileCardMyCardMenu_Result2 }
  ;
- # [cfg (feature = "app-profilecardmycardmenu")] pub use profilecardmycardmenu :: { IProfileCardMyCardMenuMethods , IProfileCardMyCardMenu_DecideEventHandlerMethods }
+ # [cfg (feature = "app-profilecardmycardmenu")] pub use profilecardmycardmenu :: { IProfileCardMyCardMenu_DecideEventHandlerMethods , IProfileCardMyCardMenuMethods }
  ;
  # [cfg (any (feature = "app-profilecardmycardroot-types"))] pub mod profilecardmycardroot ;
  # [cfg (feature = "app-profilecardmycardroot-types")] pub use profilecardmycardroot :: { ProfileCardMyCardRoot , IProfileCardMyCardRoot }
@@ -6559,19 +6559,19 @@
  # [cfg (feature = "app-profilecardmydata")] pub use profilecardmydata :: { IProfileCardMyDataMethods }
  ;
  # [cfg (any (feature = "app-profilecardpublicsettingdialog-types"))] pub mod profilecardpublicsettingdialog ;
- # [cfg (feature = "app-profilecardpublicsettingdialog-types")] pub use profilecardpublicsettingdialog :: { ProfileCardPublicSettingDialog_DialogMenuItem , IProfileCardPublicSettingDialog_DialogMenuItem , ProfileCardPublicSettingDialog_DecideEventHandler , IProfileCardPublicSettingDialog_DecideEventHandler , ProfileCardPublicSettingDialog , IProfileCardPublicSettingDialog }
+ # [cfg (feature = "app-profilecardpublicsettingdialog-types")] pub use profilecardpublicsettingdialog :: { ProfileCardPublicSettingDialog_DialogMenuItem , IProfileCardPublicSettingDialog_DialogMenuItem , ProfileCardPublicSettingDialog , IProfileCardPublicSettingDialog , ProfileCardPublicSettingDialog_DecideEventHandler , IProfileCardPublicSettingDialog_DecideEventHandler }
  ;
- # [cfg (feature = "app-profilecardpublicsettingdialog")] pub use profilecardpublicsettingdialog :: { IProfileCardPublicSettingDialog_DialogMenuItemMethods , IProfileCardPublicSettingDialog_DecideEventHandlerMethods , IProfileCardPublicSettingDialogMethods }
+ # [cfg (feature = "app-profilecardpublicsettingdialog")] pub use profilecardpublicsettingdialog :: { IProfileCardPublicSettingDialog_DialogMenuItemMethods , IProfileCardPublicSettingDialogMethods , IProfileCardPublicSettingDialog_DecideEventHandlerMethods }
  ;
  # [cfg (any (feature = "app-profilecardroot-types"))] pub mod profilecardroot ;
- # [cfg (feature = "app-profilecardroot-types")] pub use profilecardroot :: { ProfileCardRoot_StartHandler , IProfileCardRoot_StartHandler , ProfileCardRoot_RectInfo , ProfileCardRoot , IProfileCardRoot , ProfileCardRoot_SortieCountInfo , IProfileCardRoot_SortieCountInfo , ProfileCardRoot_AchievementInfo , IProfileCardRoot_AchievementInfo }
+ # [cfg (feature = "app-profilecardroot-types")] pub use profilecardroot :: { ProfileCardRoot_SortieCountInfo , IProfileCardRoot_SortieCountInfo , ProfileCardRoot , IProfileCardRoot , ProfileCardRoot_RectInfo , ProfileCardRoot_AchievementInfo , IProfileCardRoot_AchievementInfo , ProfileCardRoot_StartHandler , IProfileCardRoot_StartHandler }
  ;
- # [cfg (feature = "app-profilecardroot")] pub use profilecardroot :: { IProfileCardRoot_StartHandlerMethods , IProfileCardRootMethods , IProfileCardRoot_SortieCountInfoMethods , IProfileCardRoot_AchievementInfoMethods }
+ # [cfg (feature = "app-profilecardroot")] pub use profilecardroot :: { IProfileCardRoot_SortieCountInfoMethods , IProfileCardRootMethods , IProfileCardRoot_AchievementInfoMethods , IProfileCardRoot_StartHandlerMethods }
  ;
  # [cfg (any (feature = "app-profilecardselecteditmenu-types"))] pub mod profilecardselecteditmenu ;
- # [cfg (feature = "app-profilecardselecteditmenu-types")] pub use profilecardselecteditmenu :: { ProfileCardSelectEditMenu_Result2 , ProfileCardSelectEditMenu_ProfileCardSelectEditMenuItem , IProfileCardSelectEditMenu_ProfileCardSelectEditMenuItem , ProfileCardSelectEditMenu_DecideEventHandler , IProfileCardSelectEditMenu_DecideEventHandler , ProfileCardSelectEditMenu_DisposeEventHandler , IProfileCardSelectEditMenu_DisposeEventHandler , ProfileCardSelectEditMenu , IProfileCardSelectEditMenu }
+ # [cfg (feature = "app-profilecardselecteditmenu-types")] pub use profilecardselecteditmenu :: { ProfileCardSelectEditMenu_Result2 , ProfileCardSelectEditMenu_DecideEventHandler , IProfileCardSelectEditMenu_DecideEventHandler , ProfileCardSelectEditMenu , IProfileCardSelectEditMenu , ProfileCardSelectEditMenu_ProfileCardSelectEditMenuItem , IProfileCardSelectEditMenu_ProfileCardSelectEditMenuItem , ProfileCardSelectEditMenu_DisposeEventHandler , IProfileCardSelectEditMenu_DisposeEventHandler }
  ;
- # [cfg (feature = "app-profilecardselecteditmenu")] pub use profilecardselecteditmenu :: { IProfileCardSelectEditMenu_ProfileCardSelectEditMenuItemMethods , IProfileCardSelectEditMenu_DecideEventHandlerMethods , IProfileCardSelectEditMenu_DisposeEventHandlerMethods , IProfileCardSelectEditMenuMethods }
+ # [cfg (feature = "app-profilecardselecteditmenu")] pub use profilecardselecteditmenu :: { IProfileCardSelectEditMenu_DecideEventHandlerMethods , IProfileCardSelectEditMenuMethods , IProfileCardSelectEditMenu_ProfileCardSelectEditMenuItemMethods , IProfileCardSelectEditMenu_DisposeEventHandlerMethods }
  ;
  # [cfg (any (feature = "app-profilecardselecteditmenucontent-types"))] pub mod profilecardselecteditmenucontent ;
  # [cfg (feature = "app-profilecardselecteditmenucontent-types")] pub use profilecardselecteditmenucontent :: { ProfileCardSelectEditMenuContent , IProfileCardSelectEditMenuContent }
@@ -6589,9 +6589,9 @@
  # [cfg (feature = "app-profilecardstampdata")] pub use profilecardstampdata :: { IProfileCardStampDataMethods }
  ;
  # [cfg (any (feature = "app-profilecardstamplistmenu-types"))] pub mod profilecardstamplistmenu ;
- # [cfg (feature = "app-profilecardstamplistmenu-types")] pub use profilecardstamplistmenu :: { ProfileCardStampListMenu_DecideEventHandler , IProfileCardStampListMenu_DecideEventHandler , ProfileCardStampListMenu_CloseEventHandler , IProfileCardStampListMenu_CloseEventHandler , ProfileCardStampListMenu , IProfileCardStampListMenu , ProfileCardStampListMenu_DisposeEventHandler , IProfileCardStampListMenu_DisposeEventHandler }
+ # [cfg (feature = "app-profilecardstamplistmenu-types")] pub use profilecardstamplistmenu :: { ProfileCardStampListMenu_DecideEventHandler , IProfileCardStampListMenu_DecideEventHandler , ProfileCardStampListMenu_CloseEventHandler , IProfileCardStampListMenu_CloseEventHandler , ProfileCardStampListMenu_DisposeEventHandler , IProfileCardStampListMenu_DisposeEventHandler , ProfileCardStampListMenu , IProfileCardStampListMenu }
  ;
- # [cfg (feature = "app-profilecardstamplistmenu")] pub use profilecardstamplistmenu :: { IProfileCardStampListMenu_DecideEventHandlerMethods , IProfileCardStampListMenu_CloseEventHandlerMethods , IProfileCardStampListMenuMethods , IProfileCardStampListMenu_DisposeEventHandlerMethods }
+ # [cfg (feature = "app-profilecardstamplistmenu")] pub use profilecardstamplistmenu :: { IProfileCardStampListMenu_DecideEventHandlerMethods , IProfileCardStampListMenu_CloseEventHandlerMethods , IProfileCardStampListMenu_DisposeEventHandlerMethods , IProfileCardStampListMenuMethods }
  ;
  # [cfg (any (feature = "app-profilecardstamplistmenucontent-types"))] pub mod profilecardstamplistmenucontent ;
  # [cfg (feature = "app-profilecardstamplistmenucontent-types")] pub use profilecardstamplistmenucontent :: { ProfileCardStampListMenuContent , IProfileCardStampListMenuContent }
@@ -6609,9 +6609,9 @@
  # [cfg (feature = "app-profilecardstamplistmenuitemcontent")] pub use profilecardstamplistmenuitemcontent :: { IProfileCardStampListMenuItemContentMethods }
  ;
  # [cfg (any (feature = "app-profilecardstampmenu-types"))] pub mod profilecardstampmenu ;
- # [cfg (feature = "app-profilecardstampmenu-types")] pub use profilecardstampmenu :: { ProfileCardStampMenu , IProfileCardStampMenu , ProfileCardStampMenu_EditMode , ProfileCardStampMenu_ConfirmToClearDialog_DecideEventHandler , IProfileCardStampMenu_ConfirmToClearDialog_DecideEventHandler , ProfileCardStampMenu_DisposeEventHandler , IProfileCardStampMenu_DisposeEventHandler , ProfileCardStampMenu_DialogMenuItem , IProfileCardStampMenu_DialogMenuItem , ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler , IProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler , ProfileCardStampMenu_ConfirmToCloseDialog , IProfileCardStampMenu_ConfirmToCloseDialog , ProfileCardStampMenu_ConfirmToClearDialog , IProfileCardStampMenu_ConfirmToClearDialog }
+ # [cfg (feature = "app-profilecardstampmenu-types")] pub use profilecardstampmenu :: { ProfileCardStampMenu_ConfirmToClearDialog_DecideEventHandler , IProfileCardStampMenu_ConfirmToClearDialog_DecideEventHandler , ProfileCardStampMenu_DisposeEventHandler , IProfileCardStampMenu_DisposeEventHandler , ProfileCardStampMenu , IProfileCardStampMenu , ProfileCardStampMenu_ConfirmToCloseDialog , IProfileCardStampMenu_ConfirmToCloseDialog , ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler , IProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler , ProfileCardStampMenu_EditMode , ProfileCardStampMenu_ConfirmToClearDialog , IProfileCardStampMenu_ConfirmToClearDialog , ProfileCardStampMenu_DialogMenuItem , IProfileCardStampMenu_DialogMenuItem }
  ;
- # [cfg (feature = "app-profilecardstampmenu")] pub use profilecardstampmenu :: { IProfileCardStampMenuMethods , IProfileCardStampMenu_ConfirmToClearDialog_DecideEventHandlerMethods , IProfileCardStampMenu_DisposeEventHandlerMethods , IProfileCardStampMenu_DialogMenuItemMethods , IProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandlerMethods , IProfileCardStampMenu_ConfirmToCloseDialogMethods , IProfileCardStampMenu_ConfirmToClearDialogMethods }
+ # [cfg (feature = "app-profilecardstampmenu")] pub use profilecardstampmenu :: { IProfileCardStampMenu_ConfirmToClearDialog_DecideEventHandlerMethods , IProfileCardStampMenu_DisposeEventHandlerMethods , IProfileCardStampMenuMethods , IProfileCardStampMenu_ConfirmToCloseDialogMethods , IProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandlerMethods , IProfileCardStampMenu_ConfirmToClearDialogMethods , IProfileCardStampMenu_DialogMenuItemMethods }
  ;
  # [cfg (any (feature = "app-profilecardstampobject-types"))] pub mod profilecardstampobject ;
  # [cfg (feature = "app-profilecardstampobject-types")] pub use profilecardstampobject :: { ProfileCardStampObject , IProfileCardStampObject }
@@ -6674,9 +6674,9 @@
  # [cfg (feature = "app-profilecardtitlemenuitem")] pub use profilecardtitlemenuitem :: { IProfileCardTitleMenuItemMethods }
  ;
  # [cfg (any (feature = "app-profilecardtopmenu-types"))] pub mod profilecardtopmenu ;
- # [cfg (feature = "app-profilecardtopmenu-types")] pub use profilecardtopmenu :: { ProfileCardTopMenu_Result2 , ProfileCardTopMenu_PhotoMenuItem , IProfileCardTopMenu_PhotoMenuItem , ProfileCardTopMenu , IProfileCardTopMenu , ProfileCardTopMenu_PublicSettingMenuItem , IProfileCardTopMenu_PublicSettingMenuItem , ProfileCardTopMenu_AlbumMenuItem , IProfileCardTopMenu_AlbumMenuItem , ProfileCardTopMenu_MyCardMenuItem , IProfileCardTopMenu_MyCardMenuItem , ProfileCardTopMenu_StampVisibilitySettingMenuItem , IProfileCardTopMenu_StampVisibilitySettingMenuItem , ProfileCardTopMenu_DecideEventHandler , IProfileCardTopMenu_DecideEventHandler }
+ # [cfg (feature = "app-profilecardtopmenu-types")] pub use profilecardtopmenu :: { ProfileCardTopMenu_MyCardMenuItem , IProfileCardTopMenu_MyCardMenuItem , ProfileCardTopMenu_PublicSettingMenuItem , IProfileCardTopMenu_PublicSettingMenuItem , ProfileCardTopMenu_AlbumMenuItem , IProfileCardTopMenu_AlbumMenuItem , ProfileCardTopMenu_DecideEventHandler , IProfileCardTopMenu_DecideEventHandler , ProfileCardTopMenu , IProfileCardTopMenu , ProfileCardTopMenu_StampVisibilitySettingMenuItem , IProfileCardTopMenu_StampVisibilitySettingMenuItem , ProfileCardTopMenu_PhotoMenuItem , IProfileCardTopMenu_PhotoMenuItem , ProfileCardTopMenu_Result2 }
  ;
- # [cfg (feature = "app-profilecardtopmenu")] pub use profilecardtopmenu :: { IProfileCardTopMenu_PhotoMenuItemMethods , IProfileCardTopMenuMethods , IProfileCardTopMenu_PublicSettingMenuItemMethods , IProfileCardTopMenu_AlbumMenuItemMethods , IProfileCardTopMenu_MyCardMenuItemMethods , IProfileCardTopMenu_StampVisibilitySettingMenuItemMethods , IProfileCardTopMenu_DecideEventHandlerMethods }
+ # [cfg (feature = "app-profilecardtopmenu")] pub use profilecardtopmenu :: { IProfileCardTopMenu_MyCardMenuItemMethods , IProfileCardTopMenu_PublicSettingMenuItemMethods , IProfileCardTopMenu_AlbumMenuItemMethods , IProfileCardTopMenu_DecideEventHandlerMethods , IProfileCardTopMenuMethods , IProfileCardTopMenu_StampVisibilitySettingMenuItemMethods , IProfileCardTopMenu_PhotoMenuItemMethods }
  ;
  # [cfg (any (feature = "app-profilecardtopmenucontent-types"))] pub mod profilecardtopmenucontent ;
  # [cfg (feature = "app-profilecardtopmenucontent-types")] pub use profilecardtopmenucontent :: { ProfileCardTopMenuContent , IProfileCardTopMenuContent }
@@ -6729,9 +6729,9 @@
  # [cfg (feature = "app-profilecardvisualframemenuitem")] pub use profilecardvisualframemenuitem :: { IProfileCardVisualFrameMenuItemMethods }
  ;
  # [cfg (any (feature = "app-profilecardvisualmenu-types"))] pub mod profilecardvisualmenu ;
- # [cfg (feature = "app-profilecardvisualmenu-types")] pub use profilecardvisualmenu :: { ProfileCardVisualMenu_Category , ProfileCardVisualMenu , IProfileCardVisualMenu , ProfileCardVisualMenu_DecideEventHandler , IProfileCardVisualMenu_DecideEventHandler , ProfileCardVisualMenu_DisposeEventHandler , IProfileCardVisualMenu_DisposeEventHandler }
+ # [cfg (feature = "app-profilecardvisualmenu-types")] pub use profilecardvisualmenu :: { ProfileCardVisualMenu_DecideEventHandler , IProfileCardVisualMenu_DecideEventHandler , ProfileCardVisualMenu , IProfileCardVisualMenu , ProfileCardVisualMenu_Category , ProfileCardVisualMenu_DisposeEventHandler , IProfileCardVisualMenu_DisposeEventHandler }
  ;
- # [cfg (feature = "app-profilecardvisualmenu")] pub use profilecardvisualmenu :: { IProfileCardVisualMenuMethods , IProfileCardVisualMenu_DecideEventHandlerMethods , IProfileCardVisualMenu_DisposeEventHandlerMethods }
+ # [cfg (feature = "app-profilecardvisualmenu")] pub use profilecardvisualmenu :: { IProfileCardVisualMenu_DecideEventHandlerMethods , IProfileCardVisualMenuMethods , IProfileCardVisualMenu_DisposeEventHandlerMethods }
  ;
  # [cfg (any (feature = "app-profilecardvisualmenucontent-types"))] pub mod profilecardvisualmenucontent ;
  # [cfg (feature = "app-profilecardvisualmenucontent-types")] pub use profilecardvisualmenucontent :: { ProfileCardVisualMenuContent , IProfileCardVisualMenuContent }
@@ -6770,7 +6770,7 @@
  ;
  # [cfg (any (feature = "app-push_up-musclepushupsequence-types"))] pub mod push_up ;
  # [cfg (any (feature = "app-qualitysettingsstack-types"))] pub mod qualitysettingsstack ;
- # [cfg (feature = "app-qualitysettingsstack-types")] pub use qualitysettingsstack :: { QualitySettingsStack_Settings , QualitySettingsStack , IQualitySettingsStack }
+ # [cfg (feature = "app-qualitysettingsstack-types")] pub use qualitysettingsstack :: { QualitySettingsStack , IQualitySettingsStack , QualitySettingsStack_Settings }
  ;
  # [cfg (feature = "app-qualitysettingsstack")] pub use qualitysettingsstack :: { IQualitySettingsStackMethods }
  ;
@@ -6785,7 +6785,7 @@
  # [cfg (feature = "app-railendmarkerreciever")] pub use railendmarkerreciever :: { IRailEndMarkerRecieverMethods }
  ;
  # [cfg (any (feature = "app-random_2-types"))] pub mod random_2 ;
- # [cfg (feature = "app-random_2-types")] pub use random_2 :: { Random_Type , Random_2 , IRandom_2 }
+ # [cfg (feature = "app-random_2-types")] pub use random_2 :: { Random_2 , IRandom_2 , Random_Type }
  ;
  # [cfg (feature = "app-random_2")] pub use random_2 :: { IRandom_2Methods }
  ;
@@ -6808,9 +6808,9 @@
  # [cfg (feature = "app-ranking")] pub use ranking :: { IRankingMethods }
  ;
  # [cfg (any (feature = "app-rankingmenu-types"))] pub mod rankingmenu ;
- # [cfg (feature = "app-rankingmenu-types")] pub use rankingmenu :: { RankingMenu , IRankingMenu , RankingMenu_RankingMenuItem , IRankingMenu_RankingMenuItem }
+ # [cfg (feature = "app-rankingmenu-types")] pub use rankingmenu :: { RankingMenu_RankingMenuItem , IRankingMenu_RankingMenuItem , RankingMenu , IRankingMenu }
  ;
- # [cfg (feature = "app-rankingmenu")] pub use rankingmenu :: { IRankingMenuMethods , IRankingMenu_RankingMenuItemMethods }
+ # [cfg (feature = "app-rankingmenu")] pub use rankingmenu :: { IRankingMenu_RankingMenuItemMethods , IRankingMenuMethods }
  ;
  # [cfg (any (feature = "app-rankingmenucontent-types"))] pub mod rankingmenucontent ;
  # [cfg (feature = "app-rankingmenucontent-types")] pub use rankingmenucontent :: { RankingMenuContent , IRankingMenuContent }
@@ -6823,9 +6823,9 @@
  # [cfg (feature = "app-rankingmenuitemcontent")] pub use rankingmenuitemcontent :: { IRankingMenuItemContentMethods }
  ;
  # [cfg (any (feature = "app-rankingsequence-types"))] pub mod rankingsequence ;
- # [cfg (feature = "app-rankingsequence-types")] pub use rankingsequence :: { RankingSequence_TopMenu_BaseMenuItem , IRankingSequence_TopMenu_BaseMenuItem , RankingSequence_TopMenu_RankingMenuItem , IRankingSequence_TopMenu_RankingMenuItem , RankingSequence_UploadPairsMenu_UploadDataMenuItem , IRankingSequence_UploadPairsMenu_UploadDataMenuItem , RankingSequence , IRankingSequence , RankingSequence_UploadPairsMenu_UploadPersonMenuItem , IRankingSequence_UploadPairsMenu_UploadPersonMenuItem , RankingSequence_UploadPairsMenu_UploadGodMenuItem , IRankingSequence_UploadPairsMenu_UploadGodMenuItem , RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem , IRankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem , RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem , IRankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem , RankingSequence_UploadPairsMenu , IRankingSequence_UploadPairsMenu , RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem , IRankingSequence_UploadPairsMenu_AddUploadPairsMenuItem , RankingSequence_TopMenu , IRankingSequence_TopMenu , RankingSequence_TopMenu_UploadMenuItem , IRankingSequence_TopMenu_UploadMenuItem , RankingSequence_TopMenu_ChapterSelect , IRankingSequence_TopMenu_ChapterSelect , RankingSequence_Label , RankingSequence_PairMenuItem , IRankingSequence_PairMenuItem , RankingSequence_UploadPairsMenu_UploadPairMenuItem , IRankingSequence_UploadPairsMenu_UploadPairMenuItem }
+ # [cfg (feature = "app-rankingsequence-types")] pub use rankingsequence :: { RankingSequence_UploadPairsMenu_UploadPersonMenuItem , IRankingSequence_UploadPairsMenu_UploadPersonMenuItem , RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem , IRankingSequence_UploadPairsMenu_AddUploadPairsMenuItem , RankingSequence_UploadPairsMenu , IRankingSequence_UploadPairsMenu , RankingSequence_PairMenuItem , IRankingSequence_PairMenuItem , RankingSequence_UploadPairsMenu_UploadDataMenuItem , IRankingSequence_UploadPairsMenu_UploadDataMenuItem , RankingSequence , IRankingSequence , RankingSequence_TopMenu_BaseMenuItem , IRankingSequence_TopMenu_BaseMenuItem , RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem , IRankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem , RankingSequence_UploadPairsMenu_UploadGodMenuItem , IRankingSequence_UploadPairsMenu_UploadGodMenuItem , RankingSequence_UploadPairsMenu_UploadPairMenuItem , IRankingSequence_UploadPairsMenu_UploadPairMenuItem , RankingSequence_TopMenu , IRankingSequence_TopMenu , RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem , IRankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem , RankingSequence_TopMenu_UploadMenuItem , IRankingSequence_TopMenu_UploadMenuItem , RankingSequence_TopMenu_RankingMenuItem , IRankingSequence_TopMenu_RankingMenuItem , RankingSequence_Label , RankingSequence_TopMenu_ChapterSelect , IRankingSequence_TopMenu_ChapterSelect }
  ;
- # [cfg (feature = "app-rankingsequence")] pub use rankingsequence :: { IRankingSequence_TopMenu_BaseMenuItemMethods , IRankingSequence_TopMenu_RankingMenuItemMethods , IRankingSequence_UploadPairsMenu_UploadDataMenuItemMethods , IRankingSequenceMethods , IRankingSequence_UploadPairsMenu_UploadPersonMenuItemMethods , IRankingSequence_UploadPairsMenu_UploadGodMenuItemMethods , IRankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItemMethods , IRankingSequence_UploadPairsMenu_ClearUploadPairsMenuItemMethods , IRankingSequence_UploadPairsMenuMethods , IRankingSequence_UploadPairsMenu_AddUploadPairsMenuItemMethods , IRankingSequence_TopMenuMethods , IRankingSequence_TopMenu_UploadMenuItemMethods , IRankingSequence_TopMenu_ChapterSelectMethods , IRankingSequence_PairMenuItemMethods , IRankingSequence_UploadPairsMenu_UploadPairMenuItemMethods }
+ # [cfg (feature = "app-rankingsequence")] pub use rankingsequence :: { IRankingSequence_UploadPairsMenu_UploadPersonMenuItemMethods , IRankingSequence_UploadPairsMenu_AddUploadPairsMenuItemMethods , IRankingSequence_UploadPairsMenuMethods , IRankingSequence_PairMenuItemMethods , IRankingSequence_UploadPairsMenu_UploadDataMenuItemMethods , IRankingSequenceMethods , IRankingSequence_TopMenu_BaseMenuItemMethods , IRankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItemMethods , IRankingSequence_UploadPairsMenu_UploadGodMenuItemMethods , IRankingSequence_UploadPairsMenu_UploadPairMenuItemMethods , IRankingSequence_TopMenuMethods , IRankingSequence_UploadPairsMenu_ClearUploadPairsMenuItemMethods , IRankingSequence_TopMenu_UploadMenuItemMethods , IRankingSequence_TopMenu_RankingMenuItemMethods , IRankingSequence_TopMenu_ChapterSelectMethods }
  ;
  # [cfg (any (feature = "app-rawclasslist_1-types"))] pub mod rawclasslist_1 ;
  # [cfg (feature = "app-rawclasslist_1-types")] pub use rawclasslist_1 :: { RawClassList_1 , IRawClassList_1 }
@@ -6868,14 +6868,14 @@
  # [cfg (feature = "app-refinegodweaponparamemptymenuitem")] pub use refinegodweaponparamemptymenuitem :: { IRefineGodWeaponParamEmptyMenuItemMethods }
  ;
  # [cfg (any (feature = "app-refinegodweaponparammanager-types"))] pub mod refinegodweaponparammanager ;
- # [cfg (feature = "app-refinegodweaponparammanager-types")] pub use refinegodweaponparammanager :: { RefineGodWeaponParamManager_ReturnEventHandler , IRefineGodWeaponParamManager_ReturnEventHandler , RefineGodWeaponParamManager , IRefineGodWeaponParamManager }
+ # [cfg (feature = "app-refinegodweaponparammanager-types")] pub use refinegodweaponparammanager :: { RefineGodWeaponParamManager , IRefineGodWeaponParamManager , RefineGodWeaponParamManager_ReturnEventHandler , IRefineGodWeaponParamManager_ReturnEventHandler }
  ;
- # [cfg (feature = "app-refinegodweaponparammanager")] pub use refinegodweaponparammanager :: { IRefineGodWeaponParamManager_ReturnEventHandlerMethods , IRefineGodWeaponParamManagerMethods }
+ # [cfg (feature = "app-refinegodweaponparammanager")] pub use refinegodweaponparammanager :: { IRefineGodWeaponParamManagerMethods , IRefineGodWeaponParamManager_ReturnEventHandlerMethods }
  ;
  # [cfg (any (feature = "app-refinegodweaponparammenu-types"))] pub mod refinegodweaponparammenu ;
- # [cfg (feature = "app-refinegodweaponparammenu-types")] pub use refinegodweaponparammenu :: { RefineGodWeaponParamMenu , IRefineGodWeaponParamMenu , RefineGodWeaponParamMenu_DecideEventHandler , IRefineGodWeaponParamMenu_DecideEventHandler , RefineGodWeaponParamMenu_SelectEventHandler , IRefineGodWeaponParamMenu_SelectEventHandler , RefineGodWeaponParamMenu_RequestCloseEventHandler , IRefineGodWeaponParamMenu_RequestCloseEventHandler }
+ # [cfg (feature = "app-refinegodweaponparammenu-types")] pub use refinegodweaponparammenu :: { RefineGodWeaponParamMenu_DecideEventHandler , IRefineGodWeaponParamMenu_DecideEventHandler , RefineGodWeaponParamMenu , IRefineGodWeaponParamMenu , RefineGodWeaponParamMenu_SelectEventHandler , IRefineGodWeaponParamMenu_SelectEventHandler , RefineGodWeaponParamMenu_RequestCloseEventHandler , IRefineGodWeaponParamMenu_RequestCloseEventHandler }
  ;
- # [cfg (feature = "app-refinegodweaponparammenu")] pub use refinegodweaponparammenu :: { IRefineGodWeaponParamMenuMethods , IRefineGodWeaponParamMenu_DecideEventHandlerMethods , IRefineGodWeaponParamMenu_SelectEventHandlerMethods , IRefineGodWeaponParamMenu_RequestCloseEventHandlerMethods }
+ # [cfg (feature = "app-refinegodweaponparammenu")] pub use refinegodweaponparammenu :: { IRefineGodWeaponParamMenu_DecideEventHandlerMethods , IRefineGodWeaponParamMenuMethods , IRefineGodWeaponParamMenu_SelectEventHandlerMethods , IRefineGodWeaponParamMenu_RequestCloseEventHandlerMethods }
  ;
  # [cfg (any (feature = "app-refinegodweaponparammenucontent-types"))] pub mod refinegodweaponparammenucontent ;
  # [cfg (feature = "app-refinegodweaponparammenucontent-types")] pub use refinegodweaponparammenucontent :: { RefineGodWeaponParamMenuContent , IRefineGodWeaponParamMenuContent }
@@ -6893,9 +6893,9 @@
  # [cfg (feature = "app-refinegodweaponparammenuitemcontent")] pub use refinegodweaponparammenuitemcontent :: { IRefineGodWeaponParamMenuItemContentMethods }
  ;
  # [cfg (any (feature = "app-refinegodweaponresetyesnodialog-types"))] pub mod refinegodweaponresetyesnodialog ;
- # [cfg (feature = "app-refinegodweaponresetyesnodialog-types")] pub use refinegodweaponresetyesnodialog :: { RefineGodWeaponResetYesNoDialog , IRefineGodWeaponResetYesNoDialog , RefineGodWeaponResetYesNoDialog_YesMenuItem , IRefineGodWeaponResetYesNoDialog_YesMenuItem , RefineGodWeaponResetYesNoDialog_YesEventHandler , IRefineGodWeaponResetYesNoDialog_YesEventHandler }
+ # [cfg (feature = "app-refinegodweaponresetyesnodialog-types")] pub use refinegodweaponresetyesnodialog :: { RefineGodWeaponResetYesNoDialog_YesEventHandler , IRefineGodWeaponResetYesNoDialog_YesEventHandler , RefineGodWeaponResetYesNoDialog_YesMenuItem , IRefineGodWeaponResetYesNoDialog_YesMenuItem , RefineGodWeaponResetYesNoDialog , IRefineGodWeaponResetYesNoDialog }
  ;
- # [cfg (feature = "app-refinegodweaponresetyesnodialog")] pub use refinegodweaponresetyesnodialog :: { IRefineGodWeaponResetYesNoDialogMethods , IRefineGodWeaponResetYesNoDialog_YesMenuItemMethods , IRefineGodWeaponResetYesNoDialog_YesEventHandlerMethods }
+ # [cfg (feature = "app-refinegodweaponresetyesnodialog")] pub use refinegodweaponresetyesnodialog :: { IRefineGodWeaponResetYesNoDialog_YesEventHandlerMethods , IRefineGodWeaponResetYesNoDialog_YesMenuItemMethods , IRefineGodWeaponResetYesNoDialogMethods }
  ;
  # [cfg (any (feature = "app-refinegodweaponroot-types"))] pub mod refinegodweaponroot ;
  # [cfg (feature = "app-refinegodweaponroot-types")] pub use refinegodweaponroot :: { RefineGodWeaponRoot_RefineStatusEfficacy , IRefineGodWeaponRoot_RefineStatusEfficacy , RefineGodWeaponRoot , IRefineGodWeaponRoot , RefineGodWeaponRoot_WeaponInfoLabel , IRefineGodWeaponRoot_WeaponInfoLabel , RefineGodWeaponRoot_RefineStatus , IRefineGodWeaponRoot_RefineStatus }
@@ -6913,9 +6913,9 @@
  # [cfg (feature = "app-refinegodweaponselectmanager")] pub use refinegodweaponselectmanager :: { IRefineGodWeaponSelectManagerMethods , IRefineGodWeaponSelectManager_ReturnEventHandlerMethods }
  ;
  # [cfg (any (feature = "app-refinegodweaponselectmenu-types"))] pub mod refinegodweaponselectmenu ;
- # [cfg (feature = "app-refinegodweaponselectmenu-types")] pub use refinegodweaponselectmenu :: { RefineGodWeaponSelectMenu_DecideEventHandler , IRefineGodWeaponSelectMenu_DecideEventHandler , RefineGodWeaponSelectMenu , IRefineGodWeaponSelectMenu , RefineGodWeaponSelectMenu_RequestCloseEventHandler , IRefineGodWeaponSelectMenu_RequestCloseEventHandler , RefineGodWeaponSelectMenu_SelectEventHandler , IRefineGodWeaponSelectMenu_SelectEventHandler }
+ # [cfg (feature = "app-refinegodweaponselectmenu-types")] pub use refinegodweaponselectmenu :: { RefineGodWeaponSelectMenu_RequestCloseEventHandler , IRefineGodWeaponSelectMenu_RequestCloseEventHandler , RefineGodWeaponSelectMenu_DecideEventHandler , IRefineGodWeaponSelectMenu_DecideEventHandler , RefineGodWeaponSelectMenu , IRefineGodWeaponSelectMenu , RefineGodWeaponSelectMenu_SelectEventHandler , IRefineGodWeaponSelectMenu_SelectEventHandler }
  ;
- # [cfg (feature = "app-refinegodweaponselectmenu")] pub use refinegodweaponselectmenu :: { IRefineGodWeaponSelectMenu_DecideEventHandlerMethods , IRefineGodWeaponSelectMenuMethods , IRefineGodWeaponSelectMenu_RequestCloseEventHandlerMethods , IRefineGodWeaponSelectMenu_SelectEventHandlerMethods }
+ # [cfg (feature = "app-refinegodweaponselectmenu")] pub use refinegodweaponselectmenu :: { IRefineGodWeaponSelectMenu_RequestCloseEventHandlerMethods , IRefineGodWeaponSelectMenu_DecideEventHandlerMethods , IRefineGodWeaponSelectMenuMethods , IRefineGodWeaponSelectMenu_SelectEventHandlerMethods }
  ;
  # [cfg (any (feature = "app-refinegodweaponselectmenucontent-types"))] pub mod refinegodweaponselectmenucontent ;
  # [cfg (feature = "app-refinegodweaponselectmenucontent-types")] pub use refinegodweaponselectmenucontent :: { RefineGodWeaponSelectMenuContent , IRefineGodWeaponSelectMenuContent }
@@ -6933,19 +6933,19 @@
  # [cfg (feature = "app-refinegodweaponselectmenuitemcontent")] pub use refinegodweaponselectmenuitemcontent :: { IRefineGodWeaponSelectMenuItemContentMethods }
  ;
  # [cfg (any (feature = "app-refinegodweaponsequence-types"))] pub mod refinegodweaponsequence ;
- # [cfg (feature = "app-refinegodweaponsequence-types")] pub use refinegodweaponsequence :: { RefineGodWeaponSequence , IRefineGodWeaponSequence , RefineGodWeaponSequence_Label2 }
+ # [cfg (feature = "app-refinegodweaponsequence-types")] pub use refinegodweaponsequence :: { RefineGodWeaponSequence_Label2 , RefineGodWeaponSequence , IRefineGodWeaponSequence }
  ;
  # [cfg (feature = "app-refinegodweaponsequence")] pub use refinegodweaponsequence :: { IRefineGodWeaponSequenceMethods }
  ;
  # [cfg (any (feature = "app-refinegodweapontopmenu-types"))] pub mod refinegodweapontopmenu ;
- # [cfg (feature = "app-refinegodweapontopmenu-types")] pub use refinegodweapontopmenu :: { RefineGodWeaponTopMenu_ResetMenuItem , IRefineGodWeaponTopMenu_ResetMenuItem , RefineGodWeaponTopMenu_RefineMenuItem , IRefineGodWeaponTopMenu_RefineMenuItem , RefineGodWeaponTopMenu , IRefineGodWeaponTopMenu , RefineGodWeaponTopMenu_DecideEventHandler , IRefineGodWeaponTopMenu_DecideEventHandler , RefineGodWeaponTopMenu_Result2 }
+ # [cfg (feature = "app-refinegodweapontopmenu-types")] pub use refinegodweapontopmenu :: { RefineGodWeaponTopMenu_RefineMenuItem , IRefineGodWeaponTopMenu_RefineMenuItem , RefineGodWeaponTopMenu , IRefineGodWeaponTopMenu , RefineGodWeaponTopMenu_Result2 , RefineGodWeaponTopMenu_DecideEventHandler , IRefineGodWeaponTopMenu_DecideEventHandler , RefineGodWeaponTopMenu_ResetMenuItem , IRefineGodWeaponTopMenu_ResetMenuItem }
  ;
- # [cfg (feature = "app-refinegodweapontopmenu")] pub use refinegodweapontopmenu :: { IRefineGodWeaponTopMenu_ResetMenuItemMethods , IRefineGodWeaponTopMenu_RefineMenuItemMethods , IRefineGodWeaponTopMenuMethods , IRefineGodWeaponTopMenu_DecideEventHandlerMethods }
+ # [cfg (feature = "app-refinegodweapontopmenu")] pub use refinegodweapontopmenu :: { IRefineGodWeaponTopMenu_RefineMenuItemMethods , IRefineGodWeaponTopMenuMethods , IRefineGodWeaponTopMenu_DecideEventHandlerMethods , IRefineGodWeaponTopMenu_ResetMenuItemMethods }
  ;
  # [cfg (any (feature = "app-refinegodweaponyesnodialog-types"))] pub mod refinegodweaponyesnodialog ;
- # [cfg (feature = "app-refinegodweaponyesnodialog-types")] pub use refinegodweaponyesnodialog :: { RefineGodWeaponYesNoDialog , IRefineGodWeaponYesNoDialog , RefineGodWeaponYesNoDialog_YesMenuItem , IRefineGodWeaponYesNoDialog_YesMenuItem , RefineGodWeaponYesNoDialog_YesEventHandler , IRefineGodWeaponYesNoDialog_YesEventHandler }
+ # [cfg (feature = "app-refinegodweaponyesnodialog-types")] pub use refinegodweaponyesnodialog :: { RefineGodWeaponYesNoDialog_YesEventHandler , IRefineGodWeaponYesNoDialog_YesEventHandler , RefineGodWeaponYesNoDialog_YesMenuItem , IRefineGodWeaponYesNoDialog_YesMenuItem , RefineGodWeaponYesNoDialog , IRefineGodWeaponYesNoDialog }
  ;
- # [cfg (feature = "app-refinegodweaponyesnodialog")] pub use refinegodweaponyesnodialog :: { IRefineGodWeaponYesNoDialogMethods , IRefineGodWeaponYesNoDialog_YesMenuItemMethods , IRefineGodWeaponYesNoDialog_YesEventHandlerMethods }
+ # [cfg (feature = "app-refinegodweaponyesnodialog")] pub use refinegodweaponyesnodialog :: { IRefineGodWeaponYesNoDialog_YesEventHandlerMethods , IRefineGodWeaponYesNoDialog_YesMenuItemMethods , IRefineGodWeaponYesNoDialogMethods }
  ;
  # [cfg (any (feature = "app-refineitemdetailwindow-types"))] pub mod refineitemdetailwindow ;
  # [cfg (feature = "app-refineitemdetailwindow-types")] pub use refineitemdetailwindow :: { RefineItemDetailWindow , IRefineItemDetailWindow }
@@ -6963,9 +6963,9 @@
  # [cfg (feature = "app-refineringinfowindow")] pub use refineringinfowindow :: { IRefineRingInfoWindowMethods , IRefineRingInfoWindow_RingRefineStatisticsMethods , IRefineRingInfoWindow_RingRefinedInfoMethods }
  ;
  # [cfg (any (feature = "app-refineringresult10ringinfocontent-types"))] pub mod refineringresult10ringinfocontent ;
- # [cfg (feature = "app-refineringresult10ringinfocontent-types")] pub use refineringresult10ringinfocontent :: { RefineRingResult10RingInfoContent , IRefineRingResult10RingInfoContent , RefineRingResult10RingInfoContent_RingParam , IRefineRingResult10RingInfoContent_RingParam }
+ # [cfg (feature = "app-refineringresult10ringinfocontent-types")] pub use refineringresult10ringinfocontent :: { RefineRingResult10RingInfoContent_RingParam , IRefineRingResult10RingInfoContent_RingParam , RefineRingResult10RingInfoContent , IRefineRingResult10RingInfoContent }
  ;
- # [cfg (feature = "app-refineringresult10ringinfocontent")] pub use refineringresult10ringinfocontent :: { IRefineRingResult10RingInfoContentMethods , IRefineRingResult10RingInfoContent_RingParamMethods }
+ # [cfg (feature = "app-refineringresult10ringinfocontent")] pub use refineringresult10ringinfocontent :: { IRefineRingResult10RingInfoContent_RingParamMethods , IRefineRingResult10RingInfoContentMethods }
  ;
  # [cfg (any (feature = "app-refineringresult10window-types"))] pub mod refineringresult10window ;
  # [cfg (feature = "app-refineringresult10window-types")] pub use refineringresult10window :: { RefineRingResult10Window , IRefineRingResult10Window }
@@ -6973,9 +6973,9 @@
  # [cfg (feature = "app-refineringresult10window")] pub use refineringresult10window :: { IRefineRingResult10WindowMethods }
  ;
  # [cfg (any (feature = "app-refineringresult1window-types"))] pub mod refineringresult1window ;
- # [cfg (feature = "app-refineringresult1window-types")] pub use refineringresult1window :: { RefineRingResult1Window , IRefineRingResult1Window , RefineRingResult1Window_RingParam , IRefineRingResult1Window_RingParam }
+ # [cfg (feature = "app-refineringresult1window-types")] pub use refineringresult1window :: { RefineRingResult1Window_RingParam , IRefineRingResult1Window_RingParam , RefineRingResult1Window , IRefineRingResult1Window }
  ;
- # [cfg (feature = "app-refineringresult1window")] pub use refineringresult1window :: { IRefineRingResult1WindowMethods , IRefineRingResult1Window_RingParamMethods }
+ # [cfg (feature = "app-refineringresult1window")] pub use refineringresult1window :: { IRefineRingResult1Window_RingParamMethods , IRefineRingResult1WindowMethods }
  ;
  # [cfg (any (feature = "app-refineringtimesselectmenu-types"))] pub mod refineringtimesselectmenu ;
  # [cfg (feature = "app-refineringtimesselectmenu-types")] pub use refineringtimesselectmenu :: { RefineRingTimesSelectMenu_DecideEventHandler , IRefineRingTimesSelectMenu_DecideEventHandler , RefineRingTimesSelectMenu , IRefineRingTimesSelectMenu }
@@ -7023,9 +7023,9 @@
  # [cfg (feature = "app-refineshopengravegodemptymenuitem")] pub use refineshopengravegodemptymenuitem :: { IRefineShopEngraveGodEmptyMenuItemMethods }
  ;
  # [cfg (any (feature = "app-refineshopengravegodmenu-types"))] pub mod refineshopengravegodmenu ;
- # [cfg (feature = "app-refineshopengravegodmenu-types")] pub use refineshopengravegodmenu :: { RefineShopEngraveGodMenu_SelectEventHandler , IRefineShopEngraveGodMenu_SelectEventHandler , RefineShopEngraveGodMenu_DecideEventHandler , IRefineShopEngraveGodMenu_DecideEventHandler , RefineShopEngraveGodMenu , IRefineShopEngraveGodMenu , RefineShopEngraveGodMenu_RequestCloseEventHandler , IRefineShopEngraveGodMenu_RequestCloseEventHandler }
+ # [cfg (feature = "app-refineshopengravegodmenu-types")] pub use refineshopengravegodmenu :: { RefineShopEngraveGodMenu_RequestCloseEventHandler , IRefineShopEngraveGodMenu_RequestCloseEventHandler , RefineShopEngraveGodMenu_DecideEventHandler , IRefineShopEngraveGodMenu_DecideEventHandler , RefineShopEngraveGodMenu_SelectEventHandler , IRefineShopEngraveGodMenu_SelectEventHandler , RefineShopEngraveGodMenu , IRefineShopEngraveGodMenu }
  ;
- # [cfg (feature = "app-refineshopengravegodmenu")] pub use refineshopengravegodmenu :: { IRefineShopEngraveGodMenu_SelectEventHandlerMethods , IRefineShopEngraveGodMenu_DecideEventHandlerMethods , IRefineShopEngraveGodMenuMethods , IRefineShopEngraveGodMenu_RequestCloseEventHandlerMethods }
+ # [cfg (feature = "app-refineshopengravegodmenu")] pub use refineshopengravegodmenu :: { IRefineShopEngraveGodMenu_RequestCloseEventHandlerMethods , IRefineShopEngraveGodMenu_DecideEventHandlerMethods , IRefineShopEngraveGodMenu_SelectEventHandlerMethods , IRefineShopEngraveGodMenuMethods }
  ;
  # [cfg (any (feature = "app-refineshopengravegodmenucontent-types"))] pub mod refineshopengravegodmenucontent ;
  # [cfg (feature = "app-refineshopengravegodmenucontent-types")] pub use refineshopengravegodmenucontent :: { RefineShopEngraveGodMenuContent , IRefineShopEngraveGodMenuContent }
@@ -7043,9 +7043,9 @@
  # [cfg (feature = "app-refineshopengravegodmenuitemcontent")] pub use refineshopengravegodmenuitemcontent :: { IRefineShopEngraveGodMenuItemContentMethods }
  ;
  # [cfg (any (feature = "app-refineshopengravegodroot-types"))] pub mod refineshopengravegodroot ;
- # [cfg (feature = "app-refineshopengravegodroot-types")] pub use refineshopengravegodroot :: { RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem , IRefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem , RefineShopEngraveGodRoot_ConfirmDialog_YesMenuItem , IRefineShopEngraveGodRoot_ConfirmDialog_YesMenuItem , RefineShopEngraveGodRoot , IRefineShopEngraveGodRoot , RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler , IRefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler , RefineShopEngraveGodRoot_ConfirmToReplaceDialog , IRefineShopEngraveGodRoot_ConfirmToReplaceDialog , RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler , IRefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler , RefineShopEngraveGodRoot_ReturnEventHandler , IRefineShopEngraveGodRoot_ReturnEventHandler , RefineShopEngraveGodRoot_ConfirmDialog , IRefineShopEngraveGodRoot_ConfirmDialog }
+ # [cfg (feature = "app-refineshopengravegodroot-types")] pub use refineshopengravegodroot :: { RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem , IRefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem , RefineShopEngraveGodRoot_ConfirmDialog , IRefineShopEngraveGodRoot_ConfirmDialog , RefineShopEngraveGodRoot_ConfirmDialog_YesMenuItem , IRefineShopEngraveGodRoot_ConfirmDialog_YesMenuItem , RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler , IRefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler , RefineShopEngraveGodRoot , IRefineShopEngraveGodRoot , RefineShopEngraveGodRoot_ConfirmToReplaceDialog , IRefineShopEngraveGodRoot_ConfirmToReplaceDialog , RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler , IRefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler , RefineShopEngraveGodRoot_ReturnEventHandler , IRefineShopEngraveGodRoot_ReturnEventHandler }
  ;
- # [cfg (feature = "app-refineshopengravegodroot")] pub use refineshopengravegodroot :: { IRefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItemMethods , IRefineShopEngraveGodRoot_ConfirmDialog_YesMenuItemMethods , IRefineShopEngraveGodRootMethods , IRefineShopEngraveGodRoot_ConfirmDialog_YesEventHandlerMethods , IRefineShopEngraveGodRoot_ConfirmToReplaceDialogMethods , IRefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandlerMethods , IRefineShopEngraveGodRoot_ReturnEventHandlerMethods , IRefineShopEngraveGodRoot_ConfirmDialogMethods }
+ # [cfg (feature = "app-refineshopengravegodroot")] pub use refineshopengravegodroot :: { IRefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItemMethods , IRefineShopEngraveGodRoot_ConfirmDialogMethods , IRefineShopEngraveGodRoot_ConfirmDialog_YesMenuItemMethods , IRefineShopEngraveGodRoot_ConfirmDialog_YesEventHandlerMethods , IRefineShopEngraveGodRootMethods , IRefineShopEngraveGodRoot_ConfirmToReplaceDialogMethods , IRefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandlerMethods , IRefineShopEngraveGodRoot_ReturnEventHandlerMethods }
  ;
  # [cfg (any (feature = "app-refineshopengraveitemselectmenu-types"))] pub mod refineshopengraveitemselectmenu ;
  # [cfg (feature = "app-refineshopengraveitemselectmenu-types")] pub use refineshopengraveitemselectmenu :: { RefineShopEngraveItemSelectMenu , IRefineShopEngraveItemSelectMenu }
@@ -7068,14 +7068,14 @@
  # [cfg (feature = "app-refineshopexchangecountmenucontent")] pub use refineshopexchangecountmenucontent :: { IRefineShopExchangeCountMenuContentMethods }
  ;
  # [cfg (any (feature = "app-refineshopexchangecountmenuitem-types"))] pub mod refineshopexchangecountmenuitem ;
- # [cfg (feature = "app-refineshopexchangecountmenuitem-types")] pub use refineshopexchangecountmenuitem :: { RefineShopExchangeCountMenuItem_DecideEventHandler , IRefineShopExchangeCountMenuItem_DecideEventHandler , RefineShopExchangeCountMenuItem , IRefineShopExchangeCountMenuItem , RefineShopExchangeCountMenuItem_SelectEventHandler , IRefineShopExchangeCountMenuItem_SelectEventHandler }
+ # [cfg (feature = "app-refineshopexchangecountmenuitem-types")] pub use refineshopexchangecountmenuitem :: { RefineShopExchangeCountMenuItem , IRefineShopExchangeCountMenuItem , RefineShopExchangeCountMenuItem_SelectEventHandler , IRefineShopExchangeCountMenuItem_SelectEventHandler , RefineShopExchangeCountMenuItem_DecideEventHandler , IRefineShopExchangeCountMenuItem_DecideEventHandler }
  ;
- # [cfg (feature = "app-refineshopexchangecountmenuitem")] pub use refineshopexchangecountmenuitem :: { IRefineShopExchangeCountMenuItem_DecideEventHandlerMethods , IRefineShopExchangeCountMenuItemMethods , IRefineShopExchangeCountMenuItem_SelectEventHandlerMethods }
+ # [cfg (feature = "app-refineshopexchangecountmenuitem")] pub use refineshopexchangecountmenuitem :: { IRefineShopExchangeCountMenuItemMethods , IRefineShopExchangeCountMenuItem_SelectEventHandlerMethods , IRefineShopExchangeCountMenuItem_DecideEventHandlerMethods }
  ;
  # [cfg (any (feature = "app-refineshopexchangemenutop-types"))] pub mod refineshopexchangemenutop ;
- # [cfg (feature = "app-refineshopexchangemenutop-types")] pub use refineshopexchangemenutop :: { RefineShopExchangeMenuTop , IRefineShopExchangeMenuTop , RefineShopExchangeMenuTop_ConfirmDialog , IRefineShopExchangeMenuTop_ConfirmDialog , RefineShopExchangeMenuTop_ConfirmDialog_YesMenuItem , IRefineShopExchangeMenuTop_ConfirmDialog_YesMenuItem , RefineShopExchangeMenuTop_ConfirmDialog_YesEventHandler , IRefineShopExchangeMenuTop_ConfirmDialog_YesEventHandler , RefineShopExchangeMenuTop_CloseEventHandler , IRefineShopExchangeMenuTop_CloseEventHandler , RefineShopExchangeMenuTop_Label }
+ # [cfg (feature = "app-refineshopexchangemenutop-types")] pub use refineshopexchangemenutop :: { RefineShopExchangeMenuTop_CloseEventHandler , IRefineShopExchangeMenuTop_CloseEventHandler , RefineShopExchangeMenuTop_ConfirmDialog_YesMenuItem , IRefineShopExchangeMenuTop_ConfirmDialog_YesMenuItem , RefineShopExchangeMenuTop , IRefineShopExchangeMenuTop , RefineShopExchangeMenuTop_ConfirmDialog , IRefineShopExchangeMenuTop_ConfirmDialog , RefineShopExchangeMenuTop_Label , RefineShopExchangeMenuTop_ConfirmDialog_YesEventHandler , IRefineShopExchangeMenuTop_ConfirmDialog_YesEventHandler }
  ;
- # [cfg (feature = "app-refineshopexchangemenutop")] pub use refineshopexchangemenutop :: { IRefineShopExchangeMenuTopMethods , IRefineShopExchangeMenuTop_ConfirmDialogMethods , IRefineShopExchangeMenuTop_ConfirmDialog_YesMenuItemMethods , IRefineShopExchangeMenuTop_ConfirmDialog_YesEventHandlerMethods , IRefineShopExchangeMenuTop_CloseEventHandlerMethods }
+ # [cfg (feature = "app-refineshopexchangemenutop")] pub use refineshopexchangemenutop :: { IRefineShopExchangeMenuTop_CloseEventHandlerMethods , IRefineShopExchangeMenuTop_ConfirmDialog_YesMenuItemMethods , IRefineShopExchangeMenuTopMethods , IRefineShopExchangeMenuTop_ConfirmDialogMethods , IRefineShopExchangeMenuTop_ConfirmDialog_YesEventHandlerMethods }
  ;
  # [cfg (any (feature = "app-refineshopexchangeresultpopup-types"))] pub mod refineshopexchangeresultpopup ;
  # [cfg (feature = "app-refineshopexchangeresultpopup-types")] pub use refineshopexchangeresultpopup :: { RefineShopExchangeResultPopup , IRefineShopExchangeResultPopup }
@@ -7088,9 +7088,9 @@
  # [cfg (feature = "app-refineshopexchangeroot")] pub use refineshopexchangeroot :: { IRefineShopExchangeRootMethods }
  ;
  # [cfg (any (feature = "app-refineshopexchangesourcemenu-types"))] pub mod refineshopexchangesourcemenu ;
- # [cfg (feature = "app-refineshopexchangesourcemenu-types")] pub use refineshopexchangesourcemenu :: { RefineShopExchangeSourceMenu , IRefineShopExchangeSourceMenu , RefineShopExchangeSourceMenu_CloseEventHandler , IRefineShopExchangeSourceMenu_CloseEventHandler }
+ # [cfg (feature = "app-refineshopexchangesourcemenu-types")] pub use refineshopexchangesourcemenu :: { RefineShopExchangeSourceMenu_CloseEventHandler , IRefineShopExchangeSourceMenu_CloseEventHandler , RefineShopExchangeSourceMenu , IRefineShopExchangeSourceMenu }
  ;
- # [cfg (feature = "app-refineshopexchangesourcemenu")] pub use refineshopexchangesourcemenu :: { IRefineShopExchangeSourceMenuMethods , IRefineShopExchangeSourceMenu_CloseEventHandlerMethods }
+ # [cfg (feature = "app-refineshopexchangesourcemenu")] pub use refineshopexchangesourcemenu :: { IRefineShopExchangeSourceMenu_CloseEventHandlerMethods , IRefineShopExchangeSourceMenuMethods }
  ;
  # [cfg (any (feature = "app-refineshopexchangesourcemenucontent-types"))] pub mod refineshopexchangesourcemenucontent ;
  # [cfg (feature = "app-refineshopexchangesourcemenucontent-types")] pub use refineshopexchangesourcemenucontent :: { RefineShopExchangeSourceMenuContent , IRefineShopExchangeSourceMenuContent }
@@ -7123,9 +7123,9 @@
  # [cfg (feature = "app-refineshopgodsymbol")] pub use refineshopgodsymbol :: { IRefineShopGodSymbolMethods }
  ;
  # [cfg (any (feature = "app-refineshoprefinebasemenu-types"))] pub mod refineshoprefinebasemenu ;
- # [cfg (feature = "app-refineshoprefinebasemenu-types")] pub use refineshoprefinebasemenu :: { RefineShopRefineBaseMenu_RequestCloseEventHandler , IRefineShopRefineBaseMenu_RequestCloseEventHandler , RefineShopRefineBaseMenu_DecideEventHandler , IRefineShopRefineBaseMenu_DecideEventHandler , RefineShopRefineBaseMenu , IRefineShopRefineBaseMenu , RefineShopRefineBaseMenu_SelectEventHandler , IRefineShopRefineBaseMenu_SelectEventHandler }
+ # [cfg (feature = "app-refineshoprefinebasemenu-types")] pub use refineshoprefinebasemenu :: { RefineShopRefineBaseMenu , IRefineShopRefineBaseMenu , RefineShopRefineBaseMenu_DecideEventHandler , IRefineShopRefineBaseMenu_DecideEventHandler , RefineShopRefineBaseMenu_SelectEventHandler , IRefineShopRefineBaseMenu_SelectEventHandler , RefineShopRefineBaseMenu_RequestCloseEventHandler , IRefineShopRefineBaseMenu_RequestCloseEventHandler }
  ;
- # [cfg (feature = "app-refineshoprefinebasemenu")] pub use refineshoprefinebasemenu :: { IRefineShopRefineBaseMenu_RequestCloseEventHandlerMethods , IRefineShopRefineBaseMenu_DecideEventHandlerMethods , IRefineShopRefineBaseMenuMethods , IRefineShopRefineBaseMenu_SelectEventHandlerMethods }
+ # [cfg (feature = "app-refineshoprefinebasemenu")] pub use refineshoprefinebasemenu :: { IRefineShopRefineBaseMenuMethods , IRefineShopRefineBaseMenu_DecideEventHandlerMethods , IRefineShopRefineBaseMenu_SelectEventHandlerMethods , IRefineShopRefineBaseMenu_RequestCloseEventHandlerMethods }
  ;
  # [cfg (any (feature = "app-refineshoprefinebasemenucontent-types"))] pub mod refineshoprefinebasemenucontent ;
  # [cfg (feature = "app-refineshoprefinebasemenucontent-types")] pub use refineshoprefinebasemenucontent :: { RefineShopRefineBaseMenuContent_KindIcon , IRefineShopRefineBaseMenuContent_KindIcon , RefineShopRefineBaseMenuContent , IRefineShopRefineBaseMenuContent }
@@ -7163,9 +7163,9 @@
  # [cfg (feature = "app-refineshoprefinetargetevolvemenuitem")] pub use refineshoprefinetargetevolvemenuitem :: { IRefineShopRefineTargetEvolveMenuItemMethods }
  ;
  # [cfg (any (feature = "app-refineshoprefinetargetmenu-types"))] pub mod refineshoprefinetargetmenu ;
- # [cfg (feature = "app-refineshoprefinetargetmenu-types")] pub use refineshoprefinetargetmenu :: { RefineShopRefineTargetMenu_SelectEventHandler , IRefineShopRefineTargetMenu_SelectEventHandler , RefineShopRefineTargetMenu_DecideToEvolveEventHandler , IRefineShopRefineTargetMenu_DecideToEvolveEventHandler , RefineShopRefineTargetMenu , IRefineShopRefineTargetMenu , RefineShopRefineTargetMenu_DecideToRefineEventHandler , IRefineShopRefineTargetMenu_DecideToRefineEventHandler , RefineShopRefineTargetMenu_RequestCloseEventHandler , IRefineShopRefineTargetMenu_RequestCloseEventHandler }
+ # [cfg (feature = "app-refineshoprefinetargetmenu-types")] pub use refineshoprefinetargetmenu :: { RefineShopRefineTargetMenu_SelectEventHandler , IRefineShopRefineTargetMenu_SelectEventHandler , RefineShopRefineTargetMenu_DecideToRefineEventHandler , IRefineShopRefineTargetMenu_DecideToRefineEventHandler , RefineShopRefineTargetMenu_DecideToEvolveEventHandler , IRefineShopRefineTargetMenu_DecideToEvolveEventHandler , RefineShopRefineTargetMenu_RequestCloseEventHandler , IRefineShopRefineTargetMenu_RequestCloseEventHandler , RefineShopRefineTargetMenu , IRefineShopRefineTargetMenu }
  ;
- # [cfg (feature = "app-refineshoprefinetargetmenu")] pub use refineshoprefinetargetmenu :: { IRefineShopRefineTargetMenu_SelectEventHandlerMethods , IRefineShopRefineTargetMenu_DecideToEvolveEventHandlerMethods , IRefineShopRefineTargetMenuMethods , IRefineShopRefineTargetMenu_DecideToRefineEventHandlerMethods , IRefineShopRefineTargetMenu_RequestCloseEventHandlerMethods }
+ # [cfg (feature = "app-refineshoprefinetargetmenu")] pub use refineshoprefinetargetmenu :: { IRefineShopRefineTargetMenu_SelectEventHandlerMethods , IRefineShopRefineTargetMenu_DecideToRefineEventHandlerMethods , IRefineShopRefineTargetMenu_DecideToEvolveEventHandlerMethods , IRefineShopRefineTargetMenu_RequestCloseEventHandlerMethods , IRefineShopRefineTargetMenuMethods }
  ;
  # [cfg (any (feature = "app-refineshoprefinetargetmenucontent-types"))] pub mod refineshoprefinetargetmenucontent ;
  # [cfg (feature = "app-refineshoprefinetargetmenucontent-types")] pub use refineshoprefinetargetmenucontent :: { RefineShopRefineTargetMenuContent , IRefineShopRefineTargetMenuContent }
@@ -7188,9 +7188,9 @@
  # [cfg (feature = "app-refineshoprefinetargetroot")] pub use refineshoprefinetargetroot :: { IRefineShopRefineTargetRoot_ReturnEventHandlerMethods , IRefineShopRefineTargetRootMethods }
  ;
  # [cfg (any (feature = "app-refineshoptopmenu-types"))] pub mod refineshoptopmenu ;
- # [cfg (feature = "app-refineshoptopmenu-types")] pub use refineshoptopmenu :: { RefineShopTopMenu_RefineShopTopRefineMenuItem , IRefineShopTopMenu_RefineShopTopRefineMenuItem , RefineShopTopMenu_Result2 , RefineShopTopMenu_RefineShopTopEngraveMenuItem , IRefineShopTopMenu_RefineShopTopEngraveMenuItem , RefineShopTopMenu_DecideEventHandler , IRefineShopTopMenu_DecideEventHandler , RefineShopTopMenu_RefineShopTopExchangeMenuItem , IRefineShopTopMenu_RefineShopTopExchangeMenuItem , RefineShopTopMenu , IRefineShopTopMenu }
+ # [cfg (feature = "app-refineshoptopmenu-types")] pub use refineshoptopmenu :: { RefineShopTopMenu_Result2 , RefineShopTopMenu_RefineShopTopEngraveMenuItem , IRefineShopTopMenu_RefineShopTopEngraveMenuItem , RefineShopTopMenu , IRefineShopTopMenu , RefineShopTopMenu_RefineShopTopRefineMenuItem , IRefineShopTopMenu_RefineShopTopRefineMenuItem , RefineShopTopMenu_DecideEventHandler , IRefineShopTopMenu_DecideEventHandler , RefineShopTopMenu_RefineShopTopExchangeMenuItem , IRefineShopTopMenu_RefineShopTopExchangeMenuItem }
  ;
- # [cfg (feature = "app-refineshoptopmenu")] pub use refineshoptopmenu :: { IRefineShopTopMenu_RefineShopTopRefineMenuItemMethods , IRefineShopTopMenu_RefineShopTopEngraveMenuItemMethods , IRefineShopTopMenu_DecideEventHandlerMethods , IRefineShopTopMenu_RefineShopTopExchangeMenuItemMethods , IRefineShopTopMenuMethods }
+ # [cfg (feature = "app-refineshoptopmenu")] pub use refineshoptopmenu :: { IRefineShopTopMenu_RefineShopTopEngraveMenuItemMethods , IRefineShopTopMenuMethods , IRefineShopTopMenu_RefineShopTopRefineMenuItemMethods , IRefineShopTopMenu_DecideEventHandlerMethods , IRefineShopTopMenu_RefineShopTopExchangeMenuItemMethods }
  ;
  # [cfg (any (feature = "app-refreshcommon-types"))] pub mod refreshcommon ;
  # [cfg (feature = "app-refreshcommon-types")] pub use refreshcommon :: { RefreshCommon , IRefreshCommon }
@@ -7198,19 +7198,19 @@
  # [cfg (feature = "app-refreshcommon")] pub use refreshcommon :: { IRefreshCommonMethods }
  ;
  # [cfg (any (feature = "app-refreshconfirmdialog-types"))] pub mod refreshconfirmdialog ;
- # [cfg (feature = "app-refreshconfirmdialog-types")] pub use refreshconfirmdialog :: { RefreshConfirmDialog_Result2 , RefreshConfirmDialog , IRefreshConfirmDialog , RefreshConfirmDialog_DialogMenuItem , IRefreshConfirmDialog_DialogMenuItem , RefreshConfirmDialog_DecideEventHandler , IRefreshConfirmDialog_DecideEventHandler }
+ # [cfg (feature = "app-refreshconfirmdialog-types")] pub use refreshconfirmdialog :: { RefreshConfirmDialog_DecideEventHandler , IRefreshConfirmDialog_DecideEventHandler , RefreshConfirmDialog , IRefreshConfirmDialog , RefreshConfirmDialog_DialogMenuItem , IRefreshConfirmDialog_DialogMenuItem , RefreshConfirmDialog_Result2 }
  ;
- # [cfg (feature = "app-refreshconfirmdialog")] pub use refreshconfirmdialog :: { IRefreshConfirmDialogMethods , IRefreshConfirmDialog_DialogMenuItemMethods , IRefreshConfirmDialog_DecideEventHandlerMethods }
+ # [cfg (feature = "app-refreshconfirmdialog")] pub use refreshconfirmdialog :: { IRefreshConfirmDialog_DecideEventHandlerMethods , IRefreshConfirmDialogMethods , IRefreshConfirmDialog_DialogMenuItemMethods }
  ;
  # [cfg (any (feature = "app-refreshdemosequence-types"))] pub mod refreshdemosequence ;
- # [cfg (feature = "app-refreshdemosequence-types")] pub use refreshdemosequence :: { RefreshDemoSequence_RefreshArea , RefreshDemoSequence , IRefreshDemoSequence }
+ # [cfg (feature = "app-refreshdemosequence-types")] pub use refreshdemosequence :: { RefreshDemoSequence , IRefreshDemoSequence , RefreshDemoSequence_RefreshArea }
  ;
  # [cfg (feature = "app-refreshdemosequence")] pub use refreshdemosequence :: { IRefreshDemoSequenceMethods }
  ;
  # [cfg (any (feature = "app-refreshfacilityselectmenu-types"))] pub mod refreshfacilityselectmenu ;
- # [cfg (feature = "app-refreshfacilityselectmenu-types")] pub use refreshfacilityselectmenu :: { RefreshFacilitySelectMenu_DecideEventHandler , IRefreshFacilitySelectMenu_DecideEventHandler , RefreshFacilitySelectMenu , IRefreshFacilitySelectMenu , RefreshFacilitySelectMenu_CloseEventHandler , IRefreshFacilitySelectMenu_CloseEventHandler , RefreshFacilitySelectMenu_DisposeEventHandler , IRefreshFacilitySelectMenu_DisposeEventHandler , RefreshFacilitySelectMenu_SelectEventHandler , IRefreshFacilitySelectMenu_SelectEventHandler }
+ # [cfg (feature = "app-refreshfacilityselectmenu-types")] pub use refreshfacilityselectmenu :: { RefreshFacilitySelectMenu , IRefreshFacilitySelectMenu , RefreshFacilitySelectMenu_DecideEventHandler , IRefreshFacilitySelectMenu_DecideEventHandler , RefreshFacilitySelectMenu_SelectEventHandler , IRefreshFacilitySelectMenu_SelectEventHandler , RefreshFacilitySelectMenu_CloseEventHandler , IRefreshFacilitySelectMenu_CloseEventHandler , RefreshFacilitySelectMenu_DisposeEventHandler , IRefreshFacilitySelectMenu_DisposeEventHandler }
  ;
- # [cfg (feature = "app-refreshfacilityselectmenu")] pub use refreshfacilityselectmenu :: { IRefreshFacilitySelectMenu_DecideEventHandlerMethods , IRefreshFacilitySelectMenuMethods , IRefreshFacilitySelectMenu_CloseEventHandlerMethods , IRefreshFacilitySelectMenu_DisposeEventHandlerMethods , IRefreshFacilitySelectMenu_SelectEventHandlerMethods }
+ # [cfg (feature = "app-refreshfacilityselectmenu")] pub use refreshfacilityselectmenu :: { IRefreshFacilitySelectMenuMethods , IRefreshFacilitySelectMenu_DecideEventHandlerMethods , IRefreshFacilitySelectMenu_SelectEventHandlerMethods , IRefreshFacilitySelectMenu_CloseEventHandlerMethods , IRefreshFacilitySelectMenu_DisposeEventHandlerMethods }
  ;
  # [cfg (any (feature = "app-refreshfacilityselectmenucontent-types"))] pub mod refreshfacilityselectmenucontent ;
  # [cfg (feature = "app-refreshfacilityselectmenucontent-types")] pub use refreshfacilityselectmenucontent :: { RefreshFacilitySelectMenuContent , IRefreshFacilitySelectMenuContent }
@@ -7228,7 +7228,7 @@
  # [cfg (feature = "app-refreshreliancesetter")] pub use refreshreliancesetter :: { IRefreshRelianceSetterMethods }
  ;
  # [cfg (any (feature = "app-refreshsequence-types"))] pub mod refreshsequence ;
- # [cfg (feature = "app-refreshsequence-types")] pub use refreshsequence :: { RefreshSequence_Label , RefreshSequence , IRefreshSequence }
+ # [cfg (feature = "app-refreshsequence-types")] pub use refreshsequence :: { RefreshSequence , IRefreshSequence , RefreshSequence_Label }
  ;
  # [cfg (feature = "app-refreshsequence")] pub use refreshsequence :: { IRefreshSequenceMethods }
  ;
@@ -7238,9 +7238,9 @@
  # [cfg (feature = "app-refreshunitselectentrustmenuitem")] pub use refreshunitselectentrustmenuitem :: { IRefreshUnitSelectEntrustMenuItemMethods }
  ;
  # [cfg (any (feature = "app-refreshunitselectmenu-types"))] pub mod refreshunitselectmenu ;
- # [cfg (feature = "app-refreshunitselectmenu-types")] pub use refreshunitselectmenu :: { RefreshUnitSelectMenu , IRefreshUnitSelectMenu , RefreshUnitSelectMenu_CloseEventHandler , IRefreshUnitSelectMenu_CloseEventHandler , RefreshUnitSelectMenu_SelectEventHandler , IRefreshUnitSelectMenu_SelectEventHandler , RefreshUnitSelectMenu_DisposeEventHandler , IRefreshUnitSelectMenu_DisposeEventHandler , RefreshUnitSelectMenu_DecideEventHandler , IRefreshUnitSelectMenu_DecideEventHandler }
+ # [cfg (feature = "app-refreshunitselectmenu-types")] pub use refreshunitselectmenu :: { RefreshUnitSelectMenu_DecideEventHandler , IRefreshUnitSelectMenu_DecideEventHandler , RefreshUnitSelectMenu , IRefreshUnitSelectMenu , RefreshUnitSelectMenu_DisposeEventHandler , IRefreshUnitSelectMenu_DisposeEventHandler , RefreshUnitSelectMenu_CloseEventHandler , IRefreshUnitSelectMenu_CloseEventHandler , RefreshUnitSelectMenu_SelectEventHandler , IRefreshUnitSelectMenu_SelectEventHandler }
  ;
- # [cfg (feature = "app-refreshunitselectmenu")] pub use refreshunitselectmenu :: { IRefreshUnitSelectMenuMethods , IRefreshUnitSelectMenu_CloseEventHandlerMethods , IRefreshUnitSelectMenu_SelectEventHandlerMethods , IRefreshUnitSelectMenu_DisposeEventHandlerMethods , IRefreshUnitSelectMenu_DecideEventHandlerMethods }
+ # [cfg (feature = "app-refreshunitselectmenu")] pub use refreshunitselectmenu :: { IRefreshUnitSelectMenu_DecideEventHandlerMethods , IRefreshUnitSelectMenuMethods , IRefreshUnitSelectMenu_DisposeEventHandlerMethods , IRefreshUnitSelectMenu_CloseEventHandlerMethods , IRefreshUnitSelectMenu_SelectEventHandlerMethods }
  ;
  # [cfg (any (feature = "app-refreshunitselectmenucontent-types"))] pub mod refreshunitselectmenucontent ;
  # [cfg (feature = "app-refreshunitselectmenucontent-types")] pub use refreshunitselectmenucontent :: { RefreshUnitSelectMenuContent , IRefreshUnitSelectMenuContent }
@@ -7268,9 +7268,9 @@
  # [cfg (feature = "app-refreshunitselectroot")] pub use refreshunitselectroot :: { IRefreshUnitSelectRootMethods , IRefreshUnitSelectRoot_UnitWindowUnitInfoMethods }
  ;
  # [cfg (any (feature = "app-refreshunitsetdecidemenu-types"))] pub mod refreshunitsetdecidemenu ;
- # [cfg (feature = "app-refreshunitsetdecidemenu-types")] pub use refreshunitsetdecidemenu :: { RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem , IRefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem , RefreshUnitSetDecideMenu , IRefreshUnitSetDecideMenu , RefreshUnitSetDecideMenu_Result2 , RefreshUnitSetDecideMenu_DecideEventHandler , IRefreshUnitSetDecideMenu_DecideEventHandler , RefreshUnitSetDecideMenu_KeyUpEventHandler , IRefreshUnitSetDecideMenu_KeyUpEventHandler , RefreshUnitSetDecideMenu_KeyDownEventHandler , IRefreshUnitSetDecideMenu_KeyDownEventHandler }
+ # [cfg (feature = "app-refreshunitsetdecidemenu-types")] pub use refreshunitsetdecidemenu :: { RefreshUnitSetDecideMenu , IRefreshUnitSetDecideMenu , RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem , IRefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem , RefreshUnitSetDecideMenu_DecideEventHandler , IRefreshUnitSetDecideMenu_DecideEventHandler , RefreshUnitSetDecideMenu_Result2 , RefreshUnitSetDecideMenu_KeyDownEventHandler , IRefreshUnitSetDecideMenu_KeyDownEventHandler , RefreshUnitSetDecideMenu_KeyUpEventHandler , IRefreshUnitSetDecideMenu_KeyUpEventHandler }
  ;
- # [cfg (feature = "app-refreshunitsetdecidemenu")] pub use refreshunitsetdecidemenu :: { IRefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItemMethods , IRefreshUnitSetDecideMenuMethods , IRefreshUnitSetDecideMenu_DecideEventHandlerMethods , IRefreshUnitSetDecideMenu_KeyUpEventHandlerMethods , IRefreshUnitSetDecideMenu_KeyDownEventHandlerMethods }
+ # [cfg (feature = "app-refreshunitsetdecidemenu")] pub use refreshunitsetdecidemenu :: { IRefreshUnitSetDecideMenuMethods , IRefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItemMethods , IRefreshUnitSetDecideMenu_DecideEventHandlerMethods , IRefreshUnitSetDecideMenu_KeyDownEventHandlerMethods , IRefreshUnitSetDecideMenu_KeyUpEventHandlerMethods }
  ;
  # [cfg (any (feature = "app-refreshunitsetdecidemenucontent-types"))] pub mod refreshunitsetdecidemenucontent ;
  # [cfg (feature = "app-refreshunitsetdecidemenucontent-types")] pub use refreshunitsetdecidemenucontent :: { RefreshUnitSetDecideMenuContent , IRefreshUnitSetDecideMenuContent }
@@ -7278,9 +7278,9 @@
  # [cfg (feature = "app-refreshunitsetdecidemenucontent")] pub use refreshunitsetdecidemenucontent :: { IRefreshUnitSetDecideMenuContentMethods }
  ;
  # [cfg (any (feature = "app-refreshunitsetmenu-types"))] pub mod refreshunitsetmenu ;
- # [cfg (feature = "app-refreshunitsetmenu-types")] pub use refreshunitsetmenu :: { RefreshUnitSetMenu_SelectFacilityEventHandler , IRefreshUnitSetMenu_SelectFacilityEventHandler , RefreshUnitSetMenu_DecideEventHandler , IRefreshUnitSetMenu_DecideEventHandler , RefreshUnitSetMenu , IRefreshUnitSetMenu , RefreshUnitSetMenu_SetUnitEventHandler , IRefreshUnitSetMenu_SetUnitEventHandler , RefreshUnitSetMenu_Result2 }
+ # [cfg (feature = "app-refreshunitsetmenu-types")] pub use refreshunitsetmenu :: { RefreshUnitSetMenu_DecideEventHandler , IRefreshUnitSetMenu_DecideEventHandler , RefreshUnitSetMenu_Result2 , RefreshUnitSetMenu_SetUnitEventHandler , IRefreshUnitSetMenu_SetUnitEventHandler , RefreshUnitSetMenu , IRefreshUnitSetMenu , RefreshUnitSetMenu_SelectFacilityEventHandler , IRefreshUnitSetMenu_SelectFacilityEventHandler }
  ;
- # [cfg (feature = "app-refreshunitsetmenu")] pub use refreshunitsetmenu :: { IRefreshUnitSetMenu_SelectFacilityEventHandlerMethods , IRefreshUnitSetMenu_DecideEventHandlerMethods , IRefreshUnitSetMenuMethods , IRefreshUnitSetMenu_SetUnitEventHandlerMethods }
+ # [cfg (feature = "app-refreshunitsetmenu")] pub use refreshunitsetmenu :: { IRefreshUnitSetMenu_DecideEventHandlerMethods , IRefreshUnitSetMenu_SetUnitEventHandlerMethods , IRefreshUnitSetMenuMethods , IRefreshUnitSetMenu_SelectFacilityEventHandlerMethods }
  ;
  # [cfg (any (feature = "app-refreshunitsetmenucontent-types"))] pub mod refreshunitsetmenucontent ;
  # [cfg (feature = "app-refreshunitsetmenucontent-types")] pub use refreshunitsetmenucontent :: { RefreshUnitSetMenuContent , IRefreshUnitSetMenuContent }
@@ -7303,19 +7303,19 @@
  # [cfg (feature = "app-refreshvariable")] pub use refreshvariable :: { IRefreshVariableMethods }
  ;
  # [cfg (any (feature = "app-relay-types"))] pub mod relay ;
- # [cfg (feature = "app-relay-types")] pub use relay :: { Relay_Flags , Relay , IRelay , Relay_DisposPlayerCountsSequence_Label , Relay_ChooseAwardeeData , Relay_DisposPlayerCountsSequence , IRelay_DisposPlayerCountsSequence , Relay_TakeOverModes , Relay_CstoResult , Relay_FlagsField , IRelay_FlagsField , Relay_TrfrResult , Relay_Modes }
+ # [cfg (feature = "app-relay-types")] pub use relay :: { Relay_Modes , Relay_DisposPlayerCountsSequence , IRelay_DisposPlayerCountsSequence , Relay_DisposPlayerCountsSequence_Label , Relay_TakeOverModes , Relay , IRelay , Relay_ChooseAwardeeData , Relay_CstoResult , Relay_TrfrResult , Relay_Flags , Relay_FlagsField , IRelay_FlagsField }
  ;
- # [cfg (feature = "app-relay")] pub use relay :: { IRelayMethods , IRelay_DisposPlayerCountsSequenceMethods , IRelay_FlagsFieldMethods }
+ # [cfg (feature = "app-relay")] pub use relay :: { IRelay_DisposPlayerCountsSequenceMethods , IRelayMethods , IRelay_FlagsFieldMethods }
  ;
  # [cfg (any (feature = "app-relayappearancesequence-types"))] pub mod relayappearancesequence ;
- # [cfg (feature = "app-relayappearancesequence-types")] pub use relayappearancesequence :: { RelayAppearanceSequence_Label , RelayAppearanceSequence , IRelayAppearanceSequence }
+ # [cfg (feature = "app-relayappearancesequence-types")] pub use relayappearancesequence :: { RelayAppearanceSequence , IRelayAppearanceSequence , RelayAppearanceSequence_Label }
  ;
  # [cfg (feature = "app-relayappearancesequence")] pub use relayappearancesequence :: { IRelayAppearanceSequenceMethods }
  ;
  # [cfg (any (feature = "app-relayawarddata-types"))] pub mod relayawarddata ;
- # [cfg (feature = "app-relayawarddata-types")] pub use relayawarddata :: { RelayAwardData_CompareOp , RelayAwardData_Flags , RelayAwardData_Info , RelayAwardData , IRelayAwardData , RelayAwardData_FlagField , IRelayAwardData_FlagField , RelayAwardData_Kinds }
+ # [cfg (feature = "app-relayawarddata-types")] pub use relayawarddata :: { RelayAwardData_Kinds , RelayAwardData_FlagField , IRelayAwardData_FlagField , RelayAwardData_CompareOp , RelayAwardData , IRelayAwardData , RelayAwardData_Flags , RelayAwardData_Info }
  ;
- # [cfg (feature = "app-relayawarddata")] pub use relayawarddata :: { IRelayAwardDataMethods , IRelayAwardData_FlagFieldMethods }
+ # [cfg (feature = "app-relayawarddata")] pub use relayawarddata :: { IRelayAwardData_FlagFieldMethods , IRelayAwardDataMethods }
  ;
  # [cfg (any (feature = "app-relayawardeedata-types"))] pub mod relayawardeedata ;
  # [cfg (feature = "app-relayawardeedata-types")] pub use relayawardeedata :: { RelayAwardeeData , IRelayAwardeeData }
@@ -7336,14 +7336,14 @@
  # [cfg (feature = "app-relaybackupdata")] pub use relaybackupdata :: { IRelayBackupDataMethods }
  ;
  # [cfg (any (feature = "app-relaycompletionawarddata-types"))] pub mod relaycompletionawarddata ;
- # [cfg (feature = "app-relaycompletionawarddata-types")] pub use relaycompletionawarddata :: { RelayCompletionAwardData_ShowComparer , IRelayCompletionAwardData_ShowComparer , RelayCompletionAwardData , IRelayCompletionAwardData , RelayCompletionAwardData_CalcResult , IRelayCompletionAwardData_CalcResult , RelayCompletionAwardData_CalcResult_Item , IRelayCompletionAwardData_CalcResult_Item , RelayCompletionAwardData_CalcWork , RelayCompletionAwardData_Flags , RelayCompletionAwardData_ComparerBase , IRelayCompletionAwardData_ComparerBase , RelayCompletionAwardData_FlagField , IRelayCompletionAwardData_FlagField , RelayCompletionAwardData_CalcComparer , IRelayCompletionAwardData_CalcComparer }
+ # [cfg (feature = "app-relaycompletionawarddata-types")] pub use relaycompletionawarddata :: { RelayCompletionAwardData_Flags , RelayCompletionAwardData_CalcResult , IRelayCompletionAwardData_CalcResult , RelayCompletionAwardData_CalcWork , RelayCompletionAwardData_ComparerBase , IRelayCompletionAwardData_ComparerBase , RelayCompletionAwardData_ShowComparer , IRelayCompletionAwardData_ShowComparer , RelayCompletionAwardData_CalcResult_Item , IRelayCompletionAwardData_CalcResult_Item , RelayCompletionAwardData , IRelayCompletionAwardData , RelayCompletionAwardData_FlagField , IRelayCompletionAwardData_FlagField , RelayCompletionAwardData_CalcComparer , IRelayCompletionAwardData_CalcComparer }
  ;
- # [cfg (feature = "app-relaycompletionawarddata")] pub use relaycompletionawarddata :: { IRelayCompletionAwardData_ShowComparerMethods , IRelayCompletionAwardDataMethods , IRelayCompletionAwardData_CalcResultMethods , IRelayCompletionAwardData_CalcResult_ItemMethods , IRelayCompletionAwardData_ComparerBaseMethods , IRelayCompletionAwardData_FlagFieldMethods , IRelayCompletionAwardData_CalcComparerMethods }
+ # [cfg (feature = "app-relaycompletionawarddata")] pub use relaycompletionawarddata :: { IRelayCompletionAwardData_CalcResultMethods , IRelayCompletionAwardData_ComparerBaseMethods , IRelayCompletionAwardData_ShowComparerMethods , IRelayCompletionAwardData_CalcResult_ItemMethods , IRelayCompletionAwardDataMethods , IRelayCompletionAwardData_FlagFieldMethods , IRelayCompletionAwardData_CalcComparerMethods }
  ;
  # [cfg (any (feature = "app-relayconfirmsearchdialog-types"))] pub mod relayconfirmsearchdialog ;
- # [cfg (feature = "app-relayconfirmsearchdialog-types")] pub use relayconfirmsearchdialog :: { RelayConfirmSearchDialog , IRelayConfirmSearchDialog , RelayConfirmSearchDialog_YesMenuItem , IRelayConfirmSearchDialog_YesMenuItem , RelayConfirmSearchDialog_NoMenuItem , IRelayConfirmSearchDialog_NoMenuItem }
+ # [cfg (feature = "app-relayconfirmsearchdialog-types")] pub use relayconfirmsearchdialog :: { RelayConfirmSearchDialog_NoMenuItem , IRelayConfirmSearchDialog_NoMenuItem , RelayConfirmSearchDialog_YesMenuItem , IRelayConfirmSearchDialog_YesMenuItem , RelayConfirmSearchDialog , IRelayConfirmSearchDialog }
  ;
- # [cfg (feature = "app-relayconfirmsearchdialog")] pub use relayconfirmsearchdialog :: { IRelayConfirmSearchDialogMethods , IRelayConfirmSearchDialog_YesMenuItemMethods , IRelayConfirmSearchDialog_NoMenuItemMethods }
+ # [cfg (feature = "app-relayconfirmsearchdialog")] pub use relayconfirmsearchdialog :: { IRelayConfirmSearchDialog_NoMenuItemMethods , IRelayConfirmSearchDialog_YesMenuItemMethods , IRelayConfirmSearchDialogMethods }
  ;
  # [cfg (any (feature = "app-relaydata-types"))] pub mod relaydata ;
  # [cfg (feature = "app-relaydata-types")] pub use relaydata :: { RelayData , IRelayData }
@@ -7356,9 +7356,9 @@
  # [cfg (feature = "app-relayleavingunitdata")] pub use relayleavingunitdata :: { IRelayLeavingUnitDataMethods }
  ;
  # [cfg (any (feature = "app-relaymapmenu-types"))] pub mod relaymapmenu ;
- # [cfg (feature = "app-relaymapmenu-types")] pub use relaymapmenu :: { RelayMapMenu , IRelayMapMenu , RelayMapMenu_SelectEventHandler , IRelayMapMenu_SelectEventHandler , RelayMapMenu_DecideEventHandler , IRelayMapMenu_DecideEventHandler , RelayMapMenu_MapMenuItem , IRelayMapMenu_MapMenuItem , RelayMapMenu_RequestCloseEventHandler , IRelayMapMenu_RequestCloseEventHandler }
+ # [cfg (feature = "app-relaymapmenu-types")] pub use relaymapmenu :: { RelayMapMenu_RequestCloseEventHandler , IRelayMapMenu_RequestCloseEventHandler , RelayMapMenu , IRelayMapMenu , RelayMapMenu_SelectEventHandler , IRelayMapMenu_SelectEventHandler , RelayMapMenu_MapMenuItem , IRelayMapMenu_MapMenuItem , RelayMapMenu_DecideEventHandler , IRelayMapMenu_DecideEventHandler }
  ;
- # [cfg (feature = "app-relaymapmenu")] pub use relaymapmenu :: { IRelayMapMenuMethods , IRelayMapMenu_SelectEventHandlerMethods , IRelayMapMenu_DecideEventHandlerMethods , IRelayMapMenu_MapMenuItemMethods , IRelayMapMenu_RequestCloseEventHandlerMethods }
+ # [cfg (feature = "app-relaymapmenu")] pub use relaymapmenu :: { IRelayMapMenu_RequestCloseEventHandlerMethods , IRelayMapMenuMethods , IRelayMapMenu_SelectEventHandlerMethods , IRelayMapMenu_MapMenuItemMethods , IRelayMapMenu_DecideEventHandlerMethods }
  ;
  # [cfg (any (feature = "app-relaymapmenucontent-types"))] pub mod relaymapmenucontent ;
  # [cfg (feature = "app-relaymapmenucontent-types")] pub use relaymapmenucontent :: { RelayMapMenuContent , IRelayMapMenuContent }
@@ -7391,9 +7391,9 @@
  # [cfg (feature = "app-relaymessagemenuitemcontent")] pub use relaymessagemenuitemcontent :: { IRelayMessageMenuItemContentMethods }
  ;
  # [cfg (any (feature = "app-relaymodemenu-types"))] pub mod relaymodemenu ;
- # [cfg (feature = "app-relaymodemenu-types")] pub use relaymodemenu :: { RelayModeMenu_MenuItem , IRelayModeMenu_MenuItem , RelayModeMenu , IRelayModeMenu , RelayModeMenu_Result2 , RelayModeMenu_ReplayMenuItem , IRelayModeMenu_ReplayMenuItem }
+ # [cfg (feature = "app-relaymodemenu-types")] pub use relaymodemenu :: { RelayModeMenu_Result2 , RelayModeMenu_ReplayMenuItem , IRelayModeMenu_ReplayMenuItem , RelayModeMenu , IRelayModeMenu , RelayModeMenu_MenuItem , IRelayModeMenu_MenuItem }
  ;
- # [cfg (feature = "app-relaymodemenu")] pub use relaymodemenu :: { IRelayModeMenu_MenuItemMethods , IRelayModeMenuMethods , IRelayModeMenu_ReplayMenuItemMethods }
+ # [cfg (feature = "app-relaymodemenu")] pub use relaymodemenu :: { IRelayModeMenu_ReplayMenuItemMethods , IRelayModeMenuMethods , IRelayModeMenu_MenuItemMethods }
  ;
  # [cfg (any (feature = "app-relaymodemenucontent-types"))] pub mod relaymodemenucontent ;
  # [cfg (feature = "app-relaymodemenucontent-types")] pub use relaymodemenucontent :: { RelayModeMenuContent , IRelayModeMenuContent }
@@ -7401,9 +7401,9 @@
  # [cfg (feature = "app-relaymodemenucontent")] pub use relaymodemenucontent :: { IRelayModeMenuContentMethods }
  ;
  # [cfg (any (feature = "app-relayprofilesequence-types"))] pub mod relayprofilesequence ;
- # [cfg (feature = "app-relayprofilesequence-types")] pub use relayprofilesequence :: { RelayProfileSequence_DownloadSequence , IRelayProfileSequence_DownloadSequence , RelayProfileSequence_DownloadSequence_DownloadYesNoDialog , IRelayProfileSequence_DownloadSequence_DownloadYesNoDialog , RelayProfileSequence , IRelayProfileSequence , RelayProfileSequence_DownloadSequence_Label , RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem , IRelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem , RelayProfileSequence_UploadSequence , IRelayProfileSequence_UploadSequence }
+ # [cfg (feature = "app-relayprofilesequence-types")] pub use relayprofilesequence :: { RelayProfileSequence_UploadSequence , IRelayProfileSequence_UploadSequence , RelayProfileSequence_DownloadSequence_Label , RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem , IRelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem , RelayProfileSequence_DownloadSequence_DownloadYesNoDialog , IRelayProfileSequence_DownloadSequence_DownloadYesNoDialog , RelayProfileSequence , IRelayProfileSequence , RelayProfileSequence_DownloadSequence , IRelayProfileSequence_DownloadSequence }
  ;
- # [cfg (feature = "app-relayprofilesequence")] pub use relayprofilesequence :: { IRelayProfileSequence_DownloadSequenceMethods , IRelayProfileSequence_DownloadSequence_DownloadYesNoDialogMethods , IRelayProfileSequenceMethods , IRelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItemMethods , IRelayProfileSequence_UploadSequenceMethods }
+ # [cfg (feature = "app-relayprofilesequence")] pub use relayprofilesequence :: { IRelayProfileSequence_UploadSequenceMethods , IRelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItemMethods , IRelayProfileSequence_DownloadSequence_DownloadYesNoDialogMethods , IRelayProfileSequenceMethods , IRelayProfileSequence_DownloadSequenceMethods }
  ;
  # [cfg (any (feature = "app-relayreplaycache-types"))] pub mod relayreplaycache ;
  # [cfg (feature = "app-relayreplaycache-types")] pub use relayreplaycache :: { RelayReplayCache , IRelayReplayCache }
@@ -7411,9 +7411,9 @@
  # [cfg (feature = "app-relayreplaycache")] pub use relayreplaycache :: { IRelayReplayCacheMethods }
  ;
  # [cfg (any (feature = "app-relayreplaymenu-types"))] pub mod relayreplaymenu ;
- # [cfg (feature = "app-relayreplaymenu-types")] pub use relayreplaymenu :: { RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler , IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler , RelayReplayMenu_RelayConfirmReplayDialog , IRelayReplayMenu_RelayConfirmReplayDialog , RelayReplayMenu_RequestCloseEventHandler , IRelayReplayMenu_RequestCloseEventHandler , RelayReplayMenu , IRelayReplayMenu , RelayReplayMenu_SelectEventHandler , IRelayReplayMenu_SelectEventHandler , RelayReplayMenu_RelayConfirmReplayDialog_DialogItem , IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem , RelayReplayMenu_ReplayMenuItem , IRelayReplayMenu_ReplayMenuItem , RelayReplayMenu_DecideEventHandler , IRelayReplayMenu_DecideEventHandler }
+ # [cfg (feature = "app-relayreplaymenu-types")] pub use relayreplaymenu :: { RelayReplayMenu_SelectEventHandler , IRelayReplayMenu_SelectEventHandler , RelayReplayMenu_RelayConfirmReplayDialog_DialogItem , IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem , RelayReplayMenu_RequestCloseEventHandler , IRelayReplayMenu_RequestCloseEventHandler , RelayReplayMenu_DecideEventHandler , IRelayReplayMenu_DecideEventHandler , RelayReplayMenu , IRelayReplayMenu , RelayReplayMenu_ReplayMenuItem , IRelayReplayMenu_ReplayMenuItem , RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler , IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler , RelayReplayMenu_RelayConfirmReplayDialog , IRelayReplayMenu_RelayConfirmReplayDialog }
  ;
- # [cfg (feature = "app-relayreplaymenu")] pub use relayreplaymenu :: { IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandlerMethods , IRelayReplayMenu_RelayConfirmReplayDialogMethods , IRelayReplayMenu_RequestCloseEventHandlerMethods , IRelayReplayMenuMethods , IRelayReplayMenu_SelectEventHandlerMethods , IRelayReplayMenu_RelayConfirmReplayDialog_DialogItemMethods , IRelayReplayMenu_ReplayMenuItemMethods , IRelayReplayMenu_DecideEventHandlerMethods }
+ # [cfg (feature = "app-relayreplaymenu")] pub use relayreplaymenu :: { IRelayReplayMenu_SelectEventHandlerMethods , IRelayReplayMenu_RelayConfirmReplayDialog_DialogItemMethods , IRelayReplayMenu_RequestCloseEventHandlerMethods , IRelayReplayMenu_DecideEventHandlerMethods , IRelayReplayMenuMethods , IRelayReplayMenu_ReplayMenuItemMethods , IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandlerMethods , IRelayReplayMenu_RelayConfirmReplayDialogMethods }
  ;
  # [cfg (any (feature = "app-relayreplaymenuitemcontent-types"))] pub mod relayreplaymenuitemcontent ;
  # [cfg (feature = "app-relayreplaymenuitemcontent-types")] pub use relayreplaymenuitemcontent :: { RelayReplayMenuItemContent , IRelayReplayMenuItemContent }
@@ -7431,14 +7431,14 @@
  # [cfg (feature = "app-relayreplayselectroot")] pub use relayreplayselectroot :: { IRelayReplaySelectRootMethods }
  ;
  # [cfg (any (feature = "app-relayreplaytotakeoversequence-types"))] pub mod relayreplaytotakeoversequence ;
- # [cfg (feature = "app-relayreplaytotakeoversequence-types")] pub use relayreplaytotakeoversequence :: { RelayReplayToTakeOverSequence_Label , RelayReplayToTakeOverSequence , IRelayReplayToTakeOverSequence }
+ # [cfg (feature = "app-relayreplaytotakeoversequence-types")] pub use relayreplaytotakeoversequence :: { RelayReplayToTakeOverSequence , IRelayReplayToTakeOverSequence , RelayReplayToTakeOverSequence_Label }
  ;
  # [cfg (feature = "app-relayreplaytotakeoversequence")] pub use relayreplaytotakeoversequence :: { IRelayReplayToTakeOverSequenceMethods }
  ;
  # [cfg (any (feature = "app-relaysequence-types"))] pub mod relaysequence ;
- # [cfg (feature = "app-relaysequence-types")] pub use relaysequence :: { RelaySequence_RelaySequenceBase_1 , IRelaySequence_RelaySequenceBase_1 , RelaySequence_RelaySequenceNet , IRelaySequence_RelaySequenceNet , RelaySequence_IRelaySequenceBase , IRelaySequence_IRelaySequenceBase , RelaySequence , IRelaySequence , RelaySequence_RelaySequenceLocal , IRelaySequence_RelaySequenceLocal , RelaySequence_Label }
+ # [cfg (feature = "app-relaysequence-types")] pub use relaysequence :: { RelaySequence_RelaySequenceLocal , IRelaySequence_RelaySequenceLocal , RelaySequence_RelaySequenceBase_1 , IRelaySequence_RelaySequenceBase_1 , RelaySequence_Label , RelaySequence_RelaySequenceNet , IRelaySequence_RelaySequenceNet , RelaySequence_IRelaySequenceBase , IRelaySequence_IRelaySequenceBase , RelaySequence , IRelaySequence }
  ;
- # [cfg (feature = "app-relaysequence")] pub use relaysequence :: { IRelaySequence_RelaySequenceBase_1Methods , IRelaySequence_RelaySequenceNetMethods , IRelaySequence_IRelaySequenceBaseMethods , IRelaySequence_RelaySequenceLocalMethods }
+ # [cfg (feature = "app-relaysequence")] pub use relaysequence :: { IRelaySequence_RelaySequenceLocalMethods , IRelaySequence_RelaySequenceBase_1Methods , IRelaySequence_RelaySequenceNetMethods , IRelaySequence_IRelaySequenceBaseMethods }
  ;
  # [cfg (any (feature = "app-relayserverdata-types"))] pub mod relayserverdata ;
  # [cfg (feature = "app-relayserverdata-types")] pub use relayserverdata :: { RelayServerData , IRelayServerData }
@@ -7451,9 +7451,9 @@
  # [cfg (feature = "app-relayservermetadata")] pub use relayservermetadata :: { IRelayServerMetaDataMethods }
  ;
  # [cfg (any (feature = "app-relaysetpublishmodedialog-types"))] pub mod relaysetpublishmodedialog ;
- # [cfg (feature = "app-relaysetpublishmodedialog-types")] pub use relaysetpublishmodedialog :: { RelaySetPublishModeDialog_YesMenuItem , IRelaySetPublishModeDialog_YesMenuItem , RelaySetPublishModeDialog_NoMenuItem , IRelaySetPublishModeDialog_NoMenuItem , RelaySetPublishModeDialog , IRelaySetPublishModeDialog }
+ # [cfg (feature = "app-relaysetpublishmodedialog-types")] pub use relaysetpublishmodedialog :: { RelaySetPublishModeDialog_YesMenuItem , IRelaySetPublishModeDialog_YesMenuItem , RelaySetPublishModeDialog , IRelaySetPublishModeDialog , RelaySetPublishModeDialog_NoMenuItem , IRelaySetPublishModeDialog_NoMenuItem }
  ;
- # [cfg (feature = "app-relaysetpublishmodedialog")] pub use relaysetpublishmodedialog :: { IRelaySetPublishModeDialog_YesMenuItemMethods , IRelaySetPublishModeDialog_NoMenuItemMethods , IRelaySetPublishModeDialogMethods }
+ # [cfg (feature = "app-relaysetpublishmodedialog")] pub use relaysetpublishmodedialog :: { IRelaySetPublishModeDialog_YesMenuItemMethods , IRelaySetPublishModeDialogMethods , IRelaySetPublishModeDialog_NoMenuItemMethods }
  ;
  # [cfg (any (feature = "app-relayshowdatadialog-types"))] pub mod relayshowdatadialog ;
  # [cfg (feature = "app-relayshowdatadialog-types")] pub use relayshowdatadialog :: { RelayShowDataDialog , IRelayShowDataDialog , RelayShowDataDialog_Mode }
@@ -7466,7 +7466,7 @@
  # [cfg (feature = "app-relayshowdatadialogcontent")] pub use relayshowdatadialogcontent :: { IRelayShowDataDialogContentMethods }
  ;
  # [cfg (any (feature = "app-relayshowdatasequence-types"))] pub mod relayshowdatasequence ;
- # [cfg (feature = "app-relayshowdatasequence-types")] pub use relayshowdatasequence :: { RelayShowDataSequence , IRelayShowDataSequence , RelayShowDataSequence_Label }
+ # [cfg (feature = "app-relayshowdatasequence-types")] pub use relayshowdatasequence :: { RelayShowDataSequence_Label , RelayShowDataSequence , IRelayShowDataSequence }
  ;
  # [cfg (feature = "app-relayshowdatasequence")] pub use relayshowdatasequence :: { IRelayShowDataSequenceMethods }
  ;
@@ -7486,12 +7486,12 @@
  # [cfg (feature = "app-relaystamp")] pub use relaystamp :: { IRelayStampMethods }
  ;
  # [cfg (any (feature = "app-relaystampdata-types"))] pub mod relaystampdata ;
- # [cfg (feature = "app-relaystampdata-types")] pub use relaystampdata :: { RelayStampData_Kinds , RelayStampData_Flags , RelayStampData_FlagField , IRelayStampData_FlagField , RelayStampData , IRelayStampData }
+ # [cfg (feature = "app-relaystampdata-types")] pub use relaystampdata :: { RelayStampData_Flags , RelayStampData , IRelayStampData , RelayStampData_Kinds , RelayStampData_FlagField , IRelayStampData_FlagField }
  ;
- # [cfg (feature = "app-relaystampdata")] pub use relaystampdata :: { IRelayStampData_FlagFieldMethods , IRelayStampDataMethods }
+ # [cfg (feature = "app-relaystampdata")] pub use relaystampdata :: { IRelayStampDataMethods , IRelayStampData_FlagFieldMethods }
  ;
  # [cfg (any (feature = "app-relaytakeovermenu-types"))] pub mod relaytakeovermenu ;
- # [cfg (feature = "app-relaytakeovermenu-types")] pub use relaytakeovermenu :: { RelayTakeOverMenu_MenuItem , IRelayTakeOverMenu_MenuItem , RelayTakeOverMenu_Result2 , RelayTakeOverMenu , IRelayTakeOverMenu }
+ # [cfg (feature = "app-relaytakeovermenu-types")] pub use relaytakeovermenu :: { RelayTakeOverMenu_MenuItem , IRelayTakeOverMenu_MenuItem , RelayTakeOverMenu , IRelayTakeOverMenu , RelayTakeOverMenu_Result2 }
  ;
  # [cfg (feature = "app-relaytakeovermenu")] pub use relaytakeovermenu :: { IRelayTakeOverMenu_MenuItemMethods , IRelayTakeOverMenuMethods }
  ;
@@ -7501,7 +7501,7 @@
  # [cfg (feature = "app-relayteamawarddatadialog")] pub use relayteamawarddatadialog :: { IRelayTeamAwardDataDialogMethods }
  ;
  # [cfg (any (feature = "app-relayticketsequence-types"))] pub mod relayticketsequence ;
- # [cfg (feature = "app-relayticketsequence-types")] pub use relayticketsequence :: { RelayTicketSequence , IRelayTicketSequence , RelayTicketSequence_ProcUse , IRelayTicketSequence_ProcUse , RelayTicketSequence_ProcDaily_Label , RelayTicketSequence_ProcDaily , IRelayTicketSequence_ProcDaily }
+ # [cfg (feature = "app-relayticketsequence-types")] pub use relayticketsequence :: { RelayTicketSequence , IRelayTicketSequence , RelayTicketSequence_ProcUse , IRelayTicketSequence_ProcUse , RelayTicketSequence_ProcDaily , IRelayTicketSequence_ProcDaily , RelayTicketSequence_ProcDaily_Label }
  ;
  # [cfg (feature = "app-relayticketsequence")] pub use relayticketsequence :: { IRelayTicketSequence_ProcUseMethods , IRelayTicketSequence_ProcDailyMethods }
  ;
@@ -7511,19 +7511,19 @@
  # [cfg (feature = "app-relayunsettledsequence")] pub use relayunsettledsequence :: { IRelayUnsettledSequenceMethods }
  ;
  # [cfg (any (feature = "app-relayuserdata-types"))] pub mod relayuserdata ;
- # [cfg (feature = "app-relayuserdata-types")] pub use relayuserdata :: { RelayUserData , IRelayUserData , RelayUserData_EnteredBattle , IRelayUserData_EnteredBattle }
+ # [cfg (feature = "app-relayuserdata-types")] pub use relayuserdata :: { RelayUserData_EnteredBattle , IRelayUserData_EnteredBattle , RelayUserData , IRelayUserData }
  ;
- # [cfg (feature = "app-relayuserdata")] pub use relayuserdata :: { IRelayUserDataMethods , IRelayUserData_EnteredBattleMethods }
+ # [cfg (feature = "app-relayuserdata")] pub use relayuserdata :: { IRelayUserData_EnteredBattleMethods , IRelayUserDataMethods }
  ;
  # [cfg (any (feature = "app-relayuserglobaldata-types"))] pub mod relayuserglobaldata ;
- # [cfg (feature = "app-relayuserglobaldata-types")] pub use relayuserglobaldata :: { RelayUserGlobalData , IRelayUserGlobalData , RelayUserGlobalData_Ticket , IRelayUserGlobalData_Ticket , RelayUserGlobalData_Uncommitted , RelayUserGlobalData_ProcCleanupUnused , IRelayUserGlobalData_ProcCleanupUnused }
+ # [cfg (feature = "app-relayuserglobaldata-types")] pub use relayuserglobaldata :: { RelayUserGlobalData_Ticket , IRelayUserGlobalData_Ticket , RelayUserGlobalData , IRelayUserGlobalData , RelayUserGlobalData_ProcCleanupUnused , IRelayUserGlobalData_ProcCleanupUnused , RelayUserGlobalData_Uncommitted }
  ;
- # [cfg (feature = "app-relayuserglobaldata")] pub use relayuserglobaldata :: { IRelayUserGlobalDataMethods , IRelayUserGlobalData_TicketMethods , IRelayUserGlobalData_ProcCleanupUnusedMethods }
+ # [cfg (feature = "app-relayuserglobaldata")] pub use relayuserglobaldata :: { IRelayUserGlobalData_TicketMethods , IRelayUserGlobalDataMethods , IRelayUserGlobalData_ProcCleanupUnusedMethods }
  ;
  # [cfg (any (feature = "app-relaywdwmaphelp-types"))] pub mod relaywdwmaphelp ;
- # [cfg (feature = "app-relaywdwmaphelp-types")] pub use relaywdwmaphelp :: { RelayWdwMapHelp , IRelayWdwMapHelp , RelayWdwMapHelp_ShowItem , IRelayWdwMapHelp_ShowItem }
+ # [cfg (feature = "app-relaywdwmaphelp-types")] pub use relaywdwmaphelp :: { RelayWdwMapHelp_ShowItem , IRelayWdwMapHelp_ShowItem , RelayWdwMapHelp , IRelayWdwMapHelp }
  ;
- # [cfg (feature = "app-relaywdwmaphelp")] pub use relaywdwmaphelp :: { IRelayWdwMapHelpMethods , IRelayWdwMapHelp_ShowItemMethods }
+ # [cfg (feature = "app-relaywdwmaphelp")] pub use relaywdwmaphelp :: { IRelayWdwMapHelp_ShowItemMethods , IRelayWdwMapHelpMethods }
  ;
  # [cfg (any (feature = "app-relaywdwplayerlist-types"))] pub mod relaywdwplayerlist ;
  # [cfg (feature = "app-relaywdwplayerlist-types")] pub use relaywdwplayerlist :: { RelayWdwPlayerList , IRelayWdwPlayerList }
@@ -7531,7 +7531,7 @@
  # [cfg (feature = "app-relaywdwplayerlist")] pub use relaywdwplayerlist :: { IRelayWdwPlayerListMethods }
  ;
  # [cfg (any (feature = "app-reliancedata-types"))] pub mod reliancedata ;
- # [cfg (feature = "app-reliancedata-types")] pub use reliancedata :: { RelianceData_Level , RelianceData , IRelianceData }
+ # [cfg (feature = "app-reliancedata-types")] pub use reliancedata :: { RelianceData , IRelianceData , RelianceData_Level }
  ;
  # [cfg (feature = "app-reliancedata")] pub use reliancedata :: { IRelianceDataMethods }
  ;
@@ -7576,7 +7576,7 @@
  # [cfg (feature = "app-resourcemanager_2")] pub use resourcemanager_2 :: { IResourceManager_2Methods }
  ;
  # [cfg (any (feature = "app-resourceobject-types"))] pub mod resourceobject ;
- # [cfg (feature = "app-resourceobject-types")] pub use resourceobject :: { ResourceObject_Callback , IResourceObject_Callback , ResourceObject , IResourceObject , ResourceObject_Coroutine , IResourceObject_Coroutine , ResourceObject_Sequence , ResourceObject_Flags }
+ # [cfg (feature = "app-resourceobject-types")] pub use resourceobject :: { ResourceObject_Sequence , ResourceObject_Callback , IResourceObject_Callback , ResourceObject , IResourceObject , ResourceObject_Coroutine , IResourceObject_Coroutine , ResourceObject_Flags }
  ;
  # [cfg (feature = "app-resourceobject")] pub use resourceobject :: { IResourceObject_CallbackMethods , IResourceObjectMethods , IResourceObject_CoroutineMethods }
  ;
@@ -7606,14 +7606,14 @@
  # [cfg (feature = "app-rewarddata")] pub use rewarddata :: { IRewardDataMethods }
  ;
  # [cfg (any (feature = "app-rewindmenu-types"))] pub mod rewindmenu ;
- # [cfg (feature = "app-rewindmenu-types")] pub use rewindmenu :: { RewindMenu_MenuItem_UnitIconInfo , IRewindMenu_MenuItem_UnitIconInfo , RewindMenu_ExecuteConfirmDialog_ItemNo , IRewindMenu_ExecuteConfirmDialog_ItemNo , RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap , IRewindMenu_CancelConfirmDialog_ItemYesForChallengeMap , RewindMenu_CancelConfirmDialog_ItemNo , IRewindMenu_CancelConfirmDialog_ItemNo , RewindMenu_ExecuteConfirmDialog_ItemYes , IRewindMenu_ExecuteConfirmDialog_ItemYes , RewindMenu_ExecuteConfirmDialog , IRewindMenu_ExecuteConfirmDialog , RewindMenu_CancelConfirmDialog_ItemYes , IRewindMenu_CancelConfirmDialog_ItemYes , RewindMenu_CancelConfirmDialog , IRewindMenu_CancelConfirmDialog , RewindMenu_MenuItem , IRewindMenu_MenuItem , RewindMenu , IRewindMenu }
+ # [cfg (feature = "app-rewindmenu-types")] pub use rewindmenu :: { RewindMenu_MenuItem , IRewindMenu_MenuItem , RewindMenu , IRewindMenu , RewindMenu_ExecuteConfirmDialog , IRewindMenu_ExecuteConfirmDialog , RewindMenu_CancelConfirmDialog , IRewindMenu_CancelConfirmDialog , RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap , IRewindMenu_CancelConfirmDialog_ItemYesForChallengeMap , RewindMenu_CancelConfirmDialog_ItemYes , IRewindMenu_CancelConfirmDialog_ItemYes , RewindMenu_MenuItem_UnitIconInfo , IRewindMenu_MenuItem_UnitIconInfo , RewindMenu_ExecuteConfirmDialog_ItemNo , IRewindMenu_ExecuteConfirmDialog_ItemNo , RewindMenu_ExecuteConfirmDialog_ItemYes , IRewindMenu_ExecuteConfirmDialog_ItemYes , RewindMenu_CancelConfirmDialog_ItemNo , IRewindMenu_CancelConfirmDialog_ItemNo }
  ;
- # [cfg (feature = "app-rewindmenu")] pub use rewindmenu :: { IRewindMenu_MenuItem_UnitIconInfoMethods , IRewindMenu_ExecuteConfirmDialog_ItemNoMethods , IRewindMenu_CancelConfirmDialog_ItemYesForChallengeMapMethods , IRewindMenu_CancelConfirmDialog_ItemNoMethods , IRewindMenu_ExecuteConfirmDialog_ItemYesMethods , IRewindMenu_ExecuteConfirmDialogMethods , IRewindMenu_CancelConfirmDialog_ItemYesMethods , IRewindMenu_CancelConfirmDialogMethods , IRewindMenu_MenuItemMethods , IRewindMenuMethods }
+ # [cfg (feature = "app-rewindmenu")] pub use rewindmenu :: { IRewindMenu_MenuItemMethods , IRewindMenuMethods , IRewindMenu_ExecuteConfirmDialogMethods , IRewindMenu_CancelConfirmDialogMethods , IRewindMenu_CancelConfirmDialog_ItemYesForChallengeMapMethods , IRewindMenu_CancelConfirmDialog_ItemYesMethods , IRewindMenu_MenuItem_UnitIconInfoMethods , IRewindMenu_ExecuteConfirmDialog_ItemNoMethods , IRewindMenu_ExecuteConfirmDialog_ItemYesMethods , IRewindMenu_CancelConfirmDialog_ItemNoMethods }
  ;
  # [cfg (any (feature = "app-rewindmenucontent-types"))] pub mod rewindmenucontent ;
- # [cfg (feature = "app-rewindmenucontent-types")] pub use rewindmenucontent :: { RewindMenuContent_RestRewindTimes , IRewindMenuContent_RestRewindTimes , RewindMenuContent , IRewindMenuContent , RewindMenuContent_KeyHelp , IRewindMenuContent_KeyHelp , RewindMenuContent_Phase , IRewindMenuContent_Phase , RewindMenuContent_ScrollArrow , IRewindMenuContent_ScrollArrow }
+ # [cfg (feature = "app-rewindmenucontent-types")] pub use rewindmenucontent :: { RewindMenuContent_ScrollArrow , IRewindMenuContent_ScrollArrow , RewindMenuContent , IRewindMenuContent , RewindMenuContent_KeyHelp , IRewindMenuContent_KeyHelp , RewindMenuContent_RestRewindTimes , IRewindMenuContent_RestRewindTimes , RewindMenuContent_Phase , IRewindMenuContent_Phase }
  ;
- # [cfg (feature = "app-rewindmenucontent")] pub use rewindmenucontent :: { IRewindMenuContent_RestRewindTimesMethods , IRewindMenuContentMethods , IRewindMenuContent_KeyHelpMethods , IRewindMenuContent_PhaseMethods , IRewindMenuContent_ScrollArrowMethods }
+ # [cfg (feature = "app-rewindmenucontent")] pub use rewindmenucontent :: { IRewindMenuContent_ScrollArrowMethods , IRewindMenuContentMethods , IRewindMenuContent_KeyHelpMethods , IRewindMenuContent_RestRewindTimesMethods , IRewindMenuContent_PhaseMethods }
  ;
  # [cfg (any (feature = "app-rewindmenuitemcontent-types"))] pub mod rewindmenuitemcontent ;
  # [cfg (feature = "app-rewindmenuitemcontent-types")] pub use rewindmenuitemcontent :: { RewindMenuItemContent , IRewindMenuItemContent }
@@ -7662,19 +7662,19 @@
  # [cfg (feature = "app-ringcleaningroot")] pub use ringcleaningroot :: { IRingCleaningRootMethods }
  ;
  # [cfg (any (feature = "app-ringcleaningselectsequence-types"))] pub mod ringcleaningselectsequence ;
- # [cfg (feature = "app-ringcleaningselectsequence-types")] pub use ringcleaningselectsequence :: { RingCleaningSelectSequence_Label2 , RingCleaningSelectSequence , IRingCleaningSelectSequence }
+ # [cfg (feature = "app-ringcleaningselectsequence-types")] pub use ringcleaningselectsequence :: { RingCleaningSelectSequence , IRingCleaningSelectSequence , RingCleaningSelectSequence_Label2 }
  ;
  # [cfg (feature = "app-ringcleaningselectsequence")] pub use ringcleaningselectsequence :: { IRingCleaningSelectSequenceMethods }
  ;
  # [cfg (any (feature = "app-ringcleaningsequence-types"))] pub mod ringcleaningsequence ;
- # [cfg (feature = "app-ringcleaningsequence-types")] pub use ringcleaningsequence :: { RingCleaningSequence_RButtonHoldSequence_Label , RingCleaningSequence_RButtonHoldSequence , IRingCleaningSequence_RButtonHoldSequence , RingCleaningSequence_ConfirmDialogItemYes , IRingCleaningSequence_ConfirmDialogItemYes , RingCleaningSequence_GodType , RingCleaningSequence , IRingCleaningSequence , RingCleaningSequence_Label , RingCleaningSequence_Strength , RingCleaningSequence_ExitConfirmDialog , IRingCleaningSequence_ExitConfirmDialog , RingCleaningSequence_HitResult }
+ # [cfg (feature = "app-ringcleaningsequence-types")] pub use ringcleaningsequence :: { RingCleaningSequence , IRingCleaningSequence , RingCleaningSequence_ConfirmDialogItemYes , IRingCleaningSequence_ConfirmDialogItemYes , RingCleaningSequence_ExitConfirmDialog , IRingCleaningSequence_ExitConfirmDialog , RingCleaningSequence_RButtonHoldSequence_Label , RingCleaningSequence_RButtonHoldSequence , IRingCleaningSequence_RButtonHoldSequence , RingCleaningSequence_Strength , RingCleaningSequence_Label , RingCleaningSequence_GodType , RingCleaningSequence_HitResult }
  ;
- # [cfg (feature = "app-ringcleaningsequence")] pub use ringcleaningsequence :: { IRingCleaningSequence_RButtonHoldSequenceMethods , IRingCleaningSequence_ConfirmDialogItemYesMethods , IRingCleaningSequenceMethods , IRingCleaningSequence_ExitConfirmDialogMethods }
+ # [cfg (feature = "app-ringcleaningsequence")] pub use ringcleaningsequence :: { IRingCleaningSequenceMethods , IRingCleaningSequence_ConfirmDialogItemYesMethods , IRingCleaningSequence_ExitConfirmDialogMethods , IRingCleaningSequence_RButtonHoldSequenceMethods }
  ;
  # [cfg (any (feature = "app-ringcleaningunitselectmenu-types"))] pub mod ringcleaningunitselectmenu ;
- # [cfg (feature = "app-ringcleaningunitselectmenu-types")] pub use ringcleaningunitselectmenu :: { RingCleaningUnitSelectMenu_GodParam , RingCleaningUnitSelectMenu , IRingCleaningUnitSelectMenu , RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYes , IRingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYes , RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialog , IRingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialog , RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem , IRingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem , RingCleaningUnitSelectMenu_DecideEventHandler , IRingCleaningUnitSelectMenu_DecideEventHandler }
+ # [cfg (feature = "app-ringcleaningunitselectmenu-types")] pub use ringcleaningunitselectmenu :: { RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem , IRingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem , RingCleaningUnitSelectMenu , IRingCleaningUnitSelectMenu , RingCleaningUnitSelectMenu_GodParam , RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialog , IRingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialog , RingCleaningUnitSelectMenu_DecideEventHandler , IRingCleaningUnitSelectMenu_DecideEventHandler , RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYes , IRingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYes }
  ;
- # [cfg (feature = "app-ringcleaningunitselectmenu")] pub use ringcleaningunitselectmenu :: { IRingCleaningUnitSelectMenuMethods , IRingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYesMethods , IRingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogMethods , IRingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItemMethods , IRingCleaningUnitSelectMenu_DecideEventHandlerMethods }
+ # [cfg (feature = "app-ringcleaningunitselectmenu")] pub use ringcleaningunitselectmenu :: { IRingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItemMethods , IRingCleaningUnitSelectMenuMethods , IRingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogMethods , IRingCleaningUnitSelectMenu_DecideEventHandlerMethods , IRingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYesMethods }
  ;
  # [cfg (any (feature = "app-ringcleaningunitselectmenucontent-types"))] pub mod ringcleaningunitselectmenucontent ;
  # [cfg (feature = "app-ringcleaningunitselectmenucontent-types")] pub use ringcleaningunitselectmenucontent :: { RingCleaningUnitSelectMenuContent , IRingCleaningUnitSelectMenuContent }
@@ -7687,7 +7687,7 @@
  # [cfg (feature = "app-ringcleaningunitselectmenuitemcontent")] pub use ringcleaningunitselectmenuitemcontent :: { IRingCleaningUnitSelectMenuItemContentMethods }
  ;
  # [cfg (any (feature = "app-ringcleaningvoicedata-types"))] pub mod ringcleaningvoicedata ;
- # [cfg (feature = "app-ringcleaningvoicedata-types")] pub use ringcleaningvoicedata :: { RingCleaningVoiceData_Situation , RingCleaningVoiceData , IRingCleaningVoiceData , RingCleaningVoiceData_VoiceLabel }
+ # [cfg (feature = "app-ringcleaningvoicedata-types")] pub use ringcleaningvoicedata :: { RingCleaningVoiceData_VoiceLabel , RingCleaningVoiceData_Situation , RingCleaningVoiceData , IRingCleaningVoiceData }
  ;
  # [cfg (feature = "app-ringcleaningvoicedata")] pub use ringcleaningvoicedata :: { IRingCleaningVoiceDataMethods }
  ;
@@ -7702,7 +7702,7 @@
  # [cfg (feature = "app-ringcolliderpart")] pub use ringcolliderpart :: { IRingColliderPartMethods }
  ;
  # [cfg (any (feature = "app-ringdata-types"))] pub mod ringdata ;
- # [cfg (feature = "app-ringdata-types")] pub use ringdata :: { RingData_Kinds , RingData , IRingData , RingData_Ranks }
+ # [cfg (feature = "app-ringdata-types")] pub use ringdata :: { RingData_Ranks , RingData_Kinds , RingData , IRingData }
  ;
  # [cfg (feature = "app-ringdata")] pub use ringdata :: { IRingDataMethods }
  ;
@@ -7712,14 +7712,14 @@
  # [cfg (feature = "app-ringemptymenuitem")] pub use ringemptymenuitem :: { IRingEmptyMenuItemMethods }
  ;
  # [cfg (any (feature = "app-ringgachasequence-types"))] pub mod ringgachasequence ;
- # [cfg (feature = "app-ringgachasequence-types")] pub use ringgachasequence :: { RingGachaSequence_Label , RingGachaSequence_SkipListenerProc , IRingGachaSequence_SkipListenerProc , RingGachaSequence_SkipListenerProc_Type , RingGachaSequence_Result1Proc , IRingGachaSequence_Result1Proc , RingGachaSequence , IRingGachaSequence , RingGachaSequence_Result10Proc , IRingGachaSequence_Result10Proc , RingGachaSequence_SkipListenerProc_SkipCallback , IRingGachaSequence_SkipListenerProc_SkipCallback }
+ # [cfg (feature = "app-ringgachasequence-types")] pub use ringgachasequence :: { RingGachaSequence , IRingGachaSequence , RingGachaSequence_SkipListenerProc , IRingGachaSequence_SkipListenerProc , RingGachaSequence_Result10Proc , IRingGachaSequence_Result10Proc , RingGachaSequence_SkipListenerProc_Type , RingGachaSequence_SkipListenerProc_SkipCallback , IRingGachaSequence_SkipListenerProc_SkipCallback , RingGachaSequence_Result1Proc , IRingGachaSequence_Result1Proc , RingGachaSequence_Label }
  ;
- # [cfg (feature = "app-ringgachasequence")] pub use ringgachasequence :: { IRingGachaSequence_SkipListenerProcMethods , IRingGachaSequence_Result1ProcMethods , IRingGachaSequenceMethods , IRingGachaSequence_Result10ProcMethods , IRingGachaSequence_SkipListenerProc_SkipCallbackMethods }
+ # [cfg (feature = "app-ringgachasequence")] pub use ringgachasequence :: { IRingGachaSequenceMethods , IRingGachaSequence_SkipListenerProcMethods , IRingGachaSequence_Result10ProcMethods , IRingGachaSequence_SkipListenerProc_SkipCallbackMethods , IRingGachaSequence_Result1ProcMethods }
  ;
  # [cfg (any (feature = "app-ringinfo-types"))] pub mod ringinfo ;
- # [cfg (feature = "app-ringinfo-types")] pub use ringinfo :: { RingInfo_RingInfoWindowRingModel , IRingInfo_RingInfoWindowRingModel , RingInfo , IRingInfo , RingInfo_RingPrefabObject , IRingInfo_RingPrefabObject }
+ # [cfg (feature = "app-ringinfo-types")] pub use ringinfo :: { RingInfo_RingInfoWindowRingModel , IRingInfo_RingInfoWindowRingModel , RingInfo_RingPrefabObject , IRingInfo_RingPrefabObject , RingInfo , IRingInfo }
  ;
- # [cfg (feature = "app-ringinfo")] pub use ringinfo :: { IRingInfo_RingInfoWindowRingModelMethods , IRingInfoMethods , IRingInfo_RingPrefabObjectMethods }
+ # [cfg (feature = "app-ringinfo")] pub use ringinfo :: { IRingInfo_RingInfoWindowRingModelMethods , IRingInfo_RingPrefabObjectMethods , IRingInfoMethods }
  ;
  # [cfg (any (feature = "app-ringinfocontroller-types"))] pub mod ringinfocontroller ;
  # [cfg (feature = "app-ringinfocontroller-types")] pub use ringinfocontroller :: { RingInfoController , IRingInfoController }
@@ -7732,14 +7732,14 @@
  # [cfg (feature = "app-ringinfodirty")] pub use ringinfodirty :: { IRingInfoDirtyMethods }
  ;
  # [cfg (any (feature = "app-ringlistsequence-types"))] pub mod ringlistsequence ;
- # [cfg (feature = "app-ringlistsequence-types")] pub use ringlistsequence :: { RingListSequence_GodPageData , IRingListSequence_GodPageData , RingListSequence_RingListWindow_RingInfo_Gain , IRingListSequence_RingListWindow_RingInfo_Gain , RingListSequence_Label , RingListSequence_CharaImageController , IRingListSequence_CharaImageController , RingListSequence_PageDataList , IRingListSequence_PageDataList , RingListSequence , IRingListSequence , RingListSequence_RingListWindow_RingInfoRank , RingListSequence_GodAndRingListWindow_MenuItem , IRingListSequence_GodAndRingListWindow_MenuItem , RingListSequence_PageDataList_GodComparer , IRingListSequence_PageDataList_GodComparer , RingListSequence_RelatedGroupWindow , IRingListSequence_RelatedGroupWindow , RingListSequence_RingPageData , IRingListSequence_RingPageData , RingListSequence_CharaInfoWindow , IRingListSequence_CharaInfoWindow , RingListSequence_GodAndRingListWindow_MenuContent , IRingListSequence_GodAndRingListWindow_MenuContent , RingListSequence_GodAndRingListWindow_Menu , IRingListSequence_GodAndRingListWindow_Menu , RingListSequence_CharaImage , IRingListSequence_CharaImage , RingListSequence_RingListWindow_SkillInfo , IRingListSequence_RingListWindow_SkillInfo , RingListSequence_RingListWindow , IRingListSequence_RingListWindow , RingListSequence_GodAndRingListWindow_MenuItemContent , IRingListSequence_GodAndRingListWindow_MenuItemContent , RingListSequence_CharaArrowGroup , IRingListSequence_CharaArrowGroup , RingListSequence_PageData , IRingListSequence_PageData , RingListSequence_RingListWindow_RingInfo , IRingListSequence_RingListWindow_RingInfo , RingListSequence_GodAndRingListWindow , IRingListSequence_GodAndRingListWindow , RingListSequence_CharaInfoWindow_CharaDescriptionText , RingListSequence_CharaNavigation , IRingListSequence_CharaNavigation }
+ # [cfg (feature = "app-ringlistsequence-types")] pub use ringlistsequence :: { RingListSequence_RingListWindow , IRingListSequence_RingListWindow , RingListSequence_RingListWindow_RingInfoRank , RingListSequence_RingPageData , IRingListSequence_RingPageData , RingListSequence_GodAndRingListWindow , IRingListSequence_GodAndRingListWindow , RingListSequence_RelatedGroupWindow , IRingListSequence_RelatedGroupWindow , RingListSequence_CharaInfoWindow , IRingListSequence_CharaInfoWindow , RingListSequence_GodAndRingListWindow_Menu , IRingListSequence_GodAndRingListWindow_Menu , RingListSequence_CharaImage , IRingListSequence_CharaImage , RingListSequence_GodAndRingListWindow_MenuItem , IRingListSequence_GodAndRingListWindow_MenuItem , RingListSequence_RingListWindow_RingInfo_Gain , IRingListSequence_RingListWindow_RingInfo_Gain , RingListSequence_PageData , IRingListSequence_PageData , RingListSequence_Label , RingListSequence_GodAndRingListWindow_MenuContent , IRingListSequence_GodAndRingListWindow_MenuContent , RingListSequence_CharaNavigation , IRingListSequence_CharaNavigation , RingListSequence_CharaImageController , IRingListSequence_CharaImageController , RingListSequence_CharaInfoWindow_CharaDescriptionText , RingListSequence_PageDataList , IRingListSequence_PageDataList , RingListSequence_PageDataList_GodComparer , IRingListSequence_PageDataList_GodComparer , RingListSequence_RingListWindow_RingInfo , IRingListSequence_RingListWindow_RingInfo , RingListSequence_RingListWindow_SkillInfo , IRingListSequence_RingListWindow_SkillInfo , RingListSequence_GodAndRingListWindow_MenuItemContent , IRingListSequence_GodAndRingListWindow_MenuItemContent , RingListSequence , IRingListSequence , RingListSequence_CharaArrowGroup , IRingListSequence_CharaArrowGroup , RingListSequence_GodPageData , IRingListSequence_GodPageData }
  ;
- # [cfg (feature = "app-ringlistsequence")] pub use ringlistsequence :: { IRingListSequence_GodPageDataMethods , IRingListSequence_RingListWindow_RingInfo_GainMethods , IRingListSequence_CharaImageControllerMethods , IRingListSequence_PageDataListMethods , IRingListSequenceMethods , IRingListSequence_GodAndRingListWindow_MenuItemMethods , IRingListSequence_PageDataList_GodComparerMethods , IRingListSequence_RelatedGroupWindowMethods , IRingListSequence_RingPageDataMethods , IRingListSequence_CharaInfoWindowMethods , IRingListSequence_GodAndRingListWindow_MenuContentMethods , IRingListSequence_GodAndRingListWindow_MenuMethods , IRingListSequence_CharaImageMethods , IRingListSequence_RingListWindow_SkillInfoMethods , IRingListSequence_RingListWindowMethods , IRingListSequence_GodAndRingListWindow_MenuItemContentMethods , IRingListSequence_CharaArrowGroupMethods , IRingListSequence_PageDataMethods , IRingListSequence_RingListWindow_RingInfoMethods , IRingListSequence_GodAndRingListWindowMethods , IRingListSequence_CharaNavigationMethods }
+ # [cfg (feature = "app-ringlistsequence")] pub use ringlistsequence :: { IRingListSequence_RingListWindowMethods , IRingListSequence_RingPageDataMethods , IRingListSequence_GodAndRingListWindowMethods , IRingListSequence_RelatedGroupWindowMethods , IRingListSequence_CharaInfoWindowMethods , IRingListSequence_GodAndRingListWindow_MenuMethods , IRingListSequence_CharaImageMethods , IRingListSequence_GodAndRingListWindow_MenuItemMethods , IRingListSequence_RingListWindow_RingInfo_GainMethods , IRingListSequence_PageDataMethods , IRingListSequence_GodAndRingListWindow_MenuContentMethods , IRingListSequence_CharaNavigationMethods , IRingListSequence_CharaImageControllerMethods , IRingListSequence_PageDataListMethods , IRingListSequence_PageDataList_GodComparerMethods , IRingListSequence_RingListWindow_RingInfoMethods , IRingListSequence_RingListWindow_SkillInfoMethods , IRingListSequence_GodAndRingListWindow_MenuItemContentMethods , IRingListSequenceMethods , IRingListSequence_CharaArrowGroupMethods , IRingListSequence_GodPageDataMethods }
  ;
  # [cfg (any (feature = "app-ringlistskillmenu-types"))] pub mod ringlistskillmenu ;
- # [cfg (feature = "app-ringlistskillmenu-types")] pub use ringlistskillmenu :: { RingListSkillMenu_Menu , IRingListSkillMenu_Menu , RingListSkillMenu_MenuItem_EngageItem , IRingListSkillMenu_MenuItem_EngageItem , RingListSkillMenu_SkillHelpWindow , IRingListSkillMenu_SkillHelpWindow , RingListSkillMenu_ItemHelpWindow , IRingListSkillMenu_ItemHelpWindow , RingListSkillMenu_CancelEventHandler , IRingListSkillMenu_CancelEventHandler , RingListSkillMenu_MenuItem , IRingListSkillMenu_MenuItem , RingListSkillMenu_MenuContent , IRingListSkillMenu_MenuContent , RingListSkillMenu_MenuItem_ExtraSkill_SkillType , RingListSkillMenu_MenuItem_Skill , IRingListSkillMenu_MenuItem_Skill , RingListSkillMenu_MenuItem_WeaponTalent , IRingListSkillMenu_MenuItem_WeaponTalent , RingListSkillMenu_MenuItemContent , IRingListSkillMenu_MenuItemContent , RingListSkillMenu_MenuItem_ExtraSkill , IRingListSkillMenu_MenuItem_ExtraSkill , RingListSkillMenu , IRingListSkillMenu }
+ # [cfg (feature = "app-ringlistskillmenu-types")] pub use ringlistskillmenu :: { RingListSkillMenu_MenuItem_WeaponTalent , IRingListSkillMenu_MenuItem_WeaponTalent , RingListSkillMenu , IRingListSkillMenu , RingListSkillMenu_ItemHelpWindow , IRingListSkillMenu_ItemHelpWindow , RingListSkillMenu_Menu , IRingListSkillMenu_Menu , RingListSkillMenu_CancelEventHandler , IRingListSkillMenu_CancelEventHandler , RingListSkillMenu_MenuItem_EngageItem , IRingListSkillMenu_MenuItem_EngageItem , RingListSkillMenu_MenuItem_ExtraSkill_SkillType , RingListSkillMenu_MenuItemContent , IRingListSkillMenu_MenuItemContent , RingListSkillMenu_MenuItem , IRingListSkillMenu_MenuItem , RingListSkillMenu_SkillHelpWindow , IRingListSkillMenu_SkillHelpWindow , RingListSkillMenu_MenuItem_Skill , IRingListSkillMenu_MenuItem_Skill , RingListSkillMenu_MenuItem_ExtraSkill , IRingListSkillMenu_MenuItem_ExtraSkill , RingListSkillMenu_MenuContent , IRingListSkillMenu_MenuContent }
  ;
- # [cfg (feature = "app-ringlistskillmenu")] pub use ringlistskillmenu :: { IRingListSkillMenu_MenuMethods , IRingListSkillMenu_MenuItem_EngageItemMethods , IRingListSkillMenu_SkillHelpWindowMethods , IRingListSkillMenu_ItemHelpWindowMethods , IRingListSkillMenu_CancelEventHandlerMethods , IRingListSkillMenu_MenuItemMethods , IRingListSkillMenu_MenuContentMethods , IRingListSkillMenu_MenuItem_SkillMethods , IRingListSkillMenu_MenuItem_WeaponTalentMethods , IRingListSkillMenu_MenuItemContentMethods , IRingListSkillMenu_MenuItem_ExtraSkillMethods , IRingListSkillMenuMethods }
+ # [cfg (feature = "app-ringlistskillmenu")] pub use ringlistskillmenu :: { IRingListSkillMenu_MenuItem_WeaponTalentMethods , IRingListSkillMenuMethods , IRingListSkillMenu_ItemHelpWindowMethods , IRingListSkillMenu_MenuMethods , IRingListSkillMenu_CancelEventHandlerMethods , IRingListSkillMenu_MenuItem_EngageItemMethods , IRingListSkillMenu_MenuItemContentMethods , IRingListSkillMenu_MenuItemMethods , IRingListSkillMenu_SkillHelpWindowMethods , IRingListSkillMenu_MenuItem_SkillMethods , IRingListSkillMenu_MenuItem_ExtraSkillMethods , IRingListSkillMenu_MenuContentMethods }
  ;
  # [cfg (any (feature = "app-ringlistskillmenucontent-types"))] pub mod ringlistskillmenucontent ;
  # [cfg (feature = "app-ringlistskillmenucontent-types")] pub use ringlistskillmenucontent :: { RingListSkillMenuContent , IRingListSkillMenuContent }
@@ -7752,9 +7752,9 @@
  # [cfg (feature = "app-ringlistskillmenuitemcontent")] pub use ringlistskillmenuitemcontent :: { IRingListSkillMenuItemContentMethods }
  ;
  # [cfg (any (feature = "app-ringmenuitem-types"))] pub mod ringmenuitem ;
- # [cfg (feature = "app-ringmenuitem-types")] pub use ringmenuitem :: { RingMenuItem , IRingMenuItem , RingMenuItem_DecideEventHandler , IRingMenuItem_DecideEventHandler , RingMenuItem_SelectEventHandler , IRingMenuItem_SelectEventHandler }
+ # [cfg (feature = "app-ringmenuitem-types")] pub use ringmenuitem :: { RingMenuItem_DecideEventHandler , IRingMenuItem_DecideEventHandler , RingMenuItem_SelectEventHandler , IRingMenuItem_SelectEventHandler , RingMenuItem , IRingMenuItem }
  ;
- # [cfg (feature = "app-ringmenuitem")] pub use ringmenuitem :: { IRingMenuItemMethods , IRingMenuItem_DecideEventHandlerMethods , IRingMenuItem_SelectEventHandlerMethods }
+ # [cfg (feature = "app-ringmenuitem")] pub use ringmenuitem :: { IRingMenuItem_DecideEventHandlerMethods , IRingMenuItem_SelectEventHandlerMethods , IRingMenuItemMethods }
  ;
  # [cfg (any (feature = "app-ringmenuitemcontent-types"))] pub mod ringmenuitemcontent ;
  # [cfg (feature = "app-ringmenuitemcontent-types")] pub use ringmenuitemcontent :: { RingMenuItemContent , IRingMenuItemContent }
@@ -7767,9 +7767,9 @@
  # [cfg (feature = "app-ringselectconfirmdialog")] pub use ringselectconfirmdialog :: { IRingSelectConfirmDialog_ConfirmYesDialogItemMethods , IRingSelectConfirmDialogMethods }
  ;
  # [cfg (any (feature = "app-ringselectmenu-types"))] pub mod ringselectmenu ;
- # [cfg (feature = "app-ringselectmenu-types")] pub use ringselectmenu :: { RingSelectMenu_RingMenuItem , IRingSelectMenu_RingMenuItem , RingSelectMenu , IRingSelectMenu }
+ # [cfg (feature = "app-ringselectmenu-types")] pub use ringselectmenu :: { RingSelectMenu , IRingSelectMenu , RingSelectMenu_RingMenuItem , IRingSelectMenu_RingMenuItem }
  ;
- # [cfg (feature = "app-ringselectmenu")] pub use ringselectmenu :: { IRingSelectMenu_RingMenuItemMethods , IRingSelectMenuMethods }
+ # [cfg (feature = "app-ringselectmenu")] pub use ringselectmenu :: { IRingSelectMenuMethods , IRingSelectMenu_RingMenuItemMethods }
  ;
  # [cfg (any (feature = "app-ringselectmenucontent-types"))] pub mod ringselectmenucontent ;
  # [cfg (feature = "app-ringselectmenucontent-types")] pub use ringselectmenucontent :: { RingSelectMenuContent , IRingSelectMenuContent }
@@ -7787,9 +7787,9 @@
  # [cfg (feature = "app-ringselectroot")] pub use ringselectroot :: { IRingSelectRoot_CharaPhotoMethods , IRingSelectRootMethods }
  ;
  # [cfg (any (feature = "app-ringsynthesissequence-types"))] pub mod ringsynthesissequence ;
- # [cfg (feature = "app-ringsynthesissequence-types")] pub use ringsynthesissequence :: { RingSynthesisSequence_SkipListenerProc , IRingSynthesisSequence_SkipListenerProc , RingSynthesisSequence , IRingSynthesisSequence , RingSynthesisSequence_Label , RingSynthesisSequence_Result1Proc , IRingSynthesisSequence_Result1Proc }
+ # [cfg (feature = "app-ringsynthesissequence-types")] pub use ringsynthesissequence :: { RingSynthesisSequence_Result1Proc , IRingSynthesisSequence_Result1Proc , RingSynthesisSequence_Label , RingSynthesisSequence_SkipListenerProc , IRingSynthesisSequence_SkipListenerProc , RingSynthesisSequence , IRingSynthesisSequence }
  ;
- # [cfg (feature = "app-ringsynthesissequence")] pub use ringsynthesissequence :: { IRingSynthesisSequence_SkipListenerProcMethods , IRingSynthesisSequenceMethods , IRingSynthesisSequence_Result1ProcMethods }
+ # [cfg (feature = "app-ringsynthesissequence")] pub use ringsynthesissequence :: { IRingSynthesisSequence_Result1ProcMethods , IRingSynthesisSequence_SkipListenerProcMethods , IRingSynthesisSequenceMethods }
  ;
  # [cfg (any (feature = "app-roundcommand-types"))] pub mod roundcommand ;
  # [cfg (feature = "app-roundcommand-types")] pub use roundcommand :: { RoundCommand , IRoundCommand }
@@ -7800,19 +7800,19 @@
  # [cfg (feature = "app-roundvalue-types")] pub use roundvalue :: { RoundValue }
  ;
  # [cfg (any (feature = "app-savedata-types"))] pub mod savedata ;
- # [cfg (feature = "app-savedata-types")] pub use savedata :: { SaveData_Manager_Task , ISaveData_Manager_Task , SaveData_Manager_TaskKind , SaveData_Manager , ISaveData_Manager , SaveData_Manager_EventKind , SaveData , ISaveData }
+ # [cfg (feature = "app-savedata-types")] pub use savedata :: { SaveData_Manager_TaskKind , SaveData_Manager_EventKind , SaveData , ISaveData , SaveData_Manager , ISaveData_Manager , SaveData_Manager_Task , ISaveData_Manager_Task }
  ;
- # [cfg (feature = "app-savedata")] pub use savedata :: { ISaveData_Manager_TaskMethods , ISaveData_ManagerMethods , ISaveDataMethods }
+ # [cfg (feature = "app-savedata")] pub use savedata :: { ISaveDataMethods , ISaveData_ManagerMethods , ISaveData_Manager_TaskMethods }
  ;
  # [cfg (any (feature = "app-savedatahandle-types"))] pub mod savedatahandle ;
- # [cfg (feature = "app-savedatahandle-types")] pub use savedatahandle :: { SaveDataHandle , ISaveDataHandle , SaveDataHandle_States }
+ # [cfg (feature = "app-savedatahandle-types")] pub use savedatahandle :: { SaveDataHandle_States , SaveDataHandle , ISaveDataHandle }
  ;
  # [cfg (feature = "app-savedatahandle")] pub use savedatahandle :: { ISaveDataHandleMethods }
  ;
  # [cfg (any (feature = "app-savedatamenu-types"))] pub mod savedatamenu ;
- # [cfg (feature = "app-savedatamenu-types")] pub use savedatamenu :: { SaveDataMenu , ISaveDataMenu , SaveDataMenu_Mode , SaveDataMenu_ConfirmDialog_YesItem , ISaveDataMenu_ConfirmDialog_YesItem , SaveDataMenu_LoadConfirmDialog , ISaveDataMenu_LoadConfirmDialog , SaveDataMenu_SaveConfirmDialog_YesDialogItem , ISaveDataMenu_SaveConfirmDialog_YesDialogItem , SaveDataMenu_DeleteConfirmDialog , ISaveDataMenu_DeleteConfirmDialog , SaveDataMenu_CopyConfirmDialog_YesDialogItem , ISaveDataMenu_CopyConfirmDialog_YesDialogItem , SaveDataMenu_SaveConfirmDialog , ISaveDataMenu_SaveConfirmDialog , SaveDataMenu_LoadConfirmDialog_YesDialogItem , ISaveDataMenu_LoadConfirmDialog_YesDialogItem , SaveDataMenu_SaveConfirmDialog_NoDialogItem , ISaveDataMenu_SaveConfirmDialog_NoDialogItem , SaveDataMenu_CancelConfirmDialog_NoDialogItem , ISaveDataMenu_CancelConfirmDialog_NoDialogItem , SaveDataMenu_ConfirmDialog_NoItem , ISaveDataMenu_ConfirmDialog_NoItem , SaveDataMenu_CopyConfirmDialog , ISaveDataMenu_CopyConfirmDialog , SaveDataMenu_ConfirmDialog , ISaveDataMenu_ConfirmDialog , SaveDataMenu_DeleteConfirmDialog_NoDialogItem , ISaveDataMenu_DeleteConfirmDialog_NoDialogItem , SaveDataMenu_MenuItemContent , ISaveDataMenu_MenuItemContent , SaveDataMenu_DeleteConfirmDialog_YesDialogItem , ISaveDataMenu_DeleteConfirmDialog_YesDialogItem , SaveDataMenu_SuspendConfirmDialog , ISaveDataMenu_SuspendConfirmDialog , SaveDataMenu_Sequence , SaveDataMenu_MenuItem , ISaveDataMenu_MenuItem , SaveDataMenu_CancelConfirmDialog , ISaveDataMenu_CancelConfirmDialog , SaveDataMenu_SuspendConfirmDialog_YesDialogItem , ISaveDataMenu_SuspendConfirmDialog_YesDialogItem , SaveDataMenu_SuspendConfirmDialog_NoDialogItem , ISaveDataMenu_SuspendConfirmDialog_NoDialogItem , SaveDataMenu_LoadConfirmDialog_NoDialogItem , ISaveDataMenu_LoadConfirmDialog_NoDialogItem , SaveDataMenu_CopyConfirmDialog_NoDialogItem , ISaveDataMenu_CopyConfirmDialog_NoDialogItem , SaveDataMenu_MenuContent , ISaveDataMenu_MenuContent , SaveDataMenu_CancelConfirmDialog_YesDialogItem , ISaveDataMenu_CancelConfirmDialog_YesDialogItem }
+ # [cfg (feature = "app-savedatamenu-types")] pub use savedatamenu :: { SaveDataMenu_LoadConfirmDialog_NoDialogItem , ISaveDataMenu_LoadConfirmDialog_NoDialogItem , SaveDataMenu_CopyConfirmDialog , ISaveDataMenu_CopyConfirmDialog , SaveDataMenu_SuspendConfirmDialog , ISaveDataMenu_SuspendConfirmDialog , SaveDataMenu_ConfirmDialog_YesItem , ISaveDataMenu_ConfirmDialog_YesItem , SaveDataMenu_SaveConfirmDialog_YesDialogItem , ISaveDataMenu_SaveConfirmDialog_YesDialogItem , SaveDataMenu_SuspendConfirmDialog_YesDialogItem , ISaveDataMenu_SuspendConfirmDialog_YesDialogItem , SaveDataMenu_MenuContent , ISaveDataMenu_MenuContent , SaveDataMenu_ConfirmDialog_NoItem , ISaveDataMenu_ConfirmDialog_NoItem , SaveDataMenu_CopyConfirmDialog_YesDialogItem , ISaveDataMenu_CopyConfirmDialog_YesDialogItem , SaveDataMenu_SaveConfirmDialog , ISaveDataMenu_SaveConfirmDialog , SaveDataMenu_CopyConfirmDialog_NoDialogItem , ISaveDataMenu_CopyConfirmDialog_NoDialogItem , SaveDataMenu_CancelConfirmDialog_NoDialogItem , ISaveDataMenu_CancelConfirmDialog_NoDialogItem , SaveDataMenu , ISaveDataMenu , SaveDataMenu_CancelConfirmDialog , ISaveDataMenu_CancelConfirmDialog , SaveDataMenu_MenuItem , ISaveDataMenu_MenuItem , SaveDataMenu_LoadConfirmDialog_YesDialogItem , ISaveDataMenu_LoadConfirmDialog_YesDialogItem , SaveDataMenu_DeleteConfirmDialog , ISaveDataMenu_DeleteConfirmDialog , SaveDataMenu_DeleteConfirmDialog_NoDialogItem , ISaveDataMenu_DeleteConfirmDialog_NoDialogItem , SaveDataMenu_Sequence , SaveDataMenu_MenuItemContent , ISaveDataMenu_MenuItemContent , SaveDataMenu_SuspendConfirmDialog_NoDialogItem , ISaveDataMenu_SuspendConfirmDialog_NoDialogItem , SaveDataMenu_DeleteConfirmDialog_YesDialogItem , ISaveDataMenu_DeleteConfirmDialog_YesDialogItem , SaveDataMenu_ConfirmDialog , ISaveDataMenu_ConfirmDialog , SaveDataMenu_Mode , SaveDataMenu_CancelConfirmDialog_YesDialogItem , ISaveDataMenu_CancelConfirmDialog_YesDialogItem , SaveDataMenu_LoadConfirmDialog , ISaveDataMenu_LoadConfirmDialog , SaveDataMenu_SaveConfirmDialog_NoDialogItem , ISaveDataMenu_SaveConfirmDialog_NoDialogItem }
  ;
- # [cfg (feature = "app-savedatamenu")] pub use savedatamenu :: { ISaveDataMenuMethods , ISaveDataMenu_ConfirmDialog_YesItemMethods , ISaveDataMenu_LoadConfirmDialogMethods , ISaveDataMenu_SaveConfirmDialog_YesDialogItemMethods , ISaveDataMenu_DeleteConfirmDialogMethods , ISaveDataMenu_CopyConfirmDialog_YesDialogItemMethods , ISaveDataMenu_SaveConfirmDialogMethods , ISaveDataMenu_LoadConfirmDialog_YesDialogItemMethods , ISaveDataMenu_SaveConfirmDialog_NoDialogItemMethods , ISaveDataMenu_CancelConfirmDialog_NoDialogItemMethods , ISaveDataMenu_ConfirmDialog_NoItemMethods , ISaveDataMenu_CopyConfirmDialogMethods , ISaveDataMenu_ConfirmDialogMethods , ISaveDataMenu_DeleteConfirmDialog_NoDialogItemMethods , ISaveDataMenu_MenuItemContentMethods , ISaveDataMenu_DeleteConfirmDialog_YesDialogItemMethods , ISaveDataMenu_SuspendConfirmDialogMethods , ISaveDataMenu_MenuItemMethods , ISaveDataMenu_CancelConfirmDialogMethods , ISaveDataMenu_SuspendConfirmDialog_YesDialogItemMethods , ISaveDataMenu_SuspendConfirmDialog_NoDialogItemMethods , ISaveDataMenu_LoadConfirmDialog_NoDialogItemMethods , ISaveDataMenu_CopyConfirmDialog_NoDialogItemMethods , ISaveDataMenu_MenuContentMethods , ISaveDataMenu_CancelConfirmDialog_YesDialogItemMethods }
+ # [cfg (feature = "app-savedatamenu")] pub use savedatamenu :: { ISaveDataMenu_LoadConfirmDialog_NoDialogItemMethods , ISaveDataMenu_CopyConfirmDialogMethods , ISaveDataMenu_SuspendConfirmDialogMethods , ISaveDataMenu_ConfirmDialog_YesItemMethods , ISaveDataMenu_SaveConfirmDialog_YesDialogItemMethods , ISaveDataMenu_SuspendConfirmDialog_YesDialogItemMethods , ISaveDataMenu_MenuContentMethods , ISaveDataMenu_ConfirmDialog_NoItemMethods , ISaveDataMenu_CopyConfirmDialog_YesDialogItemMethods , ISaveDataMenu_SaveConfirmDialogMethods , ISaveDataMenu_CopyConfirmDialog_NoDialogItemMethods , ISaveDataMenu_CancelConfirmDialog_NoDialogItemMethods , ISaveDataMenuMethods , ISaveDataMenu_CancelConfirmDialogMethods , ISaveDataMenu_MenuItemMethods , ISaveDataMenu_LoadConfirmDialog_YesDialogItemMethods , ISaveDataMenu_DeleteConfirmDialogMethods , ISaveDataMenu_DeleteConfirmDialog_NoDialogItemMethods , ISaveDataMenu_MenuItemContentMethods , ISaveDataMenu_SuspendConfirmDialog_NoDialogItemMethods , ISaveDataMenu_DeleteConfirmDialog_YesDialogItemMethods , ISaveDataMenu_ConfirmDialogMethods , ISaveDataMenu_CancelConfirmDialog_YesDialogItemMethods , ISaveDataMenu_LoadConfirmDialogMethods , ISaveDataMenu_SaveConfirmDialog_NoDialogItemMethods }
  ;
  # [cfg (any (feature = "app-savedatamenucontent-types"))] pub mod savedatamenucontent ;
  # [cfg (feature = "app-savedatamenucontent-types")] pub use savedatamenucontent :: { SaveDataMenuContent , ISaveDataMenuContent }
@@ -7825,7 +7825,7 @@
  # [cfg (feature = "app-savedatamenuitemcontent")] pub use savedatamenuitemcontent :: { ISaveDataMenuItemContentMethods }
  ;
  # [cfg (any (feature = "app-savedatamenusequence-types"))] pub mod savedatamenusequence ;
- # [cfg (feature = "app-savedatamenusequence-types")] pub use savedatamenusequence :: { SaveDataMenuSequence , ISaveDataMenuSequence , SaveDataMenuSequence_Mode , SaveDataMenuSequence_Label }
+ # [cfg (feature = "app-savedatamenusequence-types")] pub use savedatamenusequence :: { SaveDataMenuSequence_Label , SaveDataMenuSequence_Mode , SaveDataMenuSequence , ISaveDataMenuSequence }
  ;
  # [cfg (feature = "app-savedatamenusequence")] pub use savedatamenusequence :: { ISaveDataMenuSequenceMethods }
  ;
@@ -7850,9 +7850,9 @@
  # [cfg (feature = "app-scriptableassetbundle_1")] pub use scriptableassetbundle_1 :: { IScriptableAssetBundle_1Methods }
  ;
  # [cfg (any (feature = "app-scriptbattle-types"))] pub mod scriptbattle ;
- # [cfg (feature = "app-scriptbattle-types")] pub use scriptbattle :: { ScriptBattle , IScriptBattle , ScriptBattle_ScriptCombatSequence , IScriptBattle_ScriptCombatSequence }
+ # [cfg (feature = "app-scriptbattle-types")] pub use scriptbattle :: { ScriptBattle_ScriptCombatSequence , IScriptBattle_ScriptCombatSequence , ScriptBattle , IScriptBattle }
  ;
- # [cfg (feature = "app-scriptbattle")] pub use scriptbattle :: { IScriptBattleMethods , IScriptBattle_ScriptCombatSequenceMethods }
+ # [cfg (feature = "app-scriptbattle")] pub use scriptbattle :: { IScriptBattle_ScriptCombatSequenceMethods , IScriptBattleMethods }
  ;
  # [cfg (any (feature = "app-scriptgame-types"))] pub mod scriptgame ;
  # [cfg (feature = "app-scriptgame-types")] pub use scriptgame :: { ScriptGame , IScriptGame }
@@ -7870,9 +7870,9 @@
  # [cfg (feature = "app-scriptmap")] pub use scriptmap :: { IScriptMapMethods }
  ;
  # [cfg (any (feature = "app-scriptmenu-types"))] pub mod scriptmenu ;
- # [cfg (feature = "app-scriptmenu-types")] pub use scriptmenu :: { ScriptMenu_EventMenu , IScriptMenu_EventMenu , ScriptMenu_EventMenuItem , IScriptMenu_EventMenuItem , ScriptMenu , IScriptMenu }
+ # [cfg (feature = "app-scriptmenu-types")] pub use scriptmenu :: { ScriptMenu_EventMenuItem , IScriptMenu_EventMenuItem , ScriptMenu , IScriptMenu , ScriptMenu_EventMenu , IScriptMenu_EventMenu }
  ;
- # [cfg (feature = "app-scriptmenu")] pub use scriptmenu :: { IScriptMenu_EventMenuMethods , IScriptMenu_EventMenuItemMethods , IScriptMenuMethods }
+ # [cfg (feature = "app-scriptmenu")] pub use scriptmenu :: { IScriptMenu_EventMenuItemMethods , IScriptMenuMethods , IScriptMenu_EventMenuMethods }
  ;
  # [cfg (any (feature = "app-scriptsound-types"))] pub mod scriptsound ;
  # [cfg (feature = "app-scriptsound-types")] pub use scriptsound :: { ScriptSound , IScriptSound }
@@ -7880,9 +7880,9 @@
  # [cfg (feature = "app-scriptsound")] pub use scriptsound :: { IScriptSoundMethods }
  ;
  # [cfg (any (feature = "app-scriptsystem-types"))] pub mod scriptsystem ;
- # [cfg (feature = "app-scriptsystem-types")] pub use scriptsystem :: { ScriptSystem_DebugButton , ScriptSystem_CameraList , IScriptSystem_CameraList , ScriptSystem , IScriptSystem }
+ # [cfg (feature = "app-scriptsystem-types")] pub use scriptsystem :: { ScriptSystem , IScriptSystem , ScriptSystem_DebugButton , ScriptSystem_CameraList , IScriptSystem_CameraList }
  ;
- # [cfg (feature = "app-scriptsystem")] pub use scriptsystem :: { IScriptSystem_CameraListMethods , IScriptSystemMethods }
+ # [cfg (feature = "app-scriptsystem")] pub use scriptsystem :: { IScriptSystemMethods , IScriptSystem_CameraListMethods }
  ;
  # [cfg (any (feature = "app-scriptunit-types"))] pub mod scriptunit ;
  # [cfg (feature = "app-scriptunit-types")] pub use scriptunit :: { ScriptUnit , IScriptUnit }
@@ -7895,9 +7895,9 @@
  # [cfg (feature = "app-scriptutil")] pub use scriptutil :: { IScriptUtilMethods }
  ;
  # [cfg (any (feature = "app-senditemmenu-types"))] pub mod senditemmenu ;
- # [cfg (feature = "app-senditemmenu-types")] pub use senditemmenu :: { SendItemMenu_ConfirmDialog , ISendItemMenu_ConfirmDialog , SendItemMenu_ConfirmDialog_ConfirmYesDialogItem , ISendItemMenu_ConfirmDialog_ConfirmYesDialogItem , SendItemMenu_SendItemMenuItem , ISendItemMenu_SendItemMenuItem , SendItemMenu_CancelCallback , ISendItemMenu_CancelCallback , SendItemMenu_DecideCallback , ISendItemMenu_DecideCallback , SendItemMenu , ISendItemMenu }
+ # [cfg (feature = "app-senditemmenu-types")] pub use senditemmenu :: { SendItemMenu_ConfirmDialog , ISendItemMenu_ConfirmDialog , SendItemMenu_ConfirmDialog_ConfirmYesDialogItem , ISendItemMenu_ConfirmDialog_ConfirmYesDialogItem , SendItemMenu_CancelCallback , ISendItemMenu_CancelCallback , SendItemMenu_DecideCallback , ISendItemMenu_DecideCallback , SendItemMenu , ISendItemMenu , SendItemMenu_SendItemMenuItem , ISendItemMenu_SendItemMenuItem }
  ;
- # [cfg (feature = "app-senditemmenu")] pub use senditemmenu :: { ISendItemMenu_ConfirmDialogMethods , ISendItemMenu_ConfirmDialog_ConfirmYesDialogItemMethods , ISendItemMenu_SendItemMenuItemMethods , ISendItemMenu_CancelCallbackMethods , ISendItemMenu_DecideCallbackMethods , ISendItemMenuMethods }
+ # [cfg (feature = "app-senditemmenu")] pub use senditemmenu :: { ISendItemMenu_ConfirmDialogMethods , ISendItemMenu_ConfirmDialog_ConfirmYesDialogItemMethods , ISendItemMenu_CancelCallbackMethods , ISendItemMenu_DecideCallbackMethods , ISendItemMenuMethods , ISendItemMenu_SendItemMenuItemMethods }
  ;
  # [cfg (any (feature = "app-senditemmenucontent-types"))] pub mod senditemmenucontent ;
  # [cfg (feature = "app-senditemmenucontent-types")] pub use senditemmenucontent :: { SendItemMenuContent , ISendItemMenuContent }
@@ -7938,7 +7938,7 @@
  # [cfg (feature = "app-shopcontent")] pub use shopcontent :: { IShopContentMethods }
  ;
  # [cfg (any (feature = "app-shopcore-types"))] pub mod shopcore ;
- # [cfg (feature = "app-shopcore-types")] pub use shopcore :: { ShopCore , IShopCore , ShopCore_Result }
+ # [cfg (feature = "app-shopcore-types")] pub use shopcore :: { ShopCore_Result , ShopCore , IShopCore }
  ;
  # [cfg (feature = "app-shopcore")] pub use shopcore :: { IShopCoreMethods }
  ;
@@ -7948,9 +7948,9 @@
  # [cfg (feature = "app-shopdata")] pub use shopdata :: { IShopDataMethods }
  ;
  # [cfg (any (feature = "app-shopdatabase_1-types"))] pub mod shopdatabase_1 ;
- # [cfg (feature = "app-shopdatabase_1-types")] pub use shopdatabase_1 :: { ShopDataBase_1_GetStockAddedKeyFunc , IShopDataBase_1_GetStockAddedKeyFunc , ShopDataBase_1_AttributeType , ShopDataBase_1 , IShopDataBase_1 , ShopDataBase_1_GetStockKeyFunc , IShopDataBase_1_GetStockKeyFunc }
+ # [cfg (feature = "app-shopdatabase_1-types")] pub use shopdatabase_1 :: { ShopDataBase_1_GetStockAddedKeyFunc , IShopDataBase_1_GetStockAddedKeyFunc , ShopDataBase_1_AttributeType , ShopDataBase_1_GetStockKeyFunc , IShopDataBase_1_GetStockKeyFunc , ShopDataBase_1 , IShopDataBase_1 }
  ;
- # [cfg (feature = "app-shopdatabase_1")] pub use shopdatabase_1 :: { IShopDataBase_1_GetStockAddedKeyFuncMethods , IShopDataBase_1Methods , IShopDataBase_1_GetStockKeyFuncMethods }
+ # [cfg (feature = "app-shopdatabase_1")] pub use shopdatabase_1 :: { IShopDataBase_1_GetStockAddedKeyFuncMethods , IShopDataBase_1_GetStockKeyFuncMethods , IShopDataBase_1Methods }
  ;
  # [cfg (any (feature = "app-shopmenuitemcontent-types"))] pub mod shopmenuitemcontent ;
  # [cfg (feature = "app-shopmenuitemcontent-types")] pub use shopmenuitemcontent :: { ShopMenuItemContent , IShopMenuItemContent }
@@ -7968,9 +7968,9 @@
  # [cfg (feature = "app-shopsellemptymenuitem")] pub use shopsellemptymenuitem :: { IShopSellEmptyMenuItemMethods }
  ;
  # [cfg (any (feature = "app-shopsellmenu-types"))] pub mod shopsellmenu ;
- # [cfg (feature = "app-shopsellmenu-types")] pub use shopsellmenu :: { ShopSellMenu_CancelItemEventHandler , IShopSellMenu_CancelItemEventHandler , ShopSellMenu_SelectEventHandler , IShopSellMenu_SelectEventHandler , ShopSellMenu_RequestCloseEventHandler , IShopSellMenu_RequestCloseEventHandler , ShopSellMenu_ChangeUnitToPrevEventHandler , IShopSellMenu_ChangeUnitToPrevEventHandler , ShopSellMenu_SwitchDetailDisplaywayEventHandler , IShopSellMenu_SwitchDetailDisplaywayEventHandler , ShopSellMenu , IShopSellMenu , ShopSellMenu_DecideEventHandler , IShopSellMenu_DecideEventHandler , ShopSellMenu_ChangeUnitToNextEventHandler , IShopSellMenu_ChangeUnitToNextEventHandler , ShopSellMenu_KindIndicator , ShopSellMenu_DecideItemEventHandler , IShopSellMenu_DecideItemEventHandler }
+ # [cfg (feature = "app-shopsellmenu-types")] pub use shopsellmenu :: { ShopSellMenu_DecideEventHandler , IShopSellMenu_DecideEventHandler , ShopSellMenu_CancelItemEventHandler , IShopSellMenu_CancelItemEventHandler , ShopSellMenu_DecideItemEventHandler , IShopSellMenu_DecideItemEventHandler , ShopSellMenu , IShopSellMenu , ShopSellMenu_ChangeUnitToPrevEventHandler , IShopSellMenu_ChangeUnitToPrevEventHandler , ShopSellMenu_SwitchDetailDisplaywayEventHandler , IShopSellMenu_SwitchDetailDisplaywayEventHandler , ShopSellMenu_KindIndicator , ShopSellMenu_RequestCloseEventHandler , IShopSellMenu_RequestCloseEventHandler , ShopSellMenu_ChangeUnitToNextEventHandler , IShopSellMenu_ChangeUnitToNextEventHandler , ShopSellMenu_SelectEventHandler , IShopSellMenu_SelectEventHandler }
  ;
- # [cfg (feature = "app-shopsellmenu")] pub use shopsellmenu :: { IShopSellMenu_CancelItemEventHandlerMethods , IShopSellMenu_SelectEventHandlerMethods , IShopSellMenu_RequestCloseEventHandlerMethods , IShopSellMenu_ChangeUnitToPrevEventHandlerMethods , IShopSellMenu_SwitchDetailDisplaywayEventHandlerMethods , IShopSellMenuMethods , IShopSellMenu_DecideEventHandlerMethods , IShopSellMenu_ChangeUnitToNextEventHandlerMethods , IShopSellMenu_DecideItemEventHandlerMethods }
+ # [cfg (feature = "app-shopsellmenu")] pub use shopsellmenu :: { IShopSellMenu_DecideEventHandlerMethods , IShopSellMenu_CancelItemEventHandlerMethods , IShopSellMenu_DecideItemEventHandlerMethods , IShopSellMenuMethods , IShopSellMenu_ChangeUnitToPrevEventHandlerMethods , IShopSellMenu_SwitchDetailDisplaywayEventHandlerMethods , IShopSellMenu_RequestCloseEventHandlerMethods , IShopSellMenu_ChangeUnitToNextEventHandlerMethods , IShopSellMenu_SelectEventHandlerMethods }
  ;
  # [cfg (any (feature = "app-shopsellmenucontent-types"))] pub mod shopsellmenucontent ;
  # [cfg (feature = "app-shopsellmenucontent-types")] pub use shopsellmenucontent :: { ShopSellMenuContent_KindIcon , IShopSellMenuContent_KindIcon , ShopSellMenuContent , IShopSellMenuContent }
@@ -7978,9 +7978,9 @@
  # [cfg (feature = "app-shopsellmenucontent")] pub use shopsellmenucontent :: { IShopSellMenuContent_KindIconMethods , IShopSellMenuContentMethods }
  ;
  # [cfg (any (feature = "app-shopsellmenuitem-types"))] pub mod shopsellmenuitem ;
- # [cfg (feature = "app-shopsellmenuitem-types")] pub use shopsellmenuitem :: { ShopSellMenuItem_CancelItemEventHandler , IShopSellMenuItem_CancelItemEventHandler , ShopSellMenuItem_DecideItemEventHandler , IShopSellMenuItem_DecideItemEventHandler , ShopSellMenuItem , IShopSellMenuItem }
+ # [cfg (feature = "app-shopsellmenuitem-types")] pub use shopsellmenuitem :: { ShopSellMenuItem_DecideItemEventHandler , IShopSellMenuItem_DecideItemEventHandler , ShopSellMenuItem , IShopSellMenuItem , ShopSellMenuItem_CancelItemEventHandler , IShopSellMenuItem_CancelItemEventHandler }
  ;
- # [cfg (feature = "app-shopsellmenuitem")] pub use shopsellmenuitem :: { IShopSellMenuItem_CancelItemEventHandlerMethods , IShopSellMenuItem_DecideItemEventHandlerMethods , IShopSellMenuItemMethods }
+ # [cfg (feature = "app-shopsellmenuitem")] pub use shopsellmenuitem :: { IShopSellMenuItem_DecideItemEventHandlerMethods , IShopSellMenuItemMethods , IShopSellMenuItem_CancelItemEventHandlerMethods }
  ;
  # [cfg (any (feature = "app-shopsellmenuitemcontent-types"))] pub mod shopsellmenuitemcontent ;
  # [cfg (feature = "app-shopsellmenuitemcontent-types")] pub use shopsellmenuitemcontent :: { ShopSellMenuItemContent , IShopSellMenuItemContent }
@@ -7988,9 +7988,9 @@
  # [cfg (feature = "app-shopsellmenuitemcontent")] pub use shopsellmenuitemcontent :: { IShopSellMenuItemContentMethods }
  ;
  # [cfg (any (feature = "app-shopsellroot-types"))] pub mod shopsellroot ;
- # [cfg (feature = "app-shopsellroot-types")] pub use shopsellroot :: { ShopSellRoot , IShopSellRoot , ShopSellRoot_ReturnEventHandler , IShopSellRoot_ReturnEventHandler }
+ # [cfg (feature = "app-shopsellroot-types")] pub use shopsellroot :: { ShopSellRoot_ReturnEventHandler , IShopSellRoot_ReturnEventHandler , ShopSellRoot , IShopSellRoot }
  ;
- # [cfg (feature = "app-shopsellroot")] pub use shopsellroot :: { IShopSellRootMethods , IShopSellRoot_ReturnEventHandlerMethods }
+ # [cfg (feature = "app-shopsellroot")] pub use shopsellroot :: { IShopSellRoot_ReturnEventHandlerMethods , IShopSellRootMethods }
  ;
  # [cfg (any (feature = "app-shopsellyesnodialog-types"))] pub mod shopsellyesnodialog ;
  # [cfg (feature = "app-shopsellyesnodialog-types")] pub use shopsellyesnodialog :: { ShopSellYesNoDialog_YesEventHandler , IShopSellYesNoDialog_YesEventHandler , ShopSellYesNoDialog , IShopSellYesNoDialog }
@@ -8008,9 +8008,9 @@
  # [cfg (feature = "app-shopsellyesnodialogyesmenuitem")] pub use shopsellyesnodialogyesmenuitem :: { IShopSellYesNoDialogYesMenuItemMethods }
  ;
  # [cfg (any (feature = "app-shopsequnece-types"))] pub mod shopsequnece ;
- # [cfg (feature = "app-shopsequnece-types")] pub use shopsequnece :: { ShopSequnece_ShopItem , IShopSequnece_ShopItem , ShopSequnece_StockItem , IShopSequnece_StockItem , ShopSequnece , IShopSequnece , ShopSequnece_ParamItem , IShopSequnece_ParamItem , ShopSequnece_GoldItem , IShopSequnece_GoldItem }
+ # [cfg (feature = "app-shopsequnece-types")] pub use shopsequnece :: { ShopSequnece_ParamItem , IShopSequnece_ParamItem , ShopSequnece_GoldItem , IShopSequnece_GoldItem , ShopSequnece_ShopItem , IShopSequnece_ShopItem , ShopSequnece_StockItem , IShopSequnece_StockItem , ShopSequnece , IShopSequnece }
  ;
- # [cfg (feature = "app-shopsequnece")] pub use shopsequnece :: { IShopSequnece_ShopItemMethods , IShopSequnece_StockItemMethods , IShopSequneceMethods , IShopSequnece_ParamItemMethods , IShopSequnece_GoldItemMethods }
+ # [cfg (feature = "app-shopsequnece")] pub use shopsequnece :: { IShopSequnece_ParamItemMethods , IShopSequnece_GoldItemMethods , IShopSequnece_ShopItemMethods , IShopSequnece_StockItemMethods , IShopSequneceMethods }
  ;
  # [cfg (any (feature = "app-shoptopmenucontent-types"))] pub mod shoptopmenucontent ;
  # [cfg (feature = "app-shoptopmenucontent-types")] pub use shoptopmenucontent :: { ShopTopMenuContent , IShopTopMenuContent }
@@ -8018,9 +8018,9 @@
  # [cfg (feature = "app-shoptopmenucontent")] pub use shoptopmenucontent :: { IShopTopMenuContentMethods }
  ;
  # [cfg (any (feature = "app-shopunitselectmenu-types"))] pub mod shopunitselectmenu ;
- # [cfg (feature = "app-shopunitselectmenu-types")] pub use shopunitselectmenu :: { ShopUnitSelectMenu_SelectEventHandler , IShopUnitSelectMenu_SelectEventHandler , ShopUnitSelectMenu , IShopUnitSelectMenu , ShopUnitSelectMenu_DecideEventHandler , IShopUnitSelectMenu_DecideEventHandler , ShopUnitSelectMenu_HelpEventHandler , IShopUnitSelectMenu_HelpEventHandler }
+ # [cfg (feature = "app-shopunitselectmenu-types")] pub use shopunitselectmenu :: { ShopUnitSelectMenu_SelectEventHandler , IShopUnitSelectMenu_SelectEventHandler , ShopUnitSelectMenu_HelpEventHandler , IShopUnitSelectMenu_HelpEventHandler , ShopUnitSelectMenu_DecideEventHandler , IShopUnitSelectMenu_DecideEventHandler , ShopUnitSelectMenu , IShopUnitSelectMenu }
  ;
- # [cfg (feature = "app-shopunitselectmenu")] pub use shopunitselectmenu :: { IShopUnitSelectMenu_SelectEventHandlerMethods , IShopUnitSelectMenuMethods , IShopUnitSelectMenu_DecideEventHandlerMethods , IShopUnitSelectMenu_HelpEventHandlerMethods }
+ # [cfg (feature = "app-shopunitselectmenu")] pub use shopunitselectmenu :: { IShopUnitSelectMenu_SelectEventHandlerMethods , IShopUnitSelectMenu_HelpEventHandlerMethods , IShopUnitSelectMenu_DecideEventHandlerMethods , IShopUnitSelectMenuMethods }
  ;
  # [cfg (any (feature = "app-shopunitselectmenucontent-types"))] pub mod shopunitselectmenucontent ;
  # [cfg (feature = "app-shopunitselectmenucontent-types")] pub use shopunitselectmenucontent :: { ShopUnitSelectMenuContent , IShopUnitSelectMenuContent }
@@ -8073,9 +8073,9 @@
  # [cfg (feature = "app-singletonmonobehaviourlist_1")] pub use singletonmonobehaviourlist_1 :: { ISingletonMonoBehaviourList_1Methods }
  ;
  # [cfg (any (feature = "app-singletonpool_2-types"))] pub mod singletonpool_2 ;
- # [cfg (feature = "app-singletonpool_2-types")] pub use singletonpool_2 :: { SingletonPool_2_Comparer , ISingletonPool_2_Comparer , SingletonPool_2 , ISingletonPool_2 }
+ # [cfg (feature = "app-singletonpool_2-types")] pub use singletonpool_2 :: { SingletonPool_2 , ISingletonPool_2 , SingletonPool_2_Comparer , ISingletonPool_2_Comparer }
  ;
- # [cfg (feature = "app-singletonpool_2")] pub use singletonpool_2 :: { ISingletonPool_2_ComparerMethods , ISingletonPool_2Methods }
+ # [cfg (feature = "app-singletonpool_2")] pub use singletonpool_2 :: { ISingletonPool_2Methods , ISingletonPool_2_ComparerMethods }
  ;
  # [cfg (any (feature = "app-singletonprocinst_1-types"))] pub mod singletonprocinst_1 ;
  # [cfg (feature = "app-singletonprocinst_1-types")] pub use singletonprocinst_1 :: { SingletonProcInst_1 , ISingletonProcInst_1 }
@@ -8089,14 +8089,14 @@
  ;
  # [cfg (any (feature = "app-sit_up-musclesitupsequence-types"))] pub mod sit_up ;
  # [cfg (any (feature = "app-skillarray-types"))] pub mod skillarray ;
- # [cfg (feature = "app-skillarray-types")] pub use skillarray :: { SkillArray , ISkillArray , SkillArray_Entity , SkillArray_Enumerator }
+ # [cfg (feature = "app-skillarray-types")] pub use skillarray :: { SkillArray_Enumerator , SkillArray_Entity , SkillArray , ISkillArray }
  ;
  # [cfg (feature = "app-skillarray")] pub use skillarray :: { ISkillArrayMethods }
  ;
  # [cfg (any (feature = "app-skilldata-types"))] pub mod skilldata ;
- # [cfg (feature = "app-skilldata-types")] pub use skilldata :: { SkillData_Layers , SkillData_IconKinds , SkillData_Actions , SkillData_Phase , SkillData_Attrs , SkillData_Timings , SkillData_CycleMasks , SkillData , ISkillData , SkillData_PrivateFlags , SkillData_TimingMasks , SkillData_Targets , SkillData_Works , SkillData_States , SkillData_Stands , SkillData_AroundTargets , SkillData_Frequencies , SkillData_Zocs , SkillData_Categorys , SkillData_Flags , SkillData_Cycles , SkillData_Func , ISkillData_Func , SkillData_Operations , SkillData_AroundCenters , SkillData_GiveTargets }
+ # [cfg (feature = "app-skilldata-types")] pub use skilldata :: { SkillData_GiveTargets , SkillData_Phase , SkillData_Actions , SkillData_Zocs , SkillData_Stands , SkillData_TimingMasks , SkillData_Targets , SkillData_Frequencies , SkillData_Func , ISkillData_Func , SkillData_CycleMasks , SkillData_Timings , SkillData_AroundCenters , SkillData_States , SkillData_AroundTargets , SkillData_Layers , SkillData_PrivateFlags , SkillData , ISkillData , SkillData_Categorys , SkillData_Flags , SkillData_Cycles , SkillData_Attrs , SkillData_Operations , SkillData_IconKinds , SkillData_Works }
  ;
- # [cfg (feature = "app-skilldata")] pub use skilldata :: { ISkillDataMethods , ISkillData_FuncMethods }
+ # [cfg (feature = "app-skilldata")] pub use skilldata :: { ISkillData_FuncMethods , ISkillDataMethods }
  ;
  # [cfg (any (feature = "app-skilleditequipskillmenu-types"))] pub mod skilleditequipskillmenu ;
  # [cfg (feature = "app-skilleditequipskillmenu-types")] pub use skilleditequipskillmenu :: { SkillEditEquipSkillMenu , ISkillEditEquipSkillMenu }
@@ -8114,9 +8114,9 @@
  # [cfg (feature = "app-skilleditequipskillmenuitem")] pub use skilleditequipskillmenuitem :: { ISkillEditEquipSkillMenuItemMethods }
  ;
  # [cfg (any (feature = "app-skilleditequipskillsubmenu-types"))] pub mod skilleditequipskillsubmenu ;
- # [cfg (feature = "app-skilleditequipskillsubmenu-types")] pub use skilleditequipskillsubmenu :: { SkillEditEquipSkillSubMenu , ISkillEditEquipSkillSubMenu , SkillEditEquipSkillSubMenu_RemoveMenuItem , ISkillEditEquipSkillSubMenu_RemoveMenuItem , SkillEditEquipSkillSubMenu_TradeMenuItem , ISkillEditEquipSkillSubMenu_TradeMenuItem , SkillEditEquipSkillSubMenu_BaseEquipMenuItem , ISkillEditEquipSkillSubMenu_BaseEquipMenuItem }
+ # [cfg (feature = "app-skilleditequipskillsubmenu-types")] pub use skilleditequipskillsubmenu :: { SkillEditEquipSkillSubMenu_RemoveMenuItem , ISkillEditEquipSkillSubMenu_RemoveMenuItem , SkillEditEquipSkillSubMenu_BaseEquipMenuItem , ISkillEditEquipSkillSubMenu_BaseEquipMenuItem , SkillEditEquipSkillSubMenu , ISkillEditEquipSkillSubMenu , SkillEditEquipSkillSubMenu_TradeMenuItem , ISkillEditEquipSkillSubMenu_TradeMenuItem }
  ;
- # [cfg (feature = "app-skilleditequipskillsubmenu")] pub use skilleditequipskillsubmenu :: { ISkillEditEquipSkillSubMenuMethods , ISkillEditEquipSkillSubMenu_RemoveMenuItemMethods , ISkillEditEquipSkillSubMenu_TradeMenuItemMethods , ISkillEditEquipSkillSubMenu_BaseEquipMenuItemMethods }
+ # [cfg (feature = "app-skilleditequipskillsubmenu")] pub use skilleditequipskillsubmenu :: { ISkillEditEquipSkillSubMenu_RemoveMenuItemMethods , ISkillEditEquipSkillSubMenu_BaseEquipMenuItemMethods , ISkillEditEquipSkillSubMenuMethods , ISkillEditEquipSkillSubMenu_TradeMenuItemMethods }
  ;
  # [cfg (any (feature = "app-skilleditpoolnonemenuitem-types"))] pub mod skilleditpoolnonemenuitem ;
  # [cfg (feature = "app-skilleditpoolnonemenuitem-types")] pub use skilleditpoolnonemenuitem :: { SkillEditPoolNoneMenuItem , ISkillEditPoolNoneMenuItem }
@@ -8192,24 +8192,24 @@
  # [cfg (feature = "app-skyscroller")] pub use skyscroller :: { ISkyScrollerMethods }
  ;
  # [cfg (any (feature = "app-softwarekeyboard-types"))] pub mod softwarekeyboard ;
- # [cfg (feature = "app-softwarekeyboard-types")] pub use softwarekeyboard :: { SoftwareKeyboard_Preset , SoftwareKeyboard , ISoftwareKeyboard }
+ # [cfg (feature = "app-softwarekeyboard-types")] pub use softwarekeyboard :: { SoftwareKeyboard , ISoftwareKeyboard , SoftwareKeyboard_Preset }
  ;
  # [cfg (feature = "app-softwarekeyboard")] pub use softwarekeyboard :: { ISoftwareKeyboardMethods }
  ;
  # [cfg (any (feature = "app-solanelinfomenu-types"))] pub mod solanelinfomenu ;
- # [cfg (feature = "app-solanelinfomenu-types")] pub use solanelinfomenu :: { SolanelInfoMenu_InfoResult , SolanelInfoMenu_DecideEventHandler , ISolanelInfoMenu_DecideEventHandler , SolanelInfoMenu , ISolanelInfoMenu }
+ # [cfg (feature = "app-solanelinfomenu-types")] pub use solanelinfomenu :: { SolanelInfoMenu , ISolanelInfoMenu , SolanelInfoMenu_DecideEventHandler , ISolanelInfoMenu_DecideEventHandler , SolanelInfoMenu_InfoResult }
  ;
- # [cfg (feature = "app-solanelinfomenu")] pub use solanelinfomenu :: { ISolanelInfoMenu_DecideEventHandlerMethods , ISolanelInfoMenuMethods }
+ # [cfg (feature = "app-solanelinfomenu")] pub use solanelinfomenu :: { ISolanelInfoMenuMethods , ISolanelInfoMenu_DecideEventHandlerMethods }
  ;
  # [cfg (any (feature = "app-solanelinfomenucontent-types"))] pub mod solanelinfomenucontent ;
- # [cfg (feature = "app-solanelinfomenucontent-types")] pub use solanelinfomenucontent :: { SolanelInfoMenuContent_Infomation , ISolanelInfoMenuContent_Infomation , SolanelInfoMenuContent , ISolanelInfoMenuContent , SolanelInfoMenuContent_SolanelUnit , ISolanelInfoMenuContent_SolanelUnit , SolanelInfoMenuContent_HelpFastTravel , ISolanelInfoMenuContent_HelpFastTravel }
+ # [cfg (feature = "app-solanelinfomenucontent-types")] pub use solanelinfomenucontent :: { SolanelInfoMenuContent_SolanelUnit , ISolanelInfoMenuContent_SolanelUnit , SolanelInfoMenuContent , ISolanelInfoMenuContent , SolanelInfoMenuContent_HelpFastTravel , ISolanelInfoMenuContent_HelpFastTravel , SolanelInfoMenuContent_Infomation , ISolanelInfoMenuContent_Infomation }
  ;
- # [cfg (feature = "app-solanelinfomenucontent")] pub use solanelinfomenucontent :: { ISolanelInfoMenuContent_InfomationMethods , ISolanelInfoMenuContentMethods , ISolanelInfoMenuContent_SolanelUnitMethods , ISolanelInfoMenuContent_HelpFastTravelMethods }
+ # [cfg (feature = "app-solanelinfomenucontent")] pub use solanelinfomenucontent :: { ISolanelInfoMenuContent_SolanelUnitMethods , ISolanelInfoMenuContentMethods , ISolanelInfoMenuContent_HelpFastTravelMethods , ISolanelInfoMenuContent_InfomationMethods }
  ;
  # [cfg (any (feature = "app-solanelinfomenuitem-types"))] pub mod solanelinfomenuitem ;
- # [cfg (feature = "app-solanelinfomenuitem-types")] pub use solanelinfomenuitem :: { SolanelInfoMenuItem , ISolanelInfoMenuItem , SolanelInfoMenuItem_ConfirmDialog , ISolanelInfoMenuItem_ConfirmDialog , SolanelInfoMenuItem_ConfirmDialog_ConfirmYesDialogItem , ISolanelInfoMenuItem_ConfirmDialog_ConfirmYesDialogItem }
+ # [cfg (feature = "app-solanelinfomenuitem-types")] pub use solanelinfomenuitem :: { SolanelInfoMenuItem_ConfirmDialog_ConfirmYesDialogItem , ISolanelInfoMenuItem_ConfirmDialog_ConfirmYesDialogItem , SolanelInfoMenuItem_ConfirmDialog , ISolanelInfoMenuItem_ConfirmDialog , SolanelInfoMenuItem , ISolanelInfoMenuItem }
  ;
- # [cfg (feature = "app-solanelinfomenuitem")] pub use solanelinfomenuitem :: { ISolanelInfoMenuItemMethods , ISolanelInfoMenuItem_ConfirmDialogMethods , ISolanelInfoMenuItem_ConfirmDialog_ConfirmYesDialogItemMethods }
+ # [cfg (feature = "app-solanelinfomenuitem")] pub use solanelinfomenuitem :: { ISolanelInfoMenuItem_ConfirmDialog_ConfirmYesDialogItemMethods , ISolanelInfoMenuItem_ConfirmDialogMethods , ISolanelInfoMenuItemMethods }
  ;
  # [cfg (any (feature = "app-solanelinfomenuitemcontent-types"))] pub mod solanelinfomenuitemcontent ;
  # [cfg (feature = "app-solanelinfomenuitemcontent-types")] pub use solanelinfomenuitemcontent :: { SolanelInfoMenuItemContent , ISolanelInfoMenuItemContent }
@@ -8217,7 +8217,7 @@
  # [cfg (feature = "app-solanelinfomenuitemcontent")] pub use solanelinfomenuitemcontent :: { ISolanelInfoMenuItemContentMethods }
  ;
  # [cfg (any (feature = "app-solanelinfosequence-types"))] pub mod solanelinfosequence ;
- # [cfg (feature = "app-solanelinfosequence-types")] pub use solanelinfosequence :: { SolanelInfoSequence , ISolanelInfoSequence , SolanelInfoSequence_DecideEventHandler , ISolanelInfoSequence_DecideEventHandler , SolanelInfoSequence_Label2 }
+ # [cfg (feature = "app-solanelinfosequence-types")] pub use solanelinfosequence :: { SolanelInfoSequence_Label2 , SolanelInfoSequence , ISolanelInfoSequence , SolanelInfoSequence_DecideEventHandler , ISolanelInfoSequence_DecideEventHandler }
  ;
  # [cfg (feature = "app-solanelinfosequence")] pub use solanelinfosequence :: { ISolanelInfoSequenceMethods , ISolanelInfoSequence_DecideEventHandlerMethods }
  ;
@@ -8232,9 +8232,9 @@
  # [cfg (feature = "app-sortconstant")] pub use sortconstant :: { ISortConstantMethods }
  ;
  # [cfg (any (feature = "app-sortgeneric-types"))] pub mod sortgeneric ;
- # [cfg (feature = "app-sortgeneric-types")] pub use sortgeneric :: { SortGeneric_DelegateComparer_1 , ISortGeneric_DelegateComparer_1 , SortGeneric , ISortGeneric , SortGeneric_ElementComparer_1 , ISortGeneric_ElementComparer_1 }
+ # [cfg (feature = "app-sortgeneric-types")] pub use sortgeneric :: { SortGeneric_DelegateComparer_1 , ISortGeneric_DelegateComparer_1 , SortGeneric_ElementComparer_1 , ISortGeneric_ElementComparer_1 , SortGeneric , ISortGeneric }
  ;
- # [cfg (feature = "app-sortgeneric")] pub use sortgeneric :: { ISortGeneric_DelegateComparer_1Methods , ISortGenericMethods , ISortGeneric_ElementComparer_1Methods }
+ # [cfg (feature = "app-sortgeneric")] pub use sortgeneric :: { ISortGeneric_DelegateComparer_1Methods , ISortGeneric_ElementComparer_1Methods , ISortGenericMethods }
  ;
  # [cfg (any (feature = "app-sortie-types"))] pub mod sortie ;
  # [cfg (feature = "app-sortie-types")] pub use sortie :: { Sortie , ISortie }
@@ -8262,9 +8262,9 @@
  # [cfg (feature = "app-sortieconfirmresetdialog")] pub use sortieconfirmresetdialog :: { ISortieConfirmResetDialog_ConfirmYesDialogItemMethods , ISortieConfirmResetDialogMethods }
  ;
  # [cfg (any (feature = "app-sortieentrust-types"))] pub mod sortieentrust ;
- # [cfg (feature = "app-sortieentrust-types")] pub use sortieentrust :: { SortieEntrust , ISortieEntrust , SortieEntrust_Executor , ISortieEntrust_Executor }
+ # [cfg (feature = "app-sortieentrust-types")] pub use sortieentrust :: { SortieEntrust_Executor , ISortieEntrust_Executor , SortieEntrust , ISortieEntrust }
  ;
- # [cfg (feature = "app-sortieentrust")] pub use sortieentrust :: { ISortieEntrustMethods , ISortieEntrust_ExecutorMethods }
+ # [cfg (feature = "app-sortieentrust")] pub use sortieentrust :: { ISortieEntrust_ExecutorMethods , ISortieEntrustMethods }
  ;
  # [cfg (any (feature = "app-sortieentrustenumextension-types"))] pub mod sortieentrustenumextension ;
  # [cfg (feature = "app-sortieentrustenumextension-types")] pub use sortieentrustenumextension :: { SortieEntrustEnumExtension , ISortieEntrustEnumExtension }
@@ -8276,9 +8276,9 @@
  # [cfg (feature = "app-sortieentrustresult-types")] pub use sortieentrustresult :: { SortieEntrustResult }
  ;
  # [cfg (any (feature = "app-sortieentrustscore-types"))] pub mod sortieentrustscore ;
- # [cfg (feature = "app-sortieentrustscore-types")] pub use sortieentrustscore :: { SortieEntrustScore , ISortieEntrustScore , SortieEntrustScore_Vulnerary , ISortieEntrustScore_Vulnerary , SortieEntrustScore_Enhance , ISortieEntrustScore_Enhance , SortieEntrustScore_Weapon , ISortieEntrustScore_Weapon , SortieEntrustScore_EnhancePerson , ISortieEntrustScore_EnhancePerson , SortieEntrustScore_Rod , ISortieEntrustScore_Rod , SortieEntrustScore_Result , ISortieEntrustScore_Result }
+ # [cfg (feature = "app-sortieentrustscore-types")] pub use sortieentrustscore :: { SortieEntrustScore_Enhance , ISortieEntrustScore_Enhance , SortieEntrustScore_Vulnerary , ISortieEntrustScore_Vulnerary , SortieEntrustScore , ISortieEntrustScore , SortieEntrustScore_EnhancePerson , ISortieEntrustScore_EnhancePerson , SortieEntrustScore_Rod , ISortieEntrustScore_Rod , SortieEntrustScore_Weapon , ISortieEntrustScore_Weapon , SortieEntrustScore_Result , ISortieEntrustScore_Result }
  ;
- # [cfg (feature = "app-sortieentrustscore")] pub use sortieentrustscore :: { ISortieEntrustScoreMethods , ISortieEntrustScore_VulneraryMethods , ISortieEntrustScore_EnhanceMethods , ISortieEntrustScore_WeaponMethods , ISortieEntrustScore_EnhancePersonMethods , ISortieEntrustScore_RodMethods , ISortieEntrustScore_ResultMethods }
+ # [cfg (feature = "app-sortieentrustscore")] pub use sortieentrustscore :: { ISortieEntrustScore_EnhanceMethods , ISortieEntrustScore_VulneraryMethods , ISortieEntrustScoreMethods , ISortieEntrustScore_EnhancePersonMethods , ISortieEntrustScore_RodMethods , ISortieEntrustScore_WeaponMethods , ISortieEntrustScore_ResultMethods }
  ;
  # [cfg (any (feature = "app-sortieentruststockdata-types"))] pub mod sortieentruststockdata ;
  # [cfg (feature = "app-sortieentruststockdata-types")] pub use sortieentruststockdata :: { SortieEntrustStockData , ISortieEntrustStockData }
@@ -8306,9 +8306,9 @@
  # [cfg (feature = "app-sortieentrustunitdataholder")] pub use sortieentrustunitdataholder :: { ISortieEntrustUnitDataHolderMethods }
  ;
  # [cfg (any (feature = "app-sortieinventorymanager-types"))] pub mod sortieinventorymanager ;
- # [cfg (feature = "app-sortieinventorymanager-types")] pub use sortieinventorymanager :: { SortieInventoryManager_Modes , SortieInventoryManager_SelectionInfo_Modes , SortieInventoryManager_ActiveWindow , SortieInventoryManager , ISortieInventoryManager , SortieInventoryManager_SelectionInfo , ISortieInventoryManager_SelectionInfo }
+ # [cfg (feature = "app-sortieinventorymanager-types")] pub use sortieinventorymanager :: { SortieInventoryManager_SelectionInfo_Modes , SortieInventoryManager_ActiveWindow , SortieInventoryManager_SelectionInfo , ISortieInventoryManager_SelectionInfo , SortieInventoryManager_Modes , SortieInventoryManager , ISortieInventoryManager }
  ;
- # [cfg (feature = "app-sortieinventorymanager")] pub use sortieinventorymanager :: { ISortieInventoryManagerMethods , ISortieInventoryManager_SelectionInfoMethods }
+ # [cfg (feature = "app-sortieinventorymanager")] pub use sortieinventorymanager :: { ISortieInventoryManager_SelectionInfoMethods , ISortieInventoryManagerMethods }
  ;
  # [cfg (any (feature = "app-sortiereliancemanager-types"))] pub mod sortiereliancemanager ;
  # [cfg (feature = "app-sortiereliancemanager-types")] pub use sortiereliancemanager :: { SortieRelianceManager , ISortieRelianceManager }
@@ -8326,17 +8326,17 @@
  # [cfg (feature = "app-sortierelianceselectionunitmenu")] pub use sortierelianceselectionunitmenu :: { ISortieRelianceSelectionUnitMenuMethods , ISortieRelianceSelectionUnitMenu_UnitMenuItemMethods }
  ;
  # [cfg (any (feature = "app-sortieselectionunitmanager-types"))] pub mod sortieselectionunitmanager ;
- # [cfg (feature = "app-sortieselectionunitmanager-types")] pub use sortieselectionunitmanager :: { SortieSelectionUnitManager_UnitSelectSubMenu , SortieSelectionUnitManager , ISortieSelectionUnitManager , SortieSelectionUnitManager_InventoryModes , SortieSelectionUnitManager_Modes }
+ # [cfg (feature = "app-sortieselectionunitmanager-types")] pub use sortieselectionunitmanager :: { SortieSelectionUnitManager_Modes , SortieSelectionUnitManager_InventoryModes , SortieSelectionUnitManager , ISortieSelectionUnitManager , SortieSelectionUnitManager_UnitSelectSubMenu }
  ;
  # [cfg (feature = "app-sortieselectionunitmanager")] pub use sortieselectionunitmanager :: { ISortieSelectionUnitManagerMethods }
  ;
  # [cfg (any (feature = "app-sortiesequence-types"))] pub mod sortiesequence ;
- # [cfg (feature = "app-sortiesequence-types")] pub use sortiesequence :: { SortieSequence_Modes , SortieSequence , ISortieSequence , SortieSequence_Label }
+ # [cfg (feature = "app-sortiesequence-types")] pub use sortiesequence :: { SortieSequence_Modes , SortieSequence_Label , SortieSequence , ISortieSequence }
  ;
  # [cfg (feature = "app-sortiesequence")] pub use sortiesequence :: { ISortieSequenceMethods }
  ;
  # [cfg (any (feature = "app-sortiesequenceclasschange-types"))] pub mod sortiesequenceclasschange ;
- # [cfg (feature = "app-sortiesequenceclasschange-types")] pub use sortiesequenceclasschange :: { SortieSequenceClassChange , ISortieSequenceClassChange , SortieSequenceClassChange_Label }
+ # [cfg (feature = "app-sortiesequenceclasschange-types")] pub use sortiesequenceclasschange :: { SortieSequenceClassChange_Label , SortieSequenceClassChange , ISortieSequenceClassChange }
  ;
  # [cfg (feature = "app-sortiesequenceclasschange")] pub use sortiesequenceclasschange :: { ISortieSequenceClassChangeMethods }
  ;
@@ -8351,7 +8351,7 @@
  # [cfg (feature = "app-sortiesequenceitemshop")] pub use sortiesequenceitemshop :: { ISortieSequenceItemShopMethods }
  ;
  # [cfg (any (feature = "app-sortiesequencereliance-types"))] pub mod sortiesequencereliance ;
- # [cfg (feature = "app-sortiesequencereliance-types")] pub use sortiesequencereliance :: { SortieSequenceReliance , ISortieSequenceReliance , SortieSequenceReliance_Label }
+ # [cfg (feature = "app-sortiesequencereliance-types")] pub use sortiesequencereliance :: { SortieSequenceReliance_Label , SortieSequenceReliance , ISortieSequenceReliance }
  ;
  # [cfg (feature = "app-sortiesequencereliance")] pub use sortiesequencereliance :: { ISortieSequenceRelianceMethods }
  ;
@@ -8361,7 +8361,7 @@
  # [cfg (feature = "app-sortiesequencereliancetalk")] pub use sortiesequencereliancetalk :: { ISortieSequenceRelianceTalkMethods }
  ;
  # [cfg (any (feature = "app-sortiesequenceringselect-types"))] pub mod sortiesequenceringselect ;
- # [cfg (feature = "app-sortiesequenceringselect-types")] pub use sortiesequenceringselect :: { SortieSequenceRingSelect_Label , SortieSequenceRingSelect , ISortieSequenceRingSelect }
+ # [cfg (feature = "app-sortiesequenceringselect-types")] pub use sortiesequenceringselect :: { SortieSequenceRingSelect , ISortieSequenceRingSelect , SortieSequenceRingSelect_Label }
  ;
  # [cfg (feature = "app-sortiesequenceringselect")] pub use sortiesequenceringselect :: { ISortieSequenceRingSelectMethods }
  ;
@@ -8376,7 +8376,7 @@
  # [cfg (feature = "app-sortiesequencetrade")] pub use sortiesequencetrade :: { ISortieSequenceTradeMethods }
  ;
  # [cfg (any (feature = "app-sortiesequencetrooplist-types"))] pub mod sortiesequencetrooplist ;
- # [cfg (feature = "app-sortiesequencetrooplist-types")] pub use sortiesequencetrooplist :: { SortieSequenceTroopList_Mode , SortieSequenceTroopList_Label , SortieSequenceTroopList , ISortieSequenceTroopList }
+ # [cfg (feature = "app-sortiesequencetrooplist-types")] pub use sortiesequencetrooplist :: { SortieSequenceTroopList_Label , SortieSequenceTroopList_Mode , SortieSequenceTroopList , ISortieSequenceTroopList }
  ;
  # [cfg (feature = "app-sortiesequencetrooplist")] pub use sortiesequencetrooplist :: { ISortieSequenceTroopListMethods }
  ;
@@ -8391,7 +8391,7 @@
  # [cfg (feature = "app-sortiesequenceweaponshop")] pub use sortiesequenceweaponshop :: { ISortieSequenceWeaponShopMethods }
  ;
  # [cfg (any (feature = "app-sortieskilleditmanager-types"))] pub mod sortieskilleditmanager ;
- # [cfg (feature = "app-sortieskilleditmanager-types")] pub use sortieskilleditmanager :: { SortieSkillEditManager , ISortieSkillEditManager , SortieSkillEditManager_Modes }
+ # [cfg (feature = "app-sortieskilleditmanager-types")] pub use sortieskilleditmanager :: { SortieSkillEditManager_Modes , SortieSkillEditManager , ISortieSkillEditManager }
  ;
  # [cfg (feature = "app-sortieskilleditmanager")] pub use sortieskilleditmanager :: { ISortieSkillEditManagerMethods }
  ;
@@ -8401,9 +8401,9 @@
  # [cfg (feature = "app-sortiesubmenucontent")] pub use sortiesubmenucontent :: { ISortieSubMenuContentMethods }
  ;
  # [cfg (any (feature = "app-sortietopmenu-types"))] pub mod sortietopmenu ;
- # [cfg (feature = "app-sortietopmenu-types")] pub use sortietopmenu :: { SortieTopMenu_RelianceMenuItem , ISortieTopMenu_RelianceMenuItem , SortieTopMenu_SubSystemMenu_TutorialItem , ISortieTopMenu_SubSystemMenu_TutorialItem , SortieTopMenu_SubFriendMenu_NotebookItem , ISortieTopMenu_SubFriendMenu_NotebookItem , SortieTopMenu_SubFriendMenu_RelianceItem , ISortieTopMenu_SubFriendMenu_RelianceItem , SortieTopMenu_StartMenuItem , ISortieTopMenu_StartMenuItem , SortieTopMenu_SaveMenuItem , ISortieTopMenu_SaveMenuItem , SortieTopMenu_FriendMenuItem , ISortieTopMenu_FriendMenuItem , SortieTopMenu_SubSystemMenu_ResetItem , ISortieTopMenu_SubSystemMenu_ResetItem , SortieTopMenu_SubSystemMenu , ISortieTopMenu_SubSystemMenu , SortieTopMenu_ShopMenuItem , ISortieTopMenu_ShopMenuItem , SortieTopMenu_SubSystemMenu_ConfigItem , ISortieTopMenu_SubSystemMenu_ConfigItem , SortieTopMenu_SubSystemMenu_ReportItem , ISortieTopMenu_SubSystemMenu_ReportItem , SortieTopMenu_SubFriendMenu_KizunaItem , ISortieTopMenu_SubFriendMenu_KizunaItem , SortieTopMenu_PositionChangeMenuItem , ISortieTopMenu_PositionChangeMenuItem , SortieTopMenu_SortieTopMenuItemBase , ISortieTopMenu_SortieTopMenuItemBase , SortieTopMenu , ISortieTopMenu , SortieTopMenu_SubFriendMenu , ISortieTopMenu_SubFriendMenu , SortieTopMenu_SubFriendMenu_RingListItem , ISortieTopMenu_SubFriendMenu_RingListItem , SortieTopMenu_ResetMapMenuItem , ISortieTopMenu_ResetMapMenuItem , SortieTopMenu_SelectionUnitMenuItem , ISortieTopMenu_SelectionUnitMenuItem , SortieTopMenu_SystemMenuItem , ISortieTopMenu_SystemMenuItem , SortieTopMenu_GodMenuItem , ISortieTopMenu_GodMenuItem , SortieTopMenu_SaveMapMenuItem , ISortieTopMenu_SaveMapMenuItem , SortieTopMenu_InventoryMenuItem , ISortieTopMenu_InventoryMenuItem , SortieTopMenu_BackMenuItem , ISortieTopMenu_BackMenuItem }
+ # [cfg (feature = "app-sortietopmenu-types")] pub use sortietopmenu :: { SortieTopMenu_SortieTopMenuItemBase , ISortieTopMenu_SortieTopMenuItemBase , SortieTopMenu_GodMenuItem , ISortieTopMenu_GodMenuItem , SortieTopMenu_FriendMenuItem , ISortieTopMenu_FriendMenuItem , SortieTopMenu_SystemMenuItem , ISortieTopMenu_SystemMenuItem , SortieTopMenu_SaveMapMenuItem , ISortieTopMenu_SaveMapMenuItem , SortieTopMenu_SubFriendMenu_RingListItem , ISortieTopMenu_SubFriendMenu_RingListItem , SortieTopMenu_InventoryMenuItem , ISortieTopMenu_InventoryMenuItem , SortieTopMenu_BackMenuItem , ISortieTopMenu_BackMenuItem , SortieTopMenu_PositionChangeMenuItem , ISortieTopMenu_PositionChangeMenuItem , SortieTopMenu_StartMenuItem , ISortieTopMenu_StartMenuItem , SortieTopMenu_SubFriendMenu_NotebookItem , ISortieTopMenu_SubFriendMenu_NotebookItem , SortieTopMenu_SubSystemMenu_ConfigItem , ISortieTopMenu_SubSystemMenu_ConfigItem , SortieTopMenu_SubSystemMenu , ISortieTopMenu_SubSystemMenu , SortieTopMenu_SubFriendMenu_KizunaItem , ISortieTopMenu_SubFriendMenu_KizunaItem , SortieTopMenu_SubFriendMenu , ISortieTopMenu_SubFriendMenu , SortieTopMenu_SubSystemMenu_ResetItem , ISortieTopMenu_SubSystemMenu_ResetItem , SortieTopMenu_RelianceMenuItem , ISortieTopMenu_RelianceMenuItem , SortieTopMenu_SubFriendMenu_RelianceItem , ISortieTopMenu_SubFriendMenu_RelianceItem , SortieTopMenu , ISortieTopMenu , SortieTopMenu_ResetMapMenuItem , ISortieTopMenu_ResetMapMenuItem , SortieTopMenu_SelectionUnitMenuItem , ISortieTopMenu_SelectionUnitMenuItem , SortieTopMenu_ShopMenuItem , ISortieTopMenu_ShopMenuItem , SortieTopMenu_SaveMenuItem , ISortieTopMenu_SaveMenuItem , SortieTopMenu_SubSystemMenu_ReportItem , ISortieTopMenu_SubSystemMenu_ReportItem , SortieTopMenu_SubSystemMenu_TutorialItem , ISortieTopMenu_SubSystemMenu_TutorialItem }
  ;
- # [cfg (feature = "app-sortietopmenu")] pub use sortietopmenu :: { ISortieTopMenu_RelianceMenuItemMethods , ISortieTopMenu_SubSystemMenu_TutorialItemMethods , ISortieTopMenu_SubFriendMenu_NotebookItemMethods , ISortieTopMenu_SubFriendMenu_RelianceItemMethods , ISortieTopMenu_StartMenuItemMethods , ISortieTopMenu_SaveMenuItemMethods , ISortieTopMenu_FriendMenuItemMethods , ISortieTopMenu_SubSystemMenu_ResetItemMethods , ISortieTopMenu_SubSystemMenuMethods , ISortieTopMenu_ShopMenuItemMethods , ISortieTopMenu_SubSystemMenu_ConfigItemMethods , ISortieTopMenu_SubSystemMenu_ReportItemMethods , ISortieTopMenu_SubFriendMenu_KizunaItemMethods , ISortieTopMenu_PositionChangeMenuItemMethods , ISortieTopMenu_SortieTopMenuItemBaseMethods , ISortieTopMenuMethods , ISortieTopMenu_SubFriendMenuMethods , ISortieTopMenu_SubFriendMenu_RingListItemMethods , ISortieTopMenu_ResetMapMenuItemMethods , ISortieTopMenu_SelectionUnitMenuItemMethods , ISortieTopMenu_SystemMenuItemMethods , ISortieTopMenu_GodMenuItemMethods , ISortieTopMenu_SaveMapMenuItemMethods , ISortieTopMenu_InventoryMenuItemMethods , ISortieTopMenu_BackMenuItemMethods }
+ # [cfg (feature = "app-sortietopmenu")] pub use sortietopmenu :: { ISortieTopMenu_SortieTopMenuItemBaseMethods , ISortieTopMenu_GodMenuItemMethods , ISortieTopMenu_FriendMenuItemMethods , ISortieTopMenu_SystemMenuItemMethods , ISortieTopMenu_SaveMapMenuItemMethods , ISortieTopMenu_SubFriendMenu_RingListItemMethods , ISortieTopMenu_InventoryMenuItemMethods , ISortieTopMenu_BackMenuItemMethods , ISortieTopMenu_PositionChangeMenuItemMethods , ISortieTopMenu_StartMenuItemMethods , ISortieTopMenu_SubFriendMenu_NotebookItemMethods , ISortieTopMenu_SubSystemMenu_ConfigItemMethods , ISortieTopMenu_SubSystemMenuMethods , ISortieTopMenu_SubFriendMenu_KizunaItemMethods , ISortieTopMenu_SubFriendMenuMethods , ISortieTopMenu_SubSystemMenu_ResetItemMethods , ISortieTopMenu_RelianceMenuItemMethods , ISortieTopMenu_SubFriendMenu_RelianceItemMethods , ISortieTopMenuMethods , ISortieTopMenu_ResetMapMenuItemMethods , ISortieTopMenu_SelectionUnitMenuItemMethods , ISortieTopMenu_ShopMenuItemMethods , ISortieTopMenu_SaveMenuItemMethods , ISortieTopMenu_SubSystemMenu_ReportItemMethods , ISortieTopMenu_SubSystemMenu_TutorialItemMethods }
  ;
  # [cfg (any (feature = "app-sortietopmenucontent-types"))] pub mod sortietopmenucontent ;
  # [cfg (feature = "app-sortietopmenucontent-types")] pub use sortietopmenucontent :: { SortieTopMenuContent , ISortieTopMenuContent }
@@ -8421,9 +8421,9 @@
  # [cfg (feature = "app-sortietopmenumanager")] pub use sortietopmenumanager :: { ISortieTopMenuManagerMethods }
  ;
  # [cfg (any (feature = "app-sortietopmenushopsubmenu-types"))] pub mod sortietopmenushopsubmenu ;
- # [cfg (feature = "app-sortietopmenushopsubmenu-types")] pub use sortietopmenushopsubmenu :: { SortieTopMenuShopSubMenu_WeaponShopMenuItem , ISortieTopMenuShopSubMenu_WeaponShopMenuItem , SortieTopMenuShopSubMenu , ISortieTopMenuShopSubMenu , SortieTopMenuShopSubMenu_ItemShopMenuItem , ISortieTopMenuShopSubMenu_ItemShopMenuItem }
+ # [cfg (feature = "app-sortietopmenushopsubmenu-types")] pub use sortietopmenushopsubmenu :: { SortieTopMenuShopSubMenu_WeaponShopMenuItem , ISortieTopMenuShopSubMenu_WeaponShopMenuItem , SortieTopMenuShopSubMenu_ItemShopMenuItem , ISortieTopMenuShopSubMenu_ItemShopMenuItem , SortieTopMenuShopSubMenu , ISortieTopMenuShopSubMenu }
  ;
- # [cfg (feature = "app-sortietopmenushopsubmenu")] pub use sortietopmenushopsubmenu :: { ISortieTopMenuShopSubMenu_WeaponShopMenuItemMethods , ISortieTopMenuShopSubMenuMethods , ISortieTopMenuShopSubMenu_ItemShopMenuItemMethods }
+ # [cfg (feature = "app-sortietopmenushopsubmenu")] pub use sortietopmenushopsubmenu :: { ISortieTopMenuShopSubMenu_WeaponShopMenuItemMethods , ISortieTopMenuShopSubMenu_ItemShopMenuItemMethods , ISortieTopMenuShopSubMenuMethods }
  ;
  # [cfg (any (feature = "app-sortietradeitemmenu-types"))] pub mod sortietradeitemmenu ;
  # [cfg (feature = "app-sortietradeitemmenu-types")] pub use sortietradeitemmenu :: { SortieTradeItemMenu , ISortieTradeItemMenu }
@@ -8441,14 +8441,14 @@
  # [cfg (feature = "app-sortietradeitemmenuitem")] pub use sortietradeitemmenuitem :: { ISortieTradeItemMenuItemMethods }
  ;
  # [cfg (any (feature = "app-sortietrademanager-types"))] pub mod sortietrademanager ;
- # [cfg (feature = "app-sortietrademanager-types")] pub use sortietrademanager :: { SortieTradeManager_Side , ISortieTradeManager_Side , SortieTradeManager_SideId , SortieTradeManager , ISortieTradeManager }
+ # [cfg (feature = "app-sortietrademanager-types")] pub use sortietrademanager :: { SortieTradeManager_SideId , SortieTradeManager , ISortieTradeManager , SortieTradeManager_Side , ISortieTradeManager_Side }
  ;
- # [cfg (feature = "app-sortietrademanager")] pub use sortietrademanager :: { ISortieTradeManager_SideMethods , ISortieTradeManagerMethods }
+ # [cfg (feature = "app-sortietrademanager")] pub use sortietrademanager :: { ISortieTradeManagerMethods , ISortieTradeManager_SideMethods }
  ;
  # [cfg (any (feature = "app-sortieunitselect-types"))] pub mod sortieunitselect ;
- # [cfg (feature = "app-sortieunitselect-types")] pub use sortieunitselect :: { SortieUnitSelect , ISortieUnitSelect , SortieUnitSelect_UnitEmptyMenuItem , ISortieUnitSelect_UnitEmptyMenuItem , SortieUnitSelect_ConfirmBattleSequence , ISortieUnitSelect_ConfirmBattleSequence , SortieUnitSelect_UnitMenuItem , ISortieUnitSelect_UnitMenuItem }
+ # [cfg (feature = "app-sortieunitselect-types")] pub use sortieunitselect :: { SortieUnitSelect_UnitEmptyMenuItem , ISortieUnitSelect_UnitEmptyMenuItem , SortieUnitSelect , ISortieUnitSelect , SortieUnitSelect_UnitMenuItem , ISortieUnitSelect_UnitMenuItem , SortieUnitSelect_ConfirmBattleSequence , ISortieUnitSelect_ConfirmBattleSequence }
  ;
- # [cfg (feature = "app-sortieunitselect")] pub use sortieunitselect :: { ISortieUnitSelectMethods , ISortieUnitSelect_UnitEmptyMenuItemMethods , ISortieUnitSelect_ConfirmBattleSequenceMethods , ISortieUnitSelect_UnitMenuItemMethods }
+ # [cfg (feature = "app-sortieunitselect")] pub use sortieunitselect :: { ISortieUnitSelect_UnitEmptyMenuItemMethods , ISortieUnitSelectMethods , ISortieUnitSelect_UnitMenuItemMethods , ISortieUnitSelect_ConfirmBattleSequenceMethods }
  ;
  # [cfg (any (feature = "app-sortieutil-types"))] pub mod sortieutil ;
  # [cfg (feature = "app-sortieutil-types")] pub use sortieutil :: { SortieUtil , ISortieUtil }
@@ -8456,14 +8456,14 @@
  # [cfg (feature = "app-sortieutil")] pub use sortieutil :: { ISortieUtilMethods }
  ;
  # [cfg (any (feature = "app-soundmanager-types"))] pub mod soundmanager ;
- # [cfg (feature = "app-soundmanager-types")] pub use soundmanager :: { SoundManager , ISoundManager , SoundManager_ParamFader , ISoundManager_ParamFader }
+ # [cfg (feature = "app-soundmanager-types")] pub use soundmanager :: { SoundManager_ParamFader , ISoundManager_ParamFader , SoundManager , ISoundManager }
  ;
- # [cfg (feature = "app-soundmanager")] pub use soundmanager :: { ISoundManagerMethods , ISoundManager_ParamFaderMethods }
+ # [cfg (feature = "app-soundmanager")] pub use soundmanager :: { ISoundManager_ParamFaderMethods , ISoundManagerMethods }
  ;
  # [cfg (any (feature = "app-soundsystem-types"))] pub mod soundsystem ;
- # [cfg (feature = "app-soundsystem-types")] pub use soundsystem :: { SoundSystem_ISoundLoad , ISoundSystem_ISoundLoad , SoundSystem_LipSyncStructData , SoundSystem_ResultSoundLoadList , ISoundSystem_ResultSoundLoadList , SoundSystem_LipSyncDataFile , ISoundSystem_LipSyncDataFile , SoundSystem , ISoundSystem , SoundSystem_ResultSoundLoad , ISoundSystem_ResultSoundLoad , SoundSystem_SoundHandle , ISoundSystem_SoundHandle , SoundSystem_ISoundParam , ISoundSystem_ISoundParam , SoundSystem_LipSyncData , ISoundSystem_LipSyncData , SoundSystem_ResultSoundLoad_Status , SoundSystem_ISoundPlay , ISoundSystem_ISoundPlay }
+ # [cfg (feature = "app-soundsystem-types")] pub use soundsystem :: { SoundSystem_LipSyncDataFile , ISoundSystem_LipSyncDataFile , SoundSystem_ResultSoundLoad , ISoundSystem_ResultSoundLoad , SoundSystem_ISoundParam , ISoundSystem_ISoundParam , SoundSystem_LipSyncStructData , SoundSystem_ResultSoundLoad_Status , SoundSystem_LipSyncData , ISoundSystem_LipSyncData , SoundSystem , ISoundSystem , SoundSystem_ISoundPlay , ISoundSystem_ISoundPlay , SoundSystem_SoundHandle , ISoundSystem_SoundHandle , SoundSystem_ResultSoundLoadList , ISoundSystem_ResultSoundLoadList , SoundSystem_ISoundLoad , ISoundSystem_ISoundLoad }
  ;
- # [cfg (feature = "app-soundsystem")] pub use soundsystem :: { ISoundSystem_ISoundLoadMethods , ISoundSystem_ResultSoundLoadListMethods , ISoundSystem_LipSyncDataFileMethods , ISoundSystemMethods , ISoundSystem_ResultSoundLoadMethods , ISoundSystem_SoundHandleMethods , ISoundSystem_ISoundParamMethods , ISoundSystem_LipSyncDataMethods , ISoundSystem_ISoundPlayMethods }
+ # [cfg (feature = "app-soundsystem")] pub use soundsystem :: { ISoundSystem_LipSyncDataFileMethods , ISoundSystem_ResultSoundLoadMethods , ISoundSystem_ISoundParamMethods , ISoundSystem_LipSyncDataMethods , ISoundSystemMethods , ISoundSystem_ISoundPlayMethods , ISoundSystem_SoundHandleMethods , ISoundSystem_ResultSoundLoadListMethods , ISoundSystem_ISoundLoadMethods }
  ;
  # [cfg (any (feature = "app-soundtestplayer-types"))] pub mod soundtestplayer ;
  # [cfg (feature = "app-soundtestplayer-types")] pub use soundtestplayer :: { SoundTestPlayer , ISoundTestPlayer }
@@ -8471,9 +8471,9 @@
  # [cfg (feature = "app-soundtestplayer")] pub use soundtestplayer :: { ISoundTestPlayerMethods }
  ;
  # [cfg (any (feature = "app-soundwwise-types"))] pub mod soundwwise ;
- # [cfg (feature = "app-soundwwise-types")] pub use soundwwise :: { SoundWwise_SoundBankManager , ISoundWwise_SoundBankManager , SoundWwise_SoundPlay , ISoundWwise_SoundPlay , SoundWwise_SoundPrepareManager , ISoundWwise_SoundPrepareManager , SoundWwise_SoundBankManager_AsyncBankHandle , ISoundWwise_SoundBankManager_AsyncBankHandle , SoundWwise , ISoundWwise , SoundWwise_SoundPrepareManager_SwitchParam , ISoundWwise_SoundPrepareManager_SwitchParam , SoundWwise_SoundBankManager_States , SoundWwise_SoundPrepareManager_EventParamList , ISoundWwise_SoundPrepareManager_EventParamList , SoundWwise_SoundParam , ISoundWwise_SoundParam , SoundWwise_SoundPlay_GameObjectPool , ISoundWwise_SoundPlay_GameObjectPool , SoundWwise_SoundHandle , ISoundWwise_SoundHandle , SoundWwise_SoundPrepareManager_EventParam , ISoundWwise_SoundPrepareManager_EventParam , SoundWwise_SoundBankManager_InternalStates , SoundWwise_SoundPrepareManager_SwitchParamList , ISoundWwise_SoundPrepareManager_SwitchParamList , SoundWwise_SoundLoad , ISoundWwise_SoundLoad , SoundWwise_SoundPrepareManager_Param , ISoundWwise_SoundPrepareManager_Param , SoundWwise_SoundBankManager_BankHandle , ISoundWwise_SoundBankManager_BankHandle , SoundWwise_SoundPrepareManager_SwitchGroupParamList , ISoundWwise_SoundPrepareManager_SwitchGroupParamList }
+ # [cfg (feature = "app-soundwwise-types")] pub use soundwwise :: { SoundWwise_SoundBankManager_States , SoundWwise_SoundBankManager_AsyncBankHandle , ISoundWwise_SoundBankManager_AsyncBankHandle , SoundWwise_SoundBankManager_InternalStates , SoundWwise_SoundPrepareManager_SwitchParamList , ISoundWwise_SoundPrepareManager_SwitchParamList , SoundWwise_SoundPlay , ISoundWwise_SoundPlay , SoundWwise_SoundPrepareManager_Param , ISoundWwise_SoundPrepareManager_Param , SoundWwise_SoundPrepareManager_EventParam , ISoundWwise_SoundPrepareManager_EventParam , SoundWwise_SoundPrepareManager_EventParamList , ISoundWwise_SoundPrepareManager_EventParamList , SoundWwise , ISoundWwise , SoundWwise_SoundPrepareManager_SwitchParam , ISoundWwise_SoundPrepareManager_SwitchParam , SoundWwise_SoundBankManager , ISoundWwise_SoundBankManager , SoundWwise_SoundPrepareManager_SwitchGroupParamList , ISoundWwise_SoundPrepareManager_SwitchGroupParamList , SoundWwise_SoundPrepareManager , ISoundWwise_SoundPrepareManager , SoundWwise_SoundLoad , ISoundWwise_SoundLoad , SoundWwise_SoundBankManager_BankHandle , ISoundWwise_SoundBankManager_BankHandle , SoundWwise_SoundParam , ISoundWwise_SoundParam , SoundWwise_SoundHandle , ISoundWwise_SoundHandle , SoundWwise_SoundPlay_GameObjectPool , ISoundWwise_SoundPlay_GameObjectPool }
  ;
- # [cfg (feature = "app-soundwwise")] pub use soundwwise :: { ISoundWwise_SoundBankManagerMethods , ISoundWwise_SoundPlayMethods , ISoundWwise_SoundPrepareManagerMethods , ISoundWwise_SoundBankManager_AsyncBankHandleMethods , ISoundWwiseMethods , ISoundWwise_SoundPrepareManager_SwitchParamMethods , ISoundWwise_SoundPrepareManager_EventParamListMethods , ISoundWwise_SoundParamMethods , ISoundWwise_SoundPlay_GameObjectPoolMethods , ISoundWwise_SoundHandleMethods , ISoundWwise_SoundPrepareManager_EventParamMethods , ISoundWwise_SoundPrepareManager_SwitchParamListMethods , ISoundWwise_SoundLoadMethods , ISoundWwise_SoundPrepareManager_ParamMethods , ISoundWwise_SoundBankManager_BankHandleMethods , ISoundWwise_SoundPrepareManager_SwitchGroupParamListMethods }
+ # [cfg (feature = "app-soundwwise")] pub use soundwwise :: { ISoundWwise_SoundBankManager_AsyncBankHandleMethods , ISoundWwise_SoundPrepareManager_SwitchParamListMethods , ISoundWwise_SoundPlayMethods , ISoundWwise_SoundPrepareManager_ParamMethods , ISoundWwise_SoundPrepareManager_EventParamMethods , ISoundWwise_SoundPrepareManager_EventParamListMethods , ISoundWwiseMethods , ISoundWwise_SoundPrepareManager_SwitchParamMethods , ISoundWwise_SoundBankManagerMethods , ISoundWwise_SoundPrepareManager_SwitchGroupParamListMethods , ISoundWwise_SoundPrepareManagerMethods , ISoundWwise_SoundLoadMethods , ISoundWwise_SoundBankManager_BankHandleMethods , ISoundWwise_SoundParamMethods , ISoundWwise_SoundHandleMethods , ISoundWwise_SoundPlay_GameObjectPoolMethods }
  ;
  # [cfg (any (feature = "app-springwind-types"))] pub mod springwind ;
  # [cfg (feature = "app-springwind-types")] pub use springwind :: { SpringWind , ISpringWind }
@@ -8507,7 +8507,7 @@
  # [cfg (feature = "app-startup")] pub use startup :: { IStartupMethods }
  ;
  # [cfg (any (feature = "app-stream_2-types"))] pub mod stream_2 ;
- # [cfg (feature = "app-stream_2-types")] pub use stream_2 :: { Stream_Info , Stream_WriteScope , Stream_PositionScope , Stream_2 , IStream_2 , Stream_ReadScope }
+ # [cfg (feature = "app-stream_2-types")] pub use stream_2 :: { Stream_2 , IStream_2 , Stream_Info , Stream_ReadScope , Stream_PositionScope , Stream_WriteScope }
  ;
  # [cfg (feature = "app-stream_2")] pub use stream_2 :: { IStream_2Methods }
  ;
@@ -8543,9 +8543,9 @@
  # [cfg (feature = "app-structcalculatordata_1")] pub use structcalculatordata_1 :: { IStructCalculatorData_1Methods }
  ;
  # [cfg (any (feature = "app-structdata_1-types"))] pub mod structdata_1 ;
- # [cfg (feature = "app-structdata_1-types")] pub use structdata_1 :: { StructData_1_EachFuncBool , IStructData_1_EachFuncBool , StructData_1_EachFuncVoid , IStructData_1_EachFuncVoid , StructData_1 , IStructData_1 }
+ # [cfg (feature = "app-structdata_1-types")] pub use structdata_1 :: { StructData_1_EachFuncBool , IStructData_1_EachFuncBool , StructData_1 , IStructData_1 , StructData_1_EachFuncVoid , IStructData_1_EachFuncVoid }
  ;
- # [cfg (feature = "app-structdata_1")] pub use structdata_1 :: { IStructData_1_EachFuncBoolMethods , IStructData_1_EachFuncVoidMethods , IStructData_1Methods }
+ # [cfg (feature = "app-structdata_1")] pub use structdata_1 :: { IStructData_1_EachFuncBoolMethods , IStructData_1Methods , IStructData_1_EachFuncVoidMethods }
  ;
  # [cfg (any (feature = "app-structdataarray_1-types"))] pub mod structdataarray_1 ;
  # [cfg (feature = "app-structdataarray_1-types")] pub use structdataarray_1 :: { StructDataArray_1 , IStructDataArray_1 }
@@ -8573,7 +8573,7 @@
  # [cfg (feature = "app-structlist_1")] pub use structlist_1 :: { IStructList_1Methods }
  ;
  # [cfg (any (feature = "app-structproperty-types"))] pub mod structproperty ;
- # [cfg (feature = "app-structproperty-types")] pub use structproperty :: { StructProperty , IStructProperty , StructProperty_Kind }
+ # [cfg (feature = "app-structproperty-types")] pub use structproperty :: { StructProperty_Kind , StructProperty , IStructProperty }
  ;
  # [cfg (feature = "app-structproperty")] pub use structproperty :: { IStructPropertyMethods }
  ;
@@ -8593,9 +8593,9 @@
  # [cfg (feature = "app-sublightmanager")] pub use sublightmanager :: { ISubLightManagerMethods }
  ;
  # [cfg (any (feature = "app-subordermenu-types"))] pub mod subordermenu ;
- # [cfg (feature = "app-subordermenu-types")] pub use subordermenu :: { SubOrderMenu_SubOrderMenuItem , ISubOrderMenu_SubOrderMenuItem , SubOrderMenu , ISubOrderMenu }
+ # [cfg (feature = "app-subordermenu-types")] pub use subordermenu :: { SubOrderMenu , ISubOrderMenu , SubOrderMenu_SubOrderMenuItem , ISubOrderMenu_SubOrderMenuItem }
  ;
- # [cfg (feature = "app-subordermenu")] pub use subordermenu :: { ISubOrderMenu_SubOrderMenuItemMethods , ISubOrderMenuMethods }
+ # [cfg (feature = "app-subordermenu")] pub use subordermenu :: { ISubOrderMenuMethods , ISubOrderMenu_SubOrderMenuItemMethods }
  ;
  # [cfg (any (feature = "app-supportcalculator-types"))] pub mod supportcalculator ;
  # [cfg (feature = "app-supportcalculator-types")] pub use supportcalculator :: { SupportCalculator , ISupportCalculator }
@@ -8631,14 +8631,14 @@
  # [cfg (feature = "app-synthesisringexecute")] pub use synthesisringexecute :: { ISynthesisRingExecuteMethods }
  ;
  # [cfg (any (feature = "app-synthesisringinfowindow-types"))] pub mod synthesisringinfowindow ;
- # [cfg (feature = "app-synthesisringinfowindow-types")] pub use synthesisringinfowindow :: { SynthesisRingInfoWindow_CharaPhoto , ISynthesisRingInfoWindow_CharaPhoto , SynthesisRingInfoWindow_RingEnhance , ISynthesisRingInfoWindow_RingEnhance , SynthesisRingInfoWindow , ISynthesisRingInfoWindow }
+ # [cfg (feature = "app-synthesisringinfowindow-types")] pub use synthesisringinfowindow :: { SynthesisRingInfoWindow , ISynthesisRingInfoWindow , SynthesisRingInfoWindow_CharaPhoto , ISynthesisRingInfoWindow_CharaPhoto , SynthesisRingInfoWindow_RingEnhance , ISynthesisRingInfoWindow_RingEnhance }
  ;
- # [cfg (feature = "app-synthesisringinfowindow")] pub use synthesisringinfowindow :: { ISynthesisRingInfoWindow_CharaPhotoMethods , ISynthesisRingInfoWindow_RingEnhanceMethods , ISynthesisRingInfoWindowMethods }
+ # [cfg (feature = "app-synthesisringinfowindow")] pub use synthesisringinfowindow :: { ISynthesisRingInfoWindowMethods , ISynthesisRingInfoWindow_CharaPhotoMethods , ISynthesisRingInfoWindow_RingEnhanceMethods }
  ;
  # [cfg (any (feature = "app-synthesisringmenutop-types"))] pub mod synthesisringmenutop ;
- # [cfg (feature = "app-synthesisringmenutop-types")] pub use synthesisringmenutop :: { SynthesisRingMenuTop_Result , ISynthesisRingMenuTop_Result , SynthesisRingMenuTop_DecideEventHandler , ISynthesisRingMenuTop_DecideEventHandler , SynthesisRingMenuTop , ISynthesisRingMenuTop }
+ # [cfg (feature = "app-synthesisringmenutop-types")] pub use synthesisringmenutop :: { SynthesisRingMenuTop_Result , ISynthesisRingMenuTop_Result , SynthesisRingMenuTop , ISynthesisRingMenuTop , SynthesisRingMenuTop_DecideEventHandler , ISynthesisRingMenuTop_DecideEventHandler }
  ;
- # [cfg (feature = "app-synthesisringmenutop")] pub use synthesisringmenutop :: { ISynthesisRingMenuTop_ResultMethods , ISynthesisRingMenuTop_DecideEventHandlerMethods , ISynthesisRingMenuTopMethods }
+ # [cfg (feature = "app-synthesisringmenutop")] pub use synthesisringmenutop :: { ISynthesisRingMenuTop_ResultMethods , ISynthesisRingMenuTopMethods , ISynthesisRingMenuTop_DecideEventHandlerMethods }
  ;
  # [cfg (any (feature = "app-synthesisringroot-types"))] pub mod synthesisringroot ;
  # [cfg (feature = "app-synthesisringroot-types")] pub use synthesisringroot :: { SynthesisRingRoot , ISynthesisRingRoot }
@@ -8646,9 +8646,9 @@
  # [cfg (feature = "app-synthesisringroot")] pub use synthesisringroot :: { ISynthesisRingRootMethods }
  ;
  # [cfg (any (feature = "app-systemcalculator-types"))] pub mod systemcalculator ;
- # [cfg (feature = "app-systemcalculator-types")] pub use systemcalculator :: { SystemCalculator_ItemKindMagicCommand , ISystemCalculator_ItemKindMagicCommand , SystemCalculator_RodTypeBasicCommand , ISystemCalculator_RodTypeBasicCommand , SystemCalculator_Force1stCommand , ISystemCalculator_Force1stCommand , SystemCalculator_PhysicalAttributeCommand , ISystemCalculator_PhysicalAttributeCommand , SystemCalculator_BattleStyleCovertCommand , ISystemCalculator_BattleStyleCovertCommand , SystemCalculator_WeaponLevelCCommand , ISystemCalculator_WeaponLevelCCommand , SystemCalculator_IceAttributeCommand , ISystemCalculator_IceAttributeCommand , SystemCalculator_ItemKindRodCommand , ISystemCalculator_ItemKindRodCommand , SystemCalculator_GenderMaleCommand , ISystemCalculator_GenderMaleCommand , SystemCalculator_ThunderAttributeCommand , ISystemCalculator_ThunderAttributeCommand , SystemCalculator_BattleStyleCooperationCommand , ISystemCalculator_BattleStyleCooperationCommand , SystemCalculator_MorphAttributeCommand , ISystemCalculator_MorphAttributeCommand , SystemCalculator_BattleStyleHeavyCommand , ISystemCalculator_BattleStyleHeavyCommand , SystemCalculator_WeaponLevelBCommand , ISystemCalculator_WeaponLevelBCommand , SystemCalculator_Force2ndCommand , ISystemCalculator_Force2ndCommand , SystemCalculator_LightAttributeCommand , ISystemCalculator_LightAttributeCommand , SystemCalculator_PersonIndexCommand , ISystemCalculator_PersonIndexCommand , SystemCalculator_WalkAttributeCommand , ISystemCalculator_WalkAttributeCommand , SystemCalculator_DifficultyLunaticCommand , ISystemCalculator_DifficultyLunaticCommand , SystemCalculator_WindAttributeCommand , ISystemCalculator_WindAttributeCommand , SystemCalculator_GameModeClassicCommand , ISystemCalculator_GameModeClassicCommand , SystemCalculator_NoneAttributeCommand , ISystemCalculator_NoneAttributeCommand , SystemCalculator_WeaponLevelDCommand , ISystemCalculator_WeaponLevelDCommand , SystemCalculator_PhaseCurrentCommand , ISystemCalculator_PhaseCurrentCommand , SystemCalculator_WeaponLevelSCommand , ISystemCalculator_WeaponLevelSCommand , SystemCalculator_BattleSideOffenseCommand , ISystemCalculator_BattleSideOffenseCommand , SystemCalculator_RodTypeHealCommand , ISystemCalculator_RodTypeHealCommand , SystemCalculator_FireAttributeCommand , ISystemCalculator_FireAttributeCommand , SystemCalculator_BattleSideChainOffenseCommand , ISystemCalculator_BattleSideChainOffenseCommand , SystemCalculator_Force3rdCommand , ISystemCalculator_Force3rdCommand , SystemCalculator , ISystemCalculator , SystemCalculator_BattleStyleHorseCommand , ISystemCalculator_BattleStyleHorseCommand , SystemCalculator_ScreenShotCommand , ISystemCalculator_ScreenShotCommand , SystemCalculator_BattleSideDefenseCommand , ISystemCalculator_BattleSideDefenseCommand , SystemCalculator_VsyncCommand , ISystemCalculator_VsyncCommand , SystemCalculator_JobRankHighCommand , ISystemCalculator_JobRankHighCommand , SystemCalculator_ItemKindDaggerCommand , ISystemCalculator_ItemKindDaggerCommand , SystemCalculator_BattleStyleFlyCommand , ISystemCalculator_BattleStyleFlyCommand , SystemCalculator_BattleStyleCommand , ISystemCalculator_BattleStyleCommand , SystemCalculator_DifficultyNormalCommand , ISystemCalculator_DifficultyNormalCommand , SystemCalculator_WeaponLevelACommand , ISystemCalculator_WeaponLevelACommand , SystemCalculator_JobRankLowCommand , ISystemCalculator_JobRankLowCommand , SystemCalculator_FlyAttributeCommand , ISystemCalculator_FlyAttributeCommand , SystemCalculator_ItemKindFistCommand , ISystemCalculator_ItemKindFistCommand , SystemCalculator_ItemKindAxeCommand , ISystemCalculator_ItemKindAxeCommand , SystemCalculator_GameModeCasualCommand , ISystemCalculator_GameModeCasualCommand , SystemCalculator_ItemKindBowCommand , ISystemCalculator_ItemKindBowCommand , SystemCalculator_DarkAttributeCommand , ISystemCalculator_DarkAttributeCommand , SystemCalculator_MagicAttributeCommand , ISystemCalculator_MagicAttributeCommand , SystemCalculator_GoodCommand , ISystemCalculator_GoodCommand , SystemCalculator_BattleStyleMagicCommand , ISystemCalculator_BattleStyleMagicCommand , SystemCalculator_BadCommand , ISystemCalculator_BadCommand , SystemCalculator_BattleStyleDragonCommand , ISystemCalculator_BattleStyleDragonCommand , SystemCalculator_BattleStylePranaCommand , ISystemCalculator_BattleStylePranaCommand , SystemCalculator_ItemKindSwordCommand , ISystemCalculator_ItemKindSwordCommand , SystemCalculator_RodTypeInterferenceCommand , ISystemCalculator_RodTypeInterferenceCommand , SystemCalculator_PhaseOtherCommand , ISystemCalculator_PhaseOtherCommand , SystemCalculator_ItemKindSpecialCommand , ISystemCalculator_ItemKindSpecialCommand , SystemCalculator_ItemKindLanceCommand , ISystemCalculator_ItemKindLanceCommand , SystemCalculator_GenderFemaleCommand , ISystemCalculator_GenderFemaleCommand , SystemCalculator_ItemIndexCommand , ISystemCalculator_ItemIndexCommand , SystemCalculator_MoveCostCommand , ISystemCalculator_MoveCostCommand , SystemCalculator_HeavyAttributeCommand , ISystemCalculator_HeavyAttributeCommand , SystemCalculator_JobIndexCommand , ISystemCalculator_JobIndexCommand , SystemCalculator_HorseAttributeCommand , ISystemCalculator_HorseAttributeCommand , SystemCalculator_DragonAttributeCommand , ISystemCalculator_DragonAttributeCommand , SystemCalculator_SkillIndexCommand , ISystemCalculator_SkillIndexCommand , SystemCalculator_DifficultyHardCommand , ISystemCalculator_DifficultyHardCommand , SystemCalculator_BattleSideChainDefenseCommand , ISystemCalculator_BattleSideChainDefenseCommand , SystemCalculator_EvilAttributeCommand , ISystemCalculator_EvilAttributeCommand }
+ # [cfg (feature = "app-systemcalculator-types")] pub use systemcalculator :: { SystemCalculator_WeaponLevelCCommand , ISystemCalculator_WeaponLevelCCommand , SystemCalculator_ItemKindFistCommand , ISystemCalculator_ItemKindFistCommand , SystemCalculator_IceAttributeCommand , ISystemCalculator_IceAttributeCommand , SystemCalculator_Force1stCommand , ISystemCalculator_Force1stCommand , SystemCalculator_NoneAttributeCommand , ISystemCalculator_NoneAttributeCommand , SystemCalculator_ScreenShotCommand , ISystemCalculator_ScreenShotCommand , SystemCalculator_PhysicalAttributeCommand , ISystemCalculator_PhysicalAttributeCommand , SystemCalculator_ItemKindBowCommand , ISystemCalculator_ItemKindBowCommand , SystemCalculator_HeavyAttributeCommand , ISystemCalculator_HeavyAttributeCommand , SystemCalculator_WeaponLevelACommand , ISystemCalculator_WeaponLevelACommand , SystemCalculator_WeaponLevelSCommand , ISystemCalculator_WeaponLevelSCommand , SystemCalculator_RodTypeHealCommand , ISystemCalculator_RodTypeHealCommand , SystemCalculator_EvilAttributeCommand , ISystemCalculator_EvilAttributeCommand , SystemCalculator_BattleStyleHorseCommand , ISystemCalculator_BattleStyleHorseCommand , SystemCalculator_BattleStyleCommand , ISystemCalculator_BattleStyleCommand , SystemCalculator_GameModeClassicCommand , ISystemCalculator_GameModeClassicCommand , SystemCalculator_DarkAttributeCommand , ISystemCalculator_DarkAttributeCommand , SystemCalculator_FlyAttributeCommand , ISystemCalculator_FlyAttributeCommand , SystemCalculator_BattleStyleMagicCommand , ISystemCalculator_BattleStyleMagicCommand , SystemCalculator_DifficultyLunaticCommand , ISystemCalculator_DifficultyLunaticCommand , SystemCalculator_GameModeCasualCommand , ISystemCalculator_GameModeCasualCommand , SystemCalculator_RodTypeBasicCommand , ISystemCalculator_RodTypeBasicCommand , SystemCalculator_MoveCostCommand , ISystemCalculator_MoveCostCommand , SystemCalculator_GenderMaleCommand , ISystemCalculator_GenderMaleCommand , SystemCalculator_JobRankHighCommand , ISystemCalculator_JobRankHighCommand , SystemCalculator_PhaseOtherCommand , ISystemCalculator_PhaseOtherCommand , SystemCalculator_BattleSideDefenseCommand , ISystemCalculator_BattleSideDefenseCommand , SystemCalculator_JobRankLowCommand , ISystemCalculator_JobRankLowCommand , SystemCalculator_BattleSideChainDefenseCommand , ISystemCalculator_BattleSideChainDefenseCommand , SystemCalculator_SkillIndexCommand , ISystemCalculator_SkillIndexCommand , SystemCalculator_BattleStyleDragonCommand , ISystemCalculator_BattleStyleDragonCommand , SystemCalculator_BattleStyleHeavyCommand , ISystemCalculator_BattleStyleHeavyCommand , SystemCalculator_RodTypeInterferenceCommand , ISystemCalculator_RodTypeInterferenceCommand , SystemCalculator_BattleSideOffenseCommand , ISystemCalculator_BattleSideOffenseCommand , SystemCalculator_ItemKindRodCommand , ISystemCalculator_ItemKindRodCommand , SystemCalculator_VsyncCommand , ISystemCalculator_VsyncCommand , SystemCalculator_DifficultyHardCommand , ISystemCalculator_DifficultyHardCommand , SystemCalculator_JobIndexCommand , ISystemCalculator_JobIndexCommand , SystemCalculator_BattleStyleCovertCommand , ISystemCalculator_BattleStyleCovertCommand , SystemCalculator_BattleSideChainOffenseCommand , ISystemCalculator_BattleSideChainOffenseCommand , SystemCalculator_WalkAttributeCommand , ISystemCalculator_WalkAttributeCommand , SystemCalculator_BattleStylePranaCommand , ISystemCalculator_BattleStylePranaCommand , SystemCalculator_ItemKindLanceCommand , ISystemCalculator_ItemKindLanceCommand , SystemCalculator_ItemIndexCommand , ISystemCalculator_ItemIndexCommand , SystemCalculator_MagicAttributeCommand , ISystemCalculator_MagicAttributeCommand , SystemCalculator_ItemKindAxeCommand , ISystemCalculator_ItemKindAxeCommand , SystemCalculator_BattleStyleFlyCommand , ISystemCalculator_BattleStyleFlyCommand , SystemCalculator_PersonIndexCommand , ISystemCalculator_PersonIndexCommand , SystemCalculator_Force2ndCommand , ISystemCalculator_Force2ndCommand , SystemCalculator_ItemKindMagicCommand , ISystemCalculator_ItemKindMagicCommand , SystemCalculator_WeaponLevelDCommand , ISystemCalculator_WeaponLevelDCommand , SystemCalculator_PhaseCurrentCommand , ISystemCalculator_PhaseCurrentCommand , SystemCalculator_HorseAttributeCommand , ISystemCalculator_HorseAttributeCommand , SystemCalculator_BattleStyleCooperationCommand , ISystemCalculator_BattleStyleCooperationCommand , SystemCalculator_WeaponLevelBCommand , ISystemCalculator_WeaponLevelBCommand , SystemCalculator , ISystemCalculator , SystemCalculator_ThunderAttributeCommand , ISystemCalculator_ThunderAttributeCommand , SystemCalculator_ItemKindSpecialCommand , ISystemCalculator_ItemKindSpecialCommand , SystemCalculator_ItemKindDaggerCommand , ISystemCalculator_ItemKindDaggerCommand , SystemCalculator_ItemKindSwordCommand , ISystemCalculator_ItemKindSwordCommand , SystemCalculator_FireAttributeCommand , ISystemCalculator_FireAttributeCommand , SystemCalculator_GoodCommand , ISystemCalculator_GoodCommand , SystemCalculator_DifficultyNormalCommand , ISystemCalculator_DifficultyNormalCommand , SystemCalculator_Force3rdCommand , ISystemCalculator_Force3rdCommand , SystemCalculator_MorphAttributeCommand , ISystemCalculator_MorphAttributeCommand , SystemCalculator_BadCommand , ISystemCalculator_BadCommand , SystemCalculator_LightAttributeCommand , ISystemCalculator_LightAttributeCommand , SystemCalculator_GenderFemaleCommand , ISystemCalculator_GenderFemaleCommand , SystemCalculator_WindAttributeCommand , ISystemCalculator_WindAttributeCommand , SystemCalculator_DragonAttributeCommand , ISystemCalculator_DragonAttributeCommand }
  ;
- # [cfg (feature = "app-systemcalculator")] pub use systemcalculator :: { ISystemCalculator_ItemKindMagicCommandMethods , ISystemCalculator_RodTypeBasicCommandMethods , ISystemCalculator_Force1stCommandMethods , ISystemCalculator_PhysicalAttributeCommandMethods , ISystemCalculator_BattleStyleCovertCommandMethods , ISystemCalculator_WeaponLevelCCommandMethods , ISystemCalculator_IceAttributeCommandMethods , ISystemCalculator_ItemKindRodCommandMethods , ISystemCalculator_GenderMaleCommandMethods , ISystemCalculator_ThunderAttributeCommandMethods , ISystemCalculator_BattleStyleCooperationCommandMethods , ISystemCalculator_MorphAttributeCommandMethods , ISystemCalculator_BattleStyleHeavyCommandMethods , ISystemCalculator_WeaponLevelBCommandMethods , ISystemCalculator_Force2ndCommandMethods , ISystemCalculator_LightAttributeCommandMethods , ISystemCalculator_PersonIndexCommandMethods , ISystemCalculator_WalkAttributeCommandMethods , ISystemCalculator_DifficultyLunaticCommandMethods , ISystemCalculator_WindAttributeCommandMethods , ISystemCalculator_GameModeClassicCommandMethods , ISystemCalculator_NoneAttributeCommandMethods , ISystemCalculator_WeaponLevelDCommandMethods , ISystemCalculator_PhaseCurrentCommandMethods , ISystemCalculator_WeaponLevelSCommandMethods , ISystemCalculator_BattleSideOffenseCommandMethods , ISystemCalculator_RodTypeHealCommandMethods , ISystemCalculator_FireAttributeCommandMethods , ISystemCalculator_BattleSideChainOffenseCommandMethods , ISystemCalculator_Force3rdCommandMethods , ISystemCalculatorMethods , ISystemCalculator_BattleStyleHorseCommandMethods , ISystemCalculator_ScreenShotCommandMethods , ISystemCalculator_BattleSideDefenseCommandMethods , ISystemCalculator_VsyncCommandMethods , ISystemCalculator_JobRankHighCommandMethods , ISystemCalculator_ItemKindDaggerCommandMethods , ISystemCalculator_BattleStyleFlyCommandMethods , ISystemCalculator_BattleStyleCommandMethods , ISystemCalculator_DifficultyNormalCommandMethods , ISystemCalculator_WeaponLevelACommandMethods , ISystemCalculator_JobRankLowCommandMethods , ISystemCalculator_FlyAttributeCommandMethods , ISystemCalculator_ItemKindFistCommandMethods , ISystemCalculator_ItemKindAxeCommandMethods , ISystemCalculator_GameModeCasualCommandMethods , ISystemCalculator_ItemKindBowCommandMethods , ISystemCalculator_DarkAttributeCommandMethods , ISystemCalculator_MagicAttributeCommandMethods , ISystemCalculator_GoodCommandMethods , ISystemCalculator_BattleStyleMagicCommandMethods , ISystemCalculator_BadCommandMethods , ISystemCalculator_BattleStyleDragonCommandMethods , ISystemCalculator_BattleStylePranaCommandMethods , ISystemCalculator_ItemKindSwordCommandMethods , ISystemCalculator_RodTypeInterferenceCommandMethods , ISystemCalculator_PhaseOtherCommandMethods , ISystemCalculator_ItemKindSpecialCommandMethods , ISystemCalculator_ItemKindLanceCommandMethods , ISystemCalculator_GenderFemaleCommandMethods , ISystemCalculator_ItemIndexCommandMethods , ISystemCalculator_MoveCostCommandMethods , ISystemCalculator_HeavyAttributeCommandMethods , ISystemCalculator_JobIndexCommandMethods , ISystemCalculator_HorseAttributeCommandMethods , ISystemCalculator_DragonAttributeCommandMethods , ISystemCalculator_SkillIndexCommandMethods , ISystemCalculator_DifficultyHardCommandMethods , ISystemCalculator_BattleSideChainDefenseCommandMethods , ISystemCalculator_EvilAttributeCommandMethods }
+ # [cfg (feature = "app-systemcalculator")] pub use systemcalculator :: { ISystemCalculator_WeaponLevelCCommandMethods , ISystemCalculator_ItemKindFistCommandMethods , ISystemCalculator_IceAttributeCommandMethods , ISystemCalculator_Force1stCommandMethods , ISystemCalculator_NoneAttributeCommandMethods , ISystemCalculator_ScreenShotCommandMethods , ISystemCalculator_PhysicalAttributeCommandMethods , ISystemCalculator_ItemKindBowCommandMethods , ISystemCalculator_HeavyAttributeCommandMethods , ISystemCalculator_WeaponLevelACommandMethods , ISystemCalculator_WeaponLevelSCommandMethods , ISystemCalculator_RodTypeHealCommandMethods , ISystemCalculator_EvilAttributeCommandMethods , ISystemCalculator_BattleStyleHorseCommandMethods , ISystemCalculator_BattleStyleCommandMethods , ISystemCalculator_GameModeClassicCommandMethods , ISystemCalculator_DarkAttributeCommandMethods , ISystemCalculator_FlyAttributeCommandMethods , ISystemCalculator_BattleStyleMagicCommandMethods , ISystemCalculator_DifficultyLunaticCommandMethods , ISystemCalculator_GameModeCasualCommandMethods , ISystemCalculator_RodTypeBasicCommandMethods , ISystemCalculator_MoveCostCommandMethods , ISystemCalculator_GenderMaleCommandMethods , ISystemCalculator_JobRankHighCommandMethods , ISystemCalculator_PhaseOtherCommandMethods , ISystemCalculator_BattleSideDefenseCommandMethods , ISystemCalculator_JobRankLowCommandMethods , ISystemCalculator_BattleSideChainDefenseCommandMethods , ISystemCalculator_SkillIndexCommandMethods , ISystemCalculator_BattleStyleDragonCommandMethods , ISystemCalculator_BattleStyleHeavyCommandMethods , ISystemCalculator_RodTypeInterferenceCommandMethods , ISystemCalculator_BattleSideOffenseCommandMethods , ISystemCalculator_ItemKindRodCommandMethods , ISystemCalculator_VsyncCommandMethods , ISystemCalculator_DifficultyHardCommandMethods , ISystemCalculator_JobIndexCommandMethods , ISystemCalculator_BattleStyleCovertCommandMethods , ISystemCalculator_BattleSideChainOffenseCommandMethods , ISystemCalculator_WalkAttributeCommandMethods , ISystemCalculator_BattleStylePranaCommandMethods , ISystemCalculator_ItemKindLanceCommandMethods , ISystemCalculator_ItemIndexCommandMethods , ISystemCalculator_MagicAttributeCommandMethods , ISystemCalculator_ItemKindAxeCommandMethods , ISystemCalculator_BattleStyleFlyCommandMethods , ISystemCalculator_PersonIndexCommandMethods , ISystemCalculator_Force2ndCommandMethods , ISystemCalculator_ItemKindMagicCommandMethods , ISystemCalculator_WeaponLevelDCommandMethods , ISystemCalculator_PhaseCurrentCommandMethods , ISystemCalculator_HorseAttributeCommandMethods , ISystemCalculator_BattleStyleCooperationCommandMethods , ISystemCalculator_WeaponLevelBCommandMethods , ISystemCalculatorMethods , ISystemCalculator_ThunderAttributeCommandMethods , ISystemCalculator_ItemKindSpecialCommandMethods , ISystemCalculator_ItemKindDaggerCommandMethods , ISystemCalculator_ItemKindSwordCommandMethods , ISystemCalculator_FireAttributeCommandMethods , ISystemCalculator_GoodCommandMethods , ISystemCalculator_DifficultyNormalCommandMethods , ISystemCalculator_Force3rdCommandMethods , ISystemCalculator_MorphAttributeCommandMethods , ISystemCalculator_BadCommandMethods , ISystemCalculator_LightAttributeCommandMethods , ISystemCalculator_GenderFemaleCommandMethods , ISystemCalculator_WindAttributeCommandMethods , ISystemCalculator_DragonAttributeCommandMethods }
  ;
  # [cfg (any (feature = "app-systemcalculatorinstance_1-types"))] pub mod systemcalculatorinstance_1 ;
  # [cfg (feature = "app-systemcalculatorinstance_1-types")] pub use systemcalculatorinstance_1 :: { SystemCalculatorInstance_1 , ISystemCalculatorInstance_1 }
@@ -8666,9 +8666,9 @@
  # [cfg (feature = "app-systemscrollmenuitemcontent")] pub use systemscrollmenuitemcontent :: { ISystemScrollMenuItemContentMethods }
  ;
  # [cfg (any (feature = "app-systhesisringconfirmdialog-types"))] pub mod systhesisringconfirmdialog ;
- # [cfg (feature = "app-systhesisringconfirmdialog-types")] pub use systhesisringconfirmdialog :: { SysthesisRingConfirmDialog_DecideEventHandler , ISysthesisRingConfirmDialog_DecideEventHandler , SysthesisRingConfirmDialog_YesDialogItem , ISysthesisRingConfirmDialog_YesDialogItem , SysthesisRingConfirmDialog , ISysthesisRingConfirmDialog }
+ # [cfg (feature = "app-systhesisringconfirmdialog-types")] pub use systhesisringconfirmdialog :: { SysthesisRingConfirmDialog_DecideEventHandler , ISysthesisRingConfirmDialog_DecideEventHandler , SysthesisRingConfirmDialog , ISysthesisRingConfirmDialog , SysthesisRingConfirmDialog_YesDialogItem , ISysthesisRingConfirmDialog_YesDialogItem }
  ;
- # [cfg (feature = "app-systhesisringconfirmdialog")] pub use systhesisringconfirmdialog :: { ISysthesisRingConfirmDialog_DecideEventHandlerMethods , ISysthesisRingConfirmDialog_YesDialogItemMethods , ISysthesisRingConfirmDialogMethods }
+ # [cfg (feature = "app-systhesisringconfirmdialog")] pub use systhesisringconfirmdialog :: { ISysthesisRingConfirmDialog_DecideEventHandlerMethods , ISysthesisRingConfirmDialogMethods , ISysthesisRingConfirmDialog_YesDialogItemMethods }
  ;
  # [cfg (any (feature = "app-talk-types"))] pub mod talk ;
  # [cfg (feature = "app-talk-types")] pub use talk :: { Talk , ITalk }
@@ -8697,9 +8697,9 @@
  # [cfg (feature = "app-talkinspector")] pub use talkinspector :: { ITalkInspectorMethods }
  ;
  # [cfg (any (feature = "app-talksound-types"))] pub mod talksound ;
- # [cfg (feature = "app-talksound-types")] pub use talksound :: { TalkSound , ITalkSound , TalkSound_WaitSE , ITalkSound_WaitSE , TalkSound_SoundType }
+ # [cfg (feature = "app-talksound-types")] pub use talksound :: { TalkSound_WaitSE , ITalkSound_WaitSE , TalkSound_SoundType , TalkSound , ITalkSound }
  ;
- # [cfg (feature = "app-talksound")] pub use talksound :: { ITalkSoundMethods , ITalkSound_WaitSEMethods }
+ # [cfg (feature = "app-talksound")] pub use talksound :: { ITalkSound_WaitSEMethods , ITalkSoundMethods }
  ;
  # [cfg (any (feature = "app-tancommand-types"))] pub mod tancommand ;
  # [cfg (feature = "app-tancommand-types")] pub use tancommand :: { TanCommand , ITanCommand }
@@ -8737,7 +8737,7 @@
  # [cfg (feature = "app-tasteconditiondata")] pub use tasteconditiondata :: { ITasteConditionData_ConditionFuncMethods , ITasteConditionDataMethods }
  ;
  # [cfg (any (feature = "app-tastedata-types"))] pub mod tastedata ;
- # [cfg (feature = "app-tastedata-types")] pub use tastedata :: { TasteData_TasteGrade , TasteData_Flags , TasteData , ITasteData , TasteData_FlagField , ITasteData_FlagField , TasteData_ConditionType }
+ # [cfg (feature = "app-tastedata-types")] pub use tastedata :: { TasteData , ITasteData , TasteData_Flags , TasteData_ConditionType , TasteData_TasteGrade , TasteData_FlagField , ITasteData_FlagField }
  ;
  # [cfg (feature = "app-tastedata")] pub use tastedata :: { ITasteDataMethods , ITasteData_FlagFieldMethods }
  ;
@@ -8752,9 +8752,9 @@
  # [cfg (feature = "app-telopinstance")] pub use telopinstance :: { ITelopInstanceMethods }
  ;
  # [cfg (any (feature = "app-telopmanager-types"))] pub mod telopmanager ;
- # [cfg (feature = "app-telopmanager-types")] pub use telopmanager :: { TelopManager_ProcRelayResult , ITelopManager_ProcRelayResult , TelopManager , ITelopManager , TelopManager_ProcBondEngageBase_Sequence , TelopManager_ProcBondEngageBase_Label , TelopManager_ProcBondLevelUp_Label2 , TelopManager_ProcBondEngageBase , ITelopManager_ProcBondEngageBase , TelopManager_ProcBondEngagePair , ITelopManager_ProcBondEngagePair , TelopManager_ProcBondEngageQuartette , ITelopManager_ProcBondEngageQuartette , TelopManager_ProcBondLevelUp , ITelopManager_ProcBondLevelUp , TelopManager_ProcRelayResult_Label2 , TelopManager_ProcBondLevelUp_Sequence }
+ # [cfg (feature = "app-telopmanager-types")] pub use telopmanager :: { TelopManager_ProcRelayResult , ITelopManager_ProcRelayResult , TelopManager_ProcBondLevelUp , ITelopManager_ProcBondLevelUp , TelopManager_ProcBondEngageQuartette , ITelopManager_ProcBondEngageQuartette , TelopManager_ProcBondLevelUp_Sequence , TelopManager_ProcBondEngageBase_Label , TelopManager , ITelopManager , TelopManager_ProcRelayResult_Label2 , TelopManager_ProcBondEngagePair , ITelopManager_ProcBondEngagePair , TelopManager_ProcBondEngageBase , ITelopManager_ProcBondEngageBase , TelopManager_ProcBondLevelUp_Label2 , TelopManager_ProcBondEngageBase_Sequence }
  ;
- # [cfg (feature = "app-telopmanager")] pub use telopmanager :: { ITelopManager_ProcRelayResultMethods , ITelopManagerMethods , ITelopManager_ProcBondEngageBaseMethods , ITelopManager_ProcBondEngagePairMethods , ITelopManager_ProcBondEngageQuartetteMethods , ITelopManager_ProcBondLevelUpMethods }
+ # [cfg (feature = "app-telopmanager")] pub use telopmanager :: { ITelopManager_ProcRelayResultMethods , ITelopManager_ProcBondLevelUpMethods , ITelopManager_ProcBondEngageQuartetteMethods , ITelopManagerMethods , ITelopManager_ProcBondEngagePairMethods , ITelopManager_ProcBondEngageBaseMethods }
  ;
  # [cfg (any (feature = "app-templatearraydata-types"))] pub mod templatearraydata ;
  # [cfg (feature = "app-templatearraydata-types")] pub use templatearraydata :: { TemplateArrayData , ITemplateArrayData }
@@ -8762,7 +8762,7 @@
  # [cfg (feature = "app-templatearraydata")] pub use templatearraydata :: { ITemplateArrayDataMethods }
  ;
  # [cfg (any (feature = "app-templateonedata-types"))] pub mod templateonedata ;
- # [cfg (feature = "app-templateonedata-types")] pub use templateonedata :: { TemplateOneData_SampleClass , ITemplateOneData_SampleClass , TemplateOneData , ITemplateOneData , TemplateOneData_Flags }
+ # [cfg (feature = "app-templateonedata-types")] pub use templateonedata :: { TemplateOneData_SampleClass , ITemplateOneData_SampleClass , TemplateOneData_Flags , TemplateOneData , ITemplateOneData }
  ;
  # [cfg (feature = "app-templateonedata")] pub use templateonedata :: { ITemplateOneData_SampleClassMethods , ITemplateOneDataMethods }
  ;
@@ -8772,7 +8772,7 @@
  # [cfg (feature = "app-terraincostdata")] pub use terraincostdata :: { ITerrainCostDataMethods }
  ;
  # [cfg (any (feature = "app-terraindata_2-types"))] pub mod terraindata_2 ;
- # [cfg (feature = "app-terraindata_2-types")] pub use terraindata_2 :: { TerrainData_Prohibitions , TerrainData_Layers , TerrainData_2 , ITerrainData_2 , TerrainData_Destroyers , TerrainData_Commands , TerrainData_Flags }
+ # [cfg (feature = "app-terraindata_2-types")] pub use terraindata_2 :: { TerrainData_Layers , TerrainData_Destroyers , TerrainData_Flags , TerrainData_Prohibitions , TerrainData_2 , ITerrainData_2 , TerrainData_Commands }
  ;
  # [cfg (feature = "app-terraindata_2")] pub use terraindata_2 :: { ITerrainData_2Methods }
  ;
@@ -8837,12 +8837,12 @@
  # [cfg (feature = "app-textassetbundle")] pub use textassetbundle :: { ITextAssetBundleMethods }
  ;
  # [cfg (any (feature = "app-textmeshanimation-types"))] pub mod textmeshanimation ;
- # [cfg (feature = "app-textmeshanimation-types")] pub use textmeshanimation :: { TextMeshAnimation_PivotType , TextMeshAnimation_DelayTimeType , TextMeshAnimation , ITextMeshAnimation , TextMeshAnimation_EndType , TextMeshAnimation_AnimationParams , ITextMeshAnimation_AnimationParams }
+ # [cfg (feature = "app-textmeshanimation-types")] pub use textmeshanimation :: { TextMeshAnimation_DelayTimeType , TextMeshAnimation , ITextMeshAnimation , TextMeshAnimation_PivotType , TextMeshAnimation_EndType , TextMeshAnimation_AnimationParams , ITextMeshAnimation_AnimationParams }
  ;
  # [cfg (feature = "app-textmeshanimation")] pub use textmeshanimation :: { ITextMeshAnimationMethods , ITextMeshAnimation_AnimationParamsMethods }
  ;
  # [cfg (any (feature = "app-textmeshmessage-types"))] pub mod textmeshmessage ;
- # [cfg (feature = "app-textmeshmessage-types")] pub use textmeshmessage :: { TextMeshMessage_Targets , TextMeshMessage , ITextMeshMessage }
+ # [cfg (feature = "app-textmeshmessage-types")] pub use textmeshmessage :: { TextMeshMessage , ITextMeshMessage , TextMeshMessage_Targets }
  ;
  # [cfg (feature = "app-textmeshmessage")] pub use textmeshmessage :: { ITextMeshMessageMethods }
  ;
@@ -8860,17 +8860,17 @@
  # [cfg (feature = "app-timestamp")] pub use timestamp :: { ITimeStampMethods }
  ;
  # [cfg (any (feature = "app-tipsdata-types"))] pub mod tipsdata ;
- # [cfg (feature = "app-tipsdata-types")] pub use tipsdata :: { TipsData_Kinds , TipsData , ITipsData , TipsData_Allows }
+ # [cfg (feature = "app-tipsdata-types")] pub use tipsdata :: { TipsData , ITipsData , TipsData_Allows , TipsData_Kinds }
  ;
  # [cfg (feature = "app-tipsdata")] pub use tipsdata :: { ITipsDataMethods }
  ;
  # [cfg (any (feature = "app-titlebar-types"))] pub mod titlebar ;
- # [cfg (feature = "app-titlebar-types")] pub use titlebar :: { TitleBar_Values , ITitleBar_Values , TitleBar_Num , ITitleBar_Num , TitleBar_Title , ITitleBar_Title , TitleBar , ITitleBar , TitleBar_FooterType , TitleBar_TitleBarProc , ITitleBar_TitleBarProc , TitleBar_AnimType }
+ # [cfg (feature = "app-titlebar-types")] pub use titlebar :: { TitleBar_Values , ITitleBar_Values , TitleBar , ITitleBar , TitleBar_Title , ITitleBar_Title , TitleBar_TitleBarProc , ITitleBar_TitleBarProc , TitleBar_AnimType , TitleBar_Num , ITitleBar_Num , TitleBar_FooterType }
  ;
- # [cfg (feature = "app-titlebar")] pub use titlebar :: { ITitleBar_ValuesMethods , ITitleBar_NumMethods , ITitleBar_TitleMethods , ITitleBarMethods , ITitleBar_TitleBarProcMethods }
+ # [cfg (feature = "app-titlebar")] pub use titlebar :: { ITitleBar_ValuesMethods , ITitleBarMethods , ITitleBar_TitleMethods , ITitleBar_TitleBarProcMethods , ITitleBar_NumMethods }
  ;
  # [cfg (any (feature = "app-titleloopsequence-types"))] pub mod titleloopsequence ;
- # [cfg (feature = "app-titleloopsequence-types")] pub use titleloopsequence :: { TitleLoopSequence_Label , TitleLoopSequence_LoopSequenceFromTitle , TitleLoopSequence , ITitleLoopSequence }
+ # [cfg (feature = "app-titleloopsequence-types")] pub use titleloopsequence :: { TitleLoopSequence_LoopSequenceFromTitle , TitleLoopSequence_Label , TitleLoopSequence , ITitleLoopSequence }
  ;
  # [cfg (feature = "app-titleloopsequence")] pub use titleloopsequence :: { ITitleLoopSequenceMethods }
  ;
@@ -8885,9 +8885,9 @@
  # [cfg (feature = "app-titlemenuitemcontent")] pub use titlemenuitemcontent :: { ITitleMenuItemContentMethods }
  ;
  # [cfg (any (feature = "app-titlesequence-types"))] pub mod titlesequence ;
- # [cfg (feature = "app-titlesequence-types")] pub use titlesequence :: { TitleSequence_PedestalData , ITitleSequence_PedestalData , TitleSequence_ProcTitleCall , ITitleSequence_ProcTitleCall , TitleSequence_ProcTitleCall_TitleCallData , ITitleSequence_ProcTitleCall_TitleCallData , TitleSequence_Label , TitleSequence , ITitleSequence }
+ # [cfg (feature = "app-titlesequence-types")] pub use titlesequence :: { TitleSequence_PedestalData , ITitleSequence_PedestalData , TitleSequence_ProcTitleCall_TitleCallData , ITitleSequence_ProcTitleCall_TitleCallData , TitleSequence , ITitleSequence , TitleSequence_ProcTitleCall , ITitleSequence_ProcTitleCall , TitleSequence_Label }
  ;
- # [cfg (feature = "app-titlesequence")] pub use titlesequence :: { ITitleSequence_PedestalDataMethods , ITitleSequence_ProcTitleCallMethods , ITitleSequence_ProcTitleCall_TitleCallDataMethods , ITitleSequenceMethods }
+ # [cfg (feature = "app-titlesequence")] pub use titlesequence :: { ITitleSequence_PedestalDataMethods , ITitleSequence_ProcTitleCall_TitleCallDataMethods , ITitleSequenceMethods , ITitleSequence_ProcTitleCallMethods }
  ;
  # [cfg (any (feature = "app-torchinspector-types"))] pub mod torchinspector ;
  # [cfg (feature = "app-torchinspector-types")] pub use torchinspector :: { TorchInspector , ITorchInspector }
@@ -8915,9 +8915,9 @@
  # [cfg (feature = "app-traderoot")] pub use traderoot :: { ITradeRootMethods }
  ;
  # [cfg (any (feature = "app-transformanimation-types"))] pub mod transformanimation ;
- # [cfg (feature = "app-transformanimation-types")] pub use transformanimation :: { TransformAnimation_Kinds , TransformAnimation_Animator , ITransformAnimation_Animator , TransformAnimation_Animator_Node , ITransformAnimation_Animator_Node , TransformAnimation , ITransformAnimation , TransformAnimation_Actions , TransformAnimation_Animation , ITransformAnimation_Animation }
+ # [cfg (feature = "app-transformanimation-types")] pub use transformanimation :: { TransformAnimation , ITransformAnimation , TransformAnimation_Animator , ITransformAnimation_Animator , TransformAnimation_Kinds , TransformAnimation_Animator_Node , ITransformAnimation_Animator_Node , TransformAnimation_Actions , TransformAnimation_Animation , ITransformAnimation_Animation }
  ;
- # [cfg (feature = "app-transformanimation")] pub use transformanimation :: { ITransformAnimation_AnimatorMethods , ITransformAnimation_Animator_NodeMethods , ITransformAnimationMethods , ITransformAnimation_AnimationMethods }
+ # [cfg (feature = "app-transformanimation")] pub use transformanimation :: { ITransformAnimationMethods , ITransformAnimation_AnimatorMethods , ITransformAnimation_Animator_NodeMethods , ITransformAnimation_AnimationMethods }
  ;
  # [cfg (any (feature = "app-transformbillboard-types"))] pub mod transformbillboard ;
  # [cfg (feature = "app-transformbillboard-types")] pub use transformbillboard :: { TransformBillboard_Axis , TransformBillboard , ITransformBillboard }
@@ -8935,14 +8935,14 @@
  # [cfg (feature = "app-tresourcehandle_1")] pub use tresourcehandle_1 :: { ITResourceHandle_1Methods }
  ;
  # [cfg (any (feature = "app-triggeredskilllistsetter-types"))] pub mod triggeredskilllistsetter ;
- # [cfg (feature = "app-triggeredskilllistsetter-types")] pub use triggeredskilllistsetter :: { TriggeredSkillListSetter_ShowSkill , ITriggeredSkillListSetter_ShowSkill , TriggeredSkillListSetter , ITriggeredSkillListSetter }
+ # [cfg (feature = "app-triggeredskilllistsetter-types")] pub use triggeredskilllistsetter :: { TriggeredSkillListSetter , ITriggeredSkillListSetter , TriggeredSkillListSetter_ShowSkill , ITriggeredSkillListSetter_ShowSkill }
  ;
- # [cfg (feature = "app-triggeredskilllistsetter")] pub use triggeredskilllistsetter :: { ITriggeredSkillListSetter_ShowSkillMethods , ITriggeredSkillListSetterMethods }
+ # [cfg (feature = "app-triggeredskilllistsetter")] pub use triggeredskilllistsetter :: { ITriggeredSkillListSetterMethods , ITriggeredSkillListSetter_ShowSkillMethods }
  ;
  # [cfg (any (feature = "app-trooplistmenu-types"))] pub mod trooplistmenu ;
- # [cfg (feature = "app-trooplistmenu-types")] pub use trooplistmenu :: { TroopListMenu , ITroopListMenu , TroopListMenu_ConfirmBattleSequence , ITroopListMenu_ConfirmBattleSequence , TroopListMenu_TroopListMenuItem , ITroopListMenu_TroopListMenuItem }
+ # [cfg (feature = "app-trooplistmenu-types")] pub use trooplistmenu :: { TroopListMenu_TroopListMenuItem , ITroopListMenu_TroopListMenuItem , TroopListMenu_ConfirmBattleSequence , ITroopListMenu_ConfirmBattleSequence , TroopListMenu , ITroopListMenu }
  ;
- # [cfg (feature = "app-trooplistmenu")] pub use trooplistmenu :: { ITroopListMenuMethods , ITroopListMenu_ConfirmBattleSequenceMethods , ITroopListMenu_TroopListMenuItemMethods }
+ # [cfg (feature = "app-trooplistmenu")] pub use trooplistmenu :: { ITroopListMenu_TroopListMenuItemMethods , ITroopListMenu_ConfirmBattleSequenceMethods , ITroopListMenuMethods }
  ;
  # [cfg (any (feature = "app-trooplistmenucontent-types"))] pub mod trooplistmenucontent ;
  # [cfg (feature = "app-trooplistmenucontent-types")] pub use trooplistmenucontent :: { TroopListMenuContent , ITroopListMenuContent }
@@ -8960,9 +8960,9 @@
  # [cfg (feature = "app-trooplistroot")] pub use trooplistroot :: { ITroopListRootMethods }
  ;
  # [cfg (any (feature = "app-trooplistsortmenu-types"))] pub mod trooplistsortmenu ;
- # [cfg (feature = "app-trooplistsortmenu-types")] pub use trooplistsortmenu :: { TroopListSortMenu_SortOrder , TroopListSortMenu_SortTitle , ITroopListSortMenu_SortTitle , TroopListSortMenu_SortType , TroopListSortMenu , ITroopListSortMenu }
+ # [cfg (feature = "app-trooplistsortmenu-types")] pub use trooplistsortmenu :: { TroopListSortMenu , ITroopListSortMenu , TroopListSortMenu_SortType , TroopListSortMenu_SortOrder , TroopListSortMenu_SortTitle , ITroopListSortMenu_SortTitle }
  ;
- # [cfg (feature = "app-trooplistsortmenu")] pub use trooplistsortmenu :: { ITroopListSortMenu_SortTitleMethods , ITroopListSortMenuMethods }
+ # [cfg (feature = "app-trooplistsortmenu")] pub use trooplistsortmenu :: { ITroopListSortMenuMethods , ITroopListSortMenu_SortTitleMethods }
  ;
  # [cfg (any (feature = "app-turnafterinspector-types"))] pub mod turnafterinspector ;
  # [cfg (feature = "app-turnafterinspector-types")] pub use turnafterinspector :: { TurnAfterInspector , ITurnAfterInspector }
@@ -8980,7 +8980,7 @@
  # [cfg (feature = "app-turncommoninspector")] pub use turncommoninspector :: { ITurnCommonInspectorMethods }
  ;
  # [cfg (any (feature = "app-turneffect-types"))] pub mod turneffect ;
- # [cfg (feature = "app-turneffect-types")] pub use turneffect :: { TurnEffect , ITurnEffect , TurnEffect_Label }
+ # [cfg (feature = "app-turneffect-types")] pub use turneffect :: { TurnEffect_Label , TurnEffect , ITurnEffect }
  ;
  # [cfg (feature = "app-turneffect")] pub use turneffect :: { ITurnEffectMethods }
  ;
@@ -8995,12 +8995,12 @@
  # [cfg (feature = "app-turninspector")] pub use turninspector :: { ITurnInspectorMethods }
  ;
  # [cfg (any (feature = "app-tuto-types"))] pub mod tuto ;
- # [cfg (feature = "app-tuto-types")] pub use tuto :: { Tuto , ITuto , Tuto_ProcDescTutorial , ITuto_ProcDescTutorial }
+ # [cfg (feature = "app-tuto-types")] pub use tuto :: { Tuto_ProcDescTutorial , ITuto_ProcDescTutorial , Tuto , ITuto }
  ;
- # [cfg (feature = "app-tuto")] pub use tuto :: { ITutoMethods , ITuto_ProcDescTutorialMethods }
+ # [cfg (feature = "app-tuto")] pub use tuto :: { ITuto_ProcDescTutorialMethods , ITutoMethods }
  ;
  # [cfg (any (feature = "app-tutorialdata-types"))] pub mod tutorialdata ;
- # [cfg (feature = "app-tutorialdata-types")] pub use tutorialdata :: { TutorialData , ITutorialData , TutorialData_Types , TutorialData_SSTypes , TutorialData_Flags , TutorialData_Notices }
+ # [cfg (feature = "app-tutorialdata-types")] pub use tutorialdata :: { TutorialData_Notices , TutorialData_Flags , TutorialData_Types , TutorialData_SSTypes , TutorialData , ITutorialData }
  ;
  # [cfg (feature = "app-tutorialdata")] pub use tutorialdata :: { ITutorialDataMethods }
  ;
@@ -9018,9 +9018,9 @@
  # [cfg (feature = "app-uicolor")] pub use uicolor :: { IUiColorMethods }
  ;
  # [cfg (any (feature = "app-unit-types"))] pub mod unit ;
- # [cfg (feature = "app-unit-types")] pub use unit :: { Unit_ChartItemsForSelectedWeapon , IUnit_ChartItemsForSelectedWeapon , Unit_GuardType , Unit_ChangeValue , Unit_ItemsForSelectedWeapon , IUnit_ItemsForSelectedWeapon , Unit_StatusField , IUnit_StatusField , Unit_DisposItemsForSelectedWeapon , IUnit_DisposItemsForSelectedWeapon , Unit_Status , Unit_CalcInfo , IUnit_CalcInfo , Unit_FuncUnitItem , IUnit_FuncUnitItem , Unit , IUnit }
+ # [cfg (feature = "app-unit-types")] pub use unit :: { Unit_DisposItemsForSelectedWeapon , IUnit_DisposItemsForSelectedWeapon , Unit_ChangeValue , Unit_StatusField , IUnit_StatusField , Unit_ItemsForSelectedWeapon , IUnit_ItemsForSelectedWeapon , Unit_GuardType , Unit_Status , Unit_ChartItemsForSelectedWeapon , IUnit_ChartItemsForSelectedWeapon , Unit , IUnit , Unit_CalcInfo , IUnit_CalcInfo , Unit_FuncUnitItem , IUnit_FuncUnitItem }
  ;
- # [cfg (feature = "app-unit")] pub use unit :: { IUnit_ChartItemsForSelectedWeaponMethods , IUnit_ItemsForSelectedWeaponMethods , IUnit_StatusFieldMethods , IUnit_DisposItemsForSelectedWeaponMethods , IUnit_CalcInfoMethods , IUnit_FuncUnitItemMethods , IUnitMethods }
+ # [cfg (feature = "app-unit")] pub use unit :: { IUnit_DisposItemsForSelectedWeaponMethods , IUnit_StatusFieldMethods , IUnit_ItemsForSelectedWeaponMethods , IUnit_ChartItemsForSelectedWeaponMethods , IUnitMethods , IUnit_CalcInfoMethods , IUnit_FuncUnitItemMethods }
  ;
  # [cfg (any (feature = "app-unitaccessory-types"))] pub mod unitaccessory ;
  # [cfg (feature = "app-unitaccessory-types")] pub use unitaccessory :: { UnitAccessory , IUnitAccessory }
@@ -9033,7 +9033,7 @@
  # [cfg (feature = "app-unitaccessorylist")] pub use unitaccessorylist :: { IUnitAccessoryListMethods }
  ;
  # [cfg (any (feature = "app-unitactor-types"))] pub mod unitactor ;
- # [cfg (feature = "app-unitactor-types")] pub use unitactor :: { UnitActor_ViewMode , UnitActor_StatusField , IUnitActor_StatusField , UnitActor_Status , UnitActor , IUnitActor }
+ # [cfg (feature = "app-unitactor-types")] pub use unitactor :: { UnitActor_StatusField , IUnitActor_StatusField , UnitActor_ViewMode , UnitActor , IUnitActor , UnitActor_Status }
  ;
  # [cfg (feature = "app-unitactor")] pub use unitactor :: { IUnitActor_StatusFieldMethods , IUnitActorMethods }
  ;
@@ -9043,9 +9043,9 @@
  # [cfg (feature = "app-unitactors")] pub use unitactors :: { IUnitActorsMethods }
  ;
  # [cfg (any (feature = "app-unitai-types"))] pub mod unitai ;
- # [cfg (feature = "app-unitai-types")] pub use unitai :: { UnitAI_FlagField , IUnitAI_FlagField , UnitAI_RandomFlag , UnitAI_MoveLimitRange , IUnitAI_MoveLimitRange , UnitAI , IUnitAI , UnitAI_VersusTypes , UnitAI_MoveLimitRange_LimitType , UnitAI_RandomFlagField , IUnitAI_RandomFlagField , UnitAI_BattleRate , UnitAI_Flag }
+ # [cfg (feature = "app-unitai-types")] pub use unitai :: { UnitAI_RandomFlag , UnitAI_MoveLimitRange_LimitType , UnitAI_VersusTypes , UnitAI_Flag , UnitAI_BattleRate , UnitAI_FlagField , IUnitAI_FlagField , UnitAI_RandomFlagField , IUnitAI_RandomFlagField , UnitAI_MoveLimitRange , IUnitAI_MoveLimitRange , UnitAI , IUnitAI }
  ;
- # [cfg (feature = "app-unitai")] pub use unitai :: { IUnitAI_FlagFieldMethods , IUnitAI_MoveLimitRangeMethods , IUnitAIMethods , IUnitAI_RandomFlagFieldMethods }
+ # [cfg (feature = "app-unitai")] pub use unitai :: { IUnitAI_FlagFieldMethods , IUnitAI_RandomFlagFieldMethods , IUnitAI_MoveLimitRangeMethods , IUnitAIMethods }
  ;
  # [cfg (any (feature = "app-unitanim-types"))] pub mod unitanim ;
  # [cfg (feature = "app-unitanim-types")] pub use unitanim :: { UnitAnim_Types , UnitAnim , IUnitAnim , UnitAnim_Times }
@@ -9058,9 +9058,9 @@
  # [cfg (feature = "app-unitbasecapability")] pub use unitbasecapability :: { IUnitBaseCapabilityMethods }
  ;
  # [cfg (any (feature = "app-unitcalculator-types"))] pub mod unitcalculator ;
- # [cfg (feature = "app-unitcalculator-types")] pub use unitcalculator :: { UnitCalculator_HealCommand , IUnitCalculator_HealCommand , UnitCalculator_ExpDanceCountCommand , IUnitCalculator_ExpDanceCountCommand , UnitCalculator_RangeFriendCountCommand , IUnitCalculator_RangeFriendCountCommand , UnitCalculator_PickupItemCommand , IUnitCalculator_PickupItemCommand , UnitCalculator_HitCommand , IUnitCalculator_HitCommand , UnitCalculator_BattleParamCommand , IUnitCalculator_BattleParamCommand , UnitCalculator_AttackCountCommand , IUnitCalculator_AttackCountCommand , UnitCalculator_JobRankCommand , IUnitCalculator_JobRankCommand , UnitCalculator_BattleChainAttackCountCommand , IUnitCalculator_BattleChainAttackCountCommand , UnitCalculator_GainGoldCommand , IUnitCalculator_GainGoldCommand , UnitCalculator_ReciveAttackCountCommand , IUnitCalculator_ReciveAttackCountCommand , UnitCalculator_SimplePowerCommand , IUnitCalculator_SimplePowerCommand , UnitCalculator_BattleLastTargetCommand , IUnitCalculator_BattleLastTargetCommand , UnitCalculator_SecureCommand , IUnitCalculator_SecureCommand , UnitCalculator_BattleSideCommand , IUnitCalculator_BattleSideCommand , UnitCalculator_BattleSceneResultEfficacyCommand , IUnitCalculator_BattleSceneResultEfficacyCommand , UnitCalculator_ContinuousCommand , IUnitCalculator_ContinuousCommand , UnitCalculator_WeaponLevelCommand , IUnitCalculator_WeaponLevelCommand , UnitCalculator_GodSkillCorrectCommand , IUnitCalculator_GodSkillCorrectCommand , UnitCalculator_TotalLevelCommand , IUnitCalculator_TotalLevelCommand , UnitCalculator_TerrainAvoidCommand , IUnitCalculator_TerrainAvoidCommand , UnitCalculator_MapUnitCountCommand_Candidates , UnitCalculator_UnitIdentCommand , IUnitCalculator_UnitIdentCommand , UnitCalculator_TotalResultCommand , IUnitCalculator_TotalResultCommand , UnitCalculator_TotalDamageCommand , IUnitCalculator_TotalDamageCommand , UnitCalculator_BattlePinchingCommand , IUnitCalculator_BattlePinchingCommand , UnitCalculator_UnitPersonCommand , IUnitCalculator_UnitPersonCommand , UnitCalculator_EngageCountCommand , IUnitCalculator_EngageCountCommand , UnitCalculator_SupportAvoidCommand , IUnitCalculator_SupportAvoidCommand , UnitCalculator_ExpBattleGiveCountCommand , IUnitCalculator_ExpBattleGiveCountCommand , UnitCalculator_LinkTechCommand , IUnitCalculator_LinkTechCommand , UnitCalculator_UnitJobCommand , IUnitCalculator_UnitJobCommand , UnitCalculator_CriticalCommand , IUnitCalculator_CriticalCommand , UnitCalculator_DamageCommand , IUnitCalculator_DamageCommand , UnitCalculator_FixedEnemyCountCommand , IUnitCalculator_FixedEnemyCountCommand , UnitCalculator_DropItemRatioCommand , IUnitCalculator_DropItemRatioCommand , UnitCalculator_DefenseCommand , IUnitCalculator_DefenseCommand , UnitCalculator_PosLowZCommand , IUnitCalculator_PosLowZCommand , UnitCalculator_GenderCommand , IUnitCalculator_GenderCommand , UnitCalculator_LevelCommand , IUnitCalculator_LevelCommand , UnitCalculator_LuukCommand , IUnitCalculator_LuukCommand , UnitCalculator_ExpInterferenceCountCommand , IUnitCalculator_ExpInterferenceCountCommand , UnitCalculator_MdefCommand , IUnitCalculator_MdefCommand , UnitCalculator_BattleSceneResultHitCommand , IUnitCalculator_BattleSceneResultHitCommand , UnitCalculator_OverlapCanRemoveCommand , IUnitCalculator_OverlapCanRemoveCommand , UnitCalculator_ForceCommand , IUnitCalculator_ForceCommand , UnitCalculator_BattleEscortCommand , IUnitCalculator_BattleEscortCommand , UnitCalculator_TotalOrderCommand , IUnitCalculator_TotalOrderCommand , UnitCalculator_WeaponAttributeCommand , IUnitCalculator_WeaponAttributeCommand , UnitCalculator_WeaponAttackCommand , IUnitCalculator_WeaponAttackCommand , UnitCalculator_MagicCommand , IUnitCalculator_MagicCommand , UnitCalculator_ExpCommand , IUnitCalculator_ExpCommand , UnitCalculator_BlowDistanceCommand , IUnitCalculator_BlowDistanceCommand , UnitCalculator_RodTypeCommand , IUnitCalculator_RodTypeCommand , UnitCalculator_InternalLevelCommand , IUnitCalculator_InternalLevelCommand , UnitCalculator_BattleSceneResultBreakCommand , IUnitCalculator_BattleSceneResultBreakCommand , UnitCalculator_UnitAroundCountdCommand , IUnitCalculator_UnitAroundCountdCommand , UnitCalculator_MoveTypeCommand , IUnitCalculator_MoveTypeCommand , UnitCalculator_BattleChainGuardCountCommand , IUnitCalculator_BattleChainGuardCountCommand , UnitCalculator_WeaponLevelBaseCommand , IUnitCalculator_WeaponLevelBaseCommand , UnitCalculator_BattleSceneResultCommand , IUnitCalculator_BattleSceneResultCommand , UnitCalculator_StrCommand , IUnitCalculator_StrCommand , UnitCalculator_TemporaryCommand , IUnitCalculator_TemporaryCommand , UnitCalculator_SimpleHitCommand , IUnitCalculator_SimpleHitCommand , UnitCalculator_ExpDestroyCountCommand , IUnitCalculator_ExpDestroyCountCommand , UnitCalculator_UnitDefenseCommand , IUnitCalculator_UnitDefenseCommand , UnitCalculator_ProbabilitySkillCommand , IUnitCalculator_ProbabilitySkillCommand , UnitCalculator_LinkQuickCommand , IUnitCalculator_LinkQuickCommand , UnitCalculator_TerrainDefenseCommand , IUnitCalculator_TerrainDefenseCommand , UnitCalculator_BattleDeadCommand , IUnitCalculator_BattleDeadCommand , UnitCalculator_MapPhaseCommand , IUnitCalculator_MapPhaseCommand , UnitCalculator_BattleReviveCommand , IUnitCalculator_BattleReviveCommand , UnitCalculator_MoveDistanceCommand , IUnitCalculator_MoveDistanceCommand , UnitCalculator_RelianceAroundTotalCommand , IUnitCalculator_RelianceAroundTotalCommand , UnitCalculator_AroundGenderCountCommand , IUnitCalculator_AroundGenderCountCommand , UnitCalculator_LinkMagicCommand , IUnitCalculator_LinkMagicCommand , UnitCalculator_WeaponInteractCommand , IUnitCalculator_WeaponInteractCommand , UnitCalculator_MaxHPCommand , IUnitCalculator_MaxHPCommand , UnitCalculator_MapUnitCountCommand , IUnitCalculator_MapUnitCountCommand , UnitCalculator_QuickCommand , IUnitCalculator_QuickCommand , UnitCalculator_EngageCountLimitCommand , IUnitCalculator_EngageCountLimitCommand , UnitCalculator_AttackCommand , IUnitCalculator_AttackCommand , UnitCalculator_RodExpCommand , IUnitCalculator_RodExpCommand , UnitCalculator_BattleSceneResultMissCommand , IUnitCalculator_BattleSceneResultMissCommand , UnitCalculator , IUnitCalculator , UnitCalculator_HPCommand , IUnitCalculator_HPCommand , UnitCalculator_UnitAttackCommand , IUnitCalculator_UnitAttackCommand , UnitCalculator_BattleChainAttackDefeatCommand , IUnitCalculator_BattleChainAttackDefeatCommand , UnitCalculator_LinkMdefCommand , IUnitCalculator_LinkMdefCommand , UnitCalculator_SupportCriticalCommand , IUnitCalculator_SupportCriticalCommand , UnitCalculator_ActionCountCommand , IUnitCalculator_ActionCountCommand , UnitCalculator_UnitSkillCommand , IUnitCalculator_UnitSkillCommand , UnitCalculator_LinkGodCommand , IUnitCalculator_LinkGodCommand , UnitCalculator_SimpleCriticalCommand , IUnitCalculator_SimpleCriticalCommand , UnitCalculator_SupportHitCommand , IUnitCalculator_SupportHitCommand , UnitCalculator_GodGoodWeaponCommand , IUnitCalculator_GodGoodWeaponCommand , UnitCalculator_LinkStrCommand , IUnitCalculator_LinkStrCommand , UnitCalculator_WeaponSecureCommand , IUnitCalculator_WeaponSecureCommand , UnitCalculator_AttackAttributeCommand , IUnitCalculator_AttackAttributeCommand , UnitCalculator_ExpRodCountCommand , IUnitCalculator_ExpRodCountCommand , UnitCalculator_IBattleSceneResultCommand , IUnitCalculator_IBattleSceneResultCommand , UnitCalculator_PosLowXCommand , IUnitCalculator_PosLowXCommand , UnitCalculator_WeaponEfficacyCommand , IUnitCalculator_WeaponEfficacyCommand , UnitCalculator_LinkDefCommand , IUnitCalculator_LinkDefCommand , UnitCalculator_SupportSecureCommand , IUnitCalculator_SupportSecureCommand , UnitCalculator_TotalActionCommand , IUnitCalculator_TotalActionCommand , UnitCalculator_RangeGenderCountCommand , IUnitCalculator_RangeGenderCountCommand , UnitCalculator_TotalAttackCommand , IUnitCalculator_TotalAttackCommand , UnitCalculator_JobInternalLevelCommand , IUnitCalculator_JobInternalLevelCommand , UnitCalculator_BlowRatioCommand , IUnitCalculator_BlowRatioCommand , UnitCalculator_BattleStyleCommand , IUnitCalculator_BattleStyleCommand , UnitCalculator_WeaponAvoidCommand , IUnitCalculator_WeaponAvoidCommand , UnitCalculator_WeaponWeightCommand , IUnitCalculator_WeaponWeightCommand , UnitCalculator_WeaponCriticalCommand , IUnitCalculator_WeaponCriticalCommand , UnitCalculator_ProbabilityGodSkillCommand , IUnitCalculator_ProbabilityGodSkillCommand , UnitCalculator_BattleCountCommand , IUnitCalculator_BattleCountCommand , UnitCalculator_GainExpCommand , IUnitCalculator_GainExpCommand , UnitCalculator_ProbabilityCommand , IUnitCalculator_ProbabilityCommand , UnitCalculator_LinkLuukCommand , IUnitCalculator_LinkLuukCommand , UnitCalculator_WeaponExpendCommand , IUnitCalculator_WeaponExpendCommand , UnitCalculator_SkillCorrectCommand , IUnitCalculator_SkillCorrectCommand , UnitCalculator_BattleTimesCommand , IUnitCalculator_BattleTimesCommand , UnitCalculator_AvoidCommand , IUnitCalculator_AvoidCommand , UnitCalculator_PosZCommand , IUnitCalculator_PosZCommand , UnitCalculator_PhysCommand , IUnitCalculator_PhysCommand , UnitCalculator_BattleDistanceCommand , IUnitCalculator_BattleDistanceCommand , UnitCalculator_WeaponEnduranceCommand , IUnitCalculator_WeaponEnduranceCommand , UnitCalculator_RangeEnemyCountCommand , IUnitCalculator_RangeEnemyCountCommand , UnitCalculator_PosXCommand , IUnitCalculator_PosXCommand , UnitCalculator_SupportLevelCommand , IUnitCalculator_SupportLevelCommand , UnitCalculator_TechCommand , IUnitCalculator_TechCommand , UnitCalculator_BattleAliveCommand , IUnitCalculator_BattleAliveCommand , UnitCalculator_LinkPhysCommand , IUnitCalculator_LinkPhysCommand , UnitCalculator_BattleArenaCommand , IUnitCalculator_BattleArenaCommand , UnitCalculator_RangeUnitCountCommand , IUnitCalculator_RangeUnitCountCommand , UnitCalculator_DefCommand , IUnitCalculator_DefCommand , UnitCalculator_GodLevelCommand , IUnitCalculator_GodLevelCommand , UnitCalculator_GodEngagingCommand , IUnitCalculator_GodEngagingCommand , UnitCalculator_FixedFriendCountCommand , IUnitCalculator_FixedFriendCountCommand , UnitCalculator_WeaponKindCommand , IUnitCalculator_WeaponKindCommand , UnitCalculator_UnitAttributeCommand , IUnitCalculator_UnitAttributeCommand , UnitCalculator_BattleSceneResultCriticalCommand , IUnitCalculator_BattleSceneResultCriticalCommand , UnitCalculator_UnitGodCommand , IUnitCalculator_UnitGodCommand , UnitCalculator_WeaponHitCommand , IUnitCalculator_WeaponHitCommand }
+ # [cfg (feature = "app-unitcalculator-types")] pub use unitcalculator :: { UnitCalculator_PosZCommand , IUnitCalculator_PosZCommand , UnitCalculator_UnitGodCommand , IUnitCalculator_UnitGodCommand , UnitCalculator_MagicCommand , IUnitCalculator_MagicCommand , UnitCalculator_LinkGodCommand , IUnitCalculator_LinkGodCommand , UnitCalculator_HPCommand , IUnitCalculator_HPCommand , UnitCalculator_EngageCountCommand , IUnitCalculator_EngageCountCommand , UnitCalculator_BattleTimesCommand , IUnitCalculator_BattleTimesCommand , UnitCalculator_LinkStrCommand , IUnitCalculator_LinkStrCommand , UnitCalculator_TotalOrderCommand , IUnitCalculator_TotalOrderCommand , UnitCalculator_TerrainDefenseCommand , IUnitCalculator_TerrainDefenseCommand , UnitCalculator_SupportSecureCommand , IUnitCalculator_SupportSecureCommand , UnitCalculator_JobRankCommand , IUnitCalculator_JobRankCommand , UnitCalculator_ExpBattleGiveCountCommand , IUnitCalculator_ExpBattleGiveCountCommand , UnitCalculator_BattleSceneResultCommand , IUnitCalculator_BattleSceneResultCommand , UnitCalculator_ForceCommand , IUnitCalculator_ForceCommand , UnitCalculator_AvoidCommand , IUnitCalculator_AvoidCommand , UnitCalculator_WeaponInteractCommand , IUnitCalculator_WeaponInteractCommand , UnitCalculator_MapUnitCountCommand , IUnitCalculator_MapUnitCountCommand , UnitCalculator_TechCommand , IUnitCalculator_TechCommand , UnitCalculator_BattleArenaCommand , IUnitCalculator_BattleArenaCommand , UnitCalculator_BattlePinchingCommand , IUnitCalculator_BattlePinchingCommand , UnitCalculator_ProbabilityCommand , IUnitCalculator_ProbabilityCommand , UnitCalculator_AroundGenderCountCommand , IUnitCalculator_AroundGenderCountCommand , UnitCalculator_WeaponWeightCommand , IUnitCalculator_WeaponWeightCommand , UnitCalculator_WeaponAttackCommand , IUnitCalculator_WeaponAttackCommand , UnitCalculator_DefCommand , IUnitCalculator_DefCommand , UnitCalculator_ExpInterferenceCountCommand , IUnitCalculator_ExpInterferenceCountCommand , UnitCalculator_RelianceAroundTotalCommand , IUnitCalculator_RelianceAroundTotalCommand , UnitCalculator , IUnitCalculator , UnitCalculator_AttackCountCommand , IUnitCalculator_AttackCountCommand , UnitCalculator_GodGoodWeaponCommand , IUnitCalculator_GodGoodWeaponCommand , UnitCalculator_AttackAttributeCommand , IUnitCalculator_AttackAttributeCommand , UnitCalculator_ExpRodCountCommand , IUnitCalculator_ExpRodCountCommand , UnitCalculator_MapUnitCountCommand_Candidates , UnitCalculator_ReciveAttackCountCommand , IUnitCalculator_ReciveAttackCountCommand , UnitCalculator_FixedEnemyCountCommand , IUnitCalculator_FixedEnemyCountCommand , UnitCalculator_DefenseCommand , IUnitCalculator_DefenseCommand , UnitCalculator_GodEngagingCommand , IUnitCalculator_GodEngagingCommand , UnitCalculator_SecureCommand , IUnitCalculator_SecureCommand , UnitCalculator_TotalActionCommand , IUnitCalculator_TotalActionCommand , UnitCalculator_WeaponEnduranceCommand , IUnitCalculator_WeaponEnduranceCommand , UnitCalculator_BattleSceneResultCriticalCommand , IUnitCalculator_BattleSceneResultCriticalCommand , UnitCalculator_UnitPersonCommand , IUnitCalculator_UnitPersonCommand , UnitCalculator_BattleSceneResultHitCommand , IUnitCalculator_BattleSceneResultHitCommand , UnitCalculator_TotalDamageCommand , IUnitCalculator_TotalDamageCommand , UnitCalculator_BattleChainAttackCountCommand , IUnitCalculator_BattleChainAttackCountCommand , UnitCalculator_BattleSideCommand , IUnitCalculator_BattleSideCommand , UnitCalculator_ExpDestroyCountCommand , IUnitCalculator_ExpDestroyCountCommand , UnitCalculator_WeaponCriticalCommand , IUnitCalculator_WeaponCriticalCommand , UnitCalculator_RangeEnemyCountCommand , IUnitCalculator_RangeEnemyCountCommand , UnitCalculator_TotalAttackCommand , IUnitCalculator_TotalAttackCommand , UnitCalculator_PosLowZCommand , IUnitCalculator_PosLowZCommand , UnitCalculator_RodTypeCommand , IUnitCalculator_RodTypeCommand , UnitCalculator_GodLevelCommand , IUnitCalculator_GodLevelCommand , UnitCalculator_LinkQuickCommand , IUnitCalculator_LinkQuickCommand , UnitCalculator_StrCommand , IUnitCalculator_StrCommand , UnitCalculator_LuukCommand , IUnitCalculator_LuukCommand , UnitCalculator_BattleDeadCommand , IUnitCalculator_BattleDeadCommand , UnitCalculator_TerrainAvoidCommand , IUnitCalculator_TerrainAvoidCommand , UnitCalculator_SupportLevelCommand , IUnitCalculator_SupportLevelCommand , UnitCalculator_LinkMdefCommand , IUnitCalculator_LinkMdefCommand , UnitCalculator_TotalLevelCommand , IUnitCalculator_TotalLevelCommand , UnitCalculator_DropItemRatioCommand , IUnitCalculator_DropItemRatioCommand , UnitCalculator_EngageCountLimitCommand , IUnitCalculator_EngageCountLimitCommand , UnitCalculator_WeaponKindCommand , IUnitCalculator_WeaponKindCommand , UnitCalculator_GainGoldCommand , IUnitCalculator_GainGoldCommand , UnitCalculator_BattleLastTargetCommand , IUnitCalculator_BattleLastTargetCommand , UnitCalculator_BattleSceneResultBreakCommand , IUnitCalculator_BattleSceneResultBreakCommand , UnitCalculator_PhysCommand , IUnitCalculator_PhysCommand , UnitCalculator_WeaponAttributeCommand , IUnitCalculator_WeaponAttributeCommand , UnitCalculator_BattleStyleCommand , IUnitCalculator_BattleStyleCommand , UnitCalculator_MaxHPCommand , IUnitCalculator_MaxHPCommand , UnitCalculator_IBattleSceneResultCommand , IUnitCalculator_IBattleSceneResultCommand , UnitCalculator_BattleDistanceCommand , IUnitCalculator_BattleDistanceCommand , UnitCalculator_ExpDanceCountCommand , IUnitCalculator_ExpDanceCountCommand , UnitCalculator_FixedFriendCountCommand , IUnitCalculator_FixedFriendCountCommand , UnitCalculator_ProbabilitySkillCommand , IUnitCalculator_ProbabilitySkillCommand , UnitCalculator_MoveDistanceCommand , IUnitCalculator_MoveDistanceCommand , UnitCalculator_ContinuousCommand , IUnitCalculator_ContinuousCommand , UnitCalculator_BlowDistanceCommand , IUnitCalculator_BlowDistanceCommand , UnitCalculator_UnitAttackCommand , IUnitCalculator_UnitAttackCommand , UnitCalculator_LevelCommand , IUnitCalculator_LevelCommand , UnitCalculator_SimpleHitCommand , IUnitCalculator_SimpleHitCommand , UnitCalculator_DamageCommand , IUnitCalculator_DamageCommand , UnitCalculator_WeaponSecureCommand , IUnitCalculator_WeaponSecureCommand , UnitCalculator_TemporaryCommand , IUnitCalculator_TemporaryCommand , UnitCalculator_BattleCountCommand , IUnitCalculator_BattleCountCommand , UnitCalculator_LinkTechCommand , IUnitCalculator_LinkTechCommand , UnitCalculator_MdefCommand , IUnitCalculator_MdefCommand , UnitCalculator_AttackCommand , IUnitCalculator_AttackCommand , UnitCalculator_CriticalCommand , IUnitCalculator_CriticalCommand , UnitCalculator_ActionCountCommand , IUnitCalculator_ActionCountCommand , UnitCalculator_PosLowXCommand , IUnitCalculator_PosLowXCommand , UnitCalculator_UnitDefenseCommand , IUnitCalculator_UnitDefenseCommand , UnitCalculator_MoveTypeCommand , IUnitCalculator_MoveTypeCommand , UnitCalculator_GodSkillCorrectCommand , IUnitCalculator_GodSkillCorrectCommand , UnitCalculator_WeaponExpendCommand , IUnitCalculator_WeaponExpendCommand , UnitCalculator_SimpleCriticalCommand , IUnitCalculator_SimpleCriticalCommand , UnitCalculator_LinkPhysCommand , IUnitCalculator_LinkPhysCommand , UnitCalculator_ExpCommand , IUnitCalculator_ExpCommand , UnitCalculator_HitCommand , IUnitCalculator_HitCommand , UnitCalculator_UnitIdentCommand , IUnitCalculator_UnitIdentCommand , UnitCalculator_LinkLuukCommand , IUnitCalculator_LinkLuukCommand , UnitCalculator_BlowRatioCommand , IUnitCalculator_BlowRatioCommand , UnitCalculator_UnitJobCommand , IUnitCalculator_UnitJobCommand , UnitCalculator_UnitSkillCommand , IUnitCalculator_UnitSkillCommand , UnitCalculator_SupportHitCommand , IUnitCalculator_SupportHitCommand , UnitCalculator_RangeFriendCountCommand , IUnitCalculator_RangeFriendCountCommand , UnitCalculator_WeaponEfficacyCommand , IUnitCalculator_WeaponEfficacyCommand , UnitCalculator_LinkDefCommand , IUnitCalculator_LinkDefCommand , UnitCalculator_BattleSceneResultEfficacyCommand , IUnitCalculator_BattleSceneResultEfficacyCommand , UnitCalculator_BattleChainAttackDefeatCommand , IUnitCalculator_BattleChainAttackDefeatCommand , UnitCalculator_PosXCommand , IUnitCalculator_PosXCommand , UnitCalculator_JobInternalLevelCommand , IUnitCalculator_JobInternalLevelCommand , UnitCalculator_QuickCommand , IUnitCalculator_QuickCommand , UnitCalculator_BattleEscortCommand , IUnitCalculator_BattleEscortCommand , UnitCalculator_InternalLevelCommand , IUnitCalculator_InternalLevelCommand , UnitCalculator_TotalResultCommand , IUnitCalculator_TotalResultCommand , UnitCalculator_GainExpCommand , IUnitCalculator_GainExpCommand , UnitCalculator_BattleAliveCommand , IUnitCalculator_BattleAliveCommand , UnitCalculator_WeaponLevelCommand , IUnitCalculator_WeaponLevelCommand , UnitCalculator_RangeGenderCountCommand , IUnitCalculator_RangeGenderCountCommand , UnitCalculator_BattleParamCommand , IUnitCalculator_BattleParamCommand , UnitCalculator_OverlapCanRemoveCommand , IUnitCalculator_OverlapCanRemoveCommand , UnitCalculator_MapPhaseCommand , IUnitCalculator_MapPhaseCommand , UnitCalculator_ProbabilityGodSkillCommand , IUnitCalculator_ProbabilityGodSkillCommand , UnitCalculator_PickupItemCommand , IUnitCalculator_PickupItemCommand , UnitCalculator_RangeUnitCountCommand , IUnitCalculator_RangeUnitCountCommand , UnitCalculator_HealCommand , IUnitCalculator_HealCommand , UnitCalculator_GenderCommand , IUnitCalculator_GenderCommand , UnitCalculator_BattleSceneResultMissCommand , IUnitCalculator_BattleSceneResultMissCommand , UnitCalculator_BattleChainGuardCountCommand , IUnitCalculator_BattleChainGuardCountCommand , UnitCalculator_SupportCriticalCommand , IUnitCalculator_SupportCriticalCommand , UnitCalculator_SupportAvoidCommand , IUnitCalculator_SupportAvoidCommand , UnitCalculator_WeaponHitCommand , IUnitCalculator_WeaponHitCommand , UnitCalculator_WeaponAvoidCommand , IUnitCalculator_WeaponAvoidCommand , UnitCalculator_RodExpCommand , IUnitCalculator_RodExpCommand , UnitCalculator_UnitAroundCountdCommand , IUnitCalculator_UnitAroundCountdCommand , UnitCalculator_SkillCorrectCommand , IUnitCalculator_SkillCorrectCommand , UnitCalculator_LinkMagicCommand , IUnitCalculator_LinkMagicCommand , UnitCalculator_UnitAttributeCommand , IUnitCalculator_UnitAttributeCommand , UnitCalculator_WeaponLevelBaseCommand , IUnitCalculator_WeaponLevelBaseCommand , UnitCalculator_BattleReviveCommand , IUnitCalculator_BattleReviveCommand , UnitCalculator_SimplePowerCommand , IUnitCalculator_SimplePowerCommand }
  ;
- # [cfg (feature = "app-unitcalculator")] pub use unitcalculator :: { IUnitCalculator_HealCommandMethods , IUnitCalculator_ExpDanceCountCommandMethods , IUnitCalculator_RangeFriendCountCommandMethods , IUnitCalculator_PickupItemCommandMethods , IUnitCalculator_HitCommandMethods , IUnitCalculator_BattleParamCommandMethods , IUnitCalculator_AttackCountCommandMethods , IUnitCalculator_JobRankCommandMethods , IUnitCalculator_BattleChainAttackCountCommandMethods , IUnitCalculator_GainGoldCommandMethods , IUnitCalculator_ReciveAttackCountCommandMethods , IUnitCalculator_SimplePowerCommandMethods , IUnitCalculator_BattleLastTargetCommandMethods , IUnitCalculator_SecureCommandMethods , IUnitCalculator_BattleSideCommandMethods , IUnitCalculator_BattleSceneResultEfficacyCommandMethods , IUnitCalculator_ContinuousCommandMethods , IUnitCalculator_WeaponLevelCommandMethods , IUnitCalculator_GodSkillCorrectCommandMethods , IUnitCalculator_TotalLevelCommandMethods , IUnitCalculator_TerrainAvoidCommandMethods , IUnitCalculator_UnitIdentCommandMethods , IUnitCalculator_TotalResultCommandMethods , IUnitCalculator_TotalDamageCommandMethods , IUnitCalculator_BattlePinchingCommandMethods , IUnitCalculator_UnitPersonCommandMethods , IUnitCalculator_EngageCountCommandMethods , IUnitCalculator_SupportAvoidCommandMethods , IUnitCalculator_ExpBattleGiveCountCommandMethods , IUnitCalculator_LinkTechCommandMethods , IUnitCalculator_UnitJobCommandMethods , IUnitCalculator_CriticalCommandMethods , IUnitCalculator_DamageCommandMethods , IUnitCalculator_FixedEnemyCountCommandMethods , IUnitCalculator_DropItemRatioCommandMethods , IUnitCalculator_DefenseCommandMethods , IUnitCalculator_PosLowZCommandMethods , IUnitCalculator_GenderCommandMethods , IUnitCalculator_LevelCommandMethods , IUnitCalculator_LuukCommandMethods , IUnitCalculator_ExpInterferenceCountCommandMethods , IUnitCalculator_MdefCommandMethods , IUnitCalculator_BattleSceneResultHitCommandMethods , IUnitCalculator_OverlapCanRemoveCommandMethods , IUnitCalculator_ForceCommandMethods , IUnitCalculator_BattleEscortCommandMethods , IUnitCalculator_TotalOrderCommandMethods , IUnitCalculator_WeaponAttributeCommandMethods , IUnitCalculator_WeaponAttackCommandMethods , IUnitCalculator_MagicCommandMethods , IUnitCalculator_ExpCommandMethods , IUnitCalculator_BlowDistanceCommandMethods , IUnitCalculator_RodTypeCommandMethods , IUnitCalculator_InternalLevelCommandMethods , IUnitCalculator_BattleSceneResultBreakCommandMethods , IUnitCalculator_UnitAroundCountdCommandMethods , IUnitCalculator_MoveTypeCommandMethods , IUnitCalculator_BattleChainGuardCountCommandMethods , IUnitCalculator_WeaponLevelBaseCommandMethods , IUnitCalculator_BattleSceneResultCommandMethods , IUnitCalculator_StrCommandMethods , IUnitCalculator_TemporaryCommandMethods , IUnitCalculator_SimpleHitCommandMethods , IUnitCalculator_ExpDestroyCountCommandMethods , IUnitCalculator_UnitDefenseCommandMethods , IUnitCalculator_ProbabilitySkillCommandMethods , IUnitCalculator_LinkQuickCommandMethods , IUnitCalculator_TerrainDefenseCommandMethods , IUnitCalculator_BattleDeadCommandMethods , IUnitCalculator_MapPhaseCommandMethods , IUnitCalculator_BattleReviveCommandMethods , IUnitCalculator_MoveDistanceCommandMethods , IUnitCalculator_RelianceAroundTotalCommandMethods , IUnitCalculator_AroundGenderCountCommandMethods , IUnitCalculator_LinkMagicCommandMethods , IUnitCalculator_WeaponInteractCommandMethods , IUnitCalculator_MaxHPCommandMethods , IUnitCalculator_MapUnitCountCommandMethods , IUnitCalculator_QuickCommandMethods , IUnitCalculator_EngageCountLimitCommandMethods , IUnitCalculator_AttackCommandMethods , IUnitCalculator_RodExpCommandMethods , IUnitCalculator_BattleSceneResultMissCommandMethods , IUnitCalculatorMethods , IUnitCalculator_HPCommandMethods , IUnitCalculator_UnitAttackCommandMethods , IUnitCalculator_BattleChainAttackDefeatCommandMethods , IUnitCalculator_LinkMdefCommandMethods , IUnitCalculator_SupportCriticalCommandMethods , IUnitCalculator_ActionCountCommandMethods , IUnitCalculator_UnitSkillCommandMethods , IUnitCalculator_LinkGodCommandMethods , IUnitCalculator_SimpleCriticalCommandMethods , IUnitCalculator_SupportHitCommandMethods , IUnitCalculator_GodGoodWeaponCommandMethods , IUnitCalculator_LinkStrCommandMethods , IUnitCalculator_WeaponSecureCommandMethods , IUnitCalculator_AttackAttributeCommandMethods , IUnitCalculator_ExpRodCountCommandMethods , IUnitCalculator_IBattleSceneResultCommandMethods , IUnitCalculator_PosLowXCommandMethods , IUnitCalculator_WeaponEfficacyCommandMethods , IUnitCalculator_LinkDefCommandMethods , IUnitCalculator_SupportSecureCommandMethods , IUnitCalculator_TotalActionCommandMethods , IUnitCalculator_RangeGenderCountCommandMethods , IUnitCalculator_TotalAttackCommandMethods , IUnitCalculator_JobInternalLevelCommandMethods , IUnitCalculator_BlowRatioCommandMethods , IUnitCalculator_BattleStyleCommandMethods , IUnitCalculator_WeaponAvoidCommandMethods , IUnitCalculator_WeaponWeightCommandMethods , IUnitCalculator_WeaponCriticalCommandMethods , IUnitCalculator_ProbabilityGodSkillCommandMethods , IUnitCalculator_BattleCountCommandMethods , IUnitCalculator_GainExpCommandMethods , IUnitCalculator_ProbabilityCommandMethods , IUnitCalculator_LinkLuukCommandMethods , IUnitCalculator_WeaponExpendCommandMethods , IUnitCalculator_SkillCorrectCommandMethods , IUnitCalculator_BattleTimesCommandMethods , IUnitCalculator_AvoidCommandMethods , IUnitCalculator_PosZCommandMethods , IUnitCalculator_PhysCommandMethods , IUnitCalculator_BattleDistanceCommandMethods , IUnitCalculator_WeaponEnduranceCommandMethods , IUnitCalculator_RangeEnemyCountCommandMethods , IUnitCalculator_PosXCommandMethods , IUnitCalculator_SupportLevelCommandMethods , IUnitCalculator_TechCommandMethods , IUnitCalculator_BattleAliveCommandMethods , IUnitCalculator_LinkPhysCommandMethods , IUnitCalculator_BattleArenaCommandMethods , IUnitCalculator_RangeUnitCountCommandMethods , IUnitCalculator_DefCommandMethods , IUnitCalculator_GodLevelCommandMethods , IUnitCalculator_GodEngagingCommandMethods , IUnitCalculator_FixedFriendCountCommandMethods , IUnitCalculator_WeaponKindCommandMethods , IUnitCalculator_UnitAttributeCommandMethods , IUnitCalculator_BattleSceneResultCriticalCommandMethods , IUnitCalculator_UnitGodCommandMethods , IUnitCalculator_WeaponHitCommandMethods }
+ # [cfg (feature = "app-unitcalculator")] pub use unitcalculator :: { IUnitCalculator_PosZCommandMethods , IUnitCalculator_UnitGodCommandMethods , IUnitCalculator_MagicCommandMethods , IUnitCalculator_LinkGodCommandMethods , IUnitCalculator_HPCommandMethods , IUnitCalculator_EngageCountCommandMethods , IUnitCalculator_BattleTimesCommandMethods , IUnitCalculator_LinkStrCommandMethods , IUnitCalculator_TotalOrderCommandMethods , IUnitCalculator_TerrainDefenseCommandMethods , IUnitCalculator_SupportSecureCommandMethods , IUnitCalculator_JobRankCommandMethods , IUnitCalculator_ExpBattleGiveCountCommandMethods , IUnitCalculator_BattleSceneResultCommandMethods , IUnitCalculator_ForceCommandMethods , IUnitCalculator_AvoidCommandMethods , IUnitCalculator_WeaponInteractCommandMethods , IUnitCalculator_MapUnitCountCommandMethods , IUnitCalculator_TechCommandMethods , IUnitCalculator_BattleArenaCommandMethods , IUnitCalculator_BattlePinchingCommandMethods , IUnitCalculator_ProbabilityCommandMethods , IUnitCalculator_AroundGenderCountCommandMethods , IUnitCalculator_WeaponWeightCommandMethods , IUnitCalculator_WeaponAttackCommandMethods , IUnitCalculator_DefCommandMethods , IUnitCalculator_ExpInterferenceCountCommandMethods , IUnitCalculator_RelianceAroundTotalCommandMethods , IUnitCalculatorMethods , IUnitCalculator_AttackCountCommandMethods , IUnitCalculator_GodGoodWeaponCommandMethods , IUnitCalculator_AttackAttributeCommandMethods , IUnitCalculator_ExpRodCountCommandMethods , IUnitCalculator_ReciveAttackCountCommandMethods , IUnitCalculator_FixedEnemyCountCommandMethods , IUnitCalculator_DefenseCommandMethods , IUnitCalculator_GodEngagingCommandMethods , IUnitCalculator_SecureCommandMethods , IUnitCalculator_TotalActionCommandMethods , IUnitCalculator_WeaponEnduranceCommandMethods , IUnitCalculator_BattleSceneResultCriticalCommandMethods , IUnitCalculator_UnitPersonCommandMethods , IUnitCalculator_BattleSceneResultHitCommandMethods , IUnitCalculator_TotalDamageCommandMethods , IUnitCalculator_BattleChainAttackCountCommandMethods , IUnitCalculator_BattleSideCommandMethods , IUnitCalculator_ExpDestroyCountCommandMethods , IUnitCalculator_WeaponCriticalCommandMethods , IUnitCalculator_RangeEnemyCountCommandMethods , IUnitCalculator_TotalAttackCommandMethods , IUnitCalculator_PosLowZCommandMethods , IUnitCalculator_RodTypeCommandMethods , IUnitCalculator_GodLevelCommandMethods , IUnitCalculator_LinkQuickCommandMethods , IUnitCalculator_StrCommandMethods , IUnitCalculator_LuukCommandMethods , IUnitCalculator_BattleDeadCommandMethods , IUnitCalculator_TerrainAvoidCommandMethods , IUnitCalculator_SupportLevelCommandMethods , IUnitCalculator_LinkMdefCommandMethods , IUnitCalculator_TotalLevelCommandMethods , IUnitCalculator_DropItemRatioCommandMethods , IUnitCalculator_EngageCountLimitCommandMethods , IUnitCalculator_WeaponKindCommandMethods , IUnitCalculator_GainGoldCommandMethods , IUnitCalculator_BattleLastTargetCommandMethods , IUnitCalculator_BattleSceneResultBreakCommandMethods , IUnitCalculator_PhysCommandMethods , IUnitCalculator_WeaponAttributeCommandMethods , IUnitCalculator_BattleStyleCommandMethods , IUnitCalculator_MaxHPCommandMethods , IUnitCalculator_IBattleSceneResultCommandMethods , IUnitCalculator_BattleDistanceCommandMethods , IUnitCalculator_ExpDanceCountCommandMethods , IUnitCalculator_FixedFriendCountCommandMethods , IUnitCalculator_ProbabilitySkillCommandMethods , IUnitCalculator_MoveDistanceCommandMethods , IUnitCalculator_ContinuousCommandMethods , IUnitCalculator_BlowDistanceCommandMethods , IUnitCalculator_UnitAttackCommandMethods , IUnitCalculator_LevelCommandMethods , IUnitCalculator_SimpleHitCommandMethods , IUnitCalculator_DamageCommandMethods , IUnitCalculator_WeaponSecureCommandMethods , IUnitCalculator_TemporaryCommandMethods , IUnitCalculator_BattleCountCommandMethods , IUnitCalculator_LinkTechCommandMethods , IUnitCalculator_MdefCommandMethods , IUnitCalculator_AttackCommandMethods , IUnitCalculator_CriticalCommandMethods , IUnitCalculator_ActionCountCommandMethods , IUnitCalculator_PosLowXCommandMethods , IUnitCalculator_UnitDefenseCommandMethods , IUnitCalculator_MoveTypeCommandMethods , IUnitCalculator_GodSkillCorrectCommandMethods , IUnitCalculator_WeaponExpendCommandMethods , IUnitCalculator_SimpleCriticalCommandMethods , IUnitCalculator_LinkPhysCommandMethods , IUnitCalculator_ExpCommandMethods , IUnitCalculator_HitCommandMethods , IUnitCalculator_UnitIdentCommandMethods , IUnitCalculator_LinkLuukCommandMethods , IUnitCalculator_BlowRatioCommandMethods , IUnitCalculator_UnitJobCommandMethods , IUnitCalculator_UnitSkillCommandMethods , IUnitCalculator_SupportHitCommandMethods , IUnitCalculator_RangeFriendCountCommandMethods , IUnitCalculator_WeaponEfficacyCommandMethods , IUnitCalculator_LinkDefCommandMethods , IUnitCalculator_BattleSceneResultEfficacyCommandMethods , IUnitCalculator_BattleChainAttackDefeatCommandMethods , IUnitCalculator_PosXCommandMethods , IUnitCalculator_JobInternalLevelCommandMethods , IUnitCalculator_QuickCommandMethods , IUnitCalculator_BattleEscortCommandMethods , IUnitCalculator_InternalLevelCommandMethods , IUnitCalculator_TotalResultCommandMethods , IUnitCalculator_GainExpCommandMethods , IUnitCalculator_BattleAliveCommandMethods , IUnitCalculator_WeaponLevelCommandMethods , IUnitCalculator_RangeGenderCountCommandMethods , IUnitCalculator_BattleParamCommandMethods , IUnitCalculator_OverlapCanRemoveCommandMethods , IUnitCalculator_MapPhaseCommandMethods , IUnitCalculator_ProbabilityGodSkillCommandMethods , IUnitCalculator_PickupItemCommandMethods , IUnitCalculator_RangeUnitCountCommandMethods , IUnitCalculator_HealCommandMethods , IUnitCalculator_GenderCommandMethods , IUnitCalculator_BattleSceneResultMissCommandMethods , IUnitCalculator_BattleChainGuardCountCommandMethods , IUnitCalculator_SupportCriticalCommandMethods , IUnitCalculator_SupportAvoidCommandMethods , IUnitCalculator_WeaponHitCommandMethods , IUnitCalculator_WeaponAvoidCommandMethods , IUnitCalculator_RodExpCommandMethods , IUnitCalculator_UnitAroundCountdCommandMethods , IUnitCalculator_SkillCorrectCommandMethods , IUnitCalculator_LinkMagicCommandMethods , IUnitCalculator_UnitAttributeCommandMethods , IUnitCalculator_WeaponLevelBaseCommandMethods , IUnitCalculator_BattleReviveCommandMethods , IUnitCalculator_SimplePowerCommandMethods }
  ;
  # [cfg (any (feature = "app-unitcommandinterruptinspector-types"))] pub mod unitcommandinterruptinspector ;
  # [cfg (feature = "app-unitcommandinterruptinspector-types")] pub use unitcommandinterruptinspector :: { UnitCommandInterruptInspector , IUnitCommandInterruptInspector }
@@ -9088,7 +9088,7 @@
  # [cfg (feature = "app-unitenhancefactors")] pub use unitenhancefactors :: { IUnitEnhanceFactorsMethods }
  ;
  # [cfg (any (feature = "app-unitenhancevalues-types"))] pub mod unitenhancevalues ;
- # [cfg (feature = "app-unitenhancevalues-types")] pub use unitenhancevalues :: { UnitEnhanceValues , IUnitEnhanceValues , UnitEnhanceValues_Type }
+ # [cfg (feature = "app-unitenhancevalues-types")] pub use unitenhancevalues :: { UnitEnhanceValues_Type , UnitEnhanceValues , IUnitEnhanceValues }
  ;
  # [cfg (feature = "app-unitenhancevalues")] pub use unitenhancevalues :: { IUnitEnhanceValuesMethods }
  ;
@@ -9111,7 +9111,7 @@
  # [cfg (feature = "app-unitgrowsequence")] pub use unitgrowsequence :: { IUnitGrowSequenceMethods }
  ;
  # [cfg (any (feature = "app-unithasitemmaxsequence-types"))] pub mod unithasitemmaxsequence ;
- # [cfg (feature = "app-unithasitemmaxsequence-types")] pub use unithasitemmaxsequence :: { UnitHasItemMaxSequence_Label , UnitHasItemMaxSequence , IUnitHasItemMaxSequence }
+ # [cfg (feature = "app-unithasitemmaxsequence-types")] pub use unithasitemmaxsequence :: { UnitHasItemMaxSequence , IUnitHasItemMaxSequence , UnitHasItemMaxSequence_Label }
  ;
  # [cfg (feature = "app-unithasitemmaxsequence")] pub use unithasitemmaxsequence :: { IUnitHasItemMaxSequenceMethods }
  ;
@@ -9126,12 +9126,12 @@
  # [cfg (feature = "app-uniticonviewercontent")] pub use uniticonviewercontent :: { IUnitIconViewerContentMethods }
  ;
  # [cfg (any (feature = "app-unitinfo-types"))] pub mod unitinfo ;
- # [cfg (feature = "app-unitinfo-types")] pub use unitinfo :: { UnitInfo_Mode , UnitInfo , IUnitInfo , UnitInfo_Side , UnitInfo_Window , IUnitInfo_Window }
+ # [cfg (feature = "app-unitinfo-types")] pub use unitinfo :: { UnitInfo , IUnitInfo , UnitInfo_Mode , UnitInfo_Side , UnitInfo_Window , IUnitInfo_Window }
  ;
  # [cfg (feature = "app-unitinfo")] pub use unitinfo :: { IUnitInfoMethods , IUnitInfo_WindowMethods }
  ;
  # [cfg (any (feature = "app-unitinfocharaimagemaskoffset-types"))] pub mod unitinfocharaimagemaskoffset ;
- # [cfg (feature = "app-unitinfocharaimagemaskoffset-types")] pub use unitinfocharaimagemaskoffset :: { UnitInfoCharaImageMaskOffset_Type , UnitInfoCharaImageMaskOffset , IUnitInfoCharaImageMaskOffset }
+ # [cfg (feature = "app-unitinfocharaimagemaskoffset-types")] pub use unitinfocharaimagemaskoffset :: { UnitInfoCharaImageMaskOffset , IUnitInfoCharaImageMaskOffset , UnitInfoCharaImageMaskOffset_Type }
  ;
  # [cfg (feature = "app-unitinfocharaimagemaskoffset")] pub use unitinfocharaimagemaskoffset :: { IUnitInfoCharaImageMaskOffsetMethods }
  ;
@@ -9141,14 +9141,14 @@
  # [cfg (feature = "app-unitinfoparammanager")] pub use unitinfoparammanager :: { IUnitInfoParamManagerMethods }
  ;
  # [cfg (any (feature = "app-unitinfoparamsetter-types"))] pub mod unitinfoparamsetter ;
- # [cfg (feature = "app-unitinfoparamsetter-types")] pub use unitinfoparamsetter :: { UnitInfoParamSetter_HPStockType , UnitInfoParamSetter_WdwType , UnitInfoParamSetter , IUnitInfoParamSetter , UnitInfoParamSetter_GodBuffType , UnitInfoParamSetter_ForceType }
+ # [cfg (feature = "app-unitinfoparamsetter-types")] pub use unitinfoparamsetter :: { UnitInfoParamSetter , IUnitInfoParamSetter , UnitInfoParamSetter_GodBuffType , UnitInfoParamSetter_HPStockType , UnitInfoParamSetter_ForceType , UnitInfoParamSetter_WdwType }
  ;
  # [cfg (feature = "app-unitinfoparamsetter")] pub use unitinfoparamsetter :: { IUnitInfoParamSetterMethods }
  ;
  # [cfg (any (feature = "app-unitinfoviewersetting-types"))] pub mod unitinfoviewersetting ;
- # [cfg (feature = "app-unitinfoviewersetting-types")] pub use unitinfoviewersetting :: { UnitInfoViewerSetting_UnitData , IUnitInfoViewerSetting_UnitData , UnitInfoViewerSetting_Seq , UnitInfoViewerSetting_ForceList , IUnitInfoViewerSetting_ForceList , UnitInfoViewerSetting , IUnitInfoViewerSetting }
+ # [cfg (feature = "app-unitinfoviewersetting-types")] pub use unitinfoviewersetting :: { UnitInfoViewerSetting_Seq , UnitInfoViewerSetting_ForceList , IUnitInfoViewerSetting_ForceList , UnitInfoViewerSetting , IUnitInfoViewerSetting , UnitInfoViewerSetting_UnitData , IUnitInfoViewerSetting_UnitData }
  ;
- # [cfg (feature = "app-unitinfoviewersetting")] pub use unitinfoviewersetting :: { IUnitInfoViewerSetting_UnitDataMethods , IUnitInfoViewerSettingMethods }
+ # [cfg (feature = "app-unitinfoviewersetting")] pub use unitinfoviewersetting :: { IUnitInfoViewerSettingMethods , IUnitInfoViewerSetting_UnitDataMethods }
  ;
  # [cfg (any (feature = "app-unitinfoweaponmodelpool-types"))] pub mod unitinfoweaponmodelpool ;
  # [cfg (feature = "app-unitinfoweaponmodelpool-types")] pub use unitinfoweaponmodelpool :: { UnitInfoWeaponModelPool , IUnitInfoWeaponModelPool }
@@ -9166,7 +9166,7 @@
  # [cfg (feature = "app-unitinfowindowcharamodel")] pub use unitinfowindowcharamodel :: { IUnitInfoWindowCharaModel_ReservedCharaVoiceMethods , IUnitInfoWindowCharaModelMethods }
  ;
  # [cfg (any (feature = "app-unitinfowindowcharaupdater-types"))] pub mod unitinfowindowcharaupdater ;
- # [cfg (feature = "app-unitinfowindowcharaupdater-types")] pub use unitinfowindowcharaupdater :: { UnitInfoWindowCharaUpdater , IUnitInfoWindowCharaUpdater , UnitInfoWindowCharaUpdater_StatusScope }
+ # [cfg (feature = "app-unitinfowindowcharaupdater-types")] pub use unitinfowindowcharaupdater :: { UnitInfoWindowCharaUpdater_StatusScope , UnitInfoWindowCharaUpdater , IUnitInfoWindowCharaUpdater }
  ;
  # [cfg (feature = "app-unitinfowindowcharaupdater")] pub use unitinfowindowcharaupdater :: { IUnitInfoWindowCharaUpdaterMethods }
  ;
@@ -9191,9 +9191,9 @@
  # [cfg (feature = "app-unititemlist")] pub use unititemlist :: { IUnitItemListMethods }
  ;
  # [cfg (any (feature = "app-unititemmenu-types"))] pub mod unititemmenu ;
- # [cfg (feature = "app-unititemmenu-types")] pub use unititemmenu :: { UnitItemMenu , IUnitItemMenu , UnitItemMenu_SelectEventHandler , IUnitItemMenu_SelectEventHandler , UnitItemMenu_RequestCloseEventHandler , IUnitItemMenu_RequestCloseEventHandler , UnitItemMenu_DecideEventHandler , IUnitItemMenu_DecideEventHandler }
+ # [cfg (feature = "app-unititemmenu-types")] pub use unititemmenu :: { UnitItemMenu_DecideEventHandler , IUnitItemMenu_DecideEventHandler , UnitItemMenu_RequestCloseEventHandler , IUnitItemMenu_RequestCloseEventHandler , UnitItemMenu , IUnitItemMenu , UnitItemMenu_SelectEventHandler , IUnitItemMenu_SelectEventHandler }
  ;
- # [cfg (feature = "app-unititemmenu")] pub use unititemmenu :: { IUnitItemMenuMethods , IUnitItemMenu_SelectEventHandlerMethods , IUnitItemMenu_RequestCloseEventHandlerMethods , IUnitItemMenu_DecideEventHandlerMethods }
+ # [cfg (feature = "app-unititemmenu")] pub use unititemmenu :: { IUnitItemMenu_DecideEventHandlerMethods , IUnitItemMenu_RequestCloseEventHandlerMethods , IUnitItemMenuMethods , IUnitItemMenu_SelectEventHandlerMethods }
  ;
  # [cfg (any (feature = "app-unititemmenucontent-types"))] pub mod unititemmenucontent ;
  # [cfg (feature = "app-unititemmenucontent-types")] pub use unititemmenucontent :: { UnitItemMenuContent , IUnitItemMenuContent }
@@ -9209,17 +9209,17 @@
  # [cfg (feature = "app-unitlistformapcombatviewer-types")] pub use unitlistformapcombatviewer :: { UnitListForMapCombatViewer , IUnitListForMapCombatViewer }
  ;
  # [cfg (any (feature = "app-unitmenuitemsetter-types"))] pub mod unitmenuitemsetter ;
- # [cfg (feature = "app-unitmenuitemsetter-types")] pub use unitmenuitemsetter :: { UnitMenuItemSetter , IUnitMenuItemSetter , UnitMenuItemSetter_SubFrame }
+ # [cfg (feature = "app-unitmenuitemsetter-types")] pub use unitmenuitemsetter :: { UnitMenuItemSetter_SubFrame , UnitMenuItemSetter , IUnitMenuItemSetter }
  ;
  # [cfg (feature = "app-unitmenuitemsetter")] pub use unitmenuitemsetter :: { IUnitMenuItemSetterMethods }
  ;
  # [cfg (any (feature = "app-unitmodel-types"))] pub mod unitmodel ;
- # [cfg (feature = "app-unitmodel-types")] pub use unitmodel :: { UnitModel_ColorFlags , UnitModel , IUnitModel , UnitModel_ResourceHandle , IUnitModel_ResourceHandle , UnitModel_DirtyFlags , UnitModel_LoadMode }
+ # [cfg (feature = "app-unitmodel-types")] pub use unitmodel :: { UnitModel_LoadMode , UnitModel , IUnitModel , UnitModel_ResourceHandle , IUnitModel_ResourceHandle , UnitModel_DirtyFlags , UnitModel_ColorFlags }
  ;
  # [cfg (feature = "app-unitmodel")] pub use unitmodel :: { IUnitModelMethods , IUnitModel_ResourceHandleMethods }
  ;
  # [cfg (any (feature = "app-unitparamdetail-types"))] pub mod unitparamdetail ;
- # [cfg (feature = "app-unitparamdetail-types")] pub use unitparamdetail :: { UnitParamDetail , IUnitParamDetail , UnitParamDetail_ValueDetail }
+ # [cfg (feature = "app-unitparamdetail-types")] pub use unitparamdetail :: { UnitParamDetail_ValueDetail , UnitParamDetail , IUnitParamDetail }
  ;
  # [cfg (feature = "app-unitparamdetail")] pub use unitparamdetail :: { IUnitParamDetailMethods }
  ;
@@ -9229,7 +9229,7 @@
  # [cfg (feature = "app-unitpool")] pub use unitpool :: { IUnitPoolMethods }
  ;
  # [cfg (any (feature = "app-unitrecord-types"))] pub mod unitrecord ;
- # [cfg (feature = "app-unitrecord-types")] pub use unitrecord :: { UnitRecord , IUnitRecord , UnitRecord_DeadFlags , UnitRecord_Kinds }
+ # [cfg (feature = "app-unitrecord-types")] pub use unitrecord :: { UnitRecord_Kinds , UnitRecord , IUnitRecord , UnitRecord_DeadFlags }
  ;
  # [cfg (feature = "app-unitrecord")] pub use unitrecord :: { IUnitRecordMethods }
  ;
@@ -9259,9 +9259,9 @@
  # [cfg (feature = "app-unitringpool")] pub use unitringpool :: { IUnitRingPoolMethods }
  ;
  # [cfg (any (feature = "app-unitselectallunitmenu-types"))] pub mod unitselectallunitmenu ;
- # [cfg (feature = "app-unitselectallunitmenu-types")] pub use unitselectallunitmenu :: { UnitSelectAllUnitMenu_EntrustMenuItem , IUnitSelectAllUnitMenu_EntrustMenuItem , UnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandler , IUnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandler , UnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandler , IUnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandler , UnitSelectAllUnitMenu , IUnitSelectAllUnitMenu , UnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandler , IUnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandler , UnitSelectAllUnitMenu_ConfirmSequence_Label , UnitSelectAllUnitMenu_ConfirmSequence_EndEventHandler , IUnitSelectAllUnitMenu_ConfirmSequence_EndEventHandler , UnitSelectAllUnitMenu_StoreAllMenuItem , IUnitSelectAllUnitMenu_StoreAllMenuItem , UnitSelectAllUnitMenu_ConfirmDialog_ConfirmNoDialogItem , IUnitSelectAllUnitMenu_ConfirmDialog_ConfirmNoDialogItem , UnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandler , IUnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandler , UnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler , IUnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler , UnitSelectAllUnitMenu_ConfirmSequence , IUnitSelectAllUnitMenu_ConfirmSequence , UnitSelectAllUnitMenu_ConfirmDialog , IUnitSelectAllUnitMenu_ConfirmDialog , UnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItem , IUnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItem }
+ # [cfg (feature = "app-unitselectallunitmenu-types")] pub use unitselectallunitmenu :: { UnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandler , IUnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandler , UnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandler , IUnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandler , UnitSelectAllUnitMenu_ConfirmDialog_ConfirmNoDialogItem , IUnitSelectAllUnitMenu_ConfirmDialog_ConfirmNoDialogItem , UnitSelectAllUnitMenu_ConfirmSequence , IUnitSelectAllUnitMenu_ConfirmSequence , UnitSelectAllUnitMenu_ConfirmDialog , IUnitSelectAllUnitMenu_ConfirmDialog , UnitSelectAllUnitMenu , IUnitSelectAllUnitMenu , UnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandler , IUnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandler , UnitSelectAllUnitMenu_EntrustMenuItem , IUnitSelectAllUnitMenu_EntrustMenuItem , UnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler , IUnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler , UnitSelectAllUnitMenu_ConfirmSequence_Label , UnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItem , IUnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItem , UnitSelectAllUnitMenu_StoreAllMenuItem , IUnitSelectAllUnitMenu_StoreAllMenuItem , UnitSelectAllUnitMenu_ConfirmSequence_EndEventHandler , IUnitSelectAllUnitMenu_ConfirmSequence_EndEventHandler , UnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandler , IUnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandler }
  ;
- # [cfg (feature = "app-unitselectallunitmenu")] pub use unitselectallunitmenu :: { IUnitSelectAllUnitMenu_EntrustMenuItemMethods , IUnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandlerMethods , IUnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandlerMethods , IUnitSelectAllUnitMenuMethods , IUnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandlerMethods , IUnitSelectAllUnitMenu_ConfirmSequence_EndEventHandlerMethods , IUnitSelectAllUnitMenu_StoreAllMenuItemMethods , IUnitSelectAllUnitMenu_ConfirmDialog_ConfirmNoDialogItemMethods , IUnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandlerMethods , IUnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandlerMethods , IUnitSelectAllUnitMenu_ConfirmSequenceMethods , IUnitSelectAllUnitMenu_ConfirmDialogMethods , IUnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItemMethods }
+ # [cfg (feature = "app-unitselectallunitmenu")] pub use unitselectallunitmenu :: { IUnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandlerMethods , IUnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandlerMethods , IUnitSelectAllUnitMenu_ConfirmDialog_ConfirmNoDialogItemMethods , IUnitSelectAllUnitMenu_ConfirmSequenceMethods , IUnitSelectAllUnitMenu_ConfirmDialogMethods , IUnitSelectAllUnitMenuMethods , IUnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandlerMethods , IUnitSelectAllUnitMenu_EntrustMenuItemMethods , IUnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandlerMethods , IUnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItemMethods , IUnitSelectAllUnitMenu_StoreAllMenuItemMethods , IUnitSelectAllUnitMenu_ConfirmSequence_EndEventHandlerMethods , IUnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandlerMethods }
  ;
  # [cfg (any (feature = "app-unitselectmenu-types"))] pub mod unitselectmenu ;
  # [cfg (feature = "app-unitselectmenu-types")] pub use unitselectmenu :: { UnitSelectMenu , IUnitSelectMenu }
@@ -9279,9 +9279,9 @@
  # [cfg (feature = "app-unitselectmenuitemcontent")] pub use unitselectmenuitemcontent :: { IUnitSelectMenuItemContentMethods }
  ;
  # [cfg (any (feature = "app-unitselectringmenu-types"))] pub mod unitselectringmenu ;
- # [cfg (feature = "app-unitselectringmenu-types")] pub use unitselectringmenu :: { UnitSelectRingMenu_EntrustRingMenuItem , IUnitSelectRingMenu_EntrustRingMenuItem , UnitSelectRingMenu_ConfirmDialog_DecideEventHandler , IUnitSelectRingMenu_ConfirmDialog_DecideEventHandler , UnitSelectRingMenu_TakeOffAllRingsMenuItem , IUnitSelectRingMenu_TakeOffAllRingsMenuItem , UnitSelectRingMenu_ConfirmDialog , IUnitSelectRingMenu_ConfirmDialog , UnitSelectRingMenu_CloseEventHandler , IUnitSelectRingMenu_CloseEventHandler , UnitSelectRingMenu_DialogYesMenuItem , IUnitSelectRingMenu_DialogYesMenuItem , UnitSelectRingMenu_DialogNoMenuItem , IUnitSelectRingMenu_DialogNoMenuItem , UnitSelectRingMenu , IUnitSelectRingMenu }
+ # [cfg (feature = "app-unitselectringmenu-types")] pub use unitselectringmenu :: { UnitSelectRingMenu , IUnitSelectRingMenu , UnitSelectRingMenu_DialogYesMenuItem , IUnitSelectRingMenu_DialogYesMenuItem , UnitSelectRingMenu_ConfirmDialog , IUnitSelectRingMenu_ConfirmDialog , UnitSelectRingMenu_TakeOffAllRingsMenuItem , IUnitSelectRingMenu_TakeOffAllRingsMenuItem , UnitSelectRingMenu_EntrustRingMenuItem , IUnitSelectRingMenu_EntrustRingMenuItem , UnitSelectRingMenu_CloseEventHandler , IUnitSelectRingMenu_CloseEventHandler , UnitSelectRingMenu_ConfirmDialog_DecideEventHandler , IUnitSelectRingMenu_ConfirmDialog_DecideEventHandler , UnitSelectRingMenu_DialogNoMenuItem , IUnitSelectRingMenu_DialogNoMenuItem }
  ;
- # [cfg (feature = "app-unitselectringmenu")] pub use unitselectringmenu :: { IUnitSelectRingMenu_EntrustRingMenuItemMethods , IUnitSelectRingMenu_ConfirmDialog_DecideEventHandlerMethods , IUnitSelectRingMenu_TakeOffAllRingsMenuItemMethods , IUnitSelectRingMenu_ConfirmDialogMethods , IUnitSelectRingMenu_CloseEventHandlerMethods , IUnitSelectRingMenu_DialogYesMenuItemMethods , IUnitSelectRingMenu_DialogNoMenuItemMethods , IUnitSelectRingMenuMethods }
+ # [cfg (feature = "app-unitselectringmenu")] pub use unitselectringmenu :: { IUnitSelectRingMenuMethods , IUnitSelectRingMenu_DialogYesMenuItemMethods , IUnitSelectRingMenu_ConfirmDialogMethods , IUnitSelectRingMenu_TakeOffAllRingsMenuItemMethods , IUnitSelectRingMenu_EntrustRingMenuItemMethods , IUnitSelectRingMenu_CloseEventHandlerMethods , IUnitSelectRingMenu_ConfirmDialog_DecideEventHandlerMethods , IUnitSelectRingMenu_DialogNoMenuItemMethods }
  ;
  # [cfg (any (feature = "app-unitselectroot-types"))] pub mod unitselectroot ;
  # [cfg (feature = "app-unitselectroot-types")] pub use unitselectroot :: { UnitSelectRoot , IUnitSelectRoot }
@@ -9299,12 +9299,12 @@
  # [cfg (feature = "app-unitselectsortiemenucontent")] pub use unitselectsortiemenucontent :: { IUnitSelectSortieMenuContentMethods }
  ;
  # [cfg (any (feature = "app-unitselectsubmenu-types"))] pub mod unitselectsubmenu ;
- # [cfg (feature = "app-unitselectsubmenu-types")] pub use unitselectsubmenu :: { UnitSelectSubMenu_InventoryMenuItem , IUnitSelectSubMenu_InventoryMenuItem , UnitSelectSubMenu_EntrustMenuItem , IUnitSelectSubMenu_EntrustMenuItem , UnitSelectSubMenu_BaseMenuItem , IUnitSelectSubMenu_BaseMenuItem , UnitSelectSubMenu_TradeMenuItem , IUnitSelectSubMenu_TradeMenuItem , UnitSelectSubMenu_SkillMenuItem , IUnitSelectSubMenu_SkillMenuItem , UnitSelectSubMenu_StoreAllMenuItem , IUnitSelectSubMenu_StoreAllMenuItem , UnitSelectSubMenu_ClassChangeMenuItem , IUnitSelectSubMenu_ClassChangeMenuItem , UnitSelectSubMenu , IUnitSelectSubMenu }
+ # [cfg (feature = "app-unitselectsubmenu-types")] pub use unitselectsubmenu :: { UnitSelectSubMenu_EntrustMenuItem , IUnitSelectSubMenu_EntrustMenuItem , UnitSelectSubMenu_ClassChangeMenuItem , IUnitSelectSubMenu_ClassChangeMenuItem , UnitSelectSubMenu , IUnitSelectSubMenu , UnitSelectSubMenu_InventoryMenuItem , IUnitSelectSubMenu_InventoryMenuItem , UnitSelectSubMenu_BaseMenuItem , IUnitSelectSubMenu_BaseMenuItem , UnitSelectSubMenu_StoreAllMenuItem , IUnitSelectSubMenu_StoreAllMenuItem , UnitSelectSubMenu_TradeMenuItem , IUnitSelectSubMenu_TradeMenuItem , UnitSelectSubMenu_SkillMenuItem , IUnitSelectSubMenu_SkillMenuItem }
  ;
- # [cfg (feature = "app-unitselectsubmenu")] pub use unitselectsubmenu :: { IUnitSelectSubMenu_InventoryMenuItemMethods , IUnitSelectSubMenu_EntrustMenuItemMethods , IUnitSelectSubMenu_BaseMenuItemMethods , IUnitSelectSubMenu_TradeMenuItemMethods , IUnitSelectSubMenu_SkillMenuItemMethods , IUnitSelectSubMenu_StoreAllMenuItemMethods , IUnitSelectSubMenu_ClassChangeMenuItemMethods , IUnitSelectSubMenuMethods }
+ # [cfg (feature = "app-unitselectsubmenu")] pub use unitselectsubmenu :: { IUnitSelectSubMenu_EntrustMenuItemMethods , IUnitSelectSubMenu_ClassChangeMenuItemMethods , IUnitSelectSubMenuMethods , IUnitSelectSubMenu_InventoryMenuItemMethods , IUnitSelectSubMenu_BaseMenuItemMethods , IUnitSelectSubMenu_StoreAllMenuItemMethods , IUnitSelectSubMenu_TradeMenuItemMethods , IUnitSelectSubMenu_SkillMenuItemMethods }
  ;
  # [cfg (any (feature = "app-unitsequence-types"))] pub mod unitsequence ;
- # [cfg (feature = "app-unitsequence-types")] pub use unitsequence :: { UnitSequence , IUnitSequence , UnitSequence_Action }
+ # [cfg (feature = "app-unitsequence-types")] pub use unitsequence :: { UnitSequence_Action , UnitSequence , IUnitSequence }
  ;
  # [cfg (feature = "app-unitsequence")] pub use unitsequence :: { IUnitSequenceMethods }
  ;
@@ -9319,12 +9319,12 @@
  # [cfg (feature = "app-unitstatus")] pub use unitstatus :: { IUnitStatusMethods }
  ;
  # [cfg (any (feature = "app-unitstatussetter-types"))] pub mod unitstatussetter ;
- # [cfg (feature = "app-unitstatussetter-types")] pub use unitstatussetter :: { UnitStatusSetter_ArrowType , UnitStatusSetter_ValueParam , IUnitStatusSetter_ValueParam , UnitStatusSetter_WdwType , UnitStatusSetter_HPStockType , UnitStatusSetter_GodBuffType , UnitStatusSetter , IUnitStatusSetter , UnitStatusSetter_ItemSetter , IUnitStatusSetter_ItemSetter , UnitStatusSetter_WeaponLevelSetter , IUnitStatusSetter_WeaponLevelSetter , UnitStatusSetter_CapabilityValueParam , IUnitStatusSetter_CapabilityValueParam , UnitStatusSetter_SkillSetter , IUnitStatusSetter_SkillSetter , UnitStatusSetter_ForceType , UnitStatusSetter_RingType }
+ # [cfg (feature = "app-unitstatussetter-types")] pub use unitstatussetter :: { UnitStatusSetter_ItemSetter , IUnitStatusSetter_ItemSetter , UnitStatusSetter_ValueParam , IUnitStatusSetter_ValueParam , UnitStatusSetter_HPStockType , UnitStatusSetter_WdwType , UnitStatusSetter , IUnitStatusSetter , UnitStatusSetter_GodBuffType , UnitStatusSetter_ForceType , UnitStatusSetter_RingType , UnitStatusSetter_CapabilityValueParam , IUnitStatusSetter_CapabilityValueParam , UnitStatusSetter_ArrowType , UnitStatusSetter_SkillSetter , IUnitStatusSetter_SkillSetter , UnitStatusSetter_WeaponLevelSetter , IUnitStatusSetter_WeaponLevelSetter }
  ;
- # [cfg (feature = "app-unitstatussetter")] pub use unitstatussetter :: { IUnitStatusSetter_ValueParamMethods , IUnitStatusSetterMethods , IUnitStatusSetter_ItemSetterMethods , IUnitStatusSetter_WeaponLevelSetterMethods , IUnitStatusSetter_CapabilityValueParamMethods , IUnitStatusSetter_SkillSetterMethods }
+ # [cfg (feature = "app-unitstatussetter")] pub use unitstatussetter :: { IUnitStatusSetter_ItemSetterMethods , IUnitStatusSetter_ValueParamMethods , IUnitStatusSetterMethods , IUnitStatusSetter_CapabilityValueParamMethods , IUnitStatusSetter_SkillSetterMethods , IUnitStatusSetter_WeaponLevelSetterMethods }
  ;
  # [cfg (any (feature = "app-unitutil-types"))] pub mod unitutil ;
- # [cfg (feature = "app-unitutil-types")] pub use unitutil :: { UnitUtil_DieType , UnitUtil , IUnitUtil }
+ # [cfg (feature = "app-unitutil-types")] pub use unitutil :: { UnitUtil , IUnitUtil , UnitUtil_DieType }
  ;
  # [cfg (feature = "app-unitutil")] pub use unitutil :: { IUnitUtilMethods }
  ;
@@ -9339,9 +9339,9 @@
  # [cfg (feature = "app-updateend")] pub use updateend :: { IUpdateEndMethods }
  ;
  # [cfg (any (feature = "app-ut-types"))] pub mod ut ;
- # [cfg (feature = "app-ut-types")] pub use ut :: { Ut , IUt , Ut_GameObjectFunction , IUt_GameObjectFunction , Ut_EnumList , IUt_EnumList }
+ # [cfg (feature = "app-ut-types")] pub use ut :: { Ut_EnumList , IUt_EnumList , Ut_GameObjectFunction , IUt_GameObjectFunction , Ut , IUt }
  ;
- # [cfg (feature = "app-ut")] pub use ut :: { IUtMethods , IUt_GameObjectFunctionMethods , IUt_EnumListMethods }
+ # [cfg (feature = "app-ut")] pub use ut :: { IUt_EnumListMethods , IUt_GameObjectFunctionMethods , IUtMethods }
  ;
  # [cfg (any (feature = "app-valuecountcontroller-types"))] pub mod valuecountcontroller ;
  # [cfg (feature = "app-valuecountcontroller-types")] pub use valuecountcontroller :: { ValueCountController , IValueCountController }
@@ -9354,9 +9354,9 @@
  # [cfg (feature = "app-variablecommand")] pub use variablecommand :: { IVariableCommandMethods }
  ;
  # [cfg (any (feature = "app-versus-types"))] pub mod versus ;
- # [cfg (feature = "app-versus-types")] pub use versus :: { Versus_VersusCheck , IVersus_VersusCheck , Versus_MapResult , Versus_MapObjectCounter , IVersus_MapObjectCounter , Versus_Mode , Versus_MatchingType , Versus_Error , Versus_CheckDataType , Versus_DownloadHistory_CheckData , IVersus_DownloadHistory_CheckData , Versus , IVersus , Versus_DownloadHistory , IVersus_DownloadHistory }
+ # [cfg (feature = "app-versus-types")] pub use versus :: { Versus_DownloadHistory_CheckData , IVersus_DownloadHistory_CheckData , Versus_DownloadHistory , IVersus_DownloadHistory , Versus_MatchingType , Versus_CheckDataType , Versus , IVersus , Versus_MapResult , Versus_VersusCheck , IVersus_VersusCheck , Versus_MapObjectCounter , IVersus_MapObjectCounter , Versus_Mode , Versus_Error }
  ;
- # [cfg (feature = "app-versus")] pub use versus :: { IVersus_VersusCheckMethods , IVersus_MapObjectCounterMethods , IVersus_DownloadHistory_CheckDataMethods , IVersusMethods , IVersus_DownloadHistoryMethods }
+ # [cfg (feature = "app-versus")] pub use versus :: { IVersus_DownloadHistory_CheckDataMethods , IVersus_DownloadHistoryMethods , IVersusMethods , IVersus_VersusCheckMethods , IVersus_MapObjectCounterMethods }
  ;
  # [cfg (any (feature = "app-versusbackupdata-types"))] pub mod versusbackupdata ;
  # [cfg (feature = "app-versusbackupdata-types")] pub use versusbackupdata :: { VersusBackupData , IVersusBackupData }
@@ -9364,7 +9364,7 @@
  # [cfg (feature = "app-versusbackupdata")] pub use versusbackupdata :: { IVersusBackupDataMethods }
  ;
  # [cfg (any (feature = "app-versuscapture-types"))] pub mod versuscapture ;
- # [cfg (feature = "app-versuscapture-types")] pub use versuscapture :: { VersusCapture , IVersusCapture , VersusCapture_Preset }
+ # [cfg (feature = "app-versuscapture-types")] pub use versuscapture :: { VersusCapture_Preset , VersusCapture , IVersusCapture }
  ;
  # [cfg (feature = "app-versuscapture")] pub use versuscapture :: { IVersusCaptureMethods }
  ;
@@ -9444,9 +9444,9 @@
  # [cfg (feature = "app-versusratecalc")] pub use versusratecalc :: { IVersusRateCalcMethods }
  ;
  # [cfg (any (feature = "app-versusreportsequence-types"))] pub mod versusreportsequence ;
- # [cfg (feature = "app-versusreportsequence-types")] pub use versusreportsequence :: { VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo , IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNo , VersusReportSequence_Label , VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes , IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYes , VersusReportSequence , IVersusReportSequence , VersusReportSequence_ConfirmDialog , IVersusReportSequence_ConfirmDialog }
+ # [cfg (feature = "app-versusreportsequence-types")] pub use versusreportsequence :: { VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo , IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNo , VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes , IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYes , VersusReportSequence_Label , VersusReportSequence_ConfirmDialog , IVersusReportSequence_ConfirmDialog , VersusReportSequence , IVersusReportSequence }
  ;
- # [cfg (feature = "app-versusreportsequence")] pub use versusreportsequence :: { IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNoMethods , IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYesMethods , IVersusReportSequenceMethods , IVersusReportSequence_ConfirmDialogMethods }
+ # [cfg (feature = "app-versusreportsequence")] pub use versusreportsequence :: { IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNoMethods , IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYesMethods , IVersusReportSequence_ConfirmDialogMethods , IVersusReportSequenceMethods }
  ;
  # [cfg (any (feature = "app-versusrewarddata-types"))] pub mod versusrewarddata ;
  # [cfg (feature = "app-versusrewarddata-types")] pub use versusrewarddata :: { VersusRewardData , IVersusRewardData }
@@ -9454,19 +9454,19 @@
  # [cfg (feature = "app-versusrewarddata")] pub use versusrewarddata :: { IVersusRewardDataMethods }
  ;
  # [cfg (any (feature = "app-versussendreportsequence-types"))] pub mod versussendreportsequence ;
- # [cfg (feature = "app-versussendreportsequence-types")] pub use versussendreportsequence :: { VersusSendReportSequence_UploadInfo , IVersusSendReportSequence_UploadInfo , VersusSendReportSequence_Label , VersusSendReportSequence_EndCallback , IVersusSendReportSequence_EndCallback , VersusSendReportSequence , IVersusSendReportSequence }
+ # [cfg (feature = "app-versussendreportsequence-types")] pub use versussendreportsequence :: { VersusSendReportSequence_UploadInfo , IVersusSendReportSequence_UploadInfo , VersusSendReportSequence_Label , VersusSendReportSequence , IVersusSendReportSequence , VersusSendReportSequence_EndCallback , IVersusSendReportSequence_EndCallback }
  ;
- # [cfg (feature = "app-versussendreportsequence")] pub use versussendreportsequence :: { IVersusSendReportSequence_UploadInfoMethods , IVersusSendReportSequence_EndCallbackMethods , IVersusSendReportSequenceMethods }
+ # [cfg (feature = "app-versussendreportsequence")] pub use versussendreportsequence :: { IVersusSendReportSequence_UploadInfoMethods , IVersusSendReportSequenceMethods , IVersusSendReportSequence_EndCallbackMethods }
  ;
  # [cfg (any (feature = "app-versussequence-types"))] pub mod versussequence ;
- # [cfg (feature = "app-versussequence-types")] pub use versussequence :: { VersusSequence_VersusTopMenu_RankedMenuItem , IVersusSequence_VersusTopMenu_RankedMenuItem , VersusSequence_VersusSequenceNet_UploadReplaySequence , IVersusSequence_VersusSequenceNet_UploadReplaySequence , VersusSequence_VersusMatchingMenu_FriendMenuItem , IVersusSequence_VersusMatchingMenu_FriendMenuItem , VersusSequence_VersusRankedMenu_MapEditMenuItem , IVersusSequence_VersusRankedMenu_MapEditMenuItem , VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence_DataType , VersusSequence_VersusSequenceBase_1 , IVersusSequence_VersusSequenceBase_1 , VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem , IVersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem , VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItem , IVersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItem , VersusSequence_VersusRankedMenu_ResultMenuItem , IVersusSequence_VersusRankedMenu_ResultMenuItem , VersusSequence_ResultDialog_SelectMenu , VersusSequence_VersusProfileMenu , IVersusSequence_VersusProfileMenu , VersusSequence_VersusMatchingMenu , IVersusSequence_VersusMatchingMenu , VersusSequence_VersusYesNoDialog_NoItem , IVersusSequence_VersusYesNoDialog_NoItem , VersusSequence_VersusSequenceLocal_LocalRate , IVersusSequence_VersusSequenceLocal_LocalRate , VersusSequence_Label , VersusSequence_VersusYesNoDialog , IVersusSequence_VersusYesNoDialog , VersusSequence_VersusSequenceNet , IVersusSequence_VersusSequenceNet , VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback , IVersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback , VersusSequence_VersusCasualMenu , IVersusSequence_VersusCasualMenu , VersusSequence_IVersusSequenceBase , IVersusSequence_IVersusSequenceBase , VersusSequence_VersusSequenceNet_SelectReplaySequence_Label , VersusSequence_ResultDialog , IVersusSequence_ResultDialog , VersusSequence_VersusMatchingMenu_CodeMenuItem , IVersusSequence_VersusMatchingMenu_CodeMenuItem , VersusSequence_VersusSequenceNet_UploadReplaySequence_Label , VersusSequence_VersusSequenceNet_UploadEditMapSequence , IVersusSequence_VersusSequenceNet_UploadEditMapSequence , VersusSequence_VersusRankedMenu , IVersusSequence_VersusRankedMenu , VersusSequence_VersusSequenceNet_UploadEditMapSequence_Label , VersusSequence_VersusYesNoDialog_YesItem , IVersusSequence_VersusYesNoDialog_YesItem , VersusSequence_VersusMatchingMenu_RandomMenuItem , IVersusSequence_VersusMatchingMenu_RandomMenuItem , VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem , IVersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem , VersusSequence_VersusRankedMenu_StartMenuItem , IVersusSequence_VersusRankedMenu_StartMenuItem , VersusSequence_VersusMatchingMenu_Result2 , VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback , IVersusSequence_VersusSequenceNet_SelectReplaySequence_Callback , VersusSequence_VersusSequenceLocal_MetaDataPack , IVersusSequence_VersusSequenceLocal_MetaDataPack , VersusSequence , IVersusSequence , VersusSequence_ProfileUploadSequence , IVersusSequence_ProfileUploadSequence , VersusSequence_DebugPersistentMenu , IVersusSequence_DebugPersistentMenu , VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence , IVersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence , VersusSequence_VersusCasualMenu_SelectMapMenuItem , IVersusSequence_VersusCasualMenu_SelectMapMenuItem , VersusSequence_VersusTopMenu_CasualMenuItem , IVersusSequence_VersusTopMenu_CasualMenuItem , VersusSequence_VersusRankedMenu_MockBattleMenuItem , IVersusSequence_VersusRankedMenu_MockBattleMenuItem , VersusSequence_VersusFriendMenu_FriendCasualMenuItem , IVersusSequence_VersusFriendMenu_FriendCasualMenuItem , VersusSequence_VersusFriendMenu_FriendRankedMenuItem , IVersusSequence_VersusFriendMenu_FriendRankedMenuItem , VersusSequence_VersusTopMenu_Result2 , VersusSequence_ProfileDownloadSequence_Label , VersusSequence_VersusSequenceNet_SelectReplaySequence , IVersusSequence_VersusSequenceNet_SelectReplaySequence , VersusSequence_ResultDialog_AssistItem , IVersusSequence_ResultDialog_AssistItem , VersusSequence_ResultDialog_DecideEventHandler , IVersusSequence_ResultDialog_DecideEventHandler , VersusSequence_VersusMatchingMenu_ProfileMenuItem , IVersusSequence_VersusMatchingMenu_ProfileMenuItem , VersusSequence_VersusFriendMenu , IVersusSequence_VersusFriendMenu , VersusSequence_VersusSequenceLocal , IVersusSequence_VersusSequenceLocal , VersusSequence_VersusRankedMenu_Result2 , VersusSequence_VersusTopMenu , IVersusSequence_VersusTopMenu , VersusSequence_VersusProfileMenu_VersusProfileMenuItem , IVersusSequence_VersusProfileMenu_VersusProfileMenuItem , VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog , IVersusSequence_ProfileDownloadSequence_DownloadYesNoDialog , VersusSequence_ProfileDownloadSequence , IVersusSequence_ProfileDownloadSequence }
+ # [cfg (feature = "app-versussequence-types")] pub use versussequence :: { VersusSequence_VersusMatchingMenu_ProfileMenuItem , IVersusSequence_VersusMatchingMenu_ProfileMenuItem , VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback , IVersusSequence_VersusSequenceNet_SelectReplaySequence_Callback , VersusSequence_VersusRankedMenu_MapEditMenuItem , IVersusSequence_VersusRankedMenu_MapEditMenuItem , VersusSequence_ResultDialog_DecideEventHandler , IVersusSequence_ResultDialog_DecideEventHandler , VersusSequence_VersusSequenceNet_UploadReplaySequence_Label , VersusSequence_VersusMatchingMenu_CodeMenuItem , IVersusSequence_VersusMatchingMenu_CodeMenuItem , VersusSequence_ResultDialog_AssistItem , IVersusSequence_ResultDialog_AssistItem , VersusSequence_VersusRankedMenu_MockBattleMenuItem , IVersusSequence_VersusRankedMenu_MockBattleMenuItem , VersusSequence_VersusTopMenu , IVersusSequence_VersusTopMenu , VersusSequence_VersusYesNoDialog_YesItem , IVersusSequence_VersusYesNoDialog_YesItem , VersusSequence_VersusYesNoDialog , IVersusSequence_VersusYesNoDialog , VersusSequence_VersusTopMenu_Result2 , VersusSequence_VersusSequenceBase_1 , IVersusSequence_VersusSequenceBase_1 , VersusSequence_VersusSequenceNet_SelectReplaySequence_Label , VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence_DataType , VersusSequence_VersusSequenceNet_SelectReplaySequence , IVersusSequence_VersusSequenceNet_SelectReplaySequence , VersusSequence_VersusSequenceLocal_MetaDataPack , IVersusSequence_VersusSequenceLocal_MetaDataPack , VersusSequence_ProfileDownloadSequence , IVersusSequence_ProfileDownloadSequence , VersusSequence_VersusProfileMenu , IVersusSequence_VersusProfileMenu , VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem , IVersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem , VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem , IVersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem , VersusSequence_VersusFriendMenu_FriendCasualMenuItem , IVersusSequence_VersusFriendMenu_FriendCasualMenuItem , VersusSequence_Label , VersusSequence_VersusRankedMenu_Result2 , VersusSequence_VersusSequenceNet , IVersusSequence_VersusSequenceNet , VersusSequence , IVersusSequence , VersusSequence_VersusTopMenu_CasualMenuItem , IVersusSequence_VersusTopMenu_CasualMenuItem , VersusSequence_IVersusSequenceBase , IVersusSequence_IVersusSequenceBase , VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence , IVersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence , VersusSequence_VersusSequenceNet_UploadEditMapSequence_Label , VersusSequence_VersusFriendMenu_FriendRankedMenuItem , IVersusSequence_VersusFriendMenu_FriendRankedMenuItem , VersusSequence_ResultDialog_SelectMenu , VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback , IVersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback , VersusSequence_VersusSequenceNet_UploadEditMapSequence , IVersusSequence_VersusSequenceNet_UploadEditMapSequence , VersusSequence_ResultDialog , IVersusSequence_ResultDialog , VersusSequence_VersusSequenceLocal , IVersusSequence_VersusSequenceLocal , VersusSequence_VersusMatchingMenu , IVersusSequence_VersusMatchingMenu , VersusSequence_VersusYesNoDialog_NoItem , IVersusSequence_VersusYesNoDialog_NoItem , VersusSequence_DebugPersistentMenu , IVersusSequence_DebugPersistentMenu , VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItem , IVersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItem , VersusSequence_VersusProfileMenu_VersusProfileMenuItem , IVersusSequence_VersusProfileMenu_VersusProfileMenuItem , VersusSequence_VersusTopMenu_RankedMenuItem , IVersusSequence_VersusTopMenu_RankedMenuItem , VersusSequence_VersusFriendMenu , IVersusSequence_VersusFriendMenu , VersusSequence_VersusRankedMenu_StartMenuItem , IVersusSequence_VersusRankedMenu_StartMenuItem , VersusSequence_ProfileUploadSequence , IVersusSequence_ProfileUploadSequence , VersusSequence_VersusSequenceLocal_LocalRate , IVersusSequence_VersusSequenceLocal_LocalRate , VersusSequence_VersusCasualMenu , IVersusSequence_VersusCasualMenu , VersusSequence_VersusMatchingMenu_Result2 , VersusSequence_VersusRankedMenu_ResultMenuItem , IVersusSequence_VersusRankedMenu_ResultMenuItem , VersusSequence_VersusMatchingMenu_RandomMenuItem , IVersusSequence_VersusMatchingMenu_RandomMenuItem , VersusSequence_VersusRankedMenu , IVersusSequence_VersusRankedMenu , VersusSequence_ProfileDownloadSequence_Label , VersusSequence_VersusMatchingMenu_FriendMenuItem , IVersusSequence_VersusMatchingMenu_FriendMenuItem , VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog , IVersusSequence_ProfileDownloadSequence_DownloadYesNoDialog , VersusSequence_VersusCasualMenu_SelectMapMenuItem , IVersusSequence_VersusCasualMenu_SelectMapMenuItem , VersusSequence_VersusSequenceNet_UploadReplaySequence , IVersusSequence_VersusSequenceNet_UploadReplaySequence }
  ;
- # [cfg (feature = "app-versussequence")] pub use versussequence :: { IVersusSequence_VersusTopMenu_RankedMenuItemMethods , IVersusSequence_VersusSequenceNet_UploadReplaySequenceMethods , IVersusSequence_VersusMatchingMenu_FriendMenuItemMethods , IVersusSequence_VersusRankedMenu_MapEditMenuItemMethods , IVersusSequence_VersusSequenceBase_1Methods , IVersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItemMethods , IVersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItemMethods , IVersusSequence_VersusRankedMenu_ResultMenuItemMethods , IVersusSequence_VersusProfileMenuMethods , IVersusSequence_VersusMatchingMenuMethods , IVersusSequence_VersusYesNoDialog_NoItemMethods , IVersusSequence_VersusYesNoDialogMethods , IVersusSequence_VersusSequenceNetMethods , IVersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallbackMethods , IVersusSequence_VersusCasualMenuMethods , IVersusSequence_IVersusSequenceBaseMethods , IVersusSequence_ResultDialogMethods , IVersusSequence_VersusMatchingMenu_CodeMenuItemMethods , IVersusSequence_VersusSequenceNet_UploadEditMapSequenceMethods , IVersusSequence_VersusRankedMenuMethods , IVersusSequence_VersusYesNoDialog_YesItemMethods , IVersusSequence_VersusMatchingMenu_RandomMenuItemMethods , IVersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItemMethods , IVersusSequence_VersusRankedMenu_StartMenuItemMethods , IVersusSequence_VersusSequenceNet_SelectReplaySequence_CallbackMethods , IVersusSequence_VersusSequenceLocal_MetaDataPackMethods , IVersusSequence_ProfileUploadSequenceMethods , IVersusSequence_DebugPersistentMenuMethods , IVersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequenceMethods , IVersusSequence_VersusCasualMenu_SelectMapMenuItemMethods , IVersusSequence_VersusTopMenu_CasualMenuItemMethods , IVersusSequence_VersusRankedMenu_MockBattleMenuItemMethods , IVersusSequence_VersusFriendMenu_FriendCasualMenuItemMethods , IVersusSequence_VersusFriendMenu_FriendRankedMenuItemMethods , IVersusSequence_VersusSequenceNet_SelectReplaySequenceMethods , IVersusSequence_ResultDialog_AssistItemMethods , IVersusSequence_ResultDialog_DecideEventHandlerMethods , IVersusSequence_VersusMatchingMenu_ProfileMenuItemMethods , IVersusSequence_VersusFriendMenuMethods , IVersusSequence_VersusSequenceLocalMethods , IVersusSequence_VersusTopMenuMethods , IVersusSequence_VersusProfileMenu_VersusProfileMenuItemMethods , IVersusSequence_ProfileDownloadSequence_DownloadYesNoDialogMethods , IVersusSequence_ProfileDownloadSequenceMethods }
+ # [cfg (feature = "app-versussequence")] pub use versussequence :: { IVersusSequence_VersusMatchingMenu_ProfileMenuItemMethods , IVersusSequence_VersusSequenceNet_SelectReplaySequence_CallbackMethods , IVersusSequence_VersusRankedMenu_MapEditMenuItemMethods , IVersusSequence_ResultDialog_DecideEventHandlerMethods , IVersusSequence_VersusMatchingMenu_CodeMenuItemMethods , IVersusSequence_ResultDialog_AssistItemMethods , IVersusSequence_VersusRankedMenu_MockBattleMenuItemMethods , IVersusSequence_VersusTopMenuMethods , IVersusSequence_VersusYesNoDialog_YesItemMethods , IVersusSequence_VersusYesNoDialogMethods , IVersusSequence_VersusSequenceBase_1Methods , IVersusSequence_VersusSequenceNet_SelectReplaySequenceMethods , IVersusSequence_VersusSequenceLocal_MetaDataPackMethods , IVersusSequence_ProfileDownloadSequenceMethods , IVersusSequence_VersusProfileMenuMethods , IVersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItemMethods , IVersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItemMethods , IVersusSequence_VersusFriendMenu_FriendCasualMenuItemMethods , IVersusSequence_VersusSequenceNetMethods , IVersusSequence_VersusTopMenu_CasualMenuItemMethods , IVersusSequence_IVersusSequenceBaseMethods , IVersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequenceMethods , IVersusSequence_VersusFriendMenu_FriendRankedMenuItemMethods , IVersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallbackMethods , IVersusSequence_VersusSequenceNet_UploadEditMapSequenceMethods , IVersusSequence_ResultDialogMethods , IVersusSequence_VersusSequenceLocalMethods , IVersusSequence_VersusMatchingMenuMethods , IVersusSequence_VersusYesNoDialog_NoItemMethods , IVersusSequence_DebugPersistentMenuMethods , IVersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItemMethods , IVersusSequence_VersusProfileMenu_VersusProfileMenuItemMethods , IVersusSequence_VersusTopMenu_RankedMenuItemMethods , IVersusSequence_VersusFriendMenuMethods , IVersusSequence_VersusRankedMenu_StartMenuItemMethods , IVersusSequence_ProfileUploadSequenceMethods , IVersusSequence_VersusCasualMenuMethods , IVersusSequence_VersusRankedMenu_ResultMenuItemMethods , IVersusSequence_VersusMatchingMenu_RandomMenuItemMethods , IVersusSequence_VersusRankedMenuMethods , IVersusSequence_VersusMatchingMenu_FriendMenuItemMethods , IVersusSequence_ProfileDownloadSequence_DownloadYesNoDialogMethods , IVersusSequence_VersusCasualMenu_SelectMapMenuItemMethods , IVersusSequence_VersusSequenceNet_UploadReplaySequenceMethods }
  ;
  # [cfg (any (feature = "app-versusservercasualdata-types"))] pub mod versusservercasualdata ;
- # [cfg (feature = "app-versusservercasualdata-types")] pub use versusservercasualdata :: { VersusServerCasualData , IVersusServerCasualData , VersusServerCasualData_GodBondBackup , IVersusServerCasualData_GodBondBackup }
+ # [cfg (feature = "app-versusservercasualdata-types")] pub use versusservercasualdata :: { VersusServerCasualData_GodBondBackup , IVersusServerCasualData_GodBondBackup , VersusServerCasualData , IVersusServerCasualData }
  ;
- # [cfg (feature = "app-versusservercasualdata")] pub use versusservercasualdata :: { IVersusServerCasualDataMethods , IVersusServerCasualData_GodBondBackupMethods }
+ # [cfg (feature = "app-versusservercasualdata")] pub use versusservercasualdata :: { IVersusServerCasualData_GodBondBackupMethods , IVersusServerCasualDataMethods }
  ;
  # [cfg (any (feature = "app-versusservercasualmetadata-types"))] pub mod versusservercasualmetadata ;
  # [cfg (feature = "app-versusservercasualmetadata-types")] pub use versusservercasualmetadata :: { VersusServerCasualMetaData , IVersusServerCasualMetaData }
@@ -9534,9 +9534,9 @@
  # [cfg (feature = "app-versusviolationtopcontent")] pub use versusviolationtopcontent :: { IVersusViolationTopContentMethods }
  ;
  # [cfg (any (feature = "app-versusviolationtypemenu-types"))] pub mod versusviolationtypemenu ;
- # [cfg (feature = "app-versusviolationtypemenu-types")] pub use versusviolationtypemenu :: { VersusViolationTypeMenu_DecideCallback , IVersusViolationTypeMenu_DecideCallback , VersusViolationTypeMenu_VersusViolationTypeMenuItem , IVersusViolationTypeMenu_VersusViolationTypeMenuItem , VersusViolationTypeMenu , IVersusViolationTypeMenu }
+ # [cfg (feature = "app-versusviolationtypemenu-types")] pub use versusviolationtypemenu :: { VersusViolationTypeMenu_DecideCallback , IVersusViolationTypeMenu_DecideCallback , VersusViolationTypeMenu , IVersusViolationTypeMenu , VersusViolationTypeMenu_VersusViolationTypeMenuItem , IVersusViolationTypeMenu_VersusViolationTypeMenuItem }
  ;
- # [cfg (feature = "app-versusviolationtypemenu")] pub use versusviolationtypemenu :: { IVersusViolationTypeMenu_DecideCallbackMethods , IVersusViolationTypeMenu_VersusViolationTypeMenuItemMethods , IVersusViolationTypeMenuMethods }
+ # [cfg (feature = "app-versusviolationtypemenu")] pub use versusviolationtypemenu :: { IVersusViolationTypeMenu_DecideCallbackMethods , IVersusViolationTypeMenuMethods , IVersusViolationTypeMenu_VersusViolationTypeMenuItemMethods }
  ;
  # [cfg (any (feature = "app-versusviolationtypemenucontent-types"))] pub mod versusviolationtypemenucontent ;
  # [cfg (feature = "app-versusviolationtypemenucontent-types")] pub use versusviolationtypemenucontent :: { VersusViolationTypeMenuContent , IVersusViolationTypeMenuContent }
@@ -9559,9 +9559,9 @@
  # [cfg (feature = "app-vibrationfile")] pub use vibrationfile :: { IVibrationFileMethods }
  ;
  # [cfg (any (feature = "app-vibrationmanager-types"))] pub mod vibrationmanager ;
- # [cfg (feature = "app-vibrationmanager-types")] pub use vibrationmanager :: { VibrationManager , IVibrationManager , VibrationManager_VibHandle , IVibrationManager_VibHandle }
+ # [cfg (feature = "app-vibrationmanager-types")] pub use vibrationmanager :: { VibrationManager_VibHandle , IVibrationManager_VibHandle , VibrationManager , IVibrationManager }
  ;
- # [cfg (feature = "app-vibrationmanager")] pub use vibrationmanager :: { IVibrationManagerMethods , IVibrationManager_VibHandleMethods }
+ # [cfg (feature = "app-vibrationmanager")] pub use vibrationmanager :: { IVibrationManager_VibHandleMethods , IVibrationManagerMethods }
  ;
  # [cfg (any (feature = "app-viewmode-types"))] pub mod viewmode ;
  # [cfg (feature = "app-viewmode-types")] pub use viewmode :: { ViewMode_Mode , ViewMode , IViewMode }
@@ -9590,9 +9590,9 @@
  # [cfg (feature = "app-waypointinspector")] pub use waypointinspector :: { IWaypointInspectorMethods }
  ;
  # [cfg (any (feature = "app-waypointsync-types"))] pub mod waypointsync ;
- # [cfg (feature = "app-waypointsync-types")] pub use waypointsync :: { WaypointSync , IWaypointSync , WaypointSync_Relative , IWaypointSync_Relative }
+ # [cfg (feature = "app-waypointsync-types")] pub use waypointsync :: { WaypointSync_Relative , IWaypointSync_Relative , WaypointSync , IWaypointSync }
  ;
- # [cfg (feature = "app-waypointsync")] pub use waypointsync :: { IWaypointSyncMethods , IWaypointSync_RelativeMethods }
+ # [cfg (feature = "app-waypointsync")] pub use waypointsync :: { IWaypointSync_RelativeMethods , IWaypointSyncMethods }
  ;
  # [cfg (any (feature = "app-weaponholdinginfowindow-types"))] pub mod weaponholdinginfowindow ;
  # [cfg (feature = "app-weaponholdinginfowindow-types")] pub use weaponholdinginfowindow :: { WeaponHoldingInfoWindow , IWeaponHoldingInfoWindow }
@@ -9625,9 +9625,9 @@
  # [cfg (feature = "app-weaponshopbuyemptymenuitem")] pub use weaponshopbuyemptymenuitem :: { IWeaponShopBuyEmptyMenuItemMethods }
  ;
  # [cfg (any (feature = "app-weaponshopbuymenu-types"))] pub mod weaponshopbuymenu ;
- # [cfg (feature = "app-weaponshopbuymenu-types")] pub use weaponshopbuymenu :: { WeaponShopBuyMenu_ChangeUnitToNextEventHandler , IWeaponShopBuyMenu_ChangeUnitToNextEventHandler , WeaponShopBuyMenu_SelectEventHandler , IWeaponShopBuyMenu_SelectEventHandler , WeaponShopBuyMenu_RequestCloseEventHandler , IWeaponShopBuyMenu_RequestCloseEventHandler , WeaponShopBuyMenu , IWeaponShopBuyMenu , WeaponShopBuyMenu_ChangeUnitToPrevEventHandler , IWeaponShopBuyMenu_ChangeUnitToPrevEventHandler , WeaponShopBuyMenu_DecideEventHandler , IWeaponShopBuyMenu_DecideEventHandler , WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler , IWeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler }
+ # [cfg (feature = "app-weaponshopbuymenu-types")] pub use weaponshopbuymenu :: { WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler , IWeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler , WeaponShopBuyMenu_ChangeUnitToPrevEventHandler , IWeaponShopBuyMenu_ChangeUnitToPrevEventHandler , WeaponShopBuyMenu , IWeaponShopBuyMenu , WeaponShopBuyMenu_ChangeUnitToNextEventHandler , IWeaponShopBuyMenu_ChangeUnitToNextEventHandler , WeaponShopBuyMenu_SelectEventHandler , IWeaponShopBuyMenu_SelectEventHandler , WeaponShopBuyMenu_DecideEventHandler , IWeaponShopBuyMenu_DecideEventHandler , WeaponShopBuyMenu_RequestCloseEventHandler , IWeaponShopBuyMenu_RequestCloseEventHandler }
  ;
- # [cfg (feature = "app-weaponshopbuymenu")] pub use weaponshopbuymenu :: { IWeaponShopBuyMenu_ChangeUnitToNextEventHandlerMethods , IWeaponShopBuyMenu_SelectEventHandlerMethods , IWeaponShopBuyMenu_RequestCloseEventHandlerMethods , IWeaponShopBuyMenuMethods , IWeaponShopBuyMenu_ChangeUnitToPrevEventHandlerMethods , IWeaponShopBuyMenu_DecideEventHandlerMethods , IWeaponShopBuyMenu_SwitchDetailDisplaywayEventHandlerMethods }
+ # [cfg (feature = "app-weaponshopbuymenu")] pub use weaponshopbuymenu :: { IWeaponShopBuyMenu_SwitchDetailDisplaywayEventHandlerMethods , IWeaponShopBuyMenu_ChangeUnitToPrevEventHandlerMethods , IWeaponShopBuyMenuMethods , IWeaponShopBuyMenu_ChangeUnitToNextEventHandlerMethods , IWeaponShopBuyMenu_SelectEventHandlerMethods , IWeaponShopBuyMenu_DecideEventHandlerMethods , IWeaponShopBuyMenu_RequestCloseEventHandlerMethods }
  ;
  # [cfg (any (feature = "app-weaponshopbuymenucontent-types"))] pub mod weaponshopbuymenucontent ;
  # [cfg (feature = "app-weaponshopbuymenucontent-types")] pub use weaponshopbuymenucontent :: { WeaponShopBuyMenuContent , IWeaponShopBuyMenuContent , WeaponShopBuyMenuContent_KindIcon , IWeaponShopBuyMenuContent_KindIcon }
@@ -9645,9 +9645,9 @@
  # [cfg (feature = "app-weaponshopbuymenuitemcontent")] pub use weaponshopbuymenuitemcontent :: { IWeaponShopBuyMenuItemContentMethods }
  ;
  # [cfg (any (feature = "app-weaponshopbuyroot-types"))] pub mod weaponshopbuyroot ;
- # [cfg (feature = "app-weaponshopbuyroot-types")] pub use weaponshopbuyroot :: { WeaponShopBuyRoot_EquipableWeaponInfo , IWeaponShopBuyRoot_EquipableWeaponInfo , WeaponShopBuyRoot , IWeaponShopBuyRoot , WeaponShopBuyRoot_ReturnEventHandler , IWeaponShopBuyRoot_ReturnEventHandler }
+ # [cfg (feature = "app-weaponshopbuyroot-types")] pub use weaponshopbuyroot :: { WeaponShopBuyRoot , IWeaponShopBuyRoot , WeaponShopBuyRoot_ReturnEventHandler , IWeaponShopBuyRoot_ReturnEventHandler , WeaponShopBuyRoot_EquipableWeaponInfo , IWeaponShopBuyRoot_EquipableWeaponInfo }
  ;
- # [cfg (feature = "app-weaponshopbuyroot")] pub use weaponshopbuyroot :: { IWeaponShopBuyRoot_EquipableWeaponInfoMethods , IWeaponShopBuyRootMethods , IWeaponShopBuyRoot_ReturnEventHandlerMethods }
+ # [cfg (feature = "app-weaponshopbuyroot")] pub use weaponshopbuyroot :: { IWeaponShopBuyRootMethods , IWeaponShopBuyRoot_ReturnEventHandlerMethods , IWeaponShopBuyRoot_EquipableWeaponInfoMethods }
  ;
  # [cfg (any (feature = "app-weaponshopdata-types"))] pub mod weaponshopdata ;
  # [cfg (feature = "app-weaponshopdata-types")] pub use weaponshopdata :: { WeaponShopData , IWeaponShopData }
@@ -9655,9 +9655,9 @@
  # [cfg (feature = "app-weaponshopdata")] pub use weaponshopdata :: { IWeaponShopDataMethods }
  ;
  # [cfg (any (feature = "app-weaponshoptopmenu-types"))] pub mod weaponshoptopmenu ;
- # [cfg (feature = "app-weaponshoptopmenu-types")] pub use weaponshoptopmenu :: { WeaponShopTopMenu_Result2 , WeaponShopTopMenu_SellMenuItem , IWeaponShopTopMenu_SellMenuItem , WeaponShopTopMenu_DecideEventHandler , IWeaponShopTopMenu_DecideEventHandler , WeaponShopTopMenu , IWeaponShopTopMenu , WeaponShopTopMenu_BuyMenuItem , IWeaponShopTopMenu_BuyMenuItem }
+ # [cfg (feature = "app-weaponshoptopmenu-types")] pub use weaponshoptopmenu :: { WeaponShopTopMenu , IWeaponShopTopMenu , WeaponShopTopMenu_BuyMenuItem , IWeaponShopTopMenu_BuyMenuItem , WeaponShopTopMenu_Result2 , WeaponShopTopMenu_SellMenuItem , IWeaponShopTopMenu_SellMenuItem , WeaponShopTopMenu_DecideEventHandler , IWeaponShopTopMenu_DecideEventHandler }
  ;
- # [cfg (feature = "app-weaponshoptopmenu")] pub use weaponshoptopmenu :: { IWeaponShopTopMenu_SellMenuItemMethods , IWeaponShopTopMenu_DecideEventHandlerMethods , IWeaponShopTopMenuMethods , IWeaponShopTopMenu_BuyMenuItemMethods }
+ # [cfg (feature = "app-weaponshoptopmenu")] pub use weaponshoptopmenu :: { IWeaponShopTopMenuMethods , IWeaponShopTopMenu_BuyMenuItemMethods , IWeaponShopTopMenu_SellMenuItemMethods , IWeaponShopTopMenu_DecideEventHandlerMethods }
  ;
  # [cfg (any (feature = "app-weightfader-types"))] pub mod weightfader ;
  # [cfg (feature = "app-weightfader-types")] pub use weightfader :: { WeightFader , IWeightFader }
@@ -9670,9 +9670,9 @@
  # [cfg (feature = "app-welleffectmanager")] pub use welleffectmanager :: { IWellEffectManagerMethods }
  ;
  # [cfg (any (feature = "app-wellitemselectmenu-types"))] pub mod wellitemselectmenu ;
- # [cfg (feature = "app-wellitemselectmenu-types")] pub use wellitemselectmenu :: { WellItemSelectMenu , IWellItemSelectMenu , WellItemSelectMenu_Kinds , WellItemSelectMenu_SelectedItem , IWellItemSelectMenu_SelectedItem }
+ # [cfg (feature = "app-wellitemselectmenu-types")] pub use wellitemselectmenu :: { WellItemSelectMenu_Kinds , WellItemSelectMenu_SelectedItem , IWellItemSelectMenu_SelectedItem , WellItemSelectMenu , IWellItemSelectMenu }
  ;
- # [cfg (feature = "app-wellitemselectmenu")] pub use wellitemselectmenu :: { IWellItemSelectMenuMethods , IWellItemSelectMenu_SelectedItemMethods }
+ # [cfg (feature = "app-wellitemselectmenu")] pub use wellitemselectmenu :: { IWellItemSelectMenu_SelectedItemMethods , IWellItemSelectMenuMethods }
  ;
  # [cfg (any (feature = "app-wellitemselectmenublankitem-types"))] pub mod wellitemselectmenublankitem ;
  # [cfg (feature = "app-wellitemselectmenublankitem-types")] pub use wellitemselectmenublankitem :: { WellItemSelectMenuBlankItem , IWellItemSelectMenuBlankItem }
@@ -9695,14 +9695,14 @@
  # [cfg (feature = "app-wellitemselectmenunoneitem")] pub use wellitemselectmenunoneitem :: { IWellItemSelectMenuNoneItemMethods }
  ;
  # [cfg (any (feature = "app-wellsequence-types"))] pub mod wellsequence ;
- # [cfg (feature = "app-wellsequence-types")] pub use wellsequence :: { WellSequence_DialogItemGotoEvilFirst , IWellSequence_DialogItemGotoEvilFirst , WellSequence_EvilWeaponEventStates , WellSequence_UseFlags , WellSequence_ChangeDifficultyMenuItem , IWellSequence_ChangeDifficultyMenuItem , WellSequence_Label , WellSequence , IWellSequence }
+ # [cfg (feature = "app-wellsequence-types")] pub use wellsequence :: { WellSequence_ChangeDifficultyMenuItem , IWellSequence_ChangeDifficultyMenuItem , WellSequence_Label , WellSequence_EvilWeaponEventStates , WellSequence_UseFlags , WellSequence , IWellSequence , WellSequence_DialogItemGotoEvilFirst , IWellSequence_DialogItemGotoEvilFirst }
  ;
- # [cfg (feature = "app-wellsequence")] pub use wellsequence :: { IWellSequence_DialogItemGotoEvilFirstMethods , IWellSequence_ChangeDifficultyMenuItemMethods , IWellSequenceMethods }
+ # [cfg (feature = "app-wellsequence")] pub use wellsequence :: { IWellSequence_ChangeDifficultyMenuItemMethods , IWellSequenceMethods , IWellSequence_DialogItemGotoEvilFirstMethods }
  ;
  # [cfg (any (feature = "app-welltopmenu-types"))] pub mod welltopmenu ;
- # [cfg (feature = "app-welltopmenu-types")] pub use welltopmenu :: { WellTopMenu_EvilMapStartMenuItem , IWellTopMenu_EvilMapStartMenuItem , WellTopMenu_ItemExchangeMenuItem , IWellTopMenu_ItemExchangeMenuItem , WellTopMenu_EvilMapChangeDifficultyMenuItem , IWellTopMenu_EvilMapChangeDifficultyMenuItem , WellTopMenu_MenuResult , WellTopMenu , IWellTopMenu , WellTopMenu_DecideEventHandler , IWellTopMenu_DecideEventHandler }
+ # [cfg (feature = "app-welltopmenu-types")] pub use welltopmenu :: { WellTopMenu_ItemExchangeMenuItem , IWellTopMenu_ItemExchangeMenuItem , WellTopMenu_MenuResult , WellTopMenu , IWellTopMenu , WellTopMenu_DecideEventHandler , IWellTopMenu_DecideEventHandler , WellTopMenu_EvilMapStartMenuItem , IWellTopMenu_EvilMapStartMenuItem , WellTopMenu_EvilMapChangeDifficultyMenuItem , IWellTopMenu_EvilMapChangeDifficultyMenuItem }
  ;
- # [cfg (feature = "app-welltopmenu")] pub use welltopmenu :: { IWellTopMenu_EvilMapStartMenuItemMethods , IWellTopMenu_ItemExchangeMenuItemMethods , IWellTopMenu_EvilMapChangeDifficultyMenuItemMethods , IWellTopMenuMethods , IWellTopMenu_DecideEventHandlerMethods }
+ # [cfg (feature = "app-welltopmenu")] pub use welltopmenu :: { IWellTopMenu_ItemExchangeMenuItemMethods , IWellTopMenuMethods , IWellTopMenu_DecideEventHandlerMethods , IWellTopMenu_EvilMapStartMenuItemMethods , IWellTopMenu_EvilMapChangeDifficultyMenuItemMethods }
  ;
  # [cfg (any (feature = "app-winloserule-types"))] pub mod winloserule ;
  # [cfg (feature = "app-winloserule-types")] pub use winloserule :: { WinLoseRule }

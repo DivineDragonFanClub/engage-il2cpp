@@ -25,23 +25,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographhaveanimatorcontroller/PhotographHaveAnimatorController_UpdateFaceAnime.md"))] # [:: unity2 :: class (namespace = "App" , name = "PhotographHaveAnimatorController.UpdateFaceAnime")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct PhotographHaveAnimatorController_UpdateFaceAnime {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographhaveanimatorcontroller/PhotographHaveAnimatorController.md"))] # [:: unity2 :: class (namespace = "App" , name = "PhotographHaveAnimatorController")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct PhotographHaveAnimatorController {
-# [offset (24)] # [rename (name = "m_AnimatorController")] pub m_animator_controller : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: runtimeanimatorcontroller :: RuntimeAnimatorController > ,
-# [offset (32)] # [rename (name = "m_AnimeTime")] pub m_anime_time : f32 ,
-# [offset (40)] # [rename (name = "m_Update")] pub m_update : crate :: app :: photographhaveanimatorcontroller :: PhotographHaveAnimatorController_UpdateAnime ,
-# [offset (48)] # [rename (name = "m_FaceUpdate")] pub m_face_update : crate :: app :: photographhaveanimatorcontroller :: PhotographHaveAnimatorController_UpdateFaceAnime ,
-# [offset (56)] # [rename (name = "m_faceAnime")] pub m_face_anime : crate :: app :: photographhaveanimatorcontroller :: PhotographHaveAnimatorController_FaceAnime ,
-# [offset (60)] # [rename (name = "m_BeforeFaceAnime")] pub m_before_face_anime : crate :: app :: photographhaveanimatorcontroller :: PhotographHaveAnimatorController_FaceAnime ,
-# [offset (64)] # [rename (name = "m_Sprite")] pub m_sprite : crate :: unity_engine :: sprite :: Sprite ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographhaveanimatorcontroller/PhotographHaveAnimatorController_UpdateAnime.md"))] # [:: unity2 :: class (namespace = "App" , name = "PhotographHaveAnimatorController.UpdateAnime")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct PhotographHaveAnimatorController_UpdateAnime {}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographhaveanimatorcontroller/PhotographHaveAnimatorController_FaceAnime.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -156,6 +139,23 @@ impl  PhotographHaveAnimatorController_FaceAnime  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographhaveanimatorcontroller/PhotographHaveAnimatorController_UpdateFaceAnime.md"))] # [:: unity2 :: class (namespace = "App" , name = "PhotographHaveAnimatorController.UpdateFaceAnime")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct PhotographHaveAnimatorController_UpdateFaceAnime {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographhaveanimatorcontroller/PhotographHaveAnimatorController.md"))] # [:: unity2 :: class (namespace = "App" , name = "PhotographHaveAnimatorController")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct PhotographHaveAnimatorController {
+# [offset (24)] # [rename (name = "m_AnimatorController")] pub m_animator_controller : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: runtimeanimatorcontroller :: RuntimeAnimatorController > ,
+# [offset (32)] # [rename (name = "m_AnimeTime")] pub m_anime_time : f32 ,
+# [offset (40)] # [rename (name = "m_Update")] pub m_update : crate :: app :: photographhaveanimatorcontroller :: PhotographHaveAnimatorController_UpdateAnime ,
+# [offset (48)] # [rename (name = "m_FaceUpdate")] pub m_face_update : crate :: app :: photographhaveanimatorcontroller :: PhotographHaveAnimatorController_UpdateFaceAnime ,
+# [offset (56)] # [rename (name = "m_faceAnime")] pub m_face_anime : crate :: app :: photographhaveanimatorcontroller :: PhotographHaveAnimatorController_FaceAnime ,
+# [offset (60)] # [rename (name = "m_BeforeFaceAnime")] pub m_before_face_anime : crate :: app :: photographhaveanimatorcontroller :: PhotographHaveAnimatorController_FaceAnime ,
+# [offset (64)] # [rename (name = "m_Sprite")] pub m_sprite : crate :: unity_engine :: sprite :: Sprite ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographhaveanimatorcontroller/PhotographHaveAnimatorController_UpdateAnime.md"))] # [:: unity2 :: class (namespace = "App" , name = "PhotographHaveAnimatorController.UpdateAnime")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct PhotographHaveAnimatorController_UpdateAnime {}
+
 }
 
 #[cfg(feature = "app-photographhaveanimatorcontroller-types")]
@@ -215,6 +215,7 @@ impl PhotographHaveAnimatorController_UpdateAnime {
 #[cfg(feature = "app-photographhaveanimatorcontroller")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::PhotographHaveAnimatorController_FaceAnime;
     pub use super::PhotographHaveAnimatorController_UpdateFaceAnime;
     pub use super::IPhotographHaveAnimatorController_UpdateFaceAnime;
     pub use super::IPhotographHaveAnimatorController_UpdateFaceAnimeMethods;
@@ -224,7 +225,6 @@ pub mod prelude {
     pub use super::PhotographHaveAnimatorController_UpdateAnime;
     pub use super::IPhotographHaveAnimatorController_UpdateAnime;
     pub use super::IPhotographHaveAnimatorController_UpdateAnimeMethods;
-    pub use super::PhotographHaveAnimatorController_FaceAnime;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

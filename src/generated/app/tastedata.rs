@@ -25,95 +25,7 @@ mod __types {
  ;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tastedata/TasteData_TasteGrade.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TasteData_TasteGrade  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for TasteData_TasteGrade  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "TasteData.TasteGrade";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for TasteData_TasteGrade  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  TasteData_TasteGrade  {
-    pub fn ss() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn s() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn a() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn b() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn c() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn d() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn e() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn f() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn g() -> Self {
-        Self { value: 8 }
-
-    }
-
-}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/tastedata/TasteData.md"))] # [:: unity2 :: class (namespace = "App" , name = "TasteData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: tastedata :: TasteData >)] pub struct TasteData {}
 
 
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tastedata/TasteData_Flags.md"))]
@@ -169,12 +81,6 @@ impl  TasteData_Flags  {
     }
 
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/tastedata/TasteData.md"))] # [:: unity2 :: class (namespace = "App" , name = "TasteData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: tastedata :: TasteData >)] pub struct TasteData {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/tastedata/TasteData_FlagField.md"))] # [:: unity2 :: class (namespace = "App" , name = "TasteData.FlagField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: tastedata :: TasteData_Flags >)] pub struct TasteData_FlagField {}
 
 
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tastedata/TasteData_ConditionType.md"))]
@@ -279,6 +185,100 @@ impl  TasteData_ConditionType  {
 
 }
 
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tastedata/TasteData_TasteGrade.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct TasteData_TasteGrade  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for TasteData_TasteGrade  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "TasteData.TasteGrade";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for TasteData_TasteGrade  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  TasteData_TasteGrade  {
+    pub fn ss() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn s() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn a() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn b() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn c() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn d() -> Self {
+        Self { value: 5 }
+
+    }
+
+
+    pub fn e() -> Self {
+        Self { value: 6 }
+
+    }
+
+
+    pub fn f() -> Self {
+        Self { value: 7 }
+
+    }
+
+
+    pub fn g() -> Self {
+        Self { value: 8 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/tastedata/TasteData_FlagField.md"))] # [:: unity2 :: class (namespace = "App" , name = "TasteData.FlagField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: tastedata :: TasteData_Flags >)] pub struct TasteData_FlagField {}
+
 }
 
 #[cfg(feature = "app-tastedata-types")]
@@ -326,15 +326,15 @@ impl TasteData_FlagField {
 #[cfg(feature = "app-tastedata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TasteData_TasteGrade;
-    pub use super::TasteData_Flags;
     pub use super::TasteData;
     pub use super::ITasteData;
     pub use super::ITasteDataMethods;
+    pub use super::TasteData_Flags;
+    pub use super::TasteData_ConditionType;
+    pub use super::TasteData_TasteGrade;
     pub use super::TasteData_FlagField;
     pub use super::ITasteData_FlagField;
     pub use super::ITasteData_FlagFieldMethods;
-    pub use super::TasteData_ConditionType;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

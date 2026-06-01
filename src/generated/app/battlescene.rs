@@ -21,6 +21,23 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlescene/BattleScene.md"))] # [:: unity2 :: class (namespace = "App" , name = "BattleScene")] # [parent (crate :: app :: pool :: Pool_Node)] pub struct BattleScene {
+# [offset (16)] # [rename (name = "m_List")] pub m_list : crate :: app :: battlescenelist :: BattleSceneList ,
+# [offset (24)] # [rename (name = "m_Side")] pub m_side : crate :: app :: battleside :: BattleSide_Type ,
+# [offset (28)] # [rename (name = "m_Target")] pub m_target : crate :: app :: battleside :: BattleSide_Type ,
+# [offset (32)] # [rename (name = "m_Kind")] pub m_kind : crate :: app :: battlescene :: BattleScene_Kind ,
+# [offset (36)] # [rename (name = "m_Skill")] pub m_skill : i32 ,
+# [offset (40)] # [rename (name = "m_Item")] pub m_item : i32 ,
+# [offset (44)] # [rename (name = "m_God")] pub m_god : i32 ,
+# [offset (48)] # [rename (name = "m_Index")] pub m_index : i32 ,
+# [offset (56)] # [rename (name = "m_Result")] pub m_result : crate :: app :: battlescene :: BattleScene_FieldResult ,
+# [offset (64)] # [rename (name = "m_Guardian")] pub m_guardian : crate :: app :: battleside :: BattleSide_Type ,
+# [offset (72)] # [rename (name = "m_Hps")] pub m_hps : crate :: app :: battleside :: BattleSide_ShortArray ,
+# [offset (80)] # [rename (name = "m_Engages")] pub m_engages : crate :: app :: battleside :: BattleSide_SbyteArray ,
+# [offset (88)] # [rename (name = "m_Damages")] pub m_damages : crate :: app :: battleside :: BattleSide_ShortArray ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlescene/BattleScene_Result.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -151,23 +168,6 @@ impl  BattleScene_Result  {
 
     }
 
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlescene/BattleScene.md"))] # [:: unity2 :: class (namespace = "App" , name = "BattleScene")] # [parent (crate :: app :: pool :: Pool_Node)] pub struct BattleScene {
-# [offset (16)] # [rename (name = "m_List")] pub m_list : crate :: app :: battlescenelist :: BattleSceneList ,
-# [offset (24)] # [rename (name = "m_Side")] pub m_side : crate :: app :: battleside :: BattleSide_Type ,
-# [offset (28)] # [rename (name = "m_Target")] pub m_target : crate :: app :: battleside :: BattleSide_Type ,
-# [offset (32)] # [rename (name = "m_Kind")] pub m_kind : crate :: app :: battlescene :: BattleScene_Kind ,
-# [offset (36)] # [rename (name = "m_Skill")] pub m_skill : i32 ,
-# [offset (40)] # [rename (name = "m_Item")] pub m_item : i32 ,
-# [offset (44)] # [rename (name = "m_God")] pub m_god : i32 ,
-# [offset (48)] # [rename (name = "m_Index")] pub m_index : i32 ,
-# [offset (56)] # [rename (name = "m_Result")] pub m_result : crate :: app :: battlescene :: BattleScene_FieldResult ,
-# [offset (64)] # [rename (name = "m_Guardian")] pub m_guardian : crate :: app :: battleside :: BattleSide_Type ,
-# [offset (72)] # [rename (name = "m_Hps")] pub m_hps : crate :: app :: battleside :: BattleSide_ShortArray ,
-# [offset (80)] # [rename (name = "m_Engages")] pub m_engages : crate :: app :: battleside :: BattleSide_SbyteArray ,
-# [offset (88)] # [rename (name = "m_Damages")] pub m_damages : crate :: app :: battleside :: BattleSide_ShortArray ,
 }
 
 
@@ -393,10 +393,10 @@ impl BattleScene_FieldResult {
 #[cfg(feature = "app-battlescene")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::BattleScene_Result;
     pub use super::BattleScene;
     pub use super::IBattleScene;
     pub use super::IBattleSceneMethods;
+    pub use super::BattleScene_Result;
     pub use super::BattleScene_FieldResult;
     pub use super::IBattleScene_FieldResult;
     pub use super::IBattleScene_FieldResultMethods;

@@ -21,45 +21,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapcursor/MapCursor_FlagField.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapCursor.FlagField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: mapcursor :: MapCursor_Flag >)] pub struct MapCursor_FlagField {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapcursor/MapCursor.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapCursor")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapcursor :: MapCursor >)] pub struct MapCursor {
-# [static_field] # [rename (name = "MapCursorMoveOffset")] pub map_cursor_move_offset : f32 ,
-# [static_field] # [rename (name = "MOVE_WAIT_FRAME")] pub move_wait_frame : i32 ,
-# [static_field] # [rename (name = "MOVE_CENTER_FRAME")] pub move_center_frame : i32 ,
-# [offset (28)] # [rename (name = "m_Pos")] pub m_pos : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (40)] # [rename (name = "m_OldPos")] pub m_old_pos : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (52)] # [rename (name = "m_OrigPos")] pub m_orig_pos : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (64)] # [rename (name = "m_Rotate")] pub m_rotate : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (76)] # [rename (name = "m_Move")] pub m_move : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (88)] # [rename (name = "m_EnterPos")] pub m_enter_pos : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (100)] # [rename (name = "m_MoveCount")] pub m_move_count : i32 ,
-# [offset (104)] # [rename (name = "m_IsRotateXSoundPlaying")] pub m_is_rotate_x_sound_playing : bool ,
-# [static_field] # [rename (name = "m_CursorTop")] pub m_cursor_top : crate :: app :: mapcursor :: MapCursor_CursorTopType ,
-# [static_field] # [rename (name = "m_CursorTopAnim")] pub m_cursor_top_anim : crate :: app :: mapcursor :: MapCursor_AnimType ,
-# [static_field] # [rename (name = "m_CursorBottomAnim")] pub m_cursor_bottom_anim : crate :: app :: mapcursor :: MapCursor_AnimType ,
-# [offset (112)] # [rename (name = "m_CursorIconBill")] pub m_cursor_icon_bill : crate :: unity_engine :: transform :: Transform ,
-# [offset (120)] # [rename (name = "m_DistanceDir")] pub m_distance_dir : i32 ,
-# [offset (124)] # [rename (name = "m_AnalogCount")] pub m_analog_count : i32 ,
-# [offset (128)] # [rename (name = "m_CenterCount")] pub m_center_count : i32 ,
-# [offset (132)] # [rename (name = "m_DistanceScale")] pub m_distance_scale : f32 ,
-# [offset (136)] # [rename (name = "m_MapCursorMoveType")] pub m_map_cursor_move_type : crate :: app :: gameconfig :: GameConfig_MapCursorMoveTyep ,
-# [offset (140)] # [rename (name = "m_IsLockMoveType")] pub m_is_lock_move_type : bool ,
-# [offset (144)] # [rename (name = "m_CursorTopObj")] pub m_cursor_top_obj : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (152)] # [rename (name = "m_CursorBottomObj")] pub m_cursor_bottom_obj : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (160)] # [rename (name = "m_CursorTopMgr")] pub m_cursor_top_mgr : crate :: root :: mappointeranimmanager :: MapPointerAnimManager ,
-# [offset (168)] # [rename (name = "m_CursorBottomMgr")] pub m_cursor_bottom_mgr : crate :: root :: mapcursoranimmanager :: MapCursorAnimManager ,
-# [static_field] # [rename (name = "m_MapPointerLocatorRoot")] pub m_map_pointer_locator_root : crate :: root :: mappointerlocatorroot :: MapPointerLocatorRoot ,
-# [static_field] # [rename (name = "m_MapCursorLocatorRoot")] pub m_map_cursor_locator_root : crate :: root :: mapcursorlocatorroot :: MapCursorLocatorRoot ,
-# [offset (176)] # [rename (name = "m_PositionTop")] pub m_position_top : crate :: app :: interpolatorvector3 :: InterpolatorVector3 ,
-# [offset (184)] # [rename (name = "m_PositionBottom")] pub m_position_bottom : crate :: app :: interpolatorvector3 :: InterpolatorVector3 ,
-# [offset (192)] # [rename (name = "m_CursorMind")] pub m_cursor_mind : crate :: app :: mapmind :: MapMind_Type ,
-# [offset (196)] # [rename (name = "m_Color")] pub m_color : crate :: unity_engine :: color :: Color ,
-# [offset (216)] # [rename (name = "m_Flags")] pub m_flags : crate :: app :: mapcursor :: MapCursor_FlagField ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapcursor/MapCursor_CursorTopType.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -139,6 +100,9 @@ impl  MapCursor_CursorTopType  {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapcursor/MapCursor_FlagField.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapCursor.FlagField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: mapcursor :: MapCursor_Flag >)] pub struct MapCursor_FlagField {}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapcursor/MapCursor_DistanceMode.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -191,6 +155,42 @@ impl  MapCursor_DistanceMode  {
 
     }
 
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapcursor/MapCursor.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapCursor")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapcursor :: MapCursor >)] pub struct MapCursor {
+# [static_field] # [rename (name = "MapCursorMoveOffset")] pub map_cursor_move_offset : f32 ,
+# [static_field] # [rename (name = "MOVE_WAIT_FRAME")] pub move_wait_frame : i32 ,
+# [static_field] # [rename (name = "MOVE_CENTER_FRAME")] pub move_center_frame : i32 ,
+# [offset (28)] # [rename (name = "m_Pos")] pub m_pos : crate :: unity_engine :: vector3 :: Vector3 ,
+# [offset (40)] # [rename (name = "m_OldPos")] pub m_old_pos : crate :: unity_engine :: vector3 :: Vector3 ,
+# [offset (52)] # [rename (name = "m_OrigPos")] pub m_orig_pos : crate :: unity_engine :: vector3 :: Vector3 ,
+# [offset (64)] # [rename (name = "m_Rotate")] pub m_rotate : crate :: unity_engine :: vector3 :: Vector3 ,
+# [offset (76)] # [rename (name = "m_Move")] pub m_move : crate :: unity_engine :: vector3 :: Vector3 ,
+# [offset (88)] # [rename (name = "m_EnterPos")] pub m_enter_pos : crate :: unity_engine :: vector3 :: Vector3 ,
+# [offset (100)] # [rename (name = "m_MoveCount")] pub m_move_count : i32 ,
+# [offset (104)] # [rename (name = "m_IsRotateXSoundPlaying")] pub m_is_rotate_x_sound_playing : bool ,
+# [static_field] # [rename (name = "m_CursorTop")] pub m_cursor_top : crate :: app :: mapcursor :: MapCursor_CursorTopType ,
+# [static_field] # [rename (name = "m_CursorTopAnim")] pub m_cursor_top_anim : crate :: app :: mapcursor :: MapCursor_AnimType ,
+# [static_field] # [rename (name = "m_CursorBottomAnim")] pub m_cursor_bottom_anim : crate :: app :: mapcursor :: MapCursor_AnimType ,
+# [offset (112)] # [rename (name = "m_CursorIconBill")] pub m_cursor_icon_bill : crate :: unity_engine :: transform :: Transform ,
+# [offset (120)] # [rename (name = "m_DistanceDir")] pub m_distance_dir : i32 ,
+# [offset (124)] # [rename (name = "m_AnalogCount")] pub m_analog_count : i32 ,
+# [offset (128)] # [rename (name = "m_CenterCount")] pub m_center_count : i32 ,
+# [offset (132)] # [rename (name = "m_DistanceScale")] pub m_distance_scale : f32 ,
+# [offset (136)] # [rename (name = "m_MapCursorMoveType")] pub m_map_cursor_move_type : crate :: app :: gameconfig :: GameConfig_MapCursorMoveTyep ,
+# [offset (140)] # [rename (name = "m_IsLockMoveType")] pub m_is_lock_move_type : bool ,
+# [offset (144)] # [rename (name = "m_CursorTopObj")] pub m_cursor_top_obj : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (152)] # [rename (name = "m_CursorBottomObj")] pub m_cursor_bottom_obj : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (160)] # [rename (name = "m_CursorTopMgr")] pub m_cursor_top_mgr : crate :: root :: mappointeranimmanager :: MapPointerAnimManager ,
+# [offset (168)] # [rename (name = "m_CursorBottomMgr")] pub m_cursor_bottom_mgr : crate :: root :: mapcursoranimmanager :: MapCursorAnimManager ,
+# [static_field] # [rename (name = "m_MapPointerLocatorRoot")] pub m_map_pointer_locator_root : crate :: root :: mappointerlocatorroot :: MapPointerLocatorRoot ,
+# [static_field] # [rename (name = "m_MapCursorLocatorRoot")] pub m_map_cursor_locator_root : crate :: root :: mapcursorlocatorroot :: MapCursorLocatorRoot ,
+# [offset (176)] # [rename (name = "m_PositionTop")] pub m_position_top : crate :: app :: interpolatorvector3 :: InterpolatorVector3 ,
+# [offset (184)] # [rename (name = "m_PositionBottom")] pub m_position_bottom : crate :: app :: interpolatorvector3 :: InterpolatorVector3 ,
+# [offset (192)] # [rename (name = "m_CursorMind")] pub m_cursor_mind : crate :: app :: mapmind :: MapMind_Type ,
+# [offset (196)] # [rename (name = "m_Color")] pub m_color : crate :: unity_engine :: color :: Color ,
+# [offset (216)] # [rename (name = "m_Flags")] pub m_flags : crate :: app :: mapcursor :: MapCursor_FlagField ,
 }
 
 
@@ -342,14 +342,14 @@ impl MapCursor {
 #[cfg(feature = "app-mapcursor")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MapCursor_CursorTopType;
     pub use super::MapCursor_FlagField;
     pub use super::IMapCursor_FlagField;
     pub use super::IMapCursor_FlagFieldMethods;
+    pub use super::MapCursor_DistanceMode;
     pub use super::MapCursor;
     pub use super::IMapCursor;
     pub use super::IMapCursorMethods;
-    pub use super::MapCursor_CursorTopType;
-    pub use super::MapCursor_DistanceMode;
     pub use super::MapCursor_Flag;
     pub use super::MapCursor_AnimType;
     pub use crate::app::bitfield32::IBitField32;

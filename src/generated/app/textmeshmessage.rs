@@ -21,6 +21,13 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/textmeshmessage/TextMeshMessage.md"))] # [:: unity2 :: class (namespace = "App" , name = "TextMeshMessage")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct TextMeshMessage {
+# [offset (24)] # [rename (name = "m_Target")] pub m_target : crate :: app :: textmeshmessage :: TextMeshMessage_Targets ,
+# [offset (32)] # [rename (name = "m_Label")] pub m_label : :: unity2 :: Il2CppString ,
+# [offset (40)] # [rename (name = "m_File")] pub m_file : :: unity2 :: Il2CppString ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/textmeshmessage/TextMeshMessage_Targets.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -69,13 +76,6 @@ impl  TextMeshMessage_Targets  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/textmeshmessage/TextMeshMessage.md"))] # [:: unity2 :: class (namespace = "App" , name = "TextMeshMessage")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct TextMeshMessage {
-# [offset (24)] # [rename (name = "m_Target")] pub m_target : crate :: app :: textmeshmessage :: TextMeshMessage_Targets ,
-# [offset (32)] # [rename (name = "m_Label")] pub m_label : :: unity2 :: Il2CppString ,
-# [offset (40)] # [rename (name = "m_File")] pub m_file : :: unity2 :: Il2CppString ,
-}
-
 }
 
 #[cfg(feature = "app-textmeshmessage-types")]
@@ -101,10 +101,10 @@ impl TextMeshMessage {
 #[cfg(feature = "app-textmeshmessage")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TextMeshMessage_Targets;
     pub use super::TextMeshMessage;
     pub use super::ITextMeshMessage;
     pub use super::ITextMeshMessageMethods;
+    pub use super::TextMeshMessage_Targets;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

@@ -13,13 +13,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/loadingmanager/LoadingManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "LoadingManager")] # [parent (crate :: system :: object :: Object)] pub struct LoadingManager {
-# [static_field] # [rename (name = "s_Binder")] pub s_binder : crate :: app :: bindholder :: BindHolder ,
-# [static_field] # [rename (name = "s_Timer")] pub s_timer : crate :: app :: timer :: Timer ,
-# [static_field] # [rename (name = "s_FadeBind")] pub s_fade_bind : bool ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/loadingmanager/LoadingManager_Modes.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -86,6 +79,13 @@ impl  LoadingManager_Modes  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/loadingmanager/LoadingManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "LoadingManager")] # [parent (crate :: system :: object :: Object)] pub struct LoadingManager {
+# [static_field] # [rename (name = "s_Binder")] pub s_binder : crate :: app :: bindholder :: BindHolder ,
+# [static_field] # [rename (name = "s_Timer")] pub s_timer : crate :: app :: timer :: Timer ,
+# [static_field] # [rename (name = "s_FadeBind")] pub s_fade_bind : bool ,
+}
+
 }
 
 #[cfg(feature = "app-loadingmanager-types")]
@@ -114,10 +114,10 @@ impl LoadingManager {
 #[cfg(feature = "app-loadingmanager")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::LoadingManager_Modes;
     pub use super::LoadingManager;
     pub use super::ILoadingManager;
     pub use super::ILoadingManagerMethods;
-    pub use super::LoadingManager_Modes;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

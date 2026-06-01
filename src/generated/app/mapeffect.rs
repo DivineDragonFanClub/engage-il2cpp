@@ -13,6 +13,9 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapeffect/MapEffect_LocationPool.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapEffect.LocationPool")] # [parent (crate :: app :: pool :: Pool_List_1 < crate :: app :: mapeffect :: MapEffect_LocationNode >)] pub struct MapEffect_LocationPool {}
+
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapeffect/MapEffect_LocationNode.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapEffect.LocationNode")] # [parent (crate :: app :: pool :: Pool_Node)] pub struct MapEffect_LocationNode {
 # [offset (16)] # [rename (name = "Name")] pub name : :: unity2 :: Il2CppString ,
 # [offset (24)] # [rename (name = "Position")] pub position : crate :: unity_engine :: vector3 :: Vector3 ,
@@ -26,13 +29,27 @@ mod __types {
 # [offset (32)] # [rename (name = "m_Pool")] pub m_pool : crate :: app :: mapeffect :: MapEffect_LocationPool ,
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapeffect/MapEffect_LocationPool.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapEffect.LocationPool")] # [parent (crate :: app :: pool :: Pool_List_1 < crate :: app :: mapeffect :: MapEffect_LocationNode >)] pub struct MapEffect_LocationPool {}
-
 }
 
 #[cfg(feature = "app-mapeffect-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-mapeffect")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapEffect_LocationPool_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEffect_LocationPool as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEffect_LocationPool as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapEffect_LocationPool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapEffect_LocationPool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-mapeffect")]
+pub trait IMapEffect_LocationPoolMethods : IMapEffect_LocationPool { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapEffect_LocationPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapEffect_LocationPool_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-mapeffect")]
+impl < __T : IMapEffect_LocationPool > IMapEffect_LocationPoolMethods for __T { }
+
+#[cfg(feature = "app-mapeffect")]
+impl MapEffect_LocationPool { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEffect_LocationPool_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-mapeffect")]
+impl MapEffect_LocationPool {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapEffect_LocationPool) , :: core :: stringify ! (new) ,)) ; < Self as IMapEffect_LocationPoolMethods > :: ctor (this ,) ; this }
+}
 
 #[cfg(feature = "app-mapeffect")]
 # [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapEffect_LocationNode_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_enter { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEffect_LocationNode as :: unity2 :: ClassIdentity > :: class () , "OnEnter" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEffect_LocationNode as :: unity2 :: ClassIdentity > :: NAME , "OnEnter" , e) , } } } pub unsafe fn on_enter (this : MapEffect_LocationNode , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapEffect_LocationNode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_enter :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_exit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEffect_LocationNode as :: unity2 :: ClassIdentity > :: class () , "OnExit" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEffect_LocationNode as :: unity2 :: ClassIdentity > :: NAME , "OnExit" , e) , } } } pub unsafe fn on_exit (this : MapEffect_LocationNode , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapEffect_LocationNode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_exit :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_match { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEffect_LocationNode as :: unity2 :: ClassIdentity > :: class () , "IsMatch" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEffect_LocationNode as :: unity2 :: ClassIdentity > :: NAME , "IsMatch" , e) , } } } pub unsafe fn is_match (this : MapEffect_LocationNode , name : :: unity2 :: Il2CppString , position : crate :: unity_engine :: vector3 :: Vector3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (MapEffect_LocationNode , :: unity2 :: Il2CppString , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_match :: get_method_info () . method_ptr ,) ; inner (this , name , position , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_create_effect { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEffect_LocationNode as :: unity2 :: ClassIdentity > :: class () , "TryCreateEffect" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEffect_LocationNode as :: unity2 :: ClassIdentity > :: NAME , "TryCreateEffect" , e) , } } } pub unsafe fn try_create_effect (this : MapEffect_LocationNode , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapEffect_LocationNode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_try_create_effect :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_delete_effect { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEffect_LocationNode as :: unity2 :: ClassIdentity > :: class () , "TryDeleteEffect" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEffect_LocationNode as :: unity2 :: ClassIdentity > :: NAME , "TryDeleteEffect" , e) , } } } pub unsafe fn try_delete_effect (this : MapEffect_LocationNode , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapEffect_LocationNode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_try_delete_effect :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEffect_LocationNode as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEffect_LocationNode as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapEffect_LocationNode , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapEffect_LocationNode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
@@ -72,34 +89,17 @@ impl MapEffect {
 }
 
 #[cfg(feature = "app-mapeffect")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapEffect_LocationPool_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapEffect_LocationPool as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapEffect_LocationPool as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapEffect_LocationPool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapEffect_LocationPool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "app-mapeffect")]
-pub trait IMapEffect_LocationPoolMethods : IMapEffect_LocationPool { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapEffect_LocationPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapEffect_LocationPool_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-mapeffect")]
-impl < __T : IMapEffect_LocationPool > IMapEffect_LocationPoolMethods for __T { }
-
-#[cfg(feature = "app-mapeffect")]
-impl MapEffect_LocationPool { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapEffect_LocationPool_unity2_raw :: __lookup_ctor :: get_method_info () } }
-
-#[cfg(feature = "app-mapeffect")]
-impl MapEffect_LocationPool {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapEffect_LocationPool) , :: core :: stringify ! (new) ,)) ; < Self as IMapEffect_LocationPoolMethods > :: ctor (this ,) ; this }
-}
-
-#[cfg(feature = "app-mapeffect")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MapEffect_LocationPool;
+    pub use super::IMapEffect_LocationPool;
+    pub use super::IMapEffect_LocationPoolMethods;
     pub use super::MapEffect_LocationNode;
     pub use super::IMapEffect_LocationNode;
     pub use super::IMapEffect_LocationNodeMethods;
     pub use super::MapEffect;
     pub use super::IMapEffect;
     pub use super::IMapEffectMethods;
-    pub use super::MapEffect_LocationPool;
-    pub use super::IMapEffect_LocationPool;
-    pub use super::IMapEffect_LocationPoolMethods;
     pub use crate::app::pool::IPool_List_1;
     pub use crate::app::pool::IPool_Node;
     pub use crate::app::singletonclass_1::ISingletonClass_1;

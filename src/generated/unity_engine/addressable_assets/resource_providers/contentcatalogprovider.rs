@@ -34,17 +34,6 @@ mod __types {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/resource_providers/contentcatalogprovider/ContentCatalogProvider_InternalOp_BundledCatalog.md"))] # [:: unity2 :: class (namespace = "UnityEngine.AddressableAssets.ResourceProviders" , name = "ContentCatalogProvider.InternalOp.BundledCatalog")] # [parent (crate :: system :: object :: Object)] pub struct ContentCatalogProvider_InternalOp_BundledCatalog {
-# [offset (16)] # [rename (name = "m_BundlePath")] pub m_bundle_path : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_OpInProgress")] pub m_op_in_progress : bool ,
-# [offset (32)] # [rename (name = "m_LoadBundleRequest")] pub m_load_bundle_request : crate :: unity_engine :: assetbundlecreaterequest :: AssetBundleCreateRequest ,
-# [offset (40)] # [rename (name = "m_CatalogAssetBundle")] pub m_catalog_asset_bundle : crate :: unity_engine :: assetbundle :: AssetBundle ,
-# [offset (48)] # [rename (name = "m_LoadTextAssetRequest")] pub m_load_text_asset_request : crate :: unity_engine :: assetbundlerequest :: AssetBundleRequest ,
-# [offset (56)] # [rename (name = "m_CatalogData")] pub m_catalog_data : crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData ,
-# [offset (64)] # [rename (name = "OnLoaded")] pub on_loaded : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData > ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/addressable_assets/resource_providers/contentcatalogprovider/ContentCatalogProvider_DependencyHashIndex.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -97,6 +86,17 @@ impl  ContentCatalogProvider_DependencyHashIndex  {
 
     }
 
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/resource_providers/contentcatalogprovider/ContentCatalogProvider_InternalOp_BundledCatalog.md"))] # [:: unity2 :: class (namespace = "UnityEngine.AddressableAssets.ResourceProviders" , name = "ContentCatalogProvider.InternalOp.BundledCatalog")] # [parent (crate :: system :: object :: Object)] pub struct ContentCatalogProvider_InternalOp_BundledCatalog {
+# [offset (16)] # [rename (name = "m_BundlePath")] pub m_bundle_path : :: unity2 :: Il2CppString ,
+# [offset (24)] # [rename (name = "m_OpInProgress")] pub m_op_in_progress : bool ,
+# [offset (32)] # [rename (name = "m_LoadBundleRequest")] pub m_load_bundle_request : crate :: unity_engine :: assetbundlecreaterequest :: AssetBundleCreateRequest ,
+# [offset (40)] # [rename (name = "m_CatalogAssetBundle")] pub m_catalog_asset_bundle : crate :: unity_engine :: assetbundle :: AssetBundle ,
+# [offset (48)] # [rename (name = "m_LoadTextAssetRequest")] pub m_load_text_asset_request : crate :: unity_engine :: assetbundlerequest :: AssetBundleRequest ,
+# [offset (56)] # [rename (name = "m_CatalogData")] pub m_catalog_data : crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData ,
+# [offset (64)] # [rename (name = "OnLoaded")] pub on_loaded : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData > ,
 }
 
 }
@@ -164,10 +164,10 @@ pub mod prelude {
     pub use super::ContentCatalogProvider;
     pub use super::IContentCatalogProvider;
     pub use super::IContentCatalogProviderMethods;
+    pub use super::ContentCatalogProvider_DependencyHashIndex;
     pub use super::ContentCatalogProvider_InternalOp_BundledCatalog;
     pub use super::IContentCatalogProvider_InternalOp_BundledCatalog;
     pub use super::IContentCatalogProvider_InternalOp_BundledCatalogMethods;
-    pub use super::ContentCatalogProvider_DependencyHashIndex;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

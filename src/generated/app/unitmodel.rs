@@ -21,18 +21,18 @@ mod __types {
  ;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitmodel/UnitModel_ColorFlags.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitmodel/UnitModel_LoadMode.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct UnitModel_ColorFlags  {
+pub struct UnitModel_LoadMode  {
     pub value: i32,
 }
 
 
-impl  ::unity2::ClassIdentity for UnitModel_ColorFlags  {
+impl  ::unity2::ClassIdentity for UnitModel_LoadMode  {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "UnitModel.ColorFlags";
+    const NAME: &'static str = "UnitModel.LoadMode";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> =
@@ -47,7 +47,7 @@ impl  ::unity2::ClassIdentity for UnitModel_ColorFlags  {
 }
 
 
-impl  ::unity2::IlType for UnitModel_ColorFlags  {
+impl  ::unity2::IlType for UnitModel_LoadMode  {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
@@ -55,33 +55,21 @@ impl  ::unity2::IlType for UnitModel_ColorFlags  {
 }
 
 
-impl  UnitModel_ColorFlags  {
-    pub fn fixed() -> Self {
+impl  UnitModel_LoadMode  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn loading() -> Self {
         Self { value: 1 }
 
     }
 
 
-    pub fn danager() -> Self {
+    pub fn done() -> Self {
         Self { value: 2 }
-
-    }
-
-
-    pub fn enemy() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn ally() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn dirty() -> Self {
-        Self { value: 16 }
 
     }
 
@@ -225,18 +213,18 @@ impl  UnitModel_DirtyFlags  {
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitmodel/UnitModel_LoadMode.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitmodel/UnitModel_ColorFlags.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct UnitModel_LoadMode  {
+pub struct UnitModel_ColorFlags  {
     pub value: i32,
 }
 
 
-impl  ::unity2::ClassIdentity for UnitModel_LoadMode  {
+impl  ::unity2::ClassIdentity for UnitModel_ColorFlags  {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "UnitModel.LoadMode";
+    const NAME: &'static str = "UnitModel.ColorFlags";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> =
@@ -251,7 +239,7 @@ impl  ::unity2::ClassIdentity for UnitModel_LoadMode  {
 }
 
 
-impl  ::unity2::IlType for UnitModel_LoadMode  {
+impl  ::unity2::IlType for UnitModel_ColorFlags  {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
@@ -259,21 +247,33 @@ impl  ::unity2::IlType for UnitModel_LoadMode  {
 }
 
 
-impl  UnitModel_LoadMode  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn loading() -> Self {
+impl  UnitModel_ColorFlags  {
+    pub fn fixed() -> Self {
         Self { value: 1 }
 
     }
 
 
-    pub fn done() -> Self {
+    pub fn danager() -> Self {
         Self { value: 2 }
+
+    }
+
+
+    pub fn enemy() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn ally() -> Self {
+        Self { value: 8 }
+
+    }
+
+
+    pub fn dirty() -> Self {
+        Self { value: 16 }
 
     }
 
@@ -324,7 +324,7 @@ impl UnitModel_ResourceHandle {
 #[cfg(feature = "app-unitmodel")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::UnitModel_ColorFlags;
+    pub use super::UnitModel_LoadMode;
     pub use super::UnitModel;
     pub use super::IUnitModel;
     pub use super::IUnitModelMethods;
@@ -332,7 +332,7 @@ pub mod prelude {
     pub use super::IUnitModel_ResourceHandle;
     pub use super::IUnitModel_ResourceHandleMethods;
     pub use super::UnitModel_DirtyFlags;
-    pub use super::UnitModel_LoadMode;
+    pub use super::UnitModel_ColorFlags;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

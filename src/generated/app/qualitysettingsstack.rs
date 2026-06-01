@@ -13,6 +13,11 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/qualitysettingsstack/QualitySettingsStack.md"))] # [:: unity2 :: class (namespace = "App" , name = "QualitySettingsStack")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: qualitysettingsstack :: QualitySettingsStack >)] pub struct QualitySettingsStack {
+# [offset (32)] # [rename (name = "m_Stack")] pub m_stack : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < crate :: app :: qualitysettingsstack :: QualitySettingsStack_Settings > ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/qualitysettingsstack/QualitySettingsStack_Settings.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -52,11 +57,6 @@ impl ::unity2::IlType for QualitySettingsStack_Settings {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/qualitysettingsstack/QualitySettingsStack.md"))] # [:: unity2 :: class (namespace = "App" , name = "QualitySettingsStack")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: qualitysettingsstack :: QualitySettingsStack >)] pub struct QualitySettingsStack {
-# [offset (32)] # [rename (name = "m_Stack")] pub m_stack : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < crate :: app :: qualitysettingsstack :: QualitySettingsStack_Settings > ,
-}
-
 }
 
 #[cfg(feature = "app-qualitysettingsstack-types")]
@@ -85,10 +85,10 @@ impl QualitySettingsStack {
 #[cfg(feature = "app-qualitysettingsstack")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::QualitySettingsStack_Settings;
     pub use super::QualitySettingsStack;
     pub use super::IQualitySettingsStack;
     pub use super::IQualitySettingsStackMethods;
+    pub use super::QualitySettingsStack_Settings;
     pub use crate::app::singletonclass_1::ISingletonClass_1;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;

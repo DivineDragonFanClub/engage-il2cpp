@@ -12,9 +12,9 @@
  # [cfg (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-contourvertex-types")] pub use contourvertex :: { ContourVertex }
  ;
  # [cfg (any (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-dict_1-types"))] pub mod dict_1 ;
- # [cfg (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-dict_1-types")] pub use dict_1 :: { Dict_1_LessOrEqual , IDict_1_LessOrEqual , Dict_1_Node , IDict_1_Node , Dict_1 , IDict_1 }
+ # [cfg (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-dict_1-types")] pub use dict_1 :: { Dict_1 , IDict_1 , Dict_1_LessOrEqual , IDict_1_LessOrEqual , Dict_1_Node , IDict_1_Node }
  ;
- # [cfg (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-dict_1")] pub use dict_1 :: { IDict_1_LessOrEqualMethods , IDict_1_NodeMethods , IDict_1Methods }
+ # [cfg (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-dict_1")] pub use dict_1 :: { IDict_1Methods , IDict_1_LessOrEqualMethods , IDict_1_NodeMethods }
  ;
  # [cfg (any (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-elementtype-types"))] pub mod elementtype ;
  # [cfg (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-elementtype-types")] pub use elementtype :: { ElementType }
@@ -28,9 +28,9 @@
  # [cfg (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-mesh_2")] pub use mesh_2 :: { IMesh_2Methods }
  ;
  # [cfg (any (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils-types"))] pub mod meshutils ;
- # [cfg (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils-types")] pub use meshutils :: { MeshUtils_Face , IMeshUtils_Face , MeshUtils_Vertex , IMeshUtils_Vertex , MeshUtils_Edge , IMeshUtils_Edge , MeshUtils_EdgePair , MeshUtils , IMeshUtils , MeshUtils_Pooled_1 , IMeshUtils_Pooled_1 }
+ # [cfg (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils-types")] pub use meshutils :: { MeshUtils_Vertex , IMeshUtils_Vertex , MeshUtils_Face , IMeshUtils_Face , MeshUtils , IMeshUtils , MeshUtils_EdgePair , MeshUtils_Edge , IMeshUtils_Edge , MeshUtils_Pooled_1 , IMeshUtils_Pooled_1 }
  ;
- # [cfg (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")] pub use meshutils :: { IMeshUtils_FaceMethods , IMeshUtils_VertexMethods , IMeshUtils_EdgeMethods , IMeshUtils_Pooled_1Methods }
+ # [cfg (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")] pub use meshutils :: { IMeshUtils_VertexMethods , IMeshUtils_FaceMethods , IMeshUtils_EdgeMethods , IMeshUtils_Pooled_1Methods }
  ;
  # [cfg (any (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-pqhandle-types"))] pub mod pqhandle ;
  # [cfg (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-pqhandle-types")] pub use pqhandle :: { PQHandle }
@@ -46,9 +46,9 @@
  # [cfg (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityqueue_1")] pub use priorityqueue_1 :: { IPriorityQueue_1_StackItemMethods , IPriorityQueue_1Methods }
  ;
  # [cfg (any (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-tess-types"))] pub mod tess ;
- # [cfg (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-tess-types")] pub use tess :: { Tess , ITess , Tess_ActiveRegion , ITess_ActiveRegion }
+ # [cfg (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-tess-types")] pub use tess :: { Tess_ActiveRegion , ITess_ActiveRegion , Tess , ITess }
  ;
- # [cfg (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-tess")] pub use tess :: { ITessMethods , ITess_ActiveRegionMethods }
+ # [cfg (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-tess")] pub use tess :: { ITess_ActiveRegionMethods , ITessMethods }
  ;
  # [cfg (any (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-vec3-types"))] pub mod vec3 ;
  # [cfg (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-vec3-types")] pub use vec3 :: { Vec3 }

@@ -13,6 +13,12 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapactor/MapActor.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapActor")] # [parent (crate :: system :: object :: Object)] pub struct MapActor {
+# [static_field] # [rename (name = "MoveTime")] pub move_time : f32 ,
+# [static_field] # [rename (name = "StickMargin")] pub stick_margin : f32 ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapactor/MapActor_MoveResult.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -67,12 +73,6 @@ impl  MapActor_MoveResult  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapactor/MapActor.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapActor")] # [parent (crate :: system :: object :: Object)] pub struct MapActor {
-# [static_field] # [rename (name = "MoveTime")] pub move_time : f32 ,
-# [static_field] # [rename (name = "StickMargin")] pub stick_margin : f32 ,
-}
-
 }
 
 #[cfg(feature = "app-mapactor-types")]
@@ -101,10 +101,10 @@ impl MapActor {
 #[cfg(feature = "app-mapactor")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapActor_MoveResult;
     pub use super::MapActor;
     pub use super::IMapActor;
     pub use super::IMapActorMethods;
+    pub use super::MapActor_MoveResult;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

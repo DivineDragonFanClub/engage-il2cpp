@@ -29,6 +29,67 @@ mod __types {
  ;
 
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/scrollbar/Scrollbar_Direction.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct Scrollbar_Direction  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for Scrollbar_Direction  {
+    const NAMESPACE: &'static str = "UnityEngine.UI";
+
+    const NAME: &'static str = "Scrollbar.Direction";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for Scrollbar_Direction  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  Scrollbar_Direction  {
+    pub fn left_to_right() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn right_to_left() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn bottom_to_top() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn top_to_bottom() -> Self {
+        Self { value: 3 }
+
+    }
+
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/scrollbar/Scrollbar_Axis.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -96,67 +157,6 @@ impl  Scrollbar_Axis  {
 
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/scrollbar/Scrollbar_ScrollEvent.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "Scrollbar.ScrollEvent")] # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < f32 >)] pub struct Scrollbar_ScrollEvent {}
 
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/scrollbar/Scrollbar_Direction.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Scrollbar_Direction  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for Scrollbar_Direction  {
-    const NAMESPACE: &'static str = "UnityEngine.UI";
-
-    const NAME: &'static str = "Scrollbar.Direction";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for Scrollbar_Direction  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  Scrollbar_Direction  {
-    pub fn left_to_right() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn right_to_left() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn bottom_to_top() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn top_to_bottom() -> Self {
-        Self { value: 3 }
-
-    }
-
-}
-
 }
 
 #[cfg(feature = "unity_engine-ui-scrollbar-types")]
@@ -199,6 +199,7 @@ impl Scrollbar_ScrollEvent {
 #[cfg(feature = "unity_engine-ui-scrollbar")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::Scrollbar_Direction;
     pub use super::Scrollbar_Axis;
     pub use super::Scrollbar;
     pub use super::IScrollbar;
@@ -206,7 +207,6 @@ pub mod prelude {
     pub use super::Scrollbar_ScrollEvent;
     pub use super::IScrollbar_ScrollEvent;
     pub use super::IScrollbar_ScrollEventMethods;
-    pub use super::Scrollbar_Direction;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

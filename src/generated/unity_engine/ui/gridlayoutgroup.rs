@@ -25,18 +25,18 @@ mod __types {
  ;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/gridlayoutgroup/GridLayoutGroup_Axis.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/gridlayoutgroup/GridLayoutGroup_Constraint.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct GridLayoutGroup_Axis  {
+pub struct GridLayoutGroup_Constraint  {
     pub value: i32,
 }
 
 
-impl  ::unity2::ClassIdentity for GridLayoutGroup_Axis  {
+impl  ::unity2::ClassIdentity for GridLayoutGroup_Constraint  {
     const NAMESPACE: &'static str = "UnityEngine.UI";
 
-    const NAME: &'static str = "GridLayoutGroup.Axis";
+    const NAME: &'static str = "GridLayoutGroup.Constraint";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> =
@@ -51,7 +51,7 @@ impl  ::unity2::ClassIdentity for GridLayoutGroup_Axis  {
 }
 
 
-impl  ::unity2::IlType for GridLayoutGroup_Axis  {
+impl  ::unity2::IlType for GridLayoutGroup_Constraint  {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
@@ -59,15 +59,21 @@ impl  ::unity2::IlType for GridLayoutGroup_Axis  {
 }
 
 
-impl  GridLayoutGroup_Axis  {
-    pub fn horizontal() -> Self {
+impl  GridLayoutGroup_Constraint  {
+    pub fn flexible() -> Self {
         Self { value: 0 }
 
     }
 
 
-    pub fn vertical() -> Self {
+    pub fn fixed_column_count() -> Self {
         Self { value: 1 }
+
+    }
+
+
+    pub fn fixed_row_count() -> Self {
+        Self { value: 2 }
 
     }
 
@@ -135,18 +141,28 @@ impl  GridLayoutGroup_Corner  {
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/gridlayoutgroup/GridLayoutGroup_Constraint.md"))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/gridlayoutgroup/GridLayoutGroup.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "GridLayoutGroup")] # [parent (crate :: unity_engine :: ui :: layoutgroup :: LayoutGroup)] pub struct GridLayoutGroup {
+# [offset (88)] # [rename (name = "m_StartCorner")] pub m_start_corner : crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Corner ,
+# [offset (92)] # [rename (name = "m_StartAxis")] pub m_start_axis : crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Axis ,
+# [offset (96)] # [rename (name = "m_CellSize")] pub m_cell_size : crate :: unity_engine :: vector2 :: Vector2 ,
+# [offset (104)] # [rename (name = "m_Spacing")] pub m_spacing : crate :: unity_engine :: vector2 :: Vector2 ,
+# [offset (112)] # [rename (name = "m_Constraint")] pub m_constraint : crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Constraint ,
+# [offset (116)] # [rename (name = "m_ConstraintCount")] pub m_constraint_count : i32 ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/gridlayoutgroup/GridLayoutGroup_Axis.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct GridLayoutGroup_Constraint  {
+pub struct GridLayoutGroup_Axis  {
     pub value: i32,
 }
 
 
-impl  ::unity2::ClassIdentity for GridLayoutGroup_Constraint  {
+impl  ::unity2::ClassIdentity for GridLayoutGroup_Axis  {
     const NAMESPACE: &'static str = "UnityEngine.UI";
 
-    const NAME: &'static str = "GridLayoutGroup.Constraint";
+    const NAME: &'static str = "GridLayoutGroup.Axis";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> =
@@ -161,7 +177,7 @@ impl  ::unity2::ClassIdentity for GridLayoutGroup_Constraint  {
 }
 
 
-impl  ::unity2::IlType for GridLayoutGroup_Constraint  {
+impl  ::unity2::IlType for GridLayoutGroup_Axis  {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
@@ -169,34 +185,18 @@ impl  ::unity2::IlType for GridLayoutGroup_Constraint  {
 }
 
 
-impl  GridLayoutGroup_Constraint  {
-    pub fn flexible() -> Self {
+impl  GridLayoutGroup_Axis  {
+    pub fn horizontal() -> Self {
         Self { value: 0 }
 
     }
 
 
-    pub fn fixed_column_count() -> Self {
+    pub fn vertical() -> Self {
         Self { value: 1 }
 
     }
 
-
-    pub fn fixed_row_count() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/gridlayoutgroup/GridLayoutGroup.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "GridLayoutGroup")] # [parent (crate :: unity_engine :: ui :: layoutgroup :: LayoutGroup)] pub struct GridLayoutGroup {
-# [offset (88)] # [rename (name = "m_StartCorner")] pub m_start_corner : crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Corner ,
-# [offset (92)] # [rename (name = "m_StartAxis")] pub m_start_axis : crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Axis ,
-# [offset (96)] # [rename (name = "m_CellSize")] pub m_cell_size : crate :: unity_engine :: vector2 :: Vector2 ,
-# [offset (104)] # [rename (name = "m_Spacing")] pub m_spacing : crate :: unity_engine :: vector2 :: Vector2 ,
-# [offset (112)] # [rename (name = "m_Constraint")] pub m_constraint : crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Constraint ,
-# [offset (116)] # [rename (name = "m_ConstraintCount")] pub m_constraint_count : i32 ,
 }
 
 }
@@ -224,12 +224,12 @@ impl GridLayoutGroup {
 #[cfg(feature = "unity_engine-ui-gridlayoutgroup")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GridLayoutGroup_Axis;
-    pub use super::GridLayoutGroup_Corner;
     pub use super::GridLayoutGroup_Constraint;
+    pub use super::GridLayoutGroup_Corner;
     pub use super::GridLayoutGroup;
     pub use super::IGridLayoutGroup;
     pub use super::IGridLayoutGroupMethods;
+    pub use super::GridLayoutGroup_Axis;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

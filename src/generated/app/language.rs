@@ -13,13 +13,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/language/Language.md"))] # [:: unity2 :: class (namespace = "App" , name = "Language")] # [parent (crate :: system :: object :: Object)] pub struct Language {
-# [static_field] # [rename (name = "s_Lang")] pub s_lang : crate :: app :: language :: Language_Langs ,
-# [static_field] # [rename (name = "s_Voice")] pub s_voice : crate :: app :: language :: Language_Voices ,
-# [static_field] # [rename (name = "s_LangChanged")] pub s_lang_changed : crate :: system :: action :: Action ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/language/Language_Voices.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -72,6 +65,13 @@ impl  Language_Voices  {
 
     }
 
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/language/Language.md"))] # [:: unity2 :: class (namespace = "App" , name = "Language")] # [parent (crate :: system :: object :: Object)] pub struct Language {
+# [static_field] # [rename (name = "s_Lang")] pub s_lang : crate :: app :: language :: Language_Langs ,
+# [static_field] # [rename (name = "s_Voice")] pub s_voice : crate :: app :: language :: Language_Voices ,
+# [static_field] # [rename (name = "s_LangChanged")] pub s_lang_changed : crate :: system :: action :: Action ,
 }
 
 
@@ -217,10 +217,10 @@ impl Language {
 #[cfg(feature = "app-language")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::Language_Voices;
     pub use super::Language;
     pub use super::ILanguage;
     pub use super::ILanguageMethods;
-    pub use super::Language_Voices;
     pub use super::Language_Langs;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

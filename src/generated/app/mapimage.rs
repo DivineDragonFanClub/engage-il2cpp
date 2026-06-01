@@ -13,25 +13,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapimage/MapImage.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapImage")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapimage :: MapImage >)] pub struct MapImage {
-# [static_field] # [rename (name = "MaxWidthBit")] pub max_width_bit : i32 ,
-# [static_field] # [rename (name = "MaxHeightBit")] pub max_height_bit : i32 ,
-# [static_field] # [rename (name = "MaxWidth")] pub max_width : i32 ,
-# [static_field] # [rename (name = "MaxHeight")] pub max_height : i32 ,
-# [static_field] # [rename (name = "MaxSize")] pub max_size : i32 ,
-# [static_field] # [rename (name = "MaxOuter")] pub max_outer : i32 ,
-# [offset (32)] # [rename (name = "m_Name")] pub m_name : :: unity2 :: Il2CppString ,
-# [offset (40)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: mapimageunit :: MapImageUnit ,
-# [offset (48)] # [rename (name = "m_Terrain")] pub m_terrain : crate :: app :: mapimageterrain :: MapImageTerrain ,
-# [offset (56)] # [rename (name = "m_Cost")] pub m_cost : crate :: app :: mapimagecost :: MapImageCost ,
-# [offset (64)] # [rename (name = "m_Danger")] pub m_danger : crate :: app :: mapimagedanger :: MapImageDanger ,
-# [offset (72)] # [rename (name = "m_Talk")] pub m_talk : crate :: app :: mapimagetalk :: MapImageTalk ,
-# [offset (80)] # [rename (name = "m_Range")] pub m_range : crate :: app :: mapimagerange :: MapImageRange ,
-# [offset (88)] # [rename (name = "m_History")] pub m_history : crate :: app :: mapimagehistory :: MapImageHistory ,
-# [offset (96)] # [rename (name = "m_BackupTerrains")] pub m_backup_terrains : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mapimage :: MapImage_BackupTerrain > ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapimage/MapImage_BackupTerrain.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -68,6 +49,25 @@ impl ::unity2::IlType for MapImage_BackupTerrain {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapimage/MapImage.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapImage")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapimage :: MapImage >)] pub struct MapImage {
+# [static_field] # [rename (name = "MaxWidthBit")] pub max_width_bit : i32 ,
+# [static_field] # [rename (name = "MaxHeightBit")] pub max_height_bit : i32 ,
+# [static_field] # [rename (name = "MaxWidth")] pub max_width : i32 ,
+# [static_field] # [rename (name = "MaxHeight")] pub max_height : i32 ,
+# [static_field] # [rename (name = "MaxSize")] pub max_size : i32 ,
+# [static_field] # [rename (name = "MaxOuter")] pub max_outer : i32 ,
+# [offset (32)] # [rename (name = "m_Name")] pub m_name : :: unity2 :: Il2CppString ,
+# [offset (40)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: mapimageunit :: MapImageUnit ,
+# [offset (48)] # [rename (name = "m_Terrain")] pub m_terrain : crate :: app :: mapimageterrain :: MapImageTerrain ,
+# [offset (56)] # [rename (name = "m_Cost")] pub m_cost : crate :: app :: mapimagecost :: MapImageCost ,
+# [offset (64)] # [rename (name = "m_Danger")] pub m_danger : crate :: app :: mapimagedanger :: MapImageDanger ,
+# [offset (72)] # [rename (name = "m_Talk")] pub m_talk : crate :: app :: mapimagetalk :: MapImageTalk ,
+# [offset (80)] # [rename (name = "m_Range")] pub m_range : crate :: app :: mapimagerange :: MapImageRange ,
+# [offset (88)] # [rename (name = "m_History")] pub m_history : crate :: app :: mapimagehistory :: MapImageHistory ,
+# [offset (96)] # [rename (name = "m_BackupTerrains")] pub m_backup_terrains : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mapimage :: MapImage_BackupTerrain > ,
+}
+
 }
 
 #[cfg(feature = "app-mapimage-types")]
@@ -96,10 +96,10 @@ impl MapImage {
 #[cfg(feature = "app-mapimage")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MapImage_BackupTerrain;
     pub use super::MapImage;
     pub use super::IMapImage;
     pub use super::IMapImageMethods;
-    pub use super::MapImage_BackupTerrain;
     pub use crate::app::singletonclass_1::ISingletonClass_1;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;

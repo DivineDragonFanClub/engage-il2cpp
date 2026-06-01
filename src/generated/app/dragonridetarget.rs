@@ -21,18 +21,18 @@ mod __types {
  ;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridetarget/DragonRideTarget_TargetType.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridetarget/DragonRideTarget_ExecuteReason.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct DragonRideTarget_TargetType  {
+pub struct DragonRideTarget_ExecuteReason  {
     pub value: i32,
 }
 
 
-impl  ::unity2::ClassIdentity for DragonRideTarget_TargetType  {
+impl  ::unity2::ClassIdentity for DragonRideTarget_ExecuteReason  {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "DragonRideTarget.TargetType";
+    const NAME: &'static str = "DragonRideTarget.ExecuteReason";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> =
@@ -47,7 +47,7 @@ impl  ::unity2::ClassIdentity for DragonRideTarget_TargetType  {
 }
 
 
-impl  ::unity2::IlType for DragonRideTarget_TargetType  {
+impl  ::unity2::IlType for DragonRideTarget_ExecuteReason  {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
@@ -55,13 +55,7 @@ impl  ::unity2::IlType for DragonRideTarget_TargetType  {
 }
 
 
-impl  DragonRideTarget_TargetType  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
+impl  DragonRideTarget_ExecuteReason  {
     pub fn normal() -> Self {
         Self { value: 1 }
 
@@ -75,19 +69,13 @@ impl  DragonRideTarget_TargetType  {
 
 
     pub fn chain() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn special() -> Self {
         Self { value: 4 }
 
     }
 
 
-    pub fn roulette() -> Self {
-        Self { value: 5 }
+    pub fn reason_count() -> Self {
+        Self { value: 8 }
 
     }
 
@@ -167,67 +155,6 @@ impl  DragonRideTarget_TargetState  {
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridetarget/DragonRideTarget_ExecuteReason.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct DragonRideTarget_ExecuteReason  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for DragonRideTarget_ExecuteReason  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "DragonRideTarget.ExecuteReason";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for DragonRideTarget_ExecuteReason  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  DragonRideTarget_ExecuteReason  {
-    pub fn normal() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn bomb() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn chain() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn reason_count() -> Self {
-        Self { value: 8 }
-
-    }
-
-}
-
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridetarget/DragonRideTarget.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRideTarget")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct DragonRideTarget {
 # [static_field] # [rename (name = "cUIRootPath")] pub c_ui_root_path : :: unity2 :: Il2CppString ,
 # [static_field] # [rename (name = "cUITargetScorePath")] pub c_ui_target_score_path : :: unity2 :: Il2CppString ,
@@ -246,6 +173,79 @@ impl  DragonRideTarget_ExecuteReason  {
 # [offset (120)] # [rename (name = "m_ShaderColorID")] pub m_shader_color_id : i32 ,
 # [offset (128)] # [rename (name = "m_DestroyText")] pub m_destroy_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
 # [offset (136)] # [rename (name = "m_DestroySubText")] pub m_destroy_sub_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridetarget/DragonRideTarget_TargetType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct DragonRideTarget_TargetType  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for DragonRideTarget_TargetType  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "DragonRideTarget.TargetType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for DragonRideTarget_TargetType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  DragonRideTarget_TargetType  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn normal() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn bomb() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn chain() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn special() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn roulette() -> Self {
+        Self { value: 5 }
+
+    }
+
 }
 
 }
@@ -273,12 +273,12 @@ impl DragonRideTarget {
 #[cfg(feature = "app-dragonridetarget")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DragonRideTarget_TargetType;
-    pub use super::DragonRideTarget_TargetState;
     pub use super::DragonRideTarget_ExecuteReason;
+    pub use super::DragonRideTarget_TargetState;
     pub use super::DragonRideTarget;
     pub use super::IDragonRideTarget;
     pub use super::IDragonRideTargetMethods;
+    pub use super::DragonRideTarget_TargetType;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

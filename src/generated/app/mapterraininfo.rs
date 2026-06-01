@@ -15,31 +15,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapterraininfo/MapTerrainInfo_MapTerrainInfoSingle.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapTerrainInfo.MapTerrainInfoSingle")] # [parent (crate :: system :: object :: Object)] pub struct MapTerrainInfo_MapTerrainInfoSingle {
-# [offset (16)] # [rename (name = "m_GameObject")] pub m_game_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (24)] # [rename (name = "m_ElemGameObjects")] pub m_elem_game_objects : :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (32)] # [rename (name = "m_ElemTitleTextMeshes")] pub m_elem_title_text_meshes : :: unity2 :: Array < crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI > ,
-# [offset (40)] # [rename (name = "m_ElemValueTextMeshes")] pub m_elem_value_text_meshes : :: unity2 :: Array < crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI > ,
-# [offset (48)] # [rename (name = "m_IsValid")] pub m_is_valid : bool ,
-# [offset (49)] # [rename (name = "m_IsShow")] pub m_is_show : bool ,
-# [offset (50)] # [rename (name = "m_IsEventShow")] pub m_is_event_show : bool ,
-# [offset (56)] # [rename (name = "m_Border")] pub m_border : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (64)] # [rename (name = "m_EffectRoot")] pub m_effect_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (72)] # [rename (name = "m_SkillRoot")] pub m_skill_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (80)] # [rename (name = "m_Alignment")] pub m_alignment : crate :: app :: mapterraininfoalignment :: MapTerrainInfoAlignment ,
-# [offset (88)] # [rename (name = "m_Side")] pub m_side : crate :: app :: mapterraininfo :: MapTerrainInfo_Side ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapterraininfo/MapTerrainInfo.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapTerrainInfo")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapterraininfo :: MapTerrainInfo >)] pub struct MapTerrainInfo {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "m_PrefabHandle")] pub m_prefab_handle : crate :: app :: tresourcehandle_1 :: TResourceHandle_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (40)] # [rename (name = "m_MapTerrainInfoSingles")] pub m_map_terrain_info_singles : :: unity2 :: Array < crate :: app :: mapterraininfo :: MapTerrainInfo_MapTerrainInfoSingle > ,
-# [static_field] # [rename (name = "m_CalcUnit")] pub m_calc_unit : crate :: app :: unit :: Unit ,
-# [static_field] # [rename (name = "m_BattleInfo")] pub m_battle_info : crate :: app :: battleinfo :: BattleInfo ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapterraininfo/MapTerrainInfo_Element.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -197,6 +172,31 @@ impl  MapTerrainInfo_Element  {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapterraininfo/MapTerrainInfo_MapTerrainInfoSingle.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapTerrainInfo.MapTerrainInfoSingle")] # [parent (crate :: system :: object :: Object)] pub struct MapTerrainInfo_MapTerrainInfoSingle {
+# [offset (16)] # [rename (name = "m_GameObject")] pub m_game_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (24)] # [rename (name = "m_ElemGameObjects")] pub m_elem_game_objects : :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > ,
+# [offset (32)] # [rename (name = "m_ElemTitleTextMeshes")] pub m_elem_title_text_meshes : :: unity2 :: Array < crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI > ,
+# [offset (40)] # [rename (name = "m_ElemValueTextMeshes")] pub m_elem_value_text_meshes : :: unity2 :: Array < crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI > ,
+# [offset (48)] # [rename (name = "m_IsValid")] pub m_is_valid : bool ,
+# [offset (49)] # [rename (name = "m_IsShow")] pub m_is_show : bool ,
+# [offset (50)] # [rename (name = "m_IsEventShow")] pub m_is_event_show : bool ,
+# [offset (56)] # [rename (name = "m_Border")] pub m_border : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (64)] # [rename (name = "m_EffectRoot")] pub m_effect_root : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (72)] # [rename (name = "m_SkillRoot")] pub m_skill_root : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (80)] # [rename (name = "m_Alignment")] pub m_alignment : crate :: app :: mapterraininfoalignment :: MapTerrainInfoAlignment ,
+# [offset (88)] # [rename (name = "m_Side")] pub m_side : crate :: app :: mapterraininfo :: MapTerrainInfo_Side ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapterraininfo/MapTerrainInfo.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapTerrainInfo")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapterraininfo :: MapTerrainInfo >)] pub struct MapTerrainInfo {
+# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
+# [offset (32)] # [rename (name = "m_PrefabHandle")] pub m_prefab_handle : crate :: app :: tresourcehandle_1 :: TResourceHandle_1 < crate :: unity_engine :: gameobject :: GameObject > ,
+# [offset (40)] # [rename (name = "m_MapTerrainInfoSingles")] pub m_map_terrain_info_singles : :: unity2 :: Array < crate :: app :: mapterraininfo :: MapTerrainInfo_MapTerrainInfoSingle > ,
+# [static_field] # [rename (name = "m_CalcUnit")] pub m_calc_unit : crate :: app :: unit :: Unit ,
+# [static_field] # [rename (name = "m_BattleInfo")] pub m_battle_info : crate :: app :: battleinfo :: BattleInfo ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapterraininfo/MapTerrainInfo_Side.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -299,13 +299,13 @@ impl MapTerrainInfo {
 #[cfg(feature = "app-mapterraininfo")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MapTerrainInfo_Element;
     pub use super::MapTerrainInfo_MapTerrainInfoSingle;
     pub use super::IMapTerrainInfo_MapTerrainInfoSingle;
     pub use super::IMapTerrainInfo_MapTerrainInfoSingleMethods;
     pub use super::MapTerrainInfo;
     pub use super::IMapTerrainInfo;
     pub use super::IMapTerrainInfoMethods;
-    pub use super::MapTerrainInfo_Element;
     pub use super::MapTerrainInfo_Side;
     pub use crate::app::singletonclass_1::ISingletonClass_1;
     pub use crate::system::object::IObject;

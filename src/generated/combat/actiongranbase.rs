@@ -19,14 +19,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actiongranbase/ActionGranBase.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "ActionGranBase")] # [parent (crate :: combat :: actiondisposerholder :: ActionDisposerHolder)] pub struct ActionGranBase {
-# [static_field] # [rename (name = "AttackLineBehind")] pub attack_line_behind : f32 ,
-# [static_field] # [rename (name = "DamageLineBehind")] pub damage_line_behind : f32 ,
-# [static_field] # [rename (name = "BackstepDistance")] pub backstep_distance : f32 ,
-# [offset (56)] # [rename (name = "warpedGoal")] pub warped_goal : crate :: combat :: fxz :: FXZ ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/actiongranbase/ActionGranBase_MoveAct.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -87,6 +79,14 @@ impl  ActionGranBase_MoveAct  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actiongranbase/ActionGranBase.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "ActionGranBase")] # [parent (crate :: combat :: actiondisposerholder :: ActionDisposerHolder)] pub struct ActionGranBase {
+# [static_field] # [rename (name = "AttackLineBehind")] pub attack_line_behind : f32 ,
+# [static_field] # [rename (name = "DamageLineBehind")] pub damage_line_behind : f32 ,
+# [static_field] # [rename (name = "BackstepDistance")] pub backstep_distance : f32 ,
+# [offset (56)] # [rename (name = "warpedGoal")] pub warped_goal : crate :: combat :: fxz :: FXZ ,
+}
+
 }
 
 #[cfg(feature = "combat-actiongranbase-types")]
@@ -115,10 +115,10 @@ impl ActionGranBase {
 #[cfg(feature = "combat-actiongranbase")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ActionGranBase_MoveAct;
     pub use super::ActionGranBase;
     pub use super::IActionGranBase;
     pub use super::IActionGranBaseMethods;
-    pub use super::ActionGranBase_MoveAct;
     pub use crate::combat::actionbase::IActionBase;
     pub use crate::combat::actiondisposerholder::IActionDisposerHolder;
     pub use crate::combat::state::IState;

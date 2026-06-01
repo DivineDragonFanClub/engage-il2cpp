@@ -24,6 +24,15 @@ mod __types {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/reflectionrendererdata/ReflectionRendererData.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Custom" , name = "ReflectionRendererData")] # [parent (crate :: unity_engine :: rendering :: universal :: scriptablerendererdata :: ScriptableRendererData)] pub struct ReflectionRendererData {
+# [offset (48)] # [rename (name = "postProcessData")] pub post_process_data : crate :: unity_engine :: rendering :: universal :: postprocessdata :: PostProcessData ,
+# [offset (56)] # [rename (name = "shaders")] pub shaders : crate :: unity_engine :: rendering :: universal :: custom :: reflectionrendererdata :: ReflectionRendererData_ShaderResources ,
+# [offset (64)] # [rename (name = "m_OpaqueLayerMask")] pub m_opaque_layer_mask : crate :: unity_engine :: layermask :: LayerMask ,
+# [offset (68)] # [rename (name = "m_TransparentLayerMask")] pub m_transparent_layer_mask : crate :: unity_engine :: layermask :: LayerMask ,
+# [offset (72)] # [rename (name = "m_ReflectionTarget")] pub m_reflection_target : crate :: unity_engine :: rendering :: universal :: custom :: reflectionrendererdata :: ReflectionRendererData_ReflectionTarget ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/custom/reflectionrendererdata/ReflectionRendererData_ReflectionTarget.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -78,15 +87,6 @@ impl  ReflectionRendererData_ReflectionTarget  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/reflectionrendererdata/ReflectionRendererData.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Custom" , name = "ReflectionRendererData")] # [parent (crate :: unity_engine :: rendering :: universal :: scriptablerendererdata :: ScriptableRendererData)] pub struct ReflectionRendererData {
-# [offset (48)] # [rename (name = "postProcessData")] pub post_process_data : crate :: unity_engine :: rendering :: universal :: postprocessdata :: PostProcessData ,
-# [offset (56)] # [rename (name = "shaders")] pub shaders : crate :: unity_engine :: rendering :: universal :: custom :: reflectionrendererdata :: ReflectionRendererData_ShaderResources ,
-# [offset (64)] # [rename (name = "m_OpaqueLayerMask")] pub m_opaque_layer_mask : crate :: unity_engine :: layermask :: LayerMask ,
-# [offset (68)] # [rename (name = "m_TransparentLayerMask")] pub m_transparent_layer_mask : crate :: unity_engine :: layermask :: LayerMask ,
-# [offset (72)] # [rename (name = "m_ReflectionTarget")] pub m_reflection_target : crate :: unity_engine :: rendering :: universal :: custom :: reflectionrendererdata :: ReflectionRendererData_ReflectionTarget ,
-}
-
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-reflectionrendererdata-types")]
@@ -132,10 +132,10 @@ pub mod prelude {
     pub use super::ReflectionRendererData_ShaderResources;
     pub use super::IReflectionRendererData_ShaderResources;
     pub use super::IReflectionRendererData_ShaderResourcesMethods;
-    pub use super::ReflectionRendererData_ReflectionTarget;
     pub use super::ReflectionRendererData;
     pub use super::IReflectionRendererData;
     pub use super::IReflectionRendererDataMethods;
+    pub use super::ReflectionRendererData_ReflectionTarget;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

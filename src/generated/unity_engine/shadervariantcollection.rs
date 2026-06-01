@@ -13,9 +13,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/shadervariantcollection/ShaderVariantCollection.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "ShaderVariantCollection")] # [parent (crate :: unity_engine :: object_2 :: Object_2)] pub struct ShaderVariantCollection {}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/shadervariantcollection/ShaderVariantCollection_ShaderVariant.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -51,6 +48,9 @@ impl ::unity2::IlType for ShaderVariantCollection_ShaderVariant {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/shadervariantcollection/ShaderVariantCollection.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "ShaderVariantCollection")] # [parent (crate :: unity_engine :: object_2 :: Object_2)] pub struct ShaderVariantCollection {}
+
 }
 
 #[cfg(feature = "unity_engine-shadervariantcollection-types")]
@@ -79,10 +79,10 @@ impl ShaderVariantCollection {
 #[cfg(feature = "unity_engine-shadervariantcollection")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ShaderVariantCollection_ShaderVariant;
     pub use super::ShaderVariantCollection;
     pub use super::IShaderVariantCollection;
     pub use super::IShaderVariantCollectionMethods;
-    pub use super::ShaderVariantCollection_ShaderVariant;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     pub use crate::unity_engine::object_2::IObject_2;

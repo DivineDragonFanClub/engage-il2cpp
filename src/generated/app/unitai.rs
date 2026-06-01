@@ -17,9 +17,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitai/UnitAI_FlagField.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitAI.FlagField")] # [parent (crate :: app :: bitfield32 :: BitField32)] pub struct UnitAI_FlagField {}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitai/UnitAI_RandomFlag.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -57,123 +54,6 @@ impl  ::unity2::IlType for UnitAI_RandomFlag  {
 impl  UnitAI_RandomFlag  {
     pub fn clear_ask_heal_b() -> Self {
         Self { value: 1 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitai/UnitAI_MoveLimitRange.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitAI.MoveLimitRange")] # [parent (crate :: system :: object :: Object)] pub struct UnitAI_MoveLimitRange {
-# [static_field] # [rename (name = "Version")] pub version : i32 ,
-# [offset (16)] # [rename (name = "m_Type")] pub m_type : u8 ,
-# [offset (17)] # [rename (name = "m_X")] pub m_x : i8 ,
-# [offset (18)] # [rename (name = "m_Z")] pub m_z : i8 ,
-# [offset (19)] # [rename (name = "m_W")] pub m_w : i8 ,
-# [offset (20)] # [rename (name = "m_H")] pub m_h : i8 ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitai/UnitAI.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitAI")] # [parent (crate :: system :: object :: Object)] pub struct UnitAI {
-# [static_field] # [rename (name = "Version")] pub version : i32 ,
-# [offset (16)] # [rename (name = "m_Flag")] pub m_flag : crate :: app :: unitai :: UnitAI_FlagField ,
-# [offset (24)] # [rename (name = "m_Band")] pub m_band : u8 ,
-# [offset (25)] # [rename (name = "m_Active")] pub m_active : u8 ,
-# [offset (26)] # [rename (name = "m_Priority")] pub m_priority : u8 ,
-# [offset (27)] # [rename (name = "m_HealRateA")] pub m_heal_rate_a : u8 ,
-# [offset (28)] # [rename (name = "m_HealRateB")] pub m_heal_rate_b : u8 ,
-# [offset (29)] # [rename (name = "m_BattleRateType")] pub m_battle_rate_type : u8 ,
-# [offset (30)] # [rename (name = "m_ProhibitEngageAttack")] pub m_prohibit_engage_attack : u8 ,
-# [offset (31)] # [rename (name = "m_ProhibitRod")] pub m_prohibit_rod : u8 ,
-# [offset (32)] # [rename (name = "m_ProhibitOverlap")] pub m_prohibit_overlap : u8 ,
-# [offset (33)] # [rename (name = "m_RerewarpCount")] pub m_rerewarp_count : u8 ,
-# [offset (34)] # [rename (name = "m_RerewarpCountMax")] pub m_rerewarp_count_max : u8 ,
-# [offset (35)] # [rename (name = "m_RerewarpLastX")] pub m_rerewarp_last_x : u8 ,
-# [offset (36)] # [rename (name = "m_RerewarpLastZ")] pub m_rerewarp_last_z : u8 ,
-# [offset (40)] # [rename (name = "m_RerewarpEventFlag")] pub m_rerewarp_event_flag : :: unity2 :: Il2CppString ,
-# [offset (48)] # [rename (name = "m_RandomFlag")] pub m_random_flag : crate :: app :: unitai :: UnitAI_RandomFlagField ,
-# [offset (56)] # [rename (name = "m_MoveLimit")] pub m_move_limit : crate :: app :: unitai :: UnitAI_MoveLimitRange ,
-# [offset (64)] # [rename (name = "m_VersusType")] pub m_versus_type : u8 ,
-# [offset (65)] # [rename (name = "m_BulletPattern")] pub m_bullet_pattern : u8 ,
-# [offset (72)] # [rename (name = "m_aSequence")] pub m_a_sequence : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [offset (80)] # [rename (name = "m_aValue")] pub m_a_value : :: unity2 :: Array < crate :: app :: aivalue :: AIValue > ,
-# [offset (88)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-# [offset (96)] # [rename (name = "m_VsThink")] pub m_vs_think : crate :: app :: aithink :: AIThink_Think ,
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitai/UnitAI_VersusTypes.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct UnitAI_VersusTypes  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for UnitAI_VersusTypes  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "UnitAI.VersusTypes";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for UnitAI_VersusTypes  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  UnitAI_VersusTypes  {
-    pub fn not_move() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn defense() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn rush() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn response_a() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn response_b() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn response_c() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 6 }
 
     }
 
@@ -253,21 +133,18 @@ impl  UnitAI_MoveLimitRange_LimitType  {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitai/UnitAI_RandomFlagField.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitAI.RandomFlagField")] # [parent (crate :: app :: bitfield32 :: BitField32)] pub struct UnitAI_RandomFlagField {}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitai/UnitAI_BattleRate.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitai/UnitAI_VersusTypes.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct UnitAI_BattleRate  {
+pub struct UnitAI_VersusTypes  {
     pub value: i32,
 }
 
 
-impl  ::unity2::ClassIdentity for UnitAI_BattleRate  {
+impl  ::unity2::ClassIdentity for UnitAI_VersusTypes  {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "UnitAI.BattleRate";
+    const NAME: &'static str = "UnitAI.VersusTypes";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> =
@@ -282,7 +159,7 @@ impl  ::unity2::ClassIdentity for UnitAI_BattleRate  {
 }
 
 
-impl  ::unity2::IlType for UnitAI_BattleRate  {
+impl  ::unity2::IlType for UnitAI_VersusTypes  {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
@@ -290,27 +167,45 @@ impl  ::unity2::IlType for UnitAI_BattleRate  {
 }
 
 
-impl  UnitAI_BattleRate  {
-    pub fn rush() -> Self {
+impl  UnitAI_VersusTypes  {
+    pub fn not_move() -> Self {
         Self { value: 0 }
 
     }
 
 
-    pub fn attack() -> Self {
+    pub fn defense() -> Self {
         Self { value: 1 }
 
     }
 
 
-    pub fn chariness() -> Self {
+    pub fn rush() -> Self {
         Self { value: 2 }
 
     }
 
 
-    pub fn num() -> Self {
+    pub fn response_a() -> Self {
         Self { value: 3 }
+
+    }
+
+
+    pub fn response_b() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn response_c() -> Self {
+        Self { value: 5 }
+
+    }
+
+
+    pub fn num() -> Self {
+        Self { value: 6 }
 
     }
 
@@ -557,6 +452,111 @@ impl  UnitAI_Flag  {
 
 }
 
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitai/UnitAI_BattleRate.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct UnitAI_BattleRate  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for UnitAI_BattleRate  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "UnitAI.BattleRate";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for UnitAI_BattleRate  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  UnitAI_BattleRate  {
+    pub fn rush() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn attack() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn chariness() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn num() -> Self {
+        Self { value: 3 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitai/UnitAI_FlagField.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitAI.FlagField")] # [parent (crate :: app :: bitfield32 :: BitField32)] pub struct UnitAI_FlagField {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitai/UnitAI_RandomFlagField.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitAI.RandomFlagField")] # [parent (crate :: app :: bitfield32 :: BitField32)] pub struct UnitAI_RandomFlagField {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitai/UnitAI_MoveLimitRange.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitAI.MoveLimitRange")] # [parent (crate :: system :: object :: Object)] pub struct UnitAI_MoveLimitRange {
+# [static_field] # [rename (name = "Version")] pub version : i32 ,
+# [offset (16)] # [rename (name = "m_Type")] pub m_type : u8 ,
+# [offset (17)] # [rename (name = "m_X")] pub m_x : i8 ,
+# [offset (18)] # [rename (name = "m_Z")] pub m_z : i8 ,
+# [offset (19)] # [rename (name = "m_W")] pub m_w : i8 ,
+# [offset (20)] # [rename (name = "m_H")] pub m_h : i8 ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitai/UnitAI.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitAI")] # [parent (crate :: system :: object :: Object)] pub struct UnitAI {
+# [static_field] # [rename (name = "Version")] pub version : i32 ,
+# [offset (16)] # [rename (name = "m_Flag")] pub m_flag : crate :: app :: unitai :: UnitAI_FlagField ,
+# [offset (24)] # [rename (name = "m_Band")] pub m_band : u8 ,
+# [offset (25)] # [rename (name = "m_Active")] pub m_active : u8 ,
+# [offset (26)] # [rename (name = "m_Priority")] pub m_priority : u8 ,
+# [offset (27)] # [rename (name = "m_HealRateA")] pub m_heal_rate_a : u8 ,
+# [offset (28)] # [rename (name = "m_HealRateB")] pub m_heal_rate_b : u8 ,
+# [offset (29)] # [rename (name = "m_BattleRateType")] pub m_battle_rate_type : u8 ,
+# [offset (30)] # [rename (name = "m_ProhibitEngageAttack")] pub m_prohibit_engage_attack : u8 ,
+# [offset (31)] # [rename (name = "m_ProhibitRod")] pub m_prohibit_rod : u8 ,
+# [offset (32)] # [rename (name = "m_ProhibitOverlap")] pub m_prohibit_overlap : u8 ,
+# [offset (33)] # [rename (name = "m_RerewarpCount")] pub m_rerewarp_count : u8 ,
+# [offset (34)] # [rename (name = "m_RerewarpCountMax")] pub m_rerewarp_count_max : u8 ,
+# [offset (35)] # [rename (name = "m_RerewarpLastX")] pub m_rerewarp_last_x : u8 ,
+# [offset (36)] # [rename (name = "m_RerewarpLastZ")] pub m_rerewarp_last_z : u8 ,
+# [offset (40)] # [rename (name = "m_RerewarpEventFlag")] pub m_rerewarp_event_flag : :: unity2 :: Il2CppString ,
+# [offset (48)] # [rename (name = "m_RandomFlag")] pub m_random_flag : crate :: app :: unitai :: UnitAI_RandomFlagField ,
+# [offset (56)] # [rename (name = "m_MoveLimit")] pub m_move_limit : crate :: app :: unitai :: UnitAI_MoveLimitRange ,
+# [offset (64)] # [rename (name = "m_VersusType")] pub m_versus_type : u8 ,
+# [offset (65)] # [rename (name = "m_BulletPattern")] pub m_bullet_pattern : u8 ,
+# [offset (72)] # [rename (name = "m_aSequence")] pub m_a_sequence : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+# [offset (80)] # [rename (name = "m_aValue")] pub m_a_value : :: unity2 :: Array < crate :: app :: aivalue :: AIValue > ,
+# [offset (88)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
+# [offset (96)] # [rename (name = "m_VsThink")] pub m_vs_think : crate :: app :: aithink :: AIThink_Think ,
+}
+
 }
 
 #[cfg(feature = "app-unitai-types")]
@@ -577,6 +577,23 @@ impl UnitAI_FlagField { pub fn set_method_info () -> & 'static :: unity2 :: il2c
 #[cfg(feature = "app-unitai")]
 impl UnitAI_FlagField {
 # [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnitAI_FlagField) , :: core :: stringify ! (new) ,)) ; < Self as IUnitAI_FlagFieldMethods > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "app-unitai")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __UnitAI_RandomFlagField_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unitai :: UnitAI_RandomFlag as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitAI_RandomFlagField as :: unity2 :: ClassIdentity > :: class () , "Set" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitAI_RandomFlagField as :: unity2 :: ClassIdentity > :: NAME , "Set" , e) , } } } pub unsafe fn set (this : UnitAI_RandomFlagField , f : crate :: app :: unitai :: UnitAI_RandomFlag , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitAI_RandomFlagField , crate :: app :: unitai :: UnitAI_RandomFlag , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set :: get_method_info () . method_ptr ,) ; inner (this , f , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_test { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unitai :: UnitAI_RandomFlag as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitAI_RandomFlagField as :: unity2 :: ClassIdentity > :: class () , "Test" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitAI_RandomFlagField as :: unity2 :: ClassIdentity > :: NAME , "Test" , e) , } } } pub unsafe fn test (this : UnitAI_RandomFlagField , f : crate :: app :: unitai :: UnitAI_RandomFlag , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (UnitAI_RandomFlagField , crate :: app :: unitai :: UnitAI_RandomFlag , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_test :: get_method_info () . method_ptr ,) ; inner (this , f , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_not { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unitai :: UnitAI_RandomFlag as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitAI_RandomFlagField as :: unity2 :: ClassIdentity > :: class () , "Not" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitAI_RandomFlagField as :: unity2 :: ClassIdentity > :: NAME , "Not" , e) , } } } pub unsafe fn not (this : UnitAI_RandomFlagField , f : crate :: app :: unitai :: UnitAI_RandomFlag , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (UnitAI_RandomFlagField , crate :: app :: unitai :: UnitAI_RandomFlag , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_not :: get_method_info () . method_ptr ,) ; inner (this , f , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitAI_RandomFlagField as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitAI_RandomFlagField as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : UnitAI_RandomFlagField , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitAI_RandomFlagField , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-unitai")]
+pub trait IUnitAI_RandomFlagFieldMethods : IUnitAI_RandomFlagField { # [doc = "`Set(crate::app::unitai::UnitAI_RandomFlag)` overload"] fn set (self , f : impl :: core :: convert :: Into < crate :: app :: unitai :: UnitAI_RandomFlag >) -> () { unsafe { let __receiver = < UnitAI_RandomFlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitAI_RandomFlagField_unity2_raw :: set (__receiver , :: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } # [doc = "`Test(crate::app::unitai::UnitAI_RandomFlag)` overload"] fn test (self , f : impl :: core :: convert :: Into < crate :: app :: unitai :: UnitAI_RandomFlag >) -> bool { unsafe { let __receiver = < UnitAI_RandomFlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitAI_RandomFlagField_unity2_raw :: test (__receiver , :: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } # [doc = "`Not(crate::app::unitai::UnitAI_RandomFlag)` overload"] fn not (self , f : impl :: core :: convert :: Into < crate :: app :: unitai :: UnitAI_RandomFlag >) -> bool { unsafe { let __receiver = < UnitAI_RandomFlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitAI_RandomFlagField_unity2_raw :: not (__receiver , :: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < UnitAI_RandomFlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitAI_RandomFlagField_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-unitai")]
+impl < __T : IUnitAI_RandomFlagField > IUnitAI_RandomFlagFieldMethods for __T { }
+
+#[cfg(feature = "app-unitai")]
+impl UnitAI_RandomFlagField { pub fn set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitAI_RandomFlagField_unity2_raw :: __lookup_set :: get_method_info () } pub fn test_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitAI_RandomFlagField_unity2_raw :: __lookup_test :: get_method_info () } pub fn not_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitAI_RandomFlagField_unity2_raw :: __lookup_not :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitAI_RandomFlagField_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-unitai")]
+impl UnitAI_RandomFlagField {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnitAI_RandomFlagField) , :: core :: stringify ! (new) ,)) ; < Self as IUnitAI_RandomFlagFieldMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-unitai")]
@@ -614,42 +631,25 @@ impl UnitAI {
 }
 
 #[cfg(feature = "app-unitai")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __UnitAI_RandomFlagField_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unitai :: UnitAI_RandomFlag as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitAI_RandomFlagField as :: unity2 :: ClassIdentity > :: class () , "Set" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitAI_RandomFlagField as :: unity2 :: ClassIdentity > :: NAME , "Set" , e) , } } } pub unsafe fn set (this : UnitAI_RandomFlagField , f : crate :: app :: unitai :: UnitAI_RandomFlag , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitAI_RandomFlagField , crate :: app :: unitai :: UnitAI_RandomFlag , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set :: get_method_info () . method_ptr ,) ; inner (this , f , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_test { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unitai :: UnitAI_RandomFlag as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitAI_RandomFlagField as :: unity2 :: ClassIdentity > :: class () , "Test" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitAI_RandomFlagField as :: unity2 :: ClassIdentity > :: NAME , "Test" , e) , } } } pub unsafe fn test (this : UnitAI_RandomFlagField , f : crate :: app :: unitai :: UnitAI_RandomFlag , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (UnitAI_RandomFlagField , crate :: app :: unitai :: UnitAI_RandomFlag , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_test :: get_method_info () . method_ptr ,) ; inner (this , f , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_not { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unitai :: UnitAI_RandomFlag as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitAI_RandomFlagField as :: unity2 :: ClassIdentity > :: class () , "Not" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitAI_RandomFlagField as :: unity2 :: ClassIdentity > :: NAME , "Not" , e) , } } } pub unsafe fn not (this : UnitAI_RandomFlagField , f : crate :: app :: unitai :: UnitAI_RandomFlag , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (UnitAI_RandomFlagField , crate :: app :: unitai :: UnitAI_RandomFlag , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_not :: get_method_info () . method_ptr ,) ; inner (this , f , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitAI_RandomFlagField as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitAI_RandomFlagField as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : UnitAI_RandomFlagField , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitAI_RandomFlagField , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "app-unitai")]
-pub trait IUnitAI_RandomFlagFieldMethods : IUnitAI_RandomFlagField { # [doc = "`Set(crate::app::unitai::UnitAI_RandomFlag)` overload"] fn set (self , f : impl :: core :: convert :: Into < crate :: app :: unitai :: UnitAI_RandomFlag >) -> () { unsafe { let __receiver = < UnitAI_RandomFlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitAI_RandomFlagField_unity2_raw :: set (__receiver , :: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } # [doc = "`Test(crate::app::unitai::UnitAI_RandomFlag)` overload"] fn test (self , f : impl :: core :: convert :: Into < crate :: app :: unitai :: UnitAI_RandomFlag >) -> bool { unsafe { let __receiver = < UnitAI_RandomFlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitAI_RandomFlagField_unity2_raw :: test (__receiver , :: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } # [doc = "`Not(crate::app::unitai::UnitAI_RandomFlag)` overload"] fn not (self , f : impl :: core :: convert :: Into < crate :: app :: unitai :: UnitAI_RandomFlag >) -> bool { unsafe { let __receiver = < UnitAI_RandomFlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitAI_RandomFlagField_unity2_raw :: not (__receiver , :: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < UnitAI_RandomFlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitAI_RandomFlagField_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-unitai")]
-impl < __T : IUnitAI_RandomFlagField > IUnitAI_RandomFlagFieldMethods for __T { }
-
-#[cfg(feature = "app-unitai")]
-impl UnitAI_RandomFlagField { pub fn set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitAI_RandomFlagField_unity2_raw :: __lookup_set :: get_method_info () } pub fn test_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitAI_RandomFlagField_unity2_raw :: __lookup_test :: get_method_info () } pub fn not_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitAI_RandomFlagField_unity2_raw :: __lookup_not :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitAI_RandomFlagField_unity2_raw :: __lookup_ctor :: get_method_info () } }
-
-#[cfg(feature = "app-unitai")]
-impl UnitAI_RandomFlagField {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnitAI_RandomFlagField) , :: core :: stringify ! (new) ,)) ; < Self as IUnitAI_RandomFlagFieldMethods > :: ctor (this ,) ; this }
-}
-
-#[cfg(feature = "app-unitai")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::UnitAI_RandomFlag;
+    pub use super::UnitAI_MoveLimitRange_LimitType;
+    pub use super::UnitAI_VersusTypes;
+    pub use super::UnitAI_Flag;
+    pub use super::UnitAI_BattleRate;
     pub use super::UnitAI_FlagField;
     pub use super::IUnitAI_FlagField;
     pub use super::IUnitAI_FlagFieldMethods;
-    pub use super::UnitAI_RandomFlag;
+    pub use super::UnitAI_RandomFlagField;
+    pub use super::IUnitAI_RandomFlagField;
+    pub use super::IUnitAI_RandomFlagFieldMethods;
     pub use super::UnitAI_MoveLimitRange;
     pub use super::IUnitAI_MoveLimitRange;
     pub use super::IUnitAI_MoveLimitRangeMethods;
     pub use super::UnitAI;
     pub use super::IUnitAI;
     pub use super::IUnitAIMethods;
-    pub use super::UnitAI_VersusTypes;
-    pub use super::UnitAI_MoveLimitRange_LimitType;
-    pub use super::UnitAI_RandomFlagField;
-    pub use super::IUnitAI_RandomFlagField;
-    pub use super::IUnitAI_RandomFlagFieldMethods;
-    pub use super::UnitAI_BattleRate;
-    pub use super::UnitAI_Flag;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::system::object::IObject;

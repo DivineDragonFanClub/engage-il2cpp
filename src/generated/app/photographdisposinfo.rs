@@ -19,36 +19,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographdisposinfo/PhotographDisposInfo_FlagField.md"))] # [:: unity2 :: class (namespace = "App" , name = "PhotographDisposInfo.FlagField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: photographdisposinfo :: PhotographDisposInfo_Flags >)] pub struct PhotographDisposInfo_FlagField {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographdisposinfo/PhotographDisposInfo.md"))] # [:: unity2 :: class (namespace = "App" , name = "PhotographDisposInfo")] # [parent (crate :: system :: object :: Object)] pub struct PhotographDisposInfo {
-# [static_field] # [rename (name = "s_FruitsPath")] pub s_fruits_path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "s_WaterCanPath")] pub s_water_can_path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "s_BrushPath")] pub s_brush_path : :: unity2 :: Il2CppString ,
-# [offset (64)] # [rename (name = "m_IsVisible")] pub m_is_visible : bool ,
-# [offset (72)] # [rename (name = "m_Locator")] pub m_locator : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (80)] # [rename (name = "m_LookTarget")] pub m_look_target : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (88)] # [rename (name = "m_PauseGroupNameList")] pub m_pause_group_name_list : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [offset (96)] # [rename (name = "m_AnimeControllerDic")] pub m_anime_controller_dic : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: unity_engine :: runtimeanimatorcontroller :: RuntimeAnimatorController > ,
-# [offset (104)] # [rename (name = "m_Flag")] pub m_flag : crate :: app :: photographdisposinfo :: PhotographDisposInfo_FlagField ,
-# [offset (112)] # [rename (name = "m_IsLoadingCharacter")] pub m_is_loading_character : bool ,
-# [offset (120)] # [rename (name = "m_CharacterIdList")] pub m_character_id_list : crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > ,
-# [offset (128)] # [rename (name = "m_CurrentCharacterId")] pub m_current_character_id : :: unity2 :: Il2CppString ,
-# [offset (136)] # [rename (name = "m_CharacterType")] pub m_character_type : crate :: app :: photographdisposinfo :: PhotographDisposInfo_CharacterType ,
-# [offset (144)] # [rename (name = "m_CharacterCmp")] pub m_character_cmp : crate :: combat :: character :: Character ,
-# [offset (152)] # [rename (name = "m_IsLookAtCamera")] pub m_is_look_at_camera : bool ,
-# [offset (156)] # [rename (name = "m_LookAtRate")] pub m_look_at_rate : f32 ,
-# [offset (176)] # [rename (name = "m_PauseDataList")] pub m_pause_data_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: photographpausedata :: PhotographPauseData > ,
-# [offset (184)] # [rename (name = "m_CurrentPauseData")] pub m_current_pause_data : crate :: app :: photographpausedata :: PhotographPauseData ,
-# [offset (192)] # [rename (name = "m_HoldItem")] pub m_hold_item : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (200)] # [rename (name = "m_HoldWeapon")] pub m_hold_weapon : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (208)] # [rename (name = "m_HoldWeaponData")] pub m_hold_weapon_data : crate :: app :: itemdata :: ItemData ,
-# [offset (216)] # [rename (name = "m_HoldWeaponPath")] pub m_hold_weapon_path : :: unity2 :: Il2CppString ,
-# [offset (224)] # [rename (name = "m_IsLoadingWeapon")] pub m_is_loading_weapon : bool ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographdisposinfo/PhotographDisposInfo_Flags.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -120,6 +90,9 @@ impl  PhotographDisposInfo_Flags  {
     }
 
 }
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographdisposinfo/PhotographDisposInfo_FlagField.md"))] # [:: unity2 :: class (namespace = "App" , name = "PhotographDisposInfo.FlagField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: photographdisposinfo :: PhotographDisposInfo_Flags >)] pub struct PhotographDisposInfo_FlagField {}
 
 
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographdisposinfo/PhotographDisposInfo_CharacterType.md"))]
@@ -194,6 +167,33 @@ impl  PhotographDisposInfo_CharacterType  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographdisposinfo/PhotographDisposInfo.md"))] # [:: unity2 :: class (namespace = "App" , name = "PhotographDisposInfo")] # [parent (crate :: system :: object :: Object)] pub struct PhotographDisposInfo {
+# [static_field] # [rename (name = "s_FruitsPath")] pub s_fruits_path : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "s_WaterCanPath")] pub s_water_can_path : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "s_BrushPath")] pub s_brush_path : :: unity2 :: Il2CppString ,
+# [offset (64)] # [rename (name = "m_IsVisible")] pub m_is_visible : bool ,
+# [offset (72)] # [rename (name = "m_Locator")] pub m_locator : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (80)] # [rename (name = "m_LookTarget")] pub m_look_target : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (88)] # [rename (name = "m_PauseGroupNameList")] pub m_pause_group_name_list : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+# [offset (96)] # [rename (name = "m_AnimeControllerDic")] pub m_anime_controller_dic : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: unity_engine :: runtimeanimatorcontroller :: RuntimeAnimatorController > ,
+# [offset (104)] # [rename (name = "m_Flag")] pub m_flag : crate :: app :: photographdisposinfo :: PhotographDisposInfo_FlagField ,
+# [offset (112)] # [rename (name = "m_IsLoadingCharacter")] pub m_is_loading_character : bool ,
+# [offset (120)] # [rename (name = "m_CharacterIdList")] pub m_character_id_list : crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > ,
+# [offset (128)] # [rename (name = "m_CurrentCharacterId")] pub m_current_character_id : :: unity2 :: Il2CppString ,
+# [offset (136)] # [rename (name = "m_CharacterType")] pub m_character_type : crate :: app :: photographdisposinfo :: PhotographDisposInfo_CharacterType ,
+# [offset (144)] # [rename (name = "m_CharacterCmp")] pub m_character_cmp : crate :: combat :: character :: Character ,
+# [offset (152)] # [rename (name = "m_IsLookAtCamera")] pub m_is_look_at_camera : bool ,
+# [offset (156)] # [rename (name = "m_LookAtRate")] pub m_look_at_rate : f32 ,
+# [offset (176)] # [rename (name = "m_PauseDataList")] pub m_pause_data_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: photographpausedata :: PhotographPauseData > ,
+# [offset (184)] # [rename (name = "m_CurrentPauseData")] pub m_current_pause_data : crate :: app :: photographpausedata :: PhotographPauseData ,
+# [offset (192)] # [rename (name = "m_HoldItem")] pub m_hold_item : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (200)] # [rename (name = "m_HoldWeapon")] pub m_hold_weapon : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (208)] # [rename (name = "m_HoldWeaponData")] pub m_hold_weapon_data : crate :: app :: itemdata :: ItemData ,
+# [offset (216)] # [rename (name = "m_HoldWeaponPath")] pub m_hold_weapon_path : :: unity2 :: Il2CppString ,
+# [offset (224)] # [rename (name = "m_IsLoadingWeapon")] pub m_is_loading_weapon : bool ,
+}
+
 }
 
 #[cfg(feature = "app-photographdisposinfo-types")]
@@ -239,14 +239,14 @@ impl PhotographDisposInfo {
 #[cfg(feature = "app-photographdisposinfo")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::PhotographDisposInfo_Flags;
     pub use super::PhotographDisposInfo_FlagField;
     pub use super::IPhotographDisposInfo_FlagField;
     pub use super::IPhotographDisposInfo_FlagFieldMethods;
+    pub use super::PhotographDisposInfo_CharacterType;
     pub use super::PhotographDisposInfo;
     pub use super::IPhotographDisposInfo;
     pub use super::IPhotographDisposInfoMethods;
-    pub use super::PhotographDisposInfo_Flags;
-    pub use super::PhotographDisposInfo_CharacterType;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

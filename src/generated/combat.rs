@@ -64,7 +64,7 @@
  # [cfg (feature = "combat-actiongranbackstep")] pub use actiongranbackstep :: { IActionGranBackstepMethods }
  ;
  # [cfg (any (feature = "combat-actiongranbase-types"))] pub mod actiongranbase ;
- # [cfg (feature = "combat-actiongranbase-types")] pub use actiongranbase :: { ActionGranBase , IActionGranBase , ActionGranBase_MoveAct }
+ # [cfg (feature = "combat-actiongranbase-types")] pub use actiongranbase :: { ActionGranBase_MoveAct , ActionGranBase , IActionGranBase }
  ;
  # [cfg (feature = "combat-actiongranbase")] pub use actiongranbase :: { IActionGranBaseMethods }
  ;
@@ -144,7 +144,7 @@
  # [cfg (feature = "combat-actiontalk")] pub use actiontalk :: { IActionTalkMethods }
  ;
  # [cfg (any (feature = "combat-actiontransform-types"))] pub mod actiontransform ;
- # [cfg (feature = "combat-actiontransform-types")] pub use actiontransform :: { ActionTransform , IActionTransform , ActionTransform_State }
+ # [cfg (feature = "combat-actiontransform-types")] pub use actiontransform :: { ActionTransform_State , ActionTransform , IActionTransform }
  ;
  # [cfg (feature = "combat-actiontransform")] pub use actiontransform :: { IActionTransformMethods }
  ;
@@ -291,7 +291,7 @@
  # [cfg (feature = "combat-cameraboundingbox")] pub use cameraboundingbox :: { ICameraBoundingBoxMethods }
  ;
  # [cfg (any (feature = "combat-cameracontrollerauto-types"))] pub mod cameracontrollerauto ;
- # [cfg (feature = "combat-cameracontrollerauto-types")] pub use cameracontrollerauto :: { CameraControllerAuto , ICameraControllerAuto , CameraControllerAuto_CamRotate }
+ # [cfg (feature = "combat-cameracontrollerauto-types")] pub use cameracontrollerauto :: { CameraControllerAuto_CamRotate , CameraControllerAuto , ICameraControllerAuto }
  ;
  # [cfg (feature = "combat-cameracontrollerauto")] pub use cameracontrollerauto :: { ICameraControllerAutoMethods }
  ;
@@ -311,7 +311,7 @@
  # [cfg (feature = "combat-cameracontrollerbird")] pub use cameracontrollerbird :: { ICameraControllerBirdMethods }
  ;
  # [cfg (any (feature = "combat-cameracontrollerbullet-types"))] pub mod cameracontrollerbullet ;
- # [cfg (feature = "combat-cameracontrollerbullet-types")] pub use cameracontrollerbullet :: { CameraControllerBullet_State , CameraControllerBullet , ICameraControllerBullet }
+ # [cfg (feature = "combat-cameracontrollerbullet-types")] pub use cameracontrollerbullet :: { CameraControllerBullet , ICameraControllerBullet , CameraControllerBullet_State }
  ;
  # [cfg (feature = "combat-cameracontrollerbullet")] pub use cameracontrollerbullet :: { ICameraControllerBulletMethods }
  ;
@@ -387,15 +387,15 @@
  # [cfg (feature = "combat-cameraposition-types")] pub use cameraposition :: { CameraPosition }
  ;
  # [cfg (any (feature = "combat-camerapositiondata-types"))] pub mod camerapositiondata ;
- # [cfg (feature = "combat-camerapositiondata-types")] pub use camerapositiondata :: { CameraPositionData_TargetJoint , CameraPositionData , ICameraPositionData , CameraPositionData_CameraShakeSettings , ICameraPositionData_CameraShakeSettings }
+ # [cfg (feature = "combat-camerapositiondata-types")] pub use camerapositiondata :: { CameraPositionData_CameraShakeSettings , ICameraPositionData_CameraShakeSettings , CameraPositionData_TargetJoint , CameraPositionData , ICameraPositionData }
  ;
- # [cfg (feature = "combat-camerapositiondata")] pub use camerapositiondata :: { ICameraPositionDataMethods , ICameraPositionData_CameraShakeSettingsMethods }
+ # [cfg (feature = "combat-camerapositiondata")] pub use camerapositiondata :: { ICameraPositionData_CameraShakeSettingsMethods , ICameraPositionDataMethods }
  ;
  # [cfg (any (feature = "combat-camerasituation-types"))] pub mod camerasituation ;
  # [cfg (feature = "combat-camerasituation-types")] pub use camerasituation :: { CameraSituation }
  ;
  # [cfg (any (feature = "combat-camerasituationconverter-types"))] pub mod camerasituationconverter ;
- # [cfg (feature = "combat-camerasituationconverter-types")] pub use camerasituationconverter :: { CameraSituationConverter , ICameraSituationConverter , CameraSituationConverter_CameraLocateStyle }
+ # [cfg (feature = "combat-camerasituationconverter-types")] pub use camerasituationconverter :: { CameraSituationConverter_CameraLocateStyle , CameraSituationConverter , ICameraSituationConverter }
  ;
  # [cfg (feature = "combat-camerasituationconverter")] pub use camerasituationconverter :: { ICameraSituationConverterMethods }
  ;
@@ -455,7 +455,7 @@
  # [cfg (feature = "combat-charactereffect")] pub use charactereffect :: { ICharacterEffectMethods }
  ;
  # [cfg (any (feature = "combat-charactereyedart-types"))] pub mod charactereyedart ;
- # [cfg (feature = "combat-charactereyedart-types")] pub use charactereyedart :: { CharacterEyeDart , ICharacterEyeDart , CharacterEyeDart_State }
+ # [cfg (feature = "combat-charactereyedart-types")] pub use charactereyedart :: { CharacterEyeDart_State , CharacterEyeDart , ICharacterEyeDart }
  ;
  # [cfg (feature = "combat-charactereyedart")] pub use charactereyedart :: { ICharacterEyeDartMethods }
  ;
@@ -521,7 +521,7 @@
  # [cfg (feature = "combat-characterlying")] pub use characterlying :: { ICharacterLyingMethods }
  ;
  # [cfg (any (feature = "combat-characterlyinghorse-types"))] pub mod characterlyinghorse ;
- # [cfg (feature = "combat-characterlyinghorse-types")] pub use characterlyinghorse :: { CharacterLyingHorse_Progress , CharacterLyingHorse , ICharacterLyingHorse }
+ # [cfg (feature = "combat-characterlyinghorse-types")] pub use characterlyinghorse :: { CharacterLyingHorse , ICharacterLyingHorse , CharacterLyingHorse_Progress }
  ;
  # [cfg (feature = "combat-characterlyinghorse")] pub use characterlyinghorse :: { ICharacterLyingHorseMethods }
  ;
@@ -536,12 +536,12 @@
  # [cfg (feature = "combat-characterlyingpegasus")] pub use characterlyingpegasus :: { ICharacterLyingPegasusMethods }
  ;
  # [cfg (any (feature = "combat-charactermove-types"))] pub mod charactermove ;
- # [cfg (feature = "combat-charactermove-types")] pub use charactermove :: { CharacterMove_State , CharacterMove , ICharacterMove , CharacterMove_StartMode }
+ # [cfg (feature = "combat-charactermove-types")] pub use charactermove :: { CharacterMove_StartMode , CharacterMove , ICharacterMove , CharacterMove_State }
  ;
  # [cfg (feature = "combat-charactermove")] pub use charactermove :: { ICharacterMoveMethods }
  ;
  # [cfg (any (feature = "combat-characternodeconstraint-types"))] pub mod characternodeconstraint ;
- # [cfg (feature = "combat-characternodeconstraint-types")] pub use characternodeconstraint :: { CharacterNodeConstraint , ICharacterNodeConstraint , CharacterNodeConstraint_State }
+ # [cfg (feature = "combat-characternodeconstraint-types")] pub use characternodeconstraint :: { CharacterNodeConstraint_State , CharacterNodeConstraint , ICharacterNodeConstraint }
  ;
  # [cfg (feature = "combat-characternodeconstraint")] pub use characternodeconstraint :: { ICharacterNodeConstraintMethods }
  ;
@@ -586,7 +586,7 @@
  # [cfg (feature = "combat-characterweapon")] pub use characterweapon :: { ICharacterWeaponMethods }
  ;
  # [cfg (any (feature = "combat-classchangesequence-types"))] pub mod classchangesequence ;
- # [cfg (feature = "combat-classchangesequence-types")] pub use classchangesequence :: { ClassChangeSequence_Label , ClassChangeSequence , IClassChangeSequence }
+ # [cfg (feature = "combat-classchangesequence-types")] pub use classchangesequence :: { ClassChangeSequence , IClassChangeSequence , ClassChangeSequence_Label }
  ;
  # [cfg (feature = "combat-classchangesequence")] pub use classchangesequence :: { IClassChangeSequenceMethods }
  ;
@@ -687,7 +687,7 @@
  # [cfg (feature = "combat-combatsequence")] pub use combatsequence :: { ICombatSequenceMethods }
  ;
  # [cfg (any (feature = "combat-combatskip-types"))] pub mod combatskip ;
- # [cfg (feature = "combat-combatskip-types")] pub use combatskip :: { CombatSkip , ICombatSkip , CombatSkip_State }
+ # [cfg (feature = "combat-combatskip-types")] pub use combatskip :: { CombatSkip_State , CombatSkip , ICombatSkip }
  ;
  # [cfg (feature = "combat-combatskip")] pub use combatskip :: { ICombatSkipMethods }
  ;
@@ -866,9 +866,9 @@
  # [cfg (feature = "combat-emittersconstraint")] pub use emittersconstraint :: { IEmittersConstraint_PairMethods , IEmittersConstraintMethods }
  ;
  # [cfg (any (feature = "combat-engagesequence-types"))] pub mod engagesequence ;
- # [cfg (feature = "combat-engagesequence-types")] pub use engagesequence :: { EngageSequence_Mode , EngageSequence , IEngageSequence , EngageSequence_Cast , IEngageSequence_Cast }
+ # [cfg (feature = "combat-engagesequence-types")] pub use engagesequence :: { EngageSequence_Cast , IEngageSequence_Cast , EngageSequence_Mode , EngageSequence , IEngageSequence }
  ;
- # [cfg (feature = "combat-engagesequence")] pub use engagesequence :: { IEngageSequenceMethods , IEngageSequence_CastMethods }
+ # [cfg (feature = "combat-engagesequence")] pub use engagesequence :: { IEngageSequence_CastMethods , IEngageSequenceMethods }
  ;
  # [cfg (any (feature = "combat-engagestyle-types"))] pub mod engagestyle ;
  # [cfg (feature = "combat-engagestyle-types")] pub use engagestyle :: { EngageStyle }
@@ -952,7 +952,7 @@
  # [cfg (feature = "combat-fxz-types")] pub use fxz :: { FXZ }
  ;
  # [cfg (any (feature = "combat-fxzex-types"))] pub mod fxzex ;
- # [cfg (feature = "combat-fxzex-types")] pub use fxzex :: { FXZEx , IFXZEx , FXZEx_HitPoint }
+ # [cfg (feature = "combat-fxzex-types")] pub use fxzex :: { FXZEx_HitPoint , FXZEx , IFXZEx }
  ;
  # [cfg (any (feature = "combat-grandewbrain-types"))] pub mod grandewbrain ;
  # [cfg (feature = "combat-grandewbrain-types")] pub use grandewbrain :: { GrandewBrain , IGrandewBrain }
@@ -1003,9 +1003,9 @@
  # [cfg (feature = "combat-intvec3-types")] pub use intvec3 :: { IntVec3 , IIntVec3 }
  ;
  # [cfg (any (feature = "combat-kaneko-types"))] pub mod kaneko ;
- # [cfg (feature = "combat-kaneko-types")] pub use kaneko :: { Kaneko_DummyDisposable , IKaneko_DummyDisposable , Kaneko , IKaneko , Kaneko_Screen , IKaneko_Screen , Kaneko_GUIFitScope , IKaneko_GUIFitScope }
+ # [cfg (feature = "combat-kaneko-types")] pub use kaneko :: { Kaneko_GUIFitScope , IKaneko_GUIFitScope , Kaneko , IKaneko , Kaneko_DummyDisposable , IKaneko_DummyDisposable , Kaneko_Screen , IKaneko_Screen }
  ;
- # [cfg (feature = "combat-kaneko")] pub use kaneko :: { IKaneko_DummyDisposableMethods , IKaneko_GUIFitScopeMethods }
+ # [cfg (feature = "combat-kaneko")] pub use kaneko :: { IKaneko_GUIFitScopeMethods , IKaneko_DummyDisposableMethods }
  ;
  # [cfg (any (feature = "combat-launchbehaviour-types"))] pub mod launchbehaviour ;
  # [cfg (feature = "combat-launchbehaviour-types")] pub use launchbehaviour :: { LaunchBehaviour , ILaunchBehaviour }
@@ -1016,7 +1016,7 @@
  # [cfg (feature = "combat-layer-types")] pub use layer :: { Layer , ILayer , Layer_Shift , ILayer_Shift , Layer_Mask , ILayer_Mask }
  ;
  # [cfg (any (feature = "combat-locationparams-types"))] pub mod locationparams ;
- # [cfg (feature = "combat-locationparams-types")] pub use locationparams :: { LocationParams_UnitType , LocationParams_LocateStyle , LocationParams_DataType , LocationParams_EmblemType , LocationParams , ILocationParams }
+ # [cfg (feature = "combat-locationparams-types")] pub use locationparams :: { LocationParams_UnitType , LocationParams_EmblemType , LocationParams , ILocationParams , LocationParams_LocateStyle , LocationParams_DataType }
  ;
  # [cfg (feature = "combat-locationparams")] pub use locationparams :: { ILocationParamsMethods }
  ;
@@ -1113,7 +1113,7 @@
  # [cfg (feature = "combat-particlefadeoutcomponent")] pub use particlefadeoutcomponent :: { IParticleFadeoutComponentMethods }
  ;
  # [cfg (any (feature = "combat-phase-types"))] pub mod phase ;
- # [cfg (feature = "combat-phase-types")] pub use phase :: { Phase_Kind , Phase_HitType , Phase_Detail , Phase , IPhase }
+ # [cfg (feature = "combat-phase-types")] pub use phase :: { Phase_Detail , Phase , IPhase , Phase_Kind , Phase_HitType }
  ;
  # [cfg (feature = "combat-phase")] pub use phase :: { IPhaseMethods }
  ;
@@ -1196,7 +1196,7 @@
  # [cfg (feature = "combat-puppet")] pub use puppet :: { IPuppetMethods }
  ;
  # [cfg (any (feature = "combat-quantizer-types"))] pub mod quantizer ;
- # [cfg (feature = "combat-quantizer-types")] pub use quantizer :: { Quantizer , IQuantizer , Quantizer_MajorAxis }
+ # [cfg (feature = "combat-quantizer-types")] pub use quantizer :: { Quantizer_MajorAxis , Quantizer , IQuantizer }
  ;
  # [cfg (any (feature = "combat-radialblurcomponent-types"))] pub mod radialblurcomponent ;
  # [cfg (feature = "combat-radialblurcomponent-types")] pub use radialblurcomponent :: { RadialBlurComponent , IRadialBlurComponent }
@@ -1286,7 +1286,7 @@
  # [cfg (feature = "combat-styles-types")] pub use styles :: { Styles , IStyles }
  ;
  # [cfg (any (feature = "combat-synctoken-types"))] pub mod synctoken ;
- # [cfg (feature = "combat-synctoken-types")] pub use synctoken :: { SyncToken , ISyncToken , SyncToken_State }
+ # [cfg (feature = "combat-synctoken-types")] pub use synctoken :: { SyncToken_State , SyncToken , ISyncToken }
  ;
  # [cfg (feature = "combat-synctoken")] pub use synctoken :: { ISyncTokenMethods }
  ;
@@ -1329,7 +1329,7 @@
  # [cfg (feature = "combat-trex-types")] pub use trex :: { TREx , ITREx }
  ;
  # [cfg (any (feature = "combat-unitdetailcameraposition-types"))] pub mod unitdetailcameraposition ;
- # [cfg (feature = "combat-unitdetailcameraposition-types")] pub use unitdetailcameraposition :: { UnitDetailCameraPosition_CenterType , UnitDetailCameraPosition , IUnitDetailCameraPosition }
+ # [cfg (feature = "combat-unitdetailcameraposition-types")] pub use unitdetailcameraposition :: { UnitDetailCameraPosition , IUnitDetailCameraPosition , UnitDetailCameraPosition_CenterType }
  ;
  # [cfg (feature = "combat-unitdetailcameraposition")] pub use unitdetailcameraposition :: { IUnitDetailCameraPositionMethods }
  ;

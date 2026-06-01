@@ -19,6 +19,13 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/reliancedata/RelianceData.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelianceData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: reliancedata :: RelianceData >)] pub struct RelianceData {
+# [static_field] # [rename (name = "NoSupport")] pub no_support : u8 ,
+# [static_field] # [rename (name = "MaxExp")] pub max_exp : i32 ,
+# [static_field] # [rename (name = "MaxData")] pub max_data : i32 ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/reliancedata/RelianceData_Level.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -91,13 +98,6 @@ impl  RelianceData_Level  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/reliancedata/RelianceData.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelianceData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: reliancedata :: RelianceData >)] pub struct RelianceData {
-# [static_field] # [rename (name = "NoSupport")] pub no_support : u8 ,
-# [static_field] # [rename (name = "MaxExp")] pub max_exp : i32 ,
-# [static_field] # [rename (name = "MaxData")] pub max_data : i32 ,
-}
-
 }
 
 #[cfg(feature = "app-reliancedata-types")]
@@ -126,10 +126,10 @@ impl RelianceData {
 #[cfg(feature = "app-reliancedata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RelianceData_Level;
     pub use super::RelianceData;
     pub use super::IRelianceData;
     pub use super::IRelianceDataMethods;
+    pub use super::RelianceData_Level;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdata_1::IStructData_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

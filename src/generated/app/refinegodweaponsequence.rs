@@ -15,18 +15,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweaponsequence/RefineGodWeaponSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineGodWeaponSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct RefineGodWeaponSequence {
-# [offset (112)] # [rename (name = "m_ShopMenuResult")] pub m_shop_menu_result : crate :: app :: refinegodweapontopmenu :: RefineGodWeaponTopMenu_Result2 ,
-# [offset (116)] # [rename (name = "m_MenuResult")] pub m_menu_result : crate :: app :: basicmenu :: BasicMenu_Result ,
-# [offset (120)] # [rename (name = "m_WeaponModelRenderer")] pub m_weapon_model_renderer : crate :: app :: shopweaponmodelrenderer :: ShopWeaponModelRenderer ,
-# [offset (128)] # [rename (name = "m_RefineGodWeaponRoot")] pub m_refine_god_weapon_root : crate :: app :: refinegodweaponroot :: RefineGodWeaponRoot ,
-# [offset (136)] # [rename (name = "m_GodUnit")] pub m_god_unit : crate :: app :: godunit :: GodUnit ,
-# [offset (144)] # [rename (name = "m_GodWeapon")] pub m_god_weapon : crate :: app :: itemdata :: ItemData ,
-# [offset (152)] # [rename (name = "m_RefineKind")] pub m_refine_kind : crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind ,
-# [offset (156)] # [rename (name = "m_WeaponSelectMenuScrollIndex")] pub m_weapon_select_menu_scroll_index : i32 ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refinegodweaponsequence/RefineGodWeaponSequence_Label2.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -129,6 +117,18 @@ impl  RefineGodWeaponSequence_Label2  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweaponsequence/RefineGodWeaponSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineGodWeaponSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct RefineGodWeaponSequence {
+# [offset (112)] # [rename (name = "m_ShopMenuResult")] pub m_shop_menu_result : crate :: app :: refinegodweapontopmenu :: RefineGodWeaponTopMenu_Result2 ,
+# [offset (116)] # [rename (name = "m_MenuResult")] pub m_menu_result : crate :: app :: basicmenu :: BasicMenu_Result ,
+# [offset (120)] # [rename (name = "m_WeaponModelRenderer")] pub m_weapon_model_renderer : crate :: app :: shopweaponmodelrenderer :: ShopWeaponModelRenderer ,
+# [offset (128)] # [rename (name = "m_RefineGodWeaponRoot")] pub m_refine_god_weapon_root : crate :: app :: refinegodweaponroot :: RefineGodWeaponRoot ,
+# [offset (136)] # [rename (name = "m_GodUnit")] pub m_god_unit : crate :: app :: godunit :: GodUnit ,
+# [offset (144)] # [rename (name = "m_GodWeapon")] pub m_god_weapon : crate :: app :: itemdata :: ItemData ,
+# [offset (152)] # [rename (name = "m_RefineKind")] pub m_refine_kind : crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind ,
+# [offset (156)] # [rename (name = "m_WeaponSelectMenuScrollIndex")] pub m_weapon_select_menu_scroll_index : i32 ,
+}
+
 }
 
 #[cfg(feature = "app-refinegodweaponsequence-types")]
@@ -157,10 +157,10 @@ impl RefineGodWeaponSequence {
 #[cfg(feature = "app-refinegodweaponsequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::RefineGodWeaponSequence_Label2;
     pub use super::RefineGodWeaponSequence;
     pub use super::IRefineGodWeaponSequence;
     pub use super::IRefineGodWeaponSequenceMethods;
-    pub use super::RefineGodWeaponSequence_Label2;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

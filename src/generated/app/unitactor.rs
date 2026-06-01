@@ -27,6 +27,9 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitactor/UnitActor_StatusField.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitActor.StatusField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: unitactor :: UnitActor_Status >)] pub struct UnitActor_StatusField {}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitactor/UnitActor_ViewMode.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -82,7 +85,24 @@ impl  UnitActor_ViewMode  {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitactor/UnitActor_StatusField.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitActor.StatusField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: unitactor :: UnitActor_Status >)] pub struct UnitActor_StatusField {}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitactor/UnitActor.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitActor")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct UnitActor {
+# [offset (24)] # [rename (name = "m_Models")] pub m_models : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (32)] # [rename (name = "m_UnitModel")] pub m_unit_model : crate :: app :: unitmodel :: UnitModel ,
+# [offset (40)] # [rename (name = "m_GodModel")] pub m_god_model : crate :: app :: unitmodel :: UnitModel ,
+# [offset (48)] # [rename (name = "m_Effect")] pub m_effect : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (56)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
+# [offset (64)] # [rename (name = "m_Status")] pub m_status : crate :: app :: unitactor :: UnitActor_StatusField ,
+# [offset (72)] # [rename (name = "m_Binder")] pub m_binder : crate :: app :: bindholder :: BindHolder ,
+# [offset (80)] # [rename (name = "m_Position")] pub m_position : crate :: unity_engine :: vector3 :: Vector3 ,
+# [offset (96)] # [rename (name = "m_Rotation")] pub m_rotation : crate :: app :: interpolatorrotation :: InterpolatorRotation ,
+# [offset (104)] # [rename (name = "m_SlopeRotation")] pub m_slope_rotation : crate :: unity_engine :: quaternion :: Quaternion ,
+# [offset (120)] # [rename (name = "m_SlopeOffset")] pub m_slope_offset : crate :: unity_engine :: vector3 :: Vector3 ,
+# [offset (136)] # [rename (name = "m_Moving")] pub m_moving : crate :: app :: interpolatorvector3 :: InterpolatorVector3 ,
+# [static_field] # [rename (name = "SHAKE_COUNT")] pub shake_count : i32 ,
+# [offset (144)] # [rename (name = "m_ShakeCount")] pub m_shake_count : i32 ,
+# [offset (148)] # [rename (name = "m_ShakeScale")] pub m_shake_scale : f32 ,
+# [offset (152)] # [rename (name = "m_ShakeOffset")] pub m_shake_offset : crate :: unity_engine :: vector3 :: Vector3 ,
+}
 
 
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitactor/UnitActor_Status.md"))]
@@ -169,26 +189,6 @@ impl  UnitActor_Status  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitactor/UnitActor.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitActor")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct UnitActor {
-# [offset (24)] # [rename (name = "m_Models")] pub m_models : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (32)] # [rename (name = "m_UnitModel")] pub m_unit_model : crate :: app :: unitmodel :: UnitModel ,
-# [offset (40)] # [rename (name = "m_GodModel")] pub m_god_model : crate :: app :: unitmodel :: UnitModel ,
-# [offset (48)] # [rename (name = "m_Effect")] pub m_effect : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (56)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-# [offset (64)] # [rename (name = "m_Status")] pub m_status : crate :: app :: unitactor :: UnitActor_StatusField ,
-# [offset (72)] # [rename (name = "m_Binder")] pub m_binder : crate :: app :: bindholder :: BindHolder ,
-# [offset (80)] # [rename (name = "m_Position")] pub m_position : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (96)] # [rename (name = "m_Rotation")] pub m_rotation : crate :: app :: interpolatorrotation :: InterpolatorRotation ,
-# [offset (104)] # [rename (name = "m_SlopeRotation")] pub m_slope_rotation : crate :: unity_engine :: quaternion :: Quaternion ,
-# [offset (120)] # [rename (name = "m_SlopeOffset")] pub m_slope_offset : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (136)] # [rename (name = "m_Moving")] pub m_moving : crate :: app :: interpolatorvector3 :: InterpolatorVector3 ,
-# [static_field] # [rename (name = "SHAKE_COUNT")] pub shake_count : i32 ,
-# [offset (144)] # [rename (name = "m_ShakeCount")] pub m_shake_count : i32 ,
-# [offset (148)] # [rename (name = "m_ShakeScale")] pub m_shake_scale : f32 ,
-# [offset (152)] # [rename (name = "m_ShakeOffset")] pub m_shake_offset : crate :: unity_engine :: vector3 :: Vector3 ,
-}
-
 }
 
 #[cfg(feature = "app-unitactor-types")]
@@ -234,14 +234,14 @@ impl UnitActor {
 #[cfg(feature = "app-unitactor")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::UnitActor_ViewMode;
     pub use super::UnitActor_StatusField;
     pub use super::IUnitActor_StatusField;
     pub use super::IUnitActor_StatusFieldMethods;
-    pub use super::UnitActor_Status;
+    pub use super::UnitActor_ViewMode;
     pub use super::UnitActor;
     pub use super::IUnitActor;
     pub use super::IUnitActorMethods;
+    pub use super::UnitActor_Status;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

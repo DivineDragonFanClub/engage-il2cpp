@@ -19,11 +19,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardcommentdata/ProfileCardCommentData.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardCommentData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: profilecardcommentdata :: ProfileCardCommentData >)] pub struct ProfileCardCommentData {
-# [static_field] # [rename (name = "CategoryMid")] pub category_mid : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardcommentdata/ProfileCardCommentData_Categories.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -102,6 +97,11 @@ impl  ProfileCardCommentData_Categories  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardcommentdata/ProfileCardCommentData.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardCommentData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: profilecardcommentdata :: ProfileCardCommentData >)] pub struct ProfileCardCommentData {
+# [static_field] # [rename (name = "CategoryMid")] pub category_mid : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+}
+
 }
 
 #[cfg(feature = "app-profilecardcommentdata-types")]
@@ -130,10 +130,10 @@ impl ProfileCardCommentData {
 #[cfg(feature = "app-profilecardcommentdata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ProfileCardCommentData_Categories;
     pub use super::ProfileCardCommentData;
     pub use super::IProfileCardCommentData;
     pub use super::IProfileCardCommentDataMethods;
-    pub use super::ProfileCardCommentData_Categories;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdata_1::IStructData_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

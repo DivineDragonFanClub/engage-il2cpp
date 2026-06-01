@@ -25,6 +25,12 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/goddata/GodData.md"))] # [:: unity2 :: class (namespace = "App" , name = "GodData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: goddata :: GodData >)] pub struct GodData {
+# [offset (328)] # [rename (name = "m_EngageHauntUnit")] pub m_engage_haunt_unit : crate :: app :: unit :: Unit ,
+# [static_field] # [rename (name = "s_LinkDics")] pub s_link_dics : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: goddata :: GodData > ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/goddata/GodData_Flags.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -102,15 +108,6 @@ impl  GodData_Flags  {
     }
 
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/goddata/GodData.md"))] # [:: unity2 :: class (namespace = "App" , name = "GodData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: goddata :: GodData >)] pub struct GodData {
-# [offset (328)] # [rename (name = "m_EngageHauntUnit")] pub m_engage_haunt_unit : crate :: app :: unit :: Unit ,
-# [static_field] # [rename (name = "s_LinkDics")] pub s_link_dics : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: goddata :: GodData > ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/goddata/GodData_FlagField.md"))] # [:: unity2 :: class (namespace = "App" , name = "GodData.FlagField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: goddata :: GodData_Flags >)] pub struct GodData_FlagField {}
 
 
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/goddata/GodData_RelianceLevel.md"))]
@@ -276,6 +273,9 @@ impl  GodData_AIEngageAttackTypes  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/goddata/GodData_FlagField.md"))] # [:: unity2 :: class (namespace = "App" , name = "GodData.FlagField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: goddata :: GodData_Flags >)] pub struct GodData_FlagField {}
+
 }
 
 #[cfg(feature = "app-goddata-types")]
@@ -323,15 +323,15 @@ impl GodData_FlagField {
 #[cfg(feature = "app-goddata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GodData_Flags;
     pub use super::GodData;
     pub use super::IGodData;
     pub use super::IGodDataMethods;
+    pub use super::GodData_Flags;
+    pub use super::GodData_RelianceLevel;
+    pub use super::GodData_AIEngageAttackTypes;
     pub use super::GodData_FlagField;
     pub use super::IGodData_FlagField;
     pub use super::IGodData_FlagFieldMethods;
-    pub use super::GodData_RelianceLevel;
-    pub use super::GodData_AIEngageAttackTypes;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

@@ -13,9 +13,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dir_2/Dir_2.md"))] # [:: unity2 :: class (namespace = "App" , name = "Dir")] # [parent (crate :: system :: object :: Object)] pub struct Dir_2 {}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dir_2/Dir_Type.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -118,6 +115,9 @@ impl  Dir_Type  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dir_2/Dir_2.md"))] # [:: unity2 :: class (namespace = "App" , name = "Dir")] # [parent (crate :: system :: object :: Object)] pub struct Dir_2 {}
+
 }
 
 #[cfg(feature = "app-dir_2-types")]
@@ -146,10 +146,10 @@ impl Dir_2 {
 #[cfg(feature = "app-dir_2")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::Dir_Type;
     pub use super::Dir_2;
     pub use super::IDir_2;
     pub use super::IDir_2Methods;
-    pub use super::Dir_Type;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

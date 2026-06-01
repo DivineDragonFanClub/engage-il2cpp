@@ -6,9 +6,9 @@
  # [cfg (feature = "app-ring_cleaning-effectcontroller")] pub use effectcontroller :: { IEffectControllerMethods , IEffectController_AutoDeleteMethods }
  ;
  # [cfg (any (feature = "app-ring_cleaning-faceimagescontroller-types"))] pub mod faceimagescontroller ;
- # [cfg (feature = "app-ring_cleaning-faceimagescontroller-types")] pub use faceimagescontroller :: { FaceImagesController_ReturnEntryComponent , IFaceImagesController_ReturnEntryComponent , FaceImagesController , IFaceImagesController , FaceImagesController_PlayPattern , FaceImagesController_AnimType }
+ # [cfg (feature = "app-ring_cleaning-faceimagescontroller-types")] pub use faceimagescontroller :: { FaceImagesController , IFaceImagesController , FaceImagesController_PlayPattern , FaceImagesController_AnimType , FaceImagesController_ReturnEntryComponent , IFaceImagesController_ReturnEntryComponent }
  ;
- # [cfg (feature = "app-ring_cleaning-faceimagescontroller")] pub use faceimagescontroller :: { IFaceImagesController_ReturnEntryComponentMethods , IFaceImagesControllerMethods }
+ # [cfg (feature = "app-ring_cleaning-faceimagescontroller")] pub use faceimagescontroller :: { IFaceImagesControllerMethods , IFaceImagesController_ReturnEntryComponentMethods }
  ;
  # [cfg (any (feature = "app-ring_cleaning-ringcleaningvoice-types"))] pub mod ringcleaningvoice ;
  # [cfg (feature = "app-ring_cleaning-ringcleaningvoice-types")] pub use ringcleaningvoice :: { RingCleaningVoice , IRingCleaningVoice }

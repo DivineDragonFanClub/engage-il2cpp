@@ -23,6 +23,13 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/materiallistmenucontent/MaterialListMenuContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "MaterialListMenuContent")] # [parent (crate :: app :: basicmenucontent :: BasicMenuContent)] pub struct MaterialListMenuContent {
+# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
+# [offset (240)] # [rename (name = "m_ItemHelpText")] pub m_item_help_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (248)] # [rename (name = "m_CategoryIconList")] pub m_category_icon_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: ui :: image :: Image > ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/materiallistmenucontent/MaterialListMenuContent_CategoryType.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -107,13 +114,6 @@ impl  MaterialListMenuContent_CategoryType  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/materiallistmenucontent/MaterialListMenuContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "MaterialListMenuContent")] # [parent (crate :: app :: basicmenucontent :: BasicMenuContent)] pub struct MaterialListMenuContent {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (240)] # [rename (name = "m_ItemHelpText")] pub m_item_help_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (248)] # [rename (name = "m_CategoryIconList")] pub m_category_icon_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: ui :: image :: Image > ,
-}
-
 }
 
 #[cfg(feature = "app-materiallistmenucontent-types")]
@@ -142,10 +142,10 @@ impl MaterialListMenuContent {
 #[cfg(feature = "app-materiallistmenucontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MaterialListMenuContent_CategoryType;
     pub use super::MaterialListMenuContent;
     pub use super::IMaterialListMenuContent;
     pub use super::IMaterialListMenuContentMethods;
+    pub use super::MaterialListMenuContent_CategoryType;
     pub use crate::app::basicmenucontent::IBasicMenuContent;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

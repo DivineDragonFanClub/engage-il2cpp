@@ -13,9 +13,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/structproperty/StructProperty.md"))] # [:: unity2 :: class (namespace = "App" , name = "StructProperty")] # [parent (crate :: system :: object :: Object)] pub struct StructProperty {}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/structproperty/StructProperty_Kind.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -214,6 +211,9 @@ impl  StructProperty_Kind  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/structproperty/StructProperty.md"))] # [:: unity2 :: class (namespace = "App" , name = "StructProperty")] # [parent (crate :: system :: object :: Object)] pub struct StructProperty {}
+
 }
 
 #[cfg(feature = "app-structproperty-types")]
@@ -242,10 +242,10 @@ impl StructProperty {
 #[cfg(feature = "app-structproperty")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::StructProperty_Kind;
     pub use super::StructProperty;
     pub use super::IStructProperty;
     pub use super::IStructPropertyMethods;
-    pub use super::StructProperty_Kind;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

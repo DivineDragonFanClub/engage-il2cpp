@@ -21,55 +21,6 @@ mod __types {
  ;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/textmeshanimation/TextMeshAnimation_PivotType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TextMeshAnimation_PivotType  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for TextMeshAnimation_PivotType  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "TextMeshAnimation.PivotType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for TextMeshAnimation_PivotType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  TextMeshAnimation_PivotType  {
-    pub fn center() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn base_line() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/textmeshanimation/TextMeshAnimation_DelayTimeType.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -126,6 +77,55 @@ impl  TextMeshAnimation_DelayTimeType  {
 # [offset (41)] # [rename (name = "m_IsFirstFrame")] pub m_is_first_frame : bool ,
 # [offset (44)] # [rename (name = "m_NowAnimationIndex")] pub m_now_animation_index : i32 ,
 # [offset (48)] # [rename (name = "m_NowTime")] pub m_now_time : f32 ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/textmeshanimation/TextMeshAnimation_PivotType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct TextMeshAnimation_PivotType  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for TextMeshAnimation_PivotType  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "TextMeshAnimation.PivotType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for TextMeshAnimation_PivotType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  TextMeshAnimation_PivotType  {
+    pub fn center() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn base_line() -> Self {
+        Self { value: 1 }
+
+    }
+
 }
 
 
@@ -260,11 +260,11 @@ impl TextMeshAnimation_AnimationParams {
 #[cfg(feature = "app-textmeshanimation")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TextMeshAnimation_PivotType;
     pub use super::TextMeshAnimation_DelayTimeType;
     pub use super::TextMeshAnimation;
     pub use super::ITextMeshAnimation;
     pub use super::ITextMeshAnimationMethods;
+    pub use super::TextMeshAnimation_PivotType;
     pub use super::TextMeshAnimation_EndType;
     pub use super::TextMeshAnimation_AnimationParams;
     pub use super::ITextMeshAnimation_AnimationParams;

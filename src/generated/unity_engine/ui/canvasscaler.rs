@@ -23,18 +23,18 @@ mod __types {
  ;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/canvasscaler/CanvasScaler_ScaleMode.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/canvasscaler/CanvasScaler_ScreenMatchMode.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct CanvasScaler_ScaleMode  {
+pub struct CanvasScaler_ScreenMatchMode  {
     pub value: i32,
 }
 
 
-impl  ::unity2::ClassIdentity for CanvasScaler_ScaleMode  {
+impl  ::unity2::ClassIdentity for CanvasScaler_ScreenMatchMode  {
     const NAMESPACE: &'static str = "UnityEngine.UI";
 
-    const NAME: &'static str = "CanvasScaler.ScaleMode";
+    const NAME: &'static str = "CanvasScaler.ScreenMatchMode";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> =
@@ -49,7 +49,7 @@ impl  ::unity2::ClassIdentity for CanvasScaler_ScaleMode  {
 }
 
 
-impl  ::unity2::IlType for CanvasScaler_ScaleMode  {
+impl  ::unity2::IlType for CanvasScaler_ScreenMatchMode  {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
@@ -57,24 +57,43 @@ impl  ::unity2::IlType for CanvasScaler_ScaleMode  {
 }
 
 
-impl  CanvasScaler_ScaleMode  {
-    pub fn constant_pixel_size() -> Self {
+impl  CanvasScaler_ScreenMatchMode  {
+    pub fn match_width_or_height() -> Self {
         Self { value: 0 }
 
     }
 
 
-    pub fn scale_with_screen_size() -> Self {
+    pub fn expand() -> Self {
         Self { value: 1 }
 
     }
 
 
-    pub fn constant_physical_size() -> Self {
+    pub fn shrink() -> Self {
         Self { value: 2 }
 
     }
 
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/canvasscaler/CanvasScaler.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "CanvasScaler")] # [parent (crate :: unity_engine :: event_systems :: uibehaviour :: UIBehaviour)] pub struct CanvasScaler {
+# [offset (24)] # [rename (name = "m_UiScaleMode")] pub m_ui_scale_mode : crate :: unity_engine :: ui :: canvasscaler :: CanvasScaler_ScaleMode ,
+# [offset (28)] # [rename (name = "m_ReferencePixelsPerUnit")] pub m_reference_pixels_per_unit : f32 ,
+# [offset (32)] # [rename (name = "m_ScaleFactor")] pub m_scale_factor : f32 ,
+# [offset (36)] # [rename (name = "m_ReferenceResolution")] pub m_reference_resolution : crate :: unity_engine :: vector2 :: Vector2 ,
+# [offset (44)] # [rename (name = "m_ScreenMatchMode")] pub m_screen_match_mode : crate :: unity_engine :: ui :: canvasscaler :: CanvasScaler_ScreenMatchMode ,
+# [offset (48)] # [rename (name = "m_MatchWidthOrHeight")] pub m_match_width_or_height : f32 ,
+# [static_field] # [rename (name = "kLogBase")] pub k_log_base : f32 ,
+# [offset (52)] # [rename (name = "m_PhysicalUnit")] pub m_physical_unit : crate :: unity_engine :: ui :: canvasscaler :: CanvasScaler_Unit ,
+# [offset (56)] # [rename (name = "m_FallbackScreenDPI")] pub m_fallback_screen_dpi : f32 ,
+# [offset (60)] # [rename (name = "m_DefaultSpriteDPI")] pub m_default_sprite_dpi : f32 ,
+# [offset (64)] # [rename (name = "m_DynamicPixelsPerUnit")] pub m_dynamic_pixels_per_unit : f32 ,
+# [offset (72)] # [rename (name = "m_Canvas")] pub m_canvas : crate :: unity_engine :: canvas :: Canvas ,
+# [offset (80)] # [rename (name = "m_PrevScaleFactor")] pub m_prev_scale_factor : f32 ,
+# [offset (84)] # [rename (name = "m_PrevReferencePixelsPerUnit")] pub m_prev_reference_pixels_per_unit : f32 ,
+# [offset (88)] # [rename (name = "m_PresetInfoIsWorld")] pub m_preset_info_is_world : bool ,
 }
 
 
@@ -145,37 +164,18 @@ impl  CanvasScaler_Unit  {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/canvasscaler/CanvasScaler.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "CanvasScaler")] # [parent (crate :: unity_engine :: event_systems :: uibehaviour :: UIBehaviour)] pub struct CanvasScaler {
-# [offset (24)] # [rename (name = "m_UiScaleMode")] pub m_ui_scale_mode : crate :: unity_engine :: ui :: canvasscaler :: CanvasScaler_ScaleMode ,
-# [offset (28)] # [rename (name = "m_ReferencePixelsPerUnit")] pub m_reference_pixels_per_unit : f32 ,
-# [offset (32)] # [rename (name = "m_ScaleFactor")] pub m_scale_factor : f32 ,
-# [offset (36)] # [rename (name = "m_ReferenceResolution")] pub m_reference_resolution : crate :: unity_engine :: vector2 :: Vector2 ,
-# [offset (44)] # [rename (name = "m_ScreenMatchMode")] pub m_screen_match_mode : crate :: unity_engine :: ui :: canvasscaler :: CanvasScaler_ScreenMatchMode ,
-# [offset (48)] # [rename (name = "m_MatchWidthOrHeight")] pub m_match_width_or_height : f32 ,
-# [static_field] # [rename (name = "kLogBase")] pub k_log_base : f32 ,
-# [offset (52)] # [rename (name = "m_PhysicalUnit")] pub m_physical_unit : crate :: unity_engine :: ui :: canvasscaler :: CanvasScaler_Unit ,
-# [offset (56)] # [rename (name = "m_FallbackScreenDPI")] pub m_fallback_screen_dpi : f32 ,
-# [offset (60)] # [rename (name = "m_DefaultSpriteDPI")] pub m_default_sprite_dpi : f32 ,
-# [offset (64)] # [rename (name = "m_DynamicPixelsPerUnit")] pub m_dynamic_pixels_per_unit : f32 ,
-# [offset (72)] # [rename (name = "m_Canvas")] pub m_canvas : crate :: unity_engine :: canvas :: Canvas ,
-# [offset (80)] # [rename (name = "m_PrevScaleFactor")] pub m_prev_scale_factor : f32 ,
-# [offset (84)] # [rename (name = "m_PrevReferencePixelsPerUnit")] pub m_prev_reference_pixels_per_unit : f32 ,
-# [offset (88)] # [rename (name = "m_PresetInfoIsWorld")] pub m_preset_info_is_world : bool ,
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/canvasscaler/CanvasScaler_ScreenMatchMode.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/canvasscaler/CanvasScaler_ScaleMode.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct CanvasScaler_ScreenMatchMode  {
+pub struct CanvasScaler_ScaleMode  {
     pub value: i32,
 }
 
 
-impl  ::unity2::ClassIdentity for CanvasScaler_ScreenMatchMode  {
+impl  ::unity2::ClassIdentity for CanvasScaler_ScaleMode  {
     const NAMESPACE: &'static str = "UnityEngine.UI";
 
-    const NAME: &'static str = "CanvasScaler.ScreenMatchMode";
+    const NAME: &'static str = "CanvasScaler.ScaleMode";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> =
@@ -190,7 +190,7 @@ impl  ::unity2::ClassIdentity for CanvasScaler_ScreenMatchMode  {
 }
 
 
-impl  ::unity2::IlType for CanvasScaler_ScreenMatchMode  {
+impl  ::unity2::IlType for CanvasScaler_ScaleMode  {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
@@ -198,20 +198,20 @@ impl  ::unity2::IlType for CanvasScaler_ScreenMatchMode  {
 }
 
 
-impl  CanvasScaler_ScreenMatchMode  {
-    pub fn match_width_or_height() -> Self {
+impl  CanvasScaler_ScaleMode  {
+    pub fn constant_pixel_size() -> Self {
         Self { value: 0 }
 
     }
 
 
-    pub fn expand() -> Self {
+    pub fn scale_with_screen_size() -> Self {
         Self { value: 1 }
 
     }
 
 
-    pub fn shrink() -> Self {
+    pub fn constant_physical_size() -> Self {
         Self { value: 2 }
 
     }
@@ -243,12 +243,12 @@ impl CanvasScaler {
 #[cfg(feature = "unity_engine-ui-canvasscaler")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CanvasScaler_ScaleMode;
-    pub use super::CanvasScaler_Unit;
+    pub use super::CanvasScaler_ScreenMatchMode;
     pub use super::CanvasScaler;
     pub use super::ICanvasScaler;
     pub use super::ICanvasScalerMethods;
-    pub use super::CanvasScaler_ScreenMatchMode;
+    pub use super::CanvasScaler_Unit;
+    pub use super::CanvasScaler_ScaleMode;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

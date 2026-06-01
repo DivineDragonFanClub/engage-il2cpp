@@ -12,9 +12,6 @@ mod __types {
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/pool/Pool_Node.md"))] # [:: unity2 :: class (namespace = "App" , name = "Pool.Node")] # [parent (crate :: system :: object :: Object)] pub struct Pool_Node {}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/pool/Pool.md"))] # [:: unity2 :: class (namespace = "App" , name = "Pool")] # [parent (crate :: system :: object :: Object)] pub struct Pool {}
-
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/pool/Pool_Hierarchy_1.md"))] # [:: unity2 :: class (namespace = "App" , name = "Pool.Hierarchy`1")] # [parent (crate :: system :: object :: Object)] pub struct Pool_Hierarchy_1 < T0 : :: unity2 :: ClassIdentity > {
 # [rename (name = "m_Pool")] pub m_pool : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < T0 > ,
 # [rename (name = "m_Used")] pub m_used : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < T0 > ,
@@ -36,6 +33,9 @@ mod __types {
 # [rename (name = "m_Pool")] pub m_pool : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < T0 > ,
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/pool/Pool.md"))] # [:: unity2 :: class (namespace = "App" , name = "Pool")] # [parent (crate :: system :: object :: Object)] pub struct Pool {}
+
 }
 
 #[cfg(feature = "app-pool-types")]
@@ -56,23 +56,6 @@ impl Pool_Node { pub fn on_enter_method_info () -> & 'static :: unity2 :: il2cpp
 #[cfg(feature = "app-pool")]
 impl Pool_Node {
 # [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Pool_Node) , :: core :: stringify ! (new) ,)) ; < Self as IPool_NodeMethods > :: ctor (this ,) ; this }
-}
-
-#[cfg(feature = "app-pool")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Pool_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Pool as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Pool as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Pool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Pool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "app-pool")]
-pub trait IPoolMethods : IPool { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Pool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Pool_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-pool")]
-impl < __T : IPool > IPoolMethods for __T { }
-
-#[cfg(feature = "app-pool")]
-impl Pool { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Pool_unity2_raw :: __lookup_ctor :: get_method_info () } }
-
-#[cfg(feature = "app-pool")]
-impl Pool {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Pool) , :: core :: stringify ! (new) ,)) ; < Self as IPoolMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-pool")]
@@ -146,14 +129,28 @@ impl < T0 : :: unity2 :: ClassIdentity > Pool_Stack_1 < T0 > {
 }
 
 #[cfg(feature = "app-pool")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Pool_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Pool as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Pool as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Pool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Pool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-pool")]
+pub trait IPoolMethods : IPool { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Pool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Pool_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-pool")]
+impl < __T : IPool > IPoolMethods for __T { }
+
+#[cfg(feature = "app-pool")]
+impl Pool { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Pool_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-pool")]
+impl Pool {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Pool) , :: core :: stringify ! (new) ,)) ; < Self as IPoolMethods > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "app-pool")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::Pool_Node;
     pub use super::IPool_Node;
     pub use super::IPool_NodeMethods;
-    pub use super::Pool;
-    pub use super::IPool;
-    pub use super::IPoolMethods;
     pub use super::Pool_Hierarchy_1;
     pub use super::IPool_Hierarchy_1;
     pub use super::IPool_Hierarchy_1Methods;
@@ -166,6 +163,9 @@ pub mod prelude {
     pub use super::Pool_Stack_1;
     pub use super::IPool_Stack_1;
     pub use super::IPool_Stack_1Methods;
+    pub use super::Pool;
+    pub use super::IPool;
+    pub use super::IPoolMethods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -17,6 +17,16 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfo/UnitInfo.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitInfo")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: unitinfo :: UnitInfo >)] pub struct UnitInfo {
+# [static_field] # [rename (name = "InvalidUnitXZ")] pub invalid_unit_xz : i32 ,
+# [static_field] # [rename (name = "c_TransitionDuration")] pub c_transition_duration : f32 ,
+# [offset (120)] # [rename (name = "m_ModeStack")] pub m_mode_stack : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < crate :: app :: unitinfo :: UnitInfo_Mode > ,
+# [offset (128)] # [rename (name = "m_Windows")] pub m_windows : :: unity2 :: Array < crate :: app :: unitinfo :: UnitInfo_Window > ,
+# [static_field] # [rename (name = "m_bUpdateSight")] pub m_b_update_sight : bool ,
+# [static_field] # [rename (name = "m_LookAtObj")] pub m_look_at_obj : crate :: unity_engine :: gameobject :: GameObject ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfo/UnitInfo_Mode.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -75,16 +85,6 @@ impl  UnitInfo_Mode  {
 
     }
 
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfo/UnitInfo.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitInfo")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: unitinfo :: UnitInfo >)] pub struct UnitInfo {
-# [static_field] # [rename (name = "InvalidUnitXZ")] pub invalid_unit_xz : i32 ,
-# [static_field] # [rename (name = "c_TransitionDuration")] pub c_transition_duration : f32 ,
-# [offset (120)] # [rename (name = "m_ModeStack")] pub m_mode_stack : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < crate :: app :: unitinfo :: UnitInfo_Mode > ,
-# [offset (128)] # [rename (name = "m_Windows")] pub m_windows : :: unity2 :: Array < crate :: app :: unitinfo :: UnitInfo_Window > ,
-# [static_field] # [rename (name = "m_bUpdateSight")] pub m_b_update_sight : bool ,
-# [static_field] # [rename (name = "m_LookAtObj")] pub m_look_at_obj : crate :: unity_engine :: gameobject :: GameObject ,
 }
 
 
@@ -202,10 +202,10 @@ impl UnitInfo_Window {
 #[cfg(feature = "app-unitinfo")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::UnitInfo_Mode;
     pub use super::UnitInfo;
     pub use super::IUnitInfo;
     pub use super::IUnitInfoMethods;
+    pub use super::UnitInfo_Mode;
     pub use super::UnitInfo_Side;
     pub use super::UnitInfo_Window;
     pub use super::IUnitInfo_Window;

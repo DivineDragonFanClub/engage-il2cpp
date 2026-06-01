@@ -15,33 +15,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akeventplayablebehavior/AkEventPlayableBehavior.md"))] # [:: unity2 :: class (namespace = "" , name = "AkEventPlayableBehavior")] # [parent (crate :: unity_engine :: playables :: playablebehaviour :: PlayableBehaviour)] pub struct AkEventPlayableBehavior {
-# [offset (16)] # [rename (name = "currentDuration")] pub current_duration : f32 ,
-# [offset (20)] # [rename (name = "currentDurationProportion")] pub current_duration_proportion : f32 ,
-# [offset (24)] # [rename (name = "eventIsPlaying")] pub event_is_playing : bool ,
-# [offset (25)] # [rename (name = "fadeinTriggered")] pub fadein_triggered : bool ,
-# [offset (26)] # [rename (name = "fadeoutTriggered")] pub fadeout_triggered : bool ,
-# [offset (28)] # [rename (name = "previousEventStartTime")] pub previous_event_start_time : f32 ,
-# [static_field] # [rename (name = "CallbackFlags")] pub callback_flags : u32 ,
-# [offset (32)] # [rename (name = "requiredActions")] pub required_actions : crate :: root :: akeventplayablebehavior :: AkEventPlayableBehavior_Actions ,
-# [static_field] # [rename (name = "scrubPlaybackLengthMs")] pub scrub_playback_length_ms : i32 ,
-# [offset (48)] # [rename (name = "eventDurationMax")] pub event_duration_max : f32 ,
-# [offset (52)] # [rename (name = "eventDurationMin")] pub event_duration_min : f32 ,
-# [offset (56)] # [rename (name = "blendInDuration")] pub blend_in_duration : f32 ,
-# [offset (60)] # [rename (name = "blendOutDuration")] pub blend_out_duration : f32 ,
-# [offset (64)] # [rename (name = "easeInDuration")] pub ease_in_duration : f32 ,
-# [offset (68)] # [rename (name = "easeOutDuration")] pub ease_out_duration : f32 ,
-# [offset (72)] # [rename (name = "blendInCurve")] pub blend_in_curve : crate :: root :: akcurveinterpolation :: AkCurveInterpolation ,
-# [offset (76)] # [rename (name = "blendOutCurve")] pub blend_out_curve : crate :: root :: akcurveinterpolation :: AkCurveInterpolation ,
-# [offset (80)] # [rename (name = "eventObject")] pub event_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (88)] # [rename (name = "retriggerEvent")] pub retrigger_event_field : bool ,
-# [offset (89)] # [rename (name = "wasScrubbingAndRequiresRetrigger")] pub was_scrubbing_and_requires_retrigger : bool ,
-# [offset (90)] # [rename (name = "StopEventAtClipEnd")] pub stop_event_at_clip_end : bool ,
-# [offset (91)] # [rename (name = "overrideTrackEmitterObject")] pub override_track_emitter_object : bool ,
-# [static_field] # [rename (name = "alph")] pub alph : f32 ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/akeventplayablebehavior/AkEventPlayableBehavior_Actions.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -120,6 +93,33 @@ impl  AkEventPlayableBehavior_Actions  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akeventplayablebehavior/AkEventPlayableBehavior.md"))] # [:: unity2 :: class (namespace = "" , name = "AkEventPlayableBehavior")] # [parent (crate :: unity_engine :: playables :: playablebehaviour :: PlayableBehaviour)] pub struct AkEventPlayableBehavior {
+# [offset (16)] # [rename (name = "currentDuration")] pub current_duration : f32 ,
+# [offset (20)] # [rename (name = "currentDurationProportion")] pub current_duration_proportion : f32 ,
+# [offset (24)] # [rename (name = "eventIsPlaying")] pub event_is_playing : bool ,
+# [offset (25)] # [rename (name = "fadeinTriggered")] pub fadein_triggered : bool ,
+# [offset (26)] # [rename (name = "fadeoutTriggered")] pub fadeout_triggered : bool ,
+# [offset (28)] # [rename (name = "previousEventStartTime")] pub previous_event_start_time : f32 ,
+# [static_field] # [rename (name = "CallbackFlags")] pub callback_flags : u32 ,
+# [offset (32)] # [rename (name = "requiredActions")] pub required_actions : crate :: root :: akeventplayablebehavior :: AkEventPlayableBehavior_Actions ,
+# [static_field] # [rename (name = "scrubPlaybackLengthMs")] pub scrub_playback_length_ms : i32 ,
+# [offset (48)] # [rename (name = "eventDurationMax")] pub event_duration_max : f32 ,
+# [offset (52)] # [rename (name = "eventDurationMin")] pub event_duration_min : f32 ,
+# [offset (56)] # [rename (name = "blendInDuration")] pub blend_in_duration : f32 ,
+# [offset (60)] # [rename (name = "blendOutDuration")] pub blend_out_duration : f32 ,
+# [offset (64)] # [rename (name = "easeInDuration")] pub ease_in_duration : f32 ,
+# [offset (68)] # [rename (name = "easeOutDuration")] pub ease_out_duration : f32 ,
+# [offset (72)] # [rename (name = "blendInCurve")] pub blend_in_curve : crate :: root :: akcurveinterpolation :: AkCurveInterpolation ,
+# [offset (76)] # [rename (name = "blendOutCurve")] pub blend_out_curve : crate :: root :: akcurveinterpolation :: AkCurveInterpolation ,
+# [offset (80)] # [rename (name = "eventObject")] pub event_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (88)] # [rename (name = "retriggerEvent")] pub retrigger_event_field : bool ,
+# [offset (89)] # [rename (name = "wasScrubbingAndRequiresRetrigger")] pub was_scrubbing_and_requires_retrigger : bool ,
+# [offset (90)] # [rename (name = "StopEventAtClipEnd")] pub stop_event_at_clip_end : bool ,
+# [offset (91)] # [rename (name = "overrideTrackEmitterObject")] pub override_track_emitter_object : bool ,
+# [static_field] # [rename (name = "alph")] pub alph : f32 ,
+}
+
 }
 
 #[cfg(feature = "root-akeventplayablebehavior-types")]
@@ -145,10 +145,10 @@ impl AkEventPlayableBehavior {
 #[cfg(feature = "root-akeventplayablebehavior")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::AkEventPlayableBehavior_Actions;
     pub use super::AkEventPlayableBehavior;
     pub use super::IAkEventPlayableBehavior;
     pub use super::IAkEventPlayableBehaviorMethods;
-    pub use super::AkEventPlayableBehavior_Actions;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

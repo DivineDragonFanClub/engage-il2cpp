@@ -15,11 +15,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/turneffect/TurnEffect.md"))] # [:: unity2 :: class (namespace = "App" , name = "TurnEffect")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct TurnEffect {
-# [offset (112)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/turneffect/TurnEffect_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -74,6 +69,11 @@ impl  TurnEffect_Label  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/turneffect/TurnEffect.md"))] # [:: unity2 :: class (namespace = "App" , name = "TurnEffect")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct TurnEffect {
+# [offset (112)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
+}
+
 }
 
 #[cfg(feature = "app-turneffect-types")]
@@ -102,10 +102,10 @@ impl TurnEffect {
 #[cfg(feature = "app-turneffect")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::TurnEffect_Label;
     pub use super::TurnEffect;
     pub use super::ITurnEffect;
     pub use super::ITurnEffectMethods;
-    pub use super::TurnEffect_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

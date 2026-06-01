@@ -23,41 +23,6 @@ mod __types {
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aicannon/AICannon_CannonData.md"))] # [:: unity2 :: class (namespace = "App" , name = "AICannon.CannonData")] # [parent (crate :: system :: object :: Object)] pub struct AICannon_CannonData {}
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aicannon/AICannon_CannonSkillScope.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AICannon_CannonSkillScope {
-    pub m_actor: crate :: app :: unit :: Unit,
-    pub m_cannon_inspector: crate :: app :: cannoninspector :: CannonInspector,
-}
-
-
-impl ::unity2::ClassIdentity for AICannon_CannonSkillScope {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AICannon.CannonSkillScope";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for AICannon_CannonSkillScope {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aicannon/AICannon_ChangeEquipScope.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -86,6 +51,41 @@ impl ::unity2::ClassIdentity for AICannon_ChangeEquipScope {
 
 
 impl ::unity2::IlType for AICannon_ChangeEquipScope {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aicannon/AICannon_CannonSkillScope.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct AICannon_CannonSkillScope {
+    pub m_actor: crate :: app :: unit :: Unit,
+    pub m_cannon_inspector: crate :: app :: cannoninspector :: CannonInspector,
+}
+
+
+impl ::unity2::ClassIdentity for AICannon_CannonSkillScope {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AICannon.CannonSkillScope";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl ::unity2::IlType for AICannon_CannonSkillScope {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
@@ -135,22 +135,22 @@ impl AICannon_CannonData {
 }
 
 #[cfg(feature = "app-aicannon")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AICannon_CannonSkillScope_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: cannoninspector :: CannonInspector as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AICannon_CannonSkillScope as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AICannon_CannonSkillScope as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AICannon_CannonSkillScope , actor : crate :: app :: unit :: Unit , cannon_inspector : crate :: app :: cannoninspector :: CannonInspector , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AICannon_CannonSkillScope , crate :: app :: unit :: Unit , crate :: app :: cannoninspector :: CannonInspector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , actor , cannon_inspector , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AICannon_CannonSkillScope as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AICannon_CannonSkillScope as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : AICannon_CannonSkillScope , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AICannon_CannonSkillScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AICannon_ChangeEquipScope_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AICannon_ChangeEquipScope as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AICannon_ChangeEquipScope as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : * mut AICannon_ChangeEquipScope , actor : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut AICannon_ChangeEquipScope , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , actor , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AICannon_ChangeEquipScope as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AICannon_ChangeEquipScope as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : * mut AICannon_ChangeEquipScope , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut AICannon_ChangeEquipScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-aicannon")]
-impl AICannon_CannonSkillScope { # [doc = "`.ctor(crate::app::unit::Unit, crate::app::cannoninspector::CannonInspector)` overload"] pub fn ctor (self , actor : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , cannon_inspector : impl :: core :: convert :: Into < crate :: app :: cannoninspector :: CannonInspector >) -> () { unsafe { __AICannon_CannonSkillScope_unity2_raw :: ctor (self , :: core :: convert :: Into :: into (actor) , :: core :: convert :: Into :: into (cannon_inspector) , :: core :: option :: Option :: None) } } # [doc = "`Dispose()` overload"] pub fn dispose (self ,) -> () { unsafe { __AICannon_CannonSkillScope_unity2_raw :: dispose (self , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-aicannon")]
-impl AICannon_CannonSkillScope { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AICannon_CannonSkillScope_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AICannon_CannonSkillScope_unity2_raw :: __lookup_dispose :: get_method_info () } }
-
-#[cfg(feature = "app-aicannon")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AICannon_ChangeEquipScope_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AICannon_ChangeEquipScope as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AICannon_ChangeEquipScope as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AICannon_ChangeEquipScope , actor : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AICannon_ChangeEquipScope , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , actor , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AICannon_ChangeEquipScope as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AICannon_ChangeEquipScope as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : AICannon_ChangeEquipScope , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AICannon_ChangeEquipScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "app-aicannon")]
-impl AICannon_ChangeEquipScope { # [doc = "`.ctor(crate::app::unit::Unit)` overload"] pub fn ctor (self , actor : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { __AICannon_ChangeEquipScope_unity2_raw :: ctor (self , :: core :: convert :: Into :: into (actor) , :: core :: option :: Option :: None) } } # [doc = "`Dispose()` overload"] pub fn dispose (self ,) -> () { unsafe { __AICannon_ChangeEquipScope_unity2_raw :: dispose (self , :: core :: option :: Option :: None) } } }
+impl AICannon_ChangeEquipScope { # [doc = "`.ctor(crate::app::unit::Unit)` overload"] pub fn ctor (mut self , actor : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { __AICannon_ChangeEquipScope_unity2_raw :: ctor (& mut self as * mut AICannon_ChangeEquipScope , :: core :: convert :: Into :: into (actor) , :: core :: option :: Option :: None) } } # [doc = "`Dispose()` overload"] pub fn dispose (mut self ,) -> () { unsafe { __AICannon_ChangeEquipScope_unity2_raw :: dispose (& mut self as * mut AICannon_ChangeEquipScope , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-aicannon")]
 impl AICannon_ChangeEquipScope { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AICannon_ChangeEquipScope_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AICannon_ChangeEquipScope_unity2_raw :: __lookup_dispose :: get_method_info () } }
+
+#[cfg(feature = "app-aicannon")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AICannon_CannonSkillScope_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: cannoninspector :: CannonInspector as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AICannon_CannonSkillScope as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AICannon_CannonSkillScope as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : * mut AICannon_CannonSkillScope , actor : crate :: app :: unit :: Unit , cannon_inspector : crate :: app :: cannoninspector :: CannonInspector , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut AICannon_CannonSkillScope , crate :: app :: unit :: Unit , crate :: app :: cannoninspector :: CannonInspector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , actor , cannon_inspector , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AICannon_CannonSkillScope as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AICannon_CannonSkillScope as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : * mut AICannon_CannonSkillScope , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut AICannon_CannonSkillScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-aicannon")]
+impl AICannon_CannonSkillScope { # [doc = "`.ctor(crate::app::unit::Unit, crate::app::cannoninspector::CannonInspector)` overload"] pub fn ctor (mut self , actor : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , cannon_inspector : impl :: core :: convert :: Into < crate :: app :: cannoninspector :: CannonInspector >) -> () { unsafe { __AICannon_CannonSkillScope_unity2_raw :: ctor (& mut self as * mut AICannon_CannonSkillScope , :: core :: convert :: Into :: into (actor) , :: core :: convert :: Into :: into (cannon_inspector) , :: core :: option :: Option :: None) } } # [doc = "`Dispose()` overload"] pub fn dispose (mut self ,) -> () { unsafe { __AICannon_CannonSkillScope_unity2_raw :: dispose (& mut self as * mut AICannon_CannonSkillScope , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-aicannon")]
+impl AICannon_CannonSkillScope { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AICannon_CannonSkillScope_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AICannon_CannonSkillScope_unity2_raw :: __lookup_dispose :: get_method_info () } }
 
 #[cfg(feature = "app-aicannon")]
 #[doc(hidden)]
@@ -161,8 +161,8 @@ pub mod prelude {
     pub use super::AICannon_CannonData;
     pub use super::IAICannon_CannonData;
     pub use super::IAICannon_CannonDataMethods;
-    pub use super::AICannon_CannonSkillScope;
     pub use super::AICannon_ChangeEquipScope;
+    pub use super::AICannon_CannonSkillScope;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

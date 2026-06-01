@@ -74,55 +74,6 @@ impl  HubAccessoryRoom_ViewMode  {
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessoryroom/HubAccessoryRoom_Shop.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct HubAccessoryRoom_Shop  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for HubAccessoryRoom_Shop  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "HubAccessoryRoom.Shop";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for HubAccessoryRoom_Shop  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  HubAccessoryRoom_Shop  {
-    pub fn hub() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn amiibo() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessoryroom/HubAccessoryRoom_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -184,6 +135,55 @@ impl  HubAccessoryRoom_Label  {
 }
 
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessoryroom/HubAccessoryRoom_Shop.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct HubAccessoryRoom_Shop  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for HubAccessoryRoom_Shop  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "HubAccessoryRoom.Shop";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for HubAccessoryRoom_Shop  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  HubAccessoryRoom_Shop  {
+    pub fn hub() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn amiibo() -> Self {
+        Self { value: 1 }
+
+    }
+
+}
+
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubaccessoryroom/HubAccessoryRoom.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubAccessoryRoom")] # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: hubaccessoryroom :: HubAccessoryRoom >)] pub struct HubAccessoryRoom {
 # [offset (136)] # [rename (name = "_DisableList")] pub disable_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
 # [offset (152)] # [rename (name = "m_Shop")] pub m_shop : crate :: app :: hubaccessoryroom :: HubAccessoryRoom_Shop ,
@@ -223,8 +223,8 @@ impl HubAccessoryRoom {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::HubAccessoryRoom_ViewMode;
-    pub use super::HubAccessoryRoom_Shop;
     pub use super::HubAccessoryRoom_Label;
+    pub use super::HubAccessoryRoom_Shop;
     pub use super::HubAccessoryRoom;
     pub use super::IHubAccessoryRoom;
     pub use super::IHubAccessoryRoomMethods;

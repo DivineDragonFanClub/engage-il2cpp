@@ -15,21 +15,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godroompedestalsequence/GodRoomPedestalSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "GodRoomPedestalSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct GodRoomPedestalSequence {
-# [offset (112)] # [rename (name = "m_TopMenuResult")] pub m_top_menu_result : crate :: app :: godroompedestaltopmenu :: GodRoomPedestalTopMenu_Result2 ,
-# [offset (116)] # [rename (name = "m_Result")] pub m_result : crate :: app :: basicmenu :: BasicMenu_Result ,
-# [offset (120)] # [rename (name = "m_RefineRingUnitSelectMenu")] pub m_refine_ring_unit_select_menu : crate :: app :: refineringunitselectmenu :: RefineRingUnitSelectMenu ,
-# [offset (128)] # [rename (name = "m_RefineRingTimesSelectMenu")] pub m_refine_ring_times_select_menu : crate :: app :: refineringtimesselectmenu :: RefineRingTimesSelectMenu ,
-# [offset (136)] # [rename (name = "m_GodUnit")] pub m_god_unit : crate :: app :: godunit :: GodUnit ,
-# [offset (144)] # [rename (name = "m_RingGachaTimes")] pub m_ring_gacha_times : i32 ,
-# [offset (152)] # [rename (name = "m_UnitRingList")] pub m_unit_ring_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unitring :: UnitRing > ,
-# [offset (160)] # [rename (name = "m_NewRingList")] pub m_new_ring_list : crate :: system :: collections :: generic :: list_1 :: List_1 < bool > ,
-# [offset (168)] # [rename (name = "m_SynthesisRingMenu")] pub m_synthesis_ring_menu : crate :: app :: synthesisringmenutop :: SynthesisRingMenuTop ,
-# [offset (176)] # [rename (name = "m_SynthesisResultSet")] pub m_synthesis_result_set : crate :: app :: synthesisringmenutop :: SynthesisRingMenuTop_Result ,
-# [offset (184)] # [rename (name = "m_GeneratedNewRings")] pub m_generated_new_rings : bool ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/godroompedestalsequence/GodRoomPedestalSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -156,6 +141,21 @@ impl  GodRoomPedestalSequence_Label  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godroompedestalsequence/GodRoomPedestalSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "GodRoomPedestalSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct GodRoomPedestalSequence {
+# [offset (112)] # [rename (name = "m_TopMenuResult")] pub m_top_menu_result : crate :: app :: godroompedestaltopmenu :: GodRoomPedestalTopMenu_Result2 ,
+# [offset (116)] # [rename (name = "m_Result")] pub m_result : crate :: app :: basicmenu :: BasicMenu_Result ,
+# [offset (120)] # [rename (name = "m_RefineRingUnitSelectMenu")] pub m_refine_ring_unit_select_menu : crate :: app :: refineringunitselectmenu :: RefineRingUnitSelectMenu ,
+# [offset (128)] # [rename (name = "m_RefineRingTimesSelectMenu")] pub m_refine_ring_times_select_menu : crate :: app :: refineringtimesselectmenu :: RefineRingTimesSelectMenu ,
+# [offset (136)] # [rename (name = "m_GodUnit")] pub m_god_unit : crate :: app :: godunit :: GodUnit ,
+# [offset (144)] # [rename (name = "m_RingGachaTimes")] pub m_ring_gacha_times : i32 ,
+# [offset (152)] # [rename (name = "m_UnitRingList")] pub m_unit_ring_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unitring :: UnitRing > ,
+# [offset (160)] # [rename (name = "m_NewRingList")] pub m_new_ring_list : crate :: system :: collections :: generic :: list_1 :: List_1 < bool > ,
+# [offset (168)] # [rename (name = "m_SynthesisRingMenu")] pub m_synthesis_ring_menu : crate :: app :: synthesisringmenutop :: SynthesisRingMenuTop ,
+# [offset (176)] # [rename (name = "m_SynthesisResultSet")] pub m_synthesis_result_set : crate :: app :: synthesisringmenutop :: SynthesisRingMenuTop_Result ,
+# [offset (184)] # [rename (name = "m_GeneratedNewRings")] pub m_generated_new_rings : bool ,
+}
+
 }
 
 #[cfg(feature = "app-godroompedestalsequence-types")]
@@ -184,10 +184,10 @@ impl GodRoomPedestalSequence {
 #[cfg(feature = "app-godroompedestalsequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::GodRoomPedestalSequence_Label;
     pub use super::GodRoomPedestalSequence;
     pub use super::IGodRoomPedestalSequence;
     pub use super::IGodRoomPedestalSequenceMethods;
-    pub use super::GodRoomPedestalSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

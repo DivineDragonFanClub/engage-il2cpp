@@ -65,6 +65,25 @@ impl ::unity2::IlType for NetEnableSequence_Arg {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/netenablesequence/NetEnableSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "NetEnableSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct NetEnableSequence {
+# [offset (112)] # [rename (name = "m_WithoutConfirm")] pub m_without_confirm : bool ,
+# [offset (113)] # [rename (name = "m_CanWriteConfig")] pub m_can_write_config : bool ,
+# [offset (114)] # [rename (name = "m_IsNetLoginOnce")] pub m_is_net_login_once : bool ,
+# [offset (115)] # [rename (name = "m_IsReflectNetResult")] pub m_is_reflect_net_result : bool ,
+# [offset (120)] # [rename (name = "m_ResultFunc")] pub m_result_func : crate :: app :: netenablesequence :: NetEnableSequence_ResultFunction ,
+# [offset (128)] # [rename (name = "m_IsLoginSucceeded")] pub m_is_login_succeeded : bool ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/netenablesequence/NetEnableSequence_ConfirmDialog.md"))] # [:: unity2 :: class (namespace = "App" , name = "NetEnableSequence.ConfirmDialog")] # [parent (crate :: system :: object :: Object)] pub struct NetEnableSequence_ConfirmDialog {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/netenablesequence/NetEnableSequence_ResultFunction.md"))] # [:: unity2 :: class (namespace = "App" , name = "NetEnableSequence.ResultFunction")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct NetEnableSequence_ResultFunction {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/netenablesequence/NetEnableSequence_ConfirmDialog_NoMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "NetEnableSequence.ConfirmDialog.NoMenuItem")] # [parent (crate :: app :: basicdialogitemno :: BasicDialogItemNo)] pub struct NetEnableSequence_ConfirmDialog_NoMenuItem {}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/netenablesequence/NetEnableSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -112,25 +131,6 @@ impl  NetEnableSequence_Label  {
     }
 
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/netenablesequence/NetEnableSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "NetEnableSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct NetEnableSequence {
-# [offset (112)] # [rename (name = "m_WithoutConfirm")] pub m_without_confirm : bool ,
-# [offset (113)] # [rename (name = "m_CanWriteConfig")] pub m_can_write_config : bool ,
-# [offset (114)] # [rename (name = "m_IsNetLoginOnce")] pub m_is_net_login_once : bool ,
-# [offset (115)] # [rename (name = "m_IsReflectNetResult")] pub m_is_reflect_net_result : bool ,
-# [offset (120)] # [rename (name = "m_ResultFunc")] pub m_result_func : crate :: app :: netenablesequence :: NetEnableSequence_ResultFunction ,
-# [offset (128)] # [rename (name = "m_IsLoginSucceeded")] pub m_is_login_succeeded : bool ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/netenablesequence/NetEnableSequence_ConfirmDialog.md"))] # [:: unity2 :: class (namespace = "App" , name = "NetEnableSequence.ConfirmDialog")] # [parent (crate :: system :: object :: Object)] pub struct NetEnableSequence_ConfirmDialog {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/netenablesequence/NetEnableSequence_ResultFunction.md"))] # [:: unity2 :: class (namespace = "App" , name = "NetEnableSequence.ResultFunction")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct NetEnableSequence_ResultFunction {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/netenablesequence/NetEnableSequence_ConfirmDialog_NoMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "NetEnableSequence.ConfirmDialog.NoMenuItem")] # [parent (crate :: app :: basicdialogitemno :: BasicDialogItemNo)] pub struct NetEnableSequence_ConfirmDialog_NoMenuItem {}
 
 
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/netenablesequence/NetEnableSequence_ConfirmDialog_YesMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "NetEnableSequence.ConfirmDialog.YesMenuItem")] # [parent (crate :: app :: basicdialogitemyes :: BasicDialogItemYes)] pub struct NetEnableSequence_ConfirmDialog_YesMenuItem {}
@@ -235,7 +235,6 @@ impl NetEnableSequence_ConfirmDialog_YesMenuItem {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::NetEnableSequence_Arg;
-    pub use super::NetEnableSequence_Label;
     pub use super::NetEnableSequence;
     pub use super::INetEnableSequence;
     pub use super::INetEnableSequenceMethods;
@@ -248,6 +247,7 @@ pub mod prelude {
     pub use super::NetEnableSequence_ConfirmDialog_NoMenuItem;
     pub use super::INetEnableSequence_ConfirmDialog_NoMenuItem;
     pub use super::INetEnableSequence_ConfirmDialog_NoMenuItemMethods;
+    pub use super::NetEnableSequence_Label;
     pub use super::NetEnableSequence_ConfirmDialog_YesMenuItem;
     pub use super::INetEnableSequence_ConfirmDialog_YesMenuItem;
     pub use super::INetEnableSequence_ConfirmDialog_YesMenuItemMethods;

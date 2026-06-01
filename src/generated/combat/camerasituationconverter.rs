@@ -13,9 +13,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/camerasituationconverter/CameraSituationConverter.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CameraSituationConverter")] # [parent (crate :: system :: object :: Object)] pub struct CameraSituationConverter {}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/camerasituationconverter/CameraSituationConverter_CameraLocateStyle.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -82,6 +79,9 @@ impl  CameraSituationConverter_CameraLocateStyle  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/camerasituationconverter/CameraSituationConverter.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CameraSituationConverter")] # [parent (crate :: system :: object :: Object)] pub struct CameraSituationConverter {}
+
 }
 
 #[cfg(feature = "combat-camerasituationconverter-types")]
@@ -110,10 +110,10 @@ impl CameraSituationConverter {
 #[cfg(feature = "combat-camerasituationconverter")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::CameraSituationConverter_CameraLocateStyle;
     pub use super::CameraSituationConverter;
     pub use super::ICameraSituationConverter;
     pub use super::ICameraSituationConverterMethods;
-    pub use super::CameraSituationConverter_CameraLocateStyle;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

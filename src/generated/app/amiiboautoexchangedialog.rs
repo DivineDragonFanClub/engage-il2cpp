@@ -27,6 +27,12 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiiboautoexchangedialog/AmiiboAutoExchangeDialog_ConfirmDialogNo.md"))] # [:: unity2 :: class (namespace = "App" , name = "AmiiboAutoExchangeDialog.ConfirmDialogNo")] # [parent (crate :: app :: basicdialogitemno :: BasicDialogItemNo)] pub struct AmiiboAutoExchangeDialog_ConfirmDialogNo {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiiboautoexchangedialog/AmiiboAutoExchangeDialog.md"))] # [:: unity2 :: class (namespace = "App" , name = "AmiiboAutoExchangeDialog")] # [parent (crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog)] pub struct AmiiboAutoExchangeDialog {}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/amiiboautoexchangedialog/AmiiboAutoExchangeDialog_Type.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -75,16 +81,27 @@ impl  AmiiboAutoExchangeDialog_Type  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiiboautoexchangedialog/AmiiboAutoExchangeDialog.md"))] # [:: unity2 :: class (namespace = "App" , name = "AmiiboAutoExchangeDialog")] # [parent (crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog)] pub struct AmiiboAutoExchangeDialog {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiiboautoexchangedialog/AmiiboAutoExchangeDialog_ConfirmDialogNo.md"))] # [:: unity2 :: class (namespace = "App" , name = "AmiiboAutoExchangeDialog.ConfirmDialogNo")] # [parent (crate :: app :: basicdialogitemno :: BasicDialogItemNo)] pub struct AmiiboAutoExchangeDialog_ConfirmDialogNo {}
-
 }
 
 #[cfg(feature = "app-amiiboautoexchangedialog-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-amiiboautoexchangedialog")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AmiiboAutoExchangeDialog_ConfirmDialogNo_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AmiiboAutoExchangeDialog_ConfirmDialogNo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AmiiboAutoExchangeDialog_ConfirmDialogNo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AmiiboAutoExchangeDialog_ConfirmDialogNo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AmiiboAutoExchangeDialog_ConfirmDialogNo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-amiiboautoexchangedialog")]
+pub trait IAmiiboAutoExchangeDialog_ConfirmDialogNoMethods : IAmiiboAutoExchangeDialog_ConfirmDialogNo { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AmiiboAutoExchangeDialog_ConfirmDialogNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AmiiboAutoExchangeDialog_ConfirmDialogNo_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-amiiboautoexchangedialog")]
+impl < __T : IAmiiboAutoExchangeDialog_ConfirmDialogNo > IAmiiboAutoExchangeDialog_ConfirmDialogNoMethods for __T { }
+
+#[cfg(feature = "app-amiiboautoexchangedialog")]
+impl AmiiboAutoExchangeDialog_ConfirmDialogNo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AmiiboAutoExchangeDialog_ConfirmDialogNo_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-amiiboautoexchangedialog")]
+impl AmiiboAutoExchangeDialog_ConfirmDialogNo {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AmiiboAutoExchangeDialog_ConfirmDialogNo) , :: core :: stringify ! (new) ,)) ; < Self as IAmiiboAutoExchangeDialog_ConfirmDialogNoMethods > :: ctor (this ,) ; this }
+}
 
 #[cfg(feature = "app-amiiboautoexchangedialog")]
 # [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AmiiboAutoExchangeDialog_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > as :: unity2 :: IlType > :: il_type () , < crate :: app :: exchangedialogcontent :: ExchangeDialogContent as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_ItemParam > as :: unity2 :: IlType > :: il_type () , < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_MoneyParam as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_ItemParam > as :: unity2 :: IlType > :: il_type () , < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_MoneyParam as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AmiiboAutoExchangeDialog as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 9 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AmiiboAutoExchangeDialog as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AmiiboAutoExchangeDialog , menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: exchangedialogcontent :: ExchangeDialogContent , top_message : :: unity2 :: Il2CppString , get_item_title : :: unity2 :: Il2CppString , get_item_param_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_ItemParam > , get_money_param : crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_MoneyParam , cost_item_title : :: unity2 :: Il2CppString , cost_item_param_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_ItemParam > , cost_money_param : crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_MoneyParam , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AmiiboAutoExchangeDialog , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: exchangedialogcontent :: ExchangeDialogContent , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_ItemParam > , crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_MoneyParam , :: unity2 :: Il2CppString , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_ItemParam > , crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_MoneyParam , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , menu_item_list , menu_content , top_message , get_item_title , get_item_param_list , get_money_param , cost_item_title , cost_item_param_list , cost_money_param , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: amiiboautoexchangedialog :: AmiiboAutoExchangeDialog_Type as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AmiiboAutoExchangeDialog as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AmiiboAutoExchangeDialog as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , ticket_num : i32 , r#type : crate :: app :: amiiboautoexchangedialog :: AmiiboAutoExchangeDialog_Type , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , i32 , crate :: app :: amiiboautoexchangedialog :: AmiiboAutoExchangeDialog_Type , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , ticket_num , r#type , __unity2_method_info) } }
@@ -107,32 +124,15 @@ impl AmiiboAutoExchangeDialog {
 }
 
 #[cfg(feature = "app-amiiboautoexchangedialog")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AmiiboAutoExchangeDialog_ConfirmDialogNo_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AmiiboAutoExchangeDialog_ConfirmDialogNo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AmiiboAutoExchangeDialog_ConfirmDialogNo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AmiiboAutoExchangeDialog_ConfirmDialogNo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AmiiboAutoExchangeDialog_ConfirmDialogNo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "app-amiiboautoexchangedialog")]
-pub trait IAmiiboAutoExchangeDialog_ConfirmDialogNoMethods : IAmiiboAutoExchangeDialog_ConfirmDialogNo { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AmiiboAutoExchangeDialog_ConfirmDialogNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AmiiboAutoExchangeDialog_ConfirmDialogNo_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-amiiboautoexchangedialog")]
-impl < __T : IAmiiboAutoExchangeDialog_ConfirmDialogNo > IAmiiboAutoExchangeDialog_ConfirmDialogNoMethods for __T { }
-
-#[cfg(feature = "app-amiiboautoexchangedialog")]
-impl AmiiboAutoExchangeDialog_ConfirmDialogNo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AmiiboAutoExchangeDialog_ConfirmDialogNo_unity2_raw :: __lookup_ctor :: get_method_info () } }
-
-#[cfg(feature = "app-amiiboautoexchangedialog")]
-impl AmiiboAutoExchangeDialog_ConfirmDialogNo {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AmiiboAutoExchangeDialog_ConfirmDialogNo) , :: core :: stringify ! (new) ,)) ; < Self as IAmiiboAutoExchangeDialog_ConfirmDialogNoMethods > :: ctor (this ,) ; this }
-}
-
-#[cfg(feature = "app-amiiboautoexchangedialog")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AmiiboAutoExchangeDialog_Type;
-    pub use super::AmiiboAutoExchangeDialog;
-    pub use super::IAmiiboAutoExchangeDialog;
-    pub use super::IAmiiboAutoExchangeDialogMethods;
     pub use super::AmiiboAutoExchangeDialog_ConfirmDialogNo;
     pub use super::IAmiiboAutoExchangeDialog_ConfirmDialogNo;
     pub use super::IAmiiboAutoExchangeDialog_ConfirmDialogNoMethods;
+    pub use super::AmiiboAutoExchangeDialog;
+    pub use super::IAmiiboAutoExchangeDialog;
+    pub use super::IAmiiboAutoExchangeDialogMethods;
+    pub use super::AmiiboAutoExchangeDialog_Type;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemno::IBasicDialogItemNo;

@@ -19,6 +19,9 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencecontract/MapSequenceContract.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceContract")] # [parent (crate :: app :: commonbattlesequence_1 :: CommonBattleSequence_1 < crate :: app :: mapsequencecontract :: MapSequenceContract >)] pub struct MapSequenceContract {}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencecontract/MapSequenceContract_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -73,9 +76,6 @@ impl  MapSequenceContract_Label  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencecontract/MapSequenceContract.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceContract")] # [parent (crate :: app :: commonbattlesequence_1 :: CommonBattleSequence_1 < crate :: app :: mapsequencecontract :: MapSequenceContract >)] pub struct MapSequenceContract {}
-
 }
 
 #[cfg(feature = "app-mapsequencecontract-types")]
@@ -104,10 +104,10 @@ impl MapSequenceContract {
 #[cfg(feature = "app-mapsequencecontract")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapSequenceContract_Label;
     pub use super::MapSequenceContract;
     pub use super::IMapSequenceContract;
     pub use super::IMapSequenceContractMethods;
+    pub use super::MapSequenceContract_Label;
     pub use crate::app::commonbattlesequence_1::ICommonBattleSequence_1;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;

@@ -15,6 +15,16 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gx/GX.md"))] # [:: unity2 :: class (namespace = "App" , name = "GX")] # [parent (crate :: unity_engine :: gui :: GUI)] pub struct GX {
+# [static_field] # [rename (name = "scrollBaseColor")] pub scroll_base_color : crate :: unity_engine :: color :: Color ,
+# [static_field] # [rename (name = "scrollBarColor")] pub scroll_bar_color : crate :: unity_engine :: color :: Color ,
+# [static_field] # [rename (name = "CanvasSizeX")] pub canvas_size_x : f32 ,
+# [static_field] # [rename (name = "CanvasSizeY")] pub canvas_size_y : f32 ,
+# [static_field] # [rename (name = "CanvasHalfX")] pub canvas_half_x : f32 ,
+# [static_field] # [rename (name = "CanvasHalfY")] pub canvas_half_y : f32 ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gx/GX_Anchor.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -111,16 +121,6 @@ impl  GX_Anchor  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gx/GX.md"))] # [:: unity2 :: class (namespace = "App" , name = "GX")] # [parent (crate :: unity_engine :: gui :: GUI)] pub struct GX {
-# [static_field] # [rename (name = "scrollBaseColor")] pub scroll_base_color : crate :: unity_engine :: color :: Color ,
-# [static_field] # [rename (name = "scrollBarColor")] pub scroll_bar_color : crate :: unity_engine :: color :: Color ,
-# [static_field] # [rename (name = "CanvasSizeX")] pub canvas_size_x : f32 ,
-# [static_field] # [rename (name = "CanvasSizeY")] pub canvas_size_y : f32 ,
-# [static_field] # [rename (name = "CanvasHalfX")] pub canvas_half_x : f32 ,
-# [static_field] # [rename (name = "CanvasHalfY")] pub canvas_half_y : f32 ,
-}
-
 }
 
 #[cfg(feature = "app-gx-types")]
@@ -149,10 +149,10 @@ impl GX {
 #[cfg(feature = "app-gx")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GX_Anchor;
     pub use super::GX;
     pub use super::IGX;
     pub use super::IGXMethods;
+    pub use super::GX_Anchor;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

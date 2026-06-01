@@ -21,6 +21,9 @@ mod __types {
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayticketsequence/RelayTicketSequence_ProcUse.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayTicketSequence.ProcUse")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct RelayTicketSequence_ProcUse {}
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayticketsequence/RelayTicketSequence_ProcDaily.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayTicketSequence.ProcDaily")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct RelayTicketSequence_ProcDaily {}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayticketsequence/RelayTicketSequence_ProcDaily_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -62,9 +65,6 @@ impl  RelayTicketSequence_ProcDaily_Label  {
     }
 
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayticketsequence/RelayTicketSequence_ProcDaily.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayTicketSequence.ProcDaily")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct RelayTicketSequence_ProcDaily {}
 
 }
 
@@ -128,10 +128,10 @@ pub mod prelude {
     pub use super::RelayTicketSequence_ProcUse;
     pub use super::IRelayTicketSequence_ProcUse;
     pub use super::IRelayTicketSequence_ProcUseMethods;
-    pub use super::RelayTicketSequence_ProcDaily_Label;
     pub use super::RelayTicketSequence_ProcDaily;
     pub use super::IRelayTicketSequence_ProcDaily;
     pub use super::IRelayTicketSequence_ProcDailyMethods;
+    pub use super::RelayTicketSequence_ProcDaily_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

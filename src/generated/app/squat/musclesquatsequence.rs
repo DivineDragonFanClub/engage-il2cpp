@@ -21,97 +21,6 @@ mod __types {
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/squat/musclesquatsequence/MuscleSquatSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MuscleSquatSequence_Label  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for MuscleSquatSequence_Label  {
-    const NAMESPACE: &'static str = "App.Squat";
-
-    const NAME: &'static str = "MuscleSquatSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for MuscleSquatSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  MuscleSquatSequence_Label  {
-    pub fn init() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn ready_count() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn tick() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn ready_finish() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn finish() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn result() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn mascot_bond() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn prize() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn r#final() -> Self {
-        Self { value: 8 }
-
-    }
-
-}
-
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/squat/musclesquatsequence/MuscleSquatSequence.md"))] # [:: unity2 :: class (namespace = "App.Squat" , name = "MuscleSquatSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct MuscleSquatSequence {
 # [static_field] # [rename (name = "ObjectRootPath")] pub object_root_path : :: unity2 :: Il2CppString ,
 # [static_field] # [rename (name = "cUIRootPath")] pub c_ui_root_path : :: unity2 :: Il2CppString ,
@@ -237,6 +146,97 @@ impl  MuscleSquatSequence_Label  {
 # [offset (764)] # [rename (name = "m_JudgeLB")] pub m_judge_lb : f32 ,
 }
 
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/squat/musclesquatsequence/MuscleSquatSequence_Label.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct MuscleSquatSequence_Label  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for MuscleSquatSequence_Label  {
+    const NAMESPACE: &'static str = "App.Squat";
+
+    const NAME: &'static str = "MuscleSquatSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for MuscleSquatSequence_Label  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  MuscleSquatSequence_Label  {
+    pub fn init() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn ready_count() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn tick() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn ready_finish() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn finish() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn result() -> Self {
+        Self { value: 5 }
+
+    }
+
+
+    pub fn mascot_bond() -> Self {
+        Self { value: 6 }
+
+    }
+
+
+    pub fn prize() -> Self {
+        Self { value: 7 }
+
+    }
+
+
+    pub fn r#final() -> Self {
+        Self { value: 8 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "app-squat-musclesquatsequence-types")]
@@ -287,10 +287,10 @@ pub mod prelude {
     pub use super::MuscleSquatSequence_RandomPack;
     pub use super::IMuscleSquatSequence_RandomPack;
     pub use super::IMuscleSquatSequence_RandomPackMethods;
-    pub use super::MuscleSquatSequence_Label;
     pub use super::MuscleSquatSequence;
     pub use super::IMuscleSquatSequence;
     pub use super::IMuscleSquatSequenceMethods;
+    pub use super::MuscleSquatSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

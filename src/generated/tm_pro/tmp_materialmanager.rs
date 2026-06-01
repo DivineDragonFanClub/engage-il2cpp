@@ -18,20 +18,20 @@ mod __types {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_materialmanager/TMP_MaterialManager_MaskingMaterial.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "TMP_MaterialManager.MaskingMaterial")] # [parent (crate :: system :: object :: Object)] pub struct TMP_MaterialManager_MaskingMaterial {
-# [offset (16)] # [rename (name = "baseMaterial")] pub base_material : crate :: unity_engine :: material :: Material ,
-# [offset (24)] # [rename (name = "stencilMaterial")] pub stencil_material : crate :: unity_engine :: material :: Material ,
-# [offset (32)] # [rename (name = "count")] pub count : i32 ,
-# [offset (36)] # [rename (name = "stencilID")] pub stencil_id : i32 ,
-}
-
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_materialmanager/TMP_MaterialManager_FallbackMaterial.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "TMP_MaterialManager.FallbackMaterial")] # [parent (crate :: system :: object :: Object)] pub struct TMP_MaterialManager_FallbackMaterial {
 # [offset (16)] # [rename (name = "fallbackID")] pub fallback_id : i64 ,
 # [offset (24)] # [rename (name = "sourceMaterial")] pub source_material : crate :: unity_engine :: material :: Material ,
 # [offset (32)] # [rename (name = "sourceMaterialCRC")] pub source_material_crc : i32 ,
 # [offset (40)] # [rename (name = "fallbackMaterial")] pub fallback_material : crate :: unity_engine :: material :: Material ,
 # [offset (48)] # [rename (name = "count")] pub count : i32 ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_materialmanager/TMP_MaterialManager_MaskingMaterial.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "TMP_MaterialManager.MaskingMaterial")] # [parent (crate :: system :: object :: Object)] pub struct TMP_MaterialManager_MaskingMaterial {
+# [offset (16)] # [rename (name = "baseMaterial")] pub base_material : crate :: unity_engine :: material :: Material ,
+# [offset (24)] # [rename (name = "stencilMaterial")] pub stencil_material : crate :: unity_engine :: material :: Material ,
+# [offset (32)] # [rename (name = "count")] pub count : i32 ,
+# [offset (36)] # [rename (name = "stencilID")] pub stencil_id : i32 ,
 }
 
 }
@@ -47,23 +47,6 @@ impl TMP_MaterialManager { # [doc = "`.cctor()` overload"] pub fn cctor () -> ()
 
 #[cfg(feature = "tm_pro-tmp_materialmanager")]
 impl TMP_MaterialManager { pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_MaterialManager_unity2_raw :: __lookup_cctor :: get_method_info () } pub fn on_pre_render_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_MaterialManager_unity2_raw :: __lookup_on_pre_render :: get_method_info () } pub fn get_stencil_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_MaterialManager_unity2_raw :: __lookup_get_stencil_material :: get_method_info () } pub fn release_stencil_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_MaterialManager_unity2_raw :: __lookup_release_stencil_material :: get_method_info () } pub fn get_base_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_MaterialManager_unity2_raw :: __lookup_get_base_material :: get_method_info () } pub fn set_stencil_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_MaterialManager_unity2_raw :: __lookup_set_stencil :: get_method_info () } pub fn add_masking_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_MaterialManager_unity2_raw :: __lookup_add_masking_material :: get_method_info () } pub fn remove_stencil_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_MaterialManager_unity2_raw :: __lookup_remove_stencil_material :: get_method_info () } pub fn release_base_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_MaterialManager_unity2_raw :: __lookup_release_base_material :: get_method_info () } pub fn clear_materials_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_MaterialManager_unity2_raw :: __lookup_clear_materials :: get_method_info () } pub fn get_stencil_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_MaterialManager_unity2_raw :: __lookup_get_stencil_id :: get_method_info () } pub fn get_material_for_rendering_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_MaterialManager_unity2_raw :: __lookup_get_material_for_rendering :: get_method_info () } pub fn find_root_sort_override_canvas_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_MaterialManager_unity2_raw :: __lookup_find_root_sort_override_canvas :: get_method_info () } pub fn get_fallback_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_MaterialManager_unity2_raw :: __lookup_get_fallback_material :: get_method_info () } pub fn get_fallback_material_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_MaterialManager_unity2_raw :: __lookup_get_fallback_material_2 :: get_method_info () } pub fn add_fallback_material_reference_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_MaterialManager_unity2_raw :: __lookup_add_fallback_material_reference :: get_method_info () } pub fn remove_fallback_material_reference_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_MaterialManager_unity2_raw :: __lookup_remove_fallback_material_reference :: get_method_info () } pub fn cleanup_fallback_materials_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_MaterialManager_unity2_raw :: __lookup_cleanup_fallback_materials :: get_method_info () } pub fn release_fallback_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_MaterialManager_unity2_raw :: __lookup_release_fallback_material :: get_method_info () } pub fn copy_material_preset_properties_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_MaterialManager_unity2_raw :: __lookup_copy_material_preset_properties :: get_method_info () } }
-
-#[cfg(feature = "tm_pro-tmp_materialmanager")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TMP_MaterialManager_MaskingMaterial_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TMP_MaterialManager_MaskingMaterial as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TMP_MaterialManager_MaskingMaterial as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : TMP_MaterialManager_MaskingMaterial , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TMP_MaterialManager_MaskingMaterial , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "tm_pro-tmp_materialmanager")]
-pub trait ITMP_MaterialManager_MaskingMaterialMethods : ITMP_MaterialManager_MaskingMaterial { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TMP_MaterialManager_MaskingMaterial as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TMP_MaterialManager_MaskingMaterial_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "tm_pro-tmp_materialmanager")]
-impl < __T : ITMP_MaterialManager_MaskingMaterial > ITMP_MaterialManager_MaskingMaterialMethods for __T { }
-
-#[cfg(feature = "tm_pro-tmp_materialmanager")]
-impl TMP_MaterialManager_MaskingMaterial { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_MaterialManager_MaskingMaterial_unity2_raw :: __lookup_ctor :: get_method_info () } }
-
-#[cfg(feature = "tm_pro-tmp_materialmanager")]
-impl TMP_MaterialManager_MaskingMaterial {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TMP_MaterialManager_MaskingMaterial) , :: core :: stringify ! (new) ,)) ; < Self as ITMP_MaterialManager_MaskingMaterialMethods > :: ctor (this ,) ; this }
-}
 
 #[cfg(feature = "tm_pro-tmp_materialmanager")]
 # [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TMP_MaterialManager_FallbackMaterial_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TMP_MaterialManager_FallbackMaterial as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TMP_MaterialManager_FallbackMaterial as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : TMP_MaterialManager_FallbackMaterial , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TMP_MaterialManager_FallbackMaterial , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
@@ -83,16 +66,33 @@ impl TMP_MaterialManager_FallbackMaterial {
 }
 
 #[cfg(feature = "tm_pro-tmp_materialmanager")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TMP_MaterialManager_MaskingMaterial_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TMP_MaterialManager_MaskingMaterial as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TMP_MaterialManager_MaskingMaterial as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : TMP_MaterialManager_MaskingMaterial , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TMP_MaterialManager_MaskingMaterial , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "tm_pro-tmp_materialmanager")]
+pub trait ITMP_MaterialManager_MaskingMaterialMethods : ITMP_MaterialManager_MaskingMaterial { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TMP_MaterialManager_MaskingMaterial as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TMP_MaterialManager_MaskingMaterial_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "tm_pro-tmp_materialmanager")]
+impl < __T : ITMP_MaterialManager_MaskingMaterial > ITMP_MaterialManager_MaskingMaterialMethods for __T { }
+
+#[cfg(feature = "tm_pro-tmp_materialmanager")]
+impl TMP_MaterialManager_MaskingMaterial { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TMP_MaterialManager_MaskingMaterial_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "tm_pro-tmp_materialmanager")]
+impl TMP_MaterialManager_MaskingMaterial {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TMP_MaterialManager_MaskingMaterial) , :: core :: stringify ! (new) ,)) ; < Self as ITMP_MaterialManager_MaskingMaterialMethods > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "tm_pro-tmp_materialmanager")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::TMP_MaterialManager;
     pub use super::ITMP_MaterialManager;
-    pub use super::TMP_MaterialManager_MaskingMaterial;
-    pub use super::ITMP_MaterialManager_MaskingMaterial;
-    pub use super::ITMP_MaterialManager_MaskingMaterialMethods;
     pub use super::TMP_MaterialManager_FallbackMaterial;
     pub use super::ITMP_MaterialManager_FallbackMaterial;
     pub use super::ITMP_MaterialManager_FallbackMaterialMethods;
+    pub use super::TMP_MaterialManager_MaskingMaterial;
+    pub use super::ITMP_MaterialManager_MaskingMaterial;
+    pub use super::ITMP_MaterialManager_MaskingMaterialMethods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

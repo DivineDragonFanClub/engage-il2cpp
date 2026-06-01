@@ -23,61 +23,6 @@ mod __types {
  ;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfounit/MapInfoUnit_InputState.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapInfoUnit_InputState  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for MapInfoUnit_InputState  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapInfoUnit.InputState";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for MapInfoUnit_InputState  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  MapInfoUnit_InputState  {
-    pub fn neutral() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn switch() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn select() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfounit/MapInfoUnit_SuppressScene.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -385,6 +330,61 @@ impl  MapInfoUnit_SpriteKind  {
 
 }
 
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfounit/MapInfoUnit_InputState.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct MapInfoUnit_InputState  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for MapInfoUnit_InputState  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapInfoUnit.InputState";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for MapInfoUnit_InputState  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  MapInfoUnit_InputState  {
+    pub fn neutral() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn switch() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn select() -> Self {
+        Self { value: 2 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "app-mapinfounit-types")]
@@ -413,12 +413,12 @@ impl MapInfoUnit {
 #[cfg(feature = "app-mapinfounit")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapInfoUnit_InputState;
     pub use super::MapInfoUnit_SuppressScene;
     pub use super::MapInfoUnit;
     pub use super::IMapInfoUnit;
     pub use super::IMapInfoUnitMethods;
     pub use super::MapInfoUnit_SpriteKind;
+    pub use super::MapInfoUnit_InputState;
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

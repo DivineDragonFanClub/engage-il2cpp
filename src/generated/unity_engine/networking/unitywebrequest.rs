@@ -13,73 +13,6 @@ mod __types {
  ;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/networking/unitywebrequest/UnityWebRequest_Result.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct UnityWebRequest_Result  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for UnityWebRequest_Result  {
-    const NAMESPACE: &'static str = "UnityEngine.Networking";
-
-    const NAME: &'static str = "UnityWebRequest.Result";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for UnityWebRequest_Result  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  UnityWebRequest_Result  {
-    pub fn in_progress() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn success() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn connection_error() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn protocol_error() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn data_processing_error() -> Self {
-        Self { value: 4 }
-
-    }
-
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/networking/unitywebrequest/UnityWebRequest_UnityWebRequestError.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -291,20 +224,6 @@ impl  UnityWebRequest_UnityWebRequestError  {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/networking/unitywebrequest/UnityWebRequest.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Networking" , name = "UnityWebRequest")] # [parent (crate :: system :: object :: Object)] pub struct UnityWebRequest {
-# [offset (16)] # [rename (name = "m_Ptr")] pub m_ptr : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "m_DownloadHandler")] pub m_download_handler : crate :: unity_engine :: networking :: downloadhandler :: DownloadHandler ,
-# [offset (32)] # [rename (name = "m_UploadHandler")] pub m_upload_handler : crate :: unity_engine :: networking :: uploadhandler :: UploadHandler ,
-# [offset (40)] # [rename (name = "m_CertificateHandler")] pub m_certificate_handler : crate :: unity_engine :: networking :: certificatehandler :: CertificateHandler ,
-# [static_field] # [rename (name = "kHttpVerbGET")] pub k_http_verb_get : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "kHttpVerbHEAD")] pub k_http_verb_head : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "kHttpVerbPOST")] pub k_http_verb_post : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "kHttpVerbPUT")] pub k_http_verb_put : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "kHttpVerbCREATE")] pub k_http_verb_create : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "kHttpVerbDELETE")] pub k_http_verb_delete : :: unity2 :: Il2CppString ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/networking/unitywebrequest/UnityWebRequest_UnityWebRequestMethod.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -371,6 +290,87 @@ impl  UnityWebRequest_UnityWebRequestMethod  {
 
 }
 
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/networking/unitywebrequest/UnityWebRequest_Result.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct UnityWebRequest_Result  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for UnityWebRequest_Result  {
+    const NAMESPACE: &'static str = "UnityEngine.Networking";
+
+    const NAME: &'static str = "UnityWebRequest.Result";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for UnityWebRequest_Result  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  UnityWebRequest_Result  {
+    pub fn in_progress() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn success() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn connection_error() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn protocol_error() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn data_processing_error() -> Self {
+        Self { value: 4 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/networking/unitywebrequest/UnityWebRequest.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Networking" , name = "UnityWebRequest")] # [parent (crate :: system :: object :: Object)] pub struct UnityWebRequest {
+# [offset (16)] # [rename (name = "m_Ptr")] pub m_ptr : :: unity2 :: IntPtr ,
+# [offset (24)] # [rename (name = "m_DownloadHandler")] pub m_download_handler : crate :: unity_engine :: networking :: downloadhandler :: DownloadHandler ,
+# [offset (32)] # [rename (name = "m_UploadHandler")] pub m_upload_handler : crate :: unity_engine :: networking :: uploadhandler :: UploadHandler ,
+# [offset (40)] # [rename (name = "m_CertificateHandler")] pub m_certificate_handler : crate :: unity_engine :: networking :: certificatehandler :: CertificateHandler ,
+# [static_field] # [rename (name = "kHttpVerbGET")] pub k_http_verb_get : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "kHttpVerbHEAD")] pub k_http_verb_head : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "kHttpVerbPOST")] pub k_http_verb_post : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "kHttpVerbPUT")] pub k_http_verb_put : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "kHttpVerbCREATE")] pub k_http_verb_create : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "kHttpVerbDELETE")] pub k_http_verb_delete : :: unity2 :: Il2CppString ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-networking-unitywebrequest-types")]
@@ -401,12 +401,12 @@ impl UnityWebRequest {
 #[cfg(feature = "unity_engine-networking-unitywebrequest")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::UnityWebRequest_Result;
     pub use super::UnityWebRequest_UnityWebRequestError;
+    pub use super::UnityWebRequest_UnityWebRequestMethod;
+    pub use super::UnityWebRequest_Result;
     pub use super::UnityWebRequest;
     pub use super::IUnityWebRequest;
     pub use super::IUnityWebRequestMethods;
-    pub use super::UnityWebRequest_UnityWebRequestMethod;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

@@ -15,9 +15,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibomanager/AmiiboManager_AmiiboInfo.md"))] # [:: unity2 :: class (namespace = "App" , name = "AmiiboManager.AmiiboInfo")] # [parent (crate :: system :: object :: Object)] pub struct AmiiboManager_AmiiboInfo {}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/amiibomanager/AmiiboManager_Sequence.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -91,6 +88,9 @@ impl  AmiiboManager_Sequence  {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibomanager/AmiiboManager_AmiiboInfo.md"))] # [:: unity2 :: class (namespace = "App" , name = "AmiiboManager.AmiiboInfo")] # [parent (crate :: system :: object :: Object)] pub struct AmiiboManager_AmiiboInfo {}
+
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibomanager/AmiiboManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "AmiiboManager")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: amiibomanager :: AmiiboManager >)] pub struct AmiiboManager {
 # [static_field] # [rename (name = "DeviceCountMax")] pub device_count_max : i32 ,
 # [offset (40)] # [rename (name = "m_DeviceCount")] pub m_device_count : i32 ,
@@ -147,10 +147,10 @@ impl AmiiboManager {
 #[cfg(feature = "app-amiibomanager")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::AmiiboManager_Sequence;
     pub use super::AmiiboManager_AmiiboInfo;
     pub use super::IAmiiboManager_AmiiboInfo;
     pub use super::IAmiiboManager_AmiiboInfoMethods;
-    pub use super::AmiiboManager_Sequence;
     pub use super::AmiiboManager;
     pub use super::IAmiiboManager;
     pub use super::IAmiiboManagerMethods;

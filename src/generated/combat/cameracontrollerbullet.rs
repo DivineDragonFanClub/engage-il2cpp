@@ -23,6 +23,15 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/cameracontrollerbullet/CameraControllerBullet.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CameraControllerBullet")] # [parent (crate :: combat :: basecameracontroller :: BaseCameraController)] pub struct CameraControllerBullet {
+# [offset (184)] # [rename (name = "StartVector")] pub start_vector : crate :: unity_engine :: vector3 :: Vector3 ,
+# [offset (196)] # [rename (name = "HoldVector")] pub hold_vector : crate :: unity_engine :: vector3 :: Vector3 ,
+# [offset (208)] # [rename (name = "BulletVector")] pub bullet_vector : crate :: unity_engine :: vector3 :: Vector3 ,
+# [offset (220)] # [rename (name = "SpeedBrake")] pub speed_brake : f32 ,
+# [offset (224)] # [rename (name = "m_LastSpeed")] pub m_last_speed : crate :: unity_engine :: vector3 :: Vector3 ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/cameracontrollerbullet/CameraControllerBullet_State.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -83,15 +92,6 @@ impl  CameraControllerBullet_State  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/cameracontrollerbullet/CameraControllerBullet.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CameraControllerBullet")] # [parent (crate :: combat :: basecameracontroller :: BaseCameraController)] pub struct CameraControllerBullet {
-# [offset (184)] # [rename (name = "StartVector")] pub start_vector : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (196)] # [rename (name = "HoldVector")] pub hold_vector : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (208)] # [rename (name = "BulletVector")] pub bullet_vector : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (220)] # [rename (name = "SpeedBrake")] pub speed_brake : f32 ,
-# [offset (224)] # [rename (name = "m_LastSpeed")] pub m_last_speed : crate :: unity_engine :: vector3 :: Vector3 ,
-}
-
 }
 
 #[cfg(feature = "combat-cameracontrollerbullet-types")]
@@ -117,10 +117,10 @@ impl CameraControllerBullet {
 #[cfg(feature = "combat-cameracontrollerbullet")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CameraControllerBullet_State;
     pub use super::CameraControllerBullet;
     pub use super::ICameraControllerBullet;
     pub use super::ICameraControllerBulletMethods;
+    pub use super::CameraControllerBullet_State;
     pub use crate::combat::basecameracontroller::IBaseCameraController;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

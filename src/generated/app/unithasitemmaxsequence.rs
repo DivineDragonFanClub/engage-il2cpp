@@ -17,6 +17,18 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unithasitemmaxsequence/UnitHasItemMaxSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitHasItemMaxSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: unithasitemmaxsequence :: UnitHasItemMaxSequence >)] pub struct UnitHasItemMaxSequence {
+# [offset (120)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
+# [offset (128)] # [rename (name = "m_GainUnitItem")] pub m_gain_unit_item : crate :: app :: unititem :: UnitItem ,
+# [offset (136)] # [rename (name = "m_Label")] pub m_label : :: unity2 :: Il2CppString ,
+# [offset (144)] # [rename (name = "m_IsSendingUnitItem")] pub m_is_sending_unit_item : bool ,
+# [offset (148)] # [rename (name = "m_SendingUnitItemIndex")] pub m_sending_unit_item_index : i32 ,
+# [offset (152)] # [rename (name = "m_IsDiscarding")] pub m_is_discarding : bool ,
+# [offset (153)] # [rename (name = "m_IsDiscardingTransporterItem")] pub m_is_discarding_transporter_item : bool ,
+# [offset (156)] # [rename (name = "m_DiscardingTransporterItemIndex")] pub m_discarding_transporter_item_index : i32 ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unithasitemmaxsequence/UnitHasItemMaxSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -71,18 +83,6 @@ impl  UnitHasItemMaxSequence_Label  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unithasitemmaxsequence/UnitHasItemMaxSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitHasItemMaxSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: unithasitemmaxsequence :: UnitHasItemMaxSequence >)] pub struct UnitHasItemMaxSequence {
-# [offset (120)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-# [offset (128)] # [rename (name = "m_GainUnitItem")] pub m_gain_unit_item : crate :: app :: unititem :: UnitItem ,
-# [offset (136)] # [rename (name = "m_Label")] pub m_label : :: unity2 :: Il2CppString ,
-# [offset (144)] # [rename (name = "m_IsSendingUnitItem")] pub m_is_sending_unit_item : bool ,
-# [offset (148)] # [rename (name = "m_SendingUnitItemIndex")] pub m_sending_unit_item_index : i32 ,
-# [offset (152)] # [rename (name = "m_IsDiscarding")] pub m_is_discarding : bool ,
-# [offset (153)] # [rename (name = "m_IsDiscardingTransporterItem")] pub m_is_discarding_transporter_item : bool ,
-# [offset (156)] # [rename (name = "m_DiscardingTransporterItemIndex")] pub m_discarding_transporter_item_index : i32 ,
-}
-
 }
 
 #[cfg(feature = "app-unithasitemmaxsequence-types")]
@@ -111,10 +111,10 @@ impl UnitHasItemMaxSequence {
 #[cfg(feature = "app-unithasitemmaxsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::UnitHasItemMaxSequence_Label;
     pub use super::UnitHasItemMaxSequence;
     pub use super::IUnitHasItemMaxSequence;
     pub use super::IUnitHasItemMaxSequenceMethods;
+    pub use super::UnitHasItemMaxSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

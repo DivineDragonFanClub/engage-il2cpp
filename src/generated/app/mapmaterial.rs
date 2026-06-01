@@ -18,6 +18,15 @@ mod __types {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapmaterial/MapMaterial_Node.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapMaterial.Node")] # [parent (crate :: system :: object :: Object)] pub struct MapMaterial_Node {
+# [offset (16)] # [rename (name = "kind")] pub kind : crate :: app :: mapmaterial :: MapMaterial_Kinds ,
+# [offset (24)] # [rename (name = "material")] pub material : :: unity2 :: Il2CppString ,
+# [offset (32)] # [rename (name = "property")] pub property : :: unity2 :: Il2CppString ,
+# [offset (40)] # [rename (name = "value")] pub value : f32 ,
+# [offset (44)] # [rename (name = "color")] pub color : crate :: unity_engine :: color :: Color ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapmaterial/MapMaterial_Kinds.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -72,15 +81,6 @@ impl  MapMaterial_Kinds  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapmaterial/MapMaterial_Node.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapMaterial.Node")] # [parent (crate :: system :: object :: Object)] pub struct MapMaterial_Node {
-# [offset (16)] # [rename (name = "kind")] pub kind : crate :: app :: mapmaterial :: MapMaterial_Kinds ,
-# [offset (24)] # [rename (name = "material")] pub material : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "property")] pub property : :: unity2 :: Il2CppString ,
-# [offset (40)] # [rename (name = "value")] pub value : f32 ,
-# [offset (44)] # [rename (name = "color")] pub color : crate :: unity_engine :: color :: Color ,
-}
-
 }
 
 #[cfg(feature = "app-mapmaterial-types")]
@@ -126,10 +126,10 @@ pub mod prelude {
     pub use super::MapMaterial;
     pub use super::IMapMaterial;
     pub use super::IMapMaterialMethods;
-    pub use super::MapMaterial_Kinds;
     pub use super::MapMaterial_Node;
     pub use super::IMapMaterial_Node;
     pub use super::IMapMaterial_NodeMethods;
+    pub use super::MapMaterial_Kinds;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

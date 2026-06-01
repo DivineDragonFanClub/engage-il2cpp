@@ -15,6 +15,17 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubweaponshopsequence/HubWeaponShopSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubWeaponShopSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct HubWeaponShopSequence {
+# [offset (112)] # [rename (name = "m_ShopMenuResult")] pub m_shop_menu_result : crate :: app :: weaponshoptopmenu :: WeaponShopTopMenu_Result2 ,
+# [offset (116)] # [rename (name = "m_ShopUnitSelectMenuResult")] pub m_shop_unit_select_menu_result : crate :: app :: basicmenu :: BasicMenu_Result ,
+# [offset (120)] # [rename (name = "m_UnitSelectRoot")] pub m_unit_select_root : crate :: app :: shopunitselectroot :: ShopUnitSelectRoot ,
+# [offset (128)] # [rename (name = "m_WeaponShopBuyRoot")] pub m_weapon_shop_buy_root : crate :: app :: weaponshopbuyroot :: WeaponShopBuyRoot ,
+# [offset (136)] # [rename (name = "m_WeaponShopSellRoot")] pub m_weapon_shop_sell_root : crate :: app :: shopsellroot :: ShopSellRoot ,
+# [offset (144)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
+# [offset (152)] # [rename (name = "m_UnitSelectMenuScrollIndex")] pub m_unit_select_menu_scroll_index : i32 ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubweaponshopsequence/HubWeaponShopSequence_Label2.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -93,17 +104,6 @@ impl  HubWeaponShopSequence_Label2  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubweaponshopsequence/HubWeaponShopSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubWeaponShopSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct HubWeaponShopSequence {
-# [offset (112)] # [rename (name = "m_ShopMenuResult")] pub m_shop_menu_result : crate :: app :: weaponshoptopmenu :: WeaponShopTopMenu_Result2 ,
-# [offset (116)] # [rename (name = "m_ShopUnitSelectMenuResult")] pub m_shop_unit_select_menu_result : crate :: app :: basicmenu :: BasicMenu_Result ,
-# [offset (120)] # [rename (name = "m_UnitSelectRoot")] pub m_unit_select_root : crate :: app :: shopunitselectroot :: ShopUnitSelectRoot ,
-# [offset (128)] # [rename (name = "m_WeaponShopBuyRoot")] pub m_weapon_shop_buy_root : crate :: app :: weaponshopbuyroot :: WeaponShopBuyRoot ,
-# [offset (136)] # [rename (name = "m_WeaponShopSellRoot")] pub m_weapon_shop_sell_root : crate :: app :: shopsellroot :: ShopSellRoot ,
-# [offset (144)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-# [offset (152)] # [rename (name = "m_UnitSelectMenuScrollIndex")] pub m_unit_select_menu_scroll_index : i32 ,
-}
-
 }
 
 #[cfg(feature = "app-hubweaponshopsequence-types")]
@@ -132,10 +132,10 @@ impl HubWeaponShopSequence {
 #[cfg(feature = "app-hubweaponshopsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HubWeaponShopSequence_Label2;
     pub use super::HubWeaponShopSequence;
     pub use super::IHubWeaponShopSequence;
     pub use super::IHubWeaponShopSequenceMethods;
+    pub use super::HubWeaponShopSequence_Label2;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
