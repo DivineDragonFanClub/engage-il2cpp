@@ -15,6 +15,13 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotcolorchangemenu/MascotColorChangeMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "MascotColorChangeMenu")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct MascotColorChangeMenu {
+# [offset (128)] # [rename (name = "m_result")] pub m_result : crate :: app :: basicmenu :: BasicMenu_Result ,
+# [offset (136)] # [rename (name = "m_RootAnim")] pub m_root_anim : crate :: unity_engine :: animator :: Animator ,
+# [offset (144)] # [rename (name = "m_cursor")] pub m_cursor : crate :: app :: mascotcolorchangemenu :: MascotColorChangeMenu_CursorTop ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mascotcolorchangemenu/MascotColorChangeMenu_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -67,13 +74,6 @@ impl  MascotColorChangeMenu_Label  {
 
     }
 
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotcolorchangemenu/MascotColorChangeMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "MascotColorChangeMenu")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct MascotColorChangeMenu {
-# [offset (128)] # [rename (name = "m_result")] pub m_result : crate :: app :: basicmenu :: BasicMenu_Result ,
-# [offset (136)] # [rename (name = "m_RootAnim")] pub m_root_anim : crate :: unity_engine :: animator :: Animator ,
-# [offset (144)] # [rename (name = "m_cursor")] pub m_cursor : crate :: app :: mascotcolorchangemenu :: MascotColorChangeMenu_CursorTop ,
 }
 
 
@@ -130,10 +130,10 @@ impl MascotColorChangeMenu_CursorTop {
 #[cfg(feature = "app-mascotcolorchangemenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MascotColorChangeMenu_Label;
     pub use super::MascotColorChangeMenu;
     pub use super::IMascotColorChangeMenu;
     pub use super::IMascotColorChangeMenuMethods;
+    pub use super::MascotColorChangeMenu_Label;
     pub use super::MascotColorChangeMenu_CursorTop;
     pub use super::IMascotColorChangeMenu_CursorTop;
     pub use super::IMascotColorChangeMenu_CursorTopMethods;

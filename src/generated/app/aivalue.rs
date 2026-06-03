@@ -49,6 +49,12 @@ impl ::unity2::IlType for AIValue_UnionValue {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aivalue/AIValue.md"))] # [:: unity2 :: class (namespace = "App" , name = "AIValue")] # [parent (crate :: system :: object :: Object)] pub struct AIValue {
+# [static_field] # [rename (name = "Version")] pub version : i32 ,
+# [offset (16)] # [rename (name = "m_V")] pub m_v : crate :: app :: aivalue :: AIValue_UnionValue ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aivalue/AIValue_Order.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -158,12 +164,6 @@ impl  AIValue_Value  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aivalue/AIValue.md"))] # [:: unity2 :: class (namespace = "App" , name = "AIValue")] # [parent (crate :: system :: object :: Object)] pub struct AIValue {
-# [static_field] # [rename (name = "Version")] pub version : i32 ,
-# [offset (16)] # [rename (name = "m_V")] pub m_v : crate :: app :: aivalue :: AIValue_UnionValue ,
-}
-
 }
 
 #[cfg(feature = "app-aivalue-types")]
@@ -193,11 +193,11 @@ impl AIValue {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::AIValue_UnionValue;
-    pub use super::AIValue_Order;
-    pub use super::AIValue_Value;
     pub use super::AIValue;
     pub use super::IAIValue;
     pub use super::IAIValueMethods;
+    pub use super::AIValue_Order;
+    pub use super::AIValue_Value;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

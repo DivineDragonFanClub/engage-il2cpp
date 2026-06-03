@@ -13,6 +13,12 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versuscapture/VersusCapture.md"))] # [:: unity2 :: class (namespace = "App" , name = "VersusCapture")] # [parent (crate :: system :: object :: Object)] pub struct VersusCapture {
+# [static_field] # [rename (name = "OpponentPos")] pub opponent_pos : crate :: unity_engine :: vector3 :: Vector3 ,
+# [static_field] # [rename (name = "PlayerPos")] pub player_pos : crate :: unity_engine :: vector3 :: Vector3 ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versuscapture/VersusCapture_Preset.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -61,12 +67,6 @@ impl  VersusCapture_Preset  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versuscapture/VersusCapture.md"))] # [:: unity2 :: class (namespace = "App" , name = "VersusCapture")] # [parent (crate :: system :: object :: Object)] pub struct VersusCapture {
-# [static_field] # [rename (name = "OpponentPos")] pub opponent_pos : crate :: unity_engine :: vector3 :: Vector3 ,
-# [static_field] # [rename (name = "PlayerPos")] pub player_pos : crate :: unity_engine :: vector3 :: Vector3 ,
-}
-
 }
 
 #[cfg(feature = "app-versuscapture-types")]
@@ -95,10 +95,10 @@ impl VersusCapture {
 #[cfg(feature = "app-versuscapture")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::VersusCapture_Preset;
     pub use super::VersusCapture;
     pub use super::IVersusCapture;
     pub use super::IVersusCaptureMethods;
+    pub use super::VersusCapture_Preset;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

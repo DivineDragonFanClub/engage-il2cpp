@@ -15,61 +15,6 @@ mod __types {
  ;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameconfig/GameConfig_MinimapType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct GameConfig_MinimapType  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for GameConfig_MinimapType  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "GameConfig.MinimapType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for GameConfig_MinimapType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  GameConfig_MinimapType  {
-    pub fn large() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn small() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn off() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameconfig/GameConfig_AllInfoSwitch.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -119,18 +64,18 @@ impl  GameConfig_AllInfoSwitch  {
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameconfig/GameConfig_DragonRideOperationType.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameconfig/GameConfig_UnitInfoType.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct GameConfig_DragonRideOperationType  {
+pub struct GameConfig_UnitInfoType  {
     pub value: i32,
 }
 
 
-impl  ::unity2::ClassIdentity for GameConfig_DragonRideOperationType  {
+impl  ::unity2::ClassIdentity for GameConfig_UnitInfoType  {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "GameConfig.DragonRideOperationType";
+    const NAME: &'static str = "GameConfig.UnitInfoType";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> =
@@ -145,7 +90,7 @@ impl  ::unity2::ClassIdentity for GameConfig_DragonRideOperationType  {
 }
 
 
-impl  ::unity2::IlType for GameConfig_DragonRideOperationType  {
+impl  ::unity2::IlType for GameConfig_UnitInfoType  {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
@@ -153,15 +98,45 @@ impl  ::unity2::IlType for GameConfig_DragonRideOperationType  {
 }
 
 
-impl  GameConfig_DragonRideOperationType  {
-    pub fn stick() -> Self {
+impl  GameConfig_UnitInfoType  {
+    pub fn info0() -> Self {
         Self { value: 0 }
 
     }
 
 
-    pub fn gyro() -> Self {
+    pub fn info1() -> Self {
         Self { value: 1 }
+
+    }
+
+
+    pub fn info2() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn info3() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn info4() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn info5() -> Self {
+        Self { value: 5 }
+
+    }
+
+
+    pub fn info6() -> Self {
+        Self { value: 6 }
 
     }
 
@@ -217,18 +192,18 @@ impl  GameConfig_Toggle  {
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameconfig/GameConfig_InfoType.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameconfig/GameConfig_OperationType.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct GameConfig_InfoType  {
+pub struct GameConfig_OperationType  {
     pub value: i32,
 }
 
 
-impl  ::unity2::ClassIdentity for GameConfig_InfoType  {
+impl  ::unity2::ClassIdentity for GameConfig_OperationType  {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "GameConfig.InfoType";
+    const NAME: &'static str = "GameConfig.OperationType";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> =
@@ -243,7 +218,7 @@ impl  ::unity2::ClassIdentity for GameConfig_InfoType  {
 }
 
 
-impl  ::unity2::IlType for GameConfig_InfoType  {
+impl  ::unity2::IlType for GameConfig_OperationType  {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
@@ -251,27 +226,174 @@ impl  ::unity2::IlType for GameConfig_InfoType  {
 }
 
 
-impl  GameConfig_InfoType  {
+impl  GameConfig_OperationType  {
+    pub fn indirect() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn direct() -> Self {
+        Self { value: 1 }
+
+    }
+
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameconfig/GameConfig_EngageAnimeType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct GameConfig_EngageAnimeType  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for GameConfig_EngageAnimeType  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "GameConfig.EngageAnimeType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for GameConfig_EngageAnimeType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  GameConfig_EngageAnimeType  {
     pub fn off() -> Self {
         Self { value: 0 }
 
     }
 
 
-    pub fn split() -> Self {
+    pub fn once() -> Self {
         Self { value: 1 }
 
     }
 
 
-    pub fn connect() -> Self {
+    pub fn on() -> Self {
         Self { value: 2 }
 
     }
 
+}
 
-    pub fn unit() -> Self {
-        Self { value: 3 }
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameconfig/GameConfig_DragonRideOperationType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct GameConfig_DragonRideOperationType  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for GameConfig_DragonRideOperationType  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "GameConfig.DragonRideOperationType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for GameConfig_DragonRideOperationType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  GameConfig_DragonRideOperationType  {
+    pub fn stick() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn gyro() -> Self {
+        Self { value: 1 }
+
+    }
+
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameconfig/GameConfig_StickTriggerMarginType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct GameConfig_StickTriggerMarginType  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for GameConfig_StickTriggerMarginType  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "GameConfig.StickTriggerMarginType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for GameConfig_StickTriggerMarginType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  GameConfig_StickTriggerMarginType  {
+    pub fn small() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn medium() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn large() -> Self {
+        Self { value: 2 }
 
     }
 
@@ -388,107 +510,9 @@ impl  GameConfig_AnimeType  {
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameconfig/GameConfig_OperationType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct GameConfig_OperationType  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for GameConfig_OperationType  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "GameConfig.OperationType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for GameConfig_OperationType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  GameConfig_OperationType  {
-    pub fn indirect() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn direct() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameconfig/GameConfig_AllInfo.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct GameConfig_AllInfo  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for GameConfig_AllInfo  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "GameConfig.AllInfo";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for GameConfig_AllInfo  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  GameConfig_AllInfo  {
-    pub fn off() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn on() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 2 }
-
-    }
-
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameconfig/GameConfig.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameConfig")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: gameconfig :: GameConfig >)] pub struct GameConfig {
+# [static_field] # [rename (name = "ValumeMax")] pub valume_max : f32 ,
+# [static_field] # [rename (name = "ValumeMin")] pub valume_min : f32 ,
 }
 
 
@@ -584,6 +608,61 @@ impl  GameConfig_CameraRotationType  {
 
     pub fn reverse() -> Self {
         Self { value: 1 }
+
+    }
+
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameconfig/GameConfig_AllInfo.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct GameConfig_AllInfo  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for GameConfig_AllInfo  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "GameConfig.AllInfo";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for GameConfig_AllInfo  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  GameConfig_AllInfo  {
+    pub fn off() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn on() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn num() -> Self {
+        Self { value: 2 }
 
     }
 
@@ -694,18 +773,18 @@ impl  GameConfig_SpeedType  {
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameconfig/GameConfig_EngageAnimeType.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameconfig/GameConfig_InfoType.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct GameConfig_EngageAnimeType  {
+pub struct GameConfig_InfoType  {
     pub value: i32,
 }
 
 
-impl  ::unity2::ClassIdentity for GameConfig_EngageAnimeType  {
+impl  ::unity2::ClassIdentity for GameConfig_InfoType  {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "GameConfig.EngageAnimeType";
+    const NAME: &'static str = "GameConfig.InfoType";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> =
@@ -720,7 +799,7 @@ impl  ::unity2::ClassIdentity for GameConfig_EngageAnimeType  {
 }
 
 
-impl  ::unity2::IlType for GameConfig_EngageAnimeType  {
+impl  ::unity2::IlType for GameConfig_InfoType  {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
@@ -728,124 +807,45 @@ impl  ::unity2::IlType for GameConfig_EngageAnimeType  {
 }
 
 
-impl  GameConfig_EngageAnimeType  {
+impl  GameConfig_InfoType  {
     pub fn off() -> Self {
         Self { value: 0 }
 
     }
 
 
-    pub fn once() -> Self {
+    pub fn split() -> Self {
         Self { value: 1 }
 
     }
 
 
-    pub fn on() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameconfig/GameConfig.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameConfig")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: gameconfig :: GameConfig >)] pub struct GameConfig {
-# [static_field] # [rename (name = "ValumeMax")] pub valume_max : f32 ,
-# [static_field] # [rename (name = "ValumeMin")] pub valume_min : f32 ,
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameconfig/GameConfig_UnitInfoType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct GameConfig_UnitInfoType  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for GameConfig_UnitInfoType  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "GameConfig.UnitInfoType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for GameConfig_UnitInfoType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  GameConfig_UnitInfoType  {
-    pub fn info0() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn info1() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn info2() -> Self {
+    pub fn connect() -> Self {
         Self { value: 2 }
 
     }
 
 
-    pub fn info3() -> Self {
+    pub fn unit() -> Self {
         Self { value: 3 }
 
     }
 
-
-    pub fn info4() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn info5() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn info6() -> Self {
-        Self { value: 6 }
-
-    }
-
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameconfig/GameConfig_StickTriggerMarginType.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameconfig/GameConfig_MinimapType.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct GameConfig_StickTriggerMarginType  {
+pub struct GameConfig_MinimapType  {
     pub value: i32,
 }
 
 
-impl  ::unity2::ClassIdentity for GameConfig_StickTriggerMarginType  {
+impl  ::unity2::ClassIdentity for GameConfig_MinimapType  {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "GameConfig.StickTriggerMarginType";
+    const NAME: &'static str = "GameConfig.MinimapType";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> =
@@ -860,7 +860,7 @@ impl  ::unity2::ClassIdentity for GameConfig_StickTriggerMarginType  {
 }
 
 
-impl  ::unity2::IlType for GameConfig_StickTriggerMarginType  {
+impl  ::unity2::IlType for GameConfig_MinimapType  {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
@@ -868,20 +868,20 @@ impl  ::unity2::IlType for GameConfig_StickTriggerMarginType  {
 }
 
 
-impl  GameConfig_StickTriggerMarginType  {
-    pub fn small() -> Self {
+impl  GameConfig_MinimapType  {
+    pub fn large() -> Self {
         Self { value: 0 }
 
     }
 
 
-    pub fn medium() -> Self {
+    pub fn small() -> Self {
         Self { value: 1 }
 
     }
 
 
-    pub fn large() -> Self {
+    pub fn off() -> Self {
         Self { value: 2 }
 
     }
@@ -916,25 +916,25 @@ impl GameConfig {
 #[cfg(feature = "app-gameconfig")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GameConfig_MinimapType;
     pub use super::GameConfig_AllInfoSwitch;
-    pub use super::GameConfig_DragonRideOperationType;
+    pub use super::GameConfig_UnitInfoType;
     pub use super::GameConfig_Toggle;
-    pub use super::GameConfig_InfoType;
+    pub use super::GameConfig_OperationType;
+    pub use super::GameConfig_EngageAnimeType;
+    pub use super::GameConfig_DragonRideOperationType;
+    pub use super::GameConfig_StickTriggerMarginType;
     pub use super::GameConfig_Modes;
     pub use super::GameConfig_AnimeType;
-    pub use super::GameConfig_OperationType;
-    pub use super::GameConfig_AllInfo;
-    pub use super::GameConfig_MapCursorMoveTyep;
-    pub use super::GameConfig_CameraRotationType;
-    pub use super::GameConfig_InfoLocation;
-    pub use super::GameConfig_SpeedType;
-    pub use super::GameConfig_EngageAnimeType;
     pub use super::GameConfig;
     pub use super::IGameConfig;
     pub use super::IGameConfigMethods;
-    pub use super::GameConfig_UnitInfoType;
-    pub use super::GameConfig_StickTriggerMarginType;
+    pub use super::GameConfig_MapCursorMoveTyep;
+    pub use super::GameConfig_CameraRotationType;
+    pub use super::GameConfig_AllInfo;
+    pub use super::GameConfig_InfoLocation;
+    pub use super::GameConfig_SpeedType;
+    pub use super::GameConfig_InfoType;
+    pub use super::GameConfig_MinimapType;
     pub use crate::app::singletonclass_1::ISingletonClass_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

@@ -31,7 +31,7 @@ pub use __types::*;
 
 #[cfg(feature = "unity_engine-resource_management-async_operations-asyncoperationbase_1")]
 # [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > AsyncOperationBase_1 < T0 > {
-# [doc = "`Execute()` overload"] # [method (name = "Execute" , args = 0)] pub fn execute (self ,) -> () ;
+# [doc = "`Execute()` overload"] # [method (name = "Execute" , args = 0 , abstract_dispatch)] pub fn execute (self ,) -> () ;
 
 # [doc = "`Destroy()` overload"] # [method (name = "Destroy" , args = 0)] pub fn destroy (self ,) -> () ;
 

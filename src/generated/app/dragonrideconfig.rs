@@ -17,17 +17,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideconfig/DragonRideConfig_ShotConfig.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRideConfig.ShotConfig")] # [parent (crate :: system :: object :: Object)] pub struct DragonRideConfig_ShotConfig {
-# [offset (16)] # [rename (name = "ShotRepeatIntervalSec")] pub shot_repeat_interval_sec : f32 ,
-# [offset (20)] # [rename (name = "ShotTriggerIntervalSec")] pub shot_trigger_interval_sec : f32 ,
-# [offset (24)] # [rename (name = "SpecialTimeSec")] pub special_time_sec : f32 ,
-# [offset (28)] # [rename (name = "SpecialIntervalSec")] pub special_interval_sec : f32 ,
-# [offset (32)] # [rename (name = "IsShotPenetrate")] pub is_shot_penetrate : bool ,
-# [offset (33)] # [rename (name = "IsShowRaySquare")] pub is_show_ray_square : bool ,
-# [offset (34)] # [rename (name = "IsNeedRouletteStop")] pub is_need_roulette_stop : bool ,
-}
-
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideconfig/DragonRideConfig.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRideConfig")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct DragonRideConfig {
 # [offset (24)] # [rename (name = "TargetChainIntervalSecond")] pub target_chain_interval_second : f32 ,
 # [offset (28)] # [rename (name = "TargetAppearSecond")] pub target_appear_second : f32 ,
@@ -63,27 +52,21 @@ mod __types {
 # [offset (72)] # [rename (name = "CloseAnimeWaitSec")] pub close_anime_wait_sec : f32 ,
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideconfig/DragonRideConfig_ShotConfig.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRideConfig.ShotConfig")] # [parent (crate :: system :: object :: Object)] pub struct DragonRideConfig_ShotConfig {
+# [offset (16)] # [rename (name = "ShotRepeatIntervalSec")] pub shot_repeat_interval_sec : f32 ,
+# [offset (20)] # [rename (name = "ShotTriggerIntervalSec")] pub shot_trigger_interval_sec : f32 ,
+# [offset (24)] # [rename (name = "SpecialTimeSec")] pub special_time_sec : f32 ,
+# [offset (28)] # [rename (name = "SpecialIntervalSec")] pub special_interval_sec : f32 ,
+# [offset (32)] # [rename (name = "IsShotPenetrate")] pub is_shot_penetrate : bool ,
+# [offset (33)] # [rename (name = "IsShowRaySquare")] pub is_show_ray_square : bool ,
+# [offset (34)] # [rename (name = "IsNeedRouletteStop")] pub is_need_roulette_stop : bool ,
+}
+
 }
 
 #[cfg(feature = "app-dragonrideconfig-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-dragonrideconfig")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DragonRideConfig_ShotConfig_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideConfig_ShotConfig as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideConfig_ShotConfig as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DragonRideConfig_ShotConfig , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideConfig_ShotConfig , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "app-dragonrideconfig")]
-pub trait IDragonRideConfig_ShotConfigMethods : IDragonRideConfig_ShotConfig { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DragonRideConfig_ShotConfig as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideConfig_ShotConfig_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-dragonrideconfig")]
-impl < __T : IDragonRideConfig_ShotConfig > IDragonRideConfig_ShotConfigMethods for __T { }
-
-#[cfg(feature = "app-dragonrideconfig")]
-impl DragonRideConfig_ShotConfig { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideConfig_ShotConfig_unity2_raw :: __lookup_ctor :: get_method_info () } }
-
-#[cfg(feature = "app-dragonrideconfig")]
-impl DragonRideConfig_ShotConfig {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DragonRideConfig_ShotConfig) , :: core :: stringify ! (new) ,)) ; < Self as IDragonRideConfig_ShotConfigMethods > :: ctor (this ,) ; this }
-}
 
 #[cfg(feature = "app-dragonrideconfig")]
 # [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DragonRideConfig_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideConfig as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideConfig as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DragonRideConfig , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideConfig , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
@@ -120,17 +103,34 @@ impl DragonRideConfig_ResultConfig {
 }
 
 #[cfg(feature = "app-dragonrideconfig")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DragonRideConfig_ShotConfig_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DragonRideConfig_ShotConfig as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DragonRideConfig_ShotConfig as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DragonRideConfig_ShotConfig , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DragonRideConfig_ShotConfig , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-dragonrideconfig")]
+pub trait IDragonRideConfig_ShotConfigMethods : IDragonRideConfig_ShotConfig { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DragonRideConfig_ShotConfig as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DragonRideConfig_ShotConfig_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-dragonrideconfig")]
+impl < __T : IDragonRideConfig_ShotConfig > IDragonRideConfig_ShotConfigMethods for __T { }
+
+#[cfg(feature = "app-dragonrideconfig")]
+impl DragonRideConfig_ShotConfig { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DragonRideConfig_ShotConfig_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-dragonrideconfig")]
+impl DragonRideConfig_ShotConfig {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DragonRideConfig_ShotConfig) , :: core :: stringify ! (new) ,)) ; < Self as IDragonRideConfig_ShotConfigMethods > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "app-dragonrideconfig")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DragonRideConfig_ShotConfig;
-    pub use super::IDragonRideConfig_ShotConfig;
-    pub use super::IDragonRideConfig_ShotConfigMethods;
     pub use super::DragonRideConfig;
     pub use super::IDragonRideConfig;
     pub use super::IDragonRideConfigMethods;
     pub use super::DragonRideConfig_ResultConfig;
     pub use super::IDragonRideConfig_ResultConfig;
     pub use super::IDragonRideConfig_ResultConfigMethods;
+    pub use super::DragonRideConfig_ShotConfig;
+    pub use super::IDragonRideConfig_ShotConfig;
+    pub use super::IDragonRideConfig_ShotConfigMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;
     pub use crate::unity_engine::component::IComponent;

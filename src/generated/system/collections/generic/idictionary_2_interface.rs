@@ -16,11 +16,11 @@ pub use __types::*;
 
 #[cfg(feature = "system-collections-generic-idictionary_2_interface")]
 # [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity > IDictionary_2_Interface < T0 , T1 > {
-# [doc = "`get_Keys()` overload"] # [method (name = "get_Keys" , args = 0)] pub fn get_keys (self ,) -> crate :: system :: collections :: generic :: icollection_1 :: ICollection_1 < T0 > ;
+# [doc = "`get_Keys()` overload"] # [method (name = "get_Keys" , args = 0 , abstract_dispatch)] pub fn get_keys (self ,) -> crate :: system :: collections :: generic :: icollection_1 :: ICollection_1 < T0 > ;
 
-# [doc = "`get_Values()` overload"] # [method (name = "get_Values" , args = 0)] pub fn get_values (self ,) -> crate :: system :: collections :: generic :: icollection_1 :: ICollection_1 < T1 > ;
+# [doc = "`get_Values()` overload"] # [method (name = "get_Values" , args = 0 , abstract_dispatch)] pub fn get_values (self ,) -> crate :: system :: collections :: generic :: icollection_1 :: ICollection_1 < T1 > ;
 
-# [doc = "`Add(T0, T1)` overload"] # [method (name = "Add" , args = 2)] pub fn add (self , key : T0 , value : T1) -> () ;
+# [doc = "`Add(T0, T1)` overload"] # [method (name = "Add" , args = 2 , abstract_dispatch)] pub fn add (self , key : T0 , value : T1) -> () ;
 }
 
 #[cfg(feature = "system-collections-generic-idictionary_2_interface")]

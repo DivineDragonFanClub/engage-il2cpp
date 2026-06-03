@@ -13,6 +13,14 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/filecommon/FileCommon.md"))] # [:: unity2 :: class (namespace = "App" , name = "FileCommon")] # [parent (crate :: system :: object :: Object)] pub struct FileCommon {
+# [static_field] # [rename (name = "s_LockObject")] pub s_lock_object : :: unity2 :: IlInstance ,
+# [static_field] # [rename (name = "s_Dictionary")] pub s_dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: filedata :: FileData > ,
+# [static_field] # [rename (name = "s_PreAsyncList")] pub s_pre_async_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: filedata :: FileData > ,
+# [static_field] # [rename (name = "s_PostAsyncList")] pub s_post_async_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: filedata :: FileData > ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/filecommon/FileCommon_State.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -67,14 +75,6 @@ impl  FileCommon_State  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/filecommon/FileCommon.md"))] # [:: unity2 :: class (namespace = "App" , name = "FileCommon")] # [parent (crate :: system :: object :: Object)] pub struct FileCommon {
-# [static_field] # [rename (name = "s_LockObject")] pub s_lock_object : :: unity2 :: IlInstance ,
-# [static_field] # [rename (name = "s_Dictionary")] pub s_dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: filedata :: FileData > ,
-# [static_field] # [rename (name = "s_PreAsyncList")] pub s_pre_async_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: filedata :: FileData > ,
-# [static_field] # [rename (name = "s_PostAsyncList")] pub s_post_async_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: filedata :: FileData > ,
-}
-
 }
 
 #[cfg(feature = "app-filecommon-types")]
@@ -103,10 +103,10 @@ impl FileCommon {
 #[cfg(feature = "app-filecommon")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::FileCommon_State;
     pub use super::FileCommon;
     pub use super::IFileCommon;
     pub use super::IFileCommonMethods;
+    pub use super::FileCommon_State;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

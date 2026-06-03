@@ -38,7 +38,7 @@ pub use __types::*;
 
 # [doc = "`Dump()` overload"] # [method (name = "Dump" , args = 0)] pub fn dump () -> () ;
 
-# [doc = "`GetKey()` overload"] # [method (name = "GetKey" , args = 0)] pub fn get_key (self ,) -> :: unity2 :: Il2CppString ;
+# [doc = "`GetKey()` overload"] # [method (name = "GetKey" , args = 0 , abstract_dispatch)] pub fn get_key (self ,) -> :: unity2 :: Il2CppString ;
 
 # [doc = "`OnBuild()` overload"] # [method (name = "OnBuild" , args = 0)] pub fn on_build (self ,) -> () ;
 

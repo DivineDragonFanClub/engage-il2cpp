@@ -23,6 +23,16 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplayplayername/RelayReplayPlayerName.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayReplayPlayerName")] # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: relayreplayplayername :: RelayReplayPlayerName >)] pub struct RelayReplayPlayerName {
+# [offset (32)] # [rename (name = "m_Text")] pub m_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
+# [offset (40)] # [rename (name = "m_CanvasManager")] pub m_canvas_manager : crate :: app :: canvasmanager :: CanvasManager ,
+# [offset (48)] # [rename (name = "m_Animator")] pub m_animator : crate :: unity_engine :: animator :: Animator ,
+# [offset (56)] # [rename (name = "m_Seq")] pub m_seq : crate :: app :: relayreplayplayername :: RelayReplayPlayerName_Seq ,
+# [offset (60)] # [rename (name = "m_IsReqClose")] pub m_is_req_close : bool ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayreplayplayername/RelayReplayPlayerName_Seq.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -83,16 +93,6 @@ impl  RelayReplayPlayerName_Seq  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplayplayername/RelayReplayPlayerName.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayReplayPlayerName")] # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: relayreplayplayername :: RelayReplayPlayerName >)] pub struct RelayReplayPlayerName {
-# [offset (32)] # [rename (name = "m_Text")] pub m_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (40)] # [rename (name = "m_CanvasManager")] pub m_canvas_manager : crate :: app :: canvasmanager :: CanvasManager ,
-# [offset (48)] # [rename (name = "m_Animator")] pub m_animator : crate :: unity_engine :: animator :: Animator ,
-# [offset (56)] # [rename (name = "m_Seq")] pub m_seq : crate :: app :: relayreplayplayername :: RelayReplayPlayerName_Seq ,
-# [offset (60)] # [rename (name = "m_IsReqClose")] pub m_is_req_close : bool ,
-}
-
 }
 
 #[cfg(feature = "app-relayreplayplayername-types")]
@@ -121,10 +121,10 @@ impl RelayReplayPlayerName {
 #[cfg(feature = "app-relayreplayplayername")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RelayReplayPlayerName_Seq;
     pub use super::RelayReplayPlayerName;
     pub use super::IRelayReplayPlayerName;
     pub use super::IRelayReplayPlayerNameMethods;
+    pub use super::RelayReplayPlayerName_Seq;
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

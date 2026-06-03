@@ -16,15 +16,15 @@ pub use __types::*;
 
 #[cfg(feature = "system-collections-generic-ilist_1_interface")]
 # [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > IList_1_Interface < T0 > {
-# [doc = "`get_Item(i32)` overload"] # [method (name = "get_Item" , args = 1)] pub fn get_item (self , index : i32) -> T0 ;
+# [doc = "`get_Item(i32)` overload"] # [method (name = "get_Item" , args = 1 , abstract_dispatch)] pub fn get_item (self , index : i32) -> T0 ;
 
-# [doc = "`set_Item(i32, T0)` overload"] # [method (name = "set_Item" , args = 2)] pub fn set_item (self , index : i32 , value : T0) -> () ;
+# [doc = "`set_Item(i32, T0)` overload"] # [method (name = "set_Item" , args = 2 , abstract_dispatch)] pub fn set_item (self , index : i32 , value : T0) -> () ;
 
-# [doc = "`IndexOf(T0)` overload"] # [method (name = "IndexOf" , args = 1)] pub fn index_of (self , item : T0) -> i32 ;
+# [doc = "`IndexOf(T0)` overload"] # [method (name = "IndexOf" , args = 1 , abstract_dispatch)] pub fn index_of (self , item : T0) -> i32 ;
 
-# [doc = "`Insert(i32, T0)` overload"] # [method (name = "Insert" , args = 2)] pub fn insert (self , index : i32 , item : T0) -> () ;
+# [doc = "`Insert(i32, T0)` overload"] # [method (name = "Insert" , args = 2 , abstract_dispatch)] pub fn insert (self , index : i32 , item : T0) -> () ;
 
-# [doc = "`RemoveAt(i32)` overload"] # [method (name = "RemoveAt" , args = 1)] pub fn remove_at (self , index : i32) -> () ;
+# [doc = "`RemoveAt(i32)` overload"] # [method (name = "RemoveAt" , args = 1 , abstract_dispatch)] pub fn remove_at (self , index : i32) -> () ;
 }
 
 #[cfg(feature = "system-collections-generic-ilist_1_interface")]

@@ -17,13 +17,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortiesequenceskilledit/SortieSequenceSkillEdit.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortieSequenceSkillEdit")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: sortiesequenceskilledit :: SortieSequenceSkillEdit >)] pub struct SortieSequenceSkillEdit {
-# [static_field] # [rename (name = "ResNameC")] pub res_name_c : :: unity2 :: Il2CppString ,
-# [offset (120)] # [rename (name = "m_Window")] pub m_window : crate :: app :: skilleditroot :: SkillEditRoot ,
-# [offset (128)] # [rename (name = "m_BackInheriteCallback")] pub m_back_inherite_callback : crate :: system :: action :: Action ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortiesequenceskilledit/SortieSequenceSkillEdit_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -84,6 +77,13 @@ impl  SortieSequenceSkillEdit_Label  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortiesequenceskilledit/SortieSequenceSkillEdit.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortieSequenceSkillEdit")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: sortiesequenceskilledit :: SortieSequenceSkillEdit >)] pub struct SortieSequenceSkillEdit {
+# [static_field] # [rename (name = "ResNameC")] pub res_name_c : :: unity2 :: Il2CppString ,
+# [offset (120)] # [rename (name = "m_Window")] pub m_window : crate :: app :: skilleditroot :: SkillEditRoot ,
+# [offset (128)] # [rename (name = "m_BackInheriteCallback")] pub m_back_inherite_callback : crate :: system :: action :: Action ,
+}
+
 }
 
 #[cfg(feature = "app-sortiesequenceskilledit-types")]
@@ -112,10 +112,10 @@ impl SortieSequenceSkillEdit {
 #[cfg(feature = "app-sortiesequenceskilledit")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::SortieSequenceSkillEdit_Label;
     pub use super::SortieSequenceSkillEdit;
     pub use super::ISortieSequenceSkillEdit;
     pub use super::ISortieSequenceSkillEditMethods;
-    pub use super::SortieSequenceSkillEdit_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

@@ -17,6 +17,14 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/waypointsync/WaypointSync.md"))] # [:: unity2 :: class (namespace = "App" , name = "WaypointSync")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct WaypointSync {
+# [offset (24)] # [rename (name = "m_TargetAsset")] pub m_target_asset : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (32)] # [rename (name = "_pastTargetAsset")] pub past_target_asset : crate :: unity_engine :: gameobject :: GameObject ,
+# [static_field] # [rename (name = "waitTime")] pub wait_time : f64 ,
+# [offset (40)] # [rename (name = "m_relatives")] pub m_relatives : :: unity2 :: Array < crate :: app :: waypointsync :: WaypointSync_Relative > ,
+}
+
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/waypointsync/WaypointSync_Relative.md"))] # [:: unity2 :: class (namespace = "App" , name = "WaypointSync.Relative")] # [parent (crate :: system :: object :: Object)] pub struct WaypointSync_Relative {
 # [offset (16)] # [rename (name = "m_targetID")] pub m_target_id : i32 ,
 # [offset (20)] # [rename (name = "m_recieverID")] pub m_reciever_id : i32 ,
@@ -29,35 +37,10 @@ mod __types {
 # [offset (64)] # [rename (name = "_targetPos")] pub target_pos : crate :: unity_engine :: vector3 :: Vector3 ,
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/waypointsync/WaypointSync.md"))] # [:: unity2 :: class (namespace = "App" , name = "WaypointSync")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct WaypointSync {
-# [offset (24)] # [rename (name = "m_TargetAsset")] pub m_target_asset : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (32)] # [rename (name = "_pastTargetAsset")] pub past_target_asset : crate :: unity_engine :: gameobject :: GameObject ,
-# [static_field] # [rename (name = "waitTime")] pub wait_time : f64 ,
-# [offset (40)] # [rename (name = "m_relatives")] pub m_relatives : :: unity2 :: Array < crate :: app :: waypointsync :: WaypointSync_Relative > ,
-}
-
 }
 
 #[cfg(feature = "app-waypointsync-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-waypointsync")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __WaypointSync_Relative_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WaypointSync_Relative as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WaypointSync_Relative as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : WaypointSync_Relative , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WaypointSync_Relative , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "app-waypointsync")]
-pub trait IWaypointSync_RelativeMethods : IWaypointSync_Relative { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < WaypointSync_Relative as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WaypointSync_Relative_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-waypointsync")]
-impl < __T : IWaypointSync_Relative > IWaypointSync_RelativeMethods for __T { }
-
-#[cfg(feature = "app-waypointsync")]
-impl WaypointSync_Relative { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WaypointSync_Relative_unity2_raw :: __lookup_ctor :: get_method_info () } }
-
-#[cfg(feature = "app-waypointsync")]
-impl WaypointSync_Relative {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WaypointSync_Relative) , :: core :: stringify ! (new) ,)) ; < Self as IWaypointSync_RelativeMethods > :: ctor (this ,) ; this }
-}
 
 #[cfg(feature = "app-waypointsync")]
 # [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __WaypointSync_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_init { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WaypointSync as :: unity2 :: ClassIdentity > :: class () , "Init" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WaypointSync as :: unity2 :: ClassIdentity > :: NAME , "Init" , e) , } } } pub unsafe fn init (this : WaypointSync , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WaypointSync , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_init :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_enable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WaypointSync as :: unity2 :: ClassIdentity > :: class () , "OnEnable" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WaypointSync as :: unity2 :: ClassIdentity > :: NAME , "OnEnable" , e) , } } } pub unsafe fn on_enable (this : WaypointSync , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WaypointSync , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_enable :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_validate { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WaypointSync as :: unity2 :: ClassIdentity > :: class () , "OnValidate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WaypointSync as :: unity2 :: ClassIdentity > :: NAME , "OnValidate" , e) , } } } pub unsafe fn on_validate (this : WaypointSync , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WaypointSync , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_validate :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WaypointSync as :: unity2 :: ClassIdentity > :: class () , "Update" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WaypointSync as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , } } } pub unsafe fn update (this : WaypointSync , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WaypointSync , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_destroy { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WaypointSync as :: unity2 :: ClassIdentity > :: class () , "OnDestroy" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WaypointSync as :: unity2 :: ClassIdentity > :: NAME , "OnDestroy" , e) , } } } pub unsafe fn on_destroy (this : WaypointSync , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WaypointSync , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_destroy :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WaypointSync as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WaypointSync as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : WaypointSync , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WaypointSync , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WaypointSync as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WaypointSync as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
@@ -80,14 +63,31 @@ impl WaypointSync {
 }
 
 #[cfg(feature = "app-waypointsync")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __WaypointSync_Relative_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WaypointSync_Relative as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WaypointSync_Relative as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : WaypointSync_Relative , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WaypointSync_Relative , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-waypointsync")]
+pub trait IWaypointSync_RelativeMethods : IWaypointSync_Relative { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < WaypointSync_Relative as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WaypointSync_Relative_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-waypointsync")]
+impl < __T : IWaypointSync_Relative > IWaypointSync_RelativeMethods for __T { }
+
+#[cfg(feature = "app-waypointsync")]
+impl WaypointSync_Relative { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WaypointSync_Relative_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-waypointsync")]
+impl WaypointSync_Relative {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WaypointSync_Relative) , :: core :: stringify ! (new) ,)) ; < Self as IWaypointSync_RelativeMethods > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "app-waypointsync")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::WaypointSync_Relative;
-    pub use super::IWaypointSync_Relative;
-    pub use super::IWaypointSync_RelativeMethods;
     pub use super::WaypointSync;
     pub use super::IWaypointSync;
     pub use super::IWaypointSyncMethods;
+    pub use super::WaypointSync_Relative;
+    pub use super::IWaypointSync_Relative;
+    pub use super::IWaypointSync_RelativeMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;
     pub use crate::unity_engine::component::IComponent;

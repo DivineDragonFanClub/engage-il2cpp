@@ -108,6 +108,12 @@ impl  SaveDataMenuSequence_Label  {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenusequence/SaveDataMenuSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "SaveDataMenuSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: savedatamenusequence :: SaveDataMenuSequence >)] pub struct SaveDataMenuSequence {
+# [offset (116)] # [rename (name = "m_Mode")] pub m_mode : crate :: app :: savedatamenusequence :: SaveDataMenuSequence_Mode ,
+# [offset (120)] # [rename (name = "m_saveDataHeaderReader")] pub m_save_data_header_reader : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/savedatamenusequence/SaveDataMenuSequence_Mode.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -192,12 +198,6 @@ impl  SaveDataMenuSequence_Mode  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenusequence/SaveDataMenuSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "SaveDataMenuSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: savedatamenusequence :: SaveDataMenuSequence >)] pub struct SaveDataMenuSequence {
-# [offset (116)] # [rename (name = "m_Mode")] pub m_mode : crate :: app :: savedatamenusequence :: SaveDataMenuSequence_Mode ,
-# [offset (120)] # [rename (name = "m_saveDataHeaderReader")] pub m_save_data_header_reader : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader ,
-}
-
 }
 
 #[cfg(feature = "app-savedatamenusequence-types")]
@@ -227,10 +227,10 @@ impl SaveDataMenuSequence {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::SaveDataMenuSequence_Label;
-    pub use super::SaveDataMenuSequence_Mode;
     pub use super::SaveDataMenuSequence;
     pub use super::ISaveDataMenuSequence;
     pub use super::ISaveDataMenuSequenceMethods;
+    pub use super::SaveDataMenuSequence_Mode;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

@@ -131,67 +131,6 @@ impl  UnitInfoParamSetter_GodBuffType  {
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoparamsetter/UnitInfoParamSetter_HPStockType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct UnitInfoParamSetter_HPStockType  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for UnitInfoParamSetter_HPStockType  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "UnitInfoParamSetter.HPStockType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for UnitInfoParamSetter_HPStockType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  UnitInfoParamSetter_HPStockType  {
-    pub fn normal() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn rampage() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn player() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn count() -> Self {
-        Self { value: 3 }
-
-    }
-
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoparamsetter/UnitInfoParamSetter_ForceType.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -343,6 +282,67 @@ impl  UnitInfoParamSetter_WdwType  {
 
 }
 
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoparamsetter/UnitInfoParamSetter_HPStockType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct UnitInfoParamSetter_HPStockType  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for UnitInfoParamSetter_HPStockType  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "UnitInfoParamSetter.HPStockType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for UnitInfoParamSetter_HPStockType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  UnitInfoParamSetter_HPStockType  {
+    pub fn normal() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn rampage() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn player() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn count() -> Self {
+        Self { value: 3 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "app-unitinfoparamsetter-types")]
@@ -375,9 +375,9 @@ pub mod prelude {
     pub use super::IUnitInfoParamSetter;
     pub use super::IUnitInfoParamSetterMethods;
     pub use super::UnitInfoParamSetter_GodBuffType;
-    pub use super::UnitInfoParamSetter_HPStockType;
     pub use super::UnitInfoParamSetter_ForceType;
     pub use super::UnitInfoParamSetter_WdwType;
+    pub use super::UnitInfoParamSetter_HPStockType;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

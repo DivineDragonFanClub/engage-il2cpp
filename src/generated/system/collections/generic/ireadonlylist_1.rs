@@ -16,7 +16,7 @@ pub use __types::*;
 
 #[cfg(feature = "system-collections-generic-ireadonlylist_1")]
 # [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > IReadOnlyList_1 < T0 > {
-# [doc = "`get_Item(i32)` overload"] # [method (name = "get_Item" , args = 1)] pub fn get_item (self , index : i32) -> T0 ;
+# [doc = "`get_Item(i32)` overload"] # [method (name = "get_Item" , args = 1 , abstract_dispatch)] pub fn get_item (self , index : i32) -> T0 ;
 }
 
 #[cfg(feature = "system-collections-generic-ireadonlylist_1")]

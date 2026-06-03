@@ -16,7 +16,7 @@ pub use __types::*;
 
 #[cfg(feature = "system-collections-generic-icomparer_1_interface")]
 # [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > IComparer_1_Interface < T0 > {
-# [doc = "`Compare(T0, T0)` overload"] # [method (name = "Compare" , args = 2)] pub fn compare (self , x : T0 , y : T0) -> i32 ;
+# [doc = "`Compare(T0, T0)` overload"] # [method (name = "Compare" , args = 2 , abstract_dispatch)] pub fn compare (self , x : T0 , y : T0) -> i32 ;
 }
 
 #[cfg(feature = "system-collections-generic-icomparer_1_interface")]

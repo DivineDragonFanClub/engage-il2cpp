@@ -13,24 +13,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procinst/ProcInst.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProcInst")] # [parent (crate :: system :: object :: Object)] pub struct ProcInst {
-# [offset (16)] # [rename (name = "m_Descs")] pub m_descs : :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > ,
-# [offset (24)] # [rename (name = "m_DescIndex")] pub m_desc_index : i32 ,
-# [offset (32)] # [rename (name = "m_Name")] pub m_name : :: unity2 :: Il2CppString ,
-# [offset (40)] # [rename (name = "m_HashCode")] pub m_hash_code : i32 ,
-# [offset (48)] # [rename (name = "m_Super")] pub m_super : crate :: app :: procinst :: ProcInst ,
-# [offset (56)] # [rename (name = "m_Child")] pub m_child : crate :: app :: procinst :: ProcInst ,
-# [offset (64)] # [rename (name = "m_Prev")] pub m_prev : crate :: app :: procinst :: ProcInst ,
-# [offset (72)] # [rename (name = "m_Next")] pub m_next : crate :: app :: procinst :: ProcInst ,
-# [offset (80)] # [rename (name = "m_Persistent")] pub m_persistent : crate :: app :: procvoidmethod :: ProcVoidMethod ,
-# [offset (88)] # [rename (name = "m_State")] pub m_state : crate :: app :: procinst :: ProcInst_State ,
-# [offset (92)] # [rename (name = "m_Suspend")] pub m_suspend : i32 ,
-# [offset (96)] # [rename (name = "m_WaitTime")] pub m_wait_time : f32 ,
-# [offset (100)] # [rename (name = "m_TickTime")] pub m_tick_time : f32 ,
-# [offset (104)] # [rename (name = "m_Stack")] pub m_stack : crate :: app :: rawvaluestack :: RawValueStack ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/procinst/ProcInst_State.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -97,6 +79,24 @@ impl  ProcInst_State  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procinst/ProcInst.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProcInst")] # [parent (crate :: system :: object :: Object)] pub struct ProcInst {
+# [offset (16)] # [rename (name = "m_Descs")] pub m_descs : :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > ,
+# [offset (24)] # [rename (name = "m_DescIndex")] pub m_desc_index : i32 ,
+# [offset (32)] # [rename (name = "m_Name")] pub m_name : :: unity2 :: Il2CppString ,
+# [offset (40)] # [rename (name = "m_HashCode")] pub m_hash_code : i32 ,
+# [offset (48)] # [rename (name = "m_Super")] pub m_super : crate :: app :: procinst :: ProcInst ,
+# [offset (56)] # [rename (name = "m_Child")] pub m_child : crate :: app :: procinst :: ProcInst ,
+# [offset (64)] # [rename (name = "m_Prev")] pub m_prev : crate :: app :: procinst :: ProcInst ,
+# [offset (72)] # [rename (name = "m_Next")] pub m_next : crate :: app :: procinst :: ProcInst ,
+# [offset (80)] # [rename (name = "m_Persistent")] pub m_persistent : crate :: app :: procvoidmethod :: ProcVoidMethod ,
+# [offset (88)] # [rename (name = "m_State")] pub m_state : crate :: app :: procinst :: ProcInst_State ,
+# [offset (92)] # [rename (name = "m_Suspend")] pub m_suspend : i32 ,
+# [offset (96)] # [rename (name = "m_WaitTime")] pub m_wait_time : f32 ,
+# [offset (100)] # [rename (name = "m_TickTime")] pub m_tick_time : f32 ,
+# [offset (104)] # [rename (name = "m_Stack")] pub m_stack : crate :: app :: rawvaluestack :: RawValueStack ,
+}
+
 }
 
 #[cfg(feature = "app-procinst-types")]
@@ -122,10 +122,10 @@ impl ProcInst {
 #[cfg(feature = "app-procinst")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ProcInst_State;
     pub use super::ProcInst;
     pub use super::IProcInst;
     pub use super::IProcInstMethods;
-    pub use super::ProcInst_State;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

@@ -34,6 +34,9 @@ mod __types {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/animationplayableasset/AnimationPlayableAsset_AnimationPlayableAssetUpgrade.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "AnimationPlayableAsset.AnimationPlayableAssetUpgrade")] # [parent (crate :: system :: object :: Object)] pub struct AnimationPlayableAsset_AnimationPlayableAssetUpgrade {}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/animationplayableasset/AnimationPlayableAsset_LoopMode.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -88,9 +91,6 @@ impl  AnimationPlayableAsset_LoopMode  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/animationplayableasset/AnimationPlayableAsset_AnimationPlayableAssetUpgrade.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "AnimationPlayableAsset.AnimationPlayableAssetUpgrade")] # [parent (crate :: system :: object :: Object)] pub struct AnimationPlayableAsset_AnimationPlayableAssetUpgrade {}
-
 }
 
 #[cfg(feature = "unity_engine-timeline-animationplayableasset-types")]
@@ -131,9 +131,9 @@ pub mod prelude {
     pub use super::AnimationPlayableAsset;
     pub use super::IAnimationPlayableAsset;
     pub use super::IAnimationPlayableAssetMethods;
-    pub use super::AnimationPlayableAsset_LoopMode;
     pub use super::AnimationPlayableAsset_AnimationPlayableAssetUpgrade;
     pub use super::IAnimationPlayableAsset_AnimationPlayableAssetUpgrade;
+    pub use super::AnimationPlayableAsset_LoopMode;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

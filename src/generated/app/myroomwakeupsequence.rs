@@ -17,6 +17,53 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomwakeupsequence/MyRoomWakeupSequence_RelianceWakeup.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomWakeupSequence.RelianceWakeup")] # [parent (crate :: system :: object :: Object)] pub struct MyRoomWakeupSequence_RelianceWakeup {
+# [offset (16)] # [rename (name = "m_pid")] pub m_pid : :: unity2 :: Il2CppString ,
+# [offset (24)] # [rename (name = "m_level")] pub m_level : crate :: app :: reliancedata :: RelianceData_Level ,
+# [offset (28)] # [rename (name = "m_pattern")] pub m_pattern : crate :: app :: gamesound :: GameSound_WakeupVoicePattern ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomwakeupsequence/MyRoomWakeupSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomWakeupSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: myroomwakeupsequence :: MyRoomWakeupSequence >)] pub struct MyRoomWakeupSequence {
+# [offset (114)] # [rename (name = "IsRecallSelect")] pub is_recall_select : bool ,
+# [offset (120)] # [rename (name = "RecallPID")] pub recall_pid : :: unity2 :: Il2CppString ,
+# [offset (128)] # [rename (name = "RecallLevel")] pub recall_level : crate :: app :: reliancedata :: RelianceData_Level ,
+# [offset (132)] # [rename (name = "RecallPattern")] pub recall_pattern : crate :: app :: gamesound :: GameSound_WakeupVoicePattern ,
+# [offset (136)] # [rename (name = "m_wakeupUnit")] pub m_wakeup_unit : crate :: app :: unit :: Unit ,
+# [offset (144)] # [rename (name = "m_level")] pub m_level : crate :: app :: reliancedata :: RelianceData_Level ,
+# [offset (148)] # [rename (name = "m_pattern")] pub m_pattern : crate :: app :: gamesound :: GameSound_WakeupVoicePattern ,
+# [offset (152)] # [rename (name = "m_pid")] pub m_pid : :: unity2 :: Il2CppString ,
+# [offset (160)] # [rename (name = "m_eventRoot")] pub m_event_root : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (168)] # [rename (name = "m_cameraRoot")] pub m_camera_root : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (176)] # [rename (name = "m_cameraRootParent")] pub m_camera_root_parent : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (184)] # [rename (name = "m_cameraData")] pub m_camera_data : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (192)] # [rename (name = "m_cameraData2")] pub m_camera_data2 : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (200)] # [rename (name = "m_character")] pub m_character : crate :: combat :: character :: Character ,
+# [offset (208)] # [rename (name = "m_lookAt")] pub m_look_at : crate :: app :: hublookatcontroller :: HubLookAtController ,
+# [offset (216)] # [rename (name = "m_CharacterPosition")] pub m_character_position : crate :: unity_engine :: vector3 :: Vector3 ,
+# [offset (228)] # [rename (name = "m_CharacterRotation")] pub m_character_rotation : crate :: unity_engine :: quaternion :: Quaternion ,
+# [offset (248)] # [rename (name = "m_timelineObject")] pub m_timeline_object : crate :: unity_engine :: playables :: playableasset :: PlayableAsset ,
+# [offset (256)] # [rename (name = "m_playableDirector")] pub m_playable_director : crate :: unity_engine :: playables :: playabledirector :: PlayableDirector ,
+# [offset (264)] # [rename (name = "m_playableAssetHandle")] pub m_playable_asset_handle : crate :: app :: resourcehandle_2 :: ResourceHandle_2 ,
+# [offset (272)] # [rename (name = "m_aocHandle")] pub m_aoc_handle : :: unity2 :: Array < crate :: app :: resourcehandle_2 :: ResourceHandle_2 > ,
+# [offset (280)] # [rename (name = "m_effectHandle")] pub m_effect_handle : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: resourcehandle_2 :: ResourceHandle_2 > ,
+# [offset (288)] # [rename (name = "m_aocList")] pub m_aoc_list : :: unity2 :: Array < crate :: unity_engine :: animatoroverridecontroller :: AnimatorOverrideController > ,
+# [offset (296)] # [rename (name = "m_currentAnimName")] pub m_current_anim_name : :: unity2 :: Il2CppString ,
+# [offset (304)] # [rename (name = "m_eventVoiceList")] pub m_event_voice_list : crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > ,
+# [offset (312)] # [rename (name = "m_eventCanvas")] pub m_event_canvas : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (320)] # [rename (name = "m_eventCanvasForeground")] pub m_event_canvas_foreground : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (328)] # [rename (name = "m_eventCanvasBackground")] pub m_event_canvas_background : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (336)] # [rename (name = "m_caption")] pub m_caption : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (344)] # [rename (name = "m_env")] pub m_env : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (352)] # [rename (name = "m_isFastWakeup")] pub m_is_fast_wakeup : bool ,
+# [offset (353)] # [rename (name = "m_isLoading")] pub m_is_loading : bool ,
+# [offset (360)] # [rename (name = "m_captionText")] pub m_caption_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (456)] # [rename (name = "FlagName")] pub flag_name : :: unity2 :: Il2CppString ,
+# [offset (464)] # [rename (name = "eventWalkin")] pub event_walkin : :: unity2 :: Il2CppString ,
+# [offset (472)] # [rename (name = "message")] pub message : crate :: app :: gamemessage :: GameMessage ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomwakeupsequence/MyRoomWakeupSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -71,53 +118,6 @@ impl  MyRoomWakeupSequence_Label  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomwakeupsequence/MyRoomWakeupSequence_RelianceWakeup.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomWakeupSequence.RelianceWakeup")] # [parent (crate :: system :: object :: Object)] pub struct MyRoomWakeupSequence_RelianceWakeup {
-# [offset (16)] # [rename (name = "m_pid")] pub m_pid : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_level")] pub m_level : crate :: app :: reliancedata :: RelianceData_Level ,
-# [offset (28)] # [rename (name = "m_pattern")] pub m_pattern : crate :: app :: gamesound :: GameSound_WakeupVoicePattern ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomwakeupsequence/MyRoomWakeupSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomWakeupSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: myroomwakeupsequence :: MyRoomWakeupSequence >)] pub struct MyRoomWakeupSequence {
-# [offset (114)] # [rename (name = "IsRecallSelect")] pub is_recall_select : bool ,
-# [offset (120)] # [rename (name = "RecallPID")] pub recall_pid : :: unity2 :: Il2CppString ,
-# [offset (128)] # [rename (name = "RecallLevel")] pub recall_level : crate :: app :: reliancedata :: RelianceData_Level ,
-# [offset (132)] # [rename (name = "RecallPattern")] pub recall_pattern : crate :: app :: gamesound :: GameSound_WakeupVoicePattern ,
-# [offset (136)] # [rename (name = "m_wakeupUnit")] pub m_wakeup_unit : crate :: app :: unit :: Unit ,
-# [offset (144)] # [rename (name = "m_level")] pub m_level : crate :: app :: reliancedata :: RelianceData_Level ,
-# [offset (148)] # [rename (name = "m_pattern")] pub m_pattern : crate :: app :: gamesound :: GameSound_WakeupVoicePattern ,
-# [offset (152)] # [rename (name = "m_pid")] pub m_pid : :: unity2 :: Il2CppString ,
-# [offset (160)] # [rename (name = "m_eventRoot")] pub m_event_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (168)] # [rename (name = "m_cameraRoot")] pub m_camera_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (176)] # [rename (name = "m_cameraRootParent")] pub m_camera_root_parent : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (184)] # [rename (name = "m_cameraData")] pub m_camera_data : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (192)] # [rename (name = "m_cameraData2")] pub m_camera_data2 : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (200)] # [rename (name = "m_character")] pub m_character : crate :: combat :: character :: Character ,
-# [offset (208)] # [rename (name = "m_lookAt")] pub m_look_at : crate :: app :: hublookatcontroller :: HubLookAtController ,
-# [offset (216)] # [rename (name = "m_CharacterPosition")] pub m_character_position : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (228)] # [rename (name = "m_CharacterRotation")] pub m_character_rotation : crate :: unity_engine :: quaternion :: Quaternion ,
-# [offset (248)] # [rename (name = "m_timelineObject")] pub m_timeline_object : crate :: unity_engine :: playables :: playableasset :: PlayableAsset ,
-# [offset (256)] # [rename (name = "m_playableDirector")] pub m_playable_director : crate :: unity_engine :: playables :: playabledirector :: PlayableDirector ,
-# [offset (264)] # [rename (name = "m_playableAssetHandle")] pub m_playable_asset_handle : crate :: app :: resourcehandle_2 :: ResourceHandle_2 ,
-# [offset (272)] # [rename (name = "m_aocHandle")] pub m_aoc_handle : :: unity2 :: Array < crate :: app :: resourcehandle_2 :: ResourceHandle_2 > ,
-# [offset (280)] # [rename (name = "m_effectHandle")] pub m_effect_handle : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: resourcehandle_2 :: ResourceHandle_2 > ,
-# [offset (288)] # [rename (name = "m_aocList")] pub m_aoc_list : :: unity2 :: Array < crate :: unity_engine :: animatoroverridecontroller :: AnimatorOverrideController > ,
-# [offset (296)] # [rename (name = "m_currentAnimName")] pub m_current_anim_name : :: unity2 :: Il2CppString ,
-# [offset (304)] # [rename (name = "m_eventVoiceList")] pub m_event_voice_list : crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > ,
-# [offset (312)] # [rename (name = "m_eventCanvas")] pub m_event_canvas : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (320)] # [rename (name = "m_eventCanvasForeground")] pub m_event_canvas_foreground : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (328)] # [rename (name = "m_eventCanvasBackground")] pub m_event_canvas_background : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (336)] # [rename (name = "m_caption")] pub m_caption : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (344)] # [rename (name = "m_env")] pub m_env : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (352)] # [rename (name = "m_isFastWakeup")] pub m_is_fast_wakeup : bool ,
-# [offset (353)] # [rename (name = "m_isLoading")] pub m_is_loading : bool ,
-# [offset (360)] # [rename (name = "m_captionText")] pub m_caption_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (456)] # [rename (name = "FlagName")] pub flag_name : :: unity2 :: Il2CppString ,
-# [offset (464)] # [rename (name = "eventWalkin")] pub event_walkin : :: unity2 :: Il2CppString ,
-# [offset (472)] # [rename (name = "message")] pub message : crate :: app :: gamemessage :: GameMessage ,
-}
-
 }
 
 #[cfg(feature = "app-myroomwakeupsequence-types")]
@@ -163,13 +163,13 @@ impl MyRoomWakeupSequence {
 #[cfg(feature = "app-myroomwakeupsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MyRoomWakeupSequence_Label;
     pub use super::MyRoomWakeupSequence_RelianceWakeup;
     pub use super::IMyRoomWakeupSequence_RelianceWakeup;
     pub use super::IMyRoomWakeupSequence_RelianceWakeupMethods;
     pub use super::MyRoomWakeupSequence;
     pub use super::IMyRoomWakeupSequence;
     pub use super::IMyRoomWakeupSequenceMethods;
+    pub use super::MyRoomWakeupSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

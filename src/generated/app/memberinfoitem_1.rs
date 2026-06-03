@@ -41,11 +41,11 @@ pub use __types::*;
 
 # [doc = "`GetColumnAlign1()` overload"] # [method (name = "GetColumnAlign1" , args = 0)] pub fn get_column_align1 (self ,) -> crate :: app :: menuitem :: MenuItem_Align ;
 
-# [doc = "`GetValue()` overload"] # [method (name = "GetValue" , args = 0)] pub fn get_value (self ,) -> crate :: system :: object :: Object ;
+# [doc = "`GetValue()` overload"] # [method (name = "GetValue" , args = 0 , abstract_dispatch)] pub fn get_value (self ,) -> crate :: system :: object :: Object ;
 
-# [doc = "`SetValue(crate::system::object::Object)` overload"] # [method (name = "SetValue" , args = 1)] pub fn set_value (self , value : crate :: system :: object :: Object) -> () ;
+# [doc = "`SetValue(crate::system::object::Object)` overload"] # [method (name = "SetValue" , args = 1 , abstract_dispatch)] pub fn set_value (self , value : crate :: system :: object :: Object) -> () ;
 
-# [doc = "`GetValueType()` overload"] # [method (name = "GetValueType" , args = 0)] pub fn get_value_type (self ,) -> :: unity2 :: SystemType ;
+# [doc = "`GetValueType()` overload"] # [method (name = "GetValueType" , args = 0 , abstract_dispatch)] pub fn get_value_type (self ,) -> :: unity2 :: SystemType ;
 
 # [doc = "`OnLeftRight(i32, bool)` overload"] # [method (name = "OnLeftRight" , args = 2)] pub fn on_left_right (self , step : i32 , is_trigger : bool) -> () ;
 }

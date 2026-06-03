@@ -15,10 +15,10 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ut/Ut_EnumList.md"))] # [:: unity2 :: class (namespace = "App" , name = "Ut.EnumList")] # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: system :: object :: Object >)] pub struct Ut_EnumList {}
-
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ut/Ut_GameObjectFunction.md"))] # [:: unity2 :: class (namespace = "App" , name = "Ut.GameObjectFunction")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct Ut_GameObjectFunction {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ut/Ut_EnumList.md"))] # [:: unity2 :: class (namespace = "App" , name = "Ut.EnumList")] # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: system :: object :: Object >)] pub struct Ut_EnumList {}
 
 
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ut/Ut.md"))] # [:: unity2 :: class (namespace = "App" , name = "Ut")] # [parent (crate :: system :: object :: Object)] pub struct Ut {
@@ -31,23 +31,6 @@ mod __types {
 
 #[cfg(feature = "app-ut-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-ut")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Ut_EnumList_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Ut_EnumList as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Ut_EnumList as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Ut_EnumList , r#type : :: unity2 :: SystemType , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Ut_EnumList , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , r#type , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_index { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Ut_EnumList as :: unity2 :: ClassIdentity > :: class () , "GetIndex" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Ut_EnumList as :: unity2 :: ClassIdentity > :: NAME , "GetIndex" , e) , } } } pub unsafe fn get_index (this : Ut_EnumList , value : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (Ut_EnumList , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_index :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } }
-
-#[cfg(feature = "app-ut")]
-pub trait IUt_EnumListMethods : IUt_EnumList { # [doc = "`.ctor(::unity2::SystemType)` overload"] fn ctor (self , r#type : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> () { unsafe { let __receiver = < Ut_EnumList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Ut_EnumList_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } # [doc = "`GetIndex(crate::system::object::Object)` overload"] fn get_index (self , value : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> i32 { unsafe { let __receiver = < Ut_EnumList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Ut_EnumList_unity2_raw :: get_index (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-ut")]
-impl < __T : IUt_EnumList > IUt_EnumListMethods for __T { }
-
-#[cfg(feature = "app-ut")]
-impl Ut_EnumList { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Ut_EnumList_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Ut_EnumList_unity2_raw :: __lookup_get_index :: get_method_info () } }
-
-#[cfg(feature = "app-ut")]
-impl Ut_EnumList {
-# [doc = "`.ctor(::unity2::SystemType)` — overload selector"] pub fn new (r#type : :: unity2 :: SystemType) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Ut_EnumList) , :: core :: stringify ! (new) ,)) ; < Self as IUt_EnumListMethods > :: ctor (this , r#type) ; this }
-}
 
 #[cfg(feature = "app-ut")]
 # [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Ut_GameObjectFunction_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Ut_GameObjectFunction as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Ut_GameObjectFunction as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Ut_GameObjectFunction , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Ut_GameObjectFunction , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , object , method , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Ut_GameObjectFunction as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Ut_GameObjectFunction as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , } } } pub unsafe fn invoke (this : Ut_GameObjectFunction , go : crate :: unity_engine :: gameobject :: GameObject , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Ut_GameObjectFunction , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_invoke :: get_method_info () . method_ptr ,) ; inner (this , go , __unity2_method_info) } }
@@ -64,6 +47,23 @@ impl Ut_GameObjectFunction { pub fn ctor_method_info () -> & 'static :: unity2 :
 #[cfg(feature = "app-ut")]
 impl Ut_GameObjectFunction {
 # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Ut_GameObjectFunction) , :: core :: stringify ! (new) ,)) ; < Self as IUt_GameObjectFunctionMethods > :: ctor (this , object , method) ; this }
+}
+
+#[cfg(feature = "app-ut")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Ut_EnumList_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Ut_EnumList as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Ut_EnumList as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Ut_EnumList , r#type : :: unity2 :: SystemType , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Ut_EnumList , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , r#type , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_index { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Ut_EnumList as :: unity2 :: ClassIdentity > :: class () , "GetIndex" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Ut_EnumList as :: unity2 :: ClassIdentity > :: NAME , "GetIndex" , e) , } } } pub unsafe fn get_index (this : Ut_EnumList , value : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (Ut_EnumList , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_index :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } }
+
+#[cfg(feature = "app-ut")]
+pub trait IUt_EnumListMethods : IUt_EnumList { # [doc = "`.ctor(::unity2::SystemType)` overload"] fn ctor (self , r#type : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> () { unsafe { let __receiver = < Ut_EnumList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Ut_EnumList_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } # [doc = "`GetIndex(crate::system::object::Object)` overload"] fn get_index (self , value : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> i32 { unsafe { let __receiver = < Ut_EnumList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Ut_EnumList_unity2_raw :: get_index (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-ut")]
+impl < __T : IUt_EnumList > IUt_EnumListMethods for __T { }
+
+#[cfg(feature = "app-ut")]
+impl Ut_EnumList { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Ut_EnumList_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Ut_EnumList_unity2_raw :: __lookup_get_index :: get_method_info () } }
+
+#[cfg(feature = "app-ut")]
+impl Ut_EnumList {
+# [doc = "`.ctor(::unity2::SystemType)` — overload selector"] pub fn new (r#type : :: unity2 :: SystemType) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Ut_EnumList) , :: core :: stringify ! (new) ,)) ; < Self as IUt_EnumListMethods > :: ctor (this , r#type) ; this }
 }
 
 #[cfg(feature = "app-ut")]
@@ -89,12 +89,12 @@ impl Ut {
 #[cfg(feature = "app-ut")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Ut_EnumList;
-    pub use super::IUt_EnumList;
-    pub use super::IUt_EnumListMethods;
     pub use super::Ut_GameObjectFunction;
     pub use super::IUt_GameObjectFunction;
     pub use super::IUt_GameObjectFunctionMethods;
+    pub use super::Ut_EnumList;
+    pub use super::IUt_EnumList;
+    pub use super::IUt_EnumListMethods;
     pub use super::Ut;
     pub use super::IUt;
     pub use super::IUtMethods;

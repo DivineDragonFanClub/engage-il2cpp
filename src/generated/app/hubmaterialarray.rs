@@ -19,14 +19,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmaterialarray/HubMaterialArray.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMaterialArray")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct HubMaterialArray {
-# [offset (24)] # [rename (name = "m_objectTag")] pub m_object_tag : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "m_activeMaterial")] pub m_active_material : :: unity2 :: Il2CppString ,
-# [offset (40)] # [rename (name = "m_materials")] pub m_materials : :: unity2 :: Array < crate :: app :: hubmaterialarray :: HubMaterialArray_MaterialInfo > ,
-# [offset (48)] # [rename (name = "m_renderer")] pub m_renderer : crate :: unity_engine :: renderer :: Renderer ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubmaterialarray/HubMaterialArray_MaterialInfo.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -61,6 +53,14 @@ impl ::unity2::IlType for HubMaterialArray_MaterialInfo {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmaterialarray/HubMaterialArray.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMaterialArray")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct HubMaterialArray {
+# [offset (24)] # [rename (name = "m_objectTag")] pub m_object_tag : :: unity2 :: Il2CppString ,
+# [offset (32)] # [rename (name = "m_activeMaterial")] pub m_active_material : :: unity2 :: Il2CppString ,
+# [offset (40)] # [rename (name = "m_materials")] pub m_materials : :: unity2 :: Array < crate :: app :: hubmaterialarray :: HubMaterialArray_MaterialInfo > ,
+# [offset (48)] # [rename (name = "m_renderer")] pub m_renderer : crate :: unity_engine :: renderer :: Renderer ,
+}
+
 }
 
 #[cfg(feature = "app-hubmaterialarray-types")]
@@ -86,10 +86,10 @@ impl HubMaterialArray {
 #[cfg(feature = "app-hubmaterialarray")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::HubMaterialArray_MaterialInfo;
     pub use super::HubMaterialArray;
     pub use super::IHubMaterialArray;
     pub use super::IHubMaterialArrayMethods;
-    pub use super::HubMaterialArray_MaterialInfo;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     pub use crate::unity_engine::behaviour::IBehaviour;

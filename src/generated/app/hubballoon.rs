@@ -21,6 +21,20 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubballoon/HubBalloon.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubBalloon")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct HubBalloon {
+# [offset (64)] # [rename (name = "m_propetyToID")] pub m_propety_to_id : i32 ,
+# [offset (72)] # [rename (name = "m_talkDefault")] pub m_talk_default : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (80)] # [rename (name = "m_talkChapter")] pub m_talk_chapter : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (88)] # [rename (name = "m_talkReliance")] pub m_talk_reliance : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (96)] # [rename (name = "m_rendererList")] pub m_renderer_list : :: unity2 :: Array < crate :: unity_engine :: renderer :: Renderer > ,
+# [offset (104)] # [rename (name = "m_materials")] pub m_materials : :: unity2 :: Array < crate :: unity_engine :: material :: Material > ,
+# [offset (112)] # [rename (name = "m_alpha")] pub m_alpha : f32 ,
+# [offset (116)] # [rename (name = "m_talkDefaultActive")] pub m_talk_default_active : bool ,
+# [offset (117)] # [rename (name = "m_talkChapterActive")] pub m_talk_chapter_active : bool ,
+# [offset (118)] # [rename (name = "m_talkRelianceActive")] pub m_talk_reliance_active : bool ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubballoon/HubBalloon_Type.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -75,20 +89,6 @@ impl  HubBalloon_Type  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubballoon/HubBalloon.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubBalloon")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct HubBalloon {
-# [offset (64)] # [rename (name = "m_propetyToID")] pub m_propety_to_id : i32 ,
-# [offset (72)] # [rename (name = "m_talkDefault")] pub m_talk_default : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (80)] # [rename (name = "m_talkChapter")] pub m_talk_chapter : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (88)] # [rename (name = "m_talkReliance")] pub m_talk_reliance : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (96)] # [rename (name = "m_rendererList")] pub m_renderer_list : :: unity2 :: Array < crate :: unity_engine :: renderer :: Renderer > ,
-# [offset (104)] # [rename (name = "m_materials")] pub m_materials : :: unity2 :: Array < crate :: unity_engine :: material :: Material > ,
-# [offset (112)] # [rename (name = "m_alpha")] pub m_alpha : f32 ,
-# [offset (116)] # [rename (name = "m_talkDefaultActive")] pub m_talk_default_active : bool ,
-# [offset (117)] # [rename (name = "m_talkChapterActive")] pub m_talk_chapter_active : bool ,
-# [offset (118)] # [rename (name = "m_talkRelianceActive")] pub m_talk_reliance_active : bool ,
-}
-
 }
 
 #[cfg(feature = "app-hubballoon-types")]
@@ -114,10 +114,10 @@ impl HubBalloon {
 #[cfg(feature = "app-hubballoon")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HubBalloon_Type;
     pub use super::HubBalloon;
     pub use super::IHubBalloon;
     pub use super::IHubBalloonMethods;
+    pub use super::HubBalloon_Type;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

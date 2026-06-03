@@ -17,6 +17,12 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talksequence/TalkSequence_ReplaceText.md"))] # [:: unity2 :: class (namespace = "App.Talk3D" , name = "TalkSequence.ReplaceText")] # [parent (crate :: system :: object :: Object)] pub struct TalkSequence_ReplaceText {
+# [offset (16)] # [rename (name = "m_Text")] pub m_text : :: unity2 :: Il2CppString ,
+# [offset (24)] # [rename (name = "m_Index")] pub m_index : i32 ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talksequence/TalkSequence_PlayMode.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -63,12 +69,6 @@ impl  TalkSequence_PlayMode  {
 
     }
 
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talksequence/TalkSequence_ReplaceText.md"))] # [:: unity2 :: class (namespace = "App.Talk3D" , name = "TalkSequence.ReplaceText")] # [parent (crate :: system :: object :: Object)] pub struct TalkSequence_ReplaceText {
-# [offset (16)] # [rename (name = "m_Text")] pub m_text : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_Index")] pub m_index : i32 ,
 }
 
 
@@ -237,10 +237,10 @@ impl TalkSequence {
 #[cfg(feature = "app-talk3_d-talksequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TalkSequence_PlayMode;
     pub use super::TalkSequence_ReplaceText;
     pub use super::ITalkSequence_ReplaceText;
     pub use super::ITalkSequence_ReplaceTextMethods;
+    pub use super::TalkSequence_PlayMode;
     pub use super::TalkSequence;
     pub use super::ITalkSequence;
     pub use super::ITalkSequenceMethods;

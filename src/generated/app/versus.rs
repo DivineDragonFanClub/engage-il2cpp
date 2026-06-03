@@ -15,30 +15,23 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versus/Versus_DownloadHistory_CheckData.md"))] # [:: unity2 :: class (namespace = "App" , name = "Versus.DownloadHistory.CheckData")] # [parent (crate :: system :: object :: Object)] pub struct Versus_DownloadHistory_CheckData {
-# [offset (16)] # [rename (name = "m_IsDownloaded")] pub m_is_downloaded : bool ,
-# [offset (24)] # [rename (name = "m_DataTime")] pub m_data_time : i64 ,
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versus/Versus_MapObjectCounter.md"))] # [:: unity2 :: class (namespace = "App" , name = "Versus.MapObjectCounter")] # [parent (crate :: system :: object :: Object)] pub struct Versus_MapObjectCounter {
+# [offset (16)] # [rename (name = "m_Dict")] pub m_dict : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: app :: mapeditorcategorydata :: MapEditorCategoryData , i32 > ,
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versus/Versus_DownloadHistory.md"))] # [:: unity2 :: class (namespace = "App" , name = "Versus.DownloadHistory")] # [parent (crate :: system :: object :: Object)] pub struct Versus_DownloadHistory {
-# [static_field] # [rename (name = "CoolTimeSecond")] pub cool_time_second : i64 ,
-# [offset (16)] # [rename (name = "m_DownloadedDataList")] pub m_downloaded_data_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: versus :: Versus_DownloadHistory_CheckData > ,
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versus/Versus_MatchingType.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versus/Versus_MapResult.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Versus_MatchingType  {
+pub struct Versus_MapResult  {
     pub value: i32,
 }
 
 
-impl  ::unity2::ClassIdentity for Versus_MatchingType  {
+impl  ::unity2::ClassIdentity for Versus_MapResult  {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "Versus.MatchingType";
+    const NAME: &'static str = "Versus.MapResult";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> =
@@ -53,7 +46,7 @@ impl  ::unity2::ClassIdentity for Versus_MatchingType  {
 }
 
 
-impl  ::unity2::IlType for Versus_MatchingType  {
+impl  ::unity2::IlType for Versus_MapResult  {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
@@ -61,30 +54,36 @@ impl  ::unity2::IlType for Versus_MatchingType  {
 }
 
 
-impl  Versus_MatchingType  {
-    pub fn random() -> Self {
+impl  Versus_MapResult  {
+    pub fn win() -> Self {
         Self { value: 0 }
 
     }
 
 
-    pub fn friend() -> Self {
+    pub fn lose() -> Self {
         Self { value: 1 }
 
     }
 
 
-    pub fn data_code() -> Self {
+    pub fn none() -> Self {
         Self { value: 2 }
 
     }
 
 
-    pub fn profile() -> Self {
+    pub fn abort() -> Self {
         Self { value: 3 }
 
     }
 
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versus/Versus_DownloadHistory.md"))] # [:: unity2 :: class (namespace = "App" , name = "Versus.DownloadHistory")] # [parent (crate :: system :: object :: Object)] pub struct Versus_DownloadHistory {
+# [static_field] # [rename (name = "CoolTimeSecond")] pub cool_time_second : i64 ,
+# [offset (16)] # [rename (name = "m_DownloadedDataList")] pub m_downloaded_data_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: versus :: Versus_DownloadHistory_CheckData > ,
 }
 
 
@@ -179,44 +178,18 @@ impl  Versus_CheckDataType  {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versus/Versus.md"))] # [:: unity2 :: class (namespace = "App" , name = "Versus")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: versus :: Versus >)] pub struct Versus {
-# [offset (32)] # [rename (name = "m_PlayerMetaData")] pub m_player_meta_data : crate :: app :: versusserverrankedmetadata :: VersusServerRankedMetaData ,
-# [offset (40)] # [rename (name = "m_PlayerData")] pub m_player_data : crate :: app :: versusserverrankeddata :: VersusServerRankedData ,
-# [offset (48)] # [rename (name = "m_PlayerRatingList")] pub m_player_rating_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: nexversus :: NexVersus_RatingData > ,
-# [offset (56)] # [rename (name = "m_OpponentMetaData")] pub m_opponent_meta_data : crate :: app :: versusserverrankedmetadata :: VersusServerRankedMetaData ,
-# [offset (64)] # [rename (name = "m_OpponentData")] pub m_opponent_data : crate :: app :: versusserverrankeddata :: VersusServerRankedData ,
-# [offset (72)] # [rename (name = "m_ReplayData")] pub m_replay_data : crate :: app :: versusserverreplaydata :: VersusServerReplayData ,
-# [offset (80)] # [rename (name = "m_ReplayMetaData")] pub m_replay_meta_data : crate :: app :: versusserverreplaymetadata :: VersusServerReplayMetaData ,
-# [offset (88)] # [rename (name = "m_CasualOpponentMetaData")] pub m_casual_opponent_meta_data : crate :: app :: versusservercasualmetadata :: VersusServerCasualMetaData ,
-# [offset (96)] # [rename (name = "m_CasualOpponentData")] pub m_casual_opponent_data : crate :: app :: versusservercasualdata :: VersusServerCasualData ,
-# [offset (104)] # [rename (name = "m_CasualPlayerData")] pub m_casual_player_data : crate :: app :: versusservercasualdata :: VersusServerCasualData ,
-# [offset (112)] # [rename (name = "m_CasualPlayerMetaData")] pub m_casual_player_meta_data : crate :: app :: versusservercasualmetadata :: VersusServerCasualMetaData ,
-# [offset (120)] # [rename (name = "m_BackupData")] pub m_backup_data : crate :: app :: versusbackupdata :: VersusBackupData ,
-# [offset (128)] # [rename (name = "m_EditBackupData")] pub m_edit_backup_data : crate :: app :: versuseditmodebackupdata :: VersusEditModeBackupData ,
-# [offset (136)] # [rename (name = "m_Mode")] pub m_mode : crate :: app :: versus :: Versus_Mode ,
-# [offset (140)] # [rename (name = "m_MatchingType")] pub m_matching_type : crate :: app :: versus :: Versus_MatchingType ,
-# [offset (144)] # [rename (name = "m_Error")] pub m_error : crate :: app :: versus :: Versus_Error ,
-# [offset (148)] # [rename (name = "m_Result")] pub m_result : crate :: app :: versus :: Versus_MapResult ,
-# [offset (152)] # [rename (name = "m_IsSurrender")] pub m_is_surrender : bool ,
-# [offset (156)] # [rename (name = "m_CasualMapNumber")] pub m_casual_map_number : i32 ,
-# [static_field] # [rename (name = "ReplaySlotCount")] pub replay_slot_count : i32 ,
-# [offset (169)] # [rename (name = "m_IsExistOnServer")] pub m_is_exist_on_server : bool ,
-# [offset (176)] # [rename (name = "m_History")] pub m_history : crate :: app :: versus :: Versus_DownloadHistory ,
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versus/Versus_MapResult.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versus/Versus_Error.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Versus_MapResult  {
+pub struct Versus_Error  {
     pub value: i32,
 }
 
 
-impl  ::unity2::ClassIdentity for Versus_MapResult  {
+impl  ::unity2::ClassIdentity for Versus_Error  {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "Versus.MapResult";
+    const NAME: &'static str = "Versus.Error";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> =
@@ -231,7 +204,7 @@ impl  ::unity2::ClassIdentity for Versus_MapResult  {
 }
 
 
-impl  ::unity2::IlType for Versus_MapResult  {
+impl  ::unity2::IlType for Versus_Error  {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
@@ -239,26 +212,87 @@ impl  ::unity2::IlType for Versus_MapResult  {
 }
 
 
-impl  Versus_MapResult  {
-    pub fn win() -> Self {
+impl  Versus_Error  {
+    pub fn none() -> Self {
+        Self { value: -1 }
+
+    }
+
+
+    pub fn ranked_report() -> Self {
+        Self { value: 101 }
+
+    }
+
+
+    pub fn ranked_offence_unit_none() -> Self {
+        Self { value: 102 }
+
+    }
+
+
+    pub fn invalid_data() -> Self {
+        Self { value: 103 }
+
+    }
+
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versus/Versus_MatchingType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct Versus_MatchingType  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for Versus_MatchingType  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Versus.MatchingType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for Versus_MatchingType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  Versus_MatchingType  {
+    pub fn random() -> Self {
         Self { value: 0 }
 
     }
 
 
-    pub fn lose() -> Self {
+    pub fn friend() -> Self {
         Self { value: 1 }
 
     }
 
 
-    pub fn none() -> Self {
+    pub fn data_code() -> Self {
         Self { value: 2 }
 
     }
 
 
-    pub fn abort() -> Self {
+    pub fn profile() -> Self {
         Self { value: 3 }
 
     }
@@ -266,11 +300,9 @@ impl  Versus_MapResult  {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versus/Versus_VersusCheck.md"))] # [:: unity2 :: class (namespace = "App" , name = "Versus.VersusCheck")] # [parent (crate :: system :: object :: Object)] pub struct Versus_VersusCheck {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versus/Versus_MapObjectCounter.md"))] # [:: unity2 :: class (namespace = "App" , name = "Versus.MapObjectCounter")] # [parent (crate :: system :: object :: Object)] pub struct Versus_MapObjectCounter {
-# [offset (16)] # [rename (name = "m_Dict")] pub m_dict : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: app :: mapeditorcategorydata :: MapEditorCategoryData , i32 > ,
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versus/Versus_DownloadHistory_CheckData.md"))] # [:: unity2 :: class (namespace = "App" , name = "Versus.DownloadHistory.CheckData")] # [parent (crate :: system :: object :: Object)] pub struct Versus_DownloadHistory_CheckData {
+# [offset (16)] # [rename (name = "m_IsDownloaded")] pub m_is_downloaded : bool ,
+# [offset (24)] # [rename (name = "m_DataTime")] pub m_data_time : i64 ,
 }
 
 
@@ -347,65 +379,33 @@ impl  Versus_Mode  {
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versus/Versus_Error.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Versus_Error  {
-    pub value: i32,
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versus/Versus.md"))] # [:: unity2 :: class (namespace = "App" , name = "Versus")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: versus :: Versus >)] pub struct Versus {
+# [offset (32)] # [rename (name = "m_PlayerMetaData")] pub m_player_meta_data : crate :: app :: versusserverrankedmetadata :: VersusServerRankedMetaData ,
+# [offset (40)] # [rename (name = "m_PlayerData")] pub m_player_data : crate :: app :: versusserverrankeddata :: VersusServerRankedData ,
+# [offset (48)] # [rename (name = "m_PlayerRatingList")] pub m_player_rating_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: nexversus :: NexVersus_RatingData > ,
+# [offset (56)] # [rename (name = "m_OpponentMetaData")] pub m_opponent_meta_data : crate :: app :: versusserverrankedmetadata :: VersusServerRankedMetaData ,
+# [offset (64)] # [rename (name = "m_OpponentData")] pub m_opponent_data : crate :: app :: versusserverrankeddata :: VersusServerRankedData ,
+# [offset (72)] # [rename (name = "m_ReplayData")] pub m_replay_data : crate :: app :: versusserverreplaydata :: VersusServerReplayData ,
+# [offset (80)] # [rename (name = "m_ReplayMetaData")] pub m_replay_meta_data : crate :: app :: versusserverreplaymetadata :: VersusServerReplayMetaData ,
+# [offset (88)] # [rename (name = "m_CasualOpponentMetaData")] pub m_casual_opponent_meta_data : crate :: app :: versusservercasualmetadata :: VersusServerCasualMetaData ,
+# [offset (96)] # [rename (name = "m_CasualOpponentData")] pub m_casual_opponent_data : crate :: app :: versusservercasualdata :: VersusServerCasualData ,
+# [offset (104)] # [rename (name = "m_CasualPlayerData")] pub m_casual_player_data : crate :: app :: versusservercasualdata :: VersusServerCasualData ,
+# [offset (112)] # [rename (name = "m_CasualPlayerMetaData")] pub m_casual_player_meta_data : crate :: app :: versusservercasualmetadata :: VersusServerCasualMetaData ,
+# [offset (120)] # [rename (name = "m_BackupData")] pub m_backup_data : crate :: app :: versusbackupdata :: VersusBackupData ,
+# [offset (128)] # [rename (name = "m_EditBackupData")] pub m_edit_backup_data : crate :: app :: versuseditmodebackupdata :: VersusEditModeBackupData ,
+# [offset (136)] # [rename (name = "m_Mode")] pub m_mode : crate :: app :: versus :: Versus_Mode ,
+# [offset (140)] # [rename (name = "m_MatchingType")] pub m_matching_type : crate :: app :: versus :: Versus_MatchingType ,
+# [offset (144)] # [rename (name = "m_Error")] pub m_error : crate :: app :: versus :: Versus_Error ,
+# [offset (148)] # [rename (name = "m_Result")] pub m_result : crate :: app :: versus :: Versus_MapResult ,
+# [offset (152)] # [rename (name = "m_IsSurrender")] pub m_is_surrender : bool ,
+# [offset (156)] # [rename (name = "m_CasualMapNumber")] pub m_casual_map_number : i32 ,
+# [static_field] # [rename (name = "ReplaySlotCount")] pub replay_slot_count : i32 ,
+# [offset (169)] # [rename (name = "m_IsExistOnServer")] pub m_is_exist_on_server : bool ,
+# [offset (176)] # [rename (name = "m_History")] pub m_history : crate :: app :: versus :: Versus_DownloadHistory ,
 }
 
 
-impl  ::unity2::ClassIdentity for Versus_Error  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Versus.Error";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for Versus_Error  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  Versus_Error  {
-    pub fn none() -> Self {
-        Self { value: -1 }
-
-    }
-
-
-    pub fn ranked_report() -> Self {
-        Self { value: 101 }
-
-    }
-
-
-    pub fn ranked_offence_unit_none() -> Self {
-        Self { value: 102 }
-
-    }
-
-
-    pub fn invalid_data() -> Self {
-        Self { value: 103 }
-
-    }
-
-}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versus/Versus_VersusCheck.md"))] # [:: unity2 :: class (namespace = "App" , name = "Versus.VersusCheck")] # [parent (crate :: system :: object :: Object)] pub struct Versus_VersusCheck {}
 
 }
 
@@ -413,20 +413,20 @@ impl  Versus_Error  {
 pub use __types::*;
 
 #[cfg(feature = "app-versus")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Versus_DownloadHistory_CheckData_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_reset { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_DownloadHistory_CheckData as :: unity2 :: ClassIdentity > :: class () , "Reset" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_DownloadHistory_CheckData as :: unity2 :: ClassIdentity > :: NAME , "Reset" , e) , } } } pub unsafe fn reset (this : Versus_DownloadHistory_CheckData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus_DownloadHistory_CheckData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_reset :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_downloaded { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_DownloadHistory_CheckData as :: unity2 :: ClassIdentity > :: class () , "IsDownloaded" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_DownloadHistory_CheckData as :: unity2 :: ClassIdentity > :: NAME , "IsDownloaded" , e) , } } } pub unsafe fn is_downloaded (this : Versus_DownloadHistory_CheckData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (Versus_DownloadHistory_CheckData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_downloaded :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_elapsed_time { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_DownloadHistory_CheckData as :: unity2 :: ClassIdentity > :: class () , "GetElapsedTime" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_DownloadHistory_CheckData as :: unity2 :: ClassIdentity > :: NAME , "GetElapsedTime" , e) , } } } pub unsafe fn get_elapsed_time (this : Versus_DownloadHistory_CheckData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i64 { let inner : extern "C" fn (Versus_DownloadHistory_CheckData , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute (__lookup_get_elapsed_time :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_DownloadHistory_CheckData as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_DownloadHistory_CheckData as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Versus_DownloadHistory_CheckData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus_DownloadHistory_CheckData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Versus_MapObjectCounter_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_MapObjectCounter as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_MapObjectCounter as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Versus_MapObjectCounter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus_MapObjectCounter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_MapObjectCounter as :: unity2 :: ClassIdentity > :: class () , "Add" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_MapObjectCounter as :: unity2 :: ClassIdentity > :: NAME , "Add" , e) , } } } pub unsafe fn add (this : Versus_MapObjectCounter , obj_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus_MapObjectCounter , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add :: get_method_info () . method_ptr ,) ; inner (this , obj_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_enumerator { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_MapObjectCounter as :: unity2 :: ClassIdentity > :: class () , "GetEnumerator" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_MapObjectCounter as :: unity2 :: ClassIdentity > :: NAME , "GetEnumerator" , e) , } } } pub unsafe fn get_enumerator (this : Versus_MapObjectCounter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2_Enumerator < crate :: app :: mapeditorcategorydata :: MapEditorCategoryData , i32 > { let inner : extern "C" fn (Versus_MapObjectCounter , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2_Enumerator < crate :: app :: mapeditorcategorydata :: MapEditorCategoryData , i32 > = :: core :: mem :: transmute (__lookup_get_enumerator :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-versus")]
-pub trait IVersus_DownloadHistory_CheckDataMethods : IVersus_DownloadHistory_CheckData { # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < Versus_DownloadHistory_CheckData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_DownloadHistory_CheckData_unity2_raw :: reset (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsDownloaded()` overload"] fn is_downloaded (self ,) -> bool { unsafe { let __receiver = < Versus_DownloadHistory_CheckData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_DownloadHistory_CheckData_unity2_raw :: is_downloaded (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetElapsedTime()` overload"] fn get_elapsed_time (self ,) -> i64 { unsafe { let __receiver = < Versus_DownloadHistory_CheckData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_DownloadHistory_CheckData_unity2_raw :: get_elapsed_time (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Versus_DownloadHistory_CheckData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_DownloadHistory_CheckData_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+pub trait IVersus_MapObjectCounterMethods : IVersus_MapObjectCounter { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Versus_MapObjectCounter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_MapObjectCounter_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Add(::unity2::Il2CppString)` overload"] fn add (self , obj_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < Versus_MapObjectCounter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_MapObjectCounter_unity2_raw :: add (__receiver , :: core :: convert :: Into :: into (obj_name) , :: core :: option :: Option :: None) } } # [doc = "`GetEnumerator()` overload"] fn get_enumerator (self ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2_Enumerator < crate :: app :: mapeditorcategorydata :: MapEditorCategoryData , i32 > { unsafe { let __receiver = < Versus_MapObjectCounter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_MapObjectCounter_unity2_raw :: get_enumerator (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-versus")]
-impl < __T : IVersus_DownloadHistory_CheckData > IVersus_DownloadHistory_CheckDataMethods for __T { }
+impl < __T : IVersus_MapObjectCounter > IVersus_MapObjectCounterMethods for __T { }
 
 #[cfg(feature = "app-versus")]
-impl Versus_DownloadHistory_CheckData { pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_DownloadHistory_CheckData_unity2_raw :: __lookup_reset :: get_method_info () } pub fn is_downloaded_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_DownloadHistory_CheckData_unity2_raw :: __lookup_is_downloaded :: get_method_info () } pub fn get_elapsed_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_DownloadHistory_CheckData_unity2_raw :: __lookup_get_elapsed_time :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_DownloadHistory_CheckData_unity2_raw :: __lookup_ctor :: get_method_info () } }
+impl Versus_MapObjectCounter { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_MapObjectCounter_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_MapObjectCounter_unity2_raw :: __lookup_add :: get_method_info () } pub fn get_enumerator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_MapObjectCounter_unity2_raw :: __lookup_get_enumerator :: get_method_info () } }
 
 #[cfg(feature = "app-versus")]
-impl Versus_DownloadHistory_CheckData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Versus_DownloadHistory_CheckData) , :: core :: stringify ! (new) ,)) ; < Self as IVersus_DownloadHistory_CheckDataMethods > :: ctor (this ,) ; this }
+impl Versus_MapObjectCounter {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Versus_MapObjectCounter) , :: core :: stringify ! (new) ,)) ; < Self as IVersus_MapObjectCounterMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-versus")]
@@ -447,6 +447,23 @@ impl Versus_DownloadHistory { pub fn ctor_method_info () -> & 'static :: unity2 
 #[cfg(feature = "app-versus")]
 impl Versus_DownloadHistory {
 # [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Versus_DownloadHistory) , :: core :: stringify ! (new) ,)) ; < Self as IVersus_DownloadHistoryMethods > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "app-versus")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Versus_DownloadHistory_CheckData_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_reset { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_DownloadHistory_CheckData as :: unity2 :: ClassIdentity > :: class () , "Reset" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_DownloadHistory_CheckData as :: unity2 :: ClassIdentity > :: NAME , "Reset" , e) , } } } pub unsafe fn reset (this : Versus_DownloadHistory_CheckData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus_DownloadHistory_CheckData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_reset :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_downloaded { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_DownloadHistory_CheckData as :: unity2 :: ClassIdentity > :: class () , "IsDownloaded" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_DownloadHistory_CheckData as :: unity2 :: ClassIdentity > :: NAME , "IsDownloaded" , e) , } } } pub unsafe fn is_downloaded (this : Versus_DownloadHistory_CheckData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (Versus_DownloadHistory_CheckData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_downloaded :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_elapsed_time { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_DownloadHistory_CheckData as :: unity2 :: ClassIdentity > :: class () , "GetElapsedTime" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_DownloadHistory_CheckData as :: unity2 :: ClassIdentity > :: NAME , "GetElapsedTime" , e) , } } } pub unsafe fn get_elapsed_time (this : Versus_DownloadHistory_CheckData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i64 { let inner : extern "C" fn (Versus_DownloadHistory_CheckData , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute (__lookup_get_elapsed_time :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_DownloadHistory_CheckData as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_DownloadHistory_CheckData as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Versus_DownloadHistory_CheckData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus_DownloadHistory_CheckData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-versus")]
+pub trait IVersus_DownloadHistory_CheckDataMethods : IVersus_DownloadHistory_CheckData { # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < Versus_DownloadHistory_CheckData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_DownloadHistory_CheckData_unity2_raw :: reset (__receiver , :: core :: option :: Option :: None) } } # [doc = "`IsDownloaded()` overload"] fn is_downloaded (self ,) -> bool { unsafe { let __receiver = < Versus_DownloadHistory_CheckData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_DownloadHistory_CheckData_unity2_raw :: is_downloaded (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetElapsedTime()` overload"] fn get_elapsed_time (self ,) -> i64 { unsafe { let __receiver = < Versus_DownloadHistory_CheckData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_DownloadHistory_CheckData_unity2_raw :: get_elapsed_time (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Versus_DownloadHistory_CheckData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_DownloadHistory_CheckData_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-versus")]
+impl < __T : IVersus_DownloadHistory_CheckData > IVersus_DownloadHistory_CheckDataMethods for __T { }
+
+#[cfg(feature = "app-versus")]
+impl Versus_DownloadHistory_CheckData { pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_DownloadHistory_CheckData_unity2_raw :: __lookup_reset :: get_method_info () } pub fn is_downloaded_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_DownloadHistory_CheckData_unity2_raw :: __lookup_is_downloaded :: get_method_info () } pub fn get_elapsed_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_DownloadHistory_CheckData_unity2_raw :: __lookup_get_elapsed_time :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_DownloadHistory_CheckData_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-versus")]
+impl Versus_DownloadHistory_CheckData {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Versus_DownloadHistory_CheckData) , :: core :: stringify ! (new) ,)) ; < Self as IVersus_DownloadHistory_CheckDataMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-versus")]
@@ -490,45 +507,28 @@ impl Versus_VersusCheck {
 }
 
 #[cfg(feature = "app-versus")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Versus_MapObjectCounter_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_MapObjectCounter as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_MapObjectCounter as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Versus_MapObjectCounter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus_MapObjectCounter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_MapObjectCounter as :: unity2 :: ClassIdentity > :: class () , "Add" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_MapObjectCounter as :: unity2 :: ClassIdentity > :: NAME , "Add" , e) , } } } pub unsafe fn add (this : Versus_MapObjectCounter , obj_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Versus_MapObjectCounter , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add :: get_method_info () . method_ptr ,) ; inner (this , obj_name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_enumerator { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Versus_MapObjectCounter as :: unity2 :: ClassIdentity > :: class () , "GetEnumerator" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Versus_MapObjectCounter as :: unity2 :: ClassIdentity > :: NAME , "GetEnumerator" , e) , } } } pub unsafe fn get_enumerator (this : Versus_MapObjectCounter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2_Enumerator < crate :: app :: mapeditorcategorydata :: MapEditorCategoryData , i32 > { let inner : extern "C" fn (Versus_MapObjectCounter , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2_Enumerator < crate :: app :: mapeditorcategorydata :: MapEditorCategoryData , i32 > = :: core :: mem :: transmute (__lookup_get_enumerator :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "app-versus")]
-pub trait IVersus_MapObjectCounterMethods : IVersus_MapObjectCounter { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Versus_MapObjectCounter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_MapObjectCounter_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Add(::unity2::Il2CppString)` overload"] fn add (self , obj_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < Versus_MapObjectCounter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_MapObjectCounter_unity2_raw :: add (__receiver , :: core :: convert :: Into :: into (obj_name) , :: core :: option :: Option :: None) } } # [doc = "`GetEnumerator()` overload"] fn get_enumerator (self ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2_Enumerator < crate :: app :: mapeditorcategorydata :: MapEditorCategoryData , i32 > { unsafe { let __receiver = < Versus_MapObjectCounter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Versus_MapObjectCounter_unity2_raw :: get_enumerator (__receiver , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-versus")]
-impl < __T : IVersus_MapObjectCounter > IVersus_MapObjectCounterMethods for __T { }
-
-#[cfg(feature = "app-versus")]
-impl Versus_MapObjectCounter { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_MapObjectCounter_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_MapObjectCounter_unity2_raw :: __lookup_add :: get_method_info () } pub fn get_enumerator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Versus_MapObjectCounter_unity2_raw :: __lookup_get_enumerator :: get_method_info () } }
-
-#[cfg(feature = "app-versus")]
-impl Versus_MapObjectCounter {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Versus_MapObjectCounter) , :: core :: stringify ! (new) ,)) ; < Self as IVersus_MapObjectCounterMethods > :: ctor (this ,) ; this }
-}
-
-#[cfg(feature = "app-versus")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Versus_DownloadHistory_CheckData;
-    pub use super::IVersus_DownloadHistory_CheckData;
-    pub use super::IVersus_DownloadHistory_CheckDataMethods;
-    pub use super::Versus_DownloadHistory;
-    pub use super::IVersus_DownloadHistory;
-    pub use super::IVersus_DownloadHistoryMethods;
-    pub use super::Versus_MatchingType;
-    pub use super::Versus_CheckDataType;
-    pub use super::Versus;
-    pub use super::IVersus;
-    pub use super::IVersusMethods;
-    pub use super::Versus_MapResult;
-    pub use super::Versus_VersusCheck;
-    pub use super::IVersus_VersusCheck;
-    pub use super::IVersus_VersusCheckMethods;
     pub use super::Versus_MapObjectCounter;
     pub use super::IVersus_MapObjectCounter;
     pub use super::IVersus_MapObjectCounterMethods;
-    pub use super::Versus_Mode;
+    pub use super::Versus_MapResult;
+    pub use super::Versus_DownloadHistory;
+    pub use super::IVersus_DownloadHistory;
+    pub use super::IVersus_DownloadHistoryMethods;
+    pub use super::Versus_CheckDataType;
     pub use super::Versus_Error;
+    pub use super::Versus_MatchingType;
+    pub use super::Versus_DownloadHistory_CheckData;
+    pub use super::IVersus_DownloadHistory_CheckData;
+    pub use super::IVersus_DownloadHistory_CheckDataMethods;
+    pub use super::Versus_Mode;
+    pub use super::Versus;
+    pub use super::IVersus;
+    pub use super::IVersusMethods;
+    pub use super::Versus_VersusCheck;
+    pub use super::IVersus_VersusCheck;
+    pub use super::IVersus_VersusCheckMethods;
     pub use crate::app::singletonclass_1::ISingletonClass_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

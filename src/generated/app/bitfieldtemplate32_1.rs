@@ -24,7 +24,7 @@ pub use __types::*;
 # [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > BitFieldTemplate32_1 < T0 > {
 # [doc = "`get_ValueType()` overload"] # [method (name = "get_ValueType" , args = 0)] pub fn get_value_type (self ,) -> :: unity2 :: SystemType ;
 
-# [doc = "`ToInt(T0)` overload"] # [method (name = "ToInt" , args = 1)] pub fn to_int (self , value : T0) -> i32 ;
+# [doc = "`ToInt(T0)` overload"] # [method (name = "ToInt" , args = 1 , abstract_dispatch)] pub fn to_int (self , value : T0) -> i32 ;
 
 # [doc = "`.ctor()` overload"] # [method (name = ".ctor" , args = 0)] pub fn ctor (self ,) -> () ;
 

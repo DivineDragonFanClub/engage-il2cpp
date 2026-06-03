@@ -13,9 +13,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_compatibility/TMP_Compatibility.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "TMP_Compatibility")] # [parent (crate :: system :: object :: Object)] pub struct TMP_Compatibility {}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_compatibility/TMP_Compatibility_AnchorPositions.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -118,6 +115,9 @@ impl  TMP_Compatibility_AnchorPositions  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_compatibility/TMP_Compatibility.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "TMP_Compatibility")] # [parent (crate :: system :: object :: Object)] pub struct TMP_Compatibility {}
+
 }
 
 #[cfg(feature = "tm_pro-tmp_compatibility-types")]
@@ -135,9 +135,9 @@ impl TMP_Compatibility { pub fn convert_text_alignment_enum_values_method_info (
 #[cfg(feature = "tm_pro-tmp_compatibility")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::TMP_Compatibility_AnchorPositions;
     pub use super::TMP_Compatibility;
     pub use super::ITMP_Compatibility;
-    pub use super::TMP_Compatibility_AnchorPositions;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

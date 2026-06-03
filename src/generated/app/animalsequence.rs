@@ -17,6 +17,12 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animalsequence/AnimalSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "AnimalSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: animalsequence :: AnimalSequence >)] pub struct AnimalSequence {
+# [offset (128)] # [rename (name = "AnimalList")] pub animal_list : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+# [offset (136)] # [rename (name = "AnimalLoadingCount")] pub animal_loading_count : i32 ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/animalsequence/AnimalSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -77,12 +83,6 @@ impl  AnimalSequence_Label  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animalsequence/AnimalSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "AnimalSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: animalsequence :: AnimalSequence >)] pub struct AnimalSequence {
-# [offset (128)] # [rename (name = "AnimalList")] pub animal_list : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [offset (136)] # [rename (name = "AnimalLoadingCount")] pub animal_loading_count : i32 ,
-}
-
 }
 
 #[cfg(feature = "app-animalsequence-types")]
@@ -111,10 +111,10 @@ impl AnimalSequence {
 #[cfg(feature = "app-animalsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AnimalSequence_Label;
     pub use super::AnimalSequence;
     pub use super::IAnimalSequence;
     pub use super::IAnimalSequenceMethods;
+    pub use super::AnimalSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

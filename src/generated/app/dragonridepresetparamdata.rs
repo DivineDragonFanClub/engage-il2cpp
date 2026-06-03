@@ -17,9 +17,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridepresetparamdata/DragonRidePresetParamData.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRidePresetParamData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: dragonridepresetparamdata :: DragonRidePresetParamData >)] pub struct DragonRidePresetParamData {}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridepresetparamdata/DragonRidePresetParamData_CourseData.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -55,6 +52,9 @@ impl ::unity2::IlType for DragonRidePresetParamData_CourseData {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridepresetparamdata/DragonRidePresetParamData.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRidePresetParamData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: dragonridepresetparamdata :: DragonRidePresetParamData >)] pub struct DragonRidePresetParamData {}
+
 }
 
 #[cfg(feature = "app-dragonridepresetparamdata-types")]
@@ -83,10 +83,10 @@ impl DragonRidePresetParamData {
 #[cfg(feature = "app-dragonridepresetparamdata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::DragonRidePresetParamData_CourseData;
     pub use super::DragonRidePresetParamData;
     pub use super::IDragonRidePresetParamData;
     pub use super::IDragonRidePresetParamDataMethods;
-    pub use super::DragonRidePresetParamData_CourseData;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdata_1::IStructData_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

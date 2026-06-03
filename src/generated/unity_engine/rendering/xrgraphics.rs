@@ -13,6 +13,9 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/xrgraphics/XRGraphics.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "XRGraphics")] # [parent (crate :: system :: object :: Object)] pub struct XRGraphics {}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/xrgraphics/XRGraphics_StereoRenderingMode.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -73,9 +76,6 @@ impl  XRGraphics_StereoRenderingMode  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/xrgraphics/XRGraphics.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "XRGraphics")] # [parent (crate :: system :: object :: Object)] pub struct XRGraphics {}
-
 }
 
 #[cfg(feature = "unity_engine-rendering-xrgraphics-types")]
@@ -104,10 +104,10 @@ impl XRGraphics {
 #[cfg(feature = "unity_engine-rendering-xrgraphics")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::XRGraphics_StereoRenderingMode;
     pub use super::XRGraphics;
     pub use super::IXRGraphics;
     pub use super::IXRGraphicsMethods;
+    pub use super::XRGraphics_StereoRenderingMode;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

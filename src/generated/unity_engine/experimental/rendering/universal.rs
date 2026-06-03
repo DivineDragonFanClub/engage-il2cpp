@@ -32,7 +32,7 @@
  # [cfg (feature = "unity_engine-experimental-rendering-universal-light2d_2")] pub use light2d_2 :: { ILight2D_2Methods }
  ;
  # [cfg (any (feature = "unity_engine-experimental-rendering-universal-light2dblendstyle-types"))] pub mod light2dblendstyle ;
- # [cfg (feature = "unity_engine-experimental-rendering-universal-light2dblendstyle-types")] pub use light2dblendstyle :: { Light2DBlendStyle , Light2DBlendStyle_BlendFactors , Light2DBlendStyle_BlendMode , Light2DBlendStyle_MaskChannelFilter , Light2DBlendStyle_TextureChannel }
+ # [cfg (feature = "unity_engine-experimental-rendering-universal-light2dblendstyle-types")] pub use light2dblendstyle :: { Light2DBlendStyle_MaskChannelFilter , Light2DBlendStyle_BlendMode , Light2DBlendStyle_TextureChannel , Light2DBlendStyle , Light2DBlendStyle_BlendFactors }
  ;
  # [cfg (any (feature = "unity_engine-experimental-rendering-universal-light2dcullresult-types"))] pub mod light2dcullresult ;
  # [cfg (feature = "unity_engine-experimental-rendering-universal-light2dcullresult-types")] pub use light2dcullresult :: { Light2DCullResult , ILight2DCullResult }
@@ -49,7 +49,7 @@
  # [cfg (feature = "unity_engine-experimental-rendering-universal-lightstats-types")] pub use lightstats :: { LightStats }
  ;
  # [cfg (any (feature = "unity_engine-experimental-rendering-universal-lightutility-types"))] pub mod lightutility ;
- # [cfg (feature = "unity_engine-experimental-rendering-universal-lightutility-types")] pub use lightutility :: { LightUtility , ILightUtility , LightUtility_SpriteLightMeshVertex , LightUtility_ParametricLightMeshVertex }
+ # [cfg (feature = "unity_engine-experimental-rendering-universal-lightutility-types")] pub use lightutility :: { LightUtility_ParametricLightMeshVertex , LightUtility_SpriteLightMeshVertex , LightUtility , ILightUtility }
  ;
  # [cfg (any (feature = "unity_engine-experimental-rendering-universal-pixelperfectcamera-types"))] pub mod pixelperfectcamera ;
  # [cfg (feature = "unity_engine-experimental-rendering-universal-pixelperfectcamera-types")] pub use pixelperfectcamera :: { PixelPerfectCamera , IPixelPerfectCamera }
@@ -80,9 +80,9 @@
  # [cfg (feature = "unity_engine-experimental-rendering-universal-rendererlighting-types")] pub use rendererlighting :: { RendererLighting , IRendererLighting }
  ;
  # [cfg (any (feature = "unity_engine-experimental-rendering-universal-renderobjects-types"))] pub mod renderobjects ;
- # [cfg (feature = "unity_engine-experimental-rendering-universal-renderobjects-types")] pub use renderobjects :: { RenderObjects_FilterSettings , IRenderObjects_FilterSettings , RenderObjects , IRenderObjects , RenderObjects_RenderObjectsSettings , IRenderObjects_RenderObjectsSettings , RenderObjects_CustomCameraSettings , IRenderObjects_CustomCameraSettings }
+ # [cfg (feature = "unity_engine-experimental-rendering-universal-renderobjects-types")] pub use renderobjects :: { RenderObjects , IRenderObjects , RenderObjects_CustomCameraSettings , IRenderObjects_CustomCameraSettings , RenderObjects_RenderObjectsSettings , IRenderObjects_RenderObjectsSettings , RenderObjects_FilterSettings , IRenderObjects_FilterSettings }
  ;
- # [cfg (feature = "unity_engine-experimental-rendering-universal-renderobjects")] pub use renderobjects :: { IRenderObjects_FilterSettingsMethods , IRenderObjectsMethods , IRenderObjects_RenderObjectsSettingsMethods , IRenderObjects_CustomCameraSettingsMethods }
+ # [cfg (feature = "unity_engine-experimental-rendering-universal-renderobjects")] pub use renderobjects :: { IRenderObjectsMethods , IRenderObjects_CustomCameraSettingsMethods , IRenderObjects_RenderObjectsSettingsMethods , IRenderObjects_FilterSettingsMethods }
  ;
  # [cfg (any (feature = "unity_engine-experimental-rendering-universal-renderobjectspass-types"))] pub mod renderobjectspass ;
  # [cfg (feature = "unity_engine-experimental-rendering-universal-renderobjectspass-types")] pub use renderobjectspass :: { RenderObjectsPass , IRenderObjectsPass }

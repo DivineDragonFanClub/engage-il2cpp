@@ -12,9 +12,9 @@
  # [cfg (feature = "system-io-compression-deflatestream")] pub use deflatestream :: { IDeflateStream_WriteMethodMethods , IDeflateStream_ReadMethodMethods , IDeflateStreamMethods }
  ;
  # [cfg (any (feature = "system-io-compression-deflatestreamnative-types"))] pub mod deflatestreamnative ;
- # [cfg (feature = "system-io-compression-deflatestreamnative-types")] pub use deflatestreamnative :: { DeflateStreamNative , IDeflateStreamNative , DeflateStreamNative_SafeDeflateStreamHandle , IDeflateStreamNative_SafeDeflateStreamHandle , DeflateStreamNative_UnmanagedReadOrWrite , IDeflateStreamNative_UnmanagedReadOrWrite }
+ # [cfg (feature = "system-io-compression-deflatestreamnative-types")] pub use deflatestreamnative :: { DeflateStreamNative_UnmanagedReadOrWrite , IDeflateStreamNative_UnmanagedReadOrWrite , DeflateStreamNative_SafeDeflateStreamHandle , IDeflateStreamNative_SafeDeflateStreamHandle , DeflateStreamNative , IDeflateStreamNative }
  ;
- # [cfg (feature = "system-io-compression-deflatestreamnative")] pub use deflatestreamnative :: { IDeflateStreamNativeMethods , IDeflateStreamNative_SafeDeflateStreamHandleMethods , IDeflateStreamNative_UnmanagedReadOrWriteMethods }
+ # [cfg (feature = "system-io-compression-deflatestreamnative")] pub use deflatestreamnative :: { IDeflateStreamNative_UnmanagedReadOrWriteMethods , IDeflateStreamNative_SafeDeflateStreamHandleMethods , IDeflateStreamNativeMethods }
  ;
  # [cfg (any (feature = "system-io-compression-gzipstream-types"))] pub mod gzipstream ;
  # [cfg (feature = "system-io-compression-gzipstream-types")] pub use gzipstream :: { GZipStream , IGZipStream }

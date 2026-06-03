@@ -30,6 +30,12 @@ mod __types {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/camerapositiondata/CameraPositionData.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CameraPositionData")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct CameraPositionData {
+# [offset (24)] # [rename (name = "ShakeSetting")] pub shake_setting : crate :: combat :: camerapositiondata :: CameraPositionData_CameraShakeSettings ,
+# [offset (128)] # [rename (name = "m_DrawCount")] pub m_draw_count : crate :: app :: gameparam :: GameParam_Holder ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/camerapositiondata/CameraPositionData_TargetJoint.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -96,12 +102,6 @@ impl  CameraPositionData_TargetJoint  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/camerapositiondata/CameraPositionData.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CameraPositionData")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct CameraPositionData {
-# [offset (24)] # [rename (name = "ShakeSetting")] pub shake_setting : crate :: combat :: camerapositiondata :: CameraPositionData_CameraShakeSettings ,
-# [offset (128)] # [rename (name = "m_DrawCount")] pub m_draw_count : crate :: app :: gameparam :: GameParam_Holder ,
-}
-
 }
 
 #[cfg(feature = "combat-camerapositiondata-types")]
@@ -147,10 +147,10 @@ pub mod prelude {
     pub use super::CameraPositionData_CameraShakeSettings;
     pub use super::ICameraPositionData_CameraShakeSettings;
     pub use super::ICameraPositionData_CameraShakeSettingsMethods;
-    pub use super::CameraPositionData_TargetJoint;
     pub use super::CameraPositionData;
     pub use super::ICameraPositionData;
     pub use super::ICameraPositionDataMethods;
+    pub use super::CameraPositionData_TargetJoint;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

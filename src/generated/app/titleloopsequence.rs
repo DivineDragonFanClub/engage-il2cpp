@@ -19,6 +19,15 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/titleloopsequence/TitleLoopSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "TitleLoopSequence")] # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: titleloopsequence :: TitleLoopSequence >)] pub struct TitleLoopSequence {
+# [static_field] # [rename (name = "s_isGOPFirst")] pub s_is_gop_first : bool ,
+# [static_field] # [rename (name = "s_IsGOPMovieHeroFemale")] pub s_is_gop_movie_hero_female : bool ,
+# [static_field] # [rename (name = "s_LoopSequenceFromTitle")] pub s_loop_sequence_from_title : crate :: app :: titleloopsequence :: TitleLoopSequence_LoopSequenceFromTitle ,
+# [static_field] # [rename (name = "s_IsFromMainMenu")] pub s_is_from_main_menu : bool ,
+# [offset (132)] # [rename (name = "m_IsEndFromTitle")] pub m_is_end_from_title : bool ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/titleloopsequence/TitleLoopSequence_LoopSequenceFromTitle.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -146,15 +155,6 @@ impl  TitleLoopSequence_Label  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/titleloopsequence/TitleLoopSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "TitleLoopSequence")] # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: titleloopsequence :: TitleLoopSequence >)] pub struct TitleLoopSequence {
-# [static_field] # [rename (name = "s_isGOPFirst")] pub s_is_gop_first : bool ,
-# [static_field] # [rename (name = "s_IsGOPMovieHeroFemale")] pub s_is_gop_movie_hero_female : bool ,
-# [static_field] # [rename (name = "s_LoopSequenceFromTitle")] pub s_loop_sequence_from_title : crate :: app :: titleloopsequence :: TitleLoopSequence_LoopSequenceFromTitle ,
-# [static_field] # [rename (name = "s_IsFromMainMenu")] pub s_is_from_main_menu : bool ,
-# [offset (132)] # [rename (name = "m_IsEndFromTitle")] pub m_is_end_from_title : bool ,
-}
-
 }
 
 #[cfg(feature = "app-titleloopsequence-types")]
@@ -183,11 +183,11 @@ impl TitleLoopSequence {
 #[cfg(feature = "app-titleloopsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TitleLoopSequence_LoopSequenceFromTitle;
-    pub use super::TitleLoopSequence_Label;
     pub use super::TitleLoopSequence;
     pub use super::ITitleLoopSequence;
     pub use super::ITitleLoopSequenceMethods;
+    pub use super::TitleLoopSequence_LoopSequenceFromTitle;
+    pub use super::TitleLoopSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::procscenesequence_1::IProcSceneSequence_1;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;

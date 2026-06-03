@@ -19,6 +19,13 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mainsequence/MainSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "MainSequence")] # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: mainsequence :: MainSequence >)] pub struct MainSequence {
+# [static_field] # [rename (name = "s_JumpLabel")] pub s_jump_label : crate :: app :: mainsequence :: MainSequence_Label ,
+# [static_field] # [rename (name = "s_FakeLabel")] pub s_fake_label : crate :: app :: mainsequence :: MainSequence_Label ,
+# [static_field] # [rename (name = "s_Initialized")] pub s_initialized : bool ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mainsequence/MainSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -235,13 +242,6 @@ impl  MainSequence_Label  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mainsequence/MainSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "MainSequence")] # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: mainsequence :: MainSequence >)] pub struct MainSequence {
-# [static_field] # [rename (name = "s_JumpLabel")] pub s_jump_label : crate :: app :: mainsequence :: MainSequence_Label ,
-# [static_field] # [rename (name = "s_FakeLabel")] pub s_fake_label : crate :: app :: mainsequence :: MainSequence_Label ,
-# [static_field] # [rename (name = "s_Initialized")] pub s_initialized : bool ,
-}
-
 }
 
 #[cfg(feature = "app-mainsequence-types")]
@@ -270,10 +270,10 @@ impl MainSequence {
 #[cfg(feature = "app-mainsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MainSequence_Label;
     pub use super::MainSequence;
     pub use super::IMainSequence;
     pub use super::IMainSequenceMethods;
+    pub use super::MainSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::procscenesequence_1::IProcSceneSequence_1;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;

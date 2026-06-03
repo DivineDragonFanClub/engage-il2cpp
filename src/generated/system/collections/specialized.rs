@@ -16,9 +16,9 @@
  # [cfg (feature = "system-collections-specialized-hybriddictionary")] pub use hybriddictionary :: { IHybridDictionaryMethods }
  ;
  # [cfg (any (feature = "system-collections-specialized-listdictionary-types"))] pub mod listdictionary ;
- # [cfg (feature = "system-collections-specialized-listdictionary-types")] pub use listdictionary :: { ListDictionary_NodeKeyValueCollection , IListDictionary_NodeKeyValueCollection , ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator , IListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator , ListDictionary_NodeEnumerator , IListDictionary_NodeEnumerator , ListDictionary_DictionaryNode , IListDictionary_DictionaryNode , ListDictionary , IListDictionary }
+ # [cfg (feature = "system-collections-specialized-listdictionary-types")] pub use listdictionary :: { ListDictionary , IListDictionary , ListDictionary_NodeEnumerator , IListDictionary_NodeEnumerator , ListDictionary_DictionaryNode , IListDictionary_DictionaryNode , ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator , IListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator , ListDictionary_NodeKeyValueCollection , IListDictionary_NodeKeyValueCollection }
  ;
- # [cfg (feature = "system-collections-specialized-listdictionary")] pub use listdictionary :: { IListDictionary_NodeKeyValueCollectionMethods , IListDictionary_NodeKeyValueCollection_NodeKeyValueEnumeratorMethods , IListDictionary_NodeEnumeratorMethods , IListDictionary_DictionaryNodeMethods , IListDictionaryMethods }
+ # [cfg (feature = "system-collections-specialized-listdictionary")] pub use listdictionary :: { IListDictionaryMethods , IListDictionary_NodeEnumeratorMethods , IListDictionary_DictionaryNodeMethods , IListDictionary_NodeKeyValueCollection_NodeKeyValueEnumeratorMethods , IListDictionary_NodeKeyValueCollectionMethods }
  ;
  # [cfg (any (feature = "system-collections-specialized-nameobjectcollectionbase-types"))] pub mod nameobjectcollectionbase ;
  # [cfg (feature = "system-collections-specialized-nameobjectcollectionbase-types")] pub use nameobjectcollectionbase :: { NameObjectCollectionBase_NameObjectEntry , INameObjectCollectionBase_NameObjectEntry , NameObjectCollectionBase , INameObjectCollectionBase , NameObjectCollectionBase_NameObjectKeysEnumerator , INameObjectCollectionBase_NameObjectKeysEnumerator }
@@ -31,9 +31,9 @@
  # [cfg (feature = "system-collections-specialized-namevaluecollection")] pub use namevaluecollection :: { INameValueCollectionMethods }
  ;
  # [cfg (any (feature = "system-collections-specialized-ordereddictionary-types"))] pub mod ordereddictionary ;
- # [cfg (feature = "system-collections-specialized-ordereddictionary-types")] pub use ordereddictionary :: { OrderedDictionary_OrderedDictionaryKeyValueCollection , IOrderedDictionary_OrderedDictionaryKeyValueCollection , OrderedDictionary , IOrderedDictionary , OrderedDictionary_OrderedDictionaryEnumerator , IOrderedDictionary_OrderedDictionaryEnumerator }
+ # [cfg (feature = "system-collections-specialized-ordereddictionary-types")] pub use ordereddictionary :: { OrderedDictionary , IOrderedDictionary , OrderedDictionary_OrderedDictionaryEnumerator , IOrderedDictionary_OrderedDictionaryEnumerator , OrderedDictionary_OrderedDictionaryKeyValueCollection , IOrderedDictionary_OrderedDictionaryKeyValueCollection }
  ;
- # [cfg (feature = "system-collections-specialized-ordereddictionary")] pub use ordereddictionary :: { IOrderedDictionary_OrderedDictionaryKeyValueCollectionMethods , IOrderedDictionaryMethods , IOrderedDictionary_OrderedDictionaryEnumeratorMethods }
+ # [cfg (feature = "system-collections-specialized-ordereddictionary")] pub use ordereddictionary :: { IOrderedDictionaryMethods , IOrderedDictionary_OrderedDictionaryEnumeratorMethods , IOrderedDictionary_OrderedDictionaryKeyValueCollectionMethods }
  ;
  # [cfg (any (feature = "system-collections-specialized-stringcollection-types"))] pub mod stringcollection ;
  # [cfg (feature = "system-collections-specialized-stringcollection-types")] pub use stringcollection :: { StringCollection , IStringCollection }

@@ -13,9 +13,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/uisystemprofilerapi/UISystemProfilerApi.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "UISystemProfilerApi")] # [parent (crate :: system :: object :: Object)] pub struct UISystemProfilerApi {}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/uisystemprofilerapi/UISystemProfilerApi_SampleType.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -64,6 +61,9 @@ impl  UISystemProfilerApi_SampleType  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/uisystemprofilerapi/UISystemProfilerApi.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "UISystemProfilerApi")] # [parent (crate :: system :: object :: Object)] pub struct UISystemProfilerApi {}
+
 }
 
 #[cfg(feature = "unity_engine-uisystemprofilerapi-types")]
@@ -81,9 +81,9 @@ impl UISystemProfilerApi { pub fn begin_sample_method_info () -> & 'static :: un
 #[cfg(feature = "unity_engine-uisystemprofilerapi")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::UISystemProfilerApi_SampleType;
     pub use super::UISystemProfilerApi;
     pub use super::IUISystemProfilerApi;
-    pub use super::UISystemProfilerApi_SampleType;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

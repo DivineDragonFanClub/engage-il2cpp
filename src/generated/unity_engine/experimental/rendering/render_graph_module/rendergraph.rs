@@ -15,8 +15,43 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraph/RenderGraph_ProfilingScopePassData.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule" , name = "RenderGraph.ProfilingScopePassData")] # [parent (crate :: system :: object :: Object)] pub struct RenderGraph_ProfilingScopePassData {
-# [offset (16)] # [rename (name = "sampler")] pub sampler : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraph/RenderGraph_OnGraphRegisteredDelegate.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule" , name = "RenderGraph.OnGraphRegisteredDelegate")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct RenderGraph_OnGraphRegisteredDelegate {}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/render_graph_module/rendergraph/RenderGraph_CompiledResourceInfo.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct RenderGraph_CompiledResourceInfo {
+    pub producers: crate :: system :: collections :: generic :: list_1 :: List_1 < i32 >,
+    pub consumers: crate :: system :: collections :: generic :: list_1 :: List_1 < i32 >,
+    pub resource_created: bool,
+    pub ref_count: i32,
+}
+
+
+impl ::unity2::ClassIdentity for RenderGraph_CompiledResourceInfo {
+    const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.RenderGraphModule";
+
+    const NAME: &'static str = "RenderGraph.CompiledResourceInfo";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl ::unity2::IlType for RenderGraph_CompiledResourceInfo {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
 }
 
 
@@ -90,44 +125,9 @@ impl ::unity2::IlType for RenderGraph_CompiledPassInfo {
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/render_graph_module/rendergraph/RenderGraph_CompiledResourceInfo.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct RenderGraph_CompiledResourceInfo {
-    pub producers: crate :: system :: collections :: generic :: list_1 :: List_1 < i32 >,
-    pub consumers: crate :: system :: collections :: generic :: list_1 :: List_1 < i32 >,
-    pub resource_created: bool,
-    pub ref_count: i32,
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraph/RenderGraph_ProfilingScopePassData.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule" , name = "RenderGraph.ProfilingScopePassData")] # [parent (crate :: system :: object :: Object)] pub struct RenderGraph_ProfilingScopePassData {
+# [offset (16)] # [rename (name = "sampler")] pub sampler : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
 }
-
-
-impl ::unity2::ClassIdentity for RenderGraph_CompiledResourceInfo {
-    const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.RenderGraphModule";
-
-    const NAME: &'static str = "RenderGraph.CompiledResourceInfo";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for RenderGraph_CompiledResourceInfo {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraph/RenderGraph_OnGraphRegisteredDelegate.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule" , name = "RenderGraph.OnGraphRegisteredDelegate")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct RenderGraph_OnGraphRegisteredDelegate {}
 
 }
 
@@ -135,21 +135,30 @@ impl ::unity2::IlType for RenderGraph_CompiledResourceInfo {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RenderGraph_ProfilingScopePassData_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RenderGraph_ProfilingScopePassData as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RenderGraph_ProfilingScopePassData as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RenderGraph_ProfilingScopePassData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RenderGraph_ProfilingScopePassData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RenderGraph_OnGraphRegisteredDelegate_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RenderGraph_OnGraphRegisteredDelegate as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RenderGraph_OnGraphRegisteredDelegate as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RenderGraph_OnGraphRegisteredDelegate , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RenderGraph_OnGraphRegisteredDelegate , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , object , method , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RenderGraph_OnGraphRegisteredDelegate as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RenderGraph_OnGraphRegisteredDelegate as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , } } } pub unsafe fn invoke (this : RenderGraph_OnGraphRegisteredDelegate , graph : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RenderGraph_OnGraphRegisteredDelegate , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_invoke :: get_method_info () . method_ptr ,) ; inner (this , graph , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
-pub trait IRenderGraph_ProfilingScopePassDataMethods : IRenderGraph_ProfilingScopePassData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RenderGraph_ProfilingScopePassData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RenderGraph_ProfilingScopePassData_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+pub trait IRenderGraph_OnGraphRegisteredDelegateMethods : IRenderGraph_OnGraphRegisteredDelegate { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < RenderGraph_OnGraphRegisteredDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RenderGraph_OnGraphRegisteredDelegate_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } # [doc = "`Invoke(crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph)` overload"] fn invoke (self , graph : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph >) -> () { unsafe { let __receiver = < RenderGraph_OnGraphRegisteredDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RenderGraph_OnGraphRegisteredDelegate_unity2_raw :: invoke (__receiver , :: core :: convert :: Into :: into (graph) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
-impl < __T : IRenderGraph_ProfilingScopePassData > IRenderGraph_ProfilingScopePassDataMethods for __T { }
+impl < __T : IRenderGraph_OnGraphRegisteredDelegate > IRenderGraph_OnGraphRegisteredDelegateMethods for __T { }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
-impl RenderGraph_ProfilingScopePassData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RenderGraph_ProfilingScopePassData_unity2_raw :: __lookup_ctor :: get_method_info () } }
+impl RenderGraph_OnGraphRegisteredDelegate { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RenderGraph_OnGraphRegisteredDelegate_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RenderGraph_OnGraphRegisteredDelegate_unity2_raw :: __lookup_invoke :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
-impl RenderGraph_ProfilingScopePassData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RenderGraph_ProfilingScopePassData) , :: core :: stringify ! (new) ,)) ; < Self as IRenderGraph_ProfilingScopePassDataMethods > :: ctor (this ,) ; this }
+impl RenderGraph_OnGraphRegisteredDelegate {
+# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RenderGraph_OnGraphRegisteredDelegate) , :: core :: stringify ! (new) ,)) ; < Self as IRenderGraph_OnGraphRegisteredDelegateMethods > :: ctor (this , object , method) ; this }
 }
+
+#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RenderGraph_CompiledResourceInfo_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_reset { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RenderGraph_CompiledResourceInfo as :: unity2 :: ClassIdentity > :: class () , "Reset" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RenderGraph_CompiledResourceInfo as :: unity2 :: ClassIdentity > :: NAME , "Reset" , e) , } } } pub unsafe fn reset (this : * mut RenderGraph_CompiledResourceInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut RenderGraph_CompiledResourceInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_reset :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
+impl RenderGraph_CompiledResourceInfo { # [doc = "`Reset()` overload"] pub fn reset (mut self ,) -> () { unsafe { __RenderGraph_CompiledResourceInfo_unity2_raw :: reset (& mut self as * mut RenderGraph_CompiledResourceInfo , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
+impl RenderGraph_CompiledResourceInfo { pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RenderGraph_CompiledResourceInfo_unity2_raw :: __lookup_reset :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
 # [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RenderGraph_CompiledPassInfo_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_allow_pass_culling { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RenderGraph_CompiledPassInfo as :: unity2 :: ClassIdentity > :: class () , "get_allowPassCulling" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RenderGraph_CompiledPassInfo as :: unity2 :: ClassIdentity > :: NAME , "get_allowPassCulling" , e) , } } } pub unsafe fn get_allow_pass_culling (this : * mut RenderGraph_CompiledPassInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (* mut RenderGraph_CompiledPassInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_get_allow_pass_culling :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_reset { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphpass :: RenderGraphPass as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RenderGraph_CompiledPassInfo as :: unity2 :: ClassIdentity > :: class () , "Reset" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RenderGraph_CompiledPassInfo as :: unity2 :: ClassIdentity > :: NAME , "Reset" , e) , } } } pub unsafe fn reset (this : * mut RenderGraph_CompiledPassInfo , pass : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphpass :: RenderGraphPass , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut RenderGraph_CompiledPassInfo , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphpass :: RenderGraphPass , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_reset :: get_method_info () . method_ptr ,) ; inner (this , pass , __unity2_method_info) } }
@@ -181,45 +190,36 @@ impl RenderGraph {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RenderGraph_CompiledResourceInfo_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_reset { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RenderGraph_CompiledResourceInfo as :: unity2 :: ClassIdentity > :: class () , "Reset" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RenderGraph_CompiledResourceInfo as :: unity2 :: ClassIdentity > :: NAME , "Reset" , e) , } } } pub unsafe fn reset (this : * mut RenderGraph_CompiledResourceInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut RenderGraph_CompiledResourceInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_reset :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RenderGraph_ProfilingScopePassData_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RenderGraph_ProfilingScopePassData as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RenderGraph_ProfilingScopePassData as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RenderGraph_ProfilingScopePassData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RenderGraph_ProfilingScopePassData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
-impl RenderGraph_CompiledResourceInfo { # [doc = "`Reset()` overload"] pub fn reset (mut self ,) -> () { unsafe { __RenderGraph_CompiledResourceInfo_unity2_raw :: reset (& mut self as * mut RenderGraph_CompiledResourceInfo , :: core :: option :: Option :: None) } } }
+pub trait IRenderGraph_ProfilingScopePassDataMethods : IRenderGraph_ProfilingScopePassData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RenderGraph_ProfilingScopePassData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RenderGraph_ProfilingScopePassData_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
-impl RenderGraph_CompiledResourceInfo { pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RenderGraph_CompiledResourceInfo_unity2_raw :: __lookup_reset :: get_method_info () } }
+impl < __T : IRenderGraph_ProfilingScopePassData > IRenderGraph_ProfilingScopePassDataMethods for __T { }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RenderGraph_OnGraphRegisteredDelegate_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RenderGraph_OnGraphRegisteredDelegate as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RenderGraph_OnGraphRegisteredDelegate as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RenderGraph_OnGraphRegisteredDelegate , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RenderGraph_OnGraphRegisteredDelegate , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , object , method , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RenderGraph_OnGraphRegisteredDelegate as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RenderGraph_OnGraphRegisteredDelegate as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , } } } pub unsafe fn invoke (this : RenderGraph_OnGraphRegisteredDelegate , graph : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RenderGraph_OnGraphRegisteredDelegate , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_invoke :: get_method_info () . method_ptr ,) ; inner (this , graph , __unity2_method_info) } }
+impl RenderGraph_ProfilingScopePassData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RenderGraph_ProfilingScopePassData_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
-pub trait IRenderGraph_OnGraphRegisteredDelegateMethods : IRenderGraph_OnGraphRegisteredDelegate { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < RenderGraph_OnGraphRegisteredDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RenderGraph_OnGraphRegisteredDelegate_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } # [doc = "`Invoke(crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph)` overload"] fn invoke (self , graph : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph >) -> () { unsafe { let __receiver = < RenderGraph_OnGraphRegisteredDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RenderGraph_OnGraphRegisteredDelegate_unity2_raw :: invoke (__receiver , :: core :: convert :: Into :: into (graph) , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
-impl < __T : IRenderGraph_OnGraphRegisteredDelegate > IRenderGraph_OnGraphRegisteredDelegateMethods for __T { }
-
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
-impl RenderGraph_OnGraphRegisteredDelegate { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RenderGraph_OnGraphRegisteredDelegate_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RenderGraph_OnGraphRegisteredDelegate_unity2_raw :: __lookup_invoke :: get_method_info () } }
-
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
-impl RenderGraph_OnGraphRegisteredDelegate {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RenderGraph_OnGraphRegisteredDelegate) , :: core :: stringify ! (new) ,)) ; < Self as IRenderGraph_OnGraphRegisteredDelegateMethods > :: ctor (this , object , method) ; this }
+impl RenderGraph_ProfilingScopePassData {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RenderGraph_ProfilingScopePassData) , :: core :: stringify ! (new) ,)) ; < Self as IRenderGraph_ProfilingScopePassDataMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RenderGraph_ProfilingScopePassData;
-    pub use super::IRenderGraph_ProfilingScopePassData;
-    pub use super::IRenderGraph_ProfilingScopePassDataMethods;
+    pub use super::RenderGraph_OnGraphRegisteredDelegate;
+    pub use super::IRenderGraph_OnGraphRegisteredDelegate;
+    pub use super::IRenderGraph_OnGraphRegisteredDelegateMethods;
+    pub use super::RenderGraph_CompiledResourceInfo;
     pub use super::RenderGraph_CompiledPassInfo;
     pub use super::RenderGraph;
     pub use super::IRenderGraph;
     pub use super::IRenderGraphMethods;
-    pub use super::RenderGraph_CompiledResourceInfo;
-    pub use super::RenderGraph_OnGraphRegisteredDelegate;
-    pub use super::IRenderGraph_OnGraphRegisteredDelegate;
-    pub use super::IRenderGraph_OnGraphRegisteredDelegateMethods;
+    pub use super::RenderGraph_ProfilingScopePassData;
+    pub use super::IRenderGraph_ProfilingScopePassData;
+    pub use super::IRenderGraph_ProfilingScopePassDataMethods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

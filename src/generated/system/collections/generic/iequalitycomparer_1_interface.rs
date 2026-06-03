@@ -16,9 +16,9 @@ pub use __types::*;
 
 #[cfg(feature = "system-collections-generic-iequalitycomparer_1_interface")]
 # [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > IEqualityComparer_1_Interface < T0 > {
-# [doc = "`Equals(T0, T0)` overload"] # [method (name = "Equals" , args = 2)] pub fn equals (self , x : T0 , y : T0) -> bool ;
+# [doc = "`Equals(T0, T0)` overload"] # [method (name = "Equals" , args = 2 , abstract_dispatch)] pub fn equals (self , x : T0 , y : T0) -> bool ;
 
-# [doc = "`GetHashCode(T0)` overload"] # [method (name = "GetHashCode" , args = 1)] pub fn get_hash_code (self , obj : T0) -> i32 ;
+# [doc = "`GetHashCode(T0)` overload"] # [method (name = "GetHashCode" , args = 1 , abstract_dispatch)] pub fn get_hash_code (self , obj : T0) -> i32 ;
 }
 
 #[cfg(feature = "system-collections-generic-iequalitycomparer_1_interface")]

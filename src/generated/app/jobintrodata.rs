@@ -19,9 +19,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/jobintrodata/JobIntroData.md"))] # [:: unity2 :: class (namespace = "App" , name = "JobIntroData")] # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: jobintrodata :: JobIntroData >)] pub struct JobIntroData {}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/jobintrodata/JobIntroData_BattleType.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -124,6 +121,9 @@ impl  JobIntroData_BattleType  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/jobintrodata/JobIntroData.md"))] # [:: unity2 :: class (namespace = "App" , name = "JobIntroData")] # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: jobintrodata :: JobIntroData >)] pub struct JobIntroData {}
+
 }
 
 #[cfg(feature = "app-jobintrodata-types")]
@@ -152,10 +152,10 @@ impl JobIntroData {
 #[cfg(feature = "app-jobintrodata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::JobIntroData_BattleType;
     pub use super::JobIntroData;
     pub use super::IJobIntroData;
     pub use super::IJobIntroDataMethods;
-    pub use super::JobIntroData_BattleType;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdataarray_1::IStructDataArray_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

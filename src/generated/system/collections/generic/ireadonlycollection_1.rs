@@ -16,7 +16,7 @@ pub use __types::*;
 
 #[cfg(feature = "system-collections-generic-ireadonlycollection_1")]
 # [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > IReadOnlyCollection_1 < T0 > {
-# [doc = "`get_Count()` overload"] # [method (name = "get_Count" , args = 0)] pub fn get_count (self ,) -> i32 ;
+# [doc = "`get_Count()` overload"] # [method (name = "get_Count" , args = 0 , abstract_dispatch)] pub fn get_count (self ,) -> i32 ;
 }
 
 #[cfg(feature = "system-collections-generic-ireadonlycollection_1")]

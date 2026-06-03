@@ -13,11 +13,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/aksoundengine/AkSoundEngine_AutoObject.md"))] # [:: unity2 :: class (namespace = "" , name = "AkSoundEngine.AutoObject")] # [parent (crate :: system :: object :: Object)] pub struct AkSoundEngine_AutoObject {
-# [offset (16)] # [rename (name = "gameObject")] pub game_object : crate :: unity_engine :: gameobject :: GameObject ,
-}
-
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/aksoundengine/AkSoundEngine_GameObjectHashFunction.md"))] # [:: unity2 :: class (namespace = "" , name = "AkSoundEngine.GameObjectHashFunction")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct AkSoundEngine_GameObjectHashFunction {}
 
 
@@ -369,27 +364,15 @@ mod __types {
 # [static_field] # [rename (name = "RegisteredGameObjects")] pub registered_game_objects : crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < u64 > ,
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/aksoundengine/AkSoundEngine_AutoObject.md"))] # [:: unity2 :: class (namespace = "" , name = "AkSoundEngine.AutoObject")] # [parent (crate :: system :: object :: Object)] pub struct AkSoundEngine_AutoObject {
+# [offset (16)] # [rename (name = "gameObject")] pub game_object : crate :: unity_engine :: gameobject :: GameObject ,
+}
+
 }
 
 #[cfg(feature = "root-aksoundengine-types")]
 pub use __types::*;
-
-#[cfg(feature = "root-aksoundengine")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AkSoundEngine_AutoObject_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkSoundEngine_AutoObject as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkSoundEngine_AutoObject as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AkSoundEngine_AutoObject , go : crate :: unity_engine :: gameobject :: GameObject , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkSoundEngine_AutoObject , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , go , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_finalize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkSoundEngine_AutoObject as :: unity2 :: ClassIdentity > :: class () , "Finalize" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkSoundEngine_AutoObject as :: unity2 :: ClassIdentity > :: NAME , "Finalize" , e) , } } } pub unsafe fn finalize (this : AkSoundEngine_AutoObject , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkSoundEngine_AutoObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_finalize :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "root-aksoundengine")]
-pub trait IAkSoundEngine_AutoObjectMethods : IAkSoundEngine_AutoObject { # [doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"] fn ctor (self , go : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < AkSoundEngine_AutoObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkSoundEngine_AutoObject_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (go) , :: core :: option :: Option :: None) } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AkSoundEngine_AutoObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkSoundEngine_AutoObject_unity2_raw :: finalize (__receiver , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "root-aksoundengine")]
-impl < __T : IAkSoundEngine_AutoObject > IAkSoundEngine_AutoObjectMethods for __T { }
-
-#[cfg(feature = "root-aksoundengine")]
-impl AkSoundEngine_AutoObject { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkSoundEngine_AutoObject_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkSoundEngine_AutoObject_unity2_raw :: __lookup_finalize :: get_method_info () } }
-
-#[cfg(feature = "root-aksoundengine")]
-impl AkSoundEngine_AutoObject {
-# [doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"] pub fn new (go : crate :: unity_engine :: gameobject :: GameObject) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkSoundEngine_AutoObject) , :: core :: stringify ! (new) ,)) ; < Self as IAkSoundEngine_AutoObjectMethods > :: ctor (this , go) ; this }
-}
 
 #[cfg(feature = "root-aksoundengine")]
 # [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AkSoundEngine_GameObjectHashFunction_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkSoundEngine_GameObjectHashFunction as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkSoundEngine_GameObjectHashFunction as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AkSoundEngine_GameObjectHashFunction , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkSoundEngine_GameObjectHashFunction , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , object , method , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkSoundEngine_GameObjectHashFunction as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkSoundEngine_GameObjectHashFunction as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , } } } pub unsafe fn invoke (this : AkSoundEngine_GameObjectHashFunction , game_object : crate :: unity_engine :: gameobject :: GameObject , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> u64 { let inner : extern "C" fn (AkSoundEngine_GameObjectHashFunction , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> u64 = :: core :: mem :: transmute (__lookup_invoke :: get_method_info () . method_ptr ,) ; inner (this , game_object , __unity2_method_info) } }
@@ -429,17 +412,34 @@ impl AkSoundEngine {
 }
 
 #[cfg(feature = "root-aksoundengine")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AkSoundEngine_AutoObject_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkSoundEngine_AutoObject as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkSoundEngine_AutoObject as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AkSoundEngine_AutoObject , go : crate :: unity_engine :: gameobject :: GameObject , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkSoundEngine_AutoObject , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , go , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_finalize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkSoundEngine_AutoObject as :: unity2 :: ClassIdentity > :: class () , "Finalize" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkSoundEngine_AutoObject as :: unity2 :: ClassIdentity > :: NAME , "Finalize" , e) , } } } pub unsafe fn finalize (this : AkSoundEngine_AutoObject , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkSoundEngine_AutoObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_finalize :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "root-aksoundengine")]
+pub trait IAkSoundEngine_AutoObjectMethods : IAkSoundEngine_AutoObject { # [doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"] fn ctor (self , go : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < AkSoundEngine_AutoObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkSoundEngine_AutoObject_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (go) , :: core :: option :: Option :: None) } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AkSoundEngine_AutoObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkSoundEngine_AutoObject_unity2_raw :: finalize (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "root-aksoundengine")]
+impl < __T : IAkSoundEngine_AutoObject > IAkSoundEngine_AutoObjectMethods for __T { }
+
+#[cfg(feature = "root-aksoundengine")]
+impl AkSoundEngine_AutoObject { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkSoundEngine_AutoObject_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkSoundEngine_AutoObject_unity2_raw :: __lookup_finalize :: get_method_info () } }
+
+#[cfg(feature = "root-aksoundengine")]
+impl AkSoundEngine_AutoObject {
+# [doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"] pub fn new (go : crate :: unity_engine :: gameobject :: GameObject) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkSoundEngine_AutoObject) , :: core :: stringify ! (new) ,)) ; < Self as IAkSoundEngine_AutoObjectMethods > :: ctor (this , go) ; this }
+}
+
+#[cfg(feature = "root-aksoundengine")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AkSoundEngine_AutoObject;
-    pub use super::IAkSoundEngine_AutoObject;
-    pub use super::IAkSoundEngine_AutoObjectMethods;
     pub use super::AkSoundEngine_GameObjectHashFunction;
     pub use super::IAkSoundEngine_GameObjectHashFunction;
     pub use super::IAkSoundEngine_GameObjectHashFunctionMethods;
     pub use super::AkSoundEngine;
     pub use super::IAkSoundEngine;
     pub use super::IAkSoundEngineMethods;
+    pub use super::AkSoundEngine_AutoObject;
+    pub use super::IAkSoundEngine_AutoObject;
+    pub use super::IAkSoundEngine_AutoObjectMethods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

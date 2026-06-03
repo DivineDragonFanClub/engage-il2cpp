@@ -72,6 +72,12 @@ impl  SortieSequence_Modes  {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortiesequence/SortieSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortieSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: sortiesequence :: SortieSequence >)] pub struct SortieSequence {
+# [static_field] # [rename (name = "s_IsDecidedToBattle")] pub s_is_decided_to_battle : bool ,
+# [offset (116)] # [rename (name = "m_Mode")] pub m_mode : crate :: app :: sortiesequence :: SortieSequence_Modes ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortiesequence/SortieSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -198,12 +204,6 @@ impl  SortieSequence_Label  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortiesequence/SortieSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortieSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: sortiesequence :: SortieSequence >)] pub struct SortieSequence {
-# [static_field] # [rename (name = "s_IsDecidedToBattle")] pub s_is_decided_to_battle : bool ,
-# [offset (116)] # [rename (name = "m_Mode")] pub m_mode : crate :: app :: sortiesequence :: SortieSequence_Modes ,
-}
-
 }
 
 #[cfg(feature = "app-sortiesequence-types")]
@@ -233,10 +233,10 @@ impl SortieSequence {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::SortieSequence_Modes;
-    pub use super::SortieSequence_Label;
     pub use super::SortieSequence;
     pub use super::ISortieSequence;
     pub use super::ISortieSequenceMethods;
+    pub use super::SortieSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

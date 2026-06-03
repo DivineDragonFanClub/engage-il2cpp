@@ -147,18 +147,6 @@ impl  JobData_WeaponValues  {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/jobdata/JobData.md"))] # [:: unity2 :: class (namespace = "App" , name = "JobData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: jobdata :: JobData >)] pub struct JobData {
-# [static_field] # [rename (name = "MaxHighJob")] pub max_high_job : i32 ,
-# [static_field] # [rename (name = "JidMaleSuffix")] pub jid_male_suffix : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "JidFemaleSuffix")] pub jid_female_suffix : :: unity2 :: Il2CppString ,
-# [offset (152)] # [rename (name = "Weapons")] pub weapons : :: unity2 :: Array < i8 > ,
-# [offset (160)] # [rename (name = "MaxWeaponLevels")] pub max_weapon_levels : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [offset (168)] # [rename (name = "WeaponLevels")] pub weapon_levels : :: unity2 :: Array < crate :: app :: weaponlevel :: WeaponLevel_Kind > ,
-# [offset (176)] # [rename (name = "WeaponLevelPlusMask")] pub weapon_level_plus_mask : crate :: app :: weaponmask :: WeaponMask ,
-# [offset (184)] # [rename (name = "HighJobs")] pub high_jobs : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/jobdata/JobData_MoveTypes.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -238,6 +226,21 @@ impl  JobData_MoveTypes  {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/jobdata/JobData.md"))] # [:: unity2 :: class (namespace = "App" , name = "JobData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: jobdata :: JobData >)] pub struct JobData {
+# [static_field] # [rename (name = "MaxHighJob")] pub max_high_job : i32 ,
+# [static_field] # [rename (name = "JidMaleSuffix")] pub jid_male_suffix : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "JidFemaleSuffix")] pub jid_female_suffix : :: unity2 :: Il2CppString ,
+# [offset (152)] # [rename (name = "Weapons")] pub weapons : :: unity2 :: Array < i8 > ,
+# [offset (160)] # [rename (name = "MaxWeaponLevels")] pub max_weapon_levels : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+# [offset (168)] # [rename (name = "WeaponLevels")] pub weapon_levels : :: unity2 :: Array < crate :: app :: weaponlevel :: WeaponLevel_Kind > ,
+# [offset (176)] # [rename (name = "WeaponLevelPlusMask")] pub weapon_level_plus_mask : crate :: app :: weaponmask :: WeaponMask ,
+# [offset (184)] # [rename (name = "HighJobs")] pub high_jobs : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/jobdata/JobData_FlagField.md"))] # [:: unity2 :: class (namespace = "App" , name = "JobData.FlagField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: jobdata :: JobData_Flags >)] pub struct JobData_FlagField {}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/jobdata/JobData_Ranks.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -285,9 +288,6 @@ impl  JobData_Ranks  {
     }
 
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/jobdata/JobData_FlagField.md"))] # [:: unity2 :: class (namespace = "App" , name = "JobData.FlagField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: jobdata :: JobData_Flags >)] pub struct JobData_FlagField {}
 
 }
 
@@ -338,14 +338,14 @@ impl JobData_FlagField {
 pub mod prelude {
     pub use super::JobData_Flags;
     pub use super::JobData_WeaponValues;
+    pub use super::JobData_MoveTypes;
     pub use super::JobData;
     pub use super::IJobData;
     pub use super::IJobDataMethods;
-    pub use super::JobData_MoveTypes;
-    pub use super::JobData_Ranks;
     pub use super::JobData_FlagField;
     pub use super::IJobData_FlagField;
     pub use super::IJobData_FlagFieldMethods;
+    pub use super::JobData_Ranks;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

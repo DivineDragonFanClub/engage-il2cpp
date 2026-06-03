@@ -37,7 +37,7 @@ pub use __types::*;
 
 # [doc = "`Get(i32, i32)` overload"] # [method (name = "Get" , args = 2)] pub fn get_2 (self , x : i32 , z : i32) -> T0 ;
 
-# [doc = "`Add(i32, T0)` overload"] # [method (name = "Add" , args = 2)] pub fn add (self , index : i32 , v : T0) -> () ;
+# [doc = "`Add(i32, T0)` overload"] # [method (name = "Add" , args = 2 , abstract_dispatch)] pub fn add (self , index : i32 , v : T0) -> () ;
 
 # [doc = "`Add(i32, i32, T0)` overload"] # [method (name = "Add" , args = 3)] pub fn add_2 (self , x : i32 , z : i32 , v : T0) -> () ;
 

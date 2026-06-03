@@ -51,11 +51,6 @@ impl ::unity2::IlType for AIEnum_SkillRangeEnemyEnumerator {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aienum/AIEnum.md"))] # [:: unity2 :: class (namespace = "App" , name = "AIEnum")] # [parent (crate :: system :: object :: Object)] pub struct AIEnum {
-# [static_field] # [rename (name = "s_SkillRangeEnemyEnumerator")] pub s_skill_range_enemy_enumerator : crate :: app :: aienum :: AIEnum_SkillRangeEnemyEnumerator ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aienum/AIEnum_SkillRangeEnemyData.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -91,6 +86,11 @@ impl ::unity2::IlType for AIEnum_SkillRangeEnemyData {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aienum/AIEnum.md"))] # [:: unity2 :: class (namespace = "App" , name = "AIEnum")] # [parent (crate :: system :: object :: Object)] pub struct AIEnum {
+# [static_field] # [rename (name = "s_SkillRangeEnemyEnumerator")] pub s_skill_range_enemy_enumerator : crate :: app :: aienum :: AIEnum_SkillRangeEnemyEnumerator ,
+}
+
 }
 
 #[cfg(feature = "app-aienum-types")]
@@ -118,9 +118,9 @@ impl AIEnum { pub fn get_skill_range_enemy_method_info () -> & 'static :: unity2
 #[doc(hidden)]
 pub mod prelude {
     pub use super::AIEnum_SkillRangeEnemyEnumerator;
+    pub use super::AIEnum_SkillRangeEnemyData;
     pub use super::AIEnum;
     pub use super::IAIEnum;
-    pub use super::AIEnum_SkillRangeEnemyData;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

@@ -16,7 +16,7 @@ pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-interop-iproxyfactory_2")]
 # [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity > IProxyFactory_2 < T0 , T1 > {
-# [doc = "`CreateProxyObject(T1)` overload"] # [method (name = "CreateProxyObject" , args = 1)] pub fn create_proxy_object (self , target : T1) -> T0 ;
+# [doc = "`CreateProxyObject(T1)` overload"] # [method (name = "CreateProxyObject" , args = 1 , abstract_dispatch)] pub fn create_proxy_object (self , target : T1) -> T0 ;
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-iproxyfactory_2")]

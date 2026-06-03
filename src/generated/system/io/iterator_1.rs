@@ -26,7 +26,7 @@ pub use __types::*;
 
 # [doc = "`get_Current()` overload"] # [method (name = "get_Current" , args = 0)] pub fn get_current (self ,) -> T0 ;
 
-# [doc = "`Clone()` overload"] # [method (name = "Clone" , args = 0)] pub fn clone (self ,) -> crate :: system :: io :: iterator_1 :: Iterator_1 < T0 > ;
+# [doc = "`Clone()` overload"] # [method (name = "Clone" , args = 0 , abstract_dispatch)] pub fn clone (self ,) -> crate :: system :: io :: iterator_1 :: Iterator_1 < T0 > ;
 
 # [doc = "`Dispose()` overload"] # [method (name = "Dispose" , args = 0)] pub fn dispose (self ,) -> () ;
 
@@ -34,7 +34,7 @@ pub use __types::*;
 
 # [doc = "`GetEnumerator()` overload"] # [method (name = "GetEnumerator" , args = 0)] pub fn get_enumerator (self ,) -> crate :: system :: collections :: generic :: ienumerator_1 :: IEnumerator_1 < T0 > ;
 
-# [doc = "`MoveNext()` overload"] # [method (name = "MoveNext" , args = 0)] pub fn move_next (self ,) -> bool ;
+# [doc = "`MoveNext()` overload"] # [method (name = "MoveNext" , args = 0 , abstract_dispatch)] pub fn move_next (self ,) -> bool ;
 
 # [doc = "`System.Collections.IEnumerator.get_Current()` overload"] # [method (name = "System.Collections.IEnumerator.get_Current" , args = 0)] pub fn system_collections_i_enumerator_get_current (self ,) -> crate :: system :: object :: Object ;
 

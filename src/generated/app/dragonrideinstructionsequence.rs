@@ -15,6 +15,12 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideinstructionsequence/DragonRideInstructionSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRideInstructionSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct DragonRideInstructionSequence {
+# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
+# [offset (112)] # [rename (name = "m_InstractionObject")] pub m_instraction_object : crate :: unity_engine :: gameobject :: GameObject ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonrideinstructionsequence/DragonRideInstructionSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -69,12 +75,6 @@ impl  DragonRideInstructionSequence_Label  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideinstructionsequence/DragonRideInstructionSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRideInstructionSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct DragonRideInstructionSequence {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (112)] # [rename (name = "m_InstractionObject")] pub m_instraction_object : crate :: unity_engine :: gameobject :: GameObject ,
-}
-
 }
 
 #[cfg(feature = "app-dragonrideinstructionsequence-types")]
@@ -103,10 +103,10 @@ impl DragonRideInstructionSequence {
 #[cfg(feature = "app-dragonrideinstructionsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DragonRideInstructionSequence_Label;
     pub use super::DragonRideInstructionSequence;
     pub use super::IDragonRideInstructionSequence;
     pub use super::IDragonRideInstructionSequenceMethods;
+    pub use super::DragonRideInstructionSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

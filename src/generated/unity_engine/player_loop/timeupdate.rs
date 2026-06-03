@@ -11,38 +11,6 @@ mod __types {
  ;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/timeupdate/TimeUpdate_WaitForLastPresentationAndUpdateTime.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct TimeUpdate_WaitForLastPresentationAndUpdateTime {}
-
-
-impl ::unity2::ClassIdentity for TimeUpdate_WaitForLastPresentationAndUpdateTime {
-    const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-    const NAME: &'static str = "TimeUpdate.WaitForLastPresentationAndUpdateTime";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for TimeUpdate_WaitForLastPresentationAndUpdateTime {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/timeupdate/TimeUpdate.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -74,6 +42,38 @@ impl ::unity2::IlType for TimeUpdate {
 
 }
 
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/timeupdate/TimeUpdate_WaitForLastPresentationAndUpdateTime.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct TimeUpdate_WaitForLastPresentationAndUpdateTime {}
+
+
+impl ::unity2::ClassIdentity for TimeUpdate_WaitForLastPresentationAndUpdateTime {
+    const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+    const NAME: &'static str = "TimeUpdate.WaitForLastPresentationAndUpdateTime";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl ::unity2::IlType for TimeUpdate_WaitForLastPresentationAndUpdateTime {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-player_loop-timeupdate-types")]
@@ -82,8 +82,8 @@ pub use __types::*;
 #[cfg(feature = "unity_engine-player_loop-timeupdate")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TimeUpdate_WaitForLastPresentationAndUpdateTime;
     pub use super::TimeUpdate;
+    pub use super::TimeUpdate_WaitForLastPresentationAndUpdateTime;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

@@ -25,6 +25,110 @@ mod __types {
  ;
 
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mappaneltarget/MapPanelTarget_DangerType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct MapPanelTarget_DangerType  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for MapPanelTarget_DangerType  {
+    const NAMESPACE: &'static str = "";
+
+    const NAME: &'static str = "MapPanelTarget.DangerType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for MapPanelTarget_DangerType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  MapPanelTarget_DangerType  {
+    pub fn none() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn disadvantage() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn criticaled() -> Self {
+        Self { value: 4 }
+
+    }
+
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mappaneltarget/MapPanelTarget_DirtyType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct MapPanelTarget_DirtyType  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for MapPanelTarget_DirtyType  {
+    const NAMESPACE: &'static str = "";
+
+    const NAME: &'static str = "MapPanelTarget.DirtyType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for MapPanelTarget_DirtyType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  MapPanelTarget_DirtyType  {
+    pub fn attack() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn full_bullet() -> Self {
+        Self { value: 2 }
+
+    }
+
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mappaneltarget/MapPanelTarget_MeshIndex.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -92,55 +196,6 @@ impl  MapPanelTarget_MeshIndex  {
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mappaneltarget/MapPanelTarget_DirtyType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapPanelTarget_DirtyType  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for MapPanelTarget_DirtyType  {
-    const NAMESPACE: &'static str = "";
-
-    const NAME: &'static str = "MapPanelTarget.DirtyType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for MapPanelTarget_DirtyType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  MapPanelTarget_DirtyType  {
-    pub fn attack() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn full_bullet() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mappaneltarget/MapPanelTarget.md"))] # [:: unity2 :: class (namespace = "" , name = "MapPanelTarget")] # [parent (crate :: root :: mappanelbase_1 :: MapPanelBase_1 < crate :: root :: mappaneltarget :: MapPanelTarget >)] pub struct MapPanelTarget {
 # [offset (64)] # [rename (name = "m_MovingAlpha")] pub m_moving_alpha : crate :: app :: gamecurve :: GameCurve ,
 # [offset (72)] # [rename (name = "m_StoppedAlpha")] pub m_stopped_alpha : crate :: app :: gamecurve :: GameCurve ,
@@ -181,61 +236,6 @@ impl  MapPanelTarget_DirtyType  {
 # [offset (360)] # [rename (name = "m_DirtyFlag")] pub m_dirty_flag : crate :: root :: mappaneltarget :: MapPanelTarget_DirtyType ,
 }
 
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mappaneltarget/MapPanelTarget_DangerType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapPanelTarget_DangerType  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for MapPanelTarget_DangerType  {
-    const NAMESPACE: &'static str = "";
-
-    const NAME: &'static str = "MapPanelTarget.DangerType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for MapPanelTarget_DangerType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  MapPanelTarget_DangerType  {
-    pub fn none() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn disadvantage() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn criticaled() -> Self {
-        Self { value: 4 }
-
-    }
-
-}
-
 }
 
 #[cfg(feature = "root-mappaneltarget-types")]
@@ -261,12 +261,12 @@ impl MapPanelTarget {
 #[cfg(feature = "root-mappaneltarget")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapPanelTarget_MeshIndex;
+    pub use super::MapPanelTarget_DangerType;
     pub use super::MapPanelTarget_DirtyType;
+    pub use super::MapPanelTarget_MeshIndex;
     pub use super::MapPanelTarget;
     pub use super::IMapPanelTarget;
     pub use super::IMapPanelTargetMethods;
-    pub use super::MapPanelTarget_DangerType;
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
     pub use crate::root::mappanelbase_1::IMapPanelBase_1;
     pub use crate::system::object::IObject;

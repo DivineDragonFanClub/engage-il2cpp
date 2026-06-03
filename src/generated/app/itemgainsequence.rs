@@ -15,6 +15,15 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemgainsequence/ItemGainSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "ItemGainSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct ItemGainSequence {
+# [offset (112)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
+# [offset (120)] # [rename (name = "m_UnitItem")] pub m_unit_item : crate :: app :: unititem :: UnitItem ,
+# [offset (128)] # [rename (name = "m_ItemData")] pub m_item_data : crate :: app :: itemdata :: ItemData ,
+# [offset (136)] # [rename (name = "m_Label")] pub m_label : :: unity2 :: Il2CppString ,
+# [offset (144)] # [rename (name = "m_Count")] pub m_count : i32 ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemgainsequence/ItemGainSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -63,15 +72,6 @@ impl  ItemGainSequence_Label  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemgainsequence/ItemGainSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "ItemGainSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct ItemGainSequence {
-# [offset (112)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-# [offset (120)] # [rename (name = "m_UnitItem")] pub m_unit_item : crate :: app :: unititem :: UnitItem ,
-# [offset (128)] # [rename (name = "m_ItemData")] pub m_item_data : crate :: app :: itemdata :: ItemData ,
-# [offset (136)] # [rename (name = "m_Label")] pub m_label : :: unity2 :: Il2CppString ,
-# [offset (144)] # [rename (name = "m_Count")] pub m_count : i32 ,
-}
-
 }
 
 #[cfg(feature = "app-itemgainsequence-types")]
@@ -100,10 +100,10 @@ impl ItemGainSequence {
 #[cfg(feature = "app-itemgainsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ItemGainSequence_Label;
     pub use super::ItemGainSequence;
     pub use super::IItemGainSequence;
     pub use super::IItemGainSequenceMethods;
+    pub use super::ItemGainSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

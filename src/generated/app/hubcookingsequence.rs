@@ -15,6 +15,55 @@ mod __types {
  ;
 
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubcookingsequence/HubCookingSequence_LookTarget.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct HubCookingSequence_LookTarget  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for HubCookingSequence_LookTarget  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "HubCookingSequence.LookTarget";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for HubCookingSequence_LookTarget  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  HubCookingSequence_LookTarget  {
+    pub fn camera() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn other() -> Self {
+        Self { value: 1 }
+
+    }
+
+}
+
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubcookingsequence/HubCookingSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubCookingSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct HubCookingSequence {
 # [offset (112)] # [rename (name = "m_SelectedUnits")] pub m_selected_units : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > ,
 # [offset (120)] # [rename (name = "m_SelectedFoodstuffs")] pub m_selected_foodstuffs : :: unity2 :: Array < crate :: app :: foodstuffdata :: FoodstuffData > ,
@@ -151,55 +200,6 @@ impl  HubCookingSequence_Label  {
 
 }
 
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubcookingsequence/HubCookingSequence_LookTarget.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct HubCookingSequence_LookTarget  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for HubCookingSequence_LookTarget  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "HubCookingSequence.LookTarget";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for HubCookingSequence_LookTarget  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  HubCookingSequence_LookTarget  {
-    pub fn camera() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn other() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
-
 }
 
 #[cfg(feature = "app-hubcookingsequence-types")]
@@ -230,11 +230,11 @@ impl HubCookingSequence {
 #[cfg(feature = "app-hubcookingsequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::HubCookingSequence_LookTarget;
     pub use super::HubCookingSequence;
     pub use super::IHubCookingSequence;
     pub use super::IHubCookingSequenceMethods;
     pub use super::HubCookingSequence_Label;
-    pub use super::HubCookingSequence_LookTarget;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

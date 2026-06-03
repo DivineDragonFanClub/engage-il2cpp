@@ -19,12 +19,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/effectdata/EffectData.md"))] # [:: unity2 :: class (namespace = "App" , name = "EffectData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: effectdata :: EffectData >)] pub struct EffectData {
-# [offset (80)] # [rename (name = "m_FilePaths")] pub m_file_paths : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [static_field] # [rename (name = "s_Binder")] pub s_binder : crate :: app :: bindholder :: BindHolder ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/effectdata/EffectData_Modes.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -77,6 +71,12 @@ impl  EffectData_Modes  {
 
     }
 
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/effectdata/EffectData.md"))] # [:: unity2 :: class (namespace = "App" , name = "EffectData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: effectdata :: EffectData >)] pub struct EffectData {
+# [offset (80)] # [rename (name = "m_FilePaths")] pub m_file_paths : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+# [static_field] # [rename (name = "s_Binder")] pub s_binder : crate :: app :: bindholder :: BindHolder ,
 }
 
 
@@ -217,10 +217,10 @@ impl EffectData {
 #[cfg(feature = "app-effectdata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::EffectData_Modes;
     pub use super::EffectData;
     pub use super::IEffectData;
     pub use super::IEffectDataMethods;
-    pub use super::EffectData_Modes;
     pub use super::EffectData_Residents;
     pub use super::EffectData_Types;
     pub use crate::app::structbase::IStructBase;

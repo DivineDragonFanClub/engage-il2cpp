@@ -21,6 +21,12 @@ mod __types {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalk/HubPlayTalk_CallPuppetEvent.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubPlayTalk.CallPuppetEvent")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct HubPlayTalk_CallPuppetEvent {
+# [offset (112)] # [rename (name = "File")] pub file : :: unity2 :: Il2CppString ,
+# [offset (120)] # [rename (name = "Mid")] pub mid : :: unity2 :: Il2CppString ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubplaytalk/HubPlayTalk_TalkType.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -73,12 +79,6 @@ impl  HubPlayTalk_TalkType  {
 
     }
 
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalk/HubPlayTalk_CallPuppetEvent.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubPlayTalk.CallPuppetEvent")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct HubPlayTalk_CallPuppetEvent {
-# [offset (112)] # [rename (name = "File")] pub file : :: unity2 :: Il2CppString ,
-# [offset (120)] # [rename (name = "Mid")] pub mid : :: unity2 :: Il2CppString ,
 }
 
 }
@@ -134,10 +134,10 @@ pub mod prelude {
     pub use super::HubPlayTalk;
     pub use super::IHubPlayTalk;
     pub use super::IHubPlayTalkMethods;
-    pub use super::HubPlayTalk_TalkType;
     pub use super::HubPlayTalk_CallPuppetEvent;
     pub use super::IHubPlayTalk_CallPuppetEvent;
     pub use super::IHubPlayTalk_CallPuppetEventMethods;
+    pub use super::HubPlayTalk_TalkType;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

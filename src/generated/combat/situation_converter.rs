@@ -11,7 +11,7 @@
  # [cfg (feature = "combat-situation_converter-cameradataset")] pub use cameradataset :: { ICameraDataSetMethods }
  ;
  # [cfg (any (feature = "combat-situation_converter-convertbrawl-types"))] pub mod convertbrawl ;
- # [cfg (feature = "combat-situation_converter-convertbrawl-types")] pub use convertbrawl :: { ConvertBrawl_State , ConvertBrawl , IConvertBrawl }
+ # [cfg (feature = "combat-situation_converter-convertbrawl-types")] pub use convertbrawl :: { ConvertBrawl , IConvertBrawl , ConvertBrawl_State }
  ;
  # [cfg (feature = "combat-situation_converter-convertbrawl")] pub use convertbrawl :: { IConvertBrawlMethods }
  ;
@@ -61,7 +61,7 @@
  # [cfg (feature = "combat-situation_converter-convertinterrupt")] pub use convertinterrupt :: { IConvertInterruptMethods }
  ;
  # [cfg (any (feature = "combat-situation_converter-convertjobintro-types"))] pub mod convertjobintro ;
- # [cfg (feature = "combat-situation_converter-convertjobintro-types")] pub use convertjobintro :: { ConvertJobIntro_State , ConvertJobIntro , IConvertJobIntro }
+ # [cfg (feature = "combat-situation_converter-convertjobintro-types")] pub use convertjobintro :: { ConvertJobIntro , IConvertJobIntro , ConvertJobIntro_State }
  ;
  # [cfg (feature = "combat-situation_converter-convertjobintro")] pub use convertjobintro :: { IConvertJobIntroMethods }
  ;

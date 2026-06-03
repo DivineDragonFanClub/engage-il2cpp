@@ -13,6 +13,9 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/quantizer/Quantizer.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "Quantizer")] # [parent (crate :: system :: object :: Object)] pub struct Quantizer {}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/quantizer/Quantizer_MajorAxis.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -73,9 +76,6 @@ impl  Quantizer_MajorAxis  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/quantizer/Quantizer.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "Quantizer")] # [parent (crate :: system :: object :: Object)] pub struct Quantizer {}
-
 }
 
 #[cfg(feature = "combat-quantizer-types")]
@@ -93,9 +93,9 @@ impl Quantizer { pub fn f_ito_vec3_method_info () -> & 'static :: unity2 :: il2c
 #[cfg(feature = "combat-quantizer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Quantizer_MajorAxis;
     pub use super::Quantizer;
     pub use super::IQuantizer;
+    pub use super::Quantizer_MajorAxis;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

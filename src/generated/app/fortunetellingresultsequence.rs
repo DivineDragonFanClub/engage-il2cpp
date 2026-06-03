@@ -17,55 +17,6 @@ mod __types {
  ;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fortunetellingresultsequence/FortuneTellingResultSequence_Label2.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct FortuneTellingResultSequence_Label2  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for FortuneTellingResultSequence_Label2  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "FortuneTellingResultSequence.Label2";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for FortuneTellingResultSequence_Label2  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  FortuneTellingResultSequence_Label2  {
-    pub fn entry() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fortunetellingresultsequence/FortuneTellingResultSequence_ResId.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -127,6 +78,55 @@ impl  FortuneTellingResultSequence_ResId  {
 }
 
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fortunetellingresultsequence/FortuneTellingResultSequence_Label2.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct FortuneTellingResultSequence_Label2  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for FortuneTellingResultSequence_Label2  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "FortuneTellingResultSequence.Label2";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for FortuneTellingResultSequence_Label2  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  FortuneTellingResultSequence_Label2  {
+    pub fn entry() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn end() -> Self {
+        Self { value: 1 }
+
+    }
+
+}
+
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fortunetellingresultsequence/FortuneTellingResultSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "FortuneTellingResultSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: fortunetellingresultsequence :: FortuneTellingResultSequence >)] pub struct FortuneTellingResultSequence {
 # [static_field] # [rename (name = "ResPaths")] pub res_paths : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
 # [offset (120)] # [rename (name = "m_RootAnim")] pub m_root_anim : crate :: unity_engine :: animator :: Animator ,
@@ -167,8 +167,8 @@ impl FortuneTellingResultSequence {
 #[cfg(feature = "app-fortunetellingresultsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::FortuneTellingResultSequence_Label2;
     pub use super::FortuneTellingResultSequence_ResId;
+    pub use super::FortuneTellingResultSequence_Label2;
     pub use super::FortuneTellingResultSequence;
     pub use super::IFortuneTellingResultSequence;
     pub use super::IFortuneTellingResultSequenceMethods;

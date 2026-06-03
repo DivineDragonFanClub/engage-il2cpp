@@ -86,9 +86,6 @@ impl  MapItemHelper_BlessFlags  {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemhelper/MapItemHelper.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapItemHelper")] # [parent (crate :: system :: object :: Object)] pub struct MapItemHelper {}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapitemhelper/MapItemHelper_Flag.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -155,6 +152,9 @@ impl  MapItemHelper_Flag  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapitemhelper/MapItemHelper.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapItemHelper")] # [parent (crate :: system :: object :: Object)] pub struct MapItemHelper {}
+
 }
 
 #[cfg(feature = "app-mapitemhelper-types")]
@@ -184,10 +184,10 @@ impl MapItemHelper {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::MapItemHelper_BlessFlags;
+    pub use super::MapItemHelper_Flag;
     pub use super::MapItemHelper;
     pub use super::IMapItemHelper;
     pub use super::IMapItemHelperMethods;
-    pub use super::MapItemHelper_Flag;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

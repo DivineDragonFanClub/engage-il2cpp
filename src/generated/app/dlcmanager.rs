@@ -79,16 +79,16 @@ impl  DLCManager_Content  {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dlcmanager/DLCManager_DLCList.md"))] # [:: unity2 :: class (namespace = "App" , name = "DLCManager.DLCList")] # [parent (crate :: system :: object :: Object)] pub struct DLCManager_DLCList {
-# [offset (16)] # [rename (name = "content")] pub content : crate :: app :: dlcmanager :: DLCManager_Content ,
-# [offset (20)] # [rename (name = "hasContent")] pub has_content : bool ,
-}
-
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dlcmanager/DLCManager_MountData.md"))] # [:: unity2 :: class (namespace = "App" , name = "DLCManager.MountData")] # [parent (crate :: system :: object :: Object)] pub struct DLCManager_MountData {
 # [offset (16)] # [rename (name = "content")] pub content : crate :: app :: dlcmanager :: DLCManager_Content ,
 # [offset (24)] # [rename (name = "mountBuffer")] pub mount_buffer : :: unity2 :: Array < u8 > ,
 # [offset (32)] # [rename (name = "mountName")] pub mount_name : :: unity2 :: Il2CppString ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dlcmanager/DLCManager_DLCList.md"))] # [:: unity2 :: class (namespace = "App" , name = "DLCManager.DLCList")] # [parent (crate :: system :: object :: Object)] pub struct DLCManager_DLCList {
+# [offset (16)] # [rename (name = "content")] pub content : crate :: app :: dlcmanager :: DLCManager_Content ,
+# [offset (20)] # [rename (name = "hasContent")] pub has_content : bool ,
 }
 
 }
@@ -117,23 +117,6 @@ impl DLCManager {
 }
 
 #[cfg(feature = "app-dlcmanager")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DLCManager_DLCList_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DLCManager_DLCList as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DLCManager_DLCList as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DLCManager_DLCList , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DLCManager_DLCList , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "app-dlcmanager")]
-pub trait IDLCManager_DLCListMethods : IDLCManager_DLCList { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DLCManager_DLCList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DLCManager_DLCList_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-dlcmanager")]
-impl < __T : IDLCManager_DLCList > IDLCManager_DLCListMethods for __T { }
-
-#[cfg(feature = "app-dlcmanager")]
-impl DLCManager_DLCList { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DLCManager_DLCList_unity2_raw :: __lookup_ctor :: get_method_info () } }
-
-#[cfg(feature = "app-dlcmanager")]
-impl DLCManager_DLCList {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DLCManager_DLCList) , :: core :: stringify ! (new) ,)) ; < Self as IDLCManager_DLCListMethods > :: ctor (this ,) ; this }
-}
-
-#[cfg(feature = "app-dlcmanager")]
 # [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DLCManager_MountData_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DLCManager_MountData as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DLCManager_MountData as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DLCManager_MountData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DLCManager_MountData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-dlcmanager")]
@@ -151,18 +134,35 @@ impl DLCManager_MountData {
 }
 
 #[cfg(feature = "app-dlcmanager")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DLCManager_DLCList_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DLCManager_DLCList as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DLCManager_DLCList as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DLCManager_DLCList , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DLCManager_DLCList , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-dlcmanager")]
+pub trait IDLCManager_DLCListMethods : IDLCManager_DLCList { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DLCManager_DLCList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DLCManager_DLCList_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-dlcmanager")]
+impl < __T : IDLCManager_DLCList > IDLCManager_DLCListMethods for __T { }
+
+#[cfg(feature = "app-dlcmanager")]
+impl DLCManager_DLCList { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DLCManager_DLCList_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-dlcmanager")]
+impl DLCManager_DLCList {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DLCManager_DLCList) , :: core :: stringify ! (new) ,)) ; < Self as IDLCManager_DLCListMethods > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "app-dlcmanager")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::DLCManager;
     pub use super::IDLCManager;
     pub use super::IDLCManagerMethods;
     pub use super::DLCManager_Content;
-    pub use super::DLCManager_DLCList;
-    pub use super::IDLCManager_DLCList;
-    pub use super::IDLCManager_DLCListMethods;
     pub use super::DLCManager_MountData;
     pub use super::IDLCManager_MountData;
     pub use super::IDLCManager_MountDataMethods;
+    pub use super::DLCManager_DLCList;
+    pub use super::IDLCManager_DLCList;
+    pub use super::IDLCManager_DLCListMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

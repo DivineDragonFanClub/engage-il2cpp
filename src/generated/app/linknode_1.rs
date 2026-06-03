@@ -35,9 +35,9 @@ pub use __types::*;
 
 # [doc = "`get_SortKey()` overload"] # [method (name = "get_SortKey" , args = 0)] pub fn get_sort_key (self ,) -> i32 ;
 
-# [doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"] # [method (name = "OnSerialize" , args = 1)] pub fn on_serialize (self , stream : crate :: app :: stream_2 :: Stream_2) -> () ;
+# [doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"] # [method (name = "OnSerialize" , args = 1 , abstract_dispatch)] pub fn on_serialize (self , stream : crate :: app :: stream_2 :: Stream_2) -> () ;
 
-# [doc = "`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"] # [method (name = "OnDeserialize" , args = 2)] pub fn on_deserialize (self , stream : crate :: app :: stream_2 :: Stream_2 , version : i32) -> () ;
+# [doc = "`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"] # [method (name = "OnDeserialize" , args = 2 , abstract_dispatch)] pub fn on_deserialize (self , stream : crate :: app :: stream_2 :: Stream_2 , version : i32) -> () ;
 
 # [doc = "`op_Implicit(crate::app::linknode_1::LinkNode_1<T0>)` overload"] # [method (name = "op_Implicit" , args = 1)] pub fn op_implicit (node : crate :: app :: linknode_1 :: LinkNode_1 < T0 >) -> crate :: system :: collections :: generic :: linkedlistnode_1 :: LinkedListNode_1 < T0 > ;
 }

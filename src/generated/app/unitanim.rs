@@ -152,12 +152,6 @@ impl  UnitAnim_Types  {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitanim/UnitAnim.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitAnim")] # [parent (crate :: system :: object :: Object)] pub struct UnitAnim {
-# [static_field] # [rename (name = "s_NullClip")] pub s_null_clip : crate :: unity_engine :: animatorclipinfo :: AnimatorClipInfo ,
-# [static_field] # [rename (name = "s_NullState")] pub s_null_state : crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitanim/UnitAnim_Times.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -230,6 +224,12 @@ impl  UnitAnim_Times  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitanim/UnitAnim.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitAnim")] # [parent (crate :: system :: object :: Object)] pub struct UnitAnim {
+# [static_field] # [rename (name = "s_NullClip")] pub s_null_clip : crate :: unity_engine :: animatorclipinfo :: AnimatorClipInfo ,
+# [static_field] # [rename (name = "s_NullState")] pub s_null_state : crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo ,
+}
+
 }
 
 #[cfg(feature = "app-unitanim-types")]
@@ -259,10 +259,10 @@ impl UnitAnim {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::UnitAnim_Types;
+    pub use super::UnitAnim_Times;
     pub use super::UnitAnim;
     pub use super::IUnitAnim;
     pub use super::IUnitAnimMethods;
-    pub use super::UnitAnim_Times;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

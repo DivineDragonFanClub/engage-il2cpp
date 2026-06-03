@@ -19,13 +19,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/jobintrosequence/JobIntroSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "JobIntroSequence")] # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: jobintrosequence :: JobIntroSequence >)] pub struct JobIntroSequence {
-# [offset (136)] # [rename (name = "m_JobDataList")] pub m_job_data_list : crate :: app :: structlist_1 :: StructList_1 < crate :: app :: jobintrodata :: JobIntroData > ,
-# [offset (144)] # [rename (name = "m_CurrentIndex")] pub m_current_index : i32 ,
-# [offset (148)] # [rename (name = "m_WaitTime")] pub m_wait_time : f32 ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/jobintrosequence/JobIntroSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -74,6 +67,13 @@ impl  JobIntroSequence_Label  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/jobintrosequence/JobIntroSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "JobIntroSequence")] # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: jobintrosequence :: JobIntroSequence >)] pub struct JobIntroSequence {
+# [offset (136)] # [rename (name = "m_JobDataList")] pub m_job_data_list : crate :: app :: structlist_1 :: StructList_1 < crate :: app :: jobintrodata :: JobIntroData > ,
+# [offset (144)] # [rename (name = "m_CurrentIndex")] pub m_current_index : i32 ,
+# [offset (148)] # [rename (name = "m_WaitTime")] pub m_wait_time : f32 ,
+}
+
 }
 
 #[cfg(feature = "app-jobintrosequence-types")]
@@ -102,10 +102,10 @@ impl JobIntroSequence {
 #[cfg(feature = "app-jobintrosequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::JobIntroSequence_Label;
     pub use super::JobIntroSequence;
     pub use super::IJobIntroSequence;
     pub use super::IJobIntroSequenceMethods;
-    pub use super::JobIntroSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::procscenesequence_1::IProcSceneSequence_1;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;

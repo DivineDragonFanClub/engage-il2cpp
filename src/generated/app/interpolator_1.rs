@@ -37,7 +37,7 @@ pub use __types::*;
 
 # [doc = "`get_Goal()` overload"] # [method (name = "get_Goal" , args = 0)] pub fn get_goal (self ,) -> T0 ;
 
-# [doc = "`IsEqual(T0, T0)` overload"] # [method (name = "IsEqual" , args = 2)] pub fn is_equal (self , a : T0 , b : T0) -> bool ;
+# [doc = "`IsEqual(T0, T0)` overload"] # [method (name = "IsEqual" , args = 2 , abstract_dispatch)] pub fn is_equal (self , a : T0 , b : T0) -> bool ;
 
 # [doc = "`Set(T0, f32)` overload"] # [method (name = "Set" , args = 2)] pub fn set (self , value : T0 , time : f32) -> bool ;
 

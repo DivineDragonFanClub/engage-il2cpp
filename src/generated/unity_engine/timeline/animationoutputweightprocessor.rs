@@ -11,6 +11,12 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/animationoutputweightprocessor/AnimationOutputWeightProcessor.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "AnimationOutputWeightProcessor")] # [parent (crate :: system :: object :: Object)] pub struct AnimationOutputWeightProcessor {
+# [offset (16)] # [rename (name = "m_Output")] pub m_output : crate :: unity_engine :: animations :: animationplayableoutput :: AnimationPlayableOutput ,
+# [offset (32)] # [rename (name = "m_Mixers")] pub m_mixers : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: timeline :: animationoutputweightprocessor :: AnimationOutputWeightProcessor_WeightInfo > ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/animationoutputweightprocessor/AnimationOutputWeightProcessor_WeightInfo.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -46,12 +52,6 @@ impl ::unity2::IlType for AnimationOutputWeightProcessor_WeightInfo {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/animationoutputweightprocessor/AnimationOutputWeightProcessor.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "AnimationOutputWeightProcessor")] # [parent (crate :: system :: object :: Object)] pub struct AnimationOutputWeightProcessor {
-# [offset (16)] # [rename (name = "m_Output")] pub m_output : crate :: unity_engine :: animations :: animationplayableoutput :: AnimationPlayableOutput ,
-# [offset (32)] # [rename (name = "m_Mixers")] pub m_mixers : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: timeline :: animationoutputweightprocessor :: AnimationOutputWeightProcessor_WeightInfo > ,
-}
-
 }
 
 #[cfg(feature = "unity_engine-timeline-animationoutputweightprocessor-types")]
@@ -77,10 +77,10 @@ impl AnimationOutputWeightProcessor {
 #[cfg(feature = "unity_engine-timeline-animationoutputweightprocessor")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AnimationOutputWeightProcessor_WeightInfo;
     pub use super::AnimationOutputWeightProcessor;
     pub use super::IAnimationOutputWeightProcessor;
     pub use super::IAnimationOutputWeightProcessorMethods;
+    pub use super::AnimationOutputWeightProcessor_WeightInfo;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

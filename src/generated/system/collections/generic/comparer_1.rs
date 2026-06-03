@@ -24,7 +24,7 @@ pub use __types::*;
 
 # [doc = "`CreateComparer()` overload"] # [method (name = "CreateComparer" , args = 0)] pub fn create_comparer () -> crate :: system :: collections :: generic :: comparer_1 :: Comparer_1 < T0 > ;
 
-# [doc = "`Compare(T0, T0)` overload"] # [method (name = "Compare" , args = 2)] pub fn compare (self , x : T0 , y : T0) -> i32 ;
+# [doc = "`Compare(T0, T0)` overload"] # [method (name = "Compare" , args = 2 , abstract_dispatch)] pub fn compare (self , x : T0 , y : T0) -> i32 ;
 
 # [doc = "`System.Collections.IComparer.Compare(crate::system::object::Object, crate::system::object::Object)` overload"] # [method (name = "System.Collections.IComparer.Compare" , args = 2)] pub fn system_collections_i_comparer_compare (self , x : crate :: system :: object :: Object , y : crate :: system :: object :: Object) -> i32 ;
 

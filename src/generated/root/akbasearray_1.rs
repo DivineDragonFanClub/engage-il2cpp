@@ -32,15 +32,15 @@ pub use __types::*;
 
 # [doc = "`Count()` overload"] # [method (name = "Count" , args = 0)] pub fn count (self ,) -> i32 ;
 
-# [doc = "`get_StructureSize()` overload"] # [method (name = "get_StructureSize" , args = 0)] pub fn get_structure_size (self ,) -> i32 ;
+# [doc = "`get_StructureSize()` overload"] # [method (name = "get_StructureSize" , args = 0 , abstract_dispatch)] pub fn get_structure_size (self ,) -> i32 ;
 
 # [doc = "`DefaultConstructAtIntPtr(::unity2::IntPtr)` overload"] # [method (name = "DefaultConstructAtIntPtr" , args = 1)] pub fn default_construct_at_int_ptr (self , address : :: unity2 :: IntPtr) -> () ;
 
 # [doc = "`ReleaseAllocatedMemoryFromReferenceAtIntPtr(::unity2::IntPtr)` overload"] # [method (name = "ReleaseAllocatedMemoryFromReferenceAtIntPtr" , args = 1)] pub fn release_allocated_memory_from_reference_at_int_ptr (self , address : :: unity2 :: IntPtr) -> () ;
 
-# [doc = "`CreateNewReferenceFromIntPtr(::unity2::IntPtr)` overload"] # [method (name = "CreateNewReferenceFromIntPtr" , args = 1)] pub fn create_new_reference_from_int_ptr (self , address : :: unity2 :: IntPtr) -> T0 ;
+# [doc = "`CreateNewReferenceFromIntPtr(::unity2::IntPtr)` overload"] # [method (name = "CreateNewReferenceFromIntPtr" , args = 1 , abstract_dispatch)] pub fn create_new_reference_from_int_ptr (self , address : :: unity2 :: IntPtr) -> T0 ;
 
-# [doc = "`CloneIntoReferenceFromIntPtr(::unity2::IntPtr, T0)` overload"] # [method (name = "CloneIntoReferenceFromIntPtr" , args = 2)] pub fn clone_into_reference_from_int_ptr (self , address : :: unity2 :: IntPtr , other : T0) -> () ;
+# [doc = "`CloneIntoReferenceFromIntPtr(::unity2::IntPtr, T0)` overload"] # [method (name = "CloneIntoReferenceFromIntPtr" , args = 2 , abstract_dispatch)] pub fn clone_into_reference_from_int_ptr (self , address : :: unity2 :: IntPtr , other : T0) -> () ;
 
 # [doc = "`get_Item(i32)` overload"] # [method (name = "get_Item" , args = 1)] pub fn get_item (self , index : i32) -> T0 ;
 

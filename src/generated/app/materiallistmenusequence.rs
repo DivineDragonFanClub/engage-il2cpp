@@ -15,6 +15,9 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/materiallistmenusequence/MaterialListMenuSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "MaterialListMenuSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct MaterialListMenuSequence {}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/materiallistmenusequence/MaterialListMenuSequence_Label2.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -63,9 +66,6 @@ impl  MaterialListMenuSequence_Label2  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/materiallistmenusequence/MaterialListMenuSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "MaterialListMenuSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct MaterialListMenuSequence {}
-
 }
 
 #[cfg(feature = "app-materiallistmenusequence-types")]
@@ -94,10 +94,10 @@ impl MaterialListMenuSequence {
 #[cfg(feature = "app-materiallistmenusequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MaterialListMenuSequence_Label2;
     pub use super::MaterialListMenuSequence;
     pub use super::IMaterialListMenuSequence;
     pub use super::IMaterialListMenuSequenceMethods;
+    pub use super::MaterialListMenuSequence_Label2;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

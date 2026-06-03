@@ -13,6 +13,16 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/addressables/Addressables.md"))] # [:: unity2 :: class (namespace = "UnityEngine.AddressableAssets" , name = "Addressables")] # [parent (crate :: system :: object :: Object)] pub struct Addressables {
+# [static_field] # [rename (name = "reinitializeAddressables")] pub reinitialize_addressables : bool ,
+# [static_field] # [rename (name = "m_AddressablesInstance")] pub m_addressables_instance : crate :: unity_engine :: addressable_assets :: addressablesimpl :: AddressablesImpl ,
+# [static_field] # [rename (name = "kAddressablesRuntimeDataPath")] pub k_addressables_runtime_data_path : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "k_AddressablesLogConditional")] pub k_addressables_log_conditional : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "kAddressablesRuntimeBuildLogPath")] pub k_addressables_runtime_build_log_path : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "LibraryPath")] pub library_path : :: unity2 :: Il2CppString ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/addressable_assets/addressables/Addressables_MergeMode.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -73,16 +83,6 @@ impl  Addressables_MergeMode  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/addressables/Addressables.md"))] # [:: unity2 :: class (namespace = "UnityEngine.AddressableAssets" , name = "Addressables")] # [parent (crate :: system :: object :: Object)] pub struct Addressables {
-# [static_field] # [rename (name = "reinitializeAddressables")] pub reinitialize_addressables : bool ,
-# [static_field] # [rename (name = "m_AddressablesInstance")] pub m_addressables_instance : crate :: unity_engine :: addressable_assets :: addressablesimpl :: AddressablesImpl ,
-# [static_field] # [rename (name = "kAddressablesRuntimeDataPath")] pub k_addressables_runtime_data_path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "k_AddressablesLogConditional")] pub k_addressables_log_conditional : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "kAddressablesRuntimeBuildLogPath")] pub k_addressables_runtime_build_log_path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "LibraryPath")] pub library_path : :: unity2 :: Il2CppString ,
-}
-
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-addressables-types")]
@@ -100,9 +100,9 @@ impl Addressables { pub fn get_m_addressables_method_info () -> & 'static :: uni
 #[cfg(feature = "unity_engine-addressable_assets-addressables")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Addressables_MergeMode;
     pub use super::Addressables;
     pub use super::IAddressables;
+    pub use super::Addressables_MergeMode;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

@@ -13,9 +13,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/mesh/Mesh.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "Mesh")] # [parent (crate :: unity_engine :: object_2 :: Object_2)] pub struct Mesh {}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/mesh/Mesh_MeshData.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -48,6 +45,9 @@ impl ::unity2::IlType for Mesh_MeshData {
     }
 
 }
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/mesh/Mesh.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "Mesh")] # [parent (crate :: unity_engine :: object_2 :: Object_2)] pub struct Mesh {}
 
 
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/mesh/Mesh_MeshDataArray.md"))]
@@ -121,10 +121,10 @@ impl Mesh_MeshDataArray { pub fn apply_to_mesh_impl_method_info () -> & 'static 
 #[cfg(feature = "unity_engine-mesh")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::Mesh_MeshData;
     pub use super::Mesh;
     pub use super::IMesh;
     pub use super::IMeshMethods;
-    pub use super::Mesh_MeshData;
     pub use super::Mesh_MeshDataArray;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;

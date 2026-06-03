@@ -24,9 +24,9 @@ pub use __types::*;
 
 # [doc = "`CreateComparer()` overload"] # [method (name = "CreateComparer" , args = 0)] pub fn create_comparer () -> crate :: system :: collections :: generic :: equalitycomparer_1 :: EqualityComparer_1 < T0 > ;
 
-# [doc = "`Equals(T0, T0)` overload"] # [method (name = "Equals" , args = 2)] pub fn equals (self , x : T0 , y : T0) -> bool ;
+# [doc = "`Equals(T0, T0)` overload"] # [method (name = "Equals" , args = 2 , abstract_dispatch)] pub fn equals (self , x : T0 , y : T0) -> bool ;
 
-# [doc = "`GetHashCode(T0)` overload"] # [method (name = "GetHashCode" , args = 1)] pub fn get_hash_code (self , obj : T0) -> i32 ;
+# [doc = "`GetHashCode(T0)` overload"] # [method (name = "GetHashCode" , args = 1 , abstract_dispatch)] pub fn get_hash_code (self , obj : T0) -> i32 ;
 
 # [doc = "`IndexOf(::unity2::Array<T0>, T0, i32, i32)` overload"] # [method (name = "IndexOf" , args = 4)] pub fn index_of (self , array : :: unity2 :: Array < T0 > , value : T0 , start_index : i32 , count : i32) -> i32 ;
 

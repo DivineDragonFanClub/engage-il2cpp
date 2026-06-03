@@ -28,19 +28,6 @@ mod __types {
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/windactor/WindActor_Func.md"))] # [:: unity2 :: class (namespace = "" , name = "WindActor.Func")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct WindActor_Func {}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/windactor/WindActor.md"))] # [:: unity2 :: class (namespace = "" , name = "WindActor")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct WindActor {
-# [offset (24)] # [rename (name = "m_Kind")] pub m_kind : crate :: root :: windactor :: WindActor_Kind ,
-# [offset (28)] # [rename (name = "m_Power")] pub m_power : f32 ,
-# [offset (32)] # [rename (name = "m_Radius")] pub m_radius : f32 ,
-# [offset (36)] # [rename (name = "m_Life")] pub m_life : f32 ,
-# [offset (40)] # [rename (name = "m_Speed")] pub m_speed : f32 ,
-# [offset (44)] # [rename (name = "m_Angle")] pub m_angle : f32 ,
-# [offset (48)] # [rename (name = "m_Range")] pub m_range : crate :: unity_engine :: vector2 :: Vector2 ,
-# [offset (56)] # [rename (name = "m_Time")] pub m_time : f32 ,
-# [offset (64)] # [rename (name = "m_Funcs")] pub m_funcs : :: unity2 :: Array < crate :: root :: windactor :: WindActor_Func > ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/windactor/WindActor_Kind.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -95,6 +82,19 @@ impl  WindActor_Kind  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/windactor/WindActor.md"))] # [:: unity2 :: class (namespace = "" , name = "WindActor")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct WindActor {
+# [offset (24)] # [rename (name = "m_Kind")] pub m_kind : crate :: root :: windactor :: WindActor_Kind ,
+# [offset (28)] # [rename (name = "m_Power")] pub m_power : f32 ,
+# [offset (32)] # [rename (name = "m_Radius")] pub m_radius : f32 ,
+# [offset (36)] # [rename (name = "m_Life")] pub m_life : f32 ,
+# [offset (40)] # [rename (name = "m_Speed")] pub m_speed : f32 ,
+# [offset (44)] # [rename (name = "m_Angle")] pub m_angle : f32 ,
+# [offset (48)] # [rename (name = "m_Range")] pub m_range : crate :: unity_engine :: vector2 :: Vector2 ,
+# [offset (56)] # [rename (name = "m_Time")] pub m_time : f32 ,
+# [offset (64)] # [rename (name = "m_Funcs")] pub m_funcs : :: unity2 :: Array < crate :: root :: windactor :: WindActor_Func > ,
+}
+
 }
 
 #[cfg(feature = "root-windactor-types")]
@@ -143,10 +143,10 @@ pub mod prelude {
     pub use super::WindActor_Func;
     pub use super::IWindActor_Func;
     pub use super::IWindActor_FuncMethods;
+    pub use super::WindActor_Kind;
     pub use super::WindActor;
     pub use super::IWindActor;
     pub use super::IWindActorMethods;
-    pub use super::WindActor_Kind;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

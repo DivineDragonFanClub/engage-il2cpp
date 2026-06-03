@@ -118,44 +118,6 @@ impl  FishingFish_FishState  {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingfish/FishingFish.md"))] # [:: unity2 :: class (namespace = "App" , name = "FishingFish")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct FishingFish {
-# [static_field] # [rename (name = "DefaultPerfectTime")] pub default_perfect_time : f32 ,
-# [offset (24)] # [rename (name = "m_state")] pub m_state : crate :: app :: fishingfish :: FishingFish_FishState ,
-# [offset (28)] # [rename (name = "m_LurePos")] pub m_lure_pos : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (40)] # [rename (name = "m_ForecastList")] pub m_forecast_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: fishing :: forecastfishdata :: ForecastFishData > ,
-# [offset (48)] # [rename (name = "m_SelectedForecastNum")] pub m_selected_forecast_num : i32 ,
-# [offset (52)] # [rename (name = "m_SizeMult")] pub m_size_mult : f32 ,
-# [offset (64)] # [rename (name = "m_Data")] pub m_data : crate :: app :: fishingfishdata :: FishingFishData ,
-# [offset (72)] # [rename (name = "m_ConfigBase")] pub m_config_base : crate :: app :: fishingconfig_base :: FishingConfig_Base ,
-# [offset (80)] # [rename (name = "m_ConfigWait")] pub m_config_wait : crate :: app :: fishingconfig_waitcatch :: FishingConfig_WaitCatch ,
-# [offset (88)] # [rename (name = "m_ConfigBattle")] pub m_config_battle : crate :: app :: fishingconfig_battle :: FishingConfig_Battle ,
-# [offset (96)] # [rename (name = "m_HP")] pub m_hp : f32 ,
-# [offset (100)] # [rename (name = "m_LethalHP")] pub m_lethal_hp : f32 ,
-# [offset (104)] # [rename (name = "m_RecoveryHP")] pub m_recovery_hp : f32 ,
-# [offset (108)] # [rename (name = "m_EscapeSpeed")] pub m_escape_speed : f32 ,
-# [offset (112)] # [rename (name = "m_Timer")] pub m_timer : f32 ,
-# [offset (116)] # [rename (name = "m_PerfectTime")] pub m_perfect_time : f32 ,
-# [offset (120)] # [rename (name = "m_CatchTime")] pub m_catch_time : f32 ,
-# [offset (124)] # [rename (name = "m_EffectTimer")] pub m_effect_timer : f32 ,
-# [offset (128)] # [rename (name = "m_ModelFadeTimer")] pub m_model_fade_timer : f32 ,
-# [offset (132)] # [rename (name = "m_CounterTimer")] pub m_counter_timer : f32 ,
-# [offset (136)] # [rename (name = "m_ForceTimer")] pub m_force_timer : f32 ,
-# [offset (140)] # [rename (name = "m_EscapeTimer")] pub m_escape_timer : f32 ,
-# [offset (152)] # [rename (name = "m_ShadowDir")] pub m_shadow_dir : f32 ,
-# [offset (156)] # [rename (name = "m_TargetDir")] pub m_target_dir : f32 ,
-# [offset (160)] # [rename (name = "m_IsChanceDraw")] pub m_is_chance_draw : bool ,
-# [offset (168)] # [rename (name = "m_DirInterp")] pub m_dir_interp : crate :: app :: interpolatorfloat :: InterpolatorFloat ,
-# [offset (180)] # [rename (name = "m_Power")] pub m_power : f32 ,
-# [offset (184)] # [rename (name = "m_AngleDiff")] pub m_angle_diff : f32 ,
-# [offset (192)] # [rename (name = "m_LureObj")] pub m_lure_obj : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (200)] # [rename (name = "m_RadarObj")] pub m_radar_obj : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (208)] # [rename (name = "m_FakeCount")] pub m_fake_count : i32 ,
-# [offset (216)] # [rename (name = "m_RadarScript")] pub m_radar_script : crate :: app :: fishingbattlerader :: FishingBattleRader ,
-# [offset (224)] # [rename (name = "m_RadicalPower")] pub m_radical_power : f32 ,
-# [offset (228)] # [rename (name = "m_RadicalRegene")] pub m_radical_regene : f32 ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingfish/FishingFish_CounterVoiceFlag.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -210,6 +172,44 @@ impl  FishingFish_CounterVoiceFlag  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingfish/FishingFish.md"))] # [:: unity2 :: class (namespace = "App" , name = "FishingFish")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct FishingFish {
+# [static_field] # [rename (name = "DefaultPerfectTime")] pub default_perfect_time : f32 ,
+# [offset (24)] # [rename (name = "m_state")] pub m_state : crate :: app :: fishingfish :: FishingFish_FishState ,
+# [offset (28)] # [rename (name = "m_LurePos")] pub m_lure_pos : crate :: unity_engine :: vector3 :: Vector3 ,
+# [offset (40)] # [rename (name = "m_ForecastList")] pub m_forecast_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: fishing :: forecastfishdata :: ForecastFishData > ,
+# [offset (48)] # [rename (name = "m_SelectedForecastNum")] pub m_selected_forecast_num : i32 ,
+# [offset (52)] # [rename (name = "m_SizeMult")] pub m_size_mult : f32 ,
+# [offset (64)] # [rename (name = "m_Data")] pub m_data : crate :: app :: fishingfishdata :: FishingFishData ,
+# [offset (72)] # [rename (name = "m_ConfigBase")] pub m_config_base : crate :: app :: fishingconfig_base :: FishingConfig_Base ,
+# [offset (80)] # [rename (name = "m_ConfigWait")] pub m_config_wait : crate :: app :: fishingconfig_waitcatch :: FishingConfig_WaitCatch ,
+# [offset (88)] # [rename (name = "m_ConfigBattle")] pub m_config_battle : crate :: app :: fishingconfig_battle :: FishingConfig_Battle ,
+# [offset (96)] # [rename (name = "m_HP")] pub m_hp : f32 ,
+# [offset (100)] # [rename (name = "m_LethalHP")] pub m_lethal_hp : f32 ,
+# [offset (104)] # [rename (name = "m_RecoveryHP")] pub m_recovery_hp : f32 ,
+# [offset (108)] # [rename (name = "m_EscapeSpeed")] pub m_escape_speed : f32 ,
+# [offset (112)] # [rename (name = "m_Timer")] pub m_timer : f32 ,
+# [offset (116)] # [rename (name = "m_PerfectTime")] pub m_perfect_time : f32 ,
+# [offset (120)] # [rename (name = "m_CatchTime")] pub m_catch_time : f32 ,
+# [offset (124)] # [rename (name = "m_EffectTimer")] pub m_effect_timer : f32 ,
+# [offset (128)] # [rename (name = "m_ModelFadeTimer")] pub m_model_fade_timer : f32 ,
+# [offset (132)] # [rename (name = "m_CounterTimer")] pub m_counter_timer : f32 ,
+# [offset (136)] # [rename (name = "m_ForceTimer")] pub m_force_timer : f32 ,
+# [offset (140)] # [rename (name = "m_EscapeTimer")] pub m_escape_timer : f32 ,
+# [offset (152)] # [rename (name = "m_ShadowDir")] pub m_shadow_dir : f32 ,
+# [offset (156)] # [rename (name = "m_TargetDir")] pub m_target_dir : f32 ,
+# [offset (160)] # [rename (name = "m_IsChanceDraw")] pub m_is_chance_draw : bool ,
+# [offset (168)] # [rename (name = "m_DirInterp")] pub m_dir_interp : crate :: app :: interpolatorfloat :: InterpolatorFloat ,
+# [offset (180)] # [rename (name = "m_Power")] pub m_power : f32 ,
+# [offset (184)] # [rename (name = "m_AngleDiff")] pub m_angle_diff : f32 ,
+# [offset (192)] # [rename (name = "m_LureObj")] pub m_lure_obj : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (200)] # [rename (name = "m_RadarObj")] pub m_radar_obj : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (208)] # [rename (name = "m_FakeCount")] pub m_fake_count : i32 ,
+# [offset (216)] # [rename (name = "m_RadarScript")] pub m_radar_script : crate :: app :: fishingbattlerader :: FishingBattleRader ,
+# [offset (224)] # [rename (name = "m_RadicalPower")] pub m_radical_power : f32 ,
+# [offset (228)] # [rename (name = "m_RadicalRegene")] pub m_radical_regene : f32 ,
+}
+
 }
 
 #[cfg(feature = "app-fishingfish-types")]
@@ -236,10 +236,10 @@ impl FishingFish {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::FishingFish_FishState;
+    pub use super::FishingFish_CounterVoiceFlag;
     pub use super::FishingFish;
     pub use super::IFishingFish;
     pub use super::IFishingFishMethods;
-    pub use super::FishingFish_CounterVoiceFlag;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

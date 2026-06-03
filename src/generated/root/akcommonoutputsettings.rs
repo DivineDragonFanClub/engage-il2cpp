@@ -20,69 +20,6 @@ mod __types {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcommonoutputsettings/AkCommonOutputSettings.md"))] # [:: unity2 :: class (namespace = "" , name = "AkCommonOutputSettings")] # [parent (crate :: system :: object :: Object)] pub struct AkCommonOutputSettings {
-# [offset (16)] # [rename (name = "m_AudioDeviceShareset")] pub m_audio_device_shareset : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_DeviceID")] pub m_device_id : u32 ,
-# [offset (28)] # [rename (name = "m_PanningRule")] pub m_panning_rule : crate :: root :: akcommonoutputsettings :: AkCommonOutputSettings_PanningRule ,
-# [offset (32)] # [rename (name = "m_ChannelConfig")] pub m_channel_config : crate :: root :: akcommonoutputsettings :: AkCommonOutputSettings_ChannelConfiguration ,
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/akcommonoutputsettings/AkCommonOutputSettings_ChannelConfiguration_ChannelConfigType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct AkCommonOutputSettings_ChannelConfiguration_ChannelConfigType  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for AkCommonOutputSettings_ChannelConfiguration_ChannelConfigType  {
-    const NAMESPACE: &'static str = "";
-
-    const NAME: &'static str = "AkCommonOutputSettings.ChannelConfiguration.ChannelConfigType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for AkCommonOutputSettings_ChannelConfiguration_ChannelConfigType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  AkCommonOutputSettings_ChannelConfiguration_ChannelConfigType  {
-    pub fn anonymous() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn standard() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn ambisonic() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/akcommonoutputsettings/AkCommonOutputSettings_ChannelConfiguration_ChannelMask.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -480,6 +417,69 @@ impl  AkCommonOutputSettings_ChannelConfiguration_ChannelMask  {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcommonoutputsettings/AkCommonOutputSettings.md"))] # [:: unity2 :: class (namespace = "" , name = "AkCommonOutputSettings")] # [parent (crate :: system :: object :: Object)] pub struct AkCommonOutputSettings {
+# [offset (16)] # [rename (name = "m_AudioDeviceShareset")] pub m_audio_device_shareset : :: unity2 :: Il2CppString ,
+# [offset (24)] # [rename (name = "m_DeviceID")] pub m_device_id : u32 ,
+# [offset (28)] # [rename (name = "m_PanningRule")] pub m_panning_rule : crate :: root :: akcommonoutputsettings :: AkCommonOutputSettings_PanningRule ,
+# [offset (32)] # [rename (name = "m_ChannelConfig")] pub m_channel_config : crate :: root :: akcommonoutputsettings :: AkCommonOutputSettings_ChannelConfiguration ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/akcommonoutputsettings/AkCommonOutputSettings_ChannelConfiguration_ChannelConfigType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct AkCommonOutputSettings_ChannelConfiguration_ChannelConfigType  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for AkCommonOutputSettings_ChannelConfiguration_ChannelConfigType  {
+    const NAMESPACE: &'static str = "";
+
+    const NAME: &'static str = "AkCommonOutputSettings.ChannelConfiguration.ChannelConfigType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for AkCommonOutputSettings_ChannelConfiguration_ChannelConfigType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  AkCommonOutputSettings_ChannelConfiguration_ChannelConfigType  {
+    pub fn anonymous() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn standard() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn ambisonic() -> Self {
+        Self { value: 2 }
+
+    }
+
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/akcommonoutputsettings/AkCommonOutputSettings_PanningRule.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -573,11 +573,11 @@ pub mod prelude {
     pub use super::AkCommonOutputSettings_ChannelConfiguration;
     pub use super::IAkCommonOutputSettings_ChannelConfiguration;
     pub use super::IAkCommonOutputSettings_ChannelConfigurationMethods;
+    pub use super::AkCommonOutputSettings_ChannelConfiguration_ChannelMask;
     pub use super::AkCommonOutputSettings;
     pub use super::IAkCommonOutputSettings;
     pub use super::IAkCommonOutputSettingsMethods;
     pub use super::AkCommonOutputSettings_ChannelConfiguration_ChannelConfigType;
-    pub use super::AkCommonOutputSettings_ChannelConfiguration_ChannelMask;
     pub use super::AkCommonOutputSettings_PanningRule;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

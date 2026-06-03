@@ -13,9 +13,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/utility/serializationutilities/SerializationUtilities.md"))] # [:: unity2 :: class (namespace = "UnityEngine.AddressableAssets.Utility" , name = "SerializationUtilities")] # [parent (crate :: system :: object :: Object)] pub struct SerializationUtilities {}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/addressable_assets/utility/serializationutilities/SerializationUtilities_ObjectType.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -100,6 +97,9 @@ impl  SerializationUtilities_ObjectType  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/utility/serializationutilities/SerializationUtilities.md"))] # [:: unity2 :: class (namespace = "UnityEngine.AddressableAssets.Utility" , name = "SerializationUtilities")] # [parent (crate :: system :: object :: Object)] pub struct SerializationUtilities {}
+
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-utility-serializationutilities-types")]
@@ -117,9 +117,9 @@ impl SerializationUtilities { pub fn read_int32_from_byte_array_method_info () -
 #[cfg(feature = "unity_engine-addressable_assets-utility-serializationutilities")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::SerializationUtilities_ObjectType;
     pub use super::SerializationUtilities;
     pub use super::ISerializationUtilities;
-    pub use super::SerializationUtilities_ObjectType;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

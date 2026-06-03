@@ -19,6 +19,9 @@ mod __types {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talklogui/TalkLogUI.md"))] # [:: unity2 :: class (namespace = "App.Talk3D" , name = "TalkLogUI")] # [parent (crate :: system :: object :: Object)] pub struct TalkLogUI {}
+
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talklogui/TalkLogUI_Window.md"))] # [:: unity2 :: class (namespace = "App.Talk3D" , name = "TalkLogUI.Window")] # [parent (crate :: system :: object :: Object)] pub struct TalkLogUI_Window {
 # [offset (16)] # [rename (name = "m_Index")] pub m_index : i32 ,
 # [offset (24)] # [rename (name = "m_RootObject")] pub m_root_object : crate :: unity_engine :: gameobject :: GameObject ,
@@ -47,9 +50,6 @@ mod __types {
 # [offset (64)] # [rename (name = "m_Duration")] pub m_duration : f32 ,
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talklogui/TalkLogUI.md"))] # [:: unity2 :: class (namespace = "App.Talk3D" , name = "TalkLogUI")] # [parent (crate :: system :: object :: Object)] pub struct TalkLogUI {}
-
 }
 
 #[cfg(feature = "app-talk3_d-talklogui-types")]
@@ -70,6 +70,23 @@ impl TalkLogUI_Cursor { pub fn ctor_method_info () -> & 'static :: unity2 :: il2
 #[cfg(feature = "app-talk3_d-talklogui")]
 impl TalkLogUI_Cursor {
 # [doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"] pub fn new (root_object : crate :: unity_engine :: gameobject :: GameObject) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TalkLogUI_Cursor) , :: core :: stringify ! (new) ,)) ; < Self as ITalkLogUI_CursorMethods > :: ctor (this , root_object) ; this }
+}
+
+#[cfg(feature = "app-talk3_d-talklogui")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TalkLogUI_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TalkLogUI as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TalkLogUI as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : TalkLogUI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TalkLogUI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-talk3_d-talklogui")]
+pub trait ITalkLogUIMethods : ITalkLogUI { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TalkLogUI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TalkLogUI_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-talk3_d-talklogui")]
+impl < __T : ITalkLogUI > ITalkLogUIMethods for __T { }
+
+#[cfg(feature = "app-talk3_d-talklogui")]
+impl TalkLogUI { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TalkLogUI_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-talk3_d-talklogui")]
+impl TalkLogUI {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TalkLogUI) , :: core :: stringify ! (new) ,)) ; < Self as ITalkLogUIMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-talk3_d-talklogui")]
@@ -107,37 +124,20 @@ impl TalkLogUI_ScrollBar {
 }
 
 #[cfg(feature = "app-talk3_d-talklogui")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TalkLogUI_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TalkLogUI as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TalkLogUI as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : TalkLogUI , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TalkLogUI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "app-talk3_d-talklogui")]
-pub trait ITalkLogUIMethods : ITalkLogUI { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TalkLogUI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TalkLogUI_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-talk3_d-talklogui")]
-impl < __T : ITalkLogUI > ITalkLogUIMethods for __T { }
-
-#[cfg(feature = "app-talk3_d-talklogui")]
-impl TalkLogUI { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TalkLogUI_unity2_raw :: __lookup_ctor :: get_method_info () } }
-
-#[cfg(feature = "app-talk3_d-talklogui")]
-impl TalkLogUI {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TalkLogUI) , :: core :: stringify ! (new) ,)) ; < Self as ITalkLogUIMethods > :: ctor (this ,) ; this }
-}
-
-#[cfg(feature = "app-talk3_d-talklogui")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::TalkLogUI_Cursor;
     pub use super::ITalkLogUI_Cursor;
     pub use super::ITalkLogUI_CursorMethods;
+    pub use super::TalkLogUI;
+    pub use super::ITalkLogUI;
+    pub use super::ITalkLogUIMethods;
     pub use super::TalkLogUI_Window;
     pub use super::ITalkLogUI_Window;
     pub use super::ITalkLogUI_WindowMethods;
     pub use super::TalkLogUI_ScrollBar;
     pub use super::ITalkLogUI_ScrollBar;
     pub use super::ITalkLogUI_ScrollBarMethods;
-    pub use super::TalkLogUI;
-    pub use super::ITalkLogUI;
-    pub use super::ITalkLogUIMethods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

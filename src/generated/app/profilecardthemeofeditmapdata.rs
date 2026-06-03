@@ -19,11 +19,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardthemeofeditmapdata/ProfileCardThemeOfEditMapData.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardThemeOfEditMapData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: profilecardthemeofeditmapdata :: ProfileCardThemeOfEditMapData >)] pub struct ProfileCardThemeOfEditMapData {
-# [static_field] # [rename (name = "CategoryMid")] pub category_mid : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardthemeofeditmapdata/ProfileCardThemeOfEditMapData_Categories.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -96,6 +91,11 @@ impl  ProfileCardThemeOfEditMapData_Categories  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardthemeofeditmapdata/ProfileCardThemeOfEditMapData.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardThemeOfEditMapData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: profilecardthemeofeditmapdata :: ProfileCardThemeOfEditMapData >)] pub struct ProfileCardThemeOfEditMapData {
+# [static_field] # [rename (name = "CategoryMid")] pub category_mid : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+}
+
 }
 
 #[cfg(feature = "app-profilecardthemeofeditmapdata-types")]
@@ -124,10 +124,10 @@ impl ProfileCardThemeOfEditMapData {
 #[cfg(feature = "app-profilecardthemeofeditmapdata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ProfileCardThemeOfEditMapData_Categories;
     pub use super::ProfileCardThemeOfEditMapData;
     pub use super::IProfileCardThemeOfEditMapData;
     pub use super::IProfileCardThemeOfEditMapDataMethods;
-    pub use super::ProfileCardThemeOfEditMapData_Categories;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdata_1::IStructData_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

@@ -16,7 +16,7 @@ pub use __types::*;
 
 #[cfg(feature = "system-collections-generic-ienumerator_1")]
 # [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > IEnumerator_1 < T0 > {
-# [doc = "`get_Current()` overload"] # [method (name = "get_Current" , args = 0)] pub fn get_current (self ,) -> T0 ;
+# [doc = "`get_Current()` overload"] # [method (name = "get_Current" , args = 0 , abstract_dispatch)] pub fn get_current (self ,) -> T0 ;
 }
 
 #[cfg(feature = "system-collections-generic-ienumerator_1")]

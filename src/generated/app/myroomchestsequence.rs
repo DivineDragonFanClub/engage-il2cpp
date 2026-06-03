@@ -34,6 +34,18 @@ mod __types {
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomchestsequence/MyRoomChestSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomChestSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: myroomchestsequence :: MyRoomChestSequence >)] pub struct MyRoomChestSequence {}
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomchestsequence/MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomChestSequence.ChestConfirmDialog.ReturnRingDialogItemYes")] # [parent (crate :: app :: basicdialogitemyes :: BasicDialogItemYes)] pub struct MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomchestsequence/MyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomChestSequence.ChestConfirmDialog.PickUpRingDialogItemYes")] # [parent (crate :: app :: basicdialogitemyes :: BasicDialogItemYes)] pub struct MyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomchestsequence/MyRoomChestSequence_ChestConfirmDialog.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomChestSequence.ChestConfirmDialog")] # [parent (crate :: app :: yesnodialog :: YesNoDialog)] pub struct MyRoomChestSequence_ChestConfirmDialog {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomchestsequence/MyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNo.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomChestSequence.ChestConfirmDialog.ConfirmDialogItemNo")] # [parent (crate :: app :: basicdialogitemno :: BasicDialogItemNo)] pub struct MyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNo {}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomchestsequence/MyRoomChestSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -88,18 +100,6 @@ impl  MyRoomChestSequence_Label  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomchestsequence/MyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomChestSequence.ChestConfirmDialog.PickUpRingDialogItemYes")] # [parent (crate :: app :: basicdialogitemyes :: BasicDialogItemYes)] pub struct MyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomchestsequence/MyRoomChestSequence_ChestConfirmDialog.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomChestSequence.ChestConfirmDialog")] # [parent (crate :: app :: yesnodialog :: YesNoDialog)] pub struct MyRoomChestSequence_ChestConfirmDialog {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomchestsequence/MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomChestSequence.ChestConfirmDialog.ReturnRingDialogItemYes")] # [parent (crate :: app :: basicdialogitemyes :: BasicDialogItemYes)] pub struct MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomchestsequence/MyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNo.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomChestSequence.ChestConfirmDialog.ConfirmDialogItemNo")] # [parent (crate :: app :: basicdialogitemno :: BasicDialogItemNo)] pub struct MyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNo {}
-
 }
 
 #[cfg(feature = "app-myroomchestsequence-types")]
@@ -123,6 +123,23 @@ impl MyRoomChestSequence { pub fn get_player_method_info () -> & 'static :: unit
 #[cfg(feature = "app-myroomchestsequence")]
 impl MyRoomChestSequence {
 # [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MyRoomChestSequence) , :: core :: stringify ! (new) ,)) ; < Self as IMyRoomChestSequenceMethods > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "app-myroomchestsequence")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_a_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , } } } pub unsafe fn a_call (this : MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_a_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-myroomchestsequence")]
+pub trait IMyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYesMethods : IMyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-myroomchestsequence")]
+impl < __T : IMyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes > IMyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYesMethods for __T { }
+
+#[cfg(feature = "app-myroomchestsequence")]
+impl MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes_unity2_raw :: __lookup_a_call :: get_method_info () } }
+
+#[cfg(feature = "app-myroomchestsequence")]
+impl MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes) , :: core :: stringify ! (new) ,)) ; < Self as IMyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYesMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-myroomchestsequence")]
@@ -163,23 +180,6 @@ impl MyRoomChestSequence_ChestConfirmDialog {
 }
 
 #[cfg(feature = "app-myroomchestsequence")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_a_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , } } } pub unsafe fn a_call (this : MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_a_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "app-myroomchestsequence")]
-pub trait IMyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYesMethods : IMyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-myroomchestsequence")]
-impl < __T : IMyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes > IMyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYesMethods for __T { }
-
-#[cfg(feature = "app-myroomchestsequence")]
-impl MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes_unity2_raw :: __lookup_a_call :: get_method_info () } }
-
-#[cfg(feature = "app-myroomchestsequence")]
-impl MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes) , :: core :: stringify ! (new) ,)) ; < Self as IMyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYesMethods > :: ctor (this ,) ; this }
-}
-
-#[cfg(feature = "app-myroomchestsequence")]
 # [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNo_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-myroomchestsequence")]
@@ -202,19 +202,19 @@ pub mod prelude {
     pub use super::MyRoomChestSequence;
     pub use super::IMyRoomChestSequence;
     pub use super::IMyRoomChestSequenceMethods;
-    pub use super::MyRoomChestSequence_Label;
+    pub use super::MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes;
+    pub use super::IMyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes;
+    pub use super::IMyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYesMethods;
     pub use super::MyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes;
     pub use super::IMyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes;
     pub use super::IMyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYesMethods;
     pub use super::MyRoomChestSequence_ChestConfirmDialog;
     pub use super::IMyRoomChestSequence_ChestConfirmDialog;
     pub use super::IMyRoomChestSequence_ChestConfirmDialogMethods;
-    pub use super::MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes;
-    pub use super::IMyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes;
-    pub use super::IMyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYesMethods;
     pub use super::MyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNo;
     pub use super::IMyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNo;
     pub use super::IMyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNoMethods;
+    pub use super::MyRoomChestSequence_Label;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemno::IBasicDialogItemNo;

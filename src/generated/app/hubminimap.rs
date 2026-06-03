@@ -21,6 +21,20 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubminimap/HubMiniMap_IconData.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMiniMap.IconData")] # [parent (crate :: system :: object :: Object)] pub struct HubMiniMap_IconData {
+# [offset (16)] # [rename (name = "access")] pub access : crate :: app :: hubaccess :: HubAccess ,
+# [offset (24)] # [rename (name = "iconS")] pub icon_s : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (32)] # [rename (name = "iconL")] pub icon_l : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (40)] # [rename (name = "iconSRect")] pub icon_s_rect : crate :: unity_engine :: recttransform :: RectTransform ,
+# [offset (48)] # [rename (name = "iconLRect")] pub icon_l_rect : crate :: unity_engine :: recttransform :: RectTransform ,
+# [offset (56)] # [rename (name = "imageS")] pub image_s : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (64)] # [rename (name = "imageL")] pub image_l : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (72)] # [rename (name = "talkS")] pub talk_s : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (80)] # [rename (name = "talkL")] pub talk_l : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (88)] # [rename (name = "m_active")] pub m_active : bool ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubminimap/HubMiniMap_MapMode.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -73,20 +87,6 @@ impl  HubMiniMap_MapMode  {
 
     }
 
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubminimap/HubMiniMap_IconData.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMiniMap.IconData")] # [parent (crate :: system :: object :: Object)] pub struct HubMiniMap_IconData {
-# [offset (16)] # [rename (name = "access")] pub access : crate :: app :: hubaccess :: HubAccess ,
-# [offset (24)] # [rename (name = "iconS")] pub icon_s : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (32)] # [rename (name = "iconL")] pub icon_l : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (40)] # [rename (name = "iconSRect")] pub icon_s_rect : crate :: unity_engine :: recttransform :: RectTransform ,
-# [offset (48)] # [rename (name = "iconLRect")] pub icon_l_rect : crate :: unity_engine :: recttransform :: RectTransform ,
-# [offset (56)] # [rename (name = "imageS")] pub image_s : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (64)] # [rename (name = "imageL")] pub image_l : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (72)] # [rename (name = "talkS")] pub talk_s : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (80)] # [rename (name = "talkL")] pub talk_l : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (88)] # [rename (name = "m_active")] pub m_active : bool ,
 }
 
 
@@ -174,10 +174,10 @@ impl HubMiniMap {
 #[cfg(feature = "app-hubminimap")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HubMiniMap_MapMode;
     pub use super::HubMiniMap_IconData;
     pub use super::IHubMiniMap_IconData;
     pub use super::IHubMiniMap_IconDataMethods;
+    pub use super::HubMiniMap_MapMode;
     pub use super::HubMiniMap;
     pub use super::IHubMiniMap;
     pub use super::IHubMiniMapMethods;

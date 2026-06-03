@@ -17,6 +17,61 @@ mod __types {
  ;
 
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tutorialsequence/TutorialSequence_Label.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct TutorialSequence_Label  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for TutorialSequence_Label  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "TutorialSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for TutorialSequence_Label  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  TutorialSequence_Label  {
+    pub fn load() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn unload() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn end() -> Self {
+        Self { value: 2 }
+
+    }
+
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tutorialsequence/TutorialSequence_LanguageType.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -108,61 +163,6 @@ impl  TutorialSequence_LanguageType  {
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tutorialsequence/TutorialSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TutorialSequence_Label  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for TutorialSequence_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "TutorialSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for TutorialSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  TutorialSequence_Label  {
-    pub fn load() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn unload() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/tutorialsequence/TutorialSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "TutorialSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: tutorialsequence :: TutorialSequence >)] pub struct TutorialSequence {
 # [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
 # [static_field] # [rename (name = "SpriteAtlasPaths")] pub sprite_atlas_paths : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
@@ -212,8 +212,8 @@ impl TutorialSequence {
 #[cfg(feature = "app-tutorialsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TutorialSequence_LanguageType;
     pub use super::TutorialSequence_Label;
+    pub use super::TutorialSequence_LanguageType;
     pub use super::TutorialSequence;
     pub use super::ITutorialSequence;
     pub use super::ITutorialSequenceMethods;

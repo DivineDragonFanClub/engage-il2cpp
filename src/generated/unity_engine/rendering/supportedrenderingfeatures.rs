@@ -13,11 +13,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/supportedrenderingfeatures/SupportedRenderingFeatures.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "SupportedRenderingFeatures")] # [parent (crate :: system :: object :: Object)] pub struct SupportedRenderingFeatures {
-# [static_field] # [rename (name = "s_Active")] pub s_active : crate :: unity_engine :: rendering :: supportedrenderingfeatures :: SupportedRenderingFeatures ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/supportedrenderingfeatures/SupportedRenderingFeatures_ReflectionProbeModes.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -64,6 +59,11 @@ impl  SupportedRenderingFeatures_ReflectionProbeModes  {
 
     }
 
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/supportedrenderingfeatures/SupportedRenderingFeatures.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "SupportedRenderingFeatures")] # [parent (crate :: system :: object :: Object)] pub struct SupportedRenderingFeatures {
+# [static_field] # [rename (name = "s_Active")] pub s_active : crate :: unity_engine :: rendering :: supportedrenderingfeatures :: SupportedRenderingFeatures ,
 }
 
 
@@ -155,10 +155,10 @@ impl SupportedRenderingFeatures {
 #[cfg(feature = "unity_engine-rendering-supportedrenderingfeatures")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::SupportedRenderingFeatures_ReflectionProbeModes;
     pub use super::SupportedRenderingFeatures;
     pub use super::ISupportedRenderingFeatures;
     pub use super::ISupportedRenderingFeaturesMethods;
-    pub use super::SupportedRenderingFeatures_ReflectionProbeModes;
     pub use super::SupportedRenderingFeatures_LightmapMixedBakeModes;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

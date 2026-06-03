@@ -16,7 +16,7 @@ pub use __types::*;
 
 #[cfg(feature = "system-collections-generic-ienumerable_1")]
 # [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > IEnumerable_1 < T0 > {
-# [doc = "`GetEnumerator()` overload"] # [method (name = "GetEnumerator" , args = 0)] pub fn get_enumerator (self ,) -> crate :: system :: collections :: generic :: ienumerator_1 :: IEnumerator_1 < T0 > ;
+# [doc = "`GetEnumerator()` overload"] # [method (name = "GetEnumerator" , args = 0 , abstract_dispatch)] pub fn get_enumerator (self ,) -> crate :: system :: collections :: generic :: ienumerator_1 :: IEnumerator_1 < T0 > ;
 }
 
 #[cfg(feature = "system-collections-generic-ienumerable_1")]

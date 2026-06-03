@@ -23,6 +23,14 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardroot/ProfileCardRoot_AchievementInfo.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardRoot.AchievementInfo")] # [parent (crate :: system :: object :: Object)] pub struct ProfileCardRoot_AchievementInfo {
+# [offset (16)] # [rename (name = "m_Icon")] pub m_icon : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (24)] # [rename (name = "m_Caption")] pub m_caption : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (32)] # [rename (name = "m_Count")] pub m_count : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (40)] # [rename (name = "m_BgImage")] pub m_bg_image : crate :: unity_engine :: ui :: image :: Image ,
+}
+
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardroot/ProfileCardRoot_SortieCountInfo.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardRoot.SortieCountInfo")] # [parent (crate :: system :: object :: Object)] pub struct ProfileCardRoot_SortieCountInfo {
 # [offset (16)] # [rename (name = "m_RootObject")] pub m_root_object : crate :: unity_engine :: gameobject :: GameObject ,
 # [offset (24)] # [rename (name = "m_UnitIcon")] pub m_unit_icon : crate :: app :: uniticon :: UnitIcon ,
@@ -30,6 +38,46 @@ mod __types {
 # [offset (40)] # [rename (name = "m_SortieCount")] pub m_sortie_count : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
 # [offset (48)] # [rename (name = "m_BgImage")] pub m_bg_image : crate :: unity_engine :: ui :: image :: Image ,
 }
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardroot/ProfileCardRoot_RectInfo.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ProfileCardRoot_RectInfo {
+    pub pos: crate :: unity_engine :: vector2 :: Vector2,
+    pub harf_size: crate :: unity_engine :: vector2 :: Vector2,
+    pub x_axis: crate :: unity_engine :: vector2 :: Vector2,
+    pub y_axis: crate :: unity_engine :: vector2 :: Vector2,
+}
+
+
+impl ::unity2::ClassIdentity for ProfileCardRoot_RectInfo {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "ProfileCardRoot.RectInfo";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl ::unity2::IlType for ProfileCardRoot_RectInfo {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardroot/ProfileCardRoot_StartHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardRoot.StartHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct ProfileCardRoot_StartHandler {}
 
 
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardroot/ProfileCardRoot.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardRoot")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct ProfileCardRoot {
@@ -122,58 +170,27 @@ mod __types {
 # [offset (696)] # [rename (name = "m_StartHandler")] pub m_start_handler : crate :: app :: profilecardroot :: ProfileCardRoot_StartHandler ,
 }
 
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardroot/ProfileCardRoot_RectInfo.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ProfileCardRoot_RectInfo {
-    pub pos: crate :: unity_engine :: vector2 :: Vector2,
-    pub harf_size: crate :: unity_engine :: vector2 :: Vector2,
-    pub x_axis: crate :: unity_engine :: vector2 :: Vector2,
-    pub y_axis: crate :: unity_engine :: vector2 :: Vector2,
-}
-
-
-impl ::unity2::ClassIdentity for ProfileCardRoot_RectInfo {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "ProfileCardRoot.RectInfo";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for ProfileCardRoot_RectInfo {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardroot/ProfileCardRoot_AchievementInfo.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardRoot.AchievementInfo")] # [parent (crate :: system :: object :: Object)] pub struct ProfileCardRoot_AchievementInfo {
-# [offset (16)] # [rename (name = "m_Icon")] pub m_icon : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (24)] # [rename (name = "m_Caption")] pub m_caption : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (32)] # [rename (name = "m_Count")] pub m_count : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (40)] # [rename (name = "m_BgImage")] pub m_bg_image : crate :: unity_engine :: ui :: image :: Image ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardroot/ProfileCardRoot_StartHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardRoot.StartHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct ProfileCardRoot_StartHandler {}
-
 }
 
 #[cfg(feature = "app-profilecardroot-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-profilecardroot")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ProfileCardRoot_AchievementInfo_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardRoot_AchievementInfo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardRoot_AchievementInfo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ProfileCardRoot_AchievementInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProfileCardRoot_AchievementInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-profilecardroot")]
+pub trait IProfileCardRoot_AchievementInfoMethods : IProfileCardRoot_AchievementInfo { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ProfileCardRoot_AchievementInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileCardRoot_AchievementInfo_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-profilecardroot")]
+impl < __T : IProfileCardRoot_AchievementInfo > IProfileCardRoot_AchievementInfoMethods for __T { }
+
+#[cfg(feature = "app-profilecardroot")]
+impl ProfileCardRoot_AchievementInfo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardRoot_AchievementInfo_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-profilecardroot")]
+impl ProfileCardRoot_AchievementInfo {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardRoot_AchievementInfo) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardRoot_AchievementInfoMethods > :: ctor (this ,) ; this }
+}
 
 #[cfg(feature = "app-profilecardroot")]
 # [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ProfileCardRoot_SortieCountInfo_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardRoot_SortieCountInfo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardRoot_SortieCountInfo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ProfileCardRoot_SortieCountInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProfileCardRoot_SortieCountInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
@@ -190,6 +207,35 @@ impl ProfileCardRoot_SortieCountInfo { pub fn ctor_method_info () -> & 'static :
 #[cfg(feature = "app-profilecardroot")]
 impl ProfileCardRoot_SortieCountInfo {
 # [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardRoot_SortieCountInfo) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardRoot_SortieCountInfoMethods > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "app-profilecardroot")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ProfileCardRoot_RectInfo_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardRoot_RectInfo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardRoot_RectInfo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : * mut ProfileCardRoot_RectInfo , pos : crate :: unity_engine :: vector2 :: Vector2 , harf_size : crate :: unity_engine :: vector2 :: Vector2 , x_axis : crate :: unity_engine :: vector2 :: Vector2 , y_axis : crate :: unity_engine :: vector2 :: Vector2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut ProfileCardRoot_RectInfo , crate :: unity_engine :: vector2 :: Vector2 , crate :: unity_engine :: vector2 :: Vector2 , crate :: unity_engine :: vector2 :: Vector2 , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , pos , harf_size , x_axis , y_axis , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_abs_dot { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardRoot_RectInfo as :: unity2 :: ClassIdentity > :: class () , "GetAbsDot" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardRoot_RectInfo as :: unity2 :: ClassIdentity > :: NAME , "GetAbsDot" , e) , } } } pub unsafe fn get_abs_dot (v1 : crate :: unity_engine :: vector2 :: Vector2 , v2 : crate :: unity_engine :: vector2 :: Vector2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (crate :: unity_engine :: vector2 :: Vector2 , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_abs_dot :: get_method_info () . method_ptr ,) ; inner (v1 , v2 , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_overlap { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardroot :: ProfileCardRoot_RectInfo as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardroot :: ProfileCardRoot_RectInfo as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardRoot_RectInfo as :: unity2 :: ClassIdentity > :: class () , "IsOverlap" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardRoot_RectInfo as :: unity2 :: ClassIdentity > :: NAME , "IsOverlap" , e) , } } } pub unsafe fn is_overlap (rect1 : crate :: app :: profilecardroot :: ProfileCardRoot_RectInfo , rect2 : crate :: app :: profilecardroot :: ProfileCardRoot_RectInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: app :: profilecardroot :: ProfileCardRoot_RectInfo , crate :: app :: profilecardroot :: ProfileCardRoot_RectInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_overlap :: get_method_info () . method_ptr ,) ; inner (rect1 , rect2 , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_distance { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardroot :: ProfileCardRoot_RectInfo as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardRoot_RectInfo as :: unity2 :: ClassIdentity > :: class () , "GetDistance" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardRoot_RectInfo as :: unity2 :: ClassIdentity > :: NAME , "GetDistance" , e) , } } } pub unsafe fn get_distance (pos : crate :: unity_engine :: vector2 :: Vector2 , rect : crate :: app :: profilecardroot :: ProfileCardRoot_RectInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (crate :: unity_engine :: vector2 :: Vector2 , crate :: app :: profilecardroot :: ProfileCardRoot_RectInfo , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_distance :: get_method_info () . method_ptr ,) ; inner (pos , rect , __unity2_method_info) } }
+
+#[cfg(feature = "app-profilecardroot")]
+impl ProfileCardRoot_RectInfo { # [doc = "`GetAbsDot(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2)` overload"] pub fn get_abs_dot (v1 : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , v2 : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> f32 { unsafe { __ProfileCardRoot_RectInfo_unity2_raw :: get_abs_dot (:: core :: convert :: Into :: into (v1) , :: core :: convert :: Into :: into (v2) , :: core :: option :: Option :: None) } } # [doc = "`IsOverlap(crate::app::profilecardroot::ProfileCardRoot_RectInfo, crate::app::profilecardroot::ProfileCardRoot_RectInfo)` overload"] pub fn is_overlap (rect1 : impl :: core :: convert :: Into < crate :: app :: profilecardroot :: ProfileCardRoot_RectInfo > , rect2 : impl :: core :: convert :: Into < crate :: app :: profilecardroot :: ProfileCardRoot_RectInfo >) -> bool { unsafe { __ProfileCardRoot_RectInfo_unity2_raw :: is_overlap (:: core :: convert :: Into :: into (rect1) , :: core :: convert :: Into :: into (rect2) , :: core :: option :: Option :: None) } } # [doc = "`GetDistance(crate::unity_engine::vector2::Vector2, crate::app::profilecardroot::ProfileCardRoot_RectInfo)` overload"] pub fn get_distance (pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , rect : impl :: core :: convert :: Into < crate :: app :: profilecardroot :: ProfileCardRoot_RectInfo >) -> f32 { unsafe { __ProfileCardRoot_RectInfo_unity2_raw :: get_distance (:: core :: convert :: Into :: into (pos) , :: core :: convert :: Into :: into (rect) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-profilecardroot")]
+impl ProfileCardRoot_RectInfo { # [doc = "`.ctor(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2)` overload"] pub fn ctor (mut self , pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , harf_size : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , x_axis : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , y_axis : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> () { unsafe { __ProfileCardRoot_RectInfo_unity2_raw :: ctor (& mut self as * mut ProfileCardRoot_RectInfo , :: core :: convert :: Into :: into (pos) , :: core :: convert :: Into :: into (harf_size) , :: core :: convert :: Into :: into (x_axis) , :: core :: convert :: Into :: into (y_axis) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-profilecardroot")]
+impl ProfileCardRoot_RectInfo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardRoot_RectInfo_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_abs_dot_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardRoot_RectInfo_unity2_raw :: __lookup_get_abs_dot :: get_method_info () } pub fn is_overlap_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardRoot_RectInfo_unity2_raw :: __lookup_is_overlap :: get_method_info () } pub fn get_distance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardRoot_RectInfo_unity2_raw :: __lookup_get_distance :: get_method_info () } }
+
+#[cfg(feature = "app-profilecardroot")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ProfileCardRoot_StartHandler_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardRoot_StartHandler as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardRoot_StartHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ProfileCardRoot_StartHandler , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProfileCardRoot_StartHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , object , method , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardRoot_StartHandler as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardRoot_StartHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , } } } pub unsafe fn invoke (this : ProfileCardRoot_StartHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProfileCardRoot_StartHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_invoke :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-profilecardroot")]
+pub trait IProfileCardRoot_StartHandlerMethods : IProfileCardRoot_StartHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < ProfileCardRoot_StartHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileCardRoot_StartHandler_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } # [doc = "`Invoke()` overload"] fn invoke (self ,) -> () { unsafe { let __receiver = < ProfileCardRoot_StartHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileCardRoot_StartHandler_unity2_raw :: invoke (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-profilecardroot")]
+impl < __T : IProfileCardRoot_StartHandler > IProfileCardRoot_StartHandlerMethods for __T { }
+
+#[cfg(feature = "app-profilecardroot")]
+impl ProfileCardRoot_StartHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardRoot_StartHandler_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardRoot_StartHandler_unity2_raw :: __lookup_invoke :: get_method_info () } }
+
+#[cfg(feature = "app-profilecardroot")]
+impl ProfileCardRoot_StartHandler {
+# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardRoot_StartHandler) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardRoot_StartHandlerMethods > :: ctor (this , object , method) ; this }
 }
 
 #[cfg(feature = "app-profilecardroot")]
@@ -213,67 +259,21 @@ impl ProfileCardRoot {
 }
 
 #[cfg(feature = "app-profilecardroot")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ProfileCardRoot_RectInfo_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardRoot_RectInfo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardRoot_RectInfo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : * mut ProfileCardRoot_RectInfo , pos : crate :: unity_engine :: vector2 :: Vector2 , harf_size : crate :: unity_engine :: vector2 :: Vector2 , x_axis : crate :: unity_engine :: vector2 :: Vector2 , y_axis : crate :: unity_engine :: vector2 :: Vector2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut ProfileCardRoot_RectInfo , crate :: unity_engine :: vector2 :: Vector2 , crate :: unity_engine :: vector2 :: Vector2 , crate :: unity_engine :: vector2 :: Vector2 , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , pos , harf_size , x_axis , y_axis , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_abs_dot { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardRoot_RectInfo as :: unity2 :: ClassIdentity > :: class () , "GetAbsDot" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardRoot_RectInfo as :: unity2 :: ClassIdentity > :: NAME , "GetAbsDot" , e) , } } } pub unsafe fn get_abs_dot (v1 : crate :: unity_engine :: vector2 :: Vector2 , v2 : crate :: unity_engine :: vector2 :: Vector2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (crate :: unity_engine :: vector2 :: Vector2 , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_abs_dot :: get_method_info () . method_ptr ,) ; inner (v1 , v2 , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_overlap { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardroot :: ProfileCardRoot_RectInfo as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardroot :: ProfileCardRoot_RectInfo as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardRoot_RectInfo as :: unity2 :: ClassIdentity > :: class () , "IsOverlap" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardRoot_RectInfo as :: unity2 :: ClassIdentity > :: NAME , "IsOverlap" , e) , } } } pub unsafe fn is_overlap (rect1 : crate :: app :: profilecardroot :: ProfileCardRoot_RectInfo , rect2 : crate :: app :: profilecardroot :: ProfileCardRoot_RectInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: app :: profilecardroot :: ProfileCardRoot_RectInfo , crate :: app :: profilecardroot :: ProfileCardRoot_RectInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_overlap :: get_method_info () . method_ptr ,) ; inner (rect1 , rect2 , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_distance { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardroot :: ProfileCardRoot_RectInfo as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardRoot_RectInfo as :: unity2 :: ClassIdentity > :: class () , "GetDistance" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardRoot_RectInfo as :: unity2 :: ClassIdentity > :: NAME , "GetDistance" , e) , } } } pub unsafe fn get_distance (pos : crate :: unity_engine :: vector2 :: Vector2 , rect : crate :: app :: profilecardroot :: ProfileCardRoot_RectInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (crate :: unity_engine :: vector2 :: Vector2 , crate :: app :: profilecardroot :: ProfileCardRoot_RectInfo , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_distance :: get_method_info () . method_ptr ,) ; inner (pos , rect , __unity2_method_info) } }
-
-#[cfg(feature = "app-profilecardroot")]
-impl ProfileCardRoot_RectInfo { # [doc = "`GetAbsDot(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2)` overload"] pub fn get_abs_dot (v1 : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , v2 : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> f32 { unsafe { __ProfileCardRoot_RectInfo_unity2_raw :: get_abs_dot (:: core :: convert :: Into :: into (v1) , :: core :: convert :: Into :: into (v2) , :: core :: option :: Option :: None) } } # [doc = "`IsOverlap(crate::app::profilecardroot::ProfileCardRoot_RectInfo, crate::app::profilecardroot::ProfileCardRoot_RectInfo)` overload"] pub fn is_overlap (rect1 : impl :: core :: convert :: Into < crate :: app :: profilecardroot :: ProfileCardRoot_RectInfo > , rect2 : impl :: core :: convert :: Into < crate :: app :: profilecardroot :: ProfileCardRoot_RectInfo >) -> bool { unsafe { __ProfileCardRoot_RectInfo_unity2_raw :: is_overlap (:: core :: convert :: Into :: into (rect1) , :: core :: convert :: Into :: into (rect2) , :: core :: option :: Option :: None) } } # [doc = "`GetDistance(crate::unity_engine::vector2::Vector2, crate::app::profilecardroot::ProfileCardRoot_RectInfo)` overload"] pub fn get_distance (pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , rect : impl :: core :: convert :: Into < crate :: app :: profilecardroot :: ProfileCardRoot_RectInfo >) -> f32 { unsafe { __ProfileCardRoot_RectInfo_unity2_raw :: get_distance (:: core :: convert :: Into :: into (pos) , :: core :: convert :: Into :: into (rect) , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-profilecardroot")]
-impl ProfileCardRoot_RectInfo { # [doc = "`.ctor(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2)` overload"] pub fn ctor (mut self , pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , harf_size : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , x_axis : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , y_axis : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> () { unsafe { __ProfileCardRoot_RectInfo_unity2_raw :: ctor (& mut self as * mut ProfileCardRoot_RectInfo , :: core :: convert :: Into :: into (pos) , :: core :: convert :: Into :: into (harf_size) , :: core :: convert :: Into :: into (x_axis) , :: core :: convert :: Into :: into (y_axis) , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-profilecardroot")]
-impl ProfileCardRoot_RectInfo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardRoot_RectInfo_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn get_abs_dot_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardRoot_RectInfo_unity2_raw :: __lookup_get_abs_dot :: get_method_info () } pub fn is_overlap_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardRoot_RectInfo_unity2_raw :: __lookup_is_overlap :: get_method_info () } pub fn get_distance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardRoot_RectInfo_unity2_raw :: __lookup_get_distance :: get_method_info () } }
-
-#[cfg(feature = "app-profilecardroot")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ProfileCardRoot_AchievementInfo_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardRoot_AchievementInfo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardRoot_AchievementInfo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ProfileCardRoot_AchievementInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProfileCardRoot_AchievementInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "app-profilecardroot")]
-pub trait IProfileCardRoot_AchievementInfoMethods : IProfileCardRoot_AchievementInfo { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ProfileCardRoot_AchievementInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileCardRoot_AchievementInfo_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-profilecardroot")]
-impl < __T : IProfileCardRoot_AchievementInfo > IProfileCardRoot_AchievementInfoMethods for __T { }
-
-#[cfg(feature = "app-profilecardroot")]
-impl ProfileCardRoot_AchievementInfo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardRoot_AchievementInfo_unity2_raw :: __lookup_ctor :: get_method_info () } }
-
-#[cfg(feature = "app-profilecardroot")]
-impl ProfileCardRoot_AchievementInfo {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardRoot_AchievementInfo) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardRoot_AchievementInfoMethods > :: ctor (this ,) ; this }
-}
-
-#[cfg(feature = "app-profilecardroot")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ProfileCardRoot_StartHandler_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardRoot_StartHandler as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardRoot_StartHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ProfileCardRoot_StartHandler , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProfileCardRoot_StartHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , object , method , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardRoot_StartHandler as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardRoot_StartHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , } } } pub unsafe fn invoke (this : ProfileCardRoot_StartHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ProfileCardRoot_StartHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_invoke :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "app-profilecardroot")]
-pub trait IProfileCardRoot_StartHandlerMethods : IProfileCardRoot_StartHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < ProfileCardRoot_StartHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileCardRoot_StartHandler_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } # [doc = "`Invoke()` overload"] fn invoke (self ,) -> () { unsafe { let __receiver = < ProfileCardRoot_StartHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProfileCardRoot_StartHandler_unity2_raw :: invoke (__receiver , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-profilecardroot")]
-impl < __T : IProfileCardRoot_StartHandler > IProfileCardRoot_StartHandlerMethods for __T { }
-
-#[cfg(feature = "app-profilecardroot")]
-impl ProfileCardRoot_StartHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardRoot_StartHandler_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ProfileCardRoot_StartHandler_unity2_raw :: __lookup_invoke :: get_method_info () } }
-
-#[cfg(feature = "app-profilecardroot")]
-impl ProfileCardRoot_StartHandler {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardRoot_StartHandler) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardRoot_StartHandlerMethods > :: ctor (this , object , method) ; this }
-}
-
-#[cfg(feature = "app-profilecardroot")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ProfileCardRoot_SortieCountInfo;
-    pub use super::IProfileCardRoot_SortieCountInfo;
-    pub use super::IProfileCardRoot_SortieCountInfoMethods;
-    pub use super::ProfileCardRoot;
-    pub use super::IProfileCardRoot;
-    pub use super::IProfileCardRootMethods;
-    pub use super::ProfileCardRoot_RectInfo;
     pub use super::ProfileCardRoot_AchievementInfo;
     pub use super::IProfileCardRoot_AchievementInfo;
     pub use super::IProfileCardRoot_AchievementInfoMethods;
+    pub use super::ProfileCardRoot_SortieCountInfo;
+    pub use super::IProfileCardRoot_SortieCountInfo;
+    pub use super::IProfileCardRoot_SortieCountInfoMethods;
+    pub use super::ProfileCardRoot_RectInfo;
     pub use super::ProfileCardRoot_StartHandler;
     pub use super::IProfileCardRoot_StartHandler;
     pub use super::IProfileCardRoot_StartHandlerMethods;
+    pub use super::ProfileCardRoot;
+    pub use super::IProfileCardRoot;
+    pub use super::IProfileCardRootMethods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

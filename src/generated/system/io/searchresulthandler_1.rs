@@ -18,9 +18,9 @@ pub use __types::*;
 
 #[cfg(feature = "system-io-searchresulthandler_1")]
 # [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > SearchResultHandler_1 < T0 > {
-# [doc = "`IsResultIncluded(crate::system::io::searchresult::SearchResult)` overload"] # [method (name = "IsResultIncluded" , args = 1)] pub fn is_result_included (self , result : crate :: system :: io :: searchresult :: SearchResult) -> bool ;
+# [doc = "`IsResultIncluded(crate::system::io::searchresult::SearchResult)` overload"] # [method (name = "IsResultIncluded" , args = 1 , abstract_dispatch)] pub fn is_result_included (self , result : crate :: system :: io :: searchresult :: SearchResult) -> bool ;
 
-# [doc = "`CreateObject(crate::system::io::searchresult::SearchResult)` overload"] # [method (name = "CreateObject" , args = 1)] pub fn create_object (self , result : crate :: system :: io :: searchresult :: SearchResult) -> T0 ;
+# [doc = "`CreateObject(crate::system::io::searchresult::SearchResult)` overload"] # [method (name = "CreateObject" , args = 1 , abstract_dispatch)] pub fn create_object (self , result : crate :: system :: io :: searchresult :: SearchResult) -> T0 ;
 
 # [doc = "`.ctor()` overload"] # [method (name = ".ctor" , args = 0)] pub fn ctor (self ,) -> () ;
 }

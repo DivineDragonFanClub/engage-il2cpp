@@ -23,6 +23,20 @@ mod __types {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventsequence/EventSequence_Coroutine.md"))] # [:: unity2 :: class (namespace = "App" , name = "EventSequence.Coroutine")] # [parent (crate :: system :: object :: Object)] pub struct EventSequence_Coroutine {
+# [offset (16)] # [rename (name = "m_Func")] pub m_func : crate :: moon_sharp :: interpreter :: dynvalue :: DynValue ,
+# [offset (24)] # [rename (name = "m_Args")] pub m_args : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > ,
+# [offset (32)] # [rename (name = "m_First")] pub m_first : bool ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventsequence/EventSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "EventSequence")] # [parent (crate :: app :: stackprocinst_1 :: StackProcInst_1 < crate :: app :: eventsequence :: EventSequence >)] pub struct EventSequence {
+# [offset (112)] # [rename (name = "m_Current")] pub m_current : crate :: app :: eventsequence :: EventSequence_Coroutine ,
+# [offset (120)] # [rename (name = "m_Coroutines")] pub m_coroutines : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: eventsequence :: EventSequence_Coroutine > ,
+# [offset (128)] # [rename (name = "m_BindingUI")] pub m_binding_ui : bool ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/eventsequence/EventSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -63,20 +77,6 @@ impl  EventSequence_Label  {
 
     }
 
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventsequence/EventSequence_Coroutine.md"))] # [:: unity2 :: class (namespace = "App" , name = "EventSequence.Coroutine")] # [parent (crate :: system :: object :: Object)] pub struct EventSequence_Coroutine {
-# [offset (16)] # [rename (name = "m_Func")] pub m_func : crate :: moon_sharp :: interpreter :: dynvalue :: DynValue ,
-# [offset (24)] # [rename (name = "m_Args")] pub m_args : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > ,
-# [offset (32)] # [rename (name = "m_First")] pub m_first : bool ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventsequence/EventSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "EventSequence")] # [parent (crate :: app :: stackprocinst_1 :: StackProcInst_1 < crate :: app :: eventsequence :: EventSequence >)] pub struct EventSequence {
-# [offset (112)] # [rename (name = "m_Current")] pub m_current : crate :: app :: eventsequence :: EventSequence_Coroutine ,
-# [offset (120)] # [rename (name = "m_Coroutines")] pub m_coroutines : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: eventsequence :: EventSequence_Coroutine > ,
-# [offset (128)] # [rename (name = "m_BindingUI")] pub m_binding_ui : bool ,
 }
 
 }
@@ -151,13 +151,13 @@ pub mod prelude {
     pub use super::EventSequence_MapEventStatck;
     pub use super::IEventSequence_MapEventStatck;
     pub use super::IEventSequence_MapEventStatckMethods;
-    pub use super::EventSequence_Label;
     pub use super::EventSequence_Coroutine;
     pub use super::IEventSequence_Coroutine;
     pub use super::IEventSequence_CoroutineMethods;
     pub use super::EventSequence;
     pub use super::IEventSequence;
     pub use super::IEventSequenceMethods;
+    pub use super::EventSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::stackprocinst_1::IStackProcInst_1;
     pub use crate::system::object::IObject;

@@ -21,6 +21,14 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/tutoriallisttopmenu/TutorialListTopMenu.md"))] # [:: unity2 :: class (namespace = "" , name = "TutorialListTopMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct TutorialListTopMenu {
+# [offset (200)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_DecideEventHandler ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/tutoriallisttopmenu/TutorialListTopMenu_DecideEventHandler.md"))] # [:: unity2 :: class (namespace = "" , name = "TutorialListTopMenu.DecideEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct TutorialListTopMenu_DecideEventHandler {}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/tutoriallisttopmenu/TutorialListTopMenu_SelectCategoryType.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -105,14 +113,6 @@ impl  TutorialListTopMenu_SelectCategoryType  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/tutoriallisttopmenu/TutorialListTopMenu.md"))] # [:: unity2 :: class (namespace = "" , name = "TutorialListTopMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct TutorialListTopMenu {
-# [offset (200)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_DecideEventHandler ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/tutoriallisttopmenu/TutorialListTopMenu_DecideEventHandler.md"))] # [:: unity2 :: class (namespace = "" , name = "TutorialListTopMenu.DecideEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct TutorialListTopMenu_DecideEventHandler {}
-
 }
 
 #[cfg(feature = "root-tutoriallisttopmenu-types")]
@@ -158,13 +158,13 @@ impl TutorialListTopMenu_DecideEventHandler {
 #[cfg(feature = "root-tutoriallisttopmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TutorialListTopMenu_SelectCategoryType;
     pub use super::TutorialListTopMenu;
     pub use super::ITutorialListTopMenu;
     pub use super::ITutorialListTopMenuMethods;
     pub use super::TutorialListTopMenu_DecideEventHandler;
     pub use super::ITutorialListTopMenu_DecideEventHandler;
     pub use super::ITutorialListTopMenu_DecideEventHandlerMethods;
+    pub use super::TutorialListTopMenu_SelectCategoryType;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::delegate::IDelegate;

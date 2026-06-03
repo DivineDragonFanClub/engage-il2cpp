@@ -35,7 +35,7 @@ pub use __types::*;
 
 # [doc = "`Get(i32)` overload"] # [method (name = "Get" , args = 1)] pub fn get (self , i : i32) -> T0 ;
 
-# [doc = "`Add(i32, T0)` overload"] # [method (name = "Add" , args = 2)] pub fn add (self , i : i32 , v : T0) -> () ;
+# [doc = "`Add(i32, T0)` overload"] # [method (name = "Add" , args = 2 , abstract_dispatch)] pub fn add (self , i : i32 , v : T0) -> () ;
 
 # [doc = "`Set(crate::app::capabilitydefinition::CapabilityDefinition_Type, T0)` overload"] # [method (name = "Set" , args = 2)] pub fn set_2 (self , t : crate :: app :: capabilitydefinition :: CapabilityDefinition_Type , v : T0) -> () ;
 
@@ -73,15 +73,15 @@ pub use __types::*;
 
 # [doc = "`Copy(crate::app::capabilitybase_1::CapabilityBase_1<T0>)` overload"] # [method (name = "Copy" , args = 1)] pub fn copy (self , src : crate :: app :: capabilitybase_1 :: CapabilityBase_1 < T0 >) -> () ;
 
-# [doc = "`IsZero()` overload"] # [method (name = "IsZero" , args = 0)] pub fn is_zero (self ,) -> bool ;
+# [doc = "`IsZero()` overload"] # [method (name = "IsZero" , args = 0 , abstract_dispatch)] pub fn is_zero (self ,) -> bool ;
 
 # [doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"] # [method (name = "Serialize" , args = 1)] pub fn serialize (self , stream : crate :: app :: stream_2 :: Stream_2) -> () ;
 
 # [doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"] # [method (name = "Deserialize" , args = 1)] pub fn deserialize (self , stream : crate :: app :: stream_2 :: Stream_2) -> () ;
 
-# [doc = "`WriteToStream(crate::app::stream_2::Stream_2, T0)` overload"] # [method (name = "WriteToStream" , args = 2)] pub fn write_to_stream (self , stream : crate :: app :: stream_2 :: Stream_2 , v : T0) -> () ;
+# [doc = "`WriteToStream(crate::app::stream_2::Stream_2, T0)` overload"] # [method (name = "WriteToStream" , args = 2 , abstract_dispatch)] pub fn write_to_stream (self , stream : crate :: app :: stream_2 :: Stream_2 , v : T0) -> () ;
 
-# [doc = "`ReadFromStream(crate::app::stream_2::Stream_2)` overload"] # [method (name = "ReadFromStream" , args = 1)] pub fn read_from_stream (self , stream : crate :: app :: stream_2 :: Stream_2) -> T0 ;
+# [doc = "`ReadFromStream(crate::app::stream_2::Stream_2)` overload"] # [method (name = "ReadFromStream" , args = 1 , abstract_dispatch)] pub fn read_from_stream (self , stream : crate :: app :: stream_2 :: Stream_2) -> T0 ;
 
 # [doc = "`get_Hp()` overload"] # [method (name = "get_Hp" , args = 0)] pub fn get_hp (self ,) -> T0 ;
 

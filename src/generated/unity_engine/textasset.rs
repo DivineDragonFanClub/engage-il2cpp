@@ -15,12 +15,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/textasset/TextAsset.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "TextAsset")] # [parent (crate :: unity_engine :: object_2 :: Object_2)] pub struct TextAsset {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/textasset/TextAsset_EncodingUtility.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "TextAsset.EncodingUtility")] # [parent (crate :: system :: object :: Object)] pub struct TextAsset_EncodingUtility {}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/textasset/TextAsset_CreateOptions.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -69,6 +63,12 @@ impl  TextAsset_CreateOptions  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/textasset/TextAsset.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "TextAsset")] # [parent (crate :: unity_engine :: object_2 :: Object_2)] pub struct TextAsset {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/textasset/TextAsset_EncodingUtility.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "TextAsset.EncodingUtility")] # [parent (crate :: system :: object :: Object)] pub struct TextAsset_EncodingUtility {}
+
 }
 
 #[cfg(feature = "unity_engine-textasset-types")]
@@ -110,12 +110,12 @@ impl TextAsset_EncodingUtility { pub fn cctor_method_info () -> & 'static :: uni
 #[cfg(feature = "unity_engine-textasset")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::TextAsset_CreateOptions;
     pub use super::TextAsset;
     pub use super::ITextAsset;
     pub use super::ITextAssetMethods;
     pub use super::TextAsset_EncodingUtility;
     pub use super::ITextAsset_EncodingUtility;
-    pub use super::TextAsset_CreateOptions;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

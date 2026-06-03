@@ -21,6 +21,79 @@ mod __types {
  ;
 
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridetarget/DragonRideTarget_TargetType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct DragonRideTarget_TargetType  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for DragonRideTarget_TargetType  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "DragonRideTarget.TargetType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for DragonRideTarget_TargetType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  DragonRideTarget_TargetType  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn normal() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn bomb() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn chain() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn special() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn roulette() -> Self {
+        Self { value: 5 }
+
+    }
+
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridetarget/DragonRideTarget_ExecuteReason.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -175,79 +248,6 @@ impl  DragonRideTarget_TargetState  {
 # [offset (136)] # [rename (name = "m_DestroySubText")] pub m_destroy_sub_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
 }
 
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridetarget/DragonRideTarget_TargetType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct DragonRideTarget_TargetType  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for DragonRideTarget_TargetType  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "DragonRideTarget.TargetType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for DragonRideTarget_TargetType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  DragonRideTarget_TargetType  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn normal() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn bomb() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn chain() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn special() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn roulette() -> Self {
-        Self { value: 5 }
-
-    }
-
-}
-
 }
 
 #[cfg(feature = "app-dragonridetarget-types")]
@@ -273,12 +273,12 @@ impl DragonRideTarget {
 #[cfg(feature = "app-dragonridetarget")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::DragonRideTarget_TargetType;
     pub use super::DragonRideTarget_ExecuteReason;
     pub use super::DragonRideTarget_TargetState;
     pub use super::DragonRideTarget;
     pub use super::IDragonRideTarget;
     pub use super::IDragonRideTargetMethods;
-    pub use super::DragonRideTarget_TargetType;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

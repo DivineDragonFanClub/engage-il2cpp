@@ -13,6 +13,14 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/xr/inputtracking/InputTracking.md"))] # [:: unity2 :: class (namespace = "UnityEngine.XR" , name = "InputTracking")] # [parent (crate :: system :: object :: Object)] pub struct InputTracking {
+# [static_field] # [rename (name = "trackingAcquired")] pub tracking_acquired : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: xr :: xrnodestate :: XRNodeState > ,
+# [static_field] # [rename (name = "trackingLost")] pub tracking_lost : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: xr :: xrnodestate :: XRNodeState > ,
+# [static_field] # [rename (name = "nodeAdded")] pub node_added : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: xr :: xrnodestate :: XRNodeState > ,
+# [static_field] # [rename (name = "nodeRemoved")] pub node_removed : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: xr :: xrnodestate :: XRNodeState > ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/inputtracking/InputTracking_TrackingStateEventType.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -73,14 +81,6 @@ impl  InputTracking_TrackingStateEventType  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/xr/inputtracking/InputTracking.md"))] # [:: unity2 :: class (namespace = "UnityEngine.XR" , name = "InputTracking")] # [parent (crate :: system :: object :: Object)] pub struct InputTracking {
-# [static_field] # [rename (name = "trackingAcquired")] pub tracking_acquired : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: xr :: xrnodestate :: XRNodeState > ,
-# [static_field] # [rename (name = "trackingLost")] pub tracking_lost : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: xr :: xrnodestate :: XRNodeState > ,
-# [static_field] # [rename (name = "nodeAdded")] pub node_added : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: xr :: xrnodestate :: XRNodeState > ,
-# [static_field] # [rename (name = "nodeRemoved")] pub node_removed : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: xr :: xrnodestate :: XRNodeState > ,
-}
-
 }
 
 #[cfg(feature = "unity_engine-xr-inputtracking-types")]
@@ -98,9 +98,9 @@ impl InputTracking { pub fn invoke_tracking_event_method_info () -> & 'static ::
 #[cfg(feature = "unity_engine-xr-inputtracking")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::InputTracking_TrackingStateEventType;
     pub use super::InputTracking;
     pub use super::IInputTracking;
+    pub use super::InputTracking_TrackingStateEventType;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

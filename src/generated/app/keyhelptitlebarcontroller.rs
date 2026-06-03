@@ -21,11 +21,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/keyhelptitlebarcontroller/KeyHelpTitleBarController.md"))] # [:: unity2 :: class (namespace = "App" , name = "KeyHelpTitleBarController")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct KeyHelpTitleBarController {
-# [offset (24)] # [rename (name = "m_HelpObject")] pub m_help_object : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/keyhelptitlebarcontroller/KeyHelpTitleBarController_Type.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -188,6 +183,11 @@ impl  KeyHelpTitleBarController_Type  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/keyhelptitlebarcontroller/KeyHelpTitleBarController.md"))] # [:: unity2 :: class (namespace = "App" , name = "KeyHelpTitleBarController")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct KeyHelpTitleBarController {
+# [offset (24)] # [rename (name = "m_HelpObject")] pub m_help_object : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
+}
+
 }
 
 #[cfg(feature = "app-keyhelptitlebarcontroller-types")]
@@ -213,10 +213,10 @@ impl KeyHelpTitleBarController {
 #[cfg(feature = "app-keyhelptitlebarcontroller")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::KeyHelpTitleBarController_Type;
     pub use super::KeyHelpTitleBarController;
     pub use super::IKeyHelpTitleBarController;
     pub use super::IKeyHelpTitleBarControllerMethods;
-    pub use super::KeyHelpTitleBarController_Type;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

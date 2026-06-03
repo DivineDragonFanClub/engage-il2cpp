@@ -19,9 +19,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotaccdata/MascotAccData.md"))] # [:: unity2 :: class (namespace = "App" , name = "MascotAccData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: mascotaccdata :: MascotAccData >)] pub struct MascotAccData {}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mascotaccdata/MascotAccData_PartsType.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -76,6 +73,9 @@ impl  MascotAccData_PartsType  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotaccdata/MascotAccData.md"))] # [:: unity2 :: class (namespace = "App" , name = "MascotAccData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: mascotaccdata :: MascotAccData >)] pub struct MascotAccData {}
+
 }
 
 #[cfg(feature = "app-mascotaccdata-types")]
@@ -104,10 +104,10 @@ impl MascotAccData {
 #[cfg(feature = "app-mascotaccdata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MascotAccData_PartsType;
     pub use super::MascotAccData;
     pub use super::IMascotAccData;
     pub use super::IMascotAccDataMethods;
-    pub use super::MascotAccData_PartsType;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdata_1::IStructData_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

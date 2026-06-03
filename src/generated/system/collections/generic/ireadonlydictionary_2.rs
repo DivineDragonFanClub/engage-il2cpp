@@ -16,7 +16,7 @@ pub use __types::*;
 
 #[cfg(feature = "system-collections-generic-ireadonlydictionary_2")]
 # [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity > IReadOnlyDictionary_2 < T0 , T1 > {
-# [doc = "`TryGetValue(T0, *mutT1)` overload"] # [method (name = "TryGetValue" , args = 2)] pub fn try_get_value (self , key : T0 , value : * mut T1) -> bool ;
+# [doc = "`TryGetValue(T0, *mutT1)` overload"] # [method (name = "TryGetValue" , args = 2 , abstract_dispatch)] pub fn try_get_value (self , key : T0 , value : * mut T1) -> bool ;
 }
 
 #[cfg(feature = "system-collections-generic-ireadonlydictionary_2")]

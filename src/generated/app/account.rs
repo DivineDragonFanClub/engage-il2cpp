@@ -19,67 +19,6 @@ mod __types {
  ;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/account/Account_SetupNsaResult.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Account_SetupNsaResult  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for Account_SetupNsaResult  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Account.SetupNsaResult";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for Account_SetupNsaResult  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  Account_SetupNsaResult  {
-    pub fn failed() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn cancelled() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn succeeded() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/account/Account_SetupNsaSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "Account.SetupNsaSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct Account_SetupNsaSequence {
-# [offset (112)] # [rename (name = "m_IsShowError")] pub m_is_show_error : bool ,
-# [offset (120)] # [rename (name = "m_ResultFunc")] pub m_result_func : crate :: app :: account :: Account_SetupNsaResultFunction ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/account/Account_SetupNsaSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -153,6 +92,67 @@ impl  Account_SetupNsaSequence_Label  {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/account/Account_SetupNsaSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "Account.SetupNsaSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct Account_SetupNsaSequence {
+# [offset (112)] # [rename (name = "m_IsShowError")] pub m_is_show_error : bool ,
+# [offset (120)] # [rename (name = "m_ResultFunc")] pub m_result_func : crate :: app :: account :: Account_SetupNsaResultFunction ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/account/Account_SetupNsaResult.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct Account_SetupNsaResult  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for Account_SetupNsaResult  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Account.SetupNsaResult";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for Account_SetupNsaResult  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  Account_SetupNsaResult  {
+    pub fn failed() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn cancelled() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn succeeded() -> Self {
+        Self { value: 2 }
+
+    }
+
+}
+
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/account/Account_SetupNsaResultFunction.md"))] # [:: unity2 :: class (namespace = "App" , name = "Account.SetupNsaResultFunction")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct Account_SetupNsaResultFunction {}
 
 
@@ -215,11 +215,11 @@ impl Account { pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp
 #[cfg(feature = "app-account")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Account_SetupNsaResult;
+    pub use super::Account_SetupNsaSequence_Label;
     pub use super::Account_SetupNsaSequence;
     pub use super::IAccount_SetupNsaSequence;
     pub use super::IAccount_SetupNsaSequenceMethods;
-    pub use super::Account_SetupNsaSequence_Label;
+    pub use super::Account_SetupNsaResult;
     pub use super::Account_SetupNsaResultFunction;
     pub use super::IAccount_SetupNsaResultFunction;
     pub use super::IAccount_SetupNsaResultFunctionMethods;

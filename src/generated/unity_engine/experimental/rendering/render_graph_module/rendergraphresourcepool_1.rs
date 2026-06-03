@@ -56,19 +56,19 @@ pub use __types::*;
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphresourcepool_1")]
 # [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > RenderGraphResourcePool_1 < T0 > {
-# [doc = "`ReleaseInternalResource(T0)` overload"] # [method (name = "ReleaseInternalResource" , args = 1)] pub fn release_internal_resource (self , res : T0) -> () ;
+# [doc = "`ReleaseInternalResource(T0)` overload"] # [method (name = "ReleaseInternalResource" , args = 1 , abstract_dispatch)] pub fn release_internal_resource (self , res : T0) -> () ;
 
-# [doc = "`GetResourceName(T0)` overload"] # [method (name = "GetResourceName" , args = 1)] pub fn get_resource_name (self , res : T0) -> :: unity2 :: Il2CppString ;
+# [doc = "`GetResourceName(T0)` overload"] # [method (name = "GetResourceName" , args = 1 , abstract_dispatch)] pub fn get_resource_name (self , res : T0) -> :: unity2 :: Il2CppString ;
 
-# [doc = "`GetResourceSize(T0)` overload"] # [method (name = "GetResourceSize" , args = 1)] pub fn get_resource_size (self , res : T0) -> i64 ;
+# [doc = "`GetResourceSize(T0)` overload"] # [method (name = "GetResourceSize" , args = 1 , abstract_dispatch)] pub fn get_resource_size (self , res : T0) -> i64 ;
 
-# [doc = "`GetResourceTypeName()` overload"] # [method (name = "GetResourceTypeName" , args = 0)] pub fn get_resource_type_name (self ,) -> :: unity2 :: Il2CppString ;
+# [doc = "`GetResourceTypeName()` overload"] # [method (name = "GetResourceTypeName" , args = 0 , abstract_dispatch)] pub fn get_resource_type_name (self ,) -> :: unity2 :: Il2CppString ;
 
 # [doc = "`ReleaseResource(i32, T0, i32)` overload"] # [method (name = "ReleaseResource" , args = 3)] pub fn release_resource (self , hash : i32 , resource : T0 , current_frame_index : i32) -> () ;
 
 # [doc = "`TryGetResource(i32, *mutT0)` overload"] # [method (name = "TryGetResource" , args = 2)] pub fn try_get_resource (self , hash_code : i32 , resource : * mut T0) -> bool ;
 
-# [doc = "`PurgeUnusedResources(i32)` overload"] # [method (name = "PurgeUnusedResources" , args = 1)] pub fn purge_unused_resources (self , current_frame_index : i32) -> () ;
+# [doc = "`PurgeUnusedResources(i32)` overload"] # [method (name = "PurgeUnusedResources" , args = 1 , abstract_dispatch)] pub fn purge_unused_resources (self , current_frame_index : i32) -> () ;
 
 # [doc = "`Cleanup()` overload"] # [method (name = "Cleanup" , args = 0)] pub fn cleanup (self ,) -> () ;
 

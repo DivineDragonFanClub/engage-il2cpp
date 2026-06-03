@@ -19,14 +19,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomeventclip/MyRoomEventClip.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomEventClip")] # [parent (crate :: unity_engine :: playables :: playableasset :: PlayableAsset)] pub struct MyRoomEventClip {
-# [offset (24)] # [rename (name = "eventType")] pub event_type : crate :: app :: myroomeventclip :: MyRoomEventClip_EventClipType ,
-# [offset (28)] # [rename (name = "eventLayer")] pub event_layer : crate :: app :: myroomeventclip :: MyRoomEventClip_EventClipLayer ,
-# [offset (32)] # [rename (name = "eventName")] pub event_name : :: unity2 :: Il2CppString ,
-# [offset (40)] # [rename (name = "isOut")] pub is_out : bool ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomeventclip/MyRoomEventClip_EventClipLayer.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -73,6 +65,14 @@ impl  MyRoomEventClip_EventClipLayer  {
 
     }
 
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomeventclip/MyRoomEventClip.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomEventClip")] # [parent (crate :: unity_engine :: playables :: playableasset :: PlayableAsset)] pub struct MyRoomEventClip {
+# [offset (24)] # [rename (name = "eventType")] pub event_type : crate :: app :: myroomeventclip :: MyRoomEventClip_EventClipType ,
+# [offset (28)] # [rename (name = "eventLayer")] pub event_layer : crate :: app :: myroomeventclip :: MyRoomEventClip_EventClipLayer ,
+# [offset (32)] # [rename (name = "eventName")] pub event_name : :: unity2 :: Il2CppString ,
+# [offset (40)] # [rename (name = "isOut")] pub is_out : bool ,
 }
 
 
@@ -149,10 +149,10 @@ impl MyRoomEventClip {
 #[cfg(feature = "app-myroomeventclip")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MyRoomEventClip_EventClipLayer;
     pub use super::MyRoomEventClip;
     pub use super::IMyRoomEventClip;
     pub use super::IMyRoomEventClipMethods;
-    pub use super::MyRoomEventClip_EventClipLayer;
     pub use super::MyRoomEventClip_EventClipType;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

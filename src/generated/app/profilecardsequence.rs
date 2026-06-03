@@ -19,6 +19,9 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardsequence/ProfileCardSequence_DisposeEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardSequence.DisposeEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct ProfileCardSequence_DisposeEventHandler {}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardsequence/ProfileCardSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -212,9 +215,6 @@ impl  ProfileCardSequence_Label  {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardsequence/ProfileCardSequence_DisposeEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardSequence.DisposeEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct ProfileCardSequence_DisposeEventHandler {}
-
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardsequence/ProfileCardSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct ProfileCardSequence {
 # [offset (112)] # [rename (name = "m_TopMenuResult")] pub m_top_menu_result : crate :: app :: profilecardtopmenu :: ProfileCardTopMenu_Result2 ,
 # [offset (116)] # [rename (name = "m_MyCardMenuResult")] pub m_my_card_menu_result : crate :: app :: profilecardmycardmenu :: ProfileCardMyCardMenu_Result2 ,
@@ -282,10 +282,10 @@ impl ProfileCardSequence {
 #[cfg(feature = "app-profilecardsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ProfileCardSequence_Label;
     pub use super::ProfileCardSequence_DisposeEventHandler;
     pub use super::IProfileCardSequence_DisposeEventHandler;
     pub use super::IProfileCardSequence_DisposeEventHandlerMethods;
+    pub use super::ProfileCardSequence_Label;
     pub use super::ProfileCardSequence;
     pub use super::IProfileCardSequence;
     pub use super::IProfileCardSequenceMethods;

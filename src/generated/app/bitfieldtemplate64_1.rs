@@ -24,7 +24,7 @@ pub use __types::*;
 # [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > BitFieldTemplate64_1 < T0 > {
 # [doc = "`get_ValueType()` overload"] # [method (name = "get_ValueType" , args = 0)] pub fn get_value_type (self ,) -> :: unity2 :: SystemType ;
 
-# [doc = "`ToLong(T0)` overload"] # [method (name = "ToLong" , args = 1)] pub fn to_long (self , value : T0) -> i64 ;
+# [doc = "`ToLong(T0)` overload"] # [method (name = "ToLong" , args = 1 , abstract_dispatch)] pub fn to_long (self , value : T0) -> i64 ;
 
 # [doc = "`.ctor()` overload"] # [method (name = ".ctor" , args = 0)] pub fn ctor (self ,) -> () ;
 

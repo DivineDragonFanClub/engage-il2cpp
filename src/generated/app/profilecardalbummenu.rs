@@ -22,20 +22,6 @@ mod __types {
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardalbummenu/ProfileCardAlbumMenu_DecideEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardAlbumMenu.DecideEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct ProfileCardAlbumMenu_DecideEventHandler {}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardalbummenu/ProfileCardAlbumMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardAlbumMenu")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct ProfileCardAlbumMenu {
-# [offset (112)] # [rename (name = "m_ChangeProfileEventHandler")] pub m_change_profile_event_handler : crate :: app :: profilecardalbummenu :: ProfileCardAlbumMenu_ChangeProfileEventHandler ,
-# [offset (120)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: profilecardalbummenu :: ProfileCardAlbumMenu_DecideEventHandler ,
-# [offset (128)] # [rename (name = "m_CardRoot")] pub m_card_root : crate :: app :: profilecardroot :: ProfileCardRoot ,
-# [offset (136)] # [rename (name = "m_ProfileListIndex")] pub m_profile_list_index : i32 ,
-# [offset (144)] # [rename (name = "m_ProfileCard")] pub m_profile_card : crate :: app :: profilecard :: ProfileCard ,
-# [offset (152)] # [rename (name = "m_result")] pub m_result : crate :: app :: basicmenu :: BasicMenu_Result ,
-# [offset (156)] # [rename (name = "m_CloseCalled")] pub m_close_called : bool ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardalbummenu/ProfileCardAlbumMenu_ChangeProfileEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardAlbumMenu.ChangeProfileEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct ProfileCardAlbumMenu_ChangeProfileEventHandler {}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardalbummenu/ProfileCardAlbumMenu_Result2.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -83,6 +69,20 @@ impl  ProfileCardAlbumMenu_Result2  {
     }
 
 }
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardalbummenu/ProfileCardAlbumMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardAlbumMenu")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct ProfileCardAlbumMenu {
+# [offset (112)] # [rename (name = "m_ChangeProfileEventHandler")] pub m_change_profile_event_handler : crate :: app :: profilecardalbummenu :: ProfileCardAlbumMenu_ChangeProfileEventHandler ,
+# [offset (120)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: profilecardalbummenu :: ProfileCardAlbumMenu_DecideEventHandler ,
+# [offset (128)] # [rename (name = "m_CardRoot")] pub m_card_root : crate :: app :: profilecardroot :: ProfileCardRoot ,
+# [offset (136)] # [rename (name = "m_ProfileListIndex")] pub m_profile_list_index : i32 ,
+# [offset (144)] # [rename (name = "m_ProfileCard")] pub m_profile_card : crate :: app :: profilecard :: ProfileCard ,
+# [offset (152)] # [rename (name = "m_result")] pub m_result : crate :: app :: basicmenu :: BasicMenu_Result ,
+# [offset (156)] # [rename (name = "m_CloseCalled")] pub m_close_called : bool ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardalbummenu/ProfileCardAlbumMenu_ChangeProfileEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardAlbumMenu.ChangeProfileEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct ProfileCardAlbumMenu_ChangeProfileEventHandler {}
 
 }
 
@@ -149,13 +149,13 @@ pub mod prelude {
     pub use super::ProfileCardAlbumMenu_DecideEventHandler;
     pub use super::IProfileCardAlbumMenu_DecideEventHandler;
     pub use super::IProfileCardAlbumMenu_DecideEventHandlerMethods;
+    pub use super::ProfileCardAlbumMenu_Result2;
     pub use super::ProfileCardAlbumMenu;
     pub use super::IProfileCardAlbumMenu;
     pub use super::IProfileCardAlbumMenuMethods;
     pub use super::ProfileCardAlbumMenu_ChangeProfileEventHandler;
     pub use super::IProfileCardAlbumMenu_ChangeProfileEventHandler;
     pub use super::IProfileCardAlbumMenu_ChangeProfileEventHandlerMethods;
-    pub use super::ProfileCardAlbumMenu_Result2;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
