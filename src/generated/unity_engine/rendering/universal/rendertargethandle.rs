@@ -42,6 +42,29 @@ impl ::unity2::IlType for RenderTargetHandle {
 
 }
 
+
+impl RenderTargetHandle {
+    #[inline]
+    pub fn camera_target() -> crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "CameraTarget");
+
+        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
+    }
+
+    #[inline]
+    pub fn set_camera_target(value: crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle) {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "CameraTarget");
+
+        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-rendertargethandle-types")]

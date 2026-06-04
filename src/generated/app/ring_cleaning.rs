@@ -6,7 +6,7 @@
  # [cfg (feature = "app-ring_cleaning-effectcontroller")] pub use effectcontroller :: { IEffectControllerMethods , IEffectController_AutoDeleteMethods }
  ;
  # [cfg (any (feature = "app-ring_cleaning-faceimagescontroller-types"))] pub mod faceimagescontroller ;
- # [cfg (feature = "app-ring_cleaning-faceimagescontroller-types")] pub use faceimagescontroller :: { FaceImagesController_PlayPattern , FaceImagesController_ReturnEntryComponent , IFaceImagesController_ReturnEntryComponent , FaceImagesController_AnimType , FaceImagesController , IFaceImagesController }
+ # [cfg (feature = "app-ring_cleaning-faceimagescontroller-types")] pub use faceimagescontroller :: { FaceImagesController_ReturnEntryComponent , IFaceImagesController_ReturnEntryComponent , FaceImagesController_PlayPattern , FaceImagesController_AnimType , FaceImagesController , IFaceImagesController }
  ;
  # [cfg (feature = "app-ring_cleaning-faceimagescontroller")] pub use faceimagescontroller :: { IFaceImagesController_ReturnEntryComponentMethods , IFaceImagesControllerMethods }
  ;

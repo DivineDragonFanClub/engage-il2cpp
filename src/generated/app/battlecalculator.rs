@@ -49,156 +49,19 @@ mod __types {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlecalculator/BattleCalculator_HitSkill.md"))] # [:: unity2 :: class (namespace = "App" , name = "BattleCalculator.HitSkill")] # [parent (crate :: app :: pool :: Pool_Node)] pub struct BattleCalculator_HitSkill {
+# [offset (16)] # [rename (name = "Side")] pub side : crate :: app :: battleinfoside :: BattleInfoSide ,
+# [offset (24)] # [rename (name = "Action")] pub action : crate :: app :: skilldata :: SkillData_Actions ,
+# [offset (32)] # [rename (name = "Skill")] pub skill : crate :: app :: skilldata :: SkillData ,
+}
+
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlecalculator/BattleCalculator_OrderList.md"))] # [:: unity2 :: class (namespace = "App" , name = "BattleCalculator.OrderList")] # [parent (crate :: app :: pool :: Pool_List_1 < crate :: app :: battlecalculator :: BattleCalculator_Order >)] pub struct BattleCalculator_OrderList {
 # [static_field] # [rename (name = "MaxOrder")] pub max_order : i32 ,
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlecalculator/BattleCalculator_Attributes.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct BattleCalculator_Attributes  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for BattleCalculator_Attributes  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "BattleCalculator.Attributes";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for BattleCalculator_Attributes  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  BattleCalculator_Attributes  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn physical() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn magic() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlecalculator/BattleCalculator_Mode.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct BattleCalculator_Mode  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for BattleCalculator_Mode  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "BattleCalculator.Mode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for BattleCalculator_Mode  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  BattleCalculator_Mode  {
-    pub fn battle() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn job_intro() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn class_change() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlecalculator/BattleCalculator_DetailScope.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct BattleCalculator_DetailScope {
-    pub m_info: crate :: app :: battleinfo :: BattleInfo,
-}
-
-
-impl ::unity2::ClassIdentity for BattleCalculator_DetailScope {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "BattleCalculator.DetailScope";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for BattleCalculator_DetailScope {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlecalculator/BattleCalculator_FlagField.md"))] # [:: unity2 :: class (namespace = "App" , name = "BattleCalculator.FlagField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: battlecalculator :: BattleCalculator_Flags >)] pub struct BattleCalculator_FlagField {}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlecalculator/BattleCalculator_FuncExp1.md"))] # [:: unity2 :: class (namespace = "App" , name = "BattleCalculator.FuncExp1")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct BattleCalculator_FuncExp1 {}
 
 
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlecalculator/BattleCalculator_Flags.md"))]
@@ -292,6 +155,82 @@ impl  BattleCalculator_Flags  {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlecalculator/BattleCalculator_FuncExp2.md"))] # [:: unity2 :: class (namespace = "App" , name = "BattleCalculator.FuncExp2")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct BattleCalculator_FuncExp2 {}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlecalculator/BattleCalculator_SeparatorScope.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct BattleCalculator_SeparatorScope {
+    pub m_calc: crate :: app :: battlecalculator :: BattleCalculator,
+    pub m_push: crate :: app :: battlescene :: BattleScene_Kind,
+    pub m_pop: crate :: app :: battlescene :: BattleScene_Kind,
+    pub m_side: crate :: app :: battleside :: BattleSide_Type,
+    pub m_equip_skill: crate :: app :: skilldata :: SkillData,
+    pub m_is_dump: bool,
+}
+
+
+impl ::unity2::ClassIdentity for BattleCalculator_SeparatorScope {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "BattleCalculator.SeparatorScope";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl ::unity2::IlType for BattleCalculator_SeparatorScope {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlecalculator/BattleCalculator_DetailScope.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct BattleCalculator_DetailScope {
+    pub m_info: crate :: app :: battleinfo :: BattleInfo,
+}
+
+
+impl ::unity2::ClassIdentity for BattleCalculator_DetailScope {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "BattleCalculator.DetailScope";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl ::unity2::IlType for BattleCalculator_DetailScope {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlecalculator/BattleCalculator_TrainingResult.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -341,26 +280,21 @@ impl  BattleCalculator_TrainingResult  {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlecalculator/BattleCalculator_HitSkillPool.md"))] # [:: unity2 :: class (namespace = "App" , name = "BattleCalculator.HitSkillPool")] # [parent (crate :: app :: pool :: Pool_List_1 < crate :: app :: battlecalculator :: BattleCalculator_HitSkill >)] pub struct BattleCalculator_HitSkillPool {}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlecalculator/BattleCalculator_FlagField.md"))] # [:: unity2 :: class (namespace = "App" , name = "BattleCalculator.FlagField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: battlecalculator :: BattleCalculator_Flags >)] pub struct BattleCalculator_FlagField {}
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlecalculator/BattleCalculator_SeparatorScope.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlecalculator/BattleCalculator_Attributes.md"))]
 #[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct BattleCalculator_SeparatorScope {
-    pub m_calc: crate :: app :: battlecalculator :: BattleCalculator,
-    pub m_push: crate :: app :: battlescene :: BattleScene_Kind,
-    pub m_pop: crate :: app :: battlescene :: BattleScene_Kind,
-    pub m_side: crate :: app :: battleside :: BattleSide_Type,
-    pub m_equip_skill: crate :: app :: skilldata :: SkillData,
-    pub m_is_dump: bool,
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct BattleCalculator_Attributes  {
+    pub value: i32,
 }
 
 
-impl ::unity2::ClassIdentity for BattleCalculator_SeparatorScope {
+impl  ::unity2::ClassIdentity for BattleCalculator_Attributes  {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "BattleCalculator.SeparatorScope";
+    const NAME: &'static str = "BattleCalculator.Attributes";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> =
@@ -375,7 +309,7 @@ impl ::unity2::ClassIdentity for BattleCalculator_SeparatorScope {
 }
 
 
-impl ::unity2::IlType for BattleCalculator_SeparatorScope {
+impl  ::unity2::IlType for BattleCalculator_Attributes  {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
@@ -383,17 +317,83 @@ impl ::unity2::IlType for BattleCalculator_SeparatorScope {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlecalculator/BattleCalculator_HitSkill.md"))] # [:: unity2 :: class (namespace = "App" , name = "BattleCalculator.HitSkill")] # [parent (crate :: app :: pool :: Pool_Node)] pub struct BattleCalculator_HitSkill {
-# [offset (16)] # [rename (name = "Side")] pub side : crate :: app :: battleinfoside :: BattleInfoSide ,
-# [offset (24)] # [rename (name = "Action")] pub action : crate :: app :: skilldata :: SkillData_Actions ,
-# [offset (32)] # [rename (name = "Skill")] pub skill : crate :: app :: skilldata :: SkillData ,
+impl  BattleCalculator_Attributes  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn physical() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn magic() -> Self {
+        Self { value: 2 }
+
+    }
+
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlecalculator/BattleCalculator_FuncExp2.md"))] # [:: unity2 :: class (namespace = "App" , name = "BattleCalculator.FuncExp2")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct BattleCalculator_FuncExp2 {}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlecalculator/BattleCalculator_HitSkillPool.md"))] # [:: unity2 :: class (namespace = "App" , name = "BattleCalculator.HitSkillPool")] # [parent (crate :: app :: pool :: Pool_List_1 < crate :: app :: battlecalculator :: BattleCalculator_HitSkill >)] pub struct BattleCalculator_HitSkillPool {}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlecalculator/BattleCalculator_FuncExp1.md"))] # [:: unity2 :: class (namespace = "App" , name = "BattleCalculator.FuncExp1")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct BattleCalculator_FuncExp1 {}
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlecalculator/BattleCalculator_Mode.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct BattleCalculator_Mode  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for BattleCalculator_Mode  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "BattleCalculator.Mode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for BattleCalculator_Mode  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  BattleCalculator_Mode  {
+    pub fn battle() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn job_intro() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn class_change() -> Self {
+        Self { value: 2 }
+
+    }
+
+}
 
 
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlecalculator/BattleCalculator_TargetScope.md"))]
@@ -474,6 +474,23 @@ impl BattleCalculator_Order {
 }
 
 #[cfg(feature = "app-battlecalculator")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __BattleCalculator_HitSkill_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_enter { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleCalculator_HitSkill as :: unity2 :: ClassIdentity > :: class () , "OnEnter" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleCalculator_HitSkill as :: unity2 :: ClassIdentity > :: NAME , "OnEnter" , e) , } } } pub unsafe fn on_enter (this : BattleCalculator_HitSkill , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (BattleCalculator_HitSkill , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_enter :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_exit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleCalculator_HitSkill as :: unity2 :: ClassIdentity > :: class () , "OnExit" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleCalculator_HitSkill as :: unity2 :: ClassIdentity > :: NAME , "OnExit" , e) , } } } pub unsafe fn on_exit (this : BattleCalculator_HitSkill , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (BattleCalculator_HitSkill , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_exit :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_clear { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleCalculator_HitSkill as :: unity2 :: ClassIdentity > :: class () , "Clear" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleCalculator_HitSkill as :: unity2 :: ClassIdentity > :: NAME , "Clear" , e) , } } } pub unsafe fn clear (this : BattleCalculator_HitSkill , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (BattleCalculator_HitSkill , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_clear :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_sort_key { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleCalculator_HitSkill as :: unity2 :: ClassIdentity > :: class () , "get_SortKey" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleCalculator_HitSkill as :: unity2 :: ClassIdentity > :: NAME , "get_SortKey" , e) , } } } pub unsafe fn get_sort_key (this : BattleCalculator_HitSkill , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (BattleCalculator_HitSkill , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_sort_key :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleCalculator_HitSkill as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleCalculator_HitSkill as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : BattleCalculator_HitSkill , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (BattleCalculator_HitSkill , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-battlecalculator")]
+pub trait IBattleCalculator_HitSkillMethods : IBattleCalculator_HitSkill { # [doc = "`OnEnter()` overload"] fn on_enter (self ,) -> () { unsafe { let __receiver = < BattleCalculator_HitSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BattleCalculator_HitSkill_unity2_raw :: on_enter (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnExit()` overload"] fn on_exit (self ,) -> () { unsafe { let __receiver = < BattleCalculator_HitSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BattleCalculator_HitSkill_unity2_raw :: on_exit (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < BattleCalculator_HitSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BattleCalculator_HitSkill_unity2_raw :: clear (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_SortKey()` overload"] fn get_sort_key (self ,) -> i32 { unsafe { let __receiver = < BattleCalculator_HitSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BattleCalculator_HitSkill_unity2_raw :: get_sort_key (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BattleCalculator_HitSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BattleCalculator_HitSkill_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-battlecalculator")]
+impl < __T : IBattleCalculator_HitSkill > IBattleCalculator_HitSkillMethods for __T { }
+
+#[cfg(feature = "app-battlecalculator")]
+impl BattleCalculator_HitSkill { pub fn on_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleCalculator_HitSkill_unity2_raw :: __lookup_on_enter :: get_method_info () } pub fn on_exit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleCalculator_HitSkill_unity2_raw :: __lookup_on_exit :: get_method_info () } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleCalculator_HitSkill_unity2_raw :: __lookup_clear :: get_method_info () } pub fn get_sort_key_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleCalculator_HitSkill_unity2_raw :: __lookup_get_sort_key :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleCalculator_HitSkill_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-battlecalculator")]
+impl BattleCalculator_HitSkill {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BattleCalculator_HitSkill) , :: core :: stringify ! (new) ,)) ; < Self as IBattleCalculator_HitSkillMethods > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "app-battlecalculator")]
 # [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __BattleCalculator_OrderList_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleCalculator_OrderList as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleCalculator_OrderList as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : BattleCalculator_OrderList , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (BattleCalculator_OrderList , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_add { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: battleinfo :: BattleInfo as :: unity2 :: IlType > :: il_type () , < crate :: app :: battleside :: BattleSide_Type as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleCalculator_OrderList as :: unity2 :: ClassIdentity > :: class () , "TryAdd" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleCalculator_OrderList as :: unity2 :: ClassIdentity > :: NAME , "TryAdd" , e) , } } } pub unsafe fn try_add (this : BattleCalculator_OrderList , info : crate :: app :: battleinfo :: BattleInfo , side : crate :: app :: battleside :: BattleSide_Type , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (BattleCalculator_OrderList , crate :: app :: battleinfo :: BattleInfo , crate :: app :: battleside :: BattleSide_Type , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_try_add :: get_method_info () . method_ptr ,) ; inner (this , info , side , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_can_swap { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: battleside :: BattleSide_Type as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleCalculator_OrderList as :: unity2 :: ClassIdentity > :: class () , "CanSwap" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleCalculator_OrderList as :: unity2 :: ClassIdentity > :: NAME , "CanSwap" , e) , } } } pub unsafe fn can_swap (this : BattleCalculator_OrderList , side : crate :: app :: battleside :: BattleSide_Type , index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (BattleCalculator_OrderList , crate :: app :: battleside :: BattleSide_Type , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_can_swap :: get_method_info () . method_ptr ,) ; inner (this , side , index , __unity2_method_info) } }
 
 #[cfg(feature = "app-battlecalculator")]
@@ -489,6 +506,49 @@ impl BattleCalculator_OrderList { pub fn ctor_method_info () -> & 'static :: uni
 impl BattleCalculator_OrderList {
 # [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BattleCalculator_OrderList) , :: core :: stringify ! (new) ,)) ; < Self as IBattleCalculator_OrderListMethods > :: ctor (this ,) ; this }
 }
+
+#[cfg(feature = "app-battlecalculator")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __BattleCalculator_FuncExp1_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleCalculator_FuncExp1 as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleCalculator_FuncExp1 as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : BattleCalculator_FuncExp1 , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (BattleCalculator_FuncExp1 , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , object , method , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: battleinfoside :: BattleInfoSide as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleCalculator_FuncExp1 as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleCalculator_FuncExp1 as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , } } } pub unsafe fn invoke (this : BattleCalculator_FuncExp1 , current : crate :: app :: battleinfoside :: BattleInfoSide , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (BattleCalculator_FuncExp1 , crate :: app :: battleinfoside :: BattleInfoSide , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_invoke :: get_method_info () . method_ptr ,) ; inner (this , current , __unity2_method_info) } }
+
+#[cfg(feature = "app-battlecalculator")]
+pub trait IBattleCalculator_FuncExp1Methods : IBattleCalculator_FuncExp1 { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < BattleCalculator_FuncExp1 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BattleCalculator_FuncExp1_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } # [doc = "`Invoke(crate::app::battleinfoside::BattleInfoSide)` overload"] fn invoke (self , current : impl :: core :: convert :: Into < crate :: app :: battleinfoside :: BattleInfoSide >) -> i32 { unsafe { let __receiver = < BattleCalculator_FuncExp1 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BattleCalculator_FuncExp1_unity2_raw :: invoke (__receiver , :: core :: convert :: Into :: into (current) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-battlecalculator")]
+impl < __T : IBattleCalculator_FuncExp1 > IBattleCalculator_FuncExp1Methods for __T { }
+
+#[cfg(feature = "app-battlecalculator")]
+impl BattleCalculator_FuncExp1 { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleCalculator_FuncExp1_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleCalculator_FuncExp1_unity2_raw :: __lookup_invoke :: get_method_info () } }
+
+#[cfg(feature = "app-battlecalculator")]
+impl BattleCalculator_FuncExp1 {
+# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BattleCalculator_FuncExp1) , :: core :: stringify ! (new) ,)) ; < Self as IBattleCalculator_FuncExp1Methods > :: ctor (this , object , method) ; this }
+}
+
+#[cfg(feature = "app-battlecalculator")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __BattleCalculator_FuncExp2_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleCalculator_FuncExp2 as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleCalculator_FuncExp2 as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : BattleCalculator_FuncExp2 , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (BattleCalculator_FuncExp2 , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , object , method , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: battleinfoside :: BattleInfoSide as :: unity2 :: IlType > :: il_type () , < crate :: app :: battleinfoside :: BattleInfoSide as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleCalculator_FuncExp2 as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleCalculator_FuncExp2 as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , } } } pub unsafe fn invoke (this : BattleCalculator_FuncExp2 , current : crate :: app :: battleinfoside :: BattleInfoSide , reverse : crate :: app :: battleinfoside :: BattleInfoSide , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (BattleCalculator_FuncExp2 , crate :: app :: battleinfoside :: BattleInfoSide , crate :: app :: battleinfoside :: BattleInfoSide , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_invoke :: get_method_info () . method_ptr ,) ; inner (this , current , reverse , __unity2_method_info) } }
+
+#[cfg(feature = "app-battlecalculator")]
+pub trait IBattleCalculator_FuncExp2Methods : IBattleCalculator_FuncExp2 { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < BattleCalculator_FuncExp2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BattleCalculator_FuncExp2_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } # [doc = "`Invoke(crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide)` overload"] fn invoke (self , current : impl :: core :: convert :: Into < crate :: app :: battleinfoside :: BattleInfoSide > , reverse : impl :: core :: convert :: Into < crate :: app :: battleinfoside :: BattleInfoSide >) -> i32 { unsafe { let __receiver = < BattleCalculator_FuncExp2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BattleCalculator_FuncExp2_unity2_raw :: invoke (__receiver , :: core :: convert :: Into :: into (current) , :: core :: convert :: Into :: into (reverse) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-battlecalculator")]
+impl < __T : IBattleCalculator_FuncExp2 > IBattleCalculator_FuncExp2Methods for __T { }
+
+#[cfg(feature = "app-battlecalculator")]
+impl BattleCalculator_FuncExp2 { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleCalculator_FuncExp2_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleCalculator_FuncExp2_unity2_raw :: __lookup_invoke :: get_method_info () } }
+
+#[cfg(feature = "app-battlecalculator")]
+impl BattleCalculator_FuncExp2 {
+# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BattleCalculator_FuncExp2) , :: core :: stringify ! (new) ,)) ; < Self as IBattleCalculator_FuncExp2Methods > :: ctor (this , object , method) ; this }
+}
+
+#[cfg(feature = "app-battlecalculator")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __BattleCalculator_SeparatorScope_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: battlecalculator :: BattleCalculator as :: unity2 :: IlType > :: il_type () , < crate :: app :: battleside :: BattleSide_Type as :: unity2 :: IlType > :: il_type () , < crate :: app :: battlescene :: BattleScene_Kind as :: unity2 :: IlType > :: il_type () , < crate :: app :: battlescene :: BattleScene_Kind as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleCalculator_SeparatorScope as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 5 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleCalculator_SeparatorScope as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : * mut BattleCalculator_SeparatorScope , calc : crate :: app :: battlecalculator :: BattleCalculator , side : crate :: app :: battleside :: BattleSide_Type , push : crate :: app :: battlescene :: BattleScene_Kind , pop : crate :: app :: battlescene :: BattleScene_Kind , is_dump : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut BattleCalculator_SeparatorScope , crate :: app :: battlecalculator :: BattleCalculator , crate :: app :: battleside :: BattleSide_Type , crate :: app :: battlescene :: BattleScene_Kind , crate :: app :: battlescene :: BattleScene_Kind , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , calc , side , push , pop , is_dump , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleCalculator_SeparatorScope as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleCalculator_SeparatorScope as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : * mut BattleCalculator_SeparatorScope , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut BattleCalculator_SeparatorScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_side { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleCalculator_SeparatorScope as :: unity2 :: ClassIdentity > :: class () , "GetSide" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleCalculator_SeparatorScope as :: unity2 :: ClassIdentity > :: NAME , "GetSide" , e) , } } } pub unsafe fn get_side (this : * mut BattleCalculator_SeparatorScope , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: battleinfoside :: BattleInfoSide { let inner : extern "C" fn (* mut BattleCalculator_SeparatorScope , :: unity2 :: OptionalMethod ,) -> crate :: app :: battleinfoside :: BattleInfoSide = :: core :: mem :: transmute (__lookup_get_side :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_side_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: battleside :: BattleSide_Type as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleCalculator_SeparatorScope as :: unity2 :: ClassIdentity > :: class () , "GetSide" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleCalculator_SeparatorScope as :: unity2 :: ClassIdentity > :: NAME , "GetSide" , e) , } } } pub unsafe fn get_side_2 (this : * mut BattleCalculator_SeparatorScope , side : crate :: app :: battleside :: BattleSide_Type , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: battleinfoside :: BattleInfoSide { let inner : extern "C" fn (* mut BattleCalculator_SeparatorScope , crate :: app :: battleside :: BattleSide_Type , :: unity2 :: OptionalMethod ,) -> crate :: app :: battleinfoside :: BattleInfoSide = :: core :: mem :: transmute (__lookup_get_side_2 :: get_method_info () . method_ptr ,) ; inner (this , side , __unity2_method_info) } }
+
+#[cfg(feature = "app-battlecalculator")]
+impl BattleCalculator_SeparatorScope { # [doc = "`.ctor(crate::app::battlecalculator::BattleCalculator, crate::app::battleside::BattleSide_Type, crate::app::battlescene::BattleScene_Kind, crate::app::battlescene::BattleScene_Kind, bool)` overload"] pub fn ctor (mut self , calc : impl :: core :: convert :: Into < crate :: app :: battlecalculator :: BattleCalculator > , side : impl :: core :: convert :: Into < crate :: app :: battleside :: BattleSide_Type > , push : impl :: core :: convert :: Into < crate :: app :: battlescene :: BattleScene_Kind > , pop : impl :: core :: convert :: Into < crate :: app :: battlescene :: BattleScene_Kind > , is_dump : impl :: core :: convert :: Into < bool >) -> () { unsafe { __BattleCalculator_SeparatorScope_unity2_raw :: ctor (& mut self as * mut BattleCalculator_SeparatorScope , :: core :: convert :: Into :: into (calc) , :: core :: convert :: Into :: into (side) , :: core :: convert :: Into :: into (push) , :: core :: convert :: Into :: into (pop) , :: core :: convert :: Into :: into (is_dump) , :: core :: option :: Option :: None) } } # [doc = "`Dispose()` overload"] pub fn dispose (mut self ,) -> () { unsafe { __BattleCalculator_SeparatorScope_unity2_raw :: dispose (& mut self as * mut BattleCalculator_SeparatorScope , :: core :: option :: Option :: None) } } # [doc = "`GetSide()` overload"] pub fn get_side (mut self ,) -> crate :: app :: battleinfoside :: BattleInfoSide { unsafe { __BattleCalculator_SeparatorScope_unity2_raw :: get_side (& mut self as * mut BattleCalculator_SeparatorScope , :: core :: option :: Option :: None) } } # [doc = "`GetSide(crate::app::battleside::BattleSide_Type)` overload"] pub fn get_side_2 (mut self , side : impl :: core :: convert :: Into < crate :: app :: battleside :: BattleSide_Type >) -> crate :: app :: battleinfoside :: BattleInfoSide { unsafe { __BattleCalculator_SeparatorScope_unity2_raw :: get_side_2 (& mut self as * mut BattleCalculator_SeparatorScope , :: core :: convert :: Into :: into (side) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-battlecalculator")]
+impl BattleCalculator_SeparatorScope { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleCalculator_SeparatorScope_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleCalculator_SeparatorScope_unity2_raw :: __lookup_dispose :: get_method_info () } pub fn get_side_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleCalculator_SeparatorScope_unity2_raw :: __lookup_get_side :: get_method_info () } pub fn get_side_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleCalculator_SeparatorScope_unity2_raw :: __lookup_get_side_2 :: get_method_info () } }
 
 #[cfg(feature = "app-battlecalculator")]
 # [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __BattleCalculator_DetailScope_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: battleinfo :: BattleInfo as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleCalculator_DetailScope as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleCalculator_DetailScope as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : * mut BattleCalculator_DetailScope , info : crate :: app :: battleinfo :: BattleInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut BattleCalculator_DetailScope , crate :: app :: battleinfo :: BattleInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , info , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleCalculator_DetailScope as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleCalculator_DetailScope as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : * mut BattleCalculator_DetailScope , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut BattleCalculator_DetailScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
@@ -534,66 +594,6 @@ impl BattleCalculator_HitSkillPool {
 }
 
 #[cfg(feature = "app-battlecalculator")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __BattleCalculator_SeparatorScope_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: battlecalculator :: BattleCalculator as :: unity2 :: IlType > :: il_type () , < crate :: app :: battleside :: BattleSide_Type as :: unity2 :: IlType > :: il_type () , < crate :: app :: battlescene :: BattleScene_Kind as :: unity2 :: IlType > :: il_type () , < crate :: app :: battlescene :: BattleScene_Kind as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleCalculator_SeparatorScope as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 5 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleCalculator_SeparatorScope as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : * mut BattleCalculator_SeparatorScope , calc : crate :: app :: battlecalculator :: BattleCalculator , side : crate :: app :: battleside :: BattleSide_Type , push : crate :: app :: battlescene :: BattleScene_Kind , pop : crate :: app :: battlescene :: BattleScene_Kind , is_dump : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut BattleCalculator_SeparatorScope , crate :: app :: battlecalculator :: BattleCalculator , crate :: app :: battleside :: BattleSide_Type , crate :: app :: battlescene :: BattleScene_Kind , crate :: app :: battlescene :: BattleScene_Kind , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , calc , side , push , pop , is_dump , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleCalculator_SeparatorScope as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleCalculator_SeparatorScope as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : * mut BattleCalculator_SeparatorScope , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut BattleCalculator_SeparatorScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_side { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleCalculator_SeparatorScope as :: unity2 :: ClassIdentity > :: class () , "GetSide" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleCalculator_SeparatorScope as :: unity2 :: ClassIdentity > :: NAME , "GetSide" , e) , } } } pub unsafe fn get_side (this : * mut BattleCalculator_SeparatorScope , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: battleinfoside :: BattleInfoSide { let inner : extern "C" fn (* mut BattleCalculator_SeparatorScope , :: unity2 :: OptionalMethod ,) -> crate :: app :: battleinfoside :: BattleInfoSide = :: core :: mem :: transmute (__lookup_get_side :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_side_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: battleside :: BattleSide_Type as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleCalculator_SeparatorScope as :: unity2 :: ClassIdentity > :: class () , "GetSide" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleCalculator_SeparatorScope as :: unity2 :: ClassIdentity > :: NAME , "GetSide" , e) , } } } pub unsafe fn get_side_2 (this : * mut BattleCalculator_SeparatorScope , side : crate :: app :: battleside :: BattleSide_Type , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: battleinfoside :: BattleInfoSide { let inner : extern "C" fn (* mut BattleCalculator_SeparatorScope , crate :: app :: battleside :: BattleSide_Type , :: unity2 :: OptionalMethod ,) -> crate :: app :: battleinfoside :: BattleInfoSide = :: core :: mem :: transmute (__lookup_get_side_2 :: get_method_info () . method_ptr ,) ; inner (this , side , __unity2_method_info) } }
-
-#[cfg(feature = "app-battlecalculator")]
-impl BattleCalculator_SeparatorScope { # [doc = "`.ctor(crate::app::battlecalculator::BattleCalculator, crate::app::battleside::BattleSide_Type, crate::app::battlescene::BattleScene_Kind, crate::app::battlescene::BattleScene_Kind, bool)` overload"] pub fn ctor (mut self , calc : impl :: core :: convert :: Into < crate :: app :: battlecalculator :: BattleCalculator > , side : impl :: core :: convert :: Into < crate :: app :: battleside :: BattleSide_Type > , push : impl :: core :: convert :: Into < crate :: app :: battlescene :: BattleScene_Kind > , pop : impl :: core :: convert :: Into < crate :: app :: battlescene :: BattleScene_Kind > , is_dump : impl :: core :: convert :: Into < bool >) -> () { unsafe { __BattleCalculator_SeparatorScope_unity2_raw :: ctor (& mut self as * mut BattleCalculator_SeparatorScope , :: core :: convert :: Into :: into (calc) , :: core :: convert :: Into :: into (side) , :: core :: convert :: Into :: into (push) , :: core :: convert :: Into :: into (pop) , :: core :: convert :: Into :: into (is_dump) , :: core :: option :: Option :: None) } } # [doc = "`Dispose()` overload"] pub fn dispose (mut self ,) -> () { unsafe { __BattleCalculator_SeparatorScope_unity2_raw :: dispose (& mut self as * mut BattleCalculator_SeparatorScope , :: core :: option :: Option :: None) } } # [doc = "`GetSide()` overload"] pub fn get_side (mut self ,) -> crate :: app :: battleinfoside :: BattleInfoSide { unsafe { __BattleCalculator_SeparatorScope_unity2_raw :: get_side (& mut self as * mut BattleCalculator_SeparatorScope , :: core :: option :: Option :: None) } } # [doc = "`GetSide(crate::app::battleside::BattleSide_Type)` overload"] pub fn get_side_2 (mut self , side : impl :: core :: convert :: Into < crate :: app :: battleside :: BattleSide_Type >) -> crate :: app :: battleinfoside :: BattleInfoSide { unsafe { __BattleCalculator_SeparatorScope_unity2_raw :: get_side_2 (& mut self as * mut BattleCalculator_SeparatorScope , :: core :: convert :: Into :: into (side) , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-battlecalculator")]
-impl BattleCalculator_SeparatorScope { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleCalculator_SeparatorScope_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleCalculator_SeparatorScope_unity2_raw :: __lookup_dispose :: get_method_info () } pub fn get_side_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleCalculator_SeparatorScope_unity2_raw :: __lookup_get_side :: get_method_info () } pub fn get_side_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleCalculator_SeparatorScope_unity2_raw :: __lookup_get_side_2 :: get_method_info () } }
-
-#[cfg(feature = "app-battlecalculator")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __BattleCalculator_HitSkill_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_enter { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleCalculator_HitSkill as :: unity2 :: ClassIdentity > :: class () , "OnEnter" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleCalculator_HitSkill as :: unity2 :: ClassIdentity > :: NAME , "OnEnter" , e) , } } } pub unsafe fn on_enter (this : BattleCalculator_HitSkill , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (BattleCalculator_HitSkill , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_enter :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_exit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleCalculator_HitSkill as :: unity2 :: ClassIdentity > :: class () , "OnExit" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleCalculator_HitSkill as :: unity2 :: ClassIdentity > :: NAME , "OnExit" , e) , } } } pub unsafe fn on_exit (this : BattleCalculator_HitSkill , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (BattleCalculator_HitSkill , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_exit :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_clear { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleCalculator_HitSkill as :: unity2 :: ClassIdentity > :: class () , "Clear" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleCalculator_HitSkill as :: unity2 :: ClassIdentity > :: NAME , "Clear" , e) , } } } pub unsafe fn clear (this : BattleCalculator_HitSkill , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (BattleCalculator_HitSkill , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_clear :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_sort_key { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleCalculator_HitSkill as :: unity2 :: ClassIdentity > :: class () , "get_SortKey" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleCalculator_HitSkill as :: unity2 :: ClassIdentity > :: NAME , "get_SortKey" , e) , } } } pub unsafe fn get_sort_key (this : BattleCalculator_HitSkill , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (BattleCalculator_HitSkill , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_sort_key :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleCalculator_HitSkill as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleCalculator_HitSkill as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : BattleCalculator_HitSkill , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (BattleCalculator_HitSkill , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "app-battlecalculator")]
-pub trait IBattleCalculator_HitSkillMethods : IBattleCalculator_HitSkill { # [doc = "`OnEnter()` overload"] fn on_enter (self ,) -> () { unsafe { let __receiver = < BattleCalculator_HitSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BattleCalculator_HitSkill_unity2_raw :: on_enter (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnExit()` overload"] fn on_exit (self ,) -> () { unsafe { let __receiver = < BattleCalculator_HitSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BattleCalculator_HitSkill_unity2_raw :: on_exit (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < BattleCalculator_HitSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BattleCalculator_HitSkill_unity2_raw :: clear (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_SortKey()` overload"] fn get_sort_key (self ,) -> i32 { unsafe { let __receiver = < BattleCalculator_HitSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BattleCalculator_HitSkill_unity2_raw :: get_sort_key (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BattleCalculator_HitSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BattleCalculator_HitSkill_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-battlecalculator")]
-impl < __T : IBattleCalculator_HitSkill > IBattleCalculator_HitSkillMethods for __T { }
-
-#[cfg(feature = "app-battlecalculator")]
-impl BattleCalculator_HitSkill { pub fn on_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleCalculator_HitSkill_unity2_raw :: __lookup_on_enter :: get_method_info () } pub fn on_exit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleCalculator_HitSkill_unity2_raw :: __lookup_on_exit :: get_method_info () } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleCalculator_HitSkill_unity2_raw :: __lookup_clear :: get_method_info () } pub fn get_sort_key_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleCalculator_HitSkill_unity2_raw :: __lookup_get_sort_key :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleCalculator_HitSkill_unity2_raw :: __lookup_ctor :: get_method_info () } }
-
-#[cfg(feature = "app-battlecalculator")]
-impl BattleCalculator_HitSkill {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BattleCalculator_HitSkill) , :: core :: stringify ! (new) ,)) ; < Self as IBattleCalculator_HitSkillMethods > :: ctor (this ,) ; this }
-}
-
-#[cfg(feature = "app-battlecalculator")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __BattleCalculator_FuncExp2_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleCalculator_FuncExp2 as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleCalculator_FuncExp2 as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : BattleCalculator_FuncExp2 , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (BattleCalculator_FuncExp2 , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , object , method , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: battleinfoside :: BattleInfoSide as :: unity2 :: IlType > :: il_type () , < crate :: app :: battleinfoside :: BattleInfoSide as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleCalculator_FuncExp2 as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleCalculator_FuncExp2 as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , } } } pub unsafe fn invoke (this : BattleCalculator_FuncExp2 , current : crate :: app :: battleinfoside :: BattleInfoSide , reverse : crate :: app :: battleinfoside :: BattleInfoSide , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (BattleCalculator_FuncExp2 , crate :: app :: battleinfoside :: BattleInfoSide , crate :: app :: battleinfoside :: BattleInfoSide , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_invoke :: get_method_info () . method_ptr ,) ; inner (this , current , reverse , __unity2_method_info) } }
-
-#[cfg(feature = "app-battlecalculator")]
-pub trait IBattleCalculator_FuncExp2Methods : IBattleCalculator_FuncExp2 { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < BattleCalculator_FuncExp2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BattleCalculator_FuncExp2_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } # [doc = "`Invoke(crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide)` overload"] fn invoke (self , current : impl :: core :: convert :: Into < crate :: app :: battleinfoside :: BattleInfoSide > , reverse : impl :: core :: convert :: Into < crate :: app :: battleinfoside :: BattleInfoSide >) -> i32 { unsafe { let __receiver = < BattleCalculator_FuncExp2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BattleCalculator_FuncExp2_unity2_raw :: invoke (__receiver , :: core :: convert :: Into :: into (current) , :: core :: convert :: Into :: into (reverse) , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-battlecalculator")]
-impl < __T : IBattleCalculator_FuncExp2 > IBattleCalculator_FuncExp2Methods for __T { }
-
-#[cfg(feature = "app-battlecalculator")]
-impl BattleCalculator_FuncExp2 { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleCalculator_FuncExp2_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleCalculator_FuncExp2_unity2_raw :: __lookup_invoke :: get_method_info () } }
-
-#[cfg(feature = "app-battlecalculator")]
-impl BattleCalculator_FuncExp2 {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BattleCalculator_FuncExp2) , :: core :: stringify ! (new) ,)) ; < Self as IBattleCalculator_FuncExp2Methods > :: ctor (this , object , method) ; this }
-}
-
-#[cfg(feature = "app-battlecalculator")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __BattleCalculator_FuncExp1_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleCalculator_FuncExp1 as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleCalculator_FuncExp1 as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : BattleCalculator_FuncExp1 , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (BattleCalculator_FuncExp1 , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , object , method , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: battleinfoside :: BattleInfoSide as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleCalculator_FuncExp1 as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleCalculator_FuncExp1 as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , } } } pub unsafe fn invoke (this : BattleCalculator_FuncExp1 , current : crate :: app :: battleinfoside :: BattleInfoSide , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (BattleCalculator_FuncExp1 , crate :: app :: battleinfoside :: BattleInfoSide , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_invoke :: get_method_info () . method_ptr ,) ; inner (this , current , __unity2_method_info) } }
-
-#[cfg(feature = "app-battlecalculator")]
-pub trait IBattleCalculator_FuncExp1Methods : IBattleCalculator_FuncExp1 { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < BattleCalculator_FuncExp1 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BattleCalculator_FuncExp1_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } # [doc = "`Invoke(crate::app::battleinfoside::BattleInfoSide)` overload"] fn invoke (self , current : impl :: core :: convert :: Into < crate :: app :: battleinfoside :: BattleInfoSide >) -> i32 { unsafe { let __receiver = < BattleCalculator_FuncExp1 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BattleCalculator_FuncExp1_unity2_raw :: invoke (__receiver , :: core :: convert :: Into :: into (current) , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-battlecalculator")]
-impl < __T : IBattleCalculator_FuncExp1 > IBattleCalculator_FuncExp1Methods for __T { }
-
-#[cfg(feature = "app-battlecalculator")]
-impl BattleCalculator_FuncExp1 { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleCalculator_FuncExp1_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BattleCalculator_FuncExp1_unity2_raw :: __lookup_invoke :: get_method_info () } }
-
-#[cfg(feature = "app-battlecalculator")]
-impl BattleCalculator_FuncExp1 {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BattleCalculator_FuncExp1) , :: core :: stringify ! (new) ,)) ; < Self as IBattleCalculator_FuncExp1Methods > :: ctor (this , object , method) ; this }
-}
-
-#[cfg(feature = "app-battlecalculator")]
 # [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __BattleCalculator_TargetScope_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: battleinfoside :: BattleInfoSide as :: unity2 :: IlType > :: il_type () , < crate :: app :: battleinfoside :: BattleInfoSide as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleCalculator_TargetScope as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleCalculator_TargetScope as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : * mut BattleCalculator_TargetScope , current : crate :: app :: battleinfoside :: BattleInfoSide , reverse : crate :: app :: battleinfoside :: BattleInfoSide , is_dump : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut BattleCalculator_TargetScope , crate :: app :: battleinfoside :: BattleInfoSide , crate :: app :: battleinfoside :: BattleInfoSide , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , current , reverse , is_dump , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BattleCalculator_TargetScope as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BattleCalculator_TargetScope as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : * mut BattleCalculator_TargetScope , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut BattleCalculator_TargetScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-battlecalculator")]
@@ -611,30 +611,30 @@ pub mod prelude {
     pub use super::BattleCalculator_Order;
     pub use super::IBattleCalculator_Order;
     pub use super::IBattleCalculator_OrderMethods;
-    pub use super::BattleCalculator_OrderList;
-    pub use super::IBattleCalculator_OrderList;
-    pub use super::IBattleCalculator_OrderListMethods;
-    pub use super::BattleCalculator_Attributes;
-    pub use super::BattleCalculator_Mode;
-    pub use super::BattleCalculator_DetailScope;
-    pub use super::BattleCalculator_FlagField;
-    pub use super::IBattleCalculator_FlagField;
-    pub use super::IBattleCalculator_FlagFieldMethods;
-    pub use super::BattleCalculator_Flags;
-    pub use super::BattleCalculator_TrainingResult;
-    pub use super::BattleCalculator_HitSkillPool;
-    pub use super::IBattleCalculator_HitSkillPool;
-    pub use super::IBattleCalculator_HitSkillPoolMethods;
-    pub use super::BattleCalculator_SeparatorScope;
     pub use super::BattleCalculator_HitSkill;
     pub use super::IBattleCalculator_HitSkill;
     pub use super::IBattleCalculator_HitSkillMethods;
-    pub use super::BattleCalculator_FuncExp2;
-    pub use super::IBattleCalculator_FuncExp2;
-    pub use super::IBattleCalculator_FuncExp2Methods;
+    pub use super::BattleCalculator_OrderList;
+    pub use super::IBattleCalculator_OrderList;
+    pub use super::IBattleCalculator_OrderListMethods;
     pub use super::BattleCalculator_FuncExp1;
     pub use super::IBattleCalculator_FuncExp1;
     pub use super::IBattleCalculator_FuncExp1Methods;
+    pub use super::BattleCalculator_Flags;
+    pub use super::BattleCalculator_FuncExp2;
+    pub use super::IBattleCalculator_FuncExp2;
+    pub use super::IBattleCalculator_FuncExp2Methods;
+    pub use super::BattleCalculator_SeparatorScope;
+    pub use super::BattleCalculator_DetailScope;
+    pub use super::BattleCalculator_TrainingResult;
+    pub use super::BattleCalculator_FlagField;
+    pub use super::IBattleCalculator_FlagField;
+    pub use super::IBattleCalculator_FlagFieldMethods;
+    pub use super::BattleCalculator_Attributes;
+    pub use super::BattleCalculator_HitSkillPool;
+    pub use super::IBattleCalculator_HitSkillPool;
+    pub use super::IBattleCalculator_HitSkillPoolMethods;
+    pub use super::BattleCalculator_Mode;
     pub use super::BattleCalculator_TargetScope;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;

@@ -44,6 +44,162 @@ impl ::unity2::IlType for Char {
 
 }
 
+
+impl Char {
+    #[inline]
+    pub fn max_value() -> u16 {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "MaxValue");
+
+        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
+    }
+
+    #[inline]
+    pub fn set_max_value(value: u16) {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "MaxValue");
+
+        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
+
+    }
+
+    #[inline]
+    pub fn min_value() -> u16 {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "MinValue");
+
+        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
+    }
+
+    #[inline]
+    pub fn set_min_value(value: u16) {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "MinValue");
+
+        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
+
+    }
+
+    #[inline]
+    pub fn category_for_latin1() -> :: unity2 :: Array < u8 > {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "categoryForLatin1");
+
+        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
+    }
+
+    #[inline]
+    pub fn set_category_for_latin1(value: :: unity2 :: Array < u8 >) {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "categoryForLatin1");
+
+        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
+
+    }
+
+    #[inline]
+    pub fn unicode_plane00_end() -> i32 {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "UNICODE_PLANE00_END");
+
+        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
+    }
+
+    #[inline]
+    pub fn set_unicode_plane00_end(value: i32) {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "UNICODE_PLANE00_END");
+
+        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
+
+    }
+
+    #[inline]
+    pub fn unicode_plane01_start() -> i32 {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "UNICODE_PLANE01_START");
+
+        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
+    }
+
+    #[inline]
+    pub fn set_unicode_plane01_start(value: i32) {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "UNICODE_PLANE01_START");
+
+        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
+
+    }
+
+    #[inline]
+    pub fn unicode_plane16_end() -> i32 {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "UNICODE_PLANE16_END");
+
+        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
+    }
+
+    #[inline]
+    pub fn set_unicode_plane16_end(value: i32) {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "UNICODE_PLANE16_END");
+
+        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
+
+    }
+
+    #[inline]
+    pub fn high_surrogate_start() -> i32 {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "HIGH_SURROGATE_START");
+
+        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
+    }
+
+    #[inline]
+    pub fn set_high_surrogate_start(value: i32) {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "HIGH_SURROGATE_START");
+
+        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
+
+    }
+
+    #[inline]
+    pub fn low_surrogate_end() -> i32 {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "LOW_SURROGATE_END");
+
+        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
+    }
+
+    #[inline]
+    pub fn set_low_surrogate_end(value: i32) {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "LOW_SURROGATE_END");
+
+        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "system-char-types")]

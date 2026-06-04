@@ -86,6 +86,20 @@ impl  GameTime_Ch  {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gametime/GameTime.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameTime")] # [parent (crate :: system :: object :: Object)] pub struct GameTime {
+# [static_field] # [rename (name = "DefaultFixedDeltaTime")] pub default_fixed_delta_time : f32 ,
+# [static_field] # [rename (name = "LocalTimeScale")] pub local_time_scale : :: unity2 :: Array < f32 > ,
+# [static_field] # [rename (name = "s_VsyncStack")] pub s_vsync_stack : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < i32 > ,
+# [static_field] # [rename (name = "Version")] pub version : i32 ,
+# [static_field] # [rename (name = "s_PlayTime")] pub s_play_time : i32 ,
+# [static_field] # [rename (name = "s_WatchTime")] pub s_watch_time : i32 ,
+# [static_field] # [rename (name = "MaxTime")] pub max_time : i32 ,
+# [static_field] # [rename (name = "TimeUnit")] pub time_unit : i32 ,
+# [static_field] # [rename (name = "TimeInv")] pub time_inv : f32 ,
+# [static_field] # [rename (name = "MaxTimeFloat")] pub max_time_float : f32 ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gametime/GameTime_VsycMode.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -188,20 +202,6 @@ impl  GameTime_VsycMode  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gametime/GameTime.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameTime")] # [parent (crate :: system :: object :: Object)] pub struct GameTime {
-# [static_field] # [rename (name = "DefaultFixedDeltaTime")] pub default_fixed_delta_time : f32 ,
-# [static_field] # [rename (name = "LocalTimeScale")] pub local_time_scale : :: unity2 :: Array < f32 > ,
-# [static_field] # [rename (name = "s_VsyncStack")] pub s_vsync_stack : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < i32 > ,
-# [static_field] # [rename (name = "Version")] pub version : i32 ,
-# [static_field] # [rename (name = "s_PlayTime")] pub s_play_time : i32 ,
-# [static_field] # [rename (name = "s_WatchTime")] pub s_watch_time : i32 ,
-# [static_field] # [rename (name = "MaxTime")] pub max_time : i32 ,
-# [static_field] # [rename (name = "TimeUnit")] pub time_unit : i32 ,
-# [static_field] # [rename (name = "TimeInv")] pub time_inv : f32 ,
-# [static_field] # [rename (name = "MaxTimeFloat")] pub max_time_float : f32 ,
-}
-
 }
 
 #[cfg(feature = "app-gametime-types")]
@@ -231,10 +231,10 @@ impl GameTime {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::GameTime_Ch;
-    pub use super::GameTime_VsycMode;
     pub use super::GameTime;
     pub use super::IGameTime;
     pub use super::IGameTimeMethods;
+    pub use super::GameTime_VsycMode;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

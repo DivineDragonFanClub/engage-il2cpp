@@ -63,8 +63,37 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ::unity2::IlType 
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/dictionary_2/Dictionary_2_ValueCollection.md"))] # [:: unity2 :: class (namespace = "System.Collections.Generic" , name = "Dictionary`2.ValueCollection")] # [parent (crate :: system :: object :: Object)] pub struct Dictionary_2_ValueCollection < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity > {
-# [rename (name = "dictionary")] pub dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < T0 , T1 > ,
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/dictionary_2/Dictionary_2_Enumerator.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct Dictionary_2_Enumerator<T0, T1> { pub _phantom: ::core::marker::PhantomData<(T0, T1,)> }
+
+
+impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ::unity2::ClassIdentity for Dictionary_2_Enumerator<T0, T1> {
+    const NAMESPACE: &'static str = "System.Collections.Generic";
+
+    const NAME: &'static str = "Dictionary`2.Enumerator";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+            .make_generic(&[<T0 as ::unity2::ClassIdentity>::class(), <T1 as ::unity2::ClassIdentity>::class()])
+            .expect("generic instantiation")
+        }
+)
+    }
+
+}
+
+
+impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ::unity2::IlType for Dictionary_2_Enumerator<T0, T1> {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
 }
 
 
@@ -136,42 +165,13 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ::unity2::IlType 
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/dictionary_2/Dictionary_2_KeyCollection.md"))] # [:: unity2 :: class (namespace = "System.Collections.Generic" , name = "Dictionary`2.KeyCollection")] # [parent (crate :: system :: object :: Object)] pub struct Dictionary_2_KeyCollection < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity > {
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/dictionary_2/Dictionary_2_ValueCollection.md"))] # [:: unity2 :: class (namespace = "System.Collections.Generic" , name = "Dictionary`2.ValueCollection")] # [parent (crate :: system :: object :: Object)] pub struct Dictionary_2_ValueCollection < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity > {
 # [rename (name = "dictionary")] pub dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < T0 , T1 > ,
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/dictionary_2/Dictionary_2_Enumerator.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct Dictionary_2_Enumerator<T0, T1> { pub _phantom: ::core::marker::PhantomData<(T0, T1,)> }
-
-
-impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ::unity2::ClassIdentity for Dictionary_2_Enumerator<T0, T1> {
-    const NAMESPACE: &'static str = "System.Collections.Generic";
-
-    const NAME: &'static str = "Dictionary`2.Enumerator";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-            .make_generic(&[<T0 as ::unity2::ClassIdentity>::class(), <T1 as ::unity2::ClassIdentity>::class()])
-            .expect("generic instantiation")
-        }
-)
-    }
-
-}
-
-
-impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ::unity2::IlType for Dictionary_2_Enumerator<T0, T1> {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/dictionary_2/Dictionary_2_KeyCollection.md"))] # [:: unity2 :: class (namespace = "System.Collections.Generic" , name = "Dictionary`2.KeyCollection")] # [parent (crate :: system :: object :: Object)] pub struct Dictionary_2_KeyCollection < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity > {
+# [rename (name = "dictionary")] pub dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < T0 , T1 > ,
 }
 
 }
@@ -295,6 +295,42 @@ impl < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity > Dicti
 }
 
 #[cfg(feature = "system-collections-generic-dictionary_2")]
+# [:: unity2 :: methods (value)] impl < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity > Dictionary_2_Enumerator < T0 , T1 > {
+# [doc = "`.ctor(crate::system::collections::generic::dictionary_2::Dictionary_2<T0,T1>, i32)` overload"] # [method (name = ".ctor" , args = 2)] pub fn ctor (self , dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < T0 , T1 > , get_enumerator_ret_type : i32) -> () ;
+
+# [doc = "`MoveNext()` overload"] # [method (name = "MoveNext" , args = 0)] pub fn move_next (self ,) -> bool ;
+
+# [doc = "`get_Current()` overload"] # [method (name = "get_Current" , args = 0)] pub fn get_current (self ,) -> crate :: system :: collections :: generic :: keyvaluepair_2 :: KeyValuePair_2 < T0 , T1 > ;
+
+# [doc = "`Dispose()` overload"] # [method (name = "Dispose" , args = 0)] pub fn dispose (self ,) -> () ;
+
+# [doc = "`System.Collections.IEnumerator.get_Current()` overload"] # [method (name = "System.Collections.IEnumerator.get_Current" , args = 0)] pub fn system_collections_i_enumerator_get_current (self ,) -> crate :: system :: object :: Object ;
+
+# [doc = "`System.Collections.IEnumerator.Reset()` overload"] # [method (name = "System.Collections.IEnumerator.Reset" , args = 0)] pub fn system_collections_i_enumerator_reset (self ,) -> () ;
+
+# [doc = "`System.Collections.IDictionaryEnumerator.get_Entry()` overload"] # [method (name = "System.Collections.IDictionaryEnumerator.get_Entry" , args = 0)] pub fn system_collections_i_dictionary_enumerator_get_entry (self ,) -> crate :: system :: collections :: dictionaryentry :: DictionaryEntry ;
+
+# [doc = "`System.Collections.IDictionaryEnumerator.get_Key()` overload"] # [method (name = "System.Collections.IDictionaryEnumerator.get_Key" , args = 0)] pub fn system_collections_i_dictionary_enumerator_get_key (self ,) -> crate :: system :: object :: Object ;
+
+# [doc = "`System.Collections.IDictionaryEnumerator.get_Value()` overload"] # [method (name = "System.Collections.IDictionaryEnumerator.get_Value" , args = 0)] pub fn system_collections_i_dictionary_enumerator_get_value (self ,) -> crate :: system :: object :: Object ;
+}
+
+#[cfg(feature = "system-collections-generic-dictionary_2")]
+# [:: unity2 :: methods (value)] impl < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity > Dictionary_2_ValueCollection_Enumerator < T0 , T1 > {
+# [doc = "`.ctor(crate::system::collections::generic::dictionary_2::Dictionary_2<T0,T1>)` overload"] # [method (name = ".ctor" , args = 1)] pub fn ctor (self , dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < T0 , T1 >) -> () ;
+
+# [doc = "`Dispose()` overload"] # [method (name = "Dispose" , args = 0)] pub fn dispose (self ,) -> () ;
+
+# [doc = "`MoveNext()` overload"] # [method (name = "MoveNext" , args = 0)] pub fn move_next (self ,) -> bool ;
+
+# [doc = "`get_Current()` overload"] # [method (name = "get_Current" , args = 0)] pub fn get_current (self ,) -> T1 ;
+
+# [doc = "`System.Collections.IEnumerator.get_Current()` overload"] # [method (name = "System.Collections.IEnumerator.get_Current" , args = 0)] pub fn system_collections_i_enumerator_get_current (self ,) -> crate :: system :: object :: Object ;
+
+# [doc = "`System.Collections.IEnumerator.Reset()` overload"] # [method (name = "System.Collections.IEnumerator.Reset" , args = 0)] pub fn system_collections_i_enumerator_reset (self ,) -> () ;
+}
+
+#[cfg(feature = "system-collections-generic-dictionary_2")]
 # [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity > Dictionary_2_ValueCollection < T0 , T1 > {
 # [doc = "`.ctor(crate::system::collections::generic::dictionary_2::Dictionary_2<T0,T1>)` overload"] # [method (name = ".ctor" , args = 1)] pub fn ctor (self , dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < T0 , T1 >) -> () ;
 
@@ -316,21 +352,6 @@ impl < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity > Dicti
 #[cfg(feature = "system-collections-generic-dictionary_2")]
 impl < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity > Dictionary_2_ValueCollection < T0 , T1 > {
 # [doc = "`.ctor(crate::system::collections::generic::dictionary_2::Dictionary_2<T0,T1>)` — overload selector"] pub fn new (dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < T0 , T1 >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Dictionary_2_ValueCollection) , :: core :: stringify ! (new) ,)) ; < Self as IDictionary_2_ValueCollectionMethods < T0 , T1 > > :: ctor (this , dictionary) ; this }
-}
-
-#[cfg(feature = "system-collections-generic-dictionary_2")]
-# [:: unity2 :: methods (value)] impl < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity > Dictionary_2_ValueCollection_Enumerator < T0 , T1 > {
-# [doc = "`.ctor(crate::system::collections::generic::dictionary_2::Dictionary_2<T0,T1>)` overload"] # [method (name = ".ctor" , args = 1)] pub fn ctor (self , dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < T0 , T1 >) -> () ;
-
-# [doc = "`Dispose()` overload"] # [method (name = "Dispose" , args = 0)] pub fn dispose (self ,) -> () ;
-
-# [doc = "`MoveNext()` overload"] # [method (name = "MoveNext" , args = 0)] pub fn move_next (self ,) -> bool ;
-
-# [doc = "`get_Current()` overload"] # [method (name = "get_Current" , args = 0)] pub fn get_current (self ,) -> T1 ;
-
-# [doc = "`System.Collections.IEnumerator.get_Current()` overload"] # [method (name = "System.Collections.IEnumerator.get_Current" , args = 0)] pub fn system_collections_i_enumerator_get_current (self ,) -> crate :: system :: object :: Object ;
-
-# [doc = "`System.Collections.IEnumerator.Reset()` overload"] # [method (name = "System.Collections.IEnumerator.Reset" , args = 0)] pub fn system_collections_i_enumerator_reset (self ,) -> () ;
 }
 
 #[cfg(feature = "system-collections-generic-dictionary_2")]
@@ -358,42 +379,21 @@ impl < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity > Dicti
 }
 
 #[cfg(feature = "system-collections-generic-dictionary_2")]
-# [:: unity2 :: methods (value)] impl < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity > Dictionary_2_Enumerator < T0 , T1 > {
-# [doc = "`.ctor(crate::system::collections::generic::dictionary_2::Dictionary_2<T0,T1>, i32)` overload"] # [method (name = ".ctor" , args = 2)] pub fn ctor (self , dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < T0 , T1 > , get_enumerator_ret_type : i32) -> () ;
-
-# [doc = "`MoveNext()` overload"] # [method (name = "MoveNext" , args = 0)] pub fn move_next (self ,) -> bool ;
-
-# [doc = "`get_Current()` overload"] # [method (name = "get_Current" , args = 0)] pub fn get_current (self ,) -> crate :: system :: collections :: generic :: keyvaluepair_2 :: KeyValuePair_2 < T0 , T1 > ;
-
-# [doc = "`Dispose()` overload"] # [method (name = "Dispose" , args = 0)] pub fn dispose (self ,) -> () ;
-
-# [doc = "`System.Collections.IEnumerator.get_Current()` overload"] # [method (name = "System.Collections.IEnumerator.get_Current" , args = 0)] pub fn system_collections_i_enumerator_get_current (self ,) -> crate :: system :: object :: Object ;
-
-# [doc = "`System.Collections.IEnumerator.Reset()` overload"] # [method (name = "System.Collections.IEnumerator.Reset" , args = 0)] pub fn system_collections_i_enumerator_reset (self ,) -> () ;
-
-# [doc = "`System.Collections.IDictionaryEnumerator.get_Entry()` overload"] # [method (name = "System.Collections.IDictionaryEnumerator.get_Entry" , args = 0)] pub fn system_collections_i_dictionary_enumerator_get_entry (self ,) -> crate :: system :: collections :: dictionaryentry :: DictionaryEntry ;
-
-# [doc = "`System.Collections.IDictionaryEnumerator.get_Key()` overload"] # [method (name = "System.Collections.IDictionaryEnumerator.get_Key" , args = 0)] pub fn system_collections_i_dictionary_enumerator_get_key (self ,) -> crate :: system :: object :: Object ;
-
-# [doc = "`System.Collections.IDictionaryEnumerator.get_Value()` overload"] # [method (name = "System.Collections.IDictionaryEnumerator.get_Value" , args = 0)] pub fn system_collections_i_dictionary_enumerator_get_value (self ,) -> crate :: system :: object :: Object ;
-}
-
-#[cfg(feature = "system-collections-generic-dictionary_2")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::Dictionary_2;
     pub use super::IDictionary_2;
     pub use super::IDictionary_2Methods;
     pub use super::Dictionary_2_KeyCollection_Enumerator;
+    pub use super::Dictionary_2_Enumerator;
+    pub use super::Dictionary_2_Entry;
+    pub use super::Dictionary_2_ValueCollection_Enumerator;
     pub use super::Dictionary_2_ValueCollection;
     pub use super::IDictionary_2_ValueCollection;
     pub use super::IDictionary_2_ValueCollectionMethods;
-    pub use super::Dictionary_2_Entry;
-    pub use super::Dictionary_2_ValueCollection_Enumerator;
     pub use super::Dictionary_2_KeyCollection;
     pub use super::IDictionary_2_KeyCollection;
     pub use super::IDictionary_2_KeyCollectionMethods;
-    pub use super::Dictionary_2_Enumerator;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

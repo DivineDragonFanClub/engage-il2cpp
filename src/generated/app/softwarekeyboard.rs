@@ -72,6 +72,7 @@ impl  SoftwareKeyboard_Preset  {
 
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/softwarekeyboard/SoftwareKeyboard.md"))] # [:: unity2 :: class (namespace = "App" , name = "SoftwareKeyboard")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct SoftwareKeyboard {
 # [static_field] # [rename (name = "DataCodeMaxLength")] pub data_code_max_length : i32 ,
+# [static_field] # [rename (name = "s_result")] pub s_result : :: unity2 :: IlInstance ,
 # [offset (296)] # [rename (name = "m_maxLength")] pub m_max_length : i32 ,
 # [offset (304)] # [rename (name = "m_headerText")] pub m_header_text : :: unity2 :: Il2CppString ,
 # [offset (312)] # [rename (name = "m_subText")] pub m_sub_text : :: unity2 :: Il2CppString ,

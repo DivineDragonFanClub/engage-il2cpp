@@ -53,6 +53,86 @@ impl ::unity2::IlType for TMP_MeshInfo {
 
 }
 
+
+impl TMP_MeshInfo {
+    #[inline]
+    pub fn s_default_color() -> crate :: unity_engine :: color32 :: Color32 {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_DefaultColor");
+
+        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
+    }
+
+    #[inline]
+    pub fn set_s_default_color(value: crate :: unity_engine :: color32 :: Color32) {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_DefaultColor");
+
+        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
+
+    }
+
+    #[inline]
+    pub fn s_default_normal() -> crate :: unity_engine :: vector3 :: Vector3 {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_DefaultNormal");
+
+        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
+    }
+
+    #[inline]
+    pub fn set_s_default_normal(value: crate :: unity_engine :: vector3 :: Vector3) {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_DefaultNormal");
+
+        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
+
+    }
+
+    #[inline]
+    pub fn s_default_tangent() -> crate :: unity_engine :: vector4 :: Vector4 {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_DefaultTangent");
+
+        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
+    }
+
+    #[inline]
+    pub fn set_s_default_tangent(value: crate :: unity_engine :: vector4 :: Vector4) {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_DefaultTangent");
+
+        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
+
+    }
+
+    #[inline]
+    pub fn s_default_bounds() -> crate :: unity_engine :: bounds :: Bounds {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_DefaultBounds");
+
+        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
+    }
+
+    #[inline]
+    pub fn set_s_default_bounds(value: crate :: unity_engine :: bounds :: Bounds) {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_DefaultBounds");
+
+        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "tm_pro-tmp_meshinfo-types")]

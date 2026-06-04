@@ -13,27 +13,15 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/componentsinchildrenenumerator_1/ComponentsInChildrenEnumerator_1.md"))] # [:: unity2 :: class (namespace = "App" , name = "ComponentsInChildrenEnumerator`1")] # [parent (crate :: system :: object :: Object)] pub struct ComponentsInChildrenEnumerator_1 < T0 : :: unity2 :: ClassIdentity > {}
-
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/componentsinchildrenenumerator_1/ComponentsInChildrenEnumerator_1_Func.md"))] # [:: unity2 :: class (namespace = "App" , name = "ComponentsInChildrenEnumerator`1.Func")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] # [parent (crate :: system :: delegate :: Delegate)] # [parent (crate :: system :: object :: Object)] pub struct ComponentsInChildrenEnumerator_1_Func < T0 : :: unity2 :: ClassIdentity > {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/componentsinchildrenenumerator_1/ComponentsInChildrenEnumerator_1.md"))] # [:: unity2 :: class (namespace = "App" , name = "ComponentsInChildrenEnumerator`1")] # [parent (crate :: system :: object :: Object)] pub struct ComponentsInChildrenEnumerator_1 < T0 : :: unity2 :: ClassIdentity > {}
 
 }
 
 #[cfg(feature = "app-componentsinchildrenenumerator_1-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-componentsinchildrenenumerator_1")]
-# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > ComponentsInChildrenEnumerator_1 < T0 > {
-# [doc = "`ForEach(crate::unity_engine::gameobject::GameObject, crate::app::componentsinchildrenenumerator_1::ComponentsInChildrenEnumerator_1_Func<T0>)` overload"] # [method (name = "ForEach" , args = 2)] pub fn for_each (go : crate :: unity_engine :: gameobject :: GameObject , func : crate :: app :: componentsinchildrenenumerator_1 :: ComponentsInChildrenEnumerator_1_Func < T0 >) -> () ;
-
-# [doc = "`.ctor()` overload"] # [method (name = ".ctor" , args = 0)] pub fn ctor (self ,) -> () ;
-}
-
-#[cfg(feature = "app-componentsinchildrenenumerator_1")]
-impl < T0 : :: unity2 :: ClassIdentity > ComponentsInChildrenEnumerator_1 < T0 > {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ComponentsInChildrenEnumerator_1) , :: core :: stringify ! (new) ,)) ; < Self as IComponentsInChildrenEnumerator_1Methods < T0 > > :: ctor (this ,) ; this }
-}
 
 #[cfg(feature = "app-componentsinchildrenenumerator_1")]
 # [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > ComponentsInChildrenEnumerator_1_Func < T0 > {
@@ -48,14 +36,26 @@ impl < T0 : :: unity2 :: ClassIdentity > ComponentsInChildrenEnumerator_1_Func <
 }
 
 #[cfg(feature = "app-componentsinchildrenenumerator_1")]
+# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > ComponentsInChildrenEnumerator_1 < T0 > {
+# [doc = "`ForEach(crate::unity_engine::gameobject::GameObject, crate::app::componentsinchildrenenumerator_1::ComponentsInChildrenEnumerator_1_Func<T0>)` overload"] # [method (name = "ForEach" , args = 2)] pub fn for_each (go : crate :: unity_engine :: gameobject :: GameObject , func : crate :: app :: componentsinchildrenenumerator_1 :: ComponentsInChildrenEnumerator_1_Func < T0 >) -> () ;
+
+# [doc = "`.ctor()` overload"] # [method (name = ".ctor" , args = 0)] pub fn ctor (self ,) -> () ;
+}
+
+#[cfg(feature = "app-componentsinchildrenenumerator_1")]
+impl < T0 : :: unity2 :: ClassIdentity > ComponentsInChildrenEnumerator_1 < T0 > {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ComponentsInChildrenEnumerator_1) , :: core :: stringify ! (new) ,)) ; < Self as IComponentsInChildrenEnumerator_1Methods < T0 > > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "app-componentsinchildrenenumerator_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ComponentsInChildrenEnumerator_1;
-    pub use super::IComponentsInChildrenEnumerator_1;
-    pub use super::IComponentsInChildrenEnumerator_1Methods;
     pub use super::ComponentsInChildrenEnumerator_1_Func;
     pub use super::IComponentsInChildrenEnumerator_1_Func;
     pub use super::IComponentsInChildrenEnumerator_1_FuncMethods;
+    pub use super::ComponentsInChildrenEnumerator_1;
+    pub use super::IComponentsInChildrenEnumerator_1;
+    pub use super::IComponentsInChildrenEnumerator_1Methods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

@@ -47,6 +47,29 @@ impl ::unity2::IlType for TMP_Offset {
 
 }
 
+
+impl TMP_Offset {
+    #[inline]
+    pub fn k_zero_offset() -> crate :: tm_pro :: tmp_offset :: TMP_Offset {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "k_ZeroOffset");
+
+        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
+    }
+
+    #[inline]
+    pub fn set_k_zero_offset(value: crate :: tm_pro :: tmp_offset :: TMP_Offset) {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "k_ZeroOffset");
+
+        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "tm_pro-tmp_offset-types")]

@@ -11,6 +11,7 @@ mod __types {
 
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/strope/StrOpe.md"))] # [:: unity2 :: class (namespace = "" , name = "StrOpe")] # [parent (crate :: system :: object :: Object)] pub struct StrOpe {
 # [static_field] # [rename (name = "instance")] pub instance : crate :: root :: strope :: StrOpe ,
+# [static_field] # [rename (name = "singletonThread")] pub singleton_thread : :: unity2 :: IlInstance ,
 # [offset (24)] # [rename (name = "chars")] pub chars : :: unity2 :: Array < u16 > ,
 }
 

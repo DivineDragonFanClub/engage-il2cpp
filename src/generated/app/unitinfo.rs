@@ -17,61 +17,6 @@ mod __types {
  ;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfo/UnitInfo_Side.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct UnitInfo_Side  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for UnitInfo_Side  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "UnitInfo.Side";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for UnitInfo_Side  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  UnitInfo_Side  {
-    pub fn left() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn right() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfo/UnitInfo_Mode.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -148,6 +93,61 @@ impl  UnitInfo_Mode  {
 }
 
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfo/UnitInfo_Side.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct UnitInfo_Side  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for UnitInfo_Side  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "UnitInfo.Side";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for UnitInfo_Side  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  UnitInfo_Side  {
+    pub fn left() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn right() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn num() -> Self {
+        Self { value: 2 }
+
+    }
+
+}
+
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfo/UnitInfo.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitInfo")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: unitinfo :: UnitInfo >)] pub struct UnitInfo {
 # [static_field] # [rename (name = "InvalidUnitXZ")] pub invalid_unit_xz : i32 ,
 # [static_field] # [rename (name = "c_TransitionDuration")] pub c_transition_duration : f32 ,
@@ -202,11 +202,11 @@ impl UnitInfo {
 #[cfg(feature = "app-unitinfo")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::UnitInfo_Side;
     pub use super::UnitInfo_Mode;
     pub use super::UnitInfo_Window;
     pub use super::IUnitInfo_Window;
     pub use super::IUnitInfo_WindowMethods;
+    pub use super::UnitInfo_Side;
     pub use super::UnitInfo;
     pub use super::IUnitInfo;
     pub use super::IUnitInfoMethods;

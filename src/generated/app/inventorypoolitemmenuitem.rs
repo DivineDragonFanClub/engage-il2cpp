@@ -17,6 +17,13 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorypoolitemmenuitem/InventoryPoolItemMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "InventoryPoolItemMenuItem")] # [parent (crate :: app :: basicitemmenuitem :: BasicItemMenuItem)] pub struct InventoryPoolItemMenuItem {
+# [offset (100)] # [rename (name = "m_OwnerItemIndex")] pub m_owner_item_index : i32 ,
+# [offset (104)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
+# [offset (112)] # [rename (name = "m_SortIndex")] pub m_sort_index : i32 ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/inventorypoolitemmenuitem/InventoryPoolItemMenuItem_PoolItemKind.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -71,13 +78,6 @@ impl  InventoryPoolItemMenuItem_PoolItemKind  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorypoolitemmenuitem/InventoryPoolItemMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "InventoryPoolItemMenuItem")] # [parent (crate :: app :: basicitemmenuitem :: BasicItemMenuItem)] pub struct InventoryPoolItemMenuItem {
-# [offset (100)] # [rename (name = "m_OwnerItemIndex")] pub m_owner_item_index : i32 ,
-# [offset (104)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-# [offset (112)] # [rename (name = "m_SortIndex")] pub m_sort_index : i32 ,
-}
-
 }
 
 #[cfg(feature = "app-inventorypoolitemmenuitem-types")]
@@ -103,10 +103,10 @@ impl InventoryPoolItemMenuItem {
 #[cfg(feature = "app-inventorypoolitemmenuitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::InventoryPoolItemMenuItem_PoolItemKind;
     pub use super::InventoryPoolItemMenuItem;
     pub use super::IInventoryPoolItemMenuItem;
     pub use super::IInventoryPoolItemMenuItemMethods;
+    pub use super::InventoryPoolItemMenuItem_PoolItemKind;
     pub use crate::app::basicitemmenuitem::IBasicItemMenuItem;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::system::object::IObject;

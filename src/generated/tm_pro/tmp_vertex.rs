@@ -48,6 +48,29 @@ impl ::unity2::IlType for TMP_Vertex {
 
 }
 
+
+impl TMP_Vertex {
+    #[inline]
+    pub fn k_zero() -> crate :: tm_pro :: tmp_vertex :: TMP_Vertex {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "k_Zero");
+
+        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
+    }
+
+    #[inline]
+    pub fn set_k_zero(value: crate :: tm_pro :: tmp_vertex :: TMP_Vertex) {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "k_Zero");
+
+        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "tm_pro-tmp_vertex-types")]

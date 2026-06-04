@@ -16,7 +16,7 @@
  # [cfg (feature = "unity_engine-resource_management-util-defaultallocationstrategy")] pub use defaultallocationstrategy :: { IDefaultAllocationStrategyMethods }
  ;
  # [cfg (any (feature = "unity_engine-resource_management-util-delayedactionmanager-types"))] pub mod delayedactionmanager ;
- # [cfg (feature = "unity_engine-resource_management-util-delayedactionmanager-types")] pub use delayedactionmanager :: { DelayedActionManager , IDelayedActionManager , DelayedActionManager_DelegateInfo }
+ # [cfg (feature = "unity_engine-resource_management-util-delayedactionmanager-types")] pub use delayedactionmanager :: { DelayedActionManager_DelegateInfo , DelayedActionManager , IDelayedActionManager }
  ;
  # [cfg (feature = "unity_engine-resource_management-util-delayedactionmanager")] pub use delayedactionmanager :: { IDelayedActionManagerMethods }
  ;

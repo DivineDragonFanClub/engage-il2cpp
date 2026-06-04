@@ -23,17 +23,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/skipindicator/SkipIndicator.md"))] # [:: unity2 :: class (namespace = "App" , name = "SkipIndicator")] # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: skipindicator :: SkipIndicator >)] pub struct SkipIndicator {
-# [offset (32)] # [rename (name = "m_Skip")] pub m_skip : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (40)] # [rename (name = "m_Auto")] pub m_auto : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (48)] # [rename (name = "m_Error")] pub m_error : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (56)] # [rename (name = "m_CanvasManager")] pub m_canvas_manager : crate :: app :: canvasmanager :: CanvasManager ,
-# [offset (64)] # [rename (name = "m_Animator")] pub m_animator : crate :: unity_engine :: animator :: Animator ,
-# [offset (72)] # [rename (name = "m_Seq")] pub m_seq : crate :: app :: skipindicator :: SkipIndicator_Seq ,
-# [offset (76)] # [rename (name = "m_IsReqClose")] pub m_is_req_close : bool ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skipindicator/SkipIndicator_Seq.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -94,6 +83,17 @@ impl  SkipIndicator_Seq  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/skipindicator/SkipIndicator.md"))] # [:: unity2 :: class (namespace = "App" , name = "SkipIndicator")] # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: skipindicator :: SkipIndicator >)] pub struct SkipIndicator {
+# [offset (32)] # [rename (name = "m_Skip")] pub m_skip : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (40)] # [rename (name = "m_Auto")] pub m_auto : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (48)] # [rename (name = "m_Error")] pub m_error : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (56)] # [rename (name = "m_CanvasManager")] pub m_canvas_manager : crate :: app :: canvasmanager :: CanvasManager ,
+# [offset (64)] # [rename (name = "m_Animator")] pub m_animator : crate :: unity_engine :: animator :: Animator ,
+# [offset (72)] # [rename (name = "m_Seq")] pub m_seq : crate :: app :: skipindicator :: SkipIndicator_Seq ,
+# [offset (76)] # [rename (name = "m_IsReqClose")] pub m_is_req_close : bool ,
+}
+
 }
 
 #[cfg(feature = "app-skipindicator-types")]
@@ -122,10 +122,10 @@ impl SkipIndicator {
 #[cfg(feature = "app-skipindicator")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::SkipIndicator_Seq;
     pub use super::SkipIndicator;
     pub use super::ISkipIndicator;
     pub use super::ISkipIndicatorMethods;
-    pub use super::SkipIndicator_Seq;
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

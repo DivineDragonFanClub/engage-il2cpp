@@ -13,11 +13,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/synctoken/SyncToken.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "SyncToken")] # [parent (crate :: system :: object :: Object)] pub struct SyncToken {
-# [offset (16)] # [rename (name = "state")] pub state : :: unity2 :: Array < crate :: combat :: synctoken :: SyncToken_State > ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/synctoken/SyncToken_State.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -72,6 +67,11 @@ impl  SyncToken_State  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/synctoken/SyncToken.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "SyncToken")] # [parent (crate :: system :: object :: Object)] pub struct SyncToken {
+# [offset (16)] # [rename (name = "state")] pub state : :: unity2 :: Array < crate :: combat :: synctoken :: SyncToken_State > ,
+}
+
 }
 
 #[cfg(feature = "combat-synctoken-types")]
@@ -100,10 +100,10 @@ impl SyncToken {
 #[cfg(feature = "combat-synctoken")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::SyncToken_State;
     pub use super::SyncToken;
     pub use super::ISyncToken;
     pub use super::ISyncTokenMethods;
-    pub use super::SyncToken_State;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

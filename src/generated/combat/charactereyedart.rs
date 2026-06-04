@@ -21,6 +21,20 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/charactereyedart/CharacterEyeDart.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CharacterEyeDart")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct CharacterEyeDart {
+# [offset (24)] # [rename (name = "m_AmplitudeMin")] pub m_amplitude_min : f32 ,
+# [offset (28)] # [rename (name = "m_AmplitudeMax")] pub m_amplitude_max : f32 ,
+# [offset (32)] # [rename (name = "m_IntervalMin")] pub m_interval_min : f32 ,
+# [offset (36)] # [rename (name = "m_IntervalMax")] pub m_interval_max : f32 ,
+# [offset (40)] # [rename (name = "m_TransitionTime")] pub m_transition_time : f32 ,
+# [offset (44)] # [rename (name = "m_State")] pub m_state : crate :: combat :: charactereyedart :: CharacterEyeDart_State ,
+# [offset (56)] # [rename (name = "m_StayTime")] pub m_stay_time : f32 ,
+# [offset (60)] # [rename (name = "m_NowTime")] pub m_now_time : f32 ,
+# [offset (64)] # [rename (name = "m_PrevWeight")] pub m_prev_weight : f32 ,
+# [offset (68)] # [rename (name = "m_NextWeight")] pub m_next_weight : f32 ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/charactereyedart/CharacterEyeDart_State.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -69,20 +83,6 @@ impl  CharacterEyeDart_State  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/charactereyedart/CharacterEyeDart.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CharacterEyeDart")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct CharacterEyeDart {
-# [offset (24)] # [rename (name = "m_AmplitudeMin")] pub m_amplitude_min : f32 ,
-# [offset (28)] # [rename (name = "m_AmplitudeMax")] pub m_amplitude_max : f32 ,
-# [offset (32)] # [rename (name = "m_IntervalMin")] pub m_interval_min : f32 ,
-# [offset (36)] # [rename (name = "m_IntervalMax")] pub m_interval_max : f32 ,
-# [offset (40)] # [rename (name = "m_TransitionTime")] pub m_transition_time : f32 ,
-# [offset (44)] # [rename (name = "m_State")] pub m_state : crate :: combat :: charactereyedart :: CharacterEyeDart_State ,
-# [offset (56)] # [rename (name = "m_StayTime")] pub m_stay_time : f32 ,
-# [offset (60)] # [rename (name = "m_NowTime")] pub m_now_time : f32 ,
-# [offset (64)] # [rename (name = "m_PrevWeight")] pub m_prev_weight : f32 ,
-# [offset (68)] # [rename (name = "m_NextWeight")] pub m_next_weight : f32 ,
-}
-
 }
 
 #[cfg(feature = "combat-charactereyedart-types")]
@@ -108,10 +108,10 @@ impl CharacterEyeDart {
 #[cfg(feature = "combat-charactereyedart")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CharacterEyeDart_State;
     pub use super::CharacterEyeDart;
     pub use super::ICharacterEyeDart;
     pub use super::ICharacterEyeDartMethods;
+    pub use super::CharacterEyeDart_State;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

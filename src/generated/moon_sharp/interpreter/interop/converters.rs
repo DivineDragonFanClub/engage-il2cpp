@@ -10,7 +10,7 @@
  # [cfg (feature = "moon_sharp-interpreter-interop-converters-scripttoclrconversions-types")] pub use scripttoclrconversions :: { ScriptToClrConversions , IScriptToClrConversions }
  ;
  # [cfg (any (feature = "moon_sharp-interpreter-interop-converters-stringconversions-types"))] pub mod stringconversions ;
- # [cfg (feature = "moon_sharp-interpreter-interop-converters-stringconversions-types")] pub use stringconversions :: { StringConversions_StringSubtype , StringConversions , IStringConversions }
+ # [cfg (feature = "moon_sharp-interpreter-interop-converters-stringconversions-types")] pub use stringconversions :: { StringConversions , IStringConversions , StringConversions_StringSubtype }
  ;
  # [cfg (any (feature = "moon_sharp-interpreter-interop-converters-tableconversions-types"))] pub mod tableconversions ;
  # [cfg (feature = "moon_sharp-interpreter-interop-converters-tableconversions-types")] pub use tableconversions :: { TableConversions , ITableConversions }

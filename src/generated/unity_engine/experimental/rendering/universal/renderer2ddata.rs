@@ -19,25 +19,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/renderer2ddata/Renderer2DData.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.Universal" , name = "Renderer2DData")] # [parent (crate :: unity_engine :: rendering :: universal :: scriptablerendererdata :: ScriptableRendererData)] pub struct Renderer2DData {
-# [offset (48)] # [rename (name = "m_TransparencySortMode")] pub m_transparency_sort_mode : crate :: unity_engine :: transparencysortmode :: TransparencySortMode ,
-# [offset (52)] # [rename (name = "m_TransparencySortAxis")] pub m_transparency_sort_axis : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (64)] # [rename (name = "m_HDREmulationScale")] pub m_hdr_emulation_scale : f32 ,
-# [offset (72)] # [rename (name = "m_LightBlendStyles")] pub m_light_blend_styles : :: unity2 :: Array < crate :: unity_engine :: experimental :: rendering :: universal :: light2dblendstyle :: Light2DBlendStyle > ,
-# [offset (80)] # [rename (name = "m_UseDepthStencilBuffer")] pub m_use_depth_stencil_buffer : bool ,
-# [offset (88)] # [rename (name = "m_ShapeLightShader")] pub m_shape_light_shader : crate :: unity_engine :: shader :: Shader ,
-# [offset (96)] # [rename (name = "m_ShapeLightVolumeShader")] pub m_shape_light_volume_shader : crate :: unity_engine :: shader :: Shader ,
-# [offset (104)] # [rename (name = "m_PointLightShader")] pub m_point_light_shader : crate :: unity_engine :: shader :: Shader ,
-# [offset (112)] # [rename (name = "m_PointLightVolumeShader")] pub m_point_light_volume_shader : crate :: unity_engine :: shader :: Shader ,
-# [offset (120)] # [rename (name = "m_BlitShader")] pub m_blit_shader : crate :: unity_engine :: shader :: Shader ,
-# [offset (128)] # [rename (name = "m_ShadowGroupShader")] pub m_shadow_group_shader : crate :: unity_engine :: shader :: Shader ,
-# [offset (136)] # [rename (name = "m_RemoveSelfShadowShader")] pub m_remove_self_shadow_shader : crate :: unity_engine :: shader :: Shader ,
-# [offset (144)] # [rename (name = "m_PostProcessData")] pub m_post_process_data : crate :: unity_engine :: rendering :: universal :: postprocessdata :: PostProcessData ,
-# [offset (176)] # [rename (name = "normalsRenderTarget")] pub normals_render_target : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
-# [offset (224)] # [rename (name = "shadowsRenderTarget")] pub shadows_render_target : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/renderer2ddata/Renderer2DData_Renderer2DDefaultMaterialType.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -92,6 +73,25 @@ impl  Renderer2DData_Renderer2DDefaultMaterialType  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/renderer2ddata/Renderer2DData.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.Universal" , name = "Renderer2DData")] # [parent (crate :: unity_engine :: rendering :: universal :: scriptablerendererdata :: ScriptableRendererData)] pub struct Renderer2DData {
+# [offset (48)] # [rename (name = "m_TransparencySortMode")] pub m_transparency_sort_mode : crate :: unity_engine :: transparencysortmode :: TransparencySortMode ,
+# [offset (52)] # [rename (name = "m_TransparencySortAxis")] pub m_transparency_sort_axis : crate :: unity_engine :: vector3 :: Vector3 ,
+# [offset (64)] # [rename (name = "m_HDREmulationScale")] pub m_hdr_emulation_scale : f32 ,
+# [offset (72)] # [rename (name = "m_LightBlendStyles")] pub m_light_blend_styles : :: unity2 :: Array < crate :: unity_engine :: experimental :: rendering :: universal :: light2dblendstyle :: Light2DBlendStyle > ,
+# [offset (80)] # [rename (name = "m_UseDepthStencilBuffer")] pub m_use_depth_stencil_buffer : bool ,
+# [offset (88)] # [rename (name = "m_ShapeLightShader")] pub m_shape_light_shader : crate :: unity_engine :: shader :: Shader ,
+# [offset (96)] # [rename (name = "m_ShapeLightVolumeShader")] pub m_shape_light_volume_shader : crate :: unity_engine :: shader :: Shader ,
+# [offset (104)] # [rename (name = "m_PointLightShader")] pub m_point_light_shader : crate :: unity_engine :: shader :: Shader ,
+# [offset (112)] # [rename (name = "m_PointLightVolumeShader")] pub m_point_light_volume_shader : crate :: unity_engine :: shader :: Shader ,
+# [offset (120)] # [rename (name = "m_BlitShader")] pub m_blit_shader : crate :: unity_engine :: shader :: Shader ,
+# [offset (128)] # [rename (name = "m_ShadowGroupShader")] pub m_shadow_group_shader : crate :: unity_engine :: shader :: Shader ,
+# [offset (136)] # [rename (name = "m_RemoveSelfShadowShader")] pub m_remove_self_shadow_shader : crate :: unity_engine :: shader :: Shader ,
+# [offset (144)] # [rename (name = "m_PostProcessData")] pub m_post_process_data : crate :: unity_engine :: rendering :: universal :: postprocessdata :: PostProcessData ,
+# [offset (176)] # [rename (name = "normalsRenderTarget")] pub normals_render_target : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+# [offset (224)] # [rename (name = "shadowsRenderTarget")] pub shadows_render_target : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderer2ddata-types")]
@@ -117,10 +117,10 @@ impl Renderer2DData {
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderer2ddata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::Renderer2DData_Renderer2DDefaultMaterialType;
     pub use super::Renderer2DData;
     pub use super::IRenderer2DData;
     pub use super::IRenderer2DDataMethods;
-    pub use super::Renderer2DData_Renderer2DDefaultMaterialType;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

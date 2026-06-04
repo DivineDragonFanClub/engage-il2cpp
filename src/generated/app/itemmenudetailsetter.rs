@@ -21,60 +21,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemmenudetailsetter/ItemMenuDetailSetter.md"))] # [:: unity2 :: class (namespace = "App" , name = "ItemMenuDetailSetter")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct ItemMenuDetailSetter {
-# [offset (24)] # [rename (name = "m_MenuTitle")] pub m_menu_title : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (32)] # [rename (name = "m_ContentsTitle")] pub m_contents_title : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (40)] # [rename (name = "m_TitleAtk")] pub m_title_atk : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (48)] # [rename (name = "m_ValueAtk")] pub m_value_atk : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (56)] # [rename (name = "m_IconAtk")] pub m_icon_atk : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (64)] # [rename (name = "m_TitleHit")] pub m_title_hit : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (72)] # [rename (name = "m_ValueHit")] pub m_value_hit : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (80)] # [rename (name = "m_IconHit")] pub m_icon_hit : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (88)] # [rename (name = "m_TitleCrit")] pub m_title_crit : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (96)] # [rename (name = "m_ValueCrit")] pub m_value_crit : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (104)] # [rename (name = "m_IconCrit")] pub m_icon_crit : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (112)] # [rename (name = "m_TitleAvo")] pub m_title_avo : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (120)] # [rename (name = "m_ValueAvo")] pub m_value_avo : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (128)] # [rename (name = "m_IconAvo")] pub m_icon_avo : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (136)] # [rename (name = "m_ObjectSpd")] pub m_object_spd : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (144)] # [rename (name = "m_TitleSpd")] pub m_title_spd : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (152)] # [rename (name = "m_ValueSpd")] pub m_value_spd : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (160)] # [rename (name = "m_IconSpd")] pub m_icon_spd : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (168)] # [rename (name = "m_ObjectWeight")] pub m_object_weight : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (176)] # [rename (name = "m_TitleWeight")] pub m_title_weight : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (184)] # [rename (name = "m_ValueWeight")] pub m_value_weight : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (192)] # [rename (name = "m_IconWeight")] pub m_icon_weight : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (200)] # [rename (name = "m_TitleRange")] pub m_title_range : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (208)] # [rename (name = "m_ValueRange")] pub m_value_range : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (216)] # [rename (name = "m_TitleSecure")] pub m_title_secure : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (224)] # [rename (name = "m_ValueSecure")] pub m_value_secure : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (232)] # [rename (name = "m_IconSecure")] pub m_icon_secure : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (240)] # [rename (name = "m_TitleWeaponLevel")] pub m_title_weapon_level : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (248)] # [rename (name = "m_ValueWeaponLevel")] pub m_value_weapon_level : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (256)] # [rename (name = "m_IconWeaponLevel")] pub m_icon_weapon_level : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (264)] # [rename (name = "m_WeaponLevelNothing")] pub m_weapon_level_nothing : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (272)] # [rename (name = "m_TitleEfficacy")] pub m_title_efficacy : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (280)] # [rename (name = "m_EfficacyIcons")] pub m_efficacy_icons : :: unity2 :: Array < crate :: unity_engine :: ui :: image :: Image > ,
-# [offset (288)] # [rename (name = "m_EfficacyNothing")] pub m_efficacy_nothing : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (296)] # [rename (name = "m_ContentsText")] pub m_contents_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (304)] # [rename (name = "m_ContentsEngWep")] pub m_contents_eng_wep : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (312)] # [rename (name = "m_ContentsEnchant")] pub m_contents_enchant : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (320)] # [rename (name = "m_ContentsSubText")] pub m_contents_sub_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (336)] # [rename (name = "m_ContentsTitleMID")] pub m_contents_title_mid : :: unity2 :: Il2CppString ,
-# [offset (344)] # [rename (name = "m_AtkTitleMID")] pub m_atk_title_mid : :: unity2 :: Il2CppString ,
-# [offset (352)] # [rename (name = "m_ColorValueAtk")] pub m_color_value_atk : crate :: unity_engine :: color :: Color ,
-# [offset (368)] # [rename (name = "m_ColorValueHit")] pub m_color_value_hit : crate :: unity_engine :: color :: Color ,
-# [offset (384)] # [rename (name = "m_ColorValueCrit")] pub m_color_value_crit : crate :: unity_engine :: color :: Color ,
-# [offset (400)] # [rename (name = "m_ColorValueAvo")] pub m_color_value_avo : crate :: unity_engine :: color :: Color ,
-# [offset (416)] # [rename (name = "m_ColorValueSpd")] pub m_color_value_spd : crate :: unity_engine :: color :: Color ,
-# [offset (432)] # [rename (name = "m_ColorValueWeight")] pub m_color_value_weight : crate :: unity_engine :: color :: Color ,
-# [offset (448)] # [rename (name = "m_ColorValueSecure")] pub m_color_value_secure : crate :: unity_engine :: color :: Color ,
-# [offset (464)] # [rename (name = "m_TmpUnit")] pub m_tmp_unit : crate :: app :: unit :: Unit ,
-# [offset (472)] # [rename (name = "m_BattleInfo")] pub m_battle_info : crate :: app :: battleinfo :: BattleInfo ,
-# [offset (480)] # [rename (name = "m_TmpBattleInfo")] pub m_tmp_battle_info : crate :: app :: battleinfo :: BattleInfo ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemmenudetailsetter/ItemMenuDetailSetter_Kind.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -147,6 +93,60 @@ impl  ItemMenuDetailSetter_Kind  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemmenudetailsetter/ItemMenuDetailSetter.md"))] # [:: unity2 :: class (namespace = "App" , name = "ItemMenuDetailSetter")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct ItemMenuDetailSetter {
+# [offset (24)] # [rename (name = "m_MenuTitle")] pub m_menu_title : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (32)] # [rename (name = "m_ContentsTitle")] pub m_contents_title : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (40)] # [rename (name = "m_TitleAtk")] pub m_title_atk : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (48)] # [rename (name = "m_ValueAtk")] pub m_value_atk : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (56)] # [rename (name = "m_IconAtk")] pub m_icon_atk : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (64)] # [rename (name = "m_TitleHit")] pub m_title_hit : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (72)] # [rename (name = "m_ValueHit")] pub m_value_hit : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (80)] # [rename (name = "m_IconHit")] pub m_icon_hit : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (88)] # [rename (name = "m_TitleCrit")] pub m_title_crit : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (96)] # [rename (name = "m_ValueCrit")] pub m_value_crit : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (104)] # [rename (name = "m_IconCrit")] pub m_icon_crit : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (112)] # [rename (name = "m_TitleAvo")] pub m_title_avo : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (120)] # [rename (name = "m_ValueAvo")] pub m_value_avo : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (128)] # [rename (name = "m_IconAvo")] pub m_icon_avo : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (136)] # [rename (name = "m_ObjectSpd")] pub m_object_spd : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (144)] # [rename (name = "m_TitleSpd")] pub m_title_spd : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (152)] # [rename (name = "m_ValueSpd")] pub m_value_spd : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (160)] # [rename (name = "m_IconSpd")] pub m_icon_spd : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (168)] # [rename (name = "m_ObjectWeight")] pub m_object_weight : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (176)] # [rename (name = "m_TitleWeight")] pub m_title_weight : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (184)] # [rename (name = "m_ValueWeight")] pub m_value_weight : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (192)] # [rename (name = "m_IconWeight")] pub m_icon_weight : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (200)] # [rename (name = "m_TitleRange")] pub m_title_range : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (208)] # [rename (name = "m_ValueRange")] pub m_value_range : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (216)] # [rename (name = "m_TitleSecure")] pub m_title_secure : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (224)] # [rename (name = "m_ValueSecure")] pub m_value_secure : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (232)] # [rename (name = "m_IconSecure")] pub m_icon_secure : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (240)] # [rename (name = "m_TitleWeaponLevel")] pub m_title_weapon_level : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (248)] # [rename (name = "m_ValueWeaponLevel")] pub m_value_weapon_level : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (256)] # [rename (name = "m_IconWeaponLevel")] pub m_icon_weapon_level : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (264)] # [rename (name = "m_WeaponLevelNothing")] pub m_weapon_level_nothing : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (272)] # [rename (name = "m_TitleEfficacy")] pub m_title_efficacy : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (280)] # [rename (name = "m_EfficacyIcons")] pub m_efficacy_icons : :: unity2 :: Array < crate :: unity_engine :: ui :: image :: Image > ,
+# [offset (288)] # [rename (name = "m_EfficacyNothing")] pub m_efficacy_nothing : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (296)] # [rename (name = "m_ContentsText")] pub m_contents_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (304)] # [rename (name = "m_ContentsEngWep")] pub m_contents_eng_wep : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (312)] # [rename (name = "m_ContentsEnchant")] pub m_contents_enchant : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (320)] # [rename (name = "m_ContentsSubText")] pub m_contents_sub_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (336)] # [rename (name = "m_ContentsTitleMID")] pub m_contents_title_mid : :: unity2 :: Il2CppString ,
+# [offset (344)] # [rename (name = "m_AtkTitleMID")] pub m_atk_title_mid : :: unity2 :: Il2CppString ,
+# [offset (352)] # [rename (name = "m_ColorValueAtk")] pub m_color_value_atk : crate :: unity_engine :: color :: Color ,
+# [offset (368)] # [rename (name = "m_ColorValueHit")] pub m_color_value_hit : crate :: unity_engine :: color :: Color ,
+# [offset (384)] # [rename (name = "m_ColorValueCrit")] pub m_color_value_crit : crate :: unity_engine :: color :: Color ,
+# [offset (400)] # [rename (name = "m_ColorValueAvo")] pub m_color_value_avo : crate :: unity_engine :: color :: Color ,
+# [offset (416)] # [rename (name = "m_ColorValueSpd")] pub m_color_value_spd : crate :: unity_engine :: color :: Color ,
+# [offset (432)] # [rename (name = "m_ColorValueWeight")] pub m_color_value_weight : crate :: unity_engine :: color :: Color ,
+# [offset (448)] # [rename (name = "m_ColorValueSecure")] pub m_color_value_secure : crate :: unity_engine :: color :: Color ,
+# [offset (464)] # [rename (name = "m_TmpUnit")] pub m_tmp_unit : crate :: app :: unit :: Unit ,
+# [offset (472)] # [rename (name = "m_BattleInfo")] pub m_battle_info : crate :: app :: battleinfo :: BattleInfo ,
+# [offset (480)] # [rename (name = "m_TmpBattleInfo")] pub m_tmp_battle_info : crate :: app :: battleinfo :: BattleInfo ,
+}
+
 }
 
 #[cfg(feature = "app-itemmenudetailsetter-types")]
@@ -172,10 +172,10 @@ impl ItemMenuDetailSetter {
 #[cfg(feature = "app-itemmenudetailsetter")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ItemMenuDetailSetter_Kind;
     pub use super::ItemMenuDetailSetter;
     pub use super::IItemMenuDetailSetter;
     pub use super::IItemMenuDetailSetterMethods;
-    pub use super::ItemMenuDetailSetter_Kind;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

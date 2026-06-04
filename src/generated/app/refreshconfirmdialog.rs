@@ -21,6 +21,9 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshconfirmdialog/RefreshConfirmDialog_DecideEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefreshConfirmDialog.DecideEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct RefreshConfirmDialog_DecideEventHandler {}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refreshconfirmdialog/RefreshConfirmDialog_Result2.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -74,9 +77,6 @@ impl  RefreshConfirmDialog_Result2  {
     }
 
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshconfirmdialog/RefreshConfirmDialog_DecideEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefreshConfirmDialog.DecideEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct RefreshConfirmDialog_DecideEventHandler {}
 
 
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshconfirmdialog/RefreshConfirmDialog_DialogMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefreshConfirmDialog.DialogMenuItem")] # [parent (crate :: app :: basicdialogitem :: BasicDialogItem)] pub struct RefreshConfirmDialog_DialogMenuItem {
@@ -151,10 +151,10 @@ impl RefreshConfirmDialog {
 #[cfg(feature = "app-refreshconfirmdialog")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RefreshConfirmDialog_Result2;
     pub use super::RefreshConfirmDialog_DecideEventHandler;
     pub use super::IRefreshConfirmDialog_DecideEventHandler;
     pub use super::IRefreshConfirmDialog_DecideEventHandlerMethods;
+    pub use super::RefreshConfirmDialog_Result2;
     pub use super::RefreshConfirmDialog_DialogMenuItem;
     pub use super::IRefreshConfirmDialog_DialogMenuItem;
     pub use super::IRefreshConfirmDialog_DialogMenuItemMethods;

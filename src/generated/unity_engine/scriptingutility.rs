@@ -11,6 +11,9 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/scriptingutility/ScriptingUtility.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "ScriptingUtility")] # [parent (crate :: system :: object :: Object)] pub struct ScriptingUtility {}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/scriptingutility/ScriptingUtility_TestClass.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -44,9 +47,6 @@ impl ::unity2::IlType for ScriptingUtility_TestClass {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/scriptingutility/ScriptingUtility.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "ScriptingUtility")] # [parent (crate :: system :: object :: Object)] pub struct ScriptingUtility {}
-
 }
 
 #[cfg(feature = "unity_engine-scriptingutility-types")]
@@ -64,9 +64,9 @@ impl ScriptingUtility { pub fn is_managed_code_working_method_info () -> & 'stat
 #[cfg(feature = "unity_engine-scriptingutility")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ScriptingUtility_TestClass;
     pub use super::ScriptingUtility;
     pub use super::IScriptingUtility;
+    pub use super::ScriptingUtility_TestClass;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

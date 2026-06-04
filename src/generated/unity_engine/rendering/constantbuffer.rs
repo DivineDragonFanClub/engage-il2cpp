@@ -14,15 +14,15 @@ mod __types {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/constantbuffer/ConstantBuffer_ConstantBufferBase.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "ConstantBuffer.ConstantBufferBase")] # [parent (crate :: system :: object :: Object)] pub struct ConstantBuffer_ConstantBufferBase {}
+
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/constantbuffer/ConstantBuffer_TypedConstantBuffer_1.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "ConstantBuffer.TypedConstantBuffer`1")] # [parent (crate :: unity_engine :: rendering :: constantbuffer :: ConstantBuffer_ConstantBufferBase)] # [parent (crate :: system :: object :: Object)] pub struct ConstantBuffer_TypedConstantBuffer_1 < T0 : :: unity2 :: ClassIdentity > {
 # [rename (name = "m_GlobalBindings")] pub m_global_bindings : crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < i32 > ,
 # [rename (name = "m_Data")] pub m_data : :: unity2 :: Array < T0 > ,
 # [static_field] # [rename (name = "s_Instance")] pub s_instance : crate :: unity_engine :: rendering :: constantbuffer :: ConstantBuffer_TypedConstantBuffer_1 < T0 > ,
 # [rename (name = "m_GPUConstantBuffer")] pub m_gpu_constant_buffer : crate :: unity_engine :: computebuffer :: ComputeBuffer ,
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/constantbuffer/ConstantBuffer_ConstantBufferBase.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "ConstantBuffer.ConstantBufferBase")] # [parent (crate :: system :: object :: Object)] pub struct ConstantBuffer_ConstantBufferBase {}
 
 }
 
@@ -47,6 +47,23 @@ impl ConstantBuffer { pub fn release_all_method_info () -> & 'static :: unity2 :
 #[cfg(feature = "unity_engine-rendering-constantbuffer")]
 impl ConstantBuffer {
 # [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ConstantBuffer) , :: core :: stringify ! (new) ,)) ; < Self as IConstantBufferMethods > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "unity_engine-rendering-constantbuffer")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ConstantBuffer_ConstantBufferBase_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_release { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ConstantBuffer_ConstantBufferBase as :: unity2 :: ClassIdentity > :: class () , "Release" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ConstantBuffer_ConstantBufferBase as :: unity2 :: ClassIdentity > :: NAME , "Release" , e) , } } } pub unsafe fn release (this : ConstantBuffer_ConstantBufferBase , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("Release") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "Release" , < ConstantBuffer_ConstantBufferBase as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (ConstantBuffer_ConstantBufferBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ConstantBuffer_ConstantBufferBase as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ConstantBuffer_ConstantBufferBase as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ConstantBuffer_ConstantBufferBase , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ConstantBuffer_ConstantBufferBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "unity_engine-rendering-constantbuffer")]
+pub trait IConstantBuffer_ConstantBufferBaseMethods : IConstantBuffer_ConstantBufferBase { # [doc = "`Release()` overload"] fn release (self ,) -> () { unsafe { let __receiver = < ConstantBuffer_ConstantBufferBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ConstantBuffer_ConstantBufferBase_unity2_raw :: release (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ConstantBuffer_ConstantBufferBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ConstantBuffer_ConstantBufferBase_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-rendering-constantbuffer")]
+impl < __T : IConstantBuffer_ConstantBufferBase > IConstantBuffer_ConstantBufferBaseMethods for __T { }
+
+#[cfg(feature = "unity_engine-rendering-constantbuffer")]
+impl ConstantBuffer_ConstantBufferBase { pub fn release_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ConstantBuffer_ConstantBufferBase_unity2_raw :: __lookup_release :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ConstantBuffer_ConstantBufferBase_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "unity_engine-rendering-constantbuffer")]
+impl ConstantBuffer_ConstantBufferBase {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ConstantBuffer_ConstantBufferBase) , :: core :: stringify ! (new) ,)) ; < Self as IConstantBuffer_ConstantBufferBaseMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "unity_engine-rendering-constantbuffer")]
@@ -76,34 +93,17 @@ impl < T0 : :: unity2 :: ClassIdentity > ConstantBuffer_TypedConstantBuffer_1 < 
 }
 
 #[cfg(feature = "unity_engine-rendering-constantbuffer")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ConstantBuffer_ConstantBufferBase_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_release { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ConstantBuffer_ConstantBufferBase as :: unity2 :: ClassIdentity > :: class () , "Release" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ConstantBuffer_ConstantBufferBase as :: unity2 :: ClassIdentity > :: NAME , "Release" , e) , } } } pub unsafe fn release (this : ConstantBuffer_ConstantBufferBase , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("Release") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "Release" , < ConstantBuffer_ConstantBufferBase as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (ConstantBuffer_ConstantBufferBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ConstantBuffer_ConstantBufferBase as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ConstantBuffer_ConstantBufferBase as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ConstantBuffer_ConstantBufferBase , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ConstantBuffer_ConstantBufferBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "unity_engine-rendering-constantbuffer")]
-pub trait IConstantBuffer_ConstantBufferBaseMethods : IConstantBuffer_ConstantBufferBase { # [doc = "`Release()` overload"] fn release (self ,) -> () { unsafe { let __receiver = < ConstantBuffer_ConstantBufferBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ConstantBuffer_ConstantBufferBase_unity2_raw :: release (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ConstantBuffer_ConstantBufferBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ConstantBuffer_ConstantBufferBase_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "unity_engine-rendering-constantbuffer")]
-impl < __T : IConstantBuffer_ConstantBufferBase > IConstantBuffer_ConstantBufferBaseMethods for __T { }
-
-#[cfg(feature = "unity_engine-rendering-constantbuffer")]
-impl ConstantBuffer_ConstantBufferBase { pub fn release_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ConstantBuffer_ConstantBufferBase_unity2_raw :: __lookup_release :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ConstantBuffer_ConstantBufferBase_unity2_raw :: __lookup_ctor :: get_method_info () } }
-
-#[cfg(feature = "unity_engine-rendering-constantbuffer")]
-impl ConstantBuffer_ConstantBufferBase {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ConstantBuffer_ConstantBufferBase) , :: core :: stringify ! (new) ,)) ; < Self as IConstantBuffer_ConstantBufferBaseMethods > :: ctor (this ,) ; this }
-}
-
-#[cfg(feature = "unity_engine-rendering-constantbuffer")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::ConstantBuffer;
     pub use super::IConstantBuffer;
     pub use super::IConstantBufferMethods;
-    pub use super::ConstantBuffer_TypedConstantBuffer_1;
-    pub use super::IConstantBuffer_TypedConstantBuffer_1;
-    pub use super::IConstantBuffer_TypedConstantBuffer_1Methods;
     pub use super::ConstantBuffer_ConstantBufferBase;
     pub use super::IConstantBuffer_ConstantBufferBase;
     pub use super::IConstantBuffer_ConstantBufferBaseMethods;
+    pub use super::ConstantBuffer_TypedConstantBuffer_1;
+    pub use super::IConstantBuffer_TypedConstantBuffer_1;
+    pub use super::IConstantBuffer_TypedConstantBuffer_1Methods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

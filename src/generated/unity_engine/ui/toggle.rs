@@ -29,6 +29,18 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/toggle/Toggle.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "Toggle")] # [parent (crate :: unity_engine :: ui :: selectable :: Selectable)] pub struct Toggle {
+# [offset (248)] # [rename (name = "toggleTransition")] pub toggle_transition : crate :: unity_engine :: ui :: toggle :: Toggle_ToggleTransition ,
+# [offset (256)] # [rename (name = "graphic")] pub graphic : crate :: unity_engine :: ui :: graphic :: Graphic ,
+# [offset (264)] # [rename (name = "m_Group")] pub m_group : crate :: unity_engine :: ui :: togglegroup :: ToggleGroup ,
+# [offset (272)] # [rename (name = "onValueChanged")] pub on_value_changed : crate :: unity_engine :: ui :: toggle :: Toggle_ToggleEvent ,
+# [offset (280)] # [rename (name = "m_IsOn")] pub m_is_on : bool ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/toggle/Toggle_ToggleEvent.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "Toggle.ToggleEvent")] # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < bool >)] pub struct Toggle_ToggleEvent {}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/toggle/Toggle_ToggleTransition.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -77,18 +89,6 @@ impl  Toggle_ToggleTransition  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/toggle/Toggle.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "Toggle")] # [parent (crate :: unity_engine :: ui :: selectable :: Selectable)] pub struct Toggle {
-# [offset (248)] # [rename (name = "toggleTransition")] pub toggle_transition : crate :: unity_engine :: ui :: toggle :: Toggle_ToggleTransition ,
-# [offset (256)] # [rename (name = "graphic")] pub graphic : crate :: unity_engine :: ui :: graphic :: Graphic ,
-# [offset (264)] # [rename (name = "m_Group")] pub m_group : crate :: unity_engine :: ui :: togglegroup :: ToggleGroup ,
-# [offset (272)] # [rename (name = "onValueChanged")] pub on_value_changed : crate :: unity_engine :: ui :: toggle :: Toggle_ToggleEvent ,
-# [offset (280)] # [rename (name = "m_IsOn")] pub m_is_on : bool ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/toggle/Toggle_ToggleEvent.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "Toggle.ToggleEvent")] # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < bool >)] pub struct Toggle_ToggleEvent {}
-
 }
 
 #[cfg(feature = "unity_engine-ui-toggle-types")]
@@ -131,13 +131,13 @@ impl Toggle_ToggleEvent {
 #[cfg(feature = "unity_engine-ui-toggle")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Toggle_ToggleTransition;
     pub use super::Toggle;
     pub use super::IToggle;
     pub use super::IToggleMethods;
     pub use super::Toggle_ToggleEvent;
     pub use super::IToggle_ToggleEvent;
     pub use super::IToggle_ToggleEventMethods;
+    pub use super::Toggle_ToggleTransition;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

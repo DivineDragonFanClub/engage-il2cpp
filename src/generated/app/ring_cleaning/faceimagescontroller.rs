@@ -21,6 +21,15 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ring_cleaning/faceimagescontroller/FaceImagesController_ReturnEntryComponent.md"))] # [:: unity2 :: class (namespace = "App.RingCleaning" , name = "FaceImagesController.ReturnEntryComponent")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct FaceImagesController_ReturnEntryComponent {
+# [offset (24)] # [rename (name = "m_Character")] pub m_character : crate :: combat :: character :: Character ,
+# [offset (32)] # [rename (name = "m_Animator")] pub m_animator : crate :: unity_engine :: animator :: Animator ,
+# [offset (40)] # [rename (name = "m_NowAnimName")] pub m_now_anim_name : :: unity2 :: Il2CppString ,
+# [offset (48)] # [rename (name = "m_ChangeAnimName")] pub m_change_anim_name : :: unity2 :: Il2CppString ,
+# [offset (56)] # [rename (name = "m_Time")] pub m_time : f32 ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ring_cleaning/faceimagescontroller/FaceImagesController_PlayPattern.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -79,15 +88,6 @@ impl  FaceImagesController_PlayPattern  {
 
     }
 
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ring_cleaning/faceimagescontroller/FaceImagesController_ReturnEntryComponent.md"))] # [:: unity2 :: class (namespace = "App.RingCleaning" , name = "FaceImagesController.ReturnEntryComponent")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct FaceImagesController_ReturnEntryComponent {
-# [offset (24)] # [rename (name = "m_Character")] pub m_character : crate :: combat :: character :: Character ,
-# [offset (32)] # [rename (name = "m_Animator")] pub m_animator : crate :: unity_engine :: animator :: Animator ,
-# [offset (40)] # [rename (name = "m_NowAnimName")] pub m_now_anim_name : :: unity2 :: Il2CppString ,
-# [offset (48)] # [rename (name = "m_ChangeAnimName")] pub m_change_anim_name : :: unity2 :: Il2CppString ,
-# [offset (56)] # [rename (name = "m_Time")] pub m_time : f32 ,
 }
 
 
@@ -232,10 +232,10 @@ impl FaceImagesController {
 #[cfg(feature = "app-ring_cleaning-faceimagescontroller")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::FaceImagesController_PlayPattern;
     pub use super::FaceImagesController_ReturnEntryComponent;
     pub use super::IFaceImagesController_ReturnEntryComponent;
     pub use super::IFaceImagesController_ReturnEntryComponentMethods;
+    pub use super::FaceImagesController_PlayPattern;
     pub use super::FaceImagesController_AnimType;
     pub use super::FaceImagesController;
     pub use super::IFaceImagesController;

@@ -13,11 +13,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatorutil/CalculatorUtil.md"))] # [:: unity2 :: class (namespace = "App" , name = "CalculatorUtil")] # [parent (crate :: system :: object :: Object)] pub struct CalculatorUtil {
-# [static_field] # [rename (name = "NullArgs")] pub null_args : crate :: system :: collections :: generic :: list_1 :: List_1 < f32 > ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/calculatorutil/CalculatorUtil_Type.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -289,6 +284,11 @@ impl  CalculatorUtil_Type  {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatorutil/CalculatorUtil.md"))] # [:: unity2 :: class (namespace = "App" , name = "CalculatorUtil")] # [parent (crate :: system :: object :: Object)] pub struct CalculatorUtil {
+# [static_field] # [rename (name = "NullArgs")] pub null_args : crate :: system :: collections :: generic :: list_1 :: List_1 < f32 > ,
+}
+
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatorutil/CalculatorUtil_Entity.md"))] # [:: unity2 :: class (namespace = "App" , name = "CalculatorUtil.Entity")] # [parent (crate :: system :: object :: Object)] pub struct CalculatorUtil_Entity {
 # [offset (16)] # [rename (name = "m_Type")] pub m_type : crate :: app :: calculatorutil :: CalculatorUtil_Type ,
 # [offset (24)] # [rename (name = "m_Name")] pub m_name : :: unity2 :: Il2CppString ,
@@ -341,10 +341,10 @@ impl CalculatorUtil_Entity {
 #[cfg(feature = "app-calculatorutil")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::CalculatorUtil_Type;
     pub use super::CalculatorUtil;
     pub use super::ICalculatorUtil;
     pub use super::ICalculatorUtilMethods;
-    pub use super::CalculatorUtil_Type;
     pub use super::CalculatorUtil_Entity;
     pub use super::ICalculatorUtil_Entity;
     pub use super::ICalculatorUtil_EntityMethods;

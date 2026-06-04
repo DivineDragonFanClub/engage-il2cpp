@@ -15,6 +15,13 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayshowdatasequence/RelayShowDataSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayShowDataSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct RelayShowDataSequence {
+# [offset (112)] # [rename (name = "m_MetaData")] pub m_meta_data : crate :: app :: relayservermetadata :: RelayServerMetaData ,
+# [offset (120)] # [rename (name = "m_Mode")] pub m_mode : crate :: app :: relayshowdatadialog :: RelayShowDataDialog_Mode ,
+# [offset (124)] # [rename (name = "m_IsNewPlay")] pub m_is_new_play : bool ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayshowdatasequence/RelayShowDataSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -63,13 +70,6 @@ impl  RelayShowDataSequence_Label  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayshowdatasequence/RelayShowDataSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayShowDataSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct RelayShowDataSequence {
-# [offset (112)] # [rename (name = "m_MetaData")] pub m_meta_data : crate :: app :: relayservermetadata :: RelayServerMetaData ,
-# [offset (120)] # [rename (name = "m_Mode")] pub m_mode : crate :: app :: relayshowdatadialog :: RelayShowDataDialog_Mode ,
-# [offset (124)] # [rename (name = "m_IsNewPlay")] pub m_is_new_play : bool ,
-}
-
 }
 
 #[cfg(feature = "app-relayshowdatasequence-types")]
@@ -98,10 +98,10 @@ impl RelayShowDataSequence {
 #[cfg(feature = "app-relayshowdatasequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RelayShowDataSequence_Label;
     pub use super::RelayShowDataSequence;
     pub use super::IRelayShowDataSequence;
     pub use super::IRelayShowDataSequenceMethods;
+    pub use super::RelayShowDataSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

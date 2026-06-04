@@ -12,6 +12,7 @@ mod __types {
 
 
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/filemanager/FileManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "FileManager")] # [parent (crate :: app :: filecommon :: FileCommon)] pub struct FileManager {
+# [static_field] # [rename (name = "s_Thread")] pub s_thread : :: unity2 :: IlInstance ,
 # [static_field] # [rename (name = "s_CrcTable")] pub s_crc_table : :: unity2 :: Array < u32 > ,
 }
 

@@ -15,12 +15,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapnavigationsequence/MapNavigationSequence.md"))] # [:: unity2 :: class (namespace = "" , name = "MapNavigationSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct MapNavigationSequence {
-# [offset (112)] # [rename (name = "m_IsHide")] pub m_is_hide : bool ,
-# [offset (120)] # [rename (name = "m_MapNavigationObject")] pub m_map_navigation_object : crate :: unity_engine :: gameobject :: GameObject ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mapnavigationsequence/MapNavigationSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -75,6 +69,12 @@ impl  MapNavigationSequence_Label  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapnavigationsequence/MapNavigationSequence.md"))] # [:: unity2 :: class (namespace = "" , name = "MapNavigationSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct MapNavigationSequence {
+# [offset (112)] # [rename (name = "m_IsHide")] pub m_is_hide : bool ,
+# [offset (120)] # [rename (name = "m_MapNavigationObject")] pub m_map_navigation_object : crate :: unity_engine :: gameobject :: GameObject ,
+}
+
 }
 
 #[cfg(feature = "root-mapnavigationsequence-types")]
@@ -103,10 +103,10 @@ impl MapNavigationSequence {
 #[cfg(feature = "root-mapnavigationsequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MapNavigationSequence_Label;
     pub use super::MapNavigationSequence;
     pub use super::IMapNavigationSequence;
     pub use super::IMapNavigationSequenceMethods;
-    pub use super::MapNavigationSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

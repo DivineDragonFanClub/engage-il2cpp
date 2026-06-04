@@ -25,7 +25,47 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaystampdata/RelayStampData.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayStampData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: relaystampdata :: RelayStampData >)] pub struct RelayStampData {}
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relaystampdata/RelayStampData_Flags.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct RelayStampData_Flags  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for RelayStampData_Flags  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RelayStampData.Flags";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for RelayStampData_Flags  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  RelayStampData_Flags  {
+    pub fn no_filter() -> Self {
+        Self { value: 1 }
+
+    }
+
+}
 
 
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relaystampdata/RelayStampData_Kinds.md"))]
@@ -119,47 +159,7 @@ impl  RelayStampData_Kinds  {
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relaystampdata/RelayStampData_Flags.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct RelayStampData_Flags  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for RelayStampData_Flags  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RelayStampData.Flags";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for RelayStampData_Flags  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  RelayStampData_Flags  {
-    pub fn no_filter() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaystampdata/RelayStampData.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayStampData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: relaystampdata :: RelayStampData >)] pub struct RelayStampData {}
 
 
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaystampdata/RelayStampData_FlagField.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayStampData.FlagField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: relaystampdata :: RelayStampData_Flags >)] pub struct RelayStampData_FlagField {}
@@ -211,11 +211,11 @@ impl RelayStampData_FlagField {
 #[cfg(feature = "app-relaystampdata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::RelayStampData_Flags;
+    pub use super::RelayStampData_Kinds;
     pub use super::RelayStampData;
     pub use super::IRelayStampData;
     pub use super::IRelayStampDataMethods;
-    pub use super::RelayStampData_Kinds;
-    pub use super::RelayStampData_Flags;
     pub use super::RelayStampData_FlagField;
     pub use super::IRelayStampData_FlagField;
     pub use super::IRelayStampData_FlagFieldMethods;

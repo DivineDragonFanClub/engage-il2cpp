@@ -17,6 +17,9 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomsoundsequence/MyRoomSoundSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomSoundSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: myroomsoundsequence :: MyRoomSoundSequence >)] pub struct MyRoomSoundSequence {}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomsoundsequence/MyRoomSoundSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -71,9 +74,6 @@ impl  MyRoomSoundSequence_Label  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomsoundsequence/MyRoomSoundSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomSoundSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: myroomsoundsequence :: MyRoomSoundSequence >)] pub struct MyRoomSoundSequence {}
-
 }
 
 #[cfg(feature = "app-myroomsoundsequence-types")]
@@ -102,10 +102,10 @@ impl MyRoomSoundSequence {
 #[cfg(feature = "app-myroomsoundsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MyRoomSoundSequence_Label;
     pub use super::MyRoomSoundSequence;
     pub use super::IMyRoomSoundSequence;
     pub use super::IMyRoomSoundSequenceMethods;
+    pub use super::MyRoomSoundSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

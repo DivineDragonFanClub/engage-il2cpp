@@ -44,6 +44,29 @@ impl ::unity2::IlType for TextureHandle {
 
 }
 
+
+impl TextureHandle {
+    #[inline]
+    pub fn s_null_handle() -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_NullHandle");
+
+        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
+    }
+
+    #[inline]
+    pub fn set_s_null_handle(value: crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturehandle :: TextureHandle) {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_NullHandle");
+
+        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-texturehandle-types")]

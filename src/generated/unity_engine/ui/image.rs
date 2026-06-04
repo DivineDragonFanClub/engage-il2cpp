@@ -88,64 +88,28 @@ impl  Image_Origin360  {
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/image/Image_Origin90.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Image_Origin90  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for Image_Origin90  {
-    const NAMESPACE: &'static str = "UnityEngine.UI";
-
-    const NAME: &'static str = "Image.Origin90";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for Image_Origin90  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  Image_Origin90  {
-    pub fn bottom_left() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn top_left() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn top_right() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn bottom_right() -> Self {
-        Self { value: 3 }
-
-    }
-
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/image/Image.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "Image")] # [parent (crate :: unity_engine :: ui :: maskablegraphic :: MaskableGraphic)] pub struct Image {
+# [static_field] # [rename (name = "s_ETC1DefaultUI")] pub s_etc1_default_ui : crate :: unity_engine :: material :: Material ,
+# [offset (208)] # [rename (name = "m_Sprite")] pub m_sprite : crate :: unity_engine :: sprite :: Sprite ,
+# [offset (216)] # [rename (name = "m_OverrideSprite")] pub m_override_sprite : crate :: unity_engine :: sprite :: Sprite ,
+# [offset (224)] # [rename (name = "m_Type")] pub m_type : crate :: unity_engine :: ui :: image :: Image_Type ,
+# [offset (228)] # [rename (name = "m_PreserveAspect")] pub m_preserve_aspect : bool ,
+# [offset (229)] # [rename (name = "m_FillCenter")] pub m_fill_center : bool ,
+# [offset (232)] # [rename (name = "m_FillMethod")] pub m_fill_method : crate :: unity_engine :: ui :: image :: Image_FillMethod ,
+# [offset (236)] # [rename (name = "m_FillAmount")] pub m_fill_amount : f32 ,
+# [offset (240)] # [rename (name = "m_FillClockwise")] pub m_fill_clockwise : bool ,
+# [offset (244)] # [rename (name = "m_FillOrigin")] pub m_fill_origin : i32 ,
+# [offset (248)] # [rename (name = "m_AlphaHitTestMinimumThreshold")] pub m_alpha_hit_test_minimum_threshold : f32 ,
+# [offset (252)] # [rename (name = "m_Tracked")] pub m_tracked : bool ,
+# [offset (253)] # [rename (name = "m_UseSpriteMesh")] pub m_use_sprite_mesh : bool ,
+# [offset (256)] # [rename (name = "m_PixelsPerUnitMultiplier")] pub m_pixels_per_unit_multiplier : f32 ,
+# [offset (260)] # [rename (name = "m_CachedReferencePixelsPerUnit")] pub m_cached_reference_pixels_per_unit : f32 ,
+# [static_field] # [rename (name = "s_VertScratch")] pub s_vert_scratch : :: unity2 :: Array < crate :: unity_engine :: vector2 :: Vector2 > ,
+# [static_field] # [rename (name = "s_UVScratch")] pub s_uv_scratch : :: unity2 :: Array < crate :: unity_engine :: vector2 :: Vector2 > ,
+# [static_field] # [rename (name = "s_Xy")] pub s_xy : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > ,
+# [static_field] # [rename (name = "s_Uv")] pub s_uv : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > ,
+# [static_field] # [rename (name = "m_TrackedTexturelessImages")] pub m_tracked_textureless_images : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: ui :: image :: Image > ,
+# [static_field] # [rename (name = "s_Initialized")] pub s_initialized : bool ,
 }
 
 
@@ -198,18 +162,18 @@ impl  Image_OriginHorizontal  {
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/image/Image_Type.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/image/Image_OriginVertical.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Image_Type  {
+pub struct Image_OriginVertical  {
     pub value: i32,
 }
 
 
-impl  ::unity2::ClassIdentity for Image_Type  {
+impl  ::unity2::ClassIdentity for Image_OriginVertical  {
     const NAMESPACE: &'static str = "UnityEngine.UI";
 
-    const NAME: &'static str = "Image.Type";
+    const NAME: &'static str = "Image.OriginVertical";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> =
@@ -224,7 +188,7 @@ impl  ::unity2::ClassIdentity for Image_Type  {
 }
 
 
-impl  ::unity2::IlType for Image_Type  {
+impl  ::unity2::IlType for Image_OriginVertical  {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
@@ -232,55 +196,18 @@ impl  ::unity2::IlType for Image_Type  {
 }
 
 
-impl  Image_Type  {
-    pub fn simple() -> Self {
+impl  Image_OriginVertical  {
+    pub fn bottom() -> Self {
         Self { value: 0 }
 
     }
 
 
-    pub fn sliced() -> Self {
+    pub fn top() -> Self {
         Self { value: 1 }
 
     }
 
-
-    pub fn tiled() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn filled() -> Self {
-        Self { value: 3 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/image/Image.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "Image")] # [parent (crate :: unity_engine :: ui :: maskablegraphic :: MaskableGraphic)] pub struct Image {
-# [static_field] # [rename (name = "s_ETC1DefaultUI")] pub s_etc1_default_ui : crate :: unity_engine :: material :: Material ,
-# [offset (208)] # [rename (name = "m_Sprite")] pub m_sprite : crate :: unity_engine :: sprite :: Sprite ,
-# [offset (216)] # [rename (name = "m_OverrideSprite")] pub m_override_sprite : crate :: unity_engine :: sprite :: Sprite ,
-# [offset (224)] # [rename (name = "m_Type")] pub m_type : crate :: unity_engine :: ui :: image :: Image_Type ,
-# [offset (228)] # [rename (name = "m_PreserveAspect")] pub m_preserve_aspect : bool ,
-# [offset (229)] # [rename (name = "m_FillCenter")] pub m_fill_center : bool ,
-# [offset (232)] # [rename (name = "m_FillMethod")] pub m_fill_method : crate :: unity_engine :: ui :: image :: Image_FillMethod ,
-# [offset (236)] # [rename (name = "m_FillAmount")] pub m_fill_amount : f32 ,
-# [offset (240)] # [rename (name = "m_FillClockwise")] pub m_fill_clockwise : bool ,
-# [offset (244)] # [rename (name = "m_FillOrigin")] pub m_fill_origin : i32 ,
-# [offset (248)] # [rename (name = "m_AlphaHitTestMinimumThreshold")] pub m_alpha_hit_test_minimum_threshold : f32 ,
-# [offset (252)] # [rename (name = "m_Tracked")] pub m_tracked : bool ,
-# [offset (253)] # [rename (name = "m_UseSpriteMesh")] pub m_use_sprite_mesh : bool ,
-# [offset (256)] # [rename (name = "m_PixelsPerUnitMultiplier")] pub m_pixels_per_unit_multiplier : f32 ,
-# [offset (260)] # [rename (name = "m_CachedReferencePixelsPerUnit")] pub m_cached_reference_pixels_per_unit : f32 ,
-# [static_field] # [rename (name = "s_VertScratch")] pub s_vert_scratch : :: unity2 :: Array < crate :: unity_engine :: vector2 :: Vector2 > ,
-# [static_field] # [rename (name = "s_UVScratch")] pub s_uv_scratch : :: unity2 :: Array < crate :: unity_engine :: vector2 :: Vector2 > ,
-# [static_field] # [rename (name = "s_Xy")] pub s_xy : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > ,
-# [static_field] # [rename (name = "s_Uv")] pub s_uv : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > ,
-# [static_field] # [rename (name = "m_TrackedTexturelessImages")] pub m_tracked_textureless_images : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: ui :: image :: Image > ,
-# [static_field] # [rename (name = "s_Initialized")] pub s_initialized : bool ,
 }
 
 
@@ -351,55 +278,6 @@ impl  Image_FillMethod  {
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/image/Image_OriginVertical.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Image_OriginVertical  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for Image_OriginVertical  {
-    const NAMESPACE: &'static str = "UnityEngine.UI";
-
-    const NAME: &'static str = "Image.OriginVertical";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for Image_OriginVertical  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  Image_OriginVertical  {
-    pub fn bottom() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn top() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/image/Image_Origin180.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -460,6 +338,128 @@ impl  Image_Origin180  {
 
 }
 
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/image/Image_Origin90.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct Image_Origin90  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for Image_Origin90  {
+    const NAMESPACE: &'static str = "UnityEngine.UI";
+
+    const NAME: &'static str = "Image.Origin90";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for Image_Origin90  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  Image_Origin90  {
+    pub fn bottom_left() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn top_left() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn top_right() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn bottom_right() -> Self {
+        Self { value: 3 }
+
+    }
+
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/image/Image_Type.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct Image_Type  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for Image_Type  {
+    const NAMESPACE: &'static str = "UnityEngine.UI";
+
+    const NAME: &'static str = "Image.Type";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for Image_Type  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  Image_Type  {
+    pub fn simple() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn sliced() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn tiled() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn filled() -> Self {
+        Self { value: 3 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-ui-image-types")]
@@ -489,15 +489,15 @@ impl Image {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::Image_Origin360;
-    pub use super::Image_Origin90;
-    pub use super::Image_OriginHorizontal;
-    pub use super::Image_Type;
     pub use super::Image;
     pub use super::IImage;
     pub use super::IImageMethods;
-    pub use super::Image_FillMethod;
+    pub use super::Image_OriginHorizontal;
     pub use super::Image_OriginVertical;
+    pub use super::Image_FillMethod;
     pub use super::Image_Origin180;
+    pub use super::Image_Origin90;
+    pub use super::Image_Type;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

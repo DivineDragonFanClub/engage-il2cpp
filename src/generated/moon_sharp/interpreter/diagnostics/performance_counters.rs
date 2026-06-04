@@ -6,9 +6,9 @@
  # [cfg (feature = "moon_sharp-interpreter-diagnostics-performance_counters-dummyperformancestopwatch")] pub use dummyperformancestopwatch :: { IDummyPerformanceStopwatchMethods }
  ;
  # [cfg (any (feature = "moon_sharp-interpreter-diagnostics-performance_counters-globalperformancestopwatch-types"))] pub mod globalperformancestopwatch ;
- # [cfg (feature = "moon_sharp-interpreter-diagnostics-performance_counters-globalperformancestopwatch-types")] pub use globalperformancestopwatch :: { GlobalPerformanceStopwatch , IGlobalPerformanceStopwatch , GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject , IGlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject }
+ # [cfg (feature = "moon_sharp-interpreter-diagnostics-performance_counters-globalperformancestopwatch-types")] pub use globalperformancestopwatch :: { GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject , IGlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject , GlobalPerformanceStopwatch , IGlobalPerformanceStopwatch }
  ;
- # [cfg (feature = "moon_sharp-interpreter-diagnostics-performance_counters-globalperformancestopwatch")] pub use globalperformancestopwatch :: { IGlobalPerformanceStopwatchMethods , IGlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObjectMethods }
+ # [cfg (feature = "moon_sharp-interpreter-diagnostics-performance_counters-globalperformancestopwatch")] pub use globalperformancestopwatch :: { IGlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObjectMethods , IGlobalPerformanceStopwatchMethods }
  ;
  # [cfg (any (feature = "moon_sharp-interpreter-diagnostics-performance_counters-iperformancestopwatch_interface-types"))] pub mod iperformancestopwatch_interface ;
  # [cfg (feature = "moon_sharp-interpreter-diagnostics-performance_counters-iperformancestopwatch_interface-types")] pub use iperformancestopwatch_interface :: { IPerformanceStopwatch_Interface , IIPerformanceStopwatch_Interface }

@@ -13,6 +13,15 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/priorityheap_1/PriorityHeap_1_LessOrEqual.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet" , name = "PriorityHeap`1.LessOrEqual")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] # [parent (crate :: system :: delegate :: Delegate)] # [parent (crate :: system :: object :: Object)] pub struct PriorityHeap_1_LessOrEqual < T0 : :: unity2 :: ClassIdentity > {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/priorityheap_1/PriorityHeap_1_HandleElem.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet" , name = "PriorityHeap`1.HandleElem")] # [parent (crate :: system :: object :: Object)] pub struct PriorityHeap_1_HandleElem < T0 : :: unity2 :: ClassIdentity > {
+# [rename (name = "_key")] pub key : T0 ,
+# [rename (name = "_node")] pub node : i32 ,
+}
+
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/priorityheap_1/PriorityHeap_1.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet" , name = "PriorityHeap`1")] # [parent (crate :: system :: object :: Object)] pub struct PriorityHeap_1 < T0 : :: unity2 :: ClassIdentity > {
 # [rename (name = "_leq")] pub leq : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: priorityheap_1 :: PriorityHeap_1_LessOrEqual < T0 > ,
 # [rename (name = "_nodes")] pub nodes : :: unity2 :: Array < i32 > ,
@@ -23,19 +32,32 @@ mod __types {
 # [rename (name = "_initialized")] pub initialized : bool ,
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/priorityheap_1/PriorityHeap_1_HandleElem.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet" , name = "PriorityHeap`1.HandleElem")] # [parent (crate :: system :: object :: Object)] pub struct PriorityHeap_1_HandleElem < T0 : :: unity2 :: ClassIdentity > {
-# [rename (name = "_key")] pub key : T0 ,
-# [rename (name = "_node")] pub node : i32 ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/priorityheap_1/PriorityHeap_1_LessOrEqual.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet" , name = "PriorityHeap`1.LessOrEqual")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] # [parent (crate :: system :: delegate :: Delegate)] # [parent (crate :: system :: object :: Object)] pub struct PriorityHeap_1_LessOrEqual < T0 : :: unity2 :: ClassIdentity > {}
-
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityheap_1-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityheap_1")]
+# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > PriorityHeap_1_LessOrEqual < T0 > {
+# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] # [method (name = ".ctor" , args = 2)] pub fn ctor (self , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> () ;
+
+# [doc = "`Invoke(T0, T0)` overload"] # [method (name = "Invoke" , args = 2)] pub fn invoke (self , lhs : T0 , rhs : T0) -> bool ;
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityheap_1")]
+impl < T0 : :: unity2 :: ClassIdentity > PriorityHeap_1_LessOrEqual < T0 > {
+# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PriorityHeap_1_LessOrEqual) , :: core :: stringify ! (new) ,)) ; < Self as IPriorityHeap_1_LessOrEqualMethods < T0 > > :: ctor (this , object , method) ; this }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityheap_1")]
+# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > PriorityHeap_1_HandleElem < T0 > {
+# [doc = "`.ctor()` overload"] # [method (name = ".ctor" , args = 0)] pub fn ctor (self ,) -> () ;
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityheap_1")]
+impl < T0 : :: unity2 :: ClassIdentity > PriorityHeap_1_HandleElem < T0 > {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PriorityHeap_1_HandleElem) , :: core :: stringify ! (new) ,)) ; < Self as IPriorityHeap_1_HandleElemMethods < T0 > > :: ctor (this ,) ; this }
+}
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityheap_1")]
 # [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > PriorityHeap_1 < T0 > {
@@ -64,39 +86,17 @@ impl < T0 : :: unity2 :: ClassIdentity > PriorityHeap_1 < T0 > {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityheap_1")]
-# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > PriorityHeap_1_HandleElem < T0 > {
-# [doc = "`.ctor()` overload"] # [method (name = ".ctor" , args = 0)] pub fn ctor (self ,) -> () ;
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityheap_1")]
-impl < T0 : :: unity2 :: ClassIdentity > PriorityHeap_1_HandleElem < T0 > {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PriorityHeap_1_HandleElem) , :: core :: stringify ! (new) ,)) ; < Self as IPriorityHeap_1_HandleElemMethods < T0 > > :: ctor (this ,) ; this }
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityheap_1")]
-# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > PriorityHeap_1_LessOrEqual < T0 > {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] # [method (name = ".ctor" , args = 2)] pub fn ctor (self , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> () ;
-
-# [doc = "`Invoke(T0, T0)` overload"] # [method (name = "Invoke" , args = 2)] pub fn invoke (self , lhs : T0 , rhs : T0) -> bool ;
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityheap_1")]
-impl < T0 : :: unity2 :: ClassIdentity > PriorityHeap_1_LessOrEqual < T0 > {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PriorityHeap_1_LessOrEqual) , :: core :: stringify ! (new) ,)) ; < Self as IPriorityHeap_1_LessOrEqualMethods < T0 > > :: ctor (this , object , method) ; this }
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityheap_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::PriorityHeap_1;
-    pub use super::IPriorityHeap_1;
-    pub use super::IPriorityHeap_1Methods;
-    pub use super::PriorityHeap_1_HandleElem;
-    pub use super::IPriorityHeap_1_HandleElem;
-    pub use super::IPriorityHeap_1_HandleElemMethods;
     pub use super::PriorityHeap_1_LessOrEqual;
     pub use super::IPriorityHeap_1_LessOrEqual;
     pub use super::IPriorityHeap_1_LessOrEqualMethods;
+    pub use super::PriorityHeap_1_HandleElem;
+    pub use super::IPriorityHeap_1_HandleElem;
+    pub use super::IPriorityHeap_1_HandleElemMethods;
+    pub use super::PriorityHeap_1;
+    pub use super::IPriorityHeap_1;
+    pub use super::IPriorityHeap_1Methods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

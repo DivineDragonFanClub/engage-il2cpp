@@ -26,6 +26,7 @@ mod __types {
 # [static_field] # [rename (name = "s_GCBind")] pub s_gc_bind : crate :: app :: bindholder :: BindHolder ,
 # [static_field] # [rename (name = "s_DestoryObjects")] pub s_destory_objects : crate :: system :: collections :: generic :: queue_1 :: Queue_1 < crate :: unity_engine :: object_2 :: Object_2 > ,
 # [static_field] # [rename (name = "s_LockDestroy")] pub s_lock_destroy : :: unity2 :: IlInstance ,
+# [static_field] # [rename (name = "s_MainThread")] pub s_main_thread : :: unity2 :: IlInstance ,
 # [static_field] # [rename (name = "LoadingPriority_Default")] pub loading_priority_default : crate :: unity_engine :: threadpriority :: ThreadPriority ,
 # [static_field] # [rename (name = "LoadingPriority_Loading")] pub loading_priority_loading : crate :: unity_engine :: threadpriority :: ThreadPriority ,
 # [static_field] # [rename (name = "AsyncUploadTimeSlice_Default")] pub async_upload_time_slice_default : i32 ,

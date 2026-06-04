@@ -21,6 +21,7 @@ mod __types {
 # [offset (88)] # [rename (name = "autoFlush")] pub auto_flush_field : bool ,
 # [offset (89)] # [rename (name = "haveWrittenPreamble")] pub have_written_preamble : bool ,
 # [offset (90)] # [rename (name = "closable")] pub closable : bool ,
+# [static_field] # [rename (name = "_UTF8NoBOM")] pub utf8_no_bom : :: unity2 :: IlInstance ,
 }
 
 }

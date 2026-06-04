@@ -28,20 +28,6 @@ mod __types {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timelineasset/TimelineAsset.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "TimelineAsset")] # [parent (crate :: unity_engine :: playables :: playableasset :: PlayableAsset)] pub struct TimelineAsset {
-# [static_field] # [rename (name = "k_LatestVersion")] pub k_latest_version : i32 ,
-# [offset (24)] # [rename (name = "m_Version")] pub m_version : i32 ,
-# [offset (32)] # [rename (name = "m_Tracks")] pub m_tracks : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: scriptableobject :: ScriptableObject > ,
-# [offset (40)] # [rename (name = "m_FixedDuration")] pub m_fixed_duration : f64 ,
-# [offset (48)] # [rename (name = "m_CacheOutputTracks")] pub m_cache_output_tracks : :: unity2 :: Array < crate :: unity_engine :: timeline :: trackasset :: TrackAsset > ,
-# [offset (56)] # [rename (name = "m_CacheRootTracks")] pub m_cache_root_tracks : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: timeline :: trackasset :: TrackAsset > ,
-# [offset (64)] # [rename (name = "m_CacheFlattenedTracks")] pub m_cache_flattened_tracks : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: timeline :: trackasset :: TrackAsset > ,
-# [offset (72)] # [rename (name = "m_EditorSettings")] pub m_editor_settings : crate :: unity_engine :: timeline :: timelineasset :: TimelineAsset_EditorSettings ,
-# [offset (80)] # [rename (name = "m_DurationMode")] pub m_duration_mode : crate :: unity_engine :: timeline :: timelineasset :: TimelineAsset_DurationMode ,
-# [offset (88)] # [rename (name = "m_MarkerTrack")] pub m_marker_track : crate :: unity_engine :: timeline :: markertrack :: MarkerTrack ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/timelineasset/TimelineAsset_DurationMode.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -88,6 +74,20 @@ impl  TimelineAsset_DurationMode  {
 
     }
 
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timelineasset/TimelineAsset.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "TimelineAsset")] # [parent (crate :: unity_engine :: playables :: playableasset :: PlayableAsset)] pub struct TimelineAsset {
+# [static_field] # [rename (name = "k_LatestVersion")] pub k_latest_version : i32 ,
+# [offset (24)] # [rename (name = "m_Version")] pub m_version : i32 ,
+# [offset (32)] # [rename (name = "m_Tracks")] pub m_tracks : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: scriptableobject :: ScriptableObject > ,
+# [offset (40)] # [rename (name = "m_FixedDuration")] pub m_fixed_duration : f64 ,
+# [offset (48)] # [rename (name = "m_CacheOutputTracks")] pub m_cache_output_tracks : :: unity2 :: Array < crate :: unity_engine :: timeline :: trackasset :: TrackAsset > ,
+# [offset (56)] # [rename (name = "m_CacheRootTracks")] pub m_cache_root_tracks : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: timeline :: trackasset :: TrackAsset > ,
+# [offset (64)] # [rename (name = "m_CacheFlattenedTracks")] pub m_cache_flattened_tracks : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: timeline :: trackasset :: TrackAsset > ,
+# [offset (72)] # [rename (name = "m_EditorSettings")] pub m_editor_settings : crate :: unity_engine :: timeline :: timelineasset :: TimelineAsset_EditorSettings ,
+# [offset (80)] # [rename (name = "m_DurationMode")] pub m_duration_mode : crate :: unity_engine :: timeline :: timelineasset :: TimelineAsset_DurationMode ,
+# [offset (88)] # [rename (name = "m_MarkerTrack")] pub m_marker_track : crate :: unity_engine :: timeline :: markertrack :: MarkerTrack ,
 }
 
 }
@@ -141,10 +141,10 @@ pub mod prelude {
     pub use super::TimelineAsset_EditorSettings;
     pub use super::ITimelineAsset_EditorSettings;
     pub use super::ITimelineAsset_EditorSettingsMethods;
+    pub use super::TimelineAsset_DurationMode;
     pub use super::TimelineAsset;
     pub use super::ITimelineAsset;
     pub use super::ITimelineAssetMethods;
-    pub use super::TimelineAsset_DurationMode;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

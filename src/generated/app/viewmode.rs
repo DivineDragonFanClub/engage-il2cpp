@@ -13,6 +13,15 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/viewmode/ViewMode.md"))] # [:: unity2 :: class (namespace = "App" , name = "ViewMode")] # [parent (crate :: system :: object :: Object)] pub struct ViewMode {
+# [static_field] # [rename (name = "s_Transition")] pub s_transition : f32 ,
+# [static_field] # [rename (name = "s_Mode")] pub s_mode : crate :: app :: viewmode :: ViewMode_Mode ,
+# [static_field] # [rename (name = "s_Stack")] pub s_stack : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < crate :: app :: viewmode :: ViewMode_Mode > ,
+# [static_field] # [rename (name = "s_BmapSkinQuality")] pub s_bmap_skin_quality : crate :: unity_engine :: skinquality :: SkinQuality ,
+# [static_field] # [rename (name = "m_ModeThreshold")] pub m_mode_threshold : crate :: app :: gameparam :: GameParam_Holder ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/viewmode/ViewMode_Mode.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -97,15 +106,6 @@ impl  ViewMode_Mode  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/viewmode/ViewMode.md"))] # [:: unity2 :: class (namespace = "App" , name = "ViewMode")] # [parent (crate :: system :: object :: Object)] pub struct ViewMode {
-# [static_field] # [rename (name = "s_Transition")] pub s_transition : f32 ,
-# [static_field] # [rename (name = "s_Mode")] pub s_mode : crate :: app :: viewmode :: ViewMode_Mode ,
-# [static_field] # [rename (name = "s_Stack")] pub s_stack : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < crate :: app :: viewmode :: ViewMode_Mode > ,
-# [static_field] # [rename (name = "s_BmapSkinQuality")] pub s_bmap_skin_quality : crate :: unity_engine :: skinquality :: SkinQuality ,
-# [static_field] # [rename (name = "m_ModeThreshold")] pub m_mode_threshold : crate :: app :: gameparam :: GameParam_Holder ,
-}
-
 }
 
 #[cfg(feature = "app-viewmode-types")]
@@ -134,10 +134,10 @@ impl ViewMode {
 #[cfg(feature = "app-viewmode")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ViewMode_Mode;
     pub use super::ViewMode;
     pub use super::IViewMode;
     pub use super::IViewModeMethods;
+    pub use super::ViewMode_Mode;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

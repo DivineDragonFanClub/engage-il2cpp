@@ -19,14 +19,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlestyle/BattleStyle.md"))] # [:: unity2 :: class (namespace = "App" , name = "BattleStyle")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: battlestyle :: BattleStyle >)] pub struct BattleStyle {
-# [static_field] # [rename (name = "Begin")] pub begin : crate :: app :: battlestyle :: BattleStyle_Types ,
-# [static_field] # [rename (name = "End")] pub end : crate :: app :: battlestyle :: BattleStyle_Types ,
-# [static_field] # [rename (name = "Count")] pub count : i32 ,
-# [static_field] # [rename (name = "Names")] pub names : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlestyle/BattleStyle_Types.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -117,6 +109,14 @@ impl  BattleStyle_Types  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlestyle/BattleStyle.md"))] # [:: unity2 :: class (namespace = "App" , name = "BattleStyle")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: battlestyle :: BattleStyle >)] pub struct BattleStyle {
+# [static_field] # [rename (name = "Begin")] pub begin : crate :: app :: battlestyle :: BattleStyle_Types ,
+# [static_field] # [rename (name = "End")] pub end : crate :: app :: battlestyle :: BattleStyle_Types ,
+# [static_field] # [rename (name = "Count")] pub count : i32 ,
+# [static_field] # [rename (name = "Names")] pub names : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+}
+
 }
 
 #[cfg(feature = "app-battlestyle-types")]
@@ -145,10 +145,10 @@ impl BattleStyle {
 #[cfg(feature = "app-battlestyle")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::BattleStyle_Types;
     pub use super::BattleStyle;
     pub use super::IBattleStyle;
     pub use super::IBattleStyleMethods;
-    pub use super::BattleStyle_Types;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdata_1::IStructData_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

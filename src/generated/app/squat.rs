@@ -6,12 +6,12 @@
  # [cfg (feature = "app-squat-musclesquatsequence")] pub use musclesquatsequence :: { IMuscleSquatSequenceMethods , IMuscleSquatSequence_RandomPackMethods }
  ;
  # [cfg (any (feature = "app-squat-note-types"))] pub mod note ;
- # [cfg (feature = "app-squat-note-types")] pub use note :: { Note_Type , Note , INote , Note_ResultRank }
+ # [cfg (feature = "app-squat-note-types")] pub use note :: { Note , INote , Note_ResultRank , Note_Type }
  ;
  # [cfg (feature = "app-squat-note")] pub use note :: { INoteMethods }
  ;
  # [cfg (any (feature = "app-squat-stick-types"))] pub mod stick ;
- # [cfg (feature = "app-squat-stick-types")] pub use stick :: { Stick_RotateDir , Stick_KeyDirection , Stick , IStick }
+ # [cfg (feature = "app-squat-stick-types")] pub use stick :: { Stick , IStick , Stick_RotateDir , Stick_KeyDirection }
  ;
  # [cfg (feature = "app-squat-stick")] pub use stick :: { IStickMethods }
  ;

@@ -13,21 +13,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcommonusersettings/AkCommonUserSettings.md"))] # [:: unity2 :: class (namespace = "" , name = "AkCommonUserSettings")] # [parent (crate :: system :: object :: Object)] pub struct AkCommonUserSettings {
-# [offset (16)] # [rename (name = "m_BasePath")] pub m_base_path : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_StartupLanguage")] pub m_startup_language : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "m_EngineLogging")] pub m_engine_logging : bool ,
-# [offset (36)] # [rename (name = "m_MaximumNumberOfPositioningPaths")] pub m_maximum_number_of_positioning_paths : u32 ,
-# [offset (40)] # [rename (name = "m_CommandQueueSize")] pub m_command_queue_size : u32 ,
-# [offset (44)] # [rename (name = "m_SamplesPerFrame")] pub m_samples_per_frame : u32 ,
-# [offset (48)] # [rename (name = "m_MainOutputSettings")] pub m_main_output_settings : crate :: root :: akcommonoutputsettings :: AkCommonOutputSettings ,
-# [offset (56)] # [rename (name = "m_StreamingLookAheadRatio")] pub m_streaming_look_ahead_ratio : f32 ,
-# [offset (60)] # [rename (name = "m_SampleRate")] pub m_sample_rate : u32 ,
-# [offset (64)] # [rename (name = "m_NumberOfRefillsInVoice")] pub m_number_of_refills_in_voice : u16 ,
-# [offset (72)] # [rename (name = "m_SpatialAudioSettings")] pub m_spatial_audio_settings : crate :: root :: akcommonusersettings :: AkCommonUserSettings_SpatialAudioSettings ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/akcommonusersettings/AkCommonUserSettings_SpatialAudioSettings_DiffractionFlags.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -80,6 +65,21 @@ impl  AkCommonUserSettings_SpatialAudioSettings_DiffractionFlags  {
 
     }
 
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcommonusersettings/AkCommonUserSettings.md"))] # [:: unity2 :: class (namespace = "" , name = "AkCommonUserSettings")] # [parent (crate :: system :: object :: Object)] pub struct AkCommonUserSettings {
+# [offset (16)] # [rename (name = "m_BasePath")] pub m_base_path : :: unity2 :: Il2CppString ,
+# [offset (24)] # [rename (name = "m_StartupLanguage")] pub m_startup_language : :: unity2 :: Il2CppString ,
+# [offset (32)] # [rename (name = "m_EngineLogging")] pub m_engine_logging : bool ,
+# [offset (36)] # [rename (name = "m_MaximumNumberOfPositioningPaths")] pub m_maximum_number_of_positioning_paths : u32 ,
+# [offset (40)] # [rename (name = "m_CommandQueueSize")] pub m_command_queue_size : u32 ,
+# [offset (44)] # [rename (name = "m_SamplesPerFrame")] pub m_samples_per_frame : u32 ,
+# [offset (48)] # [rename (name = "m_MainOutputSettings")] pub m_main_output_settings : crate :: root :: akcommonoutputsettings :: AkCommonOutputSettings ,
+# [offset (56)] # [rename (name = "m_StreamingLookAheadRatio")] pub m_streaming_look_ahead_ratio : f32 ,
+# [offset (60)] # [rename (name = "m_SampleRate")] pub m_sample_rate : u32 ,
+# [offset (64)] # [rename (name = "m_NumberOfRefillsInVoice")] pub m_number_of_refills_in_voice : u16 ,
+# [offset (72)] # [rename (name = "m_SpatialAudioSettings")] pub m_spatial_audio_settings : crate :: root :: akcommonusersettings :: AkCommonUserSettings_SpatialAudioSettings ,
 }
 
 
@@ -140,10 +140,10 @@ impl AkCommonUserSettings_SpatialAudioSettings {
 #[cfg(feature = "root-akcommonusersettings")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::AkCommonUserSettings_SpatialAudioSettings_DiffractionFlags;
     pub use super::AkCommonUserSettings;
     pub use super::IAkCommonUserSettings;
     pub use super::IAkCommonUserSettingsMethods;
-    pub use super::AkCommonUserSettings_SpatialAudioSettings_DiffractionFlags;
     pub use super::AkCommonUserSettings_SpatialAudioSettings;
     pub use super::IAkCommonUserSettings_SpatialAudioSettings;
     pub use super::IAkCommonUserSettings_SpatialAudioSettingsMethods;

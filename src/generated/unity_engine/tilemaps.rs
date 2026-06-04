@@ -6,7 +6,7 @@
  # [cfg (feature = "unity_engine-tilemaps-itilemap_interface")] pub use itilemap_interface :: { IITilemap_InterfaceMethods }
  ;
  # [cfg (any (feature = "unity_engine-tilemaps-tile-types"))] pub mod tile ;
- # [cfg (feature = "unity_engine-tilemaps-tile-types")] pub use tile :: { Tile_ColliderType , Tile , ITile }
+ # [cfg (feature = "unity_engine-tilemaps-tile-types")] pub use tile :: { Tile , ITile , Tile_ColliderType }
  ;
  # [cfg (feature = "unity_engine-tilemaps-tile")] pub use tile :: { ITileMethods }
  ;

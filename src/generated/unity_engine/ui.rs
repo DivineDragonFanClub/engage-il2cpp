@@ -6,7 +6,7 @@
  # [cfg (feature = "unity_engine-ui-animationtriggers")] pub use animationtriggers :: { IAnimationTriggersMethods }
  ;
  # [cfg (any (feature = "unity_engine-ui-aspectratiofitter-types"))] pub mod aspectratiofitter ;
- # [cfg (feature = "unity_engine-ui-aspectratiofitter-types")] pub use aspectratiofitter :: { AspectRatioFitter_AspectMode , AspectRatioFitter , IAspectRatioFitter }
+ # [cfg (feature = "unity_engine-ui-aspectratiofitter-types")] pub use aspectratiofitter :: { AspectRatioFitter , IAspectRatioFitter , AspectRatioFitter_AspectMode }
  ;
  # [cfg (feature = "unity_engine-ui-aspectratiofitter")] pub use aspectratiofitter :: { IAspectRatioFitterMethods }
  ;
@@ -21,12 +21,12 @@
  # [cfg (feature = "unity_engine-ui-basevertexeffect")] pub use basevertexeffect :: { IBaseVertexEffectMethods }
  ;
  # [cfg (any (feature = "unity_engine-ui-button-types"))] pub mod button ;
- # [cfg (feature = "unity_engine-ui-button-types")] pub use button :: { Button , IButton , Button_ButtonClickedEvent , IButton_ButtonClickedEvent }
+ # [cfg (feature = "unity_engine-ui-button-types")] pub use button :: { Button_ButtonClickedEvent , IButton_ButtonClickedEvent , Button , IButton }
  ;
- # [cfg (feature = "unity_engine-ui-button")] pub use button :: { IButtonMethods , IButton_ButtonClickedEventMethods }
+ # [cfg (feature = "unity_engine-ui-button")] pub use button :: { IButton_ButtonClickedEventMethods , IButtonMethods }
  ;
  # [cfg (any (feature = "unity_engine-ui-canvasscaler-types"))] pub mod canvasscaler ;
- # [cfg (feature = "unity_engine-ui-canvasscaler-types")] pub use canvasscaler :: { CanvasScaler_Unit , CanvasScaler_ScaleMode , CanvasScaler , ICanvasScaler , CanvasScaler_ScreenMatchMode }
+ # [cfg (feature = "unity_engine-ui-canvasscaler-types")] pub use canvasscaler :: { CanvasScaler_ScaleMode , CanvasScaler_Unit , CanvasScaler , ICanvasScaler , CanvasScaler_ScreenMatchMode }
  ;
  # [cfg (feature = "unity_engine-ui-canvasscaler")] pub use canvasscaler :: { ICanvasScalerMethods }
  ;
@@ -51,20 +51,20 @@
  # [cfg (feature = "unity_engine-ui-colorblock-types")] pub use colorblock :: { ColorBlock }
  ;
  # [cfg (any (feature = "unity_engine-ui-contentsizefitter-types"))] pub mod contentsizefitter ;
- # [cfg (feature = "unity_engine-ui-contentsizefitter-types")] pub use contentsizefitter :: { ContentSizeFitter_FitMode , ContentSizeFitter , IContentSizeFitter }
+ # [cfg (feature = "unity_engine-ui-contentsizefitter-types")] pub use contentsizefitter :: { ContentSizeFitter , IContentSizeFitter , ContentSizeFitter_FitMode }
  ;
  # [cfg (feature = "unity_engine-ui-contentsizefitter")] pub use contentsizefitter :: { IContentSizeFitterMethods }
  ;
  # [cfg (any (feature = "unity_engine-ui-coroutine_tween-colortween-types" , feature = "unity_engine-ui-coroutine_tween-floattween-types" , feature = "unity_engine-ui-coroutine_tween-itweenvalue-types" , feature = "unity_engine-ui-coroutine_tween-tweenrunner_1-types"))] pub mod coroutine_tween ;
  # [cfg (any (feature = "unity_engine-ui-defaultcontrols-types"))] pub mod defaultcontrols ;
- # [cfg (feature = "unity_engine-ui-defaultcontrols-types")] pub use defaultcontrols :: { DefaultControls_IFactoryControls , IDefaultControls_IFactoryControls , DefaultControls , IDefaultControls , DefaultControls_DefaultRuntimeFactory , IDefaultControls_DefaultRuntimeFactory , DefaultControls_Resources }
+ # [cfg (feature = "unity_engine-ui-defaultcontrols-types")] pub use defaultcontrols :: { DefaultControls , IDefaultControls , DefaultControls_IFactoryControls , IDefaultControls_IFactoryControls , DefaultControls_DefaultRuntimeFactory , IDefaultControls_DefaultRuntimeFactory , DefaultControls_Resources }
  ;
  # [cfg (feature = "unity_engine-ui-defaultcontrols")] pub use defaultcontrols :: { IDefaultControls_IFactoryControlsMethods , IDefaultControls_DefaultRuntimeFactoryMethods }
  ;
  # [cfg (any (feature = "unity_engine-ui-dropdown-types"))] pub mod dropdown ;
- # [cfg (feature = "unity_engine-ui-dropdown-types")] pub use dropdown :: { Dropdown_OptionDataList , IDropdown_OptionDataList , Dropdown_DropdownEvent , IDropdown_DropdownEvent , Dropdown_DropdownItem , IDropdown_DropdownItem , Dropdown , IDropdown , Dropdown_OptionData , IDropdown_OptionData }
+ # [cfg (feature = "unity_engine-ui-dropdown-types")] pub use dropdown :: { Dropdown_OptionData , IDropdown_OptionData , Dropdown , IDropdown , Dropdown_OptionDataList , IDropdown_OptionDataList , Dropdown_DropdownItem , IDropdown_DropdownItem , Dropdown_DropdownEvent , IDropdown_DropdownEvent }
  ;
- # [cfg (feature = "unity_engine-ui-dropdown")] pub use dropdown :: { IDropdown_OptionDataListMethods , IDropdown_DropdownEventMethods , IDropdown_DropdownItemMethods , IDropdownMethods , IDropdown_OptionDataMethods }
+ # [cfg (feature = "unity_engine-ui-dropdown")] pub use dropdown :: { IDropdown_OptionDataMethods , IDropdownMethods , IDropdown_OptionDataListMethods , IDropdown_DropdownItemMethods , IDropdown_DropdownEventMethods }
  ;
  # [cfg (any (feature = "unity_engine-ui-fontdata-types"))] pub mod fontdata ;
  # [cfg (feature = "unity_engine-ui-fontdata-types")] pub use fontdata :: { FontData , IFontData }
@@ -80,7 +80,7 @@
  # [cfg (feature = "unity_engine-ui-graphic")] pub use graphic :: { IGraphicMethods }
  ;
  # [cfg (any (feature = "unity_engine-ui-graphicraycaster-types"))] pub mod graphicraycaster ;
- # [cfg (feature = "unity_engine-ui-graphicraycaster-types")] pub use graphicraycaster :: { GraphicRaycaster_BlockingObjects , GraphicRaycaster , IGraphicRaycaster }
+ # [cfg (feature = "unity_engine-ui-graphicraycaster-types")] pub use graphicraycaster :: { GraphicRaycaster , IGraphicRaycaster , GraphicRaycaster_BlockingObjects }
  ;
  # [cfg (feature = "unity_engine-ui-graphicraycaster")] pub use graphicraycaster :: { IGraphicRaycasterMethods }
  ;
@@ -90,7 +90,7 @@
  # [cfg (feature = "unity_engine-ui-graphicregistry")] pub use graphicregistry :: { IGraphicRegistryMethods }
  ;
  # [cfg (any (feature = "unity_engine-ui-gridlayoutgroup-types"))] pub mod gridlayoutgroup ;
- # [cfg (feature = "unity_engine-ui-gridlayoutgroup-types")] pub use gridlayoutgroup :: { GridLayoutGroup , IGridLayoutGroup , GridLayoutGroup_Corner , GridLayoutGroup_Constraint , GridLayoutGroup_Axis }
+ # [cfg (feature = "unity_engine-ui-gridlayoutgroup-types")] pub use gridlayoutgroup :: { GridLayoutGroup_Axis , GridLayoutGroup , IGridLayoutGroup , GridLayoutGroup_Constraint , GridLayoutGroup_Corner }
  ;
  # [cfg (feature = "unity_engine-ui-gridlayoutgroup")] pub use gridlayoutgroup :: { IGridLayoutGroupMethods }
  ;
@@ -146,7 +146,7 @@
  # [cfg (feature = "unity_engine-ui-ilayoutselfcontroller-types")] pub use ilayoutselfcontroller :: { ILayoutSelfController , IILayoutSelfController }
  ;
  # [cfg (any (feature = "unity_engine-ui-image-types"))] pub mod image ;
- # [cfg (feature = "unity_engine-ui-image-types")] pub use image :: { Image_Origin360 , Image_Origin90 , Image_OriginHorizontal , Image_Type , Image , IImage , Image_FillMethod , Image_OriginVertical , Image_Origin180 }
+ # [cfg (feature = "unity_engine-ui-image-types")] pub use image :: { Image_Origin360 , Image , IImage , Image_OriginHorizontal , Image_OriginVertical , Image_FillMethod , Image_Origin180 , Image_Origin90 , Image_Type }
  ;
  # [cfg (feature = "unity_engine-ui-image")] pub use image :: { IImageMethods }
  ;
@@ -171,9 +171,9 @@
  # [cfg (feature = "unity_engine-ui-imeshmodifier")] pub use imeshmodifier :: { IIMeshModifierMethods }
  ;
  # [cfg (any (feature = "unity_engine-ui-inputfield-types"))] pub mod inputfield ;
- # [cfg (feature = "unity_engine-ui-inputfield-types")] pub use inputfield :: { InputField_SubmitEvent , IInputField_SubmitEvent , InputField_LineType , InputField_EditState , InputField_OnValidateInput , IInputField_OnValidateInput , InputField_ContentType , InputField_OnChangeEvent , IInputField_OnChangeEvent , InputField_InputType , InputField , IInputField , InputField_CharacterValidation }
+ # [cfg (feature = "unity_engine-ui-inputfield-types")] pub use inputfield :: { InputField_CharacterValidation , InputField_OnChangeEvent , IInputField_OnChangeEvent , InputField_LineType , InputField_ContentType , InputField_SubmitEvent , IInputField_SubmitEvent , InputField , IInputField , InputField_EditState , InputField_OnValidateInput , IInputField_OnValidateInput , InputField_InputType }
  ;
- # [cfg (feature = "unity_engine-ui-inputfield")] pub use inputfield :: { IInputField_SubmitEventMethods , IInputField_OnValidateInputMethods , IInputField_OnChangeEventMethods , IInputFieldMethods }
+ # [cfg (feature = "unity_engine-ui-inputfield")] pub use inputfield :: { IInputField_OnChangeEventMethods , IInputField_SubmitEventMethods , IInputFieldMethods , IInputField_OnValidateInputMethods }
  ;
  # [cfg (any (feature = "unity_engine-ui-ivertexmodifier-types"))] pub mod ivertexmodifier ;
  # [cfg (feature = "unity_engine-ui-ivertexmodifier-types")] pub use ivertexmodifier :: { IVertexModifier , IIVertexModifier }
@@ -256,22 +256,22 @@
  # [cfg (feature = "unity_engine-ui-rectmask2d")] pub use rectmask2d :: { IRectMask2DMethods }
  ;
  # [cfg (any (feature = "unity_engine-ui-reflectionmethodscache-types"))] pub mod reflectionmethodscache ;
- # [cfg (feature = "unity_engine-ui-reflectionmethodscache-types")] pub use reflectionmethodscache :: { ReflectionMethodsCache_RaycastAllCallback , IReflectionMethodsCache_RaycastAllCallback , ReflectionMethodsCache , IReflectionMethodsCache , ReflectionMethodsCache_Raycast2DCallback , IReflectionMethodsCache_Raycast2DCallback , ReflectionMethodsCache_GetRayIntersectionAllCallback , IReflectionMethodsCache_GetRayIntersectionAllCallback , ReflectionMethodsCache_Raycast3DCallback , IReflectionMethodsCache_Raycast3DCallback , ReflectionMethodsCache_GetRaycastNonAllocCallback , IReflectionMethodsCache_GetRaycastNonAllocCallback , ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback , IReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback }
+ # [cfg (feature = "unity_engine-ui-reflectionmethodscache-types")] pub use reflectionmethodscache :: { ReflectionMethodsCache_GetRaycastNonAllocCallback , IReflectionMethodsCache_GetRaycastNonAllocCallback , ReflectionMethodsCache , IReflectionMethodsCache , ReflectionMethodsCache_Raycast3DCallback , IReflectionMethodsCache_Raycast3DCallback , ReflectionMethodsCache_RaycastAllCallback , IReflectionMethodsCache_RaycastAllCallback , ReflectionMethodsCache_Raycast2DCallback , IReflectionMethodsCache_Raycast2DCallback , ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback , IReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback , ReflectionMethodsCache_GetRayIntersectionAllCallback , IReflectionMethodsCache_GetRayIntersectionAllCallback }
  ;
- # [cfg (feature = "unity_engine-ui-reflectionmethodscache")] pub use reflectionmethodscache :: { IReflectionMethodsCache_RaycastAllCallbackMethods , IReflectionMethodsCacheMethods , IReflectionMethodsCache_Raycast2DCallbackMethods , IReflectionMethodsCache_GetRayIntersectionAllCallbackMethods , IReflectionMethodsCache_Raycast3DCallbackMethods , IReflectionMethodsCache_GetRaycastNonAllocCallbackMethods , IReflectionMethodsCache_GetRayIntersectionAllNonAllocCallbackMethods }
+ # [cfg (feature = "unity_engine-ui-reflectionmethodscache")] pub use reflectionmethodscache :: { IReflectionMethodsCache_GetRaycastNonAllocCallbackMethods , IReflectionMethodsCacheMethods , IReflectionMethodsCache_Raycast3DCallbackMethods , IReflectionMethodsCache_RaycastAllCallbackMethods , IReflectionMethodsCache_Raycast2DCallbackMethods , IReflectionMethodsCache_GetRayIntersectionAllNonAllocCallbackMethods , IReflectionMethodsCache_GetRayIntersectionAllCallbackMethods }
  ;
  # [cfg (any (feature = "unity_engine-ui-scrollbar-types"))] pub mod scrollbar ;
- # [cfg (feature = "unity_engine-ui-scrollbar-types")] pub use scrollbar :: { Scrollbar_Direction , Scrollbar_ScrollEvent , IScrollbar_ScrollEvent , Scrollbar , IScrollbar , Scrollbar_Axis }
+ # [cfg (feature = "unity_engine-ui-scrollbar-types")] pub use scrollbar :: { Scrollbar_Axis , Scrollbar_Direction , Scrollbar , IScrollbar , Scrollbar_ScrollEvent , IScrollbar_ScrollEvent }
  ;
- # [cfg (feature = "unity_engine-ui-scrollbar")] pub use scrollbar :: { IScrollbar_ScrollEventMethods , IScrollbarMethods }
+ # [cfg (feature = "unity_engine-ui-scrollbar")] pub use scrollbar :: { IScrollbarMethods , IScrollbar_ScrollEventMethods }
  ;
  # [cfg (any (feature = "unity_engine-ui-scrollrect-types"))] pub mod scrollrect ;
- # [cfg (feature = "unity_engine-ui-scrollrect-types")] pub use scrollrect :: { ScrollRect , IScrollRect , ScrollRect_MovementType , ScrollRect_ScrollRectEvent , IScrollRect_ScrollRectEvent , ScrollRect_ScrollbarVisibility }
+ # [cfg (feature = "unity_engine-ui-scrollrect-types")] pub use scrollrect :: { ScrollRect_ScrollbarVisibility , ScrollRect_MovementType , ScrollRect_ScrollRectEvent , IScrollRect_ScrollRectEvent , ScrollRect , IScrollRect }
  ;
- # [cfg (feature = "unity_engine-ui-scrollrect")] pub use scrollrect :: { IScrollRectMethods , IScrollRect_ScrollRectEventMethods }
+ # [cfg (feature = "unity_engine-ui-scrollrect")] pub use scrollrect :: { IScrollRect_ScrollRectEventMethods , IScrollRectMethods }
  ;
  # [cfg (any (feature = "unity_engine-ui-selectable-types"))] pub mod selectable ;
- # [cfg (feature = "unity_engine-ui-selectable-types")] pub use selectable :: { Selectable , ISelectable , Selectable_Transition , Selectable_SelectionState }
+ # [cfg (feature = "unity_engine-ui-selectable-types")] pub use selectable :: { Selectable , ISelectable , Selectable_SelectionState , Selectable_Transition }
  ;
  # [cfg (feature = "unity_engine-ui-selectable")] pub use selectable :: { ISelectableMethods }
  ;
@@ -284,7 +284,7 @@
  # [cfg (feature = "unity_engine-ui-shadow")] pub use shadow :: { IShadowMethods }
  ;
  # [cfg (any (feature = "unity_engine-ui-slider-types"))] pub mod slider ;
- # [cfg (feature = "unity_engine-ui-slider-types")] pub use slider :: { Slider_SliderEvent , ISlider_SliderEvent , Slider_Direction , Slider_Axis , Slider , ISlider }
+ # [cfg (feature = "unity_engine-ui-slider-types")] pub use slider :: { Slider_Axis , Slider_Direction , Slider_SliderEvent , ISlider_SliderEvent , Slider , ISlider }
  ;
  # [cfg (feature = "unity_engine-ui-slider")] pub use slider :: { ISlider_SliderEventMethods , ISliderMethods }
  ;
@@ -292,7 +292,7 @@
  # [cfg (feature = "unity_engine-ui-spritestate-types")] pub use spritestate :: { SpriteState }
  ;
  # [cfg (any (feature = "unity_engine-ui-stencilmaterial-types"))] pub mod stencilmaterial ;
- # [cfg (feature = "unity_engine-ui-stencilmaterial-types")] pub use stencilmaterial :: { StencilMaterial_MatEntry , IStencilMaterial_MatEntry , StencilMaterial , IStencilMaterial }
+ # [cfg (feature = "unity_engine-ui-stencilmaterial-types")] pub use stencilmaterial :: { StencilMaterial , IStencilMaterial , StencilMaterial_MatEntry , IStencilMaterial_MatEntry }
  ;
  # [cfg (feature = "unity_engine-ui-stencilmaterial")] pub use stencilmaterial :: { IStencilMaterial_MatEntryMethods }
  ;
@@ -302,7 +302,7 @@
  # [cfg (feature = "unity_engine-ui-text")] pub use text :: { ITextMethods }
  ;
  # [cfg (any (feature = "unity_engine-ui-toggle-types"))] pub mod toggle ;
- # [cfg (feature = "unity_engine-ui-toggle-types")] pub use toggle :: { Toggle_ToggleTransition , Toggle , IToggle , Toggle_ToggleEvent , IToggle_ToggleEvent }
+ # [cfg (feature = "unity_engine-ui-toggle-types")] pub use toggle :: { Toggle , IToggle , Toggle_ToggleEvent , IToggle_ToggleEvent , Toggle_ToggleTransition }
  ;
  # [cfg (feature = "unity_engine-ui-toggle")] pub use toggle :: { IToggleMethods , IToggle_ToggleEventMethods }
  ;

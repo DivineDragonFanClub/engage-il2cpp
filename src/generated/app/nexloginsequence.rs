@@ -70,13 +70,6 @@ impl  NexLoginSequence_Result  {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexloginsequence/NexLoginSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "NexLoginSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct NexLoginSequence {
-# [offset (112)] # [rename (name = "m_IsShowError")] pub m_is_show_error : bool ,
-# [static_field] # [rename (name = "s_LastResult")] pub s_last_result : crate :: app :: nexloginsequence :: NexLoginSequence_Result ,
-# [static_field] # [rename (name = "s_IsGotIntegerSettings")] pub s_is_got_integer_settings : bool ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexloginsequence/NexLoginSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -167,6 +160,13 @@ impl  NexLoginSequence_Label  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexloginsequence/NexLoginSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "NexLoginSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct NexLoginSequence {
+# [offset (112)] # [rename (name = "m_IsShowError")] pub m_is_show_error : bool ,
+# [static_field] # [rename (name = "s_LastResult")] pub s_last_result : crate :: app :: nexloginsequence :: NexLoginSequence_Result ,
+# [static_field] # [rename (name = "s_IsGotIntegerSettings")] pub s_is_got_integer_settings : bool ,
+}
+
 }
 
 #[cfg(feature = "app-nexloginsequence-types")]
@@ -196,10 +196,10 @@ impl NexLoginSequence {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::NexLoginSequence_Result;
+    pub use super::NexLoginSequence_Label;
     pub use super::NexLoginSequence;
     pub use super::INexLoginSequence;
     pub use super::INexLoginSequenceMethods;
-    pub use super::NexLoginSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

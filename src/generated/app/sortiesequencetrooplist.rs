@@ -17,61 +17,6 @@ mod __types {
  ;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortiesequencetrooplist/SortieSequenceTroopList_Mode.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct SortieSequenceTroopList_Mode  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for SortieSequenceTroopList_Mode  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "SortieSequenceTroopList.Mode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for SortieSequenceTroopList_Mode  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  SortieSequenceTroopList_Mode  {
-    pub fn sortie() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn battle_map() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortiesequencetrooplist/SortieSequenceTroopList_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -136,6 +81,61 @@ impl  SortieSequenceTroopList_Label  {
 # [offset (144)] # [rename (name = "m_sortMenu")] pub m_sort_menu : crate :: app :: trooplistsortmenu :: TroopListSortMenu ,
 }
 
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortiesequencetrooplist/SortieSequenceTroopList_Mode.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct SortieSequenceTroopList_Mode  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for SortieSequenceTroopList_Mode  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "SortieSequenceTroopList.Mode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for SortieSequenceTroopList_Mode  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  SortieSequenceTroopList_Mode  {
+    pub fn sortie() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn battle_map() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn num() -> Self {
+        Self { value: 2 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "app-sortiesequencetrooplist-types")]
@@ -164,11 +164,11 @@ impl SortieSequenceTroopList {
 #[cfg(feature = "app-sortiesequencetrooplist")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SortieSequenceTroopList_Mode;
     pub use super::SortieSequenceTroopList_Label;
     pub use super::SortieSequenceTroopList;
     pub use super::ISortieSequenceTroopList;
     pub use super::ISortieSequenceTroopListMethods;
+    pub use super::SortieSequenceTroopList_Mode;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

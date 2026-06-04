@@ -17,12 +17,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/pointereventdata/PointerEventData.md"))] # [:: unity2 :: class (namespace = "UnityEngine.EventSystems" , name = "PointerEventData")] # [parent (crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData)] pub struct PointerEventData {
-# [offset (40)] # [rename (name = "m_PointerPress")] pub m_pointer_press : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (224)] # [rename (name = "hovered")] pub hovered : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/event_systems/pointereventdata/PointerEventData_InputButton.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -138,6 +132,12 @@ impl  PointerEventData_FramePressState  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/pointereventdata/PointerEventData.md"))] # [:: unity2 :: class (namespace = "UnityEngine.EventSystems" , name = "PointerEventData")] # [parent (crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData)] pub struct PointerEventData {
+# [offset (40)] # [rename (name = "m_PointerPress")] pub m_pointer_press : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (224)] # [rename (name = "hovered")] pub hovered : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-event_systems-pointereventdata-types")]
@@ -163,11 +163,11 @@ impl PointerEventData {
 #[cfg(feature = "unity_engine-event_systems-pointereventdata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::PointerEventData_InputButton;
+    pub use super::PointerEventData_FramePressState;
     pub use super::PointerEventData;
     pub use super::IPointerEventData;
     pub use super::IPointerEventDataMethods;
-    pub use super::PointerEventData_InputButton;
-    pub use super::PointerEventData_FramePressState;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

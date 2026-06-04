@@ -15,16 +15,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/async_operations/groupoperation/GroupOperation.md"))] # [:: unity2 :: class (namespace = "UnityEngine.ResourceManagement.AsyncOperations" , name = "GroupOperation")] # [parent (crate :: unity_engine :: resource_management :: async_operations :: asyncoperationbase_1 :: AsyncOperationBase_1 < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > >)] pub struct GroupOperation {
-# [offset (136)] # [rename (name = "m_InternalOnComplete")] pub m_internal_on_complete : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > ,
-# [offset (144)] # [rename (name = "m_LoadedCount")] pub m_loaded_count : i32 ,
-# [offset (148)] # [rename (name = "m_Settings")] pub m_settings : crate :: unity_engine :: resource_management :: async_operations :: groupoperation :: GroupOperation_GroupOperationSettings ,
-# [offset (152)] # [rename (name = "debugName")] pub debug_name : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "k_MaxDisplayedLocationLength")] pub k_max_displayed_location_length : i32 ,
-# [offset (168)] # [rename (name = "m_CachedDependencyLocations")] pub m_cached_dependency_locations : crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < :: unity2 :: Il2CppString > ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/async_operations/groupoperation/GroupOperation_GroupOperationSettings.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -79,6 +69,16 @@ impl  GroupOperation_GroupOperationSettings  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/async_operations/groupoperation/GroupOperation.md"))] # [:: unity2 :: class (namespace = "UnityEngine.ResourceManagement.AsyncOperations" , name = "GroupOperation")] # [parent (crate :: unity_engine :: resource_management :: async_operations :: asyncoperationbase_1 :: AsyncOperationBase_1 < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > >)] pub struct GroupOperation {
+# [offset (136)] # [rename (name = "m_InternalOnComplete")] pub m_internal_on_complete : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > ,
+# [offset (144)] # [rename (name = "m_LoadedCount")] pub m_loaded_count : i32 ,
+# [offset (148)] # [rename (name = "m_Settings")] pub m_settings : crate :: unity_engine :: resource_management :: async_operations :: groupoperation :: GroupOperation_GroupOperationSettings ,
+# [offset (152)] # [rename (name = "debugName")] pub debug_name : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "k_MaxDisplayedLocationLength")] pub k_max_displayed_location_length : i32 ,
+# [offset (168)] # [rename (name = "m_CachedDependencyLocations")] pub m_cached_dependency_locations : crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < :: unity2 :: Il2CppString > ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-resource_management-async_operations-groupoperation-types")]
@@ -104,10 +104,10 @@ impl GroupOperation {
 #[cfg(feature = "unity_engine-resource_management-async_operations-groupoperation")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::GroupOperation_GroupOperationSettings;
     pub use super::GroupOperation;
     pub use super::IGroupOperation;
     pub use super::IGroupOperationMethods;
-    pub use super::GroupOperation_GroupOperationSettings;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

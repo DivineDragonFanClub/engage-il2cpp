@@ -45,6 +45,29 @@ impl ::unity2::IlType for TablePair {
 
 }
 
+
+impl TablePair {
+    #[inline]
+    pub fn s_nil_node() -> crate :: moon_sharp :: interpreter :: tablepair :: TablePair {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_NilNode");
+
+        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
+    }
+
+    #[inline]
+    pub fn set_s_nil_node(value: crate :: moon_sharp :: interpreter :: tablepair :: TablePair) {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_NilNode");
+
+        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tablepair-types")]

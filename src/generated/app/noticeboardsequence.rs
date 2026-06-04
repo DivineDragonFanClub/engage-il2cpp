@@ -15,6 +15,12 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/noticeboardsequence/NoticeBoardSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "NoticeBoardSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct NoticeBoardSequence {
+# [offset (112)] # [rename (name = "m_TopMenuResult")] pub m_top_menu_result : crate :: app :: noticeboardtopmenu :: NoticeBoardTopMenu_Result2 ,
+# [offset (116)] # [rename (name = "m_InfoMenuResult")] pub m_info_menu_result : crate :: app :: solanelinfomenu :: SolanelInfoMenu_InfoResult ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/noticeboardsequence/NoticeBoardSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -87,12 +93,6 @@ impl  NoticeBoardSequence_Label  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/noticeboardsequence/NoticeBoardSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "NoticeBoardSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct NoticeBoardSequence {
-# [offset (112)] # [rename (name = "m_TopMenuResult")] pub m_top_menu_result : crate :: app :: noticeboardtopmenu :: NoticeBoardTopMenu_Result2 ,
-# [offset (116)] # [rename (name = "m_InfoMenuResult")] pub m_info_menu_result : crate :: app :: solanelinfomenu :: SolanelInfoMenu_InfoResult ,
-}
-
 }
 
 #[cfg(feature = "app-noticeboardsequence-types")]
@@ -121,10 +121,10 @@ impl NoticeBoardSequence {
 #[cfg(feature = "app-noticeboardsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::NoticeBoardSequence_Label;
     pub use super::NoticeBoardSequence;
     pub use super::INoticeBoardSequence;
     pub use super::INoticeBoardSequenceMethods;
+    pub use super::NoticeBoardSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

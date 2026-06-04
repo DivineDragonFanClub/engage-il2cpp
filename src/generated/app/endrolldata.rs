@@ -19,9 +19,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/endrolldata/EndRollData.md"))] # [:: unity2 :: class (namespace = "App" , name = "EndRollData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: endrolldata :: EndRollData >)] pub struct EndRollData {}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/endrolldata/EndRollData_Kind.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -136,6 +133,9 @@ impl  EndRollData_Kind  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/endrolldata/EndRollData.md"))] # [:: unity2 :: class (namespace = "App" , name = "EndRollData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: endrolldata :: EndRollData >)] pub struct EndRollData {}
+
 }
 
 #[cfg(feature = "app-endrolldata-types")]
@@ -164,10 +164,10 @@ impl EndRollData {
 #[cfg(feature = "app-endrolldata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::EndRollData_Kind;
     pub use super::EndRollData;
     pub use super::IEndRollData;
     pub use super::IEndRollDataMethods;
-    pub use super::EndRollData_Kind;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdata_1::IStructData_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

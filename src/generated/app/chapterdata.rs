@@ -19,6 +19,14 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/chapterdata/ChapterData.md"))] # [:: unity2 :: class (namespace = "App" , name = "ChapterData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: chapterdata :: ChapterData >)] pub struct ChapterData {
+# [offset (304)] # [rename (name = "m_PrefixlessCid")] pub m_prefixless_cid : :: unity2 :: Il2CppString ,
+# [offset (312)] # [rename (name = "m_ClearedFlagName")] pub m_cleared_flag_name : :: unity2 :: Il2CppString ,
+# [offset (320)] # [rename (name = "m_GmapSpotFlagName")] pub m_gmap_spot_flag_name : :: unity2 :: Il2CppString ,
+# [offset (328)] # [rename (name = "m_PlaceName")] pub m_place_name : :: unity2 :: Il2CppString ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/chapterdata/ChapterData_Flags.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -163,14 +171,6 @@ impl  ChapterData_Flags  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/chapterdata/ChapterData.md"))] # [:: unity2 :: class (namespace = "App" , name = "ChapterData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: chapterdata :: ChapterData >)] pub struct ChapterData {
-# [offset (304)] # [rename (name = "m_PrefixlessCid")] pub m_prefixless_cid : :: unity2 :: Il2CppString ,
-# [offset (312)] # [rename (name = "m_ClearedFlagName")] pub m_cleared_flag_name : :: unity2 :: Il2CppString ,
-# [offset (320)] # [rename (name = "m_GmapSpotFlagName")] pub m_gmap_spot_flag_name : :: unity2 :: Il2CppString ,
-# [offset (328)] # [rename (name = "m_PlaceName")] pub m_place_name : :: unity2 :: Il2CppString ,
-}
-
 }
 
 #[cfg(feature = "app-chapterdata-types")]
@@ -199,10 +199,10 @@ impl ChapterData {
 #[cfg(feature = "app-chapterdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ChapterData_Flags;
     pub use super::ChapterData;
     pub use super::IChapterData;
     pub use super::IChapterDataMethods;
+    pub use super::ChapterData_Flags;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdata_1::IStructData_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

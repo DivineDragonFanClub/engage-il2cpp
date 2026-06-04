@@ -10,6 +10,7 @@ mod __types {
 
 
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/customenvsetmanager/CustomEnvSetManager.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Custom" , name = "CustomEnvSetManager")] # [parent (crate :: system :: object :: Object)] pub struct CustomEnvSetManager {
+# [static_field] # [rename (name = "s_Instance")] pub s_instance : :: unity2 :: IlInstance ,
 # [offset (16)] # [rename (name = "m_EnvSets")] pub m_env_sets : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: universal :: custom :: customenvset :: CustomEnvSet > ,
 }
 

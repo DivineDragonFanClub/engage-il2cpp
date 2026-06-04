@@ -44,6 +44,29 @@ impl ::unity2::IlType for ScriptableRenderContext {
 
 }
 
+
+impl ScriptableRenderContext {
+    #[inline]
+    pub fn k_render_type_tag() -> crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "kRenderTypeTag");
+
+        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
+    }
+
+    #[inline]
+    pub fn set_k_render_type_tag(value: crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId) {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "kRenderTypeTag");
+
+        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-scriptablerendercontext-types")]

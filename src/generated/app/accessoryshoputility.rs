@@ -13,6 +13,9 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshoputility/AccessoryShopUtility.md"))] # [:: unity2 :: class (namespace = "App" , name = "AccessoryShopUtility")] # [parent (crate :: system :: object :: Object)] pub struct AccessoryShopUtility {}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/accessoryshoputility/AccessoryShopUtility_Female.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -67,9 +70,6 @@ impl  AccessoryShopUtility_Female  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshoputility/AccessoryShopUtility.md"))] # [:: unity2 :: class (namespace = "App" , name = "AccessoryShopUtility")] # [parent (crate :: system :: object :: Object)] pub struct AccessoryShopUtility {}
-
 }
 
 #[cfg(feature = "app-accessoryshoputility-types")]
@@ -98,10 +98,10 @@ impl AccessoryShopUtility {
 #[cfg(feature = "app-accessoryshoputility")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AccessoryShopUtility_Female;
     pub use super::AccessoryShopUtility;
     pub use super::IAccessoryShopUtility;
     pub use super::IAccessoryShopUtilityMethods;
+    pub use super::AccessoryShopUtility_Female;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

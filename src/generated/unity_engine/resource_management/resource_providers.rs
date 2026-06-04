@@ -36,9 +36,9 @@
  # [cfg (feature = "unity_engine-resource_management-resource_providers-atlasspriteprovider")] pub use atlasspriteprovider :: { IAtlasSpriteProviderMethods }
  ;
  # [cfg (any (feature = "unity_engine-resource_management-resource_providers-bundledassetprovider-types"))] pub mod bundledassetprovider ;
- # [cfg (feature = "unity_engine-resource_management-resource_providers-bundledassetprovider-types")] pub use bundledassetprovider :: { BundledAssetProvider , IBundledAssetProvider , BundledAssetProvider_InternalOp , IBundledAssetProvider_InternalOp }
+ # [cfg (feature = "unity_engine-resource_management-resource_providers-bundledassetprovider-types")] pub use bundledassetprovider :: { BundledAssetProvider_InternalOp , IBundledAssetProvider_InternalOp , BundledAssetProvider , IBundledAssetProvider }
  ;
- # [cfg (feature = "unity_engine-resource_management-resource_providers-bundledassetprovider")] pub use bundledassetprovider :: { IBundledAssetProviderMethods , IBundledAssetProvider_InternalOpMethods }
+ # [cfg (feature = "unity_engine-resource_management-resource_providers-bundledassetprovider")] pub use bundledassetprovider :: { IBundledAssetProvider_InternalOpMethods , IBundledAssetProviderMethods }
  ;
  # [cfg (any (feature = "unity_engine-resource_management-resource_providers-iassetbundleresource_interface-types"))] pub mod iassetbundleresource_interface ;
  # [cfg (feature = "unity_engine-resource_management-resource_providers-iassetbundleresource_interface-types")] pub use iassetbundleresource_interface :: { IAssetBundleResource_Interface , IIAssetBundleResource_Interface }
@@ -74,9 +74,9 @@
  # [cfg (feature = "unity_engine-resource_management-resource_providers-jsonassetprovider")] pub use jsonassetprovider :: { IJsonAssetProviderMethods }
  ;
  # [cfg (any (feature = "unity_engine-resource_management-resource_providers-legacyresourcesprovider-types"))] pub mod legacyresourcesprovider ;
- # [cfg (feature = "unity_engine-resource_management-resource_providers-legacyresourcesprovider-types")] pub use legacyresourcesprovider :: { LegacyResourcesProvider_InternalOp , ILegacyResourcesProvider_InternalOp , LegacyResourcesProvider , ILegacyResourcesProvider }
+ # [cfg (feature = "unity_engine-resource_management-resource_providers-legacyresourcesprovider-types")] pub use legacyresourcesprovider :: { LegacyResourcesProvider , ILegacyResourcesProvider , LegacyResourcesProvider_InternalOp , ILegacyResourcesProvider_InternalOp }
  ;
- # [cfg (feature = "unity_engine-resource_management-resource_providers-legacyresourcesprovider")] pub use legacyresourcesprovider :: { ILegacyResourcesProvider_InternalOpMethods , ILegacyResourcesProviderMethods }
+ # [cfg (feature = "unity_engine-resource_management-resource_providers-legacyresourcesprovider")] pub use legacyresourcesprovider :: { ILegacyResourcesProviderMethods , ILegacyResourcesProvider_InternalOpMethods }
  ;
  # [cfg (any (feature = "unity_engine-resource_management-resource_providers-logger_2-types"))] pub mod logger_2 ;
  # [cfg (feature = "unity_engine-resource_management-resource_providers-logger_2-types")] pub use logger_2 :: { Logger_2 , ILogger_2 }
@@ -103,12 +103,12 @@
  # [cfg (feature = "unity_engine-resource_management-resource_providers-sceneinstance-types")] pub use sceneinstance :: { SceneInstance }
  ;
  # [cfg (any (feature = "unity_engine-resource_management-resource_providers-sceneprovider-types"))] pub mod sceneprovider ;
- # [cfg (feature = "unity_engine-resource_management-resource_providers-sceneprovider-types")] pub use sceneprovider :: { SceneProvider_SceneOp , ISceneProvider_SceneOp , SceneProvider , ISceneProvider , SceneProvider_UnloadSceneOp , ISceneProvider_UnloadSceneOp }
+ # [cfg (feature = "unity_engine-resource_management-resource_providers-sceneprovider-types")] pub use sceneprovider :: { SceneProvider_UnloadSceneOp , ISceneProvider_UnloadSceneOp , SceneProvider_SceneOp , ISceneProvider_SceneOp , SceneProvider , ISceneProvider }
  ;
- # [cfg (feature = "unity_engine-resource_management-resource_providers-sceneprovider")] pub use sceneprovider :: { ISceneProvider_SceneOpMethods , ISceneProviderMethods , ISceneProvider_UnloadSceneOpMethods }
+ # [cfg (feature = "unity_engine-resource_management-resource_providers-sceneprovider")] pub use sceneprovider :: { ISceneProvider_UnloadSceneOpMethods , ISceneProvider_SceneOpMethods , ISceneProviderMethods }
  ;
  # [cfg (any (feature = "unity_engine-resource_management-resource_providers-textdataprovider-types"))] pub mod textdataprovider ;
- # [cfg (feature = "unity_engine-resource_management-resource_providers-textdataprovider-types")] pub use textdataprovider :: { TextDataProvider , ITextDataProvider , TextDataProvider_InternalOp , ITextDataProvider_InternalOp }
+ # [cfg (feature = "unity_engine-resource_management-resource_providers-textdataprovider-types")] pub use textdataprovider :: { TextDataProvider_InternalOp , ITextDataProvider_InternalOp , TextDataProvider , ITextDataProvider }
  ;
- # [cfg (feature = "unity_engine-resource_management-resource_providers-textdataprovider")] pub use textdataprovider :: { ITextDataProviderMethods , ITextDataProvider_InternalOpMethods }
+ # [cfg (feature = "unity_engine-resource_management-resource_providers-textdataprovider")] pub use textdataprovider :: { ITextDataProvider_InternalOpMethods , ITextDataProviderMethods }
  ;

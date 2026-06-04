@@ -80,52 +80,44 @@ impl  MapPanelTarget_DangerType  {
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mappaneltarget/MapPanelTarget_DirtyType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapPanelTarget_DirtyType  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for MapPanelTarget_DirtyType  {
-    const NAMESPACE: &'static str = "";
-
-    const NAME: &'static str = "MapPanelTarget.DirtyType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for MapPanelTarget_DirtyType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  MapPanelTarget_DirtyType  {
-    pub fn attack() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn full_bullet() -> Self {
-        Self { value: 2 }
-
-    }
-
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mappaneltarget/MapPanelTarget.md"))] # [:: unity2 :: class (namespace = "" , name = "MapPanelTarget")] # [parent (crate :: root :: mappanelbase_1 :: MapPanelBase_1 < crate :: root :: mappaneltarget :: MapPanelTarget >)] pub struct MapPanelTarget {
+# [offset (64)] # [rename (name = "m_MovingAlpha")] pub m_moving_alpha : crate :: app :: gamecurve :: GameCurve ,
+# [offset (72)] # [rename (name = "m_StoppedAlpha")] pub m_stopped_alpha : crate :: app :: gamecurve :: GameCurve ,
+# [static_field] # [rename (name = "m_TargetTexW")] pub m_target_tex_w : f32 ,
+# [offset (80)] # [rename (name = "m_DangerUnits")] pub m_danger_units : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , crate :: root :: mappaneltarget :: MapPanelTarget_DangerType > ,
+# [offset (88)] # [rename (name = "m_GeneralMaterial")] pub m_general_material : crate :: unity_engine :: material :: Material ,
+# [offset (96)] # [rename (name = "m_EngageMaterial")] pub m_engage_material : crate :: unity_engine :: material :: Material ,
+# [offset (104)] # [rename (name = "m_GunnerMaterial")] pub m_gunner_material : crate :: unity_engine :: material :: Material ,
+# [offset (112)] # [rename (name = "m_FullBulletMaterial")] pub m_full_bullet_material : crate :: unity_engine :: material :: Material ,
+# [offset (120)] # [rename (name = "m_DefaultColor")] pub m_default_color : crate :: unity_engine :: color :: Color ,
+# [offset (136)] # [rename (name = "m_DisadvantageColor")] pub m_disadvantage_color : crate :: unity_engine :: color :: Color ,
+# [offset (152)] # [rename (name = "m_CriticaledColor")] pub m_criticaled_color : crate :: unity_engine :: color :: Color ,
+# [offset (168)] # [rename (name = "m_EngageColor")] pub m_engage_color : crate :: unity_engine :: color :: Color ,
+# [offset (184)] # [rename (name = "m_GunnerColor")] pub m_gunner_color : crate :: unity_engine :: color :: Color ,
+# [offset (200)] # [rename (name = "m_FriendlyImpactColor")] pub m_friendly_impact_color : crate :: unity_engine :: color :: Color ,
+# [offset (216)] # [rename (name = "m_HostileImpactColor")] pub m_hostile_impact_color : crate :: unity_engine :: color :: Color ,
+# [offset (232)] # [rename (name = "m_ScrollForGeneral")] pub m_scroll_for_general : crate :: unity_engine :: animationcurve :: AnimationCurve ,
+# [offset (240)] # [rename (name = "m_ScrollForGunner")] pub m_scroll_for_gunner : crate :: unity_engine :: animationcurve :: AnimationCurve ,
+# [offset (248)] # [rename (name = "m_AlphaCurve")] pub m_alpha_curve : crate :: unity_engine :: animationcurve :: AnimationCurve ,
+# [offset (256)] # [rename (name = "m_PositionZOffsetForGeneral")] pub m_position_z_offset_for_general : f32 ,
+# [offset (260)] # [rename (name = "m_PositionZOffsetForHorse")] pub m_position_z_offset_for_horse : f32 ,
+# [offset (264)] # [rename (name = "m_PositionZOffsetForFly")] pub m_position_z_offset_for_fly : f32 ,
+# [offset (268)] # [rename (name = "m_PositionZOffsetForBmapSize2")] pub m_position_z_offset_for_bmap_size2 : f32 ,
+# [offset (272)] # [rename (name = "m_PositionZOffsetForBmapSize3")] pub m_position_z_offset_for_bmap_size3 : f32 ,
+# [offset (276)] # [rename (name = "m_PositionZOffsetForBmapSize5")] pub m_position_z_offset_for_bmap_size5 : f32 ,
+# [offset (280)] # [rename (name = "m_ArchHeightOffset")] pub m_arch_height_offset : f32 ,
+# [offset (288)] # [rename (name = "m_GeneralAttackerList")] pub m_general_attacker_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > ,
+# [offset (296)] # [rename (name = "m_EngageAttackerList")] pub m_engage_attacker_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > ,
+# [offset (304)] # [rename (name = "m_GunnerList")] pub m_gunner_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > ,
+# [offset (312)] # [rename (name = "m_FullBulletList")] pub m_full_bullet_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > ,
+# [offset (320)] # [rename (name = "m_Target")] pub m_target : crate :: app :: unit :: Unit ,
+# [offset (328)] # [rename (name = "m_DestX")] pub m_dest_x : i32 ,
+# [offset (332)] # [rename (name = "m_DestZ")] pub m_dest_z : i32 ,
+# [offset (336)] # [rename (name = "m_PropertyID")] pub m_property_id : i32 ,
+# [offset (340)] # [rename (name = "m_Time")] pub m_time : f32 ,
+# [offset (344)] # [rename (name = "m_Current")] pub m_current : crate :: app :: gamecurve :: GameCurve ,
+# [offset (352)] # [rename (name = "m_Arrow")] pub m_arrow : crate :: root :: maparrow :: MapArrow ,
+# [offset (360)] # [rename (name = "m_DirtyFlag")] pub m_dirty_flag : crate :: root :: mappaneltarget :: MapPanelTarget_DirtyType ,
 }
 
 
@@ -196,44 +188,52 @@ impl  MapPanelTarget_MeshIndex  {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mappaneltarget/MapPanelTarget.md"))] # [:: unity2 :: class (namespace = "" , name = "MapPanelTarget")] # [parent (crate :: root :: mappanelbase_1 :: MapPanelBase_1 < crate :: root :: mappaneltarget :: MapPanelTarget >)] pub struct MapPanelTarget {
-# [offset (64)] # [rename (name = "m_MovingAlpha")] pub m_moving_alpha : crate :: app :: gamecurve :: GameCurve ,
-# [offset (72)] # [rename (name = "m_StoppedAlpha")] pub m_stopped_alpha : crate :: app :: gamecurve :: GameCurve ,
-# [static_field] # [rename (name = "m_TargetTexW")] pub m_target_tex_w : f32 ,
-# [offset (80)] # [rename (name = "m_DangerUnits")] pub m_danger_units : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , crate :: root :: mappaneltarget :: MapPanelTarget_DangerType > ,
-# [offset (88)] # [rename (name = "m_GeneralMaterial")] pub m_general_material : crate :: unity_engine :: material :: Material ,
-# [offset (96)] # [rename (name = "m_EngageMaterial")] pub m_engage_material : crate :: unity_engine :: material :: Material ,
-# [offset (104)] # [rename (name = "m_GunnerMaterial")] pub m_gunner_material : crate :: unity_engine :: material :: Material ,
-# [offset (112)] # [rename (name = "m_FullBulletMaterial")] pub m_full_bullet_material : crate :: unity_engine :: material :: Material ,
-# [offset (120)] # [rename (name = "m_DefaultColor")] pub m_default_color : crate :: unity_engine :: color :: Color ,
-# [offset (136)] # [rename (name = "m_DisadvantageColor")] pub m_disadvantage_color : crate :: unity_engine :: color :: Color ,
-# [offset (152)] # [rename (name = "m_CriticaledColor")] pub m_criticaled_color : crate :: unity_engine :: color :: Color ,
-# [offset (168)] # [rename (name = "m_EngageColor")] pub m_engage_color : crate :: unity_engine :: color :: Color ,
-# [offset (184)] # [rename (name = "m_GunnerColor")] pub m_gunner_color : crate :: unity_engine :: color :: Color ,
-# [offset (200)] # [rename (name = "m_FriendlyImpactColor")] pub m_friendly_impact_color : crate :: unity_engine :: color :: Color ,
-# [offset (216)] # [rename (name = "m_HostileImpactColor")] pub m_hostile_impact_color : crate :: unity_engine :: color :: Color ,
-# [offset (232)] # [rename (name = "m_ScrollForGeneral")] pub m_scroll_for_general : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-# [offset (240)] # [rename (name = "m_ScrollForGunner")] pub m_scroll_for_gunner : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-# [offset (248)] # [rename (name = "m_AlphaCurve")] pub m_alpha_curve : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-# [offset (256)] # [rename (name = "m_PositionZOffsetForGeneral")] pub m_position_z_offset_for_general : f32 ,
-# [offset (260)] # [rename (name = "m_PositionZOffsetForHorse")] pub m_position_z_offset_for_horse : f32 ,
-# [offset (264)] # [rename (name = "m_PositionZOffsetForFly")] pub m_position_z_offset_for_fly : f32 ,
-# [offset (268)] # [rename (name = "m_PositionZOffsetForBmapSize2")] pub m_position_z_offset_for_bmap_size2 : f32 ,
-# [offset (272)] # [rename (name = "m_PositionZOffsetForBmapSize3")] pub m_position_z_offset_for_bmap_size3 : f32 ,
-# [offset (276)] # [rename (name = "m_PositionZOffsetForBmapSize5")] pub m_position_z_offset_for_bmap_size5 : f32 ,
-# [offset (280)] # [rename (name = "m_ArchHeightOffset")] pub m_arch_height_offset : f32 ,
-# [offset (288)] # [rename (name = "m_GeneralAttackerList")] pub m_general_attacker_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > ,
-# [offset (296)] # [rename (name = "m_EngageAttackerList")] pub m_engage_attacker_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > ,
-# [offset (304)] # [rename (name = "m_GunnerList")] pub m_gunner_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > ,
-# [offset (312)] # [rename (name = "m_FullBulletList")] pub m_full_bullet_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > ,
-# [offset (320)] # [rename (name = "m_Target")] pub m_target : crate :: app :: unit :: Unit ,
-# [offset (328)] # [rename (name = "m_DestX")] pub m_dest_x : i32 ,
-# [offset (332)] # [rename (name = "m_DestZ")] pub m_dest_z : i32 ,
-# [offset (336)] # [rename (name = "m_PropertyID")] pub m_property_id : i32 ,
-# [offset (340)] # [rename (name = "m_Time")] pub m_time : f32 ,
-# [offset (344)] # [rename (name = "m_Current")] pub m_current : crate :: app :: gamecurve :: GameCurve ,
-# [offset (352)] # [rename (name = "m_Arrow")] pub m_arrow : crate :: root :: maparrow :: MapArrow ,
-# [offset (360)] # [rename (name = "m_DirtyFlag")] pub m_dirty_flag : crate :: root :: mappaneltarget :: MapPanelTarget_DirtyType ,
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mappaneltarget/MapPanelTarget_DirtyType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct MapPanelTarget_DirtyType  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for MapPanelTarget_DirtyType  {
+    const NAMESPACE: &'static str = "";
+
+    const NAME: &'static str = "MapPanelTarget.DirtyType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for MapPanelTarget_DirtyType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  MapPanelTarget_DirtyType  {
+    pub fn attack() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn full_bullet() -> Self {
+        Self { value: 2 }
+
+    }
+
 }
 
 }
@@ -262,11 +262,11 @@ impl MapPanelTarget {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::MapPanelTarget_DangerType;
-    pub use super::MapPanelTarget_DirtyType;
-    pub use super::MapPanelTarget_MeshIndex;
     pub use super::MapPanelTarget;
     pub use super::IMapPanelTarget;
     pub use super::IMapPanelTargetMethods;
+    pub use super::MapPanelTarget_MeshIndex;
+    pub use super::MapPanelTarget_DirtyType;
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
     pub use crate::root::mappanelbase_1::IMapPanelBase_1;
     pub use crate::system::object::IObject;

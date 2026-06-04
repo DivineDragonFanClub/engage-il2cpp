@@ -47,6 +47,29 @@ impl ::unity2::IlType for GlyphRect {
 
 }
 
+
+impl GlyphRect {
+    #[inline]
+    pub fn s_zero_glyph_rect() -> crate :: unity_engine :: text_core :: glyphrect :: GlyphRect {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_ZeroGlyphRect");
+
+        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
+    }
+
+    #[inline]
+    pub fn set_s_zero_glyph_rect(value: crate :: unity_engine :: text_core :: glyphrect :: GlyphRect) {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_ZeroGlyphRect");
+
+        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-text_core-glyphrect-types")]

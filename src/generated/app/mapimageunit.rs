@@ -17,6 +17,42 @@ mod __types {
  ;
 
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapimageunit/MapImageUnit_PositionScope.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MapImageUnit_PositionScope {
+    pub m_unit: crate :: app :: unit :: Unit,
+    pub m_x: i32,
+    pub m_z: i32,
+}
+
+
+impl ::unity2::ClassIdentity for MapImageUnit_PositionScope {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapImageUnit.PositionScope";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl ::unity2::IlType for MapImageUnit_PositionScope {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapimageunit/MapImageUnit_UnitScope.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -55,46 +91,19 @@ impl ::unity2::IlType for MapImageUnit_UnitScope {
 # [offset (24)] # [rename (name = "m_Cells")] pub m_cells : :: unity2 :: Array < crate :: app :: mappos :: MapPos > ,
 }
 
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapimageunit/MapImageUnit_PositionScope.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapImageUnit_PositionScope {
-    pub m_unit: crate :: app :: unit :: Unit,
-    pub m_x: i32,
-    pub m_z: i32,
-}
-
-
-impl ::unity2::ClassIdentity for MapImageUnit_PositionScope {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapImageUnit.PositionScope";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for MapImageUnit_PositionScope {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
 }
 
 #[cfg(feature = "app-mapimageunit-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-mapimageunit")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapImageUnit_PositionScope_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapImageUnit_PositionScope as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapImageUnit_PositionScope as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : * mut MapImageUnit_PositionScope , unit : crate :: app :: unit :: Unit , x : i32 , z : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut MapImageUnit_PositionScope , crate :: app :: unit :: Unit , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , unit , x , z , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapImageUnit_PositionScope as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapImageUnit_PositionScope as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : * mut MapImageUnit_PositionScope , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut MapImageUnit_PositionScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-mapimageunit")]
+impl MapImageUnit_PositionScope { # [doc = "`.ctor(crate::app::unit::Unit, i32, i32)` overload"] pub fn ctor (mut self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __MapImageUnit_PositionScope_unity2_raw :: ctor (& mut self as * mut MapImageUnit_PositionScope , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } # [doc = "`Dispose()` overload"] pub fn dispose (mut self ,) -> () { unsafe { __MapImageUnit_PositionScope_unity2_raw :: dispose (& mut self as * mut MapImageUnit_PositionScope , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-mapimageunit")]
+impl MapImageUnit_PositionScope { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapImageUnit_PositionScope_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapImageUnit_PositionScope_unity2_raw :: __lookup_dispose :: get_method_info () } }
 
 #[cfg(feature = "app-mapimageunit")]
 # [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapImageUnit_UnitScope_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapImageUnit_UnitScope as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapImageUnit_UnitScope as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : * mut MapImageUnit_UnitScope , unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut MapImageUnit_UnitScope , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapImageUnit_UnitScope as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapImageUnit_UnitScope as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : * mut MapImageUnit_UnitScope , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut MapImageUnit_UnitScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
@@ -123,22 +132,13 @@ impl MapImageUnit {
 }
 
 #[cfg(feature = "app-mapimageunit")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapImageUnit_PositionScope_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapImageUnit_PositionScope as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapImageUnit_PositionScope as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : * mut MapImageUnit_PositionScope , unit : crate :: app :: unit :: Unit , x : i32 , z : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut MapImageUnit_PositionScope , crate :: app :: unit :: Unit , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , unit , x , z , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapImageUnit_PositionScope as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapImageUnit_PositionScope as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : * mut MapImageUnit_PositionScope , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut MapImageUnit_PositionScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "app-mapimageunit")]
-impl MapImageUnit_PositionScope { # [doc = "`.ctor(crate::app::unit::Unit, i32, i32)` overload"] pub fn ctor (mut self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __MapImageUnit_PositionScope_unity2_raw :: ctor (& mut self as * mut MapImageUnit_PositionScope , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } # [doc = "`Dispose()` overload"] pub fn dispose (mut self ,) -> () { unsafe { __MapImageUnit_PositionScope_unity2_raw :: dispose (& mut self as * mut MapImageUnit_PositionScope , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-mapimageunit")]
-impl MapImageUnit_PositionScope { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapImageUnit_PositionScope_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapImageUnit_PositionScope_unity2_raw :: __lookup_dispose :: get_method_info () } }
-
-#[cfg(feature = "app-mapimageunit")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MapImageUnit_PositionScope;
     pub use super::MapImageUnit_UnitScope;
     pub use super::MapImageUnit;
     pub use super::IMapImageUnit;
     pub use super::IMapImageUnitMethods;
-    pub use super::MapImageUnit_PositionScope;
     pub use crate::app::mapimagecore_1::IMapImageCore_1;
     pub use crate::app::mapimagecorebyte::IMapImageCoreByte;
     pub use crate::app::mapimageindex::IMapImageIndex;

@@ -80,11 +80,6 @@ impl  HubUtil_TimezoneType  {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubutil/HubUtil.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubUtil")] # [parent (crate :: system :: object :: Object)] pub struct HubUtil {
-# [static_field] # [rename (name = "s_HubParams")] pub s_hub_params : crate :: app :: hubparams :: HubParams ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubutil/HubUtil_ConditionType.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -218,6 +213,11 @@ impl  HubUtil_ConditionType  {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubutil/HubUtil.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubUtil")] # [parent (crate :: system :: object :: Object)] pub struct HubUtil {
+# [static_field] # [rename (name = "s_HubParams")] pub s_hub_params : crate :: app :: hubparams :: HubParams ,
+}
+
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubutil/HubUtil_BSpline.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubUtil.BSpline")] # [parent (crate :: system :: object :: Object)] pub struct HubUtil_BSpline {}
 
 }
@@ -269,10 +269,10 @@ impl HubUtil_BSpline {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::HubUtil_TimezoneType;
+    pub use super::HubUtil_ConditionType;
     pub use super::HubUtil;
     pub use super::IHubUtil;
     pub use super::IHubUtilMethods;
-    pub use super::HubUtil_ConditionType;
     pub use super::HubUtil_BSpline;
     pub use super::IHubUtil_BSpline;
     pub use super::IHubUtil_BSplineMethods;

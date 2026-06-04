@@ -46,6 +46,29 @@ impl ::unity2::IlType for AsyncOperationHandle {
 
 }
 
+
+impl AsyncOperationHandle {
+    #[inline]
+    pub fn m_is_waiting_for_completion() -> bool {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "m_IsWaitingForCompletion");
+
+        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
+    }
+
+    #[inline]
+    pub fn set_m_is_waiting_for_completion(value: bool) {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "m_IsWaitingForCompletion");
+
+        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-resource_management-async_operations-asyncoperationhandle-types")]

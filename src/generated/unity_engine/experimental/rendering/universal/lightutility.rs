@@ -43,6 +43,29 @@ impl ::unity2::IlType for LightUtility_ParametricLightMeshVertex {
 }
 
 
+impl LightUtility_ParametricLightMeshVertex {
+    #[inline]
+    pub fn vertex_layout() -> :: unity2 :: Array < crate :: unity_engine :: rendering :: vertexattributedescriptor :: VertexAttributeDescriptor > {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "VertexLayout");
+
+        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
+    }
+
+    #[inline]
+    pub fn set_vertex_layout(value: :: unity2 :: Array < crate :: unity_engine :: rendering :: vertexattributedescriptor :: VertexAttributeDescriptor >) {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "VertexLayout");
+
+        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
+
+    }
+
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/lightutility/LightUtility_SpriteLightMeshVertex.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -74,6 +97,29 @@ impl ::unity2::ClassIdentity for LightUtility_SpriteLightMeshVertex {
 impl ::unity2::IlType for LightUtility_SpriteLightMeshVertex {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl LightUtility_SpriteLightMeshVertex {
+    #[inline]
+    pub fn vertex_layout() -> :: unity2 :: Array < crate :: unity_engine :: rendering :: vertexattributedescriptor :: VertexAttributeDescriptor > {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "VertexLayout");
+
+        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
+    }
+
+    #[inline]
+    pub fn set_vertex_layout(value: :: unity2 :: Array < crate :: unity_engine :: rendering :: vertexattributedescriptor :: VertexAttributeDescriptor >) {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "VertexLayout");
+
+        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
+
     }
 
 }

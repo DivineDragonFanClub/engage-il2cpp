@@ -151,18 +151,18 @@ impl  MapInfoCircle_CircleColor  {
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfocircle/MapInfoCircle_Animes.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfocircle/MapInfoCircle_CircleState.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapInfoCircle_Animes  {
+pub struct MapInfoCircle_CircleState  {
     pub value: i32,
 }
 
 
-impl  ::unity2::ClassIdentity for MapInfoCircle_Animes  {
+impl  ::unity2::ClassIdentity for MapInfoCircle_CircleState  {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "MapInfoCircle.Animes";
+    const NAME: &'static str = "MapInfoCircle.CircleState";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> =
@@ -177,7 +177,7 @@ impl  ::unity2::ClassIdentity for MapInfoCircle_Animes  {
 }
 
 
-impl  ::unity2::IlType for MapInfoCircle_Animes  {
+impl  ::unity2::IlType for MapInfoCircle_CircleState  {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
@@ -185,21 +185,15 @@ impl  ::unity2::IlType for MapInfoCircle_Animes  {
 }
 
 
-impl  MapInfoCircle_Animes  {
+impl  MapInfoCircle_CircleState  {
     pub fn none() -> Self {
         Self { value: 0 }
 
     }
 
 
-    pub fn low_rotate() -> Self {
+    pub fn rotate() -> Self {
         Self { value: 1 }
-
-    }
-
-
-    pub fn high_rotate() -> Self {
-        Self { value: 2 }
 
     }
 
@@ -254,18 +248,18 @@ impl  MapInfoCircle_Animes  {
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfocircle/MapInfoCircle_CircleState.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfocircle/MapInfoCircle_Animes.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapInfoCircle_CircleState  {
+pub struct MapInfoCircle_Animes  {
     pub value: i32,
 }
 
 
-impl  ::unity2::ClassIdentity for MapInfoCircle_CircleState  {
+impl  ::unity2::ClassIdentity for MapInfoCircle_Animes  {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "MapInfoCircle.CircleState";
+    const NAME: &'static str = "MapInfoCircle.Animes";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> =
@@ -280,7 +274,7 @@ impl  ::unity2::ClassIdentity for MapInfoCircle_CircleState  {
 }
 
 
-impl  ::unity2::IlType for MapInfoCircle_CircleState  {
+impl  ::unity2::IlType for MapInfoCircle_Animes  {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
@@ -288,15 +282,21 @@ impl  ::unity2::IlType for MapInfoCircle_CircleState  {
 }
 
 
-impl  MapInfoCircle_CircleState  {
+impl  MapInfoCircle_Animes  {
     pub fn none() -> Self {
         Self { value: 0 }
 
     }
 
 
-    pub fn rotate() -> Self {
+    pub fn low_rotate() -> Self {
         Self { value: 1 }
+
+    }
+
+
+    pub fn high_rotate() -> Self {
+        Self { value: 2 }
 
     }
 
@@ -329,11 +329,11 @@ impl MapInfoCircle {
 pub mod prelude {
     pub use super::MapInfoCircle_MeshIndex;
     pub use super::MapInfoCircle_CircleColor;
-    pub use super::MapInfoCircle_Animes;
+    pub use super::MapInfoCircle_CircleState;
     pub use super::MapInfoCircle;
     pub use super::IMapInfoCircle;
     pub use super::IMapInfoCircleMethods;
-    pub use super::MapInfoCircle_CircleState;
+    pub use super::MapInfoCircle_Animes;
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

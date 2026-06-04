@@ -15,21 +15,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshsequence/RefreshSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefreshSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct RefreshSequence {
-# [static_field] # [rename (name = "m_RelianceExpParamName")] pub m_reliance_exp_param_name : :: unity2 :: Il2CppString ,
-# [offset (112)] # [rename (name = "m_RefreshUnitSelectRoot")] pub m_refresh_unit_select_root : crate :: app :: refreshunitselectroot :: RefreshUnitSelectRoot ,
-# [offset (120)] # [rename (name = "m_FacilityAid")] pub m_facility_aid : :: unity2 :: Il2CppString ,
-# [offset (128)] # [rename (name = "m_EnteredFromFacility")] pub m_entered_from_facility : bool ,
-# [offset (136)] # [rename (name = "m_Unit")] pub m_unit : :: unity2 :: Array < crate :: app :: unit :: Unit > ,
-# [offset (144)] # [rename (name = "m_UnitIndex")] pub m_unit_index : i32 ,
-# [offset (160)] # [rename (name = "m_AddedRelianceExp")] pub m_added_reliance_exp : bool ,
-# [offset (168)] # [rename (name = "m_UnitSetMenu")] pub m_unit_set_menu : crate :: app :: refreshunitsetmenu :: RefreshUnitSetMenu ,
-# [offset (176)] # [rename (name = "m_UnitSetMenuResult")] pub m_unit_set_menu_result : crate :: app :: refreshunitsetmenu :: RefreshUnitSetMenu_Result2 ,
-# [offset (180)] # [rename (name = "m_ConfirmDialogResult")] pub m_confirm_dialog_result : crate :: app :: refreshconfirmdialog :: RefreshConfirmDialog_Result2 ,
-# [offset (184)] # [rename (name = "m_UnitSelectMenuScrollIndex")] pub m_unit_select_menu_scroll_index : i32 ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refreshsequence/RefreshSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -132,6 +117,21 @@ impl  RefreshSequence_Label  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshsequence/RefreshSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefreshSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct RefreshSequence {
+# [static_field] # [rename (name = "m_RelianceExpParamName")] pub m_reliance_exp_param_name : :: unity2 :: Il2CppString ,
+# [offset (112)] # [rename (name = "m_RefreshUnitSelectRoot")] pub m_refresh_unit_select_root : crate :: app :: refreshunitselectroot :: RefreshUnitSelectRoot ,
+# [offset (120)] # [rename (name = "m_FacilityAid")] pub m_facility_aid : :: unity2 :: Il2CppString ,
+# [offset (128)] # [rename (name = "m_EnteredFromFacility")] pub m_entered_from_facility : bool ,
+# [offset (136)] # [rename (name = "m_Unit")] pub m_unit : :: unity2 :: Array < crate :: app :: unit :: Unit > ,
+# [offset (144)] # [rename (name = "m_UnitIndex")] pub m_unit_index : i32 ,
+# [offset (160)] # [rename (name = "m_AddedRelianceExp")] pub m_added_reliance_exp : bool ,
+# [offset (168)] # [rename (name = "m_UnitSetMenu")] pub m_unit_set_menu : crate :: app :: refreshunitsetmenu :: RefreshUnitSetMenu ,
+# [offset (176)] # [rename (name = "m_UnitSetMenuResult")] pub m_unit_set_menu_result : crate :: app :: refreshunitsetmenu :: RefreshUnitSetMenu_Result2 ,
+# [offset (180)] # [rename (name = "m_ConfirmDialogResult")] pub m_confirm_dialog_result : crate :: app :: refreshconfirmdialog :: RefreshConfirmDialog_Result2 ,
+# [offset (184)] # [rename (name = "m_UnitSelectMenuScrollIndex")] pub m_unit_select_menu_scroll_index : i32 ,
+}
+
 }
 
 #[cfg(feature = "app-refreshsequence-types")]
@@ -160,10 +160,10 @@ impl RefreshSequence {
 #[cfg(feature = "app-refreshsequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::RefreshSequence_Label;
     pub use super::RefreshSequence;
     pub use super::IRefreshSequence;
     pub use super::IRefreshSequenceMethods;
-    pub use super::RefreshSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

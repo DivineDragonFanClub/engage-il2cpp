@@ -23,6 +23,16 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/basicskillmenuitemcontent/BasicSkillMenuItemContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "BasicSkillMenuItemContent")] # [parent (crate :: app :: basicmenuitemcontent :: BasicMenuItemContent)] pub struct BasicSkillMenuItemContent {
+# [offset (72)] # [rename (name = "m_Icon")] pub m_icon : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (80)] # [rename (name = "m_Name")] pub m_name : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (88)] # [rename (name = "m_SubText")] pub m_sub_text : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (96)] # [rename (name = "m_Border")] pub m_border : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (104)] # [rename (name = "m_Efficacy")] pub m_efficacy : :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > ,
+# [offset (112)] # [rename (name = "m_IsDouble")] pub m_is_double : bool ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/basicskillmenuitemcontent/BasicSkillMenuItemContent_SubText.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -113,16 +123,6 @@ impl  BasicSkillMenuItemContent_SubText  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/basicskillmenuitemcontent/BasicSkillMenuItemContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "BasicSkillMenuItemContent")] # [parent (crate :: app :: basicmenuitemcontent :: BasicMenuItemContent)] pub struct BasicSkillMenuItemContent {
-# [offset (72)] # [rename (name = "m_Icon")] pub m_icon : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (80)] # [rename (name = "m_Name")] pub m_name : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (88)] # [rename (name = "m_SubText")] pub m_sub_text : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (96)] # [rename (name = "m_Border")] pub m_border : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (104)] # [rename (name = "m_Efficacy")] pub m_efficacy : :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (112)] # [rename (name = "m_IsDouble")] pub m_is_double : bool ,
-}
-
 }
 
 #[cfg(feature = "app-basicskillmenuitemcontent-types")]
@@ -148,10 +148,10 @@ impl BasicSkillMenuItemContent {
 #[cfg(feature = "app-basicskillmenuitemcontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::BasicSkillMenuItemContent_SubText;
     pub use super::BasicSkillMenuItemContent;
     pub use super::IBasicSkillMenuItemContent;
     pub use super::IBasicSkillMenuItemContentMethods;
+    pub use super::BasicSkillMenuItemContent_SubText;
     pub use crate::app::basicmenuitemcontent::IBasicMenuItemContent;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

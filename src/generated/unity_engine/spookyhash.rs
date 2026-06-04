@@ -11,11 +11,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/spookyhash/SpookyHash.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "SpookyHash")] # [parent (crate :: system :: object :: Object)] pub struct SpookyHash {
-# [static_field] # [rename (name = "AllowUnalignedRead")] pub allow_unaligned_read : bool ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/spookyhash/SpookyHash_U.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -47,6 +42,11 @@ impl ::unity2::IlType for SpookyHash_U {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/spookyhash/SpookyHash.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "SpookyHash")] # [parent (crate :: system :: object :: Object)] pub struct SpookyHash {
+# [static_field] # [rename (name = "AllowUnalignedRead")] pub allow_unaligned_read : bool ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-spookyhash-types")]
@@ -64,9 +64,9 @@ impl SpookyHash { pub fn attempt_detect_allow_unaligned_read_method_info () -> &
 #[cfg(feature = "unity_engine-spookyhash")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::SpookyHash_U;
     pub use super::SpookyHash;
     pub use super::ISpookyHash;
-    pub use super::SpookyHash_U;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

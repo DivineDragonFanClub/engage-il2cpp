@@ -29,7 +29,53 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/slider/Slider_SliderEvent.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "Slider.SliderEvent")] # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < f32 >)] pub struct Slider_SliderEvent {}
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/slider/Slider_Axis.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct Slider_Axis  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for Slider_Axis  {
+    const NAMESPACE: &'static str = "UnityEngine.UI";
+
+    const NAME: &'static str = "Slider.Axis";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for Slider_Axis  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  Slider_Axis  {
+    pub fn horizontal() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn vertical() -> Self {
+        Self { value: 1 }
+
+    }
+
+}
 
 
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/slider/Slider_Direction.md"))]
@@ -93,53 +139,7 @@ impl  Slider_Direction  {
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/slider/Slider_Axis.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Slider_Axis  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for Slider_Axis  {
-    const NAMESPACE: &'static str = "UnityEngine.UI";
-
-    const NAME: &'static str = "Slider.Axis";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for Slider_Axis  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  Slider_Axis  {
-    pub fn horizontal() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn vertical() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/slider/Slider_SliderEvent.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "Slider.SliderEvent")] # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < f32 >)] pub struct Slider_SliderEvent {}
 
 
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/slider/Slider.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "Slider")] # [parent (crate :: unity_engine :: ui :: selectable :: Selectable)] pub struct Slider {
@@ -203,11 +203,11 @@ impl Slider {
 #[cfg(feature = "unity_engine-ui-slider")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::Slider_Axis;
+    pub use super::Slider_Direction;
     pub use super::Slider_SliderEvent;
     pub use super::ISlider_SliderEvent;
     pub use super::ISlider_SliderEventMethods;
-    pub use super::Slider_Direction;
-    pub use super::Slider_Axis;
     pub use super::Slider;
     pub use super::ISlider;
     pub use super::ISliderMethods;

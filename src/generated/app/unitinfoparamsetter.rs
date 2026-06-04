@@ -21,61 +21,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoparamsetter/UnitInfoParamSetter.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitInfoParamSetter")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct UnitInfoParamSetter {
-# [offset (24)] # [rename (name = "m_SubInfo")] pub m_sub_info : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (32)] # [rename (name = "m_IsSimpleUI")] pub m_is_simple_ui : bool ,
-# [offset (40)] # [rename (name = "m_FrameImage")] pub m_frame_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (48)] # [rename (name = "m_WdwImage")] pub m_wdw_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (56)] # [rename (name = "m_ForceSprites")] pub m_force_sprites : :: unity2 :: Array < crate :: unity_engine :: sprite :: Sprite > ,
-# [offset (64)] # [rename (name = "m_WdwSprites")] pub m_wdw_sprites : :: unity2 :: Array < crate :: unity_engine :: sprite :: Sprite > ,
-# [offset (72)] # [rename (name = "m_GodBuffSprites")] pub m_god_buff_sprites : :: unity2 :: Array < crate :: unity_engine :: sprite :: Sprite > ,
-# [offset (80)] # [rename (name = "m_HpStockSprites")] pub m_hp_stock_sprites : :: unity2 :: Array < crate :: unity_engine :: sprite :: Sprite > ,
-# [offset (88)] # [rename (name = "m_UnitIcon")] pub m_unit_icon : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (96)] # [rename (name = "m_GodIcon")] pub m_god_icon : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (104)] # [rename (name = "m_CharaName")] pub m_chara_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (112)] # [rename (name = "m_JobName")] pub m_job_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (120)] # [rename (name = "m_BattleStyleName")] pub m_battle_style_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (128)] # [rename (name = "m_GodNameRoot")] pub m_god_name_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (136)] # [rename (name = "m_GodName")] pub m_god_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (144)] # [rename (name = "m_BondInfoRoot")] pub m_bond_info_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (152)] # [rename (name = "m_BondLevelValue")] pub m_bond_level_value : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (160)] # [rename (name = "m_BondLevelGauge")] pub m_bond_level_gauge : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (168)] # [rename (name = "m_Enchant")] pub m_enchant : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (176)] # [rename (name = "m_Level")] pub m_level : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (184)] # [rename (name = "m_GodBuffLevel")] pub m_god_buff_level : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (192)] # [rename (name = "m_GaugeExp")] pub m_gauge_exp : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (200)] # [rename (name = "m_MaxHp")] pub m_max_hp : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (208)] # [rename (name = "m_Hp")] pub m_hp : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (216)] # [rename (name = "m_GodBuffHp")] pub m_god_buff_hp : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (224)] # [rename (name = "m_HpStockRoot")] pub m_hp_stock_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (232)] # [rename (name = "m_HpStock")] pub m_hp_stock : :: unity2 :: Array < crate :: unity_engine :: ui :: image :: Image > ,
-# [offset (240)] # [rename (name = "m_Move")] pub m_move : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (248)] # [rename (name = "m_GodBuffMove")] pub m_god_buff_move : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (256)] # [rename (name = "m_TitleBtlAtk")] pub m_title_btl_atk : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (264)] # [rename (name = "m_BtlAtk")] pub m_btl_atk : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (272)] # [rename (name = "m_GodBuffAtk")] pub m_god_buff_atk : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (280)] # [rename (name = "m_BtlHit")] pub m_btl_hit : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (288)] # [rename (name = "m_GodBuffHit")] pub m_god_buff_hit : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (296)] # [rename (name = "m_BtlSpd")] pub m_btl_spd : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (304)] # [rename (name = "m_GodBuffSpd")] pub m_god_buff_spd : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (312)] # [rename (name = "m_BtlAvo")] pub m_btl_avo : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (320)] # [rename (name = "m_GodBuffAvo")] pub m_god_buff_avo : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (328)] # [rename (name = "m_BtlDef")] pub m_btl_def : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (336)] # [rename (name = "m_GodBuffDef")] pub m_god_buff_def : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (344)] # [rename (name = "m_BtlRes")] pub m_btl_res : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (352)] # [rename (name = "m_GodBuffRes")] pub m_god_buff_res : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (360)] # [rename (name = "m_ItemName")] pub m_item_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (368)] # [rename (name = "m_Items")] pub m_items : :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (376)] # [rename (name = "m_Frames")] pub m_frames : :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > ,
-# [static_field] # [rename (name = "EfficacyMax")] pub efficacy_max : i32 ,
-# [offset (384)] # [rename (name = "m_EfficacyIcons")] pub m_efficacy_icons : :: unity2 :: Array < crate :: unity_engine :: ui :: image :: Image > ,
-# [static_field] # [rename (name = "SkillMax")] pub skill_max : i32 ,
-# [offset (392)] # [rename (name = "m_SkillIcons")] pub m_skill_icons : :: unity2 :: Array < crate :: unity_engine :: ui :: image :: Image > ,
-# [offset (400)] # [rename (name = "m_RelayNameRoot")] pub m_relay_name_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (408)] # [rename (name = "m_RelayName")] pub m_relay_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoparamsetter/UnitInfoParamSetter_GodBuffType.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -283,6 +228,61 @@ impl  UnitInfoParamSetter_WdwType  {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoparamsetter/UnitInfoParamSetter.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitInfoParamSetter")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct UnitInfoParamSetter {
+# [offset (24)] # [rename (name = "m_SubInfo")] pub m_sub_info : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (32)] # [rename (name = "m_IsSimpleUI")] pub m_is_simple_ui : bool ,
+# [offset (40)] # [rename (name = "m_FrameImage")] pub m_frame_image : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (48)] # [rename (name = "m_WdwImage")] pub m_wdw_image : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (56)] # [rename (name = "m_ForceSprites")] pub m_force_sprites : :: unity2 :: Array < crate :: unity_engine :: sprite :: Sprite > ,
+# [offset (64)] # [rename (name = "m_WdwSprites")] pub m_wdw_sprites : :: unity2 :: Array < crate :: unity_engine :: sprite :: Sprite > ,
+# [offset (72)] # [rename (name = "m_GodBuffSprites")] pub m_god_buff_sprites : :: unity2 :: Array < crate :: unity_engine :: sprite :: Sprite > ,
+# [offset (80)] # [rename (name = "m_HpStockSprites")] pub m_hp_stock_sprites : :: unity2 :: Array < crate :: unity_engine :: sprite :: Sprite > ,
+# [offset (88)] # [rename (name = "m_UnitIcon")] pub m_unit_icon : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (96)] # [rename (name = "m_GodIcon")] pub m_god_icon : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (104)] # [rename (name = "m_CharaName")] pub m_chara_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (112)] # [rename (name = "m_JobName")] pub m_job_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (120)] # [rename (name = "m_BattleStyleName")] pub m_battle_style_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (128)] # [rename (name = "m_GodNameRoot")] pub m_god_name_root : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (136)] # [rename (name = "m_GodName")] pub m_god_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (144)] # [rename (name = "m_BondInfoRoot")] pub m_bond_info_root : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (152)] # [rename (name = "m_BondLevelValue")] pub m_bond_level_value : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (160)] # [rename (name = "m_BondLevelGauge")] pub m_bond_level_gauge : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (168)] # [rename (name = "m_Enchant")] pub m_enchant : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (176)] # [rename (name = "m_Level")] pub m_level : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (184)] # [rename (name = "m_GodBuffLevel")] pub m_god_buff_level : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (192)] # [rename (name = "m_GaugeExp")] pub m_gauge_exp : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (200)] # [rename (name = "m_MaxHp")] pub m_max_hp : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (208)] # [rename (name = "m_Hp")] pub m_hp : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (216)] # [rename (name = "m_GodBuffHp")] pub m_god_buff_hp : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (224)] # [rename (name = "m_HpStockRoot")] pub m_hp_stock_root : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (232)] # [rename (name = "m_HpStock")] pub m_hp_stock : :: unity2 :: Array < crate :: unity_engine :: ui :: image :: Image > ,
+# [offset (240)] # [rename (name = "m_Move")] pub m_move : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (248)] # [rename (name = "m_GodBuffMove")] pub m_god_buff_move : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (256)] # [rename (name = "m_TitleBtlAtk")] pub m_title_btl_atk : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (264)] # [rename (name = "m_BtlAtk")] pub m_btl_atk : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (272)] # [rename (name = "m_GodBuffAtk")] pub m_god_buff_atk : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (280)] # [rename (name = "m_BtlHit")] pub m_btl_hit : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (288)] # [rename (name = "m_GodBuffHit")] pub m_god_buff_hit : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (296)] # [rename (name = "m_BtlSpd")] pub m_btl_spd : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (304)] # [rename (name = "m_GodBuffSpd")] pub m_god_buff_spd : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (312)] # [rename (name = "m_BtlAvo")] pub m_btl_avo : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (320)] # [rename (name = "m_GodBuffAvo")] pub m_god_buff_avo : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (328)] # [rename (name = "m_BtlDef")] pub m_btl_def : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (336)] # [rename (name = "m_GodBuffDef")] pub m_god_buff_def : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (344)] # [rename (name = "m_BtlRes")] pub m_btl_res : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (352)] # [rename (name = "m_GodBuffRes")] pub m_god_buff_res : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (360)] # [rename (name = "m_ItemName")] pub m_item_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (368)] # [rename (name = "m_Items")] pub m_items : :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > ,
+# [offset (376)] # [rename (name = "m_Frames")] pub m_frames : :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > ,
+# [static_field] # [rename (name = "EfficacyMax")] pub efficacy_max : i32 ,
+# [offset (384)] # [rename (name = "m_EfficacyIcons")] pub m_efficacy_icons : :: unity2 :: Array < crate :: unity_engine :: ui :: image :: Image > ,
+# [static_field] # [rename (name = "SkillMax")] pub skill_max : i32 ,
+# [offset (392)] # [rename (name = "m_SkillIcons")] pub m_skill_icons : :: unity2 :: Array < crate :: unity_engine :: ui :: image :: Image > ,
+# [offset (400)] # [rename (name = "m_RelayNameRoot")] pub m_relay_name_root : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (408)] # [rename (name = "m_RelayName")] pub m_relay_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoparamsetter/UnitInfoParamSetter_HPStockType.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -371,12 +371,12 @@ impl UnitInfoParamSetter {
 #[cfg(feature = "app-unitinfoparamsetter")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::UnitInfoParamSetter;
-    pub use super::IUnitInfoParamSetter;
-    pub use super::IUnitInfoParamSetterMethods;
     pub use super::UnitInfoParamSetter_GodBuffType;
     pub use super::UnitInfoParamSetter_ForceType;
     pub use super::UnitInfoParamSetter_WdwType;
+    pub use super::UnitInfoParamSetter;
+    pub use super::IUnitInfoParamSetter;
+    pub use super::IUnitInfoParamSetterMethods;
     pub use super::UnitInfoParamSetter_HPStockType;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

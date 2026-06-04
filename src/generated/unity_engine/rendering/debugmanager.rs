@@ -23,6 +23,7 @@ mod __types {
 # [static_field] # [rename (name = "kEnableDebug")] pub k_enable_debug : :: unity2 :: Il2CppString ,
 # [offset (16)] # [rename (name = "m_DebugActions")] pub m_debug_actions : :: unity2 :: Array < crate :: unity_engine :: rendering :: debugactiondesc :: DebugActionDesc > ,
 # [offset (24)] # [rename (name = "m_DebugActionStates")] pub m_debug_action_states : :: unity2 :: Array < crate :: unity_engine :: rendering :: debugactionstate :: DebugActionState > ,
+# [static_field] # [rename (name = "s_Instance")] pub s_instance : :: unity2 :: IlInstance ,
 # [offset (32)] # [rename (name = "m_ReadOnlyPanels")] pub m_read_only_panels : crate :: system :: collections :: object_model :: readonlycollection_1 :: ReadOnlyCollection_1 < crate :: unity_engine :: rendering :: debugui :: DebugUI_Panel > ,
 # [offset (40)] # [rename (name = "m_Panels")] pub m_panels : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: debugui :: DebugUI_Panel > ,
 # [offset (48)] # [rename (name = "onDisplayRuntimeUIChanged")] pub on_display_runtime_ui_changed : crate :: system :: action_1 :: Action_1 < bool > ,

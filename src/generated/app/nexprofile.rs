@@ -17,6 +17,21 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexprofile/NexProfile_ServerSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "NexProfile.ServerSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct NexProfile_ServerSequence {
+# [static_field] # [rename (name = "BufferSizeMax")] pub buffer_size_max : i32 ,
+# [offset (112)] # [rename (name = "m_Mode")] pub m_mode : crate :: app :: nexprofile :: NexProfile_ServerSequence_Mode ,
+# [offset (120)] # [rename (name = "m_PrincipalID")] pub m_principal_id : u64 ,
+# [offset (128)] # [rename (name = "m_Profile")] pub m_profile : crate :: app :: profilecard :: ProfileCard ,
+# [offset (136)] # [rename (name = "m_DataID")] pub m_data_id : u64 ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexprofile/NexProfile.md"))] # [:: unity2 :: class (namespace = "App" , name = "NexProfile")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: nexprofile :: NexProfile >)] pub struct NexProfile {
+# [offset (28)] # [rename (name = "m_LastResult")] pub m_last_result : crate :: app :: nexprofile :: NexProfile_Results ,
+# [offset (32)] # [rename (name = "m_LastResultData")] pub m_last_result_data : crate :: app :: profilecard :: ProfileCard ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexprofile/NexProfile_Results.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -81,15 +96,6 @@ impl  NexProfile_Results  {
 
     }
 
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexprofile/NexProfile_ServerSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "NexProfile.ServerSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct NexProfile_ServerSequence {
-# [static_field] # [rename (name = "BufferSizeMax")] pub buffer_size_max : i32 ,
-# [offset (112)] # [rename (name = "m_Mode")] pub m_mode : crate :: app :: nexprofile :: NexProfile_ServerSequence_Mode ,
-# [offset (120)] # [rename (name = "m_PrincipalID")] pub m_principal_id : u64 ,
-# [offset (128)] # [rename (name = "m_Profile")] pub m_profile : crate :: app :: profilecard :: ProfileCard ,
-# [offset (136)] # [rename (name = "m_DataID")] pub m_data_id : u64 ,
 }
 
 
@@ -175,12 +181,6 @@ impl  NexProfile_ServerSequence_Label  {
 
     }
 
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexprofile/NexProfile.md"))] # [:: unity2 :: class (namespace = "App" , name = "NexProfile")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: nexprofile :: NexProfile >)] pub struct NexProfile {
-# [offset (28)] # [rename (name = "m_LastResult")] pub m_last_result : crate :: app :: nexprofile :: NexProfile_Results ,
-# [offset (32)] # [rename (name = "m_LastResultData")] pub m_last_result_data : crate :: app :: profilecard :: ProfileCard ,
 }
 
 
@@ -277,14 +277,14 @@ impl NexProfile {
 #[cfg(feature = "app-nexprofile")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::NexProfile_Results;
     pub use super::NexProfile_ServerSequence;
     pub use super::INexProfile_ServerSequence;
     pub use super::INexProfile_ServerSequenceMethods;
-    pub use super::NexProfile_ServerSequence_Label;
     pub use super::NexProfile;
     pub use super::INexProfile;
     pub use super::INexProfileMethods;
+    pub use super::NexProfile_Results;
+    pub use super::NexProfile_ServerSequence_Label;
     pub use super::NexProfile_ServerSequence_Mode;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonclass_1::ISingletonClass_1;

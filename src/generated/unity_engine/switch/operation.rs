@@ -13,6 +13,9 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/operation/Operation.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Switch" , name = "Operation")] # [parent (crate :: system :: object :: Object)] pub struct Operation {}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/switch/operation/Operation_OperationMode.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -61,9 +64,6 @@ impl  Operation_OperationMode  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/operation/Operation.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Switch" , name = "Operation")] # [parent (crate :: system :: object :: Object)] pub struct Operation {}
-
 }
 
 #[cfg(feature = "unity_engine-switch-operation-types")]
@@ -81,9 +81,9 @@ impl Operation { pub fn get_mode_method_info () -> & 'static :: unity2 :: il2cpp
 #[cfg(feature = "unity_engine-switch-operation")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Operation_OperationMode;
     pub use super::Operation;
     pub use super::IOperation;
+    pub use super::Operation_OperationMode;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

@@ -15,6 +15,7 @@ mod __types {
 # [static_field] # [rename (name = "takeCapture")] pub take_capture_field : crate :: system :: action :: Action ,
 # [static_field] # [rename (name = "releaseCapture")] pub release_capture : crate :: system :: action :: Action ,
 # [static_field] # [rename (name = "processEvent")] pub process_event_field : crate :: system :: func_3 :: Func_3 < i32 , :: unity2 :: IntPtr , bool > ,
+# [static_field] # [rename (name = "endContainerGUIFromException")] pub end_container_gui_from_exception_field : :: unity2 :: IlInstance ,
 # [static_field] # [rename (name = "guiChanged")] pub gui_changed : crate :: system :: action :: Action ,
 # [static_field] # [rename (name = "s_HasCurrentWindowKeyFocusFunc")] pub s_has_current_window_key_focus_func : crate :: system :: func_1 :: Func_1 < bool > ,
 }

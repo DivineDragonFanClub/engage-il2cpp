@@ -17,6 +17,135 @@ mod __types {
  ;
 
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameskip/GameSkip_Result.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct GameSkip_Result  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for GameSkip_Result  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "GameSkip.Result";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for GameSkip_Result  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  GameSkip_Result  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn short_skip() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn long_skip() -> Self {
+        Self { value: 2 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameskip/GameSkip_ProcWaitTime.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameSkip.ProcWaitTime")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct GameSkip_ProcWaitTime {
+# [offset (112)] # [rename (name = "m_WaitTime")] pub m_wait_time : f32 ,
+# [offset (116)] # [rename (name = "m_DeltaTime")] pub m_delta_time : f32 ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameskip/GameSkip.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameSkip")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: gameskip :: GameSkip >)] pub struct GameSkip {
+# [offset (28)] # [rename (name = "m_Sequence")] pub m_sequence : crate :: app :: gameskip :: GameSkip_Sequence ,
+# [offset (32)] # [rename (name = "m_Status")] pub m_status : crate :: app :: gameskip :: GameSkip_Status ,
+# [offset (40)] # [rename (name = "m_Statck")] pub m_statck : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < crate :: app :: gameskip :: GameSkip_Status > ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameskip/GameSkip_Sequence.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct GameSkip_Sequence  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for GameSkip_Sequence  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "GameSkip.Sequence";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for GameSkip_Sequence  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  GameSkip_Sequence  {
+    pub fn tick() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn fade_out() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn executed() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn fade_in() -> Self {
+        Self { value: 3 }
+
+    }
+
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameskip/GameSkip_Status.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -96,136 +225,7 @@ impl  GameSkip_Status  {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameskip/GameSkip_ProcWaitTime.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameSkip.ProcWaitTime")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct GameSkip_ProcWaitTime {
-# [offset (112)] # [rename (name = "m_WaitTime")] pub m_wait_time : f32 ,
-# [offset (116)] # [rename (name = "m_DeltaTime")] pub m_delta_time : f32 ,
-}
-
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameskip/GameSkip_ProcSuspend.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameSkip.ProcSuspend")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct GameSkip_ProcSuspend {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameskip/GameSkip.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameSkip")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: gameskip :: GameSkip >)] pub struct GameSkip {
-# [offset (28)] # [rename (name = "m_Sequence")] pub m_sequence : crate :: app :: gameskip :: GameSkip_Sequence ,
-# [offset (32)] # [rename (name = "m_Status")] pub m_status : crate :: app :: gameskip :: GameSkip_Status ,
-# [offset (40)] # [rename (name = "m_Statck")] pub m_statck : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < crate :: app :: gameskip :: GameSkip_Status > ,
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameskip/GameSkip_Sequence.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct GameSkip_Sequence  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for GameSkip_Sequence  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "GameSkip.Sequence";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for GameSkip_Sequence  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  GameSkip_Sequence  {
-    pub fn tick() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn fade_out() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn executed() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn fade_in() -> Self {
-        Self { value: 3 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameskip/GameSkip_Result.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct GameSkip_Result  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for GameSkip_Result  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "GameSkip.Result";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for GameSkip_Result  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  GameSkip_Result  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn short_skip() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn long_skip() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
 
 }
 
@@ -250,23 +250,6 @@ impl GameSkip_ProcWaitTime {
 }
 
 #[cfg(feature = "app-gameskip")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GameSkip_ProcSuspend_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_create { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameSkip_ProcSuspend as :: unity2 :: ClassIdentity > :: class () , "OnCreate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameSkip_ProcSuspend as :: unity2 :: ClassIdentity > :: NAME , "OnCreate" , e) , } } } pub unsafe fn on_create (this : GameSkip_ProcSuspend , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GameSkip_ProcSuspend , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_create :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_tick { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameSkip_ProcSuspend as :: unity2 :: ClassIdentity > :: class () , "OnTick" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameSkip_ProcSuspend as :: unity2 :: ClassIdentity > :: NAME , "OnTick" , e) , } } } pub unsafe fn on_tick (this : GameSkip_ProcSuspend , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GameSkip_ProcSuspend , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_tick :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameSkip_ProcSuspend as :: unity2 :: ClassIdentity > :: class () , "OnDispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameSkip_ProcSuspend as :: unity2 :: ClassIdentity > :: NAME , "OnDispose" , e) , } } } pub unsafe fn on_dispose (this : GameSkip_ProcSuspend , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GameSkip_ProcSuspend , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameSkip_ProcSuspend as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameSkip_ProcSuspend as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GameSkip_ProcSuspend , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GameSkip_ProcSuspend , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "app-gameskip")]
-pub trait IGameSkip_ProcSuspendMethods : IGameSkip_ProcSuspend { # [doc = "`OnCreate()` overload"] fn on_create (self ,) -> () { unsafe { let __receiver = < GameSkip_ProcSuspend as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GameSkip_ProcSuspend_unity2_raw :: on_create (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnTick()` overload"] fn on_tick (self ,) -> () { unsafe { let __receiver = < GameSkip_ProcSuspend as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GameSkip_ProcSuspend_unity2_raw :: on_tick (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < GameSkip_ProcSuspend as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GameSkip_ProcSuspend_unity2_raw :: on_dispose (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GameSkip_ProcSuspend as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GameSkip_ProcSuspend_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-gameskip")]
-impl < __T : IGameSkip_ProcSuspend > IGameSkip_ProcSuspendMethods for __T { }
-
-#[cfg(feature = "app-gameskip")]
-impl GameSkip_ProcSuspend { pub fn on_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameSkip_ProcSuspend_unity2_raw :: __lookup_on_create :: get_method_info () } pub fn on_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameSkip_ProcSuspend_unity2_raw :: __lookup_on_tick :: get_method_info () } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameSkip_ProcSuspend_unity2_raw :: __lookup_on_dispose :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameSkip_ProcSuspend_unity2_raw :: __lookup_ctor :: get_method_info () } }
-
-#[cfg(feature = "app-gameskip")]
-impl GameSkip_ProcSuspend {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GameSkip_ProcSuspend) , :: core :: stringify ! (new) ,)) ; < Self as IGameSkip_ProcSuspendMethods > :: ctor (this ,) ; this }
-}
-
-#[cfg(feature = "app-gameskip")]
 # [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GameSkip_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameSkip as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameSkip as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GameSkip , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GameSkip , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calc_skip_input { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameSkip as :: unity2 :: ClassIdentity > :: class () , "CalcSkipInput" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameSkip as :: unity2 :: ClassIdentity > :: NAME , "CalcSkipInput" , e) , } } } pub unsafe fn calc_skip_input (this : GameSkip , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: gameskip :: GameSkip_Result { let inner : extern "C" fn (GameSkip , :: unity2 :: OptionalMethod ,) -> crate :: app :: gameskip :: GameSkip_Result = :: core :: mem :: transmute (__lookup_calc_skip_input :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_tst_status { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gameskip :: GameSkip_Status as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameSkip as :: unity2 :: ClassIdentity > :: class () , "TstStatus" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameSkip as :: unity2 :: ClassIdentity > :: NAME , "TstStatus" , e) , } } } pub unsafe fn tst_status (this : GameSkip , status : crate :: app :: gameskip :: GameSkip_Status , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (GameSkip , crate :: app :: gameskip :: GameSkip_Status , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_tst_status :: get_method_info () . method_ptr ,) ; inner (this , status , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_status { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gameskip :: GameSkip_Status as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameSkip as :: unity2 :: ClassIdentity > :: class () , "SetStatus" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameSkip as :: unity2 :: ClassIdentity > :: NAME , "SetStatus" , e) , } } } pub unsafe fn set_status (this : GameSkip , status : crate :: app :: gameskip :: GameSkip_Status , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GameSkip , crate :: app :: gameskip :: GameSkip_Status , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_status :: get_method_info () . method_ptr ,) ; inner (this , status , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_clear_status { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gameskip :: GameSkip_Status as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameSkip as :: unity2 :: ClassIdentity > :: class () , "ClearStatus" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameSkip as :: unity2 :: ClassIdentity > :: NAME , "ClearStatus" , e) , } } } pub unsafe fn clear_status (this : GameSkip , status : crate :: app :: gameskip :: GameSkip_Status , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GameSkip , crate :: app :: gameskip :: GameSkip_Status , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_clear_status :: get_method_info () . method_ptr ,) ; inner (this , status , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_tick { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameSkip as :: unity2 :: ClassIdentity > :: class () , "OnTick" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameSkip as :: unity2 :: ClassIdentity > :: NAME , "OnTick" , e) , } } } pub unsafe fn on_tick (this : GameSkip , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GameSkip , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_tick :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_debug_skip { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameSkip as :: unity2 :: ClassIdentity > :: class () , "DebugSkip" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameSkip as :: unity2 :: ClassIdentity > :: NAME , "DebugSkip" , e) , } } } pub unsafe fn debug_skip (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_debug_skip :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_trigger { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameSkip as :: unity2 :: ClassIdentity > :: class () , "Trigger" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameSkip as :: unity2 :: ClassIdentity > :: NAME , "Trigger" , e) , } } } pub unsafe fn trigger (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_trigger :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_escape { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameSkip as :: unity2 :: ClassIdentity > :: class () , "Escape" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameSkip as :: unity2 :: ClassIdentity > :: NAME , "Escape" , e) , } } } pub unsafe fn escape (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_escape :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_enable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameSkip as :: unity2 :: ClassIdentity > :: class () , "Enable" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameSkip as :: unity2 :: ClassIdentity > :: NAME , "Enable" , e) , } } } pub unsafe fn enable (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_enable :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_disable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameSkip as :: unity2 :: ClassIdentity > :: class () , "Disable" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameSkip as :: unity2 :: ClassIdentity > :: NAME , "Disable" , e) , } } } pub unsafe fn disable (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_disable :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_enable_short_skip { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameSkip as :: unity2 :: ClassIdentity > :: class () , "EnableShortSkip" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameSkip as :: unity2 :: ClassIdentity > :: NAME , "EnableShortSkip" , e) , } } } pub unsafe fn enable_short_skip (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_enable_short_skip :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_disable_short_skip { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameSkip as :: unity2 :: ClassIdentity > :: class () , "DisableShortSkip" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameSkip as :: unity2 :: ClassIdentity > :: NAME , "DisableShortSkip" , e) , } } } pub unsafe fn disable_short_skip (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_disable_short_skip :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_skip { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameSkip as :: unity2 :: ClassIdentity > :: class () , "IsSkip" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameSkip as :: unity2 :: ClassIdentity > :: NAME , "IsSkip" , e) , } } } pub unsafe fn is_skip (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_skip :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_disable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameSkip as :: unity2 :: ClassIdentity > :: class () , "IsDisable" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameSkip as :: unity2 :: ClassIdentity > :: NAME , "IsDisable" , e) , } } } pub unsafe fn is_disable (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_disable :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_wait { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameSkip as :: unity2 :: ClassIdentity > :: class () , "IsWait" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameSkip as :: unity2 :: ClassIdentity > :: NAME , "IsWait" , e) , } } } pub unsafe fn is_wait (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_wait :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_black_out { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameSkip as :: unity2 :: ClassIdentity > :: class () , "IsBlackOut" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameSkip as :: unity2 :: ClassIdentity > :: NAME , "IsBlackOut" , e) , } } } pub unsafe fn is_black_out (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_black_out :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_black_or_fade_out { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameSkip as :: unity2 :: ClassIdentity > :: class () , "IsBlackOrFadeOut" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameSkip as :: unity2 :: ClassIdentity > :: NAME , "IsBlackOrFadeOut" , e) , } } } pub unsafe fn is_black_or_fade_out (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_black_or_fade_out :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_fade_in { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameSkip as :: unity2 :: ClassIdentity > :: class () , "IsFadeIn" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameSkip as :: unity2 :: ClassIdentity > :: NAME , "IsFadeIn" , e) , } } } pub unsafe fn is_fade_in (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_fade_in :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_push_state { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameSkip as :: unity2 :: ClassIdentity > :: class () , "PushState" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameSkip as :: unity2 :: ClassIdentity > :: NAME , "PushState" , e) , } } } pub unsafe fn push_state (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_push_state :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_pop_state { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameSkip as :: unity2 :: ClassIdentity > :: class () , "PopState" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameSkip as :: unity2 :: ClassIdentity > :: NAME , "PopState" , e) , } } } pub unsafe fn pop_state (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_pop_state :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_push_disable_ai_skip { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameSkip as :: unity2 :: ClassIdentity > :: class () , "PushDisableAISkip" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameSkip as :: unity2 :: ClassIdentity > :: NAME , "PushDisableAISkip" , e) , } } } pub unsafe fn push_disable_ai_skip (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_push_disable_ai_skip :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_pop_disable_ai_skip { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameSkip as :: unity2 :: ClassIdentity > :: class () , "PopDisableAISkip" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameSkip as :: unity2 :: ClassIdentity > :: NAME , "PopDisableAISkip" , e) , } } } pub unsafe fn pop_disable_ai_skip (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_pop_disable_ai_skip :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_trigger_ai { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameSkip as :: unity2 :: ClassIdentity > :: class () , "TriggerAI" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameSkip as :: unity2 :: ClassIdentity > :: NAME , "TriggerAI" , e) , } } } pub unsafe fn trigger_ai (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_trigger_ai :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_wait_time { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameSkip as :: unity2 :: ClassIdentity > :: class () , "WaitTime" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameSkip as :: unity2 :: ClassIdentity > :: NAME , "WaitTime" , e) , } } } pub unsafe fn wait_time (super_ : crate :: app :: procinst :: ProcInst , time : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_wait_time :: get_method_info () . method_ptr ,) ; inner (super_ , time , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_p_wait_time { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameSkip as :: unity2 :: ClassIdentity > :: class () , "PWaitTime" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameSkip as :: unity2 :: ClassIdentity > :: NAME , "PWaitTime" , e) , } } } pub unsafe fn p_wait_time (time : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc { let inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute (__lookup_p_wait_time :: get_method_info () . method_ptr ,) ; inner (time , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_suspend_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameSkip as :: unity2 :: ClassIdentity > :: class () , "SuspendBind" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameSkip as :: unity2 :: ClassIdentity > :: NAME , "SuspendBind" , e) , } } } pub unsafe fn suspend_bind (super_ : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute (__lookup_suspend_bind :: get_method_info () . method_ptr ,) ; inner (super_ , __unity2_method_info) } }
 
 #[cfg(feature = "app-gameskip")]
@@ -287,20 +270,37 @@ impl GameSkip {
 }
 
 #[cfg(feature = "app-gameskip")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GameSkip_ProcSuspend_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_create { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameSkip_ProcSuspend as :: unity2 :: ClassIdentity > :: class () , "OnCreate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameSkip_ProcSuspend as :: unity2 :: ClassIdentity > :: NAME , "OnCreate" , e) , } } } pub unsafe fn on_create (this : GameSkip_ProcSuspend , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GameSkip_ProcSuspend , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_create :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_tick { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameSkip_ProcSuspend as :: unity2 :: ClassIdentity > :: class () , "OnTick" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameSkip_ProcSuspend as :: unity2 :: ClassIdentity > :: NAME , "OnTick" , e) , } } } pub unsafe fn on_tick (this : GameSkip_ProcSuspend , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GameSkip_ProcSuspend , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_tick :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameSkip_ProcSuspend as :: unity2 :: ClassIdentity > :: class () , "OnDispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameSkip_ProcSuspend as :: unity2 :: ClassIdentity > :: NAME , "OnDispose" , e) , } } } pub unsafe fn on_dispose (this : GameSkip_ProcSuspend , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GameSkip_ProcSuspend , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameSkip_ProcSuspend as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameSkip_ProcSuspend as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GameSkip_ProcSuspend , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GameSkip_ProcSuspend , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-gameskip")]
+pub trait IGameSkip_ProcSuspendMethods : IGameSkip_ProcSuspend { # [doc = "`OnCreate()` overload"] fn on_create (self ,) -> () { unsafe { let __receiver = < GameSkip_ProcSuspend as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GameSkip_ProcSuspend_unity2_raw :: on_create (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnTick()` overload"] fn on_tick (self ,) -> () { unsafe { let __receiver = < GameSkip_ProcSuspend as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GameSkip_ProcSuspend_unity2_raw :: on_tick (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < GameSkip_ProcSuspend as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GameSkip_ProcSuspend_unity2_raw :: on_dispose (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GameSkip_ProcSuspend as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GameSkip_ProcSuspend_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-gameskip")]
+impl < __T : IGameSkip_ProcSuspend > IGameSkip_ProcSuspendMethods for __T { }
+
+#[cfg(feature = "app-gameskip")]
+impl GameSkip_ProcSuspend { pub fn on_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameSkip_ProcSuspend_unity2_raw :: __lookup_on_create :: get_method_info () } pub fn on_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameSkip_ProcSuspend_unity2_raw :: __lookup_on_tick :: get_method_info () } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameSkip_ProcSuspend_unity2_raw :: __lookup_on_dispose :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameSkip_ProcSuspend_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-gameskip")]
+impl GameSkip_ProcSuspend {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GameSkip_ProcSuspend) , :: core :: stringify ! (new) ,)) ; < Self as IGameSkip_ProcSuspendMethods > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "app-gameskip")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GameSkip_Status;
+    pub use super::GameSkip_Result;
     pub use super::GameSkip_ProcWaitTime;
     pub use super::IGameSkip_ProcWaitTime;
     pub use super::IGameSkip_ProcWaitTimeMethods;
-    pub use super::GameSkip_ProcSuspend;
-    pub use super::IGameSkip_ProcSuspend;
-    pub use super::IGameSkip_ProcSuspendMethods;
     pub use super::GameSkip;
     pub use super::IGameSkip;
     pub use super::IGameSkipMethods;
     pub use super::GameSkip_Sequence;
-    pub use super::GameSkip_Result;
+    pub use super::GameSkip_Status;
+    pub use super::GameSkip_ProcSuspend;
+    pub use super::IGameSkip_ProcSuspend;
+    pub use super::IGameSkip_ProcSuspendMethods;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonclass_1::ISingletonClass_1;
     pub use crate::system::object::IObject;

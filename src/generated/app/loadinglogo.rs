@@ -49,6 +49,14 @@ mod __types {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/loadinglogo/LoadingLogo_UnitDotObject.md"))] # [:: unity2 :: class (namespace = "App" , name = "LoadingLogo.UnitDotObject")] # [parent (crate :: system :: object :: Object)] pub struct LoadingLogo_UnitDotObject {
+# [offset (16)] # [rename (name = "m_RootObject")] pub m_root_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (24)] # [rename (name = "m_Image")] pub m_image : crate :: unity_engine :: ui :: rawimage :: RawImage ,
+# [offset (32)] # [rename (name = "m_Animator")] pub m_animator : crate :: unity_engine :: animator :: Animator ,
+# [offset (40)] # [rename (name = "m_Material")] pub m_material : crate :: unity_engine :: material :: Material ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/loadinglogo/LoadingLogo_Sequences.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -115,14 +123,6 @@ impl  LoadingLogo_Sequences  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/loadinglogo/LoadingLogo_UnitDotObject.md"))] # [:: unity2 :: class (namespace = "App" , name = "LoadingLogo.UnitDotObject")] # [parent (crate :: system :: object :: Object)] pub struct LoadingLogo_UnitDotObject {
-# [offset (16)] # [rename (name = "m_RootObject")] pub m_root_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (24)] # [rename (name = "m_Image")] pub m_image : crate :: unity_engine :: ui :: rawimage :: RawImage ,
-# [offset (32)] # [rename (name = "m_Animator")] pub m_animator : crate :: unity_engine :: animator :: Animator ,
-# [offset (40)] # [rename (name = "m_Material")] pub m_material : crate :: unity_engine :: material :: Material ,
-}
-
 }
 
 #[cfg(feature = "app-loadinglogo-types")]
@@ -174,10 +174,10 @@ pub mod prelude {
     pub use super::LoadingLogo;
     pub use super::ILoadingLogo;
     pub use super::ILoadingLogoMethods;
-    pub use super::LoadingLogo_Sequences;
     pub use super::LoadingLogo_UnitDotObject;
     pub use super::ILoadingLogo_UnitDotObject;
     pub use super::ILoadingLogo_UnitDotObjectMethods;
+    pub use super::LoadingLogo_Sequences;
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

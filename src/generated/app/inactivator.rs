@@ -21,6 +21,73 @@ mod __types {
  ;
 
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/inactivator/Inactivator_Flags.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct Inactivator_Flags  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for Inactivator_Flags  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Inactivator.Flags";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for Inactivator_Flags  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  Inactivator_Flags  {
+    pub fn シナリオ() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn 遭遇戦() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn 絆() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn 拠点() -> Self {
+        Self { value: 8 }
+
+    }
+
+
+    pub fn gmap() -> Self {
+        Self { value: 16 }
+
+    }
+
+}
+
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inactivator/Inactivator.md"))] # [:: unity2 :: class (namespace = "App" , name = "Inactivator")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct Inactivator {
 # [offset (24)] # [rename (name = "m_Flags")] pub m_flags : crate :: app :: inactivator :: Inactivator_Flags ,
 # [offset (32)] # [rename (name = "m_Variable")] pub m_variable : :: unity2 :: Il2CppString ,
@@ -99,73 +166,6 @@ impl  Inactivator_Kind  {
 
 }
 
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/inactivator/Inactivator_Flags.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Inactivator_Flags  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for Inactivator_Flags  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Inactivator.Flags";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for Inactivator_Flags  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  Inactivator_Flags  {
-    pub fn シナリオ() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn 遭遇戦() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn 絆() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn 拠点() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn gmap() -> Self {
-        Self { value: 16 }
-
-    }
-
-}
-
 }
 
 #[cfg(feature = "app-inactivator-types")]
@@ -194,11 +194,11 @@ impl Inactivator {
 #[cfg(feature = "app-inactivator")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::Inactivator_Flags;
     pub use super::Inactivator;
     pub use super::IInactivator;
     pub use super::IInactivatorMethods;
     pub use super::Inactivator_Kind;
-    pub use super::Inactivator_Flags;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

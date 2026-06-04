@@ -18,7 +18,7 @@
  # [cfg (feature = "unity_engine-resource_management-async_operations-downloadstatus-types")] pub use downloadstatus :: { DownloadStatus }
  ;
  # [cfg (any (feature = "unity_engine-resource_management-async_operations-groupoperation-types"))] pub mod groupoperation ;
- # [cfg (feature = "unity_engine-resource_management-async_operations-groupoperation-types")] pub use groupoperation :: { GroupOperation , IGroupOperation , GroupOperation_GroupOperationSettings }
+ # [cfg (feature = "unity_engine-resource_management-async_operations-groupoperation-types")] pub use groupoperation :: { GroupOperation_GroupOperationSettings , GroupOperation , IGroupOperation }
  ;
  # [cfg (feature = "unity_engine-resource_management-async_operations-groupoperation")] pub use groupoperation :: { IGroupOperationMethods }
  ;

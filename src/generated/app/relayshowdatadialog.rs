@@ -13,9 +13,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayshowdatadialog/RelayShowDataDialog.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayShowDataDialog")] # [parent (crate :: system :: object :: Object)] pub struct RelayShowDataDialog {}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayshowdatadialog/RelayShowDataDialog_Mode.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -70,6 +67,9 @@ impl  RelayShowDataDialog_Mode  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayshowdatadialog/RelayShowDataDialog.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayShowDataDialog")] # [parent (crate :: system :: object :: Object)] pub struct RelayShowDataDialog {}
+
 }
 
 #[cfg(feature = "app-relayshowdatadialog-types")]
@@ -98,10 +98,10 @@ impl RelayShowDataDialog {
 #[cfg(feature = "app-relayshowdatadialog")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::RelayShowDataDialog_Mode;
     pub use super::RelayShowDataDialog;
     pub use super::IRelayShowDataDialog;
     pub use super::IRelayShowDataDialogMethods;
-    pub use super::RelayShowDataDialog_Mode;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

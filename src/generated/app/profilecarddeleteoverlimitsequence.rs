@@ -15,13 +15,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecarddeleteoverlimitsequence/ProfileCardDeleteOverLimitSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardDeleteOverLimitSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct ProfileCardDeleteOverLimitSequence {
-# [offset (112)] # [rename (name = "m_ProfileList")] pub m_profile_list : crate :: app :: profilelist :: ProfileList ,
-# [offset (120)] # [rename (name = "m_AlbumRoot")] pub m_album_root : crate :: app :: profilecardalbumroot :: ProfileCardAlbumRoot ,
-# [offset (128)] # [rename (name = "m_IsFadeOut")] pub m_is_fade_out : bool ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecarddeleteoverlimitsequence/ProfileCardDeleteOverLimitSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -70,6 +63,13 @@ impl  ProfileCardDeleteOverLimitSequence_Label  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecarddeleteoverlimitsequence/ProfileCardDeleteOverLimitSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardDeleteOverLimitSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct ProfileCardDeleteOverLimitSequence {
+# [offset (112)] # [rename (name = "m_ProfileList")] pub m_profile_list : crate :: app :: profilelist :: ProfileList ,
+# [offset (120)] # [rename (name = "m_AlbumRoot")] pub m_album_root : crate :: app :: profilecardalbumroot :: ProfileCardAlbumRoot ,
+# [offset (128)] # [rename (name = "m_IsFadeOut")] pub m_is_fade_out : bool ,
+}
+
 }
 
 #[cfg(feature = "app-profilecarddeleteoverlimitsequence-types")]
@@ -98,10 +98,10 @@ impl ProfileCardDeleteOverLimitSequence {
 #[cfg(feature = "app-profilecarddeleteoverlimitsequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ProfileCardDeleteOverLimitSequence_Label;
     pub use super::ProfileCardDeleteOverLimitSequence;
     pub use super::IProfileCardDeleteOverLimitSequence;
     pub use super::IProfileCardDeleteOverLimitSequenceMethods;
-    pub use super::ProfileCardDeleteOverLimitSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

@@ -72,32 +72,6 @@ impl  MapSequenceHuman_NextMode  {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencehuman/MapSequenceHuman.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceHuman")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapsequencehuman :: MapSequenceHuman >)] pub struct MapSequenceHuman {
-# [offset (120)] # [rename (name = "m_JobIntroUnit")] pub m_job_intro_unit : crate :: app :: unit :: Unit ,
-# [offset (128)] # [rename (name = "m_JobIntroKeyHelpType")] pub m_job_intro_key_help_type : crate :: app :: mapkeyhelp :: MapKeyHelp_Types ,
-# [offset (132)] # [rename (name = "m_ReturnLabel")] pub m_return_label : crate :: app :: mapsequencehuman :: MapSequenceHuman_Label ,
-# [offset (136)] # [rename (name = "m_OldUnitX")] pub m_old_unit_x : i32 ,
-# [offset (140)] # [rename (name = "m_OldUnitZ")] pub m_old_unit_z : i32 ,
-# [offset (144)] # [rename (name = "m_OldCursorX")] pub m_old_cursor_x : i32 ,
-# [offset (148)] # [rename (name = "m_OldCursorZ")] pub m_old_cursor_z : i32 ,
-# [offset (152)] # [rename (name = "m_OldPickupX")] pub m_old_pickup_x : i32 ,
-# [offset (156)] # [rename (name = "m_OldPickupZ")] pub m_old_pickup_z : i32 ,
-# [offset (160)] # [rename (name = "m_EngageX")] pub m_engage_x : i32 ,
-# [offset (164)] # [rename (name = "m_EngageZ")] pub m_engage_z : i32 ,
-# [offset (168)] # [rename (name = "m_EnterX")] pub m_enter_x : i32 ,
-# [offset (172)] # [rename (name = "m_EnterZ")] pub m_enter_z : i32 ,
-# [offset (176)] # [rename (name = "m_IsEnemyAttackRange")] pub m_is_enemy_attack_range : bool ,
-# [offset (177)] # [rename (name = "m_IsUpdateSupportSkill")] pub m_is_update_support_skill : bool ,
-# [offset (184)] # [rename (name = "m_UpdateSupportSkillUnit")] pub m_update_support_skill_unit : crate :: app :: unit :: Unit ,
-# [offset (192)] # [rename (name = "m_OperateMode")] pub m_operate_mode : crate :: app :: mapsequencehuman :: MapSequenceHuman_OperateMode ,
-# [static_field] # [rename (name = "PlayerMoveMask")] pub player_move_mask : crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_Flag < crate :: app :: mapdeploy :: MapDeploy > ,
-# [static_field] # [rename (name = "EnemyMoveMask")] pub enemy_move_mask : crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_Flag < crate :: app :: mapdeploy :: MapDeploy > ,
-# [static_field] # [rename (name = "FreeWeaponMask")] pub free_weapon_mask : crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_Flag < crate :: app :: mapdeploy :: MapDeploy > ,
-# [static_field] # [rename (name = "PickWeaponMask")] pub pick_weapon_mask : crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_Flag < crate :: app :: mapdeploy :: MapDeploy > ,
-# [static_field] # [rename (name = "WaitPickFreeCursor")] pub wait_pick_free_cursor : f32 ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencehuman/MapSequenceHuman_OperateMode.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -513,6 +487,32 @@ impl  MapSequenceHuman_Label  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencehuman/MapSequenceHuman.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceHuman")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapsequencehuman :: MapSequenceHuman >)] pub struct MapSequenceHuman {
+# [offset (120)] # [rename (name = "m_JobIntroUnit")] pub m_job_intro_unit : crate :: app :: unit :: Unit ,
+# [offset (128)] # [rename (name = "m_JobIntroKeyHelpType")] pub m_job_intro_key_help_type : crate :: app :: mapkeyhelp :: MapKeyHelp_Types ,
+# [offset (132)] # [rename (name = "m_ReturnLabel")] pub m_return_label : crate :: app :: mapsequencehuman :: MapSequenceHuman_Label ,
+# [offset (136)] # [rename (name = "m_OldUnitX")] pub m_old_unit_x : i32 ,
+# [offset (140)] # [rename (name = "m_OldUnitZ")] pub m_old_unit_z : i32 ,
+# [offset (144)] # [rename (name = "m_OldCursorX")] pub m_old_cursor_x : i32 ,
+# [offset (148)] # [rename (name = "m_OldCursorZ")] pub m_old_cursor_z : i32 ,
+# [offset (152)] # [rename (name = "m_OldPickupX")] pub m_old_pickup_x : i32 ,
+# [offset (156)] # [rename (name = "m_OldPickupZ")] pub m_old_pickup_z : i32 ,
+# [offset (160)] # [rename (name = "m_EngageX")] pub m_engage_x : i32 ,
+# [offset (164)] # [rename (name = "m_EngageZ")] pub m_engage_z : i32 ,
+# [offset (168)] # [rename (name = "m_EnterX")] pub m_enter_x : i32 ,
+# [offset (172)] # [rename (name = "m_EnterZ")] pub m_enter_z : i32 ,
+# [offset (176)] # [rename (name = "m_IsEnemyAttackRange")] pub m_is_enemy_attack_range : bool ,
+# [offset (177)] # [rename (name = "m_IsUpdateSupportSkill")] pub m_is_update_support_skill : bool ,
+# [offset (184)] # [rename (name = "m_UpdateSupportSkillUnit")] pub m_update_support_skill_unit : crate :: app :: unit :: Unit ,
+# [offset (192)] # [rename (name = "m_OperateMode")] pub m_operate_mode : crate :: app :: mapsequencehuman :: MapSequenceHuman_OperateMode ,
+# [static_field] # [rename (name = "PlayerMoveMask")] pub player_move_mask : crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_Flag < crate :: app :: mapdeploy :: MapDeploy > ,
+# [static_field] # [rename (name = "EnemyMoveMask")] pub enemy_move_mask : crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_Flag < crate :: app :: mapdeploy :: MapDeploy > ,
+# [static_field] # [rename (name = "FreeWeaponMask")] pub free_weapon_mask : crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_Flag < crate :: app :: mapdeploy :: MapDeploy > ,
+# [static_field] # [rename (name = "PickWeaponMask")] pub pick_weapon_mask : crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_Flag < crate :: app :: mapdeploy :: MapDeploy > ,
+# [static_field] # [rename (name = "WaitPickFreeCursor")] pub wait_pick_free_cursor : f32 ,
+}
+
 }
 
 #[cfg(feature = "app-mapsequencehuman-types")]
@@ -542,11 +542,11 @@ impl MapSequenceHuman {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::MapSequenceHuman_NextMode;
+    pub use super::MapSequenceHuman_OperateMode;
+    pub use super::MapSequenceHuman_Label;
     pub use super::MapSequenceHuman;
     pub use super::IMapSequenceHuman;
     pub use super::IMapSequenceHumanMethods;
-    pub use super::MapSequenceHuman_OperateMode;
-    pub use super::MapSequenceHuman_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

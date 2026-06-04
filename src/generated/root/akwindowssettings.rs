@@ -32,6 +32,12 @@ mod __types {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akwindowssettings/AkWindowsSettings_PlatformAdvancedSettings.md"))] # [:: unity2 :: class (namespace = "" , name = "AkWindowsSettings.PlatformAdvancedSettings")] # [parent (crate :: root :: akcommonadvancedsettings :: AkCommonAdvancedSettings)] pub struct AkWindowsSettings_PlatformAdvancedSettings {
+# [offset (84)] # [rename (name = "m_AudioAPI")] pub m_audio_api : crate :: root :: akwindowssettings :: AkWindowsSettings_PlatformAdvancedSettings_AudioAPI ,
+# [offset (88)] # [rename (name = "m_GlobalFocus")] pub m_global_focus : bool ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/akwindowssettings/AkWindowsSettings_PlatformAdvancedSettings_AudioAPI.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -98,12 +104,6 @@ impl  AkWindowsSettings_PlatformAdvancedSettings_AudioAPI  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akwindowssettings/AkWindowsSettings_PlatformAdvancedSettings.md"))] # [:: unity2 :: class (namespace = "" , name = "AkWindowsSettings.PlatformAdvancedSettings")] # [parent (crate :: root :: akcommonadvancedsettings :: AkCommonAdvancedSettings)] pub struct AkWindowsSettings_PlatformAdvancedSettings {
-# [offset (84)] # [rename (name = "m_AudioAPI")] pub m_audio_api : crate :: root :: akwindowssettings :: AkWindowsSettings_PlatformAdvancedSettings_AudioAPI ,
-# [offset (88)] # [rename (name = "m_GlobalFocus")] pub m_global_focus : bool ,
-}
-
 }
 
 #[cfg(feature = "root-akwindowssettings-types")]
@@ -149,10 +149,10 @@ pub mod prelude {
     pub use super::AkWindowsSettings;
     pub use super::IAkWindowsSettings;
     pub use super::IAkWindowsSettingsMethods;
-    pub use super::AkWindowsSettings_PlatformAdvancedSettings_AudioAPI;
     pub use super::AkWindowsSettings_PlatformAdvancedSettings;
     pub use super::IAkWindowsSettings_PlatformAdvancedSettings;
     pub use super::IAkWindowsSettings_PlatformAdvancedSettingsMethods;
+    pub use super::AkWindowsSettings_PlatformAdvancedSettings_AudioAPI;
     pub use crate::root::akbaseplatformsettings::IAkBasePlatformSettings;
     pub use crate::root::akcommonadvancedsettings::IAkCommonAdvancedSettings;
     pub use crate::root::akcommonplatformsettings::IAkCommonPlatformSettings;

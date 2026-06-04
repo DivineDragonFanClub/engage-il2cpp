@@ -19,9 +19,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fooddata/FoodData.md"))] # [:: unity2 :: class (namespace = "App" , name = "FoodData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: fooddata :: FoodData >)] pub struct FoodData {}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fooddata/FoodData_FoodCountry.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -94,6 +91,9 @@ impl  FoodData_FoodCountry  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fooddata/FoodData.md"))] # [:: unity2 :: class (namespace = "App" , name = "FoodData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: fooddata :: FoodData >)] pub struct FoodData {}
+
 }
 
 #[cfg(feature = "app-fooddata-types")]
@@ -122,10 +122,10 @@ impl FoodData {
 #[cfg(feature = "app-fooddata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::FoodData_FoodCountry;
     pub use super::FoodData;
     pub use super::IFoodData;
     pub use super::IFoodDataMethods;
-    pub use super::FoodData_FoodCountry;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdata_1::IStructData_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

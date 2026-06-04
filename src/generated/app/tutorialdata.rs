@@ -19,6 +19,11 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/tutorialdata/TutorialData.md"))] # [:: unity2 :: class (namespace = "App" , name = "TutorialData")] # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: tutorialdata :: TutorialData >)] pub struct TutorialData {
+# [static_field] # [rename (name = "FirstIndex")] pub first_index : i32 ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tutorialdata/TutorialData_SSTypes.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -65,11 +70,6 @@ impl  TutorialData_SSTypes  {
 
     }
 
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/tutorialdata/TutorialData.md"))] # [:: unity2 :: class (namespace = "App" , name = "TutorialData")] # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: tutorialdata :: TutorialData >)] pub struct TutorialData {
-# [static_field] # [rename (name = "FirstIndex")] pub first_index : i32 ,
 }
 
 
@@ -295,10 +295,10 @@ impl TutorialData {
 #[cfg(feature = "app-tutorialdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TutorialData_SSTypes;
     pub use super::TutorialData;
     pub use super::ITutorialData;
     pub use super::ITutorialDataMethods;
+    pub use super::TutorialData_SSTypes;
     pub use super::TutorialData_Types;
     pub use super::TutorialData_Notices;
     pub use super::TutorialData_Flags;

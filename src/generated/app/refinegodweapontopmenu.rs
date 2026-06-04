@@ -31,11 +31,6 @@ mod __types {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweapontopmenu/RefineGodWeaponTopMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineGodWeaponTopMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct RefineGodWeaponTopMenu {
-# [offset (200)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: refinegodweapontopmenu :: RefineGodWeaponTopMenu_DecideEventHandler ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refinegodweapontopmenu/RefineGodWeaponTopMenu_Result2.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -88,6 +83,11 @@ impl  RefineGodWeaponTopMenu_Result2  {
 
     }
 
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweapontopmenu/RefineGodWeaponTopMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineGodWeaponTopMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct RefineGodWeaponTopMenu {
+# [offset (200)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: refinegodweapontopmenu :: RefineGodWeaponTopMenu_DecideEventHandler ,
 }
 
 
@@ -180,10 +180,10 @@ pub mod prelude {
     pub use super::RefineGodWeaponTopMenu_RefineMenuItem;
     pub use super::IRefineGodWeaponTopMenu_RefineMenuItem;
     pub use super::IRefineGodWeaponTopMenu_RefineMenuItemMethods;
+    pub use super::RefineGodWeaponTopMenu_Result2;
     pub use super::RefineGodWeaponTopMenu;
     pub use super::IRefineGodWeaponTopMenu;
     pub use super::IRefineGodWeaponTopMenuMethods;
-    pub use super::RefineGodWeaponTopMenu_Result2;
     pub use super::RefineGodWeaponTopMenu_ResetMenuItem;
     pub use super::IRefineGodWeaponTopMenu_ResetMenuItem;
     pub use super::IRefineGodWeaponTopMenu_ResetMenuItemMethods;

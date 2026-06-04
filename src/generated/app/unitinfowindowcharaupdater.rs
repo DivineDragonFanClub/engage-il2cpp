@@ -54,6 +54,29 @@ impl ::unity2::IlType for UnitInfoWindowCharaUpdater_StatusScope {
 }
 
 
+impl UnitInfoWindowCharaUpdater_StatusScope {
+    #[inline]
+    pub fn status_hash() -> i32 {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "StatusHash");
+
+        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
+    }
+
+    #[inline]
+    pub fn set_status_hash(value: i32) {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "StatusHash");
+
+        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
+
+    }
+
+}
+
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfowindowcharaupdater/UnitInfoWindowCharaUpdater.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitInfoWindowCharaUpdater")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct UnitInfoWindowCharaUpdater {
 # [offset (24)] # [rename (name = "m_IsRequestToPlayBody")] pub m_is_request_to_play_body : bool ,
 # [offset (25)] # [rename (name = "m_IsRequestToPlayFace")] pub m_is_request_to_play_face : bool ,

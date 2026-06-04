@@ -33,6 +33,7 @@ mod __types {
 # [offset (296)] # [rename (name = "m_PalleteName")] pub m_pallete_name : :: unity2 :: Il2CppString ,
 # [offset (304)] # [rename (name = "m_Brightness")] pub m_brightness : f32 ,
 # [static_field] # [rename (name = "s_TmpVertex")] pub s_tmp_vertex : crate :: unity_engine :: uivertex :: UIVertex ,
+# [static_field] # [rename (name = "s_strBuilder")] pub s_str_builder : :: unity2 :: IlInstance ,
 # [static_field] # [rename (name = "s_Key3Dictionary")] pub s_key3_dictionary : crate :: app :: key3dictionary_2 :: Key3Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: Il2CppString > ,
 # [static_field] # [rename (name = "m_EngageNameDictionary")] pub m_engage_name_dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: Il2CppString > ,
 # [static_field] # [rename (name = "m_VariationJobIconIdDictionary")] pub m_variation_job_icon_id_dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: Il2CppString > ,

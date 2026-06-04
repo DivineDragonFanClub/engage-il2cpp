@@ -13,9 +13,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/infoutil/InfoUtil_StatusSkill.md"))] # [:: unity2 :: class (namespace = "App" , name = "InfoUtil.StatusSkill")] # [parent (crate :: system :: object :: Object)] pub struct InfoUtil_StatusSkill {}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/infoutil/InfoUtil_HpStockSpriteType.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -71,8 +68,12 @@ impl  InfoUtil_HpStockSpriteType  {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/infoutil/InfoUtil_StatusSkill.md"))] # [:: unity2 :: class (namespace = "App" , name = "InfoUtil.StatusSkill")] # [parent (crate :: system :: object :: Object)] pub struct InfoUtil_StatusSkill {}
+
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/infoutil/InfoUtil.md"))] # [:: unity2 :: class (namespace = "App" , name = "InfoUtil")] # [parent (crate :: system :: object :: Object)] pub struct InfoUtil {
 # [static_field] # [rename (name = "SKILL_SLOT_MAX")] pub skill_slot_max : i32 ,
+# [static_field] # [rename (name = "s_EmptyStringBuilder")] pub s_empty_string_builder : :: unity2 :: IlInstance ,
 }
 
 }
@@ -120,10 +121,10 @@ impl InfoUtil {
 #[cfg(feature = "app-infoutil")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::InfoUtil_HpStockSpriteType;
     pub use super::InfoUtil_StatusSkill;
     pub use super::IInfoUtil_StatusSkill;
     pub use super::IInfoUtil_StatusSkillMethods;
-    pub use super::InfoUtil_HpStockSpriteType;
     pub use super::InfoUtil;
     pub use super::IInfoUtil;
     pub use super::IInfoUtilMethods;

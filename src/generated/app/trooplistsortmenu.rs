@@ -21,15 +21,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/trooplistsortmenu/TroopListSortMenu_SortTitle.md"))] # [:: unity2 :: class (namespace = "App" , name = "TroopListSortMenu.SortTitle")] # [parent (crate :: system :: object :: Object)] pub struct TroopListSortMenu_SortTitle {
-# [offset (16)] # [rename (name = "m_root")] pub m_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (24)] # [rename (name = "m_page")] pub m_page : i32 ,
-# [offset (28)] # [rename (name = "m_sortType")] pub m_sort_type : crate :: app :: trooplistsortmenu :: TroopListSortMenu_SortType ,
-# [offset (32)] # [rename (name = "m_title")] pub m_title : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (40)] # [rename (name = "m_arrow")] pub m_arrow : crate :: unity_engine :: gameobject :: GameObject ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/trooplistsortmenu/TroopListSortMenu_SortOrder.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -82,6 +73,43 @@ impl  TroopListSortMenu_SortOrder  {
 
     }
 
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/trooplistsortmenu/TroopListSortMenu_SortTitle.md"))] # [:: unity2 :: class (namespace = "App" , name = "TroopListSortMenu.SortTitle")] # [parent (crate :: system :: object :: Object)] pub struct TroopListSortMenu_SortTitle {
+# [offset (16)] # [rename (name = "m_root")] pub m_root : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (24)] # [rename (name = "m_page")] pub m_page : i32 ,
+# [offset (28)] # [rename (name = "m_sortType")] pub m_sort_type : crate :: app :: trooplistsortmenu :: TroopListSortMenu_SortType ,
+# [offset (32)] # [rename (name = "m_title")] pub m_title : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (40)] # [rename (name = "m_arrow")] pub m_arrow : crate :: unity_engine :: gameobject :: GameObject ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/trooplistsortmenu/TroopListSortMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "TroopListSortMenu")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct TroopListSortMenu {
+# [offset (24)] # [rename (name = "m_pageRoot")] pub m_page_root : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
+# [offset (32)] # [rename (name = "m_sortTitle")] pub m_sort_title : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: trooplistsortmenu :: TroopListSortMenu_SortTitle > ,
+# [offset (40)] # [rename (name = "m_cursorRoot")] pub m_cursor_root : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (48)] # [rename (name = "m_pageTitle")] pub m_page_title : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (56)] # [rename (name = "m_pageIcon")] pub m_page_icon : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
+# [offset (64)] # [rename (name = "m_upArrow")] pub m_up_arrow : crate :: unity_engine :: sprite :: Sprite ,
+# [offset (72)] # [rename (name = "m_downArrow")] pub m_down_arrow : crate :: unity_engine :: sprite :: Sprite ,
+# [offset (80)] # [rename (name = "m_selectIndex")] pub m_select_index : i32 ,
+# [offset (84)] # [rename (name = "m_posX")] pub m_pos_x : f32 ,
+# [offset (88)] # [rename (name = "m_posY")] pub m_pos_y : f32 ,
+# [offset (92)] # [rename (name = "m_fromX")] pub m_from_x : f32 ,
+# [offset (96)] # [rename (name = "m_fromY")] pub m_from_y : f32 ,
+# [offset (100)] # [rename (name = "m_toX")] pub m_to_x : f32 ,
+# [offset (104)] # [rename (name = "m_toY")] pub m_to_y : f32 ,
+# [offset (108)] # [rename (name = "m_sizeW")] pub m_size_w : f32 ,
+# [offset (112)] # [rename (name = "m_sizeH")] pub m_size_h : f32 ,
+# [offset (116)] # [rename (name = "m_fromW")] pub m_from_w : f32 ,
+# [offset (120)] # [rename (name = "m_fromH")] pub m_from_h : f32 ,
+# [offset (124)] # [rename (name = "m_toW")] pub m_to_w : f32 ,
+# [offset (128)] # [rename (name = "m_toH")] pub m_to_h : f32 ,
+# [offset (132)] # [rename (name = "m_moveTick")] pub m_move_tick : f32 ,
+# [offset (136)] # [rename (name = "m_moveFrame")] pub m_move_frame : f32 ,
+# [static_field] # [rename (name = "m_sortOrder")] pub m_sort_order : crate :: app :: trooplistsortmenu :: TroopListSortMenu_SortOrder ,
+# [static_field] # [rename (name = "m_sortType")] pub m_sort_type : crate :: app :: trooplistsortmenu :: TroopListSortMenu_SortType ,
 }
 
 
@@ -235,34 +263,6 @@ impl  TroopListSortMenu_SortType  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/trooplistsortmenu/TroopListSortMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "TroopListSortMenu")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct TroopListSortMenu {
-# [offset (24)] # [rename (name = "m_pageRoot")] pub m_page_root : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (32)] # [rename (name = "m_sortTitle")] pub m_sort_title : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: trooplistsortmenu :: TroopListSortMenu_SortTitle > ,
-# [offset (40)] # [rename (name = "m_cursorRoot")] pub m_cursor_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (48)] # [rename (name = "m_pageTitle")] pub m_page_title : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (56)] # [rename (name = "m_pageIcon")] pub m_page_icon : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (64)] # [rename (name = "m_upArrow")] pub m_up_arrow : crate :: unity_engine :: sprite :: Sprite ,
-# [offset (72)] # [rename (name = "m_downArrow")] pub m_down_arrow : crate :: unity_engine :: sprite :: Sprite ,
-# [offset (80)] # [rename (name = "m_selectIndex")] pub m_select_index : i32 ,
-# [offset (84)] # [rename (name = "m_posX")] pub m_pos_x : f32 ,
-# [offset (88)] # [rename (name = "m_posY")] pub m_pos_y : f32 ,
-# [offset (92)] # [rename (name = "m_fromX")] pub m_from_x : f32 ,
-# [offset (96)] # [rename (name = "m_fromY")] pub m_from_y : f32 ,
-# [offset (100)] # [rename (name = "m_toX")] pub m_to_x : f32 ,
-# [offset (104)] # [rename (name = "m_toY")] pub m_to_y : f32 ,
-# [offset (108)] # [rename (name = "m_sizeW")] pub m_size_w : f32 ,
-# [offset (112)] # [rename (name = "m_sizeH")] pub m_size_h : f32 ,
-# [offset (116)] # [rename (name = "m_fromW")] pub m_from_w : f32 ,
-# [offset (120)] # [rename (name = "m_fromH")] pub m_from_h : f32 ,
-# [offset (124)] # [rename (name = "m_toW")] pub m_to_w : f32 ,
-# [offset (128)] # [rename (name = "m_toH")] pub m_to_h : f32 ,
-# [offset (132)] # [rename (name = "m_moveTick")] pub m_move_tick : f32 ,
-# [offset (136)] # [rename (name = "m_moveFrame")] pub m_move_frame : f32 ,
-# [static_field] # [rename (name = "m_sortOrder")] pub m_sort_order : crate :: app :: trooplistsortmenu :: TroopListSortMenu_SortOrder ,
-# [static_field] # [rename (name = "m_sortType")] pub m_sort_type : crate :: app :: trooplistsortmenu :: TroopListSortMenu_SortType ,
-}
-
 }
 
 #[cfg(feature = "app-trooplistsortmenu-types")]
@@ -308,14 +308,14 @@ impl TroopListSortMenu {
 #[cfg(feature = "app-trooplistsortmenu")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::TroopListSortMenu_SortOrder;
     pub use super::TroopListSortMenu_SortTitle;
     pub use super::ITroopListSortMenu_SortTitle;
     pub use super::ITroopListSortMenu_SortTitleMethods;
-    pub use super::TroopListSortMenu_SortOrder;
-    pub use super::TroopListSortMenu_SortType;
     pub use super::TroopListSortMenu;
     pub use super::ITroopListSortMenu;
     pub use super::ITroopListSortMenuMethods;
+    pub use super::TroopListSortMenu_SortType;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

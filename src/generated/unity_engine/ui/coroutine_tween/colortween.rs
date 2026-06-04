@@ -56,9 +56,6 @@ impl ::unity2::IlType for ColorTween {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/coroutine_tween/colortween/ColorTween_ColorTweenCallback.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI.CoroutineTween" , name = "ColorTween.ColorTweenCallback")] # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < crate :: unity_engine :: color :: Color >)] pub struct ColorTween_ColorTweenCallback {}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/coroutine_tween/colortween/ColorTween_ColorTweenMode.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -113,6 +110,9 @@ impl  ColorTween_ColorTweenMode  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/coroutine_tween/colortween/ColorTween_ColorTweenCallback.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI.CoroutineTween" , name = "ColorTween.ColorTweenCallback")] # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < crate :: unity_engine :: color :: Color >)] pub struct ColorTween_ColorTweenCallback {}
+
 }
 
 #[cfg(feature = "unity_engine-ui-coroutine_tween-colortween-types")]
@@ -148,10 +148,10 @@ impl ColorTween_ColorTweenCallback {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::ColorTween;
+    pub use super::ColorTween_ColorTweenMode;
     pub use super::ColorTween_ColorTweenCallback;
     pub use super::IColorTween_ColorTweenCallback;
     pub use super::IColorTween_ColorTweenCallbackMethods;
-    pub use super::ColorTween_ColorTweenMode;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

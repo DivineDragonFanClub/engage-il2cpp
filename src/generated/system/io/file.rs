@@ -9,7 +9,9 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/file/File.md"))] # [:: unity2 :: class (namespace = "System.IO" , name = "File")] # [parent (crate :: system :: object :: Object)] pub struct File {}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/file/File.md"))] # [:: unity2 :: class (namespace = "System.IO" , name = "File")] # [parent (crate :: system :: object :: Object)] pub struct File {
+# [static_field] # [rename (name = "defaultLocalFileTime")] pub default_local_file_time : :: unity2 :: IlInstance ,
+}
 
 }
 

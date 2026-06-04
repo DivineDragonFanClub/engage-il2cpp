@@ -16,6 +16,7 @@ mod __types {
 
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphobjectpool/RenderGraphObjectPool_SharedObjectPool_1.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule" , name = "RenderGraphObjectPool.SharedObjectPool`1")] # [parent (crate :: system :: object :: Object)] pub struct RenderGraphObjectPool_SharedObjectPool_1 < T0 : :: unity2 :: ClassIdentity > {
 # [rename (name = "m_Pool")] pub m_pool : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < T0 > ,
+# [static_field] # [rename (name = "s_Instance")] pub s_instance : :: unity2 :: IlInstance ,
 }
 
 }

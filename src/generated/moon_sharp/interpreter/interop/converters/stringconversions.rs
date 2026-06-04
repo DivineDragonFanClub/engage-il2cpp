@@ -13,6 +13,9 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/converters/stringconversions/StringConversions.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Interop.Converters" , name = "StringConversions")] # [parent (crate :: system :: object :: Object)] pub struct StringConversions {}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/interop/converters/stringconversions/StringConversions_StringSubtype.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -73,9 +76,6 @@ impl  StringConversions_StringSubtype  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/converters/stringconversions/StringConversions.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Interop.Converters" , name = "StringConversions")] # [parent (crate :: system :: object :: Object)] pub struct StringConversions {}
-
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-converters-stringconversions-types")]
@@ -93,9 +93,9 @@ impl StringConversions { pub fn get_string_subtype_method_info () -> & 'static :
 #[cfg(feature = "moon_sharp-interpreter-interop-converters-stringconversions")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::StringConversions_StringSubtype;
     pub use super::StringConversions;
     pub use super::IStringConversions;
+    pub use super::StringConversions_StringSubtype;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

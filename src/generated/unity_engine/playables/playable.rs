@@ -44,6 +44,29 @@ impl ::unity2::IlType for Playable {
 
 }
 
+
+impl Playable {
+    #[inline]
+    pub fn m_null_playable() -> crate :: unity_engine :: playables :: playable :: Playable {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "m_NullPlayable");
+
+        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
+    }
+
+    #[inline]
+    pub fn set_m_null_playable(value: crate :: unity_engine :: playables :: playable :: Playable) {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "m_NullPlayable");
+
+        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-playables-playable-types")]

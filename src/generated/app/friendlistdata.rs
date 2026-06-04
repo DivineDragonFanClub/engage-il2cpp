@@ -19,9 +19,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/friendlistdata/FriendListData.md"))] # [:: unity2 :: class (namespace = "App" , name = "FriendListData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: friendlistdata :: FriendListData >)] pub struct FriendListData {}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/friendlistdata/FriendListData_States.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -94,6 +91,9 @@ impl  FriendListData_States  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/friendlistdata/FriendListData.md"))] # [:: unity2 :: class (namespace = "App" , name = "FriendListData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: friendlistdata :: FriendListData >)] pub struct FriendListData {}
+
 }
 
 #[cfg(feature = "app-friendlistdata-types")]
@@ -122,10 +122,10 @@ impl FriendListData {
 #[cfg(feature = "app-friendlistdata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::FriendListData_States;
     pub use super::FriendListData;
     pub use super::IFriendListData;
     pub use super::IFriendListDataMethods;
-    pub use super::FriendListData_States;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdata_1::IStructData_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

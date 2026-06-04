@@ -50,6 +50,29 @@ impl ::unity2::IlType for ColorBlock {
 
 }
 
+
+impl ColorBlock {
+    #[inline]
+    pub fn default_color_block() -> crate :: unity_engine :: ui :: colorblock :: ColorBlock {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "defaultColorBlock");
+
+        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
+    }
+
+    #[inline]
+    pub fn set_default_color_block(value: crate :: unity_engine :: ui :: colorblock :: ColorBlock) {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "defaultColorBlock");
+
+        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-ui-colorblock-types")]

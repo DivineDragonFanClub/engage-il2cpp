@@ -15,6 +15,12 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/coroutine_2/Coroutine_2.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter" , name = "Coroutine")] # [parent (crate :: moon_sharp :: interpreter :: refidobject :: RefIdObject)] pub struct Coroutine_2 {
+# [offset (24)] # [rename (name = "m_ClrCallback")] pub m_clr_callback : crate :: moon_sharp :: interpreter :: callbackfunction :: CallbackFunction ,
+# [offset (32)] # [rename (name = "m_Processor")] pub m_processor : crate :: moon_sharp :: interpreter :: execution :: vm :: processor :: Processor ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/coroutine_2/Coroutine_CoroutineType.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -69,12 +75,6 @@ impl  Coroutine_CoroutineType  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/coroutine_2/Coroutine_2.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter" , name = "Coroutine")] # [parent (crate :: moon_sharp :: interpreter :: refidobject :: RefIdObject)] pub struct Coroutine_2 {
-# [offset (24)] # [rename (name = "m_ClrCallback")] pub m_clr_callback : crate :: moon_sharp :: interpreter :: callbackfunction :: CallbackFunction ,
-# [offset (32)] # [rename (name = "m_Processor")] pub m_processor : crate :: moon_sharp :: interpreter :: execution :: vm :: processor :: Processor ,
-}
-
 }
 
 #[cfg(feature = "moon_sharp-interpreter-coroutine_2-types")]
@@ -102,10 +102,10 @@ impl Coroutine_2 {
 #[cfg(feature = "moon_sharp-interpreter-coroutine_2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Coroutine_CoroutineType;
     pub use super::Coroutine_2;
     pub use super::ICoroutine_2;
     pub use super::ICoroutine_2Methods;
+    pub use super::Coroutine_CoroutineType;
     pub use crate::moon_sharp::interpreter::refidobject::IRefIdObject;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

@@ -25,6 +25,234 @@ mod __types {
  ;
 
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameuserdata/GameUserData_MapModes.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct GameUserData_MapModes  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for GameUserData_MapModes  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "GameUserData.MapModes";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for GameUserData_MapModes  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  GameUserData_MapModes  {
+    pub fn story() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn encount() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn challenge() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn relay() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn versus() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn recollection() -> Self {
+        Self { value: 5 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserdata/GameUserData_ProcDescSetSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameUserData.ProcDescSetSequence")] # [parent (crate :: app :: procdescuser :: ProcDescUser)] pub struct GameUserData_ProcDescSetSequence {
+# [offset (20)] # [rename (name = "m_Sequence")] pub m_sequence : crate :: app :: gameuserdata :: GameUserData_Sequences ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserdata/GameUserData_StatusField.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameUserData.StatusField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: gameuserdata :: GameUserData_Statuses >)] pub struct GameUserData_StatusField {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserdata/GameUserData.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameUserData")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: gameuserdata :: GameUserData >)] pub struct GameUserData {
+# [static_field] # [rename (name = "MaxGold")] pub max_gold : i32 ,
+# [static_field] # [rename (name = "MaxRefine")] pub max_refine : i32 ,
+# [static_field] # [rename (name = "MaxPieceOfBond")] pub max_piece_of_bond : i32 ,
+# [static_field] # [rename (name = "MaxVariable")] pub max_variable : i32 ,
+# [offset (32)] # [rename (name = "m_Status")] pub m_status : crate :: app :: gameuserdata :: GameUserData_StatusField ,
+# [offset (40)] # [rename (name = "m_Sequence")] pub m_sequence : crate :: app :: gameuserdata :: GameUserData_Sequences ,
+# [offset (44)] # [rename (name = "m_GameMode")] pub m_game_mode : crate :: app :: gamemode :: GameMode ,
+# [offset (48)] # [rename (name = "m_Difficulty")] pub m_difficulty : crate :: app :: difficulty :: Difficulty ,
+# [offset (56)] # [rename (name = "m_Chapter")] pub m_chapter : crate :: app :: chapterdata :: ChapterData ,
+# [offset (64)] # [rename (name = "m_GmapSpot")] pub m_gmap_spot : :: unity2 :: Il2CppString ,
+# [offset (72)] # [rename (name = "m_ContentsIndex")] pub m_contents_index : i32 ,
+# [offset (80)] # [rename (name = "m_Variable")] pub m_variable : crate :: app :: gamevariable :: GameVariable ,
+# [offset (88)] # [rename (name = "m_Gold")] pub m_gold : i32 ,
+# [offset (92)] # [rename (name = "m_Progress")] pub m_progress : i32 ,
+# [offset (96)] # [rename (name = "m_TrainingCount")] pub m_training_count : i32 ,
+# [offset (100)] # [rename (name = "m_ArenaCount")] pub m_arena_count : i32 ,
+# [offset (104)] # [rename (name = "m_UnitInfoMode")] pub m_unit_info_mode : crate :: app :: unitinfo :: UnitInfo_Mode ,
+# [offset (108)] # [rename (name = "m_PieceOfBond")] pub m_piece_of_bond : i32 ,
+# [offset (112)] # [rename (name = "m_TotalPieceOfBond")] pub m_total_piece_of_bond : i32 ,
+# [offset (120)] # [rename (name = "m_GmapData")] pub m_gmap_data : crate :: app :: gameusergmapdata :: GameUserGmapData ,
+# [offset (128)] # [rename (name = "m_HubData")] pub m_hub_data : crate :: app :: gameuserhubdata :: GameUserHubData ,
+# [offset (136)] # [rename (name = "m_ChapterRecord")] pub m_chapter_record : crate :: app :: chapterrecord :: ChapterRecord ,
+# [offset (144)] # [rename (name = "m_MascotName")] pub m_mascot_name : :: unity2 :: Il2CppString ,
+# [offset (152)] # [rename (name = "m_MapEditData")] pub m_map_edit_data : crate :: app :: mapeditdata :: MapEditData ,
+# [offset (160)] # [rename (name = "m_RelayData")] pub m_relay_data : crate :: app :: relayuserdata :: RelayUserData ,
+# [offset (168)] # [rename (name = "m_Identifier")] pub m_identifier : u64 ,
+# [offset (176)] # [rename (name = "m_VersusData")] pub m_versus_data : crate :: app :: versususerdata :: VersusUserData ,
+# [offset (184)] # [rename (name = "m_IsShowNetTerms")] pub m_is_show_net_terms : bool ,
+# [offset (185)] # [rename (name = "m_IsShowNetHowToReport")] pub m_is_show_net_how_to_report : bool ,
+# [offset (188)] # [rename (name = "m_EvilDifficulty")] pub m_evil_difficulty : crate :: app :: difficulty :: Difficulty ,
+# [static_field] # [rename (name = "Flag_RefineIron")] pub flag_refine_iron : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "Flag_RefineSteel")] pub flag_refine_steel : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "Flag_RefineSilver")] pub flag_refine_silver : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "ChallengeRouteFlag")] pub challenge_route_flag : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "ChallengeSeedFlag")] pub challenge_seed_flag : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "ChallengeLevelFlag")] pub challenge_level_flag : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "ChallengeBestLevelFlag")] pub challenge_best_level_flag : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "ChallengeOffsetFlag")] pub challenge_offset_flag : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "ChallengeTurnFlag")] pub challenge_turn_flag : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "KeyInvestmentFilene")] pub key_investment_filene : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "KeyInvestmentBrodia")] pub key_investment_brodia : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "KeyInvestmentIrcion")] pub key_investment_ircion : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "KeyInvestmentSolum")] pub key_investment_solum : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "LOCAL_FLAG")] pub local_flag : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+# [static_field] # [rename (name = "KeyFieldBGM_Changeable")] pub key_field_bgm_changeable : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "CompletedLongEndingFlag")] pub completed_long_ending_flag : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "CompletedEvilFlag")] pub completed_evil_flag : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "Flag_RewindEnable")] pub flag_rewind_enable : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "Flag_RelianceAPlusPermit")] pub flag_reliance_a_plus_permit : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "Flag_GetPromiseRing")] pub flag_get_promise_ring : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "Flag_CC_Enchant")] pub flag_cc_enchant : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "Flag_CC_Gunner")] pub flag_cc_gunner : :: unity2 :: Il2CppString ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameuserdata/GameUserData_Sequences.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct GameUserData_Sequences  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for GameUserData_Sequences  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "GameUserData.Sequences";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for GameUserData_Sequences  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  GameUserData_Sequences  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn chapter_save() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn sortie() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn map() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn hub() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn kizuna() -> Self {
+        Self { value: 5 }
+
+    }
+
+
+    pub fn gmap() -> Self {
+        Self { value: 6 }
+
+    }
+
+
+    pub fn chapter() -> Self {
+        Self { value: 7 }
+
+    }
+
+
+    pub fn num() -> Self {
+        Self { value: 8 }
+
+    }
+
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameuserdata/GameUserData_Statuses.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -169,238 +397,27 @@ impl  GameUserData_Statuses  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserdata/GameUserData_StatusField.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameUserData.StatusField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: gameuserdata :: GameUserData_Statuses >)] pub struct GameUserData_StatusField {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserdata/GameUserData.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameUserData")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: gameuserdata :: GameUserData >)] pub struct GameUserData {
-# [static_field] # [rename (name = "MaxGold")] pub max_gold : i32 ,
-# [static_field] # [rename (name = "MaxRefine")] pub max_refine : i32 ,
-# [static_field] # [rename (name = "MaxPieceOfBond")] pub max_piece_of_bond : i32 ,
-# [static_field] # [rename (name = "MaxVariable")] pub max_variable : i32 ,
-# [offset (32)] # [rename (name = "m_Status")] pub m_status : crate :: app :: gameuserdata :: GameUserData_StatusField ,
-# [offset (40)] # [rename (name = "m_Sequence")] pub m_sequence : crate :: app :: gameuserdata :: GameUserData_Sequences ,
-# [offset (44)] # [rename (name = "m_GameMode")] pub m_game_mode : crate :: app :: gamemode :: GameMode ,
-# [offset (48)] # [rename (name = "m_Difficulty")] pub m_difficulty : crate :: app :: difficulty :: Difficulty ,
-# [offset (56)] # [rename (name = "m_Chapter")] pub m_chapter : crate :: app :: chapterdata :: ChapterData ,
-# [offset (64)] # [rename (name = "m_GmapSpot")] pub m_gmap_spot : :: unity2 :: Il2CppString ,
-# [offset (72)] # [rename (name = "m_ContentsIndex")] pub m_contents_index : i32 ,
-# [offset (80)] # [rename (name = "m_Variable")] pub m_variable : crate :: app :: gamevariable :: GameVariable ,
-# [offset (88)] # [rename (name = "m_Gold")] pub m_gold : i32 ,
-# [offset (92)] # [rename (name = "m_Progress")] pub m_progress : i32 ,
-# [offset (96)] # [rename (name = "m_TrainingCount")] pub m_training_count : i32 ,
-# [offset (100)] # [rename (name = "m_ArenaCount")] pub m_arena_count : i32 ,
-# [offset (104)] # [rename (name = "m_UnitInfoMode")] pub m_unit_info_mode : crate :: app :: unitinfo :: UnitInfo_Mode ,
-# [offset (108)] # [rename (name = "m_PieceOfBond")] pub m_piece_of_bond : i32 ,
-# [offset (112)] # [rename (name = "m_TotalPieceOfBond")] pub m_total_piece_of_bond : i32 ,
-# [offset (120)] # [rename (name = "m_GmapData")] pub m_gmap_data : crate :: app :: gameusergmapdata :: GameUserGmapData ,
-# [offset (128)] # [rename (name = "m_HubData")] pub m_hub_data : crate :: app :: gameuserhubdata :: GameUserHubData ,
-# [offset (136)] # [rename (name = "m_ChapterRecord")] pub m_chapter_record : crate :: app :: chapterrecord :: ChapterRecord ,
-# [offset (144)] # [rename (name = "m_MascotName")] pub m_mascot_name : :: unity2 :: Il2CppString ,
-# [offset (152)] # [rename (name = "m_MapEditData")] pub m_map_edit_data : crate :: app :: mapeditdata :: MapEditData ,
-# [offset (160)] # [rename (name = "m_RelayData")] pub m_relay_data : crate :: app :: relayuserdata :: RelayUserData ,
-# [offset (168)] # [rename (name = "m_Identifier")] pub m_identifier : u64 ,
-# [offset (176)] # [rename (name = "m_VersusData")] pub m_versus_data : crate :: app :: versususerdata :: VersusUserData ,
-# [offset (184)] # [rename (name = "m_IsShowNetTerms")] pub m_is_show_net_terms : bool ,
-# [offset (185)] # [rename (name = "m_IsShowNetHowToReport")] pub m_is_show_net_how_to_report : bool ,
-# [offset (188)] # [rename (name = "m_EvilDifficulty")] pub m_evil_difficulty : crate :: app :: difficulty :: Difficulty ,
-# [static_field] # [rename (name = "Flag_RefineIron")] pub flag_refine_iron : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "Flag_RefineSteel")] pub flag_refine_steel : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "Flag_RefineSilver")] pub flag_refine_silver : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "ChallengeRouteFlag")] pub challenge_route_flag : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "ChallengeSeedFlag")] pub challenge_seed_flag : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "ChallengeLevelFlag")] pub challenge_level_flag : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "ChallengeBestLevelFlag")] pub challenge_best_level_flag : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "ChallengeOffsetFlag")] pub challenge_offset_flag : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "ChallengeTurnFlag")] pub challenge_turn_flag : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "KeyInvestmentFilene")] pub key_investment_filene : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "KeyInvestmentBrodia")] pub key_investment_brodia : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "KeyInvestmentIrcion")] pub key_investment_ircion : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "KeyInvestmentSolum")] pub key_investment_solum : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "LOCAL_FLAG")] pub local_flag : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [static_field] # [rename (name = "KeyFieldBGM_Changeable")] pub key_field_bgm_changeable : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "CompletedLongEndingFlag")] pub completed_long_ending_flag : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "CompletedEvilFlag")] pub completed_evil_flag : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "Flag_RewindEnable")] pub flag_rewind_enable : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "Flag_RelianceAPlusPermit")] pub flag_reliance_a_plus_permit : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "Flag_GetPromiseRing")] pub flag_get_promise_ring : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "Flag_CC_Enchant")] pub flag_cc_enchant : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "Flag_CC_Gunner")] pub flag_cc_gunner : :: unity2 :: Il2CppString ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserdata/GameUserData_ProcDescSetSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameUserData.ProcDescSetSequence")] # [parent (crate :: app :: procdescuser :: ProcDescUser)] pub struct GameUserData_ProcDescSetSequence {
-# [offset (20)] # [rename (name = "m_Sequence")] pub m_sequence : crate :: app :: gameuserdata :: GameUserData_Sequences ,
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameuserdata/GameUserData_MapModes.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct GameUserData_MapModes  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for GameUserData_MapModes  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "GameUserData.MapModes";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for GameUserData_MapModes  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  GameUserData_MapModes  {
-    pub fn story() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn encount() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn challenge() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn relay() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn versus() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn recollection() -> Self {
-        Self { value: 5 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameuserdata/GameUserData_Sequences.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct GameUserData_Sequences  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for GameUserData_Sequences  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "GameUserData.Sequences";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for GameUserData_Sequences  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  GameUserData_Sequences  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn chapter_save() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn sortie() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn map() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn hub() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn kizuna() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn gmap() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn chapter() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 8 }
-
-    }
-
-}
-
 }
 
 #[cfg(feature = "app-gameuserdata-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-gameuserdata")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GameUserData_ProcDescSetSequence_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gameuserdata :: GameUserData_Sequences as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameUserData_ProcDescSetSequence as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameUserData_ProcDescSetSequence as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GameUserData_ProcDescSetSequence , sequence : crate :: app :: gameuserdata :: GameUserData_Sequences , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GameUserData_ProcDescSetSequence , crate :: app :: gameuserdata :: GameUserData_Sequences , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , sequence , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_execute { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameUserData_ProcDescSetSequence as :: unity2 :: ClassIdentity > :: class () , "Execute" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameUserData_ProcDescSetSequence as :: unity2 :: ClassIdentity > :: NAME , "Execute" , e) , } } } pub unsafe fn execute (this : GameUserData_ProcDescSetSequence , inst : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc_Result { let inner : extern "C" fn (GameUserData_ProcDescSetSequence , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc_Result = :: core :: mem :: transmute (__lookup_execute :: get_method_info () . method_ptr ,) ; inner (this , inst , __unity2_method_info) } }
+
+#[cfg(feature = "app-gameuserdata")]
+pub trait IGameUserData_ProcDescSetSequenceMethods : IGameUserData_ProcDescSetSequence { # [doc = "`.ctor(crate::app::gameuserdata::GameUserData_Sequences)` overload"] fn ctor (self , sequence : impl :: core :: convert :: Into < crate :: app :: gameuserdata :: GameUserData_Sequences >) -> () { unsafe { let __receiver = < GameUserData_ProcDescSetSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GameUserData_ProcDescSetSequence_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (sequence) , :: core :: option :: Option :: None) } } # [doc = "`Execute(crate::app::procinst::ProcInst)` overload"] fn execute (self , inst : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> crate :: app :: procdesc :: ProcDesc_Result { unsafe { let __receiver = < GameUserData_ProcDescSetSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GameUserData_ProcDescSetSequence_unity2_raw :: execute (__receiver , :: core :: convert :: Into :: into (inst) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-gameuserdata")]
+impl < __T : IGameUserData_ProcDescSetSequence > IGameUserData_ProcDescSetSequenceMethods for __T { }
+
+#[cfg(feature = "app-gameuserdata")]
+impl GameUserData_ProcDescSetSequence { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameUserData_ProcDescSetSequence_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameUserData_ProcDescSetSequence_unity2_raw :: __lookup_execute :: get_method_info () } }
+
+#[cfg(feature = "app-gameuserdata")]
+impl GameUserData_ProcDescSetSequence {
+# [doc = "`.ctor(crate::app::gameuserdata::GameUserData_Sequences)` — overload selector"] pub fn new (sequence : crate :: app :: gameuserdata :: GameUserData_Sequences) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GameUserData_ProcDescSetSequence) , :: core :: stringify ! (new) ,)) ; < Self as IGameUserData_ProcDescSetSequenceMethods > :: ctor (this , sequence) ; this }
+}
 
 #[cfg(feature = "app-gameuserdata")]
 # [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GameUserData_StatusField_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_int { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gameuserdata :: GameUserData_Statuses as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameUserData_StatusField as :: unity2 :: ClassIdentity > :: class () , "ToInt" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameUserData_StatusField as :: unity2 :: ClassIdentity > :: NAME , "ToInt" , e) , } } } pub unsafe fn to_int (this : GameUserData_StatusField , value : crate :: app :: gameuserdata :: GameUserData_Statuses , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (GameUserData_StatusField , crate :: app :: gameuserdata :: GameUserData_Statuses , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_to_int :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameUserData_StatusField as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameUserData_StatusField as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GameUserData_StatusField , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GameUserData_StatusField , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
@@ -440,37 +457,20 @@ impl GameUserData {
 }
 
 #[cfg(feature = "app-gameuserdata")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GameUserData_ProcDescSetSequence_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gameuserdata :: GameUserData_Sequences as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameUserData_ProcDescSetSequence as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameUserData_ProcDescSetSequence as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GameUserData_ProcDescSetSequence , sequence : crate :: app :: gameuserdata :: GameUserData_Sequences , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GameUserData_ProcDescSetSequence , crate :: app :: gameuserdata :: GameUserData_Sequences , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , sequence , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_execute { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GameUserData_ProcDescSetSequence as :: unity2 :: ClassIdentity > :: class () , "Execute" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameUserData_ProcDescSetSequence as :: unity2 :: ClassIdentity > :: NAME , "Execute" , e) , } } } pub unsafe fn execute (this : GameUserData_ProcDescSetSequence , inst : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc_Result { let inner : extern "C" fn (GameUserData_ProcDescSetSequence , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc_Result = :: core :: mem :: transmute (__lookup_execute :: get_method_info () . method_ptr ,) ; inner (this , inst , __unity2_method_info) } }
-
-#[cfg(feature = "app-gameuserdata")]
-pub trait IGameUserData_ProcDescSetSequenceMethods : IGameUserData_ProcDescSetSequence { # [doc = "`.ctor(crate::app::gameuserdata::GameUserData_Sequences)` overload"] fn ctor (self , sequence : impl :: core :: convert :: Into < crate :: app :: gameuserdata :: GameUserData_Sequences >) -> () { unsafe { let __receiver = < GameUserData_ProcDescSetSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GameUserData_ProcDescSetSequence_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (sequence) , :: core :: option :: Option :: None) } } # [doc = "`Execute(crate::app::procinst::ProcInst)` overload"] fn execute (self , inst : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> crate :: app :: procdesc :: ProcDesc_Result { unsafe { let __receiver = < GameUserData_ProcDescSetSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GameUserData_ProcDescSetSequence_unity2_raw :: execute (__receiver , :: core :: convert :: Into :: into (inst) , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-gameuserdata")]
-impl < __T : IGameUserData_ProcDescSetSequence > IGameUserData_ProcDescSetSequenceMethods for __T { }
-
-#[cfg(feature = "app-gameuserdata")]
-impl GameUserData_ProcDescSetSequence { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameUserData_ProcDescSetSequence_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GameUserData_ProcDescSetSequence_unity2_raw :: __lookup_execute :: get_method_info () } }
-
-#[cfg(feature = "app-gameuserdata")]
-impl GameUserData_ProcDescSetSequence {
-# [doc = "`.ctor(crate::app::gameuserdata::GameUserData_Sequences)` — overload selector"] pub fn new (sequence : crate :: app :: gameuserdata :: GameUserData_Sequences) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GameUserData_ProcDescSetSequence) , :: core :: stringify ! (new) ,)) ; < Self as IGameUserData_ProcDescSetSequenceMethods > :: ctor (this , sequence) ; this }
-}
-
-#[cfg(feature = "app-gameuserdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GameUserData_Statuses;
+    pub use super::GameUserData_MapModes;
+    pub use super::GameUserData_ProcDescSetSequence;
+    pub use super::IGameUserData_ProcDescSetSequence;
+    pub use super::IGameUserData_ProcDescSetSequenceMethods;
     pub use super::GameUserData_StatusField;
     pub use super::IGameUserData_StatusField;
     pub use super::IGameUserData_StatusFieldMethods;
     pub use super::GameUserData;
     pub use super::IGameUserData;
     pub use super::IGameUserDataMethods;
-    pub use super::GameUserData_ProcDescSetSequence;
-    pub use super::IGameUserData_ProcDescSetSequence;
-    pub use super::IGameUserData_ProcDescSetSequenceMethods;
-    pub use super::GameUserData_MapModes;
     pub use super::GameUserData_Sequences;
+    pub use super::GameUserData_Statuses;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

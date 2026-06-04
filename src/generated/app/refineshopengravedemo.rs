@@ -15,6 +15,12 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopengravedemo/RefineShopEngraveDemo.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineShopEngraveDemo")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct RefineShopEngraveDemo {
+# [offset (136)] # [rename (name = "m_RefineShopEngraveDemoRoot")] pub m_refine_shop_engrave_demo_root : crate :: app :: refineshopengravedemoroot :: RefineShopEngraveDemoRoot ,
+# [offset (144)] # [rename (name = "m_ShopWeaponModelRenderer")] pub m_shop_weapon_model_renderer : crate :: app :: shopweaponmodelrenderer :: ShopWeaponModelRenderer ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refineshopengravedemo/RefineShopEngraveDemo_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -57,12 +63,6 @@ impl  RefineShopEngraveDemo_Label  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopengravedemo/RefineShopEngraveDemo.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineShopEngraveDemo")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct RefineShopEngraveDemo {
-# [offset (136)] # [rename (name = "m_RefineShopEngraveDemoRoot")] pub m_refine_shop_engrave_demo_root : crate :: app :: refineshopengravedemoroot :: RefineShopEngraveDemoRoot ,
-# [offset (144)] # [rename (name = "m_ShopWeaponModelRenderer")] pub m_shop_weapon_model_renderer : crate :: app :: shopweaponmodelrenderer :: ShopWeaponModelRenderer ,
-}
-
 }
 
 #[cfg(feature = "app-refineshopengravedemo-types")]
@@ -91,10 +91,10 @@ impl RefineShopEngraveDemo {
 #[cfg(feature = "app-refineshopengravedemo")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RefineShopEngraveDemo_Label;
     pub use super::RefineShopEngraveDemo;
     pub use super::IRefineShopEngraveDemo;
     pub use super::IRefineShopEngraveDemoMethods;
+    pub use super::RefineShopEngraveDemo_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

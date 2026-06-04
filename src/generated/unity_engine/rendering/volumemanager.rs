@@ -10,6 +10,7 @@ mod __types {
 
 
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/volumemanager/VolumeManager.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "VolumeManager")] # [parent (crate :: system :: object :: Object)] pub struct VolumeManager {
+# [static_field] # [rename (name = "s_Instance")] pub s_instance : :: unity2 :: IlInstance ,
 # [static_field] # [rename (name = "k_MaxLayerCount")] pub k_max_layer_count : i32 ,
 # [offset (32)] # [rename (name = "m_SortedVolumes")] pub m_sorted_volumes : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: volume :: Volume > > ,
 # [offset (40)] # [rename (name = "m_Volumes")] pub m_volumes : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: volume :: Volume > ,

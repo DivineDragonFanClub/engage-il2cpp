@@ -13,6 +13,11 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/scriptutil/ScriptUtil.md"))] # [:: unity2 :: class (namespace = "App" , name = "ScriptUtil")] # [parent (crate :: system :: object :: Object)] pub struct ScriptUtil {
+# [static_field] # [rename (name = "MAX_CURSOR_STACK")] pub max_cursor_stack : i32 ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/scriptutil/ScriptUtil_MenuCondtion.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -67,11 +72,6 @@ impl  ScriptUtil_MenuCondtion  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/scriptutil/ScriptUtil.md"))] # [:: unity2 :: class (namespace = "App" , name = "ScriptUtil")] # [parent (crate :: system :: object :: Object)] pub struct ScriptUtil {
-# [static_field] # [rename (name = "MAX_CURSOR_STACK")] pub max_cursor_stack : i32 ,
-}
-
 }
 
 #[cfg(feature = "app-scriptutil-types")]
@@ -100,10 +100,10 @@ impl ScriptUtil {
 #[cfg(feature = "app-scriptutil")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ScriptUtil_MenuCondtion;
     pub use super::ScriptUtil;
     pub use super::IScriptUtil;
     pub use super::IScriptUtilMethods;
+    pub use super::ScriptUtil_MenuCondtion;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

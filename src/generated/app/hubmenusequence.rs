@@ -17,11 +17,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenusequence/HubMenuSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMenuSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: hubmenusequence :: HubMenuSequence >)] pub struct HubMenuSequence {
-# [offset (114)] # [rename (name = "IsGotoNext")] pub is_goto_next : bool ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubmenusequence/HubMenuSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -118,6 +113,11 @@ impl  HubMenuSequence_Label  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenusequence/HubMenuSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMenuSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: hubmenusequence :: HubMenuSequence >)] pub struct HubMenuSequence {
+# [offset (114)] # [rename (name = "IsGotoNext")] pub is_goto_next : bool ,
+}
+
 }
 
 #[cfg(feature = "app-hubmenusequence-types")]
@@ -146,10 +146,10 @@ impl HubMenuSequence {
 #[cfg(feature = "app-hubmenusequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::HubMenuSequence_Label;
     pub use super::HubMenuSequence;
     pub use super::IHubMenuSequence;
     pub use super::IHubMenuSequenceMethods;
-    pub use super::HubMenuSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

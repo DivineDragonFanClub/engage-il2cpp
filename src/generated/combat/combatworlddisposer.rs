@@ -9,7 +9,9 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/combatworlddisposer/CombatWorldDisposer.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CombatWorldDisposer")] # [parent (crate :: system :: object :: Object)] pub struct CombatWorldDisposer {}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/combatworlddisposer/CombatWorldDisposer.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CombatWorldDisposer")] # [parent (crate :: system :: object :: Object)] pub struct CombatWorldDisposer {
+# [static_field] # [rename (name = "CompositeDisposable")] pub composite_disposable : :: unity2 :: IlInstance ,
+}
 
 }
 

@@ -17,55 +17,6 @@ mod __types {
  ;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapkeyhelp/MapKeyHelp_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapKeyHelp_Label  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for MapKeyHelp_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapKeyHelp.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for MapKeyHelp_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  MapKeyHelp_Label  {
-    pub fn stay() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn measure() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapkeyhelp/MapKeyHelp_Types.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -253,6 +204,55 @@ impl  MapKeyHelp_Types  {
 }
 
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapkeyhelp/MapKeyHelp_Label.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct MapKeyHelp_Label  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for MapKeyHelp_Label  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapKeyHelp.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for MapKeyHelp_Label  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  MapKeyHelp_Label  {
+    pub fn stay() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn measure() -> Self {
+        Self { value: 1 }
+
+    }
+
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapkeyhelp/MapKeyHelp_Mode.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -351,8 +351,8 @@ impl MapKeyHelp {
 #[cfg(feature = "app-mapkeyhelp")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapKeyHelp_Label;
     pub use super::MapKeyHelp_Types;
+    pub use super::MapKeyHelp_Label;
     pub use super::MapKeyHelp_Mode;
     pub use super::MapKeyHelp;
     pub use super::IMapKeyHelp;

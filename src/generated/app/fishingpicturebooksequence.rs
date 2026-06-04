@@ -19,6 +19,14 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingpicturebooksequence/FishingPictureBookSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "FishingPictureBookSequence")] # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: hubsequence :: HubSequence >)] pub struct FishingPictureBookSequence {
+# [static_field] # [rename (name = "cTextureAtlasPath")] pub c_texture_atlas_path : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "cResultTextureGold")] pub c_result_texture_gold : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "cResultTextureSilver")] pub c_result_texture_silver : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "cResultTextureBronze")] pub c_result_texture_bronze : :: unity2 :: Il2CppString ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingpicturebooksequence/FishingPictureBookSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -79,14 +87,6 @@ impl  FishingPictureBookSequence_Label  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingpicturebooksequence/FishingPictureBookSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "FishingPictureBookSequence")] # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: hubsequence :: HubSequence >)] pub struct FishingPictureBookSequence {
-# [static_field] # [rename (name = "cTextureAtlasPath")] pub c_texture_atlas_path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "cResultTextureGold")] pub c_result_texture_gold : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "cResultTextureSilver")] pub c_result_texture_silver : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "cResultTextureBronze")] pub c_result_texture_bronze : :: unity2 :: Il2CppString ,
-}
-
 }
 
 #[cfg(feature = "app-fishingpicturebooksequence-types")]
@@ -115,10 +115,10 @@ impl FishingPictureBookSequence {
 #[cfg(feature = "app-fishingpicturebooksequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::FishingPictureBookSequence_Label;
     pub use super::FishingPictureBookSequence;
     pub use super::IFishingPictureBookSequence;
     pub use super::IFishingPictureBookSequenceMethods;
+    pub use super::FishingPictureBookSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::procscenesequence_1::IProcSceneSequence_1;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;

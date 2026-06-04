@@ -21,16 +21,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photoappearcontent/PhotoAppearContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "PhotoAppearContent")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct PhotoAppearContent {
-# [offset (24)] # [rename (name = "m_Image")] pub m_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (32)] # [rename (name = "m_Animator")] pub m_animator : crate :: unity_engine :: animator :: Animator ,
-# [offset (40)] # [rename (name = "m_Progress")] pub m_progress : f32 ,
-# [offset (48)] # [rename (name = "m_MaterialInst")] pub m_material_inst : crate :: unity_engine :: material :: Material ,
-# [offset (56)] # [rename (name = "m_State")] pub m_state : crate :: app :: photoappearcontent :: PhotoAppearContent_State ,
-# [offset (60)] # [rename (name = "m_NextState")] pub m_next_state : crate :: app :: photoappearcontent :: PhotoAppearContent_State ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photoappearcontent/PhotoAppearContent_State.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -97,6 +87,16 @@ impl  PhotoAppearContent_State  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photoappearcontent/PhotoAppearContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "PhotoAppearContent")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct PhotoAppearContent {
+# [offset (24)] # [rename (name = "m_Image")] pub m_image : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (32)] # [rename (name = "m_Animator")] pub m_animator : crate :: unity_engine :: animator :: Animator ,
+# [offset (40)] # [rename (name = "m_Progress")] pub m_progress : f32 ,
+# [offset (48)] # [rename (name = "m_MaterialInst")] pub m_material_inst : crate :: unity_engine :: material :: Material ,
+# [offset (56)] # [rename (name = "m_State")] pub m_state : crate :: app :: photoappearcontent :: PhotoAppearContent_State ,
+# [offset (60)] # [rename (name = "m_NextState")] pub m_next_state : crate :: app :: photoappearcontent :: PhotoAppearContent_State ,
+}
+
 }
 
 #[cfg(feature = "app-photoappearcontent-types")]
@@ -125,10 +125,10 @@ impl PhotoAppearContent {
 #[cfg(feature = "app-photoappearcontent")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::PhotoAppearContent_State;
     pub use super::PhotoAppearContent;
     pub use super::IPhotoAppearContent;
     pub use super::IPhotoAppearContentMethods;
-    pub use super::PhotoAppearContent_State;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

@@ -13,6 +13,17 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleparam/BattleParam.md"))] # [:: unity2 :: class (namespace = "App" , name = "BattleParam")] # [parent (crate :: system :: object :: Object)] pub struct BattleParam {
+# [static_field] # [rename (name = "INVALID")] pub invalid : f32 ,
+# [static_field] # [rename (name = "Mins")] pub mins : :: unity2 :: Array < f32 > ,
+# [static_field] # [rename (name = "Maxs")] pub maxs : :: unity2 :: Array < f32 > ,
+# [static_field] # [rename (name = "Clamps")] pub clamps : :: unity2 :: Array < f32 > ,
+# [offset (16)] # [rename (name = "Add")] pub add : f32 ,
+# [offset (20)] # [rename (name = "Scale")] pub scale : f32 ,
+# [offset (24)] # [rename (name = "Value")] pub value : f32 ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battleparam/BattleParam_Kinds.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -67,17 +78,6 @@ impl  BattleParam_Kinds  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleparam/BattleParam.md"))] # [:: unity2 :: class (namespace = "App" , name = "BattleParam")] # [parent (crate :: system :: object :: Object)] pub struct BattleParam {
-# [static_field] # [rename (name = "INVALID")] pub invalid : f32 ,
-# [static_field] # [rename (name = "Mins")] pub mins : :: unity2 :: Array < f32 > ,
-# [static_field] # [rename (name = "Maxs")] pub maxs : :: unity2 :: Array < f32 > ,
-# [static_field] # [rename (name = "Clamps")] pub clamps : :: unity2 :: Array < f32 > ,
-# [offset (16)] # [rename (name = "Add")] pub add : f32 ,
-# [offset (20)] # [rename (name = "Scale")] pub scale : f32 ,
-# [offset (24)] # [rename (name = "Value")] pub value : f32 ,
-}
-
 }
 
 #[cfg(feature = "app-battleparam-types")]
@@ -108,10 +108,10 @@ impl BattleParam {
 #[cfg(feature = "app-battleparam")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::BattleParam_Kinds;
     pub use super::BattleParam;
     pub use super::IBattleParam;
     pub use super::IBattleParamMethods;
+    pub use super::BattleParam_Kinds;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

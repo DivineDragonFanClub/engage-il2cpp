@@ -21,6 +21,55 @@ mod __types {
  ;
 
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/light2d_2/Light2D_PointLightQuality.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct Light2D_PointLightQuality  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for Light2D_PointLightQuality  {
+    const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.Universal";
+
+    const NAME: &'static str = "Light2D.PointLightQuality";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for Light2D_PointLightQuality  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  Light2D_PointLightQuality  {
+    pub fn fast() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn accurate() -> Self {
+        Self { value: 1 }
+
+    }
+
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/light2d_2/Light2D_LightType.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -88,55 +137,6 @@ impl  Light2D_LightType  {
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/light2d_2/Light2D_PointLightQuality.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Light2D_PointLightQuality  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for Light2D_PointLightQuality  {
-    const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.Universal";
-
-    const NAME: &'static str = "Light2D.PointLightQuality";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for Light2D_PointLightQuality  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  Light2D_PointLightQuality  {
-    pub fn fast() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn accurate() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
-
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/light2d_2/Light2D_2.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.Universal" , name = "Light2D")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct Light2D_2 {
 # [offset (24)] # [rename (name = "m_LightType")] pub m_light_type : crate :: unity_engine :: experimental :: rendering :: universal :: light2d_2 :: Light2D_LightType ,
 # [offset (28)] # [rename (name = "m_BlendStyleIndex")] pub m_blend_style_index : i32 ,
@@ -197,8 +197,8 @@ impl Light2D_2 {
 #[cfg(feature = "unity_engine-experimental-rendering-universal-light2d_2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Light2D_LightType;
     pub use super::Light2D_PointLightQuality;
+    pub use super::Light2D_LightType;
     pub use super::Light2D_2;
     pub use super::ILight2D_2;
     pub use super::ILight2D_2Methods;

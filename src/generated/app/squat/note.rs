@@ -13,103 +13,6 @@ mod __types {
  ;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/squat/note/Note_Type.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Note_Type  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for Note_Type  {
-    const NAMESPACE: &'static str = "App.Squat";
-
-    const NAME: &'static str = "Note.Type";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for Note_Type  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  Note_Type  {
-    pub fn skip() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn right() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn left() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn up() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn down() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn clockwise() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn un_clockwise() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn clockwise_end() -> Self {
-        Self { value: 50 }
-
-    }
-
-
-    pub fn un_clockwise_end() -> Self {
-        Self { value: 60 }
-
-    }
-
-
-    pub fn type_count() -> Self {
-        Self { value: 61 }
-
-    }
-
-}
-
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/squat/note/Note.md"))] # [:: unity2 :: class (namespace = "App.Squat" , name = "Note")] # [parent (crate :: system :: object :: Object)] pub struct Note {
 # [static_field] # [rename (name = "cUIRootPath")] pub c_ui_root_path : :: unity2 :: Il2CppString ,
 # [static_field] # [rename (name = "cUINotesLeft")] pub c_ui_notes_left : :: unity2 :: Il2CppString ,
@@ -212,6 +115,103 @@ impl  Note_ResultRank  {
 
 }
 
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/squat/note/Note_Type.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct Note_Type  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for Note_Type  {
+    const NAMESPACE: &'static str = "App.Squat";
+
+    const NAME: &'static str = "Note.Type";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for Note_Type  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  Note_Type  {
+    pub fn skip() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn right() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn left() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn up() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn down() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn clockwise() -> Self {
+        Self { value: 5 }
+
+    }
+
+
+    pub fn un_clockwise() -> Self {
+        Self { value: 6 }
+
+    }
+
+
+    pub fn clockwise_end() -> Self {
+        Self { value: 50 }
+
+    }
+
+
+    pub fn un_clockwise_end() -> Self {
+        Self { value: 60 }
+
+    }
+
+
+    pub fn type_count() -> Self {
+        Self { value: 61 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "app-squat-note-types")]
@@ -237,11 +237,11 @@ impl Note {
 #[cfg(feature = "app-squat-note")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Note_Type;
     pub use super::Note;
     pub use super::INote;
     pub use super::INoteMethods;
     pub use super::Note_ResultRank;
+    pub use super::Note_Type;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

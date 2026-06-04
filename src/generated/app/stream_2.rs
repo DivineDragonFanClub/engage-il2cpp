@@ -45,40 +45,6 @@ impl ::unity2::IlType for Stream_ReadScope {
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/stream_2/Stream_WriteScope.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct Stream_WriteScope {
-    pub m_stream: crate :: app :: stream_2 :: Stream_2,
-}
-
-
-impl ::unity2::ClassIdentity for Stream_WriteScope {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Stream.WriteScope";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for Stream_WriteScope {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/stream_2/Stream_PositionScope.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -158,6 +124,40 @@ impl ::unity2::IlType for Stream_Info {
 # [static_field] # [rename (name = "NullCode")] pub null_code : u16 ,
 }
 
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/stream_2/Stream_WriteScope.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct Stream_WriteScope {
+    pub m_stream: crate :: app :: stream_2 :: Stream_2,
+}
+
+
+impl ::unity2::ClassIdentity for Stream_WriteScope {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Stream.WriteScope";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl ::unity2::IlType for Stream_WriteScope {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
 }
 
 #[cfg(feature = "app-stream_2-types")]
@@ -171,15 +171,6 @@ impl Stream_ReadScope { # [doc = "`.ctor(crate::app::stream_2::Stream_2)` overlo
 
 #[cfg(feature = "app-stream_2")]
 impl Stream_ReadScope { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Stream_ReadScope_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Stream_ReadScope_unity2_raw :: __lookup_dispose :: get_method_info () } pub fn get_version_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Stream_ReadScope_unity2_raw :: __lookup_get_version :: get_method_info () } pub fn set_version_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Stream_ReadScope_unity2_raw :: __lookup_set_version :: get_method_info () } }
-
-#[cfg(feature = "app-stream_2")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Stream_WriteScope_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: stream_2 :: Stream_2 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Stream_WriteScope as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Stream_WriteScope as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : * mut Stream_WriteScope , stream : crate :: app :: stream_2 :: Stream_2 , version : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut Stream_WriteScope , crate :: app :: stream_2 :: Stream_2 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , stream , version , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Stream_WriteScope as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Stream_WriteScope as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : * mut Stream_WriteScope , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut Stream_WriteScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "app-stream_2")]
-impl Stream_WriteScope { # [doc = "`.ctor(crate::app::stream_2::Stream_2, i32)` overload"] pub fn ctor (mut self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 > , version : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __Stream_WriteScope_unity2_raw :: ctor (& mut self as * mut Stream_WriteScope , :: core :: convert :: Into :: into (stream) , :: core :: convert :: Into :: into (version) , :: core :: option :: Option :: None) } } # [doc = "`Dispose()` overload"] pub fn dispose (mut self ,) -> () { unsafe { __Stream_WriteScope_unity2_raw :: dispose (& mut self as * mut Stream_WriteScope , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-stream_2")]
-impl Stream_WriteScope { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Stream_WriteScope_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Stream_WriteScope_unity2_raw :: __lookup_dispose :: get_method_info () } }
 
 #[cfg(feature = "app-stream_2")]
 # [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Stream_PositionScope_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: stream_2 :: Stream_2 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Stream_PositionScope as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Stream_PositionScope as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : * mut Stream_PositionScope , stream : crate :: app :: stream_2 :: Stream_2 , position : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut Stream_PositionScope , crate :: app :: stream_2 :: Stream_2 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , stream , position , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Stream_PositionScope as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Stream_PositionScope as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : * mut Stream_PositionScope , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut Stream_PositionScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
@@ -214,15 +205,24 @@ impl Stream_2 {
 }
 
 #[cfg(feature = "app-stream_2")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Stream_WriteScope_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: stream_2 :: Stream_2 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Stream_WriteScope as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Stream_WriteScope as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : * mut Stream_WriteScope , stream : crate :: app :: stream_2 :: Stream_2 , version : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut Stream_WriteScope , crate :: app :: stream_2 :: Stream_2 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , stream , version , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Stream_WriteScope as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Stream_WriteScope as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : * mut Stream_WriteScope , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut Stream_WriteScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-stream_2")]
+impl Stream_WriteScope { # [doc = "`.ctor(crate::app::stream_2::Stream_2, i32)` overload"] pub fn ctor (mut self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 > , version : impl :: core :: convert :: Into < i32 >) -> () { unsafe { __Stream_WriteScope_unity2_raw :: ctor (& mut self as * mut Stream_WriteScope , :: core :: convert :: Into :: into (stream) , :: core :: convert :: Into :: into (version) , :: core :: option :: Option :: None) } } # [doc = "`Dispose()` overload"] pub fn dispose (mut self ,) -> () { unsafe { __Stream_WriteScope_unity2_raw :: dispose (& mut self as * mut Stream_WriteScope , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-stream_2")]
+impl Stream_WriteScope { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Stream_WriteScope_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Stream_WriteScope_unity2_raw :: __lookup_dispose :: get_method_info () } }
+
+#[cfg(feature = "app-stream_2")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::Stream_ReadScope;
-    pub use super::Stream_WriteScope;
     pub use super::Stream_PositionScope;
     pub use super::Stream_Info;
     pub use super::Stream_2;
     pub use super::IStream_2;
     pub use super::IStream_2Methods;
+    pub use super::Stream_WriteScope;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

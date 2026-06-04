@@ -27,52 +27,21 @@ mod __types {
  ;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencebattle/MapSequenceBattle_BattleUnitScope.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapSequenceBattle_BattleUnitScope {
-    pub m_info: crate :: app :: battleinfo :: BattleInfo,
-}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencebattle/MapSequenceBattle_BitFieldStatus.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceBattle.BitFieldStatus")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: mapsequencebattle :: MapSequenceBattle_Status >)] pub struct MapSequenceBattle_BitFieldStatus {}
 
 
-impl ::unity2::ClassIdentity for MapSequenceBattle_BattleUnitScope {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapSequenceBattle.BattleUnitScope";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for MapSequenceBattle_BattleUnitScope {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencebattle/MapSequenceBattle_Status.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencebattle/MapSequenceBattle_Kinds.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapSequenceBattle_Status  {
+pub struct MapSequenceBattle_Kinds  {
     pub value: i32,
 }
 
 
-impl  ::unity2::ClassIdentity for MapSequenceBattle_Status  {
+impl  ::unity2::ClassIdentity for MapSequenceBattle_Kinds  {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "MapSequenceBattle.Status";
+    const NAME: &'static str = "MapSequenceBattle.Kinds";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> =
@@ -87,7 +56,7 @@ impl  ::unity2::ClassIdentity for MapSequenceBattle_Status  {
 }
 
 
-impl  ::unity2::IlType for MapSequenceBattle_Status  {
+impl  ::unity2::IlType for MapSequenceBattle_Kinds  {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
@@ -95,37 +64,53 @@ impl  ::unity2::IlType for MapSequenceBattle_Status  {
 }
 
 
-impl  MapSequenceBattle_Status  {
-    pub fn multi_battle() -> Self {
+impl  MapSequenceBattle_Kinds  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn battle() -> Self {
         Self { value: 1 }
 
     }
 
 
-    pub fn single_rod() -> Self {
+    pub fn destroy() -> Self {
         Self { value: 2 }
 
     }
 
 
-    pub fn used_rod() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn used_move() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn last_boss_die() -> Self {
-        Self { value: 16 }
+    pub fn rod() -> Self {
+        Self { value: 3 }
 
     }
 
 }
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencebattle/MapSequenceBattle.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceBattle")] # [parent (crate :: app :: commonbattlesequence_1 :: CommonBattleSequence_1 < crate :: app :: mapsequencebattle :: MapSequenceBattle >)] pub struct MapSequenceBattle {
+# [offset (160)] # [rename (name = "m_Kind")] pub m_kind : crate :: app :: mapsequencebattle :: MapSequenceBattle_Kinds ,
+# [offset (164)] # [rename (name = "m_TargetIndex")] pub m_target_index : i32 ,
+# [offset (168)] # [rename (name = "m_BattleCount")] pub m_battle_count : i32 ,
+# [offset (172)] # [rename (name = "m_GainExp")] pub m_gain_exp : i32 ,
+# [offset (176)] # [rename (name = "m_ExpStatus")] pub m_exp_status : crate :: app :: battleinfoside :: BattleInfoSide_Status ,
+# [offset (180)] # [rename (name = "m_ExpendCount")] pub m_expend_count : i32 ,
+# [offset (184)] # [rename (name = "m_StartX")] pub m_start_x : i32 ,
+# [offset (188)] # [rename (name = "m_StartZ")] pub m_start_z : i32 ,
+# [offset (192)] # [rename (name = "m_GrowTalk")] pub m_grow_talk : bool ,
+# [offset (200)] # [rename (name = "m_Defender")] pub m_defender : crate :: app :: unit :: Unit ,
+# [offset (208)] # [rename (name = "m_Status")] pub m_status : crate :: app :: mapsequencebattle :: MapSequenceBattle_BitFieldStatus ,
+# [offset (216)] # [rename (name = "m_DeadUnits")] pub m_dead_units : crate :: app :: mapsequencebattle :: MapSequenceBattle_UnitList ,
+# [offset (224)] # [rename (name = "m_DieEvents")] pub m_die_events : crate :: app :: mapsequencebattle :: MapSequenceBattle_UnitList ,
+# [offset (232)] # [rename (name = "m_FadeUnits")] pub m_fade_units : crate :: app :: mapsequencebattle :: MapSequenceBattle_UnitList ,
+# [offset (240)] # [rename (name = "m_DropUnits")] pub m_drop_units : crate :: app :: mapsequencebattle :: MapSequenceBattle_UnitList ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencebattle/MapSequenceBattle_UnitList.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceBattle.UnitList")] # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit >)] pub struct MapSequenceBattle_UnitList {}
 
 
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencebattle/MapSequenceBattle_Label.md"))]
@@ -279,21 +264,18 @@ impl  MapSequenceBattle_Label  {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencebattle/MapSequenceBattle_BitFieldStatus.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceBattle.BitFieldStatus")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: mapsequencebattle :: MapSequenceBattle_Status >)] pub struct MapSequenceBattle_BitFieldStatus {}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencebattle/MapSequenceBattle_Kinds.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencebattle/MapSequenceBattle_BattleUnitScope.md"))]
 #[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapSequenceBattle_Kinds  {
-    pub value: i32,
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MapSequenceBattle_BattleUnitScope {
+    pub m_info: crate :: app :: battleinfo :: BattleInfo,
 }
 
 
-impl  ::unity2::ClassIdentity for MapSequenceBattle_Kinds  {
+impl ::unity2::ClassIdentity for MapSequenceBattle_BattleUnitScope {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "MapSequenceBattle.Kinds";
+    const NAME: &'static str = "MapSequenceBattle.BattleUnitScope";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> =
@@ -308,7 +290,7 @@ impl  ::unity2::ClassIdentity for MapSequenceBattle_Kinds  {
 }
 
 
-impl  ::unity2::IlType for MapSequenceBattle_Kinds  {
+impl ::unity2::IlType for MapSequenceBattle_BattleUnitScope {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
@@ -316,70 +298,79 @@ impl  ::unity2::IlType for MapSequenceBattle_Kinds  {
 }
 
 
-impl  MapSequenceBattle_Kinds  {
-    pub fn none() -> Self {
-        Self { value: 0 }
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencebattle/MapSequenceBattle_Status.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct MapSequenceBattle_Status  {
+    pub value: i32,
+}
 
+
+impl  ::unity2::ClassIdentity for MapSequenceBattle_Status  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapSequenceBattle.Status";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
     }
 
+}
 
-    pub fn battle() -> Self {
+
+impl  ::unity2::IlType for MapSequenceBattle_Status  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  MapSequenceBattle_Status  {
+    pub fn multi_battle() -> Self {
         Self { value: 1 }
 
     }
 
 
-    pub fn destroy() -> Self {
+    pub fn single_rod() -> Self {
         Self { value: 2 }
 
     }
 
 
-    pub fn rod() -> Self {
-        Self { value: 3 }
+    pub fn used_rod() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn used_move() -> Self {
+        Self { value: 8 }
+
+    }
+
+
+    pub fn last_boss_die() -> Self {
+        Self { value: 16 }
 
     }
 
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencebattle/MapSequenceBattle_UnitList.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceBattle.UnitList")] # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit >)] pub struct MapSequenceBattle_UnitList {}
-
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencebattle/MapSequenceBattle_RangeWarpTargets.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceBattle.RangeWarpTargets")] # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit >)] pub struct MapSequenceBattle_RangeWarpTargets {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencebattle/MapSequenceBattle.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceBattle")] # [parent (crate :: app :: commonbattlesequence_1 :: CommonBattleSequence_1 < crate :: app :: mapsequencebattle :: MapSequenceBattle >)] pub struct MapSequenceBattle {
-# [offset (160)] # [rename (name = "m_Kind")] pub m_kind : crate :: app :: mapsequencebattle :: MapSequenceBattle_Kinds ,
-# [offset (164)] # [rename (name = "m_TargetIndex")] pub m_target_index : i32 ,
-# [offset (168)] # [rename (name = "m_BattleCount")] pub m_battle_count : i32 ,
-# [offset (172)] # [rename (name = "m_GainExp")] pub m_gain_exp : i32 ,
-# [offset (176)] # [rename (name = "m_ExpStatus")] pub m_exp_status : crate :: app :: battleinfoside :: BattleInfoSide_Status ,
-# [offset (180)] # [rename (name = "m_ExpendCount")] pub m_expend_count : i32 ,
-# [offset (184)] # [rename (name = "m_StartX")] pub m_start_x : i32 ,
-# [offset (188)] # [rename (name = "m_StartZ")] pub m_start_z : i32 ,
-# [offset (192)] # [rename (name = "m_GrowTalk")] pub m_grow_talk : bool ,
-# [offset (200)] # [rename (name = "m_Defender")] pub m_defender : crate :: app :: unit :: Unit ,
-# [offset (208)] # [rename (name = "m_Status")] pub m_status : crate :: app :: mapsequencebattle :: MapSequenceBattle_BitFieldStatus ,
-# [offset (216)] # [rename (name = "m_DeadUnits")] pub m_dead_units : crate :: app :: mapsequencebattle :: MapSequenceBattle_UnitList ,
-# [offset (224)] # [rename (name = "m_DieEvents")] pub m_die_events : crate :: app :: mapsequencebattle :: MapSequenceBattle_UnitList ,
-# [offset (232)] # [rename (name = "m_FadeUnits")] pub m_fade_units : crate :: app :: mapsequencebattle :: MapSequenceBattle_UnitList ,
-# [offset (240)] # [rename (name = "m_DropUnits")] pub m_drop_units : crate :: app :: mapsequencebattle :: MapSequenceBattle_UnitList ,
-}
 
 }
 
 #[cfg(feature = "app-mapsequencebattle-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-mapsequencebattle")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapSequenceBattle_BattleUnitScope_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: battleinfo :: BattleInfo as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceBattle_BattleUnitScope as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceBattle_BattleUnitScope as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : * mut MapSequenceBattle_BattleUnitScope , info : crate :: app :: battleinfo :: BattleInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut MapSequenceBattle_BattleUnitScope , crate :: app :: battleinfo :: BattleInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , info , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceBattle_BattleUnitScope as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceBattle_BattleUnitScope as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : * mut MapSequenceBattle_BattleUnitScope , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut MapSequenceBattle_BattleUnitScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "app-mapsequencebattle")]
-impl MapSequenceBattle_BattleUnitScope { # [doc = "`.ctor(crate::app::battleinfo::BattleInfo)` overload"] pub fn ctor (mut self , info : impl :: core :: convert :: Into < crate :: app :: battleinfo :: BattleInfo >) -> () { unsafe { __MapSequenceBattle_BattleUnitScope_unity2_raw :: ctor (& mut self as * mut MapSequenceBattle_BattleUnitScope , :: core :: convert :: Into :: into (info) , :: core :: option :: Option :: None) } } # [doc = "`Dispose()` overload"] pub fn dispose (mut self ,) -> () { unsafe { __MapSequenceBattle_BattleUnitScope_unity2_raw :: dispose (& mut self as * mut MapSequenceBattle_BattleUnitScope , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-mapsequencebattle")]
-impl MapSequenceBattle_BattleUnitScope { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceBattle_BattleUnitScope_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceBattle_BattleUnitScope_unity2_raw :: __lookup_dispose :: get_method_info () } }
 
 #[cfg(feature = "app-mapsequencebattle")]
 # [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapSequenceBattle_BitFieldStatus_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_int { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: mapsequencebattle :: MapSequenceBattle_Status as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceBattle_BitFieldStatus as :: unity2 :: ClassIdentity > :: class () , "ToInt" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceBattle_BitFieldStatus as :: unity2 :: ClassIdentity > :: NAME , "ToInt" , e) , } } } pub unsafe fn to_int (this : MapSequenceBattle_BitFieldStatus , value : crate :: app :: mapsequencebattle :: MapSequenceBattle_Status , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (MapSequenceBattle_BitFieldStatus , crate :: app :: mapsequencebattle :: MapSequenceBattle_Status , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_to_int :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceBattle_BitFieldStatus as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceBattle_BitFieldStatus as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapSequenceBattle_BitFieldStatus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceBattle_BitFieldStatus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
@@ -396,40 +387,6 @@ impl MapSequenceBattle_BitFieldStatus { pub fn to_int_method_info () -> & 'stati
 #[cfg(feature = "app-mapsequencebattle")]
 impl MapSequenceBattle_BitFieldStatus {
 # [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSequenceBattle_BitFieldStatus) , :: core :: stringify ! (new) ,)) ; < Self as IMapSequenceBattle_BitFieldStatusMethods > :: ctor (this ,) ; this }
-}
-
-#[cfg(feature = "app-mapsequencebattle")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapSequenceBattle_UnitList_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_add { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceBattle_UnitList as :: unity2 :: ClassIdentity > :: class () , "TryAdd" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceBattle_UnitList as :: unity2 :: ClassIdentity > :: NAME , "TryAdd" , e) , } } } pub unsafe fn try_add (this : MapSequenceBattle_UnitList , unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (MapSequenceBattle_UnitList , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_try_add :: get_method_info () . method_ptr ,) ; inner (this , unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceBattle_UnitList as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceBattle_UnitList as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapSequenceBattle_UnitList , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceBattle_UnitList , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "app-mapsequencebattle")]
-pub trait IMapSequenceBattle_UnitListMethods : IMapSequenceBattle_UnitList { # [doc = "`TryAdd(crate::app::unit::Unit)` overload"] fn try_add (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { let __receiver = < MapSequenceBattle_UnitList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceBattle_UnitList_unity2_raw :: try_add (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSequenceBattle_UnitList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceBattle_UnitList_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-mapsequencebattle")]
-impl < __T : IMapSequenceBattle_UnitList > IMapSequenceBattle_UnitListMethods for __T { }
-
-#[cfg(feature = "app-mapsequencebattle")]
-impl MapSequenceBattle_UnitList { pub fn try_add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceBattle_UnitList_unity2_raw :: __lookup_try_add :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceBattle_UnitList_unity2_raw :: __lookup_ctor :: get_method_info () } }
-
-#[cfg(feature = "app-mapsequencebattle")]
-impl MapSequenceBattle_UnitList {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSequenceBattle_UnitList) , :: core :: stringify ! (new) ,)) ; < Self as IMapSequenceBattle_UnitListMethods > :: ctor (this ,) ; this }
-}
-
-#[cfg(feature = "app-mapsequencebattle")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapSequenceBattle_RangeWarpTargets_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceBattle_RangeWarpTargets as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 6 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceBattle_RangeWarpTargets as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapSequenceBattle_RangeWarpTargets , rod_unit : crate :: app :: unit :: Unit , unit : crate :: app :: unit :: Unit , range : i32 , warp_x : i32 , warp_z : i32 , can_self : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceBattle_RangeWarpTargets , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , i32 , i32 , i32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , rod_unit , unit , range , warp_x , warp_z , can_self , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceBattle_RangeWarpTargets as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceBattle_RangeWarpTargets as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : MapSequenceBattle_RangeWarpTargets , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceBattle_RangeWarpTargets , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "app-mapsequencebattle")]
-pub trait IMapSequenceBattle_RangeWarpTargetsMethods : IMapSequenceBattle_RangeWarpTargets { # [doc = "`.ctor(crate::app::unit::Unit, crate::app::unit::Unit, i32, i32, i32, bool)` overload"] fn ctor (self , rod_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , range : impl :: core :: convert :: Into < i32 > , warp_x : impl :: core :: convert :: Into < i32 > , warp_z : impl :: core :: convert :: Into < i32 > , can_self : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MapSequenceBattle_RangeWarpTargets as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceBattle_RangeWarpTargets_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (rod_unit) , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (range) , :: core :: convert :: Into :: into (warp_x) , :: core :: convert :: Into :: into (warp_z) , :: core :: convert :: Into :: into (can_self) , :: core :: option :: Option :: None) } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < MapSequenceBattle_RangeWarpTargets as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceBattle_RangeWarpTargets_unity2_raw :: dispose (__receiver , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-mapsequencebattle")]
-impl < __T : IMapSequenceBattle_RangeWarpTargets > IMapSequenceBattle_RangeWarpTargetsMethods for __T { }
-
-#[cfg(feature = "app-mapsequencebattle")]
-impl MapSequenceBattle_RangeWarpTargets { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceBattle_RangeWarpTargets_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceBattle_RangeWarpTargets_unity2_raw :: __lookup_dispose :: get_method_info () } }
-
-#[cfg(feature = "app-mapsequencebattle")]
-impl MapSequenceBattle_RangeWarpTargets {
-# [doc = "`.ctor(crate::app::unit::Unit, crate::app::unit::Unit, i32, i32, i32, bool)` — overload selector"] pub fn new (rod_unit : crate :: app :: unit :: Unit , unit : crate :: app :: unit :: Unit , range : i32 , warp_x : i32 , warp_z : i32 , can_self : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSequenceBattle_RangeWarpTargets) , :: core :: stringify ! (new) ,)) ; < Self as IMapSequenceBattle_RangeWarpTargetsMethods > :: ctor (this , rod_unit , unit , range , warp_x , warp_z , can_self) ; this }
 }
 
 #[cfg(feature = "app-mapsequencebattle")]
@@ -453,24 +410,67 @@ impl MapSequenceBattle {
 }
 
 #[cfg(feature = "app-mapsequencebattle")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapSequenceBattle_UnitList_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_add { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceBattle_UnitList as :: unity2 :: ClassIdentity > :: class () , "TryAdd" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceBattle_UnitList as :: unity2 :: ClassIdentity > :: NAME , "TryAdd" , e) , } } } pub unsafe fn try_add (this : MapSequenceBattle_UnitList , unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (MapSequenceBattle_UnitList , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_try_add :: get_method_info () . method_ptr ,) ; inner (this , unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceBattle_UnitList as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceBattle_UnitList as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapSequenceBattle_UnitList , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceBattle_UnitList , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-mapsequencebattle")]
+pub trait IMapSequenceBattle_UnitListMethods : IMapSequenceBattle_UnitList { # [doc = "`TryAdd(crate::app::unit::Unit)` overload"] fn try_add (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { let __receiver = < MapSequenceBattle_UnitList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceBattle_UnitList_unity2_raw :: try_add (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSequenceBattle_UnitList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceBattle_UnitList_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-mapsequencebattle")]
+impl < __T : IMapSequenceBattle_UnitList > IMapSequenceBattle_UnitListMethods for __T { }
+
+#[cfg(feature = "app-mapsequencebattle")]
+impl MapSequenceBattle_UnitList { pub fn try_add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceBattle_UnitList_unity2_raw :: __lookup_try_add :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceBattle_UnitList_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-mapsequencebattle")]
+impl MapSequenceBattle_UnitList {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSequenceBattle_UnitList) , :: core :: stringify ! (new) ,)) ; < Self as IMapSequenceBattle_UnitListMethods > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "app-mapsequencebattle")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapSequenceBattle_BattleUnitScope_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: battleinfo :: BattleInfo as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceBattle_BattleUnitScope as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceBattle_BattleUnitScope as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : * mut MapSequenceBattle_BattleUnitScope , info : crate :: app :: battleinfo :: BattleInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut MapSequenceBattle_BattleUnitScope , crate :: app :: battleinfo :: BattleInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , info , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceBattle_BattleUnitScope as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceBattle_BattleUnitScope as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : * mut MapSequenceBattle_BattleUnitScope , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut MapSequenceBattle_BattleUnitScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-mapsequencebattle")]
+impl MapSequenceBattle_BattleUnitScope { # [doc = "`.ctor(crate::app::battleinfo::BattleInfo)` overload"] pub fn ctor (mut self , info : impl :: core :: convert :: Into < crate :: app :: battleinfo :: BattleInfo >) -> () { unsafe { __MapSequenceBattle_BattleUnitScope_unity2_raw :: ctor (& mut self as * mut MapSequenceBattle_BattleUnitScope , :: core :: convert :: Into :: into (info) , :: core :: option :: Option :: None) } } # [doc = "`Dispose()` overload"] pub fn dispose (mut self ,) -> () { unsafe { __MapSequenceBattle_BattleUnitScope_unity2_raw :: dispose (& mut self as * mut MapSequenceBattle_BattleUnitScope , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-mapsequencebattle")]
+impl MapSequenceBattle_BattleUnitScope { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceBattle_BattleUnitScope_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceBattle_BattleUnitScope_unity2_raw :: __lookup_dispose :: get_method_info () } }
+
+#[cfg(feature = "app-mapsequencebattle")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapSequenceBattle_RangeWarpTargets_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceBattle_RangeWarpTargets as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 6 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceBattle_RangeWarpTargets as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapSequenceBattle_RangeWarpTargets , rod_unit : crate :: app :: unit :: Unit , unit : crate :: app :: unit :: Unit , range : i32 , warp_x : i32 , warp_z : i32 , can_self : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceBattle_RangeWarpTargets , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , i32 , i32 , i32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , rod_unit , unit , range , warp_x , warp_z , can_self , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapSequenceBattle_RangeWarpTargets as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceBattle_RangeWarpTargets as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : MapSequenceBattle_RangeWarpTargets , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapSequenceBattle_RangeWarpTargets , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-mapsequencebattle")]
+pub trait IMapSequenceBattle_RangeWarpTargetsMethods : IMapSequenceBattle_RangeWarpTargets { # [doc = "`.ctor(crate::app::unit::Unit, crate::app::unit::Unit, i32, i32, i32, bool)` overload"] fn ctor (self , rod_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , range : impl :: core :: convert :: Into < i32 > , warp_x : impl :: core :: convert :: Into < i32 > , warp_z : impl :: core :: convert :: Into < i32 > , can_self : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MapSequenceBattle_RangeWarpTargets as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceBattle_RangeWarpTargets_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (rod_unit) , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (range) , :: core :: convert :: Into :: into (warp_x) , :: core :: convert :: Into :: into (warp_z) , :: core :: convert :: Into :: into (can_self) , :: core :: option :: Option :: None) } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < MapSequenceBattle_RangeWarpTargets as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapSequenceBattle_RangeWarpTargets_unity2_raw :: dispose (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-mapsequencebattle")]
+impl < __T : IMapSequenceBattle_RangeWarpTargets > IMapSequenceBattle_RangeWarpTargetsMethods for __T { }
+
+#[cfg(feature = "app-mapsequencebattle")]
+impl MapSequenceBattle_RangeWarpTargets { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceBattle_RangeWarpTargets_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapSequenceBattle_RangeWarpTargets_unity2_raw :: __lookup_dispose :: get_method_info () } }
+
+#[cfg(feature = "app-mapsequencebattle")]
+impl MapSequenceBattle_RangeWarpTargets {
+# [doc = "`.ctor(crate::app::unit::Unit, crate::app::unit::Unit, i32, i32, i32, bool)` — overload selector"] pub fn new (rod_unit : crate :: app :: unit :: Unit , unit : crate :: app :: unit :: Unit , range : i32 , warp_x : i32 , warp_z : i32 , can_self : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSequenceBattle_RangeWarpTargets) , :: core :: stringify ! (new) ,)) ; < Self as IMapSequenceBattle_RangeWarpTargetsMethods > :: ctor (this , rod_unit , unit , range , warp_x , warp_z , can_self) ; this }
+}
+
+#[cfg(feature = "app-mapsequencebattle")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapSequenceBattle_BattleUnitScope;
-    pub use super::MapSequenceBattle_Status;
-    pub use super::MapSequenceBattle_Label;
     pub use super::MapSequenceBattle_BitFieldStatus;
     pub use super::IMapSequenceBattle_BitFieldStatus;
     pub use super::IMapSequenceBattle_BitFieldStatusMethods;
     pub use super::MapSequenceBattle_Kinds;
-    pub use super::MapSequenceBattle_UnitList;
-    pub use super::IMapSequenceBattle_UnitList;
-    pub use super::IMapSequenceBattle_UnitListMethods;
-    pub use super::MapSequenceBattle_RangeWarpTargets;
-    pub use super::IMapSequenceBattle_RangeWarpTargets;
-    pub use super::IMapSequenceBattle_RangeWarpTargetsMethods;
     pub use super::MapSequenceBattle;
     pub use super::IMapSequenceBattle;
     pub use super::IMapSequenceBattleMethods;
+    pub use super::MapSequenceBattle_UnitList;
+    pub use super::IMapSequenceBattle_UnitList;
+    pub use super::IMapSequenceBattle_UnitListMethods;
+    pub use super::MapSequenceBattle_Label;
+    pub use super::MapSequenceBattle_BattleUnitScope;
+    pub use super::MapSequenceBattle_Status;
+    pub use super::MapSequenceBattle_RangeWarpTargets;
+    pub use super::IMapSequenceBattle_RangeWarpTargets;
+    pub use super::IMapSequenceBattle_RangeWarpTargetsMethods;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

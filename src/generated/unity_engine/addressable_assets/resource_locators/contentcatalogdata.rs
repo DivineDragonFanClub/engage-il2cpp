@@ -31,6 +31,19 @@ mod __types {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/resource_locators/contentcatalogdata/ContentCatalogData_CompactLocation.md"))] # [:: unity2 :: class (namespace = "UnityEngine.AddressableAssets.ResourceLocators" , name = "ContentCatalogData.CompactLocation")] # [parent (crate :: system :: object :: Object)] pub struct ContentCatalogData_CompactLocation {
+# [offset (16)] # [rename (name = "m_Locator")] pub m_locator : crate :: unity_engine :: addressable_assets :: resource_locators :: resourcelocationmap :: ResourceLocationMap ,
+# [offset (24)] # [rename (name = "m_InternalId")] pub m_internal_id : :: unity2 :: Il2CppString ,
+# [offset (32)] # [rename (name = "m_ProviderId")] pub m_provider_id : :: unity2 :: Il2CppString ,
+# [offset (40)] # [rename (name = "m_Dependency")] pub m_dependency : :: unity2 :: IlInstance ,
+# [offset (48)] # [rename (name = "m_Data")] pub m_data : :: unity2 :: IlInstance ,
+# [offset (56)] # [rename (name = "m_HashCode")] pub m_hash_code : i32 ,
+# [offset (60)] # [rename (name = "m_DependencyHashCode")] pub m_dependency_hash_code : i32 ,
+# [offset (64)] # [rename (name = "m_PrimaryKey")] pub m_primary_key : :: unity2 :: Il2CppString ,
+# [offset (72)] # [rename (name = "m_Type")] pub m_type : :: unity2 :: SystemType ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/addressable_assets/resource_locators/contentcatalogdata/ContentCatalogData_Bucket.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -63,19 +76,6 @@ impl ::unity2::IlType for ContentCatalogData_Bucket {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/resource_locators/contentcatalogdata/ContentCatalogData_CompactLocation.md"))] # [:: unity2 :: class (namespace = "UnityEngine.AddressableAssets.ResourceLocators" , name = "ContentCatalogData.CompactLocation")] # [parent (crate :: system :: object :: Object)] pub struct ContentCatalogData_CompactLocation {
-# [offset (16)] # [rename (name = "m_Locator")] pub m_locator : crate :: unity_engine :: addressable_assets :: resource_locators :: resourcelocationmap :: ResourceLocationMap ,
-# [offset (24)] # [rename (name = "m_InternalId")] pub m_internal_id : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "m_ProviderId")] pub m_provider_id : :: unity2 :: Il2CppString ,
-# [offset (40)] # [rename (name = "m_Dependency")] pub m_dependency : :: unity2 :: IlInstance ,
-# [offset (48)] # [rename (name = "m_Data")] pub m_data : :: unity2 :: IlInstance ,
-# [offset (56)] # [rename (name = "m_HashCode")] pub m_hash_code : i32 ,
-# [offset (60)] # [rename (name = "m_DependencyHashCode")] pub m_dependency_hash_code : i32 ,
-# [offset (64)] # [rename (name = "m_PrimaryKey")] pub m_primary_key : :: unity2 :: Il2CppString ,
-# [offset (72)] # [rename (name = "m_Type")] pub m_type : :: unity2 :: SystemType ,
 }
 
 }
@@ -126,10 +126,10 @@ pub mod prelude {
     pub use super::ContentCatalogData;
     pub use super::IContentCatalogData;
     pub use super::IContentCatalogDataMethods;
-    pub use super::ContentCatalogData_Bucket;
     pub use super::ContentCatalogData_CompactLocation;
     pub use super::IContentCatalogData_CompactLocation;
     pub use super::IContentCatalogData_CompactLocationMethods;
+    pub use super::ContentCatalogData_Bucket;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

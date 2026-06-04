@@ -13,9 +13,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitentrust/UnitEntrust.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitEntrust")] # [parent (crate :: system :: object :: Object)] pub struct UnitEntrust {}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitentrust/UnitEntrust_Type.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -100,6 +97,9 @@ impl  UnitEntrust_Type  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitentrust/UnitEntrust.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitEntrust")] # [parent (crate :: system :: object :: Object)] pub struct UnitEntrust {}
+
 }
 
 #[cfg(feature = "app-unitentrust-types")]
@@ -125,10 +125,10 @@ impl UnitEntrust {
 #[cfg(feature = "app-unitentrust")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::UnitEntrust_Type;
     pub use super::UnitEntrust;
     pub use super::IUnitEntrust;
     pub use super::IUnitEntrustMethods;
-    pub use super::UnitEntrust_Type;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

@@ -11,6 +11,11 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/fxzex/FXZEx.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "FXZEx")] # [parent (crate :: system :: object :: Object)] pub struct FXZEx {
+# [static_field] # [rename (name = "layerMask")] pub layer_mask : i32 ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/fxzex/FXZEx_HitPoint.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -46,11 +51,6 @@ impl ::unity2::IlType for FXZEx_HitPoint {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/fxzex/FXZEx.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "FXZEx")] # [parent (crate :: system :: object :: Object)] pub struct FXZEx {
-# [static_field] # [rename (name = "layerMask")] pub layer_mask : i32 ,
-}
-
 }
 
 #[cfg(feature = "combat-fxzex-types")]
@@ -68,9 +68,9 @@ impl FXZEx { pub fn get_layer_mask_method_info () -> & 'static :: unity2 :: il2c
 #[cfg(feature = "combat-fxzex")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::FXZEx_HitPoint;
     pub use super::FXZEx;
     pub use super::IFXZEx;
+    pub use super::FXZEx_HitPoint;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

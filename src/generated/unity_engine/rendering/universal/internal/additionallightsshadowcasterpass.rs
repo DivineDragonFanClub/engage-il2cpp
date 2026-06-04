@@ -11,17 +11,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/additionallightsshadowcasterpass/AdditionalLightsShadowCasterPass_AdditionalShadowsConstantBuffer.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Internal" , name = "AdditionalLightsShadowCasterPass.AdditionalShadowsConstantBuffer")] # [parent (crate :: system :: object :: Object)] pub struct AdditionalLightsShadowCasterPass_AdditionalShadowsConstantBuffer {
-# [static_field] # [rename (name = "_AdditionalLightsWorldToShadow")] pub additional_lights_world_to_shadow : i32 ,
-# [static_field] # [rename (name = "_AdditionalShadowParams")] pub additional_shadow_params : i32 ,
-# [static_field] # [rename (name = "_AdditionalShadowOffset0")] pub additional_shadow_offset0 : i32 ,
-# [static_field] # [rename (name = "_AdditionalShadowOffset1")] pub additional_shadow_offset1 : i32 ,
-# [static_field] # [rename (name = "_AdditionalShadowOffset2")] pub additional_shadow_offset2 : i32 ,
-# [static_field] # [rename (name = "_AdditionalShadowOffset3")] pub additional_shadow_offset3 : i32 ,
-# [static_field] # [rename (name = "_AdditionalShadowmapSize")] pub additional_shadowmap_size : i32 ,
-}
-
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/additionallightsshadowcasterpass/AdditionalLightsShadowCasterPass.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Internal" , name = "AdditionalLightsShadowCasterPass")] # [parent (crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass)] pub struct AdditionalLightsShadowCasterPass {
 # [static_field] # [rename (name = "m_AdditionalShadowsBufferId")] pub m_additional_shadows_buffer_id : i32 ,
 # [static_field] # [rename (name = "m_AdditionalShadowsIndicesId")] pub m_additional_shadows_indices_id : i32 ,
@@ -40,6 +29,17 @@ mod __types {
 # [offset (232)] # [rename (name = "m_ShadowCastingLightIndicesMap")] pub m_shadow_casting_light_indices_map : crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > ,
 # [offset (240)] # [rename (name = "m_SupportsBoxFilterForShadows")] pub m_supports_box_filter_for_shadows : bool ,
 # [offset (248)] # [rename (name = "m_ProfilingSetupSampler")] pub m_profiling_setup_sampler : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/additionallightsshadowcasterpass/AdditionalLightsShadowCasterPass_AdditionalShadowsConstantBuffer.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Internal" , name = "AdditionalLightsShadowCasterPass.AdditionalShadowsConstantBuffer")] # [parent (crate :: system :: object :: Object)] pub struct AdditionalLightsShadowCasterPass_AdditionalShadowsConstantBuffer {
+# [static_field] # [rename (name = "_AdditionalLightsWorldToShadow")] pub additional_lights_world_to_shadow : i32 ,
+# [static_field] # [rename (name = "_AdditionalShadowParams")] pub additional_shadow_params : i32 ,
+# [static_field] # [rename (name = "_AdditionalShadowOffset0")] pub additional_shadow_offset0 : i32 ,
+# [static_field] # [rename (name = "_AdditionalShadowOffset1")] pub additional_shadow_offset1 : i32 ,
+# [static_field] # [rename (name = "_AdditionalShadowOffset2")] pub additional_shadow_offset2 : i32 ,
+# [static_field] # [rename (name = "_AdditionalShadowOffset3")] pub additional_shadow_offset3 : i32 ,
+# [static_field] # [rename (name = "_AdditionalShadowmapSize")] pub additional_shadowmap_size : i32 ,
 }
 
 }
@@ -67,11 +67,11 @@ impl AdditionalLightsShadowCasterPass {
 #[cfg(feature = "unity_engine-rendering-universal-internal-additionallightsshadowcasterpass")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AdditionalLightsShadowCasterPass_AdditionalShadowsConstantBuffer;
-    pub use super::IAdditionalLightsShadowCasterPass_AdditionalShadowsConstantBuffer;
     pub use super::AdditionalLightsShadowCasterPass;
     pub use super::IAdditionalLightsShadowCasterPass;
     pub use super::IAdditionalLightsShadowCasterPassMethods;
+    pub use super::AdditionalLightsShadowCasterPass_AdditionalShadowsConstantBuffer;
+    pub use super::IAdditionalLightsShadowCasterPass_AdditionalShadowsConstantBuffer;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

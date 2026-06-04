@@ -13,9 +13,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatahandle/SaveDataHandle.md"))] # [:: unity2 :: class (namespace = "App" , name = "SaveDataHandle")] # [parent (crate :: system :: object :: Object)] pub struct SaveDataHandle {}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/savedatahandle/SaveDataHandle_States.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -70,6 +67,9 @@ impl  SaveDataHandle_States  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatahandle/SaveDataHandle.md"))] # [:: unity2 :: class (namespace = "App" , name = "SaveDataHandle")] # [parent (crate :: system :: object :: Object)] pub struct SaveDataHandle {}
+
 }
 
 #[cfg(feature = "app-savedatahandle-types")]
@@ -95,10 +95,10 @@ impl SaveDataHandle {
 #[cfg(feature = "app-savedatahandle")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::SaveDataHandle_States;
     pub use super::SaveDataHandle;
     pub use super::ISaveDataHandle;
     pub use super::ISaveDataHandleMethods;
-    pub use super::SaveDataHandle_States;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

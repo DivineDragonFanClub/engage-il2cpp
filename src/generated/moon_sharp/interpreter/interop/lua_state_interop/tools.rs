@@ -9,7 +9,9 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/lua_state_interop/tools/Tools.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Interop.LuaStateInterop" , name = "Tools")] # [parent (crate :: system :: object :: Object)] pub struct Tools {}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/lua_state_interop/tools/Tools.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Interop.LuaStateInterop" , name = "Tools")] # [parent (crate :: system :: object :: Object)] pub struct Tools {
+# [static_field] # [rename (name = "r")] pub r : :: unity2 :: IlInstance ,
+}
 
 }
 

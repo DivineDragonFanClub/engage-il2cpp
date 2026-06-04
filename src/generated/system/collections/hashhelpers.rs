@@ -11,6 +11,7 @@ mod __types {
 
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/hashhelpers/HashHelpers.md"))] # [:: unity2 :: class (namespace = "System.Collections" , name = "HashHelpers")] # [parent (crate :: system :: object :: Object)] pub struct HashHelpers {
 # [static_field] # [rename (name = "primes")] pub primes : :: unity2 :: Array < i32 > ,
+# [static_field] # [rename (name = "s_SerializationInfoTable")] pub s_serialization_info_table : :: unity2 :: IlInstance ,
 }
 
 }

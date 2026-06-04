@@ -25,6 +25,30 @@ mod __types {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/friendlistsequence/FriendListSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "FriendListSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: friendlistsequence :: FriendListSequence >)] pub struct FriendListSequence {
+# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "StampAtlasPath")] pub stamp_atlas_path : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "CharaImageFolder")] pub chara_image_folder : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "CharaImageFolderS")] pub chara_image_folder_s : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "m_OpenTime")] pub m_open_time : f32 ,
+# [static_field] # [rename (name = "m_PageChangeTime")] pub m_page_change_time : f32 ,
+# [offset (120)] # [rename (name = "m_FriendListObject")] pub m_friend_list_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (128)] # [rename (name = "m_FriendListContent")] pub m_friend_list_content : crate :: app :: friendlistcontent :: FriendListContent ,
+# [offset (136)] # [rename (name = "m_CanvasGroup")] pub m_canvas_group : crate :: unity_engine :: canvasgroup :: CanvasGroup ,
+# [offset (144)] # [rename (name = "m_RootAnimator")] pub m_root_animator : crate :: unity_engine :: animator :: Animator ,
+# [offset (152)] # [rename (name = "m_CharaSpritePathArray")] pub m_chara_sprite_path_array : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+# [offset (160)] # [rename (name = "m_CharaSpriteArray")] pub m_chara_sprite_array : :: unity2 :: Array < crate :: unity_engine :: sprite :: Sprite > ,
+# [offset (168)] # [rename (name = "m_ActiveCharaSpriteIndex")] pub m_active_chara_sprite_index : i32 ,
+# [offset (176)] # [rename (name = "m_CharaSpritePathS")] pub m_chara_sprite_path_s : :: unity2 :: Il2CppString ,
+# [offset (184)] # [rename (name = "m_CharaTextureS")] pub m_chara_texture_s : crate :: unity_engine :: texture2d :: Texture2D ,
+# [static_field] # [rename (name = "FirstPage")] pub first_page : i32 ,
+# [offset (192)] # [rename (name = "m_Page")] pub m_page : i32 ,
+# [offset (196)] # [rename (name = "m_NextPage")] pub m_next_page : i32 ,
+# [offset (200)] # [rename (name = "m_FriendListDataArray")] pub m_friend_list_data_array : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: friendlistdata :: FriendListData > ,
+# [offset (208)] # [rename (name = "m_StampAtlasManager")] pub m_stamp_atlas_manager : crate :: app :: spriteatlasmanager_2 :: SpriteAtlasManager_2 ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/friendlistsequence/FriendListSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -115,30 +139,6 @@ impl  FriendListSequence_Label  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/friendlistsequence/FriendListSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "FriendListSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: friendlistsequence :: FriendListSequence >)] pub struct FriendListSequence {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "StampAtlasPath")] pub stamp_atlas_path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "CharaImageFolder")] pub chara_image_folder : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "CharaImageFolderS")] pub chara_image_folder_s : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "m_OpenTime")] pub m_open_time : f32 ,
-# [static_field] # [rename (name = "m_PageChangeTime")] pub m_page_change_time : f32 ,
-# [offset (120)] # [rename (name = "m_FriendListObject")] pub m_friend_list_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (128)] # [rename (name = "m_FriendListContent")] pub m_friend_list_content : crate :: app :: friendlistcontent :: FriendListContent ,
-# [offset (136)] # [rename (name = "m_CanvasGroup")] pub m_canvas_group : crate :: unity_engine :: canvasgroup :: CanvasGroup ,
-# [offset (144)] # [rename (name = "m_RootAnimator")] pub m_root_animator : crate :: unity_engine :: animator :: Animator ,
-# [offset (152)] # [rename (name = "m_CharaSpritePathArray")] pub m_chara_sprite_path_array : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [offset (160)] # [rename (name = "m_CharaSpriteArray")] pub m_chara_sprite_array : :: unity2 :: Array < crate :: unity_engine :: sprite :: Sprite > ,
-# [offset (168)] # [rename (name = "m_ActiveCharaSpriteIndex")] pub m_active_chara_sprite_index : i32 ,
-# [offset (176)] # [rename (name = "m_CharaSpritePathS")] pub m_chara_sprite_path_s : :: unity2 :: Il2CppString ,
-# [offset (184)] # [rename (name = "m_CharaTextureS")] pub m_chara_texture_s : crate :: unity_engine :: texture2d :: Texture2D ,
-# [static_field] # [rename (name = "FirstPage")] pub first_page : i32 ,
-# [offset (192)] # [rename (name = "m_Page")] pub m_page : i32 ,
-# [offset (196)] # [rename (name = "m_NextPage")] pub m_next_page : i32 ,
-# [offset (200)] # [rename (name = "m_FriendListDataArray")] pub m_friend_list_data_array : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: friendlistdata :: FriendListData > ,
-# [offset (208)] # [rename (name = "m_StampAtlasManager")] pub m_stamp_atlas_manager : crate :: app :: spriteatlasmanager_2 :: SpriteAtlasManager_2 ,
-}
-
 }
 
 #[cfg(feature = "app-friendlistsequence-types")]
@@ -190,10 +190,10 @@ pub mod prelude {
     pub use super::FriendListSequence_ProcZoom;
     pub use super::IFriendListSequence_ProcZoom;
     pub use super::IFriendListSequence_ProcZoomMethods;
-    pub use super::FriendListSequence_Label;
     pub use super::FriendListSequence;
     pub use super::IFriendListSequence;
     pub use super::IFriendListSequenceMethods;
+    pub use super::FriendListSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

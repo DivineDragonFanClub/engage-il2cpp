@@ -45,6 +45,29 @@ impl ::unity2::IlType for PlayableHandle {
 
 }
 
+
+impl PlayableHandle {
+    #[inline]
+    pub fn m_null() -> crate :: unity_engine :: playables :: playablehandle :: PlayableHandle {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "m_Null");
+
+        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
+    }
+
+    #[inline]
+    pub fn set_m_null(value: crate :: unity_engine :: playables :: playablehandle :: PlayableHandle) {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "m_Null");
+
+        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-playables-playablehandle-types")]
