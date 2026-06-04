@@ -11,6 +11,12 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphdebugdata/RenderGraphDebugData.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule" , name = "RenderGraphDebugData")] # [parent (crate :: system :: object :: Object)] pub struct RenderGraphDebugData {
+# [offset (16)] # [rename (name = "passList")] pub pass_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphdebugdata :: RenderGraphDebugData_PassDebugData > ,
+# [offset (24)] # [rename (name = "resourceLists")] pub resource_lists : :: unity2 :: Array < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphdebugdata :: RenderGraphDebugData_ResourceDebugData > > ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphdebugdata/RenderGraphDebugData_PassDebugData.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -46,12 +52,6 @@ impl ::unity2::IlType for RenderGraphDebugData_PassDebugData {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphdebugdata/RenderGraphDebugData.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule" , name = "RenderGraphDebugData")] # [parent (crate :: system :: object :: Object)] pub struct RenderGraphDebugData {
-# [offset (16)] # [rename (name = "passList")] pub pass_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphdebugdata :: RenderGraphDebugData_PassDebugData > ,
-# [offset (24)] # [rename (name = "resourceLists")] pub resource_lists : :: unity2 :: Array < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphdebugdata :: RenderGraphDebugData_ResourceDebugData > > ,
 }
 
 
@@ -118,10 +118,10 @@ impl RenderGraphDebugData {
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphdebugdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RenderGraphDebugData_PassDebugData;
     pub use super::RenderGraphDebugData;
     pub use super::IRenderGraphDebugData;
     pub use super::IRenderGraphDebugDataMethods;
+    pub use super::RenderGraphDebugData_PassDebugData;
     pub use super::RenderGraphDebugData_ResourceDebugData;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;

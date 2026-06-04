@@ -49,7 +49,7 @@
  # [cfg (feature = "unity_engine-xr-xrdevice-types")] pub use xrdevice :: { XRDevice , IXRDevice }
  ;
  # [cfg (any (feature = "unity_engine-xr-xrdisplaysubsystem-types"))] pub mod xrdisplaysubsystem ;
- # [cfg (feature = "unity_engine-xr-xrdisplaysubsystem-types")] pub use xrdisplaysubsystem :: { XRDisplaySubsystem_TextureLayout , XRDisplaySubsystem_XRRenderPass , XRDisplaySubsystem_XRBlitParams , XRDisplaySubsystem_XRRenderParameter , XRDisplaySubsystem , IXRDisplaySubsystem , XRDisplaySubsystem_XRMirrorViewBlitDesc }
+ # [cfg (feature = "unity_engine-xr-xrdisplaysubsystem-types")] pub use xrdisplaysubsystem :: { XRDisplaySubsystem_XRRenderParameter , XRDisplaySubsystem_TextureLayout , XRDisplaySubsystem , IXRDisplaySubsystem , XRDisplaySubsystem_XRBlitParams , XRDisplaySubsystem_XRRenderPass , XRDisplaySubsystem_XRMirrorViewBlitDesc }
  ;
  # [cfg (feature = "unity_engine-xr-xrdisplaysubsystem")] pub use xrdisplaysubsystem :: { IXRDisplaySubsystemMethods }
  ;
@@ -85,5 +85,5 @@
  # [cfg (feature = "unity_engine-xr-xrnodestate-types")] pub use xrnodestate :: { XRNodeState }
  ;
  # [cfg (any (feature = "unity_engine-xr-xrsettings-types"))] pub mod xrsettings ;
- # [cfg (feature = "unity_engine-xr-xrsettings-types")] pub use xrsettings :: { XRSettings , IXRSettings , XRSettings_StereoRenderingMode }
+ # [cfg (feature = "unity_engine-xr-xrsettings-types")] pub use xrsettings :: { XRSettings_StereoRenderingMode , XRSettings , IXRSettings }
  ;

@@ -27,20 +27,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mappanelbase_1/MapPanelBase_1_ImageGetFunction.md"))] # [:: unity2 :: class (namespace = "" , name = "MapPanelBase`1.ImageGetFunction")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] # [parent (crate :: system :: delegate :: Delegate)] # [parent (crate :: system :: object :: Object)] pub struct MapPanelBase_1_ImageGetFunction < T0 : :: unity2 :: ClassIdentity > {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mappanelbase_1/MapPanelBase_1.md"))] # [:: unity2 :: class (namespace = "" , name = "MapPanelBase`1")] # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < T0 >)] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] # [parent (crate :: unity_engine :: behaviour :: Behaviour)] # [parent (crate :: unity_engine :: component :: Component)] # [parent (crate :: unity_engine :: object_2 :: Object_2)] # [parent (crate :: system :: object :: Object)] pub struct MapPanelBase_1 < T0 : :: unity2 :: ClassIdentity > {
-# [rename (name = "m_Materials")] pub m_materials : :: unity2 :: Array < crate :: unity_engine :: material :: Material > ,
-# [rename (name = "m_Mesh")] pub m_mesh : crate :: app :: map :: Map_CellMesh ,
-# [rename (name = "m_HalfTexelX")] pub m_half_texel_x : f32 ,
-# [rename (name = "m_HalfTexelY")] pub m_half_texel_y : f32 ,
-# [rename (name = "m_RendererMaterials")] pub m_renderer_materials : :: unity2 :: Array < crate :: unity_engine :: material :: Material > ,
-# [static_field] # [rename (name = "CheckImageOffsetXTable")] pub check_image_offset_x_table : :: unity2 :: Array < i32 > ,
-# [static_field] # [rename (name = "CheckIMageOffsetZTable")] pub check_i_mage_offset_z_table : :: unity2 :: Array < i32 > ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mappanelbase_1/MapPanelBase_1_PanelType.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -114,22 +100,24 @@ impl <T0: ::unity2::ClassIdentity> MapPanelBase_1_PanelType <T0> {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mappanelbase_1/MapPanelBase_1.md"))] # [:: unity2 :: class (namespace = "" , name = "MapPanelBase`1")] # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < T0 >)] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] # [parent (crate :: unity_engine :: behaviour :: Behaviour)] # [parent (crate :: unity_engine :: component :: Component)] # [parent (crate :: unity_engine :: object_2 :: Object_2)] # [parent (crate :: system :: object :: Object)] pub struct MapPanelBase_1 < T0 : :: unity2 :: ClassIdentity > {
+# [rename (name = "m_Materials")] pub m_materials : :: unity2 :: Array < crate :: unity_engine :: material :: Material > ,
+# [rename (name = "m_Mesh")] pub m_mesh : crate :: app :: map :: Map_CellMesh ,
+# [rename (name = "m_HalfTexelX")] pub m_half_texel_x : f32 ,
+# [rename (name = "m_HalfTexelY")] pub m_half_texel_y : f32 ,
+# [rename (name = "m_RendererMaterials")] pub m_renderer_materials : :: unity2 :: Array < crate :: unity_engine :: material :: Material > ,
+# [static_field] # [rename (name = "CheckImageOffsetXTable")] pub check_image_offset_x_table : :: unity2 :: Array < i32 > ,
+# [static_field] # [rename (name = "CheckIMageOffsetZTable")] pub check_i_mage_offset_z_table : :: unity2 :: Array < i32 > ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mappanelbase_1/MapPanelBase_1_ImageGetFunction.md"))] # [:: unity2 :: class (namespace = "" , name = "MapPanelBase`1.ImageGetFunction")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] # [parent (crate :: system :: delegate :: Delegate)] # [parent (crate :: system :: object :: Object)] pub struct MapPanelBase_1_ImageGetFunction < T0 : :: unity2 :: ClassIdentity > {}
+
 }
 
 #[cfg(feature = "root-mappanelbase_1-types")]
 pub use __types::*;
-
-#[cfg(feature = "root-mappanelbase_1")]
-# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > MapPanelBase_1_ImageGetFunction < T0 > {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] # [method (name = ".ctor" , args = 2)] pub fn ctor (self , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> () ;
-
-# [doc = "`Invoke(i32, i32)` overload"] # [method (name = "Invoke" , args = 2)] pub fn invoke (self , x : i32 , z : i32) -> bool ;
-}
-
-#[cfg(feature = "root-mappanelbase_1")]
-impl < T0 : :: unity2 :: ClassIdentity > MapPanelBase_1_ImageGetFunction < T0 > {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapPanelBase_1_ImageGetFunction) , :: core :: stringify ! (new) ,)) ; < Self as IMapPanelBase_1_ImageGetFunctionMethods < T0 > > :: ctor (this , object , method) ; this }
-}
 
 #[cfg(feature = "root-mappanelbase_1")]
 # [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > MapPanelBase_1 < T0 > {
@@ -214,15 +202,27 @@ impl < T0 : :: unity2 :: ClassIdentity > MapPanelBase_1 < T0 > {
 }
 
 #[cfg(feature = "root-mappanelbase_1")]
+# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > MapPanelBase_1_ImageGetFunction < T0 > {
+# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] # [method (name = ".ctor" , args = 2)] pub fn ctor (self , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> () ;
+
+# [doc = "`Invoke(i32, i32)` overload"] # [method (name = "Invoke" , args = 2)] pub fn invoke (self , x : i32 , z : i32) -> bool ;
+}
+
+#[cfg(feature = "root-mappanelbase_1")]
+impl < T0 : :: unity2 :: ClassIdentity > MapPanelBase_1_ImageGetFunction < T0 > {
+# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapPanelBase_1_ImageGetFunction) , :: core :: stringify ! (new) ,)) ; < Self as IMapPanelBase_1_ImageGetFunctionMethods < T0 > > :: ctor (this , object , method) ; this }
+}
+
+#[cfg(feature = "root-mappanelbase_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapPanelBase_1_ImageGetFunction;
-    pub use super::IMapPanelBase_1_ImageGetFunction;
-    pub use super::IMapPanelBase_1_ImageGetFunctionMethods;
+    pub use super::MapPanelBase_1_PanelType;
     pub use super::MapPanelBase_1;
     pub use super::IMapPanelBase_1;
     pub use super::IMapPanelBase_1Methods;
-    pub use super::MapPanelBase_1_PanelType;
+    pub use super::MapPanelBase_1_ImageGetFunction;
+    pub use super::IMapPanelBase_1_ImageGetFunction;
+    pub use super::IMapPanelBase_1_ImageGetFunctionMethods;
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;

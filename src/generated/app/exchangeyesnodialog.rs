@@ -23,14 +23,14 @@ mod __types {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/exchangeyesnodialog/ExchangeYesNoDialog.md"))] # [:: unity2 :: class (namespace = "App" , name = "ExchangeYesNoDialog")] # [parent (crate :: app :: basicdialog :: BasicDialog)] pub struct ExchangeYesNoDialog {
-# [offset (288)] # [rename (name = "m_DisposeEventHandler")] pub m_dispose_event_handler : crate :: system :: action :: Action ,
-# [offset (296)] # [rename (name = "m_IsForWell")] pub m_is_for_well : bool ,
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/exchangeyesnodialog/ExchangeYesNoDialog_MoneyParam.md"))] # [:: unity2 :: class (namespace = "App" , name = "ExchangeYesNoDialog.MoneyParam")] # [parent (crate :: system :: object :: Object)] pub struct ExchangeYesNoDialog_MoneyParam {
+# [offset (16)] # [rename (name = "num")] pub num : i32 ,
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/exchangeyesnodialog/ExchangeYesNoDialog_MoneyParam.md"))] # [:: unity2 :: class (namespace = "App" , name = "ExchangeYesNoDialog.MoneyParam")] # [parent (crate :: system :: object :: Object)] pub struct ExchangeYesNoDialog_MoneyParam {
-# [offset (16)] # [rename (name = "num")] pub num : i32 ,
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/exchangeyesnodialog/ExchangeYesNoDialog.md"))] # [:: unity2 :: class (namespace = "App" , name = "ExchangeYesNoDialog")] # [parent (crate :: app :: basicdialog :: BasicDialog)] pub struct ExchangeYesNoDialog {
+# [offset (288)] # [rename (name = "m_DisposeEventHandler")] pub m_dispose_event_handler : crate :: system :: action :: Action ,
+# [offset (296)] # [rename (name = "m_IsForWell")] pub m_is_for_well : bool ,
 }
 
 }
@@ -53,6 +53,23 @@ impl ExchangeYesNoDialog_ItemParam { pub fn ctor_method_info () -> & 'static :: 
 #[cfg(feature = "app-exchangeyesnodialog")]
 impl ExchangeYesNoDialog_ItemParam {
 # [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ExchangeYesNoDialog_ItemParam) , :: core :: stringify ! (new) ,)) ; < Self as IExchangeYesNoDialog_ItemParamMethods > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "app-exchangeyesnodialog")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ExchangeYesNoDialog_MoneyParam_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ExchangeYesNoDialog_MoneyParam as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ExchangeYesNoDialog_MoneyParam as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ExchangeYesNoDialog_MoneyParam , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ExchangeYesNoDialog_MoneyParam , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-exchangeyesnodialog")]
+pub trait IExchangeYesNoDialog_MoneyParamMethods : IExchangeYesNoDialog_MoneyParam { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ExchangeYesNoDialog_MoneyParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ExchangeYesNoDialog_MoneyParam_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-exchangeyesnodialog")]
+impl < __T : IExchangeYesNoDialog_MoneyParam > IExchangeYesNoDialog_MoneyParamMethods for __T { }
+
+#[cfg(feature = "app-exchangeyesnodialog")]
+impl ExchangeYesNoDialog_MoneyParam { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ExchangeYesNoDialog_MoneyParam_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-exchangeyesnodialog")]
+impl ExchangeYesNoDialog_MoneyParam {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ExchangeYesNoDialog_MoneyParam) , :: core :: stringify ! (new) ,)) ; < Self as IExchangeYesNoDialog_MoneyParamMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-exchangeyesnodialog")]
@@ -84,34 +101,17 @@ impl ExchangeYesNoDialog {
 }
 
 #[cfg(feature = "app-exchangeyesnodialog")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ExchangeYesNoDialog_MoneyParam_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ExchangeYesNoDialog_MoneyParam as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ExchangeYesNoDialog_MoneyParam as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ExchangeYesNoDialog_MoneyParam , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ExchangeYesNoDialog_MoneyParam , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "app-exchangeyesnodialog")]
-pub trait IExchangeYesNoDialog_MoneyParamMethods : IExchangeYesNoDialog_MoneyParam { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ExchangeYesNoDialog_MoneyParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ExchangeYesNoDialog_MoneyParam_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-exchangeyesnodialog")]
-impl < __T : IExchangeYesNoDialog_MoneyParam > IExchangeYesNoDialog_MoneyParamMethods for __T { }
-
-#[cfg(feature = "app-exchangeyesnodialog")]
-impl ExchangeYesNoDialog_MoneyParam { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ExchangeYesNoDialog_MoneyParam_unity2_raw :: __lookup_ctor :: get_method_info () } }
-
-#[cfg(feature = "app-exchangeyesnodialog")]
-impl ExchangeYesNoDialog_MoneyParam {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ExchangeYesNoDialog_MoneyParam) , :: core :: stringify ! (new) ,)) ; < Self as IExchangeYesNoDialog_MoneyParamMethods > :: ctor (this ,) ; this }
-}
-
-#[cfg(feature = "app-exchangeyesnodialog")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::ExchangeYesNoDialog_ItemParam;
     pub use super::IExchangeYesNoDialog_ItemParam;
     pub use super::IExchangeYesNoDialog_ItemParamMethods;
-    pub use super::ExchangeYesNoDialog;
-    pub use super::IExchangeYesNoDialog;
-    pub use super::IExchangeYesNoDialogMethods;
     pub use super::ExchangeYesNoDialog_MoneyParam;
     pub use super::IExchangeYesNoDialog_MoneyParam;
     pub use super::IExchangeYesNoDialog_MoneyParamMethods;
+    pub use super::ExchangeYesNoDialog;
+    pub use super::IExchangeYesNoDialog;
+    pub use super::IExchangeYesNoDialogMethods;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::procinst::IProcInst;

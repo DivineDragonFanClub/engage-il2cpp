@@ -13,6 +13,18 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaybackupdata/RelayBackupData.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayBackupData")] # [parent (crate :: system :: object :: Object)] pub struct RelayBackupData {
+# [static_field] # [rename (name = "BufferSizeReplay")] pub buffer_size_replay : i32 ,
+# [static_field] # [rename (name = "BufferSizeAll")] pub buffer_size_all : i32 ,
+# [static_field] # [rename (name = "VersionReplay")] pub version_replay : u8 ,
+# [static_field] # [rename (name = "VersionAll")] pub version_all : u8 ,
+# [offset (16)] # [rename (name = "m_Kind")] pub m_kind : crate :: app :: relaybackupdata :: RelayBackupData_Kinds ,
+# [offset (24)] # [rename (name = "m_Buffer")] pub m_buffer : :: unity2 :: Array < u8 > ,
+# [offset (32)] # [rename (name = "m_Stream")] pub m_stream : crate :: app :: stream_2 :: Stream_2 ,
+# [offset (40)] # [rename (name = "m_SaveData")] pub m_save_data : crate :: app :: gamesavedata :: GameSaveData ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relaybackupdata/RelayBackupData_Kinds.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -61,18 +73,6 @@ impl  RelayBackupData_Kinds  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaybackupdata/RelayBackupData.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayBackupData")] # [parent (crate :: system :: object :: Object)] pub struct RelayBackupData {
-# [static_field] # [rename (name = "BufferSizeReplay")] pub buffer_size_replay : i32 ,
-# [static_field] # [rename (name = "BufferSizeAll")] pub buffer_size_all : i32 ,
-# [static_field] # [rename (name = "VersionReplay")] pub version_replay : u8 ,
-# [static_field] # [rename (name = "VersionAll")] pub version_all : u8 ,
-# [offset (16)] # [rename (name = "m_Kind")] pub m_kind : crate :: app :: relaybackupdata :: RelayBackupData_Kinds ,
-# [offset (24)] # [rename (name = "m_Buffer")] pub m_buffer : :: unity2 :: Array < u8 > ,
-# [offset (32)] # [rename (name = "m_Stream")] pub m_stream : crate :: app :: stream_2 :: Stream_2 ,
-# [offset (40)] # [rename (name = "m_SaveData")] pub m_save_data : crate :: app :: gamesavedata :: GameSaveData ,
-}
-
 }
 
 #[cfg(feature = "app-relaybackupdata-types")]
@@ -101,10 +101,10 @@ impl RelayBackupData {
 #[cfg(feature = "app-relaybackupdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RelayBackupData_Kinds;
     pub use super::RelayBackupData;
     pub use super::IRelayBackupData;
     pub use super::IRelayBackupDataMethods;
+    pub use super::RelayBackupData_Kinds;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

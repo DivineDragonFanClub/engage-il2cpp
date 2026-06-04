@@ -21,6 +21,15 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserglobaldata/GameUserGlobalData_FlagsField.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameUserGlobalData.FlagsField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: gameuserglobaldata :: GameUserGlobalData_Flags >)] pub struct GameUserGlobalData_FlagsField {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserglobaldata/GameUserGlobalData.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameUserGlobalData")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: gameuserglobaldata :: GameUserGlobalData >)] pub struct GameUserGlobalData {
+# [offset (48)] # [rename (name = "m_CompletedHash")] pub m_completed_hash : crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < :: unity2 :: Il2CppString > ,
+# [offset (56)] # [rename (name = "m_CompletedList")] pub m_completed_list : crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameuserglobaldata/GameUserGlobalData_Flags.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -135,15 +144,6 @@ impl  GameUserGlobalData_Flags  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserglobaldata/GameUserGlobalData_FlagsField.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameUserGlobalData.FlagsField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: gameuserglobaldata :: GameUserGlobalData_Flags >)] pub struct GameUserGlobalData_FlagsField {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserglobaldata/GameUserGlobalData.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameUserGlobalData")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: gameuserglobaldata :: GameUserGlobalData >)] pub struct GameUserGlobalData {
-# [offset (48)] # [rename (name = "m_CompletedHash")] pub m_completed_hash : crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < :: unity2 :: Il2CppString > ,
-# [offset (56)] # [rename (name = "m_CompletedList")] pub m_completed_list : crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > ,
-}
-
 }
 
 #[cfg(feature = "app-gameuserglobaldata-types")]
@@ -189,13 +189,13 @@ impl GameUserGlobalData {
 #[cfg(feature = "app-gameuserglobaldata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GameUserGlobalData_Flags;
     pub use super::GameUserGlobalData_FlagsField;
     pub use super::IGameUserGlobalData_FlagsField;
     pub use super::IGameUserGlobalData_FlagsFieldMethods;
     pub use super::GameUserGlobalData;
     pub use super::IGameUserGlobalData;
     pub use super::IGameUserGlobalDataMethods;
+    pub use super::GameUserGlobalData_Flags;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

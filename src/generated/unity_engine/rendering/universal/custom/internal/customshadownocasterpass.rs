@@ -11,6 +11,17 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/internal/customshadownocasterpass/CustomShadowNoCasterPass_CustomShadowConstantBuffer.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Custom.Internal" , name = "CustomShadowNoCasterPass.CustomShadowConstantBuffer")] # [parent (crate :: system :: object :: Object)] pub struct CustomShadowNoCasterPass_CustomShadowConstantBuffer {
+# [static_field] # [rename (name = "_WorldToShadow")] pub world_to_shadow : i32 ,
+# [static_field] # [rename (name = "_ShadowParams")] pub shadow_params : i32 ,
+# [static_field] # [rename (name = "_ShadowOffset0")] pub shadow_offset0 : i32 ,
+# [static_field] # [rename (name = "_ShadowOffset1")] pub shadow_offset1 : i32 ,
+# [static_field] # [rename (name = "_ShadowOffset2")] pub shadow_offset2 : i32 ,
+# [static_field] # [rename (name = "_ShadowOffset3")] pub shadow_offset3 : i32 ,
+# [static_field] # [rename (name = "_ShadowmapSize")] pub shadowmap_size : i32 ,
+}
+
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/internal/customshadownocasterpass/CustomShadowNoCasterPass.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Custom.Internal" , name = "CustomShadowNoCasterPass")] # [parent (crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass)] pub struct CustomShadowNoCasterPass {
 # [static_field] # [rename (name = "k_MaxCascades")] pub k_max_cascades : i32 ,
 # [static_field] # [rename (name = "k_ShadowmapBufferBits")] pub k_shadowmap_buffer_bits : i32 ,
@@ -21,17 +32,6 @@ mod __types {
 # [offset (168)] # [rename (name = "m_CustomShadowMatrices")] pub m_custom_shadow_matrices : :: unity2 :: Array < crate :: unity_engine :: matrix4x4 :: Matrix4x4 > ,
 # [static_field] # [rename (name = "m_ProfilerTag")] pub m_profiler_tag : :: unity2 :: Il2CppString ,
 # [offset (176)] # [rename (name = "m_ProfilingSampler")] pub m_profiling_sampler : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/internal/customshadownocasterpass/CustomShadowNoCasterPass_CustomShadowConstantBuffer.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Custom.Internal" , name = "CustomShadowNoCasterPass.CustomShadowConstantBuffer")] # [parent (crate :: system :: object :: Object)] pub struct CustomShadowNoCasterPass_CustomShadowConstantBuffer {
-# [static_field] # [rename (name = "_WorldToShadow")] pub world_to_shadow : i32 ,
-# [static_field] # [rename (name = "_ShadowParams")] pub shadow_params : i32 ,
-# [static_field] # [rename (name = "_ShadowOffset0")] pub shadow_offset0 : i32 ,
-# [static_field] # [rename (name = "_ShadowOffset1")] pub shadow_offset1 : i32 ,
-# [static_field] # [rename (name = "_ShadowOffset2")] pub shadow_offset2 : i32 ,
-# [static_field] # [rename (name = "_ShadowOffset3")] pub shadow_offset3 : i32 ,
-# [static_field] # [rename (name = "_ShadowmapSize")] pub shadowmap_size : i32 ,
 }
 
 }
@@ -59,11 +59,11 @@ impl CustomShadowNoCasterPass {
 #[cfg(feature = "unity_engine-rendering-universal-custom-internal-customshadownocasterpass")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::CustomShadowNoCasterPass_CustomShadowConstantBuffer;
+    pub use super::ICustomShadowNoCasterPass_CustomShadowConstantBuffer;
     pub use super::CustomShadowNoCasterPass;
     pub use super::ICustomShadowNoCasterPass;
     pub use super::ICustomShadowNoCasterPassMethods;
-    pub use super::CustomShadowNoCasterPass_CustomShadowConstantBuffer;
-    pub use super::ICustomShadowNoCasterPass_CustomShadowConstantBuffer;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

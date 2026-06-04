@@ -11,16 +11,16 @@ mod __types {
  ;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/hashset_1/HashSet_1_Slot.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/hashset_1/HashSet_1_ElementCount.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct HashSet_1_Slot<T0> { pub _phantom: ::core::marker::PhantomData<(T0,)> }
+pub struct HashSet_1_ElementCount<T0> { pub _phantom: ::core::marker::PhantomData<(T0,)> }
 
 
-impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for HashSet_1_Slot<T0> {
+impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for HashSet_1_ElementCount<T0> {
     const NAMESPACE: &'static str = "System.Collections.Generic";
 
-    const NAME: &'static str = "HashSet`1.Slot";
+    const NAME: &'static str = "HashSet`1.ElementCount";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> =
@@ -37,7 +37,7 @@ impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for HashSet_1_Slot<T0>
 }
 
 
-impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for HashSet_1_Slot<T0> {
+impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for HashSet_1_ElementCount<T0> {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
@@ -97,16 +97,16 @@ impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for HashSet_1_Enumerator<T0> 
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/hashset_1/HashSet_1_ElementCount.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/hashset_1/HashSet_1_Slot.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct HashSet_1_ElementCount<T0> { pub _phantom: ::core::marker::PhantomData<(T0,)> }
+pub struct HashSet_1_Slot<T0> { pub _phantom: ::core::marker::PhantomData<(T0,)> }
 
 
-impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for HashSet_1_ElementCount<T0> {
+impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for HashSet_1_Slot<T0> {
     const NAMESPACE: &'static str = "System.Collections.Generic";
 
-    const NAME: &'static str = "HashSet`1.ElementCount";
+    const NAME: &'static str = "HashSet`1.Slot";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> =
@@ -123,7 +123,7 @@ impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for HashSet_1_ElementC
 }
 
 
-impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for HashSet_1_ElementCount<T0> {
+impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for HashSet_1_Slot<T0> {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
@@ -233,12 +233,12 @@ impl < T0 : :: unity2 :: ClassIdentity > HashSet_1 < T0 > {
 #[cfg(feature = "system-collections-generic-hashset_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HashSet_1_Slot;
+    pub use super::HashSet_1_ElementCount;
     pub use super::HashSet_1_Enumerator;
     pub use super::HashSet_1;
     pub use super::IHashSet_1;
     pub use super::IHashSet_1Methods;
-    pub use super::HashSet_1_ElementCount;
+    pub use super::HashSet_1_Slot;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

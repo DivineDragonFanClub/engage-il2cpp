@@ -20,6 +20,15 @@ mod __types {
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemusesequence/ItemUseSequence_EnchantedUnitList.md"))] # [:: unity2 :: class (namespace = "App" , name = "ItemUseSequence.EnchantedUnitList")] # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit >)] pub struct ItemUseSequence_EnchantedUnitList {}
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemusesequence/ItemUseSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "ItemUseSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct ItemUseSequence {
+# [offset (112)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
+# [offset (120)] # [rename (name = "m_UseItem")] pub m_use_item : crate :: app :: unititem :: UnitItem ,
+# [offset (128)] # [rename (name = "m_ItemData")] pub m_item_data : crate :: app :: itemdata :: ItemData ,
+# [offset (136)] # [rename (name = "m_TargetIndex")] pub m_target_index : i32 ,
+# [offset (140)] # [rename (name = "m_GainExp")] pub m_gain_exp : i32 ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemusesequence/ItemUseSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -74,15 +83,6 @@ impl  ItemUseSequence_Label  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemusesequence/ItemUseSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "ItemUseSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct ItemUseSequence {
-# [offset (112)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-# [offset (120)] # [rename (name = "m_UseItem")] pub m_use_item : crate :: app :: unititem :: UnitItem ,
-# [offset (128)] # [rename (name = "m_ItemData")] pub m_item_data : crate :: app :: itemdata :: ItemData ,
-# [offset (136)] # [rename (name = "m_TargetIndex")] pub m_target_index : i32 ,
-# [offset (140)] # [rename (name = "m_GainExp")] pub m_gain_exp : i32 ,
-}
-
 }
 
 #[cfg(feature = "app-itemusesequence-types")]
@@ -131,10 +131,10 @@ pub mod prelude {
     pub use super::ItemUseSequence_EnchantedUnitList;
     pub use super::IItemUseSequence_EnchantedUnitList;
     pub use super::IItemUseSequence_EnchantedUnitListMethods;
-    pub use super::ItemUseSequence_Label;
     pub use super::ItemUseSequence;
     pub use super::IItemUseSequence;
     pub use super::IItemUseSequenceMethods;
+    pub use super::ItemUseSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::collections::generic::list_1::IList_1;
     pub use crate::system::object::IObject;

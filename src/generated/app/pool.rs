@@ -15,13 +15,19 @@ mod __types {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/pool/Pool_LockStack_1.md"))] # [:: unity2 :: class (namespace = "App" , name = "Pool.LockStack`1")] # [parent (crate :: app :: pool :: Pool_Stack_1 < T0 >)] # [parent (crate :: system :: object :: Object)] pub struct Pool_LockStack_1 < T0 : :: unity2 :: ClassIdentity > {
+# [rename (name = "lockObject")] pub lock_object : :: unity2 :: IlInstance ,
+}
+
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/pool/Pool_Stack_1.md"))] # [:: unity2 :: class (namespace = "App" , name = "Pool.Stack`1")] # [parent (crate :: system :: object :: Object)] pub struct Pool_Stack_1 < T0 : :: unity2 :: ClassIdentity > {
 # [rename (name = "m_Pool")] pub m_pool : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < T0 > ,
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/pool/Pool_LockStack_1.md"))] # [:: unity2 :: class (namespace = "App" , name = "Pool.LockStack`1")] # [parent (crate :: app :: pool :: Pool_Stack_1 < T0 >)] # [parent (crate :: system :: object :: Object)] pub struct Pool_LockStack_1 < T0 : :: unity2 :: ClassIdentity > {
-# [rename (name = "lockObject")] pub lock_object : :: unity2 :: IlInstance ,
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/pool/Pool_List_1.md"))] # [:: unity2 :: class (namespace = "App" , name = "Pool.List`1")] # [parent (crate :: system :: object :: Object)] pub struct Pool_List_1 < T0 : :: unity2 :: ClassIdentity > {
+# [rename (name = "m_List")] pub m_list : crate :: system :: collections :: generic :: list_1 :: List_1 < T0 > ,
+# [rename (name = "m_Pool")] pub m_pool : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < T0 > ,
 }
 
 
@@ -29,12 +35,6 @@ mod __types {
 
 
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/pool/Pool_Node.md"))] # [:: unity2 :: class (namespace = "App" , name = "Pool.Node")] # [parent (crate :: system :: object :: Object)] pub struct Pool_Node {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/pool/Pool_List_1.md"))] # [:: unity2 :: class (namespace = "App" , name = "Pool.List`1")] # [parent (crate :: system :: object :: Object)] pub struct Pool_List_1 < T0 : :: unity2 :: ClassIdentity > {
-# [rename (name = "m_List")] pub m_list : crate :: system :: collections :: generic :: list_1 :: List_1 < T0 > ,
-# [rename (name = "m_Pool")] pub m_pool : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < T0 > ,
-}
 
 }
 
@@ -56,6 +56,20 @@ impl < T0 : :: unity2 :: ClassIdentity > Pool_Hierarchy_1 < T0 > {
 }
 
 #[cfg(feature = "app-pool")]
+# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > Pool_LockStack_1 < T0 > {
+# [doc = "`.ctor(i32)` overload"] # [method (name = ".ctor" , args = 1)] pub fn ctor (self , max : i32) -> () ;
+
+# [doc = "`Pop()` overload"] # [method (name = "Pop" , args = 0)] pub fn pop (self ,) -> T0 ;
+
+# [doc = "`Push(T0)` overload"] # [method (name = "Push" , args = 1)] pub fn push (self , p : T0) -> () ;
+}
+
+#[cfg(feature = "app-pool")]
+impl < T0 : :: unity2 :: ClassIdentity > Pool_LockStack_1 < T0 > {
+# [doc = "`.ctor(i32)` — overload selector"] pub fn new (max : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Pool_LockStack_1) , :: core :: stringify ! (new) ,)) ; < Self as IPool_LockStack_1Methods < T0 > > :: ctor (this , max) ; this }
+}
+
+#[cfg(feature = "app-pool")]
 # [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > Pool_Stack_1 < T0 > {
 # [doc = "`.ctor(i32)` overload"] # [method (name = ".ctor" , args = 1)] pub fn ctor (self , max : i32) -> () ;
 
@@ -70,17 +84,31 @@ impl < T0 : :: unity2 :: ClassIdentity > Pool_Stack_1 < T0 > {
 }
 
 #[cfg(feature = "app-pool")]
-# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > Pool_LockStack_1 < T0 > {
+# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > Pool_List_1 < T0 > {
 # [doc = "`.ctor(i32)` overload"] # [method (name = ".ctor" , args = 1)] pub fn ctor (self , max : i32) -> () ;
 
-# [doc = "`Pop()` overload"] # [method (name = "Pop" , args = 0)] pub fn pop (self ,) -> T0 ;
+# [doc = "`get_Count()` overload"] # [method (name = "get_Count" , args = 0)] pub fn get_count (self ,) -> i32 ;
 
-# [doc = "`Push(T0)` overload"] # [method (name = "Push" , args = 1)] pub fn push (self , p : T0) -> () ;
+# [doc = "`get_Item(i32)` overload"] # [method (name = "get_Item" , args = 1)] pub fn get_item (self , i : i32) -> T0 ;
+
+# [doc = "`Get(i32)` overload"] # [method (name = "Get" , args = 1)] pub fn get (self , i : i32) -> T0 ;
+
+# [doc = "`Swap(i32, i32)` overload"] # [method (name = "Swap" , args = 2)] pub fn swap (self , index_a : i32 , index_b : i32) -> () ;
+
+# [doc = "`Create()` overload"] # [method (name = "Create" , args = 0)] pub fn create (self ,) -> T0 ;
+
+# [doc = "`Delete(T0)` overload"] # [method (name = "Delete" , args = 1)] pub fn delete (self , p : T0) -> () ;
+
+# [doc = "`Clear()` overload"] # [method (name = "Clear" , args = 0)] pub fn clear (self ,) -> () ;
+
+# [doc = "`Sort()` overload"] # [method (name = "Sort" , args = 0)] pub fn sort (self ,) -> () ;
+
+# [doc = "`GetEnumerator()` overload"] # [method (name = "GetEnumerator" , args = 0)] pub fn get_enumerator (self ,) -> crate :: system :: collections :: generic :: ienumerator_1 :: IEnumerator_1 < T0 > ;
 }
 
 #[cfg(feature = "app-pool")]
-impl < T0 : :: unity2 :: ClassIdentity > Pool_LockStack_1 < T0 > {
-# [doc = "`.ctor(i32)` — overload selector"] pub fn new (max : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Pool_LockStack_1) , :: core :: stringify ! (new) ,)) ; < Self as IPool_LockStack_1Methods < T0 > > :: ctor (this , max) ; this }
+impl < T0 : :: unity2 :: ClassIdentity > Pool_List_1 < T0 > {
+# [doc = "`.ctor(i32)` — overload selector"] pub fn new (max : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Pool_List_1) , :: core :: stringify ! (new) ,)) ; < Self as IPool_List_1Methods < T0 > > :: ctor (this , max) ; this }
 }
 
 #[cfg(feature = "app-pool")]
@@ -118,54 +146,26 @@ impl Pool_Node {
 }
 
 #[cfg(feature = "app-pool")]
-# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > Pool_List_1 < T0 > {
-# [doc = "`.ctor(i32)` overload"] # [method (name = ".ctor" , args = 1)] pub fn ctor (self , max : i32) -> () ;
-
-# [doc = "`get_Count()` overload"] # [method (name = "get_Count" , args = 0)] pub fn get_count (self ,) -> i32 ;
-
-# [doc = "`get_Item(i32)` overload"] # [method (name = "get_Item" , args = 1)] pub fn get_item (self , i : i32) -> T0 ;
-
-# [doc = "`Get(i32)` overload"] # [method (name = "Get" , args = 1)] pub fn get (self , i : i32) -> T0 ;
-
-# [doc = "`Swap(i32, i32)` overload"] # [method (name = "Swap" , args = 2)] pub fn swap (self , index_a : i32 , index_b : i32) -> () ;
-
-# [doc = "`Create()` overload"] # [method (name = "Create" , args = 0)] pub fn create (self ,) -> T0 ;
-
-# [doc = "`Delete(T0)` overload"] # [method (name = "Delete" , args = 1)] pub fn delete (self , p : T0) -> () ;
-
-# [doc = "`Clear()` overload"] # [method (name = "Clear" , args = 0)] pub fn clear (self ,) -> () ;
-
-# [doc = "`Sort()` overload"] # [method (name = "Sort" , args = 0)] pub fn sort (self ,) -> () ;
-
-# [doc = "`GetEnumerator()` overload"] # [method (name = "GetEnumerator" , args = 0)] pub fn get_enumerator (self ,) -> crate :: system :: collections :: generic :: ienumerator_1 :: IEnumerator_1 < T0 > ;
-}
-
-#[cfg(feature = "app-pool")]
-impl < T0 : :: unity2 :: ClassIdentity > Pool_List_1 < T0 > {
-# [doc = "`.ctor(i32)` — overload selector"] pub fn new (max : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Pool_List_1) , :: core :: stringify ! (new) ,)) ; < Self as IPool_List_1Methods < T0 > > :: ctor (this , max) ; this }
-}
-
-#[cfg(feature = "app-pool")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::Pool_Hierarchy_1;
     pub use super::IPool_Hierarchy_1;
     pub use super::IPool_Hierarchy_1Methods;
-    pub use super::Pool_Stack_1;
-    pub use super::IPool_Stack_1;
-    pub use super::IPool_Stack_1Methods;
     pub use super::Pool_LockStack_1;
     pub use super::IPool_LockStack_1;
     pub use super::IPool_LockStack_1Methods;
+    pub use super::Pool_Stack_1;
+    pub use super::IPool_Stack_1;
+    pub use super::IPool_Stack_1Methods;
+    pub use super::Pool_List_1;
+    pub use super::IPool_List_1;
+    pub use super::IPool_List_1Methods;
     pub use super::Pool;
     pub use super::IPool;
     pub use super::IPoolMethods;
     pub use super::Pool_Node;
     pub use super::IPool_Node;
     pub use super::IPool_NodeMethods;
-    pub use super::Pool_List_1;
-    pub use super::IPool_List_1;
-    pub use super::IPool_List_1Methods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -15,24 +15,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshdemosequence/RefreshDemoSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefreshDemoSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct RefreshDemoSequence {
-# [static_field] # [rename (name = "s_BasketPath")] pub s_basket_path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "s_FruitsPath")] pub s_fruits_path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "s_AOCHumMPath")] pub s_aoc_hum_m_path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "s_AOCHumFPath")] pub s_aoc_hum_f_path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "s_AOCHorsePath")] pub s_aoc_horse_path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "s_AOCc400Path")] pub s_ao_cc400_path : :: unity2 :: Il2CppString ,
-# [offset (112)] # [rename (name = "m_RefreshArea")] pub m_refresh_area : crate :: app :: refreshdemosequence :: RefreshDemoSequence_RefreshArea ,
-# [offset (120)] # [rename (name = "m_SelectUnitList")] pub m_select_unit_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > ,
-# [offset (128)] # [rename (name = "m_AreaObject")] pub m_area_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (136)] # [rename (name = "m_LoadingCount")] pub m_loading_count : i32 ,
-# [offset (144)] # [rename (name = "m_MainCamera")] pub m_main_camera : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (152)] # [rename (name = "m_DemoCameraHandle")] pub m_demo_camera_handle : crate :: app :: resourcehandle_2 :: ResourceHandle_2 ,
-# [offset (160)] # [rename (name = "m_DemoCamera")] pub m_demo_camera : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (168)] # [rename (name = "m_ReliancePopUp")] pub m_reliance_pop_up : crate :: app :: reliancepopupcontroller :: ReliancePopUpController ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refreshdemosequence/RefreshDemoSequence_RefreshArea.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -87,6 +69,24 @@ impl  RefreshDemoSequence_RefreshArea  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshdemosequence/RefreshDemoSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefreshDemoSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct RefreshDemoSequence {
+# [static_field] # [rename (name = "s_BasketPath")] pub s_basket_path : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "s_FruitsPath")] pub s_fruits_path : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "s_AOCHumMPath")] pub s_aoc_hum_m_path : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "s_AOCHumFPath")] pub s_aoc_hum_f_path : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "s_AOCHorsePath")] pub s_aoc_horse_path : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "s_AOCc400Path")] pub s_ao_cc400_path : :: unity2 :: Il2CppString ,
+# [offset (112)] # [rename (name = "m_RefreshArea")] pub m_refresh_area : crate :: app :: refreshdemosequence :: RefreshDemoSequence_RefreshArea ,
+# [offset (120)] # [rename (name = "m_SelectUnitList")] pub m_select_unit_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > ,
+# [offset (128)] # [rename (name = "m_AreaObject")] pub m_area_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (136)] # [rename (name = "m_LoadingCount")] pub m_loading_count : i32 ,
+# [offset (144)] # [rename (name = "m_MainCamera")] pub m_main_camera : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (152)] # [rename (name = "m_DemoCameraHandle")] pub m_demo_camera_handle : crate :: app :: resourcehandle_2 :: ResourceHandle_2 ,
+# [offset (160)] # [rename (name = "m_DemoCamera")] pub m_demo_camera : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (168)] # [rename (name = "m_ReliancePopUp")] pub m_reliance_pop_up : crate :: app :: reliancepopupcontroller :: ReliancePopUpController ,
+}
+
 }
 
 #[cfg(feature = "app-refreshdemosequence-types")]
@@ -115,10 +115,10 @@ impl RefreshDemoSequence {
 #[cfg(feature = "app-refreshdemosequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::RefreshDemoSequence_RefreshArea;
     pub use super::RefreshDemoSequence;
     pub use super::IRefreshDemoSequence;
     pub use super::IRefreshDemoSequenceMethods;
-    pub use super::RefreshDemoSequence_RefreshArea;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

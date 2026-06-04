@@ -15,6 +15,15 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographmodesequence/PhotographModeSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "PhotographModeSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct PhotographModeSequence {
+# [offset (112)] # [rename (name = "m_AllMenuContent")] pub m_all_menu_content : crate :: app :: photographallmenucontent :: PhotographAllMenuContent ,
+# [offset (120)] # [rename (name = "m_CameraController")] pub m_camera_controller : crate :: app :: photographcameracontroller :: PhotographCameraController ,
+# [offset (128)] # [rename (name = "m_DisposManager")] pub m_dispos_manager : crate :: app :: photographdisposmanager :: PhotographDisposManager ,
+# [offset (136)] # [rename (name = "m_IsHelpVisible")] pub m_is_help_visible : bool ,
+# [offset (140)] # [rename (name = "m_ReservedLabel")] pub m_reserved_label : crate :: app :: photographmodesequence :: PhotographModeSequence_Label ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographmodesequence/PhotographModeSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -75,15 +84,6 @@ impl  PhotographModeSequence_Label  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographmodesequence/PhotographModeSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "PhotographModeSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct PhotographModeSequence {
-# [offset (112)] # [rename (name = "m_AllMenuContent")] pub m_all_menu_content : crate :: app :: photographallmenucontent :: PhotographAllMenuContent ,
-# [offset (120)] # [rename (name = "m_CameraController")] pub m_camera_controller : crate :: app :: photographcameracontroller :: PhotographCameraController ,
-# [offset (128)] # [rename (name = "m_DisposManager")] pub m_dispos_manager : crate :: app :: photographdisposmanager :: PhotographDisposManager ,
-# [offset (136)] # [rename (name = "m_IsHelpVisible")] pub m_is_help_visible : bool ,
-# [offset (140)] # [rename (name = "m_ReservedLabel")] pub m_reserved_label : crate :: app :: photographmodesequence :: PhotographModeSequence_Label ,
-}
-
 }
 
 #[cfg(feature = "app-photographmodesequence-types")]
@@ -112,10 +112,10 @@ impl PhotographModeSequence {
 #[cfg(feature = "app-photographmodesequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::PhotographModeSequence_Label;
     pub use super::PhotographModeSequence;
     pub use super::IPhotographModeSequence;
     pub use super::IPhotographModeSequenceMethods;
+    pub use super::PhotographModeSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

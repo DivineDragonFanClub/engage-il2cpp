@@ -13,6 +13,14 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gyromnager/GyroMnager.md"))] # [:: unity2 :: class (namespace = "App" , name = "GyroMnager")] # [parent (crate :: system :: object :: Object)] pub struct GyroMnager {
+# [offset (16)] # [rename (name = "m_IsSampling")] pub m_is_sampling : bool ,
+# [offset (24)] # [rename (name = "m_HandleList")] pub m_handle_list : :: unity2 :: Array < crate :: nn :: hid :: sixaxissensorhandle :: SixAxisSensorHandle > ,
+# [offset (32)] # [rename (name = "m_HandleCoount")] pub m_handle_coount : i32 ,
+# [offset (40)] # [rename (name = "m_StateList")] pub m_state_list : :: unity2 :: Array < crate :: nn :: hid :: sixaxissensorstate :: SixAxisSensorState > ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gyromnager/GyroMnager_DeviceType.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -79,14 +87,6 @@ impl  GyroMnager_DeviceType  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gyromnager/GyroMnager.md"))] # [:: unity2 :: class (namespace = "App" , name = "GyroMnager")] # [parent (crate :: system :: object :: Object)] pub struct GyroMnager {
-# [offset (16)] # [rename (name = "m_IsSampling")] pub m_is_sampling : bool ,
-# [offset (24)] # [rename (name = "m_HandleList")] pub m_handle_list : :: unity2 :: Array < crate :: nn :: hid :: sixaxissensorhandle :: SixAxisSensorHandle > ,
-# [offset (32)] # [rename (name = "m_HandleCoount")] pub m_handle_coount : i32 ,
-# [offset (40)] # [rename (name = "m_StateList")] pub m_state_list : :: unity2 :: Array < crate :: nn :: hid :: sixaxissensorstate :: SixAxisSensorState > ,
-}
-
 }
 
 #[cfg(feature = "app-gyromnager-types")]
@@ -112,10 +112,10 @@ impl GyroMnager {
 #[cfg(feature = "app-gyromnager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GyroMnager_DeviceType;
     pub use super::GyroMnager;
     pub use super::IGyroMnager;
     pub use super::IGyroMnagerMethods;
+    pub use super::GyroMnager_DeviceType;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

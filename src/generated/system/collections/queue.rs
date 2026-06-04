@@ -9,9 +9,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/queue/Queue_QueueDebugView.md"))] # [:: unity2 :: class (namespace = "System.Collections" , name = "Queue.QueueDebugView")] # [parent (crate :: system :: object :: Object)] pub struct Queue_QueueDebugView {}
-
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/queue/Queue.md"))] # [:: unity2 :: class (namespace = "System.Collections" , name = "Queue")] # [parent (crate :: system :: object :: Object)] pub struct Queue {
 # [offset (16)] # [rename (name = "_array")] pub array : :: unity2 :: Array < crate :: system :: object :: Object > ,
 # [offset (24)] # [rename (name = "_head")] pub head : i32 ,
@@ -29,6 +26,9 @@ mod __types {
 # [offset (28)] # [rename (name = "_version")] pub version : i32 ,
 # [offset (32)] # [rename (name = "currentElement")] pub current_element : :: unity2 :: IlInstance ,
 }
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/queue/Queue_QueueDebugView.md"))] # [:: unity2 :: class (namespace = "System.Collections" , name = "Queue.QueueDebugView")] # [parent (crate :: system :: object :: Object)] pub struct Queue_QueueDebugView {}
 
 }
 
@@ -78,14 +78,14 @@ impl Queue_QueueEnumerator {
 #[cfg(feature = "system-collections-queue")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Queue_QueueDebugView;
-    pub use super::IQueue_QueueDebugView;
     pub use super::Queue;
     pub use super::IQueue;
     pub use super::IQueueMethods;
     pub use super::Queue_QueueEnumerator;
     pub use super::IQueue_QueueEnumerator;
     pub use super::IQueue_QueueEnumeratorMethods;
+    pub use super::Queue_QueueDebugView;
+    pub use super::IQueue_QueueDebugView;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

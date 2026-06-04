@@ -11,7 +11,7 @@
  # [cfg (feature = "combat-situation_converter-cameradataset")] pub use cameradataset :: { ICameraDataSetMethods }
  ;
  # [cfg (any (feature = "combat-situation_converter-convertbrawl-types"))] pub mod convertbrawl ;
- # [cfg (feature = "combat-situation_converter-convertbrawl-types")] pub use convertbrawl :: { ConvertBrawl , IConvertBrawl , ConvertBrawl_State }
+ # [cfg (feature = "combat-situation_converter-convertbrawl-types")] pub use convertbrawl :: { ConvertBrawl_State , ConvertBrawl , IConvertBrawl }
  ;
  # [cfg (feature = "combat-situation_converter-convertbrawl")] pub use convertbrawl :: { IConvertBrawlMethods }
  ;

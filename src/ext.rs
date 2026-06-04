@@ -1,3 +1,7 @@
+// The extension traits/iterators here mirror the generated `List_1` / `Dictionary_2` names on
+// purpose, so they carry the same non-camel-case `_1`/`_2`.
+#![allow(non_camel_case_types)]
+
 use unity2::{IntPtr, MethodInfo};
 
 fn method_info_intptr(callback_ptr: *mut u8, args: u8) -> IntPtr {

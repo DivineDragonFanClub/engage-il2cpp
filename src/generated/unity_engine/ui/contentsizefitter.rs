@@ -23,14 +23,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/contentsizefitter/ContentSizeFitter.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "ContentSizeFitter")] # [parent (crate :: unity_engine :: event_systems :: uibehaviour :: UIBehaviour)] pub struct ContentSizeFitter {
-# [offset (24)] # [rename (name = "m_HorizontalFit")] pub m_horizontal_fit : crate :: unity_engine :: ui :: contentsizefitter :: ContentSizeFitter_FitMode ,
-# [offset (28)] # [rename (name = "m_VerticalFit")] pub m_vertical_fit : crate :: unity_engine :: ui :: contentsizefitter :: ContentSizeFitter_FitMode ,
-# [offset (32)] # [rename (name = "m_Rect")] pub m_rect : crate :: unity_engine :: recttransform :: RectTransform ,
-# [offset (40)] # [rename (name = "m_Tracker")] pub m_tracker : crate :: unity_engine :: drivenrecttransformtracker :: DrivenRectTransformTracker ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/contentsizefitter/ContentSizeFitter_FitMode.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -85,6 +77,14 @@ impl  ContentSizeFitter_FitMode  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/contentsizefitter/ContentSizeFitter.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "ContentSizeFitter")] # [parent (crate :: unity_engine :: event_systems :: uibehaviour :: UIBehaviour)] pub struct ContentSizeFitter {
+# [offset (24)] # [rename (name = "m_HorizontalFit")] pub m_horizontal_fit : crate :: unity_engine :: ui :: contentsizefitter :: ContentSizeFitter_FitMode ,
+# [offset (28)] # [rename (name = "m_VerticalFit")] pub m_vertical_fit : crate :: unity_engine :: ui :: contentsizefitter :: ContentSizeFitter_FitMode ,
+# [offset (32)] # [rename (name = "m_Rect")] pub m_rect : crate :: unity_engine :: recttransform :: RectTransform ,
+# [offset (40)] # [rename (name = "m_Tracker")] pub m_tracker : crate :: unity_engine :: drivenrecttransformtracker :: DrivenRectTransformTracker ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-ui-contentsizefitter-types")]
@@ -110,10 +110,10 @@ impl ContentSizeFitter {
 #[cfg(feature = "unity_engine-ui-contentsizefitter")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ContentSizeFitter_FitMode;
     pub use super::ContentSizeFitter;
     pub use super::IContentSizeFitter;
     pub use super::IContentSizeFitterMethods;
-    pub use super::ContentSizeFitter_FitMode;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

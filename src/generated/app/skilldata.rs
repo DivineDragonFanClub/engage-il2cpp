@@ -21,67 +21,6 @@ mod __types {
  ;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_AroundTargets.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct SkillData_AroundTargets  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for SkillData_AroundTargets  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "SkillData.AroundTargets";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for SkillData_AroundTargets  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  SkillData_AroundTargets  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn friend() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn enemy() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn both() -> Self {
-        Self { value: 3 }
-
-    }
-
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_States.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -251,18 +190,18 @@ impl  SkillData_States  {
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_PrivateFlags.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_Zocs.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct SkillData_PrivateFlags  {
+pub struct SkillData_Zocs  {
     pub value: i32,
 }
 
 
-impl  ::unity2::ClassIdentity for SkillData_PrivateFlags  {
+impl  ::unity2::ClassIdentity for SkillData_Zocs  {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "SkillData.PrivateFlags";
+    const NAME: &'static str = "SkillData.Zocs";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> =
@@ -277,7 +216,7 @@ impl  ::unity2::ClassIdentity for SkillData_PrivateFlags  {
 }
 
 
-impl  ::unity2::IlType for SkillData_PrivateFlags  {
+impl  ::unity2::IlType for SkillData_Zocs  {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
@@ -285,359 +224,27 @@ impl  ::unity2::IlType for SkillData_PrivateFlags  {
 }
 
 
-impl  SkillData_PrivateFlags  {
-    pub fn style_skill() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn can_override() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn has_effect() -> Self {
-        Self { value: 4 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_Frequencies.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct SkillData_Frequencies  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for SkillData_Frequencies  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "SkillData.Frequencies";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for SkillData_Frequencies  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  SkillData_Frequencies  {
-    pub fn every() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn first() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn last() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn mask() -> Self {
-        Self { value: 7 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_GiveTargets.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct SkillData_GiveTargets  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for SkillData_GiveTargets  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "SkillData.GiveTargets";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for SkillData_GiveTargets  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  SkillData_GiveTargets  {
-    pub fn target() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn self_() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn chain() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn around() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn dance() -> Self {
-        Self { value: 4 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_Categorys.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct SkillData_Categorys  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for SkillData_Categorys  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "SkillData.Categorys";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for SkillData_Categorys  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  SkillData_Categorys  {
+impl  SkillData_Zocs  {
     pub fn none() -> Self {
         Self { value: 0 }
 
     }
 
 
-    pub fn person() -> Self {
+    pub fn cost_min() -> Self {
         Self { value: 1 }
 
     }
 
 
-    pub fn job() -> Self {
+    pub fn cost_max() -> Self {
         Self { value: 2 }
 
     }
 
 
-    pub fn item() -> Self {
+    pub fn not_move() -> Self {
         Self { value: 3 }
-
-    }
-
-
-    pub fn equip() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn god() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn ring() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn hub() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn support() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn battle() -> Self {
-        Self { value: 9 }
-
-    }
-
-
-    pub fn private() -> Self {
-        Self { value: 10 }
-
-    }
-
-
-    pub fn inheritance() -> Self {
-        Self { value: 11 }
-
-    }
-
-
-    pub fn command() -> Self {
-        Self { value: 12 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/skilldata/SkillData.md"))] # [:: unity2 :: class (namespace = "App" , name = "SkillData")] # [parent (crate :: app :: structcalculatordata_1 :: StructCalculatorData_1 < crate :: app :: skilldata :: SkillData >)] pub struct SkillData {
-# [static_field] # [rename (name = "PhaseCycle")] pub phase_cycle : i32 ,
-# [offset (568)] # [rename (name = "GiveSkills")] pub give_skills : crate :: app :: skillarray :: SkillArray ,
-# [offset (576)] # [rename (name = "RemoveSkills")] pub remove_skills : crate :: app :: skillarray :: SkillArray ,
-# [offset (584)] # [rename (name = "SyncSkills")] pub sync_skills : crate :: app :: skillarray :: SkillArray ,
-# [offset (592)] # [rename (name = "RebirthSkill")] pub rebirth_skill : crate :: app :: skilldata :: SkillData ,
-# [offset (600)] # [rename (name = "EngageSkill")] pub engage_skill : crate :: app :: skilldata :: SkillData ,
-# [offset (608)] # [rename (name = "ChangeSkills")] pub change_skills : :: unity2 :: Array < crate :: app :: skilldata :: SkillData > ,
-# [offset (616)] # [rename (name = "LowSkill")] pub low_skill : crate :: app :: skilldata :: SkillData ,
-# [offset (624)] # [rename (name = "HighSkill")] pub high_skill : crate :: app :: skilldata :: SkillData ,
-# [offset (632)] # [rename (name = "RootCommandSkill")] pub root_command_skill : crate :: app :: skilldata :: SkillData ,
-# [offset (640)] # [rename (name = "TimingMask")] pub timing_mask : crate :: app :: skilldata :: SkillData_TimingMasks ,
-# [offset (644)] # [rename (name = "CycleMask")] pub cycle_mask : crate :: app :: skilldata :: SkillData_CycleMasks ,
-# [offset (648)] # [rename (name = "SortKey")] pub sort_key : i32 ,
-# [offset (656)] # [rename (name = "m_ActFuncs")] pub m_act_funcs : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: skilldata :: SkillData_Func > ,
-# [offset (664)] # [rename (name = "m_AroundFuncs")] pub m_around_funcs : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: skilldata :: SkillData_Func > ,
-# [offset (672)] # [rename (name = "m_StyleSkills")] pub m_style_skills : :: unity2 :: Array < crate :: app :: skilldata :: SkillData > ,
-# [offset (680)] # [rename (name = "m_WeaponLevelMask")] pub m_weapon_level_mask : crate :: app :: weaponmask :: WeaponMask ,
-# [offset (688)] # [rename (name = "m_ConditionCommand")] pub m_condition_command : crate :: app :: calculatorcommand :: CalculatorCommand ,
-# [offset (696)] # [rename (name = "m_GiveConditionCommand")] pub m_give_condition_command : crate :: app :: calculatorcommand :: CalculatorCommand ,
-# [offset (704)] # [rename (name = "m_AroundConditionCommand")] pub m_around_condition_command : crate :: app :: calculatorcommand :: CalculatorCommand ,
-# [offset (712)] # [rename (name = "m_SyncConditionCommands")] pub m_sync_condition_commands : :: unity2 :: Array < crate :: app :: calculatorcommand :: CalculatorCommand > ,
-# [offset (720)] # [rename (name = "m_EquipItems")] pub m_equip_items : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemdata :: ItemData > ,
-# [offset (728)] # [rename (name = "m_DefaultEquipItem")] pub m_default_equip_item : crate :: app :: itemdata :: ItemData ,
-# [offset (736)] # [rename (name = "m_PrefixlessSid")] pub m_prefixless_sid : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "CommandMask")] pub command_mask : i32 ,
-# [static_field] # [rename (name = "s_EfficacySkills")] pub s_efficacy_skills : crate :: app :: skillarray :: SkillArray ,
-# [static_field] # [rename (name = "s_HeroSkill")] pub s_hero_skill : crate :: app :: skilldata :: SkillData ,
-# [static_field] # [rename (name = "s_StunSkill")] pub s_stun_skill : crate :: app :: skilldata :: SkillData ,
-# [static_field] # [rename (name = "s_DanceSkill")] pub s_dance_skill : crate :: app :: skilldata :: SkillData ,
-# [static_field] # [rename (name = "s_MorphSkill")] pub s_morph_skill : crate :: app :: skilldata :: SkillData ,
-# [static_field] # [rename (name = "s_PoisonSkill")] pub s_poison_skill : crate :: app :: skilldata :: SkillData ,
-# [static_field] # [rename (name = "s_LeaderSkill")] pub s_leader_skill : crate :: app :: skilldata :: SkillData ,
-# [static_field] # [rename (name = "s_FangCurseSkill")] pub s_fang_curse_skill : crate :: app :: skilldata :: SkillData ,
-# [static_field] # [rename (name = "s_EnchantSkill")] pub s_enchant_skill : crate :: app :: skilldata :: SkillData ,
-# [static_field] # [rename (name = "s_EnchantmentSkill")] pub s_enchantment_skill : crate :: app :: skilldata :: SkillData ,
-# [static_field] # [rename (name = "s_ImmortalSkill")] pub s_immortal_skill : crate :: app :: skilldata :: SkillData ,
-# [static_field] # [rename (name = "s_TransporterSkill")] pub s_transporter_skill : crate :: app :: skilldata :: SkillData ,
-# [static_field] # [rename (name = "s_FullBulletSkill")] pub s_full_bullet_skill : crate :: app :: skilldata :: SkillData ,
-# [static_field] # [rename (name = "s_ChainAttackGuardSkill")] pub s_chain_attack_guard_skill : crate :: app :: skilldata :: SkillData ,
-# [static_field] # [rename (name = "s_NotTerrainDamageSkill")] pub s_not_terrain_damage_skill : crate :: app :: skilldata :: SkillData ,
-# [static_field] # [rename (name = "s_GazeDiagonallySkill")] pub s_gaze_diagonally_skill : crate :: app :: skilldata :: SkillData ,
-# [static_field] # [rename (name = "s_MultiChangeSkill")] pub s_multi_change_skill : crate :: app :: skilldata :: SkillData ,
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_TimingMasks.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct SkillData_TimingMasks  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for SkillData_TimingMasks  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "SkillData.TimingMasks";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for SkillData_TimingMasks  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  SkillData_TimingMasks  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn full() -> Self {
-        Self { value: 1048575 }
 
     }
 
@@ -696,6 +303,75 @@ impl  SkillData_IconKinds  {
 
     }
 
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_AroundTargets.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct SkillData_AroundTargets  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for SkillData_AroundTargets  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "SkillData.AroundTargets";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for SkillData_AroundTargets  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  SkillData_AroundTargets  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn friend() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn enemy() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn both() -> Self {
+        Self { value: 3 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/skilldata/SkillData_Func.md"))] # [:: unity2 :: class (namespace = "App" , name = "SkillData.Func")] # [parent (crate :: system :: object :: Object)] pub struct SkillData_Func {
+# [offset (16)] # [rename (name = "Name")] pub name : :: unity2 :: Il2CppString ,
+# [offset (24)] # [rename (name = "Operation")] pub operation : crate :: app :: skilldata :: SkillData_Operations ,
+# [offset (32)] # [rename (name = "SetCommand")] pub set_command : crate :: app :: calculatorcommand :: CalculatorCommand ,
+# [offset (40)] # [rename (name = "GetCommand")] pub get_command : crate :: app :: calculatorcommand :: CalculatorCommand ,
 }
 
 
@@ -766,221 +442,6 @@ impl  SkillData_Operations  {
 
     pub fn div() -> Self {
         Self { value: 5 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/skilldata/SkillData_Func.md"))] # [:: unity2 :: class (namespace = "App" , name = "SkillData.Func")] # [parent (crate :: system :: object :: Object)] pub struct SkillData_Func {
-# [offset (16)] # [rename (name = "Name")] pub name : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "Operation")] pub operation : crate :: app :: skilldata :: SkillData_Operations ,
-# [offset (32)] # [rename (name = "SetCommand")] pub set_command : crate :: app :: calculatorcommand :: CalculatorCommand ,
-# [offset (40)] # [rename (name = "GetCommand")] pub get_command : crate :: app :: calculatorcommand :: CalculatorCommand ,
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_Targets.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct SkillData_Targets  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for SkillData_Targets  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "SkillData.Targets";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for SkillData_Targets  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  SkillData_Targets  {
-    pub fn target() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn enemy() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn friend() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn destroy() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn pierce() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn range() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn around() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn overlap() -> Self {
-        Self { value: 7 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_Works.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct SkillData_Works  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for SkillData_Works  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "SkillData.Works";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for SkillData_Works  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  SkillData_Works  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn item_heal_scale() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn job_grow_change() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn total_grow_change() -> Self {
-        Self { value: 3 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_AroundCenters.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct SkillData_AroundCenters  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for SkillData_AroundCenters  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "SkillData.AroundCenters";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for SkillData_AroundCenters  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  SkillData_AroundCenters  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn self_() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn target() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn link() -> Self {
-        Self { value: 3 }
 
     }
 
@@ -1192,6 +653,67 @@ impl  SkillData_Timings  {
 }
 
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_AroundCenters.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct SkillData_AroundCenters  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for SkillData_AroundCenters  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "SkillData.AroundCenters";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for SkillData_AroundCenters  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  SkillData_AroundCenters  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn self_() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn target() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn link() -> Self {
+        Self { value: 3 }
+
+    }
+
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_Layers.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -1246,6 +768,709 @@ impl  SkillData_Layers  {
 
 
     pub fn d() -> Self {
+        Self { value: 8 }
+
+    }
+
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_TimingMasks.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct SkillData_TimingMasks  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for SkillData_TimingMasks  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "SkillData.TimingMasks";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for SkillData_TimingMasks  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  SkillData_TimingMasks  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn full() -> Self {
+        Self { value: 1048575 }
+
+    }
+
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_Phase.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct SkillData_Phase  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for SkillData_Phase  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "SkillData.Phase";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for SkillData_Phase  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  SkillData_Phase  {
+    pub fn current() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn other() -> Self {
+        Self { value: 1 }
+
+    }
+
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_Attrs.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct SkillData_Attrs  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for SkillData_Attrs  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "SkillData.Attrs";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for SkillData_Attrs  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  SkillData_Attrs  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn walk() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn horse() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn heavy() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn fly() -> Self {
+        Self { value: 8 }
+
+    }
+
+
+    pub fn dragon() -> Self {
+        Self { value: 16 }
+
+    }
+
+
+    pub fn evil() -> Self {
+        Self { value: 32 }
+
+    }
+
+
+    pub fn morph() -> Self {
+        Self { value: 64 }
+
+    }
+
+
+    pub fn mediuth() -> Self {
+        Self { value: 128 }
+
+    }
+
+
+    pub fn duma() -> Self {
+        Self { value: 256 }
+
+    }
+
+
+    pub fn loptous() -> Self {
+        Self { value: 512 }
+
+    }
+
+
+    pub fn veld() -> Self {
+        Self { value: 1024 }
+
+    }
+
+
+    pub fn idenn() -> Self {
+        Self { value: 2048 }
+
+    }
+
+
+    pub fn nergal() -> Self {
+        Self { value: 4096 }
+
+    }
+
+
+    pub fn fodeth() -> Self {
+        Self { value: 8192 }
+
+    }
+
+
+    pub fn ashnard() -> Self {
+        Self { value: 16384 }
+
+    }
+
+
+    pub fn astarte() -> Self {
+        Self { value: 32768 }
+
+    }
+
+
+    pub fn gimle() -> Self {
+        Self { value: 65536 }
+
+    }
+
+
+    pub fn hydra() -> Self {
+        Self { value: 131072 }
+
+    }
+
+
+    pub fn nemesis() -> Self {
+        Self { value: 262144 }
+
+    }
+
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_Works.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct SkillData_Works  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for SkillData_Works  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "SkillData.Works";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for SkillData_Works  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  SkillData_Works  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn item_heal_scale() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn job_grow_change() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn total_grow_change() -> Self {
+        Self { value: 3 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/skilldata/SkillData.md"))] # [:: unity2 :: class (namespace = "App" , name = "SkillData")] # [parent (crate :: app :: structcalculatordata_1 :: StructCalculatorData_1 < crate :: app :: skilldata :: SkillData >)] pub struct SkillData {
+# [static_field] # [rename (name = "PhaseCycle")] pub phase_cycle : i32 ,
+# [offset (568)] # [rename (name = "GiveSkills")] pub give_skills : crate :: app :: skillarray :: SkillArray ,
+# [offset (576)] # [rename (name = "RemoveSkills")] pub remove_skills : crate :: app :: skillarray :: SkillArray ,
+# [offset (584)] # [rename (name = "SyncSkills")] pub sync_skills : crate :: app :: skillarray :: SkillArray ,
+# [offset (592)] # [rename (name = "RebirthSkill")] pub rebirth_skill : crate :: app :: skilldata :: SkillData ,
+# [offset (600)] # [rename (name = "EngageSkill")] pub engage_skill : crate :: app :: skilldata :: SkillData ,
+# [offset (608)] # [rename (name = "ChangeSkills")] pub change_skills : :: unity2 :: Array < crate :: app :: skilldata :: SkillData > ,
+# [offset (616)] # [rename (name = "LowSkill")] pub low_skill : crate :: app :: skilldata :: SkillData ,
+# [offset (624)] # [rename (name = "HighSkill")] pub high_skill : crate :: app :: skilldata :: SkillData ,
+# [offset (632)] # [rename (name = "RootCommandSkill")] pub root_command_skill : crate :: app :: skilldata :: SkillData ,
+# [offset (640)] # [rename (name = "TimingMask")] pub timing_mask : crate :: app :: skilldata :: SkillData_TimingMasks ,
+# [offset (644)] # [rename (name = "CycleMask")] pub cycle_mask : crate :: app :: skilldata :: SkillData_CycleMasks ,
+# [offset (648)] # [rename (name = "SortKey")] pub sort_key : i32 ,
+# [offset (656)] # [rename (name = "m_ActFuncs")] pub m_act_funcs : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: skilldata :: SkillData_Func > ,
+# [offset (664)] # [rename (name = "m_AroundFuncs")] pub m_around_funcs : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: skilldata :: SkillData_Func > ,
+# [offset (672)] # [rename (name = "m_StyleSkills")] pub m_style_skills : :: unity2 :: Array < crate :: app :: skilldata :: SkillData > ,
+# [offset (680)] # [rename (name = "m_WeaponLevelMask")] pub m_weapon_level_mask : crate :: app :: weaponmask :: WeaponMask ,
+# [offset (688)] # [rename (name = "m_ConditionCommand")] pub m_condition_command : crate :: app :: calculatorcommand :: CalculatorCommand ,
+# [offset (696)] # [rename (name = "m_GiveConditionCommand")] pub m_give_condition_command : crate :: app :: calculatorcommand :: CalculatorCommand ,
+# [offset (704)] # [rename (name = "m_AroundConditionCommand")] pub m_around_condition_command : crate :: app :: calculatorcommand :: CalculatorCommand ,
+# [offset (712)] # [rename (name = "m_SyncConditionCommands")] pub m_sync_condition_commands : :: unity2 :: Array < crate :: app :: calculatorcommand :: CalculatorCommand > ,
+# [offset (720)] # [rename (name = "m_EquipItems")] pub m_equip_items : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemdata :: ItemData > ,
+# [offset (728)] # [rename (name = "m_DefaultEquipItem")] pub m_default_equip_item : crate :: app :: itemdata :: ItemData ,
+# [offset (736)] # [rename (name = "m_PrefixlessSid")] pub m_prefixless_sid : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "CommandMask")] pub command_mask : i32 ,
+# [static_field] # [rename (name = "s_EfficacySkills")] pub s_efficacy_skills : crate :: app :: skillarray :: SkillArray ,
+# [static_field] # [rename (name = "s_HeroSkill")] pub s_hero_skill : crate :: app :: skilldata :: SkillData ,
+# [static_field] # [rename (name = "s_StunSkill")] pub s_stun_skill : crate :: app :: skilldata :: SkillData ,
+# [static_field] # [rename (name = "s_DanceSkill")] pub s_dance_skill : crate :: app :: skilldata :: SkillData ,
+# [static_field] # [rename (name = "s_MorphSkill")] pub s_morph_skill : crate :: app :: skilldata :: SkillData ,
+# [static_field] # [rename (name = "s_PoisonSkill")] pub s_poison_skill : crate :: app :: skilldata :: SkillData ,
+# [static_field] # [rename (name = "s_LeaderSkill")] pub s_leader_skill : crate :: app :: skilldata :: SkillData ,
+# [static_field] # [rename (name = "s_FangCurseSkill")] pub s_fang_curse_skill : crate :: app :: skilldata :: SkillData ,
+# [static_field] # [rename (name = "s_EnchantSkill")] pub s_enchant_skill : crate :: app :: skilldata :: SkillData ,
+# [static_field] # [rename (name = "s_EnchantmentSkill")] pub s_enchantment_skill : crate :: app :: skilldata :: SkillData ,
+# [static_field] # [rename (name = "s_ImmortalSkill")] pub s_immortal_skill : crate :: app :: skilldata :: SkillData ,
+# [static_field] # [rename (name = "s_TransporterSkill")] pub s_transporter_skill : crate :: app :: skilldata :: SkillData ,
+# [static_field] # [rename (name = "s_FullBulletSkill")] pub s_full_bullet_skill : crate :: app :: skilldata :: SkillData ,
+# [static_field] # [rename (name = "s_ChainAttackGuardSkill")] pub s_chain_attack_guard_skill : crate :: app :: skilldata :: SkillData ,
+# [static_field] # [rename (name = "s_NotTerrainDamageSkill")] pub s_not_terrain_damage_skill : crate :: app :: skilldata :: SkillData ,
+# [static_field] # [rename (name = "s_GazeDiagonallySkill")] pub s_gaze_diagonally_skill : crate :: app :: skilldata :: SkillData ,
+# [static_field] # [rename (name = "s_MultiChangeSkill")] pub s_multi_change_skill : crate :: app :: skilldata :: SkillData ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_Frequencies.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct SkillData_Frequencies  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for SkillData_Frequencies  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "SkillData.Frequencies";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for SkillData_Frequencies  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  SkillData_Frequencies  {
+    pub fn every() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn first() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn last() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn mask() -> Self {
+        Self { value: 7 }
+
+    }
+
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_Actions.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct SkillData_Actions  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for SkillData_Actions  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "SkillData.Actions";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for SkillData_Actions  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  SkillData_Actions  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn offence() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn defence() -> Self {
+        Self { value: 2 }
+
+    }
+
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_CycleMasks.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct SkillData_CycleMasks  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for SkillData_CycleMasks  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "SkillData.CycleMasks";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for SkillData_CycleMasks  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  SkillData_CycleMasks  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn full() -> Self {
+        Self { value: 1048575 }
+
+    }
+
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_Targets.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct SkillData_Targets  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for SkillData_Targets  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "SkillData.Targets";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for SkillData_Targets  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  SkillData_Targets  {
+    pub fn target() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn enemy() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn friend() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn destroy() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn pierce() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn range() -> Self {
+        Self { value: 5 }
+
+    }
+
+
+    pub fn around() -> Self {
+        Self { value: 6 }
+
+    }
+
+
+    pub fn overlap() -> Self {
+        Self { value: 7 }
+
+    }
+
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_Cycles.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct SkillData_Cycles  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for SkillData_Cycles  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "SkillData.Cycles";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for SkillData_Cycles  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  SkillData_Cycles  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn map() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn phase_before() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn phase_after() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn fixed() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn engaged() -> Self {
+        Self { value: 5 }
+
+    }
+
+
+    pub fn battled() -> Self {
+        Self { value: 6 }
+
+    }
+
+
+    pub fn battled_of() -> Self {
+        Self { value: 7 }
+
+    }
+
+
+    pub fn battled_df() -> Self {
         Self { value: 8 }
 
     }
@@ -1668,18 +1893,18 @@ impl  SkillData_Flags  {
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_Cycles.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_Categorys.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct SkillData_Cycles  {
+pub struct SkillData_Categorys  {
     pub value: i32,
 }
 
 
-impl  ::unity2::ClassIdentity for SkillData_Cycles  {
+impl  ::unity2::ClassIdentity for SkillData_Categorys  {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "SkillData.Cycles";
+    const NAME: &'static str = "SkillData.Categorys";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> =
@@ -1694,7 +1919,7 @@ impl  ::unity2::ClassIdentity for SkillData_Cycles  {
 }
 
 
-impl  ::unity2::IlType for SkillData_Cycles  {
+impl  ::unity2::IlType for SkillData_Categorys  {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
@@ -1702,75 +1927,99 @@ impl  ::unity2::IlType for SkillData_Cycles  {
 }
 
 
-impl  SkillData_Cycles  {
+impl  SkillData_Categorys  {
     pub fn none() -> Self {
         Self { value: 0 }
 
     }
 
 
-    pub fn map() -> Self {
+    pub fn person() -> Self {
         Self { value: 1 }
 
     }
 
 
-    pub fn phase_before() -> Self {
+    pub fn job() -> Self {
         Self { value: 2 }
 
     }
 
 
-    pub fn phase_after() -> Self {
+    pub fn item() -> Self {
         Self { value: 3 }
 
     }
 
 
-    pub fn fixed() -> Self {
+    pub fn equip() -> Self {
         Self { value: 4 }
 
     }
 
 
-    pub fn engaged() -> Self {
+    pub fn god() -> Self {
         Self { value: 5 }
 
     }
 
 
-    pub fn battled() -> Self {
+    pub fn ring() -> Self {
         Self { value: 6 }
 
     }
 
 
-    pub fn battled_of() -> Self {
+    pub fn hub() -> Self {
         Self { value: 7 }
 
     }
 
 
-    pub fn battled_df() -> Self {
+    pub fn support() -> Self {
         Self { value: 8 }
+
+    }
+
+
+    pub fn battle() -> Self {
+        Self { value: 9 }
+
+    }
+
+
+    pub fn private() -> Self {
+        Self { value: 10 }
+
+    }
+
+
+    pub fn inheritance() -> Self {
+        Self { value: 11 }
+
+    }
+
+
+    pub fn command() -> Self {
+        Self { value: 12 }
 
     }
 
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_Phase.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_PrivateFlags.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct SkillData_Phase  {
+pub struct SkillData_PrivateFlags  {
     pub value: i32,
 }
 
 
-impl  ::unity2::ClassIdentity for SkillData_Phase  {
+impl  ::unity2::ClassIdentity for SkillData_PrivateFlags  {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "SkillData.Phase";
+    const NAME: &'static str = "SkillData.PrivateFlags";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> =
@@ -1785,7 +2034,7 @@ impl  ::unity2::ClassIdentity for SkillData_Phase  {
 }
 
 
-impl  ::unity2::IlType for SkillData_Phase  {
+impl  ::unity2::IlType for SkillData_PrivateFlags  {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
@@ -1793,15 +2042,21 @@ impl  ::unity2::IlType for SkillData_Phase  {
 }
 
 
-impl  SkillData_Phase  {
-    pub fn current() -> Self {
-        Self { value: 0 }
+impl  SkillData_PrivateFlags  {
+    pub fn style_skill() -> Self {
+        Self { value: 1 }
 
     }
 
 
-    pub fn other() -> Self {
-        Self { value: 1 }
+    pub fn can_override() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn has_effect() -> Self {
+        Self { value: 4 }
 
     }
 
@@ -1863,18 +2118,18 @@ impl  SkillData_Stands  {
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_Zocs.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_GiveTargets.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct SkillData_Zocs  {
+pub struct SkillData_GiveTargets  {
     pub value: i32,
 }
 
 
-impl  ::unity2::ClassIdentity for SkillData_Zocs  {
+impl  ::unity2::ClassIdentity for SkillData_GiveTargets  {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "SkillData.Zocs";
+    const NAME: &'static str = "SkillData.GiveTargets";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> =
@@ -1889,7 +2144,7 @@ impl  ::unity2::ClassIdentity for SkillData_Zocs  {
 }
 
 
-impl  ::unity2::IlType for SkillData_Zocs  {
+impl  ::unity2::IlType for SkillData_GiveTargets  {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
@@ -1897,288 +2152,33 @@ impl  ::unity2::IlType for SkillData_Zocs  {
 }
 
 
-impl  SkillData_Zocs  {
-    pub fn none() -> Self {
+impl  SkillData_GiveTargets  {
+    pub fn target() -> Self {
         Self { value: 0 }
 
     }
 
 
-    pub fn cost_min() -> Self {
+    pub fn self_() -> Self {
         Self { value: 1 }
 
     }
 
 
-    pub fn cost_max() -> Self {
+    pub fn chain() -> Self {
         Self { value: 2 }
 
     }
 
 
-    pub fn not_move() -> Self {
+    pub fn around() -> Self {
         Self { value: 3 }
 
     }
 
-}
 
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_Actions.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct SkillData_Actions  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for SkillData_Actions  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "SkillData.Actions";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for SkillData_Actions  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  SkillData_Actions  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn offence() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn defence() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_Attrs.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct SkillData_Attrs  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for SkillData_Attrs  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "SkillData.Attrs";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for SkillData_Attrs  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  SkillData_Attrs  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn walk() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn horse() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn heavy() -> Self {
+    pub fn dance() -> Self {
         Self { value: 4 }
-
-    }
-
-
-    pub fn fly() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn dragon() -> Self {
-        Self { value: 16 }
-
-    }
-
-
-    pub fn evil() -> Self {
-        Self { value: 32 }
-
-    }
-
-
-    pub fn morph() -> Self {
-        Self { value: 64 }
-
-    }
-
-
-    pub fn mediuth() -> Self {
-        Self { value: 128 }
-
-    }
-
-
-    pub fn duma() -> Self {
-        Self { value: 256 }
-
-    }
-
-
-    pub fn loptous() -> Self {
-        Self { value: 512 }
-
-    }
-
-
-    pub fn veld() -> Self {
-        Self { value: 1024 }
-
-    }
-
-
-    pub fn idenn() -> Self {
-        Self { value: 2048 }
-
-    }
-
-
-    pub fn nergal() -> Self {
-        Self { value: 4096 }
-
-    }
-
-
-    pub fn fodeth() -> Self {
-        Self { value: 8192 }
-
-    }
-
-
-    pub fn ashnard() -> Self {
-        Self { value: 16384 }
-
-    }
-
-
-    pub fn astarte() -> Self {
-        Self { value: 32768 }
-
-    }
-
-
-    pub fn gimle() -> Self {
-        Self { value: 65536 }
-
-    }
-
-
-    pub fn hydra() -> Self {
-        Self { value: 131072 }
-
-    }
-
-
-    pub fn nemesis() -> Self {
-        Self { value: 262144 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_CycleMasks.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct SkillData_CycleMasks  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for SkillData_CycleMasks  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "SkillData.CycleMasks";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for SkillData_CycleMasks  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  SkillData_CycleMasks  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn full() -> Self {
-        Self { value: 1048575 }
 
     }
 
@@ -2188,6 +2188,23 @@ impl  SkillData_CycleMasks  {
 
 #[cfg(feature = "app-skilldata-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-skilldata")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __SkillData_Func_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData_Func as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData_Func as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : SkillData_Func , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData_Func , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-skilldata")]
+pub trait ISkillData_FuncMethods : ISkillData_Func { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SkillData_Func as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SkillData_Func_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-skilldata")]
+impl < __T : ISkillData_Func > ISkillData_FuncMethods for __T { }
+
+#[cfg(feature = "app-skilldata")]
+impl SkillData_Func { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SkillData_Func_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-skilldata")]
+impl SkillData_Func {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SkillData_Func) , :: core :: stringify ! (new) ,)) ; < Self as ISkillData_FuncMethods > :: ctor (this ,) ; this }
+}
 
 #[cfg(feature = "app-skilldata")]
 # [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __SkillData_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "Load" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "Load" , e) , } } } pub unsafe fn load (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_load :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_sid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_Sid" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_Sid" , e) , } } } pub unsafe fn get_sid (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_sid :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_sid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_Sid" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_Sid" , e) , } } } pub unsafe fn set_sid (this : SkillData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_sid :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_Name" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_Name" , e) , } } } pub unsafe fn get_name (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_Name" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_Name" , e) , } } } pub unsafe fn set_name (this : SkillData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_name :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_help { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_Help" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_Help" , e) , } } } pub unsafe fn get_help (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_help :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_help { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_Help" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_Help" , e) , } } } pub unsafe fn set_help (this : SkillData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_help :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_command_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_CommandName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_CommandName" , e) , } } } pub unsafe fn get_command_name (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_command_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_command_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_CommandName" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_CommandName" , e) , } } } pub unsafe fn set_command_name (this : SkillData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_command_name :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_command_help { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_CommandHelp" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_CommandHelp" , e) , } } } pub unsafe fn get_command_help (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_command_help :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_command_help { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_CommandHelp" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_CommandHelp" , e) , } } } pub unsafe fn set_command_help (this : SkillData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_command_help :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_command_warning { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_CommandWarning" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_CommandWarning" , e) , } } } pub unsafe fn get_command_warning (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_command_warning :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_command_warning { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_CommandWarning" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_CommandWarning" , e) , } } } pub unsafe fn set_command_warning (this : SkillData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_command_warning :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_root_command_sid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_RootCommandSid" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_RootCommandSid" , e) , } } } pub unsafe fn get_root_command_sid (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_root_command_sid :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_root_command_sid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_RootCommandSid" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_RootCommandSid" , e) , } } } pub unsafe fn set_root_command_sid (this : SkillData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_root_command_sid :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_icon_kind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_IconKind" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_IconKind" , e) , } } } pub unsafe fn get_icon_kind (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_IconKinds { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_IconKinds = :: core :: mem :: transmute (__lookup_get_icon_kind :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_icon_kind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: skilldata :: SkillData_IconKinds as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_IconKind" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_IconKind" , e) , } } } pub unsafe fn set_icon_kind (this : SkillData , value : crate :: app :: skilldata :: SkillData_IconKinds , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , crate :: app :: skilldata :: SkillData_IconKinds , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_icon_kind :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_icon_label { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_IconLabel" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_IconLabel" , e) , } } } pub unsafe fn get_icon_label (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_icon_label :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_icon_label { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_IconLabel" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_IconLabel" , e) , } } } pub unsafe fn set_icon_label (this : SkillData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_icon_label :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_icon_bmap { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_IconBmap" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_IconBmap" , e) , } } } pub unsafe fn get_icon_bmap (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_icon_bmap :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_icon_bmap { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_IconBmap" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_IconBmap" , e) , } } } pub unsafe fn set_icon_bmap (this : SkillData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_icon_bmap :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_stand { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_Stand" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_Stand" , e) , } } } pub unsafe fn get_stand (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_Stands { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_Stands = :: core :: mem :: transmute (__lookup_get_stand :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_stand { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: skilldata :: SkillData_Stands as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_Stand" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_Stand" , e) , } } } pub unsafe fn set_stand (this : SkillData , value : crate :: app :: skilldata :: SkillData_Stands , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , crate :: app :: skilldata :: SkillData_Stands , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_stand :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_action { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_Action" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_Action" , e) , } } } pub unsafe fn get_action (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_Actions { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_Actions = :: core :: mem :: transmute (__lookup_get_action :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_action { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: skilldata :: SkillData_Actions as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_Action" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_Action" , e) , } } } pub unsafe fn set_action (this : SkillData , value : crate :: app :: skilldata :: SkillData_Actions , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , crate :: app :: skilldata :: SkillData_Actions , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_action :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_timing { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_Timing" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_Timing" , e) , } } } pub unsafe fn get_timing (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_Timings { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_Timings = :: core :: mem :: transmute (__lookup_get_timing :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_timing { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: skilldata :: SkillData_Timings as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_Timing" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_Timing" , e) , } } } pub unsafe fn set_timing (this : SkillData , value : crate :: app :: skilldata :: SkillData_Timings , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , crate :: app :: skilldata :: SkillData_Timings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_timing :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_target { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_Target" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_Target" , e) , } } } pub unsafe fn get_target (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_Targets { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_Targets = :: core :: mem :: transmute (__lookup_get_target :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_target { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: skilldata :: SkillData_Targets as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_Target" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_Target" , e) , } } } pub unsafe fn set_target (this : SkillData , value : crate :: app :: skilldata :: SkillData_Targets , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , crate :: app :: skilldata :: SkillData_Targets , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_target :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_equip_iids { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_EquipIids" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_EquipIids" , e) , } } } pub unsafe fn get_equip_iids (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute (__lookup_get_equip_iids :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_equip_iids { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < :: unity2 :: Il2CppString > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_EquipIids" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_EquipIids" , e) , } } } pub unsafe fn set_equip_iids (this : SkillData , value : :: unity2 :: Array < :: unity2 :: Il2CppString > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_equip_iids :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_group { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_Group" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_Group" , e) , } } } pub unsafe fn get_group (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_group :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_group { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_Group" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_Group" , e) , } } } pub unsafe fn set_group (this : SkillData , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_group :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_priority { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_Priority" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_Priority" , e) , } } } pub unsafe fn get_priority (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> u8 { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute (__lookup_get_priority :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_priority { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u8 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_Priority" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_Priority" , e) , } } } pub unsafe fn set_priority (this : SkillData , value : u8 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_priority :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_layer { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_Layer" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_Layer" , e) , } } } pub unsafe fn get_layer (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_Layers { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_Layers = :: core :: mem :: transmute (__lookup_get_layer :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_layer { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: skilldata :: SkillData_Layers as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_Layer" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_Layer" , e) , } } } pub unsafe fn set_layer (this : SkillData , value : crate :: app :: skilldata :: SkillData_Layers , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , crate :: app :: skilldata :: SkillData_Layers , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_layer :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_order { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_Order" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_Order" , e) , } } } pub unsafe fn get_order (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i8 { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute (__lookup_get_order :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_order { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i8 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_Order" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_Order" , e) , } } } pub unsafe fn set_order (this : SkillData , value : i8 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_order :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_cycle { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_Cycle" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_Cycle" , e) , } } } pub unsafe fn get_cycle (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_Cycles { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_Cycles = :: core :: mem :: transmute (__lookup_get_cycle :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_cycle { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: skilldata :: SkillData_Cycles as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_Cycle" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_Cycle" , e) , } } } pub unsafe fn set_cycle (this : SkillData , value : crate :: app :: skilldata :: SkillData_Cycles , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , crate :: app :: skilldata :: SkillData_Cycles , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_cycle :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_frequency { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_Frequency" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_Frequency" , e) , } } } pub unsafe fn get_frequency (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_Frequencies { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_Frequencies = :: core :: mem :: transmute (__lookup_get_frequency :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_frequency { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: skilldata :: SkillData_Frequencies as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_Frequency" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_Frequency" , e) , } } } pub unsafe fn set_frequency (this : SkillData , value : crate :: app :: skilldata :: SkillData_Frequencies , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , crate :: app :: skilldata :: SkillData_Frequencies , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_frequency :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_condition { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_Condition" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_Condition" , e) , } } } pub unsafe fn get_condition (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_condition :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_condition { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_Condition" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_Condition" , e) , } } } pub unsafe fn set_condition (this : SkillData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_condition :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_give_target { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_GiveTarget" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_GiveTarget" , e) , } } } pub unsafe fn get_give_target (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_GiveTargets { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_GiveTargets = :: core :: mem :: transmute (__lookup_get_give_target :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_give_target { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: skilldata :: SkillData_GiveTargets as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_GiveTarget" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_GiveTarget" , e) , } } } pub unsafe fn set_give_target (this : SkillData , value : crate :: app :: skilldata :: SkillData_GiveTargets , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , crate :: app :: skilldata :: SkillData_GiveTargets , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_give_target :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_give_condition { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_GiveCondition" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_GiveCondition" , e) , } } } pub unsafe fn get_give_condition (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_give_condition :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_give_condition { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_GiveCondition" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_GiveCondition" , e) , } } } pub unsafe fn set_give_condition (this : SkillData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_give_condition :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_give_sids { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_GiveSids" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_GiveSids" , e) , } } } pub unsafe fn get_give_sids (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute (__lookup_get_give_sids :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_give_sids { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < :: unity2 :: Il2CppString > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_GiveSids" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_GiveSids" , e) , } } } pub unsafe fn set_give_sids (this : SkillData , value : :: unity2 :: Array < :: unity2 :: Il2CppString > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_give_sids :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_remove_sids { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_RemoveSids" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_RemoveSids" , e) , } } } pub unsafe fn get_remove_sids (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute (__lookup_get_remove_sids :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_remove_sids { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < :: unity2 :: Il2CppString > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_RemoveSids" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_RemoveSids" , e) , } } } pub unsafe fn set_remove_sids (this : SkillData , value : :: unity2 :: Array < :: unity2 :: Il2CppString > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_remove_sids :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_sync_conditions { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_SyncConditions" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_SyncConditions" , e) , } } } pub unsafe fn get_sync_conditions (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute (__lookup_get_sync_conditions :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_sync_conditions { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < :: unity2 :: Il2CppString > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_SyncConditions" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_SyncConditions" , e) , } } } pub unsafe fn set_sync_conditions (this : SkillData , value : :: unity2 :: Array < :: unity2 :: Il2CppString > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_sync_conditions :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_sync_sids { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_SyncSids" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_SyncSids" , e) , } } } pub unsafe fn get_sync_sids (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute (__lookup_get_sync_sids :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_sync_sids { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < :: unity2 :: Il2CppString > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_SyncSids" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_SyncSids" , e) , } } } pub unsafe fn set_sync_sids (this : SkillData , value : :: unity2 :: Array < :: unity2 :: Il2CppString > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_sync_sids :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_rebirth_sid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_RebirthSid" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_RebirthSid" , e) , } } } pub unsafe fn get_rebirth_sid (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_rebirth_sid :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_rebirth_sid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_RebirthSid" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_RebirthSid" , e) , } } } pub unsafe fn set_rebirth_sid (this : SkillData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_rebirth_sid :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_engage_sid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_EngageSid" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_EngageSid" , e) , } } } pub unsafe fn get_engage_sid (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_engage_sid :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_engage_sid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_EngageSid" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_EngageSid" , e) , } } } pub unsafe fn set_engage_sid (this : SkillData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_engage_sid :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_change_sids { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_ChangeSids" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_ChangeSids" , e) , } } } pub unsafe fn get_change_sids (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute (__lookup_get_change_sids :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_change_sids { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < :: unity2 :: Il2CppString > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_ChangeSids" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_ChangeSids" , e) , } } } pub unsafe fn set_change_sids (this : SkillData , value : :: unity2 :: Array < :: unity2 :: Il2CppString > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_change_sids :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_attack_range { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_AttackRange" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_AttackRange" , e) , } } } pub unsafe fn get_attack_range (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_attack_range :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_attack_range { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_AttackRange" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_AttackRange" , e) , } } } pub unsafe fn set_attack_range (this : SkillData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_attack_range :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_overlap_range { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_OverlapRange" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_OverlapRange" , e) , } } } pub unsafe fn get_overlap_range (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_overlap_range :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_overlap_range { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_OverlapRange" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_OverlapRange" , e) , } } } pub unsafe fn set_overlap_range (this : SkillData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_overlap_range :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_overlap_terrain { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_OverlapTerrain" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_OverlapTerrain" , e) , } } } pub unsafe fn get_overlap_terrain (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_overlap_terrain :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_overlap_terrain { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_OverlapTerrain" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_OverlapTerrain" , e) , } } } pub unsafe fn set_overlap_terrain (this : SkillData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_overlap_terrain :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_zoc_range { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_ZocRange" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_ZocRange" , e) , } } } pub unsafe fn get_zoc_range (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_zoc_range :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_zoc_range { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_ZocRange" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_ZocRange" , e) , } } } pub unsafe fn set_zoc_range (this : SkillData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_zoc_range :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_zoc_type { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_ZocType" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_ZocType" , e) , } } } pub unsafe fn get_zoc_type (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_Zocs { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_Zocs = :: core :: mem :: transmute (__lookup_get_zoc_type :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_zoc_type { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: skilldata :: SkillData_Zocs as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_ZocType" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_ZocType" , e) , } } } pub unsafe fn set_zoc_type (this : SkillData , value : crate :: app :: skilldata :: SkillData_Zocs , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , crate :: app :: skilldata :: SkillData_Zocs , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_zoc_type :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_cooperation_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_CooperationSkill" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_CooperationSkill" , e) , } } } pub unsafe fn get_cooperation_skill (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_cooperation_skill :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_cooperation_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_CooperationSkill" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_CooperationSkill" , e) , } } } pub unsafe fn set_cooperation_skill (this : SkillData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_cooperation_skill :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_horse_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_HorseSkill" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_HorseSkill" , e) , } } } pub unsafe fn get_horse_skill (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_horse_skill :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_horse_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_HorseSkill" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_HorseSkill" , e) , } } } pub unsafe fn set_horse_skill (this : SkillData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_horse_skill :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_covert_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_CovertSkill" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_CovertSkill" , e) , } } } pub unsafe fn get_covert_skill (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_covert_skill :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_covert_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_CovertSkill" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_CovertSkill" , e) , } } } pub unsafe fn set_covert_skill (this : SkillData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_covert_skill :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_heavy_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_HeavySkill" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_HeavySkill" , e) , } } } pub unsafe fn get_heavy_skill (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_heavy_skill :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_heavy_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_HeavySkill" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_HeavySkill" , e) , } } } pub unsafe fn set_heavy_skill (this : SkillData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_heavy_skill :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_fly_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_FlySkill" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_FlySkill" , e) , } } } pub unsafe fn get_fly_skill (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_fly_skill :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_fly_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_FlySkill" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_FlySkill" , e) , } } } pub unsafe fn set_fly_skill (this : SkillData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_fly_skill :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_magic_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_MagicSkill" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_MagicSkill" , e) , } } } pub unsafe fn get_magic_skill (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_magic_skill :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_magic_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_MagicSkill" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_MagicSkill" , e) , } } } pub unsafe fn set_magic_skill (this : SkillData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_magic_skill :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_prana_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_PranaSkill" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_PranaSkill" , e) , } } } pub unsafe fn get_prana_skill (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_prana_skill :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_prana_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_PranaSkill" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_PranaSkill" , e) , } } } pub unsafe fn set_prana_skill (this : SkillData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_prana_skill :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_dragon_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_DragonSkill" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_DragonSkill" , e) , } } } pub unsafe fn get_dragon_skill (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_dragon_skill :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_dragon_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_DragonSkill" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_DragonSkill" , e) , } } } pub unsafe fn set_dragon_skill (this : SkillData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_dragon_skill :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_act_names { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_ActNames" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_ActNames" , e) , } } } pub unsafe fn get_act_names (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute (__lookup_get_act_names :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_act_names { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < :: unity2 :: Il2CppString > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_ActNames" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_ActNames" , e) , } } } pub unsafe fn set_act_names (this : SkillData , value : :: unity2 :: Array < :: unity2 :: Il2CppString > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_act_names :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_act_operations { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_ActOperations" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_ActOperations" , e) , } } } pub unsafe fn get_act_operations (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute (__lookup_get_act_operations :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_act_operations { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < :: unity2 :: Il2CppString > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_ActOperations" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_ActOperations" , e) , } } } pub unsafe fn set_act_operations (this : SkillData , value : :: unity2 :: Array < :: unity2 :: Il2CppString > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_act_operations :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_act_values { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_ActValues" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_ActValues" , e) , } } } pub unsafe fn get_act_values (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute (__lookup_get_act_values :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_act_values { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < :: unity2 :: Il2CppString > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_ActValues" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_ActValues" , e) , } } } pub unsafe fn set_act_values (this : SkillData , value : :: unity2 :: Array < :: unity2 :: Il2CppString > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_act_values :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_around_center { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_AroundCenter" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_AroundCenter" , e) , } } } pub unsafe fn get_around_center (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_AroundCenters { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_AroundCenters = :: core :: mem :: transmute (__lookup_get_around_center :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_around_center { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: skilldata :: SkillData_AroundCenters as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_AroundCenter" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_AroundCenter" , e) , } } } pub unsafe fn set_around_center (this : SkillData , value : crate :: app :: skilldata :: SkillData_AroundCenters , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , crate :: app :: skilldata :: SkillData_AroundCenters , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_around_center :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_around_target { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_AroundTarget" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_AroundTarget" , e) , } } } pub unsafe fn get_around_target (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_AroundTargets { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_AroundTargets = :: core :: mem :: transmute (__lookup_get_around_target :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_around_target { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: skilldata :: SkillData_AroundTargets as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_AroundTarget" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_AroundTarget" , e) , } } } pub unsafe fn set_around_target (this : SkillData , value : crate :: app :: skilldata :: SkillData_AroundTargets , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , crate :: app :: skilldata :: SkillData_AroundTargets , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_around_target :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_around_condition { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_AroundCondition" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_AroundCondition" , e) , } } } pub unsafe fn get_around_condition (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_around_condition :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_around_condition { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_AroundCondition" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_AroundCondition" , e) , } } } pub unsafe fn set_around_condition (this : SkillData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_around_condition :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_around_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_AroundName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_AroundName" , e) , } } } pub unsafe fn get_around_name (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_around_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_around_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_AroundName" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_AroundName" , e) , } } } pub unsafe fn set_around_name (this : SkillData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_around_name :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_around_operation { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_AroundOperation" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_AroundOperation" , e) , } } } pub unsafe fn get_around_operation (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_around_operation :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_around_operation { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_AroundOperation" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_AroundOperation" , e) , } } } pub unsafe fn set_around_operation (this : SkillData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_around_operation :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_around_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_AroundValue" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_AroundValue" , e) , } } } pub unsafe fn get_around_value (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_around_value :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_around_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_AroundValue" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_AroundValue" , e) , } } } pub unsafe fn set_around_value (this : SkillData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_around_value :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_bad_state { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_BadState" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_BadState" , e) , } } } pub unsafe fn get_bad_state (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_States { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_States = :: core :: mem :: transmute (__lookup_get_bad_state :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_bad_state { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: skilldata :: SkillData_States as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_BadState" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_BadState" , e) , } } } pub unsafe fn set_bad_state (this : SkillData , value : crate :: app :: skilldata :: SkillData_States , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , crate :: app :: skilldata :: SkillData_States , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_bad_state :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_bad_ignore { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_BadIgnore" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_BadIgnore" , e) , } } } pub unsafe fn get_bad_ignore (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_States { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_States = :: core :: mem :: transmute (__lookup_get_bad_ignore :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_bad_ignore { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: skilldata :: SkillData_States as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_BadIgnore" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_BadIgnore" , e) , } } } pub unsafe fn set_bad_ignore (this : SkillData , value : crate :: app :: skilldata :: SkillData_States , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , crate :: app :: skilldata :: SkillData_States , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_bad_ignore :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_efficacy { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_Efficacy" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_Efficacy" , e) , } } } pub unsafe fn get_efficacy (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_Attrs { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_Attrs = :: core :: mem :: transmute (__lookup_get_efficacy :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_efficacy { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: skilldata :: SkillData_Attrs as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_Efficacy" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_Efficacy" , e) , } } } pub unsafe fn set_efficacy (this : SkillData , value : crate :: app :: skilldata :: SkillData_Attrs , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , crate :: app :: skilldata :: SkillData_Attrs , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_efficacy :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_efficacy_ignore { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_EfficacyIgnore" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_EfficacyIgnore" , e) , } } } pub unsafe fn get_efficacy_ignore (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_Attrs { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_Attrs = :: core :: mem :: transmute (__lookup_get_efficacy_ignore :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_efficacy_ignore { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: skilldata :: SkillData_Attrs as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_EfficacyIgnore" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_EfficacyIgnore" , e) , } } } pub unsafe fn set_efficacy_ignore (this : SkillData , value : crate :: app :: skilldata :: SkillData_Attrs , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , crate :: app :: skilldata :: SkillData_Attrs , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_efficacy_ignore :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_efficacy_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_EfficacyValue" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_EfficacyValue" , e) , } } } pub unsafe fn get_efficacy_value (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_efficacy_value :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_efficacy_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_EfficacyValue" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_EfficacyValue" , e) , } } } pub unsafe fn set_efficacy_value (this : SkillData , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_efficacy_value :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_flag { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_Flag" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_Flag" , e) , } } } pub unsafe fn get_flag (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_Flags { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_Flags = :: core :: mem :: transmute (__lookup_get_flag :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_flag { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: skilldata :: SkillData_Flags as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_Flag" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_Flag" , e) , } } } pub unsafe fn set_flag (this : SkillData , value : crate :: app :: skilldata :: SkillData_Flags , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , crate :: app :: skilldata :: SkillData_Flags , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_flag :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_private_flag { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_PrivateFlag" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_PrivateFlag" , e) , } } } pub unsafe fn get_private_flag (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_PrivateFlags { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_PrivateFlags = :: core :: mem :: transmute (__lookup_get_private_flag :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_private_flag { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: skilldata :: SkillData_PrivateFlags as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_PrivateFlag" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_PrivateFlag" , e) , } } } pub unsafe fn set_private_flag (this : SkillData , value : crate :: app :: skilldata :: SkillData_PrivateFlags , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , crate :: app :: skilldata :: SkillData_PrivateFlags , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_private_flag :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_work { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_Work" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_Work" , e) , } } } pub unsafe fn get_work (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_Works { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_Works = :: core :: mem :: transmute (__lookup_get_work :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_work { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: skilldata :: SkillData_Works as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_Work" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_Work" , e) , } } } pub unsafe fn set_work (this : SkillData , value : crate :: app :: skilldata :: SkillData_Works , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , crate :: app :: skilldata :: SkillData_Works , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_work :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_work_operation { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_WorkOperation" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_WorkOperation" , e) , } } } pub unsafe fn get_work_operation (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_work_operation :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_work_operation { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_WorkOperation" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_WorkOperation" , e) , } } } pub unsafe fn set_work_operation (this : SkillData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_work_operation :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_work_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_WorkValue" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_WorkValue" , e) , } } } pub unsafe fn get_work_value (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__lookup_get_work_value :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_work_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_WorkValue" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_WorkValue" , e) , } } } pub unsafe fn set_work_value (this : SkillData , value : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_work_value :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_power { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_Power" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_Power" , e) , } } } pub unsafe fn get_power (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_power :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_power { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_Power" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_Power" , e) , } } } pub unsafe fn set_power (this : SkillData , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_power :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_life { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_Life" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_Life" , e) , } } } pub unsafe fn get_life (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_life :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_life { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_Life" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_Life" , e) , } } } pub unsafe fn set_life (this : SkillData , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_life :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_cost { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_Cost" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_Cost" , e) , } } } pub unsafe fn get_cost (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_cost :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_cost { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_Cost" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_Cost" , e) , } } } pub unsafe fn set_cost (this : SkillData , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_cost :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_rewarp { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_Rewarp" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_Rewarp" , e) , } } } pub unsafe fn get_rewarp (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_rewarp :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_rewarp { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_Rewarp" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_Rewarp" , e) , } } } pub unsafe fn set_rewarp (this : SkillData , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_rewarp :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_removable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_Removable" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_Removable" , e) , } } } pub unsafe fn get_removable (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_removable :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_removable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_Removable" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_Removable" , e) , } } } pub unsafe fn set_removable (this : SkillData , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_removable :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_vision_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_VisionCount" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_VisionCount" , e) , } } } pub unsafe fn get_vision_count (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_vision_count :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_vision_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_VisionCount" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_VisionCount" , e) , } } } pub unsafe fn set_vision_count (this : SkillData , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_vision_count :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_range_target { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_RangeTarget" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_RangeTarget" , e) , } } } pub unsafe fn get_range_target (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData_Kinds { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData_Kinds = :: core :: mem :: transmute (__lookup_get_range_target :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_range_target { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: itemdata :: ItemData_Kinds as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_RangeTarget" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_RangeTarget" , e) , } } } pub unsafe fn set_range_target (this : SkillData , value : crate :: app :: itemdata :: ItemData_Kinds , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , crate :: app :: itemdata :: ItemData_Kinds , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_range_target :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_range_i { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_RangeI" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_RangeI" , e) , } } } pub unsafe fn get_range_i (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_range_i :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_range_i { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_RangeI" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_RangeI" , e) , } } } pub unsafe fn set_range_i (this : SkillData , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_range_i :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_range_o { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_RangeO" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_RangeO" , e) , } } } pub unsafe fn get_range_o (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_range_o :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_range_o { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_RangeO" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_RangeO" , e) , } } } pub unsafe fn set_range_o (this : SkillData , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_range_o :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_range_add { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_RangeAdd" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_RangeAdd" , e) , } } } pub unsafe fn get_range_add (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_range_add :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_range_add { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_RangeAdd" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_RangeAdd" , e) , } } } pub unsafe fn set_range_add (this : SkillData , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_range_add :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_range_extend { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_RangeExtend" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_RangeExtend" , e) , } } } pub unsafe fn get_range_extend (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_range_extend :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_range_extend { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_RangeExtend" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_RangeExtend" , e) , } } } pub unsafe fn set_range_extend (this : SkillData , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_range_extend :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_move_self { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_MoveSelf" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_MoveSelf" , e) , } } } pub unsafe fn get_move_self (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_move_self :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_move_self { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_MoveSelf" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_MoveSelf" , e) , } } } pub unsafe fn set_move_self (this : SkillData , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_move_self :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_move_target { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_MoveTarget" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_MoveTarget" , e) , } } } pub unsafe fn get_move_target (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_move_target :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_move_target { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_MoveTarget" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_MoveTarget" , e) , } } } pub unsafe fn set_move_target (this : SkillData , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_move_target :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_enhance_level { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_EnhanceLevel" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_EnhanceLevel" , e) , } } } pub unsafe fn get_enhance_level (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i8 { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute (__lookup_get_enhance_level :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_enhance_level { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i8 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_EnhanceLevel" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_EnhanceLevel" , e) , } } } pub unsafe fn set_enhance_level (this : SkillData , value : i8 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_enhance_level :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_enhance_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_EnhanceValue" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_EnhanceValue" , e) , } } } pub unsafe fn get_enhance_value (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: capabilitysbyte :: CapabilitySbyte { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> crate :: app :: capabilitysbyte :: CapabilitySbyte = :: core :: mem :: transmute (__lookup_get_enhance_value :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_enhance_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: capabilitysbyte :: CapabilitySbyte as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_EnhanceValue" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_EnhanceValue" , e) , } } } pub unsafe fn set_enhance_value (this : SkillData , value : crate :: app :: capabilitysbyte :: CapabilitySbyte , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , crate :: app :: capabilitysbyte :: CapabilitySbyte , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_enhance_value :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_weapon_prohibit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_WeaponProhibit" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_WeaponProhibit" , e) , } } } pub unsafe fn get_weapon_prohibit (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: weaponmask :: WeaponMask { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> crate :: app :: weaponmask :: WeaponMask = :: core :: mem :: transmute (__lookup_get_weapon_prohibit :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_weapon_prohibit { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: weaponmask :: WeaponMask as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_WeaponProhibit" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_WeaponProhibit" , e) , } } } pub unsafe fn set_weapon_prohibit (this : SkillData , value : crate :: app :: weaponmask :: WeaponMask , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , crate :: app :: weaponmask :: WeaponMask , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_weapon_prohibit :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_weapon_level { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_WeaponLevel" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_WeaponLevel" , e) , } } } pub unsafe fn get_weapon_level (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: weaponlevels :: WeaponLevels { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> crate :: app :: weaponlevels :: WeaponLevels = :: core :: mem :: transmute (__lookup_get_weapon_level :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_weapon_level { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: weaponlevels :: WeaponLevels as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_WeaponLevel" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_WeaponLevel" , e) , } } } pub unsafe fn set_weapon_level (this : SkillData , value : crate :: app :: weaponlevels :: WeaponLevels , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , crate :: app :: weaponlevels :: WeaponLevels , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_weapon_level :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_effect { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_Effect" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_Effect" , e) , } } } pub unsafe fn get_effect (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_effect :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_effect { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_Effect" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_Effect" , e) , } } } pub unsafe fn set_effect (this : SkillData , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_effect :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_inheritance_cost { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_InheritanceCost" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_InheritanceCost" , e) , } } } pub unsafe fn get_inheritance_cost (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> u16 { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute (__lookup_get_inheritance_cost :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_inheritance_cost { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u16 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_InheritanceCost" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_InheritanceCost" , e) , } } } pub unsafe fn set_inheritance_cost (this : SkillData , value : u16 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_inheritance_cost :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_inheritance_sort { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_InheritanceSort" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_InheritanceSort" , e) , } } } pub unsafe fn get_inheritance_sort (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> u16 { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute (__lookup_get_inheritance_sort :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_inheritance_sort { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u16 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "set_InheritanceSort" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "set_InheritanceSort" , e) , } } } pub unsafe fn set_inheritance_sort (this : SkillData , value : u16 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_inheritance_sort :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_inheritance_sort_key { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_InheritanceSortKey" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_InheritanceSortKey" , e) , } } } pub unsafe fn get_inheritance_sort_key (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_inheritance_sort_key :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_calculator { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_Calculator" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_Calculator" , e) , } } } pub unsafe fn get_calculator (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: calculatormanager :: CalculatorManager { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> crate :: app :: calculatormanager :: CalculatorManager = :: core :: mem :: transmute (__lookup_get_calculator :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_operations { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "GetOperations" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "GetOperations" , e) , } } } pub unsafe fn get_operations (operation : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_Operations { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_Operations = :: core :: mem :: transmute (__lookup_get_operations :: get_method_info () . method_ptr ,) ; inner (operation , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_func { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "CreateFunc" , 5 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "CreateFunc" , e) , } } } pub unsafe fn create_func (this : SkillData , header : :: unity2 :: Il2CppString , index : i32 , name : :: unity2 :: Il2CppString , operation : :: unity2 :: Il2CppString , value : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_Func { let inner : extern "C" fn (SkillData , :: unity2 :: Il2CppString , i32 , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_Func = :: core :: mem :: transmute (__lookup_create_func :: get_method_info () . method_ptr ,) ; inner (this , header , index , name , operation , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_read_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "ReadSkill" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "ReadSkill" , e) , } } } pub unsafe fn read_skill (sid : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData = :: core :: mem :: transmute (__lookup_read_skill :: get_method_info () . method_ptr ,) ; inner (sid , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_build { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "OnBuild" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "OnBuild" , e) , } } } pub unsafe fn on_build (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_build :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calc_change_skills { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "CalcChangeSkills" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "CalcChangeSkills" , e) , } } } pub unsafe fn calc_change_skills (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: skilldata :: SkillData > { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: skilldata :: SkillData > = :: core :: mem :: transmute (__lookup_calc_change_skills :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_completed { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "OnCompleted" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "OnCompleted" , e) , } } } pub unsafe fn on_completed (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_completed :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_group_assign { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "GroupAssign" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "GroupAssign" , e) , } } } pub unsafe fn group_assign (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_group_assign :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_completed_end { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "OnCompletedEnd" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "OnCompletedEnd" , e) , } } } pub unsafe fn on_completed_end (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_completed_end :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_release { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "OnRelease" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "OnRelease" , e) , } } } pub unsafe fn on_release (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_release :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_style_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: battlestyle :: BattleStyle_Types as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "GetStyleSkill" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "GetStyleSkill" , e) , } } } pub unsafe fn get_style_skill (this : SkillData , r#type : crate :: app :: battlestyle :: BattleStyle_Types , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData { let inner : extern "C" fn (SkillData , crate :: app :: battlestyle :: BattleStyle_Types , :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData = :: core :: mem :: transmute (__lookup_get_style_skill :: get_method_info () . method_ptr ,) ; inner (this , r#type , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_style_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: battlestyle :: BattleStyle_Types as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "SetStyleSkill" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "SetStyleSkill" , e) , } } } pub unsafe fn set_style_skill (this : SkillData , r#type : crate :: app :: battlestyle :: BattleStyle_Types , name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData , crate :: app :: battlestyle :: BattleStyle_Types , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_style_skill :: get_method_info () . method_ptr ,) ; inner (this , r#type , name , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_range_center { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "GetRangeCenter" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "GetRangeCenter" , e) , } } } pub unsafe fn get_range_center (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: rangedata :: RangeData_Targets { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> crate :: app :: rangedata :: RangeData_Targets = :: core :: mem :: transmute (__lookup_get_range_center :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_attack_range_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: dir_2 :: Dir_Type as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "GetAttackRange" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "GetAttackRange" , e) , } } } pub unsafe fn get_attack_range_2 (this : SkillData , dir : crate :: app :: dir_2 :: Dir_Type , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: rangedata :: RangeData_Offset > { let inner : extern "C" fn (SkillData , crate :: app :: dir_2 :: Dir_Type , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: rangedata :: RangeData_Offset > = :: core :: mem :: transmute (__lookup_get_attack_range_2 :: get_method_info () . method_ptr ,) ; inner (this , dir , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_overlap_range_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: dir_2 :: Dir_Type as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "GetOverlapRange" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "GetOverlapRange" , e) , } } } pub unsafe fn get_overlap_range_2 (this : SkillData , dir : crate :: app :: dir_2 :: Dir_Type , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: rangedata :: RangeData_Offset > { let inner : extern "C" fn (SkillData , crate :: app :: dir_2 :: Dir_Type , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: rangedata :: RangeData_Offset > = :: core :: mem :: transmute (__lookup_get_overlap_range_2 :: get_method_info () . method_ptr ,) ; inner (this , dir , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_has_overlap_terrain { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "HasOverlapTerrain" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "HasOverlapTerrain" , e) , } } } pub unsafe fn has_overlap_terrain (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_has_overlap_terrain :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_weapon_level_mask { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "GetWeaponLevelMask" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "GetWeaponLevelMask" , e) , } } } pub unsafe fn get_weapon_level_mask (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: weaponmask :: WeaponMask { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> crate :: app :: weaponmask :: WeaponMask = :: core :: mem :: transmute (__lookup_get_weapon_level_mask :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_item { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "GetItem" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "GetItem" , e) , } } } pub unsafe fn get_item (iid : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData = :: core :: mem :: transmute (__lookup_get_item :: get_method_info () . method_ptr ,) ; inner (iid , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_prefixless_sid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "GetPrefixlessSid" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "GetPrefixlessSid" , e) , } } } pub unsafe fn get_prefixless_sid (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_prefixless_sid :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_font_color { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "GetFontColor" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "GetFontColor" , e) , } } } pub unsafe fn get_font_color (is_engage : bool , is_active : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color { let inner : extern "C" fn (bool , bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute (__lookup_get_font_color :: get_method_info () . method_ptr ,) ; inner (is_engage , is_active , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_debug_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "GetDebugName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "GetDebugName" , e) , } } } pub unsafe fn get_debug_name (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_debug_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_command_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "IsCommandSkill" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "IsCommandSkill" , e) , } } } pub unsafe fn is_command_skill (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_command_skill :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_condition_impl { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: calculatorcommand :: CalculatorCommand as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "IsConditionImpl" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "IsConditionImpl" , e) , } } } pub unsafe fn is_condition_impl (this : SkillData , command : crate :: app :: calculatorcommand :: CalculatorCommand , obj1 : crate :: system :: object :: Object , obj2 : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , crate :: app :: calculatorcommand :: CalculatorCommand , crate :: system :: object :: Object , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_condition_impl :: get_method_info () . method_ptr ,) ; inner (this , command , obj1 , obj2 , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_has_condition { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "HasCondition" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "HasCondition" , e) , } } } pub unsafe fn has_condition (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_has_condition :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_condition { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "IsCondition" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "IsCondition" , e) , } } } pub unsafe fn is_condition (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_condition :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_condition_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "IsCondition" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "IsCondition" , e) , } } } pub unsafe fn is_condition_2 (this : SkillData , current : crate :: app :: unit :: Unit , reverse : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_condition_2 :: get_method_info () . method_ptr ,) ; inner (this , current , reverse , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_condition_3 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: battleinfoside :: BattleInfoSide as :: unity2 :: IlType > :: il_type () , < crate :: app :: battleinfoside :: BattleInfoSide as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "IsCondition" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "IsCondition" , e) , } } } pub unsafe fn is_condition_3 (this : SkillData , current : crate :: app :: battleinfoside :: BattleInfoSide , reverse : crate :: app :: battleinfoside :: BattleInfoSide , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , crate :: app :: battleinfoside :: BattleInfoSide , crate :: app :: battleinfoside :: BattleInfoSide , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_condition_3 :: get_method_info () . method_ptr ,) ; inner (this , current , reverse , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_give_condition { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "IsGiveCondition" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "IsGiveCondition" , e) , } } } pub unsafe fn is_give_condition (this : SkillData , current : crate :: app :: unit :: Unit , reverse : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_give_condition :: get_method_info () . method_ptr ,) ; inner (this , current , reverse , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_give_condition_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: battleinfoside :: BattleInfoSide as :: unity2 :: IlType > :: il_type () , < crate :: app :: battleinfoside :: BattleInfoSide as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "IsGiveCondition" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "IsGiveCondition" , e) , } } } pub unsafe fn is_give_condition_2 (this : SkillData , current : crate :: app :: battleinfoside :: BattleInfoSide , reverse : crate :: app :: battleinfoside :: BattleInfoSide , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , crate :: app :: battleinfoside :: BattleInfoSide , crate :: app :: battleinfoside :: BattleInfoSide , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_give_condition_2 :: get_method_info () . method_ptr ,) ; inner (this , current , reverse , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_execute_impl { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: skilldata :: SkillData_Func as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "ExecuteImpl" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "ExecuteImpl" , e) , } } } pub unsafe fn execute_impl (this : SkillData , func : crate :: app :: skilldata :: SkillData_Func , obj1 : crate :: system :: object :: Object , obj2 : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , crate :: app :: skilldata :: SkillData_Func , crate :: system :: object :: Object , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_execute_impl :: get_method_info () . method_ptr ,) ; inner (this , func , obj1 , obj2 , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_has_execute_act { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "HasExecuteAct" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "HasExecuteAct" , e) , } } } pub unsafe fn has_execute_act (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_has_execute_act :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_execute_act { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "ExecuteAct" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "ExecuteAct" , e) , } } } pub unsafe fn execute_act (this : SkillData , current : crate :: app :: unit :: Unit , reverse : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_execute_act :: get_method_info () . method_ptr ,) ; inner (this , current , reverse , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_execute_act_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: battleinfoside :: BattleInfoSide as :: unity2 :: IlType > :: il_type () , < crate :: app :: battleinfoside :: BattleInfoSide as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "ExecuteAct" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "ExecuteAct" , e) , } } } pub unsafe fn execute_act_2 (this : SkillData , current : crate :: app :: battleinfoside :: BattleInfoSide , reverse : crate :: app :: battleinfoside :: BattleInfoSide , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , crate :: app :: battleinfoside :: BattleInfoSide , crate :: app :: battleinfoside :: BattleInfoSide , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_execute_act_2 :: get_method_info () . method_ptr ,) ; inner (this , current , reverse , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_style_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "IsStyleSkill" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "IsStyleSkill" , e) , } } } pub unsafe fn is_style_skill (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_style_skill :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_sync_condition { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "IsSyncCondition" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "IsSyncCondition" , e) , } } } pub unsafe fn is_sync_condition (this : SkillData , unit : crate :: app :: unit :: Unit , index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , crate :: app :: unit :: Unit , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_sync_condition :: get_method_info () . method_ptr ,) ; inner (this , unit , index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_aroun_condition_target { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "IsArounConditionTarget" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "IsArounConditionTarget" , e) , } } } pub unsafe fn is_aroun_condition_target (this : SkillData , unit : crate :: app :: unit :: Unit , target : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_aroun_condition_target :: get_method_info () . method_ptr ,) ; inner (this , unit , target , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_aroun_condition { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "IsArounCondition" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "IsArounCondition" , e) , } } } pub unsafe fn is_aroun_condition (this : SkillData , unit : crate :: app :: unit :: Unit , target : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_aroun_condition :: get_method_info () . method_ptr ,) ; inner (this , unit , target , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_aroun_condition_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "IsArounCondition" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "IsArounCondition" , e) , } } } pub unsafe fn is_aroun_condition_2 (this : SkillData , unit : crate :: app :: unit :: Unit , center : crate :: app :: unit :: Unit , target : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_aroun_condition_2 :: get_method_info () . method_ptr ,) ; inner (this , unit , center , target , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_aroun_condition_3 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "IsArounCondition" , 5 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "IsArounCondition" , e) , } } } pub unsafe fn is_aroun_condition_3 (this : SkillData , unit : crate :: app :: unit :: Unit , center : crate :: app :: unit :: Unit , target : crate :: app :: unit :: Unit , range_i : i32 , range_o : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_aroun_condition_3 :: get_method_info () . method_ptr ,) ; inner (this , unit , center , target , range_i , range_o , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_has_execute_around { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "HasExecuteAround" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "HasExecuteAround" , e) , } } } pub unsafe fn has_execute_around (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_has_execute_around :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_execute_around { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "ExecuteAround" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "ExecuteAround" , e) , } } } pub unsafe fn execute_around (this : SkillData , unit : crate :: app :: unit :: Unit , target : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_execute_around :: get_method_info () . method_ptr ,) ; inner (this , unit , target , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_execute_around_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: battleinfoside :: BattleInfoSide as :: unity2 :: IlType > :: il_type () , < crate :: app :: battleinfoside :: BattleInfoSide as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "ExecuteAround" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "ExecuteAround" , e) , } } } pub unsafe fn execute_around_2 (this : SkillData , current : crate :: app :: battleinfoside :: BattleInfoSide , reverse : crate :: app :: battleinfoside :: BattleInfoSide , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , crate :: app :: battleinfoside :: BattleInfoSide , crate :: app :: battleinfoside :: BattleInfoSide , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_execute_around_2 :: get_method_info () . method_ptr ,) ; inner (this , current , reverse , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_can_frequency { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: skilldata :: SkillData_Frequencies as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "CanFrequency" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "CanFrequency" , e) , } } } pub unsafe fn can_frequency (this : SkillData , frequency : crate :: app :: skilldata :: SkillData_Frequencies , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , crate :: app :: skilldata :: SkillData_Frequencies , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_can_frequency :: get_method_info () . method_ptr ,) ; inner (this , frequency , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_can_equip { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "CanEquip" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "CanEquip" , e) , } } } pub unsafe fn can_equip (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_can_equip :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_has_effect { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "HasEffect" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "HasEffect" , e) , } } } pub unsafe fn has_effect (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_has_effect :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_hide { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "IsHide" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "IsHide" , e) , } } } pub unsafe fn is_hide (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_hide :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_moving { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "IsMoving" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "IsMoving" , e) , } } } pub unsafe fn is_moving (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_moving :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_all_range { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "IsAllRange" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "IsAllRange" , e) , } } } pub unsafe fn is_all_range (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_all_range :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_get_icon { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "TryGetIcon" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "TryGetIcon" , e) , } } } pub unsafe fn try_get_icon (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite = :: core :: mem :: transmute (__lookup_try_get_icon :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_get_effcy_icon { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "TryGetEffcyIcon" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "TryGetEffcyIcon" , e) , } } } pub unsafe fn try_get_effcy_icon (this : SkillData , is_outline : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite { let inner : extern "C" fn (SkillData , bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite = :: core :: mem :: transmute (__lookup_try_get_effcy_icon :: get_method_info () . method_ptr ,) ; inner (this , is_outline , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_equip_item { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "GetEquipItem" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "GetEquipItem" , e) , } } } pub unsafe fn get_equip_item (this : SkillData , index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData { let inner : extern "C" fn (SkillData , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData = :: core :: mem :: transmute (__lookup_get_equip_item :: get_method_info () . method_ptr ,) ; inner (this , index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_has_equip_item { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "HasEquipItem" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "HasEquipItem" , e) , } } } pub unsafe fn has_equip_item (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_has_equip_item :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_has_null_item { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "HasNullItem" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "HasNullItem" , e) , } } } pub unsafe fn has_null_item (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_has_null_item :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_can_target { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "CanTarget" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "CanTarget" , e) , } } } pub unsafe fn can_target (this : SkillData , unit : crate :: app :: unit :: Unit , target : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_can_target :: get_method_info () . method_ptr ,) ; inner (this , unit , target , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_can_range { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "CanRange" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "CanRange" , e) , } } } pub unsafe fn can_range (this : SkillData , x : i32 , z : i32 , target : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , i32 , i32 , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_can_range :: get_method_info () . method_ptr ,) ; inner (this , x , z , target , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_can_range_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "CanRange" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "CanRange" , e) , } } } pub unsafe fn can_range_2 (this : SkillData , unit : crate :: app :: unit :: Unit , target : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_can_range_2 :: get_method_info () . method_ptr ,) ; inner (this , unit , target , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_can_range_3 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "CanRange" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "CanRange" , e) , } } } pub unsafe fn can_range_3 (this : SkillData , range : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_can_range_3 :: get_method_info () . method_ptr ,) ; inner (this , range , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_can_support { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "CanSupport" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "CanSupport" , e) , } } } pub unsafe fn can_support (this : SkillData , unit : crate :: app :: unit :: Unit , target : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_can_support :: get_method_info () . method_ptr ,) ; inner (this , unit , target , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_can_self_target { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "CanSelfTarget" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "CanSelfTarget" , e) , } } } pub unsafe fn can_self_target (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_can_self_target :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_rerewarp { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "IsRerewarp" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "IsRerewarp" , e) , } } } pub unsafe fn is_rerewarp (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_rerewarp :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_enchantment_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "IsEnchantmentSkill" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "IsEnchantmentSkill" , e) , } } } pub unsafe fn is_enchantment_skill (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_enchantment_skill :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_fang_curse_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "IsFangCurseSkill" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "IsFangCurseSkill" , e) , } } } pub unsafe fn is_fang_curse_skill (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_fang_curse_skill :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_fang_curse_level { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "GetFangCurseLevel" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "GetFangCurseLevel" , e) , } } } pub unsafe fn get_fang_curse_level (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_fang_curse_level :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_calc_work { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "CalcWork" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "CalcWork" , e) , } } } pub unsafe fn calc_work (this : SkillData , value : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (SkillData , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_calc_work :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_timing_mask { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: skilldata :: SkillData_Timings as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "GetTimingMask" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "GetTimingMask" , e) , } } } pub unsafe fn get_timing_mask (timing : crate :: app :: skilldata :: SkillData_Timings , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_TimingMasks { let inner : extern "C" fn (crate :: app :: skilldata :: SkillData_Timings , :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_TimingMasks = :: core :: mem :: transmute (__lookup_get_timing_mask :: get_method_info () . method_ptr ,) ; inner (timing , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_timing_mask_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: skilldata :: SkillData_Timings as :: unity2 :: IlType > :: il_type () , < crate :: app :: skilldata :: SkillData_Timings as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "GetTimingMask" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "GetTimingMask" , e) , } } } pub unsafe fn get_timing_mask_2 (timing1 : crate :: app :: skilldata :: SkillData_Timings , timing2 : crate :: app :: skilldata :: SkillData_Timings , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_TimingMasks { let inner : extern "C" fn (crate :: app :: skilldata :: SkillData_Timings , crate :: app :: skilldata :: SkillData_Timings , :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_TimingMasks = :: core :: mem :: transmute (__lookup_get_timing_mask_2 :: get_method_info () . method_ptr ,) ; inner (timing1 , timing2 , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_timing_mask_3 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: skilldata :: SkillData_Timings as :: unity2 :: IlType > :: il_type () , < crate :: app :: skilldata :: SkillData_Timings as :: unity2 :: IlType > :: il_type () , < crate :: app :: skilldata :: SkillData_Timings as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "GetTimingMask" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "GetTimingMask" , e) , } } } pub unsafe fn get_timing_mask_3 (timing1 : crate :: app :: skilldata :: SkillData_Timings , timing2 : crate :: app :: skilldata :: SkillData_Timings , timing3 : crate :: app :: skilldata :: SkillData_Timings , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_TimingMasks { let inner : extern "C" fn (crate :: app :: skilldata :: SkillData_Timings , crate :: app :: skilldata :: SkillData_Timings , crate :: app :: skilldata :: SkillData_Timings , :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData_TimingMasks = :: core :: mem :: transmute (__lookup_get_timing_mask_3 :: get_method_info () . method_ptr ,) ; inner (timing1 , timing2 , timing3 , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_serialize_sid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: stream_2 :: Stream_2 as :: unity2 :: IlType > :: il_type () , < crate :: app :: skilldata :: SkillData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "SerializeSid" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "SerializeSid" , e) , } } } pub unsafe fn serialize_sid (stream : crate :: app :: stream_2 :: Stream_2 , skill : crate :: app :: skilldata :: SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: stream_2 :: Stream_2 , crate :: app :: skilldata :: SkillData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_serialize_sid :: get_method_info () . method_ptr ,) ; inner (stream , skill , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_deserialize_sid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: stream_2 :: Stream_2 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "DeserializeSid" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "DeserializeSid" , e) , } } } pub unsafe fn deserialize_sid (stream : crate :: app :: stream_2 :: Stream_2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData { let inner : extern "C" fn (crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData = :: core :: mem :: transmute (__lookup_deserialize_sid :: get_method_info () . method_ptr ,) ; inner (stream , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_serialize_hash { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: stream_2 :: Stream_2 as :: unity2 :: IlType > :: il_type () , < crate :: app :: skilldata :: SkillData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "SerializeHash" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "SerializeHash" , e) , } } } pub unsafe fn serialize_hash (stream : crate :: app :: stream_2 :: Stream_2 , skill : crate :: app :: skilldata :: SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: stream_2 :: Stream_2 , crate :: app :: skilldata :: SkillData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_serialize_hash :: get_method_info () . method_ptr ,) ; inner (stream , skill , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_deserialize_hash { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: stream_2 :: Stream_2 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "DeserializeHash" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "DeserializeHash" , e) , } } } pub unsafe fn deserialize_hash (stream : crate :: app :: stream_2 :: Stream_2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData { let inner : extern "C" fn (crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData = :: core :: mem :: transmute (__lookup_deserialize_hash :: get_method_info () . method_ptr ,) ; inner (stream , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_efficacy_skills { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: skilldata :: SkillData_Attrs as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "GetEfficacySkills" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "GetEfficacySkills" , e) , } } } pub unsafe fn get_efficacy_skills (attrs : crate :: app :: skilldata :: SkillData_Attrs , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skillarray :: SkillArray { let inner : extern "C" fn (crate :: app :: skilldata :: SkillData_Attrs , :: unity2 :: OptionalMethod ,) -> crate :: app :: skillarray :: SkillArray = :: core :: mem :: transmute (__lookup_get_efficacy_skills :: get_method_info () . method_ptr ,) ; inner (attrs , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_hero_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_HeroSkill" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_HeroSkill" , e) , } } } pub unsafe fn get_hero_skill (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData = :: core :: mem :: transmute (__lookup_get_hero_skill :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_stun_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_StunSkill" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_StunSkill" , e) , } } } pub unsafe fn get_stun_skill (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData = :: core :: mem :: transmute (__lookup_get_stun_skill :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_dance_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_DanceSkill" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_DanceSkill" , e) , } } } pub unsafe fn get_dance_skill (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData = :: core :: mem :: transmute (__lookup_get_dance_skill :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_morph_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_MorphSkill" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_MorphSkill" , e) , } } } pub unsafe fn get_morph_skill (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData = :: core :: mem :: transmute (__lookup_get_morph_skill :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_poison_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_PoisonSkill" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_PoisonSkill" , e) , } } } pub unsafe fn get_poison_skill (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData = :: core :: mem :: transmute (__lookup_get_poison_skill :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_leader_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_LeaderSkill" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_LeaderSkill" , e) , } } } pub unsafe fn get_leader_skill (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData = :: core :: mem :: transmute (__lookup_get_leader_skill :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_fang_curse_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_FangCurseSkill" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_FangCurseSkill" , e) , } } } pub unsafe fn get_fang_curse_skill (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData = :: core :: mem :: transmute (__lookup_get_fang_curse_skill :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_multi_change_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_MultiChangeSkill" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_MultiChangeSkill" , e) , } } } pub unsafe fn get_multi_change_skill (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData = :: core :: mem :: transmute (__lookup_get_multi_change_skill :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_enchant_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_EnchantSkill" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_EnchantSkill" , e) , } } } pub unsafe fn get_enchant_skill (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData = :: core :: mem :: transmute (__lookup_get_enchant_skill :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_enchantment_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_EnchantmentSkill" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_EnchantmentSkill" , e) , } } } pub unsafe fn get_enchantment_skill (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData = :: core :: mem :: transmute (__lookup_get_enchantment_skill :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_immortal_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_ImmortalSkill" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_ImmortalSkill" , e) , } } } pub unsafe fn get_immortal_skill (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData = :: core :: mem :: transmute (__lookup_get_immortal_skill :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_transporter_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_TransporterSkill" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_TransporterSkill" , e) , } } } pub unsafe fn get_transporter_skill (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData = :: core :: mem :: transmute (__lookup_get_transporter_skill :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_full_bullet_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_FullBulletSkill" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_FullBulletSkill" , e) , } } } pub unsafe fn get_full_bullet_skill (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData = :: core :: mem :: transmute (__lookup_get_full_bullet_skill :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_chain_attack_guard_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_ChainAttackGuardSkill" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_ChainAttackGuardSkill" , e) , } } } pub unsafe fn get_chain_attack_guard_skill (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData = :: core :: mem :: transmute (__lookup_get_chain_attack_guard_skill :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_not_terrain_damage_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_NotTerrainDamageSkill" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_NotTerrainDamageSkill" , e) , } } } pub unsafe fn get_not_terrain_damage_skill (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData = :: core :: mem :: transmute (__lookup_get_not_terrain_damage_skill :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_gaze_diagonally_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "get_GazeDiagonallySkill" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "get_GazeDiagonallySkill" , e) , } } } pub unsafe fn get_gaze_diagonally_skill (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData = :: core :: mem :: transmute (__lookup_get_gaze_diagonally_skill :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_effect_seqeunce { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "GetEffectSeqeunce" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "GetEffectSeqeunce" , e) , } } } pub unsafe fn get_effect_seqeunce (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: effectsequence :: EffectSequence { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> crate :: app :: effectsequence :: EffectSequence = :: core :: mem :: transmute (__lookup_get_effect_seqeunce :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_effect_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: effectsequence :: EffectSequence_Kind as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "GetEffectData" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "GetEffectData" , e) , } } } pub unsafe fn get_effect_data (this : SkillData , kind : crate :: app :: effectsequence :: EffectSequence_Kind , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: effectdata :: EffectData { let inner : extern "C" fn (SkillData , crate :: app :: effectsequence :: EffectSequence_Kind , :: unity2 :: OptionalMethod ,) -> crate :: app :: effectdata :: EffectData = :: core :: mem :: transmute (__lookup_get_effect_data :: get_method_info () . method_ptr ,) ; inner (this , kind , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_effect_path { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: effectsequence :: EffectSequence_Kind as :: unity2 :: IlType > :: il_type () , < crate :: app :: effectdata :: EffectData_Modes as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "GetEffectPath" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "GetEffectPath" , e) , } } } pub unsafe fn get_effect_path (this : SkillData , kind : crate :: app :: effectsequence :: EffectSequence_Kind , mode : crate :: app :: effectdata :: EffectData_Modes , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (SkillData , crate :: app :: effectsequence :: EffectSequence_Kind , crate :: app :: effectdata :: EffectData_Modes , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_effect_path :: get_method_info () . method_ptr ,) ; inner (this , kind , mode , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_show_caption { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: effectsequence :: EffectSequence_Kind as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "IsShowCaption" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "IsShowCaption" , e) , } } } pub unsafe fn is_show_caption (this : SkillData , kind : crate :: app :: effectsequence :: EffectSequence_Kind , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , crate :: app :: effectsequence :: EffectSequence_Kind , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_show_caption :: get_method_info () . method_ptr ,) ; inner (this , kind , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_time_stop { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "IsTimeStop" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "IsTimeStop" , e) , } } } pub unsafe fn is_time_stop (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_time_stop :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_show_active_caption { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "IsShowActiveCaption" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "IsShowActiveCaption" , e) , } } } pub unsafe fn is_show_active_caption (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_show_active_caption :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_show_shoot_caption { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "IsShowShootCaption" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "IsShowShootCaption" , e) , } } } pub unsafe fn is_show_shoot_caption (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_show_shoot_caption :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_show_hit_caption { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "IsShowHitCaption" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "IsShowHitCaption" , e) , } } } pub unsafe fn is_show_hit_caption (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_show_hit_caption :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_combat_active_effect { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "GetCombatActiveEffect" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "GetCombatActiveEffect" , e) , } } } pub unsafe fn get_combat_active_effect (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_combat_active_effect :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_combat_hit_effect { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "GetCombatHitEffect" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "GetCombatHitEffect" , e) , } } } pub unsafe fn get_combat_hit_effect (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_combat_hit_effect :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_b_map_active_effect { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "GetBMapActiveEffect" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "GetBMapActiveEffect" , e) , } } } pub unsafe fn get_b_map_active_effect (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_b_map_active_effect :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_b_map_shoot_effect { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "GetBMapShootEffect" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "GetBMapShootEffect" , e) , } } } pub unsafe fn get_b_map_shoot_effect (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_b_map_shoot_effect :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_b_map_hit_effect { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "GetBMapHitEffect" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "GetBMapHitEffect" , e) , } } } pub unsafe fn get_b_map_hit_effect (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_b_map_hit_effect :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_can_override_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , "CanOverrideSkill" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , "CanOverrideSkill" , e) , } } } pub unsafe fn can_override_skill (this : SkillData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (SkillData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_can_override_skill :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
@@ -2210,53 +2227,36 @@ impl SkillData {
 }
 
 #[cfg(feature = "app-skilldata")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __SkillData_Func_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SkillData_Func as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SkillData_Func as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : SkillData_Func , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SkillData_Func , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "app-skilldata")]
-pub trait ISkillData_FuncMethods : ISkillData_Func { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SkillData_Func as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SkillData_Func_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-skilldata")]
-impl < __T : ISkillData_Func > ISkillData_FuncMethods for __T { }
-
-#[cfg(feature = "app-skilldata")]
-impl SkillData_Func { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SkillData_Func_unity2_raw :: __lookup_ctor :: get_method_info () } }
-
-#[cfg(feature = "app-skilldata")]
-impl SkillData_Func {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SkillData_Func) , :: core :: stringify ! (new) ,)) ; < Self as ISkillData_FuncMethods > :: ctor (this ,) ; this }
-}
-
-#[cfg(feature = "app-skilldata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SkillData_AroundTargets;
     pub use super::SkillData_States;
-    pub use super::SkillData_PrivateFlags;
-    pub use super::SkillData_Frequencies;
-    pub use super::SkillData_GiveTargets;
-    pub use super::SkillData_Categorys;
-    pub use super::SkillData;
-    pub use super::ISkillData;
-    pub use super::ISkillDataMethods;
-    pub use super::SkillData_TimingMasks;
+    pub use super::SkillData_Zocs;
     pub use super::SkillData_IconKinds;
-    pub use super::SkillData_Operations;
+    pub use super::SkillData_AroundTargets;
     pub use super::SkillData_Func;
     pub use super::ISkillData_Func;
     pub use super::ISkillData_FuncMethods;
-    pub use super::SkillData_Targets;
-    pub use super::SkillData_Works;
-    pub use super::SkillData_AroundCenters;
+    pub use super::SkillData_Operations;
     pub use super::SkillData_Timings;
+    pub use super::SkillData_AroundCenters;
     pub use super::SkillData_Layers;
-    pub use super::SkillData_Flags;
-    pub use super::SkillData_Cycles;
+    pub use super::SkillData_TimingMasks;
     pub use super::SkillData_Phase;
-    pub use super::SkillData_Stands;
-    pub use super::SkillData_Zocs;
-    pub use super::SkillData_Actions;
     pub use super::SkillData_Attrs;
+    pub use super::SkillData_Works;
+    pub use super::SkillData;
+    pub use super::ISkillData;
+    pub use super::ISkillDataMethods;
+    pub use super::SkillData_Frequencies;
+    pub use super::SkillData_Actions;
     pub use super::SkillData_CycleMasks;
+    pub use super::SkillData_Targets;
+    pub use super::SkillData_Cycles;
+    pub use super::SkillData_Flags;
+    pub use super::SkillData_Categorys;
+    pub use super::SkillData_PrivateFlags;
+    pub use super::SkillData_Stands;
+    pub use super::SkillData_GiveTargets;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structcalculatordata_1::IStructCalculatorData_1;
     pub use crate::app::structdata_1::IStructData_1;

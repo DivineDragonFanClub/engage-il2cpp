@@ -16,7 +16,7 @@
  # [cfg (feature = "moon_sharp-interpreter-callbackfunction")] pub use callbackfunction :: { ICallbackFunctionMethods }
  ;
  # [cfg (any (feature = "moon_sharp-interpreter-closure-types"))] pub mod closure ;
- # [cfg (feature = "moon_sharp-interpreter-closure-types")] pub use closure :: { Closure_UpvaluesType , Closure , IClosure }
+ # [cfg (feature = "moon_sharp-interpreter-closure-types")] pub use closure :: { Closure , IClosure , Closure_UpvaluesType }
  ;
  # [cfg (feature = "moon_sharp-interpreter-closure")] pub use closure :: { IClosureMethods }
  ;

@@ -25,6 +25,12 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/encountjobdata/EncountJobData_FlagField.md"))] # [:: unity2 :: class (namespace = "App" , name = "EncountJobData.FlagField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: encountjobdata :: EncountJobData_Flags >)] pub struct EncountJobData_FlagField {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/encountjobdata/EncountJobData.md"))] # [:: unity2 :: class (namespace = "App" , name = "EncountJobData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: encountjobdata :: EncountJobData >)] pub struct EncountJobData {}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/encountjobdata/EncountJobData_Flags.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -79,12 +85,6 @@ impl  EncountJobData_Flags  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/encountjobdata/EncountJobData_FlagField.md"))] # [:: unity2 :: class (namespace = "App" , name = "EncountJobData.FlagField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: encountjobdata :: EncountJobData_Flags >)] pub struct EncountJobData_FlagField {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/encountjobdata/EncountJobData.md"))] # [:: unity2 :: class (namespace = "App" , name = "EncountJobData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: encountjobdata :: EncountJobData >)] pub struct EncountJobData {}
-
 }
 
 #[cfg(feature = "app-encountjobdata-types")]
@@ -132,13 +132,13 @@ impl EncountJobData {
 #[cfg(feature = "app-encountjobdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::EncountJobData_Flags;
     pub use super::EncountJobData_FlagField;
     pub use super::IEncountJobData_FlagField;
     pub use super::IEncountJobData_FlagFieldMethods;
     pub use super::EncountJobData;
     pub use super::IEncountJobData;
     pub use super::IEncountJobDataMethods;
+    pub use super::EncountJobData_Flags;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

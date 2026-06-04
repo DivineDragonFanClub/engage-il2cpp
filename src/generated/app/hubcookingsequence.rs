@@ -15,34 +15,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubcookingsequence/HubCookingSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubCookingSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct HubCookingSequence {
-# [offset (112)] # [rename (name = "m_SelectedUnits")] pub m_selected_units : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > ,
-# [offset (120)] # [rename (name = "m_SelectedFoodstuffs")] pub m_selected_foodstuffs : :: unity2 :: Array < crate :: app :: foodstuffdata :: FoodstuffData > ,
-# [offset (128)] # [rename (name = "m_LoadingCharacterCount")] pub m_loading_character_count : i32 ,
-# [offset (136)] # [rename (name = "m_UnitAccesses")] pub m_unit_accesses : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: hubaccess :: HubAccess > ,
-# [offset (144)] # [rename (name = "m_Characters")] pub m_characters : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: combat :: character :: Character > ,
-# [offset (152)] # [rename (name = "m_CurrentCook")] pub m_current_cook : crate :: app :: cookdata :: CookData ,
-# [offset (160)] # [rename (name = "m_Dish")] pub m_dish : crate :: app :: dish :: Dish ,
-# [offset (168)] # [rename (name = "m_Bento")] pub m_bento : crate :: app :: unititem :: UnitItem ,
-# [offset (176)] # [rename (name = "m_ConversationType")] pub m_conversation_type : crate :: app :: cooking :: Cooking_ConversationType ,
-# [offset (184)] # [rename (name = "m_DishRelianceResult")] pub m_dish_reliance_result : crate :: app :: dish :: Dish_RelianceResult ,
-# [offset (232)] # [rename (name = "m_DishModelHandle")] pub m_dish_model_handle : crate :: app :: tresourcehandle_1 :: TResourceHandle_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (240)] # [rename (name = "m_DishModel")] pub m_dish_model : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (248)] # [rename (name = "m_UnitBCameraLocator")] pub m_unit_b_camera_locator : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (256)] # [rename (name = "m_PanPositionY")] pub m_pan_position_y : crate :: app :: interpolatorfloat :: InterpolatorFloat ,
-# [offset (264)] # [rename (name = "m_PanEularAngle")] pub m_pan_eular_angle : crate :: app :: interpolatorvector3 :: InterpolatorVector3 ,
-# [offset (272)] # [rename (name = "m_CharaLight")] pub m_chara_light : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (280)] # [rename (name = "m_CharaLightEat")] pub m_chara_light_eat : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (288)] # [rename (name = "m_ReliancePopUp")] pub m_reliance_pop_up : crate :: app :: reliancepopupcontroller :: ReliancePopUpController ,
-# [offset (296)] # [rename (name = "m_IsReliancePopupLoaded")] pub m_is_reliance_popup_loaded : bool ,
-# [offset (297)] # [rename (name = "m_IsSkipDoCooking")] pub m_is_skip_do_cooking : bool ,
-# [offset (304)] # [rename (name = "m_AddItemUnit")] pub m_add_item_unit : crate :: app :: unit :: Unit ,
-# [offset (312)] # [rename (name = "m_SoundEvent")] pub m_sound_event : :: unity2 :: Il2CppString ,
-# [offset (320)] # [rename (name = "m_VoiceEvent")] pub m_voice_event : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "PanTime")] pub pan_time : f32 ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubcookingsequence/HubCookingSequence_LookTarget.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -89,6 +61,34 @@ impl  HubCookingSequence_LookTarget  {
 
     }
 
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubcookingsequence/HubCookingSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubCookingSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct HubCookingSequence {
+# [offset (112)] # [rename (name = "m_SelectedUnits")] pub m_selected_units : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > ,
+# [offset (120)] # [rename (name = "m_SelectedFoodstuffs")] pub m_selected_foodstuffs : :: unity2 :: Array < crate :: app :: foodstuffdata :: FoodstuffData > ,
+# [offset (128)] # [rename (name = "m_LoadingCharacterCount")] pub m_loading_character_count : i32 ,
+# [offset (136)] # [rename (name = "m_UnitAccesses")] pub m_unit_accesses : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: hubaccess :: HubAccess > ,
+# [offset (144)] # [rename (name = "m_Characters")] pub m_characters : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: combat :: character :: Character > ,
+# [offset (152)] # [rename (name = "m_CurrentCook")] pub m_current_cook : crate :: app :: cookdata :: CookData ,
+# [offset (160)] # [rename (name = "m_Dish")] pub m_dish : crate :: app :: dish :: Dish ,
+# [offset (168)] # [rename (name = "m_Bento")] pub m_bento : crate :: app :: unititem :: UnitItem ,
+# [offset (176)] # [rename (name = "m_ConversationType")] pub m_conversation_type : crate :: app :: cooking :: Cooking_ConversationType ,
+# [offset (184)] # [rename (name = "m_DishRelianceResult")] pub m_dish_reliance_result : crate :: app :: dish :: Dish_RelianceResult ,
+# [offset (232)] # [rename (name = "m_DishModelHandle")] pub m_dish_model_handle : crate :: app :: tresourcehandle_1 :: TResourceHandle_1 < crate :: unity_engine :: gameobject :: GameObject > ,
+# [offset (240)] # [rename (name = "m_DishModel")] pub m_dish_model : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (248)] # [rename (name = "m_UnitBCameraLocator")] pub m_unit_b_camera_locator : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (256)] # [rename (name = "m_PanPositionY")] pub m_pan_position_y : crate :: app :: interpolatorfloat :: InterpolatorFloat ,
+# [offset (264)] # [rename (name = "m_PanEularAngle")] pub m_pan_eular_angle : crate :: app :: interpolatorvector3 :: InterpolatorVector3 ,
+# [offset (272)] # [rename (name = "m_CharaLight")] pub m_chara_light : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (280)] # [rename (name = "m_CharaLightEat")] pub m_chara_light_eat : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (288)] # [rename (name = "m_ReliancePopUp")] pub m_reliance_pop_up : crate :: app :: reliancepopupcontroller :: ReliancePopUpController ,
+# [offset (296)] # [rename (name = "m_IsReliancePopupLoaded")] pub m_is_reliance_popup_loaded : bool ,
+# [offset (297)] # [rename (name = "m_IsSkipDoCooking")] pub m_is_skip_do_cooking : bool ,
+# [offset (304)] # [rename (name = "m_AddItemUnit")] pub m_add_item_unit : crate :: app :: unit :: Unit ,
+# [offset (312)] # [rename (name = "m_SoundEvent")] pub m_sound_event : :: unity2 :: Il2CppString ,
+# [offset (320)] # [rename (name = "m_VoiceEvent")] pub m_voice_event : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "PanTime")] pub pan_time : f32 ,
 }
 
 
@@ -230,10 +230,10 @@ impl HubCookingSequence {
 #[cfg(feature = "app-hubcookingsequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::HubCookingSequence_LookTarget;
     pub use super::HubCookingSequence;
     pub use super::IHubCookingSequence;
     pub use super::IHubCookingSequenceMethods;
-    pub use super::HubCookingSequence_LookTarget;
     pub use super::HubCookingSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;

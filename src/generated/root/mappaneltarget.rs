@@ -121,6 +121,55 @@ impl  MapPanelTarget_DangerType  {
 }
 
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mappaneltarget/MapPanelTarget_DirtyType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct MapPanelTarget_DirtyType  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for MapPanelTarget_DirtyType  {
+    const NAMESPACE: &'static str = "";
+
+    const NAME: &'static str = "MapPanelTarget.DirtyType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for MapPanelTarget_DirtyType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  MapPanelTarget_DirtyType  {
+    pub fn attack() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn full_bullet() -> Self {
+        Self { value: 2 }
+
+    }
+
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mappaneltarget/MapPanelTarget_MeshIndex.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -187,55 +236,6 @@ impl  MapPanelTarget_MeshIndex  {
 
 }
 
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mappaneltarget/MapPanelTarget_DirtyType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapPanelTarget_DirtyType  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for MapPanelTarget_DirtyType  {
-    const NAMESPACE: &'static str = "";
-
-    const NAME: &'static str = "MapPanelTarget.DirtyType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for MapPanelTarget_DirtyType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  MapPanelTarget_DirtyType  {
-    pub fn attack() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn full_bullet() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
 }
 
 #[cfg(feature = "root-mappaneltarget-types")]
@@ -265,8 +265,8 @@ pub mod prelude {
     pub use super::MapPanelTarget;
     pub use super::IMapPanelTarget;
     pub use super::IMapPanelTargetMethods;
-    pub use super::MapPanelTarget_MeshIndex;
     pub use super::MapPanelTarget_DirtyType;
+    pub use super::MapPanelTarget_MeshIndex;
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
     pub use crate::root::mappanelbase_1::IMapPanelBase_1;
     pub use crate::system::object::IObject;

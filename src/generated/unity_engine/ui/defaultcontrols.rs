@@ -11,28 +11,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/defaultcontrols/DefaultControls.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "DefaultControls")] # [parent (crate :: system :: object :: Object)] pub struct DefaultControls {
-# [static_field] # [rename (name = "m_CurrentFactory")] pub m_current_factory : crate :: unity_engine :: ui :: defaultcontrols :: DefaultControls_IFactoryControls ,
-# [static_field] # [rename (name = "kWidth")] pub k_width : f32 ,
-# [static_field] # [rename (name = "kThickHeight")] pub k_thick_height : f32 ,
-# [static_field] # [rename (name = "kThinHeight")] pub k_thin_height : f32 ,
-# [static_field] # [rename (name = "s_ThickElementSize")] pub s_thick_element_size : crate :: unity_engine :: vector2 :: Vector2 ,
-# [static_field] # [rename (name = "s_ThinElementSize")] pub s_thin_element_size : crate :: unity_engine :: vector2 :: Vector2 ,
-# [static_field] # [rename (name = "s_ImageElementSize")] pub s_image_element_size : crate :: unity_engine :: vector2 :: Vector2 ,
-# [static_field] # [rename (name = "s_DefaultSelectableColor")] pub s_default_selectable_color : crate :: unity_engine :: color :: Color ,
-# [static_field] # [rename (name = "s_PanelColor")] pub s_panel_color : crate :: unity_engine :: color :: Color ,
-# [static_field] # [rename (name = "s_TextColor")] pub s_text_color : crate :: unity_engine :: color :: Color ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/defaultcontrols/DefaultControls_IFactoryControls.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "DefaultControls.IFactoryControls")] pub struct DefaultControls_IFactoryControls {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/defaultcontrols/DefaultControls_DefaultRuntimeFactory.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "DefaultControls.DefaultRuntimeFactory")] # [parent (crate :: system :: object :: Object)] pub struct DefaultControls_DefaultRuntimeFactory {
-# [static_field] # [rename (name = "Default")] pub default : crate :: unity_engine :: ui :: defaultcontrols :: DefaultControls_IFactoryControls ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/defaultcontrols/DefaultControls_Resources.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -72,6 +50,28 @@ impl ::unity2::IlType for DefaultControls_Resources {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/defaultcontrols/DefaultControls.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "DefaultControls")] # [parent (crate :: system :: object :: Object)] pub struct DefaultControls {
+# [static_field] # [rename (name = "m_CurrentFactory")] pub m_current_factory : crate :: unity_engine :: ui :: defaultcontrols :: DefaultControls_IFactoryControls ,
+# [static_field] # [rename (name = "kWidth")] pub k_width : f32 ,
+# [static_field] # [rename (name = "kThickHeight")] pub k_thick_height : f32 ,
+# [static_field] # [rename (name = "kThinHeight")] pub k_thin_height : f32 ,
+# [static_field] # [rename (name = "s_ThickElementSize")] pub s_thick_element_size : crate :: unity_engine :: vector2 :: Vector2 ,
+# [static_field] # [rename (name = "s_ThinElementSize")] pub s_thin_element_size : crate :: unity_engine :: vector2 :: Vector2 ,
+# [static_field] # [rename (name = "s_ImageElementSize")] pub s_image_element_size : crate :: unity_engine :: vector2 :: Vector2 ,
+# [static_field] # [rename (name = "s_DefaultSelectableColor")] pub s_default_selectable_color : crate :: unity_engine :: color :: Color ,
+# [static_field] # [rename (name = "s_PanelColor")] pub s_panel_color : crate :: unity_engine :: color :: Color ,
+# [static_field] # [rename (name = "s_TextColor")] pub s_text_color : crate :: unity_engine :: color :: Color ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/defaultcontrols/DefaultControls_DefaultRuntimeFactory.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "DefaultControls.DefaultRuntimeFactory")] # [parent (crate :: system :: object :: Object)] pub struct DefaultControls_DefaultRuntimeFactory {
+# [static_field] # [rename (name = "Default")] pub default : crate :: unity_engine :: ui :: defaultcontrols :: DefaultControls_IFactoryControls ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/defaultcontrols/DefaultControls_IFactoryControls.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "DefaultControls.IFactoryControls")] pub struct DefaultControls_IFactoryControls {}
+
 }
 
 #[cfg(feature = "unity_engine-ui-defaultcontrols-types")]
@@ -85,18 +85,6 @@ impl DefaultControls { # [doc = "`get_factory()` overload"] pub fn get_factory (
 
 #[cfg(feature = "unity_engine-ui-defaultcontrols")]
 impl DefaultControls { pub fn get_factory_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DefaultControls_unity2_raw :: __lookup_get_factory :: get_method_info () } pub fn create_ui_element_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DefaultControls_unity2_raw :: __lookup_create_ui_element_root :: get_method_info () } pub fn create_ui_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DefaultControls_unity2_raw :: __lookup_create_ui_object :: get_method_info () } pub fn set_default_text_values_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DefaultControls_unity2_raw :: __lookup_set_default_text_values :: get_method_info () } pub fn set_default_color_transition_values_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DefaultControls_unity2_raw :: __lookup_set_default_color_transition_values :: get_method_info () } pub fn set_parent_and_align_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DefaultControls_unity2_raw :: __lookup_set_parent_and_align :: get_method_info () } pub fn set_layer_recursively_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DefaultControls_unity2_raw :: __lookup_set_layer_recursively :: get_method_info () } pub fn create_panel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DefaultControls_unity2_raw :: __lookup_create_panel :: get_method_info () } pub fn create_button_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DefaultControls_unity2_raw :: __lookup_create_button :: get_method_info () } pub fn create_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DefaultControls_unity2_raw :: __lookup_create_text :: get_method_info () } pub fn create_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DefaultControls_unity2_raw :: __lookup_create_image :: get_method_info () } pub fn create_raw_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DefaultControls_unity2_raw :: __lookup_create_raw_image :: get_method_info () } pub fn create_slider_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DefaultControls_unity2_raw :: __lookup_create_slider :: get_method_info () } pub fn create_scrollbar_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DefaultControls_unity2_raw :: __lookup_create_scrollbar :: get_method_info () } pub fn create_toggle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DefaultControls_unity2_raw :: __lookup_create_toggle :: get_method_info () } pub fn create_input_field_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DefaultControls_unity2_raw :: __lookup_create_input_field :: get_method_info () } pub fn create_dropdown_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DefaultControls_unity2_raw :: __lookup_create_dropdown :: get_method_info () } pub fn create_scroll_view_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DefaultControls_unity2_raw :: __lookup_create_scroll_view :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DefaultControls_unity2_raw :: __lookup_cctor :: get_method_info () } }
-
-#[cfg(feature = "unity_engine-ui-defaultcontrols")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DefaultControls_IFactoryControls_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_game_object { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < :: unity2 :: SystemType > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DefaultControls_IFactoryControls as :: unity2 :: ClassIdentity > :: class () , "CreateGameObject" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DefaultControls_IFactoryControls as :: unity2 :: ClassIdentity > :: NAME , "CreateGameObject" , e) , } } } pub unsafe fn create_game_object (this : DefaultControls_IFactoryControls , name : :: unity2 :: Il2CppString , components : :: unity2 :: Array < :: unity2 :: SystemType > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("CreateGameObject") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "CreateGameObject" , < DefaultControls_IFactoryControls as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (DefaultControls_IFactoryControls , :: unity2 :: Il2CppString , :: unity2 :: Array < :: unity2 :: SystemType > , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , name , components , __mi) } }
-
-#[cfg(feature = "unity_engine-ui-defaultcontrols")]
-pub trait IDefaultControls_IFactoryControlsMethods : IDefaultControls_IFactoryControls { # [doc = "`CreateGameObject(::unity2::Il2CppString, ::unity2::Array<::unity2::SystemType>)` overload"] fn create_game_object (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , components : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: SystemType > >) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < DefaultControls_IFactoryControls as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DefaultControls_IFactoryControls_unity2_raw :: create_game_object (__receiver , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (components) , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "unity_engine-ui-defaultcontrols")]
-impl < __T : IDefaultControls_IFactoryControls > IDefaultControls_IFactoryControlsMethods for __T { }
-
-#[cfg(feature = "unity_engine-ui-defaultcontrols")]
-impl DefaultControls_IFactoryControls { pub fn create_game_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DefaultControls_IFactoryControls_unity2_raw :: __lookup_create_game_object :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-ui-defaultcontrols")]
 # [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DefaultControls_DefaultRuntimeFactory_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_game_object { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < :: unity2 :: SystemType > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DefaultControls_DefaultRuntimeFactory as :: unity2 :: ClassIdentity > :: class () , "CreateGameObject" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DefaultControls_DefaultRuntimeFactory as :: unity2 :: ClassIdentity > :: NAME , "CreateGameObject" , e) , } } } pub unsafe fn create_game_object (this : DefaultControls_DefaultRuntimeFactory , name : :: unity2 :: Il2CppString , components : :: unity2 :: Array < :: unity2 :: SystemType > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject { let inner : extern "C" fn (DefaultControls_DefaultRuntimeFactory , :: unity2 :: Il2CppString , :: unity2 :: Array < :: unity2 :: SystemType > , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute (__lookup_create_game_object :: get_method_info () . method_ptr ,) ; inner (this , name , components , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DefaultControls_DefaultRuntimeFactory as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DefaultControls_DefaultRuntimeFactory as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DefaultControls_DefaultRuntimeFactory , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DefaultControls_DefaultRuntimeFactory , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DefaultControls_DefaultRuntimeFactory as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DefaultControls_DefaultRuntimeFactory as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
@@ -119,17 +107,29 @@ impl DefaultControls_DefaultRuntimeFactory {
 }
 
 #[cfg(feature = "unity_engine-ui-defaultcontrols")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DefaultControls_IFactoryControls_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_game_object { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < :: unity2 :: SystemType > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DefaultControls_IFactoryControls as :: unity2 :: ClassIdentity > :: class () , "CreateGameObject" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DefaultControls_IFactoryControls as :: unity2 :: ClassIdentity > :: NAME , "CreateGameObject" , e) , } } } pub unsafe fn create_game_object (this : DefaultControls_IFactoryControls , name : :: unity2 :: Il2CppString , components : :: unity2 :: Array < :: unity2 :: SystemType > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("CreateGameObject") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "CreateGameObject" , < DefaultControls_IFactoryControls as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (DefaultControls_IFactoryControls , :: unity2 :: Il2CppString , :: unity2 :: Array < :: unity2 :: SystemType > , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , name , components , __mi) } }
+
+#[cfg(feature = "unity_engine-ui-defaultcontrols")]
+pub trait IDefaultControls_IFactoryControlsMethods : IDefaultControls_IFactoryControls { # [doc = "`CreateGameObject(::unity2::Il2CppString, ::unity2::Array<::unity2::SystemType>)` overload"] fn create_game_object (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , components : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: SystemType > >) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < DefaultControls_IFactoryControls as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DefaultControls_IFactoryControls_unity2_raw :: create_game_object (__receiver , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (components) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-ui-defaultcontrols")]
+impl < __T : IDefaultControls_IFactoryControls > IDefaultControls_IFactoryControlsMethods for __T { }
+
+#[cfg(feature = "unity_engine-ui-defaultcontrols")]
+impl DefaultControls_IFactoryControls { pub fn create_game_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DefaultControls_IFactoryControls_unity2_raw :: __lookup_create_game_object :: get_method_info () } }
+
+#[cfg(feature = "unity_engine-ui-defaultcontrols")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::DefaultControls_Resources;
     pub use super::DefaultControls;
     pub use super::IDefaultControls;
-    pub use super::DefaultControls_IFactoryControls;
-    pub use super::IDefaultControls_IFactoryControls;
-    pub use super::IDefaultControls_IFactoryControlsMethods;
     pub use super::DefaultControls_DefaultRuntimeFactory;
     pub use super::IDefaultControls_DefaultRuntimeFactory;
     pub use super::IDefaultControls_DefaultRuntimeFactoryMethods;
-    pub use super::DefaultControls_Resources;
+    pub use super::DefaultControls_IFactoryControls;
+    pub use super::IDefaultControls_IFactoryControls;
+    pub use super::IDefaultControls_IFactoryControlsMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

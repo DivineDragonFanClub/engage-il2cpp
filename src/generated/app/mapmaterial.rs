@@ -13,15 +13,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapmaterial/MapMaterial_Node.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapMaterial.Node")] # [parent (crate :: system :: object :: Object)] pub struct MapMaterial_Node {
-# [offset (16)] # [rename (name = "kind")] pub kind : crate :: app :: mapmaterial :: MapMaterial_Kinds ,
-# [offset (24)] # [rename (name = "material")] pub material : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "property")] pub property : :: unity2 :: Il2CppString ,
-# [offset (40)] # [rename (name = "value")] pub value : f32 ,
-# [offset (44)] # [rename (name = "color")] pub color : crate :: unity_engine :: color :: Color ,
-}
-
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapmaterial/MapMaterial.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapMaterial")] # [parent (crate :: system :: object :: Object)] pub struct MapMaterial {
 # [offset (16)] # [rename (name = "m_List")] pub m_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mapmaterial :: MapMaterial_Node > ,
 }
@@ -81,27 +72,19 @@ impl  MapMaterial_Kinds  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapmaterial/MapMaterial_Node.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapMaterial.Node")] # [parent (crate :: system :: object :: Object)] pub struct MapMaterial_Node {
+# [offset (16)] # [rename (name = "kind")] pub kind : crate :: app :: mapmaterial :: MapMaterial_Kinds ,
+# [offset (24)] # [rename (name = "material")] pub material : :: unity2 :: Il2CppString ,
+# [offset (32)] # [rename (name = "property")] pub property : :: unity2 :: Il2CppString ,
+# [offset (40)] # [rename (name = "value")] pub value : f32 ,
+# [offset (44)] # [rename (name = "color")] pub color : crate :: unity_engine :: color :: Color ,
+}
+
 }
 
 #[cfg(feature = "app-mapmaterial-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-mapmaterial")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapMaterial_Node_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapMaterial_Node as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapMaterial_Node as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapMaterial_Node , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapMaterial_Node , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "app-mapmaterial")]
-pub trait IMapMaterial_NodeMethods : IMapMaterial_Node { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapMaterial_Node as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapMaterial_Node_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-mapmaterial")]
-impl < __T : IMapMaterial_Node > IMapMaterial_NodeMethods for __T { }
-
-#[cfg(feature = "app-mapmaterial")]
-impl MapMaterial_Node { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapMaterial_Node_unity2_raw :: __lookup_ctor :: get_method_info () } }
-
-#[cfg(feature = "app-mapmaterial")]
-impl MapMaterial_Node {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapMaterial_Node) , :: core :: stringify ! (new) ,)) ; < Self as IMapMaterial_NodeMethods > :: ctor (this ,) ; this }
-}
 
 #[cfg(feature = "app-mapmaterial")]
 # [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapMaterial_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapMaterial as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapMaterial as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapMaterial , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapMaterial , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_find { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: mapmaterial :: MapMaterial_Kinds as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapMaterial as :: unity2 :: ClassIdentity > :: class () , "Find" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapMaterial as :: unity2 :: ClassIdentity > :: NAME , "Find" , e) , } } } pub unsafe fn find (this : MapMaterial , kind : crate :: app :: mapmaterial :: MapMaterial_Kinds , material : :: unity2 :: Il2CppString , property : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: mapmaterial :: MapMaterial_Node { let inner : extern "C" fn (MapMaterial , crate :: app :: mapmaterial :: MapMaterial_Kinds , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapmaterial :: MapMaterial_Node = :: core :: mem :: transmute (__lookup_find :: get_method_info () . method_ptr ,) ; inner (this , kind , material , property , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_try_add { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: mapmaterial :: MapMaterial_Kinds as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapMaterial as :: unity2 :: ClassIdentity > :: class () , "TryAdd" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapMaterial as :: unity2 :: ClassIdentity > :: NAME , "TryAdd" , e) , } } } pub unsafe fn try_add (this : MapMaterial , kind : crate :: app :: mapmaterial :: MapMaterial_Kinds , material : :: unity2 :: Il2CppString , property : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: mapmaterial :: MapMaterial_Node { let inner : extern "C" fn (MapMaterial , crate :: app :: mapmaterial :: MapMaterial_Kinds , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapmaterial :: MapMaterial_Node = :: core :: mem :: transmute (__lookup_try_add :: get_method_info () . method_ptr ,) ; inner (this , kind , material , property , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapMaterial as :: unity2 :: ClassIdentity > :: class () , "get_Count" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapMaterial as :: unity2 :: ClassIdentity > :: NAME , "get_Count" , e) , } } } pub unsafe fn get_count (this : MapMaterial , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (MapMaterial , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_get_count :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_item { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapMaterial as :: unity2 :: ClassIdentity > :: class () , "get_Item" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapMaterial as :: unity2 :: ClassIdentity > :: NAME , "get_Item" , e) , } } } pub unsafe fn get_item (this : MapMaterial , i : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: mapmaterial :: MapMaterial_Node { let inner : extern "C" fn (MapMaterial , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapmaterial :: MapMaterial_Node = :: core :: mem :: transmute (__lookup_get_item :: get_method_info () . method_ptr ,) ; inner (this , i , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_enumerator { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapMaterial as :: unity2 :: ClassIdentity > :: class () , "GetEnumerator" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapMaterial as :: unity2 :: ClassIdentity > :: NAME , "GetEnumerator" , e) , } } } pub unsafe fn get_enumerator (this : MapMaterial , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerator_1 :: IEnumerator_1 < crate :: app :: mapmaterial :: MapMaterial_Node > { let inner : extern "C" fn (MapMaterial , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerator_1 :: IEnumerator_1 < crate :: app :: mapmaterial :: MapMaterial_Node > = :: core :: mem :: transmute (__lookup_get_enumerator :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
@@ -121,15 +104,32 @@ impl MapMaterial {
 }
 
 #[cfg(feature = "app-mapmaterial")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapMaterial_Node_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapMaterial_Node as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapMaterial_Node as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapMaterial_Node , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapMaterial_Node , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-mapmaterial")]
+pub trait IMapMaterial_NodeMethods : IMapMaterial_Node { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapMaterial_Node as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapMaterial_Node_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-mapmaterial")]
+impl < __T : IMapMaterial_Node > IMapMaterial_NodeMethods for __T { }
+
+#[cfg(feature = "app-mapmaterial")]
+impl MapMaterial_Node { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapMaterial_Node_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-mapmaterial")]
+impl MapMaterial_Node {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapMaterial_Node) , :: core :: stringify ! (new) ,)) ; < Self as IMapMaterial_NodeMethods > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "app-mapmaterial")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapMaterial_Node;
-    pub use super::IMapMaterial_Node;
-    pub use super::IMapMaterial_NodeMethods;
     pub use super::MapMaterial;
     pub use super::IMapMaterial;
     pub use super::IMapMaterialMethods;
     pub use super::MapMaterial_Kinds;
+    pub use super::MapMaterial_Node;
+    pub use super::IMapMaterial_Node;
+    pub use super::IMapMaterial_NodeMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

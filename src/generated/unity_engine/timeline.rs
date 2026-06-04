@@ -11,7 +11,7 @@
  # [cfg (feature = "unity_engine-timeline-animationplayableasset")] pub use animationplayableasset :: { IAnimationPlayableAssetMethods }
  ;
  # [cfg (any (feature = "unity_engine-timeline-animationtrack-types"))] pub mod animationtrack ;
- # [cfg (feature = "unity_engine-timeline-animationtrack-types")] pub use animationtrack :: { AnimationTrack_AnimationTrackUpgrade , IAnimationTrack_AnimationTrackUpgrade , AnimationTrack , IAnimationTrack }
+ # [cfg (feature = "unity_engine-timeline-animationtrack-types")] pub use animationtrack :: { AnimationTrack , IAnimationTrack , AnimationTrack_AnimationTrackUpgrade , IAnimationTrack_AnimationTrackUpgrade }
  ;
  # [cfg (feature = "unity_engine-timeline-animationtrack")] pub use animationtrack :: { IAnimationTrackMethods }
  ;
@@ -86,7 +86,7 @@
  # [cfg (feature = "unity_engine-timeline-inotificationoptionprovider")] pub use inotificationoptionprovider :: { IINotificationOptionProviderMethods }
  ;
  # [cfg (any (feature = "unity_engine-timeline-intervaltree_1-types"))] pub mod intervaltree_1 ;
- # [cfg (feature = "unity_engine-timeline-intervaltree_1-types")] pub use intervaltree_1 :: { IntervalTree_1_Entry , IntervalTree_1 , IIntervalTree_1 }
+ # [cfg (feature = "unity_engine-timeline-intervaltree_1-types")] pub use intervaltree_1 :: { IntervalTree_1 , IIntervalTree_1 , IntervalTree_1_Entry }
  ;
  # [cfg (feature = "unity_engine-timeline-intervaltree_1")] pub use intervaltree_1 :: { IIntervalTree_1Methods }
  ;
@@ -184,17 +184,17 @@
  # [cfg (feature = "unity_engine-timeline-supportschildtracksattribute")] pub use supportschildtracksattribute :: { ISupportsChildTracksAttributeMethods }
  ;
  # [cfg (any (feature = "unity_engine-timeline-timefieldattribute-types"))] pub mod timefieldattribute ;
- # [cfg (feature = "unity_engine-timeline-timefieldattribute-types")] pub use timefieldattribute :: { TimeFieldAttribute_UseEditMode , TimeFieldAttribute , ITimeFieldAttribute }
+ # [cfg (feature = "unity_engine-timeline-timefieldattribute-types")] pub use timefieldattribute :: { TimeFieldAttribute , ITimeFieldAttribute , TimeFieldAttribute_UseEditMode }
  ;
  # [cfg (feature = "unity_engine-timeline-timefieldattribute")] pub use timefieldattribute :: { ITimeFieldAttributeMethods }
  ;
  # [cfg (any (feature = "unity_engine-timeline-timelineasset-types"))] pub mod timelineasset ;
- # [cfg (feature = "unity_engine-timeline-timelineasset-types")] pub use timelineasset :: { TimelineAsset_EditorSettings , ITimelineAsset_EditorSettings , TimelineAsset_DurationMode , TimelineAsset , ITimelineAsset }
+ # [cfg (feature = "unity_engine-timeline-timelineasset-types")] pub use timelineasset :: { TimelineAsset_DurationMode , TimelineAsset , ITimelineAsset , TimelineAsset_EditorSettings , ITimelineAsset_EditorSettings }
  ;
- # [cfg (feature = "unity_engine-timeline-timelineasset")] pub use timelineasset :: { ITimelineAsset_EditorSettingsMethods , ITimelineAssetMethods }
+ # [cfg (feature = "unity_engine-timeline-timelineasset")] pub use timelineasset :: { ITimelineAssetMethods , ITimelineAsset_EditorSettingsMethods }
  ;
  # [cfg (any (feature = "unity_engine-timeline-timelineclip-types"))] pub mod timelineclip ;
- # [cfg (feature = "unity_engine-timeline-timelineclip-types")] pub use timelineclip :: { TimelineClip_BlendCurveMode , TimelineClip_ClipExtrapolation , TimelineClip_TimelineClipUpgrade , ITimelineClip_TimelineClipUpgrade , TimelineClip , ITimelineClip }
+ # [cfg (feature = "unity_engine-timeline-timelineclip-types")] pub use timelineclip :: { TimelineClip_TimelineClipUpgrade , ITimelineClip_TimelineClipUpgrade , TimelineClip_BlendCurveMode , TimelineClip , ITimelineClip , TimelineClip_ClipExtrapolation }
  ;
  # [cfg (feature = "unity_engine-timeline-timelineclip")] pub use timelineclip :: { ITimelineClipMethods }
  ;
@@ -221,7 +221,7 @@
  # [cfg (feature = "unity_engine-timeline-timeutility-types")] pub use timeutility :: { TimeUtility , ITimeUtility }
  ;
  # [cfg (any (feature = "unity_engine-timeline-trackasset-types"))] pub mod trackasset ;
- # [cfg (feature = "unity_engine-timeline-trackasset-types")] pub use trackasset :: { TrackAsset , ITrackAsset , TrackAsset_TransientBuildData }
+ # [cfg (feature = "unity_engine-timeline-trackasset-types")] pub use trackasset :: { TrackAsset_TransientBuildData , TrackAsset , ITrackAsset }
  ;
  # [cfg (feature = "unity_engine-timeline-trackasset")] pub use trackasset :: { ITrackAssetMethods }
  ;

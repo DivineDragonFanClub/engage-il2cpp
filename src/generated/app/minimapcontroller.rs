@@ -101,6 +101,104 @@ mod __types {
 }
 
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minimapcontroller/MiniMapController_Alignment.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct MiniMapController_Alignment  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for MiniMapController_Alignment  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MiniMapController.Alignment";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for MiniMapController_Alignment  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  MiniMapController_Alignment  {
+    pub fn left_up() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn left_center() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn left_bottom() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn center_up() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn center() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn center_bottom() -> Self {
+        Self { value: 5 }
+
+    }
+
+
+    pub fn right_up() -> Self {
+        Self { value: 6 }
+
+    }
+
+
+    pub fn right_center() -> Self {
+        Self { value: 7 }
+
+    }
+
+
+    pub fn right_bottom() -> Self {
+        Self { value: 8 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minimapcontroller/MiniMapController_TImage_1.md"))] # [:: unity2 :: class (namespace = "App" , name = "MiniMapController.TImage`1")] # [parent (crate :: system :: object :: Object)] pub struct MiniMapController_TImage_1 < T0 : :: unity2 :: ClassIdentity > {
+# [rename (name = "image")] pub image : T0 ,
+# [rename (name = "gameObject")] pub game_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [rename (name = "transform")] pub transform : crate :: unity_engine :: recttransform :: RectTransform ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minimapcontroller/MiniMapController_IconIndex.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -231,13 +329,6 @@ impl  MiniMapController_IconIndex  {
 
     }
 
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minimapcontroller/MiniMapController_TImage_1.md"))] # [:: unity2 :: class (namespace = "App" , name = "MiniMapController.TImage`1")] # [parent (crate :: system :: object :: Object)] pub struct MiniMapController_TImage_1 < T0 : :: unity2 :: ClassIdentity > {
-# [rename (name = "image")] pub image : T0 ,
-# [rename (name = "gameObject")] pub game_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [rename (name = "transform")] pub transform : crate :: unity_engine :: recttransform :: RectTransform ,
 }
 
 
@@ -411,97 +502,6 @@ impl  MiniMapController_FadeMode  {
 
 }
 
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minimapcontroller/MiniMapController_Alignment.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MiniMapController_Alignment  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for MiniMapController_Alignment  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MiniMapController.Alignment";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for MiniMapController_Alignment  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  MiniMapController_Alignment  {
-    pub fn left_up() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn left_center() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn left_bottom() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn center_up() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn center() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn center_bottom() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn right_up() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn right_center() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn right_bottom() -> Self {
-        Self { value: 8 }
-
-    }
-
-}
-
 }
 
 #[cfg(feature = "app-minimapcontroller-types")]
@@ -543,14 +543,14 @@ pub mod prelude {
     pub use super::MiniMapController;
     pub use super::IMiniMapController;
     pub use super::IMiniMapControllerMethods;
-    pub use super::MiniMapController_IconIndex;
+    pub use super::MiniMapController_Alignment;
     pub use super::MiniMapController_TImage_1;
     pub use super::IMiniMapController_TImage_1;
     pub use super::IMiniMapController_TImage_1Methods;
+    pub use super::MiniMapController_IconIndex;
     pub use super::MiniMapController_DisplayPosSize;
     pub use super::MiniMapController_Mode;
     pub use super::MiniMapController_FadeMode;
-    pub use super::MiniMapController_Alignment;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

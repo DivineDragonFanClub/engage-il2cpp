@@ -21,10 +21,10 @@ mod __types {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/kaneko/Kaneko_GUIFitScope.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "Kaneko.GUIFitScope")] # [parent (crate :: system :: object :: Object)] pub struct Kaneko_GUIFitScope {}
-
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/kaneko/Kaneko_DummyDisposable.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "Kaneko.DummyDisposable")] # [parent (crate :: system :: object :: Object)] pub struct Kaneko_DummyDisposable {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/kaneko/Kaneko_GUIFitScope.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "Kaneko.GUIFitScope")] # [parent (crate :: system :: object :: Object)] pub struct Kaneko_GUIFitScope {}
 
 }
 
@@ -50,23 +50,6 @@ impl Kaneko_Screen { # [doc = "`get_WH()` overload"] pub fn get_wh () -> crate :
 impl Kaneko_Screen { pub fn get_wh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Kaneko_Screen_unity2_raw :: __lookup_get_wh :: get_method_info () } }
 
 #[cfg(feature = "combat-kaneko")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Kaneko_GUIFitScope_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Kaneko_GUIFitScope as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Kaneko_GUIFitScope as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Kaneko_GUIFitScope , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Kaneko_GUIFitScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Kaneko_GUIFitScope as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Kaneko_GUIFitScope as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : Kaneko_GUIFitScope , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Kaneko_GUIFitScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "combat-kaneko")]
-pub trait IKaneko_GUIFitScopeMethods : IKaneko_GUIFitScope { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Kaneko_GUIFitScope as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Kaneko_GUIFitScope_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < Kaneko_GUIFitScope as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Kaneko_GUIFitScope_unity2_raw :: dispose (__receiver , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "combat-kaneko")]
-impl < __T : IKaneko_GUIFitScope > IKaneko_GUIFitScopeMethods for __T { }
-
-#[cfg(feature = "combat-kaneko")]
-impl Kaneko_GUIFitScope { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Kaneko_GUIFitScope_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Kaneko_GUIFitScope_unity2_raw :: __lookup_dispose :: get_method_info () } }
-
-#[cfg(feature = "combat-kaneko")]
-impl Kaneko_GUIFitScope {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Kaneko_GUIFitScope) , :: core :: stringify ! (new) ,)) ; < Self as IKaneko_GUIFitScopeMethods > :: ctor (this ,) ; this }
-}
-
-#[cfg(feature = "combat-kaneko")]
 # [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Kaneko_DummyDisposable_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Kaneko_DummyDisposable as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Kaneko_DummyDisposable as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : Kaneko_DummyDisposable , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Kaneko_DummyDisposable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Kaneko_DummyDisposable as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Kaneko_DummyDisposable as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Kaneko_DummyDisposable , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Kaneko_DummyDisposable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "combat-kaneko")]
@@ -84,18 +67,35 @@ impl Kaneko_DummyDisposable {
 }
 
 #[cfg(feature = "combat-kaneko")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Kaneko_GUIFitScope_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Kaneko_GUIFitScope as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Kaneko_GUIFitScope as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Kaneko_GUIFitScope , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Kaneko_GUIFitScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Kaneko_GUIFitScope as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Kaneko_GUIFitScope as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : Kaneko_GUIFitScope , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Kaneko_GUIFitScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "combat-kaneko")]
+pub trait IKaneko_GUIFitScopeMethods : IKaneko_GUIFitScope { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Kaneko_GUIFitScope as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Kaneko_GUIFitScope_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < Kaneko_GUIFitScope as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Kaneko_GUIFitScope_unity2_raw :: dispose (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "combat-kaneko")]
+impl < __T : IKaneko_GUIFitScope > IKaneko_GUIFitScopeMethods for __T { }
+
+#[cfg(feature = "combat-kaneko")]
+impl Kaneko_GUIFitScope { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Kaneko_GUIFitScope_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Kaneko_GUIFitScope_unity2_raw :: __lookup_dispose :: get_method_info () } }
+
+#[cfg(feature = "combat-kaneko")]
+impl Kaneko_GUIFitScope {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Kaneko_GUIFitScope) , :: core :: stringify ! (new) ,)) ; < Self as IKaneko_GUIFitScopeMethods > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "combat-kaneko")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::Kaneko;
     pub use super::IKaneko;
     pub use super::Kaneko_Screen;
     pub use super::IKaneko_Screen;
-    pub use super::Kaneko_GUIFitScope;
-    pub use super::IKaneko_GUIFitScope;
-    pub use super::IKaneko_GUIFitScopeMethods;
     pub use super::Kaneko_DummyDisposable;
     pub use super::IKaneko_DummyDisposable;
     pub use super::IKaneko_DummyDisposableMethods;
+    pub use super::Kaneko_GUIFitScope;
+    pub use super::IKaneko_GUIFitScope;
+    pub use super::IKaneko_GUIFitScopeMethods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

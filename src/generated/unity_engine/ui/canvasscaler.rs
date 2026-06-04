@@ -78,6 +78,25 @@ impl  CanvasScaler_ScaleMode  {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/canvasscaler/CanvasScaler.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "CanvasScaler")] # [parent (crate :: unity_engine :: event_systems :: uibehaviour :: UIBehaviour)] pub struct CanvasScaler {
+# [offset (24)] # [rename (name = "m_UiScaleMode")] pub m_ui_scale_mode : crate :: unity_engine :: ui :: canvasscaler :: CanvasScaler_ScaleMode ,
+# [offset (28)] # [rename (name = "m_ReferencePixelsPerUnit")] pub m_reference_pixels_per_unit : f32 ,
+# [offset (32)] # [rename (name = "m_ScaleFactor")] pub m_scale_factor : f32 ,
+# [offset (36)] # [rename (name = "m_ReferenceResolution")] pub m_reference_resolution : crate :: unity_engine :: vector2 :: Vector2 ,
+# [offset (44)] # [rename (name = "m_ScreenMatchMode")] pub m_screen_match_mode : crate :: unity_engine :: ui :: canvasscaler :: CanvasScaler_ScreenMatchMode ,
+# [offset (48)] # [rename (name = "m_MatchWidthOrHeight")] pub m_match_width_or_height : f32 ,
+# [static_field] # [rename (name = "kLogBase")] pub k_log_base : f32 ,
+# [offset (52)] # [rename (name = "m_PhysicalUnit")] pub m_physical_unit : crate :: unity_engine :: ui :: canvasscaler :: CanvasScaler_Unit ,
+# [offset (56)] # [rename (name = "m_FallbackScreenDPI")] pub m_fallback_screen_dpi : f32 ,
+# [offset (60)] # [rename (name = "m_DefaultSpriteDPI")] pub m_default_sprite_dpi : f32 ,
+# [offset (64)] # [rename (name = "m_DynamicPixelsPerUnit")] pub m_dynamic_pixels_per_unit : f32 ,
+# [offset (72)] # [rename (name = "m_Canvas")] pub m_canvas : crate :: unity_engine :: canvas :: Canvas ,
+# [offset (80)] # [rename (name = "m_PrevScaleFactor")] pub m_prev_scale_factor : f32 ,
+# [offset (84)] # [rename (name = "m_PrevReferencePixelsPerUnit")] pub m_prev_reference_pixels_per_unit : f32 ,
+# [offset (88)] # [rename (name = "m_PresetInfoIsWorld")] pub m_preset_info_is_world : bool ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/canvasscaler/CanvasScaler_Unit.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -142,25 +161,6 @@ impl  CanvasScaler_Unit  {
 
     }
 
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/canvasscaler/CanvasScaler.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "CanvasScaler")] # [parent (crate :: unity_engine :: event_systems :: uibehaviour :: UIBehaviour)] pub struct CanvasScaler {
-# [offset (24)] # [rename (name = "m_UiScaleMode")] pub m_ui_scale_mode : crate :: unity_engine :: ui :: canvasscaler :: CanvasScaler_ScaleMode ,
-# [offset (28)] # [rename (name = "m_ReferencePixelsPerUnit")] pub m_reference_pixels_per_unit : f32 ,
-# [offset (32)] # [rename (name = "m_ScaleFactor")] pub m_scale_factor : f32 ,
-# [offset (36)] # [rename (name = "m_ReferenceResolution")] pub m_reference_resolution : crate :: unity_engine :: vector2 :: Vector2 ,
-# [offset (44)] # [rename (name = "m_ScreenMatchMode")] pub m_screen_match_mode : crate :: unity_engine :: ui :: canvasscaler :: CanvasScaler_ScreenMatchMode ,
-# [offset (48)] # [rename (name = "m_MatchWidthOrHeight")] pub m_match_width_or_height : f32 ,
-# [static_field] # [rename (name = "kLogBase")] pub k_log_base : f32 ,
-# [offset (52)] # [rename (name = "m_PhysicalUnit")] pub m_physical_unit : crate :: unity_engine :: ui :: canvasscaler :: CanvasScaler_Unit ,
-# [offset (56)] # [rename (name = "m_FallbackScreenDPI")] pub m_fallback_screen_dpi : f32 ,
-# [offset (60)] # [rename (name = "m_DefaultSpriteDPI")] pub m_default_sprite_dpi : f32 ,
-# [offset (64)] # [rename (name = "m_DynamicPixelsPerUnit")] pub m_dynamic_pixels_per_unit : f32 ,
-# [offset (72)] # [rename (name = "m_Canvas")] pub m_canvas : crate :: unity_engine :: canvas :: Canvas ,
-# [offset (80)] # [rename (name = "m_PrevScaleFactor")] pub m_prev_scale_factor : f32 ,
-# [offset (84)] # [rename (name = "m_PrevReferencePixelsPerUnit")] pub m_prev_reference_pixels_per_unit : f32 ,
-# [offset (88)] # [rename (name = "m_PresetInfoIsWorld")] pub m_preset_info_is_world : bool ,
 }
 
 
@@ -244,10 +244,10 @@ impl CanvasScaler {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::CanvasScaler_ScaleMode;
-    pub use super::CanvasScaler_Unit;
     pub use super::CanvasScaler;
     pub use super::ICanvasScaler;
     pub use super::ICanvasScalerMethods;
+    pub use super::CanvasScaler_Unit;
     pub use super::CanvasScaler_ScreenMatchMode;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

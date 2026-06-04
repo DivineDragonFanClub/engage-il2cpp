@@ -17,11 +17,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/situation_converter/convertbrawl/ConvertBrawl.md"))] # [:: unity2 :: class (namespace = "Combat.SituationConverter" , name = "ConvertBrawl")] # [parent (crate :: combat :: situation_converter :: converterwithut :: ConverterWithUt)] pub struct ConvertBrawl {
-# [offset (44)] # [rename (name = "m_State")] pub m_state : crate :: combat :: situation_converter :: convertbrawl :: ConvertBrawl_State ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/situation_converter/convertbrawl/ConvertBrawl_State.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -76,6 +71,11 @@ impl  ConvertBrawl_State  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/situation_converter/convertbrawl/ConvertBrawl.md"))] # [:: unity2 :: class (namespace = "Combat.SituationConverter" , name = "ConvertBrawl")] # [parent (crate :: combat :: situation_converter :: converterwithut :: ConverterWithUt)] pub struct ConvertBrawl {
+# [offset (44)] # [rename (name = "m_State")] pub m_state : crate :: combat :: situation_converter :: convertbrawl :: ConvertBrawl_State ,
+}
+
 }
 
 #[cfg(feature = "combat-situation_converter-convertbrawl-types")]
@@ -101,10 +101,10 @@ impl ConvertBrawl {
 #[cfg(feature = "combat-situation_converter-convertbrawl")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ConvertBrawl_State;
     pub use super::ConvertBrawl;
     pub use super::IConvertBrawl;
     pub use super::IConvertBrawlMethods;
-    pub use super::ConvertBrawl_State;
     pub use crate::combat::situation_converter::baseconverter::IBaseConverter;
     pub use crate::combat::situation_converter::converterwithut::IConverterWithUt;
     pub use crate::system::object::IObject;

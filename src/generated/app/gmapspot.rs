@@ -13,18 +13,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapspot/GmapSpot.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapSpot")] # [parent (crate :: system :: object :: Object)] pub struct GmapSpot {
-# [offset (16)] # [rename (name = "m_GlobalFlagName")] pub m_global_flag_name : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_Chapters")] pub m_chapters : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: chapterdata :: ChapterData > ,
-# [offset (32)] # [rename (name = "m_GameObject")] pub m_game_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (40)] # [rename (name = "m_Controller")] pub m_controller : crate :: app :: gmapspotcontroller :: GmapSpotController ,
-# [offset (48)] # [rename (name = "m_MapObject")] pub m_map_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (56)] # [rename (name = "m_NextSpots")] pub m_next_spots : :: unity2 :: Array < crate :: app :: gmapspot :: GmapSpot > ,
-# [offset (64)] # [rename (name = "m_MobUnit")] pub m_mob_unit : crate :: app :: gmapmobunit :: GmapMobUnit ,
-# [offset (72)] # [rename (name = "m_EncountIcon")] pub m_encount_icon : crate :: root :: encounticon :: EncountIcon ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapspot/GmapSpot_EncountPersonType.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -98,6 +86,97 @@ impl  GmapSpot_EncountPersonType  {
 
     pub fn troublemaker() -> Self {
         Self { value: 6 }
+
+    }
+
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapspot/GmapSpot_State.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct GmapSpot_State  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for GmapSpot_State  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "GmapSpot.State";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for GmapSpot_State  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  GmapSpot_State  {
+    pub fn reserve_hide() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn hide() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn reserve_active() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn active() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn reserve_cannot_enter() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn cannot_enter() -> Self {
+        Self { value: 5 }
+
+    }
+
+
+    pub fn reserve_broken() -> Self {
+        Self { value: 6 }
+
+    }
+
+
+    pub fn broken() -> Self {
+        Self { value: 7 }
+
+    }
+
+
+    pub fn can_search() -> Self {
+        Self { value: 8 }
 
     }
 
@@ -238,94 +317,15 @@ impl  GmapSpot_EncountType  {
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapspot/GmapSpot_State.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct GmapSpot_State  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for GmapSpot_State  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "GmapSpot.State";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for GmapSpot_State  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  GmapSpot_State  {
-    pub fn reserve_hide() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn hide() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn reserve_active() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn active() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn reserve_cannot_enter() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn cannot_enter() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn reserve_broken() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn broken() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn can_search() -> Self {
-        Self { value: 8 }
-
-    }
-
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapspot/GmapSpot.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapSpot")] # [parent (crate :: system :: object :: Object)] pub struct GmapSpot {
+# [offset (16)] # [rename (name = "m_GlobalFlagName")] pub m_global_flag_name : :: unity2 :: Il2CppString ,
+# [offset (24)] # [rename (name = "m_Chapters")] pub m_chapters : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: chapterdata :: ChapterData > ,
+# [offset (32)] # [rename (name = "m_GameObject")] pub m_game_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (40)] # [rename (name = "m_Controller")] pub m_controller : crate :: app :: gmapspotcontroller :: GmapSpotController ,
+# [offset (48)] # [rename (name = "m_MapObject")] pub m_map_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (56)] # [rename (name = "m_NextSpots")] pub m_next_spots : :: unity2 :: Array < crate :: app :: gmapspot :: GmapSpot > ,
+# [offset (64)] # [rename (name = "m_MobUnit")] pub m_mob_unit : crate :: app :: gmapmobunit :: GmapMobUnit ,
+# [offset (72)] # [rename (name = "m_EncountIcon")] pub m_encount_icon : crate :: root :: encounticon :: EncountIcon ,
 }
 
 }
@@ -356,13 +356,13 @@ impl GmapSpot {
 #[cfg(feature = "app-gmapspot")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::GmapSpot_EncountPersonType;
+    pub use super::GmapSpot_State;
+    pub use super::GmapSpot_Direction;
+    pub use super::GmapSpot_EncountType;
     pub use super::GmapSpot;
     pub use super::IGmapSpot;
     pub use super::IGmapSpotMethods;
-    pub use super::GmapSpot_EncountPersonType;
-    pub use super::GmapSpot_Direction;
-    pub use super::GmapSpot_EncountType;
-    pub use super::GmapSpot_State;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

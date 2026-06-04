@@ -11,6 +11,40 @@ mod __types {
  ;
 
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nn/hid/vibrationfileparsercontext/VibrationFileParserContext.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct VibrationFileParserContext {
+    pub storage: crate :: nn :: hid :: vibrationfileparsercontext :: VibrationFileParserContext_IntPtrArray10,
+}
+
+
+impl ::unity2::ClassIdentity for VibrationFileParserContext {
+    const NAMESPACE: &'static str = "nn.hid";
+
+    const NAME: &'static str = "VibrationFileParserContext";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl ::unity2::IlType for VibrationFileParserContext {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nn/hid/vibrationfileparsercontext/VibrationFileParserContext_IntPtrArray10.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -76,40 +110,6 @@ impl VibrationFileParserContext_IntPtrArray10 {
 
 }
 
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nn/hid/vibrationfileparsercontext/VibrationFileParserContext.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct VibrationFileParserContext {
-    pub storage: crate :: nn :: hid :: vibrationfileparsercontext :: VibrationFileParserContext_IntPtrArray10,
-}
-
-
-impl ::unity2::ClassIdentity for VibrationFileParserContext {
-    const NAMESPACE: &'static str = "nn.hid";
-
-    const NAME: &'static str = "VibrationFileParserContext";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for VibrationFileParserContext {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
 }
 
 #[cfg(feature = "nn-hid-vibrationfileparsercontext-types")]
@@ -127,8 +127,8 @@ impl VibrationFileParserContext_IntPtrArray10 { pub fn get_length_method_info ()
 #[cfg(feature = "nn-hid-vibrationfileparsercontext")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::VibrationFileParserContext_IntPtrArray10;
     pub use super::VibrationFileParserContext;
+    pub use super::VibrationFileParserContext_IntPtrArray10;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

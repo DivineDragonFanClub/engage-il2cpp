@@ -17,6 +17,9 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibomenu/AmiiboMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "AmiiboMenu")] # [parent (crate :: app :: gamemessage :: GameMessage)] pub struct AmiiboMenu {}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/amiibomenu/AmiiboMenu_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -65,9 +68,6 @@ impl  AmiiboMenu_Label  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibomenu/AmiiboMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "AmiiboMenu")] # [parent (crate :: app :: gamemessage :: GameMessage)] pub struct AmiiboMenu {}
-
 }
 
 #[cfg(feature = "app-amiibomenu-types")]
@@ -96,10 +96,10 @@ impl AmiiboMenu {
 #[cfg(feature = "app-amiibomenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AmiiboMenu_Label;
     pub use super::AmiiboMenu;
     pub use super::IAmiiboMenu;
     pub use super::IAmiiboMenuMethods;
+    pub use super::AmiiboMenu_Label;
     pub use crate::app::gamemessage::IGameMessage;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;

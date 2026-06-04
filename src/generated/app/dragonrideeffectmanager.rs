@@ -39,15 +39,6 @@ mod __types {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideeffectmanager/DragonRideEffectManager_EffectReserver.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRideEffectManager.EffectReserver")] # [parent (crate :: system :: object :: Object)] pub struct DragonRideEffectManager_EffectReserver {
-# [offset (16)] # [rename (name = "m_Reserve")] pub m_reserve : :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (24)] # [rename (name = "m_TypeName")] pub m_type_name : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "m_CountMax")] pub m_count_max : i32 ,
-# [offset (36)] # [rename (name = "m_UseCount")] pub m_use_count : i32 ,
-# [offset (40)] # [rename (name = "m_ReturnCount")] pub m_return_count : i32 ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonrideeffectmanager/DragonRideEffectManager_TypeIndex.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -102,6 +93,15 @@ impl  DragonRideEffectManager_TypeIndex  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideeffectmanager/DragonRideEffectManager_EffectReserver.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRideEffectManager.EffectReserver")] # [parent (crate :: system :: object :: Object)] pub struct DragonRideEffectManager_EffectReserver {
+# [offset (16)] # [rename (name = "m_Reserve")] pub m_reserve : :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > ,
+# [offset (24)] # [rename (name = "m_TypeName")] pub m_type_name : :: unity2 :: Il2CppString ,
+# [offset (32)] # [rename (name = "m_CountMax")] pub m_count_max : i32 ,
+# [offset (36)] # [rename (name = "m_UseCount")] pub m_use_count : i32 ,
+# [offset (40)] # [rename (name = "m_ReturnCount")] pub m_return_count : i32 ,
+}
+
 }
 
 #[cfg(feature = "app-dragonrideeffectmanager-types")]
@@ -147,10 +147,10 @@ pub mod prelude {
     pub use super::DragonRideEffectManager;
     pub use super::IDragonRideEffectManager;
     pub use super::IDragonRideEffectManagerMethods;
+    pub use super::DragonRideEffectManager_TypeIndex;
     pub use super::DragonRideEffectManager_EffectReserver;
     pub use super::IDragonRideEffectManager_EffectReserver;
     pub use super::IDragonRideEffectManager_EffectReserverMethods;
-    pub use super::DragonRideEffectManager_TypeIndex;
     pub use crate::app::singletonclass_1::ISingletonClass_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

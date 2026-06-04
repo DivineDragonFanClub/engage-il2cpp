@@ -12,9 +12,9 @@
  # [cfg (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-contourvertex-types")] pub use contourvertex :: { ContourVertex }
  ;
  # [cfg (any (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-dict_1-types"))] pub mod dict_1 ;
- # [cfg (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-dict_1-types")] pub use dict_1 :: { Dict_1 , IDict_1 , Dict_1_LessOrEqual , IDict_1_LessOrEqual , Dict_1_Node , IDict_1_Node }
+ # [cfg (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-dict_1-types")] pub use dict_1 :: { Dict_1_Node , IDict_1_Node , Dict_1_LessOrEqual , IDict_1_LessOrEqual , Dict_1 , IDict_1 }
  ;
- # [cfg (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-dict_1")] pub use dict_1 :: { IDict_1Methods , IDict_1_LessOrEqualMethods , IDict_1_NodeMethods }
+ # [cfg (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-dict_1")] pub use dict_1 :: { IDict_1_NodeMethods , IDict_1_LessOrEqualMethods , IDict_1Methods }
  ;
  # [cfg (any (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-elementtype-types"))] pub mod elementtype ;
  # [cfg (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-elementtype-types")] pub use elementtype :: { ElementType }
@@ -28,17 +28,17 @@
  # [cfg (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-mesh_2")] pub use mesh_2 :: { IMesh_2Methods }
  ;
  # [cfg (any (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils-types"))] pub mod meshutils ;
- # [cfg (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils-types")] pub use meshutils :: { MeshUtils_Pooled_1 , IMeshUtils_Pooled_1 , MeshUtils_Vertex , IMeshUtils_Vertex , MeshUtils , IMeshUtils , MeshUtils_Edge , IMeshUtils_Edge , MeshUtils_Face , IMeshUtils_Face , MeshUtils_EdgePair }
+ # [cfg (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils-types")] pub use meshutils :: { MeshUtils_EdgePair , MeshUtils_Face , IMeshUtils_Face , MeshUtils_Pooled_1 , IMeshUtils_Pooled_1 , MeshUtils , IMeshUtils , MeshUtils_Edge , IMeshUtils_Edge , MeshUtils_Vertex , IMeshUtils_Vertex }
  ;
- # [cfg (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")] pub use meshutils :: { IMeshUtils_Pooled_1Methods , IMeshUtils_VertexMethods , IMeshUtils_EdgeMethods , IMeshUtils_FaceMethods }
+ # [cfg (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")] pub use meshutils :: { IMeshUtils_FaceMethods , IMeshUtils_Pooled_1Methods , IMeshUtils_EdgeMethods , IMeshUtils_VertexMethods }
  ;
  # [cfg (any (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-pqhandle-types"))] pub mod pqhandle ;
  # [cfg (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-pqhandle-types")] pub use pqhandle :: { PQHandle }
  ;
  # [cfg (any (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityheap_1-types"))] pub mod priorityheap_1 ;
- # [cfg (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityheap_1-types")] pub use priorityheap_1 :: { PriorityHeap_1_LessOrEqual , IPriorityHeap_1_LessOrEqual , PriorityHeap_1_HandleElem , IPriorityHeap_1_HandleElem , PriorityHeap_1 , IPriorityHeap_1 }
+ # [cfg (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityheap_1-types")] pub use priorityheap_1 :: { PriorityHeap_1 , IPriorityHeap_1 , PriorityHeap_1_HandleElem , IPriorityHeap_1_HandleElem , PriorityHeap_1_LessOrEqual , IPriorityHeap_1_LessOrEqual }
  ;
- # [cfg (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityheap_1")] pub use priorityheap_1 :: { IPriorityHeap_1_LessOrEqualMethods , IPriorityHeap_1_HandleElemMethods , IPriorityHeap_1Methods }
+ # [cfg (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityheap_1")] pub use priorityheap_1 :: { IPriorityHeap_1Methods , IPriorityHeap_1_HandleElemMethods , IPriorityHeap_1_LessOrEqualMethods }
  ;
  # [cfg (any (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityqueue_1-types"))] pub mod priorityqueue_1 ;
  # [cfg (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityqueue_1-types")] pub use priorityqueue_1 :: { PriorityQueue_1_StackItem , IPriorityQueue_1_StackItem , PriorityQueue_1 , IPriorityQueue_1 }

@@ -15,6 +15,11 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/closure/Closure.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter" , name = "Closure")] # [parent (crate :: moon_sharp :: interpreter :: refidobject :: RefIdObject)] pub struct Closure {
+# [static_field] # [rename (name = "emptyClosure")] pub empty_closure : crate :: moon_sharp :: interpreter :: execution :: closurecontext :: ClosureContext ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/closure/Closure_UpvaluesType.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -69,11 +74,6 @@ impl  Closure_UpvaluesType  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/closure/Closure.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter" , name = "Closure")] # [parent (crate :: moon_sharp :: interpreter :: refidobject :: RefIdObject)] pub struct Closure {
-# [static_field] # [rename (name = "emptyClosure")] pub empty_closure : crate :: moon_sharp :: interpreter :: execution :: closurecontext :: ClosureContext ,
-}
-
 }
 
 #[cfg(feature = "moon_sharp-interpreter-closure-types")]
@@ -102,10 +102,10 @@ impl Closure {
 #[cfg(feature = "moon_sharp-interpreter-closure")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Closure_UpvaluesType;
     pub use super::Closure;
     pub use super::IClosure;
     pub use super::IClosureMethods;
+    pub use super::Closure_UpvaluesType;
     pub use crate::moon_sharp::interpreter::refidobject::IRefIdObject;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

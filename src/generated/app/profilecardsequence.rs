@@ -19,32 +19,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardsequence/ProfileCardSequence_DisposeEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardSequence.DisposeEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct ProfileCardSequence_DisposeEventHandler {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardsequence/ProfileCardSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct ProfileCardSequence {
-# [offset (112)] # [rename (name = "m_TopMenuResult")] pub m_top_menu_result : crate :: app :: profilecardtopmenu :: ProfileCardTopMenu_Result2 ,
-# [offset (116)] # [rename (name = "m_MyCardMenuResult")] pub m_my_card_menu_result : crate :: app :: profilecardmycardmenu :: ProfileCardMyCardMenu_Result2 ,
-# [offset (120)] # [rename (name = "m_SelectEditMenuResult")] pub m_select_edit_menu_result : crate :: app :: profilecardselecteditmenu :: ProfileCardSelectEditMenu_Result2 ,
-# [offset (124)] # [rename (name = "m_CommentIndexMenuResult")] pub m_comment_index_menu_result : crate :: app :: profilecardcommentindexmenu :: ProfileCardCommentIndexMenu_Result2 ,
-# [offset (128)] # [rename (name = "m_AlbumMenuResult")] pub m_album_menu_result : crate :: app :: profilecardalbummenu :: ProfileCardAlbumMenu_Result2 ,
-# [offset (132)] # [rename (name = "m_AlbumListMenuResult")] pub m_album_list_menu_result : crate :: app :: profilecardalbumlistmenu :: ProfileCardAlbumListMenu_Result2 ,
-# [offset (136)] # [rename (name = "m_ProfileCardMyCardRoot")] pub m_profile_card_my_card_root : crate :: app :: profilecardmycardroot :: ProfileCardMyCardRoot ,
-# [offset (144)] # [rename (name = "m_ProfileCardAlbumRoot")] pub m_profile_card_album_root : crate :: app :: profilecardalbumroot :: ProfileCardAlbumRoot ,
-# [offset (152)] # [rename (name = "m_ProfileCardTemp")] pub m_profile_card_temp : crate :: app :: profilecard :: ProfileCard ,
-# [offset (160)] # [rename (name = "m_AlbumIndex")] pub m_album_index : i32 ,
-# [offset (164)] # [rename (name = "m_EnabledPhoto")] pub m_enabled_photo : bool ,
-# [offset (168)] # [rename (name = "m_CommentIndex")] pub m_comment_index : i32 ,
-# [offset (184)] # [rename (name = "m_CommentTempArray")] pub m_comment_temp_array : :: unity2 :: Array < crate :: app :: profilecardcommentdata :: ProfileCardCommentData > ,
-# [offset (192)] # [rename (name = "m_NeededUpdateCardOnBuild")] pub m_needed_update_card_on_build : bool ,
-# [offset (200)] # [rename (name = "m_BgData")] pub m_bg_data : crate :: app :: profilecardbgdata :: ProfileCardBgData ,
-# [offset (208)] # [rename (name = "m_FrameData")] pub m_frame_data : crate :: app :: profilecardframedata :: ProfileCardFrameData ,
-# [offset (216)] # [rename (name = "m_LoadingBgData")] pub m_loading_bg_data : bool ,
-# [offset (217)] # [rename (name = "m_LoadingFrameData")] pub m_loading_frame_data : bool ,
-# [offset (224)] # [rename (name = "m_DisposeEventHandler")] pub m_dispose_event_handler : crate :: app :: profilecardsequence :: ProfileCardSequence_DisposeEventHandler ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardsequence/ProfileCardSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -237,6 +211,32 @@ impl  ProfileCardSequence_Label  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardsequence/ProfileCardSequence_DisposeEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardSequence.DisposeEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct ProfileCardSequence_DisposeEventHandler {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardsequence/ProfileCardSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct ProfileCardSequence {
+# [offset (112)] # [rename (name = "m_TopMenuResult")] pub m_top_menu_result : crate :: app :: profilecardtopmenu :: ProfileCardTopMenu_Result2 ,
+# [offset (116)] # [rename (name = "m_MyCardMenuResult")] pub m_my_card_menu_result : crate :: app :: profilecardmycardmenu :: ProfileCardMyCardMenu_Result2 ,
+# [offset (120)] # [rename (name = "m_SelectEditMenuResult")] pub m_select_edit_menu_result : crate :: app :: profilecardselecteditmenu :: ProfileCardSelectEditMenu_Result2 ,
+# [offset (124)] # [rename (name = "m_CommentIndexMenuResult")] pub m_comment_index_menu_result : crate :: app :: profilecardcommentindexmenu :: ProfileCardCommentIndexMenu_Result2 ,
+# [offset (128)] # [rename (name = "m_AlbumMenuResult")] pub m_album_menu_result : crate :: app :: profilecardalbummenu :: ProfileCardAlbumMenu_Result2 ,
+# [offset (132)] # [rename (name = "m_AlbumListMenuResult")] pub m_album_list_menu_result : crate :: app :: profilecardalbumlistmenu :: ProfileCardAlbumListMenu_Result2 ,
+# [offset (136)] # [rename (name = "m_ProfileCardMyCardRoot")] pub m_profile_card_my_card_root : crate :: app :: profilecardmycardroot :: ProfileCardMyCardRoot ,
+# [offset (144)] # [rename (name = "m_ProfileCardAlbumRoot")] pub m_profile_card_album_root : crate :: app :: profilecardalbumroot :: ProfileCardAlbumRoot ,
+# [offset (152)] # [rename (name = "m_ProfileCardTemp")] pub m_profile_card_temp : crate :: app :: profilecard :: ProfileCard ,
+# [offset (160)] # [rename (name = "m_AlbumIndex")] pub m_album_index : i32 ,
+# [offset (164)] # [rename (name = "m_EnabledPhoto")] pub m_enabled_photo : bool ,
+# [offset (168)] # [rename (name = "m_CommentIndex")] pub m_comment_index : i32 ,
+# [offset (184)] # [rename (name = "m_CommentTempArray")] pub m_comment_temp_array : :: unity2 :: Array < crate :: app :: profilecardcommentdata :: ProfileCardCommentData > ,
+# [offset (192)] # [rename (name = "m_NeededUpdateCardOnBuild")] pub m_needed_update_card_on_build : bool ,
+# [offset (200)] # [rename (name = "m_BgData")] pub m_bg_data : crate :: app :: profilecardbgdata :: ProfileCardBgData ,
+# [offset (208)] # [rename (name = "m_FrameData")] pub m_frame_data : crate :: app :: profilecardframedata :: ProfileCardFrameData ,
+# [offset (216)] # [rename (name = "m_LoadingBgData")] pub m_loading_bg_data : bool ,
+# [offset (217)] # [rename (name = "m_LoadingFrameData")] pub m_loading_frame_data : bool ,
+# [offset (224)] # [rename (name = "m_DisposeEventHandler")] pub m_dispose_event_handler : crate :: app :: profilecardsequence :: ProfileCardSequence_DisposeEventHandler ,
+}
+
 }
 
 #[cfg(feature = "app-profilecardsequence-types")]
@@ -282,13 +282,13 @@ impl ProfileCardSequence {
 #[cfg(feature = "app-profilecardsequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ProfileCardSequence_Label;
     pub use super::ProfileCardSequence_DisposeEventHandler;
     pub use super::IProfileCardSequence_DisposeEventHandler;
     pub use super::IProfileCardSequence_DisposeEventHandlerMethods;
     pub use super::ProfileCardSequence;
     pub use super::IProfileCardSequence;
     pub use super::IProfileCardSequenceMethods;
-    pub use super::ProfileCardSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;

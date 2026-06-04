@@ -15,19 +15,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/terraindata/TerrainData.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "TerrainData")] # [parent (crate :: unity_engine :: object_2 :: Object_2)] pub struct TerrainData {
-# [static_field] # [rename (name = "k_MaximumResolution")] pub k_maximum_resolution : i32 ,
-# [static_field] # [rename (name = "k_MinimumDetailResolutionPerPatch")] pub k_minimum_detail_resolution_per_patch : i32 ,
-# [static_field] # [rename (name = "k_MaximumDetailResolutionPerPatch")] pub k_maximum_detail_resolution_per_patch : i32 ,
-# [static_field] # [rename (name = "k_MaximumDetailPatchCount")] pub k_maximum_detail_patch_count : i32 ,
-# [static_field] # [rename (name = "k_MaximumDetailsPerRes")] pub k_maximum_details_per_res : i32 ,
-# [static_field] # [rename (name = "k_MinimumAlphamapResolution")] pub k_minimum_alphamap_resolution : i32 ,
-# [static_field] # [rename (name = "k_MaximumAlphamapResolution")] pub k_maximum_alphamap_resolution : i32 ,
-# [static_field] # [rename (name = "k_MinimumBaseMapResolution")] pub k_minimum_base_map_resolution : i32 ,
-# [static_field] # [rename (name = "k_MaximumBaseMapResolution")] pub k_maximum_base_map_resolution : i32 ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/terraindata/TerrainData_BoundaryValueType.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -118,6 +105,19 @@ impl  TerrainData_BoundaryValueType  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/terraindata/TerrainData.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "TerrainData")] # [parent (crate :: unity_engine :: object_2 :: Object_2)] pub struct TerrainData {
+# [static_field] # [rename (name = "k_MaximumResolution")] pub k_maximum_resolution : i32 ,
+# [static_field] # [rename (name = "k_MinimumDetailResolutionPerPatch")] pub k_minimum_detail_resolution_per_patch : i32 ,
+# [static_field] # [rename (name = "k_MaximumDetailResolutionPerPatch")] pub k_maximum_detail_resolution_per_patch : i32 ,
+# [static_field] # [rename (name = "k_MaximumDetailPatchCount")] pub k_maximum_detail_patch_count : i32 ,
+# [static_field] # [rename (name = "k_MaximumDetailsPerRes")] pub k_maximum_details_per_res : i32 ,
+# [static_field] # [rename (name = "k_MinimumAlphamapResolution")] pub k_minimum_alphamap_resolution : i32 ,
+# [static_field] # [rename (name = "k_MaximumAlphamapResolution")] pub k_maximum_alphamap_resolution : i32 ,
+# [static_field] # [rename (name = "k_MinimumBaseMapResolution")] pub k_minimum_base_map_resolution : i32 ,
+# [static_field] # [rename (name = "k_MaximumBaseMapResolution")] pub k_maximum_base_map_resolution : i32 ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-terraindata-types")]
@@ -146,10 +146,10 @@ impl TerrainData {
 #[cfg(feature = "unity_engine-terraindata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::TerrainData_BoundaryValueType;
     pub use super::TerrainData;
     pub use super::ITerrainData;
     pub use super::ITerrainDataMethods;
-    pub use super::TerrainData_BoundaryValueType;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

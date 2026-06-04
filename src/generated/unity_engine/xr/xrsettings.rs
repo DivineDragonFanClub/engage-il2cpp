@@ -13,9 +13,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/xr/xrsettings/XRSettings.md"))] # [:: unity2 :: class (namespace = "UnityEngine.XR" , name = "XRSettings")] # [parent (crate :: system :: object :: Object)] pub struct XRSettings {}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/xrsettings/XRSettings_StereoRenderingMode.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -76,6 +73,9 @@ impl  XRSettings_StereoRenderingMode  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/xr/xrsettings/XRSettings.md"))] # [:: unity2 :: class (namespace = "UnityEngine.XR" , name = "XRSettings")] # [parent (crate :: system :: object :: Object)] pub struct XRSettings {}
+
 }
 
 #[cfg(feature = "unity_engine-xr-xrsettings-types")]
@@ -93,9 +93,9 @@ impl XRSettings { pub fn get_enabled_method_info () -> & 'static :: unity2 :: il
 #[cfg(feature = "unity_engine-xr-xrsettings")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::XRSettings_StereoRenderingMode;
     pub use super::XRSettings;
     pub use super::IXRSettings;
-    pub use super::XRSettings_StereoRenderingMode;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

@@ -15,14 +15,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapinspector/MapInspector.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapInspector")] # [parent (crate :: app :: scriptutil :: ScriptUtil)] pub struct MapInspector {
-# [offset (16)] # [rename (name = "m_Kind")] pub m_kind : crate :: app :: mapinspector :: MapInspector_Kind ,
-# [offset (24)] # [rename (name = "m_Condition")] pub m_condition : crate :: moon_sharp :: interpreter :: dynvalue :: DynValue ,
-# [offset (32)] # [rename (name = "m_Function")] pub m_function : crate :: moon_sharp :: interpreter :: dynvalue :: DynValue ,
-# [offset (40)] # [rename (name = "m_Args")] pub m_args : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinspector/MapInspector_Kind.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -251,6 +243,14 @@ impl  MapInspector_Kind  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapinspector/MapInspector.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapInspector")] # [parent (crate :: app :: scriptutil :: ScriptUtil)] pub struct MapInspector {
+# [offset (16)] # [rename (name = "m_Kind")] pub m_kind : crate :: app :: mapinspector :: MapInspector_Kind ,
+# [offset (24)] # [rename (name = "m_Condition")] pub m_condition : crate :: moon_sharp :: interpreter :: dynvalue :: DynValue ,
+# [offset (32)] # [rename (name = "m_Function")] pub m_function : crate :: moon_sharp :: interpreter :: dynvalue :: DynValue ,
+# [offset (40)] # [rename (name = "m_Args")] pub m_args : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > ,
+}
+
 }
 
 #[cfg(feature = "app-mapinspector-types")]
@@ -279,10 +279,10 @@ impl MapInspector {
 #[cfg(feature = "app-mapinspector")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MapInspector_Kind;
     pub use super::MapInspector;
     pub use super::IMapInspector;
     pub use super::IMapInspectorMethods;
-    pub use super::MapInspector_Kind;
     pub use crate::app::scriptutil::IScriptUtil;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

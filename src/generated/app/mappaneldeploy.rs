@@ -25,79 +25,6 @@ mod __types {
  ;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldeploy/MapPanelDeploy_MeshIndex.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapPanelDeploy_MeshIndex  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for MapPanelDeploy_MeshIndex  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapPanelDeploy.MeshIndex";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for MapPanelDeploy_MeshIndex  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  MapPanelDeploy_MeshIndex  {
-    pub fn r#move() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn attack() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn heal() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn support() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn interference() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 5 }
-
-    }
-
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldeploy/MapPanelDeploy_Mode.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -279,6 +206,79 @@ impl  MapPanelDeploy_Mode  {
 }
 
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldeploy/MapPanelDeploy_MeshIndex.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct MapPanelDeploy_MeshIndex  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for MapPanelDeploy_MeshIndex  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapPanelDeploy.MeshIndex";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for MapPanelDeploy_MeshIndex  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  MapPanelDeploy_MeshIndex  {
+    pub fn r#move() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn attack() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn heal() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn support() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn interference() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn num() -> Self {
+        Self { value: 5 }
+
+    }
+
+}
+
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappaneldeploy/MapPanelDeploy.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapPanelDeploy")] # [parent (crate :: root :: mappanelbase_1 :: MapPanelBase_1 < crate :: app :: mappaneldeploy :: MapPanelDeploy >)] pub struct MapPanelDeploy {
 # [offset (64)] # [rename (name = "m_MeshList")] pub m_mesh_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mappaneldeploy :: MapPanelDeploy_MeshIndex > ,
 # [offset (72)] # [rename (name = "m_MoveImage")] pub m_move_image : crate :: unity_engine :: material :: Material ,
@@ -328,8 +328,8 @@ impl MapPanelDeploy {
 #[cfg(feature = "app-mappaneldeploy")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapPanelDeploy_MeshIndex;
     pub use super::MapPanelDeploy_Mode;
+    pub use super::MapPanelDeploy_MeshIndex;
     pub use super::MapPanelDeploy;
     pub use super::IMapPanelDeploy;
     pub use super::IMapPanelDeployMethods;

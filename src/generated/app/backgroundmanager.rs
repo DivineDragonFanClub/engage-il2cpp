@@ -13,6 +13,14 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/backgroundmanager/BackgroundManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "BackgroundManager")] # [parent (crate :: system :: object :: Object)] pub struct BackgroundManager {
+# [static_field] # [rename (name = "s_Binder")] pub s_binder : crate :: app :: bindholder :: BindHolder ,
+# [static_field] # [rename (name = "s_Camera")] pub s_camera : crate :: unity_engine :: camera :: Camera ,
+# [static_field] # [rename (name = "s_IsCaptured")] pub s_is_captured : bool ,
+# [static_field] # [rename (name = "s_CaptureCount")] pub s_capture_count : i32 ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/backgroundmanager/BackgroundManager_BindType.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -61,14 +69,6 @@ impl  BackgroundManager_BindType  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/backgroundmanager/BackgroundManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "BackgroundManager")] # [parent (crate :: system :: object :: Object)] pub struct BackgroundManager {
-# [static_field] # [rename (name = "s_Binder")] pub s_binder : crate :: app :: bindholder :: BindHolder ,
-# [static_field] # [rename (name = "s_Camera")] pub s_camera : crate :: unity_engine :: camera :: Camera ,
-# [static_field] # [rename (name = "s_IsCaptured")] pub s_is_captured : bool ,
-# [static_field] # [rename (name = "s_CaptureCount")] pub s_capture_count : i32 ,
-}
-
 }
 
 #[cfg(feature = "app-backgroundmanager-types")]
@@ -97,10 +97,10 @@ impl BackgroundManager {
 #[cfg(feature = "app-backgroundmanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::BackgroundManager_BindType;
     pub use super::BackgroundManager;
     pub use super::IBackgroundManager;
     pub use super::IBackgroundManagerMethods;
+    pub use super::BackgroundManager_BindType;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

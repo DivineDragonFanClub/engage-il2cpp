@@ -11,61 +11,6 @@ mod __types {
  ;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/lightutility/LightUtility_ParametricLightMeshVertex.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct LightUtility_ParametricLightMeshVertex {}
-
-
-impl ::unity2::ClassIdentity for LightUtility_ParametricLightMeshVertex {
-    const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.Universal";
-
-    const NAME: &'static str = "LightUtility.ParametricLightMeshVertex";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for LightUtility_ParametricLightMeshVertex {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl LightUtility_ParametricLightMeshVertex {
-    #[inline]
-    pub fn vertex_layout() -> :: unity2 :: Array < crate :: unity_engine :: rendering :: vertexattributedescriptor :: VertexAttributeDescriptor > {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "VertexLayout");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_vertex_layout(value: :: unity2 :: Array < crate :: unity_engine :: rendering :: vertexattributedescriptor :: VertexAttributeDescriptor >) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "VertexLayout");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/lightutility/LightUtility_SpriteLightMeshVertex.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -125,21 +70,67 @@ impl LightUtility_SpriteLightMeshVertex {
 }
 
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/lightutility/LightUtility_ParametricLightMeshVertex.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct LightUtility_ParametricLightMeshVertex {}
+
+
+impl ::unity2::ClassIdentity for LightUtility_ParametricLightMeshVertex {
+    const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.Universal";
+
+    const NAME: &'static str = "LightUtility.ParametricLightMeshVertex";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl ::unity2::IlType for LightUtility_ParametricLightMeshVertex {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl LightUtility_ParametricLightMeshVertex {
+    #[inline]
+    pub fn vertex_layout() -> :: unity2 :: Array < crate :: unity_engine :: rendering :: vertexattributedescriptor :: VertexAttributeDescriptor > {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "VertexLayout");
+
+        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
+    }
+
+    #[inline]
+    pub fn set_vertex_layout(value: :: unity2 :: Array < crate :: unity_engine :: rendering :: vertexattributedescriptor :: VertexAttributeDescriptor >) {
+        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+
+        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "VertexLayout");
+
+        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
+
+    }
+
+}
+
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lightutility/LightUtility.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.Universal" , name = "LightUtility")] # [parent (crate :: system :: object :: Object)] pub struct LightUtility {}
 
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lightutility-types")]
 pub use __types::*;
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lightutility")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __LightUtility_ParametricLightMeshVertex_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LightUtility_ParametricLightMeshVertex as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LightUtility_ParametricLightMeshVertex as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lightutility")]
-impl LightUtility_ParametricLightMeshVertex { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __LightUtility_ParametricLightMeshVertex_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lightutility")]
-impl LightUtility_ParametricLightMeshVertex { pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LightUtility_ParametricLightMeshVertex_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lightutility")]
 # [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __LightUtility_SpriteLightMeshVertex_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LightUtility_SpriteLightMeshVertex as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LightUtility_SpriteLightMeshVertex as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
@@ -149,6 +140,15 @@ impl LightUtility_SpriteLightMeshVertex { # [doc = "`.cctor()` overload"] pub fn
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lightutility")]
 impl LightUtility_SpriteLightMeshVertex { pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LightUtility_SpriteLightMeshVertex_unity2_raw :: __lookup_cctor :: get_method_info () } }
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-lightutility")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __LightUtility_ParametricLightMeshVertex_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LightUtility_ParametricLightMeshVertex as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LightUtility_ParametricLightMeshVertex as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-lightutility")]
+impl LightUtility_ParametricLightMeshVertex { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __LightUtility_ParametricLightMeshVertex_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-lightutility")]
+impl LightUtility_ParametricLightMeshVertex { pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LightUtility_ParametricLightMeshVertex_unity2_raw :: __lookup_cctor :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lightutility")]
 # [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __LightUtility_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check_for_change { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LightUtility as :: unity2 :: ClassIdentity > :: class () , "CheckForChange" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LightUtility as :: unity2 :: ClassIdentity > :: NAME , "CheckForChange" , e) , } } } pub unsafe fn check_for_change (a : i32 , b : * mut i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (i32 , * mut i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_check_for_change :: get_method_info () . method_ptr ,) ; inner (a , b , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check_for_change_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LightUtility as :: unity2 :: ClassIdentity > :: class () , "CheckForChange" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LightUtility as :: unity2 :: ClassIdentity > :: NAME , "CheckForChange" , e) , } } } pub unsafe fn check_for_change_2 (a : f32 , b : * mut f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (f32 , * mut f32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_check_for_change_2 :: get_method_info () . method_ptr ,) ; inner (a , b , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check_for_change_3 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LightUtility as :: unity2 :: ClassIdentity > :: class () , "CheckForChange" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LightUtility as :: unity2 :: ClassIdentity > :: NAME , "CheckForChange" , e) , } } } pub unsafe fn check_for_change_3 (a : bool , b : * mut bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (bool , * mut bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_check_for_change_3 :: get_method_info () . method_ptr ,) ; inner (a , b , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_generate_parametric_mesh { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: mesh :: Mesh as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LightUtility as :: unity2 :: ClassIdentity > :: class () , "GenerateParametricMesh" , 5 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LightUtility as :: unity2 :: ClassIdentity > :: NAME , "GenerateParametricMesh" , e) , } } } pub unsafe fn generate_parametric_mesh (mesh : crate :: unity_engine :: mesh :: Mesh , radius : f32 , falloff_distance : f32 , angle : f32 , sides : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: bounds :: Bounds { let inner : extern "C" fn (crate :: unity_engine :: mesh :: Mesh , f32 , f32 , f32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: bounds :: Bounds = :: core :: mem :: transmute (__lookup_generate_parametric_mesh :: get_method_info () . method_ptr ,) ; inner (mesh , radius , falloff_distance , angle , sides , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_generate_sprite_mesh { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: mesh :: Mesh as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: sprite :: Sprite as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LightUtility as :: unity2 :: ClassIdentity > :: class () , "GenerateSpriteMesh" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LightUtility as :: unity2 :: ClassIdentity > :: NAME , "GenerateSpriteMesh" , e) , } } } pub unsafe fn generate_sprite_mesh (mesh : crate :: unity_engine :: mesh :: Mesh , sprite : crate :: unity_engine :: sprite :: Sprite , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: bounds :: Bounds { let inner : extern "C" fn (crate :: unity_engine :: mesh :: Mesh , crate :: unity_engine :: sprite :: Sprite , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: bounds :: Bounds = :: core :: mem :: transmute (__lookup_generate_sprite_mesh :: get_method_info () . method_ptr ,) ; inner (mesh , sprite , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_falloff_shape { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LightUtility as :: unity2 :: ClassIdentity > :: class () , "GetFalloffShape" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LightUtility as :: unity2 :: ClassIdentity > :: NAME , "GetFalloffShape" , e) , } } } pub unsafe fn get_falloff_shape (shape_path : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: vector2 :: Vector2 > { let inner : extern "C" fn (:: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: vector2 :: Vector2 > = :: core :: mem :: transmute (__lookup_get_falloff_shape :: get_method_info () . method_ptr ,) ; inner (shape_path , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_generate_shape_mesh { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: mesh :: Mesh as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LightUtility as :: unity2 :: ClassIdentity > :: class () , "GenerateShapeMesh" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LightUtility as :: unity2 :: ClassIdentity > :: NAME , "GenerateShapeMesh" , e) , } } } pub unsafe fn generate_shape_mesh (mesh : crate :: unity_engine :: mesh :: Mesh , shape_path : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > , falloff_distance : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: bounds :: Bounds { let inner : extern "C" fn (crate :: unity_engine :: mesh :: Mesh , :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: bounds :: Bounds = :: core :: mem :: transmute (__lookup_generate_shape_mesh :: get_method_info () . method_ptr ,) ; inner (mesh , shape_path , falloff_distance , __unity2_method_info) } }
@@ -162,8 +162,8 @@ impl LightUtility { pub fn check_for_change_method_info () -> & 'static :: unity
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lightutility")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::LightUtility_ParametricLightMeshVertex;
     pub use super::LightUtility_SpriteLightMeshVertex;
+    pub use super::LightUtility_ParametricLightMeshVertex;
     pub use super::LightUtility;
     pub use super::ILightUtility;
     pub use crate::system::object::IObject;

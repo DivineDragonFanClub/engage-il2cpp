@@ -13,12 +13,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/neterror/NetError.md"))] # [:: unity2 :: class (namespace = "App" , name = "NetError")] # [parent (crate :: system :: object :: Object)] pub struct NetError {
-# [static_field] # [rename (name = "s_Kind")] pub s_kind : crate :: app :: neterror :: NetError_Kind ,
-# [static_field] # [rename (name = "s_App")] pub s_app : crate :: app :: neterror :: NetError_App ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/neterror/NetError_Kind.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -110,6 +104,12 @@ impl  NetError_App  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/neterror/NetError.md"))] # [:: unity2 :: class (namespace = "App" , name = "NetError")] # [parent (crate :: system :: object :: Object)] pub struct NetError {
+# [static_field] # [rename (name = "s_Kind")] pub s_kind : crate :: app :: neterror :: NetError_Kind ,
+# [static_field] # [rename (name = "s_App")] pub s_app : crate :: app :: neterror :: NetError_App ,
+}
+
 }
 
 #[cfg(feature = "app-neterror-types")]
@@ -127,10 +127,10 @@ impl NetError { pub fn show_method_info () -> & 'static :: unity2 :: il2cpp :: M
 #[cfg(feature = "app-neterror")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::NetError;
-    pub use super::INetError;
     pub use super::NetError_Kind;
     pub use super::NetError_App;
+    pub use super::NetError;
+    pub use super::INetError;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

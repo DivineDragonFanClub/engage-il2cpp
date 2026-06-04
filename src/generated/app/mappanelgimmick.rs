@@ -25,6 +25,15 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappanelgimmick/MapPanelGimmick.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapPanelGimmick")] # [parent (crate :: root :: mappanelbase_1 :: MapPanelBase_1 < crate :: app :: mappanelgimmick :: MapPanelGimmick >)] pub struct MapPanelGimmick {
+# [offset (64)] # [rename (name = "m_Alpha")] pub m_alpha : crate :: app :: interpolatorfloat :: InterpolatorFloat ,
+# [offset (72)] # [rename (name = "m_GimmickImage")] pub m_gimmick_image : crate :: unity_engine :: material :: Material ,
+# [offset (80)] # [rename (name = "m_GimmickColor")] pub m_gimmick_color : crate :: unity_engine :: color :: Color ,
+# [offset (96)] # [rename (name = "m_IsUpdate")] pub m_is_update : bool ,
+# [offset (100)] # [rename (name = "previousCount")] pub previous_count : i32 ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappanelgimmick/MapPanelGimmick_MeshIndex.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -73,15 +82,6 @@ impl  MapPanelGimmick_MeshIndex  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappanelgimmick/MapPanelGimmick.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapPanelGimmick")] # [parent (crate :: root :: mappanelbase_1 :: MapPanelBase_1 < crate :: app :: mappanelgimmick :: MapPanelGimmick >)] pub struct MapPanelGimmick {
-# [offset (64)] # [rename (name = "m_Alpha")] pub m_alpha : crate :: app :: interpolatorfloat :: InterpolatorFloat ,
-# [offset (72)] # [rename (name = "m_GimmickImage")] pub m_gimmick_image : crate :: unity_engine :: material :: Material ,
-# [offset (80)] # [rename (name = "m_GimmickColor")] pub m_gimmick_color : crate :: unity_engine :: color :: Color ,
-# [offset (96)] # [rename (name = "m_IsUpdate")] pub m_is_update : bool ,
-# [offset (100)] # [rename (name = "previousCount")] pub previous_count : i32 ,
-}
-
 }
 
 #[cfg(feature = "app-mappanelgimmick-types")]
@@ -110,10 +110,10 @@ impl MapPanelGimmick {
 #[cfg(feature = "app-mappanelgimmick")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapPanelGimmick_MeshIndex;
     pub use super::MapPanelGimmick;
     pub use super::IMapPanelGimmick;
     pub use super::IMapPanelGimmickMethods;
+    pub use super::MapPanelGimmick_MeshIndex;
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
     pub use crate::root::mappanelbase_1::IMapPanelBase_1;
     pub use crate::system::object::IObject;

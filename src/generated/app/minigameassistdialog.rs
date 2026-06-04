@@ -25,70 +25,15 @@ mod __types {
  ;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minigameassistdialog/MinigameAssistDialog_MinigameType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MinigameAssistDialog_MinigameType  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for MinigameAssistDialog_MinigameType  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MinigameAssistDialog.MinigameType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for MinigameAssistDialog_MinigameType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  MinigameAssistDialog_MinigameType  {
-    pub fn dragon_ride() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn fishing() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn muscle_exercise() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minigameassistdialog/MinigameAssistDialog_AssistItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "MinigameAssistDialog.AssistItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct MinigameAssistDialog_AssistItem {}
-
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minigameassistdialog/MinigameAssistDialog.md"))] # [:: unity2 :: class (namespace = "App" , name = "MinigameAssistDialog")] # [parent (crate :: app :: basicdialog :: BasicDialog)] pub struct MinigameAssistDialog {
 # [static_field] # [rename (name = "ConfirmLabels")] pub confirm_labels : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
 # [static_field] # [rename (name = "YesLabels")] pub yes_labels : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
 # [static_field] # [rename (name = "NoLabels")] pub no_labels : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
 # [static_field] # [rename (name = "CancelLabels")] pub cancel_labels : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
 }
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minigameassistdialog/MinigameAssistDialog_AssistItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "MinigameAssistDialog.AssistItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct MinigameAssistDialog_AssistItem {}
 
 
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minigameassistdialog/MinigameAssistDialog_DecideEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "MinigameAssistDialog.DecideEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct MinigameAssistDialog_DecideEventHandler {}
@@ -148,27 +93,65 @@ impl  MinigameAssistDialog_AssistResult  {
 
 }
 
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minigameassistdialog/MinigameAssistDialog_MinigameType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct MinigameAssistDialog_MinigameType  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for MinigameAssistDialog_MinigameType  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MinigameAssistDialog.MinigameType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for MinigameAssistDialog_MinigameType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  MinigameAssistDialog_MinigameType  {
+    pub fn dragon_ride() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn fishing() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn muscle_exercise() -> Self {
+        Self { value: 2 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "app-minigameassistdialog-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-minigameassistdialog")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MinigameAssistDialog_AssistItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_build { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MinigameAssistDialog_AssistItem as :: unity2 :: ClassIdentity > :: class () , "OnBuild" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MinigameAssistDialog_AssistItem as :: unity2 :: ClassIdentity > :: NAME , "OnBuild" , e) , } } } pub unsafe fn on_build (this : MinigameAssistDialog_AssistItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MinigameAssistDialog_AssistItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_build :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MinigameAssistDialog_AssistItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MinigameAssistDialog_AssistItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MinigameAssistDialog_AssistItem , name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MinigameAssistDialog_AssistItem , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , name , __unity2_method_info) } }
-
-#[cfg(feature = "app-minigameassistdialog")]
-pub trait IMinigameAssistDialog_AssistItemMethods : IMinigameAssistDialog_AssistItem { # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < MinigameAssistDialog_AssistItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MinigameAssistDialog_AssistItem_unity2_raw :: on_build (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MinigameAssistDialog_AssistItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MinigameAssistDialog_AssistItem_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-minigameassistdialog")]
-impl < __T : IMinigameAssistDialog_AssistItem > IMinigameAssistDialog_AssistItemMethods for __T { }
-
-#[cfg(feature = "app-minigameassistdialog")]
-impl MinigameAssistDialog_AssistItem { pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MinigameAssistDialog_AssistItem_unity2_raw :: __lookup_on_build :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MinigameAssistDialog_AssistItem_unity2_raw :: __lookup_ctor :: get_method_info () } }
-
-#[cfg(feature = "app-minigameassistdialog")]
-impl MinigameAssistDialog_AssistItem {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (name : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MinigameAssistDialog_AssistItem) , :: core :: stringify ! (new) ,)) ; < Self as IMinigameAssistDialog_AssistItemMethods > :: ctor (this , name) ; this }
-}
 
 #[cfg(feature = "app-minigameassistdialog")]
 # [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MinigameAssistDialog_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_event_handler { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MinigameAssistDialog as :: unity2 :: ClassIdentity > :: class () , "get_EventHandler" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MinigameAssistDialog as :: unity2 :: ClassIdentity > :: NAME , "get_EventHandler" , e) , } } } pub unsafe fn get_event_handler (this : MinigameAssistDialog , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: minigameassistdialog :: MinigameAssistDialog_DecideEventHandler { let inner : extern "C" fn (MinigameAssistDialog , :: unity2 :: OptionalMethod ,) -> crate :: app :: minigameassistdialog :: MinigameAssistDialog_DecideEventHandler = :: core :: mem :: transmute (__lookup_get_event_handler :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_event_handler { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: minigameassistdialog :: MinigameAssistDialog_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MinigameAssistDialog as :: unity2 :: ClassIdentity > :: class () , "set_EventHandler" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MinigameAssistDialog as :: unity2 :: ClassIdentity > :: NAME , "set_EventHandler" , e) , } } } pub unsafe fn set_event_handler (this : MinigameAssistDialog , value : crate :: app :: minigameassistdialog :: MinigameAssistDialog_DecideEventHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MinigameAssistDialog , crate :: app :: minigameassistdialog :: MinigameAssistDialog_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_event_handler :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > as :: unity2 :: IlType > :: il_type () , < crate :: app :: basicdialogcontent :: BasicDialogContent as :: unity2 :: IlType > :: il_type () , < crate :: app :: minigameassistdialog :: MinigameAssistDialog_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MinigameAssistDialog as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MinigameAssistDialog as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MinigameAssistDialog , menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: basicdialogcontent :: BasicDialogContent , event_handler : crate :: app :: minigameassistdialog :: MinigameAssistDialog_DecideEventHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MinigameAssistDialog , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: basicdialogcontent :: BasicDialogContent , crate :: app :: minigameassistdialog :: MinigameAssistDialog_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , menu_item_list , menu_content , event_handler , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_bind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: minigameassistdialog :: MinigameAssistDialog_MinigameType as :: unity2 :: IlType > :: il_type () , < crate :: app :: minigameassistdialog :: MinigameAssistDialog_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MinigameAssistDialog as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MinigameAssistDialog as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } } } pub unsafe fn create_bind (super_ : crate :: app :: procinst :: ProcInst , r#type : crate :: app :: minigameassistdialog :: MinigameAssistDialog_MinigameType , event_handler : crate :: app :: minigameassistdialog :: MinigameAssistDialog_DecideEventHandler , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: minigameassistdialog :: MinigameAssistDialog { let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: minigameassistdialog :: MinigameAssistDialog_MinigameType , crate :: app :: minigameassistdialog :: MinigameAssistDialog_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> crate :: app :: minigameassistdialog :: MinigameAssistDialog = :: core :: mem :: transmute (__lookup_create_bind :: get_method_info () . method_ptr ,) ; inner (super_ , r#type , event_handler , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MinigameAssistDialog as :: unity2 :: ClassIdentity > :: class () , "GetName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MinigameAssistDialog as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , } } } pub unsafe fn get_name (this : MinigameAssistDialog , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (MinigameAssistDialog , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_close { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MinigameAssistDialog as :: unity2 :: ClassIdentity > :: class () , "OnClose" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MinigameAssistDialog as :: unity2 :: ClassIdentity > :: NAME , "OnClose" , e) , } } } pub unsafe fn on_close (this : MinigameAssistDialog , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MinigameAssistDialog , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_close :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_a_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MinigameAssistDialog as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MinigameAssistDialog as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , } } } pub unsafe fn a_call (this : MinigameAssistDialog , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (MinigameAssistDialog , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_a_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_b_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MinigameAssistDialog as :: unity2 :: ClassIdentity > :: class () , "BCall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MinigameAssistDialog as :: unity2 :: ClassIdentity > :: NAME , "BCall" , e) , } } } pub unsafe fn b_call (this : MinigameAssistDialog , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (MinigameAssistDialog , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_b_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MinigameAssistDialog as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MinigameAssistDialog as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
@@ -191,6 +174,23 @@ impl MinigameAssistDialog {
 }
 
 #[cfg(feature = "app-minigameassistdialog")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MinigameAssistDialog_AssistItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_build { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MinigameAssistDialog_AssistItem as :: unity2 :: ClassIdentity > :: class () , "OnBuild" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MinigameAssistDialog_AssistItem as :: unity2 :: ClassIdentity > :: NAME , "OnBuild" , e) , } } } pub unsafe fn on_build (this : MinigameAssistDialog_AssistItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MinigameAssistDialog_AssistItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_build :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MinigameAssistDialog_AssistItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MinigameAssistDialog_AssistItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MinigameAssistDialog_AssistItem , name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MinigameAssistDialog_AssistItem , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , name , __unity2_method_info) } }
+
+#[cfg(feature = "app-minigameassistdialog")]
+pub trait IMinigameAssistDialog_AssistItemMethods : IMinigameAssistDialog_AssistItem { # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < MinigameAssistDialog_AssistItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MinigameAssistDialog_AssistItem_unity2_raw :: on_build (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MinigameAssistDialog_AssistItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MinigameAssistDialog_AssistItem_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-minigameassistdialog")]
+impl < __T : IMinigameAssistDialog_AssistItem > IMinigameAssistDialog_AssistItemMethods for __T { }
+
+#[cfg(feature = "app-minigameassistdialog")]
+impl MinigameAssistDialog_AssistItem { pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MinigameAssistDialog_AssistItem_unity2_raw :: __lookup_on_build :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MinigameAssistDialog_AssistItem_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-minigameassistdialog")]
+impl MinigameAssistDialog_AssistItem {
+# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (name : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MinigameAssistDialog_AssistItem) , :: core :: stringify ! (new) ,)) ; < Self as IMinigameAssistDialog_AssistItemMethods > :: ctor (this , name) ; this }
+}
+
+#[cfg(feature = "app-minigameassistdialog")]
 # [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MinigameAssistDialog_DecideEventHandler_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MinigameAssistDialog_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MinigameAssistDialog_DecideEventHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MinigameAssistDialog_DecideEventHandler , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MinigameAssistDialog_DecideEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , object , method , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MinigameAssistDialog_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MinigameAssistDialog_DecideEventHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , } } } pub unsafe fn invoke (this : MinigameAssistDialog_DecideEventHandler , set : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MinigameAssistDialog_DecideEventHandler , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_invoke :: get_method_info () . method_ptr ,) ; inner (this , set , __unity2_method_info) } }
 
 #[cfg(feature = "app-minigameassistdialog")]
@@ -210,17 +210,17 @@ impl MinigameAssistDialog_DecideEventHandler {
 #[cfg(feature = "app-minigameassistdialog")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MinigameAssistDialog_MinigameType;
-    pub use super::MinigameAssistDialog_AssistItem;
-    pub use super::IMinigameAssistDialog_AssistItem;
-    pub use super::IMinigameAssistDialog_AssistItemMethods;
     pub use super::MinigameAssistDialog;
     pub use super::IMinigameAssistDialog;
     pub use super::IMinigameAssistDialogMethods;
+    pub use super::MinigameAssistDialog_AssistItem;
+    pub use super::IMinigameAssistDialog_AssistItem;
+    pub use super::IMinigameAssistDialog_AssistItemMethods;
     pub use super::MinigameAssistDialog_DecideEventHandler;
     pub use super::IMinigameAssistDialog_DecideEventHandler;
     pub use super::IMinigameAssistDialog_DecideEventHandlerMethods;
     pub use super::MinigameAssistDialog_AssistResult;
+    pub use super::MinigameAssistDialog_MinigameType;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;

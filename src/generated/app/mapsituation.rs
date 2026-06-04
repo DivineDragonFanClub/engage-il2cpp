@@ -21,28 +21,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsituation/MapSituation.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSituation")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapsituation :: MapSituation >)] pub struct MapSituation {
-# [static_field] # [rename (name = "TurnMax")] pub turn_max : i32 ,
-# [offset (32)] # [rename (name = "m_Status")] pub m_status : crate :: app :: mapsituation :: MapSituation_StatusField ,
-# [offset (40)] # [rename (name = "m_Players")] pub m_players : :: unity2 :: Array < crate :: app :: mapsituation :: MapSituation_Player > ,
-# [offset (48)] # [rename (name = "m_Groups")] pub m_groups : :: unity2 :: Array < crate :: app :: force :: Force_Type > ,
-# [offset (56)] # [rename (name = "m_CurrentForceType")] pub m_current_force_type : crate :: app :: force :: Force_Type ,
-# [offset (60)] # [rename (name = "m_HumanForceType")] pub m_human_force_type : crate :: app :: force :: Force_Type ,
-# [offset (64)] # [rename (name = "m_ForceCursors")] pub m_force_cursors : :: unity2 :: Array < crate :: app :: mapsituation :: MapSituation_ForceCursor > ,
-# [offset (72)] # [rename (name = "m_Turn")] pub m_turn : i32 ,
-# [offset (76)] # [rename (name = "m_SubPhase")] pub m_sub_phase : crate :: app :: mapsituation :: MapSituation_SubPhases ,
-# [offset (80)] # [rename (name = "m_WinRuleEnemyNumLessThanOrEqualTo")] pub m_win_rule_enemy_num_less_than_or_equal_to : i32 ,
-# [offset (84)] # [rename (name = "m_WinRuleLimitTurn")] pub m_win_rule_limit_turn : i32 ,
-# [offset (88)] # [rename (name = "m_WinLoseResult")] pub m_win_lose_result : crate :: app :: winloserule :: WinLoseRule ,
-# [offset (92)] # [rename (name = "m_Entrust")] pub m_entrust : crate :: app :: unitentrust :: UnitEntrust_Type ,
-# [offset (96)] # [rename (name = "m_WinRuleMID")] pub m_win_rule_mid : :: unity2 :: Il2CppString ,
-# [offset (104)] # [rename (name = "m_WinRuleMIDArg")] pub m_win_rule_mid_arg : :: unity2 :: Il2CppString ,
-# [offset (112)] # [rename (name = "m_LoseRuleMID")] pub m_lose_rule_mid : :: unity2 :: Il2CppString ,
-# [offset (120)] # [rename (name = "m_LoseRuleMIDArg")] pub m_lose_rule_mid_arg : :: unity2 :: Il2CppString ,
-# [offset (128)] # [rename (name = "m_AverageLevel")] pub m_average_level : i32 ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsituation/MapSituation_Player.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -116,61 +94,25 @@ impl  MapSituation_Player  {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsituation/MapSituation_ForceCursor.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSituation.ForceCursor")] # [parent (crate :: system :: object :: Object)] pub struct MapSituation_ForceCursor {}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsituation/MapSituation_SubPhases.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapSituation_SubPhases  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for MapSituation_SubPhases  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapSituation.SubPhases";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for MapSituation_SubPhases  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  MapSituation_SubPhases  {
-    pub fn normal() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn charm_confusion() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 2 }
-
-    }
-
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsituation/MapSituation.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSituation")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapsituation :: MapSituation >)] pub struct MapSituation {
+# [static_field] # [rename (name = "TurnMax")] pub turn_max : i32 ,
+# [offset (32)] # [rename (name = "m_Status")] pub m_status : crate :: app :: mapsituation :: MapSituation_StatusField ,
+# [offset (40)] # [rename (name = "m_Players")] pub m_players : :: unity2 :: Array < crate :: app :: mapsituation :: MapSituation_Player > ,
+# [offset (48)] # [rename (name = "m_Groups")] pub m_groups : :: unity2 :: Array < crate :: app :: force :: Force_Type > ,
+# [offset (56)] # [rename (name = "m_CurrentForceType")] pub m_current_force_type : crate :: app :: force :: Force_Type ,
+# [offset (60)] # [rename (name = "m_HumanForceType")] pub m_human_force_type : crate :: app :: force :: Force_Type ,
+# [offset (64)] # [rename (name = "m_ForceCursors")] pub m_force_cursors : :: unity2 :: Array < crate :: app :: mapsituation :: MapSituation_ForceCursor > ,
+# [offset (72)] # [rename (name = "m_Turn")] pub m_turn : i32 ,
+# [offset (76)] # [rename (name = "m_SubPhase")] pub m_sub_phase : crate :: app :: mapsituation :: MapSituation_SubPhases ,
+# [offset (80)] # [rename (name = "m_WinRuleEnemyNumLessThanOrEqualTo")] pub m_win_rule_enemy_num_less_than_or_equal_to : i32 ,
+# [offset (84)] # [rename (name = "m_WinRuleLimitTurn")] pub m_win_rule_limit_turn : i32 ,
+# [offset (88)] # [rename (name = "m_WinLoseResult")] pub m_win_lose_result : crate :: app :: winloserule :: WinLoseRule ,
+# [offset (92)] # [rename (name = "m_Entrust")] pub m_entrust : crate :: app :: unitentrust :: UnitEntrust_Type ,
+# [offset (96)] # [rename (name = "m_WinRuleMID")] pub m_win_rule_mid : :: unity2 :: Il2CppString ,
+# [offset (104)] # [rename (name = "m_WinRuleMIDArg")] pub m_win_rule_mid_arg : :: unity2 :: Il2CppString ,
+# [offset (112)] # [rename (name = "m_LoseRuleMID")] pub m_lose_rule_mid : :: unity2 :: Il2CppString ,
+# [offset (120)] # [rename (name = "m_LoseRuleMIDArg")] pub m_lose_rule_mid_arg : :: unity2 :: Il2CppString ,
+# [offset (128)] # [rename (name = "m_AverageLevel")] pub m_average_level : i32 ,
 }
 
 
@@ -259,7 +201,65 @@ impl  MapSituation_Status  {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsituation/MapSituation_ForceCursor.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSituation.ForceCursor")] # [parent (crate :: system :: object :: Object)] pub struct MapSituation_ForceCursor {}
+
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsituation/MapSituation_StatusField.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSituation.StatusField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: mapsituation :: MapSituation_Status >)] pub struct MapSituation_StatusField {}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsituation/MapSituation_SubPhases.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct MapSituation_SubPhases  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for MapSituation_SubPhases  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapSituation.SubPhases";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for MapSituation_SubPhases  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  MapSituation_SubPhases  {
+    pub fn normal() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn charm_confusion() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn num() -> Self {
+        Self { value: 2 }
+
+    }
+
+}
 
 }
 
@@ -323,18 +323,18 @@ impl MapSituation_StatusField {
 #[cfg(feature = "app-mapsituation")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MapSituation_Player;
     pub use super::MapSituation;
     pub use super::IMapSituation;
     pub use super::IMapSituationMethods;
-    pub use super::MapSituation_Player;
+    pub use super::MapSituation_Status;
     pub use super::MapSituation_ForceCursor;
     pub use super::IMapSituation_ForceCursor;
     pub use super::IMapSituation_ForceCursorMethods;
-    pub use super::MapSituation_SubPhases;
-    pub use super::MapSituation_Status;
     pub use super::MapSituation_StatusField;
     pub use super::IMapSituation_StatusField;
     pub use super::IMapSituation_StatusFieldMethods;
+    pub use super::MapSituation_SubPhases;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

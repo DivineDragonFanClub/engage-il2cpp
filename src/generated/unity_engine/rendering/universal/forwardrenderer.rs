@@ -13,6 +13,43 @@ mod __types {
  ;
 
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/forwardrenderer/ForwardRenderer_RenderPassInputSummary.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ForwardRenderer_RenderPassInputSummary {
+    pub requires_depth_texture: bool,
+    pub requires_depth_prepass: bool,
+    pub requires_normals_texture: bool,
+    pub requires_color_texture: bool,
+}
+
+
+impl ::unity2::ClassIdentity for ForwardRenderer_RenderPassInputSummary {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
+
+    const NAME: &'static str = "ForwardRenderer.RenderPassInputSummary";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl ::unity2::IlType for ForwardRenderer_RenderPassInputSummary {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/forwardrenderer/ForwardRenderer.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal" , name = "ForwardRenderer")] # [parent (crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer)] pub struct ForwardRenderer {
 # [static_field] # [rename (name = "k_DepthStencilBufferBits")] pub k_depth_stencil_buffer_bits : i32 ,
 # [offset (144)] # [rename (name = "m_ColorGradingLutPass")] pub m_color_grading_lut_pass : crate :: unity_engine :: rendering :: universal :: internal :: colorgradinglutpass :: ColorGradingLutPass ,
@@ -65,43 +102,6 @@ mod __types {
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/forwardrenderer/ForwardRenderer_RenderPassInputSummary.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ForwardRenderer_RenderPassInputSummary {
-    pub requires_depth_texture: bool,
-    pub requires_depth_prepass: bool,
-    pub requires_normals_texture: bool,
-    pub requires_color_texture: bool,
-}
-
-
-impl ::unity2::ClassIdentity for ForwardRenderer_RenderPassInputSummary {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
-
-    const NAME: &'static str = "ForwardRenderer.RenderPassInputSummary";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for ForwardRenderer_RenderPassInputSummary {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/forwardrenderer/ForwardRenderer_Profiling.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal" , name = "ForwardRenderer.Profiling")] # [parent (crate :: system :: object :: Object)] pub struct ForwardRenderer_Profiling {
 # [static_field] # [rename (name = "k_Name")] pub k_name : :: unity2 :: Il2CppString ,
 # [static_field] # [rename (name = "createCameraRenderTarget")] pub create_camera_render_target : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
@@ -141,10 +141,10 @@ impl ForwardRenderer_Profiling { pub fn cctor_method_info () -> & 'static :: uni
 #[cfg(feature = "unity_engine-rendering-universal-forwardrenderer")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ForwardRenderer_RenderPassInputSummary;
     pub use super::ForwardRenderer;
     pub use super::IForwardRenderer;
     pub use super::IForwardRendererMethods;
-    pub use super::ForwardRenderer_RenderPassInputSummary;
     pub use super::ForwardRenderer_Profiling;
     pub use super::IForwardRenderer_Profiling;
     pub use crate::system::object::IObject;

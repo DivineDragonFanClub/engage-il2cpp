@@ -11,6 +11,11 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/beforerenderhelper/BeforeRenderHelper.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "BeforeRenderHelper")] # [parent (crate :: system :: object :: Object)] pub struct BeforeRenderHelper {
+# [static_field] # [rename (name = "s_OrderBlocks")] pub s_order_blocks : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: beforerenderhelper :: BeforeRenderHelper_OrderBlock > ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/beforerenderhelper/BeforeRenderHelper_OrderBlock.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -45,11 +50,6 @@ impl ::unity2::IlType for BeforeRenderHelper_OrderBlock {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/beforerenderhelper/BeforeRenderHelper.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "BeforeRenderHelper")] # [parent (crate :: system :: object :: Object)] pub struct BeforeRenderHelper {
-# [static_field] # [rename (name = "s_OrderBlocks")] pub s_order_blocks : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: beforerenderhelper :: BeforeRenderHelper_OrderBlock > ,
-}
-
 }
 
 #[cfg(feature = "unity_engine-beforerenderhelper-types")]
@@ -67,9 +67,9 @@ impl BeforeRenderHelper { pub fn invoke_method_info () -> & 'static :: unity2 ::
 #[cfg(feature = "unity_engine-beforerenderhelper")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::BeforeRenderHelper_OrderBlock;
     pub use super::BeforeRenderHelper;
     pub use super::IBeforeRenderHelper;
+    pub use super::BeforeRenderHelper_OrderBlock;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

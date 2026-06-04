@@ -17,6 +17,11 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingradicalparamdata/FishingRadicalParamData.md"))] # [:: unity2 :: class (namespace = "App" , name = "FishingRadicalParamData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: fishingradicalparamdata :: FishingRadicalParamData >)] pub struct FishingRadicalParamData {
+# [offset (88)] # [rename (name = "Param")] pub param : :: unity2 :: Array < crate :: app :: fishingradicalparamdata :: FishingRadicalParamData_RadicalParam > ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingradicalparamdata/FishingRadicalParamData_RadicalParam.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -52,11 +57,6 @@ impl ::unity2::IlType for FishingRadicalParamData_RadicalParam {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingradicalparamdata/FishingRadicalParamData.md"))] # [:: unity2 :: class (namespace = "App" , name = "FishingRadicalParamData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: fishingradicalparamdata :: FishingRadicalParamData >)] pub struct FishingRadicalParamData {
-# [offset (88)] # [rename (name = "Param")] pub param : :: unity2 :: Array < crate :: app :: fishingradicalparamdata :: FishingRadicalParamData_RadicalParam > ,
-}
-
 }
 
 #[cfg(feature = "app-fishingradicalparamdata-types")]
@@ -85,10 +85,10 @@ impl FishingRadicalParamData {
 #[cfg(feature = "app-fishingradicalparamdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::FishingRadicalParamData_RadicalParam;
     pub use super::FishingRadicalParamData;
     pub use super::IFishingRadicalParamData;
     pub use super::IFishingRadicalParamDataMethods;
+    pub use super::FishingRadicalParamData_RadicalParam;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdata_1::IStructData_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

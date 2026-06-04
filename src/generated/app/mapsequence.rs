@@ -19,15 +19,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequence/MapSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequence")] # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: mapsequence :: MapSequence >)] pub struct MapSequence {
-# [offset (132)] # [rename (name = "m_IsCompleted")] pub m_is_completed : bool ,
-# [offset (133)] # [rename (name = "m_IsSortieCancel")] pub m_is_sortie_cancel : bool ,
-# [offset (134)] # [rename (name = "m_IsCallangeFailer")] pub m_is_callange_failer : bool ,
-# [offset (136)] # [rename (name = "m_PreloadHandles")] pub m_preload_handles : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: resourcehandle_2 :: ResourceHandle_2 > ,
-# [offset (144)] # [rename (name = "m_Time")] pub m_time : f64 ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequence/MapSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -250,6 +241,15 @@ impl  MapSequence_Label  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequence/MapSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequence")] # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: mapsequence :: MapSequence >)] pub struct MapSequence {
+# [offset (132)] # [rename (name = "m_IsCompleted")] pub m_is_completed : bool ,
+# [offset (133)] # [rename (name = "m_IsSortieCancel")] pub m_is_sortie_cancel : bool ,
+# [offset (134)] # [rename (name = "m_IsCallangeFailer")] pub m_is_callange_failer : bool ,
+# [offset (136)] # [rename (name = "m_PreloadHandles")] pub m_preload_handles : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: resourcehandle_2 :: ResourceHandle_2 > ,
+# [offset (144)] # [rename (name = "m_Time")] pub m_time : f64 ,
+}
+
 }
 
 #[cfg(feature = "app-mapsequence-types")]
@@ -278,10 +278,10 @@ impl MapSequence {
 #[cfg(feature = "app-mapsequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MapSequence_Label;
     pub use super::MapSequence;
     pub use super::IMapSequence;
     pub use super::IMapSequenceMethods;
-    pub use super::MapSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::procscenesequence_1::IProcSceneSequence_1;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;

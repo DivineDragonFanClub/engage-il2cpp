@@ -19,6 +19,174 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/terraindata_2/TerrainData_2.md"))] # [:: unity2 :: class (namespace = "App" , name = "TerrainData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: terraindata_2 :: TerrainData_2 >)] pub struct TerrainData_2 {}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/terraindata_2/TerrainData_Destroyers.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct TerrainData_Destroyers  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for TerrainData_Destroyers  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "TerrainData.Destroyers";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for TerrainData_Destroyers  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  TerrainData_Destroyers  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn player() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn enemy() -> Self {
+        Self { value: 2 }
+
+    }
+
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/terraindata_2/TerrainData_Prohibitions.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct TerrainData_Prohibitions  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for TerrainData_Prohibitions  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "TerrainData.Prohibitions";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for TerrainData_Prohibitions  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  TerrainData_Prohibitions  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn all() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn ground() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn near() -> Self {
+        Self { value: 3 }
+
+    }
+
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/terraindata_2/TerrainData_Layers.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct TerrainData_Layers  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for TerrainData_Layers  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "TerrainData.Layers";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for TerrainData_Layers  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  TerrainData_Layers  {
+    pub fn lower() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn upper() -> Self {
+        Self { value: 1 }
+
+    }
+
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/terraindata_2/TerrainData_Flags.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -248,174 +416,6 @@ impl  TerrainData_Commands  {
 
 }
 
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/terraindata_2/TerrainData_Destroyers.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TerrainData_Destroyers  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for TerrainData_Destroyers  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "TerrainData.Destroyers";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for TerrainData_Destroyers  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  TerrainData_Destroyers  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn player() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn enemy() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/terraindata_2/TerrainData_Prohibitions.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TerrainData_Prohibitions  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for TerrainData_Prohibitions  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "TerrainData.Prohibitions";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for TerrainData_Prohibitions  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  TerrainData_Prohibitions  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn all() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn ground() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn near() -> Self {
-        Self { value: 3 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/terraindata_2/TerrainData_2.md"))] # [:: unity2 :: class (namespace = "App" , name = "TerrainData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: terraindata_2 :: TerrainData_2 >)] pub struct TerrainData_2 {}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/terraindata_2/TerrainData_Layers.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TerrainData_Layers  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for TerrainData_Layers  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "TerrainData.Layers";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for TerrainData_Layers  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  TerrainData_Layers  {
-    pub fn lower() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn upper() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
-
 }
 
 #[cfg(feature = "app-terraindata_2-types")]
@@ -444,14 +444,14 @@ impl TerrainData_2 {
 #[cfg(feature = "app-terraindata_2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TerrainData_Flags;
-    pub use super::TerrainData_Commands;
-    pub use super::TerrainData_Destroyers;
-    pub use super::TerrainData_Prohibitions;
     pub use super::TerrainData_2;
     pub use super::ITerrainData_2;
     pub use super::ITerrainData_2Methods;
+    pub use super::TerrainData_Destroyers;
+    pub use super::TerrainData_Prohibitions;
     pub use super::TerrainData_Layers;
+    pub use super::TerrainData_Flags;
+    pub use super::TerrainData_Commands;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdata_1::IStructData_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

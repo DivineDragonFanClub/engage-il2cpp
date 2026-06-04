@@ -15,6 +15,104 @@ mod __types {
  ;
 
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortieinventorymanager/SortieInventoryManager_SelectionInfo_Modes.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct SortieInventoryManager_SelectionInfo_Modes  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for SortieInventoryManager_SelectionInfo_Modes  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "SortieInventoryManager.SelectionInfo.Modes";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for SortieInventoryManager_SelectionInfo_Modes  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  SortieInventoryManager_SelectionInfo_Modes  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn trade() -> Self {
+        Self { value: 1 }
+
+    }
+
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortieinventorymanager/SortieInventoryManager_Modes.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct SortieInventoryManager_Modes  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for SortieInventoryManager_Modes  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "SortieInventoryManager.Modes";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for SortieInventoryManager_Modes  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  SortieInventoryManager_Modes  {
+    pub fn sortie() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn transporter() -> Self {
+        Self { value: 1 }
+
+    }
+
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortieinventorymanager/SortieInventoryManager_ActiveWindow.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -70,55 +168,6 @@ impl  SortieInventoryManager_ActiveWindow  {
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortieinventorymanager/SortieInventoryManager_SelectionInfo_Modes.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct SortieInventoryManager_SelectionInfo_Modes  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for SortieInventoryManager_SelectionInfo_Modes  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "SortieInventoryManager.SelectionInfo.Modes";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for SortieInventoryManager_SelectionInfo_Modes  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  SortieInventoryManager_SelectionInfo_Modes  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn trade() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
-
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieinventorymanager/SortieInventoryManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortieInventoryManager")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: sortieinventorymanager :: SortieInventoryManager >)] pub struct SortieInventoryManager {
 # [offset (28)] # [rename (name = "m_Mode")] pub m_mode : crate :: app :: sortieinventorymanager :: SortieInventoryManager_Modes ,
 # [offset (32)] # [rename (name = "m_Selection")] pub m_selection : crate :: app :: sortieinventorymanager :: SortieInventoryManager_SelectionInfo ,
@@ -127,55 +176,6 @@ impl  SortieInventoryManager_SelectionInfo_Modes  {
 # [offset (56)] # [rename (name = "m_PoolItemMenu")] pub m_pool_item_menu : crate :: app :: inventorypoolitemmenu :: InventoryPoolItemMenu ,
 # [offset (64)] # [rename (name = "m_ActiveWindow")] pub m_active_window : crate :: app :: sortieinventorymanager :: SortieInventoryManager_ActiveWindow ,
 # [offset (72)] # [rename (name = "m_ItemInfo")] pub m_item_info : crate :: unity_engine :: gameobject :: GameObject ,
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortieinventorymanager/SortieInventoryManager_Modes.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct SortieInventoryManager_Modes  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for SortieInventoryManager_Modes  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "SortieInventoryManager.Modes";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for SortieInventoryManager_Modes  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  SortieInventoryManager_Modes  {
-    pub fn sortie() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn transporter() -> Self {
-        Self { value: 1 }
-
-    }
-
 }
 
 
@@ -223,12 +223,12 @@ impl SortieInventoryManager_SelectionInfo {
 #[cfg(feature = "app-sortieinventorymanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SortieInventoryManager_ActiveWindow;
     pub use super::SortieInventoryManager_SelectionInfo_Modes;
+    pub use super::SortieInventoryManager_Modes;
+    pub use super::SortieInventoryManager_ActiveWindow;
     pub use super::SortieInventoryManager;
     pub use super::ISortieInventoryManager;
     pub use super::ISortieInventoryManagerMethods;
-    pub use super::SortieInventoryManager_Modes;
     pub use super::SortieInventoryManager_SelectionInfo;
     pub use super::ISortieInventoryManager_SelectionInfo;
     pub use super::ISortieInventoryManager_SelectionInfoMethods;

@@ -19,6 +19,61 @@ mod __types {
  ;
 
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tipsdata/TipsData_Allows.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct TipsData_Allows  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for TipsData_Allows  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "TipsData.Allows";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for TipsData_Allows  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  TipsData_Allows  {
+    pub fn map() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn hub() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn gmap() -> Self {
+        Self { value: 4 }
+
+    }
+
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tipsdata/TipsData_Kinds.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -78,61 +133,6 @@ impl  TipsData_Kinds  {
 # [offset (92)] # [rename (name = "m_Kind")] pub m_kind : crate :: app :: tipsdata :: TipsData_Kinds ,
 }
 
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tipsdata/TipsData_Allows.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TipsData_Allows  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for TipsData_Allows  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "TipsData.Allows";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for TipsData_Allows  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  TipsData_Allows  {
-    pub fn map() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn hub() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn gmap() -> Self {
-        Self { value: 4 }
-
-    }
-
-}
-
 }
 
 #[cfg(feature = "app-tipsdata-types")]
@@ -161,11 +161,11 @@ impl TipsData {
 #[cfg(feature = "app-tipsdata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::TipsData_Allows;
     pub use super::TipsData_Kinds;
     pub use super::TipsData;
     pub use super::ITipsData;
     pub use super::ITipsDataMethods;
-    pub use super::TipsData_Allows;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdata_1::IStructData_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

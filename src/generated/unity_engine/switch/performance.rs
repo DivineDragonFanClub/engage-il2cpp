@@ -13,6 +13,12 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/performance/Performance_Debug.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Switch" , name = "Performance.Debug")] # [parent (crate :: system :: object :: Object)] pub struct Performance_Debug {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/performance/Performance.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Switch" , name = "Performance")] # [parent (crate :: system :: object :: Object)] pub struct Performance {}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/switch/performance/Performance_PerformanceMode.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -66,12 +72,6 @@ impl  Performance_PerformanceMode  {
     }
 
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/performance/Performance_Debug.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Switch" , name = "Performance.Debug")] # [parent (crate :: system :: object :: Object)] pub struct Performance_Debug {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/performance/Performance.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Switch" , name = "Performance")] # [parent (crate :: system :: object :: Object)] pub struct Performance {}
 
 
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/switch/performance/Performance_Debug_HudMode.md"))]
@@ -209,11 +209,11 @@ impl Performance { pub fn set_cpu_boost_mode_method_info () -> & 'static :: unit
 #[cfg(feature = "unity_engine-switch-performance")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Performance_PerformanceMode;
     pub use super::Performance_Debug;
     pub use super::IPerformance_Debug;
     pub use super::Performance;
     pub use super::IPerformance;
+    pub use super::Performance_PerformanceMode;
     pub use super::Performance_Debug_HudMode;
     pub use super::Performance_CpuBoostMode;
     pub use crate::system::object::IObject;

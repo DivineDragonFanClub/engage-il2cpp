@@ -19,31 +19,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maproute/MapRoute.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapRoute")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: maproute :: MapRoute >)] pub struct MapRoute {
-# [static_field] # [rename (name = "Max")] pub max : i32 ,
-# [static_field] # [rename (name = "ScoreCross")] pub score_cross : i32 ,
-# [static_field] # [rename (name = "ScoreContinue")] pub score_continue : i32 ,
-# [static_field] # [rename (name = "ScoreDistance")] pub score_distance : i32 ,
-# [static_field] # [rename (name = "ScoreAvoid")] pub score_avoid : i32 ,
-# [static_field] # [rename (name = "ScoreDef")] pub score_def : i32 ,
-# [offset (32)] # [rename (name = "m_Routes")] pub m_routes : :: unity2 :: Array < crate :: app :: dir_2 :: Dir_Type > ,
-# [offset (40)] # [rename (name = "m_Count")] pub m_count : u8 ,
-# [offset (41)] # [rename (name = "m_FirstX")] pub m_first_x : i8 ,
-# [offset (42)] # [rename (name = "m_FirstZ")] pub m_first_z : i8 ,
-# [offset (43)] # [rename (name = "m_LastX")] pub m_last_x : i8 ,
-# [offset (44)] # [rename (name = "m_LastZ")] pub m_last_z : i8 ,
-# [offset (45)] # [rename (name = "m_CursorX")] pub m_cursor_x : i8 ,
-# [offset (46)] # [rename (name = "m_CursorZ")] pub m_cursor_z : i8 ,
-# [offset (47)] # [rename (name = "m_Cost")] pub m_cost : u8 ,
-# [offset (48)] # [rename (name = "m_Mind")] pub m_mind : crate :: app :: mapmind :: MapMind_Type ,
-# [offset (52)] # [rename (name = "m_Active")] pub m_active : bool ,
-# [offset (56)] # [rename (name = "m_Cells")] pub m_cells : :: unity2 :: Array < crate :: app :: mappos :: MapPos > ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maproute/MapRoute_Func.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapRoute.Func")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct MapRoute_Func {}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maproute/MapRoute_Flag.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -134,6 +109,31 @@ impl  MapRoute_Flag  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maproute/MapRoute.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapRoute")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: maproute :: MapRoute >)] pub struct MapRoute {
+# [static_field] # [rename (name = "Max")] pub max : i32 ,
+# [static_field] # [rename (name = "ScoreCross")] pub score_cross : i32 ,
+# [static_field] # [rename (name = "ScoreContinue")] pub score_continue : i32 ,
+# [static_field] # [rename (name = "ScoreDistance")] pub score_distance : i32 ,
+# [static_field] # [rename (name = "ScoreAvoid")] pub score_avoid : i32 ,
+# [static_field] # [rename (name = "ScoreDef")] pub score_def : i32 ,
+# [offset (32)] # [rename (name = "m_Routes")] pub m_routes : :: unity2 :: Array < crate :: app :: dir_2 :: Dir_Type > ,
+# [offset (40)] # [rename (name = "m_Count")] pub m_count : u8 ,
+# [offset (41)] # [rename (name = "m_FirstX")] pub m_first_x : i8 ,
+# [offset (42)] # [rename (name = "m_FirstZ")] pub m_first_z : i8 ,
+# [offset (43)] # [rename (name = "m_LastX")] pub m_last_x : i8 ,
+# [offset (44)] # [rename (name = "m_LastZ")] pub m_last_z : i8 ,
+# [offset (45)] # [rename (name = "m_CursorX")] pub m_cursor_x : i8 ,
+# [offset (46)] # [rename (name = "m_CursorZ")] pub m_cursor_z : i8 ,
+# [offset (47)] # [rename (name = "m_Cost")] pub m_cost : u8 ,
+# [offset (48)] # [rename (name = "m_Mind")] pub m_mind : crate :: app :: mapmind :: MapMind_Type ,
+# [offset (52)] # [rename (name = "m_Active")] pub m_active : bool ,
+# [offset (56)] # [rename (name = "m_Cells")] pub m_cells : :: unity2 :: Array < crate :: app :: mappos :: MapPos > ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maproute/MapRoute_Func.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapRoute.Func")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct MapRoute_Func {}
+
 }
 
 #[cfg(feature = "app-maproute-types")]
@@ -179,13 +179,13 @@ impl MapRoute_Func {
 #[cfg(feature = "app-maproute")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MapRoute_Flag;
     pub use super::MapRoute;
     pub use super::IMapRoute;
     pub use super::IMapRouteMethods;
     pub use super::MapRoute_Func;
     pub use super::IMapRoute_Func;
     pub use super::IMapRoute_FuncMethods;
-    pub use super::MapRoute_Flag;
     pub use crate::app::singletonclass_1::ISingletonClass_1;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;

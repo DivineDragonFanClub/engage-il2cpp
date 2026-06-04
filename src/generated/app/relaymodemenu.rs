@@ -25,15 +25,6 @@ mod __types {
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaymodemenu/RelayModeMenu_ReplayMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayModeMenu.ReplayMenuItem")] # [parent (crate :: app :: relaymodemenu :: RelayModeMenu_MenuItem)] pub struct RelayModeMenu_ReplayMenuItem {}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaymodemenu/RelayModeMenu_MenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayModeMenu.MenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct RelayModeMenu_MenuItem {
-# [offset (104)] # [rename (name = "m_TitleText")] pub m_title_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (112)] # [rename (name = "m_CommentText")] pub m_comment_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (120)] # [rename (name = "m_NameLabel")] pub m_name_label : :: unity2 :: Il2CppString ,
-# [offset (128)] # [rename (name = "m_CommentLabel")] pub m_comment_label : :: unity2 :: Il2CppString ,
-# [offset (136)] # [rename (name = "m_Mode")] pub m_mode : crate :: app :: relay :: Relay_Modes ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relaymodemenu/RelayModeMenu_Result2.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -92,6 +83,15 @@ impl  RelayModeMenu_Result2  {
 
     }
 
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaymodemenu/RelayModeMenu_MenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayModeMenu.MenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct RelayModeMenu_MenuItem {
+# [offset (104)] # [rename (name = "m_TitleText")] pub m_title_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (112)] # [rename (name = "m_CommentText")] pub m_comment_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (120)] # [rename (name = "m_NameLabel")] pub m_name_label : :: unity2 :: Il2CppString ,
+# [offset (128)] # [rename (name = "m_CommentLabel")] pub m_comment_label : :: unity2 :: Il2CppString ,
+# [offset (136)] # [rename (name = "m_Mode")] pub m_mode : crate :: app :: relay :: Relay_Modes ,
 }
 
 }
@@ -162,10 +162,10 @@ pub mod prelude {
     pub use super::RelayModeMenu_ReplayMenuItem;
     pub use super::IRelayModeMenu_ReplayMenuItem;
     pub use super::IRelayModeMenu_ReplayMenuItemMethods;
+    pub use super::RelayModeMenu_Result2;
     pub use super::RelayModeMenu_MenuItem;
     pub use super::IRelayModeMenu_MenuItem;
     pub use super::IRelayModeMenu_MenuItemMethods;
-    pub use super::RelayModeMenu_Result2;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::procinst::IProcInst;

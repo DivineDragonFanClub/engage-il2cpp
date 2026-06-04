@@ -15,61 +15,6 @@ mod __types {
  ;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/postprocesspass/PostProcessPass_CaptureMode.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct PostProcessPass_CaptureMode  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for PostProcessPass_CaptureMode  {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Internal";
-
-    const NAME: &'static str = "PostProcessPass.CaptureMode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for PostProcessPass_CaptureMode  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  PostProcessPass_CaptureMode  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn capture() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn copy() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/postprocesspass/PostProcessPass_MaterialLibrary.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Internal" , name = "PostProcessPass.MaterialLibrary")] # [parent (crate :: system :: object :: Object)] pub struct PostProcessPass_MaterialLibrary {
 # [offset (16)] # [rename (name = "stopNaN")] pub stop_na_n : crate :: unity_engine :: material :: Material ,
 # [offset (24)] # [rename (name = "subpixelMorphologicalAntialiasing")] pub subpixel_morphological_antialiasing : crate :: unity_engine :: material :: Material ,
@@ -136,6 +81,61 @@ impl  PostProcessPass_CaptureMode  {
 # [static_field] # [rename (name = "_CustomFilterParams1")] pub custom_filter_params1 : i32 ,
 # [static_field] # [rename (name = "_CustomGradationFilter_Params1")] pub custom_gradation_filter_params1 : i32 ,
 # [static_field] # [rename (name = "_CustomGradationFilter_Params2")] pub custom_gradation_filter_params2 : i32 ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/postprocesspass/PostProcessPass_CaptureMode.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct PostProcessPass_CaptureMode  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for PostProcessPass_CaptureMode  {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Internal";
+
+    const NAME: &'static str = "PostProcessPass.CaptureMode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for PostProcessPass_CaptureMode  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  PostProcessPass_CaptureMode  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn capture() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn copy() -> Self {
+        Self { value: 2 }
+
+    }
+
 }
 
 
@@ -251,12 +251,12 @@ impl PostProcessPass {
 #[cfg(feature = "unity_engine-rendering-universal-internal-postprocesspass")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::PostProcessPass_CaptureMode;
     pub use super::PostProcessPass_MaterialLibrary;
     pub use super::IPostProcessPass_MaterialLibrary;
     pub use super::IPostProcessPass_MaterialLibraryMethods;
     pub use super::PostProcessPass_ShaderConstants;
     pub use super::IPostProcessPass_ShaderConstants;
+    pub use super::PostProcessPass_CaptureMode;
     pub use super::PostProcessPass;
     pub use super::IPostProcessPass;
     pub use super::IPostProcessPassMethods;

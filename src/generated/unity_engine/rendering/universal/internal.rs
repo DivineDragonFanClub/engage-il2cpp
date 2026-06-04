@@ -27,7 +27,7 @@
  # [cfg (feature = "unity_engine-rendering-universal-internal-deferredconfig-types")] pub use deferredconfig :: { DeferredConfig , IDeferredConfig }
  ;
  # [cfg (any (feature = "unity_engine-rendering-universal-internal-deferredlights-types"))] pub mod deferredlights ;
- # [cfg (feature = "unity_engine-rendering-universal-internal-deferredlights-types")] pub use deferredlights :: { DeferredLights_CullLightsJob , DeferredLights , IDeferredLights , DeferredLights_DrawCall , DeferredLights_GBufferHandles , DeferredLights_ShaderConstants , IDeferredLights_ShaderConstants }
+ # [cfg (feature = "unity_engine-rendering-universal-internal-deferredlights-types")] pub use deferredlights :: { DeferredLights_ShaderConstants , IDeferredLights_ShaderConstants , DeferredLights_GBufferHandles , DeferredLights , IDeferredLights , DeferredLights_CullLightsJob , DeferredLights_DrawCall }
  ;
  # [cfg (feature = "unity_engine-rendering-universal-internal-deferredlights")] pub use deferredlights :: { IDeferredLightsMethods }
  ;
@@ -37,7 +37,7 @@
  # [cfg (feature = "unity_engine-rendering-universal-internal-deferredpass")] pub use deferredpass :: { IDeferredPassMethods }
  ;
  # [cfg (any (feature = "unity_engine-rendering-universal-internal-deferredtiler-types"))] pub mod deferredtiler ;
- # [cfg (feature = "unity_engine-rendering-universal-internal-deferredtiler-types")] pub use deferredtiler :: { DeferredTiler , DeferredTiler_PrePunctualLight , DeferredTiler_ClipResult }
+ # [cfg (feature = "unity_engine-rendering-universal-internal-deferredtiler-types")] pub use deferredtiler :: { DeferredTiler_PrePunctualLight , DeferredTiler , DeferredTiler_ClipResult }
  ;
  # [cfg (any (feature = "unity_engine-rendering-universal-internal-depthnormalonlypass-types"))] pub mod depthnormalonlypass ;
  # [cfg (feature = "unity_engine-rendering-universal-internal-depthnormalonlypass-types")] pub use depthnormalonlypass :: { DepthNormalOnlyPass , IDepthNormalOnlyPass }
@@ -60,7 +60,7 @@
  # [cfg (feature = "unity_engine-rendering-universal-internal-finalblitpass")] pub use finalblitpass :: { IFinalBlitPassMethods }
  ;
  # [cfg (any (feature = "unity_engine-rendering-universal-internal-forwardlights-types"))] pub mod forwardlights ;
- # [cfg (feature = "unity_engine-rendering-universal-internal-forwardlights-types")] pub use forwardlights :: { ForwardLights_LightConstantBuffer , IForwardLights_LightConstantBuffer , ForwardLights , IForwardLights }
+ # [cfg (feature = "unity_engine-rendering-universal-internal-forwardlights-types")] pub use forwardlights :: { ForwardLights , IForwardLights , ForwardLights_LightConstantBuffer , IForwardLights_LightConstantBuffer }
  ;
  # [cfg (feature = "unity_engine-rendering-universal-internal-forwardlights")] pub use forwardlights :: { IForwardLightsMethods }
  ;
@@ -78,7 +78,7 @@
  # [cfg (feature = "unity_engine-rendering-universal-internal-mainlightshadowcasterpass")] pub use mainlightshadowcasterpass :: { IMainLightShadowCasterPassMethods }
  ;
  # [cfg (any (feature = "unity_engine-rendering-universal-internal-postprocesspass-types"))] pub mod postprocesspass ;
- # [cfg (feature = "unity_engine-rendering-universal-internal-postprocesspass-types")] pub use postprocesspass :: { PostProcessPass_CaptureMode , PostProcessPass_MaterialLibrary , IPostProcessPass_MaterialLibrary , PostProcessPass_ShaderConstants , IPostProcessPass_ShaderConstants , PostProcessPass , IPostProcessPass }
+ # [cfg (feature = "unity_engine-rendering-universal-internal-postprocesspass-types")] pub use postprocesspass :: { PostProcessPass_MaterialLibrary , IPostProcessPass_MaterialLibrary , PostProcessPass_ShaderConstants , IPostProcessPass_ShaderConstants , PostProcessPass_CaptureMode , PostProcessPass , IPostProcessPass }
  ;
  # [cfg (feature = "unity_engine-rendering-universal-internal-postprocesspass")] pub use postprocesspass :: { IPostProcessPass_MaterialLibraryMethods , IPostProcessPassMethods }
  ;

@@ -23,6 +23,12 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopdatabase_1/ShopDataBase_1.md"))] # [:: unity2 :: class (namespace = "App" , name = "ShopDataBase`1")] # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < T0 >)] # [parent (crate :: app :: structtemplate_1 :: StructTemplate_1 < T0 >)] # [parent (crate :: app :: structbase :: StructBase)] # [parent (crate :: system :: object :: Object)] pub struct ShopDataBase_1 < T0 : :: unity2 :: ClassIdentity > {
+# [static_field] # [rename (name = "Infinity")] pub infinity : i32 ,
+# [static_field] # [rename (name = "m_RandomGiftList")] pub m_random_gift_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemdata :: ItemData > ,
+}
+
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopdatabase_1/ShopDataBase_1_GetStockAddedKeyFunc.md"))] # [:: unity2 :: class (namespace = "App" , name = "ShopDataBase`1.GetStockAddedKeyFunc")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] # [parent (crate :: system :: delegate :: Delegate)] # [parent (crate :: system :: object :: Object)] pub struct ShopDataBase_1_GetStockAddedKeyFunc < T0 : :: unity2 :: ClassIdentity > {}
 
 
@@ -78,40 +84,10 @@ impl <T0: ::unity2::ClassIdentity> ShopDataBase_1_AttributeType <T0> {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopdatabase_1/ShopDataBase_1.md"))] # [:: unity2 :: class (namespace = "App" , name = "ShopDataBase`1")] # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < T0 >)] # [parent (crate :: app :: structtemplate_1 :: StructTemplate_1 < T0 >)] # [parent (crate :: app :: structbase :: StructBase)] # [parent (crate :: system :: object :: Object)] pub struct ShopDataBase_1 < T0 : :: unity2 :: ClassIdentity > {
-# [static_field] # [rename (name = "Infinity")] pub infinity : i32 ,
-# [static_field] # [rename (name = "m_RandomGiftList")] pub m_random_gift_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemdata :: ItemData > ,
-}
-
 }
 
 #[cfg(feature = "app-shopdatabase_1-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-shopdatabase_1")]
-# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > ShopDataBase_1_GetStockAddedKeyFunc < T0 > {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] # [method (name = ".ctor" , args = 2)] pub fn ctor (self , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> () ;
-
-# [doc = "`Invoke(::unity2::Il2CppString)` overload"] # [method (name = "Invoke" , args = 1)] pub fn invoke (self , condition : :: unity2 :: Il2CppString) -> :: unity2 :: Il2CppString ;
-}
-
-#[cfg(feature = "app-shopdatabase_1")]
-impl < T0 : :: unity2 :: ClassIdentity > ShopDataBase_1_GetStockAddedKeyFunc < T0 > {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ShopDataBase_1_GetStockAddedKeyFunc) , :: core :: stringify ! (new) ,)) ; < Self as IShopDataBase_1_GetStockAddedKeyFuncMethods < T0 > > :: ctor (this , object , method) ; this }
-}
-
-#[cfg(feature = "app-shopdatabase_1")]
-# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > ShopDataBase_1_GetStockKeyFunc < T0 > {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] # [method (name = ".ctor" , args = 2)] pub fn ctor (self , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> () ;
-
-# [doc = "`Invoke(::unity2::Il2CppString)` overload"] # [method (name = "Invoke" , args = 1)] pub fn invoke (self , condition : :: unity2 :: Il2CppString) -> :: unity2 :: Il2CppString ;
-}
-
-#[cfg(feature = "app-shopdatabase_1")]
-impl < T0 : :: unity2 :: ClassIdentity > ShopDataBase_1_GetStockKeyFunc < T0 > {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ShopDataBase_1_GetStockKeyFunc) , :: core :: stringify ! (new) ,)) ; < Self as IShopDataBase_1_GetStockKeyFuncMethods < T0 > > :: ctor (this , object , method) ; this }
-}
 
 #[cfg(feature = "app-shopdatabase_1")]
 # [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > ShopDataBase_1 < T0 > {
@@ -160,8 +136,35 @@ impl < T0 : :: unity2 :: ClassIdentity > ShopDataBase_1 < T0 > {
 }
 
 #[cfg(feature = "app-shopdatabase_1")]
+# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > ShopDataBase_1_GetStockAddedKeyFunc < T0 > {
+# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] # [method (name = ".ctor" , args = 2)] pub fn ctor (self , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> () ;
+
+# [doc = "`Invoke(::unity2::Il2CppString)` overload"] # [method (name = "Invoke" , args = 1)] pub fn invoke (self , condition : :: unity2 :: Il2CppString) -> :: unity2 :: Il2CppString ;
+}
+
+#[cfg(feature = "app-shopdatabase_1")]
+impl < T0 : :: unity2 :: ClassIdentity > ShopDataBase_1_GetStockAddedKeyFunc < T0 > {
+# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ShopDataBase_1_GetStockAddedKeyFunc) , :: core :: stringify ! (new) ,)) ; < Self as IShopDataBase_1_GetStockAddedKeyFuncMethods < T0 > > :: ctor (this , object , method) ; this }
+}
+
+#[cfg(feature = "app-shopdatabase_1")]
+# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > ShopDataBase_1_GetStockKeyFunc < T0 > {
+# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] # [method (name = ".ctor" , args = 2)] pub fn ctor (self , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> () ;
+
+# [doc = "`Invoke(::unity2::Il2CppString)` overload"] # [method (name = "Invoke" , args = 1)] pub fn invoke (self , condition : :: unity2 :: Il2CppString) -> :: unity2 :: Il2CppString ;
+}
+
+#[cfg(feature = "app-shopdatabase_1")]
+impl < T0 : :: unity2 :: ClassIdentity > ShopDataBase_1_GetStockKeyFunc < T0 > {
+# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ShopDataBase_1_GetStockKeyFunc) , :: core :: stringify ! (new) ,)) ; < Self as IShopDataBase_1_GetStockKeyFuncMethods < T0 > > :: ctor (this , object , method) ; this }
+}
+
+#[cfg(feature = "app-shopdatabase_1")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ShopDataBase_1;
+    pub use super::IShopDataBase_1;
+    pub use super::IShopDataBase_1Methods;
     pub use super::ShopDataBase_1_GetStockAddedKeyFunc;
     pub use super::IShopDataBase_1_GetStockAddedKeyFunc;
     pub use super::IShopDataBase_1_GetStockAddedKeyFuncMethods;
@@ -169,9 +172,6 @@ pub mod prelude {
     pub use super::IShopDataBase_1_GetStockKeyFunc;
     pub use super::IShopDataBase_1_GetStockKeyFuncMethods;
     pub use super::ShopDataBase_1_AttributeType;
-    pub use super::ShopDataBase_1;
-    pub use super::IShopDataBase_1;
-    pub use super::IShopDataBase_1Methods;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdataarray_1::IStructDataArray_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

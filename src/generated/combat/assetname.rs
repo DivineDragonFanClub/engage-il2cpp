@@ -13,9 +13,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/assetname/AssetName.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "AssetName")] # [parent (crate :: system :: object :: Object)] pub struct AssetName {}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/assetname/AssetName_SplitMode.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -70,6 +67,9 @@ impl  AssetName_SplitMode  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/assetname/AssetName.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "AssetName")] # [parent (crate :: system :: object :: Object)] pub struct AssetName {}
+
 }
 
 #[cfg(feature = "combat-assetname-types")]
@@ -87,9 +87,9 @@ impl AssetName { pub fn make_addressables_path_method_info () -> & 'static :: un
 #[cfg(feature = "combat-assetname")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::AssetName_SplitMode;
     pub use super::AssetName;
     pub use super::IAssetName;
-    pub use super::AssetName_SplitMode;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

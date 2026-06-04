@@ -49,7 +49,7 @@
  # [cfg (feature = "nn-hid-gesturepoint-types")] pub use gesturepoint :: { GesturePoint }
  ;
  # [cfg (any (feature = "nn-hid-gesturestate-types"))] pub mod gesturestate ;
- # [cfg (feature = "nn-hid-gesturestate-types")] pub use gesturestate :: { GestureState , GestureState_GesturePointArray4 }
+ # [cfg (feature = "nn-hid-gesturestate-types")] pub use gesturestate :: { GestureState_GesturePointArray4 , GestureState }
  ;
  # [cfg (any (feature = "nn-hid-gesturetype-types"))] pub mod gesturetype ;
  # [cfg (feature = "nn-hid-gesturetype-types")] pub use gesturetype :: { GestureType }
@@ -148,25 +148,25 @@
  # [cfg (feature = "nn-hid-touchscreen-types")] pub use touchscreen :: { TouchScreen , ITouchScreen }
  ;
  # [cfg (any (feature = "nn-hid-touchscreenstate1-types"))] pub mod touchscreenstate1 ;
- # [cfg (feature = "nn-hid-touchscreenstate1-types")] pub use touchscreenstate1 :: { TouchScreenState1_TouchStateArray1 , TouchScreenState1 }
+ # [cfg (feature = "nn-hid-touchscreenstate1-types")] pub use touchscreenstate1 :: { TouchScreenState1 , TouchScreenState1_TouchStateArray1 }
  ;
  # [cfg (any (feature = "nn-hid-touchscreenstate10-types"))] pub mod touchscreenstate10 ;
- # [cfg (feature = "nn-hid-touchscreenstate10-types")] pub use touchscreenstate10 :: { TouchScreenState10_TouchStateArray10 , TouchScreenState10 }
+ # [cfg (feature = "nn-hid-touchscreenstate10-types")] pub use touchscreenstate10 :: { TouchScreenState10 , TouchScreenState10_TouchStateArray10 }
  ;
  # [cfg (any (feature = "nn-hid-touchscreenstate11-types"))] pub mod touchscreenstate11 ;
  # [cfg (feature = "nn-hid-touchscreenstate11-types")] pub use touchscreenstate11 :: { TouchScreenState11 , TouchScreenState11_TouchStateArray11 }
  ;
  # [cfg (any (feature = "nn-hid-touchscreenstate12-types"))] pub mod touchscreenstate12 ;
- # [cfg (feature = "nn-hid-touchscreenstate12-types")] pub use touchscreenstate12 :: { TouchScreenState12 , TouchScreenState12_TouchStateArray12 }
+ # [cfg (feature = "nn-hid-touchscreenstate12-types")] pub use touchscreenstate12 :: { TouchScreenState12_TouchStateArray12 , TouchScreenState12 }
  ;
  # [cfg (any (feature = "nn-hid-touchscreenstate13-types"))] pub mod touchscreenstate13 ;
- # [cfg (feature = "nn-hid-touchscreenstate13-types")] pub use touchscreenstate13 :: { TouchScreenState13 , TouchScreenState13_TouchStateArray13 }
+ # [cfg (feature = "nn-hid-touchscreenstate13-types")] pub use touchscreenstate13 :: { TouchScreenState13_TouchStateArray13 , TouchScreenState13 }
  ;
  # [cfg (any (feature = "nn-hid-touchscreenstate14-types"))] pub mod touchscreenstate14 ;
- # [cfg (feature = "nn-hid-touchscreenstate14-types")] pub use touchscreenstate14 :: { TouchScreenState14 , TouchScreenState14_TouchStateArray14 }
+ # [cfg (feature = "nn-hid-touchscreenstate14-types")] pub use touchscreenstate14 :: { TouchScreenState14_TouchStateArray14 , TouchScreenState14 }
  ;
  # [cfg (any (feature = "nn-hid-touchscreenstate15-types"))] pub mod touchscreenstate15 ;
- # [cfg (feature = "nn-hid-touchscreenstate15-types")] pub use touchscreenstate15 :: { TouchScreenState15_TouchStateArray15 , TouchScreenState15 }
+ # [cfg (feature = "nn-hid-touchscreenstate15-types")] pub use touchscreenstate15 :: { TouchScreenState15 , TouchScreenState15_TouchStateArray15 }
  ;
  # [cfg (any (feature = "nn-hid-touchscreenstate16-types"))] pub mod touchscreenstate16 ;
  # [cfg (feature = "nn-hid-touchscreenstate16-types")] pub use touchscreenstate16 :: { TouchScreenState16_TouchStateArray16 , TouchScreenState16 }
@@ -175,22 +175,22 @@
  # [cfg (feature = "nn-hid-touchscreenstate2-types")] pub use touchscreenstate2 :: { TouchScreenState2 , TouchScreenState2_TouchStateArray2 }
  ;
  # [cfg (any (feature = "nn-hid-touchscreenstate3-types"))] pub mod touchscreenstate3 ;
- # [cfg (feature = "nn-hid-touchscreenstate3-types")] pub use touchscreenstate3 :: { TouchScreenState3_TouchStateArray3 , TouchScreenState3 }
+ # [cfg (feature = "nn-hid-touchscreenstate3-types")] pub use touchscreenstate3 :: { TouchScreenState3 , TouchScreenState3_TouchStateArray3 }
  ;
  # [cfg (any (feature = "nn-hid-touchscreenstate4-types"))] pub mod touchscreenstate4 ;
- # [cfg (feature = "nn-hid-touchscreenstate4-types")] pub use touchscreenstate4 :: { TouchScreenState4 , TouchScreenState4_TouchStateArray4 }
+ # [cfg (feature = "nn-hid-touchscreenstate4-types")] pub use touchscreenstate4 :: { TouchScreenState4_TouchStateArray4 , TouchScreenState4 }
  ;
  # [cfg (any (feature = "nn-hid-touchscreenstate5-types"))] pub mod touchscreenstate5 ;
- # [cfg (feature = "nn-hid-touchscreenstate5-types")] pub use touchscreenstate5 :: { TouchScreenState5 , TouchScreenState5_TouchStateArray5 }
+ # [cfg (feature = "nn-hid-touchscreenstate5-types")] pub use touchscreenstate5 :: { TouchScreenState5_TouchStateArray5 , TouchScreenState5 }
  ;
  # [cfg (any (feature = "nn-hid-touchscreenstate6-types"))] pub mod touchscreenstate6 ;
- # [cfg (feature = "nn-hid-touchscreenstate6-types")] pub use touchscreenstate6 :: { TouchScreenState6_TouchStateArray6 , TouchScreenState6 }
+ # [cfg (feature = "nn-hid-touchscreenstate6-types")] pub use touchscreenstate6 :: { TouchScreenState6 , TouchScreenState6_TouchStateArray6 }
  ;
  # [cfg (any (feature = "nn-hid-touchscreenstate7-types"))] pub mod touchscreenstate7 ;
  # [cfg (feature = "nn-hid-touchscreenstate7-types")] pub use touchscreenstate7 :: { TouchScreenState7_TouchStateArray7 , TouchScreenState7 }
  ;
  # [cfg (any (feature = "nn-hid-touchscreenstate8-types"))] pub mod touchscreenstate8 ;
- # [cfg (feature = "nn-hid-touchscreenstate8-types")] pub use touchscreenstate8 :: { TouchScreenState8_TouchStateArray8 , TouchScreenState8 }
+ # [cfg (feature = "nn-hid-touchscreenstate8-types")] pub use touchscreenstate8 :: { TouchScreenState8 , TouchScreenState8_TouchStateArray8 }
  ;
  # [cfg (any (feature = "nn-hid-touchscreenstate9-types"))] pub mod touchscreenstate9 ;
  # [cfg (feature = "nn-hid-touchscreenstate9-types")] pub use touchscreenstate9 :: { TouchScreenState9 , TouchScreenState9_TouchStateArray9 }
@@ -220,7 +220,7 @@
  # [cfg (feature = "nn-hid-vibrationfileinfo-types")] pub use vibrationfileinfo :: { VibrationFileInfo }
  ;
  # [cfg (any (feature = "nn-hid-vibrationfileparsercontext-types"))] pub mod vibrationfileparsercontext ;
- # [cfg (feature = "nn-hid-vibrationfileparsercontext-types")] pub use vibrationfileparsercontext :: { VibrationFileParserContext_IntPtrArray10 , VibrationFileParserContext }
+ # [cfg (feature = "nn-hid-vibrationfileparsercontext-types")] pub use vibrationfileparsercontext :: { VibrationFileParserContext , VibrationFileParserContext_IntPtrArray10 }
  ;
  # [cfg (any (feature = "nn-hid-vibrationvalue-types"))] pub mod vibrationvalue ;
  # [cfg (feature = "nn-hid-vibrationvalue-types")] pub use vibrationvalue :: { VibrationValue }

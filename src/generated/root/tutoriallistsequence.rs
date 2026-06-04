@@ -15,16 +15,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/tutoriallistsequence/TutorialListSequence.md"))] # [:: unity2 :: class (namespace = "" , name = "TutorialListSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct TutorialListSequence {
-# [offset (112)] # [rename (name = "m_CategorySelectObject")] pub m_category_select_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (120)] # [rename (name = "m_TutorialListObject")] pub m_tutorial_list_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (128)] # [rename (name = "m_PathTable")] pub m_path_table : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: Il2CppString > ,
-# [offset (136)] # [rename (name = "m_SelectCategory")] pub m_select_category : crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_SelectCategoryType ,
-# [offset (144)] # [rename (name = "m_CategoryList")] pub m_category_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_SelectCategoryType > ,
-# [offset (152)] # [rename (name = "m_IsGetAllTutorial")] pub m_is_get_all_tutorial : bool ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/tutoriallistsequence/TutorialListSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -85,6 +75,16 @@ impl  TutorialListSequence_Label  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/tutoriallistsequence/TutorialListSequence.md"))] # [:: unity2 :: class (namespace = "" , name = "TutorialListSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct TutorialListSequence {
+# [offset (112)] # [rename (name = "m_CategorySelectObject")] pub m_category_select_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (120)] # [rename (name = "m_TutorialListObject")] pub m_tutorial_list_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (128)] # [rename (name = "m_PathTable")] pub m_path_table : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: Il2CppString > ,
+# [offset (136)] # [rename (name = "m_SelectCategory")] pub m_select_category : crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_SelectCategoryType ,
+# [offset (144)] # [rename (name = "m_CategoryList")] pub m_category_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_SelectCategoryType > ,
+# [offset (152)] # [rename (name = "m_IsGetAllTutorial")] pub m_is_get_all_tutorial : bool ,
+}
+
 }
 
 #[cfg(feature = "root-tutoriallistsequence-types")]
@@ -113,10 +113,10 @@ impl TutorialListSequence {
 #[cfg(feature = "root-tutoriallistsequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::TutorialListSequence_Label;
     pub use super::TutorialListSequence;
     pub use super::ITutorialListSequence;
     pub use super::ITutorialListSequenceMethods;
-    pub use super::TutorialListSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

@@ -22,9 +22,6 @@ mod __types {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/proc/Proc_ProcCallback_1.md"))] # [:: unity2 :: class (namespace = "App" , name = "Proc.ProcCallback`1")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] # [parent (crate :: system :: delegate :: Delegate)] # [parent (crate :: system :: object :: Object)] pub struct Proc_ProcCallback_1 < T0 : :: unity2 :: ClassIdentity > {}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/proc/Proc_RootType.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -85,6 +82,9 @@ impl  Proc_RootType  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/proc/Proc_ProcCallback_1.md"))] # [:: unity2 :: class (namespace = "App" , name = "Proc.ProcCallback`1")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] # [parent (crate :: system :: delegate :: Delegate)] # [parent (crate :: system :: object :: Object)] pub struct Proc_ProcCallback_1 < T0 : :: unity2 :: ClassIdentity > {}
+
 }
 
 #[cfg(feature = "app-proc-types")]
@@ -128,10 +128,10 @@ pub mod prelude {
     pub use super::Proc;
     pub use super::IProc;
     pub use super::IProcMethods;
+    pub use super::Proc_RootType;
     pub use super::Proc_ProcCallback_1;
     pub use super::IProc_ProcCallback_1;
     pub use super::IProc_ProcCallback_1Methods;
-    pub use super::Proc_RootType;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

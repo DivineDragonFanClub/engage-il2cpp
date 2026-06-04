@@ -4,12 +4,12 @@
  # [cfg (feature = "app-talk3_d-characterfactory-types")] pub use characterfactory :: { CharacterFactory , ICharacterFactory }
  ;
  # [cfg (any (feature = "app-talk3_d-characterfactoryasync_2-types"))] pub mod characterfactoryasync_2 ;
- # [cfg (feature = "app-talk3_d-characterfactoryasync_2-types")] pub use characterfactoryasync_2 :: { CharacterFactoryAsync_2 , ICharacterFactoryAsync_2 , CharacterFactoryAsync_UnitStatusScope , CharacterFactoryAsync_onLoad , ICharacterFactoryAsync_onLoad }
+ # [cfg (feature = "app-talk3_d-characterfactoryasync_2-types")] pub use characterfactoryasync_2 :: { CharacterFactoryAsync_2 , ICharacterFactoryAsync_2 , CharacterFactoryAsync_onLoad , ICharacterFactoryAsync_onLoad , CharacterFactoryAsync_UnitStatusScope }
  ;
  # [cfg (feature = "app-talk3_d-characterfactoryasync_2")] pub use characterfactoryasync_2 :: { ICharacterFactoryAsync_2Methods , ICharacterFactoryAsync_onLoadMethods }
  ;
  # [cfg (any (feature = "app-talk3_d-talk_2-types"))] pub mod talk_2 ;
- # [cfg (feature = "app-talk3_d-talk_2-types")] pub use talk_2 :: { Talk_TalkType , Talk_2 , ITalk_2 }
+ # [cfg (feature = "app-talk3_d-talk_2-types")] pub use talk_2 :: { Talk_2 , ITalk_2 , Talk_TalkType }
  ;
  # [cfg (feature = "app-talk3_d-talk_2")] pub use talk_2 :: { ITalk_2Methods }
  ;
@@ -29,9 +29,9 @@
  # [cfg (feature = "app-talk3_d-talkcharactercontroller")] pub use talkcharactercontroller :: { ITalkCharacterControllerMethods }
  ;
  # [cfg (any (feature = "app-talk3_d-talkcharactermanager-types"))] pub mod talkcharactermanager ;
- # [cfg (feature = "app-talk3_d-talkcharactermanager-types")] pub use talkcharactermanager :: { TalkCharacterManager_ProcFadeOutCharacter , ITalkCharacterManager_ProcFadeOutCharacter , TalkCharacterManager , ITalkCharacterManager , TalkCharacterManager_onLoad , ITalkCharacterManager_onLoad , TalkCharacterManager_ProcFadeInCharacter , ITalkCharacterManager_ProcFadeInCharacter }
+ # [cfg (feature = "app-talk3_d-talkcharactermanager-types")] pub use talkcharactermanager :: { TalkCharacterManager_ProcFadeInCharacter , ITalkCharacterManager_ProcFadeInCharacter , TalkCharacterManager_ProcFadeOutCharacter , ITalkCharacterManager_ProcFadeOutCharacter , TalkCharacterManager , ITalkCharacterManager , TalkCharacterManager_onLoad , ITalkCharacterManager_onLoad }
  ;
- # [cfg (feature = "app-talk3_d-talkcharactermanager")] pub use talkcharactermanager :: { ITalkCharacterManager_ProcFadeOutCharacterMethods , ITalkCharacterManagerMethods , ITalkCharacterManager_onLoadMethods , ITalkCharacterManager_ProcFadeInCharacterMethods }
+ # [cfg (feature = "app-talk3_d-talkcharactermanager")] pub use talkcharactermanager :: { ITalkCharacterManager_ProcFadeInCharacterMethods , ITalkCharacterManager_ProcFadeOutCharacterMethods , ITalkCharacterManagerMethods , ITalkCharacterManager_onLoadMethods }
  ;
  # [cfg (any (feature = "app-talk3_d-talkcharacterpreloader-types"))] pub mod talkcharacterpreloader ;
  # [cfg (feature = "app-talk3_d-talkcharacterpreloader-types")] pub use talkcharacterpreloader :: { TalkCharacterPreLoader , ITalkCharacterPreLoader }
@@ -54,9 +54,9 @@
  # [cfg (feature = "app-talk3_d-talklogsequence")] pub use talklogsequence :: { ITalkLogSequenceMethods }
  ;
  # [cfg (any (feature = "app-talk3_d-talklogui-types"))] pub mod talklogui ;
- # [cfg (feature = "app-talk3_d-talklogui-types")] pub use talklogui :: { TalkLogUI_Cursor , ITalkLogUI_Cursor , TalkLogUI_ScrollBar , ITalkLogUI_ScrollBar , TalkLogUI_Window , ITalkLogUI_Window , TalkLogUI , ITalkLogUI }
+ # [cfg (feature = "app-talk3_d-talklogui-types")] pub use talklogui :: { TalkLogUI_Window , ITalkLogUI_Window , TalkLogUI_Cursor , ITalkLogUI_Cursor , TalkLogUI , ITalkLogUI , TalkLogUI_ScrollBar , ITalkLogUI_ScrollBar }
  ;
- # [cfg (feature = "app-talk3_d-talklogui")] pub use talklogui :: { ITalkLogUI_CursorMethods , ITalkLogUI_ScrollBarMethods , ITalkLogUI_WindowMethods , ITalkLogUIMethods }
+ # [cfg (feature = "app-talk3_d-talklogui")] pub use talklogui :: { ITalkLogUI_WindowMethods , ITalkLogUI_CursorMethods , ITalkLogUIMethods , ITalkLogUI_ScrollBarMethods }
  ;
  # [cfg (any (feature = "app-talk3_d-talkpagescroll-types"))] pub mod talkpagescroll ;
  # [cfg (feature = "app-talk3_d-talkpagescroll-types")] pub use talkpagescroll :: { TalkPageScroll , ITalkPageScroll }
@@ -69,7 +69,7 @@
  # [cfg (feature = "app-talk3_d-talkptr")] pub use talkptr :: { ITalkPtrMethods }
  ;
  # [cfg (any (feature = "app-talk3_d-talksequence-types"))] pub mod talksequence ;
- # [cfg (feature = "app-talk3_d-talksequence-types")] pub use talksequence :: { TalkSequence , ITalkSequence , TalkSequence_PlayMode , TalkSequence_Label , TalkSequence_ReplaceText , ITalkSequence_ReplaceText }
+ # [cfg (feature = "app-talk3_d-talksequence-types")] pub use talksequence :: { TalkSequence_Label , TalkSequence , ITalkSequence , TalkSequence_ReplaceText , ITalkSequence_ReplaceText , TalkSequence_PlayMode }
  ;
  # [cfg (feature = "app-talk3_d-talksequence")] pub use talksequence :: { ITalkSequenceMethods , ITalkSequence_ReplaceTextMethods }
  ;
@@ -79,7 +79,7 @@
  # [cfg (feature = "app-talk3_d-talkstatemonitor")] pub use talkstatemonitor :: { ITalkStateMonitorMethods }
  ;
  # [cfg (any (feature = "app-talk3_d-talktag-types"))] pub mod talktag ;
- # [cfg (feature = "app-talk3_d-talktag-types")] pub use talktag :: { TalkTag , ITalkTag , TalkTag_Result }
+ # [cfg (feature = "app-talk3_d-talktag-types")] pub use talktag :: { TalkTag_Result , TalkTag , ITalkTag }
  ;
  # [cfg (feature = "app-talk3_d-talktag")] pub use talktag :: { ITalkTagMethods }
  ;
@@ -89,7 +89,7 @@
  # [cfg (feature = "app-talk3_d-talktagaddletter")] pub use talktagaddletter :: { ITalkTagAddLetterMethods }
  ;
  # [cfg (any (feature = "app-talk3_d-talktaganimation-types"))] pub mod talktaganimation ;
- # [cfg (feature = "app-talk3_d-talktaganimation-types")] pub use talktaganimation :: { TalkTagAnimation , ITalkTagAnimation , TalkTagAnimation_TagID }
+ # [cfg (feature = "app-talk3_d-talktaganimation-types")] pub use talktaganimation :: { TalkTagAnimation_TagID , TalkTagAnimation , ITalkTagAnimation }
  ;
  # [cfg (feature = "app-talk3_d-talktaganimation")] pub use talktaganimation :: { ITalkTagAnimationMethods }
  ;
@@ -114,7 +114,7 @@
  # [cfg (feature = "app-talk3_d-talktagicon")] pub use talktagicon :: { ITalkTagIconMethods }
  ;
  # [cfg (any (feature = "app-talk3_d-talktagkeywait-types"))] pub mod talktagkeywait ;
- # [cfg (feature = "app-talk3_d-talktagkeywait-types")] pub use talktagkeywait :: { TalkTagKeyWait , ITalkTagKeyWait , TalkTagKeyWait_TagID }
+ # [cfg (feature = "app-talk3_d-talktagkeywait-types")] pub use talktagkeywait :: { TalkTagKeyWait_TagID , TalkTagKeyWait , ITalkTagKeyWait }
  ;
  # [cfg (feature = "app-talk3_d-talktagkeywait")] pub use talktagkeywait :: { ITalkTagKeyWaitMethods }
  ;
@@ -154,9 +154,9 @@
  # [cfg (feature = "app-talk3_d-talktagwindow")] pub use talktagwindow :: { ITalkTagWindowMethods }
  ;
  # [cfg (any (feature = "app-talk3_d-talkui-types"))] pub mod talkui ;
- # [cfg (feature = "app-talk3_d-talkui-types")] pub use talkui :: { TalkUI_TalkObjects , ITalkUI_TalkObjects , TalkUI_SystemObjects , ITalkUI_SystemObjects , TalkUI_KeyHelpObjects , ITalkUI_KeyHelpObjects , TalkUI , ITalkUI , TalkUI_FaceObjects_Face , ITalkUI_FaceObjects_Face , TalkUI_FaceObjects , ITalkUI_FaceObjects , TalkUI_StandObjects , ITalkUI_StandObjects }
+ # [cfg (feature = "app-talk3_d-talkui-types")] pub use talkui :: { TalkUI_TalkObjects , ITalkUI_TalkObjects , TalkUI_FaceObjects , ITalkUI_FaceObjects , TalkUI_StandObjects , ITalkUI_StandObjects , TalkUI , ITalkUI , TalkUI_SystemObjects , ITalkUI_SystemObjects , TalkUI_FaceObjects_Face , ITalkUI_FaceObjects_Face , TalkUI_KeyHelpObjects , ITalkUI_KeyHelpObjects }
  ;
- # [cfg (feature = "app-talk3_d-talkui")] pub use talkui :: { ITalkUI_TalkObjectsMethods , ITalkUI_SystemObjectsMethods , ITalkUI_KeyHelpObjectsMethods , ITalkUIMethods , ITalkUI_FaceObjects_FaceMethods , ITalkUI_FaceObjectsMethods , ITalkUI_StandObjectsMethods }
+ # [cfg (feature = "app-talk3_d-talkui")] pub use talkui :: { ITalkUI_TalkObjectsMethods , ITalkUI_FaceObjectsMethods , ITalkUI_StandObjectsMethods , ITalkUIMethods , ITalkUI_SystemObjectsMethods , ITalkUI_FaceObjects_FaceMethods , ITalkUI_KeyHelpObjectsMethods }
  ;
  # [cfg (any (feature = "app-talk3_d-talkutil-types"))] pub mod talkutil ;
  # [cfg (feature = "app-talk3_d-talkutil-types")] pub use talkutil :: { TalkUtil , ITalkUtil }

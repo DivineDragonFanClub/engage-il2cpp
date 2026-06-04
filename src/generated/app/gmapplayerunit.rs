@@ -15,21 +15,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapplayerunit/GmapPlayerUnit.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapPlayerUnit")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: gmapplayerunit :: GmapPlayerUnit >)] pub struct GmapPlayerUnit {
-# [offset (32)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-# [offset (40)] # [rename (name = "ShipPrefabPath")] pub ship_prefab_path : :: unity2 :: Il2CppString ,
-# [offset (48)] # [rename (name = "m_Ship")] pub m_ship : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (56)] # [rename (name = "ColliderPrefabPath")] pub collider_prefab_path : :: unity2 :: Il2CppString ,
-# [offset (64)] # [rename (name = "TeleportInEffect")] pub teleport_in_effect : :: unity2 :: Il2CppString ,
-# [offset (72)] # [rename (name = "TeleportOutEffect")] pub teleport_out_effect : :: unity2 :: Il2CppString ,
-# [offset (80)] # [rename (name = "m_Rotation")] pub m_rotation : crate :: app :: interpolatorrotation :: InterpolatorRotation ,
-# [offset (96)] # [rename (name = "m_GroundObjectNames")] pub m_ground_object_names : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [offset (104)] # [rename (name = "SeaObjectNames")] pub sea_object_names : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [offset (112)] # [rename (name = "IgnoreObjectNames")] pub ignore_object_names : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [offset (120)] # [rename (name = "PositionDelta")] pub position_delta : crate :: unity_engine :: vector3 :: Vector3 ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapplayerunit/GmapPlayerUnit_ModelType.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -78,6 +63,21 @@ impl  GmapPlayerUnit_ModelType  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapplayerunit/GmapPlayerUnit.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapPlayerUnit")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: gmapplayerunit :: GmapPlayerUnit >)] pub struct GmapPlayerUnit {
+# [offset (32)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
+# [offset (40)] # [rename (name = "ShipPrefabPath")] pub ship_prefab_path : :: unity2 :: Il2CppString ,
+# [offset (48)] # [rename (name = "m_Ship")] pub m_ship : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (56)] # [rename (name = "ColliderPrefabPath")] pub collider_prefab_path : :: unity2 :: Il2CppString ,
+# [offset (64)] # [rename (name = "TeleportInEffect")] pub teleport_in_effect : :: unity2 :: Il2CppString ,
+# [offset (72)] # [rename (name = "TeleportOutEffect")] pub teleport_out_effect : :: unity2 :: Il2CppString ,
+# [offset (80)] # [rename (name = "m_Rotation")] pub m_rotation : crate :: app :: interpolatorrotation :: InterpolatorRotation ,
+# [offset (96)] # [rename (name = "m_GroundObjectNames")] pub m_ground_object_names : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+# [offset (104)] # [rename (name = "SeaObjectNames")] pub sea_object_names : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+# [offset (112)] # [rename (name = "IgnoreObjectNames")] pub ignore_object_names : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+# [offset (120)] # [rename (name = "PositionDelta")] pub position_delta : crate :: unity_engine :: vector3 :: Vector3 ,
+}
+
 }
 
 #[cfg(feature = "app-gmapplayerunit-types")]
@@ -106,10 +106,10 @@ impl GmapPlayerUnit {
 #[cfg(feature = "app-gmapplayerunit")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::GmapPlayerUnit_ModelType;
     pub use super::GmapPlayerUnit;
     pub use super::IGmapPlayerUnit;
     pub use super::IGmapPlayerUnitMethods;
-    pub use super::GmapPlayerUnit_ModelType;
     pub use crate::app::singletonclass_1::ISingletonClass_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

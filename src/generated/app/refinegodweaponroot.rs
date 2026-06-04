@@ -49,6 +49,17 @@ mod __types {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweaponroot/RefineGodWeaponRoot_RefineStatusEfficacy.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineGodWeaponRoot.RefineStatusEfficacy")] # [parent (crate :: system :: object :: Object)] pub struct RefineGodWeaponRoot_RefineStatusEfficacy {
+# [offset (16)] # [rename (name = "m_CaptionText")] pub m_caption_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (24)] # [rename (name = "m_BeforeParentObject")] pub m_before_parent_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (32)] # [rename (name = "m_BeforeValueImage")] pub m_before_value_image : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (40)] # [rename (name = "m_BeforeNothingText")] pub m_before_nothing_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (48)] # [rename (name = "m_AfterParentObject")] pub m_after_parent_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (56)] # [rename (name = "m_AfterValueImage")] pub m_after_value_image : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (64)] # [rename (name = "m_AfterNothingText")] pub m_after_nothing_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+}
+
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweaponroot/RefineGodWeaponRoot_RefineStatus.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineGodWeaponRoot.RefineStatus")] # [parent (crate :: system :: object :: Object)] pub struct RefineGodWeaponRoot_RefineStatus {
 # [offset (16)] # [rename (name = "m_Kind")] pub m_kind : crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind ,
 # [offset (24)] # [rename (name = "m_CaptionText")] pub m_caption_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
@@ -60,17 +71,6 @@ mod __types {
 # [offset (72)] # [rename (name = "m_AfterParentObject")] pub m_after_parent_object : crate :: unity_engine :: gameobject :: GameObject ,
 # [offset (80)] # [rename (name = "m_AfterPlusText")] pub m_after_plus_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
 # [offset (88)] # [rename (name = "m_AfterValueText")] pub m_after_value_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweaponroot/RefineGodWeaponRoot_RefineStatusEfficacy.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineGodWeaponRoot.RefineStatusEfficacy")] # [parent (crate :: system :: object :: Object)] pub struct RefineGodWeaponRoot_RefineStatusEfficacy {
-# [offset (16)] # [rename (name = "m_CaptionText")] pub m_caption_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (24)] # [rename (name = "m_BeforeParentObject")] pub m_before_parent_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (32)] # [rename (name = "m_BeforeValueImage")] pub m_before_value_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (40)] # [rename (name = "m_BeforeNothingText")] pub m_before_nothing_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (48)] # [rename (name = "m_AfterParentObject")] pub m_after_parent_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (56)] # [rename (name = "m_AfterValueImage")] pub m_after_value_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (64)] # [rename (name = "m_AfterNothingText")] pub m_after_nothing_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
 }
 
 }
@@ -116,23 +116,6 @@ impl RefineGodWeaponRoot_WeaponInfoLabel {
 }
 
 #[cfg(feature = "app-refinegodweaponroot")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RefineGodWeaponRoot_RefineStatus_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefineGodWeaponRoot_RefineStatus as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineGodWeaponRoot_RefineStatus as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RefineGodWeaponRoot_RefineStatus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefineGodWeaponRoot_RefineStatus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "app-refinegodweaponroot")]
-pub trait IRefineGodWeaponRoot_RefineStatusMethods : IRefineGodWeaponRoot_RefineStatus { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RefineGodWeaponRoot_RefineStatus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefineGodWeaponRoot_RefineStatus_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-refinegodweaponroot")]
-impl < __T : IRefineGodWeaponRoot_RefineStatus > IRefineGodWeaponRoot_RefineStatusMethods for __T { }
-
-#[cfg(feature = "app-refinegodweaponroot")]
-impl RefineGodWeaponRoot_RefineStatus { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefineGodWeaponRoot_RefineStatus_unity2_raw :: __lookup_ctor :: get_method_info () } }
-
-#[cfg(feature = "app-refinegodweaponroot")]
-impl RefineGodWeaponRoot_RefineStatus {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineGodWeaponRoot_RefineStatus) , :: core :: stringify ! (new) ,)) ; < Self as IRefineGodWeaponRoot_RefineStatusMethods > :: ctor (this ,) ; this }
-}
-
-#[cfg(feature = "app-refinegodweaponroot")]
 # [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RefineGodWeaponRoot_RefineStatusEfficacy_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefineGodWeaponRoot_RefineStatusEfficacy as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineGodWeaponRoot_RefineStatusEfficacy as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RefineGodWeaponRoot_RefineStatusEfficacy , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefineGodWeaponRoot_RefineStatusEfficacy , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-refinegodweaponroot")]
@@ -150,6 +133,23 @@ impl RefineGodWeaponRoot_RefineStatusEfficacy {
 }
 
 #[cfg(feature = "app-refinegodweaponroot")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RefineGodWeaponRoot_RefineStatus_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefineGodWeaponRoot_RefineStatus as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineGodWeaponRoot_RefineStatus as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RefineGodWeaponRoot_RefineStatus , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefineGodWeaponRoot_RefineStatus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-refinegodweaponroot")]
+pub trait IRefineGodWeaponRoot_RefineStatusMethods : IRefineGodWeaponRoot_RefineStatus { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RefineGodWeaponRoot_RefineStatus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefineGodWeaponRoot_RefineStatus_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-refinegodweaponroot")]
+impl < __T : IRefineGodWeaponRoot_RefineStatus > IRefineGodWeaponRoot_RefineStatusMethods for __T { }
+
+#[cfg(feature = "app-refinegodweaponroot")]
+impl RefineGodWeaponRoot_RefineStatus { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefineGodWeaponRoot_RefineStatus_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-refinegodweaponroot")]
+impl RefineGodWeaponRoot_RefineStatus {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineGodWeaponRoot_RefineStatus) , :: core :: stringify ! (new) ,)) ; < Self as IRefineGodWeaponRoot_RefineStatusMethods > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "app-refinegodweaponroot")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::RefineGodWeaponRoot;
@@ -158,12 +158,12 @@ pub mod prelude {
     pub use super::RefineGodWeaponRoot_WeaponInfoLabel;
     pub use super::IRefineGodWeaponRoot_WeaponInfoLabel;
     pub use super::IRefineGodWeaponRoot_WeaponInfoLabelMethods;
-    pub use super::RefineGodWeaponRoot_RefineStatus;
-    pub use super::IRefineGodWeaponRoot_RefineStatus;
-    pub use super::IRefineGodWeaponRoot_RefineStatusMethods;
     pub use super::RefineGodWeaponRoot_RefineStatusEfficacy;
     pub use super::IRefineGodWeaponRoot_RefineStatusEfficacy;
     pub use super::IRefineGodWeaponRoot_RefineStatusEfficacyMethods;
+    pub use super::RefineGodWeaponRoot_RefineStatus;
+    pub use super::IRefineGodWeaponRoot_RefineStatus;
+    pub use super::IRefineGodWeaponRoot_RefineStatusMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;
     pub use crate::unity_engine::component::IComponent;

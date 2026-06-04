@@ -19,16 +19,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroommoviemenuitem/MyRoomMovieMenuItem_MyRoomMovieCallSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomMovieMenuItem.MyRoomMovieCallSequence")] # [parent (crate :: app :: stackprocinst_1 :: StackProcInst_1 < crate :: app :: myroommoviemenuitem :: MyRoomMovieMenuItem_MyRoomMovieCallSequence >)] pub struct MyRoomMovieMenuItem_MyRoomMovieCallSequence {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroommoviemenuitem/MyRoomMovieMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomMovieMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct MyRoomMovieMenuItem {
-# [offset (104)] # [rename (name = "m_movieFileName")] pub m_movie_file_name : :: unity2 :: Il2CppString ,
-# [offset (112)] # [rename (name = "m_help")] pub m_help : :: unity2 :: Il2CppString ,
-# [offset (120)] # [rename (name = "m_label")] pub m_label : :: unity2 :: Il2CppString ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroommoviemenuitem/MyRoomMovieMenuItem_MyRoomMovieCallSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -83,6 +73,16 @@ impl  MyRoomMovieMenuItem_MyRoomMovieCallSequence_Label  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroommoviemenuitem/MyRoomMovieMenuItem_MyRoomMovieCallSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomMovieMenuItem.MyRoomMovieCallSequence")] # [parent (crate :: app :: stackprocinst_1 :: StackProcInst_1 < crate :: app :: myroommoviemenuitem :: MyRoomMovieMenuItem_MyRoomMovieCallSequence >)] pub struct MyRoomMovieMenuItem_MyRoomMovieCallSequence {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroommoviemenuitem/MyRoomMovieMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomMovieMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct MyRoomMovieMenuItem {
+# [offset (104)] # [rename (name = "m_movieFileName")] pub m_movie_file_name : :: unity2 :: Il2CppString ,
+# [offset (112)] # [rename (name = "m_help")] pub m_help : :: unity2 :: Il2CppString ,
+# [offset (120)] # [rename (name = "m_label")] pub m_label : :: unity2 :: Il2CppString ,
+}
+
 }
 
 #[cfg(feature = "app-myroommoviemenuitem-types")]
@@ -128,13 +128,13 @@ impl MyRoomMovieMenuItem {
 #[cfg(feature = "app-myroommoviemenuitem")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MyRoomMovieMenuItem_MyRoomMovieCallSequence_Label;
     pub use super::MyRoomMovieMenuItem_MyRoomMovieCallSequence;
     pub use super::IMyRoomMovieMenuItem_MyRoomMovieCallSequence;
     pub use super::IMyRoomMovieMenuItem_MyRoomMovieCallSequenceMethods;
     pub use super::MyRoomMovieMenuItem;
     pub use super::IMyRoomMovieMenuItem;
     pub use super::IMyRoomMovieMenuItemMethods;
-    pub use super::MyRoomMovieMenuItem_MyRoomMovieCallSequence_Label;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::stackprocinst_1::IStackProcInst_1;

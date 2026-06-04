@@ -17,27 +17,18 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexkillbonus/NexKillBonus_ServerSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "NexKillBonus.ServerSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct NexKillBonus_ServerSequence {
-# [offset (112)] # [rename (name = "m_Mode")] pub m_mode : crate :: app :: nexkillbonus :: NexKillBonus_ServerSequence_Mode ,
-# [offset (120)] # [rename (name = "m_Cid")] pub m_cid : :: unity2 :: Il2CppString ,
-# [offset (128)] # [rename (name = "m_KillCountImage")] pub m_kill_count_image : crate :: app :: mapkillbonus :: MapKillBonus_CountImage ,
-# [offset (136)] # [rename (name = "m_KilledCountImage")] pub m_killed_count_image : crate :: app :: mapkillbonus :: MapKillBonus_CountImage ,
-# [offset (144)] # [rename (name = "m_DataId")] pub m_data_id : u64 ,
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexkillbonus/NexKillBonus_Kinds.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexkillbonus/NexKillBonus_ServerSequence_Mode.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct NexKillBonus_Kinds  {
+pub struct NexKillBonus_ServerSequence_Mode  {
     pub value: i32,
 }
 
 
-impl  ::unity2::ClassIdentity for NexKillBonus_Kinds  {
+impl  ::unity2::ClassIdentity for NexKillBonus_ServerSequence_Mode  {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "NexKillBonus.Kinds";
+    const NAME: &'static str = "NexKillBonus.ServerSequence.Mode";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> =
@@ -52,7 +43,7 @@ impl  ::unity2::ClassIdentity for NexKillBonus_Kinds  {
 }
 
 
-impl  ::unity2::IlType for NexKillBonus_Kinds  {
+impl  ::unity2::IlType for NexKillBonus_ServerSequence_Mode  {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
@@ -60,38 +51,27 @@ impl  ::unity2::IlType for NexKillBonus_Kinds  {
 }
 
 
-impl  NexKillBonus_Kinds  {
-    pub fn kill() -> Self {
+impl  NexKillBonus_ServerSequence_Mode  {
+    pub fn download() -> Self {
         Self { value: 0 }
 
     }
 
 
-    pub fn killed() -> Self {
+    pub fn upload() -> Self {
         Self { value: 1 }
-
-    }
-
-
-    pub fn max() -> Self {
-        Self { value: 2 }
 
     }
 
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexkillbonus/NexKillBonus.md"))] # [:: unity2 :: class (namespace = "App" , name = "NexKillBonus")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: nexkillbonus :: NexKillBonus >)] pub struct NexKillBonus {
-# [static_field] # [rename (name = "MaxWidth")] pub max_width : i32 ,
-# [static_field] # [rename (name = "MaxHeight")] pub max_height : i32 ,
-# [static_field] # [rename (name = "MaxPostData")] pub max_post_data : i32 ,
-# [static_field] # [rename (name = "Period")] pub period : i32 ,
-# [static_field] # [rename (name = "MaxCount")] pub max_count : i32 ,
-# [static_field] # [rename (name = "StreamBufferSize")] pub stream_buffer_size : i32 ,
-# [static_field] # [rename (name = "GetBufferSize")] pub get_buffer_size : i32 ,
-# [offset (40)] # [rename (name = "m_IsSucceeded")] pub m_is_succeeded : bool ,
-# [offset (48)] # [rename (name = "m_SerializeStream")] pub m_serialize_stream : crate :: app :: stream_2 :: Stream_2 ,
-# [offset (56)] # [rename (name = "m_SerializeStreamBuffer")] pub m_serialize_stream_buffer : :: unity2 :: Array < u8 > ,
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexkillbonus/NexKillBonus_ServerSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "NexKillBonus.ServerSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct NexKillBonus_ServerSequence {
+# [offset (112)] # [rename (name = "m_Mode")] pub m_mode : crate :: app :: nexkillbonus :: NexKillBonus_ServerSequence_Mode ,
+# [offset (120)] # [rename (name = "m_Cid")] pub m_cid : :: unity2 :: Il2CppString ,
+# [offset (128)] # [rename (name = "m_KillCountImage")] pub m_kill_count_image : crate :: app :: mapkillbonus :: MapKillBonus_CountImage ,
+# [offset (136)] # [rename (name = "m_KilledCountImage")] pub m_killed_count_image : crate :: app :: mapkillbonus :: MapKillBonus_CountImage ,
+# [offset (144)] # [rename (name = "m_DataId")] pub m_data_id : u64 ,
 }
 
 
@@ -186,18 +166,18 @@ impl  NexKillBonus_ServerSequence_Label  {
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexkillbonus/NexKillBonus_ServerSequence_Mode.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexkillbonus/NexKillBonus_Kinds.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct NexKillBonus_ServerSequence_Mode  {
+pub struct NexKillBonus_Kinds  {
     pub value: i32,
 }
 
 
-impl  ::unity2::ClassIdentity for NexKillBonus_ServerSequence_Mode  {
+impl  ::unity2::ClassIdentity for NexKillBonus_Kinds  {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "NexKillBonus.ServerSequence.Mode";
+    const NAME: &'static str = "NexKillBonus.Kinds";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> =
@@ -212,7 +192,7 @@ impl  ::unity2::ClassIdentity for NexKillBonus_ServerSequence_Mode  {
 }
 
 
-impl  ::unity2::IlType for NexKillBonus_ServerSequence_Mode  {
+impl  ::unity2::IlType for NexKillBonus_Kinds  {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
@@ -220,18 +200,38 @@ impl  ::unity2::IlType for NexKillBonus_ServerSequence_Mode  {
 }
 
 
-impl  NexKillBonus_ServerSequence_Mode  {
-    pub fn download() -> Self {
+impl  NexKillBonus_Kinds  {
+    pub fn kill() -> Self {
         Self { value: 0 }
 
     }
 
 
-    pub fn upload() -> Self {
+    pub fn killed() -> Self {
         Self { value: 1 }
 
     }
 
+
+    pub fn max() -> Self {
+        Self { value: 2 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexkillbonus/NexKillBonus.md"))] # [:: unity2 :: class (namespace = "App" , name = "NexKillBonus")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: nexkillbonus :: NexKillBonus >)] pub struct NexKillBonus {
+# [static_field] # [rename (name = "MaxWidth")] pub max_width : i32 ,
+# [static_field] # [rename (name = "MaxHeight")] pub max_height : i32 ,
+# [static_field] # [rename (name = "MaxPostData")] pub max_post_data : i32 ,
+# [static_field] # [rename (name = "Period")] pub period : i32 ,
+# [static_field] # [rename (name = "MaxCount")] pub max_count : i32 ,
+# [static_field] # [rename (name = "StreamBufferSize")] pub stream_buffer_size : i32 ,
+# [static_field] # [rename (name = "GetBufferSize")] pub get_buffer_size : i32 ,
+# [offset (40)] # [rename (name = "m_IsSucceeded")] pub m_is_succeeded : bool ,
+# [offset (48)] # [rename (name = "m_SerializeStream")] pub m_serialize_stream : crate :: app :: stream_2 :: Stream_2 ,
+# [offset (56)] # [rename (name = "m_SerializeStreamBuffer")] pub m_serialize_stream_buffer : :: unity2 :: Array < u8 > ,
 }
 
 }
@@ -279,15 +279,15 @@ impl NexKillBonus {
 #[cfg(feature = "app-nexkillbonus")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::NexKillBonus_ServerSequence_Mode;
     pub use super::NexKillBonus_ServerSequence;
     pub use super::INexKillBonus_ServerSequence;
     pub use super::INexKillBonus_ServerSequenceMethods;
+    pub use super::NexKillBonus_ServerSequence_Label;
     pub use super::NexKillBonus_Kinds;
     pub use super::NexKillBonus;
     pub use super::INexKillBonus;
     pub use super::INexKillBonusMethods;
-    pub use super::NexKillBonus_ServerSequence_Label;
-    pub use super::NexKillBonus_ServerSequence_Mode;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonclass_1::ISingletonClass_1;
     pub use crate::system::object::IObject;

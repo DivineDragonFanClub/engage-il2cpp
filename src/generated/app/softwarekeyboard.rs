@@ -15,6 +15,18 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/softwarekeyboard/SoftwareKeyboard.md"))] # [:: unity2 :: class (namespace = "App" , name = "SoftwareKeyboard")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct SoftwareKeyboard {
+# [static_field] # [rename (name = "DataCodeMaxLength")] pub data_code_max_length : i32 ,
+# [static_field] # [rename (name = "s_result")] pub s_result : :: unity2 :: IlInstance ,
+# [offset (296)] # [rename (name = "m_maxLength")] pub m_max_length : i32 ,
+# [offset (304)] # [rename (name = "m_headerText")] pub m_header_text : :: unity2 :: Il2CppString ,
+# [offset (312)] # [rename (name = "m_subText")] pub m_sub_text : :: unity2 :: Il2CppString ,
+# [offset (320)] # [rename (name = "m_initialText")] pub m_initial_text : :: unity2 :: Il2CppString ,
+# [offset (328)] # [rename (name = "m_preset")] pub m_preset : crate :: app :: softwarekeyboard :: SoftwareKeyboard_Preset ,
+# [offset (336)] # [rename (name = "m_callback")] pub m_callback : crate :: system :: action_1 :: Action_1 < :: unity2 :: Il2CppString > ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/softwarekeyboard/SoftwareKeyboard_Preset.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -69,18 +81,6 @@ impl  SoftwareKeyboard_Preset  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/softwarekeyboard/SoftwareKeyboard.md"))] # [:: unity2 :: class (namespace = "App" , name = "SoftwareKeyboard")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct SoftwareKeyboard {
-# [static_field] # [rename (name = "DataCodeMaxLength")] pub data_code_max_length : i32 ,
-# [static_field] # [rename (name = "s_result")] pub s_result : :: unity2 :: IlInstance ,
-# [offset (296)] # [rename (name = "m_maxLength")] pub m_max_length : i32 ,
-# [offset (304)] # [rename (name = "m_headerText")] pub m_header_text : :: unity2 :: Il2CppString ,
-# [offset (312)] # [rename (name = "m_subText")] pub m_sub_text : :: unity2 :: Il2CppString ,
-# [offset (320)] # [rename (name = "m_initialText")] pub m_initial_text : :: unity2 :: Il2CppString ,
-# [offset (328)] # [rename (name = "m_preset")] pub m_preset : crate :: app :: softwarekeyboard :: SoftwareKeyboard_Preset ,
-# [offset (336)] # [rename (name = "m_callback")] pub m_callback : crate :: system :: action_1 :: Action_1 < :: unity2 :: Il2CppString > ,
-}
-
 }
 
 #[cfg(feature = "app-softwarekeyboard-types")]
@@ -109,10 +109,10 @@ impl SoftwareKeyboard {
 #[cfg(feature = "app-softwarekeyboard")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SoftwareKeyboard_Preset;
     pub use super::SoftwareKeyboard;
     pub use super::ISoftwareKeyboard;
     pub use super::ISoftwareKeyboardMethods;
+    pub use super::SoftwareKeyboard_Preset;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

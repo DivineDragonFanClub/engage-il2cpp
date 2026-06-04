@@ -19,6 +19,19 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/hubcookingstartmenusequence/HubCookingStartMenuSequence.md"))] # [:: unity2 :: class (namespace = "App.CookingMenu" , name = "HubCookingStartMenuSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct HubCookingStartMenuSequence {
+# [offset (112)] # [rename (name = "m_DecideCallback")] pub m_decide_callback : crate :: app :: cooking_menu :: hubcookingstartmenusequence :: HubCookingStartMenuSequence_DecideEventHandler ,
+# [offset (120)] # [rename (name = "m_EndCallback")] pub m_end_callback : crate :: system :: action :: Action ,
+# [offset (128)] # [rename (name = "m_SelectUnitList")] pub m_select_unit_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > ,
+# [offset (136)] # [rename (name = "m_SelectFood")] pub m_select_food : crate :: app :: fooddata :: FoodData ,
+# [offset (144)] # [rename (name = "m_SelectFoodstuffList")] pub m_select_foodstuff_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: foodstuffdata :: FoodstuffData > ,
+# [offset (152)] # [rename (name = "m_AllContent")] pub m_all_content : crate :: app :: cooking_menu :: dishallmenucontent :: DishAllMenuContent ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/hubcookingstartmenusequence/HubCookingStartMenuSequence_DecideEventHandler.md"))] # [:: unity2 :: class (namespace = "App.CookingMenu" , name = "HubCookingStartMenuSequence.DecideEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct HubCookingStartMenuSequence_DecideEventHandler {}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking_menu/hubcookingstartmenusequence/HubCookingStartMenuSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -91,19 +104,6 @@ impl  HubCookingStartMenuSequence_Label  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/hubcookingstartmenusequence/HubCookingStartMenuSequence.md"))] # [:: unity2 :: class (namespace = "App.CookingMenu" , name = "HubCookingStartMenuSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct HubCookingStartMenuSequence {
-# [offset (112)] # [rename (name = "m_DecideCallback")] pub m_decide_callback : crate :: app :: cooking_menu :: hubcookingstartmenusequence :: HubCookingStartMenuSequence_DecideEventHandler ,
-# [offset (120)] # [rename (name = "m_EndCallback")] pub m_end_callback : crate :: system :: action :: Action ,
-# [offset (128)] # [rename (name = "m_SelectUnitList")] pub m_select_unit_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > ,
-# [offset (136)] # [rename (name = "m_SelectFood")] pub m_select_food : crate :: app :: fooddata :: FoodData ,
-# [offset (144)] # [rename (name = "m_SelectFoodstuffList")] pub m_select_foodstuff_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: foodstuffdata :: FoodstuffData > ,
-# [offset (152)] # [rename (name = "m_AllContent")] pub m_all_content : crate :: app :: cooking_menu :: dishallmenucontent :: DishAllMenuContent ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/hubcookingstartmenusequence/HubCookingStartMenuSequence_DecideEventHandler.md"))] # [:: unity2 :: class (namespace = "App.CookingMenu" , name = "HubCookingStartMenuSequence.DecideEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct HubCookingStartMenuSequence_DecideEventHandler {}
-
 }
 
 #[cfg(feature = "app-cooking_menu-hubcookingstartmenusequence-types")]
@@ -149,13 +149,13 @@ impl HubCookingStartMenuSequence_DecideEventHandler {
 #[cfg(feature = "app-cooking_menu-hubcookingstartmenusequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HubCookingStartMenuSequence_Label;
     pub use super::HubCookingStartMenuSequence;
     pub use super::IHubCookingStartMenuSequence;
     pub use super::IHubCookingStartMenuSequenceMethods;
     pub use super::HubCookingStartMenuSequence_DecideEventHandler;
     pub use super::IHubCookingStartMenuSequence_DecideEventHandler;
     pub use super::IHubCookingStartMenuSequence_DecideEventHandlerMethods;
+    pub use super::HubCookingStartMenuSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;

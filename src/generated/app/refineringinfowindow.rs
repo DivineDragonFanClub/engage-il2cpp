@@ -17,15 +17,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineringinfowindow/RefineRingInfoWindow_RingRefinedInfo.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineRingInfoWindow.RingRefinedInfo")] # [parent (crate :: system :: object :: Object)] pub struct RefineRingInfoWindow_RingRefinedInfo {
-# [offset (16)] # [rename (name = "m_NameText")] pub m_name_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (24)] # [rename (name = "m_RingCImage")] pub m_ring_c_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (32)] # [rename (name = "m_RingBImage")] pub m_ring_b_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (40)] # [rename (name = "m_RingAImage")] pub m_ring_a_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (48)] # [rename (name = "m_RingSImage")] pub m_ring_s_image : crate :: unity_engine :: ui :: image :: Image ,
-}
-
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineringinfowindow/RefineRingInfoWindow_RingRefineStatistics.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineRingInfoWindow.RingRefineStatistics")] # [parent (crate :: system :: object :: Object)] pub struct RefineRingInfoWindow_RingRefineStatistics {
 # [offset (16)] # [rename (name = "m_Name")] pub m_name : :: unity2 :: Il2CppString ,
 # [offset (24)] # [rename (name = "m_ExistS")] pub m_exist_s : bool ,
@@ -36,6 +27,15 @@ mod __types {
 # [offset (29)] # [rename (name = "m_RefinedA")] pub m_refined_a : bool ,
 # [offset (30)] # [rename (name = "m_RefinedB")] pub m_refined_b : bool ,
 # [offset (31)] # [rename (name = "m_RefinedC")] pub m_refined_c : bool ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineringinfowindow/RefineRingInfoWindow_RingRefinedInfo.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineRingInfoWindow.RingRefinedInfo")] # [parent (crate :: system :: object :: Object)] pub struct RefineRingInfoWindow_RingRefinedInfo {
+# [offset (16)] # [rename (name = "m_NameText")] pub m_name_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (24)] # [rename (name = "m_RingCImage")] pub m_ring_c_image : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (32)] # [rename (name = "m_RingBImage")] pub m_ring_b_image : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (40)] # [rename (name = "m_RingAImage")] pub m_ring_a_image : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (48)] # [rename (name = "m_RingSImage")] pub m_ring_s_image : crate :: unity_engine :: ui :: image :: Image ,
 }
 
 
@@ -57,23 +57,6 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-refineringinfowindow")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RefineRingInfoWindow_RingRefinedInfo_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefineRingInfoWindow_RingRefinedInfo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineRingInfoWindow_RingRefinedInfo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RefineRingInfoWindow_RingRefinedInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefineRingInfoWindow_RingRefinedInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "app-refineringinfowindow")]
-pub trait IRefineRingInfoWindow_RingRefinedInfoMethods : IRefineRingInfoWindow_RingRefinedInfo { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RefineRingInfoWindow_RingRefinedInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefineRingInfoWindow_RingRefinedInfo_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-refineringinfowindow")]
-impl < __T : IRefineRingInfoWindow_RingRefinedInfo > IRefineRingInfoWindow_RingRefinedInfoMethods for __T { }
-
-#[cfg(feature = "app-refineringinfowindow")]
-impl RefineRingInfoWindow_RingRefinedInfo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefineRingInfoWindow_RingRefinedInfo_unity2_raw :: __lookup_ctor :: get_method_info () } }
-
-#[cfg(feature = "app-refineringinfowindow")]
-impl RefineRingInfoWindow_RingRefinedInfo {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineRingInfoWindow_RingRefinedInfo) , :: core :: stringify ! (new) ,)) ; < Self as IRefineRingInfoWindow_RingRefinedInfoMethods > :: ctor (this ,) ; this }
-}
-
-#[cfg(feature = "app-refineringinfowindow")]
 # [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RefineRingInfoWindow_RingRefineStatistics_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefineRingInfoWindow_RingRefineStatistics as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineRingInfoWindow_RingRefineStatistics as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RefineRingInfoWindow_RingRefineStatistics , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefineRingInfoWindow_RingRefineStatistics , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-refineringinfowindow")]
@@ -88,6 +71,23 @@ impl RefineRingInfoWindow_RingRefineStatistics { pub fn ctor_method_info () -> &
 #[cfg(feature = "app-refineringinfowindow")]
 impl RefineRingInfoWindow_RingRefineStatistics {
 # [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineRingInfoWindow_RingRefineStatistics) , :: core :: stringify ! (new) ,)) ; < Self as IRefineRingInfoWindow_RingRefineStatisticsMethods > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "app-refineringinfowindow")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RefineRingInfoWindow_RingRefinedInfo_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RefineRingInfoWindow_RingRefinedInfo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineRingInfoWindow_RingRefinedInfo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RefineRingInfoWindow_RingRefinedInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RefineRingInfoWindow_RingRefinedInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-refineringinfowindow")]
+pub trait IRefineRingInfoWindow_RingRefinedInfoMethods : IRefineRingInfoWindow_RingRefinedInfo { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RefineRingInfoWindow_RingRefinedInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RefineRingInfoWindow_RingRefinedInfo_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-refineringinfowindow")]
+impl < __T : IRefineRingInfoWindow_RingRefinedInfo > IRefineRingInfoWindow_RingRefinedInfoMethods for __T { }
+
+#[cfg(feature = "app-refineringinfowindow")]
+impl RefineRingInfoWindow_RingRefinedInfo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RefineRingInfoWindow_RingRefinedInfo_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-refineringinfowindow")]
+impl RefineRingInfoWindow_RingRefinedInfo {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineRingInfoWindow_RingRefinedInfo) , :: core :: stringify ! (new) ,)) ; < Self as IRefineRingInfoWindow_RingRefinedInfoMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-refineringinfowindow")]
@@ -110,12 +110,12 @@ impl RefineRingInfoWindow {
 #[cfg(feature = "app-refineringinfowindow")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RefineRingInfoWindow_RingRefinedInfo;
-    pub use super::IRefineRingInfoWindow_RingRefinedInfo;
-    pub use super::IRefineRingInfoWindow_RingRefinedInfoMethods;
     pub use super::RefineRingInfoWindow_RingRefineStatistics;
     pub use super::IRefineRingInfoWindow_RingRefineStatistics;
     pub use super::IRefineRingInfoWindow_RingRefineStatisticsMethods;
+    pub use super::RefineRingInfoWindow_RingRefinedInfo;
+    pub use super::IRefineRingInfoWindow_RingRefinedInfo;
+    pub use super::IRefineRingInfoWindow_RingRefinedInfoMethods;
     pub use super::RefineRingInfoWindow;
     pub use super::IRefineRingInfoWindow;
     pub use super::IRefineRingInfoWindowMethods;

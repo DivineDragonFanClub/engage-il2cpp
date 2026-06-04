@@ -11,5 +11,5 @@
  # [cfg (feature = "unity_engine-addressable_assets-utility-resourcemanagerdiagnostics")] pub use resourcemanagerdiagnostics :: { IResourceManagerDiagnosticsMethods }
  ;
  # [cfg (any (feature = "unity_engine-addressable_assets-utility-serializationutilities-types"))] pub mod serializationutilities ;
- # [cfg (feature = "unity_engine-addressable_assets-utility-serializationutilities-types")] pub use serializationutilities :: { SerializationUtilities , ISerializationUtilities , SerializationUtilities_ObjectType }
+ # [cfg (feature = "unity_engine-addressable_assets-utility-serializationutilities-types")] pub use serializationutilities :: { SerializationUtilities_ObjectType , SerializationUtilities , ISerializationUtilities }
  ;

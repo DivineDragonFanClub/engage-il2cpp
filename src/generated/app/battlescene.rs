@@ -21,159 +21,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlescene/BattleScene.md"))] # [:: unity2 :: class (namespace = "App" , name = "BattleScene")] # [parent (crate :: app :: pool :: Pool_Node)] pub struct BattleScene {
-# [offset (16)] # [rename (name = "m_List")] pub m_list : crate :: app :: battlescenelist :: BattleSceneList ,
-# [offset (24)] # [rename (name = "m_Side")] pub m_side : crate :: app :: battleside :: BattleSide_Type ,
-# [offset (28)] # [rename (name = "m_Target")] pub m_target : crate :: app :: battleside :: BattleSide_Type ,
-# [offset (32)] # [rename (name = "m_Kind")] pub m_kind : crate :: app :: battlescene :: BattleScene_Kind ,
-# [offset (36)] # [rename (name = "m_Skill")] pub m_skill : i32 ,
-# [offset (40)] # [rename (name = "m_Item")] pub m_item : i32 ,
-# [offset (44)] # [rename (name = "m_God")] pub m_god : i32 ,
-# [offset (48)] # [rename (name = "m_Index")] pub m_index : i32 ,
-# [offset (56)] # [rename (name = "m_Result")] pub m_result : crate :: app :: battlescene :: BattleScene_FieldResult ,
-# [offset (64)] # [rename (name = "m_Guardian")] pub m_guardian : crate :: app :: battleside :: BattleSide_Type ,
-# [offset (72)] # [rename (name = "m_Hps")] pub m_hps : crate :: app :: battleside :: BattleSide_ShortArray ,
-# [offset (80)] # [rename (name = "m_Engages")] pub m_engages : crate :: app :: battleside :: BattleSide_SbyteArray ,
-# [offset (88)] # [rename (name = "m_Damages")] pub m_damages : crate :: app :: battleside :: BattleSide_ShortArray ,
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlescene/BattleScene_Result.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct BattleScene_Result  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for BattleScene_Result  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "BattleScene.Result";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for BattleScene_Result  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  BattleScene_Result  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn hit() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn critical() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn guard() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn suicide() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn efficacy() -> Self {
-        Self { value: 16 }
-
-    }
-
-
-    pub fn r#break() -> Self {
-        Self { value: 32 }
-
-    }
-
-
-    pub fn blow() -> Self {
-        Self { value: 64 }
-
-    }
-
-
-    pub fn bounce() -> Self {
-        Self { value: 128 }
-
-    }
-
-
-    pub fn chain_attack() -> Self {
-        Self { value: 256 }
-
-    }
-
-
-    pub fn chain_guard() -> Self {
-        Self { value: 512 }
-
-    }
-
-
-    pub fn dual_guard() -> Self {
-        Self { value: 1024 }
-
-    }
-
-
-    pub fn engage_attack() -> Self {
-        Self { value: 2048 }
-
-    }
-
-
-    pub fn physical() -> Self {
-        Self { value: 4096 }
-
-    }
-
-
-    pub fn magic() -> Self {
-        Self { value: 8192 }
-
-    }
-
-
-    pub fn ignore() -> Self {
-        Self { value: 16384 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlescene/BattleScene_FieldResult.md"))] # [:: unity2 :: class (namespace = "App" , name = "BattleScene.FieldResult")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: battlescene :: BattleScene_Result >)] pub struct BattleScene_FieldResult {}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlescene/BattleScene_Kind.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -348,6 +195,159 @@ impl  BattleScene_Kind  {
 
 }
 
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlescene/BattleScene_Result.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct BattleScene_Result  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for BattleScene_Result  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "BattleScene.Result";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for BattleScene_Result  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  BattleScene_Result  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn hit() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn critical() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn guard() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn suicide() -> Self {
+        Self { value: 8 }
+
+    }
+
+
+    pub fn efficacy() -> Self {
+        Self { value: 16 }
+
+    }
+
+
+    pub fn r#break() -> Self {
+        Self { value: 32 }
+
+    }
+
+
+    pub fn blow() -> Self {
+        Self { value: 64 }
+
+    }
+
+
+    pub fn bounce() -> Self {
+        Self { value: 128 }
+
+    }
+
+
+    pub fn chain_attack() -> Self {
+        Self { value: 256 }
+
+    }
+
+
+    pub fn chain_guard() -> Self {
+        Self { value: 512 }
+
+    }
+
+
+    pub fn dual_guard() -> Self {
+        Self { value: 1024 }
+
+    }
+
+
+    pub fn engage_attack() -> Self {
+        Self { value: 2048 }
+
+    }
+
+
+    pub fn physical() -> Self {
+        Self { value: 4096 }
+
+    }
+
+
+    pub fn magic() -> Self {
+        Self { value: 8192 }
+
+    }
+
+
+    pub fn ignore() -> Self {
+        Self { value: 16384 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlescene/BattleScene.md"))] # [:: unity2 :: class (namespace = "App" , name = "BattleScene")] # [parent (crate :: app :: pool :: Pool_Node)] pub struct BattleScene {
+# [offset (16)] # [rename (name = "m_List")] pub m_list : crate :: app :: battlescenelist :: BattleSceneList ,
+# [offset (24)] # [rename (name = "m_Side")] pub m_side : crate :: app :: battleside :: BattleSide_Type ,
+# [offset (28)] # [rename (name = "m_Target")] pub m_target : crate :: app :: battleside :: BattleSide_Type ,
+# [offset (32)] # [rename (name = "m_Kind")] pub m_kind : crate :: app :: battlescene :: BattleScene_Kind ,
+# [offset (36)] # [rename (name = "m_Skill")] pub m_skill : i32 ,
+# [offset (40)] # [rename (name = "m_Item")] pub m_item : i32 ,
+# [offset (44)] # [rename (name = "m_God")] pub m_god : i32 ,
+# [offset (48)] # [rename (name = "m_Index")] pub m_index : i32 ,
+# [offset (56)] # [rename (name = "m_Result")] pub m_result : crate :: app :: battlescene :: BattleScene_FieldResult ,
+# [offset (64)] # [rename (name = "m_Guardian")] pub m_guardian : crate :: app :: battleside :: BattleSide_Type ,
+# [offset (72)] # [rename (name = "m_Hps")] pub m_hps : crate :: app :: battleside :: BattleSide_ShortArray ,
+# [offset (80)] # [rename (name = "m_Engages")] pub m_engages : crate :: app :: battleside :: BattleSide_SbyteArray ,
+# [offset (88)] # [rename (name = "m_Damages")] pub m_damages : crate :: app :: battleside :: BattleSide_ShortArray ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlescene/BattleScene_FieldResult.md"))] # [:: unity2 :: class (namespace = "App" , name = "BattleScene.FieldResult")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: battlescene :: BattleScene_Result >)] pub struct BattleScene_FieldResult {}
+
 }
 
 #[cfg(feature = "app-battlescene-types")]
@@ -393,14 +393,14 @@ impl BattleScene_FieldResult {
 #[cfg(feature = "app-battlescene")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::BattleScene_Kind;
+    pub use super::BattleScene_Result;
     pub use super::BattleScene;
     pub use super::IBattleScene;
     pub use super::IBattleSceneMethods;
-    pub use super::BattleScene_Result;
     pub use super::BattleScene_FieldResult;
     pub use super::IBattleScene_FieldResult;
     pub use super::IBattleScene_FieldResultMethods;
-    pub use super::BattleScene_Kind;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

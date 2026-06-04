@@ -17,6 +17,9 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortiesequencereliance/SortieSequenceReliance.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortieSequenceReliance")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: sortiesequencereliance :: SortieSequenceReliance >)] pub struct SortieSequenceReliance {}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortiesequencereliance/SortieSequenceReliance_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -83,9 +86,6 @@ impl  SortieSequenceReliance_Label  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortiesequencereliance/SortieSequenceReliance.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortieSequenceReliance")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: sortiesequencereliance :: SortieSequenceReliance >)] pub struct SortieSequenceReliance {}
-
 }
 
 #[cfg(feature = "app-sortiesequencereliance-types")]
@@ -114,10 +114,10 @@ impl SortieSequenceReliance {
 #[cfg(feature = "app-sortiesequencereliance")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SortieSequenceReliance_Label;
     pub use super::SortieSequenceReliance;
     pub use super::ISortieSequenceReliance;
     pub use super::ISortieSequenceRelianceMethods;
+    pub use super::SortieSequenceReliance_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

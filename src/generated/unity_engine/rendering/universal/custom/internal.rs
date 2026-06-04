@@ -36,12 +36,12 @@
  # [cfg (feature = "unity_engine-rendering-universal-custom-internal-custommixedresolutionpass")] pub use custommixedresolutionpass :: { ICustomMixedResolutionPassMethods }
  ;
  # [cfg (any (feature = "unity_engine-rendering-universal-custom-internal-customshadowcasterpass-types"))] pub mod customshadowcasterpass ;
- # [cfg (feature = "unity_engine-rendering-universal-custom-internal-customshadowcasterpass-types")] pub use customshadowcasterpass :: { CustomShadowCasterPass , ICustomShadowCasterPass , CustomShadowCasterPass_CustomShadowConstantBuffer , ICustomShadowCasterPass_CustomShadowConstantBuffer }
+ # [cfg (feature = "unity_engine-rendering-universal-custom-internal-customshadowcasterpass-types")] pub use customshadowcasterpass :: { CustomShadowCasterPass_CustomShadowConstantBuffer , ICustomShadowCasterPass_CustomShadowConstantBuffer , CustomShadowCasterPass , ICustomShadowCasterPass }
  ;
  # [cfg (feature = "unity_engine-rendering-universal-custom-internal-customshadowcasterpass")] pub use customshadowcasterpass :: { ICustomShadowCasterPassMethods }
  ;
  # [cfg (any (feature = "unity_engine-rendering-universal-custom-internal-customshadownocasterpass-types"))] pub mod customshadownocasterpass ;
- # [cfg (feature = "unity_engine-rendering-universal-custom-internal-customshadownocasterpass-types")] pub use customshadownocasterpass :: { CustomShadowNoCasterPass , ICustomShadowNoCasterPass , CustomShadowNoCasterPass_CustomShadowConstantBuffer , ICustomShadowNoCasterPass_CustomShadowConstantBuffer }
+ # [cfg (feature = "unity_engine-rendering-universal-custom-internal-customshadownocasterpass-types")] pub use customshadownocasterpass :: { CustomShadowNoCasterPass_CustomShadowConstantBuffer , ICustomShadowNoCasterPass_CustomShadowConstantBuffer , CustomShadowNoCasterPass , ICustomShadowNoCasterPass }
  ;
  # [cfg (feature = "unity_engine-rendering-universal-custom-internal-customshadownocasterpass")] pub use customshadownocasterpass :: { ICustomShadowNoCasterPassMethods }
  ;

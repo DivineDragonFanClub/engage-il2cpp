@@ -17,6 +17,9 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibosoundsequence/AmiiboSoundSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "AmiiboSoundSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: amiibosoundsequence :: AmiiboSoundSequence >)] pub struct AmiiboSoundSequence {}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/amiibosoundsequence/AmiiboSoundSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -71,9 +74,6 @@ impl  AmiiboSoundSequence_Label  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibosoundsequence/AmiiboSoundSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "AmiiboSoundSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: amiibosoundsequence :: AmiiboSoundSequence >)] pub struct AmiiboSoundSequence {}
-
 }
 
 #[cfg(feature = "app-amiibosoundsequence-types")]
@@ -102,10 +102,10 @@ impl AmiiboSoundSequence {
 #[cfg(feature = "app-amiibosoundsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AmiiboSoundSequence_Label;
     pub use super::AmiiboSoundSequence;
     pub use super::IAmiiboSoundSequence;
     pub use super::IAmiiboSoundSequenceMethods;
+    pub use super::AmiiboSoundSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

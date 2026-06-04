@@ -15,6 +15,58 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/pad/Pad.md"))] # [:: unity2 :: class (namespace = "App" , name = "Pad")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: pad :: Pad >)] pub struct Pad {
+# [static_field] # [rename (name = "A")] pub a : crate :: nn :: hid :: npadbutton :: NpadButton ,
+# [static_field] # [rename (name = "B")] pub b : crate :: nn :: hid :: npadbutton :: NpadButton ,
+# [static_field] # [rename (name = "X")] pub x : crate :: nn :: hid :: npadbutton :: NpadButton ,
+# [static_field] # [rename (name = "Y")] pub y : crate :: nn :: hid :: npadbutton :: NpadButton ,
+# [static_field] # [rename (name = "StickL")] pub stick_l : crate :: nn :: hid :: npadbutton :: NpadButton ,
+# [static_field] # [rename (name = "StickR")] pub stick_r : crate :: nn :: hid :: npadbutton :: NpadButton ,
+# [static_field] # [rename (name = "L")] pub l : crate :: nn :: hid :: npadbutton :: NpadButton ,
+# [static_field] # [rename (name = "R")] pub r : crate :: nn :: hid :: npadbutton :: NpadButton ,
+# [static_field] # [rename (name = "ZL")] pub zl : crate :: nn :: hid :: npadbutton :: NpadButton ,
+# [static_field] # [rename (name = "ZR")] pub zr : crate :: nn :: hid :: npadbutton :: NpadButton ,
+# [static_field] # [rename (name = "Plus")] pub plus : crate :: nn :: hid :: npadbutton :: NpadButton ,
+# [static_field] # [rename (name = "Minus")] pub minus : crate :: nn :: hid :: npadbutton :: NpadButton ,
+# [static_field] # [rename (name = "Left")] pub left : crate :: nn :: hid :: npadbutton :: NpadButton ,
+# [static_field] # [rename (name = "Up")] pub up : crate :: nn :: hid :: npadbutton :: NpadButton ,
+# [static_field] # [rename (name = "Right")] pub right : crate :: nn :: hid :: npadbutton :: NpadButton ,
+# [static_field] # [rename (name = "Down")] pub down : crate :: nn :: hid :: npadbutton :: NpadButton ,
+# [static_field] # [rename (name = "StickLLeft")] pub stick_l_left : crate :: nn :: hid :: npadbutton :: NpadButton ,
+# [static_field] # [rename (name = "StickLUp")] pub stick_l_up : crate :: nn :: hid :: npadbutton :: NpadButton ,
+# [static_field] # [rename (name = "StickLRight")] pub stick_l_right : crate :: nn :: hid :: npadbutton :: NpadButton ,
+# [static_field] # [rename (name = "StickLDown")] pub stick_l_down : crate :: nn :: hid :: npadbutton :: NpadButton ,
+# [static_field] # [rename (name = "StickRLeft")] pub stick_r_left : crate :: nn :: hid :: npadbutton :: NpadButton ,
+# [static_field] # [rename (name = "StickRUp")] pub stick_r_up : crate :: nn :: hid :: npadbutton :: NpadButton ,
+# [static_field] # [rename (name = "StickRRight")] pub stick_r_right : crate :: nn :: hid :: npadbutton :: NpadButton ,
+# [static_field] # [rename (name = "StickRDown")] pub stick_r_down : crate :: nn :: hid :: npadbutton :: NpadButton ,
+# [static_field] # [rename (name = "LeftSL")] pub left_sl : crate :: nn :: hid :: npadbutton :: NpadButton ,
+# [static_field] # [rename (name = "LeftSR")] pub left_sr : crate :: nn :: hid :: npadbutton :: NpadButton ,
+# [static_field] # [rename (name = "RightSL")] pub right_sl : crate :: nn :: hid :: npadbutton :: NpadButton ,
+# [static_field] # [rename (name = "RightSR")] pub right_sr : crate :: nn :: hid :: npadbutton :: NpadButton ,
+# [static_field] # [rename (name = "AnyButton")] pub any_button : crate :: nn :: hid :: npadbutton :: NpadButton ,
+# [static_field] # [rename (name = "AnyCross")] pub any_cross : crate :: nn :: hid :: npadbutton :: NpadButton ,
+# [static_field] # [rename (name = "AnyLeft")] pub any_left : crate :: nn :: hid :: npadbutton :: NpadButton ,
+# [static_field] # [rename (name = "AnyUp")] pub any_up : crate :: nn :: hid :: npadbutton :: NpadButton ,
+# [static_field] # [rename (name = "AnyRight")] pub any_right : crate :: nn :: hid :: npadbutton :: NpadButton ,
+# [static_field] # [rename (name = "AnyDown")] pub any_down : crate :: nn :: hid :: npadbutton :: NpadButton ,
+# [static_field] # [rename (name = "SpeedUp")] pub speed_up : crate :: nn :: hid :: npadbutton :: NpadButton ,
+# [offset (28)] # [rename (name = "m_NpadId")] pub m_npad_id : crate :: nn :: hid :: npadid :: NpadId ,
+# [offset (32)] # [rename (name = "m_NpadStyle")] pub m_npad_style : crate :: nn :: hid :: npadstyle :: NpadStyle ,
+# [offset (40)] # [rename (name = "m_NpadState")] pub m_npad_state : crate :: nn :: hid :: npadstate :: NpadState ,
+# [offset (88)] # [rename (name = "m_OldButtons")] pub m_old_buttons : crate :: nn :: hid :: npadbutton :: NpadButton ,
+# [static_field] # [rename (name = "REPAT_FIRST")] pub repat_first : i32 ,
+# [static_field] # [rename (name = "REPAT_CONTINUE")] pub repat_continue : i32 ,
+# [offset (96)] # [rename (name = "m_RepeatButtons")] pub m_repeat_buttons : crate :: nn :: hid :: npadbutton :: NpadButton ,
+# [offset (104)] # [rename (name = "m_RepeatCount")] pub m_repeat_count : i32 ,
+# [offset (108)] # [rename (name = "m_HoldCount")] pub m_hold_count : i32 ,
+# [offset (112)] # [rename (name = "m_Mode")] pub m_mode : crate :: app :: pad :: Pad_Mode ,
+# [offset (120)] # [rename (name = "m_Vibration")] pub m_vibration : crate :: app :: vibrationmanager :: VibrationManager ,
+# [offset (128)] # [rename (name = "m_ControllerSupportApplet")] pub m_controller_support_applet : crate :: app :: controllersupportapplet :: ControllerSupportApplet ,
+# [offset (136)] # [rename (name = "m_GyroMnager")] pub m_gyro_mnager : crate :: app :: gyromnager :: GyroMnager ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/pad/Pad_Mode.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -93,58 +145,6 @@ impl  Pad_Mode  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/pad/Pad.md"))] # [:: unity2 :: class (namespace = "App" , name = "Pad")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: pad :: Pad >)] pub struct Pad {
-# [static_field] # [rename (name = "A")] pub a : crate :: nn :: hid :: npadbutton :: NpadButton ,
-# [static_field] # [rename (name = "B")] pub b : crate :: nn :: hid :: npadbutton :: NpadButton ,
-# [static_field] # [rename (name = "X")] pub x : crate :: nn :: hid :: npadbutton :: NpadButton ,
-# [static_field] # [rename (name = "Y")] pub y : crate :: nn :: hid :: npadbutton :: NpadButton ,
-# [static_field] # [rename (name = "StickL")] pub stick_l : crate :: nn :: hid :: npadbutton :: NpadButton ,
-# [static_field] # [rename (name = "StickR")] pub stick_r : crate :: nn :: hid :: npadbutton :: NpadButton ,
-# [static_field] # [rename (name = "L")] pub l : crate :: nn :: hid :: npadbutton :: NpadButton ,
-# [static_field] # [rename (name = "R")] pub r : crate :: nn :: hid :: npadbutton :: NpadButton ,
-# [static_field] # [rename (name = "ZL")] pub zl : crate :: nn :: hid :: npadbutton :: NpadButton ,
-# [static_field] # [rename (name = "ZR")] pub zr : crate :: nn :: hid :: npadbutton :: NpadButton ,
-# [static_field] # [rename (name = "Plus")] pub plus : crate :: nn :: hid :: npadbutton :: NpadButton ,
-# [static_field] # [rename (name = "Minus")] pub minus : crate :: nn :: hid :: npadbutton :: NpadButton ,
-# [static_field] # [rename (name = "Left")] pub left : crate :: nn :: hid :: npadbutton :: NpadButton ,
-# [static_field] # [rename (name = "Up")] pub up : crate :: nn :: hid :: npadbutton :: NpadButton ,
-# [static_field] # [rename (name = "Right")] pub right : crate :: nn :: hid :: npadbutton :: NpadButton ,
-# [static_field] # [rename (name = "Down")] pub down : crate :: nn :: hid :: npadbutton :: NpadButton ,
-# [static_field] # [rename (name = "StickLLeft")] pub stick_l_left : crate :: nn :: hid :: npadbutton :: NpadButton ,
-# [static_field] # [rename (name = "StickLUp")] pub stick_l_up : crate :: nn :: hid :: npadbutton :: NpadButton ,
-# [static_field] # [rename (name = "StickLRight")] pub stick_l_right : crate :: nn :: hid :: npadbutton :: NpadButton ,
-# [static_field] # [rename (name = "StickLDown")] pub stick_l_down : crate :: nn :: hid :: npadbutton :: NpadButton ,
-# [static_field] # [rename (name = "StickRLeft")] pub stick_r_left : crate :: nn :: hid :: npadbutton :: NpadButton ,
-# [static_field] # [rename (name = "StickRUp")] pub stick_r_up : crate :: nn :: hid :: npadbutton :: NpadButton ,
-# [static_field] # [rename (name = "StickRRight")] pub stick_r_right : crate :: nn :: hid :: npadbutton :: NpadButton ,
-# [static_field] # [rename (name = "StickRDown")] pub stick_r_down : crate :: nn :: hid :: npadbutton :: NpadButton ,
-# [static_field] # [rename (name = "LeftSL")] pub left_sl : crate :: nn :: hid :: npadbutton :: NpadButton ,
-# [static_field] # [rename (name = "LeftSR")] pub left_sr : crate :: nn :: hid :: npadbutton :: NpadButton ,
-# [static_field] # [rename (name = "RightSL")] pub right_sl : crate :: nn :: hid :: npadbutton :: NpadButton ,
-# [static_field] # [rename (name = "RightSR")] pub right_sr : crate :: nn :: hid :: npadbutton :: NpadButton ,
-# [static_field] # [rename (name = "AnyButton")] pub any_button : crate :: nn :: hid :: npadbutton :: NpadButton ,
-# [static_field] # [rename (name = "AnyCross")] pub any_cross : crate :: nn :: hid :: npadbutton :: NpadButton ,
-# [static_field] # [rename (name = "AnyLeft")] pub any_left : crate :: nn :: hid :: npadbutton :: NpadButton ,
-# [static_field] # [rename (name = "AnyUp")] pub any_up : crate :: nn :: hid :: npadbutton :: NpadButton ,
-# [static_field] # [rename (name = "AnyRight")] pub any_right : crate :: nn :: hid :: npadbutton :: NpadButton ,
-# [static_field] # [rename (name = "AnyDown")] pub any_down : crate :: nn :: hid :: npadbutton :: NpadButton ,
-# [static_field] # [rename (name = "SpeedUp")] pub speed_up : crate :: nn :: hid :: npadbutton :: NpadButton ,
-# [offset (28)] # [rename (name = "m_NpadId")] pub m_npad_id : crate :: nn :: hid :: npadid :: NpadId ,
-# [offset (32)] # [rename (name = "m_NpadStyle")] pub m_npad_style : crate :: nn :: hid :: npadstyle :: NpadStyle ,
-# [offset (40)] # [rename (name = "m_NpadState")] pub m_npad_state : crate :: nn :: hid :: npadstate :: NpadState ,
-# [offset (88)] # [rename (name = "m_OldButtons")] pub m_old_buttons : crate :: nn :: hid :: npadbutton :: NpadButton ,
-# [static_field] # [rename (name = "REPAT_FIRST")] pub repat_first : i32 ,
-# [static_field] # [rename (name = "REPAT_CONTINUE")] pub repat_continue : i32 ,
-# [offset (96)] # [rename (name = "m_RepeatButtons")] pub m_repeat_buttons : crate :: nn :: hid :: npadbutton :: NpadButton ,
-# [offset (104)] # [rename (name = "m_RepeatCount")] pub m_repeat_count : i32 ,
-# [offset (108)] # [rename (name = "m_HoldCount")] pub m_hold_count : i32 ,
-# [offset (112)] # [rename (name = "m_Mode")] pub m_mode : crate :: app :: pad :: Pad_Mode ,
-# [offset (120)] # [rename (name = "m_Vibration")] pub m_vibration : crate :: app :: vibrationmanager :: VibrationManager ,
-# [offset (128)] # [rename (name = "m_ControllerSupportApplet")] pub m_controller_support_applet : crate :: app :: controllersupportapplet :: ControllerSupportApplet ,
-# [offset (136)] # [rename (name = "m_GyroMnager")] pub m_gyro_mnager : crate :: app :: gyromnager :: GyroMnager ,
-}
-
 }
 
 #[cfg(feature = "app-pad-types")]
@@ -173,10 +173,10 @@ impl Pad {
 #[cfg(feature = "app-pad")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Pad_Mode;
     pub use super::Pad;
     pub use super::IPad;
     pub use super::IPadMethods;
+    pub use super::Pad_Mode;
     pub use crate::app::singletonclass_1::ISingletonClass_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

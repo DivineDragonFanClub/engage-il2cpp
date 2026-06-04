@@ -17,16 +17,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencetargetselect/MapSequenceTargetSelect.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceTargetSelect")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapsequencetargetselect :: MapSequenceTargetSelect >)] pub struct MapSequenceTargetSelect {
-# [offset (120)] # [rename (name = "m_TargetData")] pub m_target_data : crate :: app :: maptarget :: MapTarget_Data ,
-# [offset (128)] # [rename (name = "m_ItemIndex")] pub m_item_index : i32 ,
-# [offset (136)] # [rename (name = "m_BattleInfo")] pub m_battle_info : crate :: app :: battleinfo :: BattleInfo ,
-# [offset (144)] # [rename (name = "m_BattleCalc")] pub m_battle_calc : crate :: app :: battlecalculator :: BattleCalculator ,
-# [offset (152)] # [rename (name = "m_EngageLinkInfo")] pub m_engage_link_info : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (160)] # [rename (name = "m_MaskSkill")] pub m_mask_skill : crate :: app :: skillarray :: SkillArray ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencetargetselect/MapSequenceTargetSelect_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -67,6 +57,16 @@ impl  MapSequenceTargetSelect_Label  {
 
     }
 
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencetargetselect/MapSequenceTargetSelect.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceTargetSelect")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapsequencetargetselect :: MapSequenceTargetSelect >)] pub struct MapSequenceTargetSelect {
+# [offset (120)] # [rename (name = "m_TargetData")] pub m_target_data : crate :: app :: maptarget :: MapTarget_Data ,
+# [offset (128)] # [rename (name = "m_ItemIndex")] pub m_item_index : i32 ,
+# [offset (136)] # [rename (name = "m_BattleInfo")] pub m_battle_info : crate :: app :: battleinfo :: BattleInfo ,
+# [offset (144)] # [rename (name = "m_BattleCalc")] pub m_battle_calc : crate :: app :: battlecalculator :: BattleCalculator ,
+# [offset (152)] # [rename (name = "m_EngageLinkInfo")] pub m_engage_link_info : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (160)] # [rename (name = "m_MaskSkill")] pub m_mask_skill : crate :: app :: skillarray :: SkillArray ,
 }
 
 
@@ -170,10 +170,10 @@ impl MapSequenceTargetSelect {
 #[cfg(feature = "app-mapsequencetargetselect")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MapSequenceTargetSelect_Label;
     pub use super::MapSequenceTargetSelect;
     pub use super::IMapSequenceTargetSelect;
     pub use super::IMapSequenceTargetSelectMethods;
-    pub use super::MapSequenceTargetSelect_Label;
     pub use super::MapSequenceTargetSelect_InfoType;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;

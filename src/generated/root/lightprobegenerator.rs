@@ -21,6 +21,12 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/lightprobegenerator/LightProbeGenerator.md"))] # [:: unity2 :: class (namespace = "" , name = "LightProbeGenerator")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct LightProbeGenerator {
+# [offset (24)] # [rename (name = "LightProbeVolumes")] pub light_probe_volumes : :: unity2 :: Array < crate :: root :: lightprobegenerator :: LightProbeGenerator_LightProbeArea > ,
+# [offset (32)] # [rename (name = "PlacementAlgorithm")] pub placement_algorithm : crate :: root :: lightprobegenerator :: LightProbeGenerator_LightProbePlacementType ,
+}
+
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/lightprobegenerator/LightProbeGenerator_LightProbeArea.md"))] # [:: unity2 :: class (namespace = "" , name = "LightProbeGenerator.LightProbeArea")] # [parent (crate :: system :: object :: Object)] pub struct LightProbeGenerator_LightProbeArea {
 # [offset (16)] # [rename (name = "ProbeVolume")] pub probe_volume : crate :: unity_engine :: bounds :: Bounds ,
 # [offset (40)] # [rename (name = "Subdivisions")] pub subdivisions : crate :: unity_engine :: vector3 :: Vector3 ,
@@ -76,33 +82,10 @@ impl  LightProbeGenerator_LightProbePlacementType  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/lightprobegenerator/LightProbeGenerator.md"))] # [:: unity2 :: class (namespace = "" , name = "LightProbeGenerator")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct LightProbeGenerator {
-# [offset (24)] # [rename (name = "LightProbeVolumes")] pub light_probe_volumes : :: unity2 :: Array < crate :: root :: lightprobegenerator :: LightProbeGenerator_LightProbeArea > ,
-# [offset (32)] # [rename (name = "PlacementAlgorithm")] pub placement_algorithm : crate :: root :: lightprobegenerator :: LightProbeGenerator_LightProbePlacementType ,
-}
-
 }
 
 #[cfg(feature = "root-lightprobegenerator-types")]
 pub use __types::*;
-
-#[cfg(feature = "root-lightprobegenerator")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __LightProbeGenerator_LightProbeArea_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LightProbeGenerator_LightProbeArea as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LightProbeGenerator_LightProbeArea as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : LightProbeGenerator_LightProbeArea , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (LightProbeGenerator_LightProbeArea , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "root-lightprobegenerator")]
-pub trait ILightProbeGenerator_LightProbeAreaMethods : ILightProbeGenerator_LightProbeArea { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < LightProbeGenerator_LightProbeArea as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __LightProbeGenerator_LightProbeArea_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "root-lightprobegenerator")]
-impl < __T : ILightProbeGenerator_LightProbeArea > ILightProbeGenerator_LightProbeAreaMethods for __T { }
-
-#[cfg(feature = "root-lightprobegenerator")]
-impl LightProbeGenerator_LightProbeArea { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LightProbeGenerator_LightProbeArea_unity2_raw :: __lookup_ctor :: get_method_info () } }
-
-#[cfg(feature = "root-lightprobegenerator")]
-impl LightProbeGenerator_LightProbeArea {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (LightProbeGenerator_LightProbeArea) , :: core :: stringify ! (new) ,)) ; < Self as ILightProbeGenerator_LightProbeAreaMethods > :: ctor (this ,) ; this }
-}
 
 #[cfg(feature = "root-lightprobegenerator")]
 # [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __LightProbeGenerator_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_gen_probes { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LightProbeGenerator as :: unity2 :: ClassIdentity > :: class () , "GenProbes" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LightProbeGenerator as :: unity2 :: ClassIdentity > :: NAME , "GenProbes" , e) , } } } pub unsafe fn gen_probes (this : LightProbeGenerator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (LightProbeGenerator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_gen_probes :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_probes_for_volume_grid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: bounds :: Bounds as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LightProbeGenerator as :: unity2 :: ClassIdentity > :: class () , "GetProbesForVolume_Grid" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LightProbeGenerator as :: unity2 :: ClassIdentity > :: NAME , "GetProbesForVolume_Grid" , e) , } } } pub unsafe fn get_probes_for_volume_grid (this : LightProbeGenerator , probe_volume : crate :: unity_engine :: bounds :: Bounds , subdivisions : crate :: unity_engine :: vector3 :: Vector3 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: vector3 :: Vector3 > { let inner : extern "C" fn (LightProbeGenerator , crate :: unity_engine :: bounds :: Bounds , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: vector3 :: Vector3 > = :: core :: mem :: transmute (__lookup_get_probes_for_volume_grid :: get_method_info () . method_ptr ,) ; inner (this , probe_volume , subdivisions , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_probes_for_volume_random { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: bounds :: Bounds as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LightProbeGenerator as :: unity2 :: ClassIdentity > :: class () , "GetProbesForVolume_Random" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LightProbeGenerator as :: unity2 :: ClassIdentity > :: NAME , "GetProbesForVolume_Random" , e) , } } } pub unsafe fn get_probes_for_volume_random (this : LightProbeGenerator , probe_volume : crate :: unity_engine :: bounds :: Bounds , count : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: vector3 :: Vector3 > { let inner : extern "C" fn (LightProbeGenerator , crate :: unity_engine :: bounds :: Bounds , i32 , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: vector3 :: Vector3 > = :: core :: mem :: transmute (__lookup_get_probes_for_volume_random :: get_method_info () . method_ptr ,) ; inner (this , probe_volume , count , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LightProbeGenerator as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LightProbeGenerator as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : LightProbeGenerator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (LightProbeGenerator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
@@ -122,15 +105,32 @@ impl LightProbeGenerator {
 }
 
 #[cfg(feature = "root-lightprobegenerator")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __LightProbeGenerator_LightProbeArea_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LightProbeGenerator_LightProbeArea as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LightProbeGenerator_LightProbeArea as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : LightProbeGenerator_LightProbeArea , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (LightProbeGenerator_LightProbeArea , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "root-lightprobegenerator")]
+pub trait ILightProbeGenerator_LightProbeAreaMethods : ILightProbeGenerator_LightProbeArea { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < LightProbeGenerator_LightProbeArea as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __LightProbeGenerator_LightProbeArea_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "root-lightprobegenerator")]
+impl < __T : ILightProbeGenerator_LightProbeArea > ILightProbeGenerator_LightProbeAreaMethods for __T { }
+
+#[cfg(feature = "root-lightprobegenerator")]
+impl LightProbeGenerator_LightProbeArea { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LightProbeGenerator_LightProbeArea_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "root-lightprobegenerator")]
+impl LightProbeGenerator_LightProbeArea {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (LightProbeGenerator_LightProbeArea) , :: core :: stringify ! (new) ,)) ; < Self as ILightProbeGenerator_LightProbeAreaMethods > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "root-lightprobegenerator")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::LightProbeGenerator;
+    pub use super::ILightProbeGenerator;
+    pub use super::ILightProbeGeneratorMethods;
     pub use super::LightProbeGenerator_LightProbeArea;
     pub use super::ILightProbeGenerator_LightProbeArea;
     pub use super::ILightProbeGenerator_LightProbeAreaMethods;
     pub use super::LightProbeGenerator_LightProbePlacementType;
-    pub use super::LightProbeGenerator;
-    pub use super::ILightProbeGenerator;
-    pub use super::ILightProbeGeneratorMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

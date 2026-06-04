@@ -13,13 +13,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dish/Dish.md"))] # [:: unity2 :: class (namespace = "App" , name = "Dish")] # [parent (crate :: system :: object :: Object)] pub struct Dish {
-# [offset (56)] # [rename (name = "m_Func")] pub m_func : crate :: app :: tasteconditiondata :: TasteConditionData_ConditionFunc ,
-# [offset (64)] # [rename (name = "m_MakeBentoIid")] pub m_make_bento_iid : :: unity2 :: Il2CppString ,
-# [offset (72)] # [rename (name = "m_FoodData")] pub m_food_data : crate :: app :: fooddata :: FoodData ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dish/Dish_RelianceResult.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -59,6 +52,13 @@ impl ::unity2::IlType for Dish_RelianceResult {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dish/Dish.md"))] # [:: unity2 :: class (namespace = "App" , name = "Dish")] # [parent (crate :: system :: object :: Object)] pub struct Dish {
+# [offset (56)] # [rename (name = "m_Func")] pub m_func : crate :: app :: tasteconditiondata :: TasteConditionData_ConditionFunc ,
+# [offset (64)] # [rename (name = "m_MakeBentoIid")] pub m_make_bento_iid : :: unity2 :: Il2CppString ,
+# [offset (72)] # [rename (name = "m_FoodData")] pub m_food_data : crate :: app :: fooddata :: FoodData ,
 }
 
 
@@ -208,10 +208,10 @@ impl Dish {
 #[cfg(feature = "app-dish")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::Dish_RelianceResult;
     pub use super::Dish;
     pub use super::IDish;
     pub use super::IDishMethods;
-    pub use super::Dish_RelianceResult;
     pub use super::Dish_Liking;
     pub use super::Dish_RelianceResult_TryResult;
     pub use crate::system::object::IObject;

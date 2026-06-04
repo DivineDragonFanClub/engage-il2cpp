@@ -29,52 +29,26 @@ mod __types {
  ;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/slider/Slider_Axis.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Slider_Axis  {
-    pub value: i32,
-}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/slider/Slider_SliderEvent.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "Slider.SliderEvent")] # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < f32 >)] pub struct Slider_SliderEvent {}
 
 
-impl  ::unity2::ClassIdentity for Slider_Axis  {
-    const NAMESPACE: &'static str = "UnityEngine.UI";
-
-    const NAME: &'static str = "Slider.Axis";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for Slider_Axis  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  Slider_Axis  {
-    pub fn horizontal() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn vertical() -> Self {
-        Self { value: 1 }
-
-    }
-
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/slider/Slider.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "Slider")] # [parent (crate :: unity_engine :: ui :: selectable :: Selectable)] pub struct Slider {
+# [offset (248)] # [rename (name = "m_FillRect")] pub m_fill_rect : crate :: unity_engine :: recttransform :: RectTransform ,
+# [offset (256)] # [rename (name = "m_HandleRect")] pub m_handle_rect : crate :: unity_engine :: recttransform :: RectTransform ,
+# [offset (264)] # [rename (name = "m_Direction")] pub m_direction : crate :: unity_engine :: ui :: slider :: Slider_Direction ,
+# [offset (268)] # [rename (name = "m_MinValue")] pub m_min_value : f32 ,
+# [offset (272)] # [rename (name = "m_MaxValue")] pub m_max_value : f32 ,
+# [offset (276)] # [rename (name = "m_WholeNumbers")] pub m_whole_numbers : bool ,
+# [offset (280)] # [rename (name = "m_Value")] pub m_value : f32 ,
+# [offset (288)] # [rename (name = "m_OnValueChanged")] pub m_on_value_changed : crate :: unity_engine :: ui :: slider :: Slider_SliderEvent ,
+# [offset (296)] # [rename (name = "m_FillImage")] pub m_fill_image : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (304)] # [rename (name = "m_FillTransform")] pub m_fill_transform : crate :: unity_engine :: transform :: Transform ,
+# [offset (312)] # [rename (name = "m_FillContainerRect")] pub m_fill_container_rect : crate :: unity_engine :: recttransform :: RectTransform ,
+# [offset (320)] # [rename (name = "m_HandleTransform")] pub m_handle_transform : crate :: unity_engine :: transform :: Transform ,
+# [offset (328)] # [rename (name = "m_HandleContainerRect")] pub m_handle_container_rect : crate :: unity_engine :: recttransform :: RectTransform ,
+# [offset (336)] # [rename (name = "m_Offset")] pub m_offset : crate :: unity_engine :: vector2 :: Vector2 ,
+# [offset (344)] # [rename (name = "m_Tracker")] pub m_tracker : crate :: unity_engine :: drivenrecttransformtracker :: DrivenRectTransformTracker ,
+# [offset (345)] # [rename (name = "m_DelayedUpdateVisuals")] pub m_delayed_update_visuals : bool ,
 }
 
 
@@ -139,26 +113,52 @@ impl  Slider_Direction  {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/slider/Slider_SliderEvent.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "Slider.SliderEvent")] # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < f32 >)] pub struct Slider_SliderEvent {}
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/slider/Slider_Axis.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct Slider_Axis  {
+    pub value: i32,
+}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/slider/Slider.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "Slider")] # [parent (crate :: unity_engine :: ui :: selectable :: Selectable)] pub struct Slider {
-# [offset (248)] # [rename (name = "m_FillRect")] pub m_fill_rect : crate :: unity_engine :: recttransform :: RectTransform ,
-# [offset (256)] # [rename (name = "m_HandleRect")] pub m_handle_rect : crate :: unity_engine :: recttransform :: RectTransform ,
-# [offset (264)] # [rename (name = "m_Direction")] pub m_direction : crate :: unity_engine :: ui :: slider :: Slider_Direction ,
-# [offset (268)] # [rename (name = "m_MinValue")] pub m_min_value : f32 ,
-# [offset (272)] # [rename (name = "m_MaxValue")] pub m_max_value : f32 ,
-# [offset (276)] # [rename (name = "m_WholeNumbers")] pub m_whole_numbers : bool ,
-# [offset (280)] # [rename (name = "m_Value")] pub m_value : f32 ,
-# [offset (288)] # [rename (name = "m_OnValueChanged")] pub m_on_value_changed : crate :: unity_engine :: ui :: slider :: Slider_SliderEvent ,
-# [offset (296)] # [rename (name = "m_FillImage")] pub m_fill_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (304)] # [rename (name = "m_FillTransform")] pub m_fill_transform : crate :: unity_engine :: transform :: Transform ,
-# [offset (312)] # [rename (name = "m_FillContainerRect")] pub m_fill_container_rect : crate :: unity_engine :: recttransform :: RectTransform ,
-# [offset (320)] # [rename (name = "m_HandleTransform")] pub m_handle_transform : crate :: unity_engine :: transform :: Transform ,
-# [offset (328)] # [rename (name = "m_HandleContainerRect")] pub m_handle_container_rect : crate :: unity_engine :: recttransform :: RectTransform ,
-# [offset (336)] # [rename (name = "m_Offset")] pub m_offset : crate :: unity_engine :: vector2 :: Vector2 ,
-# [offset (344)] # [rename (name = "m_Tracker")] pub m_tracker : crate :: unity_engine :: drivenrecttransformtracker :: DrivenRectTransformTracker ,
-# [offset (345)] # [rename (name = "m_DelayedUpdateVisuals")] pub m_delayed_update_visuals : bool ,
+impl  ::unity2::ClassIdentity for Slider_Axis  {
+    const NAMESPACE: &'static str = "UnityEngine.UI";
+
+    const NAME: &'static str = "Slider.Axis";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for Slider_Axis  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  Slider_Axis  {
+    pub fn horizontal() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn vertical() -> Self {
+        Self { value: 1 }
+
+    }
+
 }
 
 }
@@ -203,14 +203,14 @@ impl Slider {
 #[cfg(feature = "unity_engine-ui-slider")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Slider_Axis;
-    pub use super::Slider_Direction;
     pub use super::Slider_SliderEvent;
     pub use super::ISlider_SliderEvent;
     pub use super::ISlider_SliderEventMethods;
     pub use super::Slider;
     pub use super::ISlider;
     pub use super::ISliderMethods;
+    pub use super::Slider_Direction;
+    pub use super::Slider_Axis;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

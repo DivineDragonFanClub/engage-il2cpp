@@ -25,6 +25,17 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/disposdata/DisposData_AIFlagField.md"))] # [:: unity2 :: class (namespace = "App" , name = "DisposData.AIFlagField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: disposdata :: DisposData_AIFlags >)] pub struct DisposData_AIFlagField {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/disposdata/DisposData_Item.md"))] # [:: unity2 :: class (namespace = "App" , name = "DisposData.Item")] # [parent (crate :: system :: object :: Object)] pub struct DisposData_Item {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/disposdata/DisposData.md"))] # [:: unity2 :: class (namespace = "App" , name = "DisposData")] # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: disposdata :: DisposData >)] pub struct DisposData {
+# [static_field] # [rename (name = "ITEM_COUNT")] pub item_count : i32 ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/disposdata/DisposData_Directions.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -114,6 +125,9 @@ impl  DisposData_Directions  {
     }
 
 }
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/disposdata/DisposData_FlagField.md"))] # [:: unity2 :: class (namespace = "App" , name = "DisposData.FlagField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: disposdata :: DisposData_Flags >)] pub struct DisposData_FlagField {}
 
 
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/disposdata/DisposData_Flags.md"))]
@@ -231,9 +245,6 @@ impl  DisposData_Flags  {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/disposdata/DisposData_AIFlagField.md"))] # [:: unity2 :: class (namespace = "App" , name = "DisposData.AIFlagField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: disposdata :: DisposData_AIFlags >)] pub struct DisposData_AIFlagField {}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/disposdata/DisposData_AIFlags.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -325,14 +336,6 @@ impl  DisposData_AIFlags  {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/disposdata/DisposData_Item.md"))] # [:: unity2 :: class (namespace = "App" , name = "DisposData.Item")] # [parent (crate :: system :: object :: Object)] pub struct DisposData_Item {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/disposdata/DisposData.md"))] # [:: unity2 :: class (namespace = "App" , name = "DisposData")] # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: disposdata :: DisposData >)] pub struct DisposData {
-# [static_field] # [rename (name = "ITEM_COUNT")] pub item_count : i32 ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/disposdata/DisposData_State.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -386,9 +389,6 @@ impl  DisposData_State  {
     }
 
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/disposdata/DisposData_FlagField.md"))] # [:: unity2 :: class (namespace = "App" , name = "DisposData.FlagField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: disposdata :: DisposData_Flags >)] pub struct DisposData_FlagField {}
 
 }
 
@@ -473,22 +473,22 @@ impl DisposData_FlagField {
 #[cfg(feature = "app-disposdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DisposData_Directions;
-    pub use super::DisposData_Flags;
     pub use super::DisposData_AIFlagField;
     pub use super::IDisposData_AIFlagField;
     pub use super::IDisposData_AIFlagFieldMethods;
-    pub use super::DisposData_AIFlags;
     pub use super::DisposData_Item;
     pub use super::IDisposData_Item;
     pub use super::IDisposData_ItemMethods;
     pub use super::DisposData;
     pub use super::IDisposData;
     pub use super::IDisposDataMethods;
-    pub use super::DisposData_State;
+    pub use super::DisposData_Directions;
     pub use super::DisposData_FlagField;
     pub use super::IDisposData_FlagField;
     pub use super::IDisposData_FlagFieldMethods;
+    pub use super::DisposData_Flags;
+    pub use super::DisposData_AIFlags;
+    pub use super::DisposData_State;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

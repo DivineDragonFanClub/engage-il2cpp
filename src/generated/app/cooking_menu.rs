@@ -6,24 +6,24 @@
  # [cfg (feature = "app-cooking_menu-confirmdialog")] pub use confirmdialog :: { IConfirmDialogMethods , IConfirmDialog_ConfirmDialogItemYesMethods }
  ;
  # [cfg (any (feature = "app-cooking_menu-dishallmenucontent-types"))] pub mod dishallmenucontent ;
- # [cfg (feature = "app-cooking_menu-dishallmenucontent-types")] pub use dishallmenucontent :: { DishAllMenuContent_HistoryObject , IDishAllMenuContent_HistoryObject , DishAllMenuContent , IDishAllMenuContent , DishAllMenuContent_CookHistory , IDishAllMenuContent_CookHistory , DishAllMenuContent_EnhanceObject , IDishAllMenuContent_EnhanceObject , DishAllMenuContent_DishHistory , IDishAllMenuContent_DishHistory , DishAllMenuContent_FoodstuffsHistory , IDishAllMenuContent_FoodstuffsHistory , DishAllMenuContent_UnitsHistory , IDishAllMenuContent_UnitsHistory }
+ # [cfg (feature = "app-cooking_menu-dishallmenucontent-types")] pub use dishallmenucontent :: { DishAllMenuContent_UnitsHistory , IDishAllMenuContent_UnitsHistory , DishAllMenuContent_EnhanceObject , IDishAllMenuContent_EnhanceObject , DishAllMenuContent , IDishAllMenuContent , DishAllMenuContent_DishHistory , IDishAllMenuContent_DishHistory , DishAllMenuContent_CookHistory , IDishAllMenuContent_CookHistory , DishAllMenuContent_HistoryObject , IDishAllMenuContent_HistoryObject , DishAllMenuContent_FoodstuffsHistory , IDishAllMenuContent_FoodstuffsHistory }
  ;
- # [cfg (feature = "app-cooking_menu-dishallmenucontent")] pub use dishallmenucontent :: { IDishAllMenuContent_HistoryObjectMethods , IDishAllMenuContentMethods , IDishAllMenuContent_CookHistoryMethods , IDishAllMenuContent_EnhanceObjectMethods , IDishAllMenuContent_DishHistoryMethods , IDishAllMenuContent_FoodstuffsHistoryMethods , IDishAllMenuContent_UnitsHistoryMethods }
+ # [cfg (feature = "app-cooking_menu-dishallmenucontent")] pub use dishallmenucontent :: { IDishAllMenuContent_UnitsHistoryMethods , IDishAllMenuContent_EnhanceObjectMethods , IDishAllMenuContentMethods , IDishAllMenuContent_DishHistoryMethods , IDishAllMenuContent_CookHistoryMethods , IDishAllMenuContent_HistoryObjectMethods , IDishAllMenuContent_FoodstuffsHistoryMethods }
  ;
  # [cfg (any (feature = "app-cooking_menu-dishselectfoodinfocontent-types"))] pub mod dishselectfoodinfocontent ;
- # [cfg (feature = "app-cooking_menu-dishselectfoodinfocontent-types")] pub use dishselectfoodinfocontent :: { DishSelectFoodInfoContent_UnitObject , IDishSelectFoodInfoContent_UnitObject , DishSelectFoodInfoContent_EnhanceObject , IDishSelectFoodInfoContent_EnhanceObject , DishSelectFoodInfoContent , IDishSelectFoodInfoContent , DishSelectFoodInfoContent_FoodstuffObject , IDishSelectFoodInfoContent_FoodstuffObject }
+ # [cfg (feature = "app-cooking_menu-dishselectfoodinfocontent-types")] pub use dishselectfoodinfocontent :: { DishSelectFoodInfoContent , IDishSelectFoodInfoContent , DishSelectFoodInfoContent_EnhanceObject , IDishSelectFoodInfoContent_EnhanceObject , DishSelectFoodInfoContent_UnitObject , IDishSelectFoodInfoContent_UnitObject , DishSelectFoodInfoContent_FoodstuffObject , IDishSelectFoodInfoContent_FoodstuffObject }
  ;
- # [cfg (feature = "app-cooking_menu-dishselectfoodinfocontent")] pub use dishselectfoodinfocontent :: { IDishSelectFoodInfoContent_UnitObjectMethods , IDishSelectFoodInfoContent_EnhanceObjectMethods , IDishSelectFoodInfoContentMethods , IDishSelectFoodInfoContent_FoodstuffObjectMethods }
+ # [cfg (feature = "app-cooking_menu-dishselectfoodinfocontent")] pub use dishselectfoodinfocontent :: { IDishSelectFoodInfoContentMethods , IDishSelectFoodInfoContent_EnhanceObjectMethods , IDishSelectFoodInfoContent_UnitObjectMethods , IDishSelectFoodInfoContent_FoodstuffObjectMethods }
  ;
  # [cfg (any (feature = "app-cooking_menu-dishselectmenu-types"))] pub mod dishselectmenu ;
- # [cfg (feature = "app-cooking_menu-dishselectmenu-types")] pub use dishselectmenu :: { DishSelectMenu_SelectEventHandler , IDishSelectMenu_SelectEventHandler , DishSelectMenu_DishMenuCompare , IDishSelectMenu_DishMenuCompare , DishSelectMenu_CancelEventHandler , IDishSelectMenu_CancelEventHandler , DishSelectMenu_DishSelectMenuItem , IDishSelectMenu_DishSelectMenuItem , DishSelectMenu_DecideEventHandler , IDishSelectMenu_DecideEventHandler , DishSelectMenu , IDishSelectMenu , DishSelectMenu_DishSelectMenuManager , IDishSelectMenu_DishSelectMenuManager }
+ # [cfg (feature = "app-cooking_menu-dishselectmenu-types")] pub use dishselectmenu :: { DishSelectMenu_DishSelectMenuManager , IDishSelectMenu_DishSelectMenuManager , DishSelectMenu_DishMenuCompare , IDishSelectMenu_DishMenuCompare , DishSelectMenu , IDishSelectMenu , DishSelectMenu_DecideEventHandler , IDishSelectMenu_DecideEventHandler , DishSelectMenu_SelectEventHandler , IDishSelectMenu_SelectEventHandler , DishSelectMenu_CancelEventHandler , IDishSelectMenu_CancelEventHandler , DishSelectMenu_DishSelectMenuItem , IDishSelectMenu_DishSelectMenuItem }
  ;
- # [cfg (feature = "app-cooking_menu-dishselectmenu")] pub use dishselectmenu :: { IDishSelectMenu_SelectEventHandlerMethods , IDishSelectMenu_DishMenuCompareMethods , IDishSelectMenu_CancelEventHandlerMethods , IDishSelectMenu_DishSelectMenuItemMethods , IDishSelectMenu_DecideEventHandlerMethods , IDishSelectMenuMethods , IDishSelectMenu_DishSelectMenuManagerMethods }
+ # [cfg (feature = "app-cooking_menu-dishselectmenu")] pub use dishselectmenu :: { IDishSelectMenu_DishSelectMenuManagerMethods , IDishSelectMenu_DishMenuCompareMethods , IDishSelectMenuMethods , IDishSelectMenu_DecideEventHandlerMethods , IDishSelectMenu_SelectEventHandlerMethods , IDishSelectMenu_CancelEventHandlerMethods , IDishSelectMenu_DishSelectMenuItemMethods }
  ;
  # [cfg (any (feature = "app-cooking_menu-dishselectmenucategorycontent-types"))] pub mod dishselectmenucategorycontent ;
- # [cfg (feature = "app-cooking_menu-dishselectmenucategorycontent-types")] pub use dishselectmenucategorycontent :: { DishSelectMenuCategoryContent , IDishSelectMenuCategoryContent , DishSelectMenuCategoryContent_CategoryObject , IDishSelectMenuCategoryContent_CategoryObject , DishSelectMenuCategoryContent_Category }
+ # [cfg (feature = "app-cooking_menu-dishselectmenucategorycontent-types")] pub use dishselectmenucategorycontent :: { DishSelectMenuCategoryContent_CategoryObject , IDishSelectMenuCategoryContent_CategoryObject , DishSelectMenuCategoryContent , IDishSelectMenuCategoryContent , DishSelectMenuCategoryContent_Category }
  ;
- # [cfg (feature = "app-cooking_menu-dishselectmenucategorycontent")] pub use dishselectmenucategorycontent :: { IDishSelectMenuCategoryContentMethods , IDishSelectMenuCategoryContent_CategoryObjectMethods }
+ # [cfg (feature = "app-cooking_menu-dishselectmenucategorycontent")] pub use dishselectmenucategorycontent :: { IDishSelectMenuCategoryContent_CategoryObjectMethods , IDishSelectMenuCategoryContentMethods }
  ;
  # [cfg (any (feature = "app-cooking_menu-dishselectmenucontent-types"))] pub mod dishselectmenucontent ;
  # [cfg (feature = "app-cooking_menu-dishselectmenucontent-types")] pub use dishselectmenucontent :: { DishSelectMenuContent , IDishSelectMenuContent }
@@ -36,9 +36,9 @@
  # [cfg (feature = "app-cooking_menu-dishselectmenuitemcontent")] pub use dishselectmenuitemcontent :: { IDishSelectMenuItemContentMethods }
  ;
  # [cfg (any (feature = "app-cooking_menu-foodstuffmenu-types"))] pub mod foodstuffmenu ;
- # [cfg (feature = "app-cooking_menu-foodstuffmenu-types")] pub use foodstuffmenu :: { FoodstuffMenu_FoodstuffMenuItem , IFoodstuffMenu_FoodstuffMenuItem , FoodstuffMenu_CancelEventHandler , IFoodstuffMenu_CancelEventHandler , FoodstuffMenu_FoodstuffMenuItem_Type , FoodstuffMenu_FoodstuffSelectMenuManager , IFoodstuffMenu_FoodstuffSelectMenuManager , FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected , IFoodstuffMenu_FoodstuffMenuItem_OnChangeSelected , FoodstuffMenu_DecideEventHandler , IFoodstuffMenu_DecideEventHandler , FoodstuffMenu , IFoodstuffMenu }
+ # [cfg (feature = "app-cooking_menu-foodstuffmenu-types")] pub use foodstuffmenu :: { FoodstuffMenu_FoodstuffMenuItem_Type , FoodstuffMenu_DecideEventHandler , IFoodstuffMenu_DecideEventHandler , FoodstuffMenu_FoodstuffSelectMenuManager , IFoodstuffMenu_FoodstuffSelectMenuManager , FoodstuffMenu_CancelEventHandler , IFoodstuffMenu_CancelEventHandler , FoodstuffMenu_FoodstuffMenuItem , IFoodstuffMenu_FoodstuffMenuItem , FoodstuffMenu , IFoodstuffMenu , FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected , IFoodstuffMenu_FoodstuffMenuItem_OnChangeSelected }
  ;
- # [cfg (feature = "app-cooking_menu-foodstuffmenu")] pub use foodstuffmenu :: { IFoodstuffMenu_FoodstuffMenuItemMethods , IFoodstuffMenu_CancelEventHandlerMethods , IFoodstuffMenu_FoodstuffSelectMenuManagerMethods , IFoodstuffMenu_FoodstuffMenuItem_OnChangeSelectedMethods , IFoodstuffMenu_DecideEventHandlerMethods , IFoodstuffMenuMethods }
+ # [cfg (feature = "app-cooking_menu-foodstuffmenu")] pub use foodstuffmenu :: { IFoodstuffMenu_DecideEventHandlerMethods , IFoodstuffMenu_FoodstuffSelectMenuManagerMethods , IFoodstuffMenu_CancelEventHandlerMethods , IFoodstuffMenu_FoodstuffMenuItemMethods , IFoodstuffMenuMethods , IFoodstuffMenu_FoodstuffMenuItem_OnChangeSelectedMethods }
  ;
  # [cfg (any (feature = "app-cooking_menu-foodstuffmenucontent-types"))] pub mod foodstuffmenucontent ;
  # [cfg (feature = "app-cooking_menu-foodstuffmenucontent-types")] pub use foodstuffmenucontent :: { FoodstuffMenuContent , IFoodstuffMenuContent , FoodstuffMenuContent_CursorController , IFoodstuffMenuContent_CursorController }
@@ -51,7 +51,7 @@
  # [cfg (feature = "app-cooking_menu-foodstuffmenuitemcontent")] pub use foodstuffmenuitemcontent :: { IFoodstuffMenuItemContentMethods }
  ;
  # [cfg (any (feature = "app-cooking_menu-hubcookingstartmenusequence-types"))] pub mod hubcookingstartmenusequence ;
- # [cfg (feature = "app-cooking_menu-hubcookingstartmenusequence-types")] pub use hubcookingstartmenusequence :: { HubCookingStartMenuSequence_Label , HubCookingStartMenuSequence , IHubCookingStartMenuSequence , HubCookingStartMenuSequence_DecideEventHandler , IHubCookingStartMenuSequence_DecideEventHandler }
+ # [cfg (feature = "app-cooking_menu-hubcookingstartmenusequence-types")] pub use hubcookingstartmenusequence :: { HubCookingStartMenuSequence , IHubCookingStartMenuSequence , HubCookingStartMenuSequence_DecideEventHandler , IHubCookingStartMenuSequence_DecideEventHandler , HubCookingStartMenuSequence_Label }
  ;
  # [cfg (feature = "app-cooking_menu-hubcookingstartmenusequence")] pub use hubcookingstartmenusequence :: { IHubCookingStartMenuSequenceMethods , IHubCookingStartMenuSequence_DecideEventHandlerMethods }
  ;

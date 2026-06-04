@@ -44,9 +44,9 @@
  # [cfg (feature = "nintendo-message_studio-lib-itaginfo")] pub use itaginfo :: { IITagInfoMethods }
  ;
  # [cfg (any (feature = "nintendo-message_studio-lib-libms-types"))] pub mod libms ;
- # [cfg (feature = "nintendo-message_studio-lib-libms-types")] pub use libms :: { Libms_LMSMallocPtr , ILibms_LMSMallocPtr , Libms_LMSFreePtr , ILibms_LMSFreePtr , Libms , ILibms }
+ # [cfg (feature = "nintendo-message_studio-lib-libms-types")] pub use libms :: { Libms_LMSFreePtr , ILibms_LMSFreePtr , Libms_LMSMallocPtr , ILibms_LMSMallocPtr , Libms , ILibms }
  ;
- # [cfg (feature = "nintendo-message_studio-lib-libms")] pub use libms :: { ILibms_LMSMallocPtrMethods , ILibms_LMSFreePtrMethods }
+ # [cfg (feature = "nintendo-message_studio-lib-libms")] pub use libms :: { ILibms_LMSFreePtrMethods , ILibms_LMSMallocPtrMethods }
  ;
  # [cfg (any (feature = "nintendo-message_studio-lib-libmstype-types"))] pub mod libmstype ;
  # [cfg (feature = "nintendo-message_studio-lib-libmstype-types")] pub use libmstype :: { LibmsType }

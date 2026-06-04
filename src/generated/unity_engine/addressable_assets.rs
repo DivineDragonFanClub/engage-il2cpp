@@ -4,9 +4,9 @@
  # [cfg (feature = "unity_engine-addressable_assets-addressables-types")] pub use addressables :: { Addressables_MergeMode , Addressables , IAddressables }
  ;
  # [cfg (any (feature = "unity_engine-addressable_assets-addressablesimpl-types"))] pub mod addressablesimpl ;
- # [cfg (feature = "unity_engine-addressable_assets-addressablesimpl-types")] pub use addressablesimpl :: { AddressablesImpl_LoadResourceLocationKeyOp , IAddressablesImpl_LoadResourceLocationKeyOp , AddressablesImpl_LoadResourceLocationKeysOp , IAddressablesImpl_LoadResourceLocationKeysOp , AddressablesImpl_ResourceLocatorInfo , IAddressablesImpl_ResourceLocatorInfo , AddressablesImpl , IAddressablesImpl }
+ # [cfg (feature = "unity_engine-addressable_assets-addressablesimpl-types")] pub use addressablesimpl :: { AddressablesImpl_LoadResourceLocationKeysOp , IAddressablesImpl_LoadResourceLocationKeysOp , AddressablesImpl , IAddressablesImpl , AddressablesImpl_LoadResourceLocationKeyOp , IAddressablesImpl_LoadResourceLocationKeyOp , AddressablesImpl_ResourceLocatorInfo , IAddressablesImpl_ResourceLocatorInfo }
  ;
- # [cfg (feature = "unity_engine-addressable_assets-addressablesimpl")] pub use addressablesimpl :: { IAddressablesImpl_LoadResourceLocationKeyOpMethods , IAddressablesImpl_LoadResourceLocationKeysOpMethods , IAddressablesImpl_ResourceLocatorInfoMethods , IAddressablesImplMethods }
+ # [cfg (feature = "unity_engine-addressable_assets-addressablesimpl")] pub use addressablesimpl :: { IAddressablesImpl_LoadResourceLocationKeysOpMethods , IAddressablesImplMethods , IAddressablesImpl_LoadResourceLocationKeyOpMethods , IAddressablesImpl_ResourceLocatorInfoMethods }
  ;
  # [cfg (any (feature = "unity_engine-addressable_assets-addressablesplatform-types"))] pub mod addressablesplatform ;
  # [cfg (feature = "unity_engine-addressable_assets-addressablesplatform-types")] pub use addressablesplatform :: { AddressablesPlatform }

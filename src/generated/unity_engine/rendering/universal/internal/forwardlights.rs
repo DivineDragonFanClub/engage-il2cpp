@@ -9,6 +9,26 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/forwardlights/ForwardLights.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Internal" , name = "ForwardLights")] # [parent (crate :: system :: object :: Object)] pub struct ForwardLights {
+# [static_field] # [rename (name = "k_CustomSpecCubeCount")] pub k_custom_spec_cube_count : i32 ,
+# [offset (16)] # [rename (name = "m_AdditionalLightsBufferId")] pub m_additional_lights_buffer_id : i32 ,
+# [offset (20)] # [rename (name = "m_AdditionalLightsIndicesId")] pub m_additional_lights_indices_id : i32 ,
+# [static_field] # [rename (name = "k_SetupLightConstants")] pub k_setup_light_constants : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "m_ProfilingSampler")] pub m_profiling_sampler : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
+# [offset (24)] # [rename (name = "m_MixedLightingSetup")] pub m_mixed_lighting_setup : crate :: unity_engine :: rendering :: universal :: mixedlightingsetup :: MixedLightingSetup ,
+# [offset (32)] # [rename (name = "m_AdditionalLightPositions")] pub m_additional_light_positions : :: unity2 :: Array < crate :: unity_engine :: vector4 :: Vector4 > ,
+# [offset (40)] # [rename (name = "m_AdditionalLightColors")] pub m_additional_light_colors : :: unity2 :: Array < crate :: unity_engine :: vector4 :: Vector4 > ,
+# [offset (48)] # [rename (name = "m_AdditionalLightAttenuations")] pub m_additional_light_attenuations : :: unity2 :: Array < crate :: unity_engine :: vector4 :: Vector4 > ,
+# [offset (56)] # [rename (name = "m_AdditionalLightSpotDirections")] pub m_additional_light_spot_directions : :: unity2 :: Array < crate :: unity_engine :: vector4 :: Vector4 > ,
+# [offset (64)] # [rename (name = "m_AdditionalLightOcclusionProbeChannels")] pub m_additional_light_occlusion_probe_channels : :: unity2 :: Array < crate :: unity_engine :: vector4 :: Vector4 > ,
+# [offset (72)] # [rename (name = "m_UseStructuredBuffer")] pub m_use_structured_buffer : bool ,
+# [static_field] # [rename (name = "k_BatchSimpleLightMaxCount")] pub k_batch_simple_light_max_count : i32 ,
+# [offset (80)] # [rename (name = "m_BatchSimpleLightPositions")] pub m_batch_simple_light_positions : :: unity2 :: Array < crate :: unity_engine :: vector4 :: Vector4 > ,
+# [offset (88)] # [rename (name = "m_BatchSimpleLightColors")] pub m_batch_simple_light_colors : :: unity2 :: Array < crate :: unity_engine :: vector4 :: Vector4 > ,
+# [offset (96)] # [rename (name = "m_BatchSimpleLightAttenuations")] pub m_batch_simple_light_attenuations : :: unity2 :: Array < crate :: unity_engine :: vector4 :: Vector4 > ,
+}
+
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/forwardlights/ForwardLights_LightConstantBuffer.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Internal" , name = "ForwardLights.LightConstantBuffer")] # [parent (crate :: system :: object :: Object)] pub struct ForwardLights_LightConstantBuffer {
 # [static_field] # [rename (name = "_MainLightPosition")] pub main_light_position : i32 ,
 # [static_field] # [rename (name = "_MainLightColor")] pub main_light_color : i32 ,
@@ -28,26 +48,6 @@ mod __types {
 # [static_field] # [rename (name = "_SpecCubeBoxMin")] pub spec_cube_box_min : :: unity2 :: Array < i32 > ,
 # [static_field] # [rename (name = "_SpecCubePos")] pub spec_cube_pos : :: unity2 :: Array < i32 > ,
 # [static_field] # [rename (name = "_SpecCubeTex")] pub spec_cube_tex : :: unity2 :: Array < i32 > ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/forwardlights/ForwardLights.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Internal" , name = "ForwardLights")] # [parent (crate :: system :: object :: Object)] pub struct ForwardLights {
-# [static_field] # [rename (name = "k_CustomSpecCubeCount")] pub k_custom_spec_cube_count : i32 ,
-# [offset (16)] # [rename (name = "m_AdditionalLightsBufferId")] pub m_additional_lights_buffer_id : i32 ,
-# [offset (20)] # [rename (name = "m_AdditionalLightsIndicesId")] pub m_additional_lights_indices_id : i32 ,
-# [static_field] # [rename (name = "k_SetupLightConstants")] pub k_setup_light_constants : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "m_ProfilingSampler")] pub m_profiling_sampler : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
-# [offset (24)] # [rename (name = "m_MixedLightingSetup")] pub m_mixed_lighting_setup : crate :: unity_engine :: rendering :: universal :: mixedlightingsetup :: MixedLightingSetup ,
-# [offset (32)] # [rename (name = "m_AdditionalLightPositions")] pub m_additional_light_positions : :: unity2 :: Array < crate :: unity_engine :: vector4 :: Vector4 > ,
-# [offset (40)] # [rename (name = "m_AdditionalLightColors")] pub m_additional_light_colors : :: unity2 :: Array < crate :: unity_engine :: vector4 :: Vector4 > ,
-# [offset (48)] # [rename (name = "m_AdditionalLightAttenuations")] pub m_additional_light_attenuations : :: unity2 :: Array < crate :: unity_engine :: vector4 :: Vector4 > ,
-# [offset (56)] # [rename (name = "m_AdditionalLightSpotDirections")] pub m_additional_light_spot_directions : :: unity2 :: Array < crate :: unity_engine :: vector4 :: Vector4 > ,
-# [offset (64)] # [rename (name = "m_AdditionalLightOcclusionProbeChannels")] pub m_additional_light_occlusion_probe_channels : :: unity2 :: Array < crate :: unity_engine :: vector4 :: Vector4 > ,
-# [offset (72)] # [rename (name = "m_UseStructuredBuffer")] pub m_use_structured_buffer : bool ,
-# [static_field] # [rename (name = "k_BatchSimpleLightMaxCount")] pub k_batch_simple_light_max_count : i32 ,
-# [offset (80)] # [rename (name = "m_BatchSimpleLightPositions")] pub m_batch_simple_light_positions : :: unity2 :: Array < crate :: unity_engine :: vector4 :: Vector4 > ,
-# [offset (88)] # [rename (name = "m_BatchSimpleLightColors")] pub m_batch_simple_light_colors : :: unity2 :: Array < crate :: unity_engine :: vector4 :: Vector4 > ,
-# [offset (96)] # [rename (name = "m_BatchSimpleLightAttenuations")] pub m_batch_simple_light_attenuations : :: unity2 :: Array < crate :: unity_engine :: vector4 :: Vector4 > ,
 }
 
 }
@@ -78,11 +78,11 @@ impl ForwardLights {
 #[cfg(feature = "unity_engine-rendering-universal-internal-forwardlights")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ForwardLights_LightConstantBuffer;
-    pub use super::IForwardLights_LightConstantBuffer;
     pub use super::ForwardLights;
     pub use super::IForwardLights;
     pub use super::IForwardLightsMethods;
+    pub use super::ForwardLights_LightConstantBuffer;
+    pub use super::IForwardLights_LightConstantBuffer;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

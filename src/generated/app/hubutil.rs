@@ -13,71 +13,12 @@ mod __types {
  ;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubutil/HubUtil_TimezoneType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct HubUtil_TimezoneType  {
-    pub value: i32,
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubutil/HubUtil.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubUtil")] # [parent (crate :: system :: object :: Object)] pub struct HubUtil {
+# [static_field] # [rename (name = "s_HubParams")] pub s_hub_params : crate :: app :: hubparams :: HubParams ,
 }
 
 
-impl  ::unity2::ClassIdentity for HubUtil_TimezoneType  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "HubUtil.TimezoneType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for HubUtil_TimezoneType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  HubUtil_TimezoneType  {
-    pub fn morning() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn day() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn evening() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn night() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn max() -> Self {
-        Self { value: 4 }
-
-    }
-
-}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubutil/HubUtil_BSpline.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubUtil.BSpline")] # [parent (crate :: system :: object :: Object)] pub struct HubUtil_BSpline {}
 
 
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubutil/HubUtil_ConditionType.md"))]
@@ -213,12 +154,71 @@ impl  HubUtil_ConditionType  {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubutil/HubUtil.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubUtil")] # [parent (crate :: system :: object :: Object)] pub struct HubUtil {
-# [static_field] # [rename (name = "s_HubParams")] pub s_hub_params : crate :: app :: hubparams :: HubParams ,
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubutil/HubUtil_TimezoneType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct HubUtil_TimezoneType  {
+    pub value: i32,
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubutil/HubUtil_BSpline.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubUtil.BSpline")] # [parent (crate :: system :: object :: Object)] pub struct HubUtil_BSpline {}
+impl  ::unity2::ClassIdentity for HubUtil_TimezoneType  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "HubUtil.TimezoneType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for HubUtil_TimezoneType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  HubUtil_TimezoneType  {
+    pub fn morning() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn day() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn evening() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn night() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn max() -> Self {
+        Self { value: 4 }
+
+    }
+
+}
 
 }
 
@@ -268,14 +268,14 @@ impl HubUtil_BSpline {
 #[cfg(feature = "app-hubutil")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HubUtil_TimezoneType;
-    pub use super::HubUtil_ConditionType;
     pub use super::HubUtil;
     pub use super::IHubUtil;
     pub use super::IHubUtilMethods;
     pub use super::HubUtil_BSpline;
     pub use super::IHubUtil_BSpline;
     pub use super::IHubUtil_BSplineMethods;
+    pub use super::HubUtil_ConditionType;
+    pub use super::HubUtil_TimezoneType;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

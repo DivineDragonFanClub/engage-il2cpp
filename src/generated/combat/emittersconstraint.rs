@@ -17,38 +17,21 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/emittersconstraint/EmittersConstraint.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "EmittersConstraint")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct EmittersConstraint {
+# [offset (24)] # [rename (name = "m_Pairs")] pub m_pairs : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: combat :: emittersconstraint :: EmittersConstraint_Pair > ,
+}
+
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/emittersconstraint/EmittersConstraint_Pair.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "EmittersConstraint.Pair")] # [parent (crate :: system :: object :: Object)] pub struct EmittersConstraint_Pair {
 # [offset (16)] # [rename (name = "ParticleSystem")] pub particle_system : crate :: unity_engine :: particlesystem :: ParticleSystem ,
 # [offset (24)] # [rename (name = "AttachTransform")] pub attach_transform : crate :: unity_engine :: transform :: Transform ,
 # [offset (32)] # [rename (name = "TargetBoneName")] pub target_bone_name : :: unity2 :: Il2CppString ,
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/emittersconstraint/EmittersConstraint.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "EmittersConstraint")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct EmittersConstraint {
-# [offset (24)] # [rename (name = "m_Pairs")] pub m_pairs : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: combat :: emittersconstraint :: EmittersConstraint_Pair > ,
-}
-
 }
 
 #[cfg(feature = "combat-emittersconstraint-types")]
 pub use __types::*;
-
-#[cfg(feature = "combat-emittersconstraint")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __EmittersConstraint_Pair_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EmittersConstraint_Pair as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EmittersConstraint_Pair as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : EmittersConstraint_Pair , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (EmittersConstraint_Pair , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "combat-emittersconstraint")]
-pub trait IEmittersConstraint_PairMethods : IEmittersConstraint_Pair { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < EmittersConstraint_Pair as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EmittersConstraint_Pair_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "combat-emittersconstraint")]
-impl < __T : IEmittersConstraint_Pair > IEmittersConstraint_PairMethods for __T { }
-
-#[cfg(feature = "combat-emittersconstraint")]
-impl EmittersConstraint_Pair { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EmittersConstraint_Pair_unity2_raw :: __lookup_ctor :: get_method_info () } }
-
-#[cfg(feature = "combat-emittersconstraint")]
-impl EmittersConstraint_Pair {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EmittersConstraint_Pair) , :: core :: stringify ! (new) ,)) ; < Self as IEmittersConstraint_PairMethods > :: ctor (this ,) ; this }
-}
 
 #[cfg(feature = "combat-emittersconstraint")]
 # [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __EmittersConstraint_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EmittersConstraint as :: unity2 :: ClassIdentity > :: class () , "Start" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EmittersConstraint as :: unity2 :: ClassIdentity > :: NAME , "Start" , e) , } } } pub unsafe fn start (this : EmittersConstraint , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (EmittersConstraint , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_remap { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: character :: Character as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EmittersConstraint as :: unity2 :: ClassIdentity > :: class () , "Remap" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EmittersConstraint as :: unity2 :: ClassIdentity > :: NAME , "Remap" , e) , } } } pub unsafe fn remap (this : EmittersConstraint , cp : crate :: combat :: character :: Character , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (EmittersConstraint , crate :: combat :: character :: Character , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_remap :: get_method_info () . method_ptr ,) ; inner (this , cp , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_late_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EmittersConstraint as :: unity2 :: ClassIdentity > :: class () , "LateUpdate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EmittersConstraint as :: unity2 :: ClassIdentity > :: NAME , "LateUpdate" , e) , } } } pub unsafe fn late_update (this : EmittersConstraint , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (EmittersConstraint , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_late_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EmittersConstraint as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EmittersConstraint as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : EmittersConstraint , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (EmittersConstraint , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
@@ -68,14 +51,31 @@ impl EmittersConstraint {
 }
 
 #[cfg(feature = "combat-emittersconstraint")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __EmittersConstraint_Pair_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< EmittersConstraint_Pair as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EmittersConstraint_Pair as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : EmittersConstraint_Pair , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (EmittersConstraint_Pair , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "combat-emittersconstraint")]
+pub trait IEmittersConstraint_PairMethods : IEmittersConstraint_Pair { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < EmittersConstraint_Pair as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EmittersConstraint_Pair_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "combat-emittersconstraint")]
+impl < __T : IEmittersConstraint_Pair > IEmittersConstraint_PairMethods for __T { }
+
+#[cfg(feature = "combat-emittersconstraint")]
+impl EmittersConstraint_Pair { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __EmittersConstraint_Pair_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "combat-emittersconstraint")]
+impl EmittersConstraint_Pair {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EmittersConstraint_Pair) , :: core :: stringify ! (new) ,)) ; < Self as IEmittersConstraint_PairMethods > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "combat-emittersconstraint")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::EmittersConstraint_Pair;
-    pub use super::IEmittersConstraint_Pair;
-    pub use super::IEmittersConstraint_PairMethods;
     pub use super::EmittersConstraint;
     pub use super::IEmittersConstraint;
     pub use super::IEmittersConstraintMethods;
+    pub use super::EmittersConstraint_Pair;
+    pub use super::IEmittersConstraint_Pair;
+    pub use super::IEmittersConstraint_PairMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;
     pub use crate::unity_engine::component::IComponent;

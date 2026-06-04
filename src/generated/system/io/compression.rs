@@ -7,14 +7,14 @@
  # [cfg (feature = "system-io-compression-compressionmode-types")] pub use compressionmode :: { CompressionMode }
  ;
  # [cfg (any (feature = "system-io-compression-deflatestream-types"))] pub mod deflatestream ;
- # [cfg (feature = "system-io-compression-deflatestream-types")] pub use deflatestream :: { DeflateStream , IDeflateStream , DeflateStream_ReadMethod , IDeflateStream_ReadMethod , DeflateStream_WriteMethod , IDeflateStream_WriteMethod }
+ # [cfg (feature = "system-io-compression-deflatestream-types")] pub use deflatestream :: { DeflateStream_WriteMethod , IDeflateStream_WriteMethod , DeflateStream , IDeflateStream , DeflateStream_ReadMethod , IDeflateStream_ReadMethod }
  ;
- # [cfg (feature = "system-io-compression-deflatestream")] pub use deflatestream :: { IDeflateStreamMethods , IDeflateStream_ReadMethodMethods , IDeflateStream_WriteMethodMethods }
+ # [cfg (feature = "system-io-compression-deflatestream")] pub use deflatestream :: { IDeflateStream_WriteMethodMethods , IDeflateStreamMethods , IDeflateStream_ReadMethodMethods }
  ;
  # [cfg (any (feature = "system-io-compression-deflatestreamnative-types"))] pub mod deflatestreamnative ;
- # [cfg (feature = "system-io-compression-deflatestreamnative-types")] pub use deflatestreamnative :: { DeflateStreamNative , IDeflateStreamNative , DeflateStreamNative_SafeDeflateStreamHandle , IDeflateStreamNative_SafeDeflateStreamHandle , DeflateStreamNative_UnmanagedReadOrWrite , IDeflateStreamNative_UnmanagedReadOrWrite }
+ # [cfg (feature = "system-io-compression-deflatestreamnative-types")] pub use deflatestreamnative :: { DeflateStreamNative_UnmanagedReadOrWrite , IDeflateStreamNative_UnmanagedReadOrWrite , DeflateStreamNative , IDeflateStreamNative , DeflateStreamNative_SafeDeflateStreamHandle , IDeflateStreamNative_SafeDeflateStreamHandle }
  ;
- # [cfg (feature = "system-io-compression-deflatestreamnative")] pub use deflatestreamnative :: { IDeflateStreamNativeMethods , IDeflateStreamNative_SafeDeflateStreamHandleMethods , IDeflateStreamNative_UnmanagedReadOrWriteMethods }
+ # [cfg (feature = "system-io-compression-deflatestreamnative")] pub use deflatestreamnative :: { IDeflateStreamNative_UnmanagedReadOrWriteMethods , IDeflateStreamNativeMethods , IDeflateStreamNative_SafeDeflateStreamHandleMethods }
  ;
  # [cfg (any (feature = "system-io-compression-gzipstream-types"))] pub mod gzipstream ;
  # [cfg (feature = "system-io-compression-gzipstream-types")] pub use gzipstream :: { GZipStream , IGZipStream }

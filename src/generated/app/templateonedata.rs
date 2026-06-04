@@ -19,9 +19,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/templateonedata/TemplateOneData.md"))] # [:: unity2 :: class (namespace = "App" , name = "TemplateOneData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: templateonedata :: TemplateOneData >)] pub struct TemplateOneData {}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/templateonedata/TemplateOneData_Flags.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -83,6 +80,9 @@ impl  TemplateOneData_Flags  {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/templateonedata/TemplateOneData.md"))] # [:: unity2 :: class (namespace = "App" , name = "TemplateOneData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: templateonedata :: TemplateOneData >)] pub struct TemplateOneData {}
+
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/templateonedata/TemplateOneData_SampleClass.md"))] # [:: unity2 :: class (namespace = "App" , name = "TemplateOneData.SampleClass")] # [parent (crate :: system :: object :: Object)] pub struct TemplateOneData_SampleClass {}
 
 }
@@ -130,10 +130,10 @@ impl TemplateOneData_SampleClass {
 #[cfg(feature = "app-templateonedata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::TemplateOneData_Flags;
     pub use super::TemplateOneData;
     pub use super::ITemplateOneData;
     pub use super::ITemplateOneDataMethods;
-    pub use super::TemplateOneData_Flags;
     pub use super::TemplateOneData_SampleClass;
     pub use super::ITemplateOneData_SampleClass;
     pub use super::ITemplateOneData_SampleClassMethods;
