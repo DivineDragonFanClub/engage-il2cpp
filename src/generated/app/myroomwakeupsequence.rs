@@ -57,13 +57,6 @@ mod __types {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomwakeupsequence/MyRoomWakeupSequence_RelianceWakeup.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomWakeupSequence.RelianceWakeup")] # [parent (crate :: system :: object :: Object)] pub struct MyRoomWakeupSequence_RelianceWakeup {
-# [offset (16)] # [rename (name = "m_pid")] pub m_pid : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_level")] pub m_level : crate :: app :: reliancedata :: RelianceData_Level ,
-# [offset (28)] # [rename (name = "m_pattern")] pub m_pattern : crate :: app :: gamesound :: GameSound_WakeupVoicePattern ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomwakeupsequence/MyRoomWakeupSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -118,6 +111,13 @@ impl  MyRoomWakeupSequence_Label  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomwakeupsequence/MyRoomWakeupSequence_RelianceWakeup.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomWakeupSequence.RelianceWakeup")] # [parent (crate :: system :: object :: Object)] pub struct MyRoomWakeupSequence_RelianceWakeup {
+# [offset (16)] # [rename (name = "m_pid")] pub m_pid : :: unity2 :: Il2CppString ,
+# [offset (24)] # [rename (name = "m_level")] pub m_level : crate :: app :: reliancedata :: RelianceData_Level ,
+# [offset (28)] # [rename (name = "m_pattern")] pub m_pattern : crate :: app :: gamesound :: GameSound_WakeupVoicePattern ,
+}
+
 }
 
 #[cfg(feature = "app-myroomwakeupsequence-types")]
@@ -166,10 +166,10 @@ pub mod prelude {
     pub use super::MyRoomWakeupSequence;
     pub use super::IMyRoomWakeupSequence;
     pub use super::IMyRoomWakeupSequenceMethods;
+    pub use super::MyRoomWakeupSequence_Label;
     pub use super::MyRoomWakeupSequence_RelianceWakeup;
     pub use super::IMyRoomWakeupSequence_RelianceWakeup;
     pub use super::IMyRoomWakeupSequence_RelianceWakeupMethods;
-    pub use super::MyRoomWakeupSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

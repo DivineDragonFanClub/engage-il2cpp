@@ -28,9 +28,6 @@ mod __types {
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/foodstuffdata/FoodstuffData_FlagField.md"))] # [:: unity2 :: class (namespace = "App" , name = "FoodstuffData.FlagField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: foodstuffdata :: FoodstuffData_Flags >)] pub struct FoodstuffData_FlagField {}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/foodstuffdata/FoodstuffData.md"))] # [:: unity2 :: class (namespace = "App" , name = "FoodstuffData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: foodstuffdata :: FoodstuffData >)] pub struct FoodstuffData {}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/foodstuffdata/FoodstuffData_Flags.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -91,6 +88,9 @@ impl  FoodstuffData_Flags  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/foodstuffdata/FoodstuffData.md"))] # [:: unity2 :: class (namespace = "App" , name = "FoodstuffData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: foodstuffdata :: FoodstuffData >)] pub struct FoodstuffData {}
+
 }
 
 #[cfg(feature = "app-foodstuffdata-types")]
@@ -141,10 +141,10 @@ pub mod prelude {
     pub use super::FoodstuffData_FlagField;
     pub use super::IFoodstuffData_FlagField;
     pub use super::IFoodstuffData_FlagFieldMethods;
+    pub use super::FoodstuffData_Flags;
     pub use super::FoodstuffData;
     pub use super::IFoodstuffData;
     pub use super::IFoodstuffDataMethods;
-    pub use super::FoodstuffData_Flags;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

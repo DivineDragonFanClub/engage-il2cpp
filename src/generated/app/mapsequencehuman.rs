@@ -17,67 +17,6 @@ mod __types {
  ;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencehuman/MapSequenceHuman_OperateMode.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapSequenceHuman_OperateMode  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for MapSequenceHuman_OperateMode  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapSequenceHuman.OperateMode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for MapSequenceHuman_OperateMode  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  MapSequenceHuman_OperateMode  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn direct() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn indirect() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn designate() -> Self {
-        Self { value: 3 }
-
-    }
-
-}
-
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencehuman/MapSequenceHuman.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceHuman")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapsequencehuman :: MapSequenceHuman >)] pub struct MapSequenceHuman {
 # [offset (120)] # [rename (name = "m_JobIntroUnit")] pub m_job_intro_unit : crate :: app :: unit :: Unit ,
 # [offset (128)] # [rename (name = "m_JobIntroKeyHelpType")] pub m_job_intro_key_help_type : crate :: app :: mapkeyhelp :: MapKeyHelp_Types ,
@@ -101,61 +40,6 @@ impl  MapSequenceHuman_OperateMode  {
 # [static_field] # [rename (name = "FreeWeaponMask")] pub free_weapon_mask : crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_Flag < crate :: app :: mapdeploy :: MapDeploy > ,
 # [static_field] # [rename (name = "PickWeaponMask")] pub pick_weapon_mask : crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_Flag < crate :: app :: mapdeploy :: MapDeploy > ,
 # [static_field] # [rename (name = "WaitPickFreeCursor")] pub wait_pick_free_cursor : f32 ,
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencehuman/MapSequenceHuman_NextMode.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapSequenceHuman_NextMode  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for MapSequenceHuman_NextMode  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapSequenceHuman.NextMode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for MapSequenceHuman_NextMode  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  MapSequenceHuman_NextMode  {
-    pub fn closest() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn patrol() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn order() -> Self {
-        Self { value: 2 }
-
-    }
-
 }
 
 
@@ -513,6 +397,122 @@ impl  MapSequenceHuman_Label  {
 
 }
 
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencehuman/MapSequenceHuman_NextMode.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct MapSequenceHuman_NextMode  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for MapSequenceHuman_NextMode  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapSequenceHuman.NextMode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for MapSequenceHuman_NextMode  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  MapSequenceHuman_NextMode  {
+    pub fn closest() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn patrol() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn order() -> Self {
+        Self { value: 2 }
+
+    }
+
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencehuman/MapSequenceHuman_OperateMode.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct MapSequenceHuman_OperateMode  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for MapSequenceHuman_OperateMode  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapSequenceHuman.OperateMode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for MapSequenceHuman_OperateMode  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  MapSequenceHuman_OperateMode  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn direct() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn indirect() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn designate() -> Self {
+        Self { value: 3 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "app-mapsequencehuman-types")]
@@ -541,12 +541,12 @@ impl MapSequenceHuman {
 #[cfg(feature = "app-mapsequencehuman")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapSequenceHuman_OperateMode;
     pub use super::MapSequenceHuman;
     pub use super::IMapSequenceHuman;
     pub use super::IMapSequenceHumanMethods;
-    pub use super::MapSequenceHuman_NextMode;
     pub use super::MapSequenceHuman_Label;
+    pub use super::MapSequenceHuman_NextMode;
+    pub use super::MapSequenceHuman_OperateMode;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

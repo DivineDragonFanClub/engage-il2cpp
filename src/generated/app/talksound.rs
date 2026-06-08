@@ -27,6 +27,12 @@ mod __types {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talksound/TalkSound_WaitSE.md"))] # [:: unity2 :: class (namespace = "App" , name = "TalkSound.WaitSE")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct TalkSound_WaitSE {
+# [static_field] # [rename (name = "MinimumWaitSec")] pub minimum_wait_sec : f32 ,
+# [offset (112)] # [rename (name = "m_Sec")] pub m_sec : f32 ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talksound/TalkSound_SoundType.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -93,12 +99,6 @@ impl  TalkSound_SoundType  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talksound/TalkSound_WaitSE.md"))] # [:: unity2 :: class (namespace = "App" , name = "TalkSound.WaitSE")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct TalkSound_WaitSE {
-# [static_field] # [rename (name = "MinimumWaitSec")] pub minimum_wait_sec : f32 ,
-# [offset (112)] # [rename (name = "m_Sec")] pub m_sec : f32 ,
-}
-
 }
 
 #[cfg(feature = "app-talksound-types")]
@@ -147,10 +147,10 @@ pub mod prelude {
     pub use super::TalkSound;
     pub use super::ITalkSound;
     pub use super::ITalkSoundMethods;
-    pub use super::TalkSound_SoundType;
     pub use super::TalkSound_WaitSE;
     pub use super::ITalkSound_WaitSE;
     pub use super::ITalkSound_WaitSEMethods;
+    pub use super::TalkSound_SoundType;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

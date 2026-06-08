@@ -17,7 +17,7 @@ mod __types {
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
 pub struct TextElementType  {
-    pub value: i32,
+    pub value: u8,
 }
 
 
@@ -49,13 +49,13 @@ impl  ::unity2::IlType for TextElementType  {
 
 impl  TextElementType  {
     pub fn character() -> Self {
-        Self { value: 8389121 }
+        Self { value: 1 }
 
     }
 
 
     pub fn sprite() -> Self {
-        Self { value: 32770 }
+        Self { value: 2 }
 
     }
 

@@ -19,12 +19,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/reflectionprobe/ReflectionProbe.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "ReflectionProbe")] # [parent (crate :: unity_engine :: behaviour :: Behaviour)] pub struct ReflectionProbe {
-# [static_field] # [rename (name = "reflectionProbeChanged")] pub reflection_probe_changed : crate :: system :: action_2 :: Action_2 < crate :: unity_engine :: reflectionprobe :: ReflectionProbe , crate :: unity_engine :: reflectionprobe :: ReflectionProbe_ReflectionProbeEvent > ,
-# [static_field] # [rename (name = "defaultReflectionSet")] pub default_reflection_set : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: cubemap :: Cubemap > ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/reflectionprobe/ReflectionProbe_ReflectionProbeEvent.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -73,6 +67,12 @@ impl  ReflectionProbe_ReflectionProbeEvent  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/reflectionprobe/ReflectionProbe.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "ReflectionProbe")] # [parent (crate :: unity_engine :: behaviour :: Behaviour)] pub struct ReflectionProbe {
+# [static_field] # [rename (name = "reflectionProbeChanged")] pub reflection_probe_changed : crate :: system :: action_2 :: Action_2 < crate :: unity_engine :: reflectionprobe :: ReflectionProbe , crate :: unity_engine :: reflectionprobe :: ReflectionProbe_ReflectionProbeEvent > ,
+# [static_field] # [rename (name = "defaultReflectionSet")] pub default_reflection_set : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: cubemap :: Cubemap > ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-reflectionprobe-types")]
@@ -101,10 +101,10 @@ impl ReflectionProbe {
 #[cfg(feature = "unity_engine-reflectionprobe")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ReflectionProbe_ReflectionProbeEvent;
     pub use super::ReflectionProbe;
     pub use super::IReflectionProbe;
     pub use super::IReflectionProbeMethods;
-    pub use super::ReflectionProbe_ReflectionProbeEvent;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

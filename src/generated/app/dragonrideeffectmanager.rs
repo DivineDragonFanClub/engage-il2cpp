@@ -15,30 +15,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideeffectmanager/DragonRideEffectManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRideEffectManager")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: dragonrideeffectmanager :: DragonRideEffectManager >)] pub struct DragonRideEffectManager {
-# [offset (28)] # [rename (name = "MaxNormalCount")] pub max_normal_count : i32 ,
-# [offset (32)] # [rename (name = "MaxOtherTypeCount")] pub max_other_type_count : i32 ,
-# [offset (36)] # [rename (name = "MaxShotCount")] pub max_shot_count : i32 ,
-# [offset (40)] # [rename (name = "MaxMaximumAssistCount")] pub max_maximum_assist_count : i32 ,
-# [offset (48)] # [rename (name = "EffecttRoot")] pub effectt_root : :: unity2 :: Il2CppString ,
-# [offset (56)] # [rename (name = "PathTargetNormal")] pub path_target_normal : :: unity2 :: Il2CppString ,
-# [offset (64)] # [rename (name = "PathTargetBig")] pub path_target_big : :: unity2 :: Il2CppString ,
-# [offset (72)] # [rename (name = "PathTargetLink")] pub path_target_link : :: unity2 :: Il2CppString ,
-# [offset (80)] # [rename (name = "PathTargetSpecial")] pub path_target_special : :: unity2 :: Il2CppString ,
-# [offset (88)] # [rename (name = "PathShotPlayer")] pub path_shot_player : :: unity2 :: Il2CppString ,
-# [offset (96)] # [rename (name = "PathShotAssist")] pub path_shot_assist : :: unity2 :: Il2CppString ,
-# [offset (104)] # [rename (name = "PathMaximumAssist")] pub path_maximum_assist : :: unity2 :: Il2CppString ,
-# [offset (112)] # [rename (name = "m_EffectParent")] pub m_effect_parent : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (120)] # [rename (name = "m_NormalReserve")] pub m_normal_reserve : crate :: app :: dragonrideeffectmanager :: DragonRideEffectManager_EffectReserver ,
-# [offset (128)] # [rename (name = "m_BigReserve")] pub m_big_reserve : crate :: app :: dragonrideeffectmanager :: DragonRideEffectManager_EffectReserver ,
-# [offset (136)] # [rename (name = "m_LinkReserve")] pub m_link_reserve : crate :: app :: dragonrideeffectmanager :: DragonRideEffectManager_EffectReserver ,
-# [offset (144)] # [rename (name = "m_SpecialReserve")] pub m_special_reserve : crate :: app :: dragonrideeffectmanager :: DragonRideEffectManager_EffectReserver ,
-# [offset (152)] # [rename (name = "m_ShotPReserve")] pub m_shot_p_reserve : crate :: app :: dragonrideeffectmanager :: DragonRideEffectManager_EffectReserver ,
-# [offset (160)] # [rename (name = "m_ShotAReserve")] pub m_shot_a_reserve : crate :: app :: dragonrideeffectmanager :: DragonRideEffectManager_EffectReserver ,
-# [offset (168)] # [rename (name = "m_MaximumReserve")] pub m_maximum_reserve : crate :: app :: dragonrideeffectmanager :: DragonRideEffectManager_EffectReserver ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonrideeffectmanager/DragonRideEffectManager_TypeIndex.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -94,6 +70,30 @@ impl  DragonRideEffectManager_TypeIndex  {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideeffectmanager/DragonRideEffectManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRideEffectManager")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: dragonrideeffectmanager :: DragonRideEffectManager >)] pub struct DragonRideEffectManager {
+# [offset (28)] # [rename (name = "MaxNormalCount")] pub max_normal_count : i32 ,
+# [offset (32)] # [rename (name = "MaxOtherTypeCount")] pub max_other_type_count : i32 ,
+# [offset (36)] # [rename (name = "MaxShotCount")] pub max_shot_count : i32 ,
+# [offset (40)] # [rename (name = "MaxMaximumAssistCount")] pub max_maximum_assist_count : i32 ,
+# [offset (48)] # [rename (name = "EffecttRoot")] pub effectt_root : :: unity2 :: Il2CppString ,
+# [offset (56)] # [rename (name = "PathTargetNormal")] pub path_target_normal : :: unity2 :: Il2CppString ,
+# [offset (64)] # [rename (name = "PathTargetBig")] pub path_target_big : :: unity2 :: Il2CppString ,
+# [offset (72)] # [rename (name = "PathTargetLink")] pub path_target_link : :: unity2 :: Il2CppString ,
+# [offset (80)] # [rename (name = "PathTargetSpecial")] pub path_target_special : :: unity2 :: Il2CppString ,
+# [offset (88)] # [rename (name = "PathShotPlayer")] pub path_shot_player : :: unity2 :: Il2CppString ,
+# [offset (96)] # [rename (name = "PathShotAssist")] pub path_shot_assist : :: unity2 :: Il2CppString ,
+# [offset (104)] # [rename (name = "PathMaximumAssist")] pub path_maximum_assist : :: unity2 :: Il2CppString ,
+# [offset (112)] # [rename (name = "m_EffectParent")] pub m_effect_parent : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (120)] # [rename (name = "m_NormalReserve")] pub m_normal_reserve : crate :: app :: dragonrideeffectmanager :: DragonRideEffectManager_EffectReserver ,
+# [offset (128)] # [rename (name = "m_BigReserve")] pub m_big_reserve : crate :: app :: dragonrideeffectmanager :: DragonRideEffectManager_EffectReserver ,
+# [offset (136)] # [rename (name = "m_LinkReserve")] pub m_link_reserve : crate :: app :: dragonrideeffectmanager :: DragonRideEffectManager_EffectReserver ,
+# [offset (144)] # [rename (name = "m_SpecialReserve")] pub m_special_reserve : crate :: app :: dragonrideeffectmanager :: DragonRideEffectManager_EffectReserver ,
+# [offset (152)] # [rename (name = "m_ShotPReserve")] pub m_shot_p_reserve : crate :: app :: dragonrideeffectmanager :: DragonRideEffectManager_EffectReserver ,
+# [offset (160)] # [rename (name = "m_ShotAReserve")] pub m_shot_a_reserve : crate :: app :: dragonrideeffectmanager :: DragonRideEffectManager_EffectReserver ,
+# [offset (168)] # [rename (name = "m_MaximumReserve")] pub m_maximum_reserve : crate :: app :: dragonrideeffectmanager :: DragonRideEffectManager_EffectReserver ,
+}
+
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideeffectmanager/DragonRideEffectManager_EffectReserver.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRideEffectManager.EffectReserver")] # [parent (crate :: system :: object :: Object)] pub struct DragonRideEffectManager_EffectReserver {
 # [offset (16)] # [rename (name = "m_Reserve")] pub m_reserve : :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > ,
 # [offset (24)] # [rename (name = "m_TypeName")] pub m_type_name : :: unity2 :: Il2CppString ,
@@ -144,10 +144,10 @@ impl DragonRideEffectManager_EffectReserver {
 #[cfg(feature = "app-dragonrideeffectmanager")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::DragonRideEffectManager_TypeIndex;
     pub use super::DragonRideEffectManager;
     pub use super::IDragonRideEffectManager;
     pub use super::IDragonRideEffectManagerMethods;
-    pub use super::DragonRideEffectManager_TypeIndex;
     pub use super::DragonRideEffectManager_EffectReserver;
     pub use super::IDragonRideEffectManager_EffectReserver;
     pub use super::IDragonRideEffectManager_EffectReserverMethods;

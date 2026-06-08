@@ -17,9 +17,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroommoviesequence/MyRoomMovieSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomMovieSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: myroommoviesequence :: MyRoomMovieSequence >)] pub struct MyRoomMovieSequence {}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroommoviesequence/MyRoomMovieSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -74,6 +71,9 @@ impl  MyRoomMovieSequence_Label  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroommoviesequence/MyRoomMovieSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomMovieSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: myroommoviesequence :: MyRoomMovieSequence >)] pub struct MyRoomMovieSequence {}
+
 }
 
 #[cfg(feature = "app-myroommoviesequence-types")]
@@ -102,10 +102,10 @@ impl MyRoomMovieSequence {
 #[cfg(feature = "app-myroommoviesequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MyRoomMovieSequence_Label;
     pub use super::MyRoomMovieSequence;
     pub use super::IMyRoomMovieSequence;
     pub use super::IMyRoomMovieSequenceMethods;
-    pub use super::MyRoomMovieSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

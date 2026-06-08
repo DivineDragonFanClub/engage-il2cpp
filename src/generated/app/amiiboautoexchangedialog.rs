@@ -30,9 +30,6 @@ mod __types {
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiiboautoexchangedialog/AmiiboAutoExchangeDialog_ConfirmDialogNo.md"))] # [:: unity2 :: class (namespace = "App" , name = "AmiiboAutoExchangeDialog.ConfirmDialogNo")] # [parent (crate :: app :: basicdialogitemno :: BasicDialogItemNo)] pub struct AmiiboAutoExchangeDialog_ConfirmDialogNo {}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiiboautoexchangedialog/AmiiboAutoExchangeDialog.md"))] # [:: unity2 :: class (namespace = "App" , name = "AmiiboAutoExchangeDialog")] # [parent (crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog)] pub struct AmiiboAutoExchangeDialog {}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/amiiboautoexchangedialog/AmiiboAutoExchangeDialog_Type.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -80,6 +77,9 @@ impl  AmiiboAutoExchangeDialog_Type  {
     }
 
 }
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiiboautoexchangedialog/AmiiboAutoExchangeDialog.md"))] # [:: unity2 :: class (namespace = "App" , name = "AmiiboAutoExchangeDialog")] # [parent (crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog)] pub struct AmiiboAutoExchangeDialog {}
 
 }
 
@@ -129,10 +129,10 @@ pub mod prelude {
     pub use super::AmiiboAutoExchangeDialog_ConfirmDialogNo;
     pub use super::IAmiiboAutoExchangeDialog_ConfirmDialogNo;
     pub use super::IAmiiboAutoExchangeDialog_ConfirmDialogNoMethods;
+    pub use super::AmiiboAutoExchangeDialog_Type;
     pub use super::AmiiboAutoExchangeDialog;
     pub use super::IAmiiboAutoExchangeDialog;
     pub use super::IAmiiboAutoExchangeDialogMethods;
-    pub use super::AmiiboAutoExchangeDialog_Type;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemno::IBasicDialogItemNo;

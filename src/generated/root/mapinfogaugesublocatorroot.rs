@@ -21,6 +21,61 @@ mod __types {
  ;
 
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mapinfogaugesublocatorroot/MapInfoGaugeSubLocatorRoot_BreakEffectKind.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct MapInfoGaugeSubLocatorRoot_BreakEffectKind  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for MapInfoGaugeSubLocatorRoot_BreakEffectKind  {
+    const NAMESPACE: &'static str = "";
+
+    const NAME: &'static str = "MapInfoGaugeSubLocatorRoot.BreakEffectKind";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for MapInfoGaugeSubLocatorRoot_BreakEffectKind  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  MapInfoGaugeSubLocatorRoot_BreakEffectKind  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn flash() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn solid() -> Self {
+        Self { value: 2 }
+
+    }
+
+}
+
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapinfogaugesublocatorroot/MapInfoGaugeSubLocatorRoot.md"))] # [:: unity2 :: class (namespace = "" , name = "MapInfoGaugeSubLocatorRoot")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct MapInfoGaugeSubLocatorRoot {
 # [static_field] # [rename (name = "HpStockMax")] pub hp_stock_max : i32 ,
 # [offset (24)] # [rename (name = "m_OnMapStatuses")] pub m_on_map_statuses : :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > ,
@@ -75,61 +130,6 @@ mod __types {
 # [offset (424)] # [rename (name = "m_EngageTurnRecoveryEffectOffset")] pub m_engage_turn_recovery_effect_offset : crate :: unity_engine :: vector3 :: Vector3 ,
 # [offset (440)] # [rename (name = "m_EngageTurnFlipbook")] pub m_engage_turn_flipbook : crate :: app :: flipbook :: Flipbook ,
 # [offset (448)] # [rename (name = "m_HpStockFlipbook")] pub m_hp_stock_flipbook : crate :: app :: flipbook :: Flipbook ,
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mapinfogaugesublocatorroot/MapInfoGaugeSubLocatorRoot_BreakEffectKind.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapInfoGaugeSubLocatorRoot_BreakEffectKind  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for MapInfoGaugeSubLocatorRoot_BreakEffectKind  {
-    const NAMESPACE: &'static str = "";
-
-    const NAME: &'static str = "MapInfoGaugeSubLocatorRoot.BreakEffectKind";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for MapInfoGaugeSubLocatorRoot_BreakEffectKind  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  MapInfoGaugeSubLocatorRoot_BreakEffectKind  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn flash() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn solid() -> Self {
-        Self { value: 2 }
-
-    }
-
 }
 
 
@@ -329,10 +329,10 @@ impl MapInfoGaugeSubLocatorRoot {
 #[cfg(feature = "root-mapinfogaugesublocatorroot")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MapInfoGaugeSubLocatorRoot_BreakEffectKind;
     pub use super::MapInfoGaugeSubLocatorRoot;
     pub use super::IMapInfoGaugeSubLocatorRoot;
     pub use super::IMapInfoGaugeSubLocatorRootMethods;
-    pub use super::MapInfoGaugeSubLocatorRoot_BreakEffectKind;
     pub use super::MapInfoGaugeSubLocatorRoot_Parts;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

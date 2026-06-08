@@ -17,7 +17,7 @@ mod __types {
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
 pub struct NotificationFlags  {
-    pub value: i32,
+    pub value: i16,
 }
 
 
@@ -49,19 +49,19 @@ impl  ::unity2::IlType for NotificationFlags  {
 
 impl  NotificationFlags  {
     pub fn trigger_in_edit_mode() -> Self {
-        Self { value: 131073 }
+        Self { value: 1 }
 
     }
 
 
     pub fn retroactive() -> Self {
-        Self { value: 262146 }
+        Self { value: 2 }
 
     }
 
 
     pub fn trigger_once() -> Self {
-        Self { value: 131076 }
+        Self { value: 4 }
 
     }
 

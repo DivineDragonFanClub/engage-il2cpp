@@ -17,7 +17,7 @@ mod __types {
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
 pub struct FalloffType  {
-    pub value: i32,
+    pub value: u8,
 }
 
 
@@ -49,31 +49,31 @@ impl  ::unity2::IlType for FalloffType  {
 
 impl  FalloffType  {
     pub fn inverse_squared() -> Self {
-        Self { value: 50462976 }
+        Self { value: 0 }
 
     }
 
 
     pub fn inverse_squared_no_range_attenuation() -> Self {
-        Self { value: 67305985 }
+        Self { value: 1 }
 
     }
 
 
     pub fn linear() -> Self {
-        Self { value: 262914 }
+        Self { value: 2 }
 
     }
 
 
     pub fn legacy() -> Self {
-        Self { value: 16778243 }
+        Self { value: 3 }
 
     }
 
 
     pub fn undefined() -> Self {
-        Self { value: 65540 }
+        Self { value: 4 }
 
     }
 

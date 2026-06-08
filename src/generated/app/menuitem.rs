@@ -13,58 +13,10 @@ mod __types {
  ;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/menuitem/MenuItem_Kind.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MenuItem_Kind  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for MenuItem_Kind  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MenuItem.Kind";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for MenuItem_Kind  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  MenuItem_Kind  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn group_begin() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn group_end() -> Self {
-        Self { value: 2 }
-
-    }
-
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/menuitem/MenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "MenuItem")] # [parent (crate :: system :: object :: Object)] pub struct MenuItem {
+# [offset (16)] # [rename (name = "m_Menu")] pub m_menu : crate :: app :: debugmenu :: DebugMenu ,
+# [offset (24)] # [rename (name = "m_State")] pub m_state : crate :: app :: menuitem :: MenuItem_State ,
+# [offset (28)] # [rename (name = "m_Bind")] pub m_bind : i32 ,
 }
 
 
@@ -263,10 +215,58 @@ impl  MenuItem_Result  {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/menuitem/MenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "MenuItem")] # [parent (crate :: system :: object :: Object)] pub struct MenuItem {
-# [offset (16)] # [rename (name = "m_Menu")] pub m_menu : crate :: app :: debugmenu :: DebugMenu ,
-# [offset (24)] # [rename (name = "m_State")] pub m_state : crate :: app :: menuitem :: MenuItem_State ,
-# [offset (28)] # [rename (name = "m_Bind")] pub m_bind : i32 ,
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/menuitem/MenuItem_Kind.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct MenuItem_Kind  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for MenuItem_Kind  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MenuItem.Kind";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for MenuItem_Kind  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  MenuItem_Kind  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn group_begin() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn group_end() -> Self {
+        Self { value: 2 }
+
+    }
+
 }
 
 }
@@ -297,13 +297,13 @@ impl MenuItem {
 #[cfg(feature = "app-menuitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MenuItem_Kind;
-    pub use super::MenuItem_State;
-    pub use super::MenuItem_Align;
-    pub use super::MenuItem_Result;
     pub use super::MenuItem;
     pub use super::IMenuItem;
     pub use super::IMenuItemMethods;
+    pub use super::MenuItem_State;
+    pub use super::MenuItem_Align;
+    pub use super::MenuItem_Result;
+    pub use super::MenuItem_Kind;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

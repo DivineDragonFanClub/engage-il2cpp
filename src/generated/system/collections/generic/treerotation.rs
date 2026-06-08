@@ -17,7 +17,7 @@ mod __types {
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
 pub struct TreeRotation  {
-    pub value: i32,
+    pub value: u8,
 }
 
 
@@ -49,25 +49,25 @@ impl  ::unity2::IlType for TreeRotation  {
 
 impl  TreeRotation  {
     pub fn left() -> Self {
-        Self { value: 50462976 }
+        Self { value: 0 }
 
     }
 
 
     pub fn left_right() -> Self {
-        Self { value: 67305985 }
+        Self { value: 1 }
 
     }
 
 
     pub fn right() -> Self {
-        Self { value: 262914 }
+        Self { value: 2 }
 
     }
 
 
     pub fn right_left() -> Self {
-        Self { value: 1027 }
+        Self { value: 3 }
 
     }
 

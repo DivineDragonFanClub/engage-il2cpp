@@ -30,9 +30,9 @@
  # [cfg (feature = "system-collections-generic-comparer_1")] pub use comparer_1 :: { IComparer_1Methods }
  ;
  # [cfg (any (feature = "system-collections-generic-dictionary_2-types"))] pub mod dictionary_2 ;
- # [cfg (feature = "system-collections-generic-dictionary_2-types")] pub use dictionary_2 :: { Dictionary_2_Enumerator , Dictionary_2_KeyCollection , IDictionary_2_KeyCollection , Dictionary_2 , IDictionary_2 , Dictionary_2_ValueCollection , IDictionary_2_ValueCollection , Dictionary_2_Entry , Dictionary_2_ValueCollection_Enumerator , Dictionary_2_KeyCollection_Enumerator }
+ # [cfg (feature = "system-collections-generic-dictionary_2-types")] pub use dictionary_2 :: { Dictionary_2_ValueCollection_Enumerator , Dictionary_2_Entry , Dictionary_2_KeyCollection_Enumerator , Dictionary_2_KeyCollection , IDictionary_2_KeyCollection , Dictionary_2_ValueCollection , IDictionary_2_ValueCollection , Dictionary_2_Enumerator , Dictionary_2 , IDictionary_2 }
  ;
- # [cfg (feature = "system-collections-generic-dictionary_2")] pub use dictionary_2 :: { IDictionary_2_KeyCollectionMethods , IDictionary_2Methods , IDictionary_2_ValueCollectionMethods }
+ # [cfg (feature = "system-collections-generic-dictionary_2")] pub use dictionary_2 :: { IDictionary_2_KeyCollectionMethods , IDictionary_2_ValueCollectionMethods , IDictionary_2Methods }
  ;
  # [cfg (any (feature = "system-collections-generic-dictionaryhashhelpers-types"))] pub mod dictionaryhashhelpers ;
  # [cfg (feature = "system-collections-generic-dictionaryhashhelpers-types")] pub use dictionaryhashhelpers :: { DictionaryHashHelpers , IDictionaryHashHelpers }
@@ -67,7 +67,7 @@
  # [cfg (feature = "system-collections-generic-genericequalitycomparer_1")] pub use genericequalitycomparer_1 :: { IGenericEqualityComparer_1Methods }
  ;
  # [cfg (any (feature = "system-collections-generic-hashset_1-types"))] pub mod hashset_1 ;
- # [cfg (feature = "system-collections-generic-hashset_1-types")] pub use hashset_1 :: { HashSet_1_ElementCount , HashSet_1_Enumerator , HashSet_1 , IHashSet_1 , HashSet_1_Slot }
+ # [cfg (feature = "system-collections-generic-hashset_1-types")] pub use hashset_1 :: { HashSet_1_Slot , HashSet_1_ElementCount , HashSet_1_Enumerator , HashSet_1 , IHashSet_1 }
  ;
  # [cfg (feature = "system-collections-generic-hashset_1")] pub use hashset_1 :: { IHashSet_1Methods }
  ;
@@ -153,7 +153,7 @@
  # [cfg (feature = "system-collections-generic-largearraybuilder_1-types")] pub use largearraybuilder_1 :: { LargeArrayBuilder_1 }
  ;
  # [cfg (any (feature = "system-collections-generic-linkedlist_1-types"))] pub mod linkedlist_1 ;
- # [cfg (feature = "system-collections-generic-linkedlist_1-types")] pub use linkedlist_1 :: { LinkedList_1_Enumerator , LinkedList_1 , ILinkedList_1 }
+ # [cfg (feature = "system-collections-generic-linkedlist_1-types")] pub use linkedlist_1 :: { LinkedList_1 , ILinkedList_1 , LinkedList_1_Enumerator }
  ;
  # [cfg (feature = "system-collections-generic-linkedlist_1")] pub use linkedlist_1 :: { ILinkedList_1Methods }
  ;
@@ -163,7 +163,7 @@
  # [cfg (feature = "system-collections-generic-linkedlistnode_1")] pub use linkedlistnode_1 :: { ILinkedListNode_1Methods }
  ;
  # [cfg (any (feature = "system-collections-generic-list_1-types"))] pub mod list_1 ;
- # [cfg (feature = "system-collections-generic-list_1-types")] pub use list_1 :: { List_1_Enumerator , List_1 , IList_1 }
+ # [cfg (feature = "system-collections-generic-list_1-types")] pub use list_1 :: { List_1 , IList_1 , List_1_Enumerator }
  ;
  # [cfg (feature = "system-collections-generic-list_1")] pub use list_1 :: { IList_1Methods }
  ;
@@ -227,14 +227,14 @@
  # [cfg (feature = "system-collections-generic-shortenumequalitycomparer_1")] pub use shortenumequalitycomparer_1 :: { IShortEnumEqualityComparer_1Methods }
  ;
  # [cfg (any (feature = "system-collections-generic-sorteddictionary_2-types"))] pub mod sorteddictionary_2 ;
- # [cfg (feature = "system-collections-generic-sorteddictionary_2-types")] pub use sorteddictionary_2 :: { SortedDictionary_2_ValueCollection , ISortedDictionary_2_ValueCollection , SortedDictionary_2_Enumerator , SortedDictionary_2_ValueCollection_Enumerator , SortedDictionary_2 , ISortedDictionary_2 , SortedDictionary_2_KeyCollection , ISortedDictionary_2_KeyCollection , SortedDictionary_2_KeyValuePairComparer , ISortedDictionary_2_KeyValuePairComparer , SortedDictionary_2_KeyCollection_Enumerator }
+ # [cfg (feature = "system-collections-generic-sorteddictionary_2-types")] pub use sorteddictionary_2 :: { SortedDictionary_2_ValueCollection_Enumerator , SortedDictionary_2_KeyCollection , ISortedDictionary_2_KeyCollection , SortedDictionary_2_Enumerator , SortedDictionary_2_ValueCollection , ISortedDictionary_2_ValueCollection , SortedDictionary_2 , ISortedDictionary_2 , SortedDictionary_2_KeyValuePairComparer , ISortedDictionary_2_KeyValuePairComparer , SortedDictionary_2_KeyCollection_Enumerator }
  ;
- # [cfg (feature = "system-collections-generic-sorteddictionary_2")] pub use sorteddictionary_2 :: { ISortedDictionary_2_ValueCollectionMethods , ISortedDictionary_2Methods , ISortedDictionary_2_KeyCollectionMethods , ISortedDictionary_2_KeyValuePairComparerMethods }
+ # [cfg (feature = "system-collections-generic-sorteddictionary_2")] pub use sorteddictionary_2 :: { ISortedDictionary_2_KeyCollectionMethods , ISortedDictionary_2_ValueCollectionMethods , ISortedDictionary_2Methods , ISortedDictionary_2_KeyValuePairComparerMethods }
  ;
  # [cfg (any (feature = "system-collections-generic-sortedset_1-types"))] pub mod sortedset_1 ;
- # [cfg (feature = "system-collections-generic-sortedset_1-types")] pub use sortedset_1 :: { SortedSet_1_Enumerator , SortedSet_1_Node , ISortedSet_1_Node , SortedSet_1 , ISortedSet_1 }
+ # [cfg (feature = "system-collections-generic-sortedset_1-types")] pub use sortedset_1 :: { SortedSet_1 , ISortedSet_1 , SortedSet_1_Enumerator , SortedSet_1_Node , ISortedSet_1_Node }
  ;
- # [cfg (feature = "system-collections-generic-sortedset_1")] pub use sortedset_1 :: { ISortedSet_1_NodeMethods , ISortedSet_1Methods }
+ # [cfg (feature = "system-collections-generic-sortedset_1")] pub use sortedset_1 :: { ISortedSet_1Methods , ISortedSet_1_NodeMethods }
  ;
  # [cfg (any (feature = "system-collections-generic-stack_1-types"))] pub mod stack_1 ;
  # [cfg (feature = "system-collections-generic-stack_1-types")] pub use stack_1 :: { Stack_1 , IStack_1 , Stack_1_Enumerator }

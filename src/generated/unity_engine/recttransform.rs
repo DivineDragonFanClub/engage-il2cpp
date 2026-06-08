@@ -23,6 +23,55 @@ mod __types {
  ;
 
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/recttransform/RectTransform_Axis.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct RectTransform_Axis  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for RectTransform_Axis  {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "RectTransform.Axis";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for RectTransform_Axis  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  RectTransform_Axis  {
+    pub fn horizontal() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn vertical() -> Self {
+        Self { value: 1 }
+
+    }
+
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/recttransform/RectTransform_Edge.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -84,55 +133,6 @@ impl  RectTransform_Edge  {
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/recttransform/RectTransform_Axis.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct RectTransform_Axis  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for RectTransform_Axis  {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "RectTransform.Axis";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for RectTransform_Axis  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  RectTransform_Axis  {
-    pub fn horizontal() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn vertical() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
-
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/recttransform/RectTransform.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "RectTransform")] # [parent (crate :: unity_engine :: transform :: Transform)] pub struct RectTransform {
 # [static_field] # [rename (name = "reapplyDrivenProperties")] pub reapply_driven_properties : crate :: unity_engine :: recttransform :: RectTransform_ReapplyDrivenProperties ,
 }
@@ -185,8 +185,8 @@ impl RectTransform_ReapplyDrivenProperties {
 #[cfg(feature = "unity_engine-recttransform")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RectTransform_Edge;
     pub use super::RectTransform_Axis;
+    pub use super::RectTransform_Edge;
     pub use super::RectTransform;
     pub use super::IRectTransform;
     pub use super::IRectTransformMethods;

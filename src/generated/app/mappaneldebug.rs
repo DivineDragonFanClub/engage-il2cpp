@@ -23,11 +23,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappaneldebug/MapPanelDebug.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapPanelDebug")] # [parent (crate :: root :: mappanelbase_1 :: MapPanelBase_1 < crate :: app :: mappaneldebug :: MapPanelDebug >)] pub struct MapPanelDebug {
-# [offset (64)] # [rename (name = "m_Entitys")] pub m_entitys : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mappaneldebug :: MapPanelDebug_Entity > ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldebug/MapPanelDebug_Entity.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -63,6 +58,11 @@ impl ::unity2::IlType for MapPanelDebug_Entity {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappaneldebug/MapPanelDebug.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapPanelDebug")] # [parent (crate :: root :: mappanelbase_1 :: MapPanelBase_1 < crate :: app :: mappaneldebug :: MapPanelDebug >)] pub struct MapPanelDebug {
+# [offset (64)] # [rename (name = "m_Entitys")] pub m_entitys : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mappaneldebug :: MapPanelDebug_Entity > ,
+}
+
 }
 
 #[cfg(feature = "app-mappaneldebug-types")]
@@ -91,10 +91,10 @@ impl MapPanelDebug {
 #[cfg(feature = "app-mappaneldebug")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MapPanelDebug_Entity;
     pub use super::MapPanelDebug;
     pub use super::IMapPanelDebug;
     pub use super::IMapPanelDebugMethods;
-    pub use super::MapPanelDebug_Entity;
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
     pub use crate::root::mappanelbase_1::IMapPanelBase_1;
     pub use crate::system::object::IObject;

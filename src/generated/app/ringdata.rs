@@ -86,14 +86,6 @@ impl  RingData_Ranks  {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringdata/RingData.md"))] # [:: unity2 :: class (namespace = "App" , name = "RingData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: ringdata :: RingData >)] pub struct RingData {
-# [offset (120)] # [rename (name = "m_Group")] pub m_group : :: unity2 :: Il2CppString ,
-# [offset (128)] # [rename (name = "m_FlagName")] pub m_flag_name : :: unity2 :: Il2CppString ,
-# [offset (136)] # [rename (name = "m_JewelColor")] pub m_jewel_color : crate :: unity_engine :: color :: Color ,
-# [offset (152)] # [rename (name = "m_RimColor")] pub m_rim_color : crate :: unity_engine :: color :: Color ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringdata/RingData_Kinds.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -154,6 +146,14 @@ impl  RingData_Kinds  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringdata/RingData.md"))] # [:: unity2 :: class (namespace = "App" , name = "RingData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: ringdata :: RingData >)] pub struct RingData {
+# [offset (120)] # [rename (name = "m_Group")] pub m_group : :: unity2 :: Il2CppString ,
+# [offset (128)] # [rename (name = "m_FlagName")] pub m_flag_name : :: unity2 :: Il2CppString ,
+# [offset (136)] # [rename (name = "m_JewelColor")] pub m_jewel_color : crate :: unity_engine :: color :: Color ,
+# [offset (152)] # [rename (name = "m_RimColor")] pub m_rim_color : crate :: unity_engine :: color :: Color ,
+}
+
 }
 
 #[cfg(feature = "app-ringdata-types")]
@@ -183,10 +183,10 @@ impl RingData {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::RingData_Ranks;
+    pub use super::RingData_Kinds;
     pub use super::RingData;
     pub use super::IRingData;
     pub use super::IRingDataMethods;
-    pub use super::RingData_Kinds;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdata_1::IStructData_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

@@ -17,7 +17,7 @@ mod __types {
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
 pub struct AngularFalloffType  {
-    pub value: i32,
+    pub value: u8,
 }
 
 
@@ -49,7 +49,7 @@ impl  ::unity2::IlType for AngularFalloffType  {
 
 impl  AngularFalloffType  {
     pub fn lut() -> Self {
-        Self { value: 256 }
+        Self { value: 0 }
 
     }
 

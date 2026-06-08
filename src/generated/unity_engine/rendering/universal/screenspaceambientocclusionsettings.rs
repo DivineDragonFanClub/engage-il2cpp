@@ -24,6 +24,55 @@ mod __types {
 }
 
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/screenspaceambientocclusionsettings/ScreenSpaceAmbientOcclusionSettings_DepthSource.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct ScreenSpaceAmbientOcclusionSettings_DepthSource  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for ScreenSpaceAmbientOcclusionSettings_DepthSource  {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
+
+    const NAME: &'static str = "ScreenSpaceAmbientOcclusionSettings.DepthSource";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for ScreenSpaceAmbientOcclusionSettings_DepthSource  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  ScreenSpaceAmbientOcclusionSettings_DepthSource  {
+    pub fn depth() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn depth_normals() -> Self {
+        Self { value: 1 }
+
+    }
+
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/screenspaceambientocclusionsettings/ScreenSpaceAmbientOcclusionSettings_NormalQuality.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -78,55 +127,6 @@ impl  ScreenSpaceAmbientOcclusionSettings_NormalQuality  {
 
 }
 
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/screenspaceambientocclusionsettings/ScreenSpaceAmbientOcclusionSettings_DepthSource.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct ScreenSpaceAmbientOcclusionSettings_DepthSource  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for ScreenSpaceAmbientOcclusionSettings_DepthSource  {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
-
-    const NAME: &'static str = "ScreenSpaceAmbientOcclusionSettings.DepthSource";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for ScreenSpaceAmbientOcclusionSettings_DepthSource  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  ScreenSpaceAmbientOcclusionSettings_DepthSource  {
-    pub fn depth() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn depth_normals() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
-
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-screenspaceambientocclusionsettings-types")]
@@ -155,8 +155,8 @@ pub mod prelude {
     pub use super::ScreenSpaceAmbientOcclusionSettings;
     pub use super::IScreenSpaceAmbientOcclusionSettings;
     pub use super::IScreenSpaceAmbientOcclusionSettingsMethods;
-    pub use super::ScreenSpaceAmbientOcclusionSettings_NormalQuality;
     pub use super::ScreenSpaceAmbientOcclusionSettings_DepthSource;
+    pub use super::ScreenSpaceAmbientOcclusionSettings_NormalQuality;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

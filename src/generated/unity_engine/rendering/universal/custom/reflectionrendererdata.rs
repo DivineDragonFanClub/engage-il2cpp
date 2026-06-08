@@ -19,11 +19,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/reflectionrendererdata/ReflectionRendererData_ShaderResources.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Custom" , name = "ReflectionRendererData.ShaderResources")] # [parent (crate :: system :: object :: Object)] pub struct ReflectionRendererData_ShaderResources {
-# [offset (16)] # [rename (name = "blitPS")] pub blit_ps : crate :: unity_engine :: shader :: Shader ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/custom/reflectionrendererdata/ReflectionRendererData_ReflectionTarget.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -79,6 +74,11 @@ impl  ReflectionRendererData_ReflectionTarget  {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/reflectionrendererdata/ReflectionRendererData_ShaderResources.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Custom" , name = "ReflectionRendererData.ShaderResources")] # [parent (crate :: system :: object :: Object)] pub struct ReflectionRendererData_ShaderResources {
+# [offset (16)] # [rename (name = "blitPS")] pub blit_ps : crate :: unity_engine :: shader :: Shader ,
+}
+
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/reflectionrendererdata/ReflectionRendererData.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Custom" , name = "ReflectionRendererData")] # [parent (crate :: unity_engine :: rendering :: universal :: scriptablerendererdata :: ScriptableRendererData)] pub struct ReflectionRendererData {
 # [offset (48)] # [rename (name = "postProcessData")] pub post_process_data : crate :: unity_engine :: rendering :: universal :: postprocessdata :: PostProcessData ,
 # [offset (56)] # [rename (name = "shaders")] pub shaders : crate :: unity_engine :: rendering :: universal :: custom :: reflectionrendererdata :: ReflectionRendererData_ShaderResources ,
@@ -129,10 +129,10 @@ impl ReflectionRendererData {
 #[cfg(feature = "unity_engine-rendering-universal-custom-reflectionrendererdata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ReflectionRendererData_ReflectionTarget;
     pub use super::ReflectionRendererData_ShaderResources;
     pub use super::IReflectionRendererData_ShaderResources;
     pub use super::IReflectionRendererData_ShaderResourcesMethods;
-    pub use super::ReflectionRendererData_ReflectionTarget;
     pub use super::ReflectionRendererData;
     pub use super::IReflectionRendererData;
     pub use super::IReflectionRendererDataMethods;

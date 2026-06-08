@@ -15,15 +15,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godgrowsequence/GodGrowSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "GodGrowSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct GodGrowSequence {
-# [offset (112)] # [rename (name = "m_GodUnit")] pub m_god_unit : crate :: app :: godunit :: GodUnit ,
-# [offset (120)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-# [offset (128)] # [rename (name = "m_Exp")] pub m_exp : i32 ,
-# [offset (132)] # [rename (name = "m_Dirty")] pub m_dirty : i32 ,
-# [offset (136)] # [rename (name = "m_OldLevel")] pub m_old_level : i32 ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/godgrowsequence/GodGrowSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -72,6 +63,15 @@ impl  GodGrowSequence_Label  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godgrowsequence/GodGrowSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "GodGrowSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct GodGrowSequence {
+# [offset (112)] # [rename (name = "m_GodUnit")] pub m_god_unit : crate :: app :: godunit :: GodUnit ,
+# [offset (120)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
+# [offset (128)] # [rename (name = "m_Exp")] pub m_exp : i32 ,
+# [offset (132)] # [rename (name = "m_Dirty")] pub m_dirty : i32 ,
+# [offset (136)] # [rename (name = "m_OldLevel")] pub m_old_level : i32 ,
+}
+
 }
 
 #[cfg(feature = "app-godgrowsequence-types")]
@@ -100,10 +100,10 @@ impl GodGrowSequence {
 #[cfg(feature = "app-godgrowsequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::GodGrowSequence_Label;
     pub use super::GodGrowSequence;
     pub use super::IGodGrowSequence;
     pub use super::IGodGrowSequenceMethods;
-    pub use super::GodGrowSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

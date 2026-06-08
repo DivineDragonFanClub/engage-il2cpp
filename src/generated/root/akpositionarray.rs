@@ -11,14 +11,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akpositionarray/AkPositionArray.md"))] # [:: unity2 :: class (namespace = "" , name = "AkPositionArray")] # [parent (crate :: system :: object :: Object)] pub struct AkPositionArray {
-# [offset (16)] # [rename (name = "m_Buffer")] pub m_buffer : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "m_Current")] pub m_current : :: unity2 :: IntPtr ,
-# [offset (32)] # [rename (name = "m_MaxCount")] pub m_max_count : u32 ,
-# [static_field] # [rename (name = "FloatToInt")] pub float_to_int : crate :: root :: akpositionarray :: AkPositionArray_FloatInt32Union ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/akpositionarray/AkPositionArray_FloatInt32Union.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -53,6 +45,14 @@ impl ::unity2::IlType for AkPositionArray_FloatInt32Union {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akpositionarray/AkPositionArray.md"))] # [:: unity2 :: class (namespace = "" , name = "AkPositionArray")] # [parent (crate :: system :: object :: Object)] pub struct AkPositionArray {
+# [offset (16)] # [rename (name = "m_Buffer")] pub m_buffer : :: unity2 :: IntPtr ,
+# [offset (24)] # [rename (name = "m_Current")] pub m_current : :: unity2 :: IntPtr ,
+# [offset (32)] # [rename (name = "m_MaxCount")] pub m_max_count : u32 ,
+# [static_field] # [rename (name = "FloatToInt")] pub float_to_int : crate :: root :: akpositionarray :: AkPositionArray_FloatInt32Union ,
+}
+
 }
 
 #[cfg(feature = "root-akpositionarray-types")]
@@ -81,10 +81,10 @@ impl AkPositionArray {
 #[cfg(feature = "root-akpositionarray")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::AkPositionArray_FloatInt32Union;
     pub use super::AkPositionArray;
     pub use super::IAkPositionArray;
     pub use super::IAkPositionArrayMethods;
-    pub use super::AkPositionArray_FloatInt32Union;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

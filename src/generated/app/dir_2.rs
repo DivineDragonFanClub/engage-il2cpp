@@ -20,7 +20,7 @@ mod __types {
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
 pub struct Dir_Type  {
-    pub value: i32,
+    pub value: u8,
 }
 
 
@@ -52,67 +52,67 @@ impl  ::unity2::IlType for Dir_Type  {
 
 impl  Dir_Type  {
     pub fn left() -> Self {
-        Self { value: 134480385 }
+        Self { value: 1 }
 
     }
 
 
     pub fn right() -> Self {
-        Self { value: 537396226 }
+        Self { value: 2 }
 
     }
 
 
     pub fn down() -> Self {
-        Self { value: -2145384444 }
+        Self { value: 4 }
 
     }
 
 
     pub fn up() -> Self {
-        Self { value: 8396808 }
+        Self { value: 8 }
 
     }
 
 
     pub fn center() -> Self {
-        Self { value: 151027744 }
+        Self { value: 32 }
 
     }
 
 
     pub fn terminate() -> Self {
-        Self { value: 168362112 }
+        Self { value: 128 }
 
     }
 
 
     pub fn none() -> Self {
-        Self { value: 84543744 }
+        Self { value: 0 }
 
     }
 
 
     pub fn up_left() -> Self {
-        Self { value: 100993545 }
+        Self { value: 9 }
 
     }
 
 
     pub fn up_right() -> Self {
-        Self { value: 17171722 }
+        Self { value: 10 }
 
     }
 
 
     pub fn down_left() -> Self {
-        Self { value: 67077 }
+        Self { value: 5 }
 
     }
 
 
     pub fn down_right() -> Self {
-        Self { value: 262 }
+        Self { value: 6 }
 
     }
 

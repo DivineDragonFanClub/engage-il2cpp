@@ -21,16 +21,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentnationdatasequence/InvestmentNationDataSequence_DecideEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "InvestmentNationDataSequence.DecideEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct InvestmentNationDataSequence_DecideEventHandler {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentnationdatasequence/InvestmentNationDataSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "InvestmentNationDataSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: investmentnationdatasequence :: InvestmentNationDataSequence >)] pub struct InvestmentNationDataSequence {
-# [static_field] # [rename (name = "ResNameC")] pub res_name_c : :: unity2 :: Il2CppString ,
-# [offset (120)] # [rename (name = "m_window")] pub m_window : crate :: app :: investmentnationdatamenu :: InvestmentNationDataMenu ,
-# [static_field] # [rename (name = "m_nationIndex")] pub m_nation_index : i32 ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/investmentnationdatasequence/InvestmentNationDataSequence_Label2.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -79,6 +69,16 @@ impl  InvestmentNationDataSequence_Label2  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentnationdatasequence/InvestmentNationDataSequence_DecideEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "InvestmentNationDataSequence.DecideEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct InvestmentNationDataSequence_DecideEventHandler {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentnationdatasequence/InvestmentNationDataSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "InvestmentNationDataSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: investmentnationdatasequence :: InvestmentNationDataSequence >)] pub struct InvestmentNationDataSequence {
+# [static_field] # [rename (name = "ResNameC")] pub res_name_c : :: unity2 :: Il2CppString ,
+# [offset (120)] # [rename (name = "m_window")] pub m_window : crate :: app :: investmentnationdatamenu :: InvestmentNationDataMenu ,
+# [static_field] # [rename (name = "m_nationIndex")] pub m_nation_index : i32 ,
+}
+
 }
 
 #[cfg(feature = "app-investmentnationdatasequence-types")]
@@ -124,13 +124,13 @@ impl InvestmentNationDataSequence {
 #[cfg(feature = "app-investmentnationdatasequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::InvestmentNationDataSequence_Label2;
     pub use super::InvestmentNationDataSequence_DecideEventHandler;
     pub use super::IInvestmentNationDataSequence_DecideEventHandler;
     pub use super::IInvestmentNationDataSequence_DecideEventHandlerMethods;
     pub use super::InvestmentNationDataSequence;
     pub use super::IInvestmentNationDataSequence;
     pub use super::IInvestmentNationDataSequenceMethods;
-    pub use super::InvestmentNationDataSequence_Label2;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::delegate::IDelegate;

@@ -16,6 +16,67 @@ mod __types {
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking/Cooking.md"))] # [:: unity2 :: class (namespace = "App" , name = "Cooking")] # [parent (crate :: system :: object :: Object)] pub struct Cooking {}
 
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking/Cooking_ConversationType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct Cooking_ConversationType  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for Cooking_ConversationType  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Cooking.ConversationType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for Cooking_ConversationType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  Cooking_ConversationType  {
+    pub fn about_delicious() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn monologue() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn dialogue() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn num() -> Self {
+        Self { value: 3 }
+
+    }
+
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking/Cooking_Quality.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -144,67 +205,6 @@ impl  Cooking_Order  {
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking/Cooking_ConversationType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Cooking_ConversationType  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for Cooking_ConversationType  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Cooking.ConversationType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for Cooking_ConversationType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  Cooking_ConversationType  {
-    pub fn about_delicious() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn monologue() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn dialogue() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 3 }
-
-    }
-
-}
-
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking/Cooking_Probability.md"))] # [:: unity2 :: class (namespace = "App" , name = "Cooking.Probability")] # [parent (crate :: system :: object :: Object)] pub struct Cooking_Probability {
 # [static_field] # [rename (name = "BaseProbability")] pub base_probability : :: unity2 :: Array < f32 > ,
 # [static_field] # [rename (name = "ProbabilityCorrections")] pub probability_corrections : :: unity2 :: Array < :: unity2 :: Array < f32 > > ,
@@ -262,9 +262,9 @@ pub mod prelude {
     pub use super::Cooking;
     pub use super::ICooking;
     pub use super::ICookingMethods;
+    pub use super::Cooking_ConversationType;
     pub use super::Cooking_Quality;
     pub use super::Cooking_Order;
-    pub use super::Cooking_ConversationType;
     pub use super::Cooking_Probability;
     pub use super::ICooking_Probability;
     pub use super::ICooking_ProbabilityMethods;

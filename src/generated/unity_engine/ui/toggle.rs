@@ -38,6 +38,9 @@ mod __types {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/toggle/Toggle_ToggleEvent.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "Toggle.ToggleEvent")] # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < bool >)] pub struct Toggle_ToggleEvent {}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/toggle/Toggle_ToggleTransition.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -86,9 +89,6 @@ impl  Toggle_ToggleTransition  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/toggle/Toggle_ToggleEvent.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "Toggle.ToggleEvent")] # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < bool >)] pub struct Toggle_ToggleEvent {}
-
 }
 
 #[cfg(feature = "unity_engine-ui-toggle-types")]
@@ -134,10 +134,10 @@ pub mod prelude {
     pub use super::Toggle;
     pub use super::IToggle;
     pub use super::IToggleMethods;
-    pub use super::Toggle_ToggleTransition;
     pub use super::Toggle_ToggleEvent;
     pub use super::IToggle_ToggleEvent;
     pub use super::IToggle_ToggleEventMethods;
+    pub use super::Toggle_ToggleTransition;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

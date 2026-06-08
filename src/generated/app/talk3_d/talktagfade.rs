@@ -15,14 +15,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talktagfade/TalkTagFade.md"))] # [:: unity2 :: class (namespace = "App.Talk3D" , name = "TalkTagFade")] # [parent (crate :: app :: talk3_d :: talktag :: TalkTag)] pub struct TalkTagFade {
-# [static_field] # [rename (name = "m_Colors")] pub m_colors : :: unity2 :: Array < crate :: unity_engine :: color :: Color > ,
-# [offset (16)] # [rename (name = "m_TagID")] pub m_tag_id : crate :: app :: talk3_d :: talktagfade :: TalkTagFade_TagID ,
-# [offset (20)] # [rename (name = "m_Sec")] pub m_sec : f32 ,
-# [offset (24)] # [rename (name = "m_ColorIndex")] pub m_color_index : i32 ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talktagfade/TalkTagFade_TagID.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -71,6 +63,14 @@ impl  TalkTagFade_TagID  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talktagfade/TalkTagFade.md"))] # [:: unity2 :: class (namespace = "App.Talk3D" , name = "TalkTagFade")] # [parent (crate :: app :: talk3_d :: talktag :: TalkTag)] pub struct TalkTagFade {
+# [static_field] # [rename (name = "m_Colors")] pub m_colors : :: unity2 :: Array < crate :: unity_engine :: color :: Color > ,
+# [offset (16)] # [rename (name = "m_TagID")] pub m_tag_id : crate :: app :: talk3_d :: talktagfade :: TalkTagFade_TagID ,
+# [offset (20)] # [rename (name = "m_Sec")] pub m_sec : f32 ,
+# [offset (24)] # [rename (name = "m_ColorIndex")] pub m_color_index : i32 ,
+}
+
 }
 
 #[cfg(feature = "app-talk3_d-talktagfade-types")]
@@ -99,10 +99,10 @@ impl TalkTagFade {
 #[cfg(feature = "app-talk3_d-talktagfade")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::TalkTagFade_TagID;
     pub use super::TalkTagFade;
     pub use super::ITalkTagFade;
     pub use super::ITalkTagFadeMethods;
-    pub use super::TalkTagFade_TagID;
     pub use crate::app::talk3_d::talktag::ITalkTag;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

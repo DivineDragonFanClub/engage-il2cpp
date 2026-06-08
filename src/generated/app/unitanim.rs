@@ -19,79 +19,6 @@ mod __types {
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitanim/UnitAnim_Times.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct UnitAnim_Times  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for UnitAnim_Times  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "UnitAnim.Times";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for UnitAnim_Times  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  UnitAnim_Times  {
-    pub fn zero() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn slow() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn normal() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn fast() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn very_fast() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn very_slow() -> Self {
-        Self { value: 5 }
-
-    }
-
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitanim/UnitAnim_Types.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -230,6 +157,79 @@ impl  UnitAnim_Types  {
 
 }
 
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitanim/UnitAnim_Times.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct UnitAnim_Times  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for UnitAnim_Times  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "UnitAnim.Times";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for UnitAnim_Times  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  UnitAnim_Times  {
+    pub fn zero() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn slow() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn normal() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn fast() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn very_fast() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn very_slow() -> Self {
+        Self { value: 5 }
+
+    }
+
+}
+
 }
 
 #[cfg(feature = "app-unitanim-types")]
@@ -261,8 +261,8 @@ pub mod prelude {
     pub use super::UnitAnim;
     pub use super::IUnitAnim;
     pub use super::IUnitAnimMethods;
-    pub use super::UnitAnim_Times;
     pub use super::UnitAnim_Types;
+    pub use super::UnitAnim_Times;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

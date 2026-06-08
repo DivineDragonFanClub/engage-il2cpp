@@ -17,7 +17,7 @@ mod __types {
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
 pub struct InputFeatureType  {
-    pub value: i32,
+    pub value: u32,
 }
 
 
@@ -109,7 +109,7 @@ impl  InputFeatureType  {
 
 
     pub fn k_unity_xr_input_feature_type_invalid() -> Self {
-        Self { value: -1 }
+        Self { value: 4294967295 }
 
     }
 

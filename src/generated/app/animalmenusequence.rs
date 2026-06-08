@@ -25,6 +25,69 @@ mod __types {
  ;
 
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/animalmenusequence/AnimalMenuSequence_From.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct AnimalMenuSequence_From  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for AnimalMenuSequence_From  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AnimalMenuSequence.From";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for AnimalMenuSequence_From  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  AnimalMenuSequence_From  {
+    pub fn outside() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn inside() -> Self {
+        Self { value: 1 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animalmenusequence/AnimalMenuSequence_ConfirmYes.md"))] # [:: unity2 :: class (namespace = "App" , name = "AnimalMenuSequence.ConfirmYes")] # [parent (crate :: app :: basicdialogitemyes :: BasicDialogItemYes)] pub struct AnimalMenuSequence_ConfirmYes {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animalmenusequence/AnimalMenuSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "AnimalMenuSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: animalmenusequence :: AnimalMenuSequence >)] pub struct AnimalMenuSequence {
+# [offset (184)] # [rename (name = "AnimalPID")] pub animal_pid : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
+# [offset (224)] # [rename (name = "m_Handle")] pub m_handle : crate :: app :: resourcehandle_2 :: ResourceHandle_2 ,
+# [offset (232)] # [rename (name = "m_RootAnim")] pub m_root_anim : crate :: unity_engine :: animator :: Animator ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animalmenusequence/AnimalMenuSequence_ConfirmNo.md"))] # [:: unity2 :: class (namespace = "App" , name = "AnimalMenuSequence.ConfirmNo")] # [parent (crate :: app :: basicdialogitemno :: BasicDialogItemNo)] pub struct AnimalMenuSequence_ConfirmNo {}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/animalmenusequence/AnimalMenuSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -97,89 +160,26 @@ impl  AnimalMenuSequence_Label  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animalmenusequence/AnimalMenuSequence_ConfirmNo.md"))] # [:: unity2 :: class (namespace = "App" , name = "AnimalMenuSequence.ConfirmNo")] # [parent (crate :: app :: basicdialogitemno :: BasicDialogItemNo)] pub struct AnimalMenuSequence_ConfirmNo {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animalmenusequence/AnimalMenuSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "AnimalMenuSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: animalmenusequence :: AnimalMenuSequence >)] pub struct AnimalMenuSequence {
-# [offset (184)] # [rename (name = "AnimalPID")] pub animal_pid : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (224)] # [rename (name = "m_Handle")] pub m_handle : crate :: app :: resourcehandle_2 :: ResourceHandle_2 ,
-# [offset (232)] # [rename (name = "m_RootAnim")] pub m_root_anim : crate :: unity_engine :: animator :: Animator ,
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/animalmenusequence/AnimalMenuSequence_From.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct AnimalMenuSequence_From  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for AnimalMenuSequence_From  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AnimalMenuSequence.From";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for AnimalMenuSequence_From  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  AnimalMenuSequence_From  {
-    pub fn outside() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn inside() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animalmenusequence/AnimalMenuSequence_ConfirmYes.md"))] # [:: unity2 :: class (namespace = "App" , name = "AnimalMenuSequence.ConfirmYes")] # [parent (crate :: app :: basicdialogitemyes :: BasicDialogItemYes)] pub struct AnimalMenuSequence_ConfirmYes {}
-
 }
 
 #[cfg(feature = "app-animalmenusequence-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-animalmenusequence")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AnimalMenuSequence_ConfirmNo_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimalMenuSequence_ConfirmNo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimalMenuSequence_ConfirmNo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AnimalMenuSequence_ConfirmNo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AnimalMenuSequence_ConfirmNo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_a_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimalMenuSequence_ConfirmNo as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimalMenuSequence_ConfirmNo as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , } } } pub unsafe fn a_call (this : AnimalMenuSequence_ConfirmNo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (AnimalMenuSequence_ConfirmNo , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_a_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AnimalMenuSequence_ConfirmYes_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimalMenuSequence_ConfirmYes as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimalMenuSequence_ConfirmYes as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AnimalMenuSequence_ConfirmYes , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AnimalMenuSequence_ConfirmYes , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_a_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimalMenuSequence_ConfirmYes as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimalMenuSequence_ConfirmYes as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , } } } pub unsafe fn a_call (this : AnimalMenuSequence_ConfirmYes , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (AnimalMenuSequence_ConfirmYes , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_a_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-animalmenusequence")]
-pub trait IAnimalMenuSequence_ConfirmNoMethods : IAnimalMenuSequence_ConfirmNo { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AnimalMenuSequence_ConfirmNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AnimalMenuSequence_ConfirmNo_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < AnimalMenuSequence_ConfirmNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AnimalMenuSequence_ConfirmNo_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None) } } }
+pub trait IAnimalMenuSequence_ConfirmYesMethods : IAnimalMenuSequence_ConfirmYes { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AnimalMenuSequence_ConfirmYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AnimalMenuSequence_ConfirmYes_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < AnimalMenuSequence_ConfirmYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AnimalMenuSequence_ConfirmYes_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-animalmenusequence")]
-impl < __T : IAnimalMenuSequence_ConfirmNo > IAnimalMenuSequence_ConfirmNoMethods for __T { }
+impl < __T : IAnimalMenuSequence_ConfirmYes > IAnimalMenuSequence_ConfirmYesMethods for __T { }
 
 #[cfg(feature = "app-animalmenusequence")]
-impl AnimalMenuSequence_ConfirmNo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimalMenuSequence_ConfirmNo_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimalMenuSequence_ConfirmNo_unity2_raw :: __lookup_a_call :: get_method_info () } }
+impl AnimalMenuSequence_ConfirmYes { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimalMenuSequence_ConfirmYes_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimalMenuSequence_ConfirmYes_unity2_raw :: __lookup_a_call :: get_method_info () } }
 
 #[cfg(feature = "app-animalmenusequence")]
-impl AnimalMenuSequence_ConfirmNo {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AnimalMenuSequence_ConfirmNo) , :: core :: stringify ! (new) ,)) ; < Self as IAnimalMenuSequence_ConfirmNoMethods > :: ctor (this ,) ; this }
+impl AnimalMenuSequence_ConfirmYes {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AnimalMenuSequence_ConfirmYes) , :: core :: stringify ! (new) ,)) ; < Self as IAnimalMenuSequence_ConfirmYesMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-animalmenusequence")]
@@ -203,36 +203,36 @@ impl AnimalMenuSequence {
 }
 
 #[cfg(feature = "app-animalmenusequence")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AnimalMenuSequence_ConfirmYes_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimalMenuSequence_ConfirmYes as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimalMenuSequence_ConfirmYes as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AnimalMenuSequence_ConfirmYes , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AnimalMenuSequence_ConfirmYes , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_a_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimalMenuSequence_ConfirmYes as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimalMenuSequence_ConfirmYes as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , } } } pub unsafe fn a_call (this : AnimalMenuSequence_ConfirmYes , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (AnimalMenuSequence_ConfirmYes , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_a_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AnimalMenuSequence_ConfirmNo_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimalMenuSequence_ConfirmNo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimalMenuSequence_ConfirmNo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AnimalMenuSequence_ConfirmNo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AnimalMenuSequence_ConfirmNo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_a_call { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimalMenuSequence_ConfirmNo as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimalMenuSequence_ConfirmNo as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , } } } pub unsafe fn a_call (this : AnimalMenuSequence_ConfirmNo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result { let inner : extern "C" fn (AnimalMenuSequence_ConfirmNo , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute (__lookup_a_call :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-animalmenusequence")]
-pub trait IAnimalMenuSequence_ConfirmYesMethods : IAnimalMenuSequence_ConfirmYes { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AnimalMenuSequence_ConfirmYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AnimalMenuSequence_ConfirmYes_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < AnimalMenuSequence_ConfirmYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AnimalMenuSequence_ConfirmYes_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None) } } }
+pub trait IAnimalMenuSequence_ConfirmNoMethods : IAnimalMenuSequence_ConfirmNo { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AnimalMenuSequence_ConfirmNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AnimalMenuSequence_ConfirmNo_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < AnimalMenuSequence_ConfirmNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AnimalMenuSequence_ConfirmNo_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-animalmenusequence")]
-impl < __T : IAnimalMenuSequence_ConfirmYes > IAnimalMenuSequence_ConfirmYesMethods for __T { }
+impl < __T : IAnimalMenuSequence_ConfirmNo > IAnimalMenuSequence_ConfirmNoMethods for __T { }
 
 #[cfg(feature = "app-animalmenusequence")]
-impl AnimalMenuSequence_ConfirmYes { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimalMenuSequence_ConfirmYes_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimalMenuSequence_ConfirmYes_unity2_raw :: __lookup_a_call :: get_method_info () } }
+impl AnimalMenuSequence_ConfirmNo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimalMenuSequence_ConfirmNo_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimalMenuSequence_ConfirmNo_unity2_raw :: __lookup_a_call :: get_method_info () } }
 
 #[cfg(feature = "app-animalmenusequence")]
-impl AnimalMenuSequence_ConfirmYes {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AnimalMenuSequence_ConfirmYes) , :: core :: stringify ! (new) ,)) ; < Self as IAnimalMenuSequence_ConfirmYesMethods > :: ctor (this ,) ; this }
+impl AnimalMenuSequence_ConfirmNo {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AnimalMenuSequence_ConfirmNo) , :: core :: stringify ! (new) ,)) ; < Self as IAnimalMenuSequence_ConfirmNoMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-animalmenusequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AnimalMenuSequence_Label;
-    pub use super::AnimalMenuSequence_ConfirmNo;
-    pub use super::IAnimalMenuSequence_ConfirmNo;
-    pub use super::IAnimalMenuSequence_ConfirmNoMethods;
-    pub use super::AnimalMenuSequence;
-    pub use super::IAnimalMenuSequence;
-    pub use super::IAnimalMenuSequenceMethods;
     pub use super::AnimalMenuSequence_From;
     pub use super::AnimalMenuSequence_ConfirmYes;
     pub use super::IAnimalMenuSequence_ConfirmYes;
     pub use super::IAnimalMenuSequence_ConfirmYesMethods;
+    pub use super::AnimalMenuSequence;
+    pub use super::IAnimalMenuSequence;
+    pub use super::IAnimalMenuSequenceMethods;
+    pub use super::AnimalMenuSequence_ConfirmNo;
+    pub use super::IAnimalMenuSequence_ConfirmNo;
+    pub use super::IAnimalMenuSequence_ConfirmNoMethods;
+    pub use super::AnimalMenuSequence_Label;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemno::IBasicDialogItemNo;
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;

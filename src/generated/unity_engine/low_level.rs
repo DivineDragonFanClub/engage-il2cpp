@@ -4,7 +4,7 @@
  # [cfg (feature = "unity_engine-low_level-playerloop-types")] pub use playerloop :: { PlayerLoop , IPlayerLoop }
  ;
  # [cfg (any (feature = "unity_engine-low_level-playerloopsystem-types"))] pub mod playerloopsystem ;
- # [cfg (feature = "unity_engine-low_level-playerloopsystem-types")] pub use playerloopsystem :: { PlayerLoopSystem_UpdateFunction , IPlayerLoopSystem_UpdateFunction , PlayerLoopSystem }
+ # [cfg (feature = "unity_engine-low_level-playerloopsystem-types")] pub use playerloopsystem :: { PlayerLoopSystem , PlayerLoopSystem_UpdateFunction , IPlayerLoopSystem_UpdateFunction }
  ;
  # [cfg (feature = "unity_engine-low_level-playerloopsystem")] pub use playerloopsystem :: { IPlayerLoopSystem_UpdateFunctionMethods }
  ;

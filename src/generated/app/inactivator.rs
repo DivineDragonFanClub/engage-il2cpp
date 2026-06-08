@@ -88,6 +88,12 @@ impl  Inactivator_Flags  {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inactivator/Inactivator.md"))] # [:: unity2 :: class (namespace = "App" , name = "Inactivator")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct Inactivator {
+# [offset (24)] # [rename (name = "m_Flags")] pub m_flags : crate :: app :: inactivator :: Inactivator_Flags ,
+# [offset (32)] # [rename (name = "m_Variable")] pub m_variable : :: unity2 :: Il2CppString ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/inactivator/Inactivator_Kind.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -160,12 +166,6 @@ impl  Inactivator_Kind  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inactivator/Inactivator.md"))] # [:: unity2 :: class (namespace = "App" , name = "Inactivator")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct Inactivator {
-# [offset (24)] # [rename (name = "m_Flags")] pub m_flags : crate :: app :: inactivator :: Inactivator_Flags ,
-# [offset (32)] # [rename (name = "m_Variable")] pub m_variable : :: unity2 :: Il2CppString ,
-}
-
 }
 
 #[cfg(feature = "app-inactivator-types")]
@@ -195,10 +195,10 @@ impl Inactivator {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::Inactivator_Flags;
-    pub use super::Inactivator_Kind;
     pub use super::Inactivator;
     pub use super::IInactivator;
     pub use super::IInactivatorMethods;
+    pub use super::Inactivator_Kind;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

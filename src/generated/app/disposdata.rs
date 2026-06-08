@@ -25,15 +25,101 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/disposdata/DisposData_AIFlagField.md"))] # [:: unity2 :: class (namespace = "App" , name = "DisposData.AIFlagField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: disposdata :: DisposData_AIFlags >)] pub struct DisposData_AIFlagField {}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/disposdata/DisposData_FlagField.md"))] # [:: unity2 :: class (namespace = "App" , name = "DisposData.FlagField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: disposdata :: DisposData_Flags >)] pub struct DisposData_FlagField {}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/disposdata/DisposData_AIFlags.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct DisposData_AIFlags  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for DisposData_AIFlags  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "DisposData.AIFlags";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for DisposData_AIFlags  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  DisposData_AIFlags  {
+    pub fn not_activate_by_attacked() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn dummy() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn zero_attack() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn heal() -> Self {
+        Self { value: 8 }
+
+    }
+
+
+    pub fn r#break() -> Self {
+        Self { value: 16 }
+
+    }
+
+
+    pub fn chain() -> Self {
+        Self { value: 32 }
+
+    }
+
+
+    pub fn equip_short_after_long_range() -> Self {
+        Self { value: 64 }
+
+    }
+
+
+    pub fn move_break() -> Self {
+        Self { value: 128 }
+
+    }
+
+
+    pub fn engage_attack_once() -> Self {
+        Self { value: 256 }
+
+    }
+
+}
 
 
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/disposdata/DisposData_Item.md"))] # [:: unity2 :: class (namespace = "App" , name = "DisposData.Item")] # [parent (crate :: system :: object :: Object)] pub struct DisposData_Item {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/disposdata/DisposData.md"))] # [:: unity2 :: class (namespace = "App" , name = "DisposData")] # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: disposdata :: DisposData >)] pub struct DisposData {
-# [static_field] # [rename (name = "ITEM_COUNT")] pub item_count : i32 ,
-}
 
 
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/disposdata/DisposData_Directions.md"))]
@@ -127,7 +213,67 @@ impl  DisposData_Directions  {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/disposdata/DisposData_FlagField.md"))] # [:: unity2 :: class (namespace = "App" , name = "DisposData.FlagField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: disposdata :: DisposData_Flags >)] pub struct DisposData_FlagField {}
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/disposdata/DisposData_State.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct DisposData_State  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for DisposData_State  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "DisposData.State";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for DisposData_State  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  DisposData_State  {
+    pub fn normal() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn rampage() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn keep() -> Self {
+        Self { value: -1 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/disposdata/DisposData.md"))] # [:: unity2 :: class (namespace = "App" , name = "DisposData")] # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: disposdata :: DisposData >)] pub struct DisposData {
+# [static_field] # [rename (name = "ITEM_COUNT")] pub item_count : i32 ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/disposdata/DisposData_AIFlagField.md"))] # [:: unity2 :: class (namespace = "App" , name = "DisposData.AIFlagField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: disposdata :: DisposData_AIFlags >)] pub struct DisposData_AIFlagField {}
 
 
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/disposdata/DisposData_Flags.md"))]
@@ -244,174 +390,28 @@ impl  DisposData_Flags  {
 
 }
 
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/disposdata/DisposData_AIFlags.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct DisposData_AIFlags  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for DisposData_AIFlags  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "DisposData.AIFlags";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for DisposData_AIFlags  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  DisposData_AIFlags  {
-    pub fn not_activate_by_attacked() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn dummy() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn zero_attack() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn heal() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn r#break() -> Self {
-        Self { value: 16 }
-
-    }
-
-
-    pub fn chain() -> Self {
-        Self { value: 32 }
-
-    }
-
-
-    pub fn equip_short_after_long_range() -> Self {
-        Self { value: 64 }
-
-    }
-
-
-    pub fn move_break() -> Self {
-        Self { value: 128 }
-
-    }
-
-
-    pub fn engage_attack_once() -> Self {
-        Self { value: 256 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/disposdata/DisposData_State.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct DisposData_State  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for DisposData_State  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "DisposData.State";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for DisposData_State  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  DisposData_State  {
-    pub fn normal() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn rampage() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn keep() -> Self {
-        Self { value: -1 }
-
-    }
-
-}
-
 }
 
 #[cfg(feature = "app-disposdata-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-disposdata")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DisposData_AIFlagField_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DisposData_AIFlagField as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DisposData_AIFlagField as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DisposData_AIFlagField , f : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DisposData_AIFlagField , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , f , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: disposdata :: DisposData_AIFlags as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DisposData_AIFlagField as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DisposData_AIFlagField as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor_2 (this : DisposData_AIFlagField , f : crate :: app :: disposdata :: DisposData_AIFlags , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DisposData_AIFlagField , crate :: app :: disposdata :: DisposData_AIFlags , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor_2 :: get_method_info () . method_ptr ,) ; inner (this , f , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_int { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: disposdata :: DisposData_AIFlags as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DisposData_AIFlagField as :: unity2 :: ClassIdentity > :: class () , "ToInt" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DisposData_AIFlagField as :: unity2 :: ClassIdentity > :: NAME , "ToInt" , e) , } } } pub unsafe fn to_int (this : DisposData_AIFlagField , value : crate :: app :: disposdata :: DisposData_AIFlags , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (DisposData_AIFlagField , crate :: app :: disposdata :: DisposData_AIFlags , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_to_int :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } }
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DisposData_FlagField_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DisposData_FlagField as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DisposData_FlagField as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DisposData_FlagField , f : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DisposData_FlagField , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , f , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: disposdata :: DisposData_Flags as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DisposData_FlagField as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DisposData_FlagField as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor_2 (this : DisposData_FlagField , f : crate :: app :: disposdata :: DisposData_Flags , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DisposData_FlagField , crate :: app :: disposdata :: DisposData_Flags , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor_2 :: get_method_info () . method_ptr ,) ; inner (this , f , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_int { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: disposdata :: DisposData_Flags as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DisposData_FlagField as :: unity2 :: ClassIdentity > :: class () , "ToInt" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DisposData_FlagField as :: unity2 :: ClassIdentity > :: NAME , "ToInt" , e) , } } } pub unsafe fn to_int (this : DisposData_FlagField , value : crate :: app :: disposdata :: DisposData_Flags , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (DisposData_FlagField , crate :: app :: disposdata :: DisposData_Flags , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_to_int :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } }
 
 #[cfg(feature = "app-disposdata")]
-pub trait IDisposData_AIFlagFieldMethods : IDisposData_AIFlagField { # [doc = "`.ctor(i32)` overload"] fn ctor (self , f : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DisposData_AIFlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DisposData_AIFlagField_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } # [doc = "`.ctor(crate::app::disposdata::DisposData_AIFlags)` overload"] fn ctor_2 (self , f : impl :: core :: convert :: Into < crate :: app :: disposdata :: DisposData_AIFlags >) -> () { unsafe { let __receiver = < DisposData_AIFlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DisposData_AIFlagField_unity2_raw :: ctor_2 (__receiver , :: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } # [doc = "`ToInt(crate::app::disposdata::DisposData_AIFlags)` overload"] fn to_int (self , value : impl :: core :: convert :: Into < crate :: app :: disposdata :: DisposData_AIFlags >) -> i32 { unsafe { let __receiver = < DisposData_AIFlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DisposData_AIFlagField_unity2_raw :: to_int (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } }
+pub trait IDisposData_FlagFieldMethods : IDisposData_FlagField { # [doc = "`.ctor(i32)` overload"] fn ctor (self , f : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DisposData_FlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DisposData_FlagField_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } # [doc = "`.ctor(crate::app::disposdata::DisposData_Flags)` overload"] fn ctor_2 (self , f : impl :: core :: convert :: Into < crate :: app :: disposdata :: DisposData_Flags >) -> () { unsafe { let __receiver = < DisposData_FlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DisposData_FlagField_unity2_raw :: ctor_2 (__receiver , :: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } # [doc = "`ToInt(crate::app::disposdata::DisposData_Flags)` overload"] fn to_int (self , value : impl :: core :: convert :: Into < crate :: app :: disposdata :: DisposData_Flags >) -> i32 { unsafe { let __receiver = < DisposData_FlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DisposData_FlagField_unity2_raw :: to_int (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-disposdata")]
-impl < __T : IDisposData_AIFlagField > IDisposData_AIFlagFieldMethods for __T { }
+impl < __T : IDisposData_FlagField > IDisposData_FlagFieldMethods for __T { }
 
 #[cfg(feature = "app-disposdata")]
-impl DisposData_AIFlagField { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DisposData_AIFlagField_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DisposData_AIFlagField_unity2_raw :: __lookup_ctor_2 :: get_method_info () } pub fn to_int_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DisposData_AIFlagField_unity2_raw :: __lookup_to_int :: get_method_info () } }
+impl DisposData_FlagField { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DisposData_FlagField_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DisposData_FlagField_unity2_raw :: __lookup_ctor_2 :: get_method_info () } pub fn to_int_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DisposData_FlagField_unity2_raw :: __lookup_to_int :: get_method_info () } }
 
 #[cfg(feature = "app-disposdata")]
-impl DisposData_AIFlagField {
-# [doc = "`.ctor(i32)` — overload selector"] pub fn new (f : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DisposData_AIFlagField) , :: core :: stringify ! (new) ,)) ; < Self as IDisposData_AIFlagFieldMethods > :: ctor (this , f) ; this }
+impl DisposData_FlagField {
+# [doc = "`.ctor(i32)` — overload selector"] pub fn new (f : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DisposData_FlagField) , :: core :: stringify ! (new) ,)) ; < Self as IDisposData_FlagFieldMethods > :: ctor (this , f) ; this }
 
-# [doc = "`.ctor(crate::app::disposdata::DisposData_AIFlags)` — overload selector"] pub fn new_2 (f : crate :: app :: disposdata :: DisposData_AIFlags) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DisposData_AIFlagField) , :: core :: stringify ! (new_2) ,)) ; < Self as IDisposData_AIFlagFieldMethods > :: ctor_2 (this , f) ; this }
+# [doc = "`.ctor(crate::app::disposdata::DisposData_Flags)` — overload selector"] pub fn new_2 (f : crate :: app :: disposdata :: DisposData_Flags) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DisposData_FlagField) , :: core :: stringify ! (new_2) ,)) ; < Self as IDisposData_FlagFieldMethods > :: ctor_2 (this , f) ; this }
 }
 
 #[cfg(feature = "app-disposdata")]
@@ -452,43 +452,43 @@ impl DisposData {
 }
 
 #[cfg(feature = "app-disposdata")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DisposData_FlagField_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DisposData_FlagField as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DisposData_FlagField as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DisposData_FlagField , f : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DisposData_FlagField , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , f , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: disposdata :: DisposData_Flags as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DisposData_FlagField as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DisposData_FlagField as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor_2 (this : DisposData_FlagField , f : crate :: app :: disposdata :: DisposData_Flags , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DisposData_FlagField , crate :: app :: disposdata :: DisposData_Flags , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor_2 :: get_method_info () . method_ptr ,) ; inner (this , f , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_int { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: disposdata :: DisposData_Flags as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DisposData_FlagField as :: unity2 :: ClassIdentity > :: class () , "ToInt" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DisposData_FlagField as :: unity2 :: ClassIdentity > :: NAME , "ToInt" , e) , } } } pub unsafe fn to_int (this : DisposData_FlagField , value : crate :: app :: disposdata :: DisposData_Flags , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (DisposData_FlagField , crate :: app :: disposdata :: DisposData_Flags , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_to_int :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } }
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DisposData_AIFlagField_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DisposData_AIFlagField as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DisposData_AIFlagField as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DisposData_AIFlagField , f : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DisposData_AIFlagField , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , f , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: disposdata :: DisposData_AIFlags as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DisposData_AIFlagField as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DisposData_AIFlagField as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor_2 (this : DisposData_AIFlagField , f : crate :: app :: disposdata :: DisposData_AIFlags , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DisposData_AIFlagField , crate :: app :: disposdata :: DisposData_AIFlags , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor_2 :: get_method_info () . method_ptr ,) ; inner (this , f , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_int { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: disposdata :: DisposData_AIFlags as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DisposData_AIFlagField as :: unity2 :: ClassIdentity > :: class () , "ToInt" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DisposData_AIFlagField as :: unity2 :: ClassIdentity > :: NAME , "ToInt" , e) , } } } pub unsafe fn to_int (this : DisposData_AIFlagField , value : crate :: app :: disposdata :: DisposData_AIFlags , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let inner : extern "C" fn (DisposData_AIFlagField , crate :: app :: disposdata :: DisposData_AIFlags , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__lookup_to_int :: get_method_info () . method_ptr ,) ; inner (this , value , __unity2_method_info) } }
 
 #[cfg(feature = "app-disposdata")]
-pub trait IDisposData_FlagFieldMethods : IDisposData_FlagField { # [doc = "`.ctor(i32)` overload"] fn ctor (self , f : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DisposData_FlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DisposData_FlagField_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } # [doc = "`.ctor(crate::app::disposdata::DisposData_Flags)` overload"] fn ctor_2 (self , f : impl :: core :: convert :: Into < crate :: app :: disposdata :: DisposData_Flags >) -> () { unsafe { let __receiver = < DisposData_FlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DisposData_FlagField_unity2_raw :: ctor_2 (__receiver , :: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } # [doc = "`ToInt(crate::app::disposdata::DisposData_Flags)` overload"] fn to_int (self , value : impl :: core :: convert :: Into < crate :: app :: disposdata :: DisposData_Flags >) -> i32 { unsafe { let __receiver = < DisposData_FlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DisposData_FlagField_unity2_raw :: to_int (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } }
+pub trait IDisposData_AIFlagFieldMethods : IDisposData_AIFlagField { # [doc = "`.ctor(i32)` overload"] fn ctor (self , f : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DisposData_AIFlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DisposData_AIFlagField_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } # [doc = "`.ctor(crate::app::disposdata::DisposData_AIFlags)` overload"] fn ctor_2 (self , f : impl :: core :: convert :: Into < crate :: app :: disposdata :: DisposData_AIFlags >) -> () { unsafe { let __receiver = < DisposData_AIFlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DisposData_AIFlagField_unity2_raw :: ctor_2 (__receiver , :: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } # [doc = "`ToInt(crate::app::disposdata::DisposData_AIFlags)` overload"] fn to_int (self , value : impl :: core :: convert :: Into < crate :: app :: disposdata :: DisposData_AIFlags >) -> i32 { unsafe { let __receiver = < DisposData_AIFlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DisposData_AIFlagField_unity2_raw :: to_int (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-disposdata")]
-impl < __T : IDisposData_FlagField > IDisposData_FlagFieldMethods for __T { }
+impl < __T : IDisposData_AIFlagField > IDisposData_AIFlagFieldMethods for __T { }
 
 #[cfg(feature = "app-disposdata")]
-impl DisposData_FlagField { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DisposData_FlagField_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DisposData_FlagField_unity2_raw :: __lookup_ctor_2 :: get_method_info () } pub fn to_int_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DisposData_FlagField_unity2_raw :: __lookup_to_int :: get_method_info () } }
+impl DisposData_AIFlagField { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DisposData_AIFlagField_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DisposData_AIFlagField_unity2_raw :: __lookup_ctor_2 :: get_method_info () } pub fn to_int_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DisposData_AIFlagField_unity2_raw :: __lookup_to_int :: get_method_info () } }
 
 #[cfg(feature = "app-disposdata")]
-impl DisposData_FlagField {
-# [doc = "`.ctor(i32)` — overload selector"] pub fn new (f : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DisposData_FlagField) , :: core :: stringify ! (new) ,)) ; < Self as IDisposData_FlagFieldMethods > :: ctor (this , f) ; this }
+impl DisposData_AIFlagField {
+# [doc = "`.ctor(i32)` — overload selector"] pub fn new (f : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DisposData_AIFlagField) , :: core :: stringify ! (new) ,)) ; < Self as IDisposData_AIFlagFieldMethods > :: ctor (this , f) ; this }
 
-# [doc = "`.ctor(crate::app::disposdata::DisposData_Flags)` — overload selector"] pub fn new_2 (f : crate :: app :: disposdata :: DisposData_Flags) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DisposData_FlagField) , :: core :: stringify ! (new_2) ,)) ; < Self as IDisposData_FlagFieldMethods > :: ctor_2 (this , f) ; this }
+# [doc = "`.ctor(crate::app::disposdata::DisposData_AIFlags)` — overload selector"] pub fn new_2 (f : crate :: app :: disposdata :: DisposData_AIFlags) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DisposData_AIFlagField) , :: core :: stringify ! (new_2) ,)) ; < Self as IDisposData_AIFlagFieldMethods > :: ctor_2 (this , f) ; this }
 }
 
 #[cfg(feature = "app-disposdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DisposData_AIFlagField;
-    pub use super::IDisposData_AIFlagField;
-    pub use super::IDisposData_AIFlagFieldMethods;
-    pub use super::DisposData_Item;
-    pub use super::IDisposData_Item;
-    pub use super::IDisposData_ItemMethods;
-    pub use super::DisposData;
-    pub use super::IDisposData;
-    pub use super::IDisposDataMethods;
-    pub use super::DisposData_Directions;
     pub use super::DisposData_FlagField;
     pub use super::IDisposData_FlagField;
     pub use super::IDisposData_FlagFieldMethods;
-    pub use super::DisposData_Flags;
     pub use super::DisposData_AIFlags;
+    pub use super::DisposData_Item;
+    pub use super::IDisposData_Item;
+    pub use super::IDisposData_ItemMethods;
+    pub use super::DisposData_Directions;
     pub use super::DisposData_State;
+    pub use super::DisposData;
+    pub use super::IDisposData;
+    pub use super::IDisposDataMethods;
+    pub use super::DisposData_AIFlagField;
+    pub use super::IDisposData_AIFlagField;
+    pub use super::IDisposData_AIFlagFieldMethods;
+    pub use super::DisposData_Flags;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

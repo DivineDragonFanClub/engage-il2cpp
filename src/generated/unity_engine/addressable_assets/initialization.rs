@@ -4,9 +4,9 @@
  # [cfg (feature = "unity_engine-addressable_assets-initialization-addressablesruntimeproperties-types")] pub use addressablesruntimeproperties :: { AddressablesRuntimeProperties , IAddressablesRuntimeProperties }
  ;
  # [cfg (any (feature = "unity_engine-addressable_assets-initialization-cacheinitialization-types"))] pub mod cacheinitialization ;
- # [cfg (feature = "unity_engine-addressable_assets-initialization-cacheinitialization-types")] pub use cacheinitialization :: { CacheInitialization , ICacheInitialization , CacheInitialization_CacheInitOp , ICacheInitialization_CacheInitOp }
+ # [cfg (feature = "unity_engine-addressable_assets-initialization-cacheinitialization-types")] pub use cacheinitialization :: { CacheInitialization_CacheInitOp , ICacheInitialization_CacheInitOp , CacheInitialization , ICacheInitialization }
  ;
- # [cfg (feature = "unity_engine-addressable_assets-initialization-cacheinitialization")] pub use cacheinitialization :: { ICacheInitializationMethods , ICacheInitialization_CacheInitOpMethods }
+ # [cfg (feature = "unity_engine-addressable_assets-initialization-cacheinitialization")] pub use cacheinitialization :: { ICacheInitialization_CacheInitOpMethods , ICacheInitializationMethods }
  ;
  # [cfg (any (feature = "unity_engine-addressable_assets-initialization-cacheinitializationdata-types"))] pub mod cacheinitializationdata ;
  # [cfg (feature = "unity_engine-addressable_assets-initialization-cacheinitializationdata-types")] pub use cacheinitializationdata :: { CacheInitializationData , ICacheInitializationData }

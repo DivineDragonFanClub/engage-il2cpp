@@ -34,11 +34,12 @@ mod __types {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectfoodinfocontent/DishSelectFoodInfoContent_EnhanceObject.md"))] # [:: unity2 :: class (namespace = "App.CookingMenu" , name = "DishSelectFoodInfoContent.EnhanceObject")] # [parent (crate :: system :: object :: Object)] pub struct DishSelectFoodInfoContent_EnhanceObject {
-# [offset (16)] # [rename (name = "m_Value")] pub m_value : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (24)] # [rename (name = "m_Nothing")] pub m_nothing : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (32)] # [rename (name = "m_ValueText")] pub m_value_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (40)] # [rename (name = "m_TitleText")] pub m_title_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectfoodinfocontent/DishSelectFoodInfoContent_FoodstuffObject.md"))] # [:: unity2 :: class (namespace = "App.CookingMenu" , name = "DishSelectFoodInfoContent.FoodstuffObject")] # [parent (crate :: system :: object :: Object)] pub struct DishSelectFoodInfoContent_FoodstuffObject {
+# [offset (16)] # [rename (name = "m_GameObject")] pub m_game_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (24)] # [rename (name = "m_IconImage")] pub m_icon_image : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (32)] # [rename (name = "m_NameText")] pub m_name_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (40)] # [rename (name = "m_NumText")] pub m_num_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (48)] # [rename (name = "m_CountMessText")] pub m_count_mess_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
 }
 
 
@@ -50,12 +51,11 @@ mod __types {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectfoodinfocontent/DishSelectFoodInfoContent_FoodstuffObject.md"))] # [:: unity2 :: class (namespace = "App.CookingMenu" , name = "DishSelectFoodInfoContent.FoodstuffObject")] # [parent (crate :: system :: object :: Object)] pub struct DishSelectFoodInfoContent_FoodstuffObject {
-# [offset (16)] # [rename (name = "m_GameObject")] pub m_game_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (24)] # [rename (name = "m_IconImage")] pub m_icon_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (32)] # [rename (name = "m_NameText")] pub m_name_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (40)] # [rename (name = "m_NumText")] pub m_num_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (48)] # [rename (name = "m_CountMessText")] pub m_count_mess_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectfoodinfocontent/DishSelectFoodInfoContent_EnhanceObject.md"))] # [:: unity2 :: class (namespace = "App.CookingMenu" , name = "DishSelectFoodInfoContent.EnhanceObject")] # [parent (crate :: system :: object :: Object)] pub struct DishSelectFoodInfoContent_EnhanceObject {
+# [offset (16)] # [rename (name = "m_Value")] pub m_value : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (24)] # [rename (name = "m_Nothing")] pub m_nothing : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (32)] # [rename (name = "m_ValueText")] pub m_value_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (40)] # [rename (name = "m_TitleText")] pub m_title_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
 }
 
 }
@@ -81,20 +81,20 @@ impl DishSelectFoodInfoContent {
 }
 
 #[cfg(feature = "app-cooking_menu-dishselectfoodinfocontent")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DishSelectFoodInfoContent_EnhanceObject_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DishSelectFoodInfoContent_EnhanceObject as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DishSelectFoodInfoContent_EnhanceObject as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DishSelectFoodInfoContent_EnhanceObject , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DishSelectFoodInfoContent_EnhanceObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DishSelectFoodInfoContent_FoodstuffObject_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DishSelectFoodInfoContent_FoodstuffObject as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DishSelectFoodInfoContent_FoodstuffObject as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DishSelectFoodInfoContent_FoodstuffObject , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DishSelectFoodInfoContent_FoodstuffObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-cooking_menu-dishselectfoodinfocontent")]
-pub trait IDishSelectFoodInfoContent_EnhanceObjectMethods : IDishSelectFoodInfoContent_EnhanceObject { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DishSelectFoodInfoContent_EnhanceObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DishSelectFoodInfoContent_EnhanceObject_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+pub trait IDishSelectFoodInfoContent_FoodstuffObjectMethods : IDishSelectFoodInfoContent_FoodstuffObject { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DishSelectFoodInfoContent_FoodstuffObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DishSelectFoodInfoContent_FoodstuffObject_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-cooking_menu-dishselectfoodinfocontent")]
-impl < __T : IDishSelectFoodInfoContent_EnhanceObject > IDishSelectFoodInfoContent_EnhanceObjectMethods for __T { }
+impl < __T : IDishSelectFoodInfoContent_FoodstuffObject > IDishSelectFoodInfoContent_FoodstuffObjectMethods for __T { }
 
 #[cfg(feature = "app-cooking_menu-dishselectfoodinfocontent")]
-impl DishSelectFoodInfoContent_EnhanceObject { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DishSelectFoodInfoContent_EnhanceObject_unity2_raw :: __lookup_ctor :: get_method_info () } }
+impl DishSelectFoodInfoContent_FoodstuffObject { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DishSelectFoodInfoContent_FoodstuffObject_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-cooking_menu-dishselectfoodinfocontent")]
-impl DishSelectFoodInfoContent_EnhanceObject {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DishSelectFoodInfoContent_EnhanceObject) , :: core :: stringify ! (new) ,)) ; < Self as IDishSelectFoodInfoContent_EnhanceObjectMethods > :: ctor (this ,) ; this }
+impl DishSelectFoodInfoContent_FoodstuffObject {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DishSelectFoodInfoContent_FoodstuffObject) , :: core :: stringify ! (new) ,)) ; < Self as IDishSelectFoodInfoContent_FoodstuffObjectMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-cooking_menu-dishselectfoodinfocontent")]
@@ -115,20 +115,20 @@ impl DishSelectFoodInfoContent_UnitObject {
 }
 
 #[cfg(feature = "app-cooking_menu-dishselectfoodinfocontent")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DishSelectFoodInfoContent_FoodstuffObject_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DishSelectFoodInfoContent_FoodstuffObject as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DishSelectFoodInfoContent_FoodstuffObject as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DishSelectFoodInfoContent_FoodstuffObject , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DishSelectFoodInfoContent_FoodstuffObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DishSelectFoodInfoContent_EnhanceObject_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DishSelectFoodInfoContent_EnhanceObject as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DishSelectFoodInfoContent_EnhanceObject as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DishSelectFoodInfoContent_EnhanceObject , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DishSelectFoodInfoContent_EnhanceObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-cooking_menu-dishselectfoodinfocontent")]
-pub trait IDishSelectFoodInfoContent_FoodstuffObjectMethods : IDishSelectFoodInfoContent_FoodstuffObject { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DishSelectFoodInfoContent_FoodstuffObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DishSelectFoodInfoContent_FoodstuffObject_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+pub trait IDishSelectFoodInfoContent_EnhanceObjectMethods : IDishSelectFoodInfoContent_EnhanceObject { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DishSelectFoodInfoContent_EnhanceObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DishSelectFoodInfoContent_EnhanceObject_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-cooking_menu-dishselectfoodinfocontent")]
-impl < __T : IDishSelectFoodInfoContent_FoodstuffObject > IDishSelectFoodInfoContent_FoodstuffObjectMethods for __T { }
+impl < __T : IDishSelectFoodInfoContent_EnhanceObject > IDishSelectFoodInfoContent_EnhanceObjectMethods for __T { }
 
 #[cfg(feature = "app-cooking_menu-dishselectfoodinfocontent")]
-impl DishSelectFoodInfoContent_FoodstuffObject { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DishSelectFoodInfoContent_FoodstuffObject_unity2_raw :: __lookup_ctor :: get_method_info () } }
+impl DishSelectFoodInfoContent_EnhanceObject { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DishSelectFoodInfoContent_EnhanceObject_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-cooking_menu-dishselectfoodinfocontent")]
-impl DishSelectFoodInfoContent_FoodstuffObject {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DishSelectFoodInfoContent_FoodstuffObject) , :: core :: stringify ! (new) ,)) ; < Self as IDishSelectFoodInfoContent_FoodstuffObjectMethods > :: ctor (this ,) ; this }
+impl DishSelectFoodInfoContent_EnhanceObject {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DishSelectFoodInfoContent_EnhanceObject) , :: core :: stringify ! (new) ,)) ; < Self as IDishSelectFoodInfoContent_EnhanceObjectMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-cooking_menu-dishselectfoodinfocontent")]
@@ -137,15 +137,15 @@ pub mod prelude {
     pub use super::DishSelectFoodInfoContent;
     pub use super::IDishSelectFoodInfoContent;
     pub use super::IDishSelectFoodInfoContentMethods;
-    pub use super::DishSelectFoodInfoContent_EnhanceObject;
-    pub use super::IDishSelectFoodInfoContent_EnhanceObject;
-    pub use super::IDishSelectFoodInfoContent_EnhanceObjectMethods;
-    pub use super::DishSelectFoodInfoContent_UnitObject;
-    pub use super::IDishSelectFoodInfoContent_UnitObject;
-    pub use super::IDishSelectFoodInfoContent_UnitObjectMethods;
     pub use super::DishSelectFoodInfoContent_FoodstuffObject;
     pub use super::IDishSelectFoodInfoContent_FoodstuffObject;
     pub use super::IDishSelectFoodInfoContent_FoodstuffObjectMethods;
+    pub use super::DishSelectFoodInfoContent_UnitObject;
+    pub use super::IDishSelectFoodInfoContent_UnitObject;
+    pub use super::IDishSelectFoodInfoContent_UnitObjectMethods;
+    pub use super::DishSelectFoodInfoContent_EnhanceObject;
+    pub use super::IDishSelectFoodInfoContent_EnhanceObject;
+    pub use super::IDishSelectFoodInfoContent_EnhanceObjectMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;
     pub use crate::unity_engine::component::IComponent;

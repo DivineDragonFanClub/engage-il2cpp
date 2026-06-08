@@ -19,29 +19,18 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubaccessoryroom/HubAccessoryRoom.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubAccessoryRoom")] # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: hubaccessoryroom :: HubAccessoryRoom >)] pub struct HubAccessoryRoom {
-# [offset (136)] # [rename (name = "_DisableList")] pub disable_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (152)] # [rename (name = "m_Shop")] pub m_shop : crate :: app :: hubaccessoryroom :: HubAccessoryRoom_Shop ,
-# [offset (168)] # [rename (name = "m_LastResultHash")] pub m_last_result_hash : i32 ,
-# [offset (176)] # [rename (name = "m_Character")] pub m_character : crate :: combat :: character :: Character ,
-# [offset (184)] # [rename (name = "m_LoadingAppearance")] pub m_loading_appearance : crate :: combat :: characterappearance :: CharacterAppearance ,
-# [offset (192)] # [rename (name = "m_LoadingChara")] pub m_loading_chara : crate :: combat :: character :: Character ,
-# [offset (200)] # [rename (name = "m_LastPID")] pub m_last_pid : :: unity2 :: Il2CppString ,
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessoryroom/HubAccessoryRoom_ViewMode.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessoryroom/HubAccessoryRoom_Shop.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct HubAccessoryRoom_ViewMode  {
+pub struct HubAccessoryRoom_Shop  {
     pub value: i32,
 }
 
 
-impl  ::unity2::ClassIdentity for HubAccessoryRoom_ViewMode  {
+impl  ::unity2::ClassIdentity for HubAccessoryRoom_Shop  {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "HubAccessoryRoom.ViewMode";
+    const NAME: &'static str = "HubAccessoryRoom.Shop";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> =
@@ -56,7 +45,7 @@ impl  ::unity2::ClassIdentity for HubAccessoryRoom_ViewMode  {
 }
 
 
-impl  ::unity2::IlType for HubAccessoryRoom_ViewMode  {
+impl  ::unity2::IlType for HubAccessoryRoom_Shop  {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
@@ -64,21 +53,15 @@ impl  ::unity2::IlType for HubAccessoryRoom_ViewMode  {
 }
 
 
-impl  HubAccessoryRoom_ViewMode  {
-    pub fn unit_select() -> Self {
+impl  HubAccessoryRoom_Shop  {
+    pub fn hub() -> Self {
         Self { value: 0 }
 
     }
 
 
-    pub fn accessory_select() -> Self {
+    pub fn amiibo() -> Self {
         Self { value: 1 }
-
-    }
-
-
-    pub fn preview() -> Self {
-        Self { value: 2 }
 
     }
 
@@ -146,18 +129,18 @@ impl  HubAccessoryRoom_Label  {
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessoryroom/HubAccessoryRoom_Shop.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessoryroom/HubAccessoryRoom_ViewMode.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct HubAccessoryRoom_Shop  {
+pub struct HubAccessoryRoom_ViewMode  {
     pub value: i32,
 }
 
 
-impl  ::unity2::ClassIdentity for HubAccessoryRoom_Shop  {
+impl  ::unity2::ClassIdentity for HubAccessoryRoom_ViewMode  {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "HubAccessoryRoom.Shop";
+    const NAME: &'static str = "HubAccessoryRoom.ViewMode";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> =
@@ -172,7 +155,7 @@ impl  ::unity2::ClassIdentity for HubAccessoryRoom_Shop  {
 }
 
 
-impl  ::unity2::IlType for HubAccessoryRoom_Shop  {
+impl  ::unity2::IlType for HubAccessoryRoom_ViewMode  {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
@@ -180,18 +163,35 @@ impl  ::unity2::IlType for HubAccessoryRoom_Shop  {
 }
 
 
-impl  HubAccessoryRoom_Shop  {
-    pub fn hub() -> Self {
+impl  HubAccessoryRoom_ViewMode  {
+    pub fn unit_select() -> Self {
         Self { value: 0 }
 
     }
 
 
-    pub fn amiibo() -> Self {
+    pub fn accessory_select() -> Self {
         Self { value: 1 }
 
     }
 
+
+    pub fn preview() -> Self {
+        Self { value: 2 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubaccessoryroom/HubAccessoryRoom.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubAccessoryRoom")] # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: hubaccessoryroom :: HubAccessoryRoom >)] pub struct HubAccessoryRoom {
+# [offset (136)] # [rename (name = "_DisableList")] pub disable_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
+# [offset (152)] # [rename (name = "m_Shop")] pub m_shop : crate :: app :: hubaccessoryroom :: HubAccessoryRoom_Shop ,
+# [offset (168)] # [rename (name = "m_LastResultHash")] pub m_last_result_hash : i32 ,
+# [offset (176)] # [rename (name = "m_Character")] pub m_character : crate :: combat :: character :: Character ,
+# [offset (184)] # [rename (name = "m_LoadingAppearance")] pub m_loading_appearance : crate :: combat :: characterappearance :: CharacterAppearance ,
+# [offset (192)] # [rename (name = "m_LoadingChara")] pub m_loading_chara : crate :: combat :: character :: Character ,
+# [offset (200)] # [rename (name = "m_LastPID")] pub m_last_pid : :: unity2 :: Il2CppString ,
 }
 
 }
@@ -222,12 +222,12 @@ impl HubAccessoryRoom {
 #[cfg(feature = "app-hubaccessoryroom")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::HubAccessoryRoom_Shop;
+    pub use super::HubAccessoryRoom_Label;
+    pub use super::HubAccessoryRoom_ViewMode;
     pub use super::HubAccessoryRoom;
     pub use super::IHubAccessoryRoom;
     pub use super::IHubAccessoryRoomMethods;
-    pub use super::HubAccessoryRoom_ViewMode;
-    pub use super::HubAccessoryRoom_Label;
-    pub use super::HubAccessoryRoom_Shop;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::procscenesequence_1::IProcSceneSequence_1;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;

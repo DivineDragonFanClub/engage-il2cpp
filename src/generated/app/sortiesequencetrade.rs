@@ -17,6 +17,26 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortiesequencetrade/SortieSequenceTrade.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortieSequenceTrade")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: sortiesequencetrade :: SortieSequenceTrade >)] pub struct SortieSequenceTrade {
+# [static_field] # [rename (name = "ResNameC")] pub res_name_c : :: unity2 :: Il2CppString ,
+# [offset (120)] # [rename (name = "m_GameObject")] pub m_game_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (128)] # [rename (name = "m_menuL")] pub m_menu_l : crate :: app :: sortietradeitemmenu :: SortieTradeItemMenu ,
+# [offset (136)] # [rename (name = "m_menuR")] pub m_menu_r : crate :: app :: sortietradeitemmenu :: SortieTradeItemMenu ,
+# [offset (144)] # [rename (name = "m_bSelectLeft")] pub m_b_select_left : bool ,
+# [offset (152)] # [rename (name = "m_Window")] pub m_window : crate :: app :: traderoot :: TradeRoot ,
+# [static_field] # [rename (name = "m_bSortieTrade")] pub m_b_sortie_trade : bool ,
+# [static_field] # [rename (name = "m_bInvalidCharaImage")] pub m_b_invalid_chara_image : bool ,
+# [static_field] # [rename (name = "m_TradeFromUnit")] pub m_trade_from_unit : crate :: app :: unit :: Unit ,
+# [static_field] # [rename (name = "m_TradeToUnit")] pub m_trade_to_unit : crate :: app :: unit :: Unit ,
+# [static_field] # [rename (name = "m_DefaultSelectFrom")] pub m_default_select_from : i32 ,
+# [static_field] # [rename (name = "m_DefaultSelectTo")] pub m_default_select_to : i32 ,
+# [static_field] # [rename (name = "m_InitialSelectSide")] pub m_initial_select_side : crate :: app :: sortietrademanager :: SortieTradeManager_SideId ,
+# [static_field] # [rename (name = "m_IsFirstSelectedOnInit")] pub m_is_first_selected_on_init : bool ,
+# [offset (160)] # [rename (name = "m_CharaImage")] pub m_chara_image : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (168)] # [rename (name = "m_CharaImageRight")] pub m_chara_image_right : crate :: unity_engine :: gameobject :: GameObject ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortiesequencetrade/SortieSequenceTrade_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -107,26 +127,6 @@ impl  SortieSequenceTrade_Label  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortiesequencetrade/SortieSequenceTrade.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortieSequenceTrade")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: sortiesequencetrade :: SortieSequenceTrade >)] pub struct SortieSequenceTrade {
-# [static_field] # [rename (name = "ResNameC")] pub res_name_c : :: unity2 :: Il2CppString ,
-# [offset (120)] # [rename (name = "m_GameObject")] pub m_game_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (128)] # [rename (name = "m_menuL")] pub m_menu_l : crate :: app :: sortietradeitemmenu :: SortieTradeItemMenu ,
-# [offset (136)] # [rename (name = "m_menuR")] pub m_menu_r : crate :: app :: sortietradeitemmenu :: SortieTradeItemMenu ,
-# [offset (144)] # [rename (name = "m_bSelectLeft")] pub m_b_select_left : bool ,
-# [offset (152)] # [rename (name = "m_Window")] pub m_window : crate :: app :: traderoot :: TradeRoot ,
-# [static_field] # [rename (name = "m_bSortieTrade")] pub m_b_sortie_trade : bool ,
-# [static_field] # [rename (name = "m_bInvalidCharaImage")] pub m_b_invalid_chara_image : bool ,
-# [static_field] # [rename (name = "m_TradeFromUnit")] pub m_trade_from_unit : crate :: app :: unit :: Unit ,
-# [static_field] # [rename (name = "m_TradeToUnit")] pub m_trade_to_unit : crate :: app :: unit :: Unit ,
-# [static_field] # [rename (name = "m_DefaultSelectFrom")] pub m_default_select_from : i32 ,
-# [static_field] # [rename (name = "m_DefaultSelectTo")] pub m_default_select_to : i32 ,
-# [static_field] # [rename (name = "m_InitialSelectSide")] pub m_initial_select_side : crate :: app :: sortietrademanager :: SortieTradeManager_SideId ,
-# [static_field] # [rename (name = "m_IsFirstSelectedOnInit")] pub m_is_first_selected_on_init : bool ,
-# [offset (160)] # [rename (name = "m_CharaImage")] pub m_chara_image : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (168)] # [rename (name = "m_CharaImageRight")] pub m_chara_image_right : crate :: unity_engine :: gameobject :: GameObject ,
-}
-
 }
 
 #[cfg(feature = "app-sortiesequencetrade-types")]
@@ -155,10 +155,10 @@ impl SortieSequenceTrade {
 #[cfg(feature = "app-sortiesequencetrade")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SortieSequenceTrade_Label;
     pub use super::SortieSequenceTrade;
     pub use super::ISortieSequenceTrade;
     pub use super::ISortieSequenceTradeMethods;
+    pub use super::SortieSequenceTrade_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

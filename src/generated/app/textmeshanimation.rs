@@ -80,6 +80,75 @@ impl  TextMeshAnimation_DelayTimeType  {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/textmeshanimation/TextMeshAnimation_AnimationParams.md"))] # [:: unity2 :: class (namespace = "App" , name = "TextMeshAnimation.AnimationParams")] # [parent (crate :: system :: object :: Object)] pub struct TextMeshAnimation_AnimationParams {
+# [offset (16)] # [rename (name = "OffsetCurveX")] pub offset_curve_x : crate :: unity_engine :: animationcurve :: AnimationCurve ,
+# [offset (24)] # [rename (name = "OffsetCurveY")] pub offset_curve_y : crate :: unity_engine :: animationcurve :: AnimationCurve ,
+# [offset (32)] # [rename (name = "RotationCurve")] pub rotation_curve : crate :: unity_engine :: animationcurve :: AnimationCurve ,
+# [offset (40)] # [rename (name = "ScaleCurveX")] pub scale_curve_x : crate :: unity_engine :: animationcurve :: AnimationCurve ,
+# [offset (48)] # [rename (name = "ScaleCurveY")] pub scale_curve_y : crate :: unity_engine :: animationcurve :: AnimationCurve ,
+# [offset (56)] # [rename (name = "RedCurve")] pub red_curve : crate :: unity_engine :: animationcurve :: AnimationCurve ,
+# [offset (64)] # [rename (name = "GreenCurve")] pub green_curve : crate :: unity_engine :: animationcurve :: AnimationCurve ,
+# [offset (72)] # [rename (name = "BlueCurve")] pub blue_curve : crate :: unity_engine :: animationcurve :: AnimationCurve ,
+# [offset (80)] # [rename (name = "AlphaCurve")] pub alpha_curve : crate :: unity_engine :: animationcurve :: AnimationCurve ,
+# [offset (88)] # [rename (name = "m_PivotType")] pub m_pivot_type : crate :: app :: textmeshanimation :: TextMeshAnimation_PivotType ,
+# [offset (92)] # [rename (name = "m_DelayTime")] pub m_delay_time : f32 ,
+# [offset (96)] # [rename (name = "m_DelayTimeType")] pub m_delay_time_type : crate :: app :: textmeshanimation :: TextMeshAnimation_DelayTimeType ,
+# [offset (100)] # [rename (name = "m_EndType")] pub m_end_type : crate :: app :: textmeshanimation :: TextMeshAnimation_EndType ,
+# [offset (104)] # [rename (name = "m_StartFromRight")] pub m_start_from_right : bool ,
+# [offset (108)] # [rename (name = "m_MaxIntervalTime")] pub m_max_interval_time : f32 ,
+# [offset (112)] # [rename (name = "m_EndTime")] pub m_end_time : f32 ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/textmeshanimation/TextMeshAnimation_PivotType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct TextMeshAnimation_PivotType  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for TextMeshAnimation_PivotType  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "TextMeshAnimation.PivotType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for TextMeshAnimation_PivotType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  TextMeshAnimation_PivotType  {
+    pub fn center() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn base_line() -> Self {
+        Self { value: 1 }
+
+    }
+
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/textmeshanimation/TextMeshAnimation_EndType.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -146,75 +215,6 @@ impl  TextMeshAnimation_EndType  {
 
 }
 
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/textmeshanimation/TextMeshAnimation_PivotType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TextMeshAnimation_PivotType  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for TextMeshAnimation_PivotType  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "TextMeshAnimation.PivotType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for TextMeshAnimation_PivotType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  TextMeshAnimation_PivotType  {
-    pub fn center() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn base_line() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/textmeshanimation/TextMeshAnimation_AnimationParams.md"))] # [:: unity2 :: class (namespace = "App" , name = "TextMeshAnimation.AnimationParams")] # [parent (crate :: system :: object :: Object)] pub struct TextMeshAnimation_AnimationParams {
-# [offset (16)] # [rename (name = "OffsetCurveX")] pub offset_curve_x : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-# [offset (24)] # [rename (name = "OffsetCurveY")] pub offset_curve_y : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-# [offset (32)] # [rename (name = "RotationCurve")] pub rotation_curve : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-# [offset (40)] # [rename (name = "ScaleCurveX")] pub scale_curve_x : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-# [offset (48)] # [rename (name = "ScaleCurveY")] pub scale_curve_y : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-# [offset (56)] # [rename (name = "RedCurve")] pub red_curve : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-# [offset (64)] # [rename (name = "GreenCurve")] pub green_curve : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-# [offset (72)] # [rename (name = "BlueCurve")] pub blue_curve : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-# [offset (80)] # [rename (name = "AlphaCurve")] pub alpha_curve : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-# [offset (88)] # [rename (name = "m_PivotType")] pub m_pivot_type : crate :: app :: textmeshanimation :: TextMeshAnimation_PivotType ,
-# [offset (92)] # [rename (name = "m_DelayTime")] pub m_delay_time : f32 ,
-# [offset (96)] # [rename (name = "m_DelayTimeType")] pub m_delay_time_type : crate :: app :: textmeshanimation :: TextMeshAnimation_DelayTimeType ,
-# [offset (100)] # [rename (name = "m_EndType")] pub m_end_type : crate :: app :: textmeshanimation :: TextMeshAnimation_EndType ,
-# [offset (104)] # [rename (name = "m_StartFromRight")] pub m_start_from_right : bool ,
-# [offset (108)] # [rename (name = "m_MaxIntervalTime")] pub m_max_interval_time : f32 ,
-# [offset (112)] # [rename (name = "m_EndTime")] pub m_end_time : f32 ,
-}
-
 }
 
 #[cfg(feature = "app-textmeshanimation-types")]
@@ -264,11 +264,11 @@ pub mod prelude {
     pub use super::TextMeshAnimation;
     pub use super::ITextMeshAnimation;
     pub use super::ITextMeshAnimationMethods;
-    pub use super::TextMeshAnimation_EndType;
-    pub use super::TextMeshAnimation_PivotType;
     pub use super::TextMeshAnimation_AnimationParams;
     pub use super::ITextMeshAnimation_AnimationParams;
     pub use super::ITextMeshAnimation_AnimationParamsMethods;
+    pub use super::TextMeshAnimation_PivotType;
+    pub use super::TextMeshAnimation_EndType;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

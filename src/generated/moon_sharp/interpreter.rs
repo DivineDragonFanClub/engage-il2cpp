@@ -33,7 +33,7 @@
  # [cfg (feature = "moon_sharp-interpreter-coremodules_extensionmethods-types")] pub use coremodules_extensionmethods :: { CoreModules_ExtensionMethods , ICoreModules_ExtensionMethods }
  ;
  # [cfg (any (feature = "moon_sharp-interpreter-coroutine_2-types"))] pub mod coroutine_2 ;
- # [cfg (feature = "moon_sharp-interpreter-coroutine_2-types")] pub use coroutine_2 :: { Coroutine_2 , ICoroutine_2 , Coroutine_CoroutineType }
+ # [cfg (feature = "moon_sharp-interpreter-coroutine_2-types")] pub use coroutine_2 :: { Coroutine_CoroutineType , Coroutine_2 , ICoroutine_2 }
  ;
  # [cfg (feature = "moon_sharp-interpreter-coroutine_2")] pub use coroutine_2 :: { ICoroutine_2Methods }
  ;

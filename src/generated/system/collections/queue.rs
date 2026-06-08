@@ -20,15 +20,15 @@ mod __types {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/queue/Queue_QueueDebugView.md"))] # [:: unity2 :: class (namespace = "System.Collections" , name = "Queue.QueueDebugView")] # [parent (crate :: system :: object :: Object)] pub struct Queue_QueueDebugView {}
+
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/queue/Queue_QueueEnumerator.md"))] # [:: unity2 :: class (namespace = "System.Collections" , name = "Queue.QueueEnumerator")] # [parent (crate :: system :: object :: Object)] pub struct Queue_QueueEnumerator {
 # [offset (16)] # [rename (name = "_q")] pub q : crate :: system :: collections :: queue :: Queue ,
 # [offset (24)] # [rename (name = "_index")] pub index : i32 ,
 # [offset (28)] # [rename (name = "_version")] pub version : i32 ,
 # [offset (32)] # [rename (name = "currentElement")] pub current_element : :: unity2 :: IlInstance ,
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/queue/Queue_QueueDebugView.md"))] # [:: unity2 :: class (namespace = "System.Collections" , name = "Queue.QueueDebugView")] # [parent (crate :: system :: object :: Object)] pub struct Queue_QueueDebugView {}
 
 }
 
@@ -81,11 +81,11 @@ pub mod prelude {
     pub use super::Queue;
     pub use super::IQueue;
     pub use super::IQueueMethods;
+    pub use super::Queue_QueueDebugView;
+    pub use super::IQueue_QueueDebugView;
     pub use super::Queue_QueueEnumerator;
     pub use super::IQueue_QueueEnumerator;
     pub use super::IQueue_QueueEnumeratorMethods;
-    pub use super::Queue_QueueDebugView;
-    pub use super::IQueue_QueueDebugView;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

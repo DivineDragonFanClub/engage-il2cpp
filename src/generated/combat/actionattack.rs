@@ -21,6 +21,20 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actionattack/ActionAttack.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "ActionAttack")] # [parent (crate :: combat :: actionobservable :: ActionObservable)] pub struct ActionAttack {
+# [offset (48)] # [rename (name = "m_ChainAttackTimeout")] pub m_chain_attack_timeout : f32 ,
+# [offset (52)] # [rename (name = "m_ChainSpeedRate")] pub m_chain_speed_rate : f32 ,
+# [offset (56)] # [rename (name = "m_Stage")] pub m_stage : crate :: combat :: actionattack :: ActionAttack_Stage ,
+# [offset (60)] # [rename (name = "m_WorldArrivalTime")] pub m_world_arrival_time : f32 ,
+# [offset (64)] # [rename (name = "m_FarAttackRangeSq")] pub m_far_attack_range_sq : f32 ,
+# [offset (72)] # [rename (name = "m_ChainGuard")] pub m_chain_guard : crate :: combat :: character :: Character ,
+# [offset (80)] # [rename (name = "m_bHitPassed")] pub m_b_hit_passed : bool ,
+# [offset (84)] # [rename (name = "m_TimeToNext")] pub m_time_to_next : f32 ,
+# [offset (88)] # [rename (name = "m_IsNotRepelled")] pub m_is_not_repelled : bool ,
+# [offset (89)] # [rename (name = "m_再生ジャンプPassed")] pub m_再生ジャンプpassed : bool ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/actionattack/ActionAttack_Stage.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -81,20 +95,6 @@ impl  ActionAttack_Stage  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actionattack/ActionAttack.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "ActionAttack")] # [parent (crate :: combat :: actionobservable :: ActionObservable)] pub struct ActionAttack {
-# [offset (48)] # [rename (name = "m_ChainAttackTimeout")] pub m_chain_attack_timeout : f32 ,
-# [offset (52)] # [rename (name = "m_ChainSpeedRate")] pub m_chain_speed_rate : f32 ,
-# [offset (56)] # [rename (name = "m_Stage")] pub m_stage : crate :: combat :: actionattack :: ActionAttack_Stage ,
-# [offset (60)] # [rename (name = "m_WorldArrivalTime")] pub m_world_arrival_time : f32 ,
-# [offset (64)] # [rename (name = "m_FarAttackRangeSq")] pub m_far_attack_range_sq : f32 ,
-# [offset (72)] # [rename (name = "m_ChainGuard")] pub m_chain_guard : crate :: combat :: character :: Character ,
-# [offset (80)] # [rename (name = "m_bHitPassed")] pub m_b_hit_passed : bool ,
-# [offset (84)] # [rename (name = "m_TimeToNext")] pub m_time_to_next : f32 ,
-# [offset (88)] # [rename (name = "m_IsNotRepelled")] pub m_is_not_repelled : bool ,
-# [offset (89)] # [rename (name = "m_再生ジャンプPassed")] pub m_再生ジャンプpassed : bool ,
-}
-
 }
 
 #[cfg(feature = "combat-actionattack-types")]
@@ -120,10 +120,10 @@ impl ActionAttack {
 #[cfg(feature = "combat-actionattack")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ActionAttack_Stage;
     pub use super::ActionAttack;
     pub use super::IActionAttack;
     pub use super::IActionAttackMethods;
+    pub use super::ActionAttack_Stage;
     pub use crate::combat::actionbase::IActionBase;
     pub use crate::combat::actiondisposerholder::IActionDisposerHolder;
     pub use crate::combat::actionobservable::IActionObservable;

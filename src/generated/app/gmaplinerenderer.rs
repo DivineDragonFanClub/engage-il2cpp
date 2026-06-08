@@ -41,13 +41,6 @@ mod __types {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmaplinerenderer/GmapLineRenderer_LinePoint.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapLineRenderer.LinePoint")] # [parent (crate :: system :: object :: Object)] pub struct GmapLineRenderer_LinePoint {
-# [offset (16)] # [rename (name = "vtxOffsets")] pub vtx_offsets : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > ,
-# [offset (24)] # [rename (name = "uv_table")] pub uv_table : :: unity2 :: Array < crate :: unity_engine :: vector2 :: Vector2 > ,
-# [offset (32)] # [rename (name = "m_Color")] pub m_color : crate :: unity_engine :: color :: Color ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmaplinerenderer/GmapLineRenderer_DrawType.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -88,6 +81,13 @@ impl  GmapLineRenderer_DrawType  {
 
     }
 
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmaplinerenderer/GmapLineRenderer_LinePoint.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapLineRenderer.LinePoint")] # [parent (crate :: system :: object :: Object)] pub struct GmapLineRenderer_LinePoint {
+# [offset (16)] # [rename (name = "vtxOffsets")] pub vtx_offsets : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > ,
+# [offset (24)] # [rename (name = "uv_table")] pub uv_table : :: unity2 :: Array < crate :: unity_engine :: vector2 :: Vector2 > ,
+# [offset (32)] # [rename (name = "m_Color")] pub m_color : crate :: unity_engine :: color :: Color ,
 }
 
 }
@@ -135,10 +135,10 @@ pub mod prelude {
     pub use super::GmapLineRenderer;
     pub use super::IGmapLineRenderer;
     pub use super::IGmapLineRendererMethods;
+    pub use super::GmapLineRenderer_DrawType;
     pub use super::GmapLineRenderer_LinePoint;
     pub use super::IGmapLineRenderer_LinePoint;
     pub use super::IGmapLineRenderer_LinePointMethods;
-    pub use super::GmapLineRenderer_DrawType;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

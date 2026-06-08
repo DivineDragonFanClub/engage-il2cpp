@@ -19,6 +19,9 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingsequence/FishingSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "FishingSequence")] # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: hubsequence :: HubSequence >)] pub struct FishingSequence {}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingsequence/FishingSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -85,9 +88,6 @@ impl  FishingSequence_Label  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingsequence/FishingSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "FishingSequence")] # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: hubsequence :: HubSequence >)] pub struct FishingSequence {}
-
 }
 
 #[cfg(feature = "app-fishingsequence-types")]
@@ -116,10 +116,10 @@ impl FishingSequence {
 #[cfg(feature = "app-fishingsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::FishingSequence_Label;
     pub use super::FishingSequence;
     pub use super::IFishingSequence;
     pub use super::IFishingSequenceMethods;
+    pub use super::FishingSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::procscenesequence_1::IProcSceneSequence_1;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;

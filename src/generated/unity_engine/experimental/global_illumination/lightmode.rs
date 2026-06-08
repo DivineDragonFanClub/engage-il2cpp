@@ -17,7 +17,7 @@ mod __types {
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
 pub struct LightMode  {
-    pub value: i32,
+    pub value: u8,
 }
 
 
@@ -49,25 +49,25 @@ impl  ::unity2::IlType for LightMode  {
 
 impl  LightMode  {
     pub fn realtime() -> Self {
-        Self { value: 50462976 }
+        Self { value: 0 }
 
     }
 
 
     pub fn mixed() -> Self {
-        Self { value: 197121 }
+        Self { value: 1 }
 
     }
 
 
     pub fn baked() -> Self {
-        Self { value: 16777986 }
+        Self { value: 2 }
 
     }
 
 
     pub fn unknown() -> Self {
-        Self { value: 33619971 }
+        Self { value: 3 }
 
     }
 

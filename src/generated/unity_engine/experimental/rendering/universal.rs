@@ -27,12 +27,12 @@
  ;
  # [cfg (any (feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-combinecallback-types" , feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-contourorientation-types" , feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-contourvertex-types" , feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-dict_1-types" , feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-elementtype-types" , feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-geom-types" , feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-mesh_2-types" , feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils-types" , feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-pqhandle-types" , feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityheap_1-types" , feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityqueue_1-types" , feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-tess-types" , feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-vec3-types" , feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-windingrule-types"))] pub mod lib_tess_dot_net ;
  # [cfg (any (feature = "unity_engine-experimental-rendering-universal-light2d_2-types"))] pub mod light2d_2 ;
- # [cfg (feature = "unity_engine-experimental-rendering-universal-light2d_2-types")] pub use light2d_2 :: { Light2D_PointLightQuality , Light2D_2 , ILight2D_2 , Light2D_LightType }
+ # [cfg (feature = "unity_engine-experimental-rendering-universal-light2d_2-types")] pub use light2d_2 :: { Light2D_2 , ILight2D_2 , Light2D_PointLightQuality , Light2D_LightType }
  ;
  # [cfg (feature = "unity_engine-experimental-rendering-universal-light2d_2")] pub use light2d_2 :: { ILight2D_2Methods }
  ;
  # [cfg (any (feature = "unity_engine-experimental-rendering-universal-light2dblendstyle-types"))] pub mod light2dblendstyle ;
- # [cfg (feature = "unity_engine-experimental-rendering-universal-light2dblendstyle-types")] pub use light2dblendstyle :: { Light2DBlendStyle_TextureChannel , Light2DBlendStyle_BlendFactors , Light2DBlendStyle_MaskChannelFilter , Light2DBlendStyle , Light2DBlendStyle_BlendMode }
+ # [cfg (feature = "unity_engine-experimental-rendering-universal-light2dblendstyle-types")] pub use light2dblendstyle :: { Light2DBlendStyle_BlendFactors , Light2DBlendStyle , Light2DBlendStyle_TextureChannel , Light2DBlendStyle_MaskChannelFilter , Light2DBlendStyle_BlendMode }
  ;
  # [cfg (any (feature = "unity_engine-experimental-rendering-universal-light2dcullresult-types"))] pub mod light2dcullresult ;
  # [cfg (feature = "unity_engine-experimental-rendering-universal-light2dcullresult-types")] pub use light2dcullresult :: { Light2DCullResult , ILight2DCullResult }
@@ -49,7 +49,7 @@
  # [cfg (feature = "unity_engine-experimental-rendering-universal-lightstats-types")] pub use lightstats :: { LightStats }
  ;
  # [cfg (any (feature = "unity_engine-experimental-rendering-universal-lightutility-types"))] pub mod lightutility ;
- # [cfg (feature = "unity_engine-experimental-rendering-universal-lightutility-types")] pub use lightutility :: { LightUtility_SpriteLightMeshVertex , LightUtility_ParametricLightMeshVertex , LightUtility , ILightUtility }
+ # [cfg (feature = "unity_engine-experimental-rendering-universal-lightutility-types")] pub use lightutility :: { LightUtility , ILightUtility , LightUtility_SpriteLightMeshVertex , LightUtility_ParametricLightMeshVertex }
  ;
  # [cfg (any (feature = "unity_engine-experimental-rendering-universal-pixelperfectcamera-types"))] pub mod pixelperfectcamera ;
  # [cfg (feature = "unity_engine-experimental-rendering-universal-pixelperfectcamera-types")] pub use pixelperfectcamera :: { PixelPerfectCamera , IPixelPerfectCamera }
@@ -80,9 +80,9 @@
  # [cfg (feature = "unity_engine-experimental-rendering-universal-rendererlighting-types")] pub use rendererlighting :: { RendererLighting , IRendererLighting }
  ;
  # [cfg (any (feature = "unity_engine-experimental-rendering-universal-renderobjects-types"))] pub mod renderobjects ;
- # [cfg (feature = "unity_engine-experimental-rendering-universal-renderobjects-types")] pub use renderobjects :: { RenderObjects , IRenderObjects , RenderObjects_RenderObjectsSettings , IRenderObjects_RenderObjectsSettings , RenderObjects_FilterSettings , IRenderObjects_FilterSettings , RenderObjects_CustomCameraSettings , IRenderObjects_CustomCameraSettings }
+ # [cfg (feature = "unity_engine-experimental-rendering-universal-renderobjects-types")] pub use renderobjects :: { RenderObjects_FilterSettings , IRenderObjects_FilterSettings , RenderObjects_CustomCameraSettings , IRenderObjects_CustomCameraSettings , RenderObjects , IRenderObjects , RenderObjects_RenderObjectsSettings , IRenderObjects_RenderObjectsSettings }
  ;
- # [cfg (feature = "unity_engine-experimental-rendering-universal-renderobjects")] pub use renderobjects :: { IRenderObjectsMethods , IRenderObjects_RenderObjectsSettingsMethods , IRenderObjects_FilterSettingsMethods , IRenderObjects_CustomCameraSettingsMethods }
+ # [cfg (feature = "unity_engine-experimental-rendering-universal-renderobjects")] pub use renderobjects :: { IRenderObjects_FilterSettingsMethods , IRenderObjects_CustomCameraSettingsMethods , IRenderObjectsMethods , IRenderObjects_RenderObjectsSettingsMethods }
  ;
  # [cfg (any (feature = "unity_engine-experimental-rendering-universal-renderobjectspass-types"))] pub mod renderobjectspass ;
  # [cfg (feature = "unity_engine-experimental-rendering-universal-renderobjectspass-types")] pub use renderobjectspass :: { RenderObjectsPass , IRenderObjectsPass }
@@ -111,7 +111,7 @@
  # [cfg (feature = "unity_engine-experimental-rendering-universal-shadowrendering-types")] pub use shadowrendering :: { ShadowRendering , IShadowRendering }
  ;
  # [cfg (any (feature = "unity_engine-experimental-rendering-universal-shadowutility-types"))] pub mod shadowutility ;
- # [cfg (feature = "unity_engine-experimental-rendering-universal-shadowutility-types")] pub use shadowutility :: { ShadowUtility , IShadowUtility , ShadowUtility_Edge }
+ # [cfg (feature = "unity_engine-experimental-rendering-universal-shadowutility-types")] pub use shadowutility :: { ShadowUtility_Edge , ShadowUtility , IShadowUtility }
  ;
  # [cfg (feature = "unity_engine-experimental-rendering-universal-shadowutility")] pub use shadowutility :: { IShadowUtilityMethods }
  ;

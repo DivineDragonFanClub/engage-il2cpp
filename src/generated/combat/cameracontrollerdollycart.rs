@@ -23,6 +23,13 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/cameracontrollerdollycart/CameraControllerDollyCart.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CameraControllerDollyCart")] # [parent (crate :: combat :: basecameracontroller :: BaseCameraController)] pub struct CameraControllerDollyCart {
+# [offset (168)] # [rename (name = "FrameCount")] pub frame_count : i32 ,
+# [offset (172)] # [rename (name = "m_LastHeight")] pub m_last_height : f32 ,
+# [offset (176)] # [rename (name = "m_State")] pub m_state : crate :: combat :: cameracontrollerdollycart :: CameraControllerDollyCart_State ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/cameracontrollerdollycart/CameraControllerDollyCart_State.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -83,13 +90,6 @@ impl  CameraControllerDollyCart_State  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/cameracontrollerdollycart/CameraControllerDollyCart.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CameraControllerDollyCart")] # [parent (crate :: combat :: basecameracontroller :: BaseCameraController)] pub struct CameraControllerDollyCart {
-# [offset (168)] # [rename (name = "FrameCount")] pub frame_count : i32 ,
-# [offset (172)] # [rename (name = "m_LastHeight")] pub m_last_height : f32 ,
-# [offset (176)] # [rename (name = "m_State")] pub m_state : crate :: combat :: cameracontrollerdollycart :: CameraControllerDollyCart_State ,
-}
-
 }
 
 #[cfg(feature = "combat-cameracontrollerdollycart-types")]
@@ -115,10 +115,10 @@ impl CameraControllerDollyCart {
 #[cfg(feature = "combat-cameracontrollerdollycart")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CameraControllerDollyCart_State;
     pub use super::CameraControllerDollyCart;
     pub use super::ICameraControllerDollyCart;
     pub use super::ICameraControllerDollyCartMethods;
+    pub use super::CameraControllerDollyCart_State;
     pub use crate::combat::basecameracontroller::IBaseCameraController;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

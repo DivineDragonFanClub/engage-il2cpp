@@ -19,6 +19,43 @@ mod __types {
  ;
 
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/samplewave/SampleWave_Data.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct SampleWave_Data {
+    pub vector_u: f32,
+    pub vector_v: f32,
+    pub offset_u: f32,
+    pub offset_v: f32,
+}
+
+
+impl ::unity2::ClassIdentity for SampleWave_Data {
+    const NAMESPACE: &'static str = "";
+
+    const NAME: &'static str = "SampleWave.Data";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl ::unity2::IlType for SampleWave_Data {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/samplewave/SampleWave_Temp.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -65,43 +102,6 @@ impl ::unity2::IlType for SampleWave_Temp {
 # [offset (68)] # [rename (name = "m_Scale")] pub m_scale : f32 ,
 }
 
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/samplewave/SampleWave_Data.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct SampleWave_Data {
-    pub vector_u: f32,
-    pub vector_v: f32,
-    pub offset_u: f32,
-    pub offset_v: f32,
-}
-
-
-impl ::unity2::ClassIdentity for SampleWave_Data {
-    const NAMESPACE: &'static str = "";
-
-    const NAME: &'static str = "SampleWave.Data";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for SampleWave_Data {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
 }
 
 #[cfg(feature = "root-samplewave-types")]
@@ -127,11 +127,11 @@ impl SampleWave {
 #[cfg(feature = "root-samplewave")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::SampleWave_Data;
     pub use super::SampleWave_Temp;
     pub use super::SampleWave;
     pub use super::ISampleWave;
     pub use super::ISampleWaveMethods;
-    pub use super::SampleWave_Data;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     pub use crate::unity_engine::behaviour::IBehaviour;

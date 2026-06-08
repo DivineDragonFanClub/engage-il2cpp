@@ -17,11 +17,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotfoodeatsequence/MascotFoodEatSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "MascotFoodEatSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mascotfoodeatsequence :: MascotFoodEatSequence >)] pub struct MascotFoodEatSequence {
-# [offset (120)] # [rename (name = "m_foodStuffData")] pub m_food_stuff_data : crate :: app :: foodstuffdata :: FoodstuffData ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mascotfoodeatsequence/MascotFoodEatSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -70,6 +65,11 @@ impl  MascotFoodEatSequence_Label  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotfoodeatsequence/MascotFoodEatSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "MascotFoodEatSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mascotfoodeatsequence :: MascotFoodEatSequence >)] pub struct MascotFoodEatSequence {
+# [offset (120)] # [rename (name = "m_foodStuffData")] pub m_food_stuff_data : crate :: app :: foodstuffdata :: FoodstuffData ,
+}
+
 }
 
 #[cfg(feature = "app-mascotfoodeatsequence-types")]
@@ -98,10 +98,10 @@ impl MascotFoodEatSequence {
 #[cfg(feature = "app-mascotfoodeatsequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MascotFoodEatSequence_Label;
     pub use super::MascotFoodEatSequence;
     pub use super::IMascotFoodEatSequence;
     pub use super::IMascotFoodEatSequenceMethods;
-    pub use super::MascotFoodEatSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

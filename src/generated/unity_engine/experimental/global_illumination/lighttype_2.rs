@@ -17,7 +17,7 @@ mod __types {
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
 pub struct LightType_2  {
-    pub value: i32,
+    pub value: u8,
 }
 
 
@@ -49,43 +49,43 @@ impl  ::unity2::IlType for LightType_2  {
 
 impl  LightType_2  {
     pub fn directional() -> Self {
-        Self { value: 50462976 }
+        Self { value: 0 }
 
     }
 
 
     pub fn point() -> Self {
-        Self { value: 67305985 }
+        Self { value: 1 }
 
     }
 
 
     pub fn spot() -> Self {
-        Self { value: 84148994 }
+        Self { value: 2 }
 
     }
 
 
     pub fn rectangle() -> Self {
-        Self { value: 100992003 }
+        Self { value: 3 }
 
     }
 
 
     pub fn disc() -> Self {
-        Self { value: 394500 }
+        Self { value: 4 }
 
     }
 
 
     pub fn spot_pyramid_shape() -> Self {
-        Self { value: 16778757 }
+        Self { value: 5 }
 
     }
 
 
     pub fn spot_box_shape() -> Self {
-        Self { value: 33619974 }
+        Self { value: 6 }
 
     }
 

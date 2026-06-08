@@ -15,6 +15,11 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/muscleexercisesequence/MuscleExerciseSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "MuscleExerciseSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct MuscleExerciseSequence {
+# [offset (112)] # [rename (name = "m_RootPrefab")] pub m_root_prefab : crate :: app :: muscleexerciseprefab :: MuscleExercisePrefab ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/muscleexercisesequence/MuscleExerciseSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -87,11 +92,6 @@ impl  MuscleExerciseSequence_Label  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/muscleexercisesequence/MuscleExerciseSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "MuscleExerciseSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct MuscleExerciseSequence {
-# [offset (112)] # [rename (name = "m_RootPrefab")] pub m_root_prefab : crate :: app :: muscleexerciseprefab :: MuscleExercisePrefab ,
-}
-
 }
 
 #[cfg(feature = "app-muscleexercisesequence-types")]
@@ -120,10 +120,10 @@ impl MuscleExerciseSequence {
 #[cfg(feature = "app-muscleexercisesequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MuscleExerciseSequence_Label;
     pub use super::MuscleExerciseSequence;
     pub use super::IMuscleExerciseSequence;
     pub use super::IMuscleExerciseSequenceMethods;
+    pub use super::MuscleExerciseSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

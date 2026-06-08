@@ -30,14 +30,6 @@ mod __types {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridedifficultselectmenu/DragonRideDifficultSelectMenu_DecideEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRideDifficultSelectMenu.DecideEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct DragonRideDifficultSelectMenu_DecideEventHandler {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridedifficultselectmenu/DragonRideDifficultSelectMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRideDifficultSelectMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct DragonRideDifficultSelectMenu {
-# [offset (200)] # [rename (name = "m_EnableChecker")] pub m_enable_checker : :: unity2 :: Array < bool > ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridedifficultselectmenu/DragonRideDifficultSelectMenu_Result2.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -96,6 +88,14 @@ impl  DragonRideDifficultSelectMenu_Result2  {
 
     }
 
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridedifficultselectmenu/DragonRideDifficultSelectMenu_DecideEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRideDifficultSelectMenu.DecideEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct DragonRideDifficultSelectMenu_DecideEventHandler {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridedifficultselectmenu/DragonRideDifficultSelectMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRideDifficultSelectMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct DragonRideDifficultSelectMenu {
+# [offset (200)] # [rename (name = "m_EnableChecker")] pub m_enable_checker : :: unity2 :: Array < bool > ,
 }
 
 }
@@ -163,13 +163,13 @@ pub mod prelude {
     pub use super::DragonRideDifficultSelectMenu_DifficultyItem;
     pub use super::IDragonRideDifficultSelectMenu_DifficultyItem;
     pub use super::IDragonRideDifficultSelectMenu_DifficultyItemMethods;
+    pub use super::DragonRideDifficultSelectMenu_Result2;
     pub use super::DragonRideDifficultSelectMenu_DecideEventHandler;
     pub use super::IDragonRideDifficultSelectMenu_DecideEventHandler;
     pub use super::IDragonRideDifficultSelectMenu_DecideEventHandlerMethods;
     pub use super::DragonRideDifficultSelectMenu;
     pub use super::IDragonRideDifficultSelectMenu;
     pub use super::IDragonRideDifficultSelectMenuMethods;
-    pub use super::DragonRideDifficultSelectMenu_Result2;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::procinst::IProcInst;

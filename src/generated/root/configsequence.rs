@@ -15,11 +15,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/configsequence/ConfigSequence.md"))] # [:: unity2 :: class (namespace = "" , name = "ConfigSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct ConfigSequence {
-# [offset (112)] # [rename (name = "m_ConfigObject")] pub m_config_object : crate :: unity_engine :: gameobject :: GameObject ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/configsequence/ConfigSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -74,6 +69,11 @@ impl  ConfigSequence_Label  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/configsequence/ConfigSequence.md"))] # [:: unity2 :: class (namespace = "" , name = "ConfigSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct ConfigSequence {
+# [offset (112)] # [rename (name = "m_ConfigObject")] pub m_config_object : crate :: unity_engine :: gameobject :: GameObject ,
+}
+
 }
 
 #[cfg(feature = "root-configsequence-types")]
@@ -102,10 +102,10 @@ impl ConfigSequence {
 #[cfg(feature = "root-configsequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ConfigSequence_Label;
     pub use super::ConfigSequence;
     pub use super::IConfigSequence;
     pub use super::IConfigSequenceMethods;
-    pub use super::ConfigSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

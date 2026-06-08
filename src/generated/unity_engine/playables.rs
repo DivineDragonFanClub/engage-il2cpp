@@ -10,7 +10,7 @@
  # [cfg (feature = "unity_engine-playables-directorwrapmode-types")] pub use directorwrapmode :: { DirectorWrapMode }
  ;
  # [cfg (any (feature = "unity_engine-playables-framedata-types"))] pub mod framedata ;
- # [cfg (feature = "unity_engine-playables-framedata-types")] pub use framedata :: { FrameData , FrameData_Flags , FrameData_EvaluationType }
+ # [cfg (feature = "unity_engine-playables-framedata-types")] pub use framedata :: { FrameData_EvaluationType , FrameData , FrameData_Flags }
  ;
  # [cfg (any (feature = "unity_engine-playables-inotification-types"))] pub mod inotification ;
  # [cfg (feature = "unity_engine-playables-inotification-types")] pub use inotification :: { INotification , IINotification }
@@ -56,7 +56,7 @@
  # [cfg (feature = "unity_engine-playables-playablebehaviour")] pub use playablebehaviour :: { IPlayableBehaviourMethods }
  ;
  # [cfg (any (feature = "unity_engine-playables-playablebinding-types"))] pub mod playablebinding ;
- # [cfg (feature = "unity_engine-playables-playablebinding-types")] pub use playablebinding :: { PlayableBinding , PlayableBinding_CreateOutputMethod , IPlayableBinding_CreateOutputMethod }
+ # [cfg (feature = "unity_engine-playables-playablebinding-types")] pub use playablebinding :: { PlayableBinding_CreateOutputMethod , IPlayableBinding_CreateOutputMethod , PlayableBinding }
  ;
  # [cfg (feature = "unity_engine-playables-playablebinding")] pub use playablebinding :: { IPlayableBinding_CreateOutputMethodMethods }
  ;

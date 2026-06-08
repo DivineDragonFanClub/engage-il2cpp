@@ -29,6 +29,22 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/scrollbar/Scrollbar.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "Scrollbar")] # [parent (crate :: unity_engine :: ui :: selectable :: Selectable)] pub struct Scrollbar {
+# [offset (248)] # [rename (name = "m_HandleRect")] pub m_handle_rect : crate :: unity_engine :: recttransform :: RectTransform ,
+# [offset (256)] # [rename (name = "m_Direction")] pub m_direction : crate :: unity_engine :: ui :: scrollbar :: Scrollbar_Direction ,
+# [offset (260)] # [rename (name = "m_Value")] pub m_value : f32 ,
+# [offset (264)] # [rename (name = "m_Size")] pub m_size : f32 ,
+# [offset (268)] # [rename (name = "m_NumberOfSteps")] pub m_number_of_steps : i32 ,
+# [offset (272)] # [rename (name = "m_OnValueChanged")] pub m_on_value_changed : crate :: unity_engine :: ui :: scrollbar :: Scrollbar_ScrollEvent ,
+# [offset (280)] # [rename (name = "m_ContainerRect")] pub m_container_rect : crate :: unity_engine :: recttransform :: RectTransform ,
+# [offset (288)] # [rename (name = "m_Offset")] pub m_offset : crate :: unity_engine :: vector2 :: Vector2 ,
+# [offset (296)] # [rename (name = "m_Tracker")] pub m_tracker : crate :: unity_engine :: drivenrecttransformtracker :: DrivenRectTransformTracker ,
+# [offset (304)] # [rename (name = "m_PointerDownRepeat")] pub m_pointer_down_repeat : crate :: unity_engine :: coroutine :: Coroutine ,
+# [offset (312)] # [rename (name = "isPointerDownAndNotDragging")] pub is_pointer_down_and_not_dragging : bool ,
+# [offset (313)] # [rename (name = "m_DelayedUpdateVisuals")] pub m_delayed_update_visuals : bool ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/scrollbar/Scrollbar_Direction.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -139,22 +155,6 @@ impl  Scrollbar_Axis  {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/scrollbar/Scrollbar.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "Scrollbar")] # [parent (crate :: unity_engine :: ui :: selectable :: Selectable)] pub struct Scrollbar {
-# [offset (248)] # [rename (name = "m_HandleRect")] pub m_handle_rect : crate :: unity_engine :: recttransform :: RectTransform ,
-# [offset (256)] # [rename (name = "m_Direction")] pub m_direction : crate :: unity_engine :: ui :: scrollbar :: Scrollbar_Direction ,
-# [offset (260)] # [rename (name = "m_Value")] pub m_value : f32 ,
-# [offset (264)] # [rename (name = "m_Size")] pub m_size : f32 ,
-# [offset (268)] # [rename (name = "m_NumberOfSteps")] pub m_number_of_steps : i32 ,
-# [offset (272)] # [rename (name = "m_OnValueChanged")] pub m_on_value_changed : crate :: unity_engine :: ui :: scrollbar :: Scrollbar_ScrollEvent ,
-# [offset (280)] # [rename (name = "m_ContainerRect")] pub m_container_rect : crate :: unity_engine :: recttransform :: RectTransform ,
-# [offset (288)] # [rename (name = "m_Offset")] pub m_offset : crate :: unity_engine :: vector2 :: Vector2 ,
-# [offset (296)] # [rename (name = "m_Tracker")] pub m_tracker : crate :: unity_engine :: drivenrecttransformtracker :: DrivenRectTransformTracker ,
-# [offset (304)] # [rename (name = "m_PointerDownRepeat")] pub m_pointer_down_repeat : crate :: unity_engine :: coroutine :: Coroutine ,
-# [offset (312)] # [rename (name = "isPointerDownAndNotDragging")] pub is_pointer_down_and_not_dragging : bool ,
-# [offset (313)] # [rename (name = "m_DelayedUpdateVisuals")] pub m_delayed_update_visuals : bool ,
-}
-
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/scrollbar/Scrollbar_ScrollEvent.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "Scrollbar.ScrollEvent")] # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < f32 >)] pub struct Scrollbar_ScrollEvent {}
 
 }
@@ -199,11 +199,11 @@ impl Scrollbar_ScrollEvent {
 #[cfg(feature = "unity_engine-ui-scrollbar")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Scrollbar_Direction;
-    pub use super::Scrollbar_Axis;
     pub use super::Scrollbar;
     pub use super::IScrollbar;
     pub use super::IScrollbarMethods;
+    pub use super::Scrollbar_Direction;
+    pub use super::Scrollbar_Axis;
     pub use super::Scrollbar_ScrollEvent;
     pub use super::IScrollbar_ScrollEvent;
     pub use super::IScrollbar_ScrollEventMethods;

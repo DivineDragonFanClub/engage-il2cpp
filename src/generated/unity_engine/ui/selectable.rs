@@ -23,23 +23,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/selectable/Selectable.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "Selectable")] # [parent (crate :: unity_engine :: event_systems :: uibehaviour :: UIBehaviour)] pub struct Selectable {
-# [static_field] # [rename (name = "s_Selectables")] pub s_selectables : :: unity2 :: Array < crate :: unity_engine :: ui :: selectable :: Selectable > ,
-# [static_field] # [rename (name = "s_SelectableCount")] pub s_selectable_count : i32 ,
-# [offset (24)] # [rename (name = "m_EnableCalled")] pub m_enable_called : bool ,
-# [offset (32)] # [rename (name = "m_Navigation")] pub m_navigation : crate :: unity_engine :: ui :: navigation :: Navigation ,
-# [offset (72)] # [rename (name = "m_Transition")] pub m_transition : crate :: unity_engine :: ui :: selectable :: Selectable_Transition ,
-# [offset (76)] # [rename (name = "m_Colors")] pub m_colors : crate :: unity_engine :: ui :: colorblock :: ColorBlock ,
-# [offset (168)] # [rename (name = "m_SpriteState")] pub m_sprite_state : crate :: unity_engine :: ui :: spritestate :: SpriteState ,
-# [offset (200)] # [rename (name = "m_AnimationTriggers")] pub m_animation_triggers : crate :: unity_engine :: ui :: animationtriggers :: AnimationTriggers ,
-# [offset (208)] # [rename (name = "m_Interactable")] pub m_interactable : bool ,
-# [offset (216)] # [rename (name = "m_TargetGraphic")] pub m_target_graphic : crate :: unity_engine :: ui :: graphic :: Graphic ,
-# [offset (224)] # [rename (name = "m_GroupsAllowInteraction")] pub m_groups_allow_interaction : bool ,
-# [offset (228)] # [rename (name = "m_CurrentIndex")] pub m_current_index : i32 ,
-# [offset (240)] # [rename (name = "m_CanvasGroupCache")] pub m_canvas_group_cache : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: canvasgroup :: CanvasGroup > ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/selectable/Selectable_SelectionState.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -167,6 +150,23 @@ impl  Selectable_Transition  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/selectable/Selectable.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "Selectable")] # [parent (crate :: unity_engine :: event_systems :: uibehaviour :: UIBehaviour)] pub struct Selectable {
+# [static_field] # [rename (name = "s_Selectables")] pub s_selectables : :: unity2 :: Array < crate :: unity_engine :: ui :: selectable :: Selectable > ,
+# [static_field] # [rename (name = "s_SelectableCount")] pub s_selectable_count : i32 ,
+# [offset (24)] # [rename (name = "m_EnableCalled")] pub m_enable_called : bool ,
+# [offset (32)] # [rename (name = "m_Navigation")] pub m_navigation : crate :: unity_engine :: ui :: navigation :: Navigation ,
+# [offset (72)] # [rename (name = "m_Transition")] pub m_transition : crate :: unity_engine :: ui :: selectable :: Selectable_Transition ,
+# [offset (76)] # [rename (name = "m_Colors")] pub m_colors : crate :: unity_engine :: ui :: colorblock :: ColorBlock ,
+# [offset (168)] # [rename (name = "m_SpriteState")] pub m_sprite_state : crate :: unity_engine :: ui :: spritestate :: SpriteState ,
+# [offset (200)] # [rename (name = "m_AnimationTriggers")] pub m_animation_triggers : crate :: unity_engine :: ui :: animationtriggers :: AnimationTriggers ,
+# [offset (208)] # [rename (name = "m_Interactable")] pub m_interactable : bool ,
+# [offset (216)] # [rename (name = "m_TargetGraphic")] pub m_target_graphic : crate :: unity_engine :: ui :: graphic :: Graphic ,
+# [offset (224)] # [rename (name = "m_GroupsAllowInteraction")] pub m_groups_allow_interaction : bool ,
+# [offset (228)] # [rename (name = "m_CurrentIndex")] pub m_current_index : i32 ,
+# [offset (240)] # [rename (name = "m_CanvasGroupCache")] pub m_canvas_group_cache : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: canvasgroup :: CanvasGroup > ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-ui-selectable-types")]
@@ -195,11 +195,11 @@ impl Selectable {
 #[cfg(feature = "unity_engine-ui-selectable")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::Selectable_SelectionState;
+    pub use super::Selectable_Transition;
     pub use super::Selectable;
     pub use super::ISelectable;
     pub use super::ISelectableMethods;
-    pub use super::Selectable_SelectionState;
-    pub use super::Selectable_Transition;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

@@ -25,6 +25,12 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaystampdata/RelayStampData_FlagField.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayStampData.FlagField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: relaystampdata :: RelayStampData_Flags >)] pub struct RelayStampData_FlagField {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaystampdata/RelayStampData.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayStampData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: relaystampdata :: RelayStampData >)] pub struct RelayStampData {}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relaystampdata/RelayStampData_Flags.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -66,12 +72,6 @@ impl  RelayStampData_Flags  {
     }
 
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaystampdata/RelayStampData_FlagField.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayStampData.FlagField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: relaystampdata :: RelayStampData_Flags >)] pub struct RelayStampData_FlagField {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaystampdata/RelayStampData.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayStampData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: relaystampdata :: RelayStampData >)] pub struct RelayStampData {}
 
 
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relaystampdata/RelayStampData_Kinds.md"))]
@@ -211,13 +211,13 @@ impl RelayStampData {
 #[cfg(feature = "app-relaystampdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RelayStampData_Flags;
     pub use super::RelayStampData_FlagField;
     pub use super::IRelayStampData_FlagField;
     pub use super::IRelayStampData_FlagFieldMethods;
     pub use super::RelayStampData;
     pub use super::IRelayStampData;
     pub use super::IRelayStampDataMethods;
+    pub use super::RelayStampData_Flags;
     pub use super::RelayStampData_Kinds;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;

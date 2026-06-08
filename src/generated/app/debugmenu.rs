@@ -15,9 +15,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugmenu/DebugMenu_AnchorLocation.md"))] # [:: unity2 :: class (namespace = "App" , name = "DebugMenu.AnchorLocation")] # [parent (crate :: system :: object :: Object)] pub struct DebugMenu_AnchorLocation {}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/debugmenu/DebugMenu_BindMode.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -71,6 +68,9 @@ impl  DebugMenu_BindMode  {
     }
 
 }
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugmenu/DebugMenu_AnchorLocation.md"))] # [:: unity2 :: class (namespace = "App" , name = "DebugMenu.AnchorLocation")] # [parent (crate :: system :: object :: Object)] pub struct DebugMenu_AnchorLocation {}
 
 
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugmenu/DebugMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "DebugMenu")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct DebugMenu {
@@ -146,10 +146,10 @@ impl DebugMenu {
 #[cfg(feature = "app-debugmenu")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::DebugMenu_BindMode;
     pub use super::DebugMenu_AnchorLocation;
     pub use super::IDebugMenu_AnchorLocation;
     pub use super::IDebugMenu_AnchorLocationMethods;
-    pub use super::DebugMenu_BindMode;
     pub use super::DebugMenu;
     pub use super::IDebugMenu;
     pub use super::IDebugMenuMethods;

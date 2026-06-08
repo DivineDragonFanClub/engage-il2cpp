@@ -15,17 +15,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/configbasicmenuitem/ConfigBasicMenuItem.md"))] # [:: unity2 :: class (namespace = "" , name = "ConfigBasicMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct ConfigBasicMenuItem {
-# [offset (100)] # [rename (name = "m_ConfigMethod")] pub m_config_method : crate :: root :: configbasicmenuitem :: ConfigBasicMenuItem_ConfigMethodKind ,
-# [offset (104)] # [rename (name = "m_TitleText")] pub m_title_text : :: unity2 :: Il2CppString ,
-# [offset (112)] # [rename (name = "m_CommandText")] pub m_command_text : :: unity2 :: Il2CppString ,
-# [offset (120)] # [rename (name = "m_HelpText")] pub m_help_text : :: unity2 :: Il2CppString ,
-# [offset (128)] # [rename (name = "m_IsArrow")] pub m_is_arrow : bool ,
-# [offset (129)] # [rename (name = "m_IsCommandIcon")] pub m_is_command_icon : bool ,
-# [offset (132)] # [rename (name = "m_GaugeRatio")] pub m_gauge_ratio : f32 ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/configbasicmenuitem/ConfigBasicMenuItem_ConfigMethodKind.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -74,6 +63,17 @@ impl  ConfigBasicMenuItem_ConfigMethodKind  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/configbasicmenuitem/ConfigBasicMenuItem.md"))] # [:: unity2 :: class (namespace = "" , name = "ConfigBasicMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct ConfigBasicMenuItem {
+# [offset (100)] # [rename (name = "m_ConfigMethod")] pub m_config_method : crate :: root :: configbasicmenuitem :: ConfigBasicMenuItem_ConfigMethodKind ,
+# [offset (104)] # [rename (name = "m_TitleText")] pub m_title_text : :: unity2 :: Il2CppString ,
+# [offset (112)] # [rename (name = "m_CommandText")] pub m_command_text : :: unity2 :: Il2CppString ,
+# [offset (120)] # [rename (name = "m_HelpText")] pub m_help_text : :: unity2 :: Il2CppString ,
+# [offset (128)] # [rename (name = "m_IsArrow")] pub m_is_arrow : bool ,
+# [offset (129)] # [rename (name = "m_IsCommandIcon")] pub m_is_command_icon : bool ,
+# [offset (132)] # [rename (name = "m_GaugeRatio")] pub m_gauge_ratio : f32 ,
+}
+
 }
 
 #[cfg(feature = "root-configbasicmenuitem-types")]
@@ -102,10 +102,10 @@ impl ConfigBasicMenuItem {
 #[cfg(feature = "root-configbasicmenuitem")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ConfigBasicMenuItem_ConfigMethodKind;
     pub use super::ConfigBasicMenuItem;
     pub use super::IConfigBasicMenuItem;
     pub use super::IConfigBasicMenuItemMethods;
-    pub use super::ConfigBasicMenuItem_ConfigMethodKind;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

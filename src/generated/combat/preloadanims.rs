@@ -17,7 +17,7 @@ mod __types {
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
 pub struct PreloadAnims  {
-    pub value: i32,
+    pub value: i64,
 }
 
 
@@ -235,31 +235,31 @@ impl  PreloadAnims  {
 
 
     pub fn run_start() -> Self {
-        Self { value: -2147483648 }
+        Self { value: 2147483648 }
 
     }
 
 
     pub fn special1() -> Self {
-        Self { value: 0 }
+        Self { value: 4294967296 }
 
     }
 
 
     pub fn start() -> Self {
-        Self { value: 0 }
+        Self { value: 8589934592 }
 
     }
 
 
     pub fn win() -> Self {
-        Self { value: 0 }
+        Self { value: 17179869184 }
 
     }
 
 
     pub fn win_loop() -> Self {
-        Self { value: 0 }
+        Self { value: 34359738368 }
 
     }
 
@@ -295,7 +295,7 @@ impl  PreloadAnims  {
 
 
     pub fn run() -> Self {
-        Self { value: -1073741824 }
+        Self { value: 3221225472 }
 
     }
 
@@ -325,13 +325,13 @@ impl  PreloadAnims  {
 
 
     pub fn is_full_loadable() -> Self {
-        Self { value: 0 }
+        Self { value: 4611686018427387904 }
 
     }
 
 
     pub fn all() -> Self {
-        Self { value: -1 }
+        Self { value: 9223372036854775807 }
 
     }
 

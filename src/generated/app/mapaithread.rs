@@ -13,6 +13,13 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapaithread/MapAiThread.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapAiThread")] # [parent (crate :: system :: object :: Object)] pub struct MapAiThread {
+# [offset (24)] # [rename (name = "m_Lock")] pub m_lock : :: unity2 :: IlInstance ,
+# [offset (40)] # [rename (name = "m_IsFirstRun")] pub m_is_first_run : bool ,
+# [offset (44)] # [rename (name = "m_Status")] pub m_status : crate :: app :: mapaithread :: MapAiThread_Status ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapaithread/MapAiThread_Status.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -67,13 +74,6 @@ impl  MapAiThread_Status  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapaithread/MapAiThread.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapAiThread")] # [parent (crate :: system :: object :: Object)] pub struct MapAiThread {
-# [offset (24)] # [rename (name = "m_Lock")] pub m_lock : :: unity2 :: IlInstance ,
-# [offset (40)] # [rename (name = "m_IsFirstRun")] pub m_is_first_run : bool ,
-# [offset (44)] # [rename (name = "m_Status")] pub m_status : crate :: app :: mapaithread :: MapAiThread_Status ,
-}
-
 }
 
 #[cfg(feature = "app-mapaithread-types")]
@@ -102,10 +102,10 @@ impl MapAiThread {
 #[cfg(feature = "app-mapaithread")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapAiThread_Status;
     pub use super::MapAiThread;
     pub use super::IMapAiThread;
     pub use super::IMapAiThreadMethods;
+    pub use super::MapAiThread_Status;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

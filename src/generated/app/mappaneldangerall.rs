@@ -25,6 +25,24 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappaneldangerall/MapPanelDangerAll.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapPanelDangerAll")] # [parent (crate :: root :: mappanelbase_1 :: MapPanelBase_1 < crate :: app :: mappaneldangerall :: MapPanelDangerAll >)] pub struct MapPanelDangerAll {
+# [offset (64)] # [rename (name = "m_AttackMaterial")] pub m_attack_material : crate :: unity_engine :: material :: Material ,
+# [offset (72)] # [rename (name = "m_RodMaterial")] pub m_rod_material : crate :: unity_engine :: material :: Material ,
+# [offset (80)] # [rename (name = "m_GunnerMaterial")] pub m_gunner_material : crate :: unity_engine :: material :: Material ,
+# [offset (88)] # [rename (name = "m_FrameForGunnerMaterial")] pub m_frame_for_gunner_material : crate :: unity_engine :: material :: Material ,
+# [offset (96)] # [rename (name = "m_Mode")] pub m_mode : crate :: app :: gameconfig :: GameConfig_AllInfo ,
+# [offset (100)] # [rename (name = "m_OldMode")] pub m_old_mode : crate :: app :: gameconfig :: GameConfig_AllInfo ,
+# [offset (104)] # [rename (name = "m_IsUpdate")] pub m_is_update : bool ,
+# [offset (105)] # [rename (name = "m_IsVisible")] pub m_is_visible : bool ,
+# [offset (112)] # [rename (name = "m_Alpha")] pub m_alpha : crate :: app :: interpolatorfloat :: InterpolatorFloat ,
+# [offset (120)] # [rename (name = "m_MiniMapFillMaterials")] pub m_mini_map_fill_materials : :: unity2 :: Array < crate :: unity_engine :: material :: Material > ,
+# [offset (128)] # [rename (name = "m_MiniMapFrameMaterials")] pub m_mini_map_frame_materials : :: unity2 :: Array < crate :: unity_engine :: material :: Material > ,
+# [offset (136)] # [rename (name = "m_AttackColor")] pub m_attack_color : crate :: unity_engine :: color :: Color ,
+# [offset (152)] # [rename (name = "m_RodColor")] pub m_rod_color : crate :: unity_engine :: color :: Color ,
+# [offset (168)] # [rename (name = "m_GunnerColor")] pub m_gunner_color : crate :: unity_engine :: color :: Color ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldangerall/MapPanelDangerAll_MeshIndex.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -152,24 +170,6 @@ impl  MapPanelDangerAll_DangerType  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappaneldangerall/MapPanelDangerAll.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapPanelDangerAll")] # [parent (crate :: root :: mappanelbase_1 :: MapPanelBase_1 < crate :: app :: mappaneldangerall :: MapPanelDangerAll >)] pub struct MapPanelDangerAll {
-# [offset (64)] # [rename (name = "m_AttackMaterial")] pub m_attack_material : crate :: unity_engine :: material :: Material ,
-# [offset (72)] # [rename (name = "m_RodMaterial")] pub m_rod_material : crate :: unity_engine :: material :: Material ,
-# [offset (80)] # [rename (name = "m_GunnerMaterial")] pub m_gunner_material : crate :: unity_engine :: material :: Material ,
-# [offset (88)] # [rename (name = "m_FrameForGunnerMaterial")] pub m_frame_for_gunner_material : crate :: unity_engine :: material :: Material ,
-# [offset (96)] # [rename (name = "m_Mode")] pub m_mode : crate :: app :: gameconfig :: GameConfig_AllInfo ,
-# [offset (100)] # [rename (name = "m_OldMode")] pub m_old_mode : crate :: app :: gameconfig :: GameConfig_AllInfo ,
-# [offset (104)] # [rename (name = "m_IsUpdate")] pub m_is_update : bool ,
-# [offset (105)] # [rename (name = "m_IsVisible")] pub m_is_visible : bool ,
-# [offset (112)] # [rename (name = "m_Alpha")] pub m_alpha : crate :: app :: interpolatorfloat :: InterpolatorFloat ,
-# [offset (120)] # [rename (name = "m_MiniMapFillMaterials")] pub m_mini_map_fill_materials : :: unity2 :: Array < crate :: unity_engine :: material :: Material > ,
-# [offset (128)] # [rename (name = "m_MiniMapFrameMaterials")] pub m_mini_map_frame_materials : :: unity2 :: Array < crate :: unity_engine :: material :: Material > ,
-# [offset (136)] # [rename (name = "m_AttackColor")] pub m_attack_color : crate :: unity_engine :: color :: Color ,
-# [offset (152)] # [rename (name = "m_RodColor")] pub m_rod_color : crate :: unity_engine :: color :: Color ,
-# [offset (168)] # [rename (name = "m_GunnerColor")] pub m_gunner_color : crate :: unity_engine :: color :: Color ,
-}
-
 }
 
 #[cfg(feature = "app-mappaneldangerall-types")]
@@ -195,11 +195,11 @@ impl MapPanelDangerAll {
 #[cfg(feature = "app-mappaneldangerall")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapPanelDangerAll_MeshIndex;
-    pub use super::MapPanelDangerAll_DangerType;
     pub use super::MapPanelDangerAll;
     pub use super::IMapPanelDangerAll;
     pub use super::IMapPanelDangerAllMethods;
+    pub use super::MapPanelDangerAll_MeshIndex;
+    pub use super::MapPanelDangerAll_DangerType;
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
     pub use crate::root::mappanelbase_1::IMapPanelBase_1;
     pub use crate::system::object::IObject;

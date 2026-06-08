@@ -27,14 +27,6 @@ mod __types {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenucategorycontent/DishSelectMenuCategoryContent.md"))] # [:: unity2 :: class (namespace = "App.CookingMenu" , name = "DishSelectMenuCategoryContent")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct DishSelectMenuCategoryContent {
-# [offset (24)] # [rename (name = "m_CategoryList")] pub m_category_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: cooking_menu :: dishselectmenucategorycontent :: DishSelectMenuCategoryContent_CategoryObject > ,
-# [static_field] # [rename (name = "s_EnableCategoryList")] pub s_enable_category_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: cooking_menu :: dishselectmenucategorycontent :: DishSelectMenuCategoryContent_CategoryObject > ,
-# [static_field] # [rename (name = "s_Index")] pub s_index : i32 ,
-# [static_field] # [rename (name = "s_OldIndex")] pub s_old_index : i32 ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking_menu/dishselectmenucategorycontent/DishSelectMenuCategoryContent_Category.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -113,6 +105,14 @@ impl  DishSelectMenuCategoryContent_Category  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenucategorycontent/DishSelectMenuCategoryContent.md"))] # [:: unity2 :: class (namespace = "App.CookingMenu" , name = "DishSelectMenuCategoryContent")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct DishSelectMenuCategoryContent {
+# [offset (24)] # [rename (name = "m_CategoryList")] pub m_category_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: cooking_menu :: dishselectmenucategorycontent :: DishSelectMenuCategoryContent_CategoryObject > ,
+# [static_field] # [rename (name = "s_EnableCategoryList")] pub s_enable_category_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: cooking_menu :: dishselectmenucategorycontent :: DishSelectMenuCategoryContent_CategoryObject > ,
+# [static_field] # [rename (name = "s_Index")] pub s_index : i32 ,
+# [static_field] # [rename (name = "s_OldIndex")] pub s_old_index : i32 ,
+}
+
 }
 
 #[cfg(feature = "app-cooking_menu-dishselectmenucategorycontent-types")]
@@ -161,10 +161,10 @@ pub mod prelude {
     pub use super::DishSelectMenuCategoryContent_CategoryObject;
     pub use super::IDishSelectMenuCategoryContent_CategoryObject;
     pub use super::IDishSelectMenuCategoryContent_CategoryObjectMethods;
+    pub use super::DishSelectMenuCategoryContent_Category;
     pub use super::DishSelectMenuCategoryContent;
     pub use super::IDishSelectMenuCategoryContent;
     pub use super::IDishSelectMenuCategoryContentMethods;
-    pub use super::DishSelectMenuCategoryContent_Category;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

@@ -25,6 +25,77 @@ mod __types {
  ;
 
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/gridlayoutgroup/GridLayoutGroup_Corner.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct GridLayoutGroup_Corner  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for GridLayoutGroup_Corner  {
+    const NAMESPACE: &'static str = "UnityEngine.UI";
+
+    const NAME: &'static str = "GridLayoutGroup.Corner";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for GridLayoutGroup_Corner  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  GridLayoutGroup_Corner  {
+    pub fn upper_left() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn upper_right() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn lower_left() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn lower_right() -> Self {
+        Self { value: 3 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/gridlayoutgroup/GridLayoutGroup.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "GridLayoutGroup")] # [parent (crate :: unity_engine :: ui :: layoutgroup :: LayoutGroup)] pub struct GridLayoutGroup {
+# [offset (88)] # [rename (name = "m_StartCorner")] pub m_start_corner : crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Corner ,
+# [offset (92)] # [rename (name = "m_StartAxis")] pub m_start_axis : crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Axis ,
+# [offset (96)] # [rename (name = "m_CellSize")] pub m_cell_size : crate :: unity_engine :: vector2 :: Vector2 ,
+# [offset (104)] # [rename (name = "m_Spacing")] pub m_spacing : crate :: unity_engine :: vector2 :: Vector2 ,
+# [offset (112)] # [rename (name = "m_Constraint")] pub m_constraint : crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Constraint ,
+# [offset (116)] # [rename (name = "m_ConstraintCount")] pub m_constraint_count : i32 ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/gridlayoutgroup/GridLayoutGroup_Constraint.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -128,77 +199,6 @@ impl  GridLayoutGroup_Axis  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/gridlayoutgroup/GridLayoutGroup.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "GridLayoutGroup")] # [parent (crate :: unity_engine :: ui :: layoutgroup :: LayoutGroup)] pub struct GridLayoutGroup {
-# [offset (88)] # [rename (name = "m_StartCorner")] pub m_start_corner : crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Corner ,
-# [offset (92)] # [rename (name = "m_StartAxis")] pub m_start_axis : crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Axis ,
-# [offset (96)] # [rename (name = "m_CellSize")] pub m_cell_size : crate :: unity_engine :: vector2 :: Vector2 ,
-# [offset (104)] # [rename (name = "m_Spacing")] pub m_spacing : crate :: unity_engine :: vector2 :: Vector2 ,
-# [offset (112)] # [rename (name = "m_Constraint")] pub m_constraint : crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Constraint ,
-# [offset (116)] # [rename (name = "m_ConstraintCount")] pub m_constraint_count : i32 ,
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/gridlayoutgroup/GridLayoutGroup_Corner.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct GridLayoutGroup_Corner  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for GridLayoutGroup_Corner  {
-    const NAMESPACE: &'static str = "UnityEngine.UI";
-
-    const NAME: &'static str = "GridLayoutGroup.Corner";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for GridLayoutGroup_Corner  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  GridLayoutGroup_Corner  {
-    pub fn upper_left() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn upper_right() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn lower_left() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn lower_right() -> Self {
-        Self { value: 3 }
-
-    }
-
-}
-
 }
 
 #[cfg(feature = "unity_engine-ui-gridlayoutgroup-types")]
@@ -224,12 +224,12 @@ impl GridLayoutGroup {
 #[cfg(feature = "unity_engine-ui-gridlayoutgroup")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GridLayoutGroup_Constraint;
-    pub use super::GridLayoutGroup_Axis;
+    pub use super::GridLayoutGroup_Corner;
     pub use super::GridLayoutGroup;
     pub use super::IGridLayoutGroup;
     pub use super::IGridLayoutGroupMethods;
-    pub use super::GridLayoutGroup_Corner;
+    pub use super::GridLayoutGroup_Constraint;
+    pub use super::GridLayoutGroup_Axis;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

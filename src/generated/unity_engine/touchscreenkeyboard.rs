@@ -13,11 +13,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/touchscreenkeyboard/TouchScreenKeyboard.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "TouchScreenKeyboard")] # [parent (crate :: system :: object :: Object)] pub struct TouchScreenKeyboard {
-# [offset (16)] # [rename (name = "m_Ptr")] pub m_ptr : :: unity2 :: IntPtr ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/touchscreenkeyboard/TouchScreenKeyboard_Status.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -78,6 +73,11 @@ impl  TouchScreenKeyboard_Status  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/touchscreenkeyboard/TouchScreenKeyboard.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "TouchScreenKeyboard")] # [parent (crate :: system :: object :: Object)] pub struct TouchScreenKeyboard {
+# [offset (16)] # [rename (name = "m_Ptr")] pub m_ptr : :: unity2 :: IntPtr ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-touchscreenkeyboard-types")]
@@ -106,10 +106,10 @@ impl TouchScreenKeyboard {
 #[cfg(feature = "unity_engine-touchscreenkeyboard")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::TouchScreenKeyboard_Status;
     pub use super::TouchScreenKeyboard;
     pub use super::ITouchScreenKeyboard;
     pub use super::ITouchScreenKeyboardMethods;
-    pub use super::TouchScreenKeyboard_Status;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

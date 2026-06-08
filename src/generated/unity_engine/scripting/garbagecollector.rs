@@ -13,6 +13,11 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/scripting/garbagecollector/GarbageCollector.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Scripting" , name = "GarbageCollector")] # [parent (crate :: system :: object :: Object)] pub struct GarbageCollector {
+# [static_field] # [rename (name = "GCModeChanged")] pub gc_mode_changed : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: scripting :: garbagecollector :: GarbageCollector_Mode > ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/scripting/garbagecollector/GarbageCollector_Mode.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -67,11 +72,6 @@ impl  GarbageCollector_Mode  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/scripting/garbagecollector/GarbageCollector.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Scripting" , name = "GarbageCollector")] # [parent (crate :: system :: object :: Object)] pub struct GarbageCollector {
-# [static_field] # [rename (name = "GCModeChanged")] pub gc_mode_changed : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: scripting :: garbagecollector :: GarbageCollector_Mode > ,
-}
-
 }
 
 #[cfg(feature = "unity_engine-scripting-garbagecollector-types")]
@@ -89,9 +89,9 @@ impl GarbageCollector { pub fn get_gc_mode_method_info () -> & 'static :: unity2
 #[cfg(feature = "unity_engine-scripting-garbagecollector")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GarbageCollector_Mode;
     pub use super::GarbageCollector;
     pub use super::IGarbageCollector;
+    pub use super::GarbageCollector_Mode;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

@@ -21,6 +21,61 @@ mod __types {
  ;
 
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/tutoriallistroot/TutorialListRoot_FadeType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct TutorialListRoot_FadeType  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for TutorialListRoot_FadeType  {
+    const NAMESPACE: &'static str = "";
+
+    const NAME: &'static str = "TutorialListRoot.FadeType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for TutorialListRoot_FadeType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  TutorialListRoot_FadeType  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn fade_in() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn fade_out() -> Self {
+        Self { value: 2 }
+
+    }
+
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/tutoriallistroot/TutorialListRoot_SequenceType.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -112,61 +167,6 @@ impl  TutorialListRoot_SequenceType  {
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/tutoriallistroot/TutorialListRoot_FadeType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TutorialListRoot_FadeType  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for TutorialListRoot_FadeType  {
-    const NAMESPACE: &'static str = "";
-
-    const NAME: &'static str = "TutorialListRoot.FadeType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for TutorialListRoot_FadeType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  TutorialListRoot_FadeType  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn fade_in() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn fade_out() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/tutoriallistroot/TutorialListRoot.md"))] # [:: unity2 :: class (namespace = "" , name = "TutorialListRoot")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct TutorialListRoot {
 # [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
 # [offset (24)] # [rename (name = "m_Seq")] pub m_seq : crate :: root :: tutoriallistroot :: TutorialListRoot_SequenceType ,
@@ -221,8 +221,8 @@ impl TutorialListRoot {
 #[cfg(feature = "root-tutoriallistroot")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TutorialListRoot_SequenceType;
     pub use super::TutorialListRoot_FadeType;
+    pub use super::TutorialListRoot_SequenceType;
     pub use super::TutorialListRoot;
     pub use super::ITutorialListRoot;
     pub use super::ITutorialListRootMethods;

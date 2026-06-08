@@ -15,7 +15,7 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/jobs/ijobparallelfortransformextensions/IJobParallelForTransformExtensions.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Jobs" , name = "IJobParallelForTransformExtensions")] # [parent (crate :: system :: object :: Object)] pub struct IJobParallelForTransformExtensions {}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/jobs/ijobparallelfortransformextensions/IJobParallelForTransformExtensions_TransformParallelForLoopStruct_1_ExecuteJobFunction.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Jobs" , name = "IJobParallelForTransformExtensions.TransformParallelForLoopStruct`1.ExecuteJobFunction")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] # [parent (crate :: system :: delegate :: Delegate)] # [parent (crate :: system :: object :: Object)] pub struct IJobParallelForTransformExtensions_TransformParallelForLoopStruct_1_ExecuteJobFunction < T0 : :: unity2 :: ClassIdentity > {}
 
 
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/jobs/ijobparallelfortransformextensions/IJobParallelForTransformExtensions_TransformParallelForLoopStruct_1_TransformJobData.md"))]
@@ -52,9 +52,6 @@ impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for IJobParallelForTransformE
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/jobs/ijobparallelfortransformextensions/IJobParallelForTransformExtensions_TransformParallelForLoopStruct_1_ExecuteJobFunction.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Jobs" , name = "IJobParallelForTransformExtensions.TransformParallelForLoopStruct`1.ExecuteJobFunction")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] # [parent (crate :: system :: delegate :: Delegate)] # [parent (crate :: system :: object :: Object)] pub struct IJobParallelForTransformExtensions_TransformParallelForLoopStruct_1_ExecuteJobFunction < T0 : :: unity2 :: ClassIdentity > {}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/jobs/ijobparallelfortransformextensions/IJobParallelForTransformExtensions_TransformParallelForLoopStruct_1.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -88,6 +85,9 @@ impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for IJobParallelForTransformE
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/jobs/ijobparallelfortransformextensions/IJobParallelForTransformExtensions.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Jobs" , name = "IJobParallelForTransformExtensions")] # [parent (crate :: system :: object :: Object)] pub struct IJobParallelForTransformExtensions {}
+
 }
 
 #[cfg(feature = "unity_engine-jobs-ijobparallelfortransformextensions-types")]
@@ -111,13 +111,13 @@ impl < T0 : :: unity2 :: ClassIdentity > IJobParallelForTransformExtensions_Tran
 #[cfg(feature = "unity_engine-jobs-ijobparallelfortransformextensions")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IJobParallelForTransformExtensions;
-    pub use super::IIJobParallelForTransformExtensions;
-    pub use super::IJobParallelForTransformExtensions_TransformParallelForLoopStruct_1_TransformJobData;
     pub use super::IJobParallelForTransformExtensions_TransformParallelForLoopStruct_1_ExecuteJobFunction;
     pub use super::IIJobParallelForTransformExtensions_TransformParallelForLoopStruct_1_ExecuteJobFunction;
     pub use super::IIJobParallelForTransformExtensions_TransformParallelForLoopStruct_1_ExecuteJobFunctionMethods;
+    pub use super::IJobParallelForTransformExtensions_TransformParallelForLoopStruct_1_TransformJobData;
     pub use super::IJobParallelForTransformExtensions_TransformParallelForLoopStruct_1;
+    pub use super::IJobParallelForTransformExtensions;
+    pub use super::IIJobParallelForTransformExtensions;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

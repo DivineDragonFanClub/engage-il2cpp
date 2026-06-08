@@ -17,6 +17,16 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayawardsequence/RelayAwardSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayAwardSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: relayawardsequence :: RelayAwardSequence >)] pub struct RelayAwardSequence {
+# [offset (120)] # [rename (name = "m_EnteredBattle")] pub m_entered_battle : crate :: app :: relayuserdata :: RelayUserData_EnteredBattle ,
+# [offset (128)] # [rename (name = "m_Raids")] pub m_raids : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+# [offset (136)] # [rename (name = "m_GainItem")] pub m_gain_item : crate :: app :: itemdata :: ItemData ,
+# [offset (144)] # [rename (name = "m_IsAwarded")] pub m_is_awarded : bool ,
+# [offset (148)] # [rename (name = "m_PrevMasterProofCount")] pub m_prev_master_proof_count : i32 ,
+# [offset (152)] # [rename (name = "m_PrevChangeProofCount")] pub m_prev_change_proof_count : i32 ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayawardsequence/RelayAwardSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -65,16 +75,6 @@ impl  RelayAwardSequence_Label  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayawardsequence/RelayAwardSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayAwardSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: relayawardsequence :: RelayAwardSequence >)] pub struct RelayAwardSequence {
-# [offset (120)] # [rename (name = "m_EnteredBattle")] pub m_entered_battle : crate :: app :: relayuserdata :: RelayUserData_EnteredBattle ,
-# [offset (128)] # [rename (name = "m_Raids")] pub m_raids : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [offset (136)] # [rename (name = "m_GainItem")] pub m_gain_item : crate :: app :: itemdata :: ItemData ,
-# [offset (144)] # [rename (name = "m_IsAwarded")] pub m_is_awarded : bool ,
-# [offset (148)] # [rename (name = "m_PrevMasterProofCount")] pub m_prev_master_proof_count : i32 ,
-# [offset (152)] # [rename (name = "m_PrevChangeProofCount")] pub m_prev_change_proof_count : i32 ,
-}
-
 }
 
 #[cfg(feature = "app-relayawardsequence-types")]
@@ -103,10 +103,10 @@ impl RelayAwardSequence {
 #[cfg(feature = "app-relayawardsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RelayAwardSequence_Label;
     pub use super::RelayAwardSequence;
     pub use super::IRelayAwardSequence;
     pub use super::IRelayAwardSequenceMethods;
+    pub use super::RelayAwardSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

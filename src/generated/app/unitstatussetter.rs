@@ -21,18 +21,18 @@ mod __types {
  ;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitstatussetter/UnitStatusSetter_GodBuffType.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitstatussetter/UnitStatusSetter_ForceType.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct UnitStatusSetter_GodBuffType  {
+pub struct UnitStatusSetter_ForceType  {
     pub value: i32,
 }
 
 
-impl  ::unity2::ClassIdentity for UnitStatusSetter_GodBuffType  {
+impl  ::unity2::ClassIdentity for UnitStatusSetter_ForceType  {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "UnitStatusSetter.GodBuffType";
+    const NAME: &'static str = "UnitStatusSetter.ForceType";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> =
@@ -47,7 +47,7 @@ impl  ::unity2::ClassIdentity for UnitStatusSetter_GodBuffType  {
 }
 
 
-impl  ::unity2::IlType for UnitStatusSetter_GodBuffType  {
+impl  ::unity2::IlType for UnitStatusSetter_ForceType  {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
@@ -55,105 +55,36 @@ impl  ::unity2::IlType for UnitStatusSetter_GodBuffType  {
 }
 
 
-impl  UnitStatusSetter_GodBuffType  {
-    pub fn blue() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn red() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn count() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitstatussetter/UnitStatusSetter_ValueParam.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitStatusSetter.ValueParam")] # [parent (crate :: system :: object :: Object)] pub struct UnitStatusSetter_ValueParam {
-# [offset (16)] # [rename (name = "m_setter")] pub m_setter : crate :: app :: unitstatussetter :: UnitStatusSetter ,
-# [offset (24)] # [rename (name = "m_root")] pub m_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (32)] # [rename (name = "m_title")] pub m_title : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (40)] # [rename (name = "m_value")] pub m_value : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (48)] # [rename (name = "m_upArrow")] pub m_up_arrow : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (56)] # [rename (name = "m_godUpBalloon")] pub m_god_up_balloon : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (64)] # [rename (name = "m_balloonImage")] pub m_balloon_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (72)] # [rename (name = "m_godUpValue")] pub m_god_up_value : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (80)] # [rename (name = "m_godBuffImage")] pub m_god_buff_image : crate :: unity_engine :: ui :: image :: Image ,
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitstatussetter/UnitStatusSetter_HPStockType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct UnitStatusSetter_HPStockType  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for UnitStatusSetter_HPStockType  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "UnitStatusSetter.HPStockType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for UnitStatusSetter_HPStockType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  UnitStatusSetter_HPStockType  {
-    pub fn normal() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn rampage() -> Self {
-        Self { value: 1 }
-
-    }
-
-
+impl  UnitStatusSetter_ForceType  {
     pub fn player() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn enemy() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn ally() -> Self {
         Self { value: 2 }
 
     }
 
 
-    pub fn count() -> Self {
+    pub fn f4th() -> Self {
         Self { value: 3 }
 
     }
 
-}
 
+    pub fn count() -> Self {
+        Self { value: 4 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitstatussetter/UnitStatusSetter_WeaponLevelSetter.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitStatusSetter.WeaponLevelSetter")] # [parent (crate :: system :: object :: Object)] pub struct UnitStatusSetter_WeaponLevelSetter {
-# [offset (16)] # [rename (name = "m_root")] pub m_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (24)] # [rename (name = "m_icon")] pub m_icon : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (32)] # [rename (name = "m_level")] pub m_level : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+    }
+
 }
 
 
@@ -218,18 +149,25 @@ impl  UnitStatusSetter_HPStockType  {
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitstatussetter/UnitStatusSetter_RingType.md"))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitstatussetter/UnitStatusSetter_WeaponLevelSetter.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitStatusSetter.WeaponLevelSetter")] # [parent (crate :: system :: object :: Object)] pub struct UnitStatusSetter_WeaponLevelSetter {
+# [offset (16)] # [rename (name = "m_root")] pub m_root : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (24)] # [rename (name = "m_icon")] pub m_icon : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (32)] # [rename (name = "m_level")] pub m_level : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitstatussetter/UnitStatusSetter_ArrowType.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct UnitStatusSetter_RingType  {
+pub struct UnitStatusSetter_ArrowType  {
     pub value: i32,
 }
 
 
-impl  ::unity2::ClassIdentity for UnitStatusSetter_RingType  {
+impl  ::unity2::ClassIdentity for UnitStatusSetter_ArrowType  {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "UnitStatusSetter.RingType";
+    const NAME: &'static str = "UnitStatusSetter.ArrowType";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> =
@@ -244,7 +182,7 @@ impl  ::unity2::ClassIdentity for UnitStatusSetter_RingType  {
 }
 
 
-impl  ::unity2::IlType for UnitStatusSetter_RingType  {
+impl  ::unity2::IlType for UnitStatusSetter_ArrowType  {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
@@ -252,30 +190,178 @@ impl  ::unity2::IlType for UnitStatusSetter_RingType  {
 }
 
 
-impl  UnitStatusSetter_RingType  {
-    pub fn god() -> Self {
+impl  UnitStatusSetter_ArrowType  {
+    pub fn plus() -> Self {
         Self { value: 0 }
 
     }
 
 
-    pub fn ring() -> Self {
+    pub fn minus() -> Self {
         Self { value: 1 }
 
     }
 
 
-    pub fn dark_god() -> Self {
+    pub fn count() -> Self {
+        Self { value: 2 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitstatussetter/UnitStatusSetter_ItemSetter.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitStatusSetter.ItemSetter")] # [parent (crate :: system :: object :: Object)] pub struct UnitStatusSetter_ItemSetter {
+# [offset (16)] # [rename (name = "m_root")] pub m_root : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (24)] # [rename (name = "m_icon")] pub m_icon : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (32)] # [rename (name = "m_name")] pub m_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (40)] # [rename (name = "m_count")] pub m_count : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (48)] # [rename (name = "m_godBuffImage")] pub m_god_buff_image : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (56)] # [rename (name = "m_setter")] pub m_setter : crate :: app :: unitstatussetter :: UnitStatusSetter ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitstatussetter/UnitStatusSetter_GodBuffType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct UnitStatusSetter_GodBuffType  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for UnitStatusSetter_GodBuffType  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "UnitStatusSetter.GodBuffType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for UnitStatusSetter_GodBuffType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  UnitStatusSetter_GodBuffType  {
+    pub fn blue() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn red() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn count() -> Self {
+        Self { value: 2 }
+
+    }
+
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitstatussetter/UnitStatusSetter_SkillSetter.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitStatusSetter.SkillSetter")] # [parent (crate :: system :: object :: Object)] pub struct UnitStatusSetter_SkillSetter {
+# [offset (16)] # [rename (name = "m_root")] pub m_root : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (24)] # [rename (name = "m_icon")] pub m_icon : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (32)] # [rename (name = "m_name")] pub m_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (40)] # [rename (name = "m_godBuffImage")] pub m_god_buff_image : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (48)] # [rename (name = "m_styleBonus")] pub m_style_bonus : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (56)] # [rename (name = "m_setter")] pub m_setter : crate :: app :: unitstatussetter :: UnitStatusSetter ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitstatussetter/UnitStatusSetter_HPStockType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct UnitStatusSetter_HPStockType  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for UnitStatusSetter_HPStockType  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "UnitStatusSetter.HPStockType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for UnitStatusSetter_HPStockType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  UnitStatusSetter_HPStockType  {
+    pub fn normal() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn rampage() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn player() -> Self {
         Self { value: 2 }
 
     }
 
 
-    pub fn none() -> Self {
+    pub fn count() -> Self {
         Self { value: 3 }
 
     }
 
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitstatussetter/UnitStatusSetter_ValueParam.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitStatusSetter.ValueParam")] # [parent (crate :: system :: object :: Object)] pub struct UnitStatusSetter_ValueParam {
+# [offset (16)] # [rename (name = "m_setter")] pub m_setter : crate :: app :: unitstatussetter :: UnitStatusSetter ,
+# [offset (24)] # [rename (name = "m_root")] pub m_root : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (32)] # [rename (name = "m_title")] pub m_title : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (40)] # [rename (name = "m_value")] pub m_value : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (48)] # [rename (name = "m_upArrow")] pub m_up_arrow : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (56)] # [rename (name = "m_godUpBalloon")] pub m_god_up_balloon : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (64)] # [rename (name = "m_balloonImage")] pub m_balloon_image : crate :: unity_engine :: ui :: image :: Image ,
+# [offset (72)] # [rename (name = "m_godUpValue")] pub m_god_up_value : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
+# [offset (80)] # [rename (name = "m_godBuffImage")] pub m_god_buff_image : crate :: unity_engine :: ui :: image :: Image ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitstatussetter/UnitStatusSetter_CapabilityValueParam.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitStatusSetter.CapabilityValueParam")] # [parent (crate :: app :: unitstatussetter :: UnitStatusSetter_ValueParam)] pub struct UnitStatusSetter_CapabilityValueParam {
+# [offset (88)] # [rename (name = "m_capabilityType")] pub m_capability_type : crate :: app :: capabilitydefinition :: CapabilityDefinition_Type ,
 }
 
 
@@ -364,18 +450,18 @@ impl  UnitStatusSetter_WdwType  {
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitstatussetter/UnitStatusSetter_ForceType.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitstatussetter/UnitStatusSetter_RingType.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct UnitStatusSetter_ForceType  {
+pub struct UnitStatusSetter_RingType  {
     pub value: i32,
 }
 
 
-impl  ::unity2::ClassIdentity for UnitStatusSetter_ForceType  {
+impl  ::unity2::ClassIdentity for UnitStatusSetter_RingType  {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "UnitStatusSetter.ForceType";
+    const NAME: &'static str = "UnitStatusSetter.RingType";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> =
@@ -390,7 +476,7 @@ impl  ::unity2::ClassIdentity for UnitStatusSetter_ForceType  {
 }
 
 
-impl  ::unity2::IlType for UnitStatusSetter_ForceType  {
+impl  ::unity2::IlType for UnitStatusSetter_RingType  {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
@@ -398,113 +484,27 @@ impl  ::unity2::IlType for UnitStatusSetter_ForceType  {
 }
 
 
-impl  UnitStatusSetter_ForceType  {
-    pub fn player() -> Self {
+impl  UnitStatusSetter_RingType  {
+    pub fn god() -> Self {
         Self { value: 0 }
 
     }
 
 
-    pub fn enemy() -> Self {
+    pub fn ring() -> Self {
         Self { value: 1 }
 
     }
 
 
-    pub fn ally() -> Self {
+    pub fn dark_god() -> Self {
         Self { value: 2 }
 
     }
 
 
-    pub fn f4th() -> Self {
+    pub fn none() -> Self {
         Self { value: 3 }
-
-    }
-
-
-    pub fn count() -> Self {
-        Self { value: 4 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitstatussetter/UnitStatusSetter_SkillSetter.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitStatusSetter.SkillSetter")] # [parent (crate :: system :: object :: Object)] pub struct UnitStatusSetter_SkillSetter {
-# [offset (16)] # [rename (name = "m_root")] pub m_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (24)] # [rename (name = "m_icon")] pub m_icon : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (32)] # [rename (name = "m_name")] pub m_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (40)] # [rename (name = "m_godBuffImage")] pub m_god_buff_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (48)] # [rename (name = "m_styleBonus")] pub m_style_bonus : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (56)] # [rename (name = "m_setter")] pub m_setter : crate :: app :: unitstatussetter :: UnitStatusSetter ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitstatussetter/UnitStatusSetter_ItemSetter.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitStatusSetter.ItemSetter")] # [parent (crate :: system :: object :: Object)] pub struct UnitStatusSetter_ItemSetter {
-# [offset (16)] # [rename (name = "m_root")] pub m_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (24)] # [rename (name = "m_icon")] pub m_icon : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (32)] # [rename (name = "m_name")] pub m_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (40)] # [rename (name = "m_count")] pub m_count : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (48)] # [rename (name = "m_godBuffImage")] pub m_god_buff_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (56)] # [rename (name = "m_setter")] pub m_setter : crate :: app :: unitstatussetter :: UnitStatusSetter ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitstatussetter/UnitStatusSetter_CapabilityValueParam.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitStatusSetter.CapabilityValueParam")] # [parent (crate :: app :: unitstatussetter :: UnitStatusSetter_ValueParam)] pub struct UnitStatusSetter_CapabilityValueParam {
-# [offset (88)] # [rename (name = "m_capabilityType")] pub m_capability_type : crate :: app :: capabilitydefinition :: CapabilityDefinition_Type ,
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitstatussetter/UnitStatusSetter_ArrowType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct UnitStatusSetter_ArrowType  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for UnitStatusSetter_ArrowType  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "UnitStatusSetter.ArrowType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for UnitStatusSetter_ArrowType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  UnitStatusSetter_ArrowType  {
-    pub fn plus() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn minus() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn count() -> Self {
-        Self { value: 2 }
 
     }
 
@@ -514,40 +514,6 @@ impl  UnitStatusSetter_ArrowType  {
 
 #[cfg(feature = "app-unitstatussetter-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-unitstatussetter")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __UnitStatusSetter_ValueParam_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_init { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unitstatussetter :: UnitStatusSetter as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter_ValueParam as :: unity2 :: ClassIdentity > :: class () , "Init" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter_ValueParam as :: unity2 :: ClassIdentity > :: NAME , "Init" , e) , } } } pub unsafe fn init (this : UnitStatusSetter_ValueParam , setter : crate :: app :: unitstatussetter :: UnitStatusSetter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter_ValueParam , crate :: app :: unitstatussetter :: UnitStatusSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_init :: get_method_info () . method_ptr ,) ; inner (this , setter , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_override { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: ui :: image :: Image as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter_ValueParam as :: unity2 :: ClassIdentity > :: class () , "SetOverride" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter_ValueParam as :: unity2 :: ClassIdentity > :: NAME , "SetOverride" , e) , } } } pub unsafe fn set_override (this : UnitStatusSetter_ValueParam , text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI , arrow : crate :: unity_engine :: ui :: image :: Image , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter_ValueParam , crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI , crate :: unity_engine :: ui :: image :: Image , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_override :: get_method_info () . method_ptr ,) ; inner (this , text , arrow , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_override_title { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter_ValueParam as :: unity2 :: ClassIdentity > :: class () , "SetOverrideTitle" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter_ValueParam as :: unity2 :: ClassIdentity > :: NAME , "SetOverrideTitle" , e) , } } } pub unsafe fn set_override_title (this : UnitStatusSetter_ValueParam , title : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter_ValueParam , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_override_title :: get_method_info () . method_ptr ,) ; inner (this , title , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unitparamdetail :: UnitParamDetail as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter_ValueParam as :: unity2 :: ClassIdentity > :: class () , "SetValue" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter_ValueParam as :: unity2 :: ClassIdentity > :: NAME , "SetValue" , e) , } } } pub unsafe fn set_value (this : UnitStatusSetter_ValueParam , detail : crate :: app :: unitparamdetail :: UnitParamDetail , is_limit : bool , is_god_change : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter_ValueParam , crate :: app :: unitparamdetail :: UnitParamDetail , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_value :: get_method_info () . method_ptr ,) ; inner (this , detail , is_limit , is_god_change , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_value_no_enhance { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unitparamdetail :: UnitParamDetail as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter_ValueParam as :: unity2 :: ClassIdentity > :: class () , "SetValueNoEnhance" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter_ValueParam as :: unity2 :: ClassIdentity > :: NAME , "SetValueNoEnhance" , e) , } } } pub unsafe fn set_value_no_enhance (this : UnitStatusSetter_ValueParam , detail : crate :: app :: unitparamdetail :: UnitParamDetail , is_limit : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter_ValueParam , crate :: app :: unitparamdetail :: UnitParamDetail , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_value_no_enhance :: get_method_info () . method_ptr ,) ; inner (this , detail , is_limit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_value_direct { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter_ValueParam as :: unity2 :: ClassIdentity > :: class () , "SetValueDirect" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter_ValueParam as :: unity2 :: ClassIdentity > :: NAME , "SetValueDirect" , e) , } } } pub unsafe fn set_value_direct (this : UnitStatusSetter_ValueParam , str : :: unity2 :: Il2CppString , dir : i32 , is_limit : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter_ValueParam , :: unity2 :: Il2CppString , i32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_value_direct :: get_method_info () . method_ptr ,) ; inner (this , str , dir , is_limit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_balloon { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: unitstatussetter :: UnitStatusSetter_RingType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter_ValueParam as :: unity2 :: ClassIdentity > :: class () , "SetBalloon" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter_ValueParam as :: unity2 :: ClassIdentity > :: NAME , "SetBalloon" , e) , } } } pub unsafe fn set_balloon (this : UnitStatusSetter_ValueParam , up_value : i32 , ring_type : crate :: app :: unitstatussetter :: UnitStatusSetter_RingType , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter_ValueParam , i32 , crate :: app :: unitstatussetter :: UnitStatusSetter_RingType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_balloon :: get_method_info () . method_ptr ,) ; inner (this , up_value , ring_type , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter_ValueParam as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter_ValueParam as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : UnitStatusSetter_ValueParam , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter_ValueParam , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "app-unitstatussetter")]
-pub trait IUnitStatusSetter_ValueParamMethods : IUnitStatusSetter_ValueParam { # [doc = "`Init(crate::app::unitstatussetter::UnitStatusSetter)` overload"] fn init (self , setter : impl :: core :: convert :: Into < crate :: app :: unitstatussetter :: UnitStatusSetter >) -> () { unsafe { let __receiver = < UnitStatusSetter_ValueParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitStatusSetter_ValueParam_unity2_raw :: init (__receiver , :: core :: convert :: Into :: into (setter) , :: core :: option :: Option :: None) } } # [doc = "`SetOverride(crate::tm_pro::textmeshprougui::TextMeshProUGUI, crate::unity_engine::ui::image::Image)` overload"] fn set_override (self , text : impl :: core :: convert :: Into < crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI > , arrow : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: image :: Image >) -> () { unsafe { let __receiver = < UnitStatusSetter_ValueParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitStatusSetter_ValueParam_unity2_raw :: set_override (__receiver , :: core :: convert :: Into :: into (text) , :: core :: convert :: Into :: into (arrow) , :: core :: option :: Option :: None) } } # [doc = "`SetOverrideTitle(::unity2::Il2CppString)` overload"] fn set_override_title (self , title : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < UnitStatusSetter_ValueParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitStatusSetter_ValueParam_unity2_raw :: set_override_title (__receiver , :: core :: convert :: Into :: into (title) , :: core :: option :: Option :: None) } } # [doc = "`SetValue(crate::app::unitparamdetail::UnitParamDetail, bool, bool)` overload"] fn set_value (self , detail : impl :: core :: convert :: Into < crate :: app :: unitparamdetail :: UnitParamDetail > , is_limit : impl :: core :: convert :: Into < bool > , is_god_change : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < UnitStatusSetter_ValueParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitStatusSetter_ValueParam_unity2_raw :: set_value (__receiver , :: core :: convert :: Into :: into (detail) , :: core :: convert :: Into :: into (is_limit) , :: core :: convert :: Into :: into (is_god_change) , :: core :: option :: Option :: None) } } # [doc = "`SetValueNoEnhance(crate::app::unitparamdetail::UnitParamDetail, bool)` overload"] fn set_value_no_enhance (self , detail : impl :: core :: convert :: Into < crate :: app :: unitparamdetail :: UnitParamDetail > , is_limit : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < UnitStatusSetter_ValueParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitStatusSetter_ValueParam_unity2_raw :: set_value_no_enhance (__receiver , :: core :: convert :: Into :: into (detail) , :: core :: convert :: Into :: into (is_limit) , :: core :: option :: Option :: None) } } # [doc = "`SetValueDirect(::unity2::Il2CppString, i32, bool)` overload"] fn set_value_direct (self , str : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , dir : impl :: core :: convert :: Into < i32 > , is_limit : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < UnitStatusSetter_ValueParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitStatusSetter_ValueParam_unity2_raw :: set_value_direct (__receiver , :: core :: convert :: Into :: into (str) , :: core :: convert :: Into :: into (dir) , :: core :: convert :: Into :: into (is_limit) , :: core :: option :: Option :: None) } } # [doc = "`SetBalloon(i32, crate::app::unitstatussetter::UnitStatusSetter_RingType)` overload"] fn set_balloon (self , up_value : impl :: core :: convert :: Into < i32 > , ring_type : impl :: core :: convert :: Into < crate :: app :: unitstatussetter :: UnitStatusSetter_RingType >) -> () { unsafe { let __receiver = < UnitStatusSetter_ValueParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitStatusSetter_ValueParam_unity2_raw :: set_balloon (__receiver , :: core :: convert :: Into :: into (up_value) , :: core :: convert :: Into :: into (ring_type) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < UnitStatusSetter_ValueParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitStatusSetter_ValueParam_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-unitstatussetter")]
-impl < __T : IUnitStatusSetter_ValueParam > IUnitStatusSetter_ValueParamMethods for __T { }
-
-#[cfg(feature = "app-unitstatussetter")]
-impl UnitStatusSetter_ValueParam { pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitStatusSetter_ValueParam_unity2_raw :: __lookup_init :: get_method_info () } pub fn set_override_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitStatusSetter_ValueParam_unity2_raw :: __lookup_set_override :: get_method_info () } pub fn set_override_title_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitStatusSetter_ValueParam_unity2_raw :: __lookup_set_override_title :: get_method_info () } pub fn set_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitStatusSetter_ValueParam_unity2_raw :: __lookup_set_value :: get_method_info () } pub fn set_value_no_enhance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitStatusSetter_ValueParam_unity2_raw :: __lookup_set_value_no_enhance :: get_method_info () } pub fn set_value_direct_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitStatusSetter_ValueParam_unity2_raw :: __lookup_set_value_direct :: get_method_info () } pub fn set_balloon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitStatusSetter_ValueParam_unity2_raw :: __lookup_set_balloon :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitStatusSetter_ValueParam_unity2_raw :: __lookup_ctor :: get_method_info () } }
-
-#[cfg(feature = "app-unitstatussetter")]
-impl UnitStatusSetter_ValueParam {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnitStatusSetter_ValueParam) , :: core :: stringify ! (new) ,)) ; < Self as IUnitStatusSetter_ValueParamMethods > :: ctor (this ,) ; this }
-}
-
-#[cfg(feature = "app-unitstatussetter")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __UnitStatusSetter_WeaponLevelSetter_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_init { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter_WeaponLevelSetter as :: unity2 :: ClassIdentity > :: class () , "Init" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter_WeaponLevelSetter as :: unity2 :: ClassIdentity > :: NAME , "Init" , e) , } } } pub unsafe fn init (this : UnitStatusSetter_WeaponLevelSetter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter_WeaponLevelSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_init :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: itemdata :: ItemData_Kinds as :: unity2 :: IlType > :: il_type () , < crate :: app :: weaponlevel :: WeaponLevel_Kind as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: jobdata :: JobData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter_WeaponLevelSetter as :: unity2 :: ClassIdentity > :: class () , "Set" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter_WeaponLevelSetter as :: unity2 :: ClassIdentity > :: NAME , "Set" , e) , } } } pub unsafe fn set (this : UnitStatusSetter_WeaponLevelSetter , kind : crate :: app :: itemdata :: ItemData_Kinds , level : crate :: app :: weaponlevel :: WeaponLevel_Kind , diff : i32 , job_data : crate :: app :: jobdata :: JobData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter_WeaponLevelSetter , crate :: app :: itemdata :: ItemData_Kinds , crate :: app :: weaponlevel :: WeaponLevel_Kind , i32 , crate :: app :: jobdata :: JobData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set :: get_method_info () . method_ptr ,) ; inner (this , kind , level , diff , job_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter_WeaponLevelSetter as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter_WeaponLevelSetter as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : UnitStatusSetter_WeaponLevelSetter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter_WeaponLevelSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "app-unitstatussetter")]
-pub trait IUnitStatusSetter_WeaponLevelSetterMethods : IUnitStatusSetter_WeaponLevelSetter { # [doc = "`Init()` overload"] fn init (self ,) -> () { unsafe { let __receiver = < UnitStatusSetter_WeaponLevelSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitStatusSetter_WeaponLevelSetter_unity2_raw :: init (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Set(crate::app::itemdata::ItemData_Kinds, crate::app::weaponlevel::WeaponLevel_Kind, i32, crate::app::jobdata::JobData)` overload"] fn set (self , kind : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData_Kinds > , level : impl :: core :: convert :: Into < crate :: app :: weaponlevel :: WeaponLevel_Kind > , diff : impl :: core :: convert :: Into < i32 > , job_data : impl :: core :: convert :: Into < crate :: app :: jobdata :: JobData >) -> () { unsafe { let __receiver = < UnitStatusSetter_WeaponLevelSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitStatusSetter_WeaponLevelSetter_unity2_raw :: set (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: convert :: Into :: into (level) , :: core :: convert :: Into :: into (diff) , :: core :: convert :: Into :: into (job_data) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < UnitStatusSetter_WeaponLevelSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitStatusSetter_WeaponLevelSetter_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-unitstatussetter")]
-impl < __T : IUnitStatusSetter_WeaponLevelSetter > IUnitStatusSetter_WeaponLevelSetterMethods for __T { }
-
-#[cfg(feature = "app-unitstatussetter")]
-impl UnitStatusSetter_WeaponLevelSetter { pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitStatusSetter_WeaponLevelSetter_unity2_raw :: __lookup_init :: get_method_info () } pub fn set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitStatusSetter_WeaponLevelSetter_unity2_raw :: __lookup_set :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitStatusSetter_WeaponLevelSetter_unity2_raw :: __lookup_ctor :: get_method_info () } }
-
-#[cfg(feature = "app-unitstatussetter")]
-impl UnitStatusSetter_WeaponLevelSetter {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnitStatusSetter_WeaponLevelSetter) , :: core :: stringify ! (new) ,)) ; < Self as IUnitStatusSetter_WeaponLevelSetterMethods > :: ctor (this ,) ; this }
-}
 
 #[cfg(feature = "app-unitstatussetter")]
 # [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __UnitStatusSetter_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_ring_color { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unitstatussetter :: UnitStatusSetter_RingType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter as :: unity2 :: ClassIdentity > :: class () , "GetRingColor" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter as :: unity2 :: ClassIdentity > :: NAME , "GetRingColor" , e) , } } } pub unsafe fn get_ring_color (r#type : crate :: app :: unitstatussetter :: UnitStatusSetter_RingType , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color { let inner : extern "C" fn (crate :: app :: unitstatussetter :: UnitStatusSetter_RingType , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute (__lookup_get_ring_color :: get_method_info () . method_ptr ,) ; inner (r#type , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_ring_sprite { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unitstatussetter :: UnitStatusSetter as :: unity2 :: IlType > :: il_type () , < crate :: app :: unitstatussetter :: UnitStatusSetter_RingType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter as :: unity2 :: ClassIdentity > :: class () , "GetRingSprite" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter as :: unity2 :: ClassIdentity > :: NAME , "GetRingSprite" , e) , } } } pub unsafe fn get_ring_sprite (setter : crate :: app :: unitstatussetter :: UnitStatusSetter , r#type : crate :: app :: unitstatussetter :: UnitStatusSetter_RingType , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite { let inner : extern "C" fn (crate :: app :: unitstatussetter :: UnitStatusSetter , crate :: app :: unitstatussetter :: UnitStatusSetter_RingType , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite = :: core :: mem :: transmute (__lookup_get_ring_sprite :: get_method_info () . method_ptr ,) ; inner (setter , r#type , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_arrow_sprite { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unitstatussetter :: UnitStatusSetter as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: ui :: image :: Image as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter as :: unity2 :: ClassIdentity > :: class () , "SetArrowSprite" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter as :: unity2 :: ClassIdentity > :: NAME , "SetArrowSprite" , e) , } } } pub unsafe fn set_arrow_sprite (setter : crate :: app :: unitstatussetter :: UnitStatusSetter , image : crate :: unity_engine :: ui :: image :: Image , diff : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: unitstatussetter :: UnitStatusSetter , crate :: unity_engine :: ui :: image :: Image , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_arrow_sprite :: get_method_info () . method_ptr ,) ; inner (setter , image , diff , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_text_color { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter as :: unity2 :: ClassIdentity > :: class () , "SetTextColor" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter as :: unity2 :: ClassIdentity > :: NAME , "SetTextColor" , e) , } } } pub unsafe fn set_text_color (text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI , diff : i32 , is_limit : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI , i32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_text_color :: get_method_info () . method_ptr ,) ; inner (text , diff , is_limit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_unit_ring_type { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter as :: unity2 :: ClassIdentity > :: class () , "GetUnitRingType" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter as :: unity2 :: ClassIdentity > :: NAME , "GetUnitRingType" , e) , } } } pub unsafe fn get_unit_ring_type (unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: unitstatussetter :: UnitStatusSetter_RingType { let inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> crate :: app :: unitstatussetter :: UnitStatusSetter_RingType = :: core :: mem :: transmute (__lookup_get_unit_ring_type :: get_method_info () . method_ptr ,) ; inner (unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_init { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter as :: unity2 :: ClassIdentity > :: class () , "Init" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter as :: unity2 :: ClassIdentity > :: NAME , "Init" , e) , } } } pub unsafe fn init (this : UnitStatusSetter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_init :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: battleinfo :: BattleInfo_Flags as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter as :: unity2 :: ClassIdentity > :: class () , "SetData" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter as :: unity2 :: ClassIdentity > :: NAME , "SetData" , e) , } } } pub unsafe fn set_data (this : UnitStatusSetter , unit : crate :: app :: unit :: Unit , flags : crate :: app :: battleinfo :: BattleInfo_Flags , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter , crate :: app :: unit :: Unit , crate :: app :: battleinfo :: BattleInfo_Flags , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_data :: get_method_info () . method_ptr ,) ; inner (this , unit , flags , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_data_impl { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter as :: unity2 :: ClassIdentity > :: class () , "SetDataImpl" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter as :: unity2 :: ClassIdentity > :: NAME , "SetDataImpl" , e) , } } } pub unsafe fn set_data_impl (this : UnitStatusSetter , unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_data_impl :: get_method_info () . method_ptr ,) ; inner (this , unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_data_temp_ring { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: godunit :: GodUnit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unitring :: UnitRing as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter as :: unity2 :: ClassIdentity > :: class () , "SetDataTempRing" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter as :: unity2 :: ClassIdentity > :: NAME , "SetDataTempRing" , e) , } } } pub unsafe fn set_data_temp_ring (this : UnitStatusSetter , unit : crate :: app :: unit :: Unit , god : crate :: app :: godunit :: GodUnit , ring : crate :: app :: unitring :: UnitRing , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter , crate :: app :: unit :: Unit , crate :: app :: godunit :: GodUnit , crate :: app :: unitring :: UnitRing , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_data_temp_ring :: get_method_info () . method_ptr ,) ; inner (this , unit , god , ring , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_data_no_enhance { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter as :: unity2 :: ClassIdentity > :: class () , "SetDataNoEnhance" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter as :: unity2 :: ClassIdentity > :: NAME , "SetDataNoEnhance" , e) , } } } pub unsafe fn set_data_no_enhance (this : UnitStatusSetter , unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_data_no_enhance :: get_method_info () . method_ptr ,) ; inner (this , unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_data_class_change { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter as :: unity2 :: ClassIdentity > :: class () , "SetDataClassChange" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter as :: unity2 :: ClassIdentity > :: NAME , "SetDataClassChange" , e) , } } } pub unsafe fn set_data_class_change (this : UnitStatusSetter , before : crate :: app :: unit :: Unit , after : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_data_class_change :: get_method_info () . method_ptr ,) ; inner (this , before , after , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_god_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: godunit :: GodUnit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unitring :: UnitRing as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter as :: unity2 :: ClassIdentity > :: class () , "SetGodName" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter as :: unity2 :: ClassIdentity > :: NAME , "SetGodName" , e) , } } } pub unsafe fn set_god_name (this : UnitStatusSetter , unit : crate :: app :: unit :: Unit , god : crate :: app :: godunit :: GodUnit , ring : crate :: app :: unitring :: UnitRing , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter , crate :: app :: unit :: Unit , crate :: app :: godunit :: GodUnit , crate :: app :: unitring :: UnitRing , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_god_name :: get_method_info () . method_ptr ,) ; inner (this , unit , god , ring , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_image_color { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: godunit :: GodUnit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter as :: unity2 :: ClassIdentity > :: class () , "SetImageColor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter as :: unity2 :: ClassIdentity > :: NAME , "SetImageColor" , e) , } } } pub unsafe fn set_image_color (this : UnitStatusSetter , unit : crate :: app :: unit :: Unit , god : crate :: app :: godunit :: GodUnit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter , crate :: app :: unit :: Unit , crate :: app :: godunit :: GodUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_image_color :: get_method_info () . method_ptr ,) ; inner (this , unit , god , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_god_info { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: godunit :: GodUnit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter as :: unity2 :: ClassIdentity > :: class () , "SetGodInfo" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter as :: unity2 :: ClassIdentity > :: NAME , "SetGodInfo" , e) , } } } pub unsafe fn set_god_info (this : UnitStatusSetter , unit : crate :: app :: unit :: Unit , god : crate :: app :: godunit :: GodUnit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter , crate :: app :: unit :: Unit , crate :: app :: godunit :: GodUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_god_info :: get_method_info () . method_ptr ,) ; inner (this , unit , god , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_item_icons { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter as :: unity2 :: ClassIdentity > :: class () , "SetItemIcons" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter as :: unity2 :: ClassIdentity > :: NAME , "SetItemIcons" , e) , } } } pub unsafe fn set_item_icons (this : UnitStatusSetter , unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_item_icons :: get_method_info () . method_ptr ,) ; inner (this , unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter as :: unity2 :: ClassIdentity > :: class () , "SetSkill" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter as :: unity2 :: ClassIdentity > :: NAME , "SetSkill" , e) , } } } pub unsafe fn set_skill (this : UnitStatusSetter , unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_skill :: get_method_info () . method_ptr ,) ; inner (this , unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_level { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter as :: unity2 :: ClassIdentity > :: class () , "SetLevel" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter as :: unity2 :: ClassIdentity > :: NAME , "SetLevel" , e) , } } } pub unsafe fn set_level (this : UnitStatusSetter , unit : crate :: app :: unit :: Unit , unit_no_enhance : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_level :: get_method_info () . method_ptr ,) ; inner (this , unit , unit_no_enhance , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_sp { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter as :: unity2 :: ClassIdentity > :: class () , "SetSP" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter as :: unity2 :: ClassIdentity > :: NAME , "SetSP" , e) , } } } pub unsafe fn set_sp (this : UnitStatusSetter , unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_sp :: get_method_info () . method_ptr ,) ; inner (this , unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_efficacy { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter as :: unity2 :: ClassIdentity > :: class () , "SetEfficacy" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter as :: unity2 :: ClassIdentity > :: NAME , "SetEfficacy" , e) , } } } pub unsafe fn set_efficacy (this : UnitStatusSetter , unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_efficacy :: get_method_info () . method_ptr ,) ; inner (this , unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_weapon_level { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter as :: unity2 :: ClassIdentity > :: class () , "SetWeaponLevel" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter as :: unity2 :: ClassIdentity > :: NAME , "SetWeaponLevel" , e) , } } } pub unsafe fn set_weapon_level (this : UnitStatusSetter , base_unit : crate :: app :: unit :: Unit , temp_unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_weapon_level :: get_method_info () . method_ptr ,) ; inner (this , base_unit , temp_unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_battle_status { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter as :: unity2 :: ClassIdentity > :: class () , "SetBattleStatus" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter as :: unity2 :: ClassIdentity > :: NAME , "SetBattleStatus" , e) , } } } pub unsafe fn set_battle_status (this : UnitStatusSetter , unit : crate :: app :: unit :: Unit , is_god_change : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter , crate :: app :: unit :: Unit , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_battle_status :: get_method_info () . method_ptr ,) ; inner (this , unit , is_god_change , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_capability { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter as :: unity2 :: ClassIdentity > :: class () , "SetCapability" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter as :: unity2 :: ClassIdentity > :: NAME , "SetCapability" , e) , } } } pub unsafe fn set_capability (this : UnitStatusSetter , unit : crate :: app :: unit :: Unit , unit_no_enhance : crate :: app :: unit :: Unit , is_god_change : bool , is_no_enhance : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_capability :: get_method_info () . method_ptr ,) ; inner (this , unit , unit_no_enhance , is_god_change , is_no_enhance , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_attack_title { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter as :: unity2 :: ClassIdentity > :: class () , "SetAttackTitle" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter as :: unity2 :: ClassIdentity > :: NAME , "SetAttackTitle" , e) , } } } pub unsafe fn set_attack_title (this : UnitStatusSetter , unit : crate :: app :: unit :: Unit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_attack_title :: get_method_info () . method_ptr ,) ; inner (this , unit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_efficacy_skill { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter as :: unity2 :: ClassIdentity > :: class () , "GetEfficacySkill" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter as :: unity2 :: ClassIdentity > :: NAME , "GetEfficacySkill" , e) , } } } pub unsafe fn get_efficacy_skill (this : UnitStatusSetter , unit : crate :: app :: unit :: Unit , icon_index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData { let inner : extern "C" fn (UnitStatusSetter , crate :: app :: unit :: Unit , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData = :: core :: mem :: transmute (__lookup_get_efficacy_skill :: get_method_info () . method_ptr ,) ; inner (this , unit , icon_index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : UnitStatusSetter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
@@ -570,20 +536,20 @@ impl UnitStatusSetter {
 }
 
 #[cfg(feature = "app-unitstatussetter")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __UnitStatusSetter_SkillSetter_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_init { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unitstatussetter :: UnitStatusSetter as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter_SkillSetter as :: unity2 :: ClassIdentity > :: class () , "Init" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter_SkillSetter as :: unity2 :: ClassIdentity > :: NAME , "Init" , e) , } } } pub unsafe fn init (this : UnitStatusSetter_SkillSetter , setter : crate :: app :: unitstatussetter :: UnitStatusSetter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter_SkillSetter , crate :: app :: unitstatussetter :: UnitStatusSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_init :: get_method_info () . method_ptr ,) ; inner (this , setter , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_disable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter_SkillSetter as :: unity2 :: ClassIdentity > :: class () , "Disable" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter_SkillSetter as :: unity2 :: ClassIdentity > :: NAME , "Disable" , e) , } } } pub unsafe fn disable (this : UnitStatusSetter_SkillSetter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter_SkillSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_disable :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: skilldata :: SkillData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: app :: unitstatussetter :: UnitStatusSetter_RingType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter_SkillSetter as :: unity2 :: ClassIdentity > :: class () , "Set" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter_SkillSetter as :: unity2 :: ClassIdentity > :: NAME , "Set" , e) , } } } pub unsafe fn set (this : UnitStatusSetter_SkillSetter , skill : crate :: app :: skilldata :: SkillData , is_active : bool , r#type : crate :: app :: unitstatussetter :: UnitStatusSetter_RingType , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter_SkillSetter , crate :: app :: skilldata :: SkillData , bool , crate :: app :: unitstatussetter :: UnitStatusSetter_RingType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set :: get_method_info () . method_ptr ,) ; inner (this , skill , is_active , r#type , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter_SkillSetter as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter_SkillSetter as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : UnitStatusSetter_SkillSetter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter_SkillSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __UnitStatusSetter_WeaponLevelSetter_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_init { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter_WeaponLevelSetter as :: unity2 :: ClassIdentity > :: class () , "Init" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter_WeaponLevelSetter as :: unity2 :: ClassIdentity > :: NAME , "Init" , e) , } } } pub unsafe fn init (this : UnitStatusSetter_WeaponLevelSetter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter_WeaponLevelSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_init :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: itemdata :: ItemData_Kinds as :: unity2 :: IlType > :: il_type () , < crate :: app :: weaponlevel :: WeaponLevel_Kind as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: jobdata :: JobData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter_WeaponLevelSetter as :: unity2 :: ClassIdentity > :: class () , "Set" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter_WeaponLevelSetter as :: unity2 :: ClassIdentity > :: NAME , "Set" , e) , } } } pub unsafe fn set (this : UnitStatusSetter_WeaponLevelSetter , kind : crate :: app :: itemdata :: ItemData_Kinds , level : crate :: app :: weaponlevel :: WeaponLevel_Kind , diff : i32 , job_data : crate :: app :: jobdata :: JobData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter_WeaponLevelSetter , crate :: app :: itemdata :: ItemData_Kinds , crate :: app :: weaponlevel :: WeaponLevel_Kind , i32 , crate :: app :: jobdata :: JobData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set :: get_method_info () . method_ptr ,) ; inner (this , kind , level , diff , job_data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter_WeaponLevelSetter as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter_WeaponLevelSetter as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : UnitStatusSetter_WeaponLevelSetter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter_WeaponLevelSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "app-unitstatussetter")]
-pub trait IUnitStatusSetter_SkillSetterMethods : IUnitStatusSetter_SkillSetter { # [doc = "`Init(crate::app::unitstatussetter::UnitStatusSetter)` overload"] fn init (self , setter : impl :: core :: convert :: Into < crate :: app :: unitstatussetter :: UnitStatusSetter >) -> () { unsafe { let __receiver = < UnitStatusSetter_SkillSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitStatusSetter_SkillSetter_unity2_raw :: init (__receiver , :: core :: convert :: Into :: into (setter) , :: core :: option :: Option :: None) } } # [doc = "`Disable()` overload"] fn disable (self ,) -> () { unsafe { let __receiver = < UnitStatusSetter_SkillSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitStatusSetter_SkillSetter_unity2_raw :: disable (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Set(crate::app::skilldata::SkillData, bool, crate::app::unitstatussetter::UnitStatusSetter_RingType)` overload"] fn set (self , skill : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData > , is_active : impl :: core :: convert :: Into < bool > , r#type : impl :: core :: convert :: Into < crate :: app :: unitstatussetter :: UnitStatusSetter_RingType >) -> () { unsafe { let __receiver = < UnitStatusSetter_SkillSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitStatusSetter_SkillSetter_unity2_raw :: set (__receiver , :: core :: convert :: Into :: into (skill) , :: core :: convert :: Into :: into (is_active) , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < UnitStatusSetter_SkillSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitStatusSetter_SkillSetter_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+pub trait IUnitStatusSetter_WeaponLevelSetterMethods : IUnitStatusSetter_WeaponLevelSetter { # [doc = "`Init()` overload"] fn init (self ,) -> () { unsafe { let __receiver = < UnitStatusSetter_WeaponLevelSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitStatusSetter_WeaponLevelSetter_unity2_raw :: init (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Set(crate::app::itemdata::ItemData_Kinds, crate::app::weaponlevel::WeaponLevel_Kind, i32, crate::app::jobdata::JobData)` overload"] fn set (self , kind : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData_Kinds > , level : impl :: core :: convert :: Into < crate :: app :: weaponlevel :: WeaponLevel_Kind > , diff : impl :: core :: convert :: Into < i32 > , job_data : impl :: core :: convert :: Into < crate :: app :: jobdata :: JobData >) -> () { unsafe { let __receiver = < UnitStatusSetter_WeaponLevelSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitStatusSetter_WeaponLevelSetter_unity2_raw :: set (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: convert :: Into :: into (level) , :: core :: convert :: Into :: into (diff) , :: core :: convert :: Into :: into (job_data) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < UnitStatusSetter_WeaponLevelSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitStatusSetter_WeaponLevelSetter_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
 
 #[cfg(feature = "app-unitstatussetter")]
-impl < __T : IUnitStatusSetter_SkillSetter > IUnitStatusSetter_SkillSetterMethods for __T { }
+impl < __T : IUnitStatusSetter_WeaponLevelSetter > IUnitStatusSetter_WeaponLevelSetterMethods for __T { }
 
 #[cfg(feature = "app-unitstatussetter")]
-impl UnitStatusSetter_SkillSetter { pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitStatusSetter_SkillSetter_unity2_raw :: __lookup_init :: get_method_info () } pub fn disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitStatusSetter_SkillSetter_unity2_raw :: __lookup_disable :: get_method_info () } pub fn set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitStatusSetter_SkillSetter_unity2_raw :: __lookup_set :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitStatusSetter_SkillSetter_unity2_raw :: __lookup_ctor :: get_method_info () } }
+impl UnitStatusSetter_WeaponLevelSetter { pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitStatusSetter_WeaponLevelSetter_unity2_raw :: __lookup_init :: get_method_info () } pub fn set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitStatusSetter_WeaponLevelSetter_unity2_raw :: __lookup_set :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitStatusSetter_WeaponLevelSetter_unity2_raw :: __lookup_ctor :: get_method_info () } }
 
 #[cfg(feature = "app-unitstatussetter")]
-impl UnitStatusSetter_SkillSetter {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnitStatusSetter_SkillSetter) , :: core :: stringify ! (new) ,)) ; < Self as IUnitStatusSetter_SkillSetterMethods > :: ctor (this ,) ; this }
+impl UnitStatusSetter_WeaponLevelSetter {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnitStatusSetter_WeaponLevelSetter) , :: core :: stringify ! (new) ,)) ; < Self as IUnitStatusSetter_WeaponLevelSetterMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-unitstatussetter")]
@@ -601,6 +567,40 @@ impl UnitStatusSetter_ItemSetter { pub fn init_method_info () -> & 'static :: un
 #[cfg(feature = "app-unitstatussetter")]
 impl UnitStatusSetter_ItemSetter {
 # [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnitStatusSetter_ItemSetter) , :: core :: stringify ! (new) ,)) ; < Self as IUnitStatusSetter_ItemSetterMethods > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "app-unitstatussetter")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __UnitStatusSetter_SkillSetter_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_init { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unitstatussetter :: UnitStatusSetter as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter_SkillSetter as :: unity2 :: ClassIdentity > :: class () , "Init" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter_SkillSetter as :: unity2 :: ClassIdentity > :: NAME , "Init" , e) , } } } pub unsafe fn init (this : UnitStatusSetter_SkillSetter , setter : crate :: app :: unitstatussetter :: UnitStatusSetter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter_SkillSetter , crate :: app :: unitstatussetter :: UnitStatusSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_init :: get_method_info () . method_ptr ,) ; inner (this , setter , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_disable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter_SkillSetter as :: unity2 :: ClassIdentity > :: class () , "Disable" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter_SkillSetter as :: unity2 :: ClassIdentity > :: NAME , "Disable" , e) , } } } pub unsafe fn disable (this : UnitStatusSetter_SkillSetter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter_SkillSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_disable :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: skilldata :: SkillData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: app :: unitstatussetter :: UnitStatusSetter_RingType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter_SkillSetter as :: unity2 :: ClassIdentity > :: class () , "Set" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter_SkillSetter as :: unity2 :: ClassIdentity > :: NAME , "Set" , e) , } } } pub unsafe fn set (this : UnitStatusSetter_SkillSetter , skill : crate :: app :: skilldata :: SkillData , is_active : bool , r#type : crate :: app :: unitstatussetter :: UnitStatusSetter_RingType , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter_SkillSetter , crate :: app :: skilldata :: SkillData , bool , crate :: app :: unitstatussetter :: UnitStatusSetter_RingType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set :: get_method_info () . method_ptr ,) ; inner (this , skill , is_active , r#type , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter_SkillSetter as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter_SkillSetter as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : UnitStatusSetter_SkillSetter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter_SkillSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-unitstatussetter")]
+pub trait IUnitStatusSetter_SkillSetterMethods : IUnitStatusSetter_SkillSetter { # [doc = "`Init(crate::app::unitstatussetter::UnitStatusSetter)` overload"] fn init (self , setter : impl :: core :: convert :: Into < crate :: app :: unitstatussetter :: UnitStatusSetter >) -> () { unsafe { let __receiver = < UnitStatusSetter_SkillSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitStatusSetter_SkillSetter_unity2_raw :: init (__receiver , :: core :: convert :: Into :: into (setter) , :: core :: option :: Option :: None) } } # [doc = "`Disable()` overload"] fn disable (self ,) -> () { unsafe { let __receiver = < UnitStatusSetter_SkillSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitStatusSetter_SkillSetter_unity2_raw :: disable (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Set(crate::app::skilldata::SkillData, bool, crate::app::unitstatussetter::UnitStatusSetter_RingType)` overload"] fn set (self , skill : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData > , is_active : impl :: core :: convert :: Into < bool > , r#type : impl :: core :: convert :: Into < crate :: app :: unitstatussetter :: UnitStatusSetter_RingType >) -> () { unsafe { let __receiver = < UnitStatusSetter_SkillSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitStatusSetter_SkillSetter_unity2_raw :: set (__receiver , :: core :: convert :: Into :: into (skill) , :: core :: convert :: Into :: into (is_active) , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < UnitStatusSetter_SkillSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitStatusSetter_SkillSetter_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-unitstatussetter")]
+impl < __T : IUnitStatusSetter_SkillSetter > IUnitStatusSetter_SkillSetterMethods for __T { }
+
+#[cfg(feature = "app-unitstatussetter")]
+impl UnitStatusSetter_SkillSetter { pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitStatusSetter_SkillSetter_unity2_raw :: __lookup_init :: get_method_info () } pub fn disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitStatusSetter_SkillSetter_unity2_raw :: __lookup_disable :: get_method_info () } pub fn set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitStatusSetter_SkillSetter_unity2_raw :: __lookup_set :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitStatusSetter_SkillSetter_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-unitstatussetter")]
+impl UnitStatusSetter_SkillSetter {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnitStatusSetter_SkillSetter) , :: core :: stringify ! (new) ,)) ; < Self as IUnitStatusSetter_SkillSetterMethods > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "app-unitstatussetter")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __UnitStatusSetter_ValueParam_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_init { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unitstatussetter :: UnitStatusSetter as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter_ValueParam as :: unity2 :: ClassIdentity > :: class () , "Init" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter_ValueParam as :: unity2 :: ClassIdentity > :: NAME , "Init" , e) , } } } pub unsafe fn init (this : UnitStatusSetter_ValueParam , setter : crate :: app :: unitstatussetter :: UnitStatusSetter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter_ValueParam , crate :: app :: unitstatussetter :: UnitStatusSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_init :: get_method_info () . method_ptr ,) ; inner (this , setter , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_override { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: ui :: image :: Image as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter_ValueParam as :: unity2 :: ClassIdentity > :: class () , "SetOverride" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter_ValueParam as :: unity2 :: ClassIdentity > :: NAME , "SetOverride" , e) , } } } pub unsafe fn set_override (this : UnitStatusSetter_ValueParam , text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI , arrow : crate :: unity_engine :: ui :: image :: Image , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter_ValueParam , crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI , crate :: unity_engine :: ui :: image :: Image , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_override :: get_method_info () . method_ptr ,) ; inner (this , text , arrow , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_override_title { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter_ValueParam as :: unity2 :: ClassIdentity > :: class () , "SetOverrideTitle" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter_ValueParam as :: unity2 :: ClassIdentity > :: NAME , "SetOverrideTitle" , e) , } } } pub unsafe fn set_override_title (this : UnitStatusSetter_ValueParam , title : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter_ValueParam , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_override_title :: get_method_info () . method_ptr ,) ; inner (this , title , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unitparamdetail :: UnitParamDetail as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter_ValueParam as :: unity2 :: ClassIdentity > :: class () , "SetValue" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter_ValueParam as :: unity2 :: ClassIdentity > :: NAME , "SetValue" , e) , } } } pub unsafe fn set_value (this : UnitStatusSetter_ValueParam , detail : crate :: app :: unitparamdetail :: UnitParamDetail , is_limit : bool , is_god_change : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter_ValueParam , crate :: app :: unitparamdetail :: UnitParamDetail , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_value :: get_method_info () . method_ptr ,) ; inner (this , detail , is_limit , is_god_change , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_value_no_enhance { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unitparamdetail :: UnitParamDetail as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter_ValueParam as :: unity2 :: ClassIdentity > :: class () , "SetValueNoEnhance" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter_ValueParam as :: unity2 :: ClassIdentity > :: NAME , "SetValueNoEnhance" , e) , } } } pub unsafe fn set_value_no_enhance (this : UnitStatusSetter_ValueParam , detail : crate :: app :: unitparamdetail :: UnitParamDetail , is_limit : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter_ValueParam , crate :: app :: unitparamdetail :: UnitParamDetail , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_value_no_enhance :: get_method_info () . method_ptr ,) ; inner (this , detail , is_limit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_value_direct { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter_ValueParam as :: unity2 :: ClassIdentity > :: class () , "SetValueDirect" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter_ValueParam as :: unity2 :: ClassIdentity > :: NAME , "SetValueDirect" , e) , } } } pub unsafe fn set_value_direct (this : UnitStatusSetter_ValueParam , str : :: unity2 :: Il2CppString , dir : i32 , is_limit : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter_ValueParam , :: unity2 :: Il2CppString , i32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_value_direct :: get_method_info () . method_ptr ,) ; inner (this , str , dir , is_limit , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_balloon { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: unitstatussetter :: UnitStatusSetter_RingType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter_ValueParam as :: unity2 :: ClassIdentity > :: class () , "SetBalloon" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter_ValueParam as :: unity2 :: ClassIdentity > :: NAME , "SetBalloon" , e) , } } } pub unsafe fn set_balloon (this : UnitStatusSetter_ValueParam , up_value : i32 , ring_type : crate :: app :: unitstatussetter :: UnitStatusSetter_RingType , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter_ValueParam , i32 , crate :: app :: unitstatussetter :: UnitStatusSetter_RingType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_balloon :: get_method_info () . method_ptr ,) ; inner (this , up_value , ring_type , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnitStatusSetter_ValueParam as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnitStatusSetter_ValueParam as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : UnitStatusSetter_ValueParam , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (UnitStatusSetter_ValueParam , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-unitstatussetter")]
+pub trait IUnitStatusSetter_ValueParamMethods : IUnitStatusSetter_ValueParam { # [doc = "`Init(crate::app::unitstatussetter::UnitStatusSetter)` overload"] fn init (self , setter : impl :: core :: convert :: Into < crate :: app :: unitstatussetter :: UnitStatusSetter >) -> () { unsafe { let __receiver = < UnitStatusSetter_ValueParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitStatusSetter_ValueParam_unity2_raw :: init (__receiver , :: core :: convert :: Into :: into (setter) , :: core :: option :: Option :: None) } } # [doc = "`SetOverride(crate::tm_pro::textmeshprougui::TextMeshProUGUI, crate::unity_engine::ui::image::Image)` overload"] fn set_override (self , text : impl :: core :: convert :: Into < crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI > , arrow : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: image :: Image >) -> () { unsafe { let __receiver = < UnitStatusSetter_ValueParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitStatusSetter_ValueParam_unity2_raw :: set_override (__receiver , :: core :: convert :: Into :: into (text) , :: core :: convert :: Into :: into (arrow) , :: core :: option :: Option :: None) } } # [doc = "`SetOverrideTitle(::unity2::Il2CppString)` overload"] fn set_override_title (self , title : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < UnitStatusSetter_ValueParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitStatusSetter_ValueParam_unity2_raw :: set_override_title (__receiver , :: core :: convert :: Into :: into (title) , :: core :: option :: Option :: None) } } # [doc = "`SetValue(crate::app::unitparamdetail::UnitParamDetail, bool, bool)` overload"] fn set_value (self , detail : impl :: core :: convert :: Into < crate :: app :: unitparamdetail :: UnitParamDetail > , is_limit : impl :: core :: convert :: Into < bool > , is_god_change : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < UnitStatusSetter_ValueParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitStatusSetter_ValueParam_unity2_raw :: set_value (__receiver , :: core :: convert :: Into :: into (detail) , :: core :: convert :: Into :: into (is_limit) , :: core :: convert :: Into :: into (is_god_change) , :: core :: option :: Option :: None) } } # [doc = "`SetValueNoEnhance(crate::app::unitparamdetail::UnitParamDetail, bool)` overload"] fn set_value_no_enhance (self , detail : impl :: core :: convert :: Into < crate :: app :: unitparamdetail :: UnitParamDetail > , is_limit : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < UnitStatusSetter_ValueParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitStatusSetter_ValueParam_unity2_raw :: set_value_no_enhance (__receiver , :: core :: convert :: Into :: into (detail) , :: core :: convert :: Into :: into (is_limit) , :: core :: option :: Option :: None) } } # [doc = "`SetValueDirect(::unity2::Il2CppString, i32, bool)` overload"] fn set_value_direct (self , str : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , dir : impl :: core :: convert :: Into < i32 > , is_limit : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < UnitStatusSetter_ValueParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitStatusSetter_ValueParam_unity2_raw :: set_value_direct (__receiver , :: core :: convert :: Into :: into (str) , :: core :: convert :: Into :: into (dir) , :: core :: convert :: Into :: into (is_limit) , :: core :: option :: Option :: None) } } # [doc = "`SetBalloon(i32, crate::app::unitstatussetter::UnitStatusSetter_RingType)` overload"] fn set_balloon (self , up_value : impl :: core :: convert :: Into < i32 > , ring_type : impl :: core :: convert :: Into < crate :: app :: unitstatussetter :: UnitStatusSetter_RingType >) -> () { unsafe { let __receiver = < UnitStatusSetter_ValueParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitStatusSetter_ValueParam_unity2_raw :: set_balloon (__receiver , :: core :: convert :: Into :: into (up_value) , :: core :: convert :: Into :: into (ring_type) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < UnitStatusSetter_ValueParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __UnitStatusSetter_ValueParam_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-unitstatussetter")]
+impl < __T : IUnitStatusSetter_ValueParam > IUnitStatusSetter_ValueParamMethods for __T { }
+
+#[cfg(feature = "app-unitstatussetter")]
+impl UnitStatusSetter_ValueParam { pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitStatusSetter_ValueParam_unity2_raw :: __lookup_init :: get_method_info () } pub fn set_override_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitStatusSetter_ValueParam_unity2_raw :: __lookup_set_override :: get_method_info () } pub fn set_override_title_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitStatusSetter_ValueParam_unity2_raw :: __lookup_set_override_title :: get_method_info () } pub fn set_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitStatusSetter_ValueParam_unity2_raw :: __lookup_set_value :: get_method_info () } pub fn set_value_no_enhance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitStatusSetter_ValueParam_unity2_raw :: __lookup_set_value_no_enhance :: get_method_info () } pub fn set_value_direct_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitStatusSetter_ValueParam_unity2_raw :: __lookup_set_value_direct :: get_method_info () } pub fn set_balloon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitStatusSetter_ValueParam_unity2_raw :: __lookup_set_balloon :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __UnitStatusSetter_ValueParam_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-unitstatussetter")]
+impl UnitStatusSetter_ValueParam {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnitStatusSetter_ValueParam) , :: core :: stringify ! (new) ,)) ; < Self as IUnitStatusSetter_ValueParamMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-unitstatussetter")]
@@ -623,30 +623,30 @@ impl UnitStatusSetter_CapabilityValueParam {
 #[cfg(feature = "app-unitstatussetter")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::UnitStatusSetter_GodBuffType;
-    pub use super::UnitStatusSetter_ValueParam;
-    pub use super::IUnitStatusSetter_ValueParam;
-    pub use super::IUnitStatusSetter_ValueParamMethods;
-    pub use super::UnitStatusSetter_HPStockType;
-    pub use super::UnitStatusSetter_WeaponLevelSetter;
-    pub use super::IUnitStatusSetter_WeaponLevelSetter;
-    pub use super::IUnitStatusSetter_WeaponLevelSetterMethods;
+    pub use super::UnitStatusSetter_ForceType;
     pub use super::UnitStatusSetter;
     pub use super::IUnitStatusSetter;
     pub use super::IUnitStatusSetterMethods;
-    pub use super::UnitStatusSetter_RingType;
-    pub use super::UnitStatusSetter_WdwType;
-    pub use super::UnitStatusSetter_ForceType;
-    pub use super::UnitStatusSetter_SkillSetter;
-    pub use super::IUnitStatusSetter_SkillSetter;
-    pub use super::IUnitStatusSetter_SkillSetterMethods;
+    pub use super::UnitStatusSetter_WeaponLevelSetter;
+    pub use super::IUnitStatusSetter_WeaponLevelSetter;
+    pub use super::IUnitStatusSetter_WeaponLevelSetterMethods;
+    pub use super::UnitStatusSetter_ArrowType;
     pub use super::UnitStatusSetter_ItemSetter;
     pub use super::IUnitStatusSetter_ItemSetter;
     pub use super::IUnitStatusSetter_ItemSetterMethods;
+    pub use super::UnitStatusSetter_GodBuffType;
+    pub use super::UnitStatusSetter_SkillSetter;
+    pub use super::IUnitStatusSetter_SkillSetter;
+    pub use super::IUnitStatusSetter_SkillSetterMethods;
+    pub use super::UnitStatusSetter_HPStockType;
+    pub use super::UnitStatusSetter_ValueParam;
+    pub use super::IUnitStatusSetter_ValueParam;
+    pub use super::IUnitStatusSetter_ValueParamMethods;
     pub use super::UnitStatusSetter_CapabilityValueParam;
     pub use super::IUnitStatusSetter_CapabilityValueParam;
     pub use super::IUnitStatusSetter_CapabilityValueParamMethods;
-    pub use super::UnitStatusSetter_ArrowType;
+    pub use super::UnitStatusSetter_WdwType;
+    pub use super::UnitStatusSetter_RingType;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

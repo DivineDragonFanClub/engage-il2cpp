@@ -21,18 +21,18 @@ mod __types {
  ;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/locationparams/LocationParams_UnitType.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/locationparams/LocationParams_EmblemType.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct LocationParams_UnitType  {
+pub struct LocationParams_EmblemType  {
     pub value: i32,
 }
 
 
-impl  ::unity2::ClassIdentity for LocationParams_UnitType  {
+impl  ::unity2::ClassIdentity for LocationParams_EmblemType  {
     const NAMESPACE: &'static str = "Combat";
 
-    const NAME: &'static str = "LocationParams.UnitType";
+    const NAME: &'static str = "LocationParams.EmblemType";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> =
@@ -47,7 +47,7 @@ impl  ::unity2::ClassIdentity for LocationParams_UnitType  {
 }
 
 
-impl  ::unity2::IlType for LocationParams_UnitType  {
+impl  ::unity2::IlType for LocationParams_EmblemType  {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
@@ -55,33 +55,27 @@ impl  ::unity2::IlType for LocationParams_UnitType  {
 }
 
 
-impl  LocationParams_UnitType  {
-    pub fn walk() -> Self {
+impl  LocationParams_EmblemType  {
+    pub fn normal() -> Self {
         Self { value: 0 }
 
     }
 
 
-    pub fn horce() -> Self {
+    pub fn sigurd() -> Self {
         Self { value: 1 }
 
     }
 
 
-    pub fn pegasus() -> Self {
+    pub fn flying() -> Self {
         Self { value: 2 }
 
     }
 
 
-    pub fn dragon() -> Self {
-        Self { value: 3 }
-
-    }
-
-
     pub fn num() -> Self {
-        Self { value: 4 }
+        Self { value: 3 }
 
     }
 
@@ -152,6 +146,15 @@ impl  LocationParams_DataType  {
 
     }
 
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/locationparams/LocationParams.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "LocationParams")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct LocationParams {
+# [static_field] # [rename (name = "Instance")] pub instance : crate :: combat :: locationparams :: LocationParams ,
+# [offset (24)] # [rename (name = "EmblemPos")] pub emblem_pos : :: unity2 :: Array < f32 > ,
+# [offset (32)] # [rename (name = "FlyWinThreshold")] pub fly_win_threshold : f32 ,
+# [offset (36)] # [rename (name = "LookCenter")] pub look_center : bool ,
+# [static_field] # [rename (name = "s_RefletDegree")] pub s_reflet_degree : crate :: app :: gameparam :: GameParam_Holder ,
 }
 
 
@@ -246,27 +249,18 @@ impl  LocationParams_LocateStyle  {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/locationparams/LocationParams.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "LocationParams")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct LocationParams {
-# [static_field] # [rename (name = "Instance")] pub instance : crate :: combat :: locationparams :: LocationParams ,
-# [offset (24)] # [rename (name = "EmblemPos")] pub emblem_pos : :: unity2 :: Array < f32 > ,
-# [offset (32)] # [rename (name = "FlyWinThreshold")] pub fly_win_threshold : f32 ,
-# [offset (36)] # [rename (name = "LookCenter")] pub look_center : bool ,
-# [static_field] # [rename (name = "s_RefletDegree")] pub s_reflet_degree : crate :: app :: gameparam :: GameParam_Holder ,
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/locationparams/LocationParams_EmblemType.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/locationparams/LocationParams_UnitType.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct LocationParams_EmblemType  {
+pub struct LocationParams_UnitType  {
     pub value: i32,
 }
 
 
-impl  ::unity2::ClassIdentity for LocationParams_EmblemType  {
+impl  ::unity2::ClassIdentity for LocationParams_UnitType  {
     const NAMESPACE: &'static str = "Combat";
 
-    const NAME: &'static str = "LocationParams.EmblemType";
+    const NAME: &'static str = "LocationParams.UnitType";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> =
@@ -281,7 +275,7 @@ impl  ::unity2::ClassIdentity for LocationParams_EmblemType  {
 }
 
 
-impl  ::unity2::IlType for LocationParams_EmblemType  {
+impl  ::unity2::IlType for LocationParams_UnitType  {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
@@ -289,27 +283,33 @@ impl  ::unity2::IlType for LocationParams_EmblemType  {
 }
 
 
-impl  LocationParams_EmblemType  {
-    pub fn normal() -> Self {
+impl  LocationParams_UnitType  {
+    pub fn walk() -> Self {
         Self { value: 0 }
 
     }
 
 
-    pub fn sigurd() -> Self {
+    pub fn horce() -> Self {
         Self { value: 1 }
 
     }
 
 
-    pub fn flying() -> Self {
+    pub fn pegasus() -> Self {
         Self { value: 2 }
 
     }
 
 
-    pub fn num() -> Self {
+    pub fn dragon() -> Self {
         Self { value: 3 }
+
+    }
+
+
+    pub fn num() -> Self {
+        Self { value: 4 }
 
     }
 
@@ -343,13 +343,13 @@ impl LocationParams {
 #[cfg(feature = "combat-locationparams")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::LocationParams_UnitType;
+    pub use super::LocationParams_EmblemType;
     pub use super::LocationParams_DataType;
-    pub use super::LocationParams_LocateStyle;
     pub use super::LocationParams;
     pub use super::ILocationParams;
     pub use super::ILocationParamsMethods;
-    pub use super::LocationParams_EmblemType;
+    pub use super::LocationParams_LocateStyle;
+    pub use super::LocationParams_UnitType;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

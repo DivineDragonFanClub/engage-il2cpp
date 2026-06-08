@@ -21,22 +21,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/screenspaceambientocclusion/ScreenSpaceAmbientOcclusion.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal" , name = "ScreenSpaceAmbientOcclusion")] # [parent (crate :: unity_engine :: rendering :: universal :: scriptablerendererfeature :: ScriptableRendererFeature)] pub struct ScreenSpaceAmbientOcclusion {
-# [offset (32)] # [rename (name = "m_Shader")] pub m_shader : crate :: unity_engine :: shader :: Shader ,
-# [offset (40)] # [rename (name = "m_Settings")] pub m_settings : crate :: unity_engine :: rendering :: universal :: screenspaceambientocclusionsettings :: ScreenSpaceAmbientOcclusionSettings ,
-# [offset (48)] # [rename (name = "m_Material")] pub m_material : crate :: unity_engine :: material :: Material ,
-# [offset (56)] # [rename (name = "m_SSAOPass")] pub m_ssao_pass : crate :: unity_engine :: rendering :: universal :: screenspaceambientocclusion :: ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass ,
-# [static_field] # [rename (name = "k_ShaderName")] pub k_shader_name : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "k_OrthographicCameraKeyword")] pub k_orthographic_camera_keyword : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "k_NormalReconstructionLowKeyword")] pub k_normal_reconstruction_low_keyword : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "k_NormalReconstructionMediumKeyword")] pub k_normal_reconstruction_medium_keyword : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "k_NormalReconstructionHighKeyword")] pub k_normal_reconstruction_high_keyword : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "k_SourceDepthKeyword")] pub k_source_depth_keyword : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "k_SourceDepthNormalsKeyword")] pub k_source_depth_normals_keyword : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "k_SourceGBufferKeyword")] pub k_source_g_buffer_keyword : :: unity2 :: Il2CppString ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/screenspaceambientocclusion/ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -95,6 +79,22 @@ impl  ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses  
 
     }
 
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/screenspaceambientocclusion/ScreenSpaceAmbientOcclusion.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal" , name = "ScreenSpaceAmbientOcclusion")] # [parent (crate :: unity_engine :: rendering :: universal :: scriptablerendererfeature :: ScriptableRendererFeature)] pub struct ScreenSpaceAmbientOcclusion {
+# [offset (32)] # [rename (name = "m_Shader")] pub m_shader : crate :: unity_engine :: shader :: Shader ,
+# [offset (40)] # [rename (name = "m_Settings")] pub m_settings : crate :: unity_engine :: rendering :: universal :: screenspaceambientocclusionsettings :: ScreenSpaceAmbientOcclusionSettings ,
+# [offset (48)] # [rename (name = "m_Material")] pub m_material : crate :: unity_engine :: material :: Material ,
+# [offset (56)] # [rename (name = "m_SSAOPass")] pub m_ssao_pass : crate :: unity_engine :: rendering :: universal :: screenspaceambientocclusion :: ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass ,
+# [static_field] # [rename (name = "k_ShaderName")] pub k_shader_name : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "k_OrthographicCameraKeyword")] pub k_orthographic_camera_keyword : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "k_NormalReconstructionLowKeyword")] pub k_normal_reconstruction_low_keyword : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "k_NormalReconstructionMediumKeyword")] pub k_normal_reconstruction_medium_keyword : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "k_NormalReconstructionHighKeyword")] pub k_normal_reconstruction_high_keyword : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "k_SourceDepthKeyword")] pub k_source_depth_keyword : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "k_SourceDepthNormalsKeyword")] pub k_source_depth_normals_keyword : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "k_SourceGBufferKeyword")] pub k_source_g_buffer_keyword : :: unity2 :: Il2CppString ,
 }
 
 
@@ -161,10 +161,10 @@ impl ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass {
 #[cfg(feature = "unity_engine-rendering-universal-screenspaceambientocclusion")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses;
     pub use super::ScreenSpaceAmbientOcclusion;
     pub use super::IScreenSpaceAmbientOcclusion;
     pub use super::IScreenSpaceAmbientOcclusionMethods;
-    pub use super::ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses;
     pub use super::ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass;
     pub use super::IScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass;
     pub use super::IScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPassMethods;

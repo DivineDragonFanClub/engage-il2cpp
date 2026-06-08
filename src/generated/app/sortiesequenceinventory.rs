@@ -17,16 +17,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortiesequenceinventory/SortieSequenceInventory.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortieSequenceInventory")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: sortiesequenceinventory :: SortieSequenceInventory >)] pub struct SortieSequenceInventory {
-# [static_field] # [rename (name = "ResNameC")] pub res_name_c : :: unity2 :: Il2CppString ,
-# [offset (120)] # [rename (name = "m_GameObject")] pub m_game_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (128)] # [rename (name = "m_Window")] pub m_window : crate :: app :: inventoryroot :: InventoryRoot ,
-# [offset (136)] # [rename (name = "m_VisibilytyOfUnitInfo")] pub m_visibilyty_of_unit_info : bool ,
-# [offset (144)] # [rename (name = "m_CharaImage")] pub m_chara_image : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (152)] # [rename (name = "m_CharaImageRight")] pub m_chara_image_right : crate :: unity_engine :: gameobject :: GameObject ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortiesequenceinventory/SortieSequenceInventory_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -111,6 +101,16 @@ impl  SortieSequenceInventory_Label  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortiesequenceinventory/SortieSequenceInventory.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortieSequenceInventory")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: sortiesequenceinventory :: SortieSequenceInventory >)] pub struct SortieSequenceInventory {
+# [static_field] # [rename (name = "ResNameC")] pub res_name_c : :: unity2 :: Il2CppString ,
+# [offset (120)] # [rename (name = "m_GameObject")] pub m_game_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (128)] # [rename (name = "m_Window")] pub m_window : crate :: app :: inventoryroot :: InventoryRoot ,
+# [offset (136)] # [rename (name = "m_VisibilytyOfUnitInfo")] pub m_visibilyty_of_unit_info : bool ,
+# [offset (144)] # [rename (name = "m_CharaImage")] pub m_chara_image : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (152)] # [rename (name = "m_CharaImageRight")] pub m_chara_image_right : crate :: unity_engine :: gameobject :: GameObject ,
+}
+
 }
 
 #[cfg(feature = "app-sortiesequenceinventory-types")]
@@ -139,10 +139,10 @@ impl SortieSequenceInventory {
 #[cfg(feature = "app-sortiesequenceinventory")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::SortieSequenceInventory_Label;
     pub use super::SortieSequenceInventory;
     pub use super::ISortieSequenceInventory;
     pub use super::ISortieSequenceInventoryMethods;
-    pub use super::SortieSequenceInventory_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

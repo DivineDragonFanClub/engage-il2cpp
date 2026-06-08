@@ -26,7 +26,7 @@
  # [cfg (feature = "unity_engine-experimental-rendering-render_graph_module-renderfunc_1")] pub use renderfunc_1 :: { IRenderFunc_1Methods }
  ;
  # [cfg (any (feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph-types"))] pub mod rendergraph ;
- # [cfg (feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph-types")] pub use rendergraph :: { RenderGraph , IRenderGraph , RenderGraph_OnGraphRegisteredDelegate , IRenderGraph_OnGraphRegisteredDelegate , RenderGraph_CompiledResourceInfo , RenderGraph_ProfilingScopePassData , IRenderGraph_ProfilingScopePassData , RenderGraph_CompiledPassInfo }
+ # [cfg (feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph-types")] pub use rendergraph :: { RenderGraph_CompiledPassInfo , RenderGraph_CompiledResourceInfo , RenderGraph , IRenderGraph , RenderGraph_OnGraphRegisteredDelegate , IRenderGraph_OnGraphRegisteredDelegate , RenderGraph_ProfilingScopePassData , IRenderGraph_ProfilingScopePassData }
  ;
  # [cfg (feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")] pub use rendergraph :: { IRenderGraphMethods , IRenderGraph_OnGraphRegisteredDelegateMethods , IRenderGraph_ProfilingScopePassDataMethods }
  ;
@@ -39,7 +39,7 @@
  # [cfg (feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphcontext")] pub use rendergraphcontext :: { IRenderGraphContextMethods }
  ;
  # [cfg (any (feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphdebugdata-types"))] pub mod rendergraphdebugdata ;
- # [cfg (feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphdebugdata-types")] pub use rendergraphdebugdata :: { RenderGraphDebugData , IRenderGraphDebugData , RenderGraphDebugData_PassDebugData , RenderGraphDebugData_ResourceDebugData }
+ # [cfg (feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphdebugdata-types")] pub use rendergraphdebugdata :: { RenderGraphDebugData , IRenderGraphDebugData , RenderGraphDebugData_ResourceDebugData , RenderGraphDebugData_PassDebugData }
  ;
  # [cfg (feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphdebugdata")] pub use rendergraphdebugdata :: { IRenderGraphDebugDataMethods }
  ;
@@ -91,9 +91,9 @@
  # [cfg (feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphresourcepool_1")] pub use rendergraphresourcepool_1 :: { IRenderGraphResourcePool_1Methods }
  ;
  # [cfg (any (feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphresourceregistry-types"))] pub mod rendergraphresourceregistry ;
- # [cfg (feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphresourceregistry-types")] pub use rendergraphresourceregistry :: { RenderGraphResourceRegistry_TextureResource , IRenderGraphResourceRegistry_TextureResource , RenderGraphResourceRegistry_IRenderGraphResource , IRenderGraphResourceRegistry_IRenderGraphResource , RenderGraphResourceRegistry , IRenderGraphResourceRegistry , RenderGraphResourceRegistry_RendererListResource , RenderGraphResourceRegistry_RenderGraphResource_2 , IRenderGraphResourceRegistry_RenderGraphResource_2 , RenderGraphResourceRegistry_ComputeBufferResource , IRenderGraphResourceRegistry_ComputeBufferResource }
+ # [cfg (feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphresourceregistry-types")] pub use rendergraphresourceregistry :: { RenderGraphResourceRegistry_RendererListResource , RenderGraphResourceRegistry_RenderGraphResource_2 , IRenderGraphResourceRegistry_RenderGraphResource_2 , RenderGraphResourceRegistry_ComputeBufferResource , IRenderGraphResourceRegistry_ComputeBufferResource , RenderGraphResourceRegistry_TextureResource , IRenderGraphResourceRegistry_TextureResource , RenderGraphResourceRegistry , IRenderGraphResourceRegistry , RenderGraphResourceRegistry_IRenderGraphResource , IRenderGraphResourceRegistry_IRenderGraphResource }
  ;
- # [cfg (feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphresourceregistry")] pub use rendergraphresourceregistry :: { IRenderGraphResourceRegistry_TextureResourceMethods , IRenderGraphResourceRegistry_IRenderGraphResourceMethods , IRenderGraphResourceRegistryMethods , IRenderGraphResourceRegistry_RenderGraphResource_2Methods , IRenderGraphResourceRegistry_ComputeBufferResourceMethods }
+ # [cfg (feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphresourceregistry")] pub use rendergraphresourceregistry :: { IRenderGraphResourceRegistry_RenderGraphResource_2Methods , IRenderGraphResourceRegistry_ComputeBufferResourceMethods , IRenderGraphResourceRegistry_TextureResourceMethods , IRenderGraphResourceRegistryMethods , IRenderGraphResourceRegistry_IRenderGraphResourceMethods }
  ;
  # [cfg (any (feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphresourcetype-types"))] pub mod rendergraphresourcetype ;
  # [cfg (feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphresourcetype-types")] pub use rendergraphresourcetype :: { RenderGraphResourceType }

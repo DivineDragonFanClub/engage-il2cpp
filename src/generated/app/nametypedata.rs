@@ -19,12 +19,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nametypedata/NameTypeData.md"))] # [:: unity2 :: class (namespace = "App" , name = "NameTypeData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: nametypedata :: NameTypeData >)] pub struct NameTypeData {
-# [static_field] # [rename (name = "MaxData")] pub max_data : i32 ,
-# [offset (48)] # [rename (name = "SuffixArray")] pub suffix_array : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nametypedata/NameTypeData_Type.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -187,6 +181,12 @@ impl  NameTypeData_Type  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nametypedata/NameTypeData.md"))] # [:: unity2 :: class (namespace = "App" , name = "NameTypeData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: nametypedata :: NameTypeData >)] pub struct NameTypeData {
+# [static_field] # [rename (name = "MaxData")] pub max_data : i32 ,
+# [offset (48)] # [rename (name = "SuffixArray")] pub suffix_array : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+}
+
 }
 
 #[cfg(feature = "app-nametypedata-types")]
@@ -215,10 +215,10 @@ impl NameTypeData {
 #[cfg(feature = "app-nametypedata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::NameTypeData_Type;
     pub use super::NameTypeData;
     pub use super::INameTypeData;
     pub use super::INameTypeDataMethods;
-    pub use super::NameTypeData_Type;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdata_1::IStructData_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

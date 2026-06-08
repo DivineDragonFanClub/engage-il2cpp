@@ -17,16 +17,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomwakeupselectsequence/MyRoomWakeupSelectSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomWakeupSelectSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: myroomwakeupselectsequence :: MyRoomWakeupSelectSequence >)] pub struct MyRoomWakeupSelectSequence {
-# [offset (136)] # [rename (name = "m_mainContent")] pub m_main_content : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (144)] # [rename (name = "m_ReservePID")] pub m_reserve_pid : :: unity2 :: Il2CppString ,
-# [offset (152)] # [rename (name = "m_ReservePattern")] pub m_reserve_pattern : crate :: app :: gamesound :: GameSound_WakeupVoicePattern ,
-# [offset (156)] # [rename (name = "m_ReserveLevel")] pub m_reserve_level : crate :: app :: reliancedata :: RelianceData_Level ,
-# [offset (160)] # [rename (name = "m_TmpSelect")] pub m_tmp_select : i32 ,
-# [offset (164)] # [rename (name = "m_TmpScroll")] pub m_tmp_scroll : i32 ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomwakeupselectsequence/MyRoomWakeupSelectSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -87,6 +77,16 @@ impl  MyRoomWakeupSelectSequence_Label  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomwakeupselectsequence/MyRoomWakeupSelectSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomWakeupSelectSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: myroomwakeupselectsequence :: MyRoomWakeupSelectSequence >)] pub struct MyRoomWakeupSelectSequence {
+# [offset (136)] # [rename (name = "m_mainContent")] pub m_main_content : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (144)] # [rename (name = "m_ReservePID")] pub m_reserve_pid : :: unity2 :: Il2CppString ,
+# [offset (152)] # [rename (name = "m_ReservePattern")] pub m_reserve_pattern : crate :: app :: gamesound :: GameSound_WakeupVoicePattern ,
+# [offset (156)] # [rename (name = "m_ReserveLevel")] pub m_reserve_level : crate :: app :: reliancedata :: RelianceData_Level ,
+# [offset (160)] # [rename (name = "m_TmpSelect")] pub m_tmp_select : i32 ,
+# [offset (164)] # [rename (name = "m_TmpScroll")] pub m_tmp_scroll : i32 ,
+}
+
 }
 
 #[cfg(feature = "app-myroomwakeupselectsequence-types")]
@@ -115,10 +115,10 @@ impl MyRoomWakeupSelectSequence {
 #[cfg(feature = "app-myroomwakeupselectsequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MyRoomWakeupSelectSequence_Label;
     pub use super::MyRoomWakeupSelectSequence;
     pub use super::IMyRoomWakeupSelectSequence;
     pub use super::IMyRoomWakeupSelectSequenceMethods;
-    pub use super::MyRoomWakeupSelectSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

@@ -15,22 +15,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/testsampledata/TestSampleData_Item.md"))] # [:: unity2 :: class (namespace = "" , name = "TestSampleData.Item")] # [parent (crate :: system :: object :: Object)] pub struct TestSampleData_Item {
-# [offset (16)] # [rename (name = "Name")] pub name : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "Value")] pub value : i32 ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/testsampledata/TestSampleData.md"))] # [:: unity2 :: class (namespace = "" , name = "TestSampleData")] # [parent (crate :: root :: structscriptabledata_1 :: StructScriptableData_1 < crate :: root :: testsampledata :: TestSampleData >)] pub struct TestSampleData {
-# [offset (16)] # [rename (name = "Pid")] pub pid : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "Name")] pub name : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "Level")] pub level : i32 ,
-# [offset (36)] # [rename (name = "Hp")] pub hp : i32 ,
-# [offset (40)] # [rename (name = "Flag")] pub flag : crate :: root :: testsampledata :: TestSampleData_Flags ,
-# [offset (48)] # [rename (name = "Items")] pub items : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: root :: testsampledata :: TestSampleData_Item > ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/testsampledata/TestSampleData_Flags.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -97,6 +81,22 @@ impl  TestSampleData_Flags  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/testsampledata/TestSampleData_Item.md"))] # [:: unity2 :: class (namespace = "" , name = "TestSampleData.Item")] # [parent (crate :: system :: object :: Object)] pub struct TestSampleData_Item {
+# [offset (16)] # [rename (name = "Name")] pub name : :: unity2 :: Il2CppString ,
+# [offset (24)] # [rename (name = "Value")] pub value : i32 ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/testsampledata/TestSampleData.md"))] # [:: unity2 :: class (namespace = "" , name = "TestSampleData")] # [parent (crate :: root :: structscriptabledata_1 :: StructScriptableData_1 < crate :: root :: testsampledata :: TestSampleData >)] pub struct TestSampleData {
+# [offset (16)] # [rename (name = "Pid")] pub pid : :: unity2 :: Il2CppString ,
+# [offset (24)] # [rename (name = "Name")] pub name : :: unity2 :: Il2CppString ,
+# [offset (32)] # [rename (name = "Level")] pub level : i32 ,
+# [offset (36)] # [rename (name = "Hp")] pub hp : i32 ,
+# [offset (40)] # [rename (name = "Flag")] pub flag : crate :: root :: testsampledata :: TestSampleData_Flags ,
+# [offset (48)] # [rename (name = "Items")] pub items : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: root :: testsampledata :: TestSampleData_Item > ,
+}
+
 }
 
 #[cfg(feature = "root-testsampledata-types")]
@@ -142,13 +142,13 @@ impl TestSampleData {
 #[cfg(feature = "root-testsampledata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::TestSampleData_Flags;
     pub use super::TestSampleData_Item;
     pub use super::ITestSampleData_Item;
     pub use super::ITestSampleData_ItemMethods;
     pub use super::TestSampleData;
     pub use super::ITestSampleData;
     pub use super::ITestSampleDataMethods;
-    pub use super::TestSampleData_Flags;
     pub use crate::root::structscriptabledata_1::IStructScriptableData_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

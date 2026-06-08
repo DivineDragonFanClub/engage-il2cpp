@@ -20,13 +20,6 @@ mod __types {
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/switchvideoplayer/SwitchVideoPlayer_MovieEventDelegate.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Switch" , name = "SwitchVideoPlayer.MovieEventDelegate")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct SwitchVideoPlayer_MovieEventDelegate {}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/switchvideoplayer/SwitchVideoPlayer.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Switch" , name = "SwitchVideoPlayer")] # [parent (crate :: system :: object :: Object)] pub struct SwitchVideoPlayer {
-# [offset (16)] # [rename (name = "m_Ptr")] pub m_ptr : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "m_MovieEvent")] pub m_movie_event : crate :: unity_engine :: switch :: switchvideoplayer :: SwitchVideoPlayer_MovieEventDelegate ,
-# [static_field] # [rename (name = "OnMovieEvent")] pub on_movie_event : crate :: unity_engine :: switch :: switchvideoplayer :: SwitchVideoPlayer_MovieEventDelegate ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/switch/switchvideoplayer/SwitchVideoPlayer_Event.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -93,6 +86,13 @@ impl  SwitchVideoPlayer_Event  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/switchvideoplayer/SwitchVideoPlayer.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Switch" , name = "SwitchVideoPlayer")] # [parent (crate :: system :: object :: Object)] pub struct SwitchVideoPlayer {
+# [offset (16)] # [rename (name = "m_Ptr")] pub m_ptr : :: unity2 :: IntPtr ,
+# [offset (24)] # [rename (name = "m_MovieEvent")] pub m_movie_event : crate :: unity_engine :: switch :: switchvideoplayer :: SwitchVideoPlayer_MovieEventDelegate ,
+# [static_field] # [rename (name = "OnMovieEvent")] pub on_movie_event : crate :: unity_engine :: switch :: switchvideoplayer :: SwitchVideoPlayer_MovieEventDelegate ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-switch-switchvideoplayer-types")]
@@ -130,9 +130,9 @@ pub mod prelude {
     pub use super::SwitchVideoPlayer_MovieEventDelegate;
     pub use super::ISwitchVideoPlayer_MovieEventDelegate;
     pub use super::ISwitchVideoPlayer_MovieEventDelegateMethods;
+    pub use super::SwitchVideoPlayer_Event;
     pub use super::SwitchVideoPlayer;
     pub use super::ISwitchVideoPlayer;
-    pub use super::SwitchVideoPlayer_Event;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

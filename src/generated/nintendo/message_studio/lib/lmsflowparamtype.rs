@@ -17,7 +17,7 @@ mod __types {
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
 pub struct LMSFlowParamType  {
-    pub value: i32,
+    pub value: u8,
 }
 
 
@@ -49,49 +49,49 @@ impl  ::unity2::IlType for LMSFlowParamType  {
 
 impl  LMSFlowParamType  {
     pub fn b4() -> Self {
-        Self { value: 50462976 }
+        Self { value: 0 }
 
     }
 
 
     pub fn b22() -> Self {
-        Self { value: 67305985 }
+        Self { value: 1 }
 
     }
 
 
     pub fn b211() -> Self {
-        Self { value: 84148994 }
+        Self { value: 2 }
 
     }
 
 
     pub fn b112() -> Self {
-        Self { value: 100992003 }
+        Self { value: 3 }
 
     }
 
 
     pub fn b1111() -> Self {
-        Self { value: -16382716 }
+        Self { value: 4 }
 
     }
 
 
     pub fn text() -> Self {
-        Self { value: 184485381 }
+        Self { value: 5 }
 
     }
 
 
     pub fn list() -> Self {
-        Self { value: 720646 }
+        Self { value: 6 }
 
     }
 
 
     pub fn unknown() -> Self {
-        Self { value: 2815 }
+        Self { value: 255 }
 
     }
 

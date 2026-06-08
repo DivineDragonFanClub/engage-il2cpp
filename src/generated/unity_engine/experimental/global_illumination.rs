@@ -22,7 +22,7 @@
  # [cfg (feature = "unity_engine-experimental-global_illumination-lightmapperutils-types")] pub use lightmapperutils :: { LightmapperUtils , ILightmapperUtils }
  ;
  # [cfg (any (feature = "unity_engine-experimental-global_illumination-lightmapping-types"))] pub mod lightmapping ;
- # [cfg (feature = "unity_engine-experimental-global_illumination-lightmapping-types")] pub use lightmapping :: { Lightmapping_RequestLightsDelegate , ILightmapping_RequestLightsDelegate , Lightmapping , ILightmapping }
+ # [cfg (feature = "unity_engine-experimental-global_illumination-lightmapping-types")] pub use lightmapping :: { Lightmapping , ILightmapping , Lightmapping_RequestLightsDelegate , ILightmapping_RequestLightsDelegate }
  ;
  # [cfg (feature = "unity_engine-experimental-global_illumination-lightmapping")] pub use lightmapping :: { ILightmapping_RequestLightsDelegateMethods }
  ;

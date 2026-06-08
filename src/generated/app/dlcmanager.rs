@@ -13,6 +13,19 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dlcmanager/DLCManager_DLCList.md"))] # [:: unity2 :: class (namespace = "App" , name = "DLCManager.DLCList")] # [parent (crate :: system :: object :: Object)] pub struct DLCManager_DLCList {
+# [offset (16)] # [rename (name = "content")] pub content : crate :: app :: dlcmanager :: DLCManager_Content ,
+# [offset (20)] # [rename (name = "hasContent")] pub has_content : bool ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dlcmanager/DLCManager_MountData.md"))] # [:: unity2 :: class (namespace = "App" , name = "DLCManager.MountData")] # [parent (crate :: system :: object :: Object)] pub struct DLCManager_MountData {
+# [offset (16)] # [rename (name = "content")] pub content : crate :: app :: dlcmanager :: DLCManager_Content ,
+# [offset (24)] # [rename (name = "mountBuffer")] pub mount_buffer : :: unity2 :: Array < u8 > ,
+# [offset (32)] # [rename (name = "mountName")] pub mount_name : :: unity2 :: Il2CppString ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dlcmanager/DLCManager_Content.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -65,19 +78,6 @@ impl  DLCManager_Content  {
 
     }
 
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dlcmanager/DLCManager_DLCList.md"))] # [:: unity2 :: class (namespace = "App" , name = "DLCManager.DLCList")] # [parent (crate :: system :: object :: Object)] pub struct DLCManager_DLCList {
-# [offset (16)] # [rename (name = "content")] pub content : crate :: app :: dlcmanager :: DLCManager_Content ,
-# [offset (20)] # [rename (name = "hasContent")] pub has_content : bool ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dlcmanager/DLCManager_MountData.md"))] # [:: unity2 :: class (namespace = "App" , name = "DLCManager.MountData")] # [parent (crate :: system :: object :: Object)] pub struct DLCManager_MountData {
-# [offset (16)] # [rename (name = "content")] pub content : crate :: app :: dlcmanager :: DLCManager_Content ,
-# [offset (24)] # [rename (name = "mountBuffer")] pub mount_buffer : :: unity2 :: Array < u8 > ,
-# [offset (32)] # [rename (name = "mountName")] pub mount_name : :: unity2 :: Il2CppString ,
 }
 
 
@@ -153,13 +153,13 @@ impl DLCManager {
 #[cfg(feature = "app-dlcmanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DLCManager_Content;
     pub use super::DLCManager_DLCList;
     pub use super::IDLCManager_DLCList;
     pub use super::IDLCManager_DLCListMethods;
     pub use super::DLCManager_MountData;
     pub use super::IDLCManager_MountData;
     pub use super::IDLCManager_MountDataMethods;
+    pub use super::DLCManager_Content;
     pub use super::DLCManager;
     pub use super::IDLCManager;
     pub use super::IDLCManagerMethods;

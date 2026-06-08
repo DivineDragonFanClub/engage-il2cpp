@@ -13,72 +13,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/deferredlights/DeferredLights_ShaderConstants.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Internal" , name = "DeferredLights.ShaderConstants")] # [parent (crate :: system :: object :: Object)] pub struct DeferredLights_ShaderConstants {
-# [static_field] # [rename (name = "_LitStencilRef")] pub lit_stencil_ref : i32 ,
-# [static_field] # [rename (name = "_LitStencilReadMask")] pub lit_stencil_read_mask : i32 ,
-# [static_field] # [rename (name = "_LitStencilWriteMask")] pub lit_stencil_write_mask : i32 ,
-# [static_field] # [rename (name = "_SimpleLitStencilRef")] pub simple_lit_stencil_ref : i32 ,
-# [static_field] # [rename (name = "_SimpleLitStencilReadMask")] pub simple_lit_stencil_read_mask : i32 ,
-# [static_field] # [rename (name = "_SimpleLitStencilWriteMask")] pub simple_lit_stencil_write_mask : i32 ,
-# [static_field] # [rename (name = "_StencilRef")] pub stencil_ref : i32 ,
-# [static_field] # [rename (name = "_StencilReadMask")] pub stencil_read_mask : i32 ,
-# [static_field] # [rename (name = "_StencilWriteMask")] pub stencil_write_mask : i32 ,
-# [static_field] # [rename (name = "_LitPunctualStencilRef")] pub lit_punctual_stencil_ref : i32 ,
-# [static_field] # [rename (name = "_LitPunctualStencilReadMask")] pub lit_punctual_stencil_read_mask : i32 ,
-# [static_field] # [rename (name = "_LitPunctualStencilWriteMask")] pub lit_punctual_stencil_write_mask : i32 ,
-# [static_field] # [rename (name = "_SimpleLitPunctualStencilRef")] pub simple_lit_punctual_stencil_ref : i32 ,
-# [static_field] # [rename (name = "_SimpleLitPunctualStencilReadMask")] pub simple_lit_punctual_stencil_read_mask : i32 ,
-# [static_field] # [rename (name = "_SimpleLitPunctualStencilWriteMask")] pub simple_lit_punctual_stencil_write_mask : i32 ,
-# [static_field] # [rename (name = "_LitDirStencilRef")] pub lit_dir_stencil_ref : i32 ,
-# [static_field] # [rename (name = "_LitDirStencilReadMask")] pub lit_dir_stencil_read_mask : i32 ,
-# [static_field] # [rename (name = "_LitDirStencilWriteMask")] pub lit_dir_stencil_write_mask : i32 ,
-# [static_field] # [rename (name = "_SimpleLitDirStencilRef")] pub simple_lit_dir_stencil_ref : i32 ,
-# [static_field] # [rename (name = "_SimpleLitDirStencilReadMask")] pub simple_lit_dir_stencil_read_mask : i32 ,
-# [static_field] # [rename (name = "_SimpleLitDirStencilWriteMask")] pub simple_lit_dir_stencil_write_mask : i32 ,
-# [static_field] # [rename (name = "_ClearStencilRef")] pub clear_stencil_ref : i32 ,
-# [static_field] # [rename (name = "_ClearStencilReadMask")] pub clear_stencil_read_mask : i32 ,
-# [static_field] # [rename (name = "_ClearStencilWriteMask")] pub clear_stencil_write_mask : i32 ,
-# [static_field] # [rename (name = "UDepthRanges")] pub u_depth_ranges : i32 ,
-# [static_field] # [rename (name = "_DepthRanges")] pub depth_ranges : i32 ,
-# [static_field] # [rename (name = "_DownsamplingWidth")] pub downsampling_width : i32 ,
-# [static_field] # [rename (name = "_DownsamplingHeight")] pub downsampling_height : i32 ,
-# [static_field] # [rename (name = "_SourceShiftX")] pub source_shift_x : i32 ,
-# [static_field] # [rename (name = "_SourceShiftY")] pub source_shift_y : i32 ,
-# [static_field] # [rename (name = "_TileShiftX")] pub tile_shift_x : i32 ,
-# [static_field] # [rename (name = "_TileShiftY")] pub tile_shift_y : i32 ,
-# [static_field] # [rename (name = "_tileXCount")] pub tile_x_count : i32 ,
-# [static_field] # [rename (name = "_DepthRangeOffset")] pub depth_range_offset : i32 ,
-# [static_field] # [rename (name = "_BitmaskTex")] pub bitmask_tex : i32 ,
-# [static_field] # [rename (name = "UTileList")] pub u_tile_list : i32 ,
-# [static_field] # [rename (name = "_TileList")] pub tile_list : i32 ,
-# [static_field] # [rename (name = "UPunctualLightBuffer")] pub u_punctual_light_buffer : i32 ,
-# [static_field] # [rename (name = "_PunctualLightBuffer")] pub punctual_light_buffer : i32 ,
-# [static_field] # [rename (name = "URelLightList")] pub u_rel_light_list : i32 ,
-# [static_field] # [rename (name = "_RelLightList")] pub rel_light_list : i32 ,
-# [static_field] # [rename (name = "_TilePixelWidth")] pub tile_pixel_width : i32 ,
-# [static_field] # [rename (name = "_TilePixelHeight")] pub tile_pixel_height : i32 ,
-# [static_field] # [rename (name = "_InstanceOffset")] pub instance_offset : i32 ,
-# [static_field] # [rename (name = "_DepthTex")] pub depth_tex : i32 ,
-# [static_field] # [rename (name = "_DepthTexSize")] pub depth_tex_size : i32 ,
-# [static_field] # [rename (name = "_ScreenSize")] pub screen_size : i32 ,
-# [static_field] # [rename (name = "_ScreenToWorld")] pub screen_to_world : i32 ,
-# [static_field] # [rename (name = "_unproject0")] pub unproject0 : i32 ,
-# [static_field] # [rename (name = "_unproject1")] pub unproject1 : i32 ,
-# [static_field] # [rename (name = "_MainLightPosition")] pub main_light_position : i32 ,
-# [static_field] # [rename (name = "_MainLightColor")] pub main_light_color : i32 ,
-# [static_field] # [rename (name = "_SpotLightScale")] pub spot_light_scale : i32 ,
-# [static_field] # [rename (name = "_SpotLightBias")] pub spot_light_bias : i32 ,
-# [static_field] # [rename (name = "_SpotLightGuard")] pub spot_light_guard : i32 ,
-# [static_field] # [rename (name = "_LightPosWS")] pub light_pos_ws : i32 ,
-# [static_field] # [rename (name = "_LightColor")] pub light_color : i32 ,
-# [static_field] # [rename (name = "_LightAttenuation")] pub light_attenuation : i32 ,
-# [static_field] # [rename (name = "_LightOcclusionProbInfo")] pub light_occlusion_prob_info : i32 ,
-# [static_field] # [rename (name = "_LightDirection")] pub light_direction : i32 ,
-# [static_field] # [rename (name = "_LightFlags")] pub light_flags : i32 ,
-# [static_field] # [rename (name = "_ShadowLightIndex")] pub shadow_light_index : i32 ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/deferredlights/DeferredLights_GBufferHandles.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -158,45 +92,6 @@ impl  DeferredLights_GBufferHandles  {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/deferredlights/DeferredLights.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Internal" , name = "DeferredLights")] # [parent (crate :: system :: object :: Object)] pub struct DeferredLights {
-# [static_field] # [rename (name = "k_SetupLights")] pub k_setup_lights : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "k_DeferredPass")] pub k_deferred_pass : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "k_TileDepthInfo")] pub k_tile_depth_info : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "k_DeferredTiledPass")] pub k_deferred_tiled_pass : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "k_DeferredStencilPass")] pub k_deferred_stencil_pass : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "k_DeferredFogPass")] pub k_deferred_fog_pass : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "k_ClearStencilPartial")] pub k_clear_stencil_partial : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "k_SetupLightConstants")] pub k_setup_light_constants : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "kStencilShapeGuard")] pub k_stencil_shape_guard : f32 ,
-# [static_field] # [rename (name = "m_ProfilingSetupLights")] pub m_profiling_setup_lights : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
-# [static_field] # [rename (name = "m_ProfilingDeferredPass")] pub m_profiling_deferred_pass : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
-# [static_field] # [rename (name = "m_ProfilingTileDepthInfo")] pub m_profiling_tile_depth_info : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
-# [static_field] # [rename (name = "m_ProfilingSetupLightConstants")] pub m_profiling_setup_light_constants : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
-# [offset (408)] # [rename (name = "m_CachedRenderWidth")] pub m_cached_render_width : i32 ,
-# [offset (412)] # [rename (name = "m_CachedRenderHeight")] pub m_cached_render_height : i32 ,
-# [offset (416)] # [rename (name = "m_CachedProjectionMatrix")] pub m_cached_projection_matrix : crate :: unity_engine :: matrix4x4 :: Matrix4x4 ,
-# [offset (480)] # [rename (name = "m_Tilers")] pub m_tilers : :: unity2 :: Array < crate :: unity_engine :: rendering :: universal :: internal :: deferredtiler :: DeferredTiler > ,
-# [offset (488)] # [rename (name = "m_TileDataCapacities")] pub m_tile_data_capacities : :: unity2 :: Array < i32 > ,
-# [offset (496)] # [rename (name = "m_HasTileVisLights")] pub m_has_tile_vis_lights : bool ,
-# [offset (536)] # [rename (name = "m_AdditionalLightsShadowCasterPass")] pub m_additional_lights_shadow_caster_pass : crate :: unity_engine :: rendering :: universal :: internal :: additionallightsshadowcasterpass :: AdditionalLightsShadowCasterPass ,
-# [offset (544)] # [rename (name = "m_SphereMesh")] pub m_sphere_mesh : crate :: unity_engine :: mesh :: Mesh ,
-# [offset (552)] # [rename (name = "m_HemisphereMesh")] pub m_hemisphere_mesh : crate :: unity_engine :: mesh :: Mesh ,
-# [offset (560)] # [rename (name = "m_FullscreenMesh")] pub m_fullscreen_mesh : crate :: unity_engine :: mesh :: Mesh ,
-# [offset (568)] # [rename (name = "m_MaxDepthRangePerBatch")] pub m_max_depth_range_per_batch : i32 ,
-# [offset (572)] # [rename (name = "m_MaxTilesPerBatch")] pub m_max_tiles_per_batch : i32 ,
-# [offset (576)] # [rename (name = "m_MaxPunctualLightPerBatch")] pub m_max_punctual_light_per_batch : i32 ,
-# [offset (580)] # [rename (name = "m_MaxRelLightIndicesPerBatch")] pub m_max_rel_light_indices_per_batch : i32 ,
-# [offset (584)] # [rename (name = "m_TileDepthInfoMaterial")] pub m_tile_depth_info_material : crate :: unity_engine :: material :: Material ,
-# [offset (592)] # [rename (name = "m_TileDeferredMaterial")] pub m_tile_deferred_material : crate :: unity_engine :: material :: Material ,
-# [offset (600)] # [rename (name = "m_StencilDeferredMaterial")] pub m_stencil_deferred_material : crate :: unity_engine :: material :: Material ,
-# [offset (608)] # [rename (name = "m_ScreenToWorld")] pub m_screen_to_world : :: unity2 :: Array < crate :: unity_engine :: matrix4x4 :: Matrix4x4 > ,
-# [offset (616)] # [rename (name = "m_ProfilingSamplerDeferredTiledPass")] pub m_profiling_sampler_deferred_tiled_pass : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
-# [offset (624)] # [rename (name = "m_ProfilingSamplerDeferredStencilPass")] pub m_profiling_sampler_deferred_stencil_pass : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
-# [offset (632)] # [rename (name = "m_ProfilingSamplerDeferredFogPass")] pub m_profiling_sampler_deferred_fog_pass : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
-# [offset (640)] # [rename (name = "m_ProfilingSamplerClearStencilPartialPass")] pub m_profiling_sampler_clear_stencil_partial_pass : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/deferredlights/DeferredLights_CullLightsJob.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -226,6 +121,72 @@ impl ::unity2::IlType for DeferredLights_CullLightsJob {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
 
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/deferredlights/DeferredLights_ShaderConstants.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Internal" , name = "DeferredLights.ShaderConstants")] # [parent (crate :: system :: object :: Object)] pub struct DeferredLights_ShaderConstants {
+# [static_field] # [rename (name = "_LitStencilRef")] pub lit_stencil_ref : i32 ,
+# [static_field] # [rename (name = "_LitStencilReadMask")] pub lit_stencil_read_mask : i32 ,
+# [static_field] # [rename (name = "_LitStencilWriteMask")] pub lit_stencil_write_mask : i32 ,
+# [static_field] # [rename (name = "_SimpleLitStencilRef")] pub simple_lit_stencil_ref : i32 ,
+# [static_field] # [rename (name = "_SimpleLitStencilReadMask")] pub simple_lit_stencil_read_mask : i32 ,
+# [static_field] # [rename (name = "_SimpleLitStencilWriteMask")] pub simple_lit_stencil_write_mask : i32 ,
+# [static_field] # [rename (name = "_StencilRef")] pub stencil_ref : i32 ,
+# [static_field] # [rename (name = "_StencilReadMask")] pub stencil_read_mask : i32 ,
+# [static_field] # [rename (name = "_StencilWriteMask")] pub stencil_write_mask : i32 ,
+# [static_field] # [rename (name = "_LitPunctualStencilRef")] pub lit_punctual_stencil_ref : i32 ,
+# [static_field] # [rename (name = "_LitPunctualStencilReadMask")] pub lit_punctual_stencil_read_mask : i32 ,
+# [static_field] # [rename (name = "_LitPunctualStencilWriteMask")] pub lit_punctual_stencil_write_mask : i32 ,
+# [static_field] # [rename (name = "_SimpleLitPunctualStencilRef")] pub simple_lit_punctual_stencil_ref : i32 ,
+# [static_field] # [rename (name = "_SimpleLitPunctualStencilReadMask")] pub simple_lit_punctual_stencil_read_mask : i32 ,
+# [static_field] # [rename (name = "_SimpleLitPunctualStencilWriteMask")] pub simple_lit_punctual_stencil_write_mask : i32 ,
+# [static_field] # [rename (name = "_LitDirStencilRef")] pub lit_dir_stencil_ref : i32 ,
+# [static_field] # [rename (name = "_LitDirStencilReadMask")] pub lit_dir_stencil_read_mask : i32 ,
+# [static_field] # [rename (name = "_LitDirStencilWriteMask")] pub lit_dir_stencil_write_mask : i32 ,
+# [static_field] # [rename (name = "_SimpleLitDirStencilRef")] pub simple_lit_dir_stencil_ref : i32 ,
+# [static_field] # [rename (name = "_SimpleLitDirStencilReadMask")] pub simple_lit_dir_stencil_read_mask : i32 ,
+# [static_field] # [rename (name = "_SimpleLitDirStencilWriteMask")] pub simple_lit_dir_stencil_write_mask : i32 ,
+# [static_field] # [rename (name = "_ClearStencilRef")] pub clear_stencil_ref : i32 ,
+# [static_field] # [rename (name = "_ClearStencilReadMask")] pub clear_stencil_read_mask : i32 ,
+# [static_field] # [rename (name = "_ClearStencilWriteMask")] pub clear_stencil_write_mask : i32 ,
+# [static_field] # [rename (name = "UDepthRanges")] pub u_depth_ranges : i32 ,
+# [static_field] # [rename (name = "_DepthRanges")] pub depth_ranges : i32 ,
+# [static_field] # [rename (name = "_DownsamplingWidth")] pub downsampling_width : i32 ,
+# [static_field] # [rename (name = "_DownsamplingHeight")] pub downsampling_height : i32 ,
+# [static_field] # [rename (name = "_SourceShiftX")] pub source_shift_x : i32 ,
+# [static_field] # [rename (name = "_SourceShiftY")] pub source_shift_y : i32 ,
+# [static_field] # [rename (name = "_TileShiftX")] pub tile_shift_x : i32 ,
+# [static_field] # [rename (name = "_TileShiftY")] pub tile_shift_y : i32 ,
+# [static_field] # [rename (name = "_tileXCount")] pub tile_x_count : i32 ,
+# [static_field] # [rename (name = "_DepthRangeOffset")] pub depth_range_offset : i32 ,
+# [static_field] # [rename (name = "_BitmaskTex")] pub bitmask_tex : i32 ,
+# [static_field] # [rename (name = "UTileList")] pub u_tile_list : i32 ,
+# [static_field] # [rename (name = "_TileList")] pub tile_list : i32 ,
+# [static_field] # [rename (name = "UPunctualLightBuffer")] pub u_punctual_light_buffer : i32 ,
+# [static_field] # [rename (name = "_PunctualLightBuffer")] pub punctual_light_buffer : i32 ,
+# [static_field] # [rename (name = "URelLightList")] pub u_rel_light_list : i32 ,
+# [static_field] # [rename (name = "_RelLightList")] pub rel_light_list : i32 ,
+# [static_field] # [rename (name = "_TilePixelWidth")] pub tile_pixel_width : i32 ,
+# [static_field] # [rename (name = "_TilePixelHeight")] pub tile_pixel_height : i32 ,
+# [static_field] # [rename (name = "_InstanceOffset")] pub instance_offset : i32 ,
+# [static_field] # [rename (name = "_DepthTex")] pub depth_tex : i32 ,
+# [static_field] # [rename (name = "_DepthTexSize")] pub depth_tex_size : i32 ,
+# [static_field] # [rename (name = "_ScreenSize")] pub screen_size : i32 ,
+# [static_field] # [rename (name = "_ScreenToWorld")] pub screen_to_world : i32 ,
+# [static_field] # [rename (name = "_unproject0")] pub unproject0 : i32 ,
+# [static_field] # [rename (name = "_unproject1")] pub unproject1 : i32 ,
+# [static_field] # [rename (name = "_MainLightPosition")] pub main_light_position : i32 ,
+# [static_field] # [rename (name = "_MainLightColor")] pub main_light_color : i32 ,
+# [static_field] # [rename (name = "_SpotLightScale")] pub spot_light_scale : i32 ,
+# [static_field] # [rename (name = "_SpotLightBias")] pub spot_light_bias : i32 ,
+# [static_field] # [rename (name = "_SpotLightGuard")] pub spot_light_guard : i32 ,
+# [static_field] # [rename (name = "_LightPosWS")] pub light_pos_ws : i32 ,
+# [static_field] # [rename (name = "_LightColor")] pub light_color : i32 ,
+# [static_field] # [rename (name = "_LightAttenuation")] pub light_attenuation : i32 ,
+# [static_field] # [rename (name = "_LightOcclusionProbInfo")] pub light_occlusion_prob_info : i32 ,
+# [static_field] # [rename (name = "_LightDirection")] pub light_direction : i32 ,
+# [static_field] # [rename (name = "_LightFlags")] pub light_flags : i32 ,
+# [static_field] # [rename (name = "_ShadowLightIndex")] pub shadow_light_index : i32 ,
 }
 
 
@@ -269,10 +230,58 @@ impl ::unity2::IlType for DeferredLights_DrawCall {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/deferredlights/DeferredLights.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Internal" , name = "DeferredLights")] # [parent (crate :: system :: object :: Object)] pub struct DeferredLights {
+# [static_field] # [rename (name = "k_SetupLights")] pub k_setup_lights : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "k_DeferredPass")] pub k_deferred_pass : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "k_TileDepthInfo")] pub k_tile_depth_info : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "k_DeferredTiledPass")] pub k_deferred_tiled_pass : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "k_DeferredStencilPass")] pub k_deferred_stencil_pass : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "k_DeferredFogPass")] pub k_deferred_fog_pass : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "k_ClearStencilPartial")] pub k_clear_stencil_partial : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "k_SetupLightConstants")] pub k_setup_light_constants : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "kStencilShapeGuard")] pub k_stencil_shape_guard : f32 ,
+# [static_field] # [rename (name = "m_ProfilingSetupLights")] pub m_profiling_setup_lights : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
+# [static_field] # [rename (name = "m_ProfilingDeferredPass")] pub m_profiling_deferred_pass : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
+# [static_field] # [rename (name = "m_ProfilingTileDepthInfo")] pub m_profiling_tile_depth_info : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
+# [static_field] # [rename (name = "m_ProfilingSetupLightConstants")] pub m_profiling_setup_light_constants : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
+# [offset (408)] # [rename (name = "m_CachedRenderWidth")] pub m_cached_render_width : i32 ,
+# [offset (412)] # [rename (name = "m_CachedRenderHeight")] pub m_cached_render_height : i32 ,
+# [offset (416)] # [rename (name = "m_CachedProjectionMatrix")] pub m_cached_projection_matrix : crate :: unity_engine :: matrix4x4 :: Matrix4x4 ,
+# [offset (480)] # [rename (name = "m_Tilers")] pub m_tilers : :: unity2 :: Array < crate :: unity_engine :: rendering :: universal :: internal :: deferredtiler :: DeferredTiler > ,
+# [offset (488)] # [rename (name = "m_TileDataCapacities")] pub m_tile_data_capacities : :: unity2 :: Array < i32 > ,
+# [offset (496)] # [rename (name = "m_HasTileVisLights")] pub m_has_tile_vis_lights : bool ,
+# [offset (536)] # [rename (name = "m_AdditionalLightsShadowCasterPass")] pub m_additional_lights_shadow_caster_pass : crate :: unity_engine :: rendering :: universal :: internal :: additionallightsshadowcasterpass :: AdditionalLightsShadowCasterPass ,
+# [offset (544)] # [rename (name = "m_SphereMesh")] pub m_sphere_mesh : crate :: unity_engine :: mesh :: Mesh ,
+# [offset (552)] # [rename (name = "m_HemisphereMesh")] pub m_hemisphere_mesh : crate :: unity_engine :: mesh :: Mesh ,
+# [offset (560)] # [rename (name = "m_FullscreenMesh")] pub m_fullscreen_mesh : crate :: unity_engine :: mesh :: Mesh ,
+# [offset (568)] # [rename (name = "m_MaxDepthRangePerBatch")] pub m_max_depth_range_per_batch : i32 ,
+# [offset (572)] # [rename (name = "m_MaxTilesPerBatch")] pub m_max_tiles_per_batch : i32 ,
+# [offset (576)] # [rename (name = "m_MaxPunctualLightPerBatch")] pub m_max_punctual_light_per_batch : i32 ,
+# [offset (580)] # [rename (name = "m_MaxRelLightIndicesPerBatch")] pub m_max_rel_light_indices_per_batch : i32 ,
+# [offset (584)] # [rename (name = "m_TileDepthInfoMaterial")] pub m_tile_depth_info_material : crate :: unity_engine :: material :: Material ,
+# [offset (592)] # [rename (name = "m_TileDeferredMaterial")] pub m_tile_deferred_material : crate :: unity_engine :: material :: Material ,
+# [offset (600)] # [rename (name = "m_StencilDeferredMaterial")] pub m_stencil_deferred_material : crate :: unity_engine :: material :: Material ,
+# [offset (608)] # [rename (name = "m_ScreenToWorld")] pub m_screen_to_world : :: unity2 :: Array < crate :: unity_engine :: matrix4x4 :: Matrix4x4 > ,
+# [offset (616)] # [rename (name = "m_ProfilingSamplerDeferredTiledPass")] pub m_profiling_sampler_deferred_tiled_pass : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
+# [offset (624)] # [rename (name = "m_ProfilingSamplerDeferredStencilPass")] pub m_profiling_sampler_deferred_stencil_pass : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
+# [offset (632)] # [rename (name = "m_ProfilingSamplerDeferredFogPass")] pub m_profiling_sampler_deferred_fog_pass : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
+# [offset (640)] # [rename (name = "m_ProfilingSamplerClearStencilPartialPass")] pub m_profiling_sampler_clear_stencil_partial_pass : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-deferredlights-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-deferredlights")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DeferredLights_CullLightsJob_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_execute { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DeferredLights_CullLightsJob as :: unity2 :: ClassIdentity > :: class () , "Execute" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DeferredLights_CullLightsJob as :: unity2 :: ClassIdentity > :: NAME , "Execute" , e) , } } } pub unsafe fn execute (this : * mut DeferredLights_CullLightsJob , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut DeferredLights_CullLightsJob , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_execute :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-deferredlights")]
+impl DeferredLights_CullLightsJob { # [doc = "`Execute()` overload"] pub fn execute (mut self ,) -> () { unsafe { __DeferredLights_CullLightsJob_unity2_raw :: execute (& mut self as * mut DeferredLights_CullLightsJob , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-deferredlights")]
+impl DeferredLights_CullLightsJob { pub fn execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DeferredLights_CullLightsJob_unity2_raw :: __lookup_execute :: get_method_info () } }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-deferredlights")]
 # [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DeferredLights_ShaderConstants_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DeferredLights_ShaderConstants as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DeferredLights_ShaderConstants as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
@@ -304,25 +313,16 @@ impl DeferredLights {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-deferredlights")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DeferredLights_CullLightsJob_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_execute { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DeferredLights_CullLightsJob as :: unity2 :: ClassIdentity > :: class () , "Execute" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DeferredLights_CullLightsJob as :: unity2 :: ClassIdentity > :: NAME , "Execute" , e) , } } } pub unsafe fn execute (this : * mut DeferredLights_CullLightsJob , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut DeferredLights_CullLightsJob , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_execute :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "unity_engine-rendering-universal-internal-deferredlights")]
-impl DeferredLights_CullLightsJob { # [doc = "`Execute()` overload"] pub fn execute (mut self ,) -> () { unsafe { __DeferredLights_CullLightsJob_unity2_raw :: execute (& mut self as * mut DeferredLights_CullLightsJob , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "unity_engine-rendering-universal-internal-deferredlights")]
-impl DeferredLights_CullLightsJob { pub fn execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DeferredLights_CullLightsJob_unity2_raw :: __lookup_execute :: get_method_info () } }
-
-#[cfg(feature = "unity_engine-rendering-universal-internal-deferredlights")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::DeferredLights_GBufferHandles;
+    pub use super::DeferredLights_CullLightsJob;
     pub use super::DeferredLights_ShaderConstants;
     pub use super::IDeferredLights_ShaderConstants;
-    pub use super::DeferredLights_GBufferHandles;
+    pub use super::DeferredLights_DrawCall;
     pub use super::DeferredLights;
     pub use super::IDeferredLights;
     pub use super::IDeferredLightsMethods;
-    pub use super::DeferredLights_CullLightsJob;
-    pub use super::DeferredLights_DrawCall;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

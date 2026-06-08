@@ -11,17 +11,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/internal/customshadowcasterpass/CustomShadowCasterPass_CustomShadowConstantBuffer.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Custom.Internal" , name = "CustomShadowCasterPass.CustomShadowConstantBuffer")] # [parent (crate :: system :: object :: Object)] pub struct CustomShadowCasterPass_CustomShadowConstantBuffer {
-# [static_field] # [rename (name = "_WorldToShadow")] pub world_to_shadow : i32 ,
-# [static_field] # [rename (name = "_ShadowParams")] pub shadow_params : i32 ,
-# [static_field] # [rename (name = "_ShadowOffset0")] pub shadow_offset0 : i32 ,
-# [static_field] # [rename (name = "_ShadowOffset1")] pub shadow_offset1 : i32 ,
-# [static_field] # [rename (name = "_ShadowOffset2")] pub shadow_offset2 : i32 ,
-# [static_field] # [rename (name = "_ShadowOffset3")] pub shadow_offset3 : i32 ,
-# [static_field] # [rename (name = "_ShadowmapSize")] pub shadowmap_size : i32 ,
-}
-
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/internal/customshadowcasterpass/CustomShadowCasterPass.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Custom.Internal" , name = "CustomShadowCasterPass")] # [parent (crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass)] pub struct CustomShadowCasterPass {
 # [static_field] # [rename (name = "k_MaxCascades")] pub k_max_cascades : i32 ,
 # [static_field] # [rename (name = "k_ShadowmapBufferBits")] pub k_shadowmap_buffer_bits : i32 ,
@@ -37,6 +26,17 @@ mod __types {
 # [offset (208)] # [rename (name = "m_CascadeSplitDistances")] pub m_cascade_split_distances : :: unity2 :: Array < crate :: unity_engine :: vector4 :: Vector4 > ,
 # [static_field] # [rename (name = "m_ProfilerTag")] pub m_profiler_tag : :: unity2 :: Il2CppString ,
 # [offset (216)] # [rename (name = "m_ProfilingSampler")] pub m_profiling_sampler : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/internal/customshadowcasterpass/CustomShadowCasterPass_CustomShadowConstantBuffer.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Custom.Internal" , name = "CustomShadowCasterPass.CustomShadowConstantBuffer")] # [parent (crate :: system :: object :: Object)] pub struct CustomShadowCasterPass_CustomShadowConstantBuffer {
+# [static_field] # [rename (name = "_WorldToShadow")] pub world_to_shadow : i32 ,
+# [static_field] # [rename (name = "_ShadowParams")] pub shadow_params : i32 ,
+# [static_field] # [rename (name = "_ShadowOffset0")] pub shadow_offset0 : i32 ,
+# [static_field] # [rename (name = "_ShadowOffset1")] pub shadow_offset1 : i32 ,
+# [static_field] # [rename (name = "_ShadowOffset2")] pub shadow_offset2 : i32 ,
+# [static_field] # [rename (name = "_ShadowOffset3")] pub shadow_offset3 : i32 ,
+# [static_field] # [rename (name = "_ShadowmapSize")] pub shadowmap_size : i32 ,
 }
 
 }
@@ -64,11 +64,11 @@ impl CustomShadowCasterPass {
 #[cfg(feature = "unity_engine-rendering-universal-custom-internal-customshadowcasterpass")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CustomShadowCasterPass_CustomShadowConstantBuffer;
-    pub use super::ICustomShadowCasterPass_CustomShadowConstantBuffer;
     pub use super::CustomShadowCasterPass;
     pub use super::ICustomShadowCasterPass;
     pub use super::ICustomShadowCasterPassMethods;
+    pub use super::CustomShadowCasterPass_CustomShadowConstantBuffer;
+    pub use super::ICustomShadowCasterPass_CustomShadowConstantBuffer;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

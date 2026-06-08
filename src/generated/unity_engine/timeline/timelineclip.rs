@@ -13,9 +13,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timelineclip/TimelineClip_TimelineClipUpgrade.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "TimelineClip.TimelineClipUpgrade")] # [parent (crate :: system :: object :: Object)] pub struct TimelineClip_TimelineClipUpgrade {}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/timelineclip/TimelineClip_BlendCurveMode.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -63,6 +60,9 @@ impl  TimelineClip_BlendCurveMode  {
     }
 
 }
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timelineclip/TimelineClip_TimelineClipUpgrade.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "TimelineClip.TimelineClipUpgrade")] # [parent (crate :: system :: object :: Object)] pub struct TimelineClip_TimelineClipUpgrade {}
 
 
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timelineclip/TimelineClip.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "TimelineClip")] # [parent (crate :: system :: object :: Object)] pub struct TimelineClip {
@@ -203,9 +203,9 @@ impl TimelineClip {
 #[cfg(feature = "unity_engine-timeline-timelineclip")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::TimelineClip_BlendCurveMode;
     pub use super::TimelineClip_TimelineClipUpgrade;
     pub use super::ITimelineClip_TimelineClipUpgrade;
-    pub use super::TimelineClip_BlendCurveMode;
     pub use super::TimelineClip;
     pub use super::ITimelineClip;
     pub use super::ITimelineClipMethods;

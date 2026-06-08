@@ -17,7 +17,7 @@ mod __types {
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
 pub struct DynamicResUpscaleFilter  {
-    pub value: i32,
+    pub value: u8,
 }
 
 
@@ -49,25 +49,25 @@ impl  ::unity2::IlType for DynamicResUpscaleFilter  {
 
 impl  DynamicResUpscaleFilter  {
     pub fn bilinear() -> Self {
-        Self { value: 50462976 }
+        Self { value: 0 }
 
     }
 
 
     pub fn catmull_rom() -> Self {
-        Self { value: 16974337 }
+        Self { value: 1 }
 
     }
 
 
     pub fn lanczos() -> Self {
-        Self { value: 66306 }
+        Self { value: 2 }
 
     }
 
 
     pub fn contrast_adaptive_sharpen() -> Self {
-        Self { value: 259 }
+        Self { value: 3 }
 
     }
 

@@ -17,7 +17,7 @@ mod __types {
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
 pub struct LMSFlowNodeType  {
-    pub value: i32,
+    pub value: u8,
 }
 
 
@@ -49,37 +49,37 @@ impl  ::unity2::IlType for LMSFlowNodeType  {
 
 impl  LMSFlowNodeType  {
     pub fn invalid() -> Self {
-        Self { value: 50462976 }
+        Self { value: 0 }
 
     }
 
 
     pub fn message() -> Self {
-        Self { value: 67305985 }
+        Self { value: 1 }
 
     }
 
 
     pub fn branch() -> Self {
-        Self { value: 84148994 }
+        Self { value: 2 }
 
     }
 
 
     pub fn event() -> Self {
-        Self { value: 328707 }
+        Self { value: 3 }
 
     }
 
 
     pub fn entry() -> Self {
-        Self { value: 16778500 }
+        Self { value: 4 }
 
     }
 
 
     pub fn jump() -> Self {
-        Self { value: 33619973 }
+        Self { value: 5 }
 
     }
 

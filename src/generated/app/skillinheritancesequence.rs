@@ -15,9 +15,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/skillinheritancesequence/SkillInheritanceSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "SkillInheritanceSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct SkillInheritanceSequence {}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skillinheritancesequence/SkillInheritanceSequence_Label2.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -78,6 +75,9 @@ impl  SkillInheritanceSequence_Label2  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/skillinheritancesequence/SkillInheritanceSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "SkillInheritanceSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct SkillInheritanceSequence {}
+
 }
 
 #[cfg(feature = "app-skillinheritancesequence-types")]
@@ -106,10 +106,10 @@ impl SkillInheritanceSequence {
 #[cfg(feature = "app-skillinheritancesequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::SkillInheritanceSequence_Label2;
     pub use super::SkillInheritanceSequence;
     pub use super::ISkillInheritanceSequence;
     pub use super::ISkillInheritanceSequenceMethods;
-    pub use super::SkillInheritanceSequence_Label2;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

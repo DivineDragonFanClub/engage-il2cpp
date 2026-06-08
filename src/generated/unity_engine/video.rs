@@ -15,9 +15,9 @@
  # [cfg (feature = "unity_engine-video-videoclip")] pub use videoclip :: { IVideoClipMethods }
  ;
  # [cfg (any (feature = "unity_engine-video-videoplayer-types"))] pub mod videoplayer ;
- # [cfg (feature = "unity_engine-video-videoplayer-types")] pub use videoplayer :: { VideoPlayer_ErrorEventHandler , IVideoPlayer_ErrorEventHandler , VideoPlayer , IVideoPlayer , VideoPlayer_EventHandler , IVideoPlayer_EventHandler , VideoPlayer_FrameReadyEventHandler , IVideoPlayer_FrameReadyEventHandler , VideoPlayer_TimeEventHandler , IVideoPlayer_TimeEventHandler }
+ # [cfg (feature = "unity_engine-video-videoplayer-types")] pub use videoplayer :: { VideoPlayer_EventHandler , IVideoPlayer_EventHandler , VideoPlayer_TimeEventHandler , IVideoPlayer_TimeEventHandler , VideoPlayer_ErrorEventHandler , IVideoPlayer_ErrorEventHandler , VideoPlayer , IVideoPlayer , VideoPlayer_FrameReadyEventHandler , IVideoPlayer_FrameReadyEventHandler }
  ;
- # [cfg (feature = "unity_engine-video-videoplayer")] pub use videoplayer :: { IVideoPlayer_ErrorEventHandlerMethods , IVideoPlayerMethods , IVideoPlayer_EventHandlerMethods , IVideoPlayer_FrameReadyEventHandlerMethods , IVideoPlayer_TimeEventHandlerMethods }
+ # [cfg (feature = "unity_engine-video-videoplayer")] pub use videoplayer :: { IVideoPlayer_EventHandlerMethods , IVideoPlayer_TimeEventHandlerMethods , IVideoPlayer_ErrorEventHandlerMethods , IVideoPlayerMethods , IVideoPlayer_FrameReadyEventHandlerMethods }
  ;
  # [cfg (any (feature = "unity_engine-video-videorendermode-types"))] pub mod videorendermode ;
  # [cfg (feature = "unity_engine-video-videorendermode-types")] pub use videorendermode :: { VideoRenderMode }

@@ -27,12 +27,12 @@ mod __types {
 }
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/assembly/Assembly_ResolveEventHolder.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "Assembly.ResolveEventHolder")] # [parent (crate :: system :: object :: Object)] pub struct Assembly_ResolveEventHolder {}
+
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/assembly/Assembly_UnmanagedMemoryStreamForModule.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "Assembly.UnmanagedMemoryStreamForModule")] # [parent (crate :: system :: io :: unmanagedmemorystream :: UnmanagedMemoryStream)] pub struct Assembly_UnmanagedMemoryStreamForModule {
 # [offset (104)] # [rename (name = "module")] pub module : crate :: system :: reflection :: module :: Module ,
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/assembly/Assembly_ResolveEventHolder.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "Assembly.ResolveEventHolder")] # [parent (crate :: system :: object :: Object)] pub struct Assembly_ResolveEventHolder {}
 
 }
 
@@ -60,18 +60,6 @@ impl Assembly {
 }
 
 #[cfg(feature = "system-reflection-assembly")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Assembly_UnmanagedMemoryStreamForModule_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Assembly_UnmanagedMemoryStreamForModule as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Assembly_UnmanagedMemoryStreamForModule as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : Assembly_UnmanagedMemoryStreamForModule , disposing : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Assembly_UnmanagedMemoryStreamForModule , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , disposing , __unity2_method_info) } }
-
-#[cfg(feature = "system-reflection-assembly")]
-pub trait IAssembly_UnmanagedMemoryStreamForModuleMethods : IAssembly_UnmanagedMemoryStreamForModule { # [doc = "`Dispose(bool)` overload"] fn dispose (self , disposing : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Assembly_UnmanagedMemoryStreamForModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Assembly_UnmanagedMemoryStreamForModule_unity2_raw :: dispose (__receiver , :: core :: convert :: Into :: into (disposing) , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "system-reflection-assembly")]
-impl < __T : IAssembly_UnmanagedMemoryStreamForModule > IAssembly_UnmanagedMemoryStreamForModuleMethods for __T { }
-
-#[cfg(feature = "system-reflection-assembly")]
-impl Assembly_UnmanagedMemoryStreamForModule { pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Assembly_UnmanagedMemoryStreamForModule_unity2_raw :: __lookup_dispose :: get_method_info () } }
-
-#[cfg(feature = "system-reflection-assembly")]
 # [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Assembly_ResolveEventHolder_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Assembly_ResolveEventHolder as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Assembly_ResolveEventHolder as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Assembly_ResolveEventHolder , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Assembly_ResolveEventHolder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
 
 #[cfg(feature = "system-reflection-assembly")]
@@ -89,17 +77,29 @@ impl Assembly_ResolveEventHolder {
 }
 
 #[cfg(feature = "system-reflection-assembly")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Assembly_UnmanagedMemoryStreamForModule_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Assembly_UnmanagedMemoryStreamForModule as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Assembly_UnmanagedMemoryStreamForModule as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } pub unsafe fn dispose (this : Assembly_UnmanagedMemoryStreamForModule , disposing : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Assembly_UnmanagedMemoryStreamForModule , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_dispose :: get_method_info () . method_ptr ,) ; inner (this , disposing , __unity2_method_info) } }
+
+#[cfg(feature = "system-reflection-assembly")]
+pub trait IAssembly_UnmanagedMemoryStreamForModuleMethods : IAssembly_UnmanagedMemoryStreamForModule { # [doc = "`Dispose(bool)` overload"] fn dispose (self , disposing : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Assembly_UnmanagedMemoryStreamForModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Assembly_UnmanagedMemoryStreamForModule_unity2_raw :: dispose (__receiver , :: core :: convert :: Into :: into (disposing) , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "system-reflection-assembly")]
+impl < __T : IAssembly_UnmanagedMemoryStreamForModule > IAssembly_UnmanagedMemoryStreamForModuleMethods for __T { }
+
+#[cfg(feature = "system-reflection-assembly")]
+impl Assembly_UnmanagedMemoryStreamForModule { pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Assembly_UnmanagedMemoryStreamForModule_unity2_raw :: __lookup_dispose :: get_method_info () } }
+
+#[cfg(feature = "system-reflection-assembly")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::Assembly;
     pub use super::IAssembly;
     pub use super::IAssemblyMethods;
-    pub use super::Assembly_UnmanagedMemoryStreamForModule;
-    pub use super::IAssembly_UnmanagedMemoryStreamForModule;
-    pub use super::IAssembly_UnmanagedMemoryStreamForModuleMethods;
     pub use super::Assembly_ResolveEventHolder;
     pub use super::IAssembly_ResolveEventHolder;
     pub use super::IAssembly_ResolveEventHolderMethods;
+    pub use super::Assembly_UnmanagedMemoryStreamForModule;
+    pub use super::IAssembly_UnmanagedMemoryStreamForModule;
+    pub use super::IAssembly_UnmanagedMemoryStreamForModuleMethods;
     pub use crate::system::io::stream::IStream;
     pub use crate::system::io::unmanagedmemorystream::IUnmanagedMemoryStream;
     pub use crate::system::object::IObject;

@@ -21,16 +21,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubconditioncontroller/HubConditionController.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubConditionController")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct HubConditionController {
-# [offset (24)] # [rename (name = "m_conditionType")] pub m_condition_type : crate :: app :: hubutil :: HubUtil_ConditionType ,
-# [offset (28)] # [rename (name = "m_controlType")] pub m_control_type : crate :: app :: hubconditioncontroller :: HubConditionController_ControlType ,
-# [offset (32)] # [rename (name = "m_conditionFlag")] pub m_condition_flag : bool ,
-# [offset (33)] # [rename (name = "m_isUseTargets")] pub m_is_use_targets : bool ,
-# [offset (40)] # [rename (name = "m_targets")] pub m_targets : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (48)] # [rename (name = "m_lods")] pub m_lods : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubconditioncontroller/HubConditionController_ControlType.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -79,6 +69,16 @@ impl  HubConditionController_ControlType  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubconditioncontroller/HubConditionController.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubConditionController")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct HubConditionController {
+# [offset (24)] # [rename (name = "m_conditionType")] pub m_condition_type : crate :: app :: hubutil :: HubUtil_ConditionType ,
+# [offset (28)] # [rename (name = "m_controlType")] pub m_control_type : crate :: app :: hubconditioncontroller :: HubConditionController_ControlType ,
+# [offset (32)] # [rename (name = "m_conditionFlag")] pub m_condition_flag : bool ,
+# [offset (33)] # [rename (name = "m_isUseTargets")] pub m_is_use_targets : bool ,
+# [offset (40)] # [rename (name = "m_targets")] pub m_targets : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
+# [offset (48)] # [rename (name = "m_lods")] pub m_lods : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
+}
+
 }
 
 #[cfg(feature = "app-hubconditioncontroller-types")]
@@ -104,10 +104,10 @@ impl HubConditionController {
 #[cfg(feature = "app-hubconditioncontroller")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::HubConditionController_ControlType;
     pub use super::HubConditionController;
     pub use super::IHubConditionController;
     pub use super::IHubConditionControllerMethods;
-    pub use super::HubConditionController_ControlType;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

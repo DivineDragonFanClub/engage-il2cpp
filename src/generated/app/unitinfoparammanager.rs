@@ -15,6 +15,21 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoparammanager/UnitInfoParamManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitInfoParamManager")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: unitinfoparammanager :: UnitInfoParamManager >)] pub struct UnitInfoParamManager {
+# [offset (32)] # [rename (name = "m_CalcUnit")] pub m_calc_unit : crate :: app :: unit :: Unit ,
+# [offset (40)] # [rename (name = "m_BattleInfoParam")] pub m_battle_info_param : crate :: app :: battleinfoparam :: BattleInfoParam ,
+# [offset (48)] # [rename (name = "m_CalcUnitNoGod")] pub m_calc_unit_no_god : crate :: app :: unit :: Unit ,
+# [offset (56)] # [rename (name = "m_BattleInfoParamNoGod")] pub m_battle_info_param_no_god : crate :: app :: battleinfoparam :: BattleInfoParam ,
+# [offset (64)] # [rename (name = "m_CalcUnitNoEffect")] pub m_calc_unit_no_effect : crate :: app :: unit :: Unit ,
+# [offset (72)] # [rename (name = "m_BattleInfoParamNoEffect")] pub m_battle_info_param_no_effect : crate :: app :: battleinfoparam :: BattleInfoParam ,
+# [offset (80)] # [rename (name = "m_CalcUnitNoHub")] pub m_calc_unit_no_hub : crate :: app :: unit :: Unit ,
+# [offset (88)] # [rename (name = "m_BattleInfoParamNoHub")] pub m_battle_info_param_no_hub : crate :: app :: battleinfoparam :: BattleInfoParam ,
+# [offset (96)] # [rename (name = "m_BattleInfo")] pub m_battle_info : crate :: app :: battleinfo :: BattleInfo ,
+# [offset (104)] # [rename (name = "m_OldRingOwner")] pub m_old_ring_owner : crate :: app :: unit :: Unit ,
+# [offset (112)] # [rename (name = "m_param")] pub m_param : :: unity2 :: Array < crate :: app :: unitparamdetail :: UnitParamDetail > ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoparammanager/UnitInfoParamManager_ValueType.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -159,21 +174,6 @@ impl  UnitInfoParamManager_ValueType  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoparammanager/UnitInfoParamManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitInfoParamManager")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: unitinfoparammanager :: UnitInfoParamManager >)] pub struct UnitInfoParamManager {
-# [offset (32)] # [rename (name = "m_CalcUnit")] pub m_calc_unit : crate :: app :: unit :: Unit ,
-# [offset (40)] # [rename (name = "m_BattleInfoParam")] pub m_battle_info_param : crate :: app :: battleinfoparam :: BattleInfoParam ,
-# [offset (48)] # [rename (name = "m_CalcUnitNoGod")] pub m_calc_unit_no_god : crate :: app :: unit :: Unit ,
-# [offset (56)] # [rename (name = "m_BattleInfoParamNoGod")] pub m_battle_info_param_no_god : crate :: app :: battleinfoparam :: BattleInfoParam ,
-# [offset (64)] # [rename (name = "m_CalcUnitNoEffect")] pub m_calc_unit_no_effect : crate :: app :: unit :: Unit ,
-# [offset (72)] # [rename (name = "m_BattleInfoParamNoEffect")] pub m_battle_info_param_no_effect : crate :: app :: battleinfoparam :: BattleInfoParam ,
-# [offset (80)] # [rename (name = "m_CalcUnitNoHub")] pub m_calc_unit_no_hub : crate :: app :: unit :: Unit ,
-# [offset (88)] # [rename (name = "m_BattleInfoParamNoHub")] pub m_battle_info_param_no_hub : crate :: app :: battleinfoparam :: BattleInfoParam ,
-# [offset (96)] # [rename (name = "m_BattleInfo")] pub m_battle_info : crate :: app :: battleinfo :: BattleInfo ,
-# [offset (104)] # [rename (name = "m_OldRingOwner")] pub m_old_ring_owner : crate :: app :: unit :: Unit ,
-# [offset (112)] # [rename (name = "m_param")] pub m_param : :: unity2 :: Array < crate :: app :: unitparamdetail :: UnitParamDetail > ,
-}
-
 }
 
 #[cfg(feature = "app-unitinfoparammanager-types")]
@@ -202,10 +202,10 @@ impl UnitInfoParamManager {
 #[cfg(feature = "app-unitinfoparammanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::UnitInfoParamManager_ValueType;
     pub use super::UnitInfoParamManager;
     pub use super::IUnitInfoParamManager;
     pub use super::IUnitInfoParamManagerMethods;
+    pub use super::UnitInfoParamManager_ValueType;
     pub use crate::app::singletonclass_1::ISingletonClass_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

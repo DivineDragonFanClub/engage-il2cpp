@@ -17,13 +17,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actiontransform/ActionTransform.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "ActionTransform")] # [parent (crate :: combat :: actionbase :: ActionBase)] pub struct ActionTransform {
-# [offset (40)] # [rename (name = "m_DoPlayer")] pub m_do_player : bool ,
-# [offset (41)] # [rename (name = "m_DoEnemy")] pub m_do_enemy : bool ,
-# [offset (44)] # [rename (name = "m_State")] pub m_state : crate :: combat :: actiontransform :: ActionTransform_State ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/actiontransform/ActionTransform_State.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -78,6 +71,13 @@ impl  ActionTransform_State  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actiontransform/ActionTransform.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "ActionTransform")] # [parent (crate :: combat :: actionbase :: ActionBase)] pub struct ActionTransform {
+# [offset (40)] # [rename (name = "m_DoPlayer")] pub m_do_player : bool ,
+# [offset (41)] # [rename (name = "m_DoEnemy")] pub m_do_enemy : bool ,
+# [offset (44)] # [rename (name = "m_State")] pub m_state : crate :: combat :: actiontransform :: ActionTransform_State ,
+}
+
 }
 
 #[cfg(feature = "combat-actiontransform-types")]
@@ -103,10 +103,10 @@ impl ActionTransform {
 #[cfg(feature = "combat-actiontransform")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ActionTransform_State;
     pub use super::ActionTransform;
     pub use super::IActionTransform;
     pub use super::IActionTransformMethods;
-    pub use super::ActionTransform_State;
     pub use crate::combat::actionbase::IActionBase;
     pub use crate::combat::state::IState;
     pub use crate::system::object::IObject;

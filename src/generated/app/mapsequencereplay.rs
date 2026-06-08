@@ -17,6 +17,9 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencereplay/MapSequenceReplay.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceReplay")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapsequencereplay :: MapSequenceReplay >)] pub struct MapSequenceReplay {}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencereplay/MapSequenceReplay_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -107,9 +110,6 @@ impl  MapSequenceReplay_Label  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencereplay/MapSequenceReplay.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceReplay")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapsequencereplay :: MapSequenceReplay >)] pub struct MapSequenceReplay {}
-
 }
 
 #[cfg(feature = "app-mapsequencereplay-types")]
@@ -138,10 +138,10 @@ impl MapSequenceReplay {
 #[cfg(feature = "app-mapsequencereplay")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapSequenceReplay_Label;
     pub use super::MapSequenceReplay;
     pub use super::IMapSequenceReplay;
     pub use super::IMapSequenceReplayMethods;
+    pub use super::MapSequenceReplay_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

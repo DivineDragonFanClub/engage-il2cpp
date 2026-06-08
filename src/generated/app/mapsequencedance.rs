@@ -19,6 +19,9 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencedance/MapSequenceDance.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceDance")] # [parent (crate :: app :: commonbattlesequence_1 :: CommonBattleSequence_1 < crate :: app :: mapsequencedance :: MapSequenceDance >)] pub struct MapSequenceDance {}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencedance/MapSequenceDance_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -79,9 +82,6 @@ impl  MapSequenceDance_Label  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencedance/MapSequenceDance.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceDance")] # [parent (crate :: app :: commonbattlesequence_1 :: CommonBattleSequence_1 < crate :: app :: mapsequencedance :: MapSequenceDance >)] pub struct MapSequenceDance {}
-
 }
 
 #[cfg(feature = "app-mapsequencedance-types")]
@@ -110,10 +110,10 @@ impl MapSequenceDance {
 #[cfg(feature = "app-mapsequencedance")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapSequenceDance_Label;
     pub use super::MapSequenceDance;
     pub use super::IMapSequenceDance;
     pub use super::IMapSequenceDanceMethods;
+    pub use super::MapSequenceDance_Label;
     pub use crate::app::commonbattlesequence_1::ICommonBattleSequence_1;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;

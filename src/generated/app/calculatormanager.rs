@@ -15,16 +15,7 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatormanager/CalculatorManager_StackPool.md"))] # [:: unity2 :: class (namespace = "App" , name = "CalculatorManager.StackPool")] # [parent (crate :: system :: collections :: generic :: stack_1 :: Stack_1 < crate :: app :: calculatormanager :: CalculatorManager_CommandStack >)] pub struct CalculatorManager_StackPool {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatormanager/CalculatorManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "CalculatorManager")] # [parent (crate :: app :: calculatorutil :: CalculatorUtil)] pub struct CalculatorManager {
-# [static_field] # [rename (name = "s_lockObject")] pub s_lock_object : :: unity2 :: IlInstance ,
-# [offset (16)] # [rename (name = "m_CommandList")] pub m_command_list : crate :: app :: calculatormanager :: CalculatorManager_CommandList ,
-# [static_field] # [rename (name = "STACK_MAX")] pub stack_max : i32 ,
-# [static_field] # [rename (name = "ARGS_MAX")] pub args_max : i32 ,
-# [offset (24)] # [rename (name = "m_Pool")] pub m_pool : crate :: app :: calculatormanager :: CalculatorManager_StackPool ,
-}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatormanager/CalculatorManager_CommandList.md"))] # [:: unity2 :: class (namespace = "App" , name = "CalculatorManager.CommandList")] # [parent (crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , crate :: app :: calculatorcommand :: CalculatorCommand >)] pub struct CalculatorManager_CommandList {}
 
 
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatormanager/CalculatorManager_CommandStack.md"))] # [:: unity2 :: class (namespace = "App" , name = "CalculatorManager.CommandStack")] # [parent (crate :: system :: object :: Object)] pub struct CalculatorManager_CommandStack {
@@ -36,12 +27,55 @@ mod __types {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatormanager/CalculatorManager_CommandList.md"))] # [:: unity2 :: class (namespace = "App" , name = "CalculatorManager.CommandList")] # [parent (crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , crate :: app :: calculatorcommand :: CalculatorCommand >)] pub struct CalculatorManager_CommandList {}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatormanager/CalculatorManager_StackPool.md"))] # [:: unity2 :: class (namespace = "App" , name = "CalculatorManager.StackPool")] # [parent (crate :: system :: collections :: generic :: stack_1 :: Stack_1 < crate :: app :: calculatormanager :: CalculatorManager_CommandStack >)] pub struct CalculatorManager_StackPool {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatormanager/CalculatorManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "CalculatorManager")] # [parent (crate :: app :: calculatorutil :: CalculatorUtil)] pub struct CalculatorManager {
+# [static_field] # [rename (name = "s_lockObject")] pub s_lock_object : :: unity2 :: IlInstance ,
+# [offset (16)] # [rename (name = "m_CommandList")] pub m_command_list : crate :: app :: calculatormanager :: CalculatorManager_CommandList ,
+# [static_field] # [rename (name = "STACK_MAX")] pub stack_max : i32 ,
+# [static_field] # [rename (name = "ARGS_MAX")] pub args_max : i32 ,
+# [offset (24)] # [rename (name = "m_Pool")] pub m_pool : crate :: app :: calculatormanager :: CalculatorManager_StackPool ,
+}
 
 }
 
 #[cfg(feature = "app-calculatormanager-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-calculatormanager")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CalculatorManager_CommandList_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CalculatorManager_CommandList as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CalculatorManager_CommandList as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : CalculatorManager_CommandList , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CalculatorManager_CommandList , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-calculatormanager")]
+pub trait ICalculatorManager_CommandListMethods : ICalculatorManager_CommandList { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CalculatorManager_CommandList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CalculatorManager_CommandList_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-calculatormanager")]
+impl < __T : ICalculatorManager_CommandList > ICalculatorManager_CommandListMethods for __T { }
+
+#[cfg(feature = "app-calculatormanager")]
+impl CalculatorManager_CommandList { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CalculatorManager_CommandList_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-calculatormanager")]
+impl CalculatorManager_CommandList {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CalculatorManager_CommandList) , :: core :: stringify ! (new) ,)) ; < Self as ICalculatorManager_CommandListMethods > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "app-calculatormanager")]
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CalculatorManager_CommandStack_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_clear { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CalculatorManager_CommandStack as :: unity2 :: ClassIdentity > :: class () , "Clear" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CalculatorManager_CommandStack as :: unity2 :: ClassIdentity > :: NAME , "Clear" , e) , } } } pub unsafe fn clear (this : CalculatorManager_CommandStack , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CalculatorManager_CommandStack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_clear :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CalculatorManager_CommandStack as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CalculatorManager_CommandStack as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : CalculatorManager_CommandStack , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CalculatorManager_CommandStack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+
+#[cfg(feature = "app-calculatormanager")]
+pub trait ICalculatorManager_CommandStackMethods : ICalculatorManager_CommandStack { # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < CalculatorManager_CommandStack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CalculatorManager_CommandStack_unity2_raw :: clear (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CalculatorManager_CommandStack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CalculatorManager_CommandStack_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+
+#[cfg(feature = "app-calculatormanager")]
+impl < __T : ICalculatorManager_CommandStack > ICalculatorManager_CommandStackMethods for __T { }
+
+#[cfg(feature = "app-calculatormanager")]
+impl CalculatorManager_CommandStack { pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CalculatorManager_CommandStack_unity2_raw :: __lookup_clear :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CalculatorManager_CommandStack_unity2_raw :: __lookup_ctor :: get_method_info () } }
+
+#[cfg(feature = "app-calculatormanager")]
+impl CalculatorManager_CommandStack {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CalculatorManager_CommandStack) , :: core :: stringify ! (new) ,)) ; < Self as ICalculatorManager_CommandStackMethods > :: ctor (this ,) ; this }
+}
 
 #[cfg(feature = "app-calculatormanager")]
 # [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CalculatorManager_StackPool_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CalculatorManager_StackPool as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CalculatorManager_StackPool as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : CalculatorManager_StackPool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CalculatorManager_StackPool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
@@ -81,54 +115,20 @@ impl CalculatorManager {
 }
 
 #[cfg(feature = "app-calculatormanager")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CalculatorManager_CommandStack_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_clear { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CalculatorManager_CommandStack as :: unity2 :: ClassIdentity > :: class () , "Clear" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CalculatorManager_CommandStack as :: unity2 :: ClassIdentity > :: NAME , "Clear" , e) , } } } pub unsafe fn clear (this : CalculatorManager_CommandStack , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CalculatorManager_CommandStack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_clear :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CalculatorManager_CommandStack as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CalculatorManager_CommandStack as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : CalculatorManager_CommandStack , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CalculatorManager_CommandStack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "app-calculatormanager")]
-pub trait ICalculatorManager_CommandStackMethods : ICalculatorManager_CommandStack { # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < CalculatorManager_CommandStack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CalculatorManager_CommandStack_unity2_raw :: clear (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CalculatorManager_CommandStack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CalculatorManager_CommandStack_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-calculatormanager")]
-impl < __T : ICalculatorManager_CommandStack > ICalculatorManager_CommandStackMethods for __T { }
-
-#[cfg(feature = "app-calculatormanager")]
-impl CalculatorManager_CommandStack { pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CalculatorManager_CommandStack_unity2_raw :: __lookup_clear :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CalculatorManager_CommandStack_unity2_raw :: __lookup_ctor :: get_method_info () } }
-
-#[cfg(feature = "app-calculatormanager")]
-impl CalculatorManager_CommandStack {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CalculatorManager_CommandStack) , :: core :: stringify ! (new) ,)) ; < Self as ICalculatorManager_CommandStackMethods > :: ctor (this ,) ; this }
-}
-
-#[cfg(feature = "app-calculatormanager")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CalculatorManager_CommandList_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CalculatorManager_CommandList as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CalculatorManager_CommandList as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : CalculatorManager_CommandList , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CalculatorManager_CommandList , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "app-calculatormanager")]
-pub trait ICalculatorManager_CommandListMethods : ICalculatorManager_CommandList { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CalculatorManager_CommandList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CalculatorManager_CommandList_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-calculatormanager")]
-impl < __T : ICalculatorManager_CommandList > ICalculatorManager_CommandListMethods for __T { }
-
-#[cfg(feature = "app-calculatormanager")]
-impl CalculatorManager_CommandList { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CalculatorManager_CommandList_unity2_raw :: __lookup_ctor :: get_method_info () } }
-
-#[cfg(feature = "app-calculatormanager")]
-impl CalculatorManager_CommandList {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CalculatorManager_CommandList) , :: core :: stringify ! (new) ,)) ; < Self as ICalculatorManager_CommandListMethods > :: ctor (this ,) ; this }
-}
-
-#[cfg(feature = "app-calculatormanager")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::CalculatorManager_CommandList;
+    pub use super::ICalculatorManager_CommandList;
+    pub use super::ICalculatorManager_CommandListMethods;
+    pub use super::CalculatorManager_CommandStack;
+    pub use super::ICalculatorManager_CommandStack;
+    pub use super::ICalculatorManager_CommandStackMethods;
     pub use super::CalculatorManager_StackPool;
     pub use super::ICalculatorManager_StackPool;
     pub use super::ICalculatorManager_StackPoolMethods;
     pub use super::CalculatorManager;
     pub use super::ICalculatorManager;
     pub use super::ICalculatorManagerMethods;
-    pub use super::CalculatorManager_CommandStack;
-    pub use super::ICalculatorManager_CommandStack;
-    pub use super::ICalculatorManager_CommandStackMethods;
-    pub use super::CalculatorManager_CommandList;
-    pub use super::ICalculatorManager_CommandList;
-    pub use super::ICalculatorManager_CommandListMethods;
     pub use crate::app::calculatorutil::ICalculatorUtil;
     pub use crate::system::collections::generic::dictionary_2::IDictionary_2;
     pub use crate::system::collections::generic::stack_1::IStack_1;

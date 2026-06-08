@@ -13,12 +13,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayoutoption/GUILayoutOption.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "GUILayoutOption")] # [parent (crate :: system :: object :: Object)] pub struct GUILayoutOption {
-# [offset (16)] # [rename (name = "type")] pub r#type : crate :: unity_engine :: guilayoutoption :: GUILayoutOption_Type ,
-# [offset (24)] # [rename (name = "value")] pub value : :: unity2 :: IlInstance ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/guilayoutoption/GUILayoutOption_Type.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -139,6 +133,12 @@ impl  GUILayoutOption_Type  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayoutoption/GUILayoutOption.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "GUILayoutOption")] # [parent (crate :: system :: object :: Object)] pub struct GUILayoutOption {
+# [offset (16)] # [rename (name = "type")] pub r#type : crate :: unity_engine :: guilayoutoption :: GUILayoutOption_Type ,
+# [offset (24)] # [rename (name = "value")] pub value : :: unity2 :: IlInstance ,
+}
+
 }
 
 #[cfg(feature = "unity_engine-guilayoutoption-types")]
@@ -164,10 +164,10 @@ impl GUILayoutOption {
 #[cfg(feature = "unity_engine-guilayoutoption")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::GUILayoutOption_Type;
     pub use super::GUILayoutOption;
     pub use super::IGUILayoutOption;
     pub use super::IGUILayoutOptionMethods;
-    pub use super::GUILayoutOption_Type;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

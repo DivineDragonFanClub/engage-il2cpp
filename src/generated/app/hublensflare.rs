@@ -19,6 +19,17 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hublensflare/HubLensFlare.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubLensFlare")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct HubLensFlare {
+# [offset (24)] # [rename (name = "FlareScale")] pub flare_scale : f32 ,
+# [offset (28)] # [rename (name = "FlareMaxSize")] pub flare_max_size : f32 ,
+# [offset (32)] # [rename (name = "FlareZ")] pub flare_z : f32 ,
+# [offset (36)] # [rename (name = "RotateV")] pub rotate_v : f32 ,
+# [offset (40)] # [rename (name = "m_flare")] pub m_flare : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: hublensflare :: HubLensFlare_Flare > ,
+# [offset (48)] # [rename (name = "m_sunPosition")] pub m_sun_position : crate :: unity_engine :: vector3 :: Vector3 ,
+# [offset (64)] # [rename (name = "m_light")] pub m_light : crate :: unity_engine :: gameobject :: GameObject ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hublensflare/HubLensFlare_Flare.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -58,17 +69,6 @@ impl ::unity2::IlType for HubLensFlare_Flare {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hublensflare/HubLensFlare.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubLensFlare")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct HubLensFlare {
-# [offset (24)] # [rename (name = "FlareScale")] pub flare_scale : f32 ,
-# [offset (28)] # [rename (name = "FlareMaxSize")] pub flare_max_size : f32 ,
-# [offset (32)] # [rename (name = "FlareZ")] pub flare_z : f32 ,
-# [offset (36)] # [rename (name = "RotateV")] pub rotate_v : f32 ,
-# [offset (40)] # [rename (name = "m_flare")] pub m_flare : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: hublensflare :: HubLensFlare_Flare > ,
-# [offset (48)] # [rename (name = "m_sunPosition")] pub m_sun_position : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (64)] # [rename (name = "m_light")] pub m_light : crate :: unity_engine :: gameobject :: GameObject ,
-}
-
 }
 
 #[cfg(feature = "app-hublensflare-types")]
@@ -94,10 +94,10 @@ impl HubLensFlare {
 #[cfg(feature = "app-hublensflare")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HubLensFlare_Flare;
     pub use super::HubLensFlare;
     pub use super::IHubLensFlare;
     pub use super::IHubLensFlareMethods;
+    pub use super::HubLensFlare_Flare;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     pub use crate::unity_engine::behaviour::IBehaviour;

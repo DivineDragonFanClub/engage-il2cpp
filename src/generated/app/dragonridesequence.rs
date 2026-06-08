@@ -19,6 +19,22 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridesequence/DragonRideSequence_PrizeData.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRideSequence.PrizeData")] # [parent (crate :: system :: object :: Object)] pub struct DragonRideSequence_PrizeData {}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridesequence/DragonRideSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRideSequence")] # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: hubsequence :: HubSequence >)] pub struct DragonRideSequence {
+# [offset (133)] # [rename (name = "m_IsLoadMenuContent")] pub m_is_load_menu_content : bool ,
+# [offset (136)] # [rename (name = "m_PrizeBondData")] pub m_prize_bond_data : crate :: app :: dragonridesequence :: DragonRideSequence_PrizeData ,
+# [offset (144)] # [rename (name = "m_PrizeItemDataList")] pub m_prize_item_data_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: dragonridesequence :: DragonRideSequence_PrizeData > ,
+# [offset (152)] # [rename (name = "m_PrizeItemMax")] pub m_prize_item_max : i32 ,
+# [offset (156)] # [rename (name = "m_PrizeItemCount")] pub m_prize_item_count : i32 ,
+# [offset (160)] # [rename (name = "m_AnnouceDifficult")] pub m_annouce_difficult : crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > ,
+# [offset (168)] # [rename (name = "m_IsAnnounceVoiceOnce")] pub m_is_announce_voice_once : bool ,
+# [offset (176)] # [rename (name = "m_Talker")] pub m_talker : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (184)] # [rename (name = "m_TalkerChara")] pub m_talker_chara : crate :: combat :: character :: Character ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridesequence/DragonRideSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -139,22 +155,6 @@ impl  DragonRideSequence_Label  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridesequence/DragonRideSequence_PrizeData.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRideSequence.PrizeData")] # [parent (crate :: system :: object :: Object)] pub struct DragonRideSequence_PrizeData {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridesequence/DragonRideSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRideSequence")] # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: hubsequence :: HubSequence >)] pub struct DragonRideSequence {
-# [offset (133)] # [rename (name = "m_IsLoadMenuContent")] pub m_is_load_menu_content : bool ,
-# [offset (136)] # [rename (name = "m_PrizeBondData")] pub m_prize_bond_data : crate :: app :: dragonridesequence :: DragonRideSequence_PrizeData ,
-# [offset (144)] # [rename (name = "m_PrizeItemDataList")] pub m_prize_item_data_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: dragonridesequence :: DragonRideSequence_PrizeData > ,
-# [offset (152)] # [rename (name = "m_PrizeItemMax")] pub m_prize_item_max : i32 ,
-# [offset (156)] # [rename (name = "m_PrizeItemCount")] pub m_prize_item_count : i32 ,
-# [offset (160)] # [rename (name = "m_AnnouceDifficult")] pub m_annouce_difficult : crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > ,
-# [offset (168)] # [rename (name = "m_IsAnnounceVoiceOnce")] pub m_is_announce_voice_once : bool ,
-# [offset (176)] # [rename (name = "m_Talker")] pub m_talker : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (184)] # [rename (name = "m_TalkerChara")] pub m_talker_chara : crate :: combat :: character :: Character ,
-}
-
 }
 
 #[cfg(feature = "app-dragonridesequence-types")]
@@ -202,13 +202,13 @@ impl DragonRideSequence {
 #[cfg(feature = "app-dragonridesequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DragonRideSequence_Label;
     pub use super::DragonRideSequence_PrizeData;
     pub use super::IDragonRideSequence_PrizeData;
     pub use super::IDragonRideSequence_PrizeDataMethods;
     pub use super::DragonRideSequence;
     pub use super::IDragonRideSequence;
     pub use super::IDragonRideSequenceMethods;
+    pub use super::DragonRideSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::procscenesequence_1::IProcSceneSequence_1;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;

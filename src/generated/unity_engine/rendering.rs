@@ -133,9 +133,9 @@
  # [cfg (feature = "unity_engine-rendering-computequeuetype-types")] pub use computequeuetype :: { ComputeQueueType }
  ;
  # [cfg (any (feature = "unity_engine-rendering-constantbuffer-types"))] pub mod constantbuffer ;
- # [cfg (feature = "unity_engine-rendering-constantbuffer-types")] pub use constantbuffer :: { ConstantBuffer_ConstantBufferBase , IConstantBuffer_ConstantBufferBase , ConstantBuffer_TypedConstantBuffer_1 , IConstantBuffer_TypedConstantBuffer_1 , ConstantBuffer , IConstantBuffer }
+ # [cfg (feature = "unity_engine-rendering-constantbuffer-types")] pub use constantbuffer :: { ConstantBuffer_TypedConstantBuffer_1 , IConstantBuffer_TypedConstantBuffer_1 , ConstantBuffer_ConstantBufferBase , IConstantBuffer_ConstantBufferBase , ConstantBuffer , IConstantBuffer }
  ;
- # [cfg (feature = "unity_engine-rendering-constantbuffer")] pub use constantbuffer :: { IConstantBuffer_ConstantBufferBaseMethods , IConstantBuffer_TypedConstantBuffer_1Methods , IConstantBufferMethods }
+ # [cfg (feature = "unity_engine-rendering-constantbuffer")] pub use constantbuffer :: { IConstantBuffer_TypedConstantBuffer_1Methods , IConstantBuffer_ConstantBufferBaseMethods , IConstantBufferMethods }
  ;
  # [cfg (any (feature = "unity_engine-rendering-copytexturesupport-types"))] pub mod copytexturesupport ;
  # [cfg (feature = "unity_engine-rendering-copytexturesupport-types")] pub use copytexturesupport :: { CopyTextureSupport }
@@ -147,7 +147,7 @@
  # [cfg (feature = "unity_engine-rendering-corematrixutils-types")] pub use corematrixutils :: { CoreMatrixUtils , ICoreMatrixUtils }
  ;
  # [cfg (any (feature = "unity_engine-rendering-coreunsafeutils-types"))] pub mod coreunsafeutils ;
- # [cfg (feature = "unity_engine-rendering-coreunsafeutils-types")] pub use coreunsafeutils :: { CoreUnsafeUtils , ICoreUnsafeUtils , CoreUnsafeUtils_FixedBufferStringQueue , CoreUnsafeUtils_IKeyGetter_2 , ICoreUnsafeUtils_IKeyGetter_2 , CoreUnsafeUtils_DefaultKeyGetter_1 , CoreUnsafeUtils_UintKeyGetter }
+ # [cfg (feature = "unity_engine-rendering-coreunsafeutils-types")] pub use coreunsafeutils :: { CoreUnsafeUtils_FixedBufferStringQueue , CoreUnsafeUtils_IKeyGetter_2 , ICoreUnsafeUtils_IKeyGetter_2 , CoreUnsafeUtils , ICoreUnsafeUtils , CoreUnsafeUtils_DefaultKeyGetter_1 , CoreUnsafeUtils_UintKeyGetter }
  ;
  # [cfg (feature = "unity_engine-rendering-coreunsafeutils")] pub use coreunsafeutils :: { ICoreUnsafeUtils_IKeyGetter_2Methods }
  ;
@@ -183,7 +183,7 @@
  # [cfg (feature = "unity_engine-rendering-debugactionrepeatmode-types")] pub use debugactionrepeatmode :: { DebugActionRepeatMode }
  ;
  # [cfg (any (feature = "unity_engine-rendering-debugactionstate-types"))] pub mod debugactionstate ;
- # [cfg (feature = "unity_engine-rendering-debugactionstate-types")] pub use debugactionstate :: { DebugActionState , IDebugActionState , DebugActionState_DebugActionKeyType }
+ # [cfg (feature = "unity_engine-rendering-debugactionstate-types")] pub use debugactionstate :: { DebugActionState_DebugActionKeyType , DebugActionState , IDebugActionState }
  ;
  # [cfg (feature = "unity_engine-rendering-debugactionstate")] pub use debugactionstate :: { IDebugActionStateMethods }
  ;
@@ -198,9 +198,9 @@
  # [cfg (feature = "unity_engine-rendering-debugshapes")] pub use debugshapes :: { IDebugShapesMethods }
  ;
  # [cfg (any (feature = "unity_engine-rendering-debugui-types"))] pub mod debugui ;
- # [cfg (feature = "unity_engine-rendering-debugui-types")] pub use debugui :: { DebugUI_Flags , DebugUI_ColorField , IDebugUI_ColorField , DebugUI_Panel , IDebugUI_Panel , DebugUI_Table , IDebugUI_Table , DebugUI_Vector3Field , IDebugUI_Vector3Field , DebugUI_VBox , IDebugUI_VBox , DebugUI_Container , IDebugUI_Container , DebugUI_BitField , IDebugUI_BitField , DebugUI , IDebugUI , DebugUI_HBox , IDebugUI_HBox , DebugUI_UIntField , IDebugUI_UIntField , DebugUI_IValueField , IDebugUI_IValueField , DebugUI_Field_1 , IDebugUI_Field_1 , DebugUI_Value , IDebugUI_Value , DebugUI_Table_Row , IDebugUI_Table_Row , DebugUI_Vector2Field , IDebugUI_Vector2Field , DebugUI_IntField , IDebugUI_IntField , DebugUI_Widget , IDebugUI_Widget , DebugUI_Foldout , IDebugUI_Foldout , DebugUI_BoolField , IDebugUI_BoolField , DebugUI_Vector4Field , IDebugUI_Vector4Field , DebugUI_IContainer , IDebugUI_IContainer , DebugUI_HistoryBoolField , IDebugUI_HistoryBoolField , DebugUI_FloatField , IDebugUI_FloatField , DebugUI_EnumField , IDebugUI_EnumField , DebugUI_Button , IDebugUI_Button , DebugUI_HistoryEnumField , IDebugUI_HistoryEnumField }
+ # [cfg (feature = "unity_engine-rendering-debugui-types")] pub use debugui :: { DebugUI_Panel , IDebugUI_Panel , DebugUI_IntField , IDebugUI_IntField , DebugUI_Container , IDebugUI_Container , DebugUI_HBox , IDebugUI_HBox , DebugUI_HistoryBoolField , IDebugUI_HistoryBoolField , DebugUI_Table , IDebugUI_Table , DebugUI_Field_1 , IDebugUI_Field_1 , DebugUI_FloatField , IDebugUI_FloatField , DebugUI_Vector4Field , IDebugUI_Vector4Field , DebugUI_Foldout , IDebugUI_Foldout , DebugUI_Widget , IDebugUI_Widget , DebugUI_BoolField , IDebugUI_BoolField , DebugUI_Vector2Field , IDebugUI_Vector2Field , DebugUI_HistoryEnumField , IDebugUI_HistoryEnumField , DebugUI_UIntField , IDebugUI_UIntField , DebugUI_ColorField , IDebugUI_ColorField , DebugUI_IContainer , IDebugUI_IContainer , DebugUI_EnumField , IDebugUI_EnumField , DebugUI_IValueField , IDebugUI_IValueField , DebugUI_BitField , IDebugUI_BitField , DebugUI , IDebugUI , DebugUI_VBox , IDebugUI_VBox , DebugUI_Table_Row , IDebugUI_Table_Row , DebugUI_Value , IDebugUI_Value , DebugUI_Flags , DebugUI_Vector3Field , IDebugUI_Vector3Field , DebugUI_Button , IDebugUI_Button }
  ;
- # [cfg (feature = "unity_engine-rendering-debugui")] pub use debugui :: { IDebugUI_ColorFieldMethods , IDebugUI_PanelMethods , IDebugUI_TableMethods , IDebugUI_Vector3FieldMethods , IDebugUI_VBoxMethods , IDebugUI_ContainerMethods , IDebugUI_BitFieldMethods , IDebugUIMethods , IDebugUI_HBoxMethods , IDebugUI_UIntFieldMethods , IDebugUI_IValueFieldMethods , IDebugUI_Field_1Methods , IDebugUI_ValueMethods , IDebugUI_Table_RowMethods , IDebugUI_Vector2FieldMethods , IDebugUI_IntFieldMethods , IDebugUI_WidgetMethods , IDebugUI_FoldoutMethods , IDebugUI_BoolFieldMethods , IDebugUI_Vector4FieldMethods , IDebugUI_IContainerMethods , IDebugUI_HistoryBoolFieldMethods , IDebugUI_FloatFieldMethods , IDebugUI_EnumFieldMethods , IDebugUI_ButtonMethods , IDebugUI_HistoryEnumFieldMethods }
+ # [cfg (feature = "unity_engine-rendering-debugui")] pub use debugui :: { IDebugUI_PanelMethods , IDebugUI_IntFieldMethods , IDebugUI_ContainerMethods , IDebugUI_HBoxMethods , IDebugUI_HistoryBoolFieldMethods , IDebugUI_TableMethods , IDebugUI_Field_1Methods , IDebugUI_FloatFieldMethods , IDebugUI_Vector4FieldMethods , IDebugUI_FoldoutMethods , IDebugUI_WidgetMethods , IDebugUI_BoolFieldMethods , IDebugUI_Vector2FieldMethods , IDebugUI_HistoryEnumFieldMethods , IDebugUI_UIntFieldMethods , IDebugUI_ColorFieldMethods , IDebugUI_IContainerMethods , IDebugUI_EnumFieldMethods , IDebugUI_IValueFieldMethods , IDebugUI_BitFieldMethods , IDebugUIMethods , IDebugUI_VBoxMethods , IDebugUI_Table_RowMethods , IDebugUI_ValueMethods , IDebugUI_Vector3FieldMethods , IDebugUI_ButtonMethods }
  ;
  # [cfg (any (feature = "unity_engine-rendering-debugupdater-types"))] pub mod debugupdater ;
  # [cfg (feature = "unity_engine-rendering-debugupdater-types")] pub use debugupdater :: { DebugUpdater , IDebugUpdater }
@@ -322,9 +322,9 @@
  # [cfg (feature = "unity_engine-rendering-graphicstier-types")] pub use graphicstier :: { GraphicsTier }
  ;
  # [cfg (any (feature = "unity_engine-rendering-hablecurve-types"))] pub mod hablecurve ;
- # [cfg (feature = "unity_engine-rendering-hablecurve-types")] pub use hablecurve :: { HableCurve , IHableCurve , HableCurve_Segment , IHableCurve_Segment , HableCurve_DirectParams , HableCurve_Uniforms , IHableCurve_Uniforms }
+ # [cfg (feature = "unity_engine-rendering-hablecurve-types")] pub use hablecurve :: { HableCurve_DirectParams , HableCurve_Uniforms , IHableCurve_Uniforms , HableCurve , IHableCurve , HableCurve_Segment , IHableCurve_Segment }
  ;
- # [cfg (feature = "unity_engine-rendering-hablecurve")] pub use hablecurve :: { IHableCurveMethods , IHableCurve_SegmentMethods , IHableCurve_UniformsMethods }
+ # [cfg (feature = "unity_engine-rendering-hablecurve")] pub use hablecurve :: { IHableCurve_UniformsMethods , IHableCurveMethods , IHableCurve_SegmentMethods }
  ;
  # [cfg (any (feature = "unity_engine-rendering-haltonsequence-types"))] pub mod haltonsequence ;
  # [cfg (feature = "unity_engine-rendering-haltonsequence-types")] pub use haltonsequence :: { HaltonSequence , IHaltonSequence }
@@ -588,7 +588,7 @@
  # [cfg (feature = "unity_engine-rendering-reflectionprobetype-types")] pub use reflectionprobetype :: { ReflectionProbeType }
  ;
  # [cfg (any (feature = "unity_engine-rendering-reloadattribute-types"))] pub mod reloadattribute ;
- # [cfg (feature = "unity_engine-rendering-reloadattribute-types")] pub use reloadattribute :: { ReloadAttribute , IReloadAttribute , ReloadAttribute_Package }
+ # [cfg (feature = "unity_engine-rendering-reloadattribute-types")] pub use reloadattribute :: { ReloadAttribute_Package , ReloadAttribute , IReloadAttribute }
  ;
  # [cfg (feature = "unity_engine-rendering-reloadattribute")] pub use reloadattribute :: { IReloadAttributeMethods }
  ;
@@ -654,7 +654,7 @@
  # [cfg (feature = "unity_engine-rendering-rthandles-types")] pub use rthandles :: { RTHandles , IRTHandles }
  ;
  # [cfg (any (feature = "unity_engine-rendering-rthandlesystem-types"))] pub mod rthandlesystem ;
- # [cfg (feature = "unity_engine-rendering-rthandlesystem-types")] pub use rthandlesystem :: { RTHandleSystem_ResizeMode , RTHandleSystem , IRTHandleSystem }
+ # [cfg (feature = "unity_engine-rendering-rthandlesystem-types")] pub use rthandlesystem :: { RTHandleSystem , IRTHandleSystem , RTHandleSystem_ResizeMode }
  ;
  # [cfg (feature = "unity_engine-rendering-rthandlesystem")] pub use rthandlesystem :: { IRTHandleSystemMethods }
  ;
@@ -732,7 +732,7 @@
  # [cfg (feature = "unity_engine-rendering-submeshdescriptor-types")] pub use submeshdescriptor :: { SubMeshDescriptor }
  ;
  # [cfg (any (feature = "unity_engine-rendering-supportedrenderingfeatures-types"))] pub mod supportedrenderingfeatures ;
- # [cfg (feature = "unity_engine-rendering-supportedrenderingfeatures-types")] pub use supportedrenderingfeatures :: { SupportedRenderingFeatures_ReflectionProbeModes , SupportedRenderingFeatures , ISupportedRenderingFeatures , SupportedRenderingFeatures_LightmapMixedBakeModes }
+ # [cfg (feature = "unity_engine-rendering-supportedrenderingfeatures-types")] pub use supportedrenderingfeatures :: { SupportedRenderingFeatures , ISupportedRenderingFeatures , SupportedRenderingFeatures_LightmapMixedBakeModes , SupportedRenderingFeatures_ReflectionProbeModes }
  ;
  # [cfg (feature = "unity_engine-rendering-supportedrenderingfeatures")] pub use supportedrenderingfeatures :: { ISupportedRenderingFeaturesMethods }
  ;

@@ -15,6 +15,20 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitgrowsequence/UnitGrowSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitGrowSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct UnitGrowSequence {
+# [offset (112)] # [rename (name = "m_CameraMode")] pub m_camera_mode : crate :: app :: viewmode :: ViewMode_Mode ,
+# [offset (120)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
+# [offset (128)] # [rename (name = "m_Exp")] pub m_exp : i32 ,
+# [offset (132)] # [rename (name = "m_OldLevel")] pub m_old_level : i32 ,
+# [offset (136)] # [rename (name = "m_IsTalk")] pub m_is_talk : bool ,
+# [offset (140)] # [rename (name = "m_SkillPoint")] pub m_skill_point : i32 ,
+# [offset (144)] # [rename (name = "m_ClassChangeJob")] pub m_class_change_job : crate :: app :: jobdata :: JobData ,
+# [offset (152)] # [rename (name = "m_ClassChangeItem")] pub m_class_change_item : crate :: app :: itemdata :: ItemData ,
+# [offset (160)] # [rename (name = "m_ClassChangeWeaponMask")] pub m_class_change_weapon_mask : crate :: app :: weaponmask :: WeaponMask ,
+# [offset (168)] # [rename (name = "m_ClassChangeWeapon")] pub m_class_change_weapon : crate :: app :: itemdata :: ItemData ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitgrowsequence/UnitGrowSequence_Label.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -81,20 +95,6 @@ impl  UnitGrowSequence_Label  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitgrowsequence/UnitGrowSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitGrowSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct UnitGrowSequence {
-# [offset (112)] # [rename (name = "m_CameraMode")] pub m_camera_mode : crate :: app :: viewmode :: ViewMode_Mode ,
-# [offset (120)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-# [offset (128)] # [rename (name = "m_Exp")] pub m_exp : i32 ,
-# [offset (132)] # [rename (name = "m_OldLevel")] pub m_old_level : i32 ,
-# [offset (136)] # [rename (name = "m_IsTalk")] pub m_is_talk : bool ,
-# [offset (140)] # [rename (name = "m_SkillPoint")] pub m_skill_point : i32 ,
-# [offset (144)] # [rename (name = "m_ClassChangeJob")] pub m_class_change_job : crate :: app :: jobdata :: JobData ,
-# [offset (152)] # [rename (name = "m_ClassChangeItem")] pub m_class_change_item : crate :: app :: itemdata :: ItemData ,
-# [offset (160)] # [rename (name = "m_ClassChangeWeaponMask")] pub m_class_change_weapon_mask : crate :: app :: weaponmask :: WeaponMask ,
-# [offset (168)] # [rename (name = "m_ClassChangeWeapon")] pub m_class_change_weapon : crate :: app :: itemdata :: ItemData ,
-}
-
 }
 
 #[cfg(feature = "app-unitgrowsequence-types")]
@@ -123,10 +123,10 @@ impl UnitGrowSequence {
 #[cfg(feature = "app-unitgrowsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::UnitGrowSequence_Label;
     pub use super::UnitGrowSequence;
     pub use super::IUnitGrowSequence;
     pub use super::IUnitGrowSequenceMethods;
+    pub use super::UnitGrowSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

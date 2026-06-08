@@ -17,7 +17,7 @@ mod __types {
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
 pub struct NodeColor  {
-    pub value: i32,
+    pub value: u8,
 }
 
 
@@ -49,13 +49,13 @@ impl  ::unity2::IlType for NodeColor  {
 
 impl  NodeColor  {
     pub fn black() -> Self {
-        Self { value: 16777472 }
+        Self { value: 0 }
 
     }
 
 
     pub fn red() -> Self {
-        Self { value: 33619969 }
+        Self { value: 1 }
 
     }
 

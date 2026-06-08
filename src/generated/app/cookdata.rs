@@ -19,12 +19,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cookdata/CookData.md"))] # [:: unity2 :: class (namespace = "App" , name = "CookData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: cookdata :: CookData >)] pub struct CookData {
-# [offset (136)] # [rename (name = "MaskColor100")] pub mask_color100 : crate :: unity_engine :: color :: Color ,
-# [offset (152)] # [rename (name = "MaskColor075")] pub mask_color075 : crate :: unity_engine :: color :: Color ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cookdata/CookData_Difficulty.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -97,6 +91,12 @@ impl  CookData_Difficulty  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cookdata/CookData.md"))] # [:: unity2 :: class (namespace = "App" , name = "CookData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: cookdata :: CookData >)] pub struct CookData {
+# [offset (136)] # [rename (name = "MaskColor100")] pub mask_color100 : crate :: unity_engine :: color :: Color ,
+# [offset (152)] # [rename (name = "MaskColor075")] pub mask_color075 : crate :: unity_engine :: color :: Color ,
+}
+
 }
 
 #[cfg(feature = "app-cookdata-types")]
@@ -125,10 +125,10 @@ impl CookData {
 #[cfg(feature = "app-cookdata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::CookData_Difficulty;
     pub use super::CookData;
     pub use super::ICookData;
     pub use super::ICookDataMethods;
-    pub use super::CookData_Difficulty;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdata_1::IStructData_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

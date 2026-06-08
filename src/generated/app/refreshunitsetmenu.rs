@@ -21,6 +21,19 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetmenu/RefreshUnitSetMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefreshUnitSetMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct RefreshUnitSetMenu {
+# [offset (200)] # [rename (name = "m_SelectFacilityEventHandler")] pub m_select_facility_event_handler : crate :: app :: refreshunitsetmenu :: RefreshUnitSetMenu_SelectFacilityEventHandler ,
+# [offset (208)] # [rename (name = "m_SetUnitEventHandler")] pub m_set_unit_event_handler : crate :: app :: refreshunitsetmenu :: RefreshUnitSetMenu_SetUnitEventHandler ,
+# [offset (216)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: refreshunitsetmenu :: RefreshUnitSetMenu_DecideEventHandler ,
+# [offset (224)] # [rename (name = "m_DecideMenu")] pub m_decide_menu : crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu ,
+# [offset (232)] # [rename (name = "m_FacilityIndex")] pub m_facility_index : i32 ,
+# [offset (240)] # [rename (name = "m_Unit")] pub m_unit : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: Array < crate :: app :: unit :: Unit > > ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetmenu/RefreshUnitSetMenu_SelectFacilityEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefreshUnitSetMenu.SelectFacilityEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct RefreshUnitSetMenu_SelectFacilityEventHandler {}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refreshunitsetmenu/RefreshUnitSetMenu_Result2.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -80,19 +93,6 @@ impl  RefreshUnitSetMenu_Result2  {
     }
 
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetmenu/RefreshUnitSetMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefreshUnitSetMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct RefreshUnitSetMenu {
-# [offset (200)] # [rename (name = "m_SelectFacilityEventHandler")] pub m_select_facility_event_handler : crate :: app :: refreshunitsetmenu :: RefreshUnitSetMenu_SelectFacilityEventHandler ,
-# [offset (208)] # [rename (name = "m_SetUnitEventHandler")] pub m_set_unit_event_handler : crate :: app :: refreshunitsetmenu :: RefreshUnitSetMenu_SetUnitEventHandler ,
-# [offset (216)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: refreshunitsetmenu :: RefreshUnitSetMenu_DecideEventHandler ,
-# [offset (224)] # [rename (name = "m_DecideMenu")] pub m_decide_menu : crate :: app :: refreshunitsetdecidemenu :: RefreshUnitSetDecideMenu ,
-# [offset (232)] # [rename (name = "m_FacilityIndex")] pub m_facility_index : i32 ,
-# [offset (240)] # [rename (name = "m_Unit")] pub m_unit : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: Array < crate :: app :: unit :: Unit > > ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetmenu/RefreshUnitSetMenu_SelectFacilityEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefreshUnitSetMenu.SelectFacilityEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct RefreshUnitSetMenu_SelectFacilityEventHandler {}
 
 
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetmenu/RefreshUnitSetMenu_SetUnitEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefreshUnitSetMenu.SetUnitEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct RefreshUnitSetMenu_SetUnitEventHandler {}
@@ -179,13 +179,13 @@ impl RefreshUnitSetMenu_DecideEventHandler {
 #[cfg(feature = "app-refreshunitsetmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RefreshUnitSetMenu_Result2;
     pub use super::RefreshUnitSetMenu;
     pub use super::IRefreshUnitSetMenu;
     pub use super::IRefreshUnitSetMenuMethods;
     pub use super::RefreshUnitSetMenu_SelectFacilityEventHandler;
     pub use super::IRefreshUnitSetMenu_SelectFacilityEventHandler;
     pub use super::IRefreshUnitSetMenu_SelectFacilityEventHandlerMethods;
+    pub use super::RefreshUnitSetMenu_Result2;
     pub use super::RefreshUnitSetMenu_SetUnitEventHandler;
     pub use super::IRefreshUnitSetMenu_SetUnitEventHandler;
     pub use super::IRefreshUnitSetMenu_SetUnitEventHandlerMethods;

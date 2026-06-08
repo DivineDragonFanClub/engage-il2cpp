@@ -34,154 +34,11 @@ mod __types {
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/helpmanager/HelpManager_HelpItemType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct HelpManager_HelpItemType  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for HelpManager_HelpItemType  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "HelpManager.HelpItemType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for HelpManager_HelpItemType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  HelpManager_HelpItemType  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn unit_name() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn god_name() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn bond_lv() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn job_title() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn efficacy() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn battle_type() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn unit_lv() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn r#move() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn weapon_lv() -> Self {
-        Self { value: 9 }
-
-    }
-
-
-    pub fn parameter() -> Self {
-        Self { value: 10 }
-
-    }
-
-
-    pub fn hp() -> Self {
-        Self { value: 11 }
-
-    }
-
-
-    pub fn hp_stock() -> Self {
-        Self { value: 12 }
-
-    }
-
-
-    pub fn weapon_item() -> Self {
-        Self { value: 13 }
-
-    }
-
-
-    pub fn god_weapon_item() -> Self {
-        Self { value: 14 }
-
-    }
-
-
-    pub fn skill() -> Self {
-        Self { value: 15 }
-
-    }
-
-
-    pub fn god_skill() -> Self {
-        Self { value: 16 }
-
-    }
-
-
-    pub fn terrain_info_skill() -> Self {
-        Self { value: 17 }
-
-    }
-
-
-    pub fn enchantment() -> Self {
-        Self { value: 18 }
-
-    }
-
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/helpmanager/HelpManager_Item.md"))] # [:: unity2 :: class (namespace = "App" , name = "HelpManager.Item")] # [parent (crate :: system :: object :: Object)] pub struct HelpManager_Item {
+# [offset (16)] # [rename (name = "self")] pub self_ : crate :: app :: helpitembase :: HelpItemBase ,
+# [offset (24)] # [rename (name = "pos")] pub pos : crate :: unity_engine :: vector2 :: Vector2 ,
+# [offset (32)] # [rename (name = "dirLine")] pub dir_line : :: unity2 :: Array < :: unity2 :: Array < crate :: unity_engine :: vector2 :: Vector2 > > ,
+# [offset (40)] # [rename (name = "isMoveToNoTouchItem")] pub is_move_to_no_touch_item : :: unity2 :: Array < bool > ,
 }
 
 
@@ -337,11 +194,154 @@ impl  HelpManager_Item_Dir  {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/helpmanager/HelpManager_Item.md"))] # [:: unity2 :: class (namespace = "App" , name = "HelpManager.Item")] # [parent (crate :: system :: object :: Object)] pub struct HelpManager_Item {
-# [offset (16)] # [rename (name = "self")] pub self_ : crate :: app :: helpitembase :: HelpItemBase ,
-# [offset (24)] # [rename (name = "pos")] pub pos : crate :: unity_engine :: vector2 :: Vector2 ,
-# [offset (32)] # [rename (name = "dirLine")] pub dir_line : :: unity2 :: Array < :: unity2 :: Array < crate :: unity_engine :: vector2 :: Vector2 > > ,
-# [offset (40)] # [rename (name = "isMoveToNoTouchItem")] pub is_move_to_no_touch_item : :: unity2 :: Array < bool > ,
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/helpmanager/HelpManager_HelpItemType.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct HelpManager_HelpItemType  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for HelpManager_HelpItemType  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "HelpManager.HelpItemType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for HelpManager_HelpItemType  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  HelpManager_HelpItemType  {
+    pub fn none() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn unit_name() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn god_name() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn bond_lv() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn job_title() -> Self {
+        Self { value: 4 }
+
+    }
+
+
+    pub fn efficacy() -> Self {
+        Self { value: 5 }
+
+    }
+
+
+    pub fn battle_type() -> Self {
+        Self { value: 6 }
+
+    }
+
+
+    pub fn unit_lv() -> Self {
+        Self { value: 7 }
+
+    }
+
+
+    pub fn r#move() -> Self {
+        Self { value: 8 }
+
+    }
+
+
+    pub fn weapon_lv() -> Self {
+        Self { value: 9 }
+
+    }
+
+
+    pub fn parameter() -> Self {
+        Self { value: 10 }
+
+    }
+
+
+    pub fn hp() -> Self {
+        Self { value: 11 }
+
+    }
+
+
+    pub fn hp_stock() -> Self {
+        Self { value: 12 }
+
+    }
+
+
+    pub fn weapon_item() -> Self {
+        Self { value: 13 }
+
+    }
+
+
+    pub fn god_weapon_item() -> Self {
+        Self { value: 14 }
+
+    }
+
+
+    pub fn skill() -> Self {
+        Self { value: 15 }
+
+    }
+
+
+    pub fn god_skill() -> Self {
+        Self { value: 16 }
+
+    }
+
+
+    pub fn terrain_info_skill() -> Self {
+        Self { value: 17 }
+
+    }
+
+
+    pub fn enchantment() -> Self {
+        Self { value: 18 }
+
+    }
+
 }
 
 }
@@ -392,12 +392,12 @@ pub mod prelude {
     pub use super::HelpManager;
     pub use super::IHelpManager;
     pub use super::IHelpManagerMethods;
-    pub use super::HelpManager_HelpItemType;
-    pub use super::HelpManager_SituationType;
-    pub use super::HelpManager_Item_Dir;
     pub use super::HelpManager_Item;
     pub use super::IHelpManager_Item;
     pub use super::IHelpManager_ItemMethods;
+    pub use super::HelpManager_SituationType;
+    pub use super::HelpManager_Item_Dir;
+    pub use super::HelpManager_HelpItemType;
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

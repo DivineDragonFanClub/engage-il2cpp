@@ -132,22 +132,6 @@ impl  MapPrefab_Category  {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapprefab/MapPrefab_Entity.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapPrefab.Entity")] # [parent (crate :: system :: object :: Object)] pub struct MapPrefab_Entity {
-# [offset (16)] # [rename (name = "gameObject")] pub game_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (24)] # [rename (name = "region")] pub region : crate :: app :: mapprefab :: MapPrefab_Region ,
-# [offset (28)] # [rename (name = "category")] pub category : crate :: app :: mapprefab :: MapPrefab_Category ,
-# [offset (32)] # [rename (name = "name")] pub name : :: unity2 :: Il2CppString ,
-# [offset (40)] # [rename (name = "time")] pub time : :: unity2 :: Il2CppString ,
-# [offset (48)] # [rename (name = "user")] pub user : :: unity2 :: Il2CppString ,
-# [offset (56)] # [rename (name = "comment")] pub comment : :: unity2 :: Il2CppString ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapprefab/MapPrefab.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapPrefab")] # [parent (crate :: unity_engine :: scriptableobject :: ScriptableObject)] pub struct MapPrefab {
-# [offset (24)] # [rename (name = "m_Entitys")] pub m_entitys : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mapprefab :: MapPrefab_Entity > ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapprefab/MapPrefab_Region.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -214,6 +198,22 @@ impl  MapPrefab_Region  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapprefab/MapPrefab_Entity.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapPrefab.Entity")] # [parent (crate :: system :: object :: Object)] pub struct MapPrefab_Entity {
+# [offset (16)] # [rename (name = "gameObject")] pub game_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (24)] # [rename (name = "region")] pub region : crate :: app :: mapprefab :: MapPrefab_Region ,
+# [offset (28)] # [rename (name = "category")] pub category : crate :: app :: mapprefab :: MapPrefab_Category ,
+# [offset (32)] # [rename (name = "name")] pub name : :: unity2 :: Il2CppString ,
+# [offset (40)] # [rename (name = "time")] pub time : :: unity2 :: Il2CppString ,
+# [offset (48)] # [rename (name = "user")] pub user : :: unity2 :: Il2CppString ,
+# [offset (56)] # [rename (name = "comment")] pub comment : :: unity2 :: Il2CppString ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapprefab/MapPrefab.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapPrefab")] # [parent (crate :: unity_engine :: scriptableobject :: ScriptableObject)] pub struct MapPrefab {
+# [offset (24)] # [rename (name = "m_Entitys")] pub m_entitys : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mapprefab :: MapPrefab_Entity > ,
+}
+
 }
 
 #[cfg(feature = "app-mapprefab-types")]
@@ -257,13 +257,13 @@ impl MapPrefab {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::MapPrefab_Category;
+    pub use super::MapPrefab_Region;
     pub use super::MapPrefab_Entity;
     pub use super::IMapPrefab_Entity;
     pub use super::IMapPrefab_EntityMethods;
     pub use super::MapPrefab;
     pub use super::IMapPrefab;
     pub use super::IMapPrefabMethods;
-    pub use super::MapPrefab_Region;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

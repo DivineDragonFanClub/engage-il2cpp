@@ -23,6 +23,19 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/wellitemselectmenu/WellItemSelectMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "WellItemSelectMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct WellItemSelectMenu {
+# [offset (200)] # [rename (name = "ItemKindList")] pub item_kind_list : :: unity2 :: Array < crate :: app :: itemdata :: ItemData_Kinds > ,
+# [static_field] # [rename (name = "SELECT_ITEM_MAX")] pub select_item_max : i32 ,
+# [offset (208)] # [rename (name = "m_SelectedKindIndex")] pub m_selected_kind_index : i32 ,
+# [static_field] # [rename (name = "ShowRowNum")] pub show_row_num : i32 ,
+# [offset (216)] # [rename (name = "m_SavedFullMenuItemList")] pub m_saved_full_menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > ,
+# [offset (224)] # [rename (name = "m_SortMenuItemList")] pub m_sort_menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > ,
+# [offset (232)] # [rename (name = "m_ItemKind")] pub m_item_kind : crate :: app :: itemdata :: ItemData_Kinds ,
+# [offset (240)] # [rename (name = "m_Selects")] pub m_selects : :: unity2 :: Array < crate :: app :: basicmenuselect :: BasicMenuSelect > ,
+# [offset (248)] # [rename (name = "m_SelectedItemList")] pub m_selected_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicitemmenuitem :: BasicItemMenuItem > ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/wellitemselectmenu/WellItemSelectMenu_Kinds.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -78,19 +91,6 @@ impl  WellItemSelectMenu_Kinds  {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/wellitemselectmenu/WellItemSelectMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "WellItemSelectMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct WellItemSelectMenu {
-# [offset (200)] # [rename (name = "ItemKindList")] pub item_kind_list : :: unity2 :: Array < crate :: app :: itemdata :: ItemData_Kinds > ,
-# [static_field] # [rename (name = "SELECT_ITEM_MAX")] pub select_item_max : i32 ,
-# [offset (208)] # [rename (name = "m_SelectedKindIndex")] pub m_selected_kind_index : i32 ,
-# [static_field] # [rename (name = "ShowRowNum")] pub show_row_num : i32 ,
-# [offset (216)] # [rename (name = "m_SavedFullMenuItemList")] pub m_saved_full_menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > ,
-# [offset (224)] # [rename (name = "m_SortMenuItemList")] pub m_sort_menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > ,
-# [offset (232)] # [rename (name = "m_ItemKind")] pub m_item_kind : crate :: app :: itemdata :: ItemData_Kinds ,
-# [offset (240)] # [rename (name = "m_Selects")] pub m_selects : :: unity2 :: Array < crate :: app :: basicmenuselect :: BasicMenuSelect > ,
-# [offset (248)] # [rename (name = "m_SelectedItemList")] pub m_selected_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicitemmenuitem :: BasicItemMenuItem > ,
-}
-
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/wellitemselectmenu/WellItemSelectMenu_SelectedItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "WellItemSelectMenu.SelectedItem")] # [parent (crate :: app :: wellitemselectmenuitem :: WellItemSelectMenuItem)] pub struct WellItemSelectMenu_SelectedItem {
 # [offset (128)] # [rename (name = "m_MenuItem")] pub m_menu_item : crate :: app :: wellitemselectmenuitem :: WellItemSelectMenuItem ,
 }
@@ -140,10 +140,10 @@ impl WellItemSelectMenu_SelectedItem {
 #[cfg(feature = "app-wellitemselectmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::WellItemSelectMenu_Kinds;
     pub use super::WellItemSelectMenu;
     pub use super::IWellItemSelectMenu;
     pub use super::IWellItemSelectMenuMethods;
+    pub use super::WellItemSelectMenu_Kinds;
     pub use super::WellItemSelectMenu_SelectedItem;
     pub use super::IWellItemSelectMenu_SelectedItem;
     pub use super::IWellItemSelectMenu_SelectedItemMethods;

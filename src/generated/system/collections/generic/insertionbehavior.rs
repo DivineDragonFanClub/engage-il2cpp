@@ -17,7 +17,7 @@ mod __types {
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
 pub struct InsertionBehavior  {
-    pub value: i32,
+    pub value: u8,
 }
 
 
@@ -49,19 +49,19 @@ impl  ::unity2::IlType for InsertionBehavior  {
 
 impl  InsertionBehavior  {
     pub fn none() -> Self {
-        Self { value: 117571840 }
+        Self { value: 0 }
 
     }
 
 
     pub fn overwrite_existing() -> Self {
-        Self { value: 459265 }
+        Self { value: 1 }
 
     }
 
 
     pub fn throw_on_existing() -> Self {
-        Self { value: 1794 }
+        Self { value: 2 }
 
     }
 
