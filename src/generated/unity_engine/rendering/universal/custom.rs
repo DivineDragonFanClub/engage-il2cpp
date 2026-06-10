@@ -70,7 +70,7 @@
  # [cfg (feature = "unity_engine-rendering-universal-custom-reflectionrenderer")] pub use reflectionrenderer :: { IReflectionRendererMethods }
  ;
  # [cfg (any (feature = "unity_engine-rendering-universal-custom-reflectionrendererdata-types"))] pub mod reflectionrendererdata ;
- # [cfg (feature = "unity_engine-rendering-universal-custom-reflectionrendererdata-types")] pub use reflectionrendererdata :: { ReflectionRendererData_ReflectionTarget , ReflectionRendererData_ShaderResources , IReflectionRendererData_ShaderResources , ReflectionRendererData , IReflectionRendererData }
+ # [cfg (feature = "unity_engine-rendering-universal-custom-reflectionrendererdata-types")] pub use reflectionrendererdata :: { ReflectionRendererData_ShaderResources , IReflectionRendererData_ShaderResources , ReflectionRendererData_ReflectionTarget , ReflectionRendererData , IReflectionRendererData }
  ;
  # [cfg (feature = "unity_engine-rendering-universal-custom-reflectionrendererdata")] pub use reflectionrendererdata :: { IReflectionRendererData_ShaderResourcesMethods , IReflectionRendererDataMethods }
  ;
@@ -80,7 +80,7 @@
  # [cfg (feature = "unity_engine-rendering-universal-custom-statusmodelrenderer")] pub use statusmodelrenderer :: { IStatusModelRendererMethods }
  ;
  # [cfg (any (feature = "unity_engine-rendering-universal-custom-statusmodelrendererdata-types"))] pub mod statusmodelrendererdata ;
- # [cfg (feature = "unity_engine-rendering-universal-custom-statusmodelrendererdata-types")] pub use statusmodelrendererdata :: { StatusModelRendererData , IStatusModelRendererData , StatusModelRendererData_ShaderResources , IStatusModelRendererData_ShaderResources }
+ # [cfg (feature = "unity_engine-rendering-universal-custom-statusmodelrendererdata-types")] pub use statusmodelrendererdata :: { StatusModelRendererData_ShaderResources , IStatusModelRendererData_ShaderResources , StatusModelRendererData , IStatusModelRendererData }
  ;
- # [cfg (feature = "unity_engine-rendering-universal-custom-statusmodelrendererdata")] pub use statusmodelrendererdata :: { IStatusModelRendererDataMethods , IStatusModelRendererData_ShaderResourcesMethods }
+ # [cfg (feature = "unity_engine-rendering-universal-custom-statusmodelrendererdata")] pub use statusmodelrendererdata :: { IStatusModelRendererData_ShaderResourcesMethods , IStatusModelRendererDataMethods }
  ;

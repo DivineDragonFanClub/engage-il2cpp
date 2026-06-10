@@ -17,16 +17,13 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-logger_2")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Logger_2_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Logger_2 as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Logger_2 as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : Logger_2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (Logger_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "unity_engine-resource_management-resource_providers-logger_2")]
-pub trait ILogger_2Methods : ILogger_2 { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Logger_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Logger_2_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+pub trait ILogger_2Methods : ILogger_2 { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Logger_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Logger_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bef860usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-logger_2")]
 impl < __T : ILogger_2 > ILogger_2Methods for __T { }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-logger_2")]
-impl Logger_2 { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Logger_2_unity2_raw :: __lookup_ctor :: get_method_info () } }
+impl Logger_2 { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Logger_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-logger_2")]
 impl Logger_2 {

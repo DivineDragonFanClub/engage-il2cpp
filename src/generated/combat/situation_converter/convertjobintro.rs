@@ -15,6 +15,11 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/situation_converter/convertjobintro/ConvertJobIntro.md"))] # [:: unity2 :: class (namespace = "Combat.SituationConverter" , name = "ConvertJobIntro")] # [parent (crate :: combat :: situation_converter :: baseconverter :: BaseConverter)] pub struct ConvertJobIntro {
+# [offset (24)] # [rename (name = "m_State")] pub m_state : crate :: combat :: situation_converter :: convertjobintro :: ConvertJobIntro_State ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/situation_converter/convertjobintro/ConvertJobIntro_State.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -75,27 +80,19 @@ impl  ConvertJobIntro_State  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/situation_converter/convertjobintro/ConvertJobIntro.md"))] # [:: unity2 :: class (namespace = "Combat.SituationConverter" , name = "ConvertJobIntro")] # [parent (crate :: combat :: situation_converter :: baseconverter :: BaseConverter)] pub struct ConvertJobIntro {
-# [offset (24)] # [rename (name = "m_State")] pub m_state : crate :: combat :: situation_converter :: convertjobintro :: ConvertJobIntro_State ,
-}
-
 }
 
 #[cfg(feature = "combat-situation_converter-convertjobintro-types")]
 pub use __types::*;
 
 #[cfg(feature = "combat-situation_converter-convertjobintro")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ConvertJobIntro_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: situation_converter :: cameradataset :: CameraDataSet as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ConvertJobIntro as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ConvertJobIntro as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : ConvertJobIntro , data : crate :: combat :: situation_converter :: cameradataset :: CameraDataSet , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (ConvertJobIntro , crate :: combat :: situation_converter :: cameradataset :: CameraDataSet , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , data , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_convert { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: camerasituation :: CameraSituation as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ConvertJobIntro as :: unity2 :: ClassIdentity > :: class () , "Convert" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ConvertJobIntro as :: unity2 :: ClassIdentity > :: NAME , "Convert" , e) , } } } pub unsafe fn convert (this : ConvertJobIntro , situation : crate :: combat :: camerasituation :: CameraSituation , arg : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition { let inner : extern "C" fn (ConvertJobIntro , crate :: combat :: camerasituation :: CameraSituation , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition = :: core :: mem :: transmute (__lookup_convert :: get_method_info () . method_ptr ,) ; inner (this , situation , arg , __unity2_method_info) } }
-
-#[cfg(feature = "combat-situation_converter-convertjobintro")]
-pub trait IConvertJobIntroMethods : IConvertJobIntro { # [doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` overload"] fn ctor (self , data : impl :: core :: convert :: Into < crate :: combat :: situation_converter :: cameradataset :: CameraDataSet >) -> () { unsafe { let __receiver = < ConvertJobIntro as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ConvertJobIntro_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } # [doc = "`Convert(crate::combat::camerasituation::CameraSituation, ::unity2::Il2CppString)` overload"] fn convert (self , situation : impl :: core :: convert :: Into < crate :: combat :: camerasituation :: CameraSituation > , arg : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: combat :: cameraposition :: CameraPosition { unsafe { let __receiver = < ConvertJobIntro as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ConvertJobIntro_unity2_raw :: convert (__receiver , :: core :: convert :: Into :: into (situation) , :: core :: convert :: Into :: into (arg) , :: core :: option :: Option :: None) } } }
+pub trait IConvertJobIntroMethods : IConvertJobIntro { # [doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` overload"] fn ctor (self , data : impl :: core :: convert :: Into < crate :: combat :: situation_converter :: cameradataset :: CameraDataSet >) -> () { unsafe { let __receiver = < ConvertJobIntro as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConvertJobIntro , crate :: combat :: situation_converter :: cameradataset :: CameraDataSet , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2541fe0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`Convert(crate::combat::camerasituation::CameraSituation, ::unity2::Il2CppString)` overload"] fn convert (self , situation : impl :: core :: convert :: Into < crate :: combat :: camerasituation :: CameraSituation > , arg : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: combat :: cameraposition :: CameraPosition { unsafe { let __receiver = < ConvertJobIntro as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConvertJobIntro , crate :: combat :: camerasituation :: CameraSituation , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2541ff0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (situation) , :: core :: convert :: Into :: into (arg) , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "combat-situation_converter-convertjobintro")]
 impl < __T : IConvertJobIntro > IConvertJobIntroMethods for __T { }
 
 #[cfg(feature = "combat-situation_converter-convertjobintro")]
-impl ConvertJobIntro { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ConvertJobIntro_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn convert_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ConvertJobIntro_unity2_raw :: __lookup_convert :: get_method_info () } }
+impl ConvertJobIntro { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConvertJobIntro as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn convert_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConvertJobIntro as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
 
 #[cfg(feature = "combat-situation_converter-convertjobintro")]
 impl ConvertJobIntro {
@@ -105,10 +102,10 @@ impl ConvertJobIntro {
 #[cfg(feature = "combat-situation_converter-convertjobintro")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ConvertJobIntro_State;
     pub use super::ConvertJobIntro;
     pub use super::IConvertJobIntro;
     pub use super::IConvertJobIntroMethods;
+    pub use super::ConvertJobIntro_State;
     pub use crate::combat::situation_converter::baseconverter::IBaseConverter;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

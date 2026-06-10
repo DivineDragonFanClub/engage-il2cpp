@@ -17,13 +17,10 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-colorutility")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ColorUtility_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_html_string_rgb { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: color :: Color as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ColorUtility as :: unity2 :: ClassIdentity > :: class () , "ToHtmlStringRGB" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ColorUtility as :: unity2 :: ClassIdentity > :: NAME , "ToHtmlStringRGB" , e) , } } } pub unsafe fn to_html_string_rgb (color : crate :: unity_engine :: color :: Color , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_to_html_string_rgb :: get_method_info () . method_ptr ,) ; inner (color , __unity2_method_info) } }
+impl ColorUtility { # [doc = "`ToHtmlStringRGB(crate::unity_engine::color::Color)` overload"] pub fn to_html_string_rgb (color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c41b70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (color) , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "unity_engine-colorutility")]
-impl ColorUtility { # [doc = "`ToHtmlStringRGB(crate::unity_engine::color::Color)` overload"] pub fn to_html_string_rgb (color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> :: unity2 :: Il2CppString { unsafe { __ColorUtility_unity2_raw :: to_html_string_rgb (:: core :: convert :: Into :: into (color) , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "unity_engine-colorutility")]
-impl ColorUtility { pub fn to_html_string_rgb_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ColorUtility_unity2_raw :: __lookup_to_html_string_rgb :: get_method_info () } }
+impl ColorUtility { pub fn to_html_string_rgb_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ColorUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
 
 #[cfg(feature = "unity_engine-colorutility")]
 #[doc(hidden)]

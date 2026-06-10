@@ -17,16 +17,13 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-reflection-assemblyproductattribute")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AssemblyProductAttribute_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AssemblyProductAttribute as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AssemblyProductAttribute as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AssemblyProductAttribute , product : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AssemblyProductAttribute , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , product , __unity2_method_info) } }
-
-#[cfg(feature = "system-reflection-assemblyproductattribute")]
-pub trait IAssemblyProductAttributeMethods : IAssemblyProductAttribute { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , product : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AssemblyProductAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AssemblyProductAttribute_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (product) , :: core :: option :: Option :: None) } } }
+pub trait IAssemblyProductAttributeMethods : IAssemblyProductAttribute { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , product : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AssemblyProductAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssemblyProductAttribute , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3403a90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (product) , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "system-reflection-assemblyproductattribute")]
 impl < __T : IAssemblyProductAttribute > IAssemblyProductAttributeMethods for __T { }
 
 #[cfg(feature = "system-reflection-assemblyproductattribute")]
-impl AssemblyProductAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AssemblyProductAttribute_unity2_raw :: __lookup_ctor :: get_method_info () } }
+impl AssemblyProductAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssemblyProductAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
 
 #[cfg(feature = "system-reflection-assemblyproductattribute")]
 impl AssemblyProductAttribute {

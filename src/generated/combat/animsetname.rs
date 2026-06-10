@@ -17,13 +17,10 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-animsetname")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AnimsetName_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_change_nml { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < u16 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimsetName as :: unity2 :: ClassIdentity > :: class () , "ChangeNML" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimsetName as :: unity2 :: ClassIdentity > :: NAME , "ChangeNML" , e) , } } } pub unsafe fn change_nml (aoc : :: unity2 :: Il2CppString , c : u16 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (:: unity2 :: Il2CppString , u16 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_change_nml :: get_method_info () . method_ptr ,) ; inner (aoc , c , __unity2_method_info) } }
+impl AnimsetName { # [doc = "`ChangeNML(::unity2::Il2CppString, u16)` overload"] pub fn change_nml (aoc : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , c : impl :: core :: convert :: Into < u16 >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , u16 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c9cad0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (aoc) , :: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "combat-animsetname")]
-impl AnimsetName { # [doc = "`ChangeNML(::unity2::Il2CppString, u16)` overload"] pub fn change_nml (aoc : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , c : impl :: core :: convert :: Into < u16 >) -> :: unity2 :: Il2CppString { unsafe { __AnimsetName_unity2_raw :: change_nml (:: core :: convert :: Into :: into (aoc) , :: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "combat-animsetname")]
-impl AnimsetName { pub fn change_nml_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimsetName_unity2_raw :: __lookup_change_nml :: get_method_info () } }
+impl AnimsetName { pub fn change_nml_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimsetName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
 
 #[cfg(feature = "combat-animsetname")]
 #[doc(hidden)]

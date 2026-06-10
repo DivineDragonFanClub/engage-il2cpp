@@ -83,9 +83,9 @@
  # [cfg (feature = "system-io-fileshare-types")] pub use fileshare :: { FileShare }
  ;
  # [cfg (any (feature = "system-io-filestream-types"))] pub mod filestream ;
- # [cfg (feature = "system-io-filestream-types")] pub use filestream :: { FileStream_ReadDelegate , IFileStream_ReadDelegate , FileStream , IFileStream , FileStream_WriteDelegate , IFileStream_WriteDelegate }
+ # [cfg (feature = "system-io-filestream-types")] pub use filestream :: { FileStream_WriteDelegate , IFileStream_WriteDelegate , FileStream , IFileStream , FileStream_ReadDelegate , IFileStream_ReadDelegate }
  ;
- # [cfg (feature = "system-io-filestream")] pub use filestream :: { IFileStream_ReadDelegateMethods , IFileStreamMethods , IFileStream_WriteDelegateMethods }
+ # [cfg (feature = "system-io-filestream")] pub use filestream :: { IFileStream_WriteDelegateMethods , IFileStreamMethods , IFileStream_ReadDelegateMethods }
  ;
  # [cfg (any (feature = "system-io-filestreamasyncresult-types"))] pub mod filestreamasyncresult ;
  # [cfg (feature = "system-io-filestreamasyncresult-types")] pub use filestreamasyncresult :: { FileStreamAsyncResult , IFileStreamAsyncResult }
@@ -168,9 +168,9 @@
  # [cfg (feature = "system-io-seekorigin-types")] pub use seekorigin :: { SeekOrigin }
  ;
  # [cfg (any (feature = "system-io-stream-types"))] pub mod stream ;
- # [cfg (feature = "system-io-stream-types")] pub use stream :: { Stream , IStream , Stream_ReadWriteParameters , Stream_SynchronousAsyncResult , IStream_SynchronousAsyncResult , Stream_ReadWriteTask , IStream_ReadWriteTask , Stream_NullStream , IStream_NullStream }
+ # [cfg (feature = "system-io-stream-types")] pub use stream :: { Stream_ReadWriteTask , IStream_ReadWriteTask , Stream_SynchronousAsyncResult , IStream_SynchronousAsyncResult , Stream , IStream , Stream_ReadWriteParameters , Stream_NullStream , IStream_NullStream }
  ;
- # [cfg (feature = "system-io-stream")] pub use stream :: { IStreamMethods , IStream_SynchronousAsyncResultMethods , IStream_ReadWriteTaskMethods , IStream_NullStreamMethods }
+ # [cfg (feature = "system-io-stream")] pub use stream :: { IStream_ReadWriteTaskMethods , IStream_SynchronousAsyncResultMethods , IStreamMethods , IStream_NullStreamMethods }
  ;
  # [cfg (any (feature = "system-io-streamreader-types"))] pub mod streamreader ;
  # [cfg (feature = "system-io-streamreader-types")] pub use streamreader :: { StreamReader_NullStreamReader , IStreamReader_NullStreamReader , StreamReader , IStreamReader }
@@ -193,14 +193,14 @@
  # [cfg (feature = "system-io-stringresulthandler")] pub use stringresulthandler :: { IStringResultHandlerMethods }
  ;
  # [cfg (any (feature = "system-io-textreader-types"))] pub mod textreader ;
- # [cfg (feature = "system-io-textreader-types")] pub use textreader :: { TextReader_NullTextReader , ITextReader_NullTextReader , TextReader_SyncTextReader , ITextReader_SyncTextReader , TextReader , ITextReader }
+ # [cfg (feature = "system-io-textreader-types")] pub use textreader :: { TextReader_SyncTextReader , ITextReader_SyncTextReader , TextReader_NullTextReader , ITextReader_NullTextReader , TextReader , ITextReader }
  ;
- # [cfg (feature = "system-io-textreader")] pub use textreader :: { ITextReader_NullTextReaderMethods , ITextReader_SyncTextReaderMethods , ITextReaderMethods }
+ # [cfg (feature = "system-io-textreader")] pub use textreader :: { ITextReader_SyncTextReaderMethods , ITextReader_NullTextReaderMethods , ITextReaderMethods }
  ;
  # [cfg (any (feature = "system-io-textwriter-types"))] pub mod textwriter ;
- # [cfg (feature = "system-io-textwriter-types")] pub use textwriter :: { TextWriter , ITextWriter , TextWriter_NullTextWriter , ITextWriter_NullTextWriter , TextWriter_SyncTextWriter , ITextWriter_SyncTextWriter }
+ # [cfg (feature = "system-io-textwriter-types")] pub use textwriter :: { TextWriter_SyncTextWriter , ITextWriter_SyncTextWriter , TextWriter , ITextWriter , TextWriter_NullTextWriter , ITextWriter_NullTextWriter }
  ;
- # [cfg (feature = "system-io-textwriter")] pub use textwriter :: { ITextWriterMethods , ITextWriter_NullTextWriterMethods , ITextWriter_SyncTextWriterMethods }
+ # [cfg (feature = "system-io-textwriter")] pub use textwriter :: { ITextWriter_SyncTextWriterMethods , ITextWriterMethods , ITextWriter_NullTextWriterMethods }
  ;
  # [cfg (any (feature = "system-io-unexceptionalstreamreader-types"))] pub mod unexceptionalstreamreader ;
  # [cfg (feature = "system-io-unexceptionalstreamreader-types")] pub use unexceptionalstreamreader :: { UnexceptionalStreamReader , IUnexceptionalStreamReader }

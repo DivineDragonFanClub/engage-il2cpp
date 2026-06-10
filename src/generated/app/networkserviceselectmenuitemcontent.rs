@@ -29,16 +29,13 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-networkserviceselectmenuitemcontent")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __NetworkServiceSelectMenuItemContent_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NetworkServiceSelectMenuItemContent as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NetworkServiceSelectMenuItemContent as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : NetworkServiceSelectMenuItemContent , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (NetworkServiceSelectMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "app-networkserviceselectmenuitemcontent")]
-pub trait INetworkServiceSelectMenuItemContentMethods : INetworkServiceSelectMenuItemContent { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < NetworkServiceSelectMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __NetworkServiceSelectMenuItemContent_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+pub trait INetworkServiceSelectMenuItemContentMethods : INetworkServiceSelectMenuItemContent { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < NetworkServiceSelectMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NetworkServiceSelectMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f13dd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "app-networkserviceselectmenuitemcontent")]
 impl < __T : INetworkServiceSelectMenuItemContent > INetworkServiceSelectMenuItemContentMethods for __T { }
 
 #[cfg(feature = "app-networkserviceselectmenuitemcontent")]
-impl NetworkServiceSelectMenuItemContent { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NetworkServiceSelectMenuItemContent_unity2_raw :: __lookup_ctor :: get_method_info () } }
+impl NetworkServiceSelectMenuItemContent { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NetworkServiceSelectMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
 
 #[cfg(feature = "app-networkserviceselectmenuitemcontent")]
 impl NetworkServiceSelectMenuItemContent {

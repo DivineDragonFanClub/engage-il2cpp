@@ -19,43 +19,6 @@ mod __types {
  ;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/samplewave/SampleWave_Data.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct SampleWave_Data {
-    pub vector_u: f32,
-    pub vector_v: f32,
-    pub offset_u: f32,
-    pub offset_v: f32,
-}
-
-
-impl ::unity2::ClassIdentity for SampleWave_Data {
-    const NAMESPACE: &'static str = "";
-
-    const NAME: &'static str = "SampleWave.Data";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for SampleWave_Data {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/samplewave/SampleWave_Temp.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -102,22 +65,56 @@ impl ::unity2::IlType for SampleWave_Temp {
 # [offset (68)] # [rename (name = "m_Scale")] pub m_scale : f32 ,
 }
 
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/samplewave/SampleWave_Data.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct SampleWave_Data {
+    pub vector_u: f32,
+    pub vector_v: f32,
+    pub offset_u: f32,
+    pub offset_v: f32,
+}
+
+
+impl ::unity2::ClassIdentity for SampleWave_Data {
+    const NAMESPACE: &'static str = "";
+
+    const NAME: &'static str = "SampleWave.Data";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl ::unity2::IlType for SampleWave_Data {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
 }
 
 #[cfg(feature = "root-samplewave-types")]
 pub use __types::*;
 
 #[cfg(feature = "root-samplewave")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __SampleWave_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_start { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SampleWave as :: unity2 :: ClassIdentity > :: class () , "Start" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SampleWave as :: unity2 :: ClassIdentity > :: NAME , "Start" , e) , } } } pub unsafe fn start (this : SampleWave , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SampleWave , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_start :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SampleWave as :: unity2 :: ClassIdentity > :: class () , "Update" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SampleWave as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , } } } pub unsafe fn update (this : SampleWave , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SampleWave , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_wave { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SampleWave as :: unity2 :: ClassIdentity > :: class () , "UpdateWave" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SampleWave as :: unity2 :: ClassIdentity > :: NAME , "UpdateWave" , e) , } } } pub unsafe fn update_wave (this : SampleWave , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SampleWave , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_wave :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_reset_wave { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SampleWave as :: unity2 :: ClassIdentity > :: class () , "ResetWave" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SampleWave as :: unity2 :: ClassIdentity > :: NAME , "ResetWave" , e) , } } } pub unsafe fn reset_wave (this : SampleWave , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SampleWave , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_reset_wave :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_color { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: color :: Color as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SampleWave as :: unity2 :: ClassIdentity > :: class () , "UpdateColor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SampleWave as :: unity2 :: ClassIdentity > :: NAME , "UpdateColor" , e) , } } } pub unsafe fn update_color (this : SampleWave , color : crate :: unity_engine :: color :: Color , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SampleWave , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_color :: get_method_info () . method_ptr ,) ; inner (this , color , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_create_material { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SampleWave as :: unity2 :: ClassIdentity > :: class () , "CreateMaterial" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SampleWave as :: unity2 :: ClassIdentity > :: NAME , "CreateMaterial" , e) , } } } pub unsafe fn create_material (this : SampleWave , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SampleWave , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_create_material :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SampleWave as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SampleWave as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : SampleWave , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SampleWave , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "root-samplewave")]
-pub trait ISampleWaveMethods : ISampleWave { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < SampleWave as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SampleWave_unity2_raw :: start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < SampleWave as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SampleWave_unity2_raw :: update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UpdateWave()` overload"] fn update_wave (self ,) -> () { unsafe { let __receiver = < SampleWave as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SampleWave_unity2_raw :: update_wave (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ResetWave()` overload"] fn reset_wave (self ,) -> () { unsafe { let __receiver = < SampleWave as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SampleWave_unity2_raw :: reset_wave (__receiver , :: core :: option :: Option :: None) } } # [doc = "`UpdateColor(crate::unity_engine::color::Color)` overload"] fn update_color (self , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { let __receiver = < SampleWave as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SampleWave_unity2_raw :: update_color (__receiver , :: core :: convert :: Into :: into (color) , :: core :: option :: Option :: None) } } # [doc = "`CreateMaterial()` overload"] fn create_material (self ,) -> () { unsafe { let __receiver = < SampleWave as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SampleWave_unity2_raw :: create_material (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SampleWave as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SampleWave_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+pub trait ISampleWaveMethods : ISampleWave { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < SampleWave as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SampleWave , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec3cd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < SampleWave as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SampleWave , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec4280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateWave()` overload"] fn update_wave (self ,) -> () { unsafe { let __receiver = < SampleWave as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SampleWave , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec4290usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ResetWave()` overload"] fn reset_wave (self ,) -> () { unsafe { let __receiver = < SampleWave as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SampleWave , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec3fb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateColor(crate::unity_engine::color::Color)` overload"] fn update_color (self , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { let __receiver = < SampleWave as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SampleWave , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec3e50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (color) , :: core :: option :: Option :: None) } } } # [doc = "`CreateMaterial()` overload"] fn create_material (self ,) -> () { unsafe { let __receiver = < SampleWave as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SampleWave , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec40e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SampleWave as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SampleWave , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec46f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "root-samplewave")]
 impl < __T : ISampleWave > ISampleWaveMethods for __T { }
 
 #[cfg(feature = "root-samplewave")]
-impl SampleWave { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SampleWave_unity2_raw :: __lookup_start :: get_method_info () } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SampleWave_unity2_raw :: __lookup_update :: get_method_info () } pub fn update_wave_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SampleWave_unity2_raw :: __lookup_update_wave :: get_method_info () } pub fn reset_wave_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SampleWave_unity2_raw :: __lookup_reset_wave :: get_method_info () } pub fn update_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SampleWave_unity2_raw :: __lookup_update_color :: get_method_info () } pub fn create_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SampleWave_unity2_raw :: __lookup_create_material :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SampleWave_unity2_raw :: __lookup_ctor :: get_method_info () } }
+impl SampleWave { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SampleWave as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SampleWave as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn update_wave_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SampleWave as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn reset_wave_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SampleWave as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn update_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SampleWave as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn create_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SampleWave as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SampleWave as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
 
 #[cfg(feature = "root-samplewave")]
 impl SampleWave {
@@ -127,11 +124,11 @@ impl SampleWave {
 #[cfg(feature = "root-samplewave")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SampleWave_Data;
     pub use super::SampleWave_Temp;
     pub use super::SampleWave;
     pub use super::ISampleWave;
     pub use super::ISampleWaveMethods;
+    pub use super::SampleWave_Data;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     pub use crate::unity_engine::behaviour::IBehaviour;

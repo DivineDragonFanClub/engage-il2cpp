@@ -21,16 +21,13 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-inspectornameattribute")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __InspectorNameAttribute_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InspectorNameAttribute as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InspectorNameAttribute as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : InspectorNameAttribute , display_name : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (InspectorNameAttribute , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , display_name , __unity2_method_info) } }
-
-#[cfg(feature = "unity_engine-inspectornameattribute")]
-pub trait IInspectorNameAttributeMethods : IInspectorNameAttribute { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , display_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < InspectorNameAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __InspectorNameAttribute_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (display_name) , :: core :: option :: Option :: None) } } }
+pub trait IInspectorNameAttributeMethods : IInspectorNameAttribute { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , display_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < InspectorNameAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InspectorNameAttribute , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c51570usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (display_name) , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "unity_engine-inspectornameattribute")]
 impl < __T : IInspectorNameAttribute > IInspectorNameAttributeMethods for __T { }
 
 #[cfg(feature = "unity_engine-inspectornameattribute")]
-impl InspectorNameAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __InspectorNameAttribute_unity2_raw :: __lookup_ctor :: get_method_info () } }
+impl InspectorNameAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InspectorNameAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
 
 #[cfg(feature = "unity_engine-inspectornameattribute")]
 impl InspectorNameAttribute {

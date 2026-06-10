@@ -43,16 +43,16 @@ impl ::unity2::IlType for PreLateUpdate_LegacyAnimationUpdate {
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/prelateupdate/PreLateUpdate_DirectorDeferredEvaluate.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/prelateupdate/PreLateUpdate_DirectorUpdateAnimationEnd.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct PreLateUpdate_DirectorDeferredEvaluate {}
+pub struct PreLateUpdate_DirectorUpdateAnimationEnd {}
 
 
-impl ::unity2::ClassIdentity for PreLateUpdate_DirectorDeferredEvaluate {
+impl ::unity2::ClassIdentity for PreLateUpdate_DirectorUpdateAnimationEnd {
     const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
 
-    const NAME: &'static str = "PreLateUpdate.DirectorDeferredEvaluate";
+    const NAME: &'static str = "PreLateUpdate.DirectorUpdateAnimationEnd";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> =
@@ -67,71 +67,7 @@ impl ::unity2::ClassIdentity for PreLateUpdate_DirectorDeferredEvaluate {
 }
 
 
-impl ::unity2::IlType for PreLateUpdate_DirectorDeferredEvaluate {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/prelateupdate/PreLateUpdate_Physics2DLateUpdate.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct PreLateUpdate_Physics2DLateUpdate {}
-
-
-impl ::unity2::ClassIdentity for PreLateUpdate_Physics2DLateUpdate {
-    const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-    const NAME: &'static str = "PreLateUpdate.Physics2DLateUpdate";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for PreLateUpdate_Physics2DLateUpdate {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/prelateupdate/PreLateUpdate_UIElementsUpdatePanels.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct PreLateUpdate_UIElementsUpdatePanels {}
-
-
-impl ::unity2::ClassIdentity for PreLateUpdate_UIElementsUpdatePanels {
-    const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-    const NAME: &'static str = "PreLateUpdate.UIElementsUpdatePanels";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for PreLateUpdate_UIElementsUpdatePanels {
+impl ::unity2::IlType for PreLateUpdate_DirectorUpdateAnimationEnd {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
@@ -171,16 +107,16 @@ impl ::unity2::IlType for PreLateUpdate_DirectorUpdateAnimationBegin {
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/prelateupdate/PreLateUpdate_ParticleSystemBeginUpdateAll.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/prelateupdate/PreLateUpdate.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct PreLateUpdate_ParticleSystemBeginUpdateAll {}
+pub struct PreLateUpdate {}
 
 
-impl ::unity2::ClassIdentity for PreLateUpdate_ParticleSystemBeginUpdateAll {
+impl ::unity2::ClassIdentity for PreLateUpdate {
     const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
 
-    const NAME: &'static str = "PreLateUpdate.ParticleSystemBeginUpdateAll";
+    const NAME: &'static str = "PreLateUpdate";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> =
@@ -195,103 +131,7 @@ impl ::unity2::ClassIdentity for PreLateUpdate_ParticleSystemBeginUpdateAll {
 }
 
 
-impl ::unity2::IlType for PreLateUpdate_ParticleSystemBeginUpdateAll {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/prelateupdate/PreLateUpdate_EndGraphicsJobsAfterScriptUpdate.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct PreLateUpdate_EndGraphicsJobsAfterScriptUpdate {}
-
-
-impl ::unity2::ClassIdentity for PreLateUpdate_EndGraphicsJobsAfterScriptUpdate {
-    const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-    const NAME: &'static str = "PreLateUpdate.EndGraphicsJobsAfterScriptUpdate";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for PreLateUpdate_EndGraphicsJobsAfterScriptUpdate {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/prelateupdate/PreLateUpdate_UNetUpdate.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct PreLateUpdate_UNetUpdate {}
-
-
-impl ::unity2::ClassIdentity for PreLateUpdate_UNetUpdate {
-    const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-    const NAME: &'static str = "PreLateUpdate.UNetUpdate";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for PreLateUpdate_UNetUpdate {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/prelateupdate/PreLateUpdate_DirectorUpdateAnimationEnd.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct PreLateUpdate_DirectorUpdateAnimationEnd {}
-
-
-impl ::unity2::ClassIdentity for PreLateUpdate_DirectorUpdateAnimationEnd {
-    const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-    const NAME: &'static str = "PreLateUpdate.DirectorUpdateAnimationEnd";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for PreLateUpdate_DirectorUpdateAnimationEnd {
+impl ::unity2::IlType for PreLateUpdate {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
@@ -331,6 +171,102 @@ impl ::unity2::IlType for PreLateUpdate_ScriptRunBehaviourLateUpdate {
 }
 
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/prelateupdate/PreLateUpdate_DirectorDeferredEvaluate.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct PreLateUpdate_DirectorDeferredEvaluate {}
+
+
+impl ::unity2::ClassIdentity for PreLateUpdate_DirectorDeferredEvaluate {
+    const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+    const NAME: &'static str = "PreLateUpdate.DirectorDeferredEvaluate";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl ::unity2::IlType for PreLateUpdate_DirectorDeferredEvaluate {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/prelateupdate/PreLateUpdate_UIElementsUpdatePanels.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct PreLateUpdate_UIElementsUpdatePanels {}
+
+
+impl ::unity2::ClassIdentity for PreLateUpdate_UIElementsUpdatePanels {
+    const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+    const NAME: &'static str = "PreLateUpdate.UIElementsUpdatePanels";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl ::unity2::IlType for PreLateUpdate_UIElementsUpdatePanels {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/prelateupdate/PreLateUpdate_Physics2DLateUpdate.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct PreLateUpdate_Physics2DLateUpdate {}
+
+
+impl ::unity2::ClassIdentity for PreLateUpdate_Physics2DLateUpdate {
+    const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+    const NAME: &'static str = "PreLateUpdate.Physics2DLateUpdate";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl ::unity2::IlType for PreLateUpdate_Physics2DLateUpdate {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/prelateupdate/PreLateUpdate_UpdateNetworkManager.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -356,6 +292,38 @@ impl ::unity2::ClassIdentity for PreLateUpdate_UpdateNetworkManager {
 
 
 impl ::unity2::IlType for PreLateUpdate_UpdateNetworkManager {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/prelateupdate/PreLateUpdate_UpdateMasterServerInterface.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct PreLateUpdate_UpdateMasterServerInterface {}
+
+
+impl ::unity2::ClassIdentity for PreLateUpdate_UpdateMasterServerInterface {
+    const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+    const NAME: &'static str = "PreLateUpdate.UpdateMasterServerInterface";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl ::unity2::IlType for PreLateUpdate_UpdateMasterServerInterface {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
@@ -395,6 +363,70 @@ impl ::unity2::IlType for PreLateUpdate_ConstraintManagerUpdate {
 }
 
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/prelateupdate/PreLateUpdate_UNetUpdate.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct PreLateUpdate_UNetUpdate {}
+
+
+impl ::unity2::ClassIdentity for PreLateUpdate_UNetUpdate {
+    const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+    const NAME: &'static str = "PreLateUpdate.UNetUpdate";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl ::unity2::IlType for PreLateUpdate_UNetUpdate {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/prelateupdate/PreLateUpdate_ParticleSystemBeginUpdateAll.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct PreLateUpdate_ParticleSystemBeginUpdateAll {}
+
+
+impl ::unity2::ClassIdentity for PreLateUpdate_ParticleSystemBeginUpdateAll {
+    const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+    const NAME: &'static str = "PreLateUpdate.ParticleSystemBeginUpdateAll";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl ::unity2::IlType for PreLateUpdate_ParticleSystemBeginUpdateAll {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/prelateupdate/PreLateUpdate_AIUpdatePostScript.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -427,16 +459,16 @@ impl ::unity2::IlType for PreLateUpdate_AIUpdatePostScript {
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/prelateupdate/PreLateUpdate.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/prelateupdate/PreLateUpdate_EndGraphicsJobsAfterScriptUpdate.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct PreLateUpdate {}
+pub struct PreLateUpdate_EndGraphicsJobsAfterScriptUpdate {}
 
 
-impl ::unity2::ClassIdentity for PreLateUpdate {
+impl ::unity2::ClassIdentity for PreLateUpdate_EndGraphicsJobsAfterScriptUpdate {
     const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
 
-    const NAME: &'static str = "PreLateUpdate";
+    const NAME: &'static str = "PreLateUpdate.EndGraphicsJobsAfterScriptUpdate";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> =
@@ -451,39 +483,7 @@ impl ::unity2::ClassIdentity for PreLateUpdate {
 }
 
 
-impl ::unity2::IlType for PreLateUpdate {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/prelateupdate/PreLateUpdate_UpdateMasterServerInterface.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct PreLateUpdate_UpdateMasterServerInterface {}
-
-
-impl ::unity2::ClassIdentity for PreLateUpdate_UpdateMasterServerInterface {
-    const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-    const NAME: &'static str = "PreLateUpdate.UpdateMasterServerInterface";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for PreLateUpdate_UpdateMasterServerInterface {
+impl ::unity2::IlType for PreLateUpdate_EndGraphicsJobsAfterScriptUpdate {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
     }
@@ -499,20 +499,20 @@ pub use __types::*;
 #[doc(hidden)]
 pub mod prelude {
     pub use super::PreLateUpdate_LegacyAnimationUpdate;
-    pub use super::PreLateUpdate_DirectorDeferredEvaluate;
-    pub use super::PreLateUpdate_Physics2DLateUpdate;
-    pub use super::PreLateUpdate_UIElementsUpdatePanels;
-    pub use super::PreLateUpdate_DirectorUpdateAnimationBegin;
-    pub use super::PreLateUpdate_ParticleSystemBeginUpdateAll;
-    pub use super::PreLateUpdate_EndGraphicsJobsAfterScriptUpdate;
-    pub use super::PreLateUpdate_UNetUpdate;
     pub use super::PreLateUpdate_DirectorUpdateAnimationEnd;
-    pub use super::PreLateUpdate_ScriptRunBehaviourLateUpdate;
-    pub use super::PreLateUpdate_UpdateNetworkManager;
-    pub use super::PreLateUpdate_ConstraintManagerUpdate;
-    pub use super::PreLateUpdate_AIUpdatePostScript;
+    pub use super::PreLateUpdate_DirectorUpdateAnimationBegin;
     pub use super::PreLateUpdate;
+    pub use super::PreLateUpdate_ScriptRunBehaviourLateUpdate;
+    pub use super::PreLateUpdate_DirectorDeferredEvaluate;
+    pub use super::PreLateUpdate_UIElementsUpdatePanels;
+    pub use super::PreLateUpdate_Physics2DLateUpdate;
+    pub use super::PreLateUpdate_UpdateNetworkManager;
     pub use super::PreLateUpdate_UpdateMasterServerInterface;
+    pub use super::PreLateUpdate_ConstraintManagerUpdate;
+    pub use super::PreLateUpdate_UNetUpdate;
+    pub use super::PreLateUpdate_ParticleSystemBeginUpdateAll;
+    pub use super::PreLateUpdate_AIUpdatePostScript;
+    pub use super::PreLateUpdate_EndGraphicsJobsAfterScriptUpdate;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

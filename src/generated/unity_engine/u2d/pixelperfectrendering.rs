@@ -17,13 +17,10 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-u2d-pixelperfectrendering")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __PixelPerfectRendering_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_pixel_snap_spacing { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PixelPerfectRendering as :: unity2 :: ClassIdentity > :: class () , "set_pixelSnapSpacing" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PixelPerfectRendering as :: unity2 :: ClassIdentity > :: NAME , "set_pixelSnapSpacing" , e) , } } } pub unsafe fn set_pixel_snap_spacing (value : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_pixel_snap_spacing :: get_method_info () . method_ptr ,) ; inner (value , __unity2_method_info) } }
+impl PixelPerfectRendering { # [doc = "`set_pixelSnapSpacing(f32)` overload"] pub fn set_pixel_snap_spacing (value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f1160usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "unity_engine-u2d-pixelperfectrendering")]
-impl PixelPerfectRendering { # [doc = "`set_pixelSnapSpacing(f32)` overload"] pub fn set_pixel_snap_spacing (value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { __PixelPerfectRendering_unity2_raw :: set_pixel_snap_spacing (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "unity_engine-u2d-pixelperfectrendering")]
-impl PixelPerfectRendering { pub fn set_pixel_snap_spacing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PixelPerfectRendering_unity2_raw :: __lookup_set_pixel_snap_spacing :: get_method_info () } }
+impl PixelPerfectRendering { pub fn set_pixel_snap_spacing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PixelPerfectRendering as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
 
 #[cfg(feature = "unity_engine-u2d-pixelperfectrendering")]
 #[doc(hidden)]

@@ -22,16 +22,13 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rangeattribute")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RangeAttribute_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RangeAttribute as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RangeAttribute as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : RangeAttribute , min : f32 , max : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (RangeAttribute , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , min , max , __unity2_method_info) } }
-
-#[cfg(feature = "unity_engine-rangeattribute")]
-pub trait IRangeAttributeMethods : IRangeAttribute { # [doc = "`.ctor(f32, f32)` overload"] fn ctor (self , min : impl :: core :: convert :: Into < f32 > , max : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < RangeAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RangeAttribute_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (min) , :: core :: convert :: Into :: into (max) , :: core :: option :: Option :: None) } } }
+pub trait IRangeAttributeMethods : IRangeAttribute { # [doc = "`.ctor(f32, f32)` overload"] fn ctor (self , min : impl :: core :: convert :: Into < f32 > , max : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < RangeAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RangeAttribute , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f79e30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (min) , :: core :: convert :: Into :: into (max) , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "unity_engine-rangeattribute")]
 impl < __T : IRangeAttribute > IRangeAttributeMethods for __T { }
 
 #[cfg(feature = "unity_engine-rangeattribute")]
-impl RangeAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RangeAttribute_unity2_raw :: __lookup_ctor :: get_method_info () } }
+impl RangeAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RangeAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
 
 #[cfg(feature = "unity_engine-rangeattribute")]
 impl RangeAttribute {

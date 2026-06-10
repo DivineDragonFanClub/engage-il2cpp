@@ -21,16 +21,13 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "root-akenumflagattribute")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AkEnumFlagAttribute_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkEnumFlagAttribute as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkEnumFlagAttribute as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AkEnumFlagAttribute , r#type : :: unity2 :: SystemType , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkEnumFlagAttribute , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , r#type , __unity2_method_info) } }
-
-#[cfg(feature = "root-akenumflagattribute")]
-pub trait IAkEnumFlagAttributeMethods : IAkEnumFlagAttribute { # [doc = "`.ctor(::unity2::SystemType)` overload"] fn ctor (self , r#type : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> () { unsafe { let __receiver = < AkEnumFlagAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkEnumFlagAttribute_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } }
+pub trait IAkEnumFlagAttributeMethods : IAkEnumFlagAttribute { # [doc = "`.ctor(::unity2::SystemType)` overload"] fn ctor (self , r#type : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> () { unsafe { let __receiver = < AkEnumFlagAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkEnumFlagAttribute , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f19f10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "root-akenumflagattribute")]
 impl < __T : IAkEnumFlagAttribute > IAkEnumFlagAttributeMethods for __T { }
 
 #[cfg(feature = "root-akenumflagattribute")]
-impl AkEnumFlagAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkEnumFlagAttribute_unity2_raw :: __lookup_ctor :: get_method_info () } }
+impl AkEnumFlagAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkEnumFlagAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
 
 #[cfg(feature = "root-akenumflagattribute")]
 impl AkEnumFlagAttribute {

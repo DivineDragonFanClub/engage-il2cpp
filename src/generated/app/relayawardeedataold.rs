@@ -17,13 +17,10 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-relayawardeedataold")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RelayAwardeeDataOld_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_deserialize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: stream_2 :: Stream_2 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayAwardeeDataOld as :: unity2 :: ClassIdentity > :: class () , "Deserialize" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayAwardeeDataOld as :: unity2 :: ClassIdentity > :: NAME , "Deserialize" , e) , } } } pub unsafe fn deserialize (stream : crate :: app :: stream_2 :: Stream_2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_deserialize :: get_method_info () . method_ptr ,) ; inner (stream , __unity2_method_info) } }
+impl RelayAwardeeDataOld { # [doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"] pub fn deserialize (stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d0b70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "app-relayawardeedataold")]
-impl RelayAwardeeDataOld { # [doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"] pub fn deserialize (stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { __RelayAwardeeDataOld_unity2_raw :: deserialize (:: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-relayawardeedataold")]
-impl RelayAwardeeDataOld { pub fn deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __RelayAwardeeDataOld_unity2_raw :: __lookup_deserialize :: get_method_info () } }
+impl RelayAwardeeDataOld { pub fn deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAwardeeDataOld as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
 
 #[cfg(feature = "app-relayawardeedataold")]
 #[doc(hidden)]

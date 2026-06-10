@@ -17,16 +17,13 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-lwrp-lwrpadditionalcameradata")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __LWRPAdditionalCameraData_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LWRPAdditionalCameraData as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LWRPAdditionalCameraData as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : LWRPAdditionalCameraData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (LWRPAdditionalCameraData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "unity_engine-rendering-lwrp-lwrpadditionalcameradata")]
-pub trait ILWRPAdditionalCameraDataMethods : ILWRPAdditionalCameraData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < LWRPAdditionalCameraData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __LWRPAdditionalCameraData_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+pub trait ILWRPAdditionalCameraDataMethods : ILWRPAdditionalCameraData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < LWRPAdditionalCameraData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LWRPAdditionalCameraData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef17a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "unity_engine-rendering-lwrp-lwrpadditionalcameradata")]
 impl < __T : ILWRPAdditionalCameraData > ILWRPAdditionalCameraDataMethods for __T { }
 
 #[cfg(feature = "unity_engine-rendering-lwrp-lwrpadditionalcameradata")]
-impl LWRPAdditionalCameraData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LWRPAdditionalCameraData_unity2_raw :: __lookup_ctor :: get_method_info () } }
+impl LWRPAdditionalCameraData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LWRPAdditionalCameraData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
 
 #[cfg(feature = "unity_engine-rendering-lwrp-lwrpadditionalcameradata")]
 impl LWRPAdditionalCameraData {

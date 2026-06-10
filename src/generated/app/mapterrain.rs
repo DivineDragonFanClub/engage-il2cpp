@@ -25,13 +25,6 @@ mod __types {
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapterrain/MapTerrain_OverlapData.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapTerrain.OverlapData")] # [parent (crate :: system :: object :: Object)] pub struct MapTerrain_OverlapData {
-# [offset (16)] # [rename (name = "X")] pub x : u8 ,
-# [offset (17)] # [rename (name = "Y")] pub y : u8 ,
-# [offset (24)] # [rename (name = "Attr")] pub attr : :: unity2 :: Il2CppString ,
-}
-
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapterrain/MapTerrain_LayerData.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapTerrain.LayerData")] # [parent (crate :: system :: object :: Object)] pub struct MapTerrain_LayerData {
 # [offset (16)] # [rename (name = "X")] pub x : u8 ,
 # [offset (17)] # [rename (name = "Y")] pub y : u8 ,
@@ -41,22 +34,26 @@ mod __types {
 # [offset (24)] # [rename (name = "Attr")] pub attr : :: unity2 :: Il2CppString ,
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapterrain/MapTerrain_OverlapData.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapTerrain.OverlapData")] # [parent (crate :: system :: object :: Object)] pub struct MapTerrain_OverlapData {
+# [offset (16)] # [rename (name = "X")] pub x : u8 ,
+# [offset (17)] # [rename (name = "Y")] pub y : u8 ,
+# [offset (24)] # [rename (name = "Attr")] pub attr : :: unity2 :: Il2CppString ,
+}
+
 }
 
 #[cfg(feature = "app-mapterrain-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-mapterrain")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapTerrain_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_tid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapTerrain as :: unity2 :: ClassIdentity > :: class () , "SetTid" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapTerrain as :: unity2 :: ClassIdentity > :: NAME , "SetTid" , e) , } } } pub unsafe fn set_tid (this : MapTerrain , x : i32 , z : i32 , tid : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapTerrain , i32 , i32 , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_set_tid :: get_method_info () . method_ptr ,) ; inner (this , x , z , tid , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_tid { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapTerrain as :: unity2 :: ClassIdentity > :: class () , "GetTid" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapTerrain as :: unity2 :: ClassIdentity > :: NAME , "GetTid" , e) , } } } pub unsafe fn get_tid (this : MapTerrain , x : i32 , z : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (MapTerrain , i32 , i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_tid :: get_method_info () . method_ptr ,) ; inner (this , x , z , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapTerrain as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapTerrain as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapTerrain , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapTerrain , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_clear { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapTerrain as :: unity2 :: ClassIdentity > :: class () , "Clear" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapTerrain as :: unity2 :: ClassIdentity > :: NAME , "Clear" , e) , } } } pub unsafe fn clear (this : MapTerrain , tid : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapTerrain , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_clear :: get_method_info () . method_ptr ,) ; inner (this , tid , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update_map_image { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapTerrain as :: unity2 :: ClassIdentity > :: class () , "UpdateMapImage" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapTerrain as :: unity2 :: ClassIdentity > :: NAME , "UpdateMapImage" , e) , } } } pub unsafe fn update_map_image (this : MapTerrain , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapTerrain , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update_map_image :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "app-mapterrain")]
-pub trait IMapTerrainMethods : IMapTerrain { # [doc = "`SetTid(i32, i32, ::unity2::Il2CppString)` overload"] fn set_tid (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , tid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MapTerrain as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapTerrain_unity2_raw :: set_tid (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (tid) , :: core :: option :: Option :: None) } } # [doc = "`GetTid(i32, i32)` overload"] fn get_tid (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapTerrain as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapTerrain_unity2_raw :: get_tid (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapTerrain as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapTerrain_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Clear(::unity2::Il2CppString)` overload"] fn clear (self , tid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MapTerrain as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapTerrain_unity2_raw :: clear (__receiver , :: core :: convert :: Into :: into (tid) , :: core :: option :: Option :: None) } } # [doc = "`UpdateMapImage()` overload"] fn update_map_image (self ,) -> () { unsafe { let __receiver = < MapTerrain as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapTerrain_unity2_raw :: update_map_image (__receiver , :: core :: option :: Option :: None) } } }
+pub trait IMapTerrainMethods : IMapTerrain { # [doc = "`SetTid(i32, i32, ::unity2::Il2CppString)` overload"] fn set_tid (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , tid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MapTerrain as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapTerrain , i32 , i32 , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x201bf10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (tid) , :: core :: option :: Option :: None) } } } # [doc = "`GetTid(i32, i32)` overload"] fn get_tid (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapTerrain as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapTerrain , i32 , i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x201bf90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapTerrain as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapTerrain , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x201bfd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Clear(::unity2::Il2CppString)` overload"] fn clear (self , tid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MapTerrain as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapTerrain , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x201c110usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (tid) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateMapImage()` overload"] fn update_map_image (self ,) -> () { unsafe { let __receiver = < MapTerrain as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapTerrain , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x201c260usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "app-mapterrain")]
 impl < __T : IMapTerrain > IMapTerrainMethods for __T { }
 
 #[cfg(feature = "app-mapterrain")]
-impl MapTerrain { pub fn set_tid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapTerrain_unity2_raw :: __lookup_set_tid :: get_method_info () } pub fn get_tid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapTerrain_unity2_raw :: __lookup_get_tid :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapTerrain_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapTerrain_unity2_raw :: __lookup_clear :: get_method_info () } pub fn update_map_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapTerrain_unity2_raw :: __lookup_update_map_image :: get_method_info () } }
+impl MapTerrain { pub fn set_tid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapTerrain as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_tid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapTerrain as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapTerrain as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapTerrain as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn update_map_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapTerrain as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
 
 #[cfg(feature = "app-mapterrain")]
 impl MapTerrain {
@@ -64,37 +61,31 @@ impl MapTerrain {
 }
 
 #[cfg(feature = "app-mapterrain")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapTerrain_OverlapData_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapTerrain_OverlapData as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapTerrain_OverlapData as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapTerrain_OverlapData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapTerrain_OverlapData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "app-mapterrain")]
-pub trait IMapTerrain_OverlapDataMethods : IMapTerrain_OverlapData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapTerrain_OverlapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapTerrain_OverlapData_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-mapterrain")]
-impl < __T : IMapTerrain_OverlapData > IMapTerrain_OverlapDataMethods for __T { }
-
-#[cfg(feature = "app-mapterrain")]
-impl MapTerrain_OverlapData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapTerrain_OverlapData_unity2_raw :: __lookup_ctor :: get_method_info () } }
-
-#[cfg(feature = "app-mapterrain")]
-impl MapTerrain_OverlapData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapTerrain_OverlapData) , :: core :: stringify ! (new) ,)) ; < Self as IMapTerrain_OverlapDataMethods > :: ctor (this ,) ; this }
-}
-
-#[cfg(feature = "app-mapterrain")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapTerrain_LayerData_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapTerrain_LayerData as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapTerrain_LayerData as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapTerrain_LayerData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapTerrain_LayerData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "app-mapterrain")]
-pub trait IMapTerrain_LayerDataMethods : IMapTerrain_LayerData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapTerrain_LayerData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapTerrain_LayerData_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+pub trait IMapTerrain_LayerDataMethods : IMapTerrain_LayerData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapTerrain_LayerData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapTerrain_LayerData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e42f00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "app-mapterrain")]
 impl < __T : IMapTerrain_LayerData > IMapTerrain_LayerDataMethods for __T { }
 
 #[cfg(feature = "app-mapterrain")]
-impl MapTerrain_LayerData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapTerrain_LayerData_unity2_raw :: __lookup_ctor :: get_method_info () } }
+impl MapTerrain_LayerData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapTerrain_LayerData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
 
 #[cfg(feature = "app-mapterrain")]
 impl MapTerrain_LayerData {
 # [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapTerrain_LayerData) , :: core :: stringify ! (new) ,)) ; < Self as IMapTerrain_LayerDataMethods > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "app-mapterrain")]
+pub trait IMapTerrain_OverlapDataMethods : IMapTerrain_OverlapData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapTerrain_OverlapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapTerrain_OverlapData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e42f10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+
+#[cfg(feature = "app-mapterrain")]
+impl < __T : IMapTerrain_OverlapData > IMapTerrain_OverlapDataMethods for __T { }
+
+#[cfg(feature = "app-mapterrain")]
+impl MapTerrain_OverlapData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapTerrain_OverlapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+
+#[cfg(feature = "app-mapterrain")]
+impl MapTerrain_OverlapData {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapTerrain_OverlapData) , :: core :: stringify ! (new) ,)) ; < Self as IMapTerrain_OverlapDataMethods > :: ctor (this ,) ; this }
 }
 
 #[cfg(feature = "app-mapterrain")]
@@ -103,12 +94,12 @@ pub mod prelude {
     pub use super::MapTerrain;
     pub use super::IMapTerrain;
     pub use super::IMapTerrainMethods;
-    pub use super::MapTerrain_OverlapData;
-    pub use super::IMapTerrain_OverlapData;
-    pub use super::IMapTerrain_OverlapDataMethods;
     pub use super::MapTerrain_LayerData;
     pub use super::IMapTerrain_LayerData;
     pub use super::IMapTerrain_LayerDataMethods;
+    pub use super::MapTerrain_OverlapData;
+    pub use super::IMapTerrain_OverlapData;
+    pub use super::IMapTerrain_OverlapDataMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::object_2::IObject_2;
     pub use crate::unity_engine::scriptableobject::IScriptableObject;

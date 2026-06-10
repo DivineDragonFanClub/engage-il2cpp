@@ -19,16 +19,16 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-execution-looptracker")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __LoopTracker_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LoopTracker as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LoopTracker as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : LoopTracker , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (LoopTracker , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __LoopTracker_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LoopTracker as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LoopTracker as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } }
 
 #[cfg(feature = "moon_sharp-interpreter-execution-looptracker")]
-pub trait ILoopTrackerMethods : ILoopTracker { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < LoopTracker as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __LoopTracker_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+pub trait ILoopTrackerMethods : ILoopTracker { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < LoopTracker as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LoopTracker , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__LoopTracker_unity2_raw :: __lookup_ctor :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "moon_sharp-interpreter-execution-looptracker")]
 impl < __T : ILoopTracker > ILoopTrackerMethods for __T { }
 
 #[cfg(feature = "moon_sharp-interpreter-execution-looptracker")]
-impl LoopTracker { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LoopTracker_unity2_raw :: __lookup_ctor :: get_method_info () } }
+impl LoopTracker { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LoopTracker as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
 
 #[cfg(feature = "moon_sharp-interpreter-execution-looptracker")]
 impl LoopTracker {

@@ -17,16 +17,13 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-yieldinstruction")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __YieldInstruction_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< YieldInstruction as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < YieldInstruction as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : YieldInstruction , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (YieldInstruction , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "unity_engine-yieldinstruction")]
-pub trait IYieldInstructionMethods : IYieldInstruction { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < YieldInstruction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __YieldInstruction_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+pub trait IYieldInstructionMethods : IYieldInstruction { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < YieldInstruction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (YieldInstruction , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x379ab30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "unity_engine-yieldinstruction")]
 impl < __T : IYieldInstruction > IYieldInstructionMethods for __T { }
 
 #[cfg(feature = "unity_engine-yieldinstruction")]
-impl YieldInstruction { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __YieldInstruction_unity2_raw :: __lookup_ctor :: get_method_info () } }
+impl YieldInstruction { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < YieldInstruction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
 
 #[cfg(feature = "unity_engine-yieldinstruction")]
 impl YieldInstruction {

@@ -15,6 +15,9 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/low_level/playerloopsystem/PlayerLoopSystem_UpdateFunction.md"))] # [:: unity2 :: class (namespace = "UnityEngine.LowLevel" , name = "PlayerLoopSystem.UpdateFunction")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct PlayerLoopSystem_UpdateFunction {}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/low_level/playerloopsystem/PlayerLoopSystem.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -52,34 +55,19 @@ impl ::unity2::IlType for PlayerLoopSystem {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/low_level/playerloopsystem/PlayerLoopSystem_UpdateFunction.md"))] # [:: unity2 :: class (namespace = "UnityEngine.LowLevel" , name = "PlayerLoopSystem.UpdateFunction")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct PlayerLoopSystem_UpdateFunction {}
-
 }
 
 #[cfg(feature = "unity_engine-low_level-playerloopsystem-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-low_level-playerloopsystem")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __PlayerLoopSystem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_string { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PlayerLoopSystem as :: unity2 :: ClassIdentity > :: class () , "ToString" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PlayerLoopSystem as :: unity2 :: ClassIdentity > :: NAME , "ToString" , e) , } } } pub unsafe fn to_string (this : * mut PlayerLoopSystem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (* mut PlayerLoopSystem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_to_string :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "unity_engine-low_level-playerloopsystem")]
-impl PlayerLoopSystem { # [doc = "`ToString()` overload"] pub fn to_string (mut self ,) -> :: unity2 :: Il2CppString { unsafe { __PlayerLoopSystem_unity2_raw :: to_string (& mut self as * mut PlayerLoopSystem , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "unity_engine-low_level-playerloopsystem")]
-impl PlayerLoopSystem { pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PlayerLoopSystem_unity2_raw :: __lookup_to_string :: get_method_info () } }
-
-#[cfg(feature = "unity_engine-low_level-playerloopsystem")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __PlayerLoopSystem_UpdateFunction_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PlayerLoopSystem_UpdateFunction as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PlayerLoopSystem_UpdateFunction as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : PlayerLoopSystem_UpdateFunction , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PlayerLoopSystem_UpdateFunction , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , object , method , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< PlayerLoopSystem_UpdateFunction as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PlayerLoopSystem_UpdateFunction as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , } } } pub unsafe fn invoke (this : PlayerLoopSystem_UpdateFunction , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (PlayerLoopSystem_UpdateFunction , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_invoke :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "unity_engine-low_level-playerloopsystem")]
-pub trait IPlayerLoopSystem_UpdateFunctionMethods : IPlayerLoopSystem_UpdateFunction { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < PlayerLoopSystem_UpdateFunction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PlayerLoopSystem_UpdateFunction_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } # [doc = "`Invoke()` overload"] fn invoke (self ,) -> () { unsafe { let __receiver = < PlayerLoopSystem_UpdateFunction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PlayerLoopSystem_UpdateFunction_unity2_raw :: invoke (__receiver , :: core :: option :: Option :: None) } } }
+pub trait IPlayerLoopSystem_UpdateFunctionMethods : IPlayerLoopSystem_UpdateFunction { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < PlayerLoopSystem_UpdateFunction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PlayerLoopSystem_UpdateFunction , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x379e1c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke()` overload"] fn invoke (self ,) -> () { unsafe { let __receiver = < PlayerLoopSystem_UpdateFunction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PlayerLoopSystem_UpdateFunction , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x379e1e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "unity_engine-low_level-playerloopsystem")]
 impl < __T : IPlayerLoopSystem_UpdateFunction > IPlayerLoopSystem_UpdateFunctionMethods for __T { }
 
 #[cfg(feature = "unity_engine-low_level-playerloopsystem")]
-impl PlayerLoopSystem_UpdateFunction { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PlayerLoopSystem_UpdateFunction_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __PlayerLoopSystem_UpdateFunction_unity2_raw :: __lookup_invoke :: get_method_info () } }
+impl PlayerLoopSystem_UpdateFunction { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayerLoopSystem_UpdateFunction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayerLoopSystem_UpdateFunction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
 
 #[cfg(feature = "unity_engine-low_level-playerloopsystem")]
 impl PlayerLoopSystem_UpdateFunction {
@@ -87,12 +75,18 @@ impl PlayerLoopSystem_UpdateFunction {
 }
 
 #[cfg(feature = "unity_engine-low_level-playerloopsystem")]
+impl PlayerLoopSystem { # [doc = "`ToString()` overload"] pub fn to_string (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut PlayerLoopSystem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f8900usize) as * mut u8) ; __inner (self as * mut PlayerLoopSystem , :: core :: option :: Option :: None) } } } }
+
+#[cfg(feature = "unity_engine-low_level-playerloopsystem")]
+impl PlayerLoopSystem { pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayerLoopSystem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+
+#[cfg(feature = "unity_engine-low_level-playerloopsystem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::PlayerLoopSystem;
     pub use super::PlayerLoopSystem_UpdateFunction;
     pub use super::IPlayerLoopSystem_UpdateFunction;
     pub use super::IPlayerLoopSystem_UpdateFunctionMethods;
+    pub use super::PlayerLoopSystem;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

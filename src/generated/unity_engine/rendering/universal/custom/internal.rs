@@ -26,12 +26,12 @@
  # [cfg (feature = "unity_engine-rendering-universal-custom-internal-customeffectpass")] pub use customeffectpass :: { ICustomEffectPassMethods }
  ;
  # [cfg (any (feature = "unity_engine-rendering-universal-custom-internal-customlightocclusionpass-types"))] pub mod customlightocclusionpass ;
- # [cfg (feature = "unity_engine-rendering-universal-custom-internal-customlightocclusionpass-types")] pub use customlightocclusionpass :: { CustomLightOcclusionPass , ICustomLightOcclusionPass , CustomLightOcclusionPass_ShaderConstants , ICustomLightOcclusionPass_ShaderConstants }
+ # [cfg (feature = "unity_engine-rendering-universal-custom-internal-customlightocclusionpass-types")] pub use customlightocclusionpass :: { CustomLightOcclusionPass_ShaderConstants , ICustomLightOcclusionPass_ShaderConstants , CustomLightOcclusionPass , ICustomLightOcclusionPass }
  ;
  # [cfg (feature = "unity_engine-rendering-universal-custom-internal-customlightocclusionpass")] pub use customlightocclusionpass :: { ICustomLightOcclusionPassMethods }
  ;
  # [cfg (any (feature = "unity_engine-rendering-universal-custom-internal-custommixedresolutionpass-types"))] pub mod custommixedresolutionpass ;
- # [cfg (feature = "unity_engine-rendering-universal-custom-internal-custommixedresolutionpass-types")] pub use custommixedresolutionpass :: { CustomMixedResolutionPass_DownsampleType , CustomMixedResolutionPass , ICustomMixedResolutionPass , CustomMixedResolutionPass_CompositeType }
+ # [cfg (feature = "unity_engine-rendering-universal-custom-internal-custommixedresolutionpass-types")] pub use custommixedresolutionpass :: { CustomMixedResolutionPass , ICustomMixedResolutionPass , CustomMixedResolutionPass_CompositeType , CustomMixedResolutionPass_DownsampleType }
  ;
  # [cfg (feature = "unity_engine-rendering-universal-custom-internal-custommixedresolutionpass")] pub use custommixedresolutionpass :: { ICustomMixedResolutionPassMethods }
  ;

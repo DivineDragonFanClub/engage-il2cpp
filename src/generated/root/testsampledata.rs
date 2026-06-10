@@ -15,6 +15,16 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/testsampledata/TestSampleData.md"))] # [:: unity2 :: class (namespace = "" , name = "TestSampleData")] # [parent (crate :: root :: structscriptabledata_1 :: StructScriptableData_1 < crate :: root :: testsampledata :: TestSampleData >)] pub struct TestSampleData {
+# [offset (16)] # [rename (name = "Pid")] pub pid : :: unity2 :: Il2CppString ,
+# [offset (24)] # [rename (name = "Name")] pub name : :: unity2 :: Il2CppString ,
+# [offset (32)] # [rename (name = "Level")] pub level : i32 ,
+# [offset (36)] # [rename (name = "Hp")] pub hp : i32 ,
+# [offset (40)] # [rename (name = "Flag")] pub flag : crate :: root :: testsampledata :: TestSampleData_Flags ,
+# [offset (48)] # [rename (name = "Items")] pub items : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: root :: testsampledata :: TestSampleData_Item > ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/testsampledata/TestSampleData_Flags.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -87,52 +97,22 @@ impl  TestSampleData_Flags  {
 # [offset (24)] # [rename (name = "Value")] pub value : i32 ,
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/testsampledata/TestSampleData.md"))] # [:: unity2 :: class (namespace = "" , name = "TestSampleData")] # [parent (crate :: root :: structscriptabledata_1 :: StructScriptableData_1 < crate :: root :: testsampledata :: TestSampleData >)] pub struct TestSampleData {
-# [offset (16)] # [rename (name = "Pid")] pub pid : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "Name")] pub name : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "Level")] pub level : i32 ,
-# [offset (36)] # [rename (name = "Hp")] pub hp : i32 ,
-# [offset (40)] # [rename (name = "Flag")] pub flag : crate :: root :: testsampledata :: TestSampleData_Flags ,
-# [offset (48)] # [rename (name = "Items")] pub items : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: root :: testsampledata :: TestSampleData_Item > ,
-}
-
 }
 
 #[cfg(feature = "root-testsampledata-types")]
 pub use __types::*;
 
 #[cfg(feature = "root-testsampledata")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TestSampleData_Item_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TestSampleData_Item as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TestSampleData_Item as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : TestSampleData_Item , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TestSampleData_Item , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+impl TestSampleData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e80f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "root-testsampledata")]
-pub trait ITestSampleData_ItemMethods : ITestSampleData_Item { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TestSampleData_Item as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TestSampleData_Item_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "root-testsampledata")]
-impl < __T : ITestSampleData_Item > ITestSampleData_ItemMethods for __T { }
-
-#[cfg(feature = "root-testsampledata")]
-impl TestSampleData_Item { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TestSampleData_Item_unity2_raw :: __lookup_ctor :: get_method_info () } }
-
-#[cfg(feature = "root-testsampledata")]
-impl TestSampleData_Item {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TestSampleData_Item) , :: core :: stringify ! (new) ,)) ; < Self as ITestSampleData_ItemMethods > :: ctor (this ,) ; this }
-}
-
-#[cfg(feature = "root-testsampledata")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TestSampleData_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_key { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TestSampleData as :: unity2 :: ClassIdentity > :: class () , "GetKey" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TestSampleData as :: unity2 :: ClassIdentity > :: NAME , "GetKey" , e) , } } } pub unsafe fn get_key (this : TestSampleData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (TestSampleData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_key :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_build { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TestSampleData as :: unity2 :: ClassIdentity > :: class () , "OnBuild" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TestSampleData as :: unity2 :: ClassIdentity > :: NAME , "OnBuild" , e) , } } } pub unsafe fn on_build (this : TestSampleData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TestSampleData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_build :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_release { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TestSampleData as :: unity2 :: ClassIdentity > :: class () , "OnRelease" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TestSampleData as :: unity2 :: ClassIdentity > :: NAME , "OnRelease" , e) , } } } pub unsafe fn on_release (this : TestSampleData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TestSampleData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_release :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_debug_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TestSampleData as :: unity2 :: ClassIdentity > :: class () , "GetDebugName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TestSampleData as :: unity2 :: ClassIdentity > :: NAME , "GetDebugName" , e) , } } } pub unsafe fn get_debug_name (this : TestSampleData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (TestSampleData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_debug_name :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TestSampleData as :: unity2 :: ClassIdentity > :: class () , "Load" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TestSampleData as :: unity2 :: ClassIdentity > :: NAME , "Load" , e) , } } } pub unsafe fn load (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_load :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TestSampleData as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TestSampleData as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : TestSampleData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TestSampleData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "root-testsampledata")]
-impl TestSampleData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { __TestSampleData_unity2_raw :: load (:: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "root-testsampledata")]
-pub trait ITestSampleDataMethods : ITestSampleData { # [doc = "`GetKey()` overload"] fn get_key (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TestSampleData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TestSampleData_unity2_raw :: get_key (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < TestSampleData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TestSampleData_unity2_raw :: on_build (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnRelease()` overload"] fn on_release (self ,) -> () { unsafe { let __receiver = < TestSampleData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TestSampleData_unity2_raw :: on_release (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TestSampleData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TestSampleData_unity2_raw :: get_debug_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TestSampleData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TestSampleData_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+pub trait ITestSampleDataMethods : ITestSampleData { # [doc = "`GetKey()` overload"] fn get_key (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TestSampleData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TestSampleData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e8030usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < TestSampleData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TestSampleData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e8040usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnRelease()` overload"] fn on_release (self ,) -> () { unsafe { let __receiver = < TestSampleData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TestSampleData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e8050usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TestSampleData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TestSampleData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e8060usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TestSampleData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TestSampleData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e8200usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "root-testsampledata")]
 impl < __T : ITestSampleData > ITestSampleDataMethods for __T { }
 
 #[cfg(feature = "root-testsampledata")]
-impl TestSampleData { pub fn get_key_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TestSampleData_unity2_raw :: __lookup_get_key :: get_method_info () } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TestSampleData_unity2_raw :: __lookup_on_build :: get_method_info () } pub fn on_release_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TestSampleData_unity2_raw :: __lookup_on_release :: get_method_info () } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TestSampleData_unity2_raw :: __lookup_get_debug_name :: get_method_info () } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TestSampleData_unity2_raw :: __lookup_load :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TestSampleData_unity2_raw :: __lookup_ctor :: get_method_info () } }
+impl TestSampleData { pub fn get_key_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TestSampleData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TestSampleData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_release_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TestSampleData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TestSampleData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TestSampleData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TestSampleData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
 
 #[cfg(feature = "root-testsampledata")]
 impl TestSampleData {
@@ -140,15 +120,29 @@ impl TestSampleData {
 }
 
 #[cfg(feature = "root-testsampledata")]
+pub trait ITestSampleData_ItemMethods : ITestSampleData_Item { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TestSampleData_Item as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TestSampleData_Item , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22044b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+
+#[cfg(feature = "root-testsampledata")]
+impl < __T : ITestSampleData_Item > ITestSampleData_ItemMethods for __T { }
+
+#[cfg(feature = "root-testsampledata")]
+impl TestSampleData_Item { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TestSampleData_Item as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+
+#[cfg(feature = "root-testsampledata")]
+impl TestSampleData_Item {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TestSampleData_Item) , :: core :: stringify ! (new) ,)) ; < Self as ITestSampleData_ItemMethods > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "root-testsampledata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::TestSampleData;
+    pub use super::ITestSampleData;
+    pub use super::ITestSampleDataMethods;
     pub use super::TestSampleData_Flags;
     pub use super::TestSampleData_Item;
     pub use super::ITestSampleData_Item;
     pub use super::ITestSampleData_ItemMethods;
-    pub use super::TestSampleData;
-    pub use super::ITestSampleData;
-    pub use super::ITestSampleDataMethods;
     pub use crate::root::structscriptabledata_1::IStructScriptableData_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

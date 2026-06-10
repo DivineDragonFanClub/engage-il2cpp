@@ -17,13 +17,10 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-cursor")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Cursor_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_lock_state { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Cursor as :: unity2 :: ClassIdentity > :: class () , "get_lockState" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Cursor as :: unity2 :: ClassIdentity > :: NAME , "get_lockState" , e) , } } } pub unsafe fn get_lock_state (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: cursorlockmode :: CursorLockMode { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: cursorlockmode :: CursorLockMode = :: core :: mem :: transmute (__lookup_get_lock_state :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+impl Cursor { # [doc = "`get_lockState()` overload"] pub fn get_lock_state () -> crate :: unity_engine :: cursorlockmode :: CursorLockMode { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: cursorlockmode :: CursorLockMode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c49fd0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "unity_engine-cursor")]
-impl Cursor { # [doc = "`get_lockState()` overload"] pub fn get_lock_state () -> crate :: unity_engine :: cursorlockmode :: CursorLockMode { unsafe { __Cursor_unity2_raw :: get_lock_state (:: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "unity_engine-cursor")]
-impl Cursor { pub fn get_lock_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __Cursor_unity2_raw :: __lookup_get_lock_state :: get_method_info () } }
+impl Cursor { pub fn get_lock_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Cursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
 
 #[cfg(feature = "unity_engine-cursor")]
 #[doc(hidden)]

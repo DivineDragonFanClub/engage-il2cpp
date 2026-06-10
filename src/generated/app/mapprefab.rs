@@ -17,6 +17,89 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapprefab/MapPrefab.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapPrefab")] # [parent (crate :: unity_engine :: scriptableobject :: ScriptableObject)] pub struct MapPrefab {
+# [offset (24)] # [rename (name = "m_Entitys")] pub m_entitys : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mapprefab :: MapPrefab_Entity > ,
+}
+
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapprefab/MapPrefab_Entity.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapPrefab.Entity")] # [parent (crate :: system :: object :: Object)] pub struct MapPrefab_Entity {
+# [offset (16)] # [rename (name = "gameObject")] pub game_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [offset (24)] # [rename (name = "region")] pub region : crate :: app :: mapprefab :: MapPrefab_Region ,
+# [offset (28)] # [rename (name = "category")] pub category : crate :: app :: mapprefab :: MapPrefab_Category ,
+# [offset (32)] # [rename (name = "name")] pub name : :: unity2 :: Il2CppString ,
+# [offset (40)] # [rename (name = "time")] pub time : :: unity2 :: Il2CppString ,
+# [offset (48)] # [rename (name = "user")] pub user : :: unity2 :: Il2CppString ,
+# [offset (56)] # [rename (name = "comment")] pub comment : :: unity2 :: Il2CppString ,
+}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapprefab/MapPrefab_Region.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct MapPrefab_Region  {
+    pub value: i32,
+}
+
+
+impl  ::unity2::ClassIdentity for MapPrefab_Region  {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapPrefab.Region";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+        }
+)
+    }
+
+}
+
+
+impl  ::unity2::IlType for MapPrefab_Region  {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
+
+impl  MapPrefab_Region  {
+    pub fn 無し() -> Self {
+        Self { value: 0 }
+
+    }
+
+
+    pub fn 温暖() -> Self {
+        Self { value: 1 }
+
+    }
+
+
+    pub fn 熱帯() -> Self {
+        Self { value: 2 }
+
+    }
+
+
+    pub fn 乾燥() -> Self {
+        Self { value: 3 }
+
+    }
+
+
+    pub fn 寒冷() -> Self {
+        Self { value: 4 }
+
+    }
+
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapprefab/MapPrefab_Category.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -131,122 +214,19 @@ impl  MapPrefab_Category  {
 
 }
 
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapprefab/MapPrefab_Region.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapPrefab_Region  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for MapPrefab_Region  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapPrefab.Region";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for MapPrefab_Region  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  MapPrefab_Region  {
-    pub fn 無し() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn 温暖() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn 熱帯() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn 乾燥() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn 寒冷() -> Self {
-        Self { value: 4 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapprefab/MapPrefab_Entity.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapPrefab.Entity")] # [parent (crate :: system :: object :: Object)] pub struct MapPrefab_Entity {
-# [offset (16)] # [rename (name = "gameObject")] pub game_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (24)] # [rename (name = "region")] pub region : crate :: app :: mapprefab :: MapPrefab_Region ,
-# [offset (28)] # [rename (name = "category")] pub category : crate :: app :: mapprefab :: MapPrefab_Category ,
-# [offset (32)] # [rename (name = "name")] pub name : :: unity2 :: Il2CppString ,
-# [offset (40)] # [rename (name = "time")] pub time : :: unity2 :: Il2CppString ,
-# [offset (48)] # [rename (name = "user")] pub user : :: unity2 :: Il2CppString ,
-# [offset (56)] # [rename (name = "comment")] pub comment : :: unity2 :: Il2CppString ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapprefab/MapPrefab.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapPrefab")] # [parent (crate :: unity_engine :: scriptableobject :: ScriptableObject)] pub struct MapPrefab {
-# [offset (24)] # [rename (name = "m_Entitys")] pub m_entitys : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mapprefab :: MapPrefab_Entity > ,
-}
-
 }
 
 #[cfg(feature = "app-mapprefab-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-mapprefab")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapPrefab_Entity_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPrefab_Entity as :: unity2 :: ClassIdentity > :: class () , "Update" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPrefab_Entity as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , } } } pub unsafe fn update (this : MapPrefab_Entity , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapPrefab_Entity , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPrefab_Entity as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPrefab_Entity as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapPrefab_Entity , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapPrefab_Entity , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "app-mapprefab")]
-pub trait IMapPrefab_EntityMethods : IMapPrefab_Entity { # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < MapPrefab_Entity as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapPrefab_Entity_unity2_raw :: update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapPrefab_Entity as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapPrefab_Entity_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-mapprefab")]
-impl < __T : IMapPrefab_Entity > IMapPrefab_EntityMethods for __T { }
-
-#[cfg(feature = "app-mapprefab")]
-impl MapPrefab_Entity { pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPrefab_Entity_unity2_raw :: __lookup_update :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPrefab_Entity_unity2_raw :: __lookup_ctor :: get_method_info () } }
-
-#[cfg(feature = "app-mapprefab")]
-impl MapPrefab_Entity {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapPrefab_Entity) , :: core :: stringify ! (new) ,)) ; < Self as IMapPrefab_EntityMethods > :: ctor (this ,) ; this }
-}
-
-#[cfg(feature = "app-mapprefab")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MapPrefab_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_has_object { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPrefab as :: unity2 :: ClassIdentity > :: class () , "HasObject" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPrefab as :: unity2 :: ClassIdentity > :: NAME , "HasObject" , e) , } } } pub unsafe fn has_object (this : MapPrefab , go : crate :: unity_engine :: gameobject :: GameObject , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (MapPrefab , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_has_object :: get_method_info () . method_ptr ,) ; inner (this , go , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_add { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: mapprefab :: MapPrefab_Entity as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPrefab as :: unity2 :: ClassIdentity > :: class () , "Add" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPrefab as :: unity2 :: ClassIdentity > :: NAME , "Add" , e) , } } } pub unsafe fn add (this : MapPrefab , entity : crate :: app :: mapprefab :: MapPrefab_Entity , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapPrefab , crate :: app :: mapprefab :: MapPrefab_Entity , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_add :: get_method_info () . method_ptr ,) ; inner (this , entity , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_sort { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPrefab as :: unity2 :: ClassIdentity > :: class () , "Sort" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPrefab as :: unity2 :: ClassIdentity > :: NAME , "Sort" , e) , } } } pub unsafe fn sort (this : MapPrefab , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapPrefab , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_sort :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MapPrefab as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapPrefab as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MapPrefab , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MapPrefab , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "app-mapprefab")]
-pub trait IMapPrefabMethods : IMapPrefab { # [doc = "`HasObject(crate::unity_engine::gameobject::GameObject)` overload"] fn has_object (self , go : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> bool { unsafe { let __receiver = < MapPrefab as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapPrefab_unity2_raw :: has_object (__receiver , :: core :: convert :: Into :: into (go) , :: core :: option :: Option :: None) } } # [doc = "`Add(crate::app::mapprefab::MapPrefab_Entity)` overload"] fn add (self , entity : impl :: core :: convert :: Into < crate :: app :: mapprefab :: MapPrefab_Entity >) -> () { unsafe { let __receiver = < MapPrefab as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapPrefab_unity2_raw :: add (__receiver , :: core :: convert :: Into :: into (entity) , :: core :: option :: Option :: None) } } # [doc = "`Sort()` overload"] fn sort (self ,) -> () { unsafe { let __receiver = < MapPrefab as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapPrefab_unity2_raw :: sort (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapPrefab as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MapPrefab_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+pub trait IMapPrefabMethods : IMapPrefab { # [doc = "`HasObject(crate::unity_engine::gameobject::GameObject)` overload"] fn has_object (self , go : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> bool { unsafe { let __receiver = < MapPrefab as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPrefab , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235b640usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (go) , :: core :: option :: Option :: None) } } } # [doc = "`Add(crate::app::mapprefab::MapPrefab_Entity)` overload"] fn add (self , entity : impl :: core :: convert :: Into < crate :: app :: mapprefab :: MapPrefab_Entity >) -> () { unsafe { let __receiver = < MapPrefab as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPrefab , crate :: app :: mapprefab :: MapPrefab_Entity , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235b7e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (entity) , :: core :: option :: Option :: None) } } } # [doc = "`Sort()` overload"] fn sort (self ,) -> () { unsafe { let __receiver = < MapPrefab as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPrefab , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235b850usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapPrefab as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPrefab , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235b980usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "app-mapprefab")]
 impl < __T : IMapPrefab > IMapPrefabMethods for __T { }
 
 #[cfg(feature = "app-mapprefab")]
-impl MapPrefab { pub fn has_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPrefab_unity2_raw :: __lookup_has_object :: get_method_info () } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPrefab_unity2_raw :: __lookup_add :: get_method_info () } pub fn sort_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPrefab_unity2_raw :: __lookup_sort :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MapPrefab_unity2_raw :: __lookup_ctor :: get_method_info () } }
+impl MapPrefab { pub fn has_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPrefab as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPrefab as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn sort_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPrefab as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPrefab as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
 
 #[cfg(feature = "app-mapprefab")]
 impl MapPrefab {
@@ -254,16 +234,30 @@ impl MapPrefab {
 }
 
 #[cfg(feature = "app-mapprefab")]
+pub trait IMapPrefab_EntityMethods : IMapPrefab_Entity { # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < MapPrefab_Entity as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPrefab_Entity , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x218d5f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapPrefab_Entity as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPrefab_Entity , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x218d6a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+
+#[cfg(feature = "app-mapprefab")]
+impl < __T : IMapPrefab_Entity > IMapPrefab_EntityMethods for __T { }
+
+#[cfg(feature = "app-mapprefab")]
+impl MapPrefab_Entity { pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPrefab_Entity as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPrefab_Entity as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+
+#[cfg(feature = "app-mapprefab")]
+impl MapPrefab_Entity {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapPrefab_Entity) , :: core :: stringify ! (new) ,)) ; < Self as IMapPrefab_EntityMethods > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "app-mapprefab")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapPrefab_Category;
-    pub use super::MapPrefab_Region;
-    pub use super::MapPrefab_Entity;
-    pub use super::IMapPrefab_Entity;
-    pub use super::IMapPrefab_EntityMethods;
     pub use super::MapPrefab;
     pub use super::IMapPrefab;
     pub use super::IMapPrefabMethods;
+    pub use super::MapPrefab_Entity;
+    pub use super::IMapPrefab_Entity;
+    pub use super::IMapPrefab_EntityMethods;
+    pub use super::MapPrefab_Region;
+    pub use super::MapPrefab_Category;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

@@ -15,6 +15,14 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/casualmap/CasualMap_ObjectData.md"))] # [:: unity2 :: class (namespace = "App" , name = "CasualMap.ObjectData")] # [parent (crate :: system :: object :: Object)] pub struct CasualMap_ObjectData {
+# [offset (16)] # [rename (name = "x")] pub x : i32 ,
+# [offset (20)] # [rename (name = "z")] pub z : i32 ,
+# [offset (24)] # [rename (name = "id")] pub id : i32 ,
+# [offset (28)] # [rename (name = "rotate")] pub rotate : i32 ,
+}
+
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/casualmap/CasualMap.md"))] # [:: unity2 :: class (namespace = "App" , name = "CasualMap")] # [parent (crate :: app :: singletonscriptableobject_1 :: SingletonScriptableObject_1 < crate :: app :: casualmap :: CasualMap >)] pub struct CasualMap {
 # [offset (24)] # [rename (name = "m_CasualEditData1")] pub m_casual_edit_data1 : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: casualmap :: CasualMap_ObjectData > ,
 # [offset (32)] # [rename (name = "m_CasualEditData2")] pub m_casual_edit_data2 : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: casualmap :: CasualMap_ObjectData > ,
@@ -28,47 +36,19 @@ mod __types {
 # [offset (96)] # [rename (name = "m_CasualEditData10")] pub m_casual_edit_data10 : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: casualmap :: CasualMap_ObjectData > ,
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/casualmap/CasualMap_ObjectData.md"))] # [:: unity2 :: class (namespace = "App" , name = "CasualMap.ObjectData")] # [parent (crate :: system :: object :: Object)] pub struct CasualMap_ObjectData {
-# [offset (16)] # [rename (name = "x")] pub x : i32 ,
-# [offset (20)] # [rename (name = "z")] pub z : i32 ,
-# [offset (24)] # [rename (name = "id")] pub id : i32 ,
-# [offset (28)] # [rename (name = "rotate")] pub rotate : i32 ,
-}
-
 }
 
 #[cfg(feature = "app-casualmap-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-casualmap")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CasualMap_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_data_list { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CasualMap as :: unity2 :: ClassIdentity > :: class () , "GetDataList" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CasualMap as :: unity2 :: ClassIdentity > :: NAME , "GetDataList" , e) , } } } pub unsafe fn get_data_list (this : CasualMap , stage : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: casualmap :: CasualMap_ObjectData > { let inner : extern "C" fn (CasualMap , i32 , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: casualmap :: CasualMap_ObjectData > = :: core :: mem :: transmute (__lookup_get_data_list :: get_method_info () . method_ptr ,) ; inner (this , stage , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CasualMap as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CasualMap as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : CasualMap , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CasualMap , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "app-casualmap")]
-pub trait ICasualMapMethods : ICasualMap { # [doc = "`GetDataList(i32)` overload"] fn get_data_list (self , stage : impl :: core :: convert :: Into < i32 >) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: casualmap :: CasualMap_ObjectData > { unsafe { let __receiver = < CasualMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CasualMap_unity2_raw :: get_data_list (__receiver , :: core :: convert :: Into :: into (stage) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CasualMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CasualMap_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-casualmap")]
-impl < __T : ICasualMap > ICasualMapMethods for __T { }
-
-#[cfg(feature = "app-casualmap")]
-impl CasualMap { pub fn get_data_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CasualMap_unity2_raw :: __lookup_get_data_list :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CasualMap_unity2_raw :: __lookup_ctor :: get_method_info () } }
-
-#[cfg(feature = "app-casualmap")]
-impl CasualMap {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CasualMap) , :: core :: stringify ! (new) ,)) ; < Self as ICasualMapMethods > :: ctor (this ,) ; this }
-}
-
-#[cfg(feature = "app-casualmap")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CasualMap_ObjectData_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CasualMap_ObjectData as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CasualMap_ObjectData as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : CasualMap_ObjectData , x : i32 , z : i32 , id : i32 , rotate : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CasualMap_ObjectData , i32 , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , x , z , id , rotate , __unity2_method_info) } }
-
-#[cfg(feature = "app-casualmap")]
-pub trait ICasualMap_ObjectDataMethods : ICasualMap_ObjectData { # [doc = "`.ctor(i32, i32, i32, i32)` overload"] fn ctor (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , id : impl :: core :: convert :: Into < i32 > , rotate : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < CasualMap_ObjectData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CasualMap_ObjectData_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (id) , :: core :: convert :: Into :: into (rotate) , :: core :: option :: Option :: None) } } }
+pub trait ICasualMap_ObjectDataMethods : ICasualMap_ObjectData { # [doc = "`.ctor(i32, i32, i32, i32)` overload"] fn ctor (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , id : impl :: core :: convert :: Into < i32 > , rotate : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < CasualMap_ObjectData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CasualMap_ObjectData , i32 , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19be830usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (id) , :: core :: convert :: Into :: into (rotate) , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "app-casualmap")]
 impl < __T : ICasualMap_ObjectData > ICasualMap_ObjectDataMethods for __T { }
 
 #[cfg(feature = "app-casualmap")]
-impl CasualMap_ObjectData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CasualMap_ObjectData_unity2_raw :: __lookup_ctor :: get_method_info () } }
+impl CasualMap_ObjectData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CasualMap_ObjectData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
 
 #[cfg(feature = "app-casualmap")]
 impl CasualMap_ObjectData {
@@ -76,14 +56,28 @@ impl CasualMap_ObjectData {
 }
 
 #[cfg(feature = "app-casualmap")]
+pub trait ICasualMapMethods : ICasualMap { # [doc = "`GetDataList(i32)` overload"] fn get_data_list (self , stage : impl :: core :: convert :: Into < i32 >) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: casualmap :: CasualMap_ObjectData > { unsafe { let __receiver = < CasualMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CasualMap , i32 , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: casualmap :: CasualMap_ObjectData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25c0d50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stage) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CasualMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CasualMap , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25c0e00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+
+#[cfg(feature = "app-casualmap")]
+impl < __T : ICasualMap > ICasualMapMethods for __T { }
+
+#[cfg(feature = "app-casualmap")]
+impl CasualMap { pub fn get_data_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CasualMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CasualMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+
+#[cfg(feature = "app-casualmap")]
+impl CasualMap {
+# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CasualMap) , :: core :: stringify ! (new) ,)) ; < Self as ICasualMapMethods > :: ctor (this ,) ; this }
+}
+
+#[cfg(feature = "app-casualmap")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CasualMap;
-    pub use super::ICasualMap;
-    pub use super::ICasualMapMethods;
     pub use super::CasualMap_ObjectData;
     pub use super::ICasualMap_ObjectData;
     pub use super::ICasualMap_ObjectDataMethods;
+    pub use super::CasualMap;
+    pub use super::ICasualMap;
+    pub use super::ICasualMapMethods;
     pub use crate::app::singletonscriptableobject_1::ISingletonScriptableObject_1;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::object_2::IObject_2;

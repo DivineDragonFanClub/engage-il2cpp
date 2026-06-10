@@ -13,6 +13,15 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capabilitydefinition/CapabilityDefinition.md"))] # [:: unity2 :: class (namespace = "App" , name = "CapabilityDefinition")] # [parent (crate :: system :: object :: Object)] pub struct CapabilityDefinition {
+# [static_field] # [rename (name = "Num")] pub num : i32 ,
+# [static_field] # [rename (name = "CcNum")] pub cc_num : i32 ,
+# [static_field] # [rename (name = "GrowNum")] pub grow_num : i32 ,
+# [static_field] # [rename (name = "Names")] pub names : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+# [static_field] # [rename (name = "Helps")] pub helps : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/capabilitydefinition/CapabilityDefinition_Type.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -139,34 +148,22 @@ impl  CapabilityDefinition_Type  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capabilitydefinition/CapabilityDefinition.md"))] # [:: unity2 :: class (namespace = "App" , name = "CapabilityDefinition")] # [parent (crate :: system :: object :: Object)] pub struct CapabilityDefinition {
-# [static_field] # [rename (name = "Num")] pub num : i32 ,
-# [static_field] # [rename (name = "CcNum")] pub cc_num : i32 ,
-# [static_field] # [rename (name = "GrowNum")] pub grow_num : i32 ,
-# [static_field] # [rename (name = "Names")] pub names : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [static_field] # [rename (name = "Helps")] pub helps : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-}
-
 }
 
 #[cfg(feature = "app-capabilitydefinition-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-capabilitydefinition")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CapabilityDefinition_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CapabilityDefinition as :: unity2 :: ClassIdentity > :: class () , "GetName" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CapabilityDefinition as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , } } } pub unsafe fn get_name (index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_name :: get_method_info () . method_ptr ,) ; inner (index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_help { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CapabilityDefinition as :: unity2 :: ClassIdentity > :: class () , "GetHelp" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CapabilityDefinition as :: unity2 :: ClassIdentity > :: NAME , "GetHelp" , e) , } } } pub unsafe fn get_help (index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_help :: get_method_info () . method_ptr ,) ; inner (index , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CapabilityDefinition as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CapabilityDefinition as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : CapabilityDefinition , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (CapabilityDefinition , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CapabilityDefinition as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CapabilityDefinition as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+impl CapabilityDefinition { # [doc = "`GetName(i32)` overload"] pub fn get_name (index : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bced0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`GetHelp(i32)` overload"] pub fn get_help (index : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bcfa0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bd080usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "app-capabilitydefinition")]
-impl CapabilityDefinition { # [doc = "`GetName(i32)` overload"] pub fn get_name (index : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { __CapabilityDefinition_unity2_raw :: get_name (:: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } # [doc = "`GetHelp(i32)` overload"] pub fn get_help (index : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { __CapabilityDefinition_unity2_raw :: get_help (:: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __CapabilityDefinition_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-capabilitydefinition")]
-pub trait ICapabilityDefinitionMethods : ICapabilityDefinition { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CapabilityDefinition as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CapabilityDefinition_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+pub trait ICapabilityDefinitionMethods : ICapabilityDefinition { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CapabilityDefinition as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CapabilityDefinition , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bd070usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "app-capabilitydefinition")]
 impl < __T : ICapabilityDefinition > ICapabilityDefinitionMethods for __T { }
 
 #[cfg(feature = "app-capabilitydefinition")]
-impl CapabilityDefinition { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CapabilityDefinition_unity2_raw :: __lookup_get_name :: get_method_info () } pub fn get_help_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CapabilityDefinition_unity2_raw :: __lookup_get_help :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CapabilityDefinition_unity2_raw :: __lookup_ctor :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __CapabilityDefinition_unity2_raw :: __lookup_cctor :: get_method_info () } }
+impl CapabilityDefinition { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapabilityDefinition as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_help_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapabilityDefinition as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapabilityDefinition as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapabilityDefinition as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
 
 #[cfg(feature = "app-capabilitydefinition")]
 impl CapabilityDefinition {
@@ -176,10 +173,10 @@ impl CapabilityDefinition {
 #[cfg(feature = "app-capabilitydefinition")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CapabilityDefinition_Type;
     pub use super::CapabilityDefinition;
     pub use super::ICapabilityDefinition;
     pub use super::ICapabilityDefinitionMethods;
+    pub use super::CapabilityDefinition_Type;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

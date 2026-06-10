@@ -39,16 +39,13 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-faceinfo_legacy")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __FaceInfo_Legacy_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< FaceInfo_Legacy as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < FaceInfo_Legacy as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : FaceInfo_Legacy , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (FaceInfo_Legacy , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "tm_pro-faceinfo_legacy")]
-pub trait IFaceInfo_LegacyMethods : IFaceInfo_Legacy { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FaceInfo_Legacy as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __FaceInfo_Legacy_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+pub trait IFaceInfo_LegacyMethods : IFaceInfo_Legacy { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FaceInfo_Legacy as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FaceInfo_Legacy , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d8ba20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "tm_pro-faceinfo_legacy")]
 impl < __T : IFaceInfo_Legacy > IFaceInfo_LegacyMethods for __T { }
 
 #[cfg(feature = "tm_pro-faceinfo_legacy")]
-impl FaceInfo_Legacy { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __FaceInfo_Legacy_unity2_raw :: __lookup_ctor :: get_method_info () } }
+impl FaceInfo_Legacy { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceInfo_Legacy as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
 
 #[cfg(feature = "tm_pro-faceinfo_legacy")]
 impl FaceInfo_Legacy {

@@ -17,13 +17,10 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-exjobintrodata")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ExJobIntroData_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_revenge { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: jobintrodata :: JobIntroData_BattleType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ExJobIntroData as :: unity2 :: ClassIdentity > :: class () , "IsRevenge" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ExJobIntroData as :: unity2 :: ClassIdentity > :: NAME , "IsRevenge" , e) , } } } pub unsafe fn is_revenge (r#type : crate :: app :: jobintrodata :: JobIntroData_BattleType , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: app :: jobintrodata :: JobIntroData_BattleType , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_revenge :: get_method_info () . method_ptr ,) ; inner (r#type , __unity2_method_info) } }
+impl ExJobIntroData { # [doc = "`IsRevenge(crate::app::jobintrodata::JobIntroData_BattleType)` overload"] pub fn is_revenge (r#type : impl :: core :: convert :: Into < crate :: app :: jobintrodata :: JobIntroData_BattleType >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: jobintrodata :: JobIntroData_BattleType , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e4c90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "app-exjobintrodata")]
-impl ExJobIntroData { # [doc = "`IsRevenge(crate::app::jobintrodata::JobIntroData_BattleType)` overload"] pub fn is_revenge (r#type : impl :: core :: convert :: Into < crate :: app :: jobintrodata :: JobIntroData_BattleType >) -> bool { unsafe { __ExJobIntroData_unity2_raw :: is_revenge (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-exjobintrodata")]
-impl ExJobIntroData { pub fn is_revenge_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ExJobIntroData_unity2_raw :: __lookup_is_revenge :: get_method_info () } }
+impl ExJobIntroData { pub fn is_revenge_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ExJobIntroData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
 
 #[cfg(feature = "app-exjobintrodata")]
 #[doc(hidden)]

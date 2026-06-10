@@ -17,13 +17,10 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-animassetex")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AnimAssetEx_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_exists { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: animasset :: AnimAsset as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimAssetEx as :: unity2 :: ClassIdentity > :: class () , "Exists" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimAssetEx as :: unity2 :: ClassIdentity > :: NAME , "Exists" , e) , } } } pub unsafe fn exists (aa : crate :: combat :: animasset :: AnimAsset , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: combat :: animasset :: AnimAsset , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_exists :: get_method_info () . method_ptr ,) ; inner (aa , __unity2_method_info) } }
+impl AnimAssetEx { # [doc = "`Exists(crate::combat::animasset::AnimAsset)` overload"] pub fn exists (aa : impl :: core :: convert :: Into < crate :: combat :: animasset :: AnimAsset >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: combat :: animasset :: AnimAsset , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8e140usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (aa) , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "combat-animassetex")]
-impl AnimAssetEx { # [doc = "`Exists(crate::combat::animasset::AnimAsset)` overload"] pub fn exists (aa : impl :: core :: convert :: Into < crate :: combat :: animasset :: AnimAsset >) -> bool { unsafe { __AnimAssetEx_unity2_raw :: exists (:: core :: convert :: Into :: into (aa) , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "combat-animassetex")]
-impl AnimAssetEx { pub fn exists_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AnimAssetEx_unity2_raw :: __lookup_exists :: get_method_info () } }
+impl AnimAssetEx { pub fn exists_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimAssetEx as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
 
 #[cfg(feature = "combat-animassetex")]
 #[doc(hidden)]

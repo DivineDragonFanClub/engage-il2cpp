@@ -20,16 +20,13 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-io-searchresult")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __SearchResult_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_user_path { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SearchResult as :: unity2 :: ClassIdentity > :: class () , "get_UserPath" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SearchResult as :: unity2 :: ClassIdentity > :: NAME , "get_UserPath" , e) , } } } pub unsafe fn get_user_path (this : SearchResult , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let inner : extern "C" fn (SearchResult , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__lookup_get_user_path :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "system-io-searchresult")]
-pub trait ISearchResultMethods : ISearchResult { # [doc = "`get_UserPath()` overload"] fn get_user_path (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < SearchResult as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SearchResult_unity2_raw :: get_user_path (__receiver , :: core :: option :: Option :: None) } } }
+pub trait ISearchResultMethods : ISearchResult { # [doc = "`get_UserPath()` overload"] fn get_user_path (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < SearchResult as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SearchResult , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3500ab0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "system-io-searchresult")]
 impl < __T : ISearchResult > ISearchResultMethods for __T { }
 
 #[cfg(feature = "system-io-searchresult")]
-impl SearchResult { pub fn get_user_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SearchResult_unity2_raw :: __lookup_get_user_path :: get_method_info () } }
+impl SearchResult { pub fn get_user_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SearchResult as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
 
 #[cfg(feature = "system-io-searchresult")]
 #[doc(hidden)]

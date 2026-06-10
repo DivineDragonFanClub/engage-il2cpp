@@ -22,13 +22,10 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-timeline-matchtargetfieldconstants")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MatchTargetFieldConstants_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MatchTargetFieldConstants as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MatchTargetFieldConstants as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+impl MatchTargetFieldConstants { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d8710usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "unity_engine-timeline-matchtargetfieldconstants")]
-impl MatchTargetFieldConstants { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __MatchTargetFieldConstants_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "unity_engine-timeline-matchtargetfieldconstants")]
-impl MatchTargetFieldConstants { pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MatchTargetFieldConstants_unity2_raw :: __lookup_cctor :: get_method_info () } }
+impl MatchTargetFieldConstants { pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MatchTargetFieldConstants as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
 
 #[cfg(feature = "unity_engine-timeline-matchtargetfieldconstants")]
 #[doc(hidden)]

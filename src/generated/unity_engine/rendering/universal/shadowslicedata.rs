@@ -55,13 +55,10 @@ impl ::unity2::IlType for ShadowSliceData {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-universal-shadowslicedata")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ShadowSliceData_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_clear { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ShadowSliceData as :: unity2 :: ClassIdentity > :: class () , "Clear" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ShadowSliceData as :: unity2 :: ClassIdentity > :: NAME , "Clear" , e) , } } } pub unsafe fn clear (this : * mut ShadowSliceData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (* mut ShadowSliceData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_clear :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+impl ShadowSliceData { # [doc = "`Clear()` overload"] pub fn clear (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut ShadowSliceData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2edb510usize) as * mut u8) ; __inner (self as * mut ShadowSliceData , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "unity_engine-rendering-universal-shadowslicedata")]
-impl ShadowSliceData { # [doc = "`Clear()` overload"] pub fn clear (mut self ,) -> () { unsafe { __ShadowSliceData_unity2_raw :: clear (& mut self as * mut ShadowSliceData , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "unity_engine-rendering-universal-shadowslicedata")]
-impl ShadowSliceData { pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ShadowSliceData_unity2_raw :: __lookup_clear :: get_method_info () } }
+impl ShadowSliceData { pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShadowSliceData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
 
 #[cfg(feature = "unity_engine-rendering-universal-shadowslicedata")]
 #[doc(hidden)]

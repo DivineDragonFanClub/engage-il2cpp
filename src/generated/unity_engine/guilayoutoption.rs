@@ -13,6 +13,12 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayoutoption/GUILayoutOption.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "GUILayoutOption")] # [parent (crate :: system :: object :: Object)] pub struct GUILayoutOption {
+# [offset (16)] # [rename (name = "type")] pub r#type : crate :: unity_engine :: guilayoutoption :: GUILayoutOption_Type ,
+# [offset (24)] # [rename (name = "value")] pub value : :: unity2 :: IlInstance ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/guilayoutoption/GUILayoutOption_Type.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -133,28 +139,19 @@ impl  GUILayoutOption_Type  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayoutoption/GUILayoutOption.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "GUILayoutOption")] # [parent (crate :: system :: object :: Object)] pub struct GUILayoutOption {
-# [offset (16)] # [rename (name = "type")] pub r#type : crate :: unity_engine :: guilayoutoption :: GUILayoutOption_Type ,
-# [offset (24)] # [rename (name = "value")] pub value : :: unity2 :: IlInstance ,
-}
-
 }
 
 #[cfg(feature = "unity_engine-guilayoutoption-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-guilayoutoption")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GUILayoutOption_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: guilayoutoption :: GUILayoutOption_Type as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GUILayoutOption as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GUILayoutOption as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GUILayoutOption , r#type : crate :: unity_engine :: guilayoutoption :: GUILayoutOption_Type , value : crate :: system :: object :: Object , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GUILayoutOption , crate :: unity_engine :: guilayoutoption :: GUILayoutOption_Type , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , r#type , value , __unity2_method_info) } }
-
-#[cfg(feature = "unity_engine-guilayoutoption")]
-pub trait IGUILayoutOptionMethods : IGUILayoutOption { # [doc = "`.ctor(crate::unity_engine::guilayoutoption::GUILayoutOption_Type, crate::system::object::Object)` overload"] fn ctor (self , r#type : impl :: core :: convert :: Into < crate :: unity_engine :: guilayoutoption :: GUILayoutOption_Type > , value : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < GUILayoutOption as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GUILayoutOption_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } }
+pub trait IGUILayoutOptionMethods : IGUILayoutOption { # [doc = "`.ctor(crate::unity_engine::guilayoutoption::GUILayoutOption_Type, crate::system::object::Object)` overload"] fn ctor (self , r#type : impl :: core :: convert :: Into < crate :: unity_engine :: guilayoutoption :: GUILayoutOption_Type > , value : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < GUILayoutOption as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GUILayoutOption , crate :: unity_engine :: guilayoutoption :: GUILayoutOption_Type , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c457f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "unity_engine-guilayoutoption")]
 impl < __T : IGUILayoutOption > IGUILayoutOptionMethods for __T { }
 
 #[cfg(feature = "unity_engine-guilayoutoption")]
-impl GUILayoutOption { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GUILayoutOption_unity2_raw :: __lookup_ctor :: get_method_info () } }
+impl GUILayoutOption { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUILayoutOption as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
 
 #[cfg(feature = "unity_engine-guilayoutoption")]
 impl GUILayoutOption {
@@ -164,10 +161,10 @@ impl GUILayoutOption {
 #[cfg(feature = "unity_engine-guilayoutoption")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GUILayoutOption_Type;
     pub use super::GUILayoutOption;
     pub use super::IGUILayoutOption;
     pub use super::IGUILayoutOptionMethods;
+    pub use super::GUILayoutOption_Type;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

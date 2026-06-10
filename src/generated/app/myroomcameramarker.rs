@@ -19,13 +19,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomcameramarker/MyRoomCameraMarker.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomCameraMarker")] # [parent (crate :: unity_engine :: timeline :: marker :: Marker)] pub struct MyRoomCameraMarker {
-# [offset (40)] # [rename (name = "CameraType")] pub camera_type : crate :: app :: myroomcameramarker :: MyRoomCameraMarker_Type ,
-# [offset (48)] # [rename (name = "CameraName")] pub camera_name : :: unity2 :: Il2CppString ,
-# [offset (56)] # [rename (name = "AnimName")] pub anim_name : :: unity2 :: Il2CppString ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomcameramarker/MyRoomCameraMarker_Type.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -74,22 +67,26 @@ impl  MyRoomCameraMarker_Type  {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomcameramarker/MyRoomCameraMarker.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomCameraMarker")] # [parent (crate :: unity_engine :: timeline :: marker :: Marker)] pub struct MyRoomCameraMarker {
+# [offset (40)] # [rename (name = "CameraType")] pub camera_type : crate :: app :: myroomcameramarker :: MyRoomCameraMarker_Type ,
+# [offset (48)] # [rename (name = "CameraName")] pub camera_name : :: unity2 :: Il2CppString ,
+# [offset (56)] # [rename (name = "AnimName")] pub anim_name : :: unity2 :: Il2CppString ,
+}
+
 }
 
 #[cfg(feature = "app-myroomcameramarker-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-myroomcameramarker")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MyRoomCameraMarker_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_id { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomCameraMarker as :: unity2 :: ClassIdentity > :: class () , "get_id" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomCameraMarker as :: unity2 :: ClassIdentity > :: NAME , "get_id" , e) , } } } pub unsafe fn get_id (this : MyRoomCameraMarker , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: propertyname :: PropertyName { let inner : extern "C" fn (MyRoomCameraMarker , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: propertyname :: PropertyName = :: core :: mem :: transmute (__lookup_get_id :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomCameraMarker as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomCameraMarker as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MyRoomCameraMarker , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MyRoomCameraMarker , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "app-myroomcameramarker")]
-pub trait IMyRoomCameraMarkerMethods : IMyRoomCameraMarker { # [doc = "`get_id()` overload"] fn get_id (self ,) -> crate :: unity_engine :: propertyname :: PropertyName { unsafe { let __receiver = < MyRoomCameraMarker as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MyRoomCameraMarker_unity2_raw :: get_id (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MyRoomCameraMarker as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MyRoomCameraMarker_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+pub trait IMyRoomCameraMarkerMethods : IMyRoomCameraMarker { # [doc = "`get_id()` overload"] fn get_id (self ,) -> crate :: unity_engine :: propertyname :: PropertyName { unsafe { let __receiver = < MyRoomCameraMarker as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomCameraMarker , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: propertyname :: PropertyName = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238c3b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MyRoomCameraMarker as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomCameraMarker , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238c410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "app-myroomcameramarker")]
 impl < __T : IMyRoomCameraMarker > IMyRoomCameraMarkerMethods for __T { }
 
 #[cfg(feature = "app-myroomcameramarker")]
-impl MyRoomCameraMarker { pub fn get_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomCameraMarker_unity2_raw :: __lookup_get_id :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MyRoomCameraMarker_unity2_raw :: __lookup_ctor :: get_method_info () } }
+impl MyRoomCameraMarker { pub fn get_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomCameraMarker as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomCameraMarker as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
 
 #[cfg(feature = "app-myroomcameramarker")]
 impl MyRoomCameraMarker {
@@ -99,10 +96,10 @@ impl MyRoomCameraMarker {
 #[cfg(feature = "app-myroomcameramarker")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MyRoomCameraMarker_Type;
     pub use super::MyRoomCameraMarker;
     pub use super::IMyRoomCameraMarker;
     pub use super::IMyRoomCameraMarkerMethods;
-    pub use super::MyRoomCameraMarker_Type;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

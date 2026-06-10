@@ -19,16 +19,13 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-lowerresblittexture")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __LowerResBlitTexture_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_lower_res_blit_texture_dont_strip_me { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LowerResBlitTexture as :: unity2 :: ClassIdentity > :: class () , "LowerResBlitTextureDontStripMe" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LowerResBlitTexture as :: unity2 :: ClassIdentity > :: NAME , "LowerResBlitTextureDontStripMe" , e) , } } } pub unsafe fn lower_res_blit_texture_dont_strip_me (this : LowerResBlitTexture , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (LowerResBlitTexture , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_lower_res_blit_texture_dont_strip_me :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "unity_engine-lowerresblittexture")]
-pub trait ILowerResBlitTextureMethods : ILowerResBlitTexture { # [doc = "`LowerResBlitTextureDontStripMe()` overload"] fn lower_res_blit_texture_dont_strip_me (self ,) -> () { unsafe { let __receiver = < LowerResBlitTexture as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __LowerResBlitTexture_unity2_raw :: lower_res_blit_texture_dont_strip_me (__receiver , :: core :: option :: Option :: None) } } }
+pub trait ILowerResBlitTextureMethods : ILowerResBlitTexture { # [doc = "`LowerResBlitTextureDontStripMe()` overload"] fn lower_res_blit_texture_dont_strip_me (self ,) -> () { unsafe { let __receiver = < LowerResBlitTexture as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LowerResBlitTexture , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32d8a30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "unity_engine-lowerresblittexture")]
 impl < __T : ILowerResBlitTexture > ILowerResBlitTextureMethods for __T { }
 
 #[cfg(feature = "unity_engine-lowerresblittexture")]
-impl LowerResBlitTexture { pub fn lower_res_blit_texture_dont_strip_me_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __LowerResBlitTexture_unity2_raw :: __lookup_lower_res_blit_texture_dont_strip_me :: get_method_info () } }
+impl LowerResBlitTexture { pub fn lower_res_blit_texture_dont_strip_me_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LowerResBlitTexture as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
 
 #[cfg(feature = "unity_engine-lowerresblittexture")]
 #[doc(hidden)]

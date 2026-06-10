@@ -22,16 +22,13 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "root-tutoriallisttopbasicmenuitem")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TutorialListTopBasicMenuItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TutorialListTopBasicMenuItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TutorialListTopBasicMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : TutorialListTopBasicMenuItem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TutorialListTopBasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "root-tutoriallisttopbasicmenuitem")]
-pub trait ITutorialListTopBasicMenuItemMethods : ITutorialListTopBasicMenuItem { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TutorialListTopBasicMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TutorialListTopBasicMenuItem_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+pub trait ITutorialListTopBasicMenuItemMethods : ITutorialListTopBasicMenuItem { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TutorialListTopBasicMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TutorialListTopBasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b3ac0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "root-tutoriallisttopbasicmenuitem")]
 impl < __T : ITutorialListTopBasicMenuItem > ITutorialListTopBasicMenuItemMethods for __T { }
 
 #[cfg(feature = "root-tutoriallisttopbasicmenuitem")]
-impl TutorialListTopBasicMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TutorialListTopBasicMenuItem_unity2_raw :: __lookup_ctor :: get_method_info () } }
+impl TutorialListTopBasicMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialListTopBasicMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
 
 #[cfg(feature = "root-tutoriallisttopbasicmenuitem")]
 impl TutorialListTopBasicMenuItem {

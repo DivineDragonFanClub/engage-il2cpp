@@ -19,17 +19,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hublensflare/HubLensFlare.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubLensFlare")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct HubLensFlare {
-# [offset (24)] # [rename (name = "FlareScale")] pub flare_scale : f32 ,
-# [offset (28)] # [rename (name = "FlareMaxSize")] pub flare_max_size : f32 ,
-# [offset (32)] # [rename (name = "FlareZ")] pub flare_z : f32 ,
-# [offset (36)] # [rename (name = "RotateV")] pub rotate_v : f32 ,
-# [offset (40)] # [rename (name = "m_flare")] pub m_flare : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: hublensflare :: HubLensFlare_Flare > ,
-# [offset (48)] # [rename (name = "m_sunPosition")] pub m_sun_position : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (64)] # [rename (name = "m_light")] pub m_light : crate :: unity_engine :: gameobject :: GameObject ,
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hublensflare/HubLensFlare_Flare.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -69,22 +58,30 @@ impl ::unity2::IlType for HubLensFlare_Flare {
 
 }
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hublensflare/HubLensFlare.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubLensFlare")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct HubLensFlare {
+# [offset (24)] # [rename (name = "FlareScale")] pub flare_scale : f32 ,
+# [offset (28)] # [rename (name = "FlareMaxSize")] pub flare_max_size : f32 ,
+# [offset (32)] # [rename (name = "FlareZ")] pub flare_z : f32 ,
+# [offset (36)] # [rename (name = "RotateV")] pub rotate_v : f32 ,
+# [offset (40)] # [rename (name = "m_flare")] pub m_flare : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: hublensflare :: HubLensFlare_Flare > ,
+# [offset (48)] # [rename (name = "m_sunPosition")] pub m_sun_position : crate :: unity_engine :: vector3 :: Vector3 ,
+# [offset (64)] # [rename (name = "m_light")] pub m_light : crate :: unity_engine :: gameobject :: GameObject ,
+}
+
 }
 
 #[cfg(feature = "app-hublensflare-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-hublensflare")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __HubLensFlare_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_awake { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubLensFlare as :: unity2 :: ClassIdentity > :: class () , "Awake" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubLensFlare as :: unity2 :: ClassIdentity > :: NAME , "Awake" , e) , } } } pub unsafe fn awake (this : HubLensFlare , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubLensFlare , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_awake :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_update { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubLensFlare as :: unity2 :: ClassIdentity > :: class () , "Update" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubLensFlare as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , } } } pub unsafe fn update (this : HubLensFlare , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubLensFlare , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_update :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_destroy { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubLensFlare as :: unity2 :: ClassIdentity > :: class () , "OnDestroy" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubLensFlare as :: unity2 :: ClassIdentity > :: NAME , "OnDestroy" , e) , } } } pub unsafe fn on_destroy (this : HubLensFlare , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubLensFlare , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_destroy :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< HubLensFlare as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubLensFlare as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : HubLensFlare , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (HubLensFlare , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "app-hublensflare")]
-pub trait IHubLensFlareMethods : IHubLensFlare { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < HubLensFlare as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubLensFlare_unity2_raw :: awake (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < HubLensFlare as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubLensFlare_unity2_raw :: update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < HubLensFlare as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubLensFlare_unity2_raw :: on_destroy (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubLensFlare as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HubLensFlare_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+pub trait IHubLensFlareMethods : IHubLensFlare { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < HubLensFlare as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubLensFlare , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28acef0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < HubLensFlare as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubLensFlare , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28ad360usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < HubLensFlare as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubLensFlare , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28ad870usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubLensFlare as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubLensFlare , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28ada00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "app-hublensflare")]
 impl < __T : IHubLensFlare > IHubLensFlareMethods for __T { }
 
 #[cfg(feature = "app-hublensflare")]
-impl HubLensFlare { pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubLensFlare_unity2_raw :: __lookup_awake :: get_method_info () } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubLensFlare_unity2_raw :: __lookup_update :: get_method_info () } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubLensFlare_unity2_raw :: __lookup_on_destroy :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __HubLensFlare_unity2_raw :: __lookup_ctor :: get_method_info () } }
+impl HubLensFlare { pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubLensFlare as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubLensFlare as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubLensFlare as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubLensFlare as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
 
 #[cfg(feature = "app-hublensflare")]
 impl HubLensFlare {
@@ -94,10 +91,10 @@ impl HubLensFlare {
 #[cfg(feature = "app-hublensflare")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::HubLensFlare_Flare;
     pub use super::HubLensFlare;
     pub use super::IHubLensFlare;
     pub use super::IHubLensFlareMethods;
-    pub use super::HubLensFlare_Flare;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     pub use crate::unity_engine::behaviour::IBehaviour;

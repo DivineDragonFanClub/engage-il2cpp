@@ -21,16 +21,13 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-nointerpintparameter")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __NoInterpIntParameter_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NoInterpIntParameter as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NoInterpIntParameter as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : NoInterpIntParameter , value : i32 , override_state : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (NoInterpIntParameter , i32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , value , override_state , __unity2_method_info) } }
-
-#[cfg(feature = "unity_engine-rendering-nointerpintparameter")]
-pub trait INoInterpIntParameterMethods : INoInterpIntParameter { # [doc = "`.ctor(i32, bool)` overload"] fn ctor (self , value : impl :: core :: convert :: Into < i32 > , override_state : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < NoInterpIntParameter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __NoInterpIntParameter_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (override_state) , :: core :: option :: Option :: None) } } }
+pub trait INoInterpIntParameterMethods : INoInterpIntParameter { # [doc = "`.ctor(i32, bool)` overload"] fn ctor (self , value : impl :: core :: convert :: Into < i32 > , override_state : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < NoInterpIntParameter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NoInterpIntParameter , i32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30ac270usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (override_state) , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "unity_engine-rendering-nointerpintparameter")]
 impl < __T : INoInterpIntParameter > INoInterpIntParameterMethods for __T { }
 
 #[cfg(feature = "unity_engine-rendering-nointerpintparameter")]
-impl NoInterpIntParameter { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NoInterpIntParameter_unity2_raw :: __lookup_ctor :: get_method_info () } }
+impl NoInterpIntParameter { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NoInterpIntParameter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
 
 #[cfg(feature = "unity_engine-rendering-nointerpintparameter")]
 impl NoInterpIntParameter {

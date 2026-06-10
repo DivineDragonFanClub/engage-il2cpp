@@ -9,7 +9,7 @@
  # [cfg (feature = "unity_engine-rendering-universal-internal-bitarray_2-types")] pub use bitarray_2 :: { BitArray_2 }
  ;
  # [cfg (any (feature = "unity_engine-rendering-universal-internal-colorgradinglutpass-types"))] pub mod colorgradinglutpass ;
- # [cfg (feature = "unity_engine-rendering-universal-internal-colorgradinglutpass-types")] pub use colorgradinglutpass :: { ColorGradingLutPass , IColorGradingLutPass , ColorGradingLutPass_ShaderConstants , IColorGradingLutPass_ShaderConstants }
+ # [cfg (feature = "unity_engine-rendering-universal-internal-colorgradinglutpass-types")] pub use colorgradinglutpass :: { ColorGradingLutPass_ShaderConstants , IColorGradingLutPass_ShaderConstants , ColorGradingLutPass , IColorGradingLutPass }
  ;
  # [cfg (feature = "unity_engine-rendering-universal-internal-colorgradinglutpass")] pub use colorgradinglutpass :: { IColorGradingLutPassMethods }
  ;
@@ -27,7 +27,7 @@
  # [cfg (feature = "unity_engine-rendering-universal-internal-deferredconfig-types")] pub use deferredconfig :: { DeferredConfig , IDeferredConfig }
  ;
  # [cfg (any (feature = "unity_engine-rendering-universal-internal-deferredlights-types"))] pub mod deferredlights ;
- # [cfg (feature = "unity_engine-rendering-universal-internal-deferredlights-types")] pub use deferredlights :: { DeferredLights_GBufferHandles , DeferredLights_CullLightsJob , DeferredLights_ShaderConstants , IDeferredLights_ShaderConstants , DeferredLights_DrawCall , DeferredLights , IDeferredLights }
+ # [cfg (feature = "unity_engine-rendering-universal-internal-deferredlights-types")] pub use deferredlights :: { DeferredLights_GBufferHandles , DeferredLights_CullLightsJob , DeferredLights_DrawCall , DeferredLights , IDeferredLights , DeferredLights_ShaderConstants , IDeferredLights_ShaderConstants }
  ;
  # [cfg (feature = "unity_engine-rendering-universal-internal-deferredlights")] pub use deferredlights :: { IDeferredLightsMethods }
  ;
@@ -37,7 +37,7 @@
  # [cfg (feature = "unity_engine-rendering-universal-internal-deferredpass")] pub use deferredpass :: { IDeferredPassMethods }
  ;
  # [cfg (any (feature = "unity_engine-rendering-universal-internal-deferredtiler-types"))] pub mod deferredtiler ;
- # [cfg (feature = "unity_engine-rendering-universal-internal-deferredtiler-types")] pub use deferredtiler :: { DeferredTiler , DeferredTiler_PrePunctualLight , DeferredTiler_ClipResult }
+ # [cfg (feature = "unity_engine-rendering-universal-internal-deferredtiler-types")] pub use deferredtiler :: { DeferredTiler , DeferredTiler_ClipResult , DeferredTiler_PrePunctualLight }
  ;
  # [cfg (any (feature = "unity_engine-rendering-universal-internal-depthnormalonlypass-types"))] pub mod depthnormalonlypass ;
  # [cfg (feature = "unity_engine-rendering-universal-internal-depthnormalonlypass-types")] pub use depthnormalonlypass :: { DepthNormalOnlyPass , IDepthNormalOnlyPass }
@@ -78,7 +78,7 @@
  # [cfg (feature = "unity_engine-rendering-universal-internal-mainlightshadowcasterpass")] pub use mainlightshadowcasterpass :: { IMainLightShadowCasterPassMethods }
  ;
  # [cfg (any (feature = "unity_engine-rendering-universal-internal-postprocesspass-types"))] pub mod postprocesspass ;
- # [cfg (feature = "unity_engine-rendering-universal-internal-postprocesspass-types")] pub use postprocesspass :: { PostProcessPass , IPostProcessPass , PostProcessPass_ShaderConstants , IPostProcessPass_ShaderConstants , PostProcessPass_CaptureMode , PostProcessPass_MaterialLibrary , IPostProcessPass_MaterialLibrary }
+ # [cfg (feature = "unity_engine-rendering-universal-internal-postprocesspass-types")] pub use postprocesspass :: { PostProcessPass_CaptureMode , PostProcessPass , IPostProcessPass , PostProcessPass_ShaderConstants , IPostProcessPass_ShaderConstants , PostProcessPass_MaterialLibrary , IPostProcessPass_MaterialLibrary }
  ;
  # [cfg (feature = "unity_engine-rendering-universal-internal-postprocesspass")] pub use postprocesspass :: { IPostProcessPassMethods , IPostProcessPass_MaterialLibraryMethods }
  ;

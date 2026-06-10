@@ -21,13 +21,10 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-signaltowhom")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __SignalToWhom_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_for_me { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: character :: Character as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SignalToWhom as :: unity2 :: ClassIdentity > :: class () , "IsForMe" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SignalToWhom as :: unity2 :: ClassIdentity > :: NAME , "IsForMe" , e) , } } } pub unsafe fn is_for_me (cp : crate :: combat :: character :: Character , target_side : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (crate :: combat :: character :: Character , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_for_me :: get_method_info () . method_ptr ,) ; inner (cp , target_side , __unity2_method_info) } }
+impl SignalToWhom { # [doc = "`IsForMe(crate::combat::character::Character, i32)` overload"] pub fn is_for_me (cp : impl :: core :: convert :: Into < crate :: combat :: character :: Character > , target_side : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: combat :: character :: Character , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x247d520usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (cp) , :: core :: convert :: Into :: into (target_side) , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "combat-signaltowhom")]
-impl SignalToWhom { # [doc = "`IsForMe(crate::combat::character::Character, i32)` overload"] pub fn is_for_me (cp : impl :: core :: convert :: Into < crate :: combat :: character :: Character > , target_side : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { __SignalToWhom_unity2_raw :: is_for_me (:: core :: convert :: Into :: into (cp) , :: core :: convert :: Into :: into (target_side) , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "combat-signaltowhom")]
-impl SignalToWhom { pub fn is_for_me_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SignalToWhom_unity2_raw :: __lookup_is_for_me :: get_method_info () } }
+impl SignalToWhom { pub fn is_for_me_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SignalToWhom as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
 
 #[cfg(feature = "combat-signaltowhom")]
 #[doc(hidden)]

@@ -17,13 +17,10 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-shopcommon")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ShopCommon_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_satisfied { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ShopCommon as :: unity2 :: ClassIdentity > :: class () , "IsSatisfied" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ShopCommon as :: unity2 :: ClassIdentity > :: NAME , "IsSatisfied" , e) , } } } pub unsafe fn is_satisfied (conditions : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_satisfied :: get_method_info () . method_ptr ,) ; inner (conditions , __unity2_method_info) } }
+impl ShopCommon { # [doc = "`IsSatisfied(::unity2::Il2CppString)` overload"] pub fn is_satisfied (conditions : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ae400usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (conditions) , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "app-shopcommon")]
-impl ShopCommon { # [doc = "`IsSatisfied(::unity2::Il2CppString)` overload"] pub fn is_satisfied (conditions : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { __ShopCommon_unity2_raw :: is_satisfied (:: core :: convert :: Into :: into (conditions) , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-shopcommon")]
-impl ShopCommon { pub fn is_satisfied_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ShopCommon_unity2_raw :: __lookup_is_satisfied :: get_method_info () } }
+impl ShopCommon { pub fn is_satisfied_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopCommon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
 
 #[cfg(feature = "app-shopcommon")]
 #[doc(hidden)]

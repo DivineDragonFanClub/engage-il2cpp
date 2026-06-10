@@ -11,6 +11,11 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/beforerenderhelper/BeforeRenderHelper.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "BeforeRenderHelper")] # [parent (crate :: system :: object :: Object)] pub struct BeforeRenderHelper {
+# [static_field] # [rename (name = "s_OrderBlocks")] pub s_order_blocks : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: beforerenderhelper :: BeforeRenderHelper_OrderBlock > ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/beforerenderhelper/BeforeRenderHelper_OrderBlock.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -45,31 +50,23 @@ impl ::unity2::IlType for BeforeRenderHelper_OrderBlock {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/beforerenderhelper/BeforeRenderHelper.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "BeforeRenderHelper")] # [parent (crate :: system :: object :: Object)] pub struct BeforeRenderHelper {
-# [static_field] # [rename (name = "s_OrderBlocks")] pub s_order_blocks : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: beforerenderhelper :: BeforeRenderHelper_OrderBlock > ,
-}
-
 }
 
 #[cfg(feature = "unity_engine-beforerenderhelper-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-beforerenderhelper")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __BeforeRenderHelper_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_invoke { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BeforeRenderHelper as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BeforeRenderHelper as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , } } } pub unsafe fn invoke (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_invoke :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< BeforeRenderHelper as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < BeforeRenderHelper as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } pub unsafe fn cctor (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_cctor :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+impl BeforeRenderHelper { # [doc = "`Invoke()` overload"] pub fn invoke () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c36000usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c37560usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "unity_engine-beforerenderhelper")]
-impl BeforeRenderHelper { # [doc = "`Invoke()` overload"] pub fn invoke () -> () { unsafe { __BeforeRenderHelper_unity2_raw :: invoke (:: core :: option :: Option :: None) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { __BeforeRenderHelper_unity2_raw :: cctor (:: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "unity_engine-beforerenderhelper")]
-impl BeforeRenderHelper { pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BeforeRenderHelper_unity2_raw :: __lookup_invoke :: get_method_info () } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __BeforeRenderHelper_unity2_raw :: __lookup_cctor :: get_method_info () } }
+impl BeforeRenderHelper { pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BeforeRenderHelper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BeforeRenderHelper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
 
 #[cfg(feature = "unity_engine-beforerenderhelper")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::BeforeRenderHelper_OrderBlock;
     pub use super::BeforeRenderHelper;
     pub use super::IBeforeRenderHelper;
+    pub use super::BeforeRenderHelper_OrderBlock;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

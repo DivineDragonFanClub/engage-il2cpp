@@ -25,16 +25,13 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "root-dynamicboneplanecollider_bridge")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DynamicBonePlaneCollider_Bridge_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynamicBonePlaneCollider_Bridge as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynamicBonePlaneCollider_Bridge as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DynamicBonePlaneCollider_Bridge , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DynamicBonePlaneCollider_Bridge , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "root-dynamicboneplanecollider_bridge")]
-pub trait IDynamicBonePlaneCollider_BridgeMethods : IDynamicBonePlaneCollider_Bridge { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DynamicBonePlaneCollider_Bridge as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DynamicBonePlaneCollider_Bridge_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+pub trait IDynamicBonePlaneCollider_BridgeMethods : IDynamicBonePlaneCollider_Bridge { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DynamicBonePlaneCollider_Bridge as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynamicBonePlaneCollider_Bridge , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d3220usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "root-dynamicboneplanecollider_bridge")]
 impl < __T : IDynamicBonePlaneCollider_Bridge > IDynamicBonePlaneCollider_BridgeMethods for __T { }
 
 #[cfg(feature = "root-dynamicboneplanecollider_bridge")]
-impl DynamicBonePlaneCollider_Bridge { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DynamicBonePlaneCollider_Bridge_unity2_raw :: __lookup_ctor :: get_method_info () } }
+impl DynamicBonePlaneCollider_Bridge { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynamicBonePlaneCollider_Bridge as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
 
 #[cfg(feature = "root-dynamicboneplanecollider_bridge")]
 impl DynamicBonePlaneCollider_Bridge {

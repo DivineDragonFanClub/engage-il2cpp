@@ -17,16 +17,13 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-reflection-assemblyfileversionattribute")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AssemblyFileVersionAttribute_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AssemblyFileVersionAttribute as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AssemblyFileVersionAttribute as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AssemblyFileVersionAttribute , version : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AssemblyFileVersionAttribute , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , version , __unity2_method_info) } }
-
-#[cfg(feature = "system-reflection-assemblyfileversionattribute")]
-pub trait IAssemblyFileVersionAttributeMethods : IAssemblyFileVersionAttribute { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , version : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AssemblyFileVersionAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AssemblyFileVersionAttribute_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (version) , :: core :: option :: Option :: None) } } }
+pub trait IAssemblyFileVersionAttributeMethods : IAssemblyFileVersionAttribute { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , version : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AssemblyFileVersionAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssemblyFileVersionAttribute , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3401c10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (version) , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "system-reflection-assemblyfileversionattribute")]
 impl < __T : IAssemblyFileVersionAttribute > IAssemblyFileVersionAttributeMethods for __T { }
 
 #[cfg(feature = "system-reflection-assemblyfileversionattribute")]
-impl AssemblyFileVersionAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AssemblyFileVersionAttribute_unity2_raw :: __lookup_ctor :: get_method_info () } }
+impl AssemblyFileVersionAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssemblyFileVersionAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
 
 #[cfg(feature = "system-reflection-assemblyfileversionattribute")]
 impl AssemblyFileVersionAttribute {

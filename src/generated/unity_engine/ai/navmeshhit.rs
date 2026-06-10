@@ -54,13 +54,10 @@ impl ::unity2::IlType for NavMeshHit {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-ai-navmeshhit")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __NavMeshHit_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_position { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< NavMeshHit as :: unity2 :: ClassIdentity > :: class () , "get_position" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NavMeshHit as :: unity2 :: ClassIdentity > :: NAME , "get_position" , e) , } } } pub unsafe fn get_position (this : * mut NavMeshHit , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 { let inner : extern "C" fn (* mut NavMeshHit , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute (__lookup_get_position :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+impl NavMeshHit { # [doc = "`get_position()` overload"] pub fn get_position (& mut self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (* mut NavMeshHit , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f43f60usize) as * mut u8) ; __inner (self as * mut NavMeshHit , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "unity_engine-ai-navmeshhit")]
-impl NavMeshHit { # [doc = "`get_position()` overload"] pub fn get_position (mut self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { __NavMeshHit_unity2_raw :: get_position (& mut self as * mut NavMeshHit , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "unity_engine-ai-navmeshhit")]
-impl NavMeshHit { pub fn get_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __NavMeshHit_unity2_raw :: __lookup_get_position :: get_method_info () } }
+impl NavMeshHit { pub fn get_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NavMeshHit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
 
 #[cfg(feature = "unity_engine-ai-navmeshhit")]
 #[doc(hidden)]

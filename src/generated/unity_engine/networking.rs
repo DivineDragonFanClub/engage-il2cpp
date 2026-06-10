@@ -22,7 +22,7 @@
  ;
  # [cfg (any (feature = "unity_engine-networking-player_connection-messageeventargs-types" , feature = "unity_engine-networking-player_connection-playerconnection-types" , feature = "unity_engine-networking-player_connection-playereditorconnectionevents-types"))] pub mod player_connection ;
  # [cfg (any (feature = "unity_engine-networking-unitywebrequest-types"))] pub mod unitywebrequest ;
- # [cfg (feature = "unity_engine-networking-unitywebrequest-types")] pub use unitywebrequest :: { UnityWebRequest_Result , UnityWebRequest_UnityWebRequestMethod , UnityWebRequest , IUnityWebRequest , UnityWebRequest_UnityWebRequestError }
+ # [cfg (feature = "unity_engine-networking-unitywebrequest-types")] pub use unitywebrequest :: { UnityWebRequest_UnityWebRequestError , UnityWebRequest_UnityWebRequestMethod , UnityWebRequest , IUnityWebRequest , UnityWebRequest_Result }
  ;
  # [cfg (feature = "unity_engine-networking-unitywebrequest")] pub use unitywebrequest :: { IUnityWebRequestMethods }
  ;

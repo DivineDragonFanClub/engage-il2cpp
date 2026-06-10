@@ -20,16 +20,13 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "root-akgameobjpositionoffsetdata")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AkGameObjPositionOffsetData_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AkGameObjPositionOffsetData as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkGameObjPositionOffsetData as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AkGameObjPositionOffsetData , i_really_want_to_be_constructed : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AkGameObjPositionOffsetData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , i_really_want_to_be_constructed , __unity2_method_info) } }
-
-#[cfg(feature = "root-akgameobjpositionoffsetdata")]
-pub trait IAkGameObjPositionOffsetDataMethods : IAkGameObjPositionOffsetData { # [doc = "`.ctor(bool)` overload"] fn ctor (self , i_really_want_to_be_constructed : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkGameObjPositionOffsetData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkGameObjPositionOffsetData_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (i_really_want_to_be_constructed) , :: core :: option :: Option :: None) } } }
+pub trait IAkGameObjPositionOffsetDataMethods : IAkGameObjPositionOffsetData { # [doc = "`.ctor(bool)` overload"] fn ctor (self , i_really_want_to_be_constructed : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkGameObjPositionOffsetData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkGameObjPositionOffsetData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1f6d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (i_really_want_to_be_constructed) , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "root-akgameobjpositionoffsetdata")]
 impl < __T : IAkGameObjPositionOffsetData > IAkGameObjPositionOffsetDataMethods for __T { }
 
 #[cfg(feature = "root-akgameobjpositionoffsetdata")]
-impl AkGameObjPositionOffsetData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AkGameObjPositionOffsetData_unity2_raw :: __lookup_ctor :: get_method_info () } }
+impl AkGameObjPositionOffsetData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkGameObjPositionOffsetData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
 
 #[cfg(feature = "root-akgameobjpositionoffsetdata")]
 impl AkGameObjPositionOffsetData {

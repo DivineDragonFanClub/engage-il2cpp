@@ -49,7 +49,7 @@
  # [cfg (feature = "unity_engine-xr-xrdevice-types")] pub use xrdevice :: { XRDevice , IXRDevice }
  ;
  # [cfg (any (feature = "unity_engine-xr-xrdisplaysubsystem-types"))] pub mod xrdisplaysubsystem ;
- # [cfg (feature = "unity_engine-xr-xrdisplaysubsystem-types")] pub use xrdisplaysubsystem :: { XRDisplaySubsystem_XRMirrorViewBlitDesc , XRDisplaySubsystem_XRRenderParameter , XRDisplaySubsystem_XRBlitParams , XRDisplaySubsystem_XRRenderPass , XRDisplaySubsystem_TextureLayout , XRDisplaySubsystem , IXRDisplaySubsystem }
+ # [cfg (feature = "unity_engine-xr-xrdisplaysubsystem-types")] pub use xrdisplaysubsystem :: { XRDisplaySubsystem_XRBlitParams , XRDisplaySubsystem_XRRenderPass , XRDisplaySubsystem_XRMirrorViewBlitDesc , XRDisplaySubsystem_TextureLayout , XRDisplaySubsystem , IXRDisplaySubsystem , XRDisplaySubsystem_XRRenderParameter }
  ;
  # [cfg (feature = "unity_engine-xr-xrdisplaysubsystem")] pub use xrdisplaysubsystem :: { IXRDisplaySubsystemMethods }
  ;

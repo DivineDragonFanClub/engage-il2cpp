@@ -21,16 +21,13 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-minattribute")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MinAttribute_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< MinAttribute as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MinAttribute as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : MinAttribute , min : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (MinAttribute , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , min , __unity2_method_info) } }
-
-#[cfg(feature = "unity_engine-minattribute")]
-pub trait IMinAttributeMethods : IMinAttribute { # [doc = "`.ctor(f32)` overload"] fn ctor (self , min : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < MinAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MinAttribute_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (min) , :: core :: option :: Option :: None) } } }
+pub trait IMinAttributeMethods : IMinAttribute { # [doc = "`.ctor(f32)` overload"] fn ctor (self , min : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < MinAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MinAttribute , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32ecef0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (min) , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "unity_engine-minattribute")]
 impl < __T : IMinAttribute > IMinAttributeMethods for __T { }
 
 #[cfg(feature = "unity_engine-minattribute")]
-impl MinAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __MinAttribute_unity2_raw :: __lookup_ctor :: get_method_info () } }
+impl MinAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MinAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
 
 #[cfg(feature = "unity_engine-minattribute")]
 impl MinAttribute {

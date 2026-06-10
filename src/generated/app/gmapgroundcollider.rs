@@ -21,6 +21,11 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapgroundcollider/GmapGroundCollider.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapGroundCollider")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct GmapGroundCollider {
+# [offset (24)] # [rename (name = "m_GroundType")] pub m_ground_type : crate :: app :: gmapgroundcollider :: GmapGroundCollider_Type ,
+}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapgroundcollider/GmapGroundCollider_Type.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -69,27 +74,19 @@ impl  GmapGroundCollider_Type  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapgroundcollider/GmapGroundCollider.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapGroundCollider")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct GmapGroundCollider {
-# [offset (24)] # [rename (name = "m_GroundType")] pub m_ground_type : crate :: app :: gmapgroundcollider :: GmapGroundCollider_Type ,
-}
-
 }
 
 #[cfg(feature = "app-gmapgroundcollider-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-gmapgroundcollider")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __GmapGroundCollider_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_on_validate { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapGroundCollider as :: unity2 :: ClassIdentity > :: class () , "OnValidate" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapGroundCollider as :: unity2 :: ClassIdentity > :: NAME , "OnValidate" , e) , } } } pub unsafe fn on_validate (this : GmapGroundCollider , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapGroundCollider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_on_validate :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_ground_type { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapGroundCollider as :: unity2 :: ClassIdentity > :: class () , "get_GroundType" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapGroundCollider as :: unity2 :: ClassIdentity > :: NAME , "get_GroundType" , e) , } } } pub unsafe fn get_ground_type (this : GmapGroundCollider , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: gmapgroundcollider :: GmapGroundCollider_Type { let inner : extern "C" fn (GmapGroundCollider , :: unity2 :: OptionalMethod ,) -> crate :: app :: gmapgroundcollider :: GmapGroundCollider_Type = :: core :: mem :: transmute (__lookup_get_ground_type :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapGroundCollider as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapGroundCollider as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : GmapGroundCollider , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (GmapGroundCollider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "app-gmapgroundcollider")]
-pub trait IGmapGroundColliderMethods : IGmapGroundCollider { # [doc = "`OnValidate()` overload"] fn on_validate (self ,) -> () { unsafe { let __receiver = < GmapGroundCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapGroundCollider_unity2_raw :: on_validate (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_GroundType()` overload"] fn get_ground_type (self ,) -> crate :: app :: gmapgroundcollider :: GmapGroundCollider_Type { unsafe { let __receiver = < GmapGroundCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapGroundCollider_unity2_raw :: get_ground_type (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GmapGroundCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __GmapGroundCollider_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+pub trait IGmapGroundColliderMethods : IGmapGroundCollider { # [doc = "`OnValidate()` overload"] fn on_validate (self ,) -> () { unsafe { let __receiver = < GmapGroundCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapGroundCollider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2528a50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_GroundType()` overload"] fn get_ground_type (self ,) -> crate :: app :: gmapgroundcollider :: GmapGroundCollider_Type { unsafe { let __receiver = < GmapGroundCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapGroundCollider , :: unity2 :: OptionalMethod ,) -> crate :: app :: gmapgroundcollider :: GmapGroundCollider_Type = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2528af0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GmapGroundCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapGroundCollider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2528b00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "app-gmapgroundcollider")]
 impl < __T : IGmapGroundCollider > IGmapGroundColliderMethods for __T { }
 
 #[cfg(feature = "app-gmapgroundcollider")]
-impl GmapGroundCollider { pub fn on_validate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapGroundCollider_unity2_raw :: __lookup_on_validate :: get_method_info () } pub fn get_ground_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapGroundCollider_unity2_raw :: __lookup_get_ground_type :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __GmapGroundCollider_unity2_raw :: __lookup_ctor :: get_method_info () } }
+impl GmapGroundCollider { pub fn on_validate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapGroundCollider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_ground_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapGroundCollider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapGroundCollider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
 
 #[cfg(feature = "app-gmapgroundcollider")]
 impl GmapGroundCollider {
@@ -99,10 +96,10 @@ impl GmapGroundCollider {
 #[cfg(feature = "app-gmapgroundcollider")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GmapGroundCollider_Type;
     pub use super::GmapGroundCollider;
     pub use super::IGmapGroundCollider;
     pub use super::IGmapGroundColliderMethods;
+    pub use super::GmapGroundCollider_Type;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

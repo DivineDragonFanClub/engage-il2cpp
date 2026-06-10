@@ -10,7 +10,7 @@
  # [cfg (feature = "unity_engine-playables-directorwrapmode-types")] pub use directorwrapmode :: { DirectorWrapMode }
  ;
  # [cfg (any (feature = "unity_engine-playables-framedata-types"))] pub mod framedata ;
- # [cfg (feature = "unity_engine-playables-framedata-types")] pub use framedata :: { FrameData_EvaluationType , FrameData , FrameData_Flags }
+ # [cfg (feature = "unity_engine-playables-framedata-types")] pub use framedata :: { FrameData_Flags , FrameData , FrameData_EvaluationType }
  ;
  # [cfg (any (feature = "unity_engine-playables-inotification-types"))] pub mod inotification ;
  # [cfg (feature = "unity_engine-playables-inotification-types")] pub use inotification :: { INotification , IINotification }

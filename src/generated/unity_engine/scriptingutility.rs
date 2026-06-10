@@ -11,6 +11,9 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/scriptingutility/ScriptingUtility.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "ScriptingUtility")] # [parent (crate :: system :: object :: Object)] pub struct ScriptingUtility {}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/scriptingutility/ScriptingUtility_TestClass.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -44,29 +47,23 @@ impl ::unity2::IlType for ScriptingUtility_TestClass {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/scriptingutility/ScriptingUtility.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "ScriptingUtility")] # [parent (crate :: system :: object :: Object)] pub struct ScriptingUtility {}
-
 }
 
 #[cfg(feature = "unity_engine-scriptingutility-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-scriptingutility")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ScriptingUtility_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_managed_code_working { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScriptingUtility as :: unity2 :: ClassIdentity > :: class () , "IsManagedCodeWorking" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScriptingUtility as :: unity2 :: ClassIdentity > :: NAME , "IsManagedCodeWorking" , e) , } } } pub unsafe fn is_managed_code_working (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__lookup_is_managed_code_working :: get_method_info () . method_ptr ,) ; inner (__unity2_method_info) } }
+impl ScriptingUtility { # [doc = "`IsManagedCodeWorking()` overload"] pub fn is_managed_code_working () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8e800usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "unity_engine-scriptingutility")]
-impl ScriptingUtility { # [doc = "`IsManagedCodeWorking()` overload"] pub fn is_managed_code_working () -> bool { unsafe { __ScriptingUtility_unity2_raw :: is_managed_code_working (:: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "unity_engine-scriptingutility")]
-impl ScriptingUtility { pub fn is_managed_code_working_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __ScriptingUtility_unity2_raw :: __lookup_is_managed_code_working :: get_method_info () } }
+impl ScriptingUtility { pub fn is_managed_code_working_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptingUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
 
 #[cfg(feature = "unity_engine-scriptingutility")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ScriptingUtility_TestClass;
     pub use super::ScriptingUtility;
     pub use super::IScriptingUtility;
+    pub use super::ScriptingUtility_TestClass;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

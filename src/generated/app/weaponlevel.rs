@@ -13,6 +13,9 @@ mod __types {
  ;
 
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponlevel/WeaponLevel.md"))] # [:: unity2 :: class (namespace = "App" , name = "WeaponLevel")] # [parent (crate :: system :: object :: Object)] pub struct WeaponLevel {}
+
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/weaponlevel/WeaponLevel_Kind.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -85,28 +88,22 @@ impl  WeaponLevel_Kind  {
 
 }
 
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponlevel/WeaponLevel.md"))] # [:: unity2 :: class (namespace = "App" , name = "WeaponLevel")] # [parent (crate :: system :: object :: Object)] pub struct WeaponLevel {}
-
 }
 
 #[cfg(feature = "app-weaponlevel-types")]
 pub use __types::*;
 
 #[cfg(feature = "app-weaponlevel")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __WeaponLevel_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_kind { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WeaponLevel as :: unity2 :: ClassIdentity > :: class () , "GetKind" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WeaponLevel as :: unity2 :: ClassIdentity > :: NAME , "GetKind" , e) , } } } pub unsafe fn get_kind (level : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: app :: weaponlevel :: WeaponLevel_Kind { let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: weaponlevel :: WeaponLevel_Kind = :: core :: mem :: transmute (__lookup_get_kind :: get_method_info () . method_ptr ,) ; inner (level , __unity2_method_info) } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WeaponLevel as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WeaponLevel as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : WeaponLevel , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (WeaponLevel , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
+impl WeaponLevel { # [doc = "`GetKind(::unity2::Il2CppString)` overload"] pub fn get_kind (level : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: weaponlevel :: WeaponLevel_Kind { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: weaponlevel :: WeaponLevel_Kind = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c93f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (level) , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "app-weaponlevel")]
-impl WeaponLevel { # [doc = "`GetKind(::unity2::Il2CppString)` overload"] pub fn get_kind (level : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: weaponlevel :: WeaponLevel_Kind { unsafe { __WeaponLevel_unity2_raw :: get_kind (:: core :: convert :: Into :: into (level) , :: core :: option :: Option :: None) } } }
-
-#[cfg(feature = "app-weaponlevel")]
-pub trait IWeaponLevelMethods : IWeaponLevel { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < WeaponLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __WeaponLevel_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+pub trait IWeaponLevelMethods : IWeaponLevel { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < WeaponLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WeaponLevel , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c9570usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "app-weaponlevel")]
 impl < __T : IWeaponLevel > IWeaponLevelMethods for __T { }
 
 #[cfg(feature = "app-weaponlevel")]
-impl WeaponLevel { pub fn get_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WeaponLevel_unity2_raw :: __lookup_get_kind :: get_method_info () } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __WeaponLevel_unity2_raw :: __lookup_ctor :: get_method_info () } }
+impl WeaponLevel { pub fn get_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WeaponLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WeaponLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
 
 #[cfg(feature = "app-weaponlevel")]
 impl WeaponLevel {
@@ -116,10 +113,10 @@ impl WeaponLevel {
 #[cfg(feature = "app-weaponlevel")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::WeaponLevel_Kind;
     pub use super::WeaponLevel;
     pub use super::IWeaponLevel;
     pub use super::IWeaponLevelMethods;
+    pub use super::WeaponLevel_Kind;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

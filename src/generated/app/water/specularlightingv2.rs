@@ -25,16 +25,13 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-water-specularlightingv2")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __SpecularLightingV2_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SpecularLightingV2 as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SpecularLightingV2 as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : SpecularLightingV2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (SpecularLightingV2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "app-water-specularlightingv2")]
-pub trait ISpecularLightingV2Methods : ISpecularLightingV2 { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SpecularLightingV2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __SpecularLightingV2_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+pub trait ISpecularLightingV2Methods : ISpecularLightingV2 { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SpecularLightingV2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SpecularLightingV2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24ff3f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "app-water-specularlightingv2")]
 impl < __T : ISpecularLightingV2 > ISpecularLightingV2Methods for __T { }
 
 #[cfg(feature = "app-water-specularlightingv2")]
-impl SpecularLightingV2 { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __SpecularLightingV2_unity2_raw :: __lookup_ctor :: get_method_info () } }
+impl SpecularLightingV2 { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpecularLightingV2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
 
 #[cfg(feature = "app-water-specularlightingv2")]
 impl SpecularLightingV2 {

@@ -21,16 +21,13 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-addressable_assets-assetreferencetexture")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AssetReferenceTexture_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< AssetReferenceTexture as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AssetReferenceTexture as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : AssetReferenceTexture , guid : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (AssetReferenceTexture , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , guid , __unity2_method_info) } }
-
-#[cfg(feature = "unity_engine-addressable_assets-assetreferencetexture")]
-pub trait IAssetReferenceTextureMethods : IAssetReferenceTexture { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , guid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AssetReferenceTexture as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AssetReferenceTexture_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (guid) , :: core :: option :: Option :: None) } } }
+pub trait IAssetReferenceTextureMethods : IAssetReferenceTexture { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , guid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AssetReferenceTexture as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetReferenceTexture , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db3010usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (guid) , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "unity_engine-addressable_assets-assetreferencetexture")]
 impl < __T : IAssetReferenceTexture > IAssetReferenceTextureMethods for __T { }
 
 #[cfg(feature = "unity_engine-addressable_assets-assetreferencetexture")]
-impl AssetReferenceTexture { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __AssetReferenceTexture_unity2_raw :: __lookup_ctor :: get_method_info () } }
+impl AssetReferenceTexture { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetReferenceTexture as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
 
 #[cfg(feature = "unity_engine-addressable_assets-assetreferencetexture")]
 impl AssetReferenceTexture {

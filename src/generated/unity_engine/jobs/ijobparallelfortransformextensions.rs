@@ -15,43 +15,6 @@ mod __types {
  ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/jobs/ijobparallelfortransformextensions/IJobParallelForTransformExtensions_TransformParallelForLoopStruct_1_ExecuteJobFunction.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Jobs" , name = "IJobParallelForTransformExtensions.TransformParallelForLoopStruct`1.ExecuteJobFunction")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] # [parent (crate :: system :: delegate :: Delegate)] # [parent (crate :: system :: object :: Object)] pub struct IJobParallelForTransformExtensions_TransformParallelForLoopStruct_1_ExecuteJobFunction < T0 : :: unity2 :: ClassIdentity > {}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/jobs/ijobparallelfortransformextensions/IJobParallelForTransformExtensions_TransformParallelForLoopStruct_1_TransformJobData.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct IJobParallelForTransformExtensions_TransformParallelForLoopStruct_1_TransformJobData<T0> { pub _phantom: ::core::marker::PhantomData<(T0,)> }
-
-
-impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for IJobParallelForTransformExtensions_TransformParallelForLoopStruct_1_TransformJobData<T0> {
-    const NAMESPACE: &'static str = "UnityEngine.Jobs";
-
-    const NAME: &'static str = "IJobParallelForTransformExtensions.TransformParallelForLoopStruct`1.TransformJobData";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-            .make_generic(&[<T0 as ::unity2::ClassIdentity>::class()])
-            .expect("generic instantiation")
-        }
-)
-    }
-
-}
-
-
-impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for IJobParallelForTransformExtensions_TransformParallelForLoopStruct_1_TransformJobData<T0> {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/jobs/ijobparallelfortransformextensions/IJobParallelForTransformExtensions_TransformParallelForLoopStruct_1.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -88,10 +51,52 @@ impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for IJobParallelForTransformE
 
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/jobs/ijobparallelfortransformextensions/IJobParallelForTransformExtensions.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Jobs" , name = "IJobParallelForTransformExtensions")] # [parent (crate :: system :: object :: Object)] pub struct IJobParallelForTransformExtensions {}
 
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/jobs/ijobparallelfortransformextensions/IJobParallelForTransformExtensions_TransformParallelForLoopStruct_1_ExecuteJobFunction.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Jobs" , name = "IJobParallelForTransformExtensions.TransformParallelForLoopStruct`1.ExecuteJobFunction")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] # [parent (crate :: system :: delegate :: Delegate)] # [parent (crate :: system :: object :: Object)] pub struct IJobParallelForTransformExtensions_TransformParallelForLoopStruct_1_ExecuteJobFunction < T0 : :: unity2 :: ClassIdentity > {}
+
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/jobs/ijobparallelfortransformextensions/IJobParallelForTransformExtensions_TransformParallelForLoopStruct_1_TransformJobData.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct IJobParallelForTransformExtensions_TransformParallelForLoopStruct_1_TransformJobData<T0> { pub _phantom: ::core::marker::PhantomData<(T0,)> }
+
+
+impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for IJobParallelForTransformExtensions_TransformParallelForLoopStruct_1_TransformJobData<T0> {
+    const NAMESPACE: &'static str = "UnityEngine.Jobs";
+
+    const NAME: &'static str = "IJobParallelForTransformExtensions.TransformParallelForLoopStruct`1.TransformJobData";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
+            ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+            .make_generic(&[<T0 as ::unity2::ClassIdentity>::class()])
+            .expect("generic instantiation")
+        }
+)
+    }
+
+}
+
+
+impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for IJobParallelForTransformExtensions_TransformParallelForLoopStruct_1_TransformJobData<T0> {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+    }
+
+}
+
 }
 
 #[cfg(feature = "unity_engine-jobs-ijobparallelfortransformextensions-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-jobs-ijobparallelfortransformextensions")]
+# [:: unity2 :: methods (value)] impl < T0 : :: unity2 :: ClassIdentity > IJobParallelForTransformExtensions_TransformParallelForLoopStruct_1 < T0 > {
+# [doc = "`Initialize()` overload"] # [method (name = "Initialize" , args = 0)] pub fn initialize () -> :: unity2 :: IntPtr ;
+}
 
 #[cfg(feature = "unity_engine-jobs-ijobparallelfortransformextensions")]
 # [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > IJobParallelForTransformExtensions_TransformParallelForLoopStruct_1_ExecuteJobFunction < T0 > {
@@ -104,20 +109,15 @@ impl < T0 : :: unity2 :: ClassIdentity > IJobParallelForTransformExtensions_Tran
 }
 
 #[cfg(feature = "unity_engine-jobs-ijobparallelfortransformextensions")]
-# [:: unity2 :: methods (value)] impl < T0 : :: unity2 :: ClassIdentity > IJobParallelForTransformExtensions_TransformParallelForLoopStruct_1 < T0 > {
-# [doc = "`Initialize()` overload"] # [method (name = "Initialize" , args = 0)] pub fn initialize () -> :: unity2 :: IntPtr ;
-}
-
-#[cfg(feature = "unity_engine-jobs-ijobparallelfortransformextensions")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::IJobParallelForTransformExtensions_TransformParallelForLoopStruct_1;
+    pub use super::IJobParallelForTransformExtensions;
+    pub use super::IIJobParallelForTransformExtensions;
     pub use super::IJobParallelForTransformExtensions_TransformParallelForLoopStruct_1_ExecuteJobFunction;
     pub use super::IIJobParallelForTransformExtensions_TransformParallelForLoopStruct_1_ExecuteJobFunction;
     pub use super::IIJobParallelForTransformExtensions_TransformParallelForLoopStruct_1_ExecuteJobFunctionMethods;
     pub use super::IJobParallelForTransformExtensions_TransformParallelForLoopStruct_1_TransformJobData;
-    pub use super::IJobParallelForTransformExtensions_TransformParallelForLoopStruct_1;
-    pub use super::IJobParallelForTransformExtensions;
-    pub use super::IIJobParallelForTransformExtensions;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

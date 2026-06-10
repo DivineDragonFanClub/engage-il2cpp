@@ -20,16 +20,13 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguiprefabbundle")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DebugUIPrefabBundle_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DebugUIPrefabBundle as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DebugUIPrefabBundle as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : DebugUIPrefabBundle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (DebugUIPrefabBundle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , __unity2_method_info) } }
-
-#[cfg(feature = "unity_engine-rendering-ui-debuguiprefabbundle")]
-pub trait IDebugUIPrefabBundleMethods : IDebugUIPrefabBundle { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DebugUIPrefabBundle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DebugUIPrefabBundle_unity2_raw :: ctor (__receiver , :: core :: option :: Option :: None) } } }
+pub trait IDebugUIPrefabBundleMethods : IDebugUIPrefabBundle { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DebugUIPrefabBundle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIPrefabBundle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30a8fc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguiprefabbundle")]
 impl < __T : IDebugUIPrefabBundle > IDebugUIPrefabBundleMethods for __T { }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguiprefabbundle")]
-impl DebugUIPrefabBundle { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __DebugUIPrefabBundle_unity2_raw :: __lookup_ctor :: get_method_info () } }
+impl DebugUIPrefabBundle { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIPrefabBundle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguiprefabbundle")]
 impl DebugUIPrefabBundle {

@@ -22,16 +22,13 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-textareaattribute")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TextAreaAttribute_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< TextAreaAttribute as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TextAreaAttribute as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } pub unsafe fn ctor (this : TextAreaAttribute , min_lines : i32 , max_lines : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let inner : extern "C" fn (TextAreaAttribute , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__lookup_ctor :: get_method_info () . method_ptr ,) ; inner (this , min_lines , max_lines , __unity2_method_info) } }
-
-#[cfg(feature = "unity_engine-textareaattribute")]
-pub trait ITextAreaAttributeMethods : ITextAreaAttribute { # [doc = "`.ctor(i32, i32)` overload"] fn ctor (self , min_lines : impl :: core :: convert :: Into < i32 > , max_lines : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < TextAreaAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __TextAreaAttribute_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (min_lines) , :: core :: convert :: Into :: into (max_lines) , :: core :: option :: Option :: None) } } }
+pub trait ITextAreaAttributeMethods : ITextAreaAttribute { # [doc = "`.ctor(i32, i32)` overload"] fn ctor (self , min_lines : impl :: core :: convert :: Into < i32 > , max_lines : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < TextAreaAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextAreaAttribute , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3788c10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (min_lines) , :: core :: convert :: Into :: into (max_lines) , :: core :: option :: Option :: None) } } } }
 
 #[cfg(feature = "unity_engine-textareaattribute")]
 impl < __T : ITextAreaAttribute > ITextAreaAttributeMethods for __T { }
 
 #[cfg(feature = "unity_engine-textareaattribute")]
-impl TextAreaAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { __TextAreaAttribute_unity2_raw :: __lookup_ctor :: get_method_info () } }
+impl TextAreaAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextAreaAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
 
 #[cfg(feature = "unity_engine-textareaattribute")]
 impl TextAreaAttribute {

@@ -158,9 +158,9 @@
  # [cfg (feature = "unity_engine-event_systems-pointereventdata")] pub use pointereventdata :: { IPointerEventDataMethods }
  ;
  # [cfg (any (feature = "unity_engine-event_systems-pointerinputmodule-types"))] pub mod pointerinputmodule ;
- # [cfg (feature = "unity_engine-event_systems-pointerinputmodule-types")] pub use pointerinputmodule :: { PointerInputModule_ButtonState , IPointerInputModule_ButtonState , PointerInputModule_MouseState , IPointerInputModule_MouseState , PointerInputModule_MouseButtonEventData , IPointerInputModule_MouseButtonEventData , PointerInputModule , IPointerInputModule }
+ # [cfg (feature = "unity_engine-event_systems-pointerinputmodule-types")] pub use pointerinputmodule :: { PointerInputModule_MouseButtonEventData , IPointerInputModule_MouseButtonEventData , PointerInputModule_MouseState , IPointerInputModule_MouseState , PointerInputModule_ButtonState , IPointerInputModule_ButtonState , PointerInputModule , IPointerInputModule }
  ;
- # [cfg (feature = "unity_engine-event_systems-pointerinputmodule")] pub use pointerinputmodule :: { IPointerInputModule_ButtonStateMethods , IPointerInputModule_MouseStateMethods , IPointerInputModule_MouseButtonEventDataMethods , IPointerInputModuleMethods }
+ # [cfg (feature = "unity_engine-event_systems-pointerinputmodule")] pub use pointerinputmodule :: { IPointerInputModule_MouseButtonEventDataMethods , IPointerInputModule_MouseStateMethods , IPointerInputModule_ButtonStateMethods , IPointerInputModuleMethods }
  ;
  # [cfg (any (feature = "unity_engine-event_systems-raycastermanager-types"))] pub mod raycastermanager ;
  # [cfg (feature = "unity_engine-event_systems-raycastermanager-types")] pub use raycastermanager :: { RaycasterManager , IRaycasterManager }
@@ -174,7 +174,7 @@
  # [cfg (feature = "unity_engine-event_systems-standaloneinputmodule")] pub use standaloneinputmodule :: { IStandaloneInputModuleMethods }
  ;
  # [cfg (any (feature = "unity_engine-event_systems-standaloneinputmodule18-types"))] pub mod standaloneinputmodule18 ;
- # [cfg (feature = "unity_engine-event_systems-standaloneinputmodule18-types")] pub use standaloneinputmodule18 :: { StandaloneInputModule18_InputMode , StandaloneInputModule18 , IStandaloneInputModule18 }
+ # [cfg (feature = "unity_engine-event_systems-standaloneinputmodule18-types")] pub use standaloneinputmodule18 :: { StandaloneInputModule18 , IStandaloneInputModule18 , StandaloneInputModule18_InputMode }
  ;
  # [cfg (feature = "unity_engine-event_systems-standaloneinputmodule18")] pub use standaloneinputmodule18 :: { IStandaloneInputModule18Methods }
  ;
